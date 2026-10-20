@@ -1,0 +1,94 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://www.cameronsutcliff.com/magpie-data/schema/index.schema.json",
+ "title": "Magpie archive index (magpie.index/1)",
+ "description": "Every edition, newest first, with its headline, leads and counts. Fetch a day with days/<date>.json.",
+ "type": "object",
+ "required": [
+  "schema",
+  "latest",
+  "days"
+ ],
+ "properties": {
+  "schema": {
+   "const": "magpie.index/1"
+  },
+  "latest": {
+   "type": "string",
+   "format": "date"
+  },
+  "days": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "date",
+     "events",
+     "top"
+    ],
+    "properties": {
+     "date": {
+      "type": "string",
+      "format": "date"
+     },
+     "headline": {
+      "type": "string"
+     },
+     "events": {
+      "type": "integer"
+     },
+     "enriched": {
+      "type": "boolean"
+     },
+     "backfilled": {
+      "type": "boolean"
+     },
+     "sources": {
+      "type": "integer"
+     },
+     "topics": {
+      "type": "object",
+      "additionalProperties": {
+       "type": "integer"
+      }
+     },
+     "kinds": {
+      "type": "object",
+      "additionalProperties": {
+       "type": "integer"
+      }
+     },
+     "top": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "id": {
+         "type": "string"
+        },
+        "title": {
+         "type": "string"
+        },
+        "impact": {
+         "type": "number"
+        },
+        "vendor": {
+         "type": [
+          "string",
+          "null"
+         ]
+        }
+       }
+      }
+     },
+     "vendors": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     }
+    }
+   }
+  }
+ }
+}
