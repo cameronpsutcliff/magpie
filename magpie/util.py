@@ -201,7 +201,7 @@ def write_json(path: Path, obj, *, compact: bool = False) -> None:
 
 
 # A number counts only as a whole token: not inside a word, version, identifier or path ("x10", "v10", "/10/").
-NUMBER_TOKEN = re.compile(r"(?<![\w./-])\d[\d,]*(?:\.\d+)?(?![\w/-])")
+NUMBER_TOKEN = re.compile(r"(?<![\w./-])\d[\d,]*(?:\.\d+)?")  # "10x" and "10-fold" count; "v10" and "/10/" do not
 
 
 def ungrounded_numbers(claims: list[str], source: str) -> list[str]:

@@ -37,7 +37,7 @@ EVENTS:
 
 def _row(e: dict) -> dict:
     b = e.get("brief") or {}
-    return {"id": e["id"], "headline": b.get("headline") or e["title"], "newly_possible": b.get("newly_possible") or e.get("summary", ""),
+    return {"id": e["id"], "headline": b["headline"], "newly_possible": b.get("newly_possible", ""),
             "why": b.get("why", ""), "limits": b.get("limits", ""), "maker": e.get("maker"), "evidence": e.get("evidence"),
             "impact": e.get("impact"), "metrics": e.get("metrics") or {}}  # editor-written fields only: no raw source text
 
@@ -69,7 +69,8 @@ def keep(paras, rows: dict) -> list[dict]:
 
 def generate(day: dict, timeout: int = 600) -> dict:
     by = {e["id"]: e for e in day.get("events", [])}
-    top = [by[i] for i in day.get("top", []) if i in by and by[i].get("brief")]
+    # Only items the editor wrote up: raw feed text never reaches this prompt.
+    top = [by[i] for i in day.get("top", []) if i in by and (by[i].get("brief") or {}).get("headline")]
     if len(top) < 2:
         return {"items": [], "note": "Too few edited leads to write a read."}
     rows = {e["id"]: _row(e) for e in top}
