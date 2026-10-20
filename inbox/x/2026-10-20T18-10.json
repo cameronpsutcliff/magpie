@@ -1,0 +1,232 @@
+{
+ "ran_at": "2026-10-20T18:10:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v3",
+ "since": "2026-10-20T17:39:00Z",
+ "queries": 12,
+ "calls": 16,
+ "items": [
+  {
+   "title": "OpenAI API adds optional 12-hour prompt caching",
+   "url": "https://x.com/OpenAIDevs/status/2112603916076781778",
+   "handle": "@OpenAIDevs",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Developers can now keep shared instructions, tool definitions and context cached for up to 12 hours instead of the default short window, so agents that run on a schedule keep paying the cached-input rate between sparse calls.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "OpenAI",
+   "posted_at": "2026-10-20T17:56:38Z",
+   "metrics": {
+    "likes": 251,
+    "reposts": 12,
+    "quotes": 12,
+    "replies": 31,
+    "views": 11287
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Builders welcomed it for scheduled and always-on agents and worked through the pricing: the 12-hour write costs more than the default write, so it pays off once a cache would otherwise go cold twice; a few off-topic complaints about the dots agent's quality and speed.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Google and Meta open-source TorchTPU, native PyTorch on TPUs",
+   "url": "https://x.com/PyTorch/status/2112601000670322787",
+   "handle": "@PyTorch",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "TorchTPU is a native PyTorch backend for Google TPUs with true eager execution and a torch.compile backend, plus vLLM and SGLang serving and TorchTitan training at scale, so existing PyTorch code can move to TPUs with minimal changes.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/google-pytorch/torch_tpu",
+    "https://pytorch.org/blog/introducing-torchtpu/",
+    "https://cloud.google.com/blog/topics/ai-infrastructure/torchtpu-is-now-open-source-run-native-pytorch-on-tpus/",
+    "https://github.com/vllm-project/vllm-torchtpu",
+    "https://developers.googleblog.com/announcing-new-vllm-and-sglang-inference-engines-on-tpu/"
+   ],
+   "vendor": "Google / Meta PyTorch",
+   "posted_at": "2026-10-20T17:45:03Z",
+   "metrics": {
+    "likes": 5,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 2,
+    "views": 1020
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "LangSmith adds Managed Deep Agents with per-user credentials and memory",
+   "url": "https://x.com/hwchase17/status/2112602732984938689",
+   "handle": "@hwchase17",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "LangChain now hosts Deep Agents as a managed service that gives each end user their own credentials and memory, for teams serving one agent to many people.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://www.langchain.com/blog/langsmith-managed-deep-agents-whats-new"
+   ],
+   "vendor": "LangChain",
+   "posted_at": "2026-10-20T17:51:56Z",
+   "metrics": {
+    "likes": 6,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 5,
+    "views": 828
+   },
+   "confirmed_by": [
+    "@LangChain"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Command Code launches Mods Hub, an open-source registry for agent mods",
+   "url": "https://x.com/CommandCodeAI/status/2112603204764717528",
+   "handle": "@CommandCodeAI",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Command Code users can discover, install and publish mods that add tools, commands, hooks and rules to the coding agent, with 30-plus available at launch.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Command Code",
+   "posted_at": "2026-10-20T17:53:48Z",
+   "metrics": {
+    "likes": 31,
+    "reposts": 4,
+    "quotes": 1,
+    "replies": 3,
+    "views": 874
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Arena: GPT-6 Luna and GPT-6.1 Sol hold 6 of 11 Agent Arena Pareto frontier spots",
+   "url": "https://x.com/arena/status/2112600237491810662",
+   "handle": "@arena",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Arena's cost versus performance frontier for agent tasks shows Luna leading under $0.10 per task and Sol between $0.22 and $0.65, with different reasoning-effort levels of the same model filling several frontier spots.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Arena",
+   "posted_at": "2026-10-20T17:42:01Z",
+   "metrics": {
+    "likes": 35,
+    "reposts": 4,
+    "quotes": 1,
+    "replies": 9,
+    "views": 4314
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Warp reports 40% more merged PRs and 67% lower cost per PR with Warp Factories",
+   "url": "https://x.com/warpdotdev/status/2112605226196750762",
+   "handle": "@warpdotdev",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Warp says three months of running its own agent software factory, with agent quality measurement, model benchmarking and self-improvement loops, raised merged PRs 40% and cut cost per PR 67%, and it walks through the setup in Warp Factories.",
+   "kind": "tool",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Warp",
+   "posted_at": "2026-10-20T18:01:50Z",
+   "metrics": {
+    "likes": 2,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 264
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Internal, self-reported figures with no baseline, method or data shown in the post.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "none",
+    "summary": "Posted minutes before the sweep; no replies or quote posts were readable yet.",
+    "tried": false,
+    "replies_read": 0
+   }
+  },
+  {
+   "title": "SoMark releases OXR, a 1.3B open document parsing model",
+   "url": "https://x.com/somarkai/status/2112574994152636502",
+   "handle": "@somarkai",
+   "group": "opensource",
+   "origin": "discovery",
+   "summary": "OXR turns PDFs and document images into Markdown or JSON with layout coordinates, using a swappable layout module; SoMark says the 1.3B model ranks first on olmOCR-Bench, OmniDocBench and DocParsingBench and leads open models on speed, with weights and reproduction steps published.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/SoMarkAI/OXR",
+    "https://huggingface.co/SoMarkAI/OXR-1.0"
+   ],
+   "vendor": "SoMark",
+   "posted_at": "2026-10-20T16:01:43Z",
+   "metrics": {
+    "likes": 40,
+    "reposts": 13,
+    "quotes": 25,
+    "replies": 13,
+    "views": 34863
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Benchmark rankings are self-reported with the paper still pending, the repo is new with few stars, and early quote posts come mostly from low-engagement aggregator accounts.",
+    "source": "https://x.com/Arj_786/status/2112605757975966149"
+   }
+  }
+ ],
+ "saved_rejected": []
+}

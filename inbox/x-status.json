@@ -1,19 +1,19 @@
 {
- "updated_at": "2026-10-20T17:39:00Z",
+ "updated_at": "2026-10-20T18:10:00Z",
  "job": "sweep",
  "prompt": "v3",
- "calls_used_today": 90,
+ "calls_used_today": 106,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-10-20T17:39:00Z",
-  "items": 38,
-  "queries": 9,
-  "deep_reads": 10,
-  "rechecks": 0,
-  "flagged": 7,
-  "saved_in": 1,
+  "ran_at": "2026-10-20T18:10:00Z",
+  "items": 7,
+  "queries": 12,
+  "deep_reads": 2,
+  "rechecks": 8,
+  "flagged": 2,
+  "saved_in": 0,
   "saved_kept": 0,
-  "videos": 3
+  "videos": 0
  },
  "roster": {
   "curated": 223,
@@ -31,11 +31,13 @@
   "get_posts_quoted_posts returns plain reposts unless exclude retweets,replies is passed; the prompt should specify that.",
   "The min_likes search operator appears to be ignored by search_posts_all, so discovery queries return mostly low-engagement posts.",
   "Video analysis needs a video-capable reader; this run only downloaded 3 clips over 60 seconds for later analysis and left the video field out of items.",
-  "config/scout.json has follow_mode browser, but this run was told to recommend only; no account qualified anyway because new trial accounts cannot be followed and curated accounts have no sweep history yet.",
-  "The Twitter Profile intro and verdict note were not sent by this subagent; the parent agent holds that step."
+  "config/scout.json has follow_mode browser, but runs so far have no browser and are told to report follow candidates to the parent instead of following or logging; through the 18:10Z sweep no account has 3 qualifying sweep-file posts yet.",
+  "search_posts_all returns a next_token even when result_count is below max_results; following it for a 30-minute window returned nothing, so treat result_count under max_results as the end of the window and skip the extra page.",
+  "Post public_metrics come back as repost_count, not retweet_count; the prompt's metrics.reposts should map from repost_count.",
+  "TorchTPU (announced around 11:30Z by Google Cloud accounts) only reached the sweep through a later @PyTorch post; @googlecloud, @GoogleOSS or a Google Cloud Tech account may be worth a roster review look."
  ],
  "errors": [
-  "Possible prompt injection in a reply on the Anthropic scorpion toxin post, asking AI summarizers for input; ignored: https://x.com/rgcpete/status/2112594375524196692",
-  "Accounts unavailable: @xai (moved, @SpaceXAI not found), @heygen_official (suspended); @lmarena_ai now posts as @arena."
+  "Accounts unavailable and skipped: @xai (moved, @SpaceXAI not found), @heygen_official (suspended); @lmarena_ai swept as @arena.",
+  "One Warp Factories clip (341 s) was downloaded outside the repo for later analysis; no video record was added because this run cannot analyze video."
  ]
 }
