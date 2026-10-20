@@ -114,6 +114,10 @@ def constraint_key(it: dict, doc_url: str | None = None) -> str:
     for k in it.get("keys") or []:
         if k.startswith("policy:"):
             return k
+    for u in (doc_url, it["url"]):
+        m = FR_DOC.search(u or "")
+        if m:
+            return f"policy:fr:{m.group(1)}"  # the same key the Federal Register collector gives it
     return f"policy:{url_key(doc_url or it['url'])}"
 
 
@@ -252,6 +256,11 @@ def signature(c: dict) -> str:
                                                          extra.get("comments_close_on"), c.get("_doc"))), 12)
 
 
+def _merge_sources(old: list[dict], group: list[dict]) -> list[dict]:
+    seen = {s["url"] for s in old}
+    return (old + [{"name": c["source_name"], "url": c["url"], "title": c["title"]} for c in group if c["url"] not in seen])[:6]
+
+
 def _signal(rec: dict, date: str) -> tuple[float, dict]:
     layers = set(rec.get("layers") or [])
     reach = min(1.0, 0.3 * len(layers) + (0.25 if layers & {"publishing", "access", "chips"} else 0))
@@ -278,7 +287,7 @@ def classify(cands: list[dict], date: str, recorded: list[dict] | None = None, t
         texts = list(pool.map(lambda c: _page_text(c["_doc"]) if c.get("_doc") else "", cands))
     rows = [_row(c, t) for c, t in zip(cands, texts)]
     by_id = {r["id"]: (c, r) for c, r in zip(cands, rows)}
-    shown = [{k: r.get(k) for k in ("id", "headline", "issuer", "jurisdiction", "instrument", "status", "first_seen")}
+    shown = [{k: r.get(k) for k in ("id", "headline", "issuer", "jurisdiction", "instrument", "status", "first_seen", "doc_url")}
              for r in recorded or []]
     prompt = PROMPT.format(date=date, n=len(rows), topic_ids=", ".join(topics), hat_ids=", ".join(hats),
                            recorded=json.dumps(shown, ensure_ascii=False, indent=0),
@@ -372,10 +381,13 @@ def generate(items: list[dict], date: str, data_dir, state_dir, *, llm: bool = T
     kept = [(c, cache[c["_key"]]) for c in cands if cache.get(c["_key"], {}).get("kept") and current(c)]
     reg_by_id = {r["id"]: r for r in register.get("items", [])}
     joined: dict[str, list[dict]] = {}
+    others = register.get("items", [])
     for c, v in kept:
-        r = reg_by_id.get(v.get("same_as"))
-        if r and r["key"] != c["_key"] and same_action(c.get("_doc"), c["url"], r):
-            joined.setdefault(r["key"], []).append(c)
+        hint = reg_by_id.get(v.get("same_as"))
+        match = next((r for r in ([hint] if hint else []) + others
+                      if r["key"] != c["_key"] and same_action(c.get("_doc"), c["url"], r)), None)
+        if match:
+            joined.setdefault(match["key"], []).append(c)
     kept = [(c, v) for c, v in kept if not any(c in cs for cs in joined.values())]
     records = []
     for key, cs in joined.items():
@@ -391,17 +403,15 @@ def generate(items: list[dict], date: str, data_dir, state_dir, *, llm: bool = T
         records.append(r)
 
     # Merge duplicates the editor named among today's candidates, then build one record per new action.
-    id_to_key = {v.get("_id"): c["_key"] for c, v in kept}
     groups: dict[str, list[dict]] = {}
-    lead_of = {c["_key"]: (c, v) for c, v in kept}
     for c, v in kept:
-        lead = id_to_key.get(v.get("same_as")) or c["_key"]
-        if lead not in lead_of:
-            lead = c["_key"]
-        elif lead != c["_key"]:
-            lc, _ = lead_of[lead]
-            if not same_action(c.get("_doc"), c["url"], {"doc_url": lc.get("_doc"), "url": lc["url"]}):
-                lead = c["_key"]
+        lead = c["_key"]
+        for oc, _ in kept:  # the first candidate (in priority order) sharing a document leads the group
+            if oc["_key"] == c["_key"]:
+                break
+            if same_action(c.get("_doc"), c["url"], {"doc_url": oc.get("_doc"), "url": oc["url"]}):
+                lead = oc["_key"]
+                break
         groups.setdefault(lead, []).append(c)
     for lead_key, group in groups.items():
         v = cache[lead_key]
@@ -415,7 +425,7 @@ def generate(items: list[dict], date: str, data_dir, state_dir, *, llm: bool = T
             "comment_deadline": v["comment_deadline"], "access_now": v["access_now"], "impact": v["impact"],
             "ripples": v["ripples"], "hats": v["hats"],
             "url": lead["url"], "doc_url": lead.get("_doc") or lead["url"], "primary": any(c["_primary"] for c in group),
-            "sources": [{"name": c["source_name"], "url": c["url"], "title": c["title"]} for c in group][:6],
+            "sources": _merge_sources(prior.get("sources", []), group),
             "published_at": max((c.get("published_at") or "" for c in group), default="") or None,
             "first_seen": prior.get("first_seen") or date, "last_seen": date,
         }

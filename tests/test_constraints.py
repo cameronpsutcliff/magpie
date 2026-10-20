@@ -182,6 +182,25 @@ class ConstraintTests(unittest.TestCase):
         self.assertEqual(item["first_seen"], DATE)
         self.assertIn("https://x.com/agency/status/5", {s["url"] for s in item["sources"]})
 
+    def test_a_shared_document_joins_without_any_model_hint(self):
+        K.LANES.clear()
+        K.LANES["claude"] = FakeLane(self._keep())
+        first = policy_item("https://www.federalregister.gov/d/2099-12345", "Registration rule", num="2099-12345")
+        _, section = K.generate([first], DATE, self.data, self.state)
+        K.update_register(section, DATE, self.data)
+        K.LANES["claude"] = FakeLane(self._keep())  # no same_as at all
+        post = Item(source_id="x-grok-bot", source_kind="policy", source_name="X: @agency", url="https://x.com/agency/status/6",
+                    title="Rule out today", summary="rule", published_at="2099-01-11T09:00:00+00:00",
+                    extra={"primary": False, "links": ["https://www.federalregister.gov/documents/2099/01/10/2099-12345/r"]}).finalize().to_dict()
+        self.assertEqual(K.candidates([post])[0]["_key"], "policy:fr:2099-12345")
+        events, section2 = K.generate([post], "2099-01-11", self.data, self.state)
+        self.assertEqual(events, [])
+        self.assertEqual(len(section2["items"]), 1)
+        item = section2["items"][0]
+        self.assertFalse(item["new"])
+        self.assertEqual({s["url"] for s in item["sources"]},
+                         {"https://www.federalregister.gov/d/2099-12345", "https://x.com/agency/status/6"})
+
     def test_same_issuer_is_not_the_same_action(self):
         rec = {"doc_url": "https://www.federalregister.gov/d/2099-11111", "url": "https://www.federalregister.gov/d/2099-11111",
                "issuer": "Commerce", "jurisdiction": "US", "sources": []}
