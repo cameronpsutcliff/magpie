@@ -296,6 +296,19 @@ class ElementTests(unittest.TestCase):
             E.rebuild(self.data, since="2099-04-01")
         self.assertFalse((self.data / "elements" / "gh-old--one.json").exists())
 
+    def test_an_old_start_allows_only_itself_or_the_last_seven_editions(self):
+        import datetime as dt
+        dates = [(dt.date(2099, 8, 1) + dt.timedelta(days=i)).isoformat() for i in range(30)]
+        for d in dates:
+            write_json(self.data / "days" / f"{d}.json", day(d, []), compact=True)
+        E.update(dates[0], self.data)  # the pages started long ago
+        self.assertEqual(E.rebuild(self.data)["since"], dates[0])  # a plain rebuild keeps the start
+        self.assertEqual(E.rebuild(self.data, since=dates[0])["since"], dates[0])
+        with self.assertRaises(ValueError):  # with the old start in place, a date between it and the seed is refused
+            E.rebuild(self.data, since=dates[10])
+        self.assertEqual(json.loads((self.data / "elements" / "index.json").read_text())["since"], dates[0])
+        self.assertEqual(E.rebuild(self.data, since=dates[-7])["since"], dates[-7])  # within the last seven
+
     def test_a_corrected_document_reaches_existing_pages_and_the_action_page(self):
         E.rebuild(self.data)
         # beta/kit (two days, maker "Open source") links nothing; the action now cites the newsletter that covered it

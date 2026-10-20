@@ -757,11 +757,10 @@ def rebuild(data_dir: Path, state_dir: Path | None = None, since: str | None = N
     store = Store(data_dir, state_dir)
     every = store.all_dates()
     seed = every[-SEED_EDITIONS] if len(every) >= SEED_EDITIONS else (every[0] if every else None)
-    # Never a backfill: a rebuild starts where the pages already start, or within the last SEED_EDITIONS editions.
-    floor = min(d for d in (store.since, seed) if d) if (store.since or seed) else None
-    if since and floor and since < floor:
-        raise ValueError(f"element pages reach back at most {SEED_EDITIONS} editions ({seed}) or to where they "
-                         f"already start ({store.since}); {since} would backfill the archive")
+    # Never a backfill: a rebuild starts exactly where the pages already start, or within the last SEED_EDITIONS editions.
+    if since and since != store.since and seed and since < seed:
+        raise ValueError(f"element pages start where they already start ({store.since}) or within the last {SEED_EDITIONS} "
+                         f"editions (from {seed}); {since} would backfill the archive")
     store.since = since or store.since or seed
     store.index = {"schema": INDEX_SCHEMA, "since": store.since, "updated": None, "elements": []}
     store.by_key = {}
