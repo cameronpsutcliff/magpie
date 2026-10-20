@@ -16,7 +16,7 @@ import traceback
 
 from . import build as B
 from . import discover, review
-from .collectors import feeds, github, inbox, local, web, youtube
+from .collectors import feeds, github, inbox, local, web
 from .enrich import enrich
 from .util import ROOT, edition_date, iso, load_json, now_utc, write_json
 
@@ -40,8 +40,8 @@ def collect(cloud: bool) -> tuple[list, dict, list]:
     if orgs:
         jobs["github-watched-orgs"] = lambda: github.watched_orgs(orgs)
     if not cloud:
-        jobs["youtube-watchlist"] = local.youtube
-        jobs["youtube-channels"] = youtube.channels
+        jobs["youtube-watchlist"] = local.youtube  # the brief written by `magpie youtube`, the one YouTube job
+        jobs["x-saved"] = inbox.x_saved
     names = {s["id"]: s["name"] for s in reg.get("feeds", []) + reg.get("apis", [])}
     kinds = {s["id"]: s["kind"] for s in reg.get("feeds", []) + reg.get("apis", [])}
 
@@ -84,6 +84,10 @@ def main() -> None:
     sub.add_parser("reindex", help="rebuild index.json and latest.json from the day files")
     pz = sub.add_parser("possibilities", help="combine the day's capabilities into new possibilities")
     pz.add_argument("--date", help="edition date, default latest")
+    py = sub.add_parser("youtube", help="find, transcribe and brief the day's videos (the one YouTube job)")
+    py.add_argument("--hours", type=int, help="lookback window, default 36 (MAGPIE_YT_LOOKBACK_HOURS)")
+    pv = sub.add_parser("viewing", help="pick the videos worth watching from their transcripts")
+    pv.add_argument("--date", help="edition date, default latest")
     bf = sub.add_parser("backfill", help="rebuild past editions from archives")
     bf.add_argument("--from", dest="start", required=True, help="first edition date, YYYY-MM-DD")
     bf.add_argument("--to", dest="end", required=True, help="last edition date, YYYY-MM-DD")
@@ -101,6 +105,14 @@ def main() -> None:
     if a.cmd == "possibilities":
         from .possibilities import run_for
         run_for(a.date)
+        return
+    if a.cmd == "youtube":
+        from .ytintel import run as youtube_run
+        youtube_run(a.hours)
+        return
+    if a.cmd == "viewing":
+        from .viewing import run_for as viewing_for
+        viewing_for(a.date)
         return
     if a.cmd == "reindex":
         from .publish import reindex
@@ -175,6 +187,12 @@ def main() -> None:
             except Exception as ex:  # an idea pass must never block the edition
                 day["possibilities"] = {"items": [], "errors": [f"{type(ex).__name__}: {str(ex)[:160]}"]}
         print(f"possibilities: {len(day['possibilities'].get('items', []))}", file=sys.stderr)
+        try:
+            from .viewing import generate as pick_viewing
+            day["viewing"] = pick_viewing(date, items, DATA, STATE)
+        except Exception as ex:  # viewing must never block the edition
+            day["viewing"] = {"items": [], "errors": [f"{type(ex).__name__}: {str(ex)[:160]}"]}
+        print(f"viewing: {len(day['viewing'].get('items', []))}", file=sys.stderr)
     publish_day(day, events, top_events, force=a.force)
 
 if __name__ == "__main__":

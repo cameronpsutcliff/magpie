@@ -35,7 +35,8 @@ def watch_counts() -> dict:
     reg = load_json(ROOT / "config/sources.json", {})
     feeds = len(reg.get("feeds", []))
     apis = len([a for a in reg.get("apis", []) if str(a.get("url", "")).startswith("http")])
-    yt = len(load_json(ROOT / "config/youtube.json", {}).get("channels", []))
+    from .ytintel import roster as yt_roster
+    yt = len(yt_roster()) or len(load_json(ROOT / "config/youtube.json", {}).get("channels", []))
     from .collectors.inbox import roster
     x = len(roster())
     return {"feeds": feeds, "apis": apis, "youtube_channels": yt, "x_accounts": x, "total": feeds + apis + yt + x}

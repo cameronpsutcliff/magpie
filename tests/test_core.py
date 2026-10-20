@@ -94,6 +94,36 @@ class CoreTests(unittest.TestCase):
         self.assertIn("@new_lab", handles)
         self.assertNotIn("@_inception_ai", handles)
 
+    def test_saved_posts_defer_to_scout(self):
+        import os
+        import tempfile
+        from pathlib import Path
+        from magpie.collectors import inbox
+        with tempfile.TemporaryDirectory() as tmp:
+            box = Path(tmp) / "x"
+            box.mkdir()
+            ran = now_utc().isoformat()
+            (box / "s.json").write_text(json.dumps({"ran_at": ran, "items": [
+                {"title": "Vetted", "url": "https://x.com/a/status/1", "origin": "saved", "handle": "@a"}],
+                "saved_rejected": [{"url": "https://x.com/b/status/2", "reason": "funding news"}]}))
+            saves = Path(tmp) / "saved.jsonl"
+            saves.write_text("\n".join(json.dumps({"url": f"https://x.com/{h}/status/{n}", "text": "t", "author_username": h,
+                                                    "created_at": ran, "first_seen_at": ran}) for h, n in (("a", 1), ("b", 2), ("c", 3))))
+            old = inbox.INBOX, os.environ.get("MAGPIE_X_SAVED")
+            inbox.INBOX, os.environ["MAGPIE_X_SAVED"] = box, str(saves)
+            try:
+                saved = inbox.x_saved()
+                bot = inbox.x_from_grok_bot()
+            finally:
+                inbox.INBOX = old[0]
+                if old[1] is None:
+                    os.environ.pop("MAGPIE_X_SAVED", None)
+                else:
+                    os.environ["MAGPIE_X_SAVED"] = old[1]
+        self.assertEqual([i.url for i in saved], ["https://x.com/c/status/3"])
+        self.assertTrue(saved[0].extra["saved"])
+        self.assertTrue(bot[0].extra["saved"])
+
 
 if __name__ == "__main__":
     unittest.main()
