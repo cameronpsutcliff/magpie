@@ -24,8 +24,8 @@ from .util import ROOT, edition_date, iso, load_json, now_utc, write_json
 from .publish import DATA, STATE, compose_day, publish_day, scrub  # noqa: F401  (scrub re-exported for tests)
 
 
-def collect(cloud: bool) -> tuple[list, dict, list]:
-    reg = load_json(ROOT / "config/sources.json", {})
+def jobs_for(reg: dict, cloud: bool) -> dict:
+    """Every collector to run, by source id. Feeds, APIs and policy feeds come from config/sources.json."""
     jobs = {
         "github-trending": github.trending,
         "github-new-rising": github.new_and_rising,
@@ -46,6 +46,12 @@ def collect(cloud: bool) -> tuple[list, dict, list]:
     if not cloud:
         jobs["youtube-watchlist"] = local.youtube  # the brief written by `magpie youtube`, the one YouTube job
         jobs["x-saved"] = inbox.x_saved
+    return jobs
+
+
+def collect(cloud: bool) -> tuple[list, dict, list]:
+    reg = load_json(ROOT / "config/sources.json", {})
+    jobs = jobs_for(reg, cloud)
     listed = reg.get("feeds", []) + reg.get("apis", []) + reg.get("policy_feeds", [])
     names = {s["id"]: s["name"] for s in listed}
     kinds = {s["id"]: s["kind"] for s in listed}

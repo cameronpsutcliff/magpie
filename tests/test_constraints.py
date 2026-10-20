@@ -261,6 +261,38 @@ class ConstraintTests(unittest.TestCase):
         self.assertEqual(events, [])
 
 
+class WiringTests(unittest.TestCase):
+    def test_federal_register_runs_its_own_collector(self):
+        import magpie.__main__ as cli
+        from magpie.collectors import policy
+        from magpie.util import ROOT, load_json
+        reg = load_json(ROOT / "config/sources.json", {})
+        for cloud in (False, True):
+            jobs = cli.jobs_for(reg, cloud)
+            self.assertIs(jobs["federal-register"], policy.federal_register)
+            for f in reg["policy_feeds"]:
+                self.assertIn(f["id"], jobs)
+        self.assertNotIn("federal-register", [f["id"] for f in reg["feeds"]])
+
+    def test_constraints_command_refuses_a_past_edition(self):
+        import os
+        from magpie.publish import DATA
+        days = sorted(p.stem for p in (DATA / "days").glob("*.json"))
+        if len(days) < 2:
+            self.skipTest("needs two editions")
+        old = os.environ.get("MAGPIE_DATE")
+        os.environ["MAGPIE_DATE"] = days[-1]
+        try:
+            with self.assertRaises(SystemExit) as ctx:
+                K.run_for(days[0])
+            self.assertIn("only be added to today's edition", str(ctx.exception))
+        finally:
+            if old is None:
+                os.environ.pop("MAGPIE_DATE", None)
+            else:
+                os.environ["MAGPIE_DATE"] = old
+
+
 class TrackerTests(unittest.TestCase):
     def setUp(self):
         self.tmp = Path(tempfile.mkdtemp())

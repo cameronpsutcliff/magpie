@@ -462,10 +462,15 @@ def run_for(date: str | None = None) -> None:
     from .collectors import policy
     from .publish import DATA, STATE, index_entry, scrub, write_feed
 
+    from .util import edition_date
+
     path = DATA / "days" / f"{date}.json" if date else DATA / "latest.json"
     day = load_json(path, None)
     if not day:
         raise SystemExit(f"no edition at {path}")
+    if day["date"] != edition_date():
+        # The sources only say what is current; stamping that onto a past edition would rewrite history.
+        raise SystemExit(f"constraints can only be added to today's edition ({edition_date()}), not {day['date']}")
     reg = load_json(ROOT / "config/sources.json", {})
     items, errors = [], []
     jobs = [policy.federal_register] + [lambda src=f: policy.policy_feed(src) for f in reg.get("policy_feeds", [])]
