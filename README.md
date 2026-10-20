@@ -66,13 +66,15 @@ mentioned, then applies two rules:
 | Rule | When |
 |---|---|
 | Promote | Two or more trusted, independent sources cited it within the week. |
-| Demote | Zero kept items in 21 days of editions, or three hype flags in that window. |
+| Demote | Zero kept items in 21 days of live editions, or three hype flags in that window. Backfilled editions never count toward zero kept. |
 
-Trusted means owner-curated: a registry source with trust 0.65 or more, an X roster account the pulse
-reads, or a high-priority YouTube channel. Discovered sources never vouch for others. Promoted X
-accounts join the Grok pulse, newsletters become feeds (only after their feed parses), GitHub owners
-feed the `github-watched-orgs` collector, and YouTube channels are listed in `youtube_channels` for the
-transcript pipeline. Demoted sources move to a `benched` list. Candidates and their evidence land in
+Trusted means owner-curated: a registry source with trust 0.65 or more, an X roster account the Grok
+sweeps read (the pulse and Grok Bot count as one), or a high-priority YouTube channel. Discovered
+sources never vouch for others. Promoted X accounts join the roster in the `builders` group,
+newsletters become feeds (only after their feed parses), GitHub owners feed the `github-watched-orgs`
+collector, and YouTube channels join `config/youtube.json` at medium priority when a link gave their
+channel id (a bare handle is held for you to add by hand). Demoted sources move to a `benched` list;
+YouTube channels are pruned by hand through the `dropped` list. Candidates and their evidence land in
 `config/candidates.json` and the change log in `reports/discovery/`; review both, veto what you don't
 want (vetoes live in `config/vetoes.json`), then commit `config/` and `reports/`.
 

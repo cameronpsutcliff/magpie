@@ -5,13 +5,15 @@ sources Magpie does not watch yet: X accounts, YouTube channels, newsletters and
 other sources linked or mentioned. Explicit rules then change the watch list:
 
 - Promote a new source when two or more trusted, independent sources cited it within the week.
-- Demote a watched source after zero kept items in 21 days of editions, or three hype flags in that window.
+- Demote a watched source after zero kept items in 21 days of live editions, or three hype flags in that
+  window. Backfilled editions never count toward zero kept: they were rebuilt from archives that cover
+  only some sources.
 
 A trusted source is an owner-curated one: a registry source with trust of at least 0.65, an X roster
-account the pulse reads (signal_to_noise 4 or more), or a high-priority YouTube channel. Discovered
-sources never vouch for others, so the list cannot snowball from its own picks.
+account the Grok sweeps read (signal_to_noise 4 or more), or a high-priority YouTube channel.
+Discovered sources never vouch for others, so the list cannot snowball from its own picks.
 
-Every change lands in config/ with its evidence, candidates in config/candidates.json, and a readable
+Every change lands in config/ (sources.json, x-accounts.json, youtube.json) with its evidence, candidates in config/candidates.json, and a readable
 change log in reports/discovery/. The owner undoes any change with `--veto <id>`; config/vetoes.json
 remembers it so the loop never repeats it.
 """
@@ -41,6 +43,12 @@ CAPS = {"x": 5, "github": 5, "newsletter": 3, "youtube": 3}
 KIND_LABEL = {"x": "X account", "youtube": "YouTube channel", "newsletter": "newsletter", "github": "GitHub owner"}
 GROUP_NAMES = {"github": "GitHub", "huggingface": "Hugging Face"}
 PULSE = ("x-grok-pulse", "X pulse (Grok)")
+# Both read the X roster through Grok (the home pulse and Grok Bot's inbox), so an account is one citer
+# whichever of them carried its post, and someone outside the roster that either surfaced is cited by the pulse.
+X_SWEEPS = ("x-grok-pulse", "x-grok-bot")
+# The shared transcript pipeline's list and Magpie's own config/youtube.json; a channel on both is one citer.
+YOUTUBE = ("youtube-watchlist", "youtube-channels")
+NEW_X_GROUP = "builders"  # the sweep group the X pulse falls back to for an account without one
 
 X_URL = re.compile(r"(?<![\w.-])(?:www\.)?(?:x|twitter)\.com/([A-Za-z0-9_]{1,15})(?![A-Za-z0-9_])", re.I)
 X_AT = re.compile(r"(?<![\w@./])@([A-Za-z0-9_]{2,15})(?![A-Za-z0-9_@]|\.[A-Za-z])")
@@ -77,7 +85,7 @@ def references(item: dict) -> list[dict]:
         refs.setdefault(eid, {"id": eid, "kind": kind, "label": label, "url": url, **more})
 
     handles = [h for h in X_URL.findall(text)]
-    if item["source_id"] == "x-grok-pulse":
+    if item["source_id"] in X_SWEEPS:
         handles += X_AT.findall(f"{item.get('title') or ''} {item.get('summary') or ''}")
     for h in handles:
         at = f"@{h}"
@@ -85,7 +93,8 @@ def references(item: dict) -> list[dict]:
             continue
         add(f"x:{at.lower()}", "x", at, f"https://x.com/{h}")
     for path in YT_URL.findall(text):
-        add(f"youtube:{path.lower()}", "youtube", path, f"https://www.youtube.com/{path}")
+        more = {"channel_id": path[len("channel/"):]} if path.lower().startswith("channel/") else {}
+        add(f"youtube:{path.lower()}", "youtube", path, f"https://www.youtube.com/{path}", **more)
     for name in SUBSTACK.findall(text):
         host = f"{name.lower()}.substack.com"
         if name.lower() not in NOT_PUBLICATIONS and host != own_host:
@@ -112,13 +121,14 @@ def references(item: dict) -> list[dict]:
 def citer_of(item: dict, roster: dict, discovered: set) -> tuple[str, str, bool]:
     """(id, display name, trusted) of the source that produced an item."""
     sid = item["source_id"]
-    if sid == "x-grok-pulse":
+    if sid in X_SWEEPS:
         h = (item.get("author") or "").lower()
         acct = roster.get(h) or {}
         trusted = acct.get("signal_to_noise", 0) >= X_TRUSTED_SNR and acct.get("origin") != "discovery"
-        return f"x:{h}", item["source_name"], trusted
-    if sid == "youtube-watchlist":
-        return f"youtube-watchlist:{(item.get('author') or '').lower()}", item["source_name"], item["trust"] >= MIN_TRUST
+        return f"x:{h}", f"X: {item.get('author') or ''}", trusted
+    if sid in YOUTUBE:
+        # High priority is trust 0.7; discovered channels join at medium priority (0.55), so they never vouch.
+        return f"youtube-channel:{(item.get('author') or '').lower()}", item["source_name"], item["trust"] >= MIN_TRUST
     group = source_group(sid)
     return group, GROUP_NAMES.get(group, item["source_name"]), item["trust"] >= MIN_TRUST and sid not in discovered
 
@@ -137,7 +147,7 @@ def mine(week: list[tuple[str, list[dict]]], roster: dict, discovered: set) -> d
             cid, cname, trusted = citer_of(it, roster, discovered)
             found = [(r, cid, cname, trusted) for r in references(it)]
             author = (it.get("author") or "").lower()
-            if it["source_id"] == "x-grok-pulse" and author.startswith("@") and author not in roster:
+            if it["source_id"] in X_SWEEPS and author.startswith("@") and author not in roster:
                 # The pulse surfaced a post from someone outside the roster: the pulse is the citer.
                 found.append(({"id": f"x:{author}", "kind": "x", "label": it["author"], "url": f"https://x.com/{author[1:]}"},
                               PULSE[0], PULSE[1], True))
@@ -158,7 +168,11 @@ def trusted_citers(e: dict) -> list[str]:
 
 # 2. What is already watched.
 
-def entries(sources: dict, roster_cfg: dict):
+def _yt_id(c: dict) -> str:
+    return f"youtube:{c['handle'].lower()}" if c.get("handle") else f"youtube:channel/{c['channel_id'].lower()}"
+
+
+def entries(sources: dict, roster_cfg: dict, youtube_cfg: dict | None = None):
     """(entity id, label, owner dict, list name, entry, kept key) for every active watch-list entry."""
     for f in sources.get("feeds", []):
         yield f"feed:{f['id']}", f["name"], sources, "feeds", f, f"name:{f['name'].lower()}"
@@ -167,9 +181,9 @@ def entries(sources: dict, roster_cfg: dict):
         yield f"x:{h}", a["handle"], roster_cfg, "accounts", a, f"name:x: {h}"
     for o in sources.get("github_orgs", []):
         yield f"github:{o['org'].lower()}", o["org"], sources, "github_orgs", o, f"github:{o['org'].lower()}"
-    for y in sources.get("youtube_channels", []):
-        # The YouTube watch list itself lives in the home tier's transcript pipeline, which owns its pruning.
-        yield f"youtube:{y['channel'].lower()}", y["channel"], sources, "youtube_channels", y, None
+    for c in (youtube_cfg or {}).get("channels", []):
+        # The owner prunes config/youtube.json by hand (its dropped list), so the loop only adds to it.
+        yield _yt_id(c), c["name"], youtube_cfg, "channels", c, None
 
 
 def benched_entries(sources: dict, roster_cfg: dict):
@@ -182,8 +196,13 @@ def benched_entries(sources: dict, roster_cfg: dict):
         yield f"x:{b['handle'].lower()}", b["handle"], roster_cfg, "accounts", b
 
 
-def watched_ids(sources: dict, roster_cfg: dict, week: list[tuple[str, list[dict]]]) -> set[str]:
+def watched_ids(sources: dict, roster_cfg: dict, week: list[tuple[str, list[dict]]],
+                youtube_cfg: dict | None = None) -> set[str]:
     ids = {e[0] for e in entries(sources, roster_cfg)} | {e[0] for e in benched_entries(sources, roster_cfg)}
+    for c in (youtube_cfg or {}).get("channels", []):
+        ids.add(f"youtube:channel/{c['channel_id'].lower()}")
+        if c.get("handle"):
+            ids.add(f"youtube:{c['handle'].lower()}")
     feeds = sources.get("feeds", []) + [b for b in sources.get("benched", []) if "url" in b]
     for f in feeds:
         ids.add(f"newsletter:{_host(f['url'])}")
@@ -202,24 +221,43 @@ def watched_ids(sources: dict, roster_cfg: dict, week: list[tuple[str, list[dict
 
 # 3. What the published editions kept.
 
+def _live(day: dict) -> bool:
+    return not (day.get("edition") or {}).get("backfilled") and (day.get("run") or {}).get("where") != "backfill"
+
+
 def kept_stats(days_dir: Path, date: str, window: int = DEMOTE_DAYS) -> dict:
+    """Kept counts come from live editions only; hype flags from every edition in the window."""
     start = (_day(date) - dt.timedelta(days=window - 1)).isoformat()
-    dates = sorted(p.stem for p in days_dir.glob("*.json"))
+    stems = sorted(p.stem for p in days_dir.glob("*.json") if p.stem <= date)
+    first_live, backfilled = None, 0
+    for d in stems:  # only the editions before the first live one are read outside the window
+        if d >= start:
+            break
+        if _live(load_json(days_dir / f"{d}.json", {})):
+            first_live = d
+            break
+        backfilled += 1
     kept, hype = Counter(), {}
-    used = [d for d in dates if start <= d <= date]
+    used = [d for d in stems if d >= start]
     for d in used:
-        for e in load_json(days_dir / f"{d}.json", {}).get("events", []):
+        day = load_json(days_dir / f"{d}.json", {})
+        live = _live(day)
+        if live and first_live is None:
+            first_live = d
+        backfilled += not live
+        for e in day.get("events", []):
             subjects = {f"name:{s['name'].lower()}" for s in e.get("sources", [])}
             names = subjects | {f"name:{s['name'].lower()}" for s in e.get("mentions", [])}
             if e["key"].startswith("gh:"):
                 owner = f"github:{e['key'][3:].split('/')[0]}"
                 names.add(owner)
                 subjects.add(owner)
-            kept.update(names)
+            if live:
+                kept.update(names)
             if (e.get("brief") or {}).get("hype"):
                 for n in subjects:
                     hype.setdefault(n, set()).add(e["key"])
-    return {"start": start, "first_day": dates[0] if dates else None, "days": used, "kept": kept, "hype": hype}
+    return {"start": start, "first_day": first_live, "days": used, "backfilled": backfilled, "kept": kept, "hype": hype}
 
 
 # 4. The rules.
@@ -241,6 +279,8 @@ def plan(ents: dict, watched: set, vetoes: dict, avoided: set, check_feed) -> di
         reason = None
         if taken[e["kind"]] >= CAPS[e["kind"]]:
             reason = f"weekly cap of {CAPS[e['kind']]} new {KIND_LABEL[e['kind']]}s reached"
+        elif e["kind"] == "youtube" and not e.get("channel_id"):
+            reason = "only a handle was linked; config/youtube.json needs the channel id, so add it by hand if wanted"
         elif e["kind"] == "newsletter":
             if not e.get("feed_url"):
                 reason = "no feed URL could be derived; add it by hand if wanted"
@@ -284,15 +324,14 @@ def _slug(s: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
 
 
-def apply(result: dict, sources: dict, roster_cfg: dict, date: str) -> None:
+def apply(result: dict, sources: dict, roster_cfg: dict, youtube_cfg: dict, date: str) -> None:
     for e in result["promoted"]:
         evidence = [ev for ev in _evidence(e) if ev["source"] in trusted_citers(e)][:3]
         base = {"origin": "discovery", "since": date, "discovered_as": e["id"], "evidence": evidence}
         if e["kind"] == "x":
             roster_cfg.setdefault("accounts", []).append({
-                "handle": e["label"], "display_name": e["label"].lstrip("@"), "category": None, "affiliation": "",
-                "why": _why(e, date), "cadence": "unknown", "signal_to_noise": X_TRUSTED_SNR,
-                "example": evidence[0]["title"] if evidence else "", **base})
+                "handle": e["label"], "name": e["label"].lstrip("@"), "group": NEW_X_GROUP, "affiliation": "",
+                "why": _why(e, date), "signal_to_noise": X_TRUSTED_SNR, **base})
         elif e["kind"] == "newsletter":
             sources.setdefault("feeds", []).append({
                 "id": f"nl-{_slug(e['label'])}", "name": e["label"].removesuffix(".substack.com"), "kind": "newsletter",
@@ -301,9 +340,9 @@ def apply(result: dict, sources: dict, roster_cfg: dict, date: str) -> None:
         elif e["kind"] == "github":
             sources.setdefault("github_orgs", []).append({"org": e["label"], "why": _why(e, date), **base})
         elif e["kind"] == "youtube":
-            sources.setdefault("youtube_channels", []).append({
-                "channel": e["label"], "url": e["url"], "why": _why(e, date),
-                "note": "Add to the home tier's YouTube transcript pipeline to start collecting.", **base})
+            youtube_cfg.setdefault("channels", []).append({
+                "channel_id": e["channel_id"], "handle": None, "name": e["label"], "class": None, "priority": "medium",
+                "why": _why(e, date), "source": "discovery", **base})
     for d in result["demoted"]:
         d["owner"][d["list"]].remove(d["entry"])
         d["owner"].setdefault("benched", []).append({**d["entry"], "benched": {"date": date, "reason": d["reason"]}})
@@ -319,11 +358,16 @@ def check_feed_online(url: str) -> tuple[bool, str]:
     return (True, f"{len(entries_)} entries") if entries_ else (False, "feed has no entries")
 
 
-def save_config(path: Path, obj: dict) -> None:
-    """Config files keep their hand-written format: one-space indent, no trailing newline."""
+def save_config(path: Path, obj: dict, indent: int = 1, newline: bool = False) -> None:
+    """Config files keep their hand-written format: sources.json and x-accounts.json use a one-space indent
+    and no trailing newline; youtube.json uses two spaces and a trailing newline (save_youtube)."""
     tmp = path.with_suffix(path.suffix + ".tmp")
-    tmp.write_text(json.dumps(obj, indent=1, ensure_ascii=False))
+    tmp.write_text(json.dumps(obj, indent=indent, ensure_ascii=False) + ("\n" if newline else ""))
     tmp.replace(path)
+
+
+def save_youtube(path: Path, obj: dict) -> None:
+    save_config(path, obj, indent=2, newline=True)
 
 
 def load_week(runs_dir: Path, date: str, days: int = WEEK_DAYS) -> list[tuple[str, list[dict]]]:
@@ -359,12 +403,12 @@ def render_log(date: str, week: list, stats: dict, result: dict, zero_ready: boo
     L += [f"Mined {n_items} items from {len(week)} days of runs ({start} to {date}) and checked "
           f"{len(stats['days'])} published editions for demotions.", "",
           "Rules: promote a new source when two or more trusted, independent sources cite it within the week. "
-          f"Demote a watched source after zero kept items in {DEMOTE_DAYS} days of editions, or {HYPE_LIMIT} hype flags "
+          f"Demote a watched source after zero kept items in {DEMOTE_DAYS} days of live editions, or {HYPE_LIMIT} hype flags "
           "in that window. Discovered sources never vouch for others.", "",
           "To undo a change, run its veto command. config/vetoes.json remembers every veto.", ""]
     promoted, demoted, held, watching = result["promoted"], result["demoted"], result["held"], result["watching"]
     effect = {"x": "joins the X pulse roster", "newsletter": "added as a feed", "github": "added to GitHub watched orgs",
-              "youtube": "listed for the YouTube transcript pipeline (add it there to start collecting)"}
+              "youtube": "added to config/youtube.json at medium priority"}
     L += [f"## Promoted ({len(promoted)})", ""]
     for e in promoted:
         where = f" ({e['feed_url']})" if e["kind"] == "newsletter" else ""
@@ -393,12 +437,12 @@ def render_log(date: str, week: list, stats: dict, result: dict, zero_ready: boo
         L += ["", f"Skipped {len(result['skipped'])} sources the owner vetoed or the X roster avoids."]
     L += ["", "## Rule status", ""]
     if zero_ready:
-        L.append(f"- Zero-kept demotion: active, over editions from {stats['start']} to {date}.")
+        L.append(f"- Zero-kept demotion: active, over live editions from {stats['start']} to {date}.")
     else:
         first = stats["first_day"] or date
         due = (_day(first) + dt.timedelta(days=DEMOTE_DAYS - 1)).isoformat()
-        L.append(f"- Zero-kept demotion: waiting for {DEMOTE_DAYS} days of editions (first edition {first}; "
-                 f"first check {due}).")
+        L.append(f"- Zero-kept demotion: waiting for {DEMOTE_DAYS} days of live editions (first live edition {first}; "
+                 f"first check {due}; {stats.get('backfilled', 0)} backfilled editions do not count).")
     L.append(f"- Hype demotion: active, {HYPE_LIMIT} flags on a source's own stories in {DEMOTE_DAYS} days.")
     return "\n".join(L) + "\n"
 
@@ -419,14 +463,17 @@ def run(root: Path = ROOT, date: str | None = None, dry_run: bool = False, check
     cfg = root / "config"
     sources = load_json(cfg / "sources.json", {})
     roster_cfg = load_json(cfg / "x-accounts.json", {"accounts": []})
+    youtube_cfg = load_json(cfg / "youtube.json", {"channels": []})
     vetoes = load_json(cfg / "vetoes.json", {"never_promote": [], "never_demote": []})
     week = load_week(root / "state/runs", date)
     roster = {a["handle"].lower(): a for a in roster_cfg.get("accounts", [])}
-    discovered = {f["id"] for f in sources.get("feeds", []) if f.get("origin") == "discovery"}
-    avoided = {f"x:{a['handle'].lower()}" for a in roster_cfg.get("avoid", [])}
+    # Repos from promoted GitHub owners are discovered too, so they never vouch for others.
+    discovered = {f["id"] for f in sources.get("feeds", []) if f.get("origin") == "discovery"} | {"github-watched-orgs"}
+    avoided = ({f"x:{a['handle'].lower()}" for a in roster_cfg.get("avoid", [])} |
+               {f"youtube:channel/{c['channel_id'].lower()}" for c in youtube_cfg.get("dropped", [])})
 
     ents = mine(week, roster, discovered)
-    result = plan(ents, watched_ids(sources, roster_cfg, week), vetoes, avoided, check_feed)
+    result = plan(ents, watched_ids(sources, roster_cfg, week, youtube_cfg), vetoes, avoided, check_feed)
     stats = kept_stats(root / "data/v1/days", date)
     result["demoted"], zero_ready = demotions(sources, roster_cfg, vetoes, stats)
     log = render_log(date, week, stats, result, zero_ready, dry_run)
@@ -449,10 +496,12 @@ def run(root: Path = ROOT, date: str | None = None, dry_run: bool = False, check
     scrub(candidates)
     scrub(log)
     if not dry_run:
-        apply(result, sources, roster_cfg, date)
+        apply(result, sources, roster_cfg, youtube_cfg, date)
         if result["promoted"] or result["demoted"]:
             save_config(cfg / "sources.json", sources)
             save_config(cfg / "x-accounts.json", roster_cfg)
+        if any(e["kind"] == "youtube" for e in result["promoted"]):
+            save_youtube(cfg / "youtube.json", youtube_cfg)
         write_json(cfg / "candidates.json", candidates)
         path = root / "reports/discovery" / f"{date}.md"
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -466,6 +515,7 @@ def veto(root: Path, ids: list[str]) -> list[str]:
     cfg = root / "config"
     sources = load_json(cfg / "sources.json", {})
     roster_cfg = load_json(cfg / "x-accounts.json", {"accounts": []})
+    youtube_cfg = load_json(cfg / "youtube.json", None)
     vetoes = load_json(cfg / "vetoes.json", {"never_promote": [], "never_demote": []})
     msgs = []
 
@@ -476,7 +526,7 @@ def veto(root: Path, ids: list[str]) -> list[str]:
     for raw in ids:
         vid = raw.strip().lower()
         done = False
-        for eid, label, owner, lst, entry, _ in list(entries(sources, roster_cfg)):
+        for eid, label, owner, lst, entry, _ in list(entries(sources, roster_cfg, youtube_cfg)):
             if vid not in (eid, (entry.get("discovered_as") or "").lower()):
                 continue
             if entry.get("origin") == "discovery":
@@ -505,6 +555,8 @@ def veto(root: Path, ids: list[str]) -> list[str]:
                               "github:owner, newsletter:host, youtube:@handle or feed:<id>.")
     save_config(cfg / "sources.json", sources)
     save_config(cfg / "x-accounts.json", roster_cfg)
+    if youtube_cfg is not None:
+        save_youtube(cfg / "youtube.json", youtube_cfg)
     save_config(cfg / "vetoes.json", vetoes)
     return msgs
 
