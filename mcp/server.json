@@ -1,0 +1,14 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.cameronsutcliff/magpie",
+  "title": "Magpie",
+  "description": "Read-only access to Magpie, a daily brief on what became newly possible in AI.",
+  "websiteUrl": "https://www.cameronsutcliff.com/magpie/api",
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://www.cameronsutcliff.com/api/mcp"
+    }
+  ]
+}
