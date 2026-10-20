@@ -3,39 +3,39 @@
  "days": [
   {
    "date": "2026-10-20",
-   "headline": "Run Meta's agent model locally, audit code with agents, search leaner, and more",
-   "events": 175,
+   "headline": "Run a local 30B agent, serve DeepSeek, audit code with agents, and more",
+   "events": 172,
    "enriched": true,
    "top": [
     {
+     "id": "c710b6d73fe4",
+     "title": "DeepSeek open-sources its DeepInfer inference stack",
+     "impact": 4,
+     "vendor": "DeepSeek"
+    },
+    {
      "id": "afd21fa67ca5",
-     "title": "Meta's Muse Glimmer 30B runs agents on one consumer GPU",
+     "title": "Meta publishes Muse Glimmer 30B for local agents",
      "impact": 5,
      "vendor": "Meta"
     },
     {
      "id": "94ba3bb50ccd",
-     "title": "Hindsight gives agents memory that learns",
+     "title": "Hindsight offers agent memory that learns",
      "impact": 4,
      "vendor": "Open source"
     },
     {
      "id": "e487fe51b82b",
-     "title": "Cloudflare releases a security audit skill for coding agents",
+     "title": "Cloudflare ships a security audit skill for coding agents",
      "impact": 4,
      "vendor": "Cloudflare"
     },
     {
-     "id": "f8dbde01fb3a",
-     "title": "Exa 3.0 ties for first on search with fewer tokens",
-     "impact": 4,
-     "vendor": "Exa"
-    },
-    {
-     "id": "f68fca3fdcc5",
-     "title": "DeepSeek V4.1 Flash jumps to second among open models",
-     "impact": 4,
-     "vendor": "DeepSeek"
+     "id": "b95deaced653",
+     "title": "MemT-1.0 builds memory into model computation",
+     "impact": 3,
+     "vendor": "Research"
     }
    ],
    "vendors": [
@@ -43,8 +43,8 @@
     "Research",
     "Anthropic",
     "DeepSeek",
-    "Meta",
-    "NVIDIA"
+    "Qwen",
+    "Meta"
    ]
   },
   {
