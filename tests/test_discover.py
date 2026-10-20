@@ -27,6 +27,7 @@ SOURCES = {"version": 1, "feeds": [
     {"id": "trusted-letter", "name": "Trusted Letter", "kind": "newsletter", "url": "https://trusted.example/feed", "trust": 0.75},
     {"id": "quiet-letter", "name": "Quiet Letter", "kind": "newsletter", "url": "https://quiet.example/feed", "trust": 0.7},
     {"id": "weak-letter", "name": "Weak Letter", "kind": "newsletter", "url": "https://weak.example/feed", "trust": 0.5},
+    {"id": "lab-news", "name": "Lab news", "kind": "news", "vendor": "Lab", "url": "https://lab.example/rss.xml", "trust": 0.75},
 ], "apis": []}
 YOUTUBE = {"channels": [
     {"channel_id": "UCwatchedwatchedwatched1", "handle": "@Watched", "name": "Watched", "priority": "high"},
@@ -88,8 +89,8 @@ class DiscoverTests(unittest.TestCase):
     def test_references_find_sources_but_not_self(self):
         x = item("x-grok-pulse", "social", "https://x.com/vetted/status/1", "New agent kit from @newlab",
                  author="@vetted", links=["https://github.com/NewLab/kit", "https://x.com/i/status/2"])
-        ids = {r["id"] for r in discover.references(x)}
-        self.assertEqual(ids, {"x:@newlab", "github:newlab"})
+        # X accounts are Magpie Scout's, so a post names a GitHub owner here but no X account.
+        self.assertEqual({r["id"] for r in discover.references(x)}, {"github:newlab"})
         nl = item("trusted-letter", "newsletter", "https://trusted.example/p/issue-9", "Issue 9",
                   body='<a href="https://trusted.example/p/issue-8">last week</a> '
                        '<a href="https://www.youtube.com/@LabTalks">talk</a> <a href="https://deepdive.substack.com/p/x">post</a> '
@@ -125,30 +126,29 @@ class DiscoverTests(unittest.TestCase):
 
     def test_promotions_write_configs_candidates_and_log(self):
         r = self.repo
+        roster_before = (r.root / "config/x-accounts.json").read_text()
         r.run_items([
-            item("x-grok-pulse", "social", "https://x.com/rising/status/1", "Rising lab ships a model", author="@rising"),
             item("trusted-letter", "newsletter", "https://trusted.example/p/c", "C",
                  body="https://x.com/rising/status/1 and https://deepdive.substack.com/p/evals"),
             item("x-grok-pulse", "social", "https://x.com/vetted/status/3", "Evals writeup", author="@vetted",
-                 links=["https://deepdive.substack.com/p/evals"]),
+                 links=["https://deepdive.substack.com/p/evals", "https://x.com/rising/status/1"]),
         ], back=1)
         out = r.run()
-        self.assertEqual({e["id"] for e in out["result"]["promoted"]}, {"x:@rising", "newsletter:deepdive.substack.com"})
-        acct = next(a for a in r.read("config/x-accounts.json")["accounts"] if a["handle"] == "@rising")
-        self.assertEqual(acct["signal_to_noise"], 4)  # the X pulse reads it from the next run
+        self.assertEqual({e["id"] for e in out["result"]["promoted"]}, {"newsletter:deepdive.substack.com"})
+        self.assertEqual((r.root / "config/x-accounts.json").read_text(), roster_before)
         feed = next(f for f in r.read("config/sources.json")["feeds"] if f.get("origin") == "discovery")
         self.assertEqual(feed["url"], "https://deepdive.substack.com/feed")
         self.assertLess(feed["trust"], discover.MIN_TRUST)
         cands = r.read("config/candidates.json")
         self.assertEqual({c["status"] for c in cands["candidates"]}, {"promoted"})
         log = (r.root / f"reports/discovery/{r.end}.md").read_text()
-        self.assertIn("python -m magpie discover --veto x:@rising", log)
+        self.assertIn("python -m magpie discover --veto newsletter:deepdive.substack.com", log)
         self.assertNotIn(chr(0x2014), log)
 
         # Rerunning the same week changes nothing and keeps the earlier log.
         again = r.run()
         self.assertEqual(again["result"]["promoted"], [])
-        self.assertIn("x:@rising", (r.root / f"reports/discovery/{r.end}.md").read_text())
+        self.assertIn("newsletter:deepdive.substack.com", (r.root / f"reports/discovery/{r.end}.md").read_text())
 
     def test_discovered_sources_do_not_vouch(self):
         r = self.repo
@@ -199,48 +199,57 @@ class DiscoverTests(unittest.TestCase):
         self.assertNotIn("quiet-letter", [f["id"] for f in sources["feeds"]])
         self.assertEqual(sources["benched"][0]["benched"]["date"], r.end)
 
-    def test_three_hype_flags_demote(self):
+    def test_three_hype_flags_demote_but_vendor_feeds_and_x_accounts_stay(self):
         r = self.repo
-        r.editions(3, lambda d: [event(f"gh:hype/{d}", ["X: @noisy"], hype=True),
-                                 event("gh:calm/x", ["X: @vetted"], hype=False)])
+        roster_before = (r.root / "config/x-accounts.json").read_text()
+        r.editions(3, lambda d: [event(f"gh:hype/{d}", ["Quiet Letter", "Lab news", "X: @noisy"], hype=True),
+                                 event("gh:calm/x", ["Trusted Letter"], hype=False)])
         out = r.run()
-        self.assertEqual([d["id"] for d in out["result"]["demoted"]], ["x:@noisy"])
-        roster = r.read("config/x-accounts.json")
-        self.assertEqual([b["handle"] for b in roster["benched"]], ["@noisy"])
-        self.assertNotIn("@noisy", [a["handle"] for a in roster["accounts"]])
+        self.assertEqual([d["id"] for d in out["result"]["demoted"]], ["feed:quiet-letter"])
+        sources = r.read("config/sources.json")
+        self.assertEqual([b["id"] for b in sources["benched"]], ["quiet-letter"])
+        self.assertIn("lab-news", [f["id"] for f in sources["feeds"]])
+        self.assertEqual((r.root / "config/x-accounts.json").read_text(), roster_before)
 
     def test_same_story_flagged_twice_counts_once(self):
         r = self.repo
-        r.editions(3, lambda d: [event("gh:hype/same", ["X: @noisy"], hype=True)])
+        r.editions(3, lambda d: [event("gh:hype/same", ["Quiet Letter"], hype=True)])
         self.assertEqual(r.run(dry_run=True)["result"]["demoted"], [])
 
     def test_veto_undoes_and_is_remembered(self):
         r = self.repo
         r.run_items([
-            item("x-grok-pulse", "social", "https://x.com/rising/status/1", "Rising", author="@rising"),
-            item("trusted-letter", "newsletter", "https://trusted.example/p/e", "E", body="https://x.com/rising/status/1"),
+            item("trusted-letter", "newsletter", "https://trusted.example/p/e", "E", body="https://deepdive.substack.com/p/e"),
+            item("x-grok-pulse", "social", "https://x.com/vetted/status/5", "E", author="@vetted",
+                 links=["https://deepdive.substack.com/p/e"]),
         ])
-        r.editions(3, lambda d: [event(f"gh:hype/{d}", ["X: @noisy"], hype=True)])
+        r.editions(3, lambda d: [event(f"gh:hype/{d}", ["Quiet Letter"], hype=True)])
         r.run()
-        msgs = discover.veto(r.root, ["x:@rising", "X:@Noisy"])
+        msgs = discover.veto(r.root, ["newsletter:deepdive.substack.com", "Feed:Quiet-Letter", "x:@vetted"])
         self.assertIn("promotion undone", msgs[0])
         self.assertIn("restored", msgs[1])
-        handles = [a["handle"] for a in r.read("config/x-accounts.json")["accounts"]]
-        self.assertIn("@noisy", handles)
-        self.assertNotIn("@rising", handles)
+        self.assertIn("Magpie Scout", msgs[2])
+        feeds = [f["id"] for f in r.read("config/sources.json")["feeds"]]
+        self.assertIn("quiet-letter", feeds)
+        self.assertFalse(any(f.startswith("nl-") for f in feeds))
         vetoes = r.read("config/vetoes.json")
-        self.assertEqual((vetoes["never_promote"], vetoes["never_demote"]), (["x:@rising"], ["x:@noisy"]))
+        self.assertEqual((vetoes["never_promote"], vetoes["never_demote"]),
+                         (["newsletter:deepdive.substack.com"], ["feed:quiet-letter"]))
         out = r.run(dry_run=True)
         self.assertEqual((out["result"]["promoted"], out["result"]["demoted"]), ([], []))
-        self.assertEqual(out["result"]["skipped"], ["x:@rising"])
+        self.assertEqual(out["result"]["skipped"], ["newsletter:deepdive.substack.com"])
 
-    def test_avoided_accounts_are_never_promoted(self):
+    def test_x_accounts_are_never_candidates(self):
         r = self.repo
         r.run_items([
             item("x-grok-pulse", "social", "https://x.com/shouty/status/1", "World first", author="@shouty"),
             item("trusted-letter", "newsletter", "https://trusted.example/p/f", "F", body="https://x.com/shouty/status/1"),
+            item("x-grok-bot", "social", "https://x.com/vetted/status/6", "F", author="@vetted",
+                 links=["https://x.com/shouty/status/1"]),
         ])
-        self.assertEqual(r.run(dry_run=True)["result"]["skipped"], ["x:@shouty"])
+        out = r.run(dry_run=True)
+        ids = {e["id"] for k in ("promoted", "held", "watching") for e in out["result"][k]}
+        self.assertFalse(any(i.startswith("x:") for i in ids))
 
     def test_weekly_cap(self):
         r = self.repo
@@ -279,8 +288,8 @@ class DiscoverTests(unittest.TestCase):
 
     def test_hype_flags_count_in_backfilled_editions(self):
         r = self.repo
-        r.editions(3, lambda d: [event(f"gh:hype/{d}", ["X: @noisy"], hype=True)], backfilled=True)
-        self.assertEqual([d["id"] for d in r.run(dry_run=True)["result"]["demoted"]], ["x:@noisy"])
+        r.editions(3, lambda d: [event(f"gh:hype/{d}", ["Quiet Letter"], hype=True)], backfilled=True)
+        self.assertEqual([d["id"] for d in r.run(dry_run=True)["result"]["demoted"]], ["feed:quiet-letter"])
 
     def test_grok_bot_posts_cite_like_the_pulse(self):
         r = self.repo
@@ -290,36 +299,45 @@ class DiscoverTests(unittest.TestCase):
                  links=["https://github.com/one/kit"]),
             item("x-grok-bot", "social", "https://x.com/vetted/status/8", "Kit", author="@vetted",
                  links=["https://github.com/one/kit"]),
-            # Grok Bot surfacing an account outside the roster counts as the pulse citing it.
-            item("x-grok-bot", "social", "https://x.com/outsider/status/9", "Outsider ships", author="@outsider"),
-            item("trusted-letter", "newsletter", "https://trusted.example/p/h", "H", body="https://x.com/outsider/status/9"),
-        ])
-        out = r.run()
-        self.assertEqual([e["id"] for e in out["result"]["promoted"]], ["x:@outsider"])
-        self.assertIn("github:one", {e["id"] for e in out["result"]["watching"]})
-        acct = next(a for a in r.read("config/x-accounts.json")["accounts"] if a["handle"] == "@outsider")
-        self.assertEqual((acct["group"], acct["name"], acct["signal_to_noise"]), ("builders", "outsider", 4))
-
-    def test_scout_roster_is_left_to_the_scout(self):
-        r = self.repo
-        # The Scout may write a handle without its @; it is the same account.
-        r.write("inbox/x-roster.json", {"accounts": [{"handle": "@ontrial", "status": "trial", "signal_to_noise": 5},
-                                                      {"handle": "Gone", "status": "retired"}, {"status": "trial"}]})
-        r.run_items([
-            # A Scout trial account is already watched, and it does not vouch for anyone.
-            item("x-grok-bot", "social", "https://x.com/ontrial/status/1", "Kit", author="@ontrial",
-                 links=["https://github.com/scouted/kit"]),
-            item("trusted-letter", "newsletter", "https://trusted.example/p/s", "S",
-                 body="https://github.com/scouted/kit https://x.com/ontrial/status/1 https://x.com/gone/status/2"),
-            item("x-grok-pulse", "social", "https://x.com/vetted/status/12", "S", author="@vetted",
-                 links=["https://x.com/ontrial/status/1", "https://x.com/gone/status/2"]),
+            # A Grok Bot post from a curated account vouches like a pulse post.
+            item("x-grok-bot", "social", "https://x.com/noisy/status/9", "Two", author="@noisy",
+                 links=["https://github.com/two/tool"]),
+            item("trusted-letter", "newsletter", "https://trusted.example/p/h", "H", body="https://github.com/two/tool"),
         ])
         out = r.run(dry_run=True)
-        self.assertEqual(out["result"]["promoted"], [])
-        self.assertIn("github:scouted", {e["id"] for e in out["result"]["watching"]})
-        for broken in ("", "[]", '{"accounts": null}', '{"accounts": ["@x", 3]}'):
-            (r.root / "inbox/x-roster.json").write_text(broken)
-            self.assertEqual(discover.scout_ids(r.root / "inbox/x-roster.json"), set())
+        self.assertEqual([e["id"] for e in out["result"]["promoted"]], ["github:two"])
+        self.assertIn("github:one", {e["id"] for e in out["result"]["watching"]})
+
+    def test_scout_source_leads_become_candidates(self):
+        r = self.repo
+        yt = "https://www.youtube.com/channel/UCleadleadleadleadlead12"
+        r.write("inbox/x-roster.json", {"updated_at": f"{r.end}T09:30:00Z", "accounts": [
+            {"handle": "@ontrial", "status": "trial", "signal_to_noise": 5}], "source_leads": [
+            {"kind": "newsletter", "name": "Lead Letter", "url": "https://leadletter.substack.com", "seen_via": ["@vetted", "noisy"]},
+            {"kind": "youtube", "name": "Lead Talks", "url": yt, "seen_via": ["@vetted", "@noisy"]},
+            # A Scout addition does not vouch, and neither does a low signal-to-noise account.
+            {"kind": "blog", "name": "Example blog", "url": "https://blog.example.org/", "seen_via": ["@vetted", "@ontrial"]},
+            {"kind": "changelog", "name": "Tool", "url": "https://tool.example.net/changelog.xml", "seen_via": ["@vetted", "@lowsnr"]},
+            {"kind": "blog", "url": "not a url", "seen_via": ["@vetted", "@noisy"]}, "junk"]})
+        out = r.run()
+        self.assertEqual({e["id"] for e in out["result"]["promoted"]},
+                         {"newsletter:leadletter.substack.com", "youtube:channel/ucleadleadleadleadlead12"})
+        watching = {e["id"]: e for e in out["result"]["watching"]}
+        self.assertEqual(set(watching), {"newsletter:blog.example.org", "newsletter:tool.example.net"})
+        self.assertEqual(watching["newsletter:tool.example.net"]["feed_url"], "https://tool.example.net/changelog.xml")
+        self.assertEqual(watching["newsletter:blog.example.org"]["feed_url"], "https://blog.example.org/feed")
+        self.assertEqual(r.read("config/youtube.json")["channels"][-1]["name"], "Lead Talks")
+
+    def test_stale_or_broken_scout_files_add_nothing(self):
+        r = self.repo
+        lead = {"kind": "newsletter", "url": "https://leadletter.substack.com", "seen_via": ["@vetted", "@noisy"]}
+        r.write("inbox/x-roster.json", {"updated_at": r.day(10), "source_leads": [lead]})
+        self.assertEqual(r.run(dry_run=True)["result"]["promoted"], [])
+        path = r.root / "inbox/x-roster.json"
+        for broken in ("", "[]", '{"source_leads": null}', '{"updated_at": "nope", "source_leads": ["x", 3]}'):
+            path.write_text(broken)
+            self.assertEqual(discover.scout_leads(path)[1], [])
+            self.assertEqual(r.run(dry_run=True)["result"]["promoted"], [])
 
     def test_doubted_x_posts_do_not_vouch(self):
         r = self.repo

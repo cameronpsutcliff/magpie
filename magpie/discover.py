@@ -1,24 +1,27 @@
 """The discovery loop: a watch list that grows and prunes itself, once a week.
 
 `python -m magpie discover` mines the last seven days of run items (state/runs/*/items.json) for
-sources Magpie does not watch yet: X accounts, YouTube channels, newsletters and GitHub owners that
-other sources linked or mentioned. Explicit rules then change the watch list:
+sources Magpie does not watch yet: newsletters and blogs, YouTube channels and GitHub owners that
+other sources linked or mentioned, plus the `source_leads` Magpie Scout records in inbox/x-roster.json.
+Explicit rules then change the watch list:
 
 - Promote a new source when two or more trusted, independent sources cited it within the week.
 - Demote a watched source after zero kept items in its last 21 live editions, or three hype flags in
   21 days. Backfilled editions never count toward zero kept: they were rebuilt from archives that cover
-  only some sources.
+  only some sources. Official lab and vendor feeds (a feed with a vendor) are pinned: hype flags still
+  mark their items down in the score, but the loop never benches them.
 
 A trusted source is an owner-curated one: a registry source with trust of at least 0.65, an account in
 config/x-accounts.json with signal_to_noise 4 or more, or a high-priority YouTube channel. Discovered
 sources never vouch for others, so the list cannot snowball from its own picks; that includes the
-accounts Magpie Scout keeps in inbox/x-roster.json, and an X post carrying doubt of level 2 or more.
-The Scout maintains its own part of the X roster, so every handle it lists (trial, active or retired) is
-left to it: the loop neither promotes nor re-promotes those.
+accounts Magpie Scout adds, and an X post carrying doubt of level 2 or more.
 
-Every change lands in config/ (sources.json, x-accounts.json, youtube.json) with its evidence, candidates in config/candidates.json, and a readable
-change log in reports/discovery/. The owner undoes any change with `--veto <id>`; config/vetoes.json
-remembers it so the loop never repeats it.
+The X roster is not the loop's: Magpie Scout maintains inbox/x-roster.json and config/x-accounts.json
+stays owner-curated, so the loop never promotes or benches an X account. X posts still cite sources.
+
+Every change lands in config/ (sources.json, youtube.json) with its evidence, candidates in
+config/candidates.json, and a readable change log in reports/discovery/. The owner undoes any change with
+`--veto <id>`; config/vetoes.json remembers it so the loop never repeats it.
 """
 from __future__ import annotations
 
@@ -42,21 +45,15 @@ HYPE_LIMIT = 3
 MIN_TRUST = 0.65
 X_TRUSTED_SNR = 4
 NEW_FEED_TRUST = 0.6
-CAPS = {"x": 5, "github": 5, "newsletter": 3, "youtube": 3}
-KIND_LABEL = {"x": "X account", "youtube": "YouTube channel", "newsletter": "newsletter", "github": "GitHub owner"}
+CAPS = {"github": 5, "newsletter": 3, "youtube": 3}
+KIND_LABEL = {"youtube": "YouTube channel", "newsletter": "newsletter", "github": "GitHub owner"}
 GROUP_NAMES = {"github": "GitHub", "huggingface": "Hugging Face"}
-PULSE = ("x-grok-pulse", "X pulse (Grok)")
 # Both read the X roster through Grok (the home pulse and Grok Bot's inbox), so an account is one citer
-# whichever of them carried its post, and someone outside the roster that either surfaced is cited by the pulse.
+# whichever of them carried its post.
 X_SWEEPS = ("x-grok-pulse", "x-grok-bot")
 # The shared transcript pipeline's list and Magpie's own config/youtube.json; a channel on both is one citer.
 YOUTUBE = ("youtube-watchlist", "youtube-channels")
-NEW_X_GROUP = "builders"  # the sweep group the X pulse falls back to for an account without one
-
-X_URL = re.compile(r"(?<![\w.-])(?:www\.)?(?:x|twitter)\.com/([A-Za-z0-9_]{1,15})(?![A-Za-z0-9_])", re.I)
-X_AT = re.compile(r"(?<![\w@./])@([A-Za-z0-9_]{2,15})(?![A-Za-z0-9_@]|\.[A-Za-z])")
-X_RESERVED = {"i", "home", "search", "intent", "share", "hashtag", "explore", "settings", "messages", "notifications",
-              "compose", "login", "signup", "tos", "privacy", "about", "jobs", "status", "web"}
+FEEDISH = re.compile(r"(?:rss|atom|feed)|\.xml(?:$|\?)", re.I)
 YT_URL = re.compile(r"youtube\.com/(@[\w.-]{3,30}|channel/UC[\w-]{22}|c/[\w.-]+|user/[\w.-]+)", re.I)
 SUBSTACK = re.compile(r"(?<![\w.-])([a-z0-9-]+)\.substack\.com", re.I)
 BEEHIIV = re.compile(r"(?<![\w.-])([a-z0-9-]+)\.beehiiv\.com", re.I)
@@ -81,20 +78,11 @@ def references(item: dict) -> list[dict]:
     links = item.get("extra", {}).get("links") or []
     text = " ".join([item.get("url") or ""] + links + [item.get("title") or "", item.get("summary") or ""])
     own_host = _host(item.get("url") or "")
-    author = (item.get("author") or "").lower()
     refs: dict[str, dict] = {}
 
     def add(eid, kind, label, url, **more):
         refs.setdefault(eid, {"id": eid, "kind": kind, "label": label, "url": url, **more})
 
-    handles = [h for h in X_URL.findall(text)]
-    if item["source_id"] in X_SWEEPS:
-        handles += X_AT.findall(f"{item.get('title') or ''} {item.get('summary') or ''}")
-    for h in handles:
-        at = f"@{h}"
-        if h.lower() in X_RESERVED or at.lower() == author:
-            continue
-        add(f"x:{at.lower()}", "x", at, f"https://x.com/{h}")
     for path in YT_URL.findall(text):
         more = {"channel_id": path[len("channel/"):]} if path.lower().startswith("channel/") else {}
         add(f"youtube:{path.lower()}", "youtube", path, f"https://www.youtube.com/{path}", **more)
@@ -149,21 +137,76 @@ def mine(week: list[tuple[str, list[dict]]], roster: dict, discovered: set) -> d
     for date, items in week:
         for it in items:
             cid, cname, trusted = citer_of(it, roster, discovered)
-            found = [(r, cid, cname, trusted) for r in references(it)]
-            author = (it.get("author") or "").lower()
-            if it["source_id"] in X_SWEEPS and author.startswith("@") and author not in roster:
-                # The pulse surfaced a post from someone outside the roster: the pulse is the citer.
-                found.append(({"id": f"x:{author}", "kind": "x", "label": it["author"], "url": f"https://x.com/{author[1:]}"},
-                              PULSE[0], PULSE[1], True))
-            for ref, cid, cname, trusted in found:
-                e = ents.setdefault(ref["id"], {**ref, "citers": {}, "evidence": [], "dates": set(), "ai": False})
-                c = e["citers"].setdefault(cid, {"name": cname, "trusted": False})
-                c["trusted"] = c["trusted"] or trusted
-                e["dates"].add(date)
-                e["ai"] = e["ai"] or _is_ai(it)
-                if all(ev["url"] != it["url"] or ev["source"] != cname for ev in e["evidence"]):
-                    e["evidence"].append({"date": date, "source": cname, "title": (it.get("title") or "")[:160], "url": it["url"]})
+            for ref in references(it):
+                _cite(ents, ref, cid, cname, trusted, date, (it.get("title") or "")[:160], it["url"], _is_ai(it))
     return ents
+
+
+def _cite(ents: dict, ref: dict, cid: str, cname: str, trusted: bool, date: str, title: str, url: str, ai: bool) -> None:
+    e = ents.setdefault(ref["id"], {**ref, "citers": {}, "evidence": [], "dates": set(), "ai": False})
+    c = e["citers"].setdefault(cid, {"name": cname, "trusted": False})
+    c["trusted"] = c["trusted"] or trusted
+    e["dates"].add(date)
+    e["ai"] = e["ai"] or ai
+    if all(ev["url"] != url or ev["source"] != cname for ev in e["evidence"]):
+        e["evidence"].append({"date": date, "source": cname, "title": title, "url": url})
+
+
+def scout_leads(path: Path) -> tuple[str | None, list[dict]]:
+    """(updated date, source leads) from Magpie Scout's roster file; nothing when it is missing or malformed."""
+    data = load_json(path, {})
+    if not isinstance(data, dict):
+        return None, []
+    leads = data.get("source_leads")
+    updated = str(data.get("updated_at") or "")[:10]
+    try:
+        _day(updated)
+    except ValueError:
+        updated = None
+    return updated, [x for x in leads if isinstance(x, dict)] if isinstance(leads, list) else []
+
+
+def lead_ref(lead: dict) -> dict | None:
+    """The watch-list entity a Scout lead names: a YouTube channel, or a feed for anything else."""
+    url = str(lead.get("url") or "").strip()
+    if not url.startswith(("https://", "http://")):
+        return None
+    if str(lead.get("kind") or "").lower() == "youtube" or "youtube.com/" in url:
+        m = YT_URL.search(url)
+        if not m:
+            return None
+        path = m.group(1)
+        more = {"channel_id": path[len("channel/"):]} if path.lower().startswith("channel/") else {}
+        return {"id": f"youtube:{path.lower()}", "kind": "youtube", "label": str(lead.get("name") or path)[:80],
+                "url": f"https://www.youtube.com/{path}", **more}
+    found = [r for r in references({"url": "", "extra": {"links": [url]}}) if r["kind"] == "newsletter"]
+    if found:
+        return found[0]
+    host = _host(url)
+    if not host:
+        return None
+    kind = str(lead.get("kind") or "").lower()
+    return {"id": f"newsletter:{host}", "kind": "newsletter", "label": str(lead.get("name") or host)[:80],
+            "url": url, "feed_url": url if FEEDISH.search(urllib.parse.urlsplit(url).path + "?" + urllib.parse.urlsplit(url).query)
+            else f"https://{host}/feed", "feed_kind": kind if kind in ("blog", "changelog", "newsletter") else "newsletter"}
+
+
+def add_leads(ents: dict, leads: list[dict], updated: str | None, roster: dict, start: str, date: str) -> None:
+    """A Scout lead is cited by the X accounts it was seen via; only curated ones vouch, as for posts."""
+    if not updated or not start <= updated <= date:
+        return  # a stale roster file says nothing about this week
+    for lead in leads:
+        ref = lead_ref(lead)
+        if not ref:
+            continue
+        title = f"Scout lead: {lead.get('why') or lead.get('name') or ref['label']}"[:160]
+        for h in lead.get("seen_via") or []:
+            h = str(h).strip().lstrip("@").lower()
+            if not h:
+                continue
+            acct = roster.get(f"@{h}") or {}
+            trusted = acct.get("signal_to_noise", 0) >= X_TRUSTED_SNR and acct.get("origin") != "discovery"
+            _cite(ents, ref, f"x:@{h}", f"X: @{h}", trusted, updated, title, ref["url"], True)
 
 
 def trusted_citers(e: dict) -> list[str]:
@@ -176,13 +219,10 @@ def _yt_id(c: dict) -> str:
     return f"youtube:{c['handle'].lower()}" if c.get("handle") else f"youtube:channel/{c['channel_id'].lower()}"
 
 
-def entries(sources: dict, roster_cfg: dict, youtube_cfg: dict | None = None):
+def entries(sources: dict, youtube_cfg: dict | None = None):
     """(entity id, label, owner dict, list name, entry, kept key) for every active watch-list entry."""
     for f in sources.get("feeds", []):
         yield f"feed:{f['id']}", f["name"], sources, "feeds", f, f"name:{f['name'].lower()}"
-    for a in roster_cfg.get("accounts", []):
-        h = a["handle"].lower()
-        yield f"x:{h}", a["handle"], roster_cfg, "accounts", a, f"name:x: {h}"
     for o in sources.get("github_orgs", []):
         yield f"github:{o['org'].lower()}", o["org"], sources, "github_orgs", o, f"github:{o['org'].lower()}"
     for c in (youtube_cfg or {}).get("channels", []):
@@ -190,19 +230,16 @@ def entries(sources: dict, roster_cfg: dict, youtube_cfg: dict | None = None):
         yield _yt_id(c), c["name"], youtube_cfg, "channels", c, None
 
 
-def benched_entries(sources: dict, roster_cfg: dict):
+def benched_entries(sources: dict):
     for b in sources.get("benched", []):
         if "org" in b:
             yield f"github:{b['org'].lower()}", b["org"], sources, "github_orgs", b
         else:
             yield f"feed:{b['id']}", b["name"], sources, "feeds", b
-    for b in roster_cfg.get("benched", []):
-        yield f"x:{b['handle'].lower()}", b["handle"], roster_cfg, "accounts", b
 
 
-def watched_ids(sources: dict, roster_cfg: dict, week: list[tuple[str, list[dict]]],
-                youtube_cfg: dict | None = None) -> set[str]:
-    ids = {e[0] for e in entries(sources, roster_cfg)} | {e[0] for e in benched_entries(sources, roster_cfg)}
+def watched_ids(sources: dict, week: list[tuple[str, list[dict]]], youtube_cfg: dict | None = None) -> set[str]:
+    ids = {e[0] for e in entries(sources)} | {e[0] for e in benched_entries(sources)}
     for c in (youtube_cfg or {}).get("channels", []):
         ids.add(f"youtube:channel/{c['channel_id'].lower()}")
         if c.get("handle"):
@@ -301,12 +338,16 @@ def plan(ents: dict, watched: set, vetoes: dict, avoided: set, check_feed) -> di
     return {"promoted": promoted, "held": held, "watching": watching, "skipped": skipped}
 
 
-def demotions(sources: dict, roster_cfg: dict, vetoes: dict, stats: dict) -> tuple[list[dict], bool]:
-    pinned = set(vetoes.get("never_demote", []))
+def pinned(eid: str, lst: str, entry: dict, vetoes: dict) -> bool:
+    """Never benched: owner pins, and official lab and vendor feeds (their own blogs, news and changelogs)."""
+    return eid in set(vetoes.get("never_demote", [])) or bool(entry.get("pinned")) or (lst == "feeds" and bool(entry.get("vendor")))
+
+
+def demotions(sources: dict, vetoes: dict, stats: dict) -> tuple[list[dict], bool]:
     ready = stats["live"] >= DEMOTE_DAYS
     out = []
-    for eid, label, owner, lst, entry, kept_key in entries(sources, roster_cfg):
-        if kept_key is None or eid in pinned or entry.get("pinned"):
+    for eid, label, owner, lst, entry, kept_key in entries(sources):
+        if kept_key is None or pinned(eid, lst, entry, vetoes):
             continue
         flags = len(stats["hype"].get(kept_key, ()))
         if flags >= HYPE_LIMIT:
@@ -336,18 +377,15 @@ def _feed_id(label: str, taken: set) -> str:
     return fid
 
 
-def apply(result: dict, sources: dict, roster_cfg: dict, youtube_cfg: dict, date: str) -> None:
+def apply(result: dict, sources: dict, youtube_cfg: dict, date: str) -> None:
     feed_ids = {f["id"] for f in sources.get("feeds", []) + sources.get("benched", []) if "id" in f}
     for e in result["promoted"]:
         evidence = [ev for ev in _evidence(e) if ev["source"] in trusted_citers(e)][:3]
         base = {"origin": "discovery", "since": date, "discovered_as": e["id"], "evidence": evidence}
-        if e["kind"] == "x":
-            roster_cfg.setdefault("accounts", []).append({
-                "handle": e["label"], "name": e["label"].lstrip("@"), "group": NEW_X_GROUP, "affiliation": "",
-                "why": _why(e, date), "signal_to_noise": X_TRUSTED_SNR, **base})
-        elif e["kind"] == "newsletter":
+        if e["kind"] == "newsletter":
             sources.setdefault("feeds", []).append({
-                "id": _feed_id(e["label"], feed_ids), "name": e["label"].removesuffix(".substack.com"), "kind": "newsletter",
+                "id": _feed_id(e["label"], feed_ids), "name": e["label"].removesuffix(".substack.com"),
+                "kind": e.get("feed_kind") or "newsletter",
                 "url": e["feed_url"], "trust": NEW_FEED_TRUST, "vendor": None, "product": None, "window_hours": 72,
                 "why": _why(e, date), **base})
         elif e["kind"] == "github":
@@ -372,8 +410,8 @@ def check_feed_online(url: str) -> tuple[bool, str]:
 
 
 def save_config(path: Path, obj: dict, indent: int = 1, newline: bool = False) -> None:
-    """Config files keep their hand-written format: sources.json and x-accounts.json use a one-space indent
-    and no trailing newline; youtube.json uses two spaces and a trailing newline (save_youtube)."""
+    """Config files keep their hand-written format: sources.json and vetoes.json use a one-space indent and
+    no trailing newline; youtube.json uses two spaces and a trailing newline (save_youtube)."""
     tmp = path.with_suffix(path.suffix + ".tmp")
     tmp.write_text(json.dumps(obj, indent=indent, ensure_ascii=False) + ("\n" if newline else ""))
     tmp.replace(path)
@@ -381,18 +419,6 @@ def save_config(path: Path, obj: dict, indent: int = 1, newline: bool = False) -
 
 def save_youtube(path: Path, obj: dict) -> None:
     save_config(path, obj, indent=2, newline=True)
-
-
-def scout_ids(path: Path) -> set[str]:
-    """Every handle Magpie Scout lists, in any status, as x:@handle."""
-    data = load_json(path, {})
-    accounts = data.get("accounts") if isinstance(data, dict) else None
-    out = set()
-    for a in accounts if isinstance(accounts, list) else []:
-        h = str(a.get("handle") or "").strip().lstrip("@") if isinstance(a, dict) else ""
-        if h:
-            out.add(f"x:@{h.lower()}")
-    return out
 
 
 def load_week(runs_dir: Path, date: str, days: int = WEEK_DAYS) -> list[tuple[str, list[dict]]]:
@@ -432,7 +458,7 @@ def render_log(date: str, week: list, stats: dict, result: dict, zero_ready: boo
           f"flags in {DEMOTE_DAYS} days. Discovered sources never vouch for others.", "",
           "To undo a change, run its veto command. config/vetoes.json remembers every veto.", ""]
     promoted, demoted, held, watching = result["promoted"], result["demoted"], result["held"], result["watching"]
-    effect = {"x": "joins the X pulse roster", "newsletter": "added as a feed", "github": "added to GitHub watched orgs",
+    effect = {"newsletter": "added as a feed", "github": "added to GitHub watched orgs",
               "youtube": "added to config/youtube.json at medium priority"}
     L += [f"## Promoted ({len(promoted)})", ""]
     for e in promoted:
@@ -459,7 +485,7 @@ def render_log(date: str, week: list, stats: dict, result: dict, zero_ready: boo
                 more = f", and {len(group) - 8} more in config/candidates.json" if len(group) > 8 else ""
                 L.append(f"- {KIND_LABEL[kind]}s: {names}{more}.")
     if result["skipped"]:
-        L += ["", f"Skipped {len(result['skipped'])} sources the owner vetoed or the X roster avoids."]
+        L += ["", f"Skipped {len(result['skipped'])} sources the owner vetoed or dropped."]
     L += ["", "## Rule status", ""]
     if zero_ready:
         L.append(f"- Zero-kept demotion: active, over the {DEMOTE_DAYS} live editions from {stats['kept_start']} to {date}.")
@@ -469,7 +495,9 @@ def render_log(date: str, week: list, stats: dict, result: dict, zero_ready: boo
         L.append(f"- Zero-kept demotion: waiting for {DEMOTE_DAYS} live editions ({stats['live']} so far, first live "
                  f"edition {first}; first check {due} at the earliest; {stats['backfilled']} backfilled editions "
                  "do not count).")
-    L.append(f"- Hype demotion: active, {HYPE_LIMIT} flags on a source's own stories in {DEMOTE_DAYS} days.")
+    L.append(f"- Hype demotion: active, {HYPE_LIMIT} flags on a source's own stories in {DEMOTE_DAYS} days; official "
+             "lab and vendor feeds are pinned.")
+    L.append("- X accounts: left to Magpie Scout; the loop only reads their posts and the Scout's source leads.")
     return "\n".join(L) + "\n"
 
 
@@ -492,17 +520,18 @@ def run(root: Path = ROOT, date: str | None = None, dry_run: bool = False, check
     youtube_cfg = load_json(cfg / "youtube.json", {"channels": []})
     vetoes = load_json(cfg / "vetoes.json", {"never_promote": [], "never_demote": []})
     week = load_week(root / "state/runs", date)
-    roster = {a["handle"].lower(): a for a in roster_cfg.get("accounts", [])}  # curated only: the ones that vouch
-    scout = scout_ids(root / "inbox/x-roster.json")
+    # Read only: the curated accounts are the ones whose posts and leads vouch.
+    roster = {a["handle"].lower(): a for a in roster_cfg.get("accounts", []) if a.get("handle")}
     # Repos from promoted GitHub owners are discovered too, so they never vouch for others.
     discovered = {f["id"] for f in sources.get("feeds", []) if f.get("origin") == "discovery"} | {"github-watched-orgs"}
-    avoided = ({f"x:{a['handle'].lower()}" for a in roster_cfg.get("avoid", [])} |
-               {f"youtube:channel/{c['channel_id'].lower()}" for c in youtube_cfg.get("dropped", [])})
+    avoided = {f"youtube:channel/{c['channel_id'].lower()}" for c in youtube_cfg.get("dropped", [])}
 
     ents = mine(week, roster, discovered)
-    result = plan(ents, watched_ids(sources, roster_cfg, week, youtube_cfg) | scout, vetoes, avoided, check_feed)
+    updated, leads = scout_leads(root / "inbox/x-roster.json")
+    add_leads(ents, leads, updated, roster, (_day(date) - dt.timedelta(days=WEEK_DAYS - 1)).isoformat(), date)
+    result = plan(ents, watched_ids(sources, week, youtube_cfg), vetoes, avoided, check_feed)
     stats = kept_stats(root / "data/v1/days", date)
-    result["demoted"], zero_ready = demotions(sources, roster_cfg, vetoes, stats)
+    result["demoted"], zero_ready = demotions(sources, vetoes, stats)
     log = render_log(date, week, stats, result, zero_ready, dry_run)
 
     candidates = {
@@ -513,8 +542,11 @@ def run(root: Path = ROOT, date: str | None = None, dry_run: bool = False, check
         "rules": {"promote": "two or more trusted, independent sources cite it within the week",
                   "demote": f"zero kept items in the last {DEMOTE_DAYS} live editions, or {HYPE_LIMIT} hype flags in "
                             f"{DEMOTE_DAYS} days",
-                  "trusted": f"owner-curated sources with trust >= {MIN_TRUST}, X roster accounts with signal_to_noise >= "
-                             f"{X_TRUSTED_SNR}, high-priority YouTube channels; discovered sources never vouch"},
+                  "trusted": f"owner-curated sources with trust >= {MIN_TRUST}, config/x-accounts.json accounts with "
+                             f"signal_to_noise >= {X_TRUSTED_SNR}, high-priority YouTube channels; discovered sources "
+                             "never vouch",
+                  "pinned": "official lab and vendor feeds (a vendor set) and owner pins are never benched",
+                  "x": "X accounts are Magpie Scout's; the loop never promotes or benches them"},
         "candidates": [_record(e, "promoted") for e in result["promoted"]] +
                       [_record(e, "held", e["reason"]) for e in result["held"]],
         "demoted": [{"id": d["id"], "label": d["label"], "reason": d["reason"]} for d in result["demoted"]],
@@ -524,10 +556,9 @@ def run(root: Path = ROOT, date: str | None = None, dry_run: bool = False, check
     scrub(candidates)
     scrub(log)
     if not dry_run:
-        apply(result, sources, roster_cfg, youtube_cfg, date)
+        apply(result, sources, youtube_cfg, date)
         if result["promoted"] or result["demoted"]:
             save_config(cfg / "sources.json", sources)
-            save_config(cfg / "x-accounts.json", roster_cfg)
         if any(e["kind"] == "youtube" for e in result["promoted"]):
             save_youtube(cfg / "youtube.json", youtube_cfg)
         write_json(cfg / "candidates.json", candidates)
@@ -542,7 +573,6 @@ def veto(root: Path, ids: list[str]) -> list[str]:
     """Undo a promotion or demotion and remember the decision."""
     cfg = root / "config"
     sources = load_json(cfg / "sources.json", {})
-    roster_cfg = load_json(cfg / "x-accounts.json", {"accounts": []})
     youtube_cfg = load_json(cfg / "youtube.json", None)
     vetoes = load_json(cfg / "vetoes.json", {"never_promote": [], "never_demote": []})
     msgs = []
@@ -553,8 +583,11 @@ def veto(root: Path, ids: list[str]) -> list[str]:
 
     for raw in ids:
         vid = raw.strip().lower()
+        if vid.startswith("x:"):
+            msgs.append(f"{vid}: X accounts belong to Magpie Scout and config/x-accounts.json; the loop does not change them.")
+            continue
         done = False
-        for eid, label, owner, lst, entry, _ in list(entries(sources, roster_cfg, youtube_cfg)):
+        for eid, label, owner, lst, entry, _ in list(entries(sources, youtube_cfg)):
             if vid not in (eid, (entry.get("discovered_as") or "").lower()):
                 continue
             if entry.get("origin") == "discovery":
@@ -567,7 +600,7 @@ def veto(root: Path, ids: list[str]) -> list[str]:
             done = True
             break
         if not done:
-            for eid, label, owner, lst, entry in list(benched_entries(sources, roster_cfg)):
+            for eid, label, owner, lst, entry in list(benched_entries(sources)):
                 if vid != eid:
                     continue
                 owner["benched"].remove(entry)
@@ -579,10 +612,9 @@ def veto(root: Path, ids: list[str]) -> list[str]:
         if not done:
             remember("never_promote", vid)
             msgs.append(f"{vid}: not on the watch list; recorded so it is never promoted.")
-    vetoes.setdefault("note", "Owner decisions the discovery loop must respect. Ids look like x:@handle, "
-                              "github:owner, newsletter:host, youtube:@handle or feed:<id>.")
+    vetoes.setdefault("note", "Owner decisions the discovery loop must respect. Ids look like github:owner, "
+                              "newsletter:host, youtube:@handle or feed:<id>.")
     save_config(cfg / "sources.json", sources)
-    save_config(cfg / "x-accounts.json", roster_cfg)
     if youtube_cfg is not None:
         save_youtube(cfg / "youtube.json", youtube_cfg)
     save_config(cfg / "vetoes.json", vetoes)
