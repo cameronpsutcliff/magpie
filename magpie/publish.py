@@ -130,6 +130,7 @@ def publish_day(day: dict, events: list[dict], top_events: list[dict], *, force:
     index["days"].sort(key=lambda d: d["date"], reverse=True)
     index["latest"] = index["days"][0]["date"]
     write_json(DATA / "index.json", index, compact=False)
+    write_feed()
     print(f"published {date}: {len(events)} events, top {len(top_events)}, {day['run']['seconds']}s", file=sys.stderr)
     return True
 
@@ -152,6 +153,49 @@ def index_entry(day: dict) -> dict:
     }
 
 
+SITE = "https://www.cameronsutcliff.com/magpie"
+FEED_URL = "https://www.cameronsutcliff.com/magpie-data/feed.json"
+
+
+def write_feed(limit: int = 30) -> None:
+    """JSON Feed 1.1 of the latest editions: one item per day, with its leads and best new possibility."""
+    from html import escape
+
+    days = sorted((load_json(p, None) for p in (DATA / "days").glob("*.json")), key=lambda d: d["date"], reverse=True)
+    items = []
+    for d in [d for d in days if d][:limit]:
+        by = {e["id"]: e for e in d.get("events", [])}
+        top = [by[i] for i in d.get("top", []) if i in by]
+        ed = d.get("edition", {})
+        leads = "".join(
+            f'<li><a href="{escape(e["url"])}">{escape((e.get("brief") or {}).get("headline") or e["title"])}</a>'
+            f'{": " + escape((e.get("brief") or {}).get("newly_possible", "")) if (e.get("brief") or {}).get("newly_possible") else ""}</li>'
+            for e in top)
+        poss = (d.get("possibilities") or {}).get("items") or []
+        best = f"<p><strong>New possibility:</strong> {escape(poss[0]['title'])}</p>" if poss else ""
+        watch = (d.get("viewing") or {}).get("items") or []
+        vids = ("<p><strong>Worth watching:</strong> " + "; ".join(f'<a href="{escape(v["url"])}">{escape(v["title"])}</a>' for v in watch[:3]) + "</p>") if watch else ""
+        text = " ".join(filter(None, [ed.get("dek"), *[((e.get("brief") or {}).get("headline") or e["title"]) for e in top]]))
+        items.append({
+            "id": d["date"],
+            "url": f"{SITE}/{d['date']}",
+            "title": ed.get("headline") or f"Magpie, {d['date']}",
+            "summary": ed.get("dek") or "",
+            "content_html": f"<p>{escape(ed.get('dek', ''))}</p><ol>{leads}</ol>{best}{vids}",
+            "content_text": text,
+            "date_published": d.get("generated_at"),
+            "tags": sorted({t for e in top for t in e.get("topics", [])}),
+            "_magpie": {"day": f"https://www.cameronsutcliff.com/magpie-data/days/{d['date']}.json",
+                        "backfilled": bool(ed.get("backfilled")), "capabilities": d.get("coverage", {}).get("events")},
+        })
+    feed = {"version": "https://jsonfeed.org/version/1.1", "title": "Magpie",
+            "home_page_url": SITE, "feed_url": FEED_URL,
+            "description": "Every shiny new thing in AI, collected each morning and ranked by what it makes possible.",
+            "language": "en", "authors": [{"name": "Cameron Sutcliff", "url": "https://www.cameronsutcliff.com"}],
+            "items": items}
+    write_json(DATA / "feed.json", feed, compact=False)
+
+
 def reindex() -> None:
     """Rebuild index.json and latest.json from the day files (used after merging branches)."""
     days = sorted((load_json(p, None) for p in (DATA / "days").glob("*.json")), key=lambda d: d["date"], reverse=True)
@@ -160,4 +204,5 @@ def reindex() -> None:
     write_json(DATA / "index.json", index, compact=False)
     if days:
         write_json(DATA / "latest.json", days[0], compact=True)
+    write_feed()
     print(f"reindexed {len(days)} editions; latest {index['latest']}", file=sys.stderr)

@@ -139,6 +139,31 @@ class CoreTests(unittest.TestCase):
         self.assertEqual(row["event_id"], "e1")
         self.assertEqual([b["url"] for b in row["buzz"]], ["https://x.com/a/status/1"])
 
+    def test_json_feed(self):
+        import tempfile
+        from pathlib import Path
+        from magpie import publish
+        with tempfile.TemporaryDirectory() as tmp:
+            data = Path(tmp)
+            (data / "days").mkdir()
+            ev = {"id": "e1", "title": "a/tool", "url": "https://github.com/a/tool", "topics": ["agents"],
+                  "brief": {"headline": "Tool ships", "newly_possible": "Agents can run it locally."}}
+            day = {"date": "2099-01-02", "generated_at": "2099-01-02T11:00:00Z", "edition": {"headline": "Tool ships", "dek": "One line."},
+                   "events": [ev], "top": ["e1"], "coverage": {"events": 1}, "possibilities": {"items": [{"title": "A new idea"}]}}
+            (data / "days" / "2099-01-02.json").write_text(json.dumps(day))
+            old = publish.DATA
+            publish.DATA = data
+            try:
+                publish.write_feed()
+                feed = json.loads((data / "feed.json").read_text())
+            finally:
+                publish.DATA = old
+        self.assertEqual(feed["version"], "https://jsonfeed.org/version/1.1")
+        item = feed["items"][0]
+        self.assertEqual(item["id"], "2099-01-02")
+        self.assertIn("Tool ships", item["content_html"])
+        self.assertIn("A new idea", item["content_html"])
+
 
 if __name__ == "__main__":
     unittest.main()

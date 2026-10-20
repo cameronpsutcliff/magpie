@@ -1,0 +1,716 @@
+{
+ "version": "https://jsonfeed.org/version/1.1",
+ "title": "Magpie",
+ "home_page_url": "https://www.cameronsutcliff.com/magpie",
+ "feed_url": "https://www.cameronsutcliff.com/magpie-data/feed.json",
+ "description": "Every shiny new thing in AI, collected each morning and ranked by what it makes possible.",
+ "language": "en",
+ "authors": [
+  {
+   "name": "Cameron Sutcliff",
+   "url": "https://www.cameronsutcliff.com"
+  }
+ ],
+ "items": [
+  {
+   "id": "2026-10-20",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-10-20",
+   "title": "Serve DeepSeek, speed up local inference, build speech tools and more",
+   "summary": "Open inference tools and speech models give builders more serving options. Structured outputs and agent replay tools make automated workflows easier to inspect.",
+   "content_html": "<p>Open inference tools and speech models give builders more serving options. Structured outputs and agent replay tools make automated workflows easier to inspect.</p><ol><li><a href=\"https://github.com/deepseek-ai/DeepInfer\">DeepSeek opens its DeepInfer inference framework</a>: Builders can use DeepSeek&#x27;s open-source framework for large-scale inference with DeepSeek models.</li><li><a href=\"https://github.com/heygen-com/hyperframes\">Hyperframes turns agent-written HTML into video</a>: Builders can render video from HTML with a project built for agents.</li><li><a href=\"https://aws.amazon.com/blogs/machine-learning/structured-outputs-for-anthropic-claude-models-on-amazon-bedrock/\">Bedrock adds structured outputs across Claude models</a>: Builders can request schema-compliant JSON and strict tool use from all Claude models on both Bedrock endpoints.</li><li><a href=\"https://huggingface.co/google/embeddinggemma-2\">Google lists EmbeddingGemma 2 feature extractor</a>: Builders can access EmbeddingGemma 2 for feature extraction.</li><li><a href=\"https://github.com/anomalyco/opencode\">OpenCode offers an open coding agent</a>: Developers can use and inspect OpenCode&#x27;s open-source coding agent.</li></ol><p><strong>New possibility:</strong> Compliance training teams can ship localized video variants from templated agent output</p><p><strong>Worth watching:</strong> <a href=\"https://www.youtube.com/watch?v=ti3vVYwzW4A\">Pi Durable EXPLAINED: Build Always-On Agents with Local Models</a>; <a href=\"https://www.youtube.com/watch?v=H4azmWcqO5g\">Local AI 202: Get Massive Speed-ups with Speculative Decoding</a>; <a href=\"https://www.youtube.com/watch?v=UGjk3Uk0MxM\">The Model Swap Workshop: GPT-5.5 vs Kimi vs DeepSeek vs Mistral, Pamela Fox, Microsoft</a></p>",
+   "content_text": "Open inference tools and speech models give builders more serving options. Structured outputs and agent replay tools make automated workflows easier to inspect. DeepSeek opens its DeepInfer inference framework Hyperframes turns agent-written HTML into video Bedrock adds structured outputs across Claude models Google lists EmbeddingGemma 2 feature extractor OpenCode offers an open coding agent",
+   "date_published": "2026-10-20T15:21:33Z",
+   "tags": [
+    "agents",
+    "coding",
+    "infra",
+    "memory",
+    "models",
+    "multimodal"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-20.json",
+    "backfilled": false,
+    "capabilities": 443
+   }
+  },
+  {
+   "id": "2026-10-19",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-10-19",
+   "title": "Download Meta's open Muse Spark, diffuse text fast, forecast time series, and more",
+   "summary": "Big open and cheap models lead the day: Meta's Muse Spark weights, MiniMax M3.1 Flash, Inception's diffusion LLM and Mistral's time-series models. Around them sit agent harness tooling, inference speedups and a crowd of trending repos whose claims are mostly star counts.",
+   "content_html": "<p>Big open and cheap models lead the day: Meta&#x27;s Muse Spark weights, MiniMax M3.1 Flash, Inception&#x27;s diffusion LLM and Mistral&#x27;s time-series models. Around them sit agent harness tooling, inference speedups and a crowd of trending repos whose claims are mostly star counts.</p><ol><li><a href=\"https://huggingface.co/meta-models/Muse-Spark-Open-816B-A42B\">Meta posts open Muse Spark 816B multimodal model</a>: Builders can download an 816B total, 42B active image-and-text model from Meta on Hugging Face.</li><li><a href=\"https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017\">DeepSeek V4.1 Flash 1017 trends on Hugging Face</a>: Builders can download a new image-and-text DeepSeek V4.1 Flash checkpoint.</li><li><a href=\"https://mistral.ai/news/timestral/\">Mistral launches Timestral time-series foundation models</a>: Teams can use Mistral foundation models built for time-series data.</li><li><a href=\"https://github.com/debpalash/VoiceStudio\">VoiceStudio offers local voice suite in 646 languages</a>: Users can do voice design, dubbing, dictation, transcription and audiobook creation fully locally.</li><li><a href=\"https://huggingface.co/papers/2610.26860\">OpenVLHarness adds memory to visual tool-using agents</a>: Researchers can study a visual agent harness that combines persistent memory and mixed tools across 22 benchmarks.</li></ol><p><strong>New possibility:</strong> SaaS vendors can turn agent security audits into ready compliance evidence trails</p>",
+   "content_text": "Big open and cheap models lead the day: Meta's Muse Spark weights, MiniMax M3.1 Flash, Inception's diffusion LLM and Mistral's time-series models. Around them sit agent harness tooling, inference speedups and a crowd of trending repos whose claims are mostly star counts. Meta posts open Muse Spark 816B multimodal model DeepSeek V4.1 Flash 1017 trends on Hugging Face Mistral launches Timestral time-series foundation models VoiceStudio offers local voice suite in 646 languages OpenVLHarness adds memory to visual tool-using agents",
+   "date_published": "2026-10-20T05:05:12Z",
+   "tags": [
+    "agents",
+    "infra",
+    "local",
+    "memory",
+    "models",
+    "multimodal"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-19.json",
+    "backfilled": false,
+    "capabilities": 177
+   }
+  },
+  {
+   "id": "2026-10-18",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-10-18",
+   "title": "Quizzes your AI's code, drives Android, searches the web cheaply, and more",
+   "summary": "A busy day for agent tooling, with a new DeepSeek Flash model and a cheap search API leading the news. Most other items are skills, wrappers and talks that build on existing tools.",
+   "content_html": "<p>A busy day for agent tooling, with a new DeepSeek Flash model and a cheap search API leading the news. Most other items are skills, wrappers and talks that build on existing tools.</p><ol><li><a href=\"https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017\">DeepSeek releases V4.1 Flash 1017 weights</a>: You can download and run a new DeepSeek V4.1 Flash checkpoint from Hugging Face.</li><li><a href=\"https://sphinx-six-theta.vercel.app/\">Sphinx quizzes you on agent-written code</a>: You can make a push to prod pause on a questionnaire that checks you understand the code your agent wrote.</li><li><a href=\"https://api-docs.deepseek.com/guides/search/\">DeepSeek API adds search and fetch</a>: You can give a DeepSeek model web search and page fetch at $0.75 per 1000 successful requests.</li><li><a href=\"https://www.youtube.com/watch?v=cNm4zyUtWj0\">RuneScape Bench tests agents in an MMO</a>: You can evaluate agents on long, open-ended play in a massively multiplayer game.</li><li><a href=\"https://github.com/ygelfand/echolocal\">Echo Dot becomes a local Home Assistant satellite</a>: You can run an Echo Dot or Echo Show as a local Home Assistant voice satellite, media player and Bluetooth proxy with no Amazon cloud.</li></ol>",
+   "content_text": "A busy day for agent tooling, with a new DeepSeek Flash model and a cheap search API leading the news. Most other items are skills, wrappers and talks that build on existing tools. DeepSeek releases V4.1 Flash 1017 weights Sphinx quizzes you on agent-written code DeepSeek API adds search and fetch RuneScape Bench tests agents in an MMO Echo Dot becomes a local Home Assistant satellite",
+   "date_published": "2026-10-20T15:22:18Z",
+   "tags": [
+    "agents",
+    "coding",
+    "evals",
+    "local",
+    "memory",
+    "models",
+    "multimodal"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-18.json",
+    "backfilled": true,
+    "capabilities": 86
+   }
+  },
+  {
+   "id": "2026-10-17",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-10-17",
+   "title": "Matches spatial tasks in one pass, opens computer-use agents, automates Android, and more",
+   "summary": "Open computer-use and GUI agent stacks lead a day heavy on papers and agent tooling. Several evals show the gap between benchmarks and real delivery work, while most repos are incremental skills and utilities.",
+   "content_html": "<p>Open computer-use and GUI agent stacks lead a day heavy on papers and agent tooling. Several evals show the gap between benchmarks and real delivery work, while most repos are incremental skills and utilities.</p><ol><li><a href=\"https://huggingface.co/papers/2610.22200\">OpenGCUA offers an open stack for computer-use agents</a>: You can build a generalist computer-use agent that combines visual control, programmatic interfaces and code execution on open parts.</li><li><a href=\"https://huggingface.co/papers/2610.20939\">MAI-Gym unifies GUI agent evaluation and RL training</a>: You can evaluate, collect data and train GUI agents with online RL across mobile, computer and web in one open platform.</li><li><a href=\"https://github.com/google/artemis\">ARTEMIS turns plain instructions into Android automation</a>: You can describe an Android workflow in natural language and have it run end to end with logs captured.</li><li><a href=\"https://www.mercor.com/research/labor-index/benchmark-map/\">Mercor maps where AI benchmarks miss US work</a>: You can see which kinds of work hours are poorly covered by current AI benchmarks.</li><li><a href=\"https://github.com/jasonxu114514/opencode2api\">opencode2api proxies OpenCode Zen with OpenAI and Anthropic APIs</a>: You can call OpenCode Zen models through OpenAI and Anthropic compatible endpoints with key pooling and routing.</li></ol>",
+   "content_text": "Open computer-use and GUI agent stacks lead a day heavy on papers and agent tooling. Several evals show the gap between benchmarks and real delivery work, while most repos are incremental skills and utilities. OpenGCUA offers an open stack for computer-use agents MAI-Gym unifies GUI agent evaluation and RL training ARTEMIS turns plain instructions into Android automation Mercor maps where AI benchmarks miss US work opencode2api proxies OpenCode Zen with OpenAI and Anthropic APIs",
+   "date_published": "2026-10-20T15:23:10Z",
+   "tags": [
+    "agents",
+    "coding",
+    "evals",
+    "infra",
+    "models",
+    "research"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-17.json",
+    "backfilled": true,
+    "capabilities": 141
+   }
+  },
+  {
+   "id": "2026-10-16",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-10-16",
+   "title": "Generates consistent long video, reverse engineers faster, runs offline on phones, and more",
+   "summary": "Today is mostly research papers plus a few useful repos and one pricing-dated model release. The strongest items cut the effort of long video, malware analysis and phone-side agents.",
+   "content_html": "<p>Today is mostly research papers plus a few useful repos and one pricing-dated model release. The strongest items cut the effort of long video, malware analysis and phone-side agents.</p><ol><li><a href=\"https://huggingface.co/papers/2610.20571\">Agentic video generation with world-state memory</a>: You can generate long videos where scenes and events stay consistent, because shots are built from a screenplay and checked against scene and event memories.</li><li><a href=\"https://huggingface.co/papers/2610.20584\">Player-1 learns game control from synthetic experience</a>: You can train game-playing agents with fine-tuning plus reinforcement learning across synthetic environments, beating demonstration-only baselines.</li><li><a href=\"https://github.com/trailofbits/skills\">Trail of Bits publishes Claude Code security skills</a>: You can load security research, vulnerability detection and audit workflows into Claude Code as ready-made skills.</li><li><a href=\"https://blogs.gnome.org/uraeus/2026/10/15/aiandreverseengineerhardware/\">Using AI to reverse engineer hardware</a>: You can use AI to help reverse engineer hardware.</li><li><a href=\"https://github.com/OpenBMB/MiniCPM-V-Apps\">MiniCPM-V apps run multimodal chat offline on phones</a>: You can run multimodal chat fully offline on iOS, Android and HarmonyOS.</li></ol>",
+   "content_text": "Today is mostly research papers plus a few useful repos and one pricing-dated model release. The strongest items cut the effort of long video, malware analysis and phone-side agents. Agentic video generation with world-state memory Player-1 learns game control from synthetic experience Trail of Bits publishes Claude Code security skills Using AI to reverse engineer hardware MiniCPM-V apps run multimodal chat offline on phones",
+   "date_published": "2026-10-20T15:24:00Z",
+   "tags": [
+    "agents",
+    "coding",
+    "local",
+    "memory",
+    "multimodal",
+    "research",
+    "reverse",
+    "security"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-16.json",
+    "backfilled": true,
+    "capabilities": 137
+   }
+  },
+  {
+   "id": "2026-10-15",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-10-15",
+   "title": "Runs on-device agents, prices HTML against markdown, reviews agent docs, and more",
+   "summary": "Today's strongest items are practical: a model built for on-device agents, a measured token cost test, and tools that give agents a place to publish work. The paper side is mostly decision models and agent harness research without runnable code.",
+   "content_html": "<p>Today&#x27;s strongest items are practical: a model built for on-device agents, a measured token cost test, and tools that give agents a place to publish work. The paper side is mostly decision models and agent harness research without runnable code.</p><ol><li><a href=\"https://huggingface.co/papers/2610.18773\">Jeva: a decision-native architecture for structured choices</a>: A model design can now enforce null-awareness, permutation invariance, option scalability and cross-request caching together for structured decisions.</li><li><a href=\"https://huggingface.co/papers/2610.14224\">Harness^2 refines agent harnesses without ground-truth verifiers</a>: Agent harnesses can be improved through recursive task-level refinement and continual learning, without ground-truth verifiers.</li><li><a href=\"https://www.youtube.com/watch?v=iLDkDIgqQM4\">Measured: HTML costs far more tokens than markdown</a>: You can now see measured token costs for agent output formats, taken from Claude Code usage reports on Opus 5.5.</li><li><a href=\"https://github.com/isair/jarvis\">Jarvis: private offline desktop assistant with memory and MCP</a>: A desktop assistant can run offline with Ollama or OpenAI-compatible servers, with voice, personal memory, dictation and MCP tools.</li><li><a href=\"https://github.com/razorpay/slashdocs\">Slashdocs lets agents publish reviewable HTML documents</a>: Agents can push HTML documents to a self-hosted server through a CLI or remote MCP, and humans review them with comments and versions.</li></ol>",
+   "content_text": "Today's strongest items are practical: a model built for on-device agents, a measured token cost test, and tools that give agents a place to publish work. The paper side is mostly decision models and agent harness research without runnable code. Jeva: a decision-native architecture for structured choices Harness^2 refines agent harnesses without ground-truth verifiers Measured: HTML costs far more tokens than markdown Jarvis: private offline desktop assistant with memory and MCP Slashdocs lets agents publish reviewable HTML documents",
+   "date_published": "2026-10-20T15:24:53Z",
+   "tags": [
+    "agents",
+    "coding",
+    "evals",
+    "local",
+    "memory",
+    "models",
+    "multimodal",
+    "research"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-15.json",
+    "backfilled": true,
+    "capabilities": 136
+   }
+  },
+  {
+   "id": "2026-10-14",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-10-14",
+   "title": "Grounds objects faster, serves audio models, answers calls, audits coding agents, and more",
+   "summary": "Most of today's items are papers and repos with few independent results. The most usable pieces are an open call center stack, an audio serving framework, and practical Claude Code habits for cost and privacy.",
+   "content_html": "<p>Most of today&#x27;s items are papers and repos with few independent results. The most usable pieces are an open call center stack, an audio serving framework, and practical Claude Code habits for cost and privacy.</p><ol><li><a href=\"https://huggingface.co/papers/2609.39601\">GroundingPI: 4B model for precise object localization</a>: A small 4B grounding model is reported to improve object localization and downstream robotics and driving performance.</li><li><a href=\"https://huggingface.co/papers/2610.11765\">Thinking Inertia: models keep reasoning when told not to</a>: You can now measure how well a model obeys a no-thinking instruction using multi-level metrics.</li><li><a href=\"https://github.com/rasonyang/ai-native-callcenter\">Self-hosted AI call center with realtime voice bots</a>: You can run an API-first call center where voice bots answer calls and human agents take over without dropping them.</li><li><a href=\"https://github.com/sgl-project/sglang-omni\">SGLang-Omni serves audio and multimodal models</a>: You can serve TTS, ASR and unified multimodal models in a high-performance framework from the SGLang project.</li><li><a href=\"https://github.com/mvanhorn/last30days-skill\">last30days skill researches topics across social sources</a>: An agent skill researches a topic across Reddit, X, YouTube, HN, Polymarket and the web and writes a grounded summary.</li></ol>",
+   "content_text": "Most of today's items are papers and repos with few independent results. The most usable pieces are an open call center stack, an audio serving framework, and practical Claude Code habits for cost and privacy. GroundingPI: 4B model for precise object localization Thinking Inertia: models keep reasoning when told not to Self-hosted AI call center with realtime voice bots SGLang-Omni serves audio and multimodal models last30days skill researches topics across social sources",
+   "date_published": "2026-10-20T15:25:41Z",
+   "tags": [
+    "agents",
+    "evals",
+    "infra",
+    "local",
+    "memory",
+    "models",
+    "multimodal",
+    "robotics"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-14.json",
+    "backfilled": true,
+    "capabilities": 130
+   }
+  },
+  {
+   "id": "2026-10-13",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-10-13",
+   "title": "Trim vision tokens, clone voices, ship agents from YAML, and more",
+   "summary": "Most of today is research papers with no runnable code, plus a few usable open repos. The clearest practical items are an open speech model, a transformers release, and a talk on managing agents as code.",
+   "content_html": "<p>Most of today is research papers with no runnable code, plus a few usable open repos. The clearest practical items are an open speech model, a transformers release, and a talk on managing agents as code.</p><ol><li><a href=\"https://huggingface.co/papers/2610.12572\">DiffusionART stabilizes reinforcement fine-tuning of diffusion models</a>: Fine-tune diffusion models with reinforcement learning without tuning EMA or needing differentiable rewards.</li><li><a href=\"https://huggingface.co/papers/2610.07987\">VisionWeave cuts visual token use by 43%</a>: Serve multimodal models with adaptive visual token granularity, using 43% fewer tokens while keeping nearly all performance.</li><li><a href=\"https://github.com/OpenBMB/VoxCPM\">VoxCPM2 offers tokenizer-free multilingual speech and voice cloning</a>: Generate multilingual speech, design voices and clone them with an open tokenizer-free TTS model.</li><li><a href=\"https://github.com/huggingface/transformers\">Transformers ships releases v5.18.0 and v5.19.0</a>: Use the latest model definitions for text, vision, audio and multimodal inference and training by upgrading to v5.19.0.</li><li><a href=\"https://www.youtube.com/watch?v=QSeaZ6qHyXs\">Managed Agents resources defined in YAML for CI/CD</a>: Keep long-term agent resources as YAML in your codebase and update them from CI using the Ant CLI.</li></ol>",
+   "content_text": "Most of today is research papers with no runnable code, plus a few usable open repos. The clearest practical items are an open speech model, a transformers release, and a talk on managing agents as code. DiffusionART stabilizes reinforcement fine-tuning of diffusion models VisionWeave cuts visual token use by 43% VoxCPM2 offers tokenizer-free multilingual speech and voice cloning Transformers ships releases v5.18.0 and v5.19.0 Managed Agents resources defined in YAML for CI/CD",
+   "date_published": "2026-10-20T15:26:36Z",
+   "tags": [
+    "agents",
+    "evals",
+    "infra",
+    "memory",
+    "models",
+    "multimodal",
+    "research"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-13.json",
+    "backfilled": true,
+    "capabilities": 105
+   }
+  },
+  {
+   "id": "2026-10-12",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-10-12",
+   "title": "Fine-tunes embeddings, sandboxes agents, maps codebases, and more",
+   "summary": "A thin day. Most items are repos and talks with launch claims and no measured results. The most useful are a walkthrough on fine-tuning a multimodal embedding model, an agent sandbox, and a fresh Transformers release.",
+   "content_html": "<p>A thin day. Most items are repos and talks with launch claims and no measured results. The most useful are a walkthrough on fine-tuning a multimodal embedding model, an agent sandbox, and a fresh Transformers release.</p><ol><li><a href=\"https://github.com/huggingface/transformers\">Transformers ships releases 5.18.0 and 5.19.0</a>: Builders can use the latest model definitions for text, vision, audio and multimodal models through the standard Transformers framework.</li><li><a href=\"https://www.youtube.com/watch?v=S7tFyREI19I\">Fine-tuning Gemini embedding 2 on your data</a>: You can fine-tune an open multimodal embedding model on your own content, such as video transcripts, so search returns the exact timestamped moment.</li><li><a href=\"https://www.youtube.com/watch?v=LgX0QF2D9y0\">Goodfire on how agents choose critical tokens</a>: Researchers can study which tokens drive a model&#x27;s decisions, a gap noted when even chain of thought leaves actions hard to predict.</li><li><a href=\"https://github.com/TencentCloud/CubeSandbox\">CubeSandbox: instant sandbox for AI agents</a>: Agent builders can run concurrent, secure, lightweight sandboxes that start instantly.</li><li><a href=\"https://github.com/repowise-dev/repowise\">Repowise serves codebase health data over MCP</a>: An AI agent can query code health scores, generated docs, git analytics, dead code findings and architectural decisions for a repo through MCP.</li></ol>",
+   "content_text": "A thin day. Most items are repos and talks with launch claims and no measured results. The most useful are a walkthrough on fine-tuning a multimodal embedding model, an agent sandbox, and a fresh Transformers release. Transformers ships releases 5.18.0 and 5.19.0 Fine-tuning Gemini embedding 2 on your data Goodfire on how agents choose critical tokens CubeSandbox: instant sandbox for AI agents Repowise serves codebase health data over MCP",
+   "date_published": "2026-10-20T15:27:26Z",
+   "tags": [
+    "agents",
+    "coding",
+    "evals",
+    "mcp",
+    "memory",
+    "models",
+    "multimodal",
+    "research",
+    "security"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-12.json",
+    "backfilled": true,
+    "capabilities": 139
+   }
+  },
+  {
+   "id": "2026-10-11",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-10-11",
+   "title": "Decompiling games, running agents free, gating agent access, and more",
+   "summary": "Most of today's items are agent tooling and infrastructure, with one large write-up on agents decompiling a game. Several candidates are old projects or news with no new capability, so the day is thin.",
+   "content_html": "<p>Most of today&#x27;s items are agent tooling and infrastructure, with one large write-up on agents decompiling a game. Several candidates are old projects or news with no new capability, so the day is thin.</p><ol><li><a href=\"https://momo5502.com/posts/2026-10-09-game-decompilation/\">AI agents decompile a first-person shooter</a>: You can point AI agents at a compiled game and have them work toward recovering its source over a very long run.</li><li><a href=\"https://github.com/casdoor/casdoor\">Casdoor adds identity and gateway for agents and MCP</a>: You can put one open-source auth server in front of LLMs, MCP servers and agents, using standards such as OAuth, OIDC and SAML.</li><li><a href=\"https://github.com/microsoft/TRELLIS.2\">Microsoft TRELLIS.2 for compact 3D generation</a>: You can generate 3D assets using native, compact structured latents.</li><li><a href=\"https://github.com/huggingface/transformers\">Transformers ships v5.18 and v5.19 releases</a>: You can load newer model definitions for text, vision, audio and multimodal work through the updated library.</li><li><a href=\"https://github.com/Robbyant/lingbot-map\">LingBot-Map streams 3D reconstruction from video</a>: You can reconstruct 3D geometry in a streaming fashion using a geometric context transformer.</li></ol>",
+   "content_text": "Most of today's items are agent tooling and infrastructure, with one large write-up on agents decompiling a game. Several candidates are old projects or news with no new capability, so the day is thin. AI agents decompile a first-person shooter Casdoor adds identity and gateway for agents and MCP Microsoft TRELLIS.2 for compact 3D generation Transformers ships v5.18 and v5.19 releases LingBot-Map streams 3D reconstruction from video",
+   "date_published": "2026-10-20T15:28:11Z",
+   "tags": [
+    "agents",
+    "infra",
+    "mcp",
+    "models",
+    "multimodal",
+    "research",
+    "reverse",
+    "security"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-11.json",
+    "backfilled": true,
+    "capabilities": 36
+   }
+  },
+  {
+   "id": "2026-10-10",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-10-10",
+   "title": "Compacts agent memory, simulates worlds, routes tokens, steers robots, and more",
+   "summary": "Today is mostly research papers on agents, world models and robots, with few runnable releases. The practical items are repos for cutting token use, self-hosting an agent, and wiring agents to science tools.",
+   "content_html": "<p>Today is mostly research papers on agents, world models and robots, with few runnable releases. The practical items are repos for cutting token use, self-hosting an agent, and wiring agents to science tools.</p><ol><li><a href=\"https://huggingface.co/papers/2610.12374\">AgentGarten builds interactive code worlds for agents</a>: Agents can learn inside real-time virtual worlds built from simulators and a shared neural renderer, passing experience on between agents.</li><li><a href=\"https://huggingface.co/papers/2610.11287\">REMORY adds learned soft tokens to agent memory summaries</a>: Long-horizon agents can keep decision accuracy while using little context, by pairing text summaries with learnable soft tokens.</li><li><a href=\"https://github.com/BerriAI/litellm\">LiteLLM gateway calls 100+ LLM APIs in one format</a>: You can call over 100 LLM APIs in OpenAI or native format with cost tracking, guardrails and load balancing.</li><li><a href=\"https://github.com/Robbyant/lingbot-map\">LingBot-Map reconstructs 3D scenes from streaming input</a>: You can run streaming 3D reconstruction with a geometric context transformer, with code released.</li><li><a href=\"https://github.com/rociiu/talorys\">Talorys runs a personal AI agent on Cloudflare free tier</a>: You can self-host a personal AI agent on Cloudflare&#x27;s free tier.</li></ol>",
+   "content_text": "Today is mostly research papers on agents, world models and robots, with few runnable releases. The practical items are repos for cutting token use, self-hosting an agent, and wiring agents to science tools. AgentGarten builds interactive code worlds for agents REMORY adds learned soft tokens to agent memory summaries LiteLLM gateway calls 100+ LLM APIs in one format LingBot-Map reconstructs 3D scenes from streaming input Talorys runs a personal AI agent on Cloudflare free tier",
+   "date_published": "2026-10-20T15:29:00Z",
+   "tags": [
+    "agents",
+    "infra",
+    "local",
+    "mcp",
+    "memory",
+    "models",
+    "multimodal",
+    "research"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-10.json",
+    "backfilled": true,
+    "capabilities": 110
+   }
+  },
+  {
+   "id": "2026-10-09",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-10-09",
+   "title": "Shrinks speech to text, plugs Jira into agents, scales robot memory, and more",
+   "summary": "A 16.9 MB speech-to-text model and an official Atlassian MCP server lead a day of small, practical building blocks. Most of the rest is research papers on video, robot world models and agent training, with few runnable artifacts.",
+   "content_html": "<p>A 16.9 MB speech-to-text model and an official Atlassian MCP server lead a day of small, practical building blocks. Most of the rest is research papers on video, robot world models and agent training, with few runnable artifacts.</p><ol><li><a href=\"https://cactuscompute.com/blog/whistle\">Whistle fits speech to text in 16.9 MB</a>: You can get speech-to-text from a model package of only 16.9 MB.</li><li><a href=\"https://github.com/atlassian/atlassian-mcp-server\">Atlassian ships official remote MCP server</a>: You can connect Jira, Confluence, Jira Service Management, Bitbucket and Compass to Claude, ChatGPT, Cursor and VS Code through one official server using OAuth 2.1 or API tokens.</li><li><a href=\"https://huggingface.co/papers/2609.38169\">STEPQuant shrinks recurrent state memory in linear attention</a>: You can quantize the recurrent state of linear attention models by giving precision where errors matter most and memory lives longest.</li><li><a href=\"https://huggingface.co/papers/2610.10528\">Long-WAM gives robot world models longer visual history</a>: Robot control models can use long visual histories and still run with low latency, improving long-horizon manipulation.</li><li><a href=\"https://github.com/CursorTouch/Windows-MCP\">Windows-MCP lets agents use Windows computers</a>: You can give an MCP-capable agent computer-use control of a Windows machine through an MCP server.</li></ol>",
+   "content_text": "A 16.9 MB speech-to-text model and an official Atlassian MCP server lead a day of small, practical building blocks. Most of the rest is research papers on video, robot world models and agent training, with few runnable artifacts. Whistle fits speech to text in 16.9 MB Atlassian ships official remote MCP server STEPQuant shrinks recurrent state memory in linear attention Long-WAM gives robot world models longer visual history Windows-MCP lets agents use Windows computers",
+   "date_published": "2026-10-20T15:30:02Z",
+   "tags": [
+    "agents",
+    "coding",
+    "infra",
+    "local",
+    "mcp",
+    "memory",
+    "multimodal",
+    "research",
+    "robotics"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-09.json",
+    "backfilled": true,
+    "capabilities": 100
+   }
+  },
+  {
+   "id": "2026-10-08",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-10-08",
+   "title": "GPT-6 ships Intelligent UI, Haiku 5.5 lands, 4-bit RL stabilizes, and more",
+   "summary": "Two big model releases lead the day, with a third from DeepSeek drawing heavy discussion. Under them, a run of papers shows low-precision reinforcement learning and agent evaluation getting more practical.",
+   "content_html": "<p>Two big model releases lead the day, with a third from DeepSeek drawing heavy discussion. Under them, a run of papers shows low-precision reinforcement learning and agent evaluation getting more practical.</p><ol><li><a href=\"https://www.anthropic.com/claude-haiku-5-5\">Anthropic releases Claude Haiku 5.5</a>: Claude Haiku 5.5 is now available from Anthropic.</li><li><a href=\"https://huggingface.co/papers/2610.00864\">Kinematic MeanFlow generates robot actions in one step</a>: Robotic foundation models can produce actions in a single step instead of many denoising steps.</li><li><a href=\"https://huggingface.co/papers/2610.05966\">HuatuoGPT-3 adapts base models to medicine with RL only</a>: You can adapt a base model to a domain with one-stage reinforcement learning and minimal data, skipping a separate supervised stage.</li><li><a href=\"https://github.com/allenai/olmocr\">olmocr turns PDFs into text for LLM data</a>: You can linearize PDFs into clean text for LLM datasets and training with an open toolkit.</li><li><a href=\"https://github.com/uber/ADR\">Uber open-sources ADR to secure AI agents</a>: You can add observability, security benchmarking and threat detection to enterprise AI agents with a tool already deployed at Uber.</li></ol>",
+   "content_text": "Two big model releases lead the day, with a third from DeepSeek drawing heavy discussion. Under them, a run of papers shows low-precision reinforcement learning and agent evaluation getting more practical. Anthropic releases Claude Haiku 5.5 Kinematic MeanFlow generates robot actions in one step HuatuoGPT-3 adapts base models to medicine with RL only olmocr turns PDFs into text for LLM data Uber open-sources ADR to secure AI agents",
+   "date_published": "2026-10-20T15:31:04Z",
+   "tags": [
+    "agents",
+    "evals",
+    "infra",
+    "models",
+    "research",
+    "robotics",
+    "security"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-08.json",
+    "backfilled": true,
+    "capabilities": 108
+   }
+  },
+  {
+   "id": "2026-10-07",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-10-07",
+   "title": "Generates synced video and audio, proves new math results, runs faster on Macs, and more",
+   "summary": "Today brings a mix of open research and tooling, with a few concrete releases for builders. Several candidates are thin on detail, so many entries stay modest.",
+   "content_html": "<p>Today brings a mix of open research and tooling, with a few concrete releases for builders. Several candidates are thin on detail, so many entries stay modest.</p><ol><li><a href=\"https://openai.com/index/sharing-ai-progress-in-mathematics\">OpenAI shares new math results with Lean proofs</a>: You can inspect results on open math problems from an internal frontier model, with Lean formalizations published on GitHub.</li><li><a href=\"https://huggingface.co/papers/2610.05608\">Kandinsky 6.0 Video generates lip-synced audio and video</a>: You can generate short clips where video and audio are produced together, with lip-sync, from one diffusion model family.</li><li><a href=\"https://huggingface.co/papers/2610.04198\">ALoDLM spends more compute on harder tokens</a>: Diffusion language models can now allocate extra computation to difficult tokens, narrowing the quality gap with autoregressive models while staying parallel.</li><li><a href=\"https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/\">EmbeddingGemma 2 is an open multimodal embedder</a>: You can embed multiple kinds of content with an open, lightweight Google model.</li><li><a href=\"https://github.com/anthropics/claude-plugins-community\">Community plugin marketplace for Claude Code</a>: You can browse community plugins for Claude Code and Claude Cowork in a read-only mirror, and submit your own.</li></ol>",
+   "content_text": "Today brings a mix of open research and tooling, with a few concrete releases for builders. Several candidates are thin on detail, so many entries stay modest. OpenAI shares new math results with Lean proofs Kandinsky 6.0 Video generates lip-synced audio and video ALoDLM spends more compute on harder tokens EmbeddingGemma 2 is an open multimodal embedder Community plugin marketplace for Claude Code",
+   "date_published": "2026-10-20T15:31:57Z",
+   "tags": [
+    "coding",
+    "evals",
+    "infra",
+    "mcp",
+    "memory",
+    "models",
+    "multimodal",
+    "research"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-07.json",
+    "backfilled": true,
+    "capabilities": 108
+   }
+  },
+  {
+   "id": "2026-10-06",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-10-06",
+   "title": "Opens a 501B model, finds magnet candidates, steers robots, and more",
+   "summary": "A large open-weight model and an agent-driven materials search lead a day that is otherwise mostly papers. Agent verification, memory and robot control show up as ideas to read, with few runnable artifacts.",
+   "content_html": "<p>A large open-weight model and an agent-driven materials search lead a day that is otherwise mostly papers. Agent verification, memory and robot control show up as ideas to read, with few runnable artifacts.</p><ol><li><a href=\"https://huggingface.co/papers/2609.38078\">MotorMind drives robots with general vision-language models</a>: A general vision-language model can do zero-shot robot manipulation by reasoning from observations and issuing mid-level actions, with no specialized training or external tools.</li><li><a href=\"https://huggingface.co/papers/2610.00972\">VeriHarness verifies long agent outputs without reference answers</a>: You can check and improve the output of a long-running agent by comparing multiple attempts and revising with evidence, with no gold answer.</li><li><a href=\"https://github.com/VictorTaelin/OptMem\">OptMem gives agents permanent memory in 426 tokens</a>: You can add persistent memory to an agent with a 426-token prompt and a script.</li><li><a href=\"https://reflection.ai/blog/introducing-beam\">Reflection releases Beam, a 501B open-weight model</a>: Teams can obtain a 501B-parameter model with open weights from Reflection.</li><li><a href=\"https://www.vals.ai/blogs/room-temperature-magnetic-semiconductors\">Opus 5.5 agents propose two magnetic semiconductor candidates</a>: Agents built on Opus 5.5 identified two candidate room-temperature magnetic semiconductors.</li></ol>",
+   "content_text": "A large open-weight model and an agent-driven materials search lead a day that is otherwise mostly papers. Agent verification, memory and robot control show up as ideas to read, with few runnable artifacts. MotorMind drives robots with general vision-language models VeriHarness verifies long agent outputs without reference answers OptMem gives agents permanent memory in 426 tokens Reflection releases Beam, a 501B open-weight model Opus 5.5 agents propose two magnetic semiconductor candidates",
+   "date_published": "2026-10-20T15:32:59Z",
+   "tags": [
+    "agents",
+    "evals",
+    "infra",
+    "memory",
+    "models",
+    "research",
+    "robotics"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-06.json",
+    "backfilled": true,
+    "capabilities": 93
+   }
+  },
+  {
+   "id": "2026-10-05",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-10-05",
+   "title": "Run large models locally, search video, automate production and more",
+   "summary": "Local inference and agent tools lead the reported capabilities. Several talks describe working systems, but many candidates offer little evidence beyond a title or project summary.",
+   "content_html": "<p>Local inference and agent tools lead the reported capabilities. Several talks describe working systems, but many candidates offer little evidence beyond a title or project summary.</p><ol><li><a href=\"https://github.com/ys-ll/uniterm\">Uniterm combines remote access with shell agents</a>: Users can access SSH, RDP, SFTP, databases, and Kubernetes in a terminal whose built-in agent plans and runs multi-turn shell commands.</li><li><a href=\"https://github.com/Niko1221/Strata\">Strata reports running Qwen on RTX 4090</a>: Strata reports letting users run Qwen 3.8 Flash Next, a 125B model, on an RTX 4090 at 100 tokens per second.</li><li><a href=\"https://github.com/michael-denyer/pstack-claude\">Pstack workflows reach more coding agents</a>: Builders can use translations of Poteto&#x27;s pstack workflows across Claude Code, Codex, Pi, OpenCode, Gemini, and Prime Agent.</li><li><a href=\"https://github.com/kaifcodec/user-scanner\">User Scanner exposes footprint searches through MCP</a>: Agents can use native MCP support to access an email and username investigation suite claiming over 2720 scan vectors.</li><li><a href=\"https://www.youtube.com/watch?v=bRGyYaE0lxI\">Crusoe describes automatic recovery from GPU failures</a>: Crusoe describes infrastructure using Slurm and Kubernetes to automate remediation of hardware failures during large training workloads.</li></ol>",
+   "content_text": "Local inference and agent tools lead the reported capabilities. Several talks describe working systems, but many candidates offer little evidence beyond a title or project summary. Uniterm combines remote access with shell agents Strata reports running Qwen on RTX 4090 Pstack workflows reach more coding agents User Scanner exposes footprint searches through MCP Crusoe describes automatic recovery from GPU failures",
+   "date_published": "2026-10-20T15:35:51Z",
+   "tags": [
+    "agents",
+    "coding",
+    "infra",
+    "local",
+    "mcp",
+    "models",
+    "research",
+    "security"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-05.json",
+    "backfilled": true,
+    "capabilities": 57
+   }
+  },
+  {
+   "id": "2026-10-04",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-10-04",
+   "title": "Sandbox agents in microVMs, read messy documents, run a sovereign open model, and more",
+   "summary": "Today's strongest items are practical building blocks: a microVM sandbox for agents, an OCR model for complex layouts, and an open-weight model from Aleph Alpha. Much of the rest is talks, essays and repos with thin evidence, so treat launch claims with care.",
+   "content_html": "<p>Today&#x27;s strongest items are practical building blocks: a microVM sandbox for agents, an OCR model for complex layouts, and an open-weight model from Aleph Alpha. Much of the rest is talks, essays and repos with thin evidence, so treat launch claims with care.</p><ol><li><a href=\"https://www.youtube.com/watch?v=OE_lLNCNfQo\">Docker SBX: microVM sandboxes for any agent</a>: You can run agents in a permissive &#x27;YOLO&#x27; mode inside a microVM sandbox.</li><li><a href=\"https://github.com/modelcontextprotocol/python-sdk\">Official Python SDK for MCP servers and clients</a>: You can build both MCP servers and clients in Python with the official SDK.</li><li><a href=\"https://github.com/datalab-to/chandra\">Chandra OCR handles tables, forms and handwriting</a>: You can extract text from complex tables, forms and handwriting while keeping full layout.</li><li><a href=\"https://liao.gg/blog/agents-dont-need-memory\">Argument: agents need documentation, not memory</a>: You can frame agent context as maintained documentation instead of a memory store that grows on its own.</li><li><a href=\"https://claude.dev/blog/getting-the-most-out-of-opus-5-5/\">Guide to getting the most from Opus 5.5</a>: You can follow a guide to using Opus 5.5 in Claude and Claude Code.</li></ol>",
+   "content_text": "Today's strongest items are practical building blocks: a microVM sandbox for agents, an OCR model for complex layouts, and an open-weight model from Aleph Alpha. Much of the rest is talks, essays and repos with thin evidence, so treat launch claims with care. Docker SBX: microVM sandboxes for any agent Official Python SDK for MCP servers and clients Chandra OCR handles tables, forms and handwriting Argument: agents need documentation, not memory Guide to getting the most from Opus 5.5",
+   "date_published": "2026-10-20T15:36:40Z",
+   "tags": [
+    "agents",
+    "coding",
+    "infra",
+    "mcp",
+    "memory",
+    "models",
+    "multimodal",
+    "security"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-04.json",
+    "backfilled": true,
+    "capabilities": 91
+   }
+  },
+  {
+   "id": "2026-10-03",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-10-03",
+   "title": "Runs models locally, shares caches across models, remembers streaming video, and more",
+   "summary": "A sovereign open-weight model and a local LLM runner led community attention, while papers focused on agent memory, cache reuse and video. Most of the rest was incremental tooling and conference talks.",
+   "content_html": "<p>A sovereign open-weight model and a local LLM runner led community attention, while papers focused on agent memory, cache reuse and video. Most of the rest was incremental tooling and conference talks.</p><ol><li><a href=\"https://huggingface.co/papers/2609.32259\">HeteroFold reuses KV caches across different model families</a>: One language model can pass its key-value cache to a model from a different family, and the receiver skips prefill.</li><li><a href=\"https://dwarfstar.sh/\">ds4 runs LLMs locally, from the creator of Redis</a>: People can try a local LLM runner made by the creator of Redis.</li><li><a href=\"https://huggingface.co/papers/2610.01762\">OneStreamer adds reusable memory to streaming video models</a>: A model can build reusable memory from a live video stream and answer promptly, instead of only reacting to the latest frames.</li><li><a href=\"https://github.com/Panniantong/Agent-Reach\">Agent-Reach gives agents search across social sites via one CLI</a>: An agent can read and search Twitter, Reddit, YouTube, GitHub, Bilibili and XiaoHongShu through one CLI, with no API fees.</li><li><a href=\"https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/\">Kolibri: Aleph Alpha releases a sovereign open-weight model</a>: Organizations can use an open-weight model positioned as sovereign, from Aleph Alpha.</li></ol>",
+   "content_text": "A sovereign open-weight model and a local LLM runner led community attention, while papers focused on agent memory, cache reuse and video. Most of the rest was incremental tooling and conference talks. HeteroFold reuses KV caches across different model families ds4 runs LLMs locally, from the creator of Redis OneStreamer adds reusable memory to streaming video models Agent-Reach gives agents search across social sites via one CLI Kolibri: Aleph Alpha releases a sovereign open-weight model",
+   "date_published": "2026-10-20T15:37:41Z",
+   "tags": [
+    "agents",
+    "coding",
+    "evals",
+    "local",
+    "memory",
+    "models",
+    "multimodal"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-03.json",
+    "backfilled": true,
+    "capabilities": 150
+   }
+  },
+  {
+   "id": "2026-10-02",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-10-02",
+   "title": "Open decision models, faster computer use, distilling past RL teachers, and more",
+   "summary": "Cloudflare's Clef and OpenAI's agent stack lead a day heavy on agent plumbing. Most of the rest is papers on recurrent vision, self-improving agents and distillation, with little runnable code yet.",
+   "content_html": "<p>Cloudflare&#x27;s Clef and OpenAI&#x27;s agent stack lead a day heavy on agent plumbing. Most of the rest is papers on recurrent vision, self-improving agents and distillation, with little runnable code yet.</p><ol><li><a href=\"https://huggingface.co/papers/2609.36484\">RIDE extrapolates RL shifts during on-policy distillation</a>: A student model can be pushed past its RL-trained teacher by extrapolating the teacher&#x27;s representation shift directly in hidden states.</li><li><a href=\"https://huggingface.co/papers/2609.38288\">AREX-2 trains agents to improve their own work</a>: Agents trained on synthetic long-horizon improvement trajectories can refine their answers iteratively at test time.</li><li><a href=\"https://github.com/sgl-project/sglang\">SGLang serves language and multimodal models fast</a>: You can serve large language and multimodal models through one high-performance open serving framework.</li><li><a href=\"https://blog.cloudflare.com/clef-decision-models/\">Clef: open-weight decision models and RL fine-tuning</a>: Teams can use open-weight decision models and a new platform for RL fine-tuning, as announced on the Cloudflare blog.</li><li><a href=\"https://github.com/google/skills\">Google publishes Agent Skills for its products</a>: Agents can load ready-made skills for Google products and technologies from an official repo.</li></ol>",
+   "content_text": "Cloudflare's Clef and OpenAI's agent stack lead a day heavy on agent plumbing. Most of the rest is papers on recurrent vision, self-improving agents and distillation, with little runnable code yet. RIDE extrapolates RL shifts during on-policy distillation AREX-2 trains agents to improve their own work SGLang serves language and multimodal models fast Clef: open-weight decision models and RL fine-tuning Google publishes Agent Skills for its products",
+   "date_published": "2026-10-20T15:38:29Z",
+   "tags": [
+    "agents",
+    "evals",
+    "infra",
+    "mcp",
+    "models",
+    "multimodal",
+    "research"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-02.json",
+    "backfilled": true,
+    "capabilities": 134
+   }
+  },
+  {
+   "id": "2026-10-01",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-10-01",
+   "title": "Google ships Gemini 4 Argon, agent guardrails move outside, Ollama gains decision models, and more",
+   "summary": "Google's Gemini 4 Argon post led the day on Hacker News, though the input has few details on it. Most other items were papers, small tools and trackers, with security separation and local decision models the clearest practical steps.",
+   "content_html": "<p>Google&#x27;s Gemini 4 Argon post led the day on Hacker News, though the input has few details on it. Most other items were papers, small tools and trackers, with security separation and local decision models the clearest practical steps.</p><ol><li><a href=\"https://huggingface.co/papers/2609.31847\">Omni-IO Skills lets agents handle mixed media</a>: A general agent can coordinate workflows across many kinds of artifacts using hierarchical skills and a persistent asset registry.</li><li><a href=\"https://huggingface.co/papers/2609.34309\">MaLiang-Harness makes image and video generation programmable</a>: Visual creation can run through persistent executable generation with traceable edits and revision-aware verification.</li><li><a href=\"https://www.youtube.com/watch?v=4rg6gjt59fM\">Agent controls move outside the agent</a>: Claude can do work without seeing passwords while OpenShell limits reachable files and network connections.</li><li><a href=\"https://www.youtube.com/watch?v=jE1A6I1twrU\">Ollama adds local decision models</a>: Ollama 0.35 can run decision models locally, returning a pick and probability per option for named questions.</li><li><a href=\"https://github.com/aws/agent-toolkit-for-aws\">AWS ships official MCP servers for agents</a>: AI agents can build on AWS using official, AWS-supported MCP servers, skills and plugins.</li></ol>",
+   "content_text": "Google's Gemini 4 Argon post led the day on Hacker News, though the input has few details on it. Most other items were papers, small tools and trackers, with security separation and local decision models the clearest practical steps. Omni-IO Skills lets agents handle mixed media MaLiang-Harness makes image and video generation programmable Agent controls move outside the agent Ollama adds local decision models AWS ships official MCP servers for agents",
+   "date_published": "2026-10-20T15:39:35Z",
+   "tags": [
+    "agents",
+    "local",
+    "mcp",
+    "models",
+    "multimodal",
+    "security"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-01.json",
+    "backfilled": true,
+    "capabilities": 144
+   }
+  },
+  {
+   "id": "2026-09-30",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-09-30",
+   "title": "OpenAI cuts frontier prices, ships always-on agents, Kubernetes gets agent sandboxes, and more",
+   "summary": "OpenAI led the day with a cheaper near-Astra model and a new always-on agent product. Most other items were agent tooling and research papers that have not yet been tested outside their own results.",
+   "content_html": "<p>OpenAI led the day with a cheaper near-Astra model and a new always-on agent product. Most other items were agent tooling and research papers that have not yet been tested outside their own results.</p><ol><li><a href=\"https://huggingface.co/papers/2609.33325\">VisionHOPE: Vision Backbone That Modifies Itself</a>: Researchers can try a visual backbone whose memory and learning update together, with stability controls on the updates.</li><li><a href=\"https://huggingface.co/papers/2609.33757\">YuE2 Unifies Score and Audio Music Generation</a>: One system can plan a song as a readable score and then produce full-song audio, with agentic editing.</li><li><a href=\"https://github.com/kubernetes-sigs/agent-sandbox\">Kubernetes agent-sandbox: Isolated Stateful Workloads for Agents</a>: You can manage isolated, stateful, singleton workloads on Kubernetes for agent runtimes and reinforcement learning.</li><li><a href=\"https://openai.com/index/introducing-gpt-6-1-sol\">GPT-6.1 Sol: Near-Astra Quality at One-Fifth Price</a>: Teams can run coding, computer use and professional tasks on a model OpenAI says is near Astra at one-fifth of Astra&#x27;s API token prices.</li><li><a href=\"https://github.com/bytedance/deer-flow\">DeerFlow: ByteDance Long-Horizon Agent Harness</a>: You can run an open-source harness with sandboxes, memories, tools, skills and subagents on tasks lasting minutes to hours.</li></ol>",
+   "content_text": "OpenAI led the day with a cheaper near-Astra model and a new always-on agent product. Most other items were agent tooling and research papers that have not yet been tested outside their own results. VisionHOPE: Vision Backbone That Modifies Itself YuE2 Unifies Score and Audio Music Generation Kubernetes agent-sandbox: Isolated Stateful Workloads for Agents GPT-6.1 Sol: Near-Astra Quality at One-Fifth Price DeerFlow: ByteDance Long-Horizon Agent Harness",
+   "date_published": "2026-10-20T15:40:34Z",
+   "tags": [
+    "agents",
+    "coding",
+    "infra",
+    "memory",
+    "models",
+    "multimodal"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-09-30.json",
+    "backfilled": true,
+    "capabilities": 158
+   }
+  },
+  {
+   "id": "2026-09-29",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-09-29",
+   "title": "Refine agent skills, run security tools, retain memories, and more",
+   "summary": "Agent tools connect reusable skills, security testing, and persistent memory. Research proposes improvements to inference, training, and robotic decisions, with practical gains still to verify.",
+   "content_html": "<p>Agent tools connect reusable skills, security testing, and persistent memory. Research proposes improvements to inference, training, and robotic decisions, with practical gains still to verify.</p><ol><li><a href=\"https://huggingface.co/papers/2609.26333\">Disaggregated quantization separates prefill and decode formats</a>: Researchers report using separate formats and storage for prefill and decode to improve speed and accuracy at very low bit widths.</li><li><a href=\"https://huggingface.co/papers/2609.18703\">RayOrch preserves lineage in distributed data preparation</a>: RayOrch reports preserving parent-child relationships during distributed data processing while enabling efficient GPU batching.</li><li><a href=\"https://github.com/0x4m4/hexstrike-ai\">HexStrike connects agents to cybersecurity tools</a>: HexStrike provides an MCP server that lets AI agents run more than 150 cybersecurity tools for security testing and research.</li><li><a href=\"https://github.com/ashhart/TensorFold\">TensorFold serves local decoding on Apple Silicon</a>: TensorFold offers LLM decoding on Apple Silicon through MLX and an OpenAI-compatible endpoint, claiming fast and exact decoding.</li><li><a href=\"https://github.com/microsoft/SkillOpt\">SkillOpt optimizes reusable skills for frozen agents</a>: SkillOpt edits natural-language skills using agent trajectories, validates updates, and exports a deployable best_skill.md artifact without changing the underlying model.</li></ol>",
+   "content_text": "Agent tools connect reusable skills, security testing, and persistent memory. Research proposes improvements to inference, training, and robotic decisions, with practical gains still to verify. Disaggregated quantization separates prefill and decode formats RayOrch preserves lineage in distributed data preparation HexStrike connects agents to cybersecurity tools TensorFold serves local decoding on Apple Silicon SkillOpt optimizes reusable skills for frozen agents",
+   "date_published": "2026-10-20T15:43:15Z",
+   "tags": [
+    "agents",
+    "evals",
+    "infra",
+    "local",
+    "mcp",
+    "models",
+    "security"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-09-29.json",
+    "backfilled": true,
+    "capabilities": 85
+   }
+  },
+  {
+   "id": "2026-09-28",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-09-28",
+   "title": "Run any model locally, clone voices offline, and manage coding agents from one terminal, and more",
+   "summary": "Most of today's strongest items are open-source tools that bundle existing capabilities into easier packages. The rest is commentary, legal news and opinion, so genuinely new capability is thin.",
+   "content_html": "<p>Most of today&#x27;s strongest items are open-source tools that bundle existing capabilities into easier packages. The rest is commentary, legal news and opinion, so genuinely new capability is thin.</p><ol><li><a href=\"https://github.com/NVIDIA/Model-Optimizer\">NVIDIA Model-Optimizer bundles compression techniques for faster inference</a>: You can apply quantization, distillation, pruning and speculative decoding from one library, then deploy to TensorRT-LLM or vLLM.</li><li><a href=\"https://github.com/mudler/LocalAI\">LocalAI runs LLMs, vision, voice and video locally</a>: You can serve many model types behind one open-source engine on your own hardware, with no GPU required.</li><li><a href=\"https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5\">Official prompting guide for Claude Opus 5.5</a>: You can follow vendor guidance to tune prompts for Claude Opus 5.5.</li><li><a href=\"https://github.com/YoanWai/agent-manager\">Agent-manager tracks coding agents from one tmux TUI</a>: You can see live status, send quick prompts, use worktrees and review diffs for several coding agents in one terminal view.</li><li><a href=\"https://github.com/microsoft/data-formulator\">Data Formulator explores and visualizes data with AI</a>: You can connect data, explore it and build visualizations through an interactive AI-driven system.</li></ol>",
+   "content_text": "Most of today's strongest items are open-source tools that bundle existing capabilities into easier packages. The rest is commentary, legal news and opinion, so genuinely new capability is thin. NVIDIA Model-Optimizer bundles compression techniques for faster inference LocalAI runs LLMs, vision, voice and video locally Official prompting guide for Claude Opus 5.5 Agent-manager tracks coding agents from one tmux TUI Data Formulator explores and visualizes data with AI",
+   "date_published": "2026-10-20T15:43:59Z",
+   "tags": [
+    "agents",
+    "coding",
+    "infra",
+    "local",
+    "models",
+    "multimodal",
+    "research"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-09-28.json",
+    "backfilled": true,
+    "capabilities": 51
+   }
+  },
+  {
+   "id": "2026-09-27",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-09-27",
+   "title": "Fine-tune on a small GPU, let agents run research loops, and more",
+   "summary": "Today's strongest items are about doing more with less hardware and handing research loops to agents. Most other items are tooling and plugins around coding agents, with several talks and papers that offer claims but little to run.",
+   "content_html": "<p>Today&#x27;s strongest items are about doing more with less hardware and handing research loops to agents. Most other items are tooling and plugins around coding agents, with several talks and papers that offer claims but little to run.</p><ol><li><a href=\"https://github.com/wshobson/agents\">One plugin marketplace for seven coding agent tools</a>: You can reuse the same agent plugins across Claude Code, Codex, Cursor, OpenCode, GitHub Copilot, Google Antigravity and Pi.</li><li><a href=\"https://www.youtube.com/watch?v=oVsEddfhdxc\">Claude Code and Codex race human researchers</a>: You can see how frontier coding agents perform against human researchers on automated AI research tasks, shared openly.</li><li><a href=\"https://tangled.org/yanndegat.tngl.sh/drawgent\">Drawgent runs a coding agent on Excalidraw</a>: You can steer a coding agent from a live Excalidraw canvas instead of only a text prompt.</li><li><a href=\"https://github.com/gastownhall/beads\">Beads adds memory to your coding agent</a>: You can give a coding agent a persistent memory layer instead of starting each session cold.</li><li><a href=\"https://arxiv.org/abs/2609.22978\">DeepSeek describes Elastic Compute (DSec) in a paper</a>: You can read how DeepSeek frames elastic compute in a new paper.</li></ol>",
+   "content_text": "Today's strongest items are about doing more with less hardware and handing research loops to agents. Most other items are tooling and plugins around coding agents, with several talks and papers that offer claims but little to run. One plugin marketplace for seven coding agent tools Claude Code and Codex race human researchers Drawgent runs a coding agent on Excalidraw Beads adds memory to your coding agent DeepSeek describes Elastic Compute (DSec) in a paper",
+   "date_published": "2026-10-20T15:44:58Z",
+   "tags": [
+    "agents",
+    "coding",
+    "infra",
+    "mcp",
+    "memory",
+    "research"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-09-27.json",
+    "backfilled": true,
+    "capabilities": 80
+   }
+  },
+  {
+   "id": "2026-09-26",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-09-26",
+   "title": "Revise agent reasoning, retain coding memory, test unfamiliar worlds and more",
+   "summary": "Agent tools connect memory, configuration and specialist workflows. Research tests reasoning, perception and exploration, with practical gains still needing verification.",
+   "content_html": "<p>Agent tools connect memory, configuration and specialist workflows. Research tests reasoning, perception and exploration, with practical gains still needing verification.</p><ol><li><a href=\"https://huggingface.co/papers/2609.28654\">Benchmark object permanence in video world models</a>: Researchers can use a dedicated dataset and benchmark to evaluate and improve object permanence reasoning in video world models.</li><li><a href=\"https://huggingface.co/papers/2609.28416\">AEWM revises agent reasoning before decisions</a>: Researchers can explore judging actions and revising contaminated reasoning states through AEWM.</li><li><a href=\"https://github.com/Gentleman-Programming/engram\">Engram provides persistent coding agent memory</a>: Builders can add persistent memory through an agent-agnostic Go binary with MCP, HTTP, CLI and TUI interfaces.</li><li><a href=\"https://github.com/Alishahryar1/free-claude-code\">Free Claude Code adds browser harness sessions</a>: The project claims native browser sessions across multiple coding harnesses and models, with voice support.</li><li><a href=\"https://github.com/darkzOGx/youtube-automation-agent\">YouTube agent links creation and publishing</a>: The repository claims an agent workflow that creates, optimizes and publishes YouTube videos using Gemini or OpenAI.</li></ol>",
+   "content_text": "Agent tools connect memory, configuration and specialist workflows. Research tests reasoning, perception and exploration, with practical gains still needing verification. Benchmark object permanence in video world models AEWM revises agent reasoning before decisions Engram provides persistent coding agent memory Free Claude Code adds browser harness sessions YouTube agent links creation and publishing",
+   "date_published": "2026-10-20T15:47:45Z",
+   "tags": [
+    "agents",
+    "coding",
+    "evals",
+    "mcp",
+    "memory",
+    "models",
+    "multimodal",
+    "research"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-09-26.json",
+    "backfilled": true,
+    "capabilities": 117
+   }
+  },
+  {
+   "id": "2026-09-25",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-09-25",
+   "title": "Exposes benchmark memorization, compresses models, benchmarks world-model serving, and more",
+   "summary": "A quiet day with a few useful building blocks. The strongest items are a test that checks whether coding agents memorized SWE-bench, a model compression library, and serving benchmarks for video world models.",
+   "content_html": "<p>A quiet day with a few useful building blocks. The strongest items are a test that checks whether coding agents memorized SWE-bench, a model compression library, and serving benchmarks for video world models.</p><ol><li><a href=\"https://huggingface.co/papers/2609.27891\">SchrodingerRepo tests if agents memorized SWE-bench</a>: You can evaluate coding agents on repositories whose structure is dynamically altered, reducing reliance on memorized cues.</li><li><a href=\"https://huggingface.co/papers/2609.26780\">SpeakerMem-R1 tracks who said what</a>: Agents can keep separate, speaker-labeled memory in multi-party conversations and reason about relations between speakers.</li><li><a href=\"https://github.com/NVIDIA/Model-Optimizer\">NVIDIA Model-Optimizer unifies model compression techniques</a>: You can apply quantization, distillation, pruning, architecture search and speculative decoding from one library, targeting TensorRT-LLM, TensorRT or vLLM.</li><li><a href=\"https://www.youtube.com/watch?v=NER_yS3YZsw\">Benchmarks for serving NVIDIA Cosmos 3 Super</a>: You can compare four serving topologies for a video world model on HGX B200 and H200 using vLLM-Omni, with reproducible benchmarks.</li><li><a href=\"https://github.com/vectorize-io/hindsight\">Hindsight: agent memory that learns</a>: Agents can use an open-source memory layer that is meant to learn over time.</li></ol>",
+   "content_text": "A quiet day with a few useful building blocks. The strongest items are a test that checks whether coding agents memorized SWE-bench, a model compression library, and serving benchmarks for video world models. SchrodingerRepo tests if agents memorized SWE-bench SpeakerMem-R1 tracks who said what NVIDIA Model-Optimizer unifies model compression techniques Benchmarks for serving NVIDIA Cosmos 3 Super Hindsight: agent memory that learns",
+   "date_published": "2026-10-20T15:48:45Z",
+   "tags": [
+    "agents",
+    "coding",
+    "evals",
+    "infra",
+    "memory",
+    "models",
+    "research",
+    "robotics"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-09-25.json",
+    "backfilled": true,
+    "capabilities": 117
+   }
+  },
+  {
+   "id": "2026-09-24",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-09-24",
+   "title": "Claude finds an enzyme, agents get cheaper code context, and more",
+   "summary": "The day mixes one headline science claim from Anthropic with a run of practical agent tooling, from code graphs to model swapping. Most papers are incremental and ship without code.",
+   "content_html": "<p>The day mixes one headline science claim from Anthropic with a run of practical agent tooling, from code graphs to model swapping. Most papers are incremental and ship without code.</p><ol><li><a href=\"https://huggingface.co/papers/2609.25804\">Taste-Bench scores agent judgment at trajectory forks</a>: You can measure how well an agent chooses at decision points in long tasks, and train that judgment through distillation.</li><li><a href=\"https://huggingface.co/papers/2609.25165\">Ovis-Embedding unifies text, image, video and audio retrieval</a>: A single embedding model can retrieve across text, image, video and audio with one shared backbone.</li><li><a href=\"https://github.com/mukul975/Anthropic-Cybersecurity-Skills\">817 cybersecurity skills packaged for coding agents</a>: Agents can load structured security skills mapped to MITRE ATT&amp;CK, NIST CSF 2.0 and four other frameworks.</li><li><a href=\"https://github.com/mostlygeek/llama-swap\">llama-swap swaps local models behind one compatible endpoint</a>: One OpenAI or Anthropic compatible endpoint can switch between local servers like llama.cpp and vllm on demand.</li><li><a href=\"https://www.anthropic.com/news/claude-discovers-novel-enzyme-system\">Claude reportedly discovers a novel CRISPR-like enzyme system</a>: An AI model is reported to have found a new enzyme system with CRISPR-like repeats.</li></ol>",
+   "content_text": "The day mixes one headline science claim from Anthropic with a run of practical agent tooling, from code graphs to model swapping. Most papers are incremental and ship without code. Taste-Bench scores agent judgment at trajectory forks Ovis-Embedding unifies text, image, video and audio retrieval 817 cybersecurity skills packaged for coding agents llama-swap swaps local models behind one compatible endpoint Claude reportedly discovers a novel CRISPR-like enzyme system",
+   "date_published": "2026-10-20T15:49:48Z",
+   "tags": [
+    "agents",
+    "coding",
+    "evals",
+    "infra",
+    "local",
+    "memory",
+    "models",
+    "multimodal",
+    "research",
+    "security"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-09-24.json",
+    "backfilled": true,
+    "capabilities": 120
+   }
+  },
+  {
+   "id": "2026-09-23",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-09-23",
+   "title": "Ships GPT-6 Sol and Luna, lands Opus 5.5, edits video with agents, and more",
+   "summary": "Two frontier model releases lead the day, with OpenAI's GPT-6 Sol and Luna and Anthropic's Opus 5.5. Below them sit agent tooling repos and a set of research papers without code.",
+   "content_html": "<p>Two frontier model releases lead the day, with OpenAI&#x27;s GPT-6 Sol and Luna and Anthropic&#x27;s Opus 5.5. Below them sit agent tooling repos and a set of research papers without code.</p><ol><li><a href=\"https://www.anthropic.com/claude-opus-5-5\">Anthropic releases Claude Opus 5.5</a>: You can use Claude Opus 5.5, the first model in the Claude 5.5 family, through Anthropic.</li><li><a href=\"https://huggingface.co/papers/2609.24972\">Regularized self-improvement for agent harnesses</a>: You can let an agent harness edit itself while constraining edits to favor reusable mechanisms over benchmark memorization.</li><li><a href=\"https://huggingface.co/papers/2609.13814\">Realtime-Venus: full-duplex voice with background delegation</a>: You can build a dialogue system that listens and speaks at once while tools run asynchronously in the background.</li><li><a href=\"https://openai.com/index/introducing-gpt-6-sol-and-luna\">OpenAI launches GPT-6 Sol and Luna</a>: You can pick between two GPT-6 models that trade capability against cost for everyday work.</li><li><a href=\"https://github.com/skyhook-io/radar\">Radar: Kubernetes UI with built-in MCP server</a>: You can let AI agents inspect cluster issues, topology, events and audits through an MCP server in one Go binary.</li></ol>",
+   "content_text": "Two frontier model releases lead the day, with OpenAI's GPT-6 Sol and Luna and Anthropic's Opus 5.5. Below them sit agent tooling repos and a set of research papers without code. Anthropic releases Claude Opus 5.5 Regularized self-improvement for agent harnesses Realtime-Venus: full-duplex voice with background delegation OpenAI launches GPT-6 Sol and Luna Radar: Kubernetes UI with built-in MCP server",
+   "date_published": "2026-10-20T15:50:33Z",
+   "tags": [
+    "agents",
+    "coding",
+    "evals",
+    "infra",
+    "mcp",
+    "models",
+    "multimodal"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-09-23.json",
+    "backfilled": true,
+    "capabilities": 113
+   }
+  },
+  {
+   "id": "2026-09-22",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-09-22",
+   "title": "Agents learn skills from code, query messy data, train on code tasks, and more",
+   "summary": "Most of today's strongest items are agent papers about getting skills and training tasks out of existing code and data. Grok 4.7 drew the most attention, but the source gives little detail beyond the announcement.",
+   "content_html": "<p>Most of today&#x27;s strongest items are agent papers about getting skills and training tasks out of existing code and data. Grok 4.7 drew the most attention, but the source gives little detail beyond the announcement.</p><ol><li><a href=\"https://huggingface.co/papers/2609.15779\">EvoOntology lets data agents query mixed sources</a>: A data agent can use an ontology layer that evolves at runtime to query heterogeneous data sources.</li><li><a href=\"https://huggingface.co/papers/2609.05571\">Code2Skill extracts agent skills from source code</a>: Agents can start with verifiable procedural skills pulled automatically from source code, before they have gathered any interaction experience.</li><li><a href=\"https://github.com/QuantumNous/new-api\">new-api gateway converts between LLM API formats</a>: You can run one gateway that cross-converts various LLMs into OpenAI-compatible, Claude-compatible or Gemini-compatible formats.</li><li><a href=\"https://github.com/larksuite/cli\">Official Lark CLI ships with 20+ agent skills</a>: Humans and AI agents can drive Lark from the command line, using 200+ commands and 20+ agent skills across messaging, docs, sheets, calendar, mail and more.</li><li><a href=\"https://x.ai/news/grok-4-7\">xAI announces Grok 4.7</a>: Builders have a new Grok model version to test, according to the xAI announcement.</li></ol>",
+   "content_text": "Most of today's strongest items are agent papers about getting skills and training tasks out of existing code and data. Grok 4.7 drew the most attention, but the source gives little detail beyond the announcement. EvoOntology lets data agents query mixed sources Code2Skill extracts agent skills from source code new-api gateway converts between LLM API formats Official Lark CLI ships with 20+ agent skills xAI announces Grok 4.7",
+   "date_published": "2026-10-20T15:51:29Z",
+   "tags": [
+    "agents",
+    "coding",
+    "evals",
+    "mcp",
+    "models",
+    "reverse"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-09-22.json",
+    "backfilled": true,
+    "capabilities": 104
+   }
+  },
+  {
+   "id": "2026-09-21",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-09-21",
+   "title": "Shares memory across coding agents, constrains browser model output, orchestrates agents and more",
+   "summary": "The strongest items today are tooling that makes agents and small models easier to run: shared agent memory, schema-bound output in the browser, and an open orchestrator from Google. Several headline items, including Qwen Image 2.1 and AX, arrive with little detail beyond their own pages, so treat them as leads to check.",
+   "content_html": "<p>The strongest items today are tooling that makes agents and small models easier to run: shared agent memory, schema-bound output in the browser, and an open orchestrator from Google. Several headline items, including Qwen Image 2.1 and AX, arrive with little detail beyond their own pages, so treat them as leads to check.</p><ol><li><a href=\"https://github.com/vshulcz/deja-vu\">deja-vu shares one memory across coding agents</a>: You can search and reuse fixes from past sessions across Claude Code, Codex, Cursor, Copilot CLI and others, using history already on disk.</li><li><a href=\"https://github.com/jaredpalmer/kev/tree/main\">Kev: tiny decision models on Qwen3.5</a>: You can use a family of small decision models built on top of Qwen3.5, modeled on Jev.</li><li><a href=\"https://www.youtube.com/watch?v=3V9CPisNs1g\">Transformers.js 4.3 adds structured output in browser</a>: You can force a model running in the browser to follow a JSON schema or a regex, token by token.</li><li><a href=\"https://agentexecutor.io\">Google releases AX, an open agent orchestrator</a>: You can look at an open agentic orchestrator from Google for coordinating agent runs.</li><li><a href=\"https://heretic-project.org/\">Heretic removes restrictions from language models</a>: You can use a tool that strips built-in restrictions from a language model.</li></ol>",
+   "content_text": "The strongest items today are tooling that makes agents and small models easier to run: shared agent memory, schema-bound output in the browser, and an open orchestrator from Google. Several headline items, including Qwen Image 2.1 and AX, arrive with little detail beyond their own pages, so treat them as leads to check. deja-vu shares one memory across coding agents Kev: tiny decision models on Qwen3.5 Transformers.js 4.3 adds structured output in browser Google releases AX, an open agent orchestrator Heretic removes restrictions from language models",
+   "date_published": "2026-10-20T15:52:19Z",
+   "tags": [
+    "agents",
+    "coding",
+    "infra",
+    "local",
+    "memory",
+    "models",
+    "security"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-09-21.json",
+    "backfilled": true,
+    "capabilities": 50
+   }
+  }
+ ]
+}

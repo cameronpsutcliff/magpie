@@ -1,0 +1,717 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://www.cameronsutcliff.com/magpie-data/schema/day.schema.json",
+ "title": "Magpie edition (magpie.day/1)",
+ "description": "One morning's edition of Magpie: every AI capability collected that day, ranked, with the editor's words, new possibilities, recommended viewing, rising repos and product updates. Fields may be added; existing fields keep their meaning within magpie.day/1.",
+ "type": "object",
+ "required": [
+  "schema",
+  "date",
+  "generated_at",
+  "run",
+  "edition",
+  "coverage",
+  "top",
+  "events",
+  "topics"
+ ],
+ "properties": {
+  "schema": {
+   "const": "magpie.day/1"
+  },
+  "date": {
+   "type": "string",
+   "format": "date",
+   "description": "The edition's date in US Central time."
+  },
+  "generated_at": {
+   "type": "string",
+   "format": "date-time"
+  },
+  "run": {
+   "type": "object",
+   "properties": {
+    "where": {
+     "type": "string"
+    },
+    "editor": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "enriched": {
+     "type": "integer"
+    },
+    "seconds": {
+     "type": "number"
+    }
+   }
+  },
+  "edition": {
+   "type": "object",
+   "properties": {
+    "headline": {
+     "type": "string"
+    },
+    "dek": {
+     "type": "string"
+    },
+    "read_minutes": {
+     "type": "integer"
+    },
+    "backfilled": {
+     "type": "boolean",
+     "description": "Rebuilt from archives after the fact."
+    },
+    "note": {
+     "type": "string"
+    }
+   }
+  },
+  "coverage": {
+   "type": "object",
+   "properties": {
+    "events": {
+     "type": "integer"
+    },
+    "items": {
+     "type": "integer"
+    },
+    "sources_ok": {
+     "type": "integer"
+    },
+    "sources_total": {
+     "type": "integer"
+    },
+    "watch": {
+     "type": "object",
+     "description": "What Magpie watches: feeds, live APIs, YouTube channels, X accounts."
+    },
+    "sources": {
+     "type": "array"
+    }
+   }
+  },
+  "top": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   },
+   "description": "The day's five leads, as event ids in rank order."
+  },
+  "events": {
+   "type": "array",
+   "items": {
+    "$ref": "#/$defs/event"
+   },
+   "description": "Up to 260 capabilities, ranked."
+  },
+  "possibilities": {
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/possibility"
+     }
+    },
+    "note": {
+     "type": "string"
+    }
+   },
+   "description": "Reasoned ideas built from the day's capabilities, not reported news."
+  },
+  "viewing": {
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/video"
+     }
+    },
+    "considered": {
+     "type": "integer"
+    },
+    "watch": {
+     "type": "integer"
+    },
+    "skim": {
+     "type": "integer"
+    },
+    "skip": {
+     "type": "integer"
+    }
+   },
+   "description": "Videos judged worth watching from their transcripts."
+  },
+  "rising": {
+   "type": "object",
+   "properties": {
+    "day": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/rising"
+     }
+    },
+    "week": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/rising"
+     }
+    },
+    "month": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/rising"
+     }
+    },
+    "new": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/rising"
+     }
+    }
+   }
+  },
+  "updates": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "date": {
+      "type": "string"
+     },
+     "vendor": {
+      "type": "string"
+     },
+     "product": {
+      "type": "string"
+     },
+     "title": {
+      "type": "string"
+     },
+     "url": {
+      "type": "string"
+     },
+     "kind": {
+      "type": "string"
+     },
+     "summary": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "topics": {
+   "type": "object",
+   "additionalProperties": {
+    "type": "string"
+   },
+   "description": "Topic id to label."
+  },
+  "hats": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "label": {
+      "type": "string"
+     },
+     "question": {
+      "type": "string"
+     }
+    }
+   }
+  }
+ },
+ "$defs": {
+  "source": {
+   "type": "object",
+   "required": [
+    "name",
+    "url",
+    "title"
+   ],
+   "properties": {
+    "name": {
+     "type": "string",
+     "description": "The source that carried it, e.g. 'X: @handle' or 'Hacker News'."
+    },
+    "kind": {
+     "type": [
+      "string",
+      "null"
+     ],
+     "description": "repo, model, space, paper, social, video, newsletter, blog, changelog, community or news."
+    },
+    "url": {
+     "type": "string",
+     "format": "uri"
+    },
+    "title": {
+     "type": "string"
+    },
+    "discussion": {
+     "type": "string",
+     "format": "uri",
+     "description": "A discussion thread, when the source has one."
+    }
+   }
+  },
+  "event": {
+   "type": "object",
+   "required": [
+    "id",
+    "key",
+    "kind",
+    "title",
+    "url",
+    "topics",
+    "evidence",
+    "signal",
+    "impact",
+    "sources",
+    "mentions"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "description": "Stable within a day; derived from the canonical key."
+    },
+    "key": {
+     "type": "string",
+     "description": "Canonical key: gh:owner/repo, hf:org/model, hfs:org/space, arxiv:id, or url:host/path."
+    },
+    "kind": {
+     "type": "string",
+     "description": "The lead source's kind."
+    },
+    "title": {
+     "type": "string"
+    },
+    "summary": {
+     "type": "string"
+    },
+    "url": {
+     "type": "string",
+     "format": "uri"
+    },
+    "maker": {
+     "type": [
+      "string",
+      "null"
+     ],
+     "description": "Who made it, not who it targets."
+    },
+    "vendors": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "topics": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Topic ids; labels are in the day's `topics` map."
+    },
+    "evidence": {
+     "enum": [
+      "reported",
+      "reproduced",
+      "corroborated"
+     ],
+     "description": "reported: one source group. reproduced: something runnable plus two or more groups. corroborated: three or more groups."
+    },
+    "signal": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 100,
+     "description": "Computed by code from novelty, actionability, momentum, corroboration, trust and ripple."
+    },
+    "impact": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 5,
+     "description": "How far it ripples into other technology, rated by the editor (0 when unedited)."
+    },
+    "rank_score": {
+     "type": "number"
+    },
+    "metrics": {
+     "type": "object",
+     "additionalProperties": {
+      "type": "number"
+     },
+     "description": "Momentum numbers such as stars_day, stars_week, hn_points, hf_trending."
+    },
+    "doubt": {
+     "type": [
+      "object",
+      "null"
+     ],
+     "description": "Present when X flagged it: a Community Note or credible pushback, level 2 or 3.",
+     "properties": {
+      "level": {
+       "type": "integer"
+      },
+      "note": {
+       "type": "string"
+      },
+      "url": {
+       "type": [
+        "string",
+        "null"
+       ]
+      }
+     }
+    },
+    "sources": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/source"
+     }
+    },
+    "mentions": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/source"
+     },
+     "description": "Sources that mentioned it while covering something else."
+    },
+    "brief": {
+     "type": "object",
+     "description": "Written by the editor for the strongest candidates. The editor cannot change scores or add facts.",
+     "properties": {
+      "headline": {
+       "type": "string"
+      },
+      "newly_possible": {
+       "type": "string"
+      },
+      "why": {
+       "type": "string"
+      },
+      "try": {
+       "type": "string"
+      },
+      "limits": {
+       "type": "string"
+      },
+      "impact": {
+       "type": [
+        "integer",
+        "null"
+       ]
+      },
+      "hype": {
+       "type": "boolean"
+      },
+      "ripples": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "topic": {
+          "type": "string"
+         },
+         "effect": {
+          "type": [
+           "string",
+           "null"
+          ]
+         }
+        }
+       }
+      },
+      "hats": {
+       "type": "object",
+       "additionalProperties": {
+        "type": "string"
+       },
+       "description": "The same capability read through roles such as architect or security engineer."
+      }
+     }
+    }
+   }
+  },
+  "possibility": {
+   "type": "object",
+   "required": [
+    "title",
+    "ingredients"
+   ],
+   "properties": {
+    "title": {
+     "type": "string",
+     "description": "The consequence, stated as a claim."
+    },
+    "connection": {
+     "type": "string"
+    },
+    "ingredients": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Event ids, at least one from that day."
+    },
+    "ingredient_refs": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "title": {
+        "type": "string"
+       },
+       "date": {
+        "type": "string",
+        "format": "date"
+       },
+       "today": {
+        "type": "boolean"
+       },
+       "maker": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "url": {
+        "type": [
+         "string",
+         "null"
+        ]
+       }
+      }
+     }
+    },
+    "context": {
+     "type": "string"
+    },
+    "chain": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "What changed, the mechanism, then two 'and then what' steps."
+    },
+    "who": {
+     "type": "string"
+    },
+    "variable": {
+     "type": "string"
+    },
+    "versus": {
+     "type": "string"
+    },
+    "smallest_test": {
+     "type": "string"
+    },
+    "disconfirm": {
+     "type": "string"
+    },
+    "effort": {
+     "enum": [
+      "an afternoon",
+      "a week",
+      "a month",
+      "a quarter"
+     ]
+    },
+    "scores": {
+     "type": "object",
+     "properties": {
+      "novelty": {
+       "type": "integer",
+       "minimum": 1,
+       "maximum": 5
+      },
+      "feasibility": {
+       "type": "integer",
+       "minimum": 1,
+       "maximum": 5
+      },
+      "value": {
+       "type": "integer",
+       "minimum": 1,
+       "maximum": 5
+      },
+      "evidence": {
+       "type": "integer",
+       "minimum": 1,
+       "maximum": 5
+      }
+     }
+    },
+    "rank": {
+     "type": "number"
+    }
+   }
+  },
+  "video": {
+   "type": "object",
+   "required": [
+    "platform",
+    "id",
+    "url",
+    "title"
+   ],
+   "properties": {
+    "platform": {
+     "enum": [
+      "youtube",
+      "x"
+     ]
+    },
+    "id": {
+     "type": "string"
+    },
+    "url": {
+     "type": "string",
+     "format": "uri"
+    },
+    "title": {
+     "type": "string"
+    },
+    "channel": {
+     "type": "string"
+    },
+    "duration_s": {
+     "type": [
+      "integer",
+      "null"
+     ]
+    },
+    "thumbnail": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "why": {
+     "type": "string"
+    },
+    "learn": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "audience": {
+     "type": "string"
+    },
+    "caution": {
+     "type": "string"
+    },
+    "verdict": {
+     "type": "string"
+    },
+    "scores": {
+     "type": "object",
+     "properties": {
+      "substance": {
+       "type": [
+        "integer",
+        "null"
+       ]
+      },
+      "novelty": {
+       "type": [
+        "integer",
+        "null"
+       ]
+      },
+      "hype": {
+       "type": [
+        "integer",
+        "null"
+       ]
+      }
+     }
+    }
+   }
+  },
+  "rising": {
+   "type": "object",
+   "required": [
+    "repo"
+   ],
+   "properties": {
+    "repo": {
+     "type": "string",
+     "description": "owner/name"
+    },
+    "description": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "language": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "stars_total": {
+     "type": [
+      "integer",
+      "null"
+     ]
+    },
+    "stars_window": {
+     "type": [
+      "integer",
+      "null"
+     ]
+    },
+    "window": {
+     "type": "string"
+    },
+    "rank": {
+     "type": [
+      "integer",
+      "null"
+     ]
+    },
+    "ai": {
+     "type": [
+      "boolean",
+      "null"
+     ]
+    },
+    "created_at": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "readme": {
+     "type": "string",
+     "description": "The opening of the README as plain text."
+    },
+    "buzz": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/source"
+     },
+     "description": "Posts, videos, threads and newsletters that mentioned it that day."
+    },
+    "event_id": {
+     "type": "string",
+     "description": "The capability event for this repo, when it is published."
+    }
+   }
+  }
+ }
+}
