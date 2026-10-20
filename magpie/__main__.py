@@ -6,6 +6,7 @@
     python -m magpie discover         # weekly: grow and prune the watch list (see discover.py)
     python -m magpie review --week    # weekly: quality report on the week's editions (see review.py)
     python -m magpie constraints      # add the constraints lane and trackers to a published edition
+    python -m magpie elements         # fold the latest edition into the element pages (--rebuild for all)
 """
 from __future__ import annotations
 
@@ -105,6 +106,9 @@ def main() -> None:
     prd.add_argument("--date", help="edition date, default latest")
     pk = sub.add_parser("constraints", help="add official actions that constrain AI, and the trackers, to an edition")
     pk.add_argument("--date", help="edition date, default latest")
+    pe = sub.add_parser("elements", help="fold an edition into the element pages, or rebuild them all")
+    pe.add_argument("--date", help="edition date, default latest")
+    pe.add_argument("--rebuild", action="store_true", help="regenerate every element page from the day files")
     bf = sub.add_parser("backfill", help="rebuild past editions from archives")
     bf.add_argument("--from", dest="start", required=True, help="first edition date, YYYY-MM-DD")
     bf.add_argument("--to", dest="end", required=True, help="last edition date, YYYY-MM-DD")
@@ -142,6 +146,10 @@ def main() -> None:
     if a.cmd == "constraints":
         from .constraints import run_for as constraints_for
         constraints_for(a.date)
+        return
+    if a.cmd == "elements":
+        from .elements import run as elements_run
+        elements_run(a.date, full=a.rebuild)
         return
     if a.cmd == "reindex":
         from .publish import reindex

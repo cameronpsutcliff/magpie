@@ -147,9 +147,19 @@ def publish_day(day: dict, events: list[dict], top_events: list[dict], *, force:
             persist(date, DATA)
     except Exception as ex:
         print(f"constraints register or hardware history not updated: {type(ex).__name__}: {str(ex)[:160]}", file=sys.stderr)
+    refresh_elements(date)
     write_feed()
     print(f"published {date}: {len(events)} events, top {len(top_events)}, {day['run']['seconds']}s", file=sys.stderr)
     return True
+
+
+def refresh_elements(date: str) -> None:
+    """Fold the edition into the element pages (data/v1/elements). A side file: it never fails the edition."""
+    try:
+        from .elements import update
+        update(date, DATA, STATE)
+    except Exception as ex:
+        print(f"element pages not updated: {type(ex).__name__}: {str(ex)[:160]}", file=sys.stderr)
 
 
 def index_entry(day: dict) -> dict:

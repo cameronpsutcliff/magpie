@@ -29,8 +29,20 @@ list, and a roster of 72 vetted X accounts read through Grok's live search.
 | `data/v1/latest.json` | Today's edition |
 | `data/v1/days/YYYY-MM-DD.json` | Every past edition |
 | `data/v1/index.json` | The archive: date, headline, lead stories, counts |
+| `data/v1/elements/<slug>.json` | One element across every edition: what it is, where to find it, what it works with, its history |
+| `data/v1/elements/index.json` | Every element page, with its canonical key, first and last sighting and counts |
 
-Schema `magpie.day/1`. Anything downstream can pull these files; nothing needs this code.
+Schemas `magpie.day/1`, `magpie.element/1` and `magpie.elements/1` live in `data/v1/schema/`. Anything downstream
+can pull these files; nothing needs this code.
+
+An **element** is one thing Magpie keeps meeting: a repo, model, paper, tool or official action, keyed the way the
+editions cluster it (`gh:owner/repo`, `hf:org/model`, `arxiv:id`, `url:...`, `policy:...`). It gets a page when it
+appears on two or more days, feeds a new possibility, is an official action, or an action already on record names
+its maker or rests on a document it links to. Pages are computed from the published editions and the constraints
+register, with no model call: every appearance, where to find it, which sources spotted it, the knock-on areas the
+editor named, the possibilities it fed, what it works with (combined in a possibility, or covered by the same post
+on the same day), and the actions that touch it. Each publish folds that day in and replaces any earlier copy of
+the same day; `python3 -m magpie elements --rebuild` regenerates them all from the day files.
 
 ## Where it runs
 
@@ -46,6 +58,7 @@ Schema `magpie.day/1`. Anything downstream can pull these files; nothing needs t
 ```bash
 python3 -m magpie run --no-llm --cloud   # keyless sources, no editor
 python3 -m magpie run                    # everything available on this machine
+python3 -m magpie elements --rebuild     # regenerate every element page from the day files
 python3 -m unittest discover -s tests
 ```
 
