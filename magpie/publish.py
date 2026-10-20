@@ -90,7 +90,8 @@ def compose_day(date: str, items: list[dict], rising: dict, health: list[dict], 
              "ai": i["extra"].get("ai")} for i in items if i["source_id"] == "github-new-rising"]},
         "updates": B.updates_calendar(items),
         "facets": facets,
-        "graph": B.ripple_graph(top_events + [e for e in caps if e["id"] not in top and e.get("brief")], topics_cfg),
+        "graph": B.ripple_graph([e for e in top_events if e["kind"] != "constraint"]
+                                + [e for e in caps if e["id"] not in top and e.get("brief")], topics_cfg),
         "topics": {k: v["label"] for k, v in topics_cfg.items()},
         "hats": load_json(ROOT / "config/hats.json", {}).get("hats", []),
     }

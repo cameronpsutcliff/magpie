@@ -74,6 +74,8 @@ For each item return:
 - same_as: the id of another candidate, or of a RECORDED action, that is the same action; else null
 - headline: 5 to 12 words naming the action and who it hits
 - harder: one sentence on what becomes harder, slower, costlier or impossible, and for whom
+- quote: one sentence copied exactly, word for word, from the item's text, summary or title (up to 40 words) that
+  shows what becomes harder. Magpie checks it against the document and drops the item if it is not there.
 - who: who is affected, as a short phrase
 - why: one sentence on why someone who builds with or buys AI should care
 - limits: one short clause on what is not settled (draft status, text not public, scope unclear), or ""
@@ -141,7 +143,8 @@ def candidates(items: list[dict]) -> list[dict]:
         doc = next((l for l in [it["url"], *(extra.get("links") or [])] if PRIMARY_LINK.search(l or "")), None)
         vendor_notice = it["source_kind"] == "changelog" or (it["source_kind"] == "news" and it.get("vendor_hint"))
         if doc or vendor_notice:
-            out.append({**it, "_key": constraint_key(it, doc), "_primary": True, "_doc": doc or it["url"]})
+            out.append({**it, "_key": constraint_key(it, doc), "_primary": True, "_doc": doc or it["url"],
+                        "_vendor": bool(vendor_notice and not doc)})
     out.sort(key=lambda c: c.get("published_at") or "", reverse=True)
     out.sort(key=lambda c: (not c["_primary"], -c.get("trust", 0.5)))  # stable: newest first within each tier
     by_key = {}
@@ -242,6 +245,17 @@ def doc_ids(*urls: str | None) -> set[str]:
     return out
 
 
+def _norm(text: str) -> str:
+    t = (text or "").lower().replace("\u2019", "'").replace("\u2018", "'").replace("\u201c", '"').replace("\u201d", '"')
+    return re.sub(r"\s+", " ", t).strip()
+
+
+def quoted(quote: str, source: str) -> bool:
+    """The supporting sentence must appear, word for word, in the grounding text."""
+    q = _norm(quote).strip(" .\"'")
+    return len(q.split()) >= 4 and len(q.split()) <= 60 and q in _norm(source)
+
+
 def same_action(doc: str | None, url: str | None, rec: dict) -> bool:
     """Two sightings become one action only when they share a document. Model-written fields never decide it."""
     mine = doc_ids(doc, url)
@@ -331,12 +345,15 @@ def classify(cands: list[dict], date: str, recorded: list[dict] | None = None, t
             else:
                 source = prose(row, GROUND_ALL)
             words = {k: clean(v.get(k) or "") for k in ("headline", "harder", "who", "why", "limits")}
+            quote = clean(v.get("quote") or "")
             ripples = [{"topic": r["topic"], "effect": clean(r.get("effect") or "")} for r in v.get("ripples") or []
                        if isinstance(r, dict) and r.get("topic") in topics][:2]
             hat_words = {k: clean(x) for k, x in (v.get("hats") or {}).items() if isinstance(x, str) and x.strip() and k in hats}
             loose = ungrounded([*words.values(), *(r["effect"] for r in ripples), *hat_words.values()], source)
-            if loose or not words["headline"] or not words["harder"]:
-                dropped.append({"title": c["title"], "why": f"numbers not in its document: {', '.join(loose)}" if loose else "no headline"})
+            if loose or not words["headline"] or not words["harder"] or not quoted(quote, source):
+                why = (f"numbers not in its document: {', '.join(loose)}" if loose else
+                       "no headline" if not words["headline"] or not words["harder"] else "its supporting quote is not in the document")
+                dropped.append({"title": c["title"], "why": why})
                 verdicts[c["_key"]] = {"kept": False, "date": date, "dropped": True, "sig": sig}
                 continue
             extra = c.get("extra") or {}
@@ -346,17 +363,18 @@ def classify(cands: list[dict], date: str, recorded: list[dict] | None = None, t
                 impact = 2
             verdicts[c["_key"]] = {
                 "kept": True, "date": date, "same_as": v.get("same_as"), "_id": c["_id"], "sig": sig,
-                **words,
+                **words, "quote": quote,
                 "status": issuer_status(extra, date) or (v.get("status") if v.get("status") in STATUSES else "proposed"),
                 "instrument": v.get("instrument") if v.get("instrument") in INSTRUMENTS else "guidance",
                 "layers": [l for l in v.get("layers") or [] if l in LAYERS][:3],
-                "jurisdiction": clean(v.get("jurisdiction") or extra.get("jurisdiction") or ""),
-                "issuer": clean(v.get("issuer") or extra.get("issuer") or ""),
+                "jurisdiction": clean(extra.get("jurisdiction") or v.get("jurisdiction") or ""),
+                "issuer": clean(extra.get("issuer") or v.get("issuer") or ""),
                 # Structured dates from the issuer win; a model's date must appear in the document text.
                 "effective": extra.get("effective_on") or grounded_date(v.get("effective"), source),
                 "comment_deadline": extra.get("comments_close_on") or grounded_date(v.get("comment_deadline"), source),
                 # Only an in-force action from the issuer's own document may cut access on the page.
-                "access_now": bool(v.get("access_now")) and (issuer_status(extra, date) or v.get("status")) == "in_force" and c["_primary"],
+                "access_now": bool(v.get("access_now")) and c["_primary"] and (
+                    issuer_status(extra, date) == "in_force" or (c.get("_vendor") and v.get("status") == "in_force")),
                 "impact": impact,
                 "ripples": ripples,
                 "hats": hat_words,
@@ -365,7 +383,8 @@ def classify(cands: list[dict], date: str, recorded: list[dict] | None = None, t
     return {}, [], {"lane": None, "classified": 0, "errors": errors}
 
 
-PER_RUN = 24  # most candidates one classifier call sees; the rest wait for the next run
+PER_RUN = 24  # most candidates one classifier call sees
+BATCHES = 3   # classifier calls a run may make; anything beyond waits for the next run
 
 
 def generate(items: list[dict], date: str, data_dir, state_dir, *, llm: bool = True) -> tuple[list[dict], dict]:
@@ -376,15 +395,19 @@ def generate(items: list[dict], date: str, data_dir, state_dir, *, llm: bool = T
     known = {r["key"]: r for r in register.get("items", [])}
     cands = candidates(items)
     fresh = [c for c in cands if c["_key"] not in cache or cache[c["_key"]].get("sig") != signature(c)]
-    deferred = max(0, len(fresh) - PER_RUN)
-    fresh = fresh[:PER_RUN]  # already ordered: issuer documents first, then by trust, newest first
+    deferred = max(0, len(fresh) - PER_RUN * BATCHES)
+    fresh = fresh[:PER_RUN * BATCHES]  # already ordered: issuer documents first, then by trust, newest first
     receipt = {"lane": None, "classified": 0, "errors": []}
     dropped: list[dict] = []
     recent = [r for r in register.get("items", [])
               if (dt.date.fromisoformat(date) - dt.date.fromisoformat(r.get("last_seen") or date)).days <= 30]
     if fresh and llm:
-        verdicts, dropped, receipt = classify(fresh, date, recent)
-        cache.update(verdicts)
+        for start in range(0, len(fresh), PER_RUN):
+            verdicts, d, r = classify(fresh[start:start + PER_RUN], date, recent)
+            cache.update(verdicts)
+            dropped += d
+            receipt = {"lane": r["lane"] or receipt["lane"], "classified": receipt["classified"] + r["classified"],
+                       "errors": receipt["errors"] + r["errors"]}
         write_json(cache_path, cache)
     elif fresh:
         receipt["errors"].append("the editor did not run; new candidates wait for the next edited run")
@@ -432,7 +455,8 @@ def generate(items: list[dict], date: str, data_dir, state_dir, *, llm: bool = T
         prior = known.get(lead_key, {})
         rec = {
             "id": short_hash(lead_key, 12), "key": lead_key,
-            "headline": v["headline"], "title": lead["title"], "harder": v["harder"], "who": v["who"], "why": v["why"],
+            "headline": v["headline"], "title": lead["title"], "harder": v["harder"], "quote": v.get("quote", ""),
+            "who": v["who"], "why": v["why"],
             "limits": v["limits"], "status": v["status"], "instrument": v["instrument"], "layers": v["layers"],
             "jurisdiction": v["jurisdiction"], "issuer": v["issuer"], "effective": v["effective"],
             "comment_deadline": v["comment_deadline"], "access_now": v["access_now"], "impact": v["impact"],
@@ -492,7 +516,7 @@ def _event(rec: dict, date: str) -> dict:
         "language": None, "license": None, "created_at": None,
         "sources": [{"name": s["name"], "kind": "policy", "url": s["url"], "title": s["title"]} for s in rec["sources"]],
         "mentions": [], "source_groups": len({s["name"] for s in rec["sources"]}),
-        "brief": {"headline": rec["headline"], "harder": rec["harder"], "who": rec["who"], "why": rec["why"],
+        "brief": {"headline": rec["headline"], "harder": rec["harder"], "quote": rec.get("quote", ""), "who": rec["who"], "why": rec["why"],
                   "limits": rec["limits"], "impact": rec["impact"], "ripples": rec.get("ripples") or [],
                   "hats": rec.get("hats") or {}},
         "constraint": {k: rec.get(k) for k in ("status", "instrument", "layers", "jurisdiction", "issuer", "effective",
@@ -548,6 +572,8 @@ def run_for(date: str | None = None) -> None:
     section["errors"] = section.get("errors", []) + errors
     day["events"] = [e for e in day["events"] if e["kind"] != "constraint"] + events
     day["facets"]["kinds"] = Counter(e["kind"] for e in day["events"]).most_common()
+    from .build import rank_and_select
+    day["top"] = rank_and_select(day["events"])  # an action that cuts access today may lead the page
     day["constraints"] = section
     day["trackers"] = trackers.build(day["date"], DATA, STATE)
     scrub(day)
