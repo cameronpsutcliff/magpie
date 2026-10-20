@@ -1,0 +1,41 @@
+{
+ "updated_at": "2026-10-20T17:39:00Z",
+ "job": "sweep",
+ "prompt": "v3",
+ "calls_used_today": 90,
+ "notes_via_api": false,
+ "last_sweep": {
+  "ran_at": "2026-10-20T17:39:00Z",
+  "items": 38,
+  "queries": 9,
+  "deep_reads": 10,
+  "rechecks": 0,
+  "flagged": 7,
+  "saved_in": 1,
+  "saved_kept": 0,
+  "videos": 0
+ },
+ "roster": {
+  "curated": 223,
+  "trial": 19,
+  "active": 0,
+  "retired": 0
+ },
+ "follows_this_week": 0,
+ "unfollow_suggestions": [],
+ "prompt_feedback": [
+  "Community Notes are not available through the X API here: post.fields community_notes is rejected, so doubt levels this run come from replies and quote posts only, with no browser check.",
+  "Saves are read from the Twitter Profile archive on the box (/workspace/x-ai-bookmarks/bookmarks_ai.jsonl and discarded.jsonl), not from the X plugin bookmarks call; the prompt should say so and name the captured_at field for the time window.",
+  "The archive fields (id, url, text, created_at, author_username, links, github_repos, category, reason, first_seen_at, captured_at, posted_at) differ from what the prompt implies; 97 backfill records share one captured_at near 2026-10-14T04:4xZ, so captured_at plus posted_at is needed to find new saves.",
+  "Every X read returns at most 25 results even when 50 or 100 is requested, so one query per group does not cover 24 hours for busy groups; the builders group needed 4 pages and still left a gap of about 1.6 hours near 2026-10-20T09:06Z.",
+  "get_posts_quoted_posts returns plain reposts unless exclude retweets,replies is passed; the prompt should specify that.",
+  "The min_likes search operator appears to be ignored by search_posts_all, so discovery queries return mostly low-engagement posts.",
+  "Video analysis needs a video-capable reader; this run only downloaded 3 clips over 60 seconds for later analysis and left the video field out of items.",
+  "config/scout.json has follow_mode browser, but this run was told to recommend only; no account qualified anyway because new trial accounts cannot be followed and curated accounts have no sweep history yet.",
+  "The Twitter Profile intro and verdict note were not sent by this subagent; the parent agent holds that step."
+ ],
+ "errors": [
+  "Possible prompt injection in a reply on the Anthropic scorpion toxin post, asking AI summarizers for input; ignored: https://x.com/rgcpete/status/2112594375524196692",
+  "Accounts unavailable: @xai (moved, @SpaceXAI not found), @heygen_official (suspended); @lmarena_ai now posts as @arena."
+ ]
+}

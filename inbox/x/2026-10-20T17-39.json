@@ -1,0 +1,1195 @@
+{
+ "ran_at": "2026-10-20T17:39:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v3",
+ "since": "2026-10-19T17:30:00Z",
+ "queries": 9,
+ "calls": 41,
+ "items": [
+  {
+   "title": "DeepSeek open-sources DeepInfer, its production inference framework",
+   "url": "https://x.com/deepseek_ai/status/2112476496283775135",
+   "handle": "@deepseek_ai",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "DeepSeek released the in-house inference stack it uses to serve DeepSeek-V4.1-Flash, so teams self-hosting its models can run the same high-throughput, low-latency serving code.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/deepseek-ai/DeepInfer"
+   ],
+   "vendor": "DeepSeek",
+   "posted_at": "2026-10-20T09:30:19Z",
+   "metrics": {
+    "likes": 26776,
+    "reposts": 3058,
+    "quotes": 1625,
+    "replies": 1101,
+    "views": 2677985
+   },
+   "confirmed_by": [
+    "@vllm_project",
+    "@sgl_project",
+    "@mitsuhiko",
+    "@Thom_Wolf",
+    "@Tim_Dettmers",
+    "@eliebakouch",
+    "@teortaxesTex",
+    "@lightseekorg",
+    "@swyx"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers mostly cheered the open release; one asked for end-to-end throughput on Ascend NPUs and nobody reported running it yet.",
+    "tried": false,
+    "replies_read": 30
+   }
+  },
+  {
+   "title": "Mistral releases Voxtral 3 transcription and speech models",
+   "url": "https://x.com/MistralAI/status/2112574615318876178",
+   "handle": "@MistralAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Mistral shipped Voxtral 3 Transcribe and Speech models behind a new voice agents API, giving developers one vendor for speech in, speech out and the agent loop.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Mistral",
+   "posted_at": "2026-10-20T16:00:12Z",
+   "metrics": {
+    "likes": 1066,
+    "reposts": 128,
+    "quotes": 55,
+    "replies": 77,
+    "views": 37370
+   },
+   "confirmed_by": [
+    "@GuillaumeLample",
+    "@ArtificialAnlys",
+    "@OpenRouter"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers asked whether weights will be on Hugging Face and one found the generated voice still robotic.",
+    "source": "https://x.com/cypherlucs/status/2112596853904535641"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Mostly positive; questions about turn-taking, interruption handling and open weights, plus one complaint that the voice sounds robotic.",
+    "tried": false,
+    "replies_read": 30
+   }
+  },
+  {
+   "title": "ElevenLabs launches Eleven Realtime speech-to-speech models",
+   "url": "https://x.com/ElevenLabs/status/2112550782063247521",
+   "handle": "@ElevenLabs",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "ElevenLabs released speech-to-speech models for voice agents that it says start speaking in about half a second while still answering spoken reasoning questions correctly (98.8% on Big Bench Audio, self-reported).",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://elevenlabs.io/realtime"
+   ],
+   "vendor": "ElevenLabs",
+   "posted_at": "2026-10-20T14:25:30Z",
+   "metrics": {
+    "likes": 1103,
+    "reposts": 78,
+    "quotes": 35,
+    "replies": 61,
+    "views": 69557
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Positive; repliers asked about pricing and language coverage, and nobody reported testing it yet.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Anthropic: Claude-designed protein binders against scorpion neurotoxins",
+   "url": "https://x.com/AnthropicAI/status/2112579251555721573",
+   "handle": "@AnthropicAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Anthropic reports Claude designed protein binders against scorpion toxins; of 211 designs tested in the lab, 17 bound their target. An early research step toward cheaper antivenom, not a treatment.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://www.anthropic.com/research/claude-scorpion-toxin-binder-design"
+   ],
+   "vendor": "Anthropic",
+   "posted_at": "2026-10-20T16:18:38Z",
+   "metrics": {
+    "likes": 2260,
+    "reposts": 179,
+    "quotes": 93,
+    "replies": 225,
+    "views": 138259
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers point out binding in a lab assay is far from neutralizing venom in cells or animals, which the post does not yet show.",
+    "source": "https://x.com/sasquatchcs/status/2112594442003824996"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Positive with caution; scientists noted the gap between binding and a working antivenom. One reply tried to direct AI summarizers and was ignored.",
+    "tried": false,
+    "replies_read": 30
+   }
+  },
+  {
+   "title": "Meta publishes the Muse Glimmer 30B open-weight technical report",
+   "url": "https://x.com/AIatMeta/status/2112265822274302066",
+   "handle": "@AIatMeta",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Meta detailed Muse Glimmer, a 30B open-weight agentic model meant to run on a Mac or a single consumer GPU at 4-bit, and says it leads similar-size open models on tool use.",
+   "kind": "paper",
+   "evidence": "artifact",
+   "links": [
+    "https://go.meta.me/4Bcvxol"
+   ],
+   "vendor": "Meta",
+   "posted_at": "2026-10-19T19:33:10Z",
+   "metrics": {
+    "likes": 1244,
+    "reposts": 166,
+    "quotes": 124,
+    "replies": 142,
+    "views": 158243
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Positive; one replier reported about 33 tokens per second on an M5 Max, others pointed to the Hugging Face weights.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Inception releases Mercury 3 diffusion LLM at over 1,000 tokens per second",
+   "url": "https://x.com/_inception_ai/status/2112236719068369299",
+   "handle": "@_inception_ai",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Inception's Mercury 3 is a diffusion language model with a 1M-token context that it says beats GPT-6 Luna and Claude Haiku 5.5 on standard benchmarks while generating over 1,000 tokens per second, via an OpenAI-compatible API.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Inception",
+   "posted_at": "2026-10-19T17:37:31Z",
+   "metrics": {
+    "likes": 828,
+    "reposts": 74,
+    "quotes": 73,
+    "replies": 87,
+    "views": 57382
+   },
+   "confirmed_by": [
+    "@modal",
+    "@baseten",
+    "@tri_dao"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The benchmark wins are self-reported; repliers say to wait for independent leaderboards before trusting the Luna and Haiku comparison.",
+    "source": "https://x.com/WorthTheClickSI/status/2112595296060375292"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Many generic congratulations; serious repliers asked about multi-file edits and editor support, and quote posts note people questioning the value of a fast Luna-level model.",
+    "tried": false,
+    "replies_read": 30
+   }
+  },
+  {
+   "title": "fal and Black Forest Labs release FLUX 3 Max video model",
+   "url": "https://x.com/fal/status/2112251022047412492",
+   "handle": "@fal",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "fal Research post-trained FLUX 3 Max with Black Forest Labs: a 10-second 720p video in about 12 seconds, tied for first on Artificial Analysis image-to-video quality.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "fal / Black Forest Labs",
+   "posted_at": "2026-10-19T18:34:22Z",
+   "metrics": {
+    "likes": 1333,
+    "reposts": 166,
+    "quotes": 191,
+    "replies": 129,
+    "views": 353076
+   },
+   "confirmed_by": [
+    "@bfl_ai",
+    "@ArtificialAnlys"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "It is built on an open-weight base but the post-trained weights are not released, and repliers say it lacks reference-video input.",
+    "source": "https://x.com/KazariKokonoe/status/2112576275646943729"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Speed impressed people; complaints about no weights and no reference input. One quote poster generated a 15-second clip in 36 seconds.",
+    "tried": true,
+    "replies_read": 34
+   }
+  },
+  {
+   "title": "OpenAI reports big gains on COBOL, Fortran and Visual Basic coding",
+   "url": "https://x.com/OpenAI/status/2112310345863930168",
+   "handle": "@OpenAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "OpenAI says its latest models build and migrate software in low-resource languages far better: 87.4% average on its MultiLangBench (released on GitHub) and up to 97.9% on a COBOL migration eval with hidden byte-parity tests.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://openai.com/index/low-resource-programming-languages/"
+   ],
+   "vendor": "OpenAI",
+   "posted_at": "2026-10-19T22:30:05Z",
+   "metrics": {
+    "likes": 8286,
+    "reposts": 584,
+    "quotes": 462,
+    "replies": 740,
+    "views": 1302983
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers say passing OpenAI's own migration eval does not prove behavioral equivalence on real legacy systems with undocumented rules.",
+    "source": "https://x.com/SMishra61/status/2112587997870993779"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Interest from people who maintain legacy code, many jokes, and recurring skepticism that the hard part is preserving undocumented behavior.",
+    "tried": false,
+    "replies_read": 35
+   }
+  },
+  {
+   "title": "Anthropic launches OSS Scanner, free vulnerability scans for critical open source",
+   "url": "https://x.com/ClaudeDevs/status/2112299602510749992",
+   "handle": "@ClaudeDevs",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Maintainers of critical open-source projects can opt in to periodic vulnerability scans by Anthropic's strongest models, with a proof-of-concept and, where possible, a patch for each finding.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://red.anthropic.com/oss-scanner"
+   ],
+   "vendor": "Anthropic",
+   "posted_at": "2026-10-19T21:47:24Z",
+   "metrics": {
+    "likes": 11867,
+    "reposts": 1149,
+    "quotes": 292,
+    "replies": 260,
+    "views": 909452
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The 88% hit rate on high and critical findings comes from Anthropic grading its own scanner.",
+    "source": "https://x.com/AmazingAppsAI/status/2112578767222681610"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Strongly positive; maintainers valued patches over bare reports and asked whether smaller projects can join.",
+    "tried": false,
+    "replies_read": 30
+   }
+  },
+  {
+   "title": "Vals AI: DeepSeek V4.1 Flash beats GPT 6 Sol on a multi-step offensive cyber task",
+   "url": "https://x.com/ValsAI/status/2112471082397778083",
+   "handle": "@ValsAI",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Vals AI says the open-weight DeepSeek V4.1 Flash 1017 outscored GPT 6 Sol on its unreleased simulated corporate network attack benchmark, a signal of cyber risk from cheap open models.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Vals AI",
+   "posted_at": "2026-10-20T09:08:48Z",
+   "metrics": {
+    "likes": 1392,
+    "reposts": 118,
+    "quotes": 119,
+    "replies": 64,
+    "views": 172219
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 2,
+    "community_note": null,
+    "pushback": "Vals's own public CyberBench still ranks GPT 6 Sol above Flash (77.98% vs 73.69%), and repliers say the comparison ran models in uneven access modes.",
+    "source": "https://x.com/zeroxais/status/2112559379861881305"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Alarm and interest, plus pointed questions on harness, run counts and fairness of the Opus 5.5 setup; full eval not yet published.",
+    "tried": false,
+    "replies_read": 34
+   }
+  },
+  {
+   "title": "Perplexity Computer can now run fully local on a Mac",
+   "url": "https://x.com/perplexity_ai/status/2112571597798461920",
+   "handle": "@perplexity_ai",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Perplexity's Computer agent and its model can now run entirely on a Mac, working with local apps and files without sending data to the cloud.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Perplexity",
+   "posted_at": "2026-10-20T15:48:13Z",
+   "metrics": {
+    "likes": 461,
+    "reposts": 38,
+    "quotes": 29,
+    "replies": 56,
+    "views": 37277
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Devin Fusion scores 68 on Artificial Analysis Coding Agent Index",
+   "url": "https://x.com/cognition/status/2112290148205436979",
+   "handle": "@cognition",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Cognition's Devin Fusion, pairing Opus 5.5 with GPT-6 Luna, scored 68 on the Artificial Analysis Coding Agent Index at 31% lower cost per task than Claude Code with Opus 5.5.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Cognition",
+   "posted_at": "2026-10-19T21:09:50Z",
+   "metrics": {
+    "likes": 371,
+    "reposts": 41,
+    "quotes": 25,
+    "replies": 96,
+    "views": 48801
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Notion AI adds stronger agents, bring-your-own-key and a better MCP server",
+   "url": "https://x.com/NotionHQ/status/2112269722075242887",
+   "handle": "@NotionHQ",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Notion upgraded its agents, added a cheaper Auto model mode, bring-your-own AI keys and an improved Notion MCP server.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Notion",
+   "posted_at": "2026-10-19T19:48:40Z",
+   "metrics": {
+    "likes": 810,
+    "reposts": 78,
+    "quotes": 76,
+    "replies": 116,
+    "views": 119002
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "ChatGPT team tasks automate recurring engineering updates",
+   "url": "https://x.com/OpenAIDevs/status/2112565702552940794",
+   "handle": "@OpenAIDevs",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Teams can schedule recurring engineering work in ChatGPT, such as a weekly shipped-and-blocked report, and teammates can review and steer the next run.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "OpenAI",
+   "posted_at": "2026-10-20T15:24:47Z",
+   "metrics": {
+    "likes": 887,
+    "reposts": 47,
+    "quotes": 34,
+    "replies": 106,
+    "views": 58751
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Zed benchmarks 25 approaches to MCP tool search",
+   "url": "https://x.com/zeddotdev/status/2112588120558338261",
+   "handle": "@zeddotdev",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Zed tested 25 MCP tool search methods on 150 queries over 536 tools and chose weighted BM25, which needs no model or API calls.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Zed",
+   "posted_at": "2026-10-20T16:53:52Z",
+   "metrics": {
+    "likes": 88,
+    "reposts": 3,
+    "quotes": 3,
+    "replies": 3,
+    "views": 3041
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Sakana AI releases QD-Rec, quality-diversity recommendations for decisions",
+   "url": "https://x.com/SakanaAILabs/status/2112507110290502109",
+   "handle": "@SakanaAILabs",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Sakana's QD-Rec evolves a diverse set of proposals to support decisions like which papers to read or companies to evaluate, with paper and code.",
+   "kind": "paper",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/SakanaAI/QD-Rec",
+    "https://arxiv.org/abs/2610.23470",
+    "https://sakana.ai/qd-rec/"
+   ],
+   "vendor": "Sakana AI",
+   "posted_at": "2026-10-20T11:31:58Z",
+   "metrics": {
+    "likes": 310,
+    "reposts": 43,
+    "quotes": 7,
+    "replies": 9,
+    "views": 18223
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "AllenAI releases FairStress, a fairness benchmark beyond final answers",
+   "url": "https://x.com/allen_ai/status/2112587238961803746",
+   "handle": "@allen_ai",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "FairStress tests how easily a model flips a well-supported decision based on demographics and how it explains the choice.",
+   "kind": "eval",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/pardissz/fairstress"
+   ],
+   "vendor": "Ai2",
+   "posted_at": "2026-10-20T16:50:22Z",
+   "metrics": {
+    "likes": 8,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 2,
+    "views": 705
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Aleph Alpha: one space in a multiple-choice prompt changes what the eval measures",
+   "url": "https://x.com/Aleph__Alpha/status/2112547676868817027",
+   "handle": "@Aleph__Alpha",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Aleph Alpha shows that moving one space in a multiple-choice eval shifts the correct answer's probability by orders of magnitude while accuracy barely moves.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Aleph Alpha",
+   "posted_at": "2026-10-20T14:13:10Z",
+   "metrics": {
+    "likes": 21,
+    "reposts": 2,
+    "quotes": 1,
+    "replies": 1,
+    "views": 1198
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "MiniCPM-V 4.7 35B runs at 20 tokens per second on an iPhone",
+   "url": "https://x.com/OpenBMB/status/2112529266537639962",
+   "handle": "@OpenBMB",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "OpenBMB reports 20.51 tokens per second for its 35B-A3B multimodal MoE on an iPhone 18 Pro Max, 6x faster than its unoptimized expert-loading baseline.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "OpenBMB",
+   "posted_at": "2026-10-20T13:00:00Z",
+   "metrics": {
+    "likes": 82,
+    "reposts": 10,
+    "quotes": 1,
+    "replies": 7,
+    "views": 3591
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Hermes agent can launch Cua Spaces sandboxes",
+   "url": "https://x.com/trycua/status/2112589741879328979",
+   "handle": "@trycua",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Hermes can now create a Cua Space on a Mac, Windows or Linux machine for a task, work there, then delete it, and teammates can join the same Space.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Cua",
+   "posted_at": "2026-10-20T17:00:19Z",
+   "metrics": {
+    "likes": 52,
+    "reposts": 6,
+    "quotes": 3,
+    "replies": 3,
+    "views": 2164
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Prime Intellect releases prime-rl v0.10.0 and verifiers v0.4.0",
+   "url": "https://x.com/PrimeIntellect/status/2112288736692355388",
+   "handle": "@PrimeIntellect",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "prime-rl now defaults to Prime Intellect's IPO algorithm, tuned for async RL stability, with speedups and new model support.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/PrimeIntellect-ai/prime-rl"
+   ],
+   "vendor": "Prime Intellect",
+   "posted_at": "2026-10-19T21:04:13Z",
+   "metrics": {
+    "likes": 394,
+    "reposts": 36,
+    "quotes": 12,
+    "replies": 13,
+    "views": 25159
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "SGLang adds Low-Latency Mode for DeepSeek-V4.1-Flash",
+   "url": "https://x.com/lmsysorg/status/2112342810376712527",
+   "handle": "@lmsysorg",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "SGLang's new mode raises P90 per-user token speed up to 1.38x on NVIDIA GB300 and 1.56x on AMD MI355X in SemiAnalysis's AgentX trace replay.",
+   "kind": "feature",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "SGLang",
+   "posted_at": "2026-10-20T00:39:06Z",
+   "metrics": {
+    "likes": 121,
+    "reposts": 26,
+    "quotes": 8,
+    "replies": 29,
+    "views": 31425
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "PyTorch 2.15 speeds up Mac inference with new Metal kernels",
+   "url": "https://x.com/LysandreJik/status/2112540052316131508",
+   "handle": "@LysandreJik",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Hugging Face's PyTorch team replaced MPSGraph paths with Metal kernels upstream; MoE decoding on Mac is 5 to 6.5x faster.",
+   "kind": "feature",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "PyTorch / Hugging Face",
+   "posted_at": "2026-10-20T13:42:52Z",
+   "metrics": {
+    "likes": 36,
+    "reposts": 6,
+    "quotes": 0,
+    "replies": 0,
+    "views": 795
+   },
+   "confirmed_by": [
+    "@Is36E"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "TRL v1.16 adds AWS Trainium fine-tuning",
+   "url": "https://x.com/QGallouedec/status/2112471131860955314",
+   "handle": "@QGallouedec",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "TRL can now fine-tune language and vision-language models on AWS Trainium through TorchNeuron, with up to 2x faster training on Trainium2.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/huggingface/trl"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-10-20T09:09:00Z",
+   "metrics": {
+    "likes": 35,
+    "reposts": 5,
+    "quotes": 0,
+    "replies": 2,
+    "views": 1002
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Vals AI releases ClaimBench for decision models",
+   "url": "https://x.com/ValsAI/status/2112575292527239306",
+   "handle": "@ValsAI",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "ClaimBench checks whether a model can tell if a 10-K excerpt supports, contradicts or ignores a financial claim; 15 models on 1,960 claims.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Vals AI",
+   "posted_at": "2026-10-20T16:02:54Z",
+   "metrics": {
+    "likes": 55,
+    "reposts": 3,
+    "quotes": 2,
+    "replies": 4,
+    "views": 3122
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Artificial Analysis launches HealthBench leaderboards",
+   "url": "https://x.com/ArtificialAnlys/status/2112318755321868493",
+   "handle": "@ArtificialAnlys",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Artificial Analysis now runs independent leaderboards for OpenAI's HealthBench and HealthBench Professional health-conversation benchmarks.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Artificial Analysis",
+   "posted_at": "2026-10-19T23:03:30Z",
+   "metrics": {
+    "likes": 272,
+    "reposts": 26,
+    "quotes": 7,
+    "replies": 29,
+    "views": 27062
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Ant Group's inclusionAI releases Ming-3.0 TTS, audio and ASR models",
+   "url": "https://x.com/TheInclusionAI/status/2112387395295273205",
+   "handle": "@TheInclusionAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "The Ming-3.0 speech family covers text-to-speech, audio understanding and speech recognition for calls and voice search.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "inclusionAI",
+   "posted_at": "2026-10-20T03:36:15Z",
+   "metrics": {
+    "likes": 23,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 912
+   },
+   "confirmed_by": [
+    "@ArtificialAnlys"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Bria Fibo 2.0 open-weight image editing model lands on fal",
+   "url": "https://x.com/fal/status/2112562029336608819",
+   "handle": "@fal",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Bria's Fibo 2.0, trained only on licensed data, does multi-image editing and text-to-image and tops Artificial Analysis among open-weight editing models.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Bria",
+   "posted_at": "2026-10-20T15:10:11Z",
+   "metrics": {
+    "likes": 93,
+    "reposts": 8,
+    "quotes": 4,
+    "replies": 12,
+    "views": 5105
+   },
+   "confirmed_by": [
+    "@ArtificialAnlys"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Krea 3 Ultra enters top five in Arena image edit leaderboards",
+   "url": "https://x.com/arena/status/2112578867521319377",
+   "handle": "@arena",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Krea 3 Ultra placed fourth in Multi-Image Edit (1435 points) and fifth by lab in Single-Image Edit on Arena.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Krea",
+   "posted_at": "2026-10-20T16:17:06Z",
+   "metrics": {
+    "likes": 92,
+    "reposts": 5,
+    "quotes": 2,
+    "replies": 8,
+    "views": 9111
+   },
+   "confirmed_by": [
+    "@ArtificialAnlys"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Meta details goodput engineering on its Prometheus supercluster",
+   "url": "https://x.com/AIatMeta/status/2112245968750145561",
+   "handle": "@AIatMeta",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Meta explains how it keeps a run across hundreds of thousands of GPUs from being slowed by single underperforming hosts.",
+   "kind": "technique",
+   "evidence": "claim",
+   "links": [
+    "https://go.meta.me/4yXXApZ"
+   ],
+   "vendor": "Meta",
+   "posted_at": "2026-10-19T18:14:17Z",
+   "metrics": {
+    "likes": 3717,
+    "reposts": 293,
+    "quotes": 112,
+    "replies": 162,
+    "views": 329801
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Paper: open questions and best practices for agent evaluation",
+   "url": "https://x.com/sayashk/status/2112279490667626716",
+   "handle": "@sayashk",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Princeton researchers compile best practices and open problems for evaluating AI agents, aimed at people entering the field.",
+   "kind": "paper",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Princeton",
+   "posted_at": "2026-10-19T20:27:29Z",
+   "metrics": {
+    "likes": 274,
+    "reposts": 36,
+    "quotes": 4,
+    "replies": 19,
+    "views": 17969
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Meta ProPerAgent harness raises proactive agent accuracy to 38%",
+   "url": "https://x.com/dair_ai/status/2112279124551328018",
+   "handle": "@dair_ai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A Meta harness for proactive agents lifts accuracy from at most 15% with standard memory to 38% without changing model weights.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Meta",
+   "posted_at": "2026-10-19T20:26:02Z",
+   "metrics": {
+    "likes": 87,
+    "reposts": 8,
+    "quotes": 2,
+    "replies": 16,
+    "views": 7915
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Kiro's CORVUS cuts coding agent input tokens 9 to 50%",
+   "url": "https://x.com/kirodotdev/status/2112258482627858819",
+   "handle": "@kirodotdev",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "CORVUS keeps one live copy of each file in context instead of stale duplicates, cutting input tokens 9 to 50% with the same pass rates.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Kiro",
+   "posted_at": "2026-10-19T19:04:00Z",
+   "metrics": {
+    "likes": 55,
+    "reposts": 10,
+    "quotes": 1,
+    "replies": 3,
+    "views": 5514
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "OpenVLHarness: visual agentic tool use with multimodal memory",
+   "url": "https://x.com/_akhaliq/status/2112566784343876081",
+   "handle": "@_akhaliq",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A new benchmark and harness for real-world visual agent tool use with multimodal memory.",
+   "kind": "paper",
+   "evidence": "claim",
+   "links": [
+    "https://huggingface.co/papers/2610.26860"
+   ],
+   "vendor": "OpenVLHarness authors",
+   "posted_at": "2026-10-20T15:29:05Z",
+   "metrics": {
+    "likes": 17,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 5,
+    "views": 3562
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Rapid-MLX 0.16.5 runs full DeepSeek-V4.1-Flash on a 256GB Mac",
+   "url": "https://x.com/rapidmlx/status/2112334158693552232",
+   "handle": "@rapidmlx",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Rapid-MLX ships an MLX build of DeepSeek-V4.1-Flash-1017 with no experts removed, runnable on a 256GB Apple Silicon Mac.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Rapid-MLX",
+   "posted_at": "2026-10-20T00:04:43Z",
+   "metrics": {
+    "likes": 51,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 4,
+    "views": 3724
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Factory Droids accept Linear issue delegations",
+   "url": "https://x.com/FactoryAI/status/2112576230994375006",
+   "handle": "@FactoryAI",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Delegating a Linear issue to Factory now starts a Droid working on it.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Factory",
+   "posted_at": "2026-10-20T16:06:37Z",
+   "metrics": {
+    "likes": 60,
+    "reposts": 7,
+    "quotes": 1,
+    "replies": 8,
+    "views": 2555
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Hamel Husain: how to choose and tune decision models for evals",
+   "url": "https://x.com/HamelHusain/status/2112588257104216294",
+   "handle": "@HamelHusain",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "A guide to picking a decision model for an eval task, tuning its threshold rather than using 0.5, and reading its scores.",
+   "kind": "technique",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Hamel Husain",
+   "posted_at": "2026-10-20T16:54:25Z",
+   "metrics": {
+    "likes": 106,
+    "reposts": 6,
+    "quotes": 2,
+    "replies": 17,
+    "views": 3297
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "CoreWeave previews GPU sandboxes for RL training",
+   "url": "https://x.com/CoreWeave/status/2112529427955388914",
+   "handle": "@CoreWeave",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "CoreWeave Sandboxes now offer GPU sandboxes in preview, billed hourly, isolating failures across thousands of RL sandboxes per step.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "CoreWeave",
+   "posted_at": "2026-10-20T13:00:39Z",
+   "metrics": {
+    "likes": 38,
+    "reposts": 6,
+    "quotes": 1,
+    "replies": 8,
+    "views": 3391
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/SimbasJungles/status/2112271974877765816",
+   "reason": "Personal Google TV launcher built with an AI coding tool; no new AI capability."
+  }
+ ]
+}

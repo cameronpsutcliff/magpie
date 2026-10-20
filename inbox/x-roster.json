@@ -1,0 +1,376 @@
+{
+ "updated_at": "2026-10-20T17:39:00Z",
+ "accounts": [
+  {
+   "handle": "@thsottiaux",
+   "name": "Tibo",
+   "group": "devtools",
+   "affiliation": "OpenAI",
+   "why": "First-hand on OpenAI Codex product changes as its lead; posts concrete feature and usage-limit changes.",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-10-20",
+   "evidence": [
+    "https://x.com/thsottiaux/status/2111990254408434095",
+    "https://x.com/thsottiaux/status/2111244596131111253"
+   ],
+   "last_qualifying_post": "2026-10-19",
+   "retired_reason": null
+  },
+  {
+   "handle": "@OpenBMB",
+   "name": "OpenBMB",
+   "group": "labs",
+   "affiliation": "OpenBMB / ModelBest",
+   "why": "Official account for MiniCPM open multimodal models, with on-device speed measurements.",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-10-20",
+   "evidence": [
+    "https://x.com/OpenBMB/status/2109694573408866351",
+    "https://x.com/OpenBMB/status/2110364065822646570"
+   ],
+   "last_qualifying_post": "2026-10-14",
+   "retired_reason": null
+  },
+  {
+   "handle": "@FishAudio",
+   "name": "Fish Audio",
+   "group": "labs",
+   "affiliation": "Fish Audio",
+   "why": "Official account shipping open-weight TTS and ASR models (Drama 3).",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-10-20",
+   "evidence": [
+    "https://x.com/FishAudio/status/2110038429199450126",
+    "https://x.com/FishAudio/status/2104617131920748857"
+   ],
+   "last_qualifying_post": "2026-10-13",
+   "retired_reason": null
+  },
+  {
+   "handle": "@fal",
+   "name": "fal",
+   "group": "applied",
+   "affiliation": "fal",
+   "why": "Generative media inference platform that also post-trains its own models (FLUX 3 Max) and posts speed numbers.",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-10-20",
+   "evidence": [
+    "https://x.com/fal/status/2112251022047412492",
+    "https://x.com/fal/status/2110795863861674073"
+   ],
+   "last_qualifying_post": "2026-10-19",
+   "retired_reason": null
+  },
+  {
+   "handle": "@ExaAILabs",
+   "name": "Exa",
+   "group": "applied",
+   "affiliation": "Exa",
+   "why": "Search API for agents; posts versioned releases and its own benchmarks (Exa 3.0, ATLAS).",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-10-20",
+   "evidence": [
+    "https://x.com/ExaAILabs/status/2112218730952601719",
+    "https://x.com/ExaAILabs/status/2108245582745850303"
+   ],
+   "last_qualifying_post": "2026-10-19",
+   "retired_reason": null
+  },
+  {
+   "handle": "@OfficialLoganK",
+   "name": "Logan Kilpatrick",
+   "group": "labs",
+   "affiliation": "Google",
+   "why": "Gemini product lead; first-hand on Gemini API and model releases.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-10-20",
+   "evidence": [
+    "https://x.com/OfficialLoganK/status/2110038940841545827",
+    "https://x.com/OfficialLoganK/status/2102785495726219305"
+   ],
+   "last_qualifying_post": "2026-10-13",
+   "retired_reason": null
+  },
+  {
+   "handle": "@Thom_Wolf",
+   "name": "Thomas Wolf",
+   "group": "opensource",
+   "affiliation": "Hugging Face",
+   "why": "Hugging Face co-founder sharing runnable open demos and minimal training code.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-10-20",
+   "evidence": [
+    "https://x.com/Thom_Wolf/status/2112141448019644458",
+    "https://x.com/Thom_Wolf/status/2110381625200795942"
+   ],
+   "last_qualifying_post": "2026-10-19",
+   "retired_reason": null
+  },
+  {
+   "handle": "@trycua",
+   "name": "Cua",
+   "group": "devtools",
+   "affiliation": "Cua",
+   "why": "Open computer-use agent infrastructure; ships SDK and sandbox (Cua Spaces) features.",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-10-20",
+   "evidence": [
+    "https://x.com/trycua/status/2112228154651881479",
+    "https://x.com/trycua/status/2112589741879328979"
+   ],
+   "last_qualifying_post": "2026-10-20",
+   "retired_reason": null
+  },
+  {
+   "handle": "@PrismML",
+   "name": "PrismML",
+   "group": "labs",
+   "affiliation": "PrismML",
+   "why": "Ships ternary and 1-bit open models (Bonsai 2) with size and speed measurements.",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-10-20",
+   "evidence": [
+    "https://x.com/PrismML/status/2110823964650164348",
+    "https://x.com/PrismML/status/2102859262062145966"
+   ],
+   "last_qualifying_post": "2026-10-15",
+   "retired_reason": null
+  },
+  {
+   "handle": "@Aleph__Alpha",
+   "name": "Aleph Alpha",
+   "group": "research",
+   "affiliation": "Aleph Alpha",
+   "why": "Posts evaluation methodology research with measurements (PriorBPB, multiple-choice spacing).",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-10-20",
+   "evidence": [
+    "https://x.com/Aleph__Alpha/status/2110008600936800588",
+    "https://x.com/Aleph__Alpha/status/2112547676868817027"
+   ],
+   "last_qualifying_post": "2026-10-20",
+   "retired_reason": null
+  },
+  {
+   "handle": "@odysseyml",
+   "name": "Odyssey",
+   "group": "labs",
+   "affiliation": "Odyssey",
+   "why": "World model lab shipping interactive video models (Odyssey-3) with demos.",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-10-20",
+   "evidence": [
+    "https://x.com/odysseyml/status/2108238378751967385",
+    "https://x.com/odysseyml/status/2105714716316438684"
+   ],
+   "last_qualifying_post": "2026-10-08",
+   "retired_reason": null
+  },
+  {
+   "handle": "@actualinc",
+   "name": "Actual Computer",
+   "group": "applied",
+   "affiliation": "Actual",
+   "why": "Ships open tooling with measurements (toks tokenizer, e engine).",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-10-20",
+   "evidence": [
+    "https://x.com/actualinc/status/2107573418434629849",
+    "https://x.com/actualinc/status/2110759623435117020"
+   ],
+   "last_qualifying_post": "2026-10-15",
+   "retired_reason": null
+  },
+  {
+   "handle": "@GeminiApp",
+   "name": "Google Gemini",
+   "group": "labs",
+   "affiliation": "Google",
+   "why": "Official Gemini app account; first-hand on consumer Gemini features (Skills, Argon).",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-10-20",
+   "evidence": [
+    "https://x.com/GeminiApp/status/2110039322229649783",
+    "https://x.com/GeminiApp/status/2105327839054835886"
+   ],
+   "last_qualifying_post": "2026-10-13",
+   "retired_reason": null
+  },
+  {
+   "handle": "@hume_ai",
+   "name": "Hume AI",
+   "group": "research",
+   "affiliation": "Hume AI",
+   "why": "Voice AI lab posting voice model evaluations (Real World VoiceEQ).",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-10-20",
+   "evidence": [
+    "https://x.com/hume_ai/status/2102804812031270923",
+    "https://x.com/hume_ai/status/2108622420647248362"
+   ],
+   "last_qualifying_post": "2026-10-09",
+   "retired_reason": null
+  },
+  {
+   "handle": "@ElevenLabs",
+   "name": "ElevenLabs",
+   "group": "labs",
+   "affiliation": "ElevenLabs",
+   "why": "Official account for speech models (Eleven Realtime, v4) with latency and benchmark numbers.",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-10-20",
+   "evidence": [
+    "https://x.com/ElevenLabs/status/2112550782063247521",
+    "https://x.com/ElevenLabs/status/2110759737583345706"
+   ],
+   "last_qualifying_post": "2026-10-20",
+   "retired_reason": null
+  },
+  {
+   "handle": "@mem0ai",
+   "name": "mem0",
+   "group": "applied",
+   "affiliation": "Mem0",
+   "why": "Agent memory layer; publishes its own memory benchmark (DolphinBench).",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-10-20",
+   "evidence": [
+    "https://x.com/mem0ai/status/2102438126941876590",
+    "https://x.com/mem0ai/status/2105685414430523472"
+   ],
+   "last_qualifying_post": "2026-10-01",
+   "retired_reason": null
+  },
+  {
+   "handle": "@reflection_ai",
+   "name": "Reflection",
+   "group": "labs",
+   "affiliation": "Reflection AI",
+   "why": "Releases large open-weight models under Apache 2.0 (Beam 501B).",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-10-20",
+   "evidence": [
+    "https://x.com/reflection_ai/status/2107186849370247235",
+    "https://x.com/reflection_ai/status/2111079965529968798"
+   ],
+   "last_qualifying_post": "2026-10-16",
+   "retired_reason": null
+  },
+  {
+   "handle": "@Gradio",
+   "name": "Gradio",
+   "group": "opensource",
+   "affiliation": "Hugging Face",
+   "why": "Open-source UI library account; posts runnable demos with cost numbers.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-10-20",
+   "evidence": [
+    "https://x.com/Gradio/status/2105615321222823964",
+    "https://x.com/Gradio/status/2104932384689082535"
+   ],
+   "last_qualifying_post": "2026-10-01",
+   "retired_reason": null
+  },
+  {
+   "handle": "@ElorianAI",
+   "name": "Elorian AI",
+   "group": "labs",
+   "affiliation": "Elorian",
+   "why": "New lab shipping a visual reasoning model (Glimpse) and its own benchmark.",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-10-20",
+   "evidence": [
+    "https://x.com/ElorianAI/status/2111142036208501070",
+    "https://x.com/ElorianAI/status/2107973580319576356"
+   ],
+   "last_qualifying_post": "2026-10-16",
+   "retired_reason": null
+  }
+ ],
+ "source_leads": [
+  {
+   "kind": "blog",
+   "name": "Anthropic Frontier Red Team (red.anthropic.com)",
+   "url": "https://red.anthropic.com/",
+   "why": "Security and cyber capability write-ups such as OSS Scanner that are not in the Anthropic news or research feeds.",
+   "seen_via": [
+    "@ClaudeDevs"
+   ]
+  },
+  {
+   "kind": "blog",
+   "name": "Sakana AI blog",
+   "url": "https://sakana.ai/blog/",
+   "why": "Research releases with code (QD-Rec and earlier) that Magpie does not watch.",
+   "seen_via": [
+    "@SakanaAILabs"
+   ]
+  },
+  {
+   "kind": "blog",
+   "name": "Meta AI blog",
+   "url": "https://ai.meta.com/blog/",
+   "why": "Muse model reports and infrastructure posts; the existing Meta engineering feed misses most of them.",
+   "seen_via": [
+    "@AIatMeta"
+   ]
+  },
+  {
+   "kind": "changelog",
+   "name": "prime-rl releases",
+   "url": "https://github.com/PrimeIntellect-ai/prime-rl/releases.atom",
+   "why": "Open RL training framework releases (v0.10.0 today).",
+   "seen_via": [
+    "@PrimeIntellect"
+   ]
+  },
+  {
+   "kind": "changelog",
+   "name": "TRL releases",
+   "url": "https://github.com/huggingface/trl/releases.atom",
+   "why": "Hugging Face post-training library releases (v1.16 Trainium support).",
+   "seen_via": [
+    "@QGallouedec"
+   ]
+  },
+  {
+   "kind": "changelog",
+   "name": "PyTorch releases",
+   "url": "https://github.com/pytorch/pytorch/releases.atom",
+   "why": "Core framework releases such as 2.15 with large Mac MPS speedups.",
+   "seen_via": [
+    "@LysandreJik",
+    "@Is36E"
+   ]
+  },
+  {
+   "kind": "blog",
+   "name": "Inception blog",
+   "url": "https://www.inceptionlabs.ai/blog",
+   "why": "Diffusion LLM releases (Mercury 3) from a lab not otherwise covered.",
+   "seen_via": [
+    "@_inception_ai",
+    "@tri_dao"
+   ]
+  }
+ ]
+}
