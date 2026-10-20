@@ -149,6 +149,19 @@ class ElementTests(unittest.TestCase):
         finally:
             E.update = orig
 
+    def test_a_lost_page_file_is_rebuilt_from_the_editions(self):
+        E.rebuild(self.data)
+        (self.data / "elements" / "gh-beta-kit.json").unlink()
+        E.update("2099-01-02", self.data)
+        self.assertEqual(self.page("gh-beta-kit")["first_seen"], "2099-01-01")
+
+    def test_a_page_the_redaction_gate_blocks_is_skipped(self):
+        d2 = self.days["2099-01-02"]
+        d2["events"][0]["summary"] = "see /Users/someone/notes"
+        write_json(self.data / "days" / "2099-01-02.json", d2, compact=True)
+        E.update("2099-01-02", self.data)  # does not raise SystemExit
+        self.assertFalse((self.data / "elements" / "gh-beta-kit.json").exists())
+
     def test_pages_validate(self):
         try:
             from jsonschema import Draft202012Validator

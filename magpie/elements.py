@@ -476,11 +476,17 @@ class Store:
     def load(self, slug: str) -> dict | None:
         return load_json(self.dir / f"{slug}.json", None)
 
-    def write(self, page: dict) -> None:
+    def write(self, page: dict) -> bool:
+        """Write one page through the redaction gate. A page the gate blocks is skipped, never the edition."""
         from .publish import scrub
-        scrub(page)
+        try:
+            scrub(page)
+        except SystemExit as ex:
+            print(f"element {page['slug']} not written: {ex}", file=sys.stderr)
+            return False
         write_json(self.dir / f"{page['slug']}.json", page, compact=True)
         self.by_key[page["key"]] = index_entry(page)
+        return True
 
     def drop(self, key: str) -> None:
         entry = self.by_key.pop(key, None)
@@ -551,7 +557,8 @@ def update(date: str, data_dir: Path, state_dir: Path | None = None) -> dict:
         entry = store.by_key.get(key)
         if entry:
             page = store.load(entry["slug"])
-            contribs = page_contribs(page) if page else {}
+            # A listed page whose file is missing or unreadable (a merge race) is rebuilt from the editions.
+            contribs = page_contribs(page) if page else earlier(store, key, date)
             slug = entry["slug"]
         else:
             if key not in today:
@@ -567,8 +574,7 @@ def update(date: str, data_dir: Path, state_dir: Path | None = None) -> dict:
                 dropped += 1
             continue
         names = store.names_for(key) if key.startswith("policy:") else None
-        store.write(assemble(key, slug, contribs, store.register, store.topic_labels, names))
-        written += 1
+        written += store.write(assemble(key, slug, contribs, store.register, store.topic_labels, names))
     store.save_index(date)
     store.refresh_constraints({c["key"] for c in store.register if c.get("last_seen") == date or c.get("first_seen") == date})
     store.refresh_names()

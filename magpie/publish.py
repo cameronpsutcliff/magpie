@@ -158,7 +158,7 @@ def refresh_elements(date: str) -> None:
     try:
         from .elements import update
         update(date, DATA, STATE)
-    except Exception as ex:
+    except (Exception, SystemExit) as ex:  # the redaction gate raises SystemExit; here it must not end the run
         print(f"element pages not updated: {type(ex).__name__}: {str(ex)[:160]}", file=sys.stderr)
 
 
