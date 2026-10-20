@@ -1134,15 +1134,16 @@
   },
   {
    "id": "thoughtworks-insights",
-   "name": "Thoughtworks Insights",
+   "name": "Thoughtworks Insights (AI posts)",
    "kind": "blog",
    "url": "https://www.thoughtworks.com/rss/insights.xml",
    "trust": 0.65,
-   "vendor": "Thoughtworks",
+   "vendor": null,
    "product": null,
    "window_hours": 72,
    "max_entries": 40,
-   "ai_only": true
+   "ai_only": true,
+   "pinned": true
   },
   {
    "id": "martin-fowler",

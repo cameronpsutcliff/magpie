@@ -26,8 +26,12 @@ class ReadTests(unittest.TestCase):
             {"lead": "Acme cut costs 73%.", "body": "", "ids": ["b"]},
             "not a paragraph",
         ]
+        paras.append({"lead": "Acme ships.", "body": "", "ids": ["a", "invented"]})  # one unknown citation sinks it
+        paras.append({"lead": "Acme ships.", "body": "", "ids": [["a"]]})
+        paras.append({"lead": 7, "body": "", "ids": ["a"]})
         kept = R.keep(paras, rows)
         self.assertEqual([p["ids"] for p in kept], [["a"]])
+        self.assertEqual(R.keep(1, rows), [])
 
     def test_generate_reads_the_ranked_top(self):
         day = {"date": "2099-01-01", "edition": {"headline": "H", "dek": "D"}, "top": ["a", "b", "c"],
@@ -49,6 +53,8 @@ class ReadTests(unittest.TestCase):
         self.assertTrue(feeds.AI_TEXT.search("AI Agent Harness"))
         self.assertFalse(feeds.AI_TEXT.search("When software meets hardware"))
         self.assertFalse(feeds.AI_TEXT.search("Airport retail strategy"))
+        self.assertFalse(feeds.AI_TEXT.search("How change agents lead a retail transformation"))
+        self.assertFalse(feeds.AI_TEXT.search("Writing better prompts for your team retros"))
 
 
 if __name__ == "__main__":

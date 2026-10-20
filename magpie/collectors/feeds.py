@@ -9,9 +9,9 @@ from ..items import Item
 from ..util import fetch, now_utc, parse_time, strip_html
 
 # For feeds that cover more than AI: keep an entry only when its title or summary is about AI.
-AI_TEXT = re.compile(r"\b(?:AI|A\.I\.|LLMs?|GenAI|gen-?AI|agents?|agentic|generative|machine learning|language models?|"
-                     r"copilots?|coding assistants?|prompts?|inference|model weights|open[- ]weights?|RAG|MCP|"
-                     r"Claude|GPT|Gemini|Llama|Qwen|DeepSeek)\b")
+AI_TEXT = re.compile(r"\b(?:AI|A\.I\.|LLMs?|GenAI|gen-?AI|generative AI|agentic|AI agents?|machine learning|"
+                     r"(?:large )?language models?|copilots?|coding assistants?|prompt engineering|model weights|"
+                     r"open[- ]weights?|RAG|MCP|Claude|GPT|ChatGPT|Gemini|Llama|Qwen|DeepSeek)\b")
 
 NS = {"atom": "http://www.w3.org/2005/Atom", "content": "http://purl.org/rss/1.0/modules/content/",
       "dc": "http://purl.org/dc/elements/1.1/", "media": "http://search.yahoo.com/mrss/"}
@@ -65,7 +65,7 @@ def collect_feed(src: dict) -> list[Item]:
         title = strip_html(e["title"], 220)
         if src.get("title_must") and not any(w.lower() in title.lower() for w in src["title_must"]):
             continue
-        if src.get("ai_only") and not AI_TEXT.search(f"{title} {e['summary'] or e['body']}"):
+        if src.get("ai_only") and not AI_TEXT.search(f"{title} {strip_html(e['summary'])} {strip_html(e['body'])}"):
             continue  # a company or author feed that covers more than AI
         out.append(Item(
             source_id=src["id"],

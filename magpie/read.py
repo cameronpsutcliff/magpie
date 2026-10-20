@@ -39,7 +39,7 @@ def _row(e: dict) -> dict:
     b = e.get("brief") or {}
     return {"id": e["id"], "headline": b.get("headline") or e["title"], "newly_possible": b.get("newly_possible") or e.get("summary", ""),
             "why": b.get("why", ""), "limits": b.get("limits", ""), "maker": e.get("maker"), "evidence": e.get("evidence"),
-            "impact": e.get("impact"), "metrics": e.get("metrics") or {}, "sources": [s.get("title", "") for s in e.get("sources", [])][:5]}
+            "impact": e.get("impact"), "metrics": e.get("metrics") or {}}  # editor-written fields only: no raw source text
 
 
 def _grounding(row: dict) -> str:
@@ -51,11 +51,17 @@ def keep(paras, rows: dict) -> list[dict]:
     """A paragraph stays only if it cites events shown and states no number they do not."""
     out = []
     for para in paras if isinstance(paras, list) else []:
-        if not isinstance(para, dict):
+        if not isinstance(para, dict) or not isinstance(para.get("ids"), list):
             continue
-        ids = [i for i in dict.fromkeys(para.get("ids") or []) if i in rows]
-        lead, body = clean(para.get("lead") or ""), clean(para.get("body") or "")
-        if not ids or not lead or ungrounded_numbers([lead, body], " ".join(_grounding(rows[i]) for i in ids)):
+        cited = [i for i in para["ids"] if isinstance(i, str)]
+        if not cited or len(cited) != len(para["ids"]) or any(i not in rows for i in cited):
+            continue  # one unknown citation sinks the paragraph: it may rest on it
+        ids = list(dict.fromkeys(cited))
+        lead, body = para.get("lead"), para.get("body") or ""
+        if not isinstance(lead, str) or not isinstance(body, str):
+            continue
+        lead, body = clean(lead), clean(body)
+        if not lead or ungrounded_numbers([lead, body], " ".join(_grounding(rows[i]) for i in ids)):
             continue
         out.append({"lead": lead, "body": body, "ids": ids})
     return out[:3]
@@ -77,8 +83,9 @@ def generate(day: dict, timeout: int = 600) -> dict:
         except Exception as ex:  # try the next lane
             errors.append(f"{lane}: {str(ex)[:160]}")
             continue
-        items = keep(data.get("read"), rows)
-        return {"items": items, "lane": lane, "offered": len(data.get("read") or []), "kept": len(items)}
+        offered = data.get("read") if isinstance(data, dict) and isinstance(data.get("read"), list) else []
+        items = keep(offered, rows)
+        return {"items": items, "lane": lane, "offered": len(offered), "kept": len(items)}
     return {"items": [], "errors": errors}
 
 
