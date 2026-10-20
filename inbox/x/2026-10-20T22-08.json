@@ -1,0 +1,738 @@
+{
+ "ran_at": "2026-10-20T22:08:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v4",
+ "since": "2026-10-20T18:10:00Z",
+ "queries": 10,
+ "calls": 21,
+ "items": [
+  {
+   "title": "Meta's Muse Spark Open weights are out, with day-0 hosting and fine-tuning on Fireworks",
+   "url": "https://x.com/FireworksAI_HQ/status/2112642096175948137",
+   "handle": "@FireworksAI_HQ",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Meta published Muse Spark Open, an 816B-total, 42B-active multimodal open-weight model with a 1M-token context, on Hugging Face under Meta's own license rather than an open-source one. Fireworks serves it from launch for inference and API fine-tuning, so teams can try or adapt it without hosting roughly 700 GB of weights themselves.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/meta-models/Muse-Spark-Open-816B-A42B",
+    "https://research.meta.ai/blog/muse-spark-open",
+    "https://fireworks.ai/models/fireworks/muse-spark-open"
+   ],
+   "vendor": "Meta",
+   "posted_at": "2026-10-20T20:28:21Z",
+   "metrics": {
+    "likes": 9,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 1,
+    "views": 1096
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Vals ranks Reflection's open-weight Beam 1.0 #10 among open models and fastest on its index",
+   "url": "https://x.com/ValsAI/status/2112655199999590772",
+   "handle": "@ValsAI",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Vals AI placed Reflection's Beam 1.0 (501B total, 23B active, Apache 2.0) tenth among open-weight models on the Vals Index and first on speed. Reflection also revealed that Beam was the stealth CatJam model on OpenCode, where it stays free for another week.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/reflection/Beam-1.0-501B-A23B",
+    "https://reflection.ai/blog/beam-is-available"
+   ],
+   "vendor": "Reflection AI",
+   "posted_at": "2026-10-20T21:20:25Z",
+   "metrics": {
+    "likes": 24,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 1,
+    "views": 1290
+   },
+   "confirmed_by": [
+    "@reflection_ai"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "EAGLE-4 speculative decoding ships with TorchSpec training and TokenSpeed serving",
+   "url": "https://x.com/lightseekorg/status/2112660526685929824",
+   "handle": "@lightseekorg",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "EAGLE-4 adds cost-aware dynamic draft trees and chains to lossless speculative decoding. LightSeek reports 750 tokens per second for one request on Qwen3.8-27B across four B300 GPUs, 2.85 times plain decoding and 1.28 times the model's own MTP drafter, and about 3 times on an agentic coding workload.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://lightseek.org/blog/eagle-4"
+   ],
+   "vendor": "LightSeek Foundation / EAGLE",
+   "posted_at": "2026-10-20T21:41:35Z",
+   "metrics": {
+    "likes": 12,
+    "reposts": 3,
+    "quotes": 1,
+    "replies": 0,
+    "views": 360
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Ornith-1.5-122B open-weight coding model goes free in Command Code and runs via Ollama",
+   "url": "https://x.com/CommandCodeAI/status/2112650593877766522",
+   "handle": "@CommandCodeAI",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Ornith-1.5-122B, an MIT-licensed mixture-of-experts agentic coding model with a 262K context, is now free for all Command Code plans. Ollama users can launch it locally inside Hermes Agent with one command, and Unsloth has published GGUF quantizations.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/ornith-ai/Ornith-1.5-122B",
+    "https://ollama.com/library/ornith-1.5",
+    "https://huggingface.co/unsloth/Ornith-1.5-122B-GGUF"
+   ],
+   "vendor": "Ornith AI",
+   "posted_at": "2026-10-20T21:02:07Z",
+   "metrics": {
+    "likes": 63,
+    "reposts": 8,
+    "quotes": 2,
+    "replies": 5,
+    "views": 2526
+   },
+   "confirmed_by": [
+    "@witcheer"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Cloudflare's Clef 27B decision model runs locally in Ollama",
+   "url": "https://x.com/ollama/status/2112635366159352101",
+   "handle": "@ollama",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Clef, a 27B multimodal model fine-tuned from Qwen3.8-27B that answers typed questions about a text, JSON or image state, can be run locally (about 18 to 20 GB) or in Ollama's cloud through a System One compatible endpoint. The Ollama listing was published about six days before this post.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://ollama.com/library/clef"
+   ],
+   "vendor": "Cloudflare",
+   "posted_at": "2026-10-20T20:01:36Z",
+   "metrics": {
+    "likes": 100,
+    "reposts": 15,
+    "quotes": 1,
+    "replies": 10,
+    "views": 6908
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "SGLang-Omni adds a unified runtime for full-duplex voice interaction",
+   "url": "https://x.com/lmsysorg/status/2112625536350740896",
+   "handle": "@lmsysorg",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "SGLang-Omni now serves native full-duplex models, turn-based multimodal models and cascaded ASR, LLM and TTS pipelines under one session runtime. On one H200 a Qwen3.8-27B cascade averaged 0.17 s stop latency and 1.32 s response latency with 16 concurrent sessions.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://www.sglang.io/blog/omni-interactive-runtime"
+   ],
+   "vendor": "SGLang / LMSYS",
+   "posted_at": "2026-10-20T19:22:33Z",
+   "metrics": {
+    "likes": 11,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 3,
+    "views": 640
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "RL-trained agents build filesystems that lift later RAG accuracy from 44% to 77%",
+   "url": "https://x.com/tinkerapi/status/2112623690362101837",
+   "handle": "@tinkerapi",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A Tinker grant project trained agents with reinforcement learning to organize files in anticipation of other agents' queries, which raised downstream retrieval accuracy from 44% to 77%. The post links only to the author's thread, with no paper or code.",
+   "kind": "technique",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Tinker grants (Thinking Machines)",
+   "posted_at": "2026-10-20T19:15:13Z",
+   "metrics": {
+    "likes": 70,
+    "reposts": 2,
+    "quotes": 1,
+    "replies": 1,
+    "views": 2741
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No paper, code or method linked in the post.",
+    "source": null
+   }
+  },
+  {
+   "title": "Paper: many transcoder features are single MLP neurons in disguise",
+   "url": "https://x.com/omarsar0/status/2112619619865579572",
+   "handle": "@omarsar0",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Across 13 open-source transcoders, many active late-layer features turn out to be near copies of single MLP neurons, and only those features stay stable across training runs and match the MLP's Jacobian. That makes raw neurons a stronger interpretability starting point and means other transcoder features need validation before use.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2610.24521"
+   ],
+   "vendor": "Shabalin and Piotrowski (attributed to Anthropic by the poster)",
+   "posted_at": "2026-10-20T18:59:02Z",
+   "metrics": {
+    "likes": 47,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 7,
+    "views": 3692
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Epi, a persistent self-improving research agent, sets 120 records",
+   "url": "https://x.com/dair_ai/status/2112618107038835011",
+   "handle": "@dair_ai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Epi keeps working on one research problem across many model sessions with persistent history, branching and a fixed verifier it cannot change. It reports 120 records, including an 84 times narrower interval for the n-queens constant, and its lighter Epi-turbo beats Codex by 5.4% on 30 FrontierOR tasks at 64% of the cost.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2610.24944"
+   ],
+   "vendor": "Huang et al.",
+   "posted_at": "2026-10-20T18:53:01Z",
+   "metrics": {
+    "likes": 33,
+    "reposts": 3,
+    "quotes": 1,
+    "replies": 2,
+    "views": 3402
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Frontier agents still fail expert review on open-ended AI research with $10,000 budgets",
+   "url": "https://x.com/sayashk/status/2112648736484806847",
+   "handle": "@sayashk",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A follow-up evaluation gave Fable 5.1 and GPT-6 Astra research questions from unpublished papers and $10,000 budgets. Experiment design and resource management improved, but the original authors still rejected both AI-written papers for weak judgment, calibration and communication.",
+   "kind": "eval",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Sayash Kapoor and collaborators",
+   "posted_at": "2026-10-20T20:54:44Z",
+   "metrics": {
+    "likes": 39,
+    "reposts": 7,
+    "quotes": 3,
+    "replies": 10,
+    "views": 2380
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Two papers only, no write-up or data linked in the post.",
+    "source": null
+   }
+  },
+  {
+   "title": "Vals Router Index: every model router lost to some single model on score and cost",
+   "url": "https://x.com/ValsAI/status/2112624419923440095",
+   "handle": "@ValsAI",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Vals tested five routers (OpenRouter Auto, FireRouter, Ramp Router, Jev, Fugu Max) against every model on its index with the same agents and about 1,250 tasks in finance, coding, law and tax. Each router was beaten on both score and cost by at least one single model.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Vals AI",
+   "posted_at": "2026-10-20T19:18:07Z",
+   "metrics": {
+    "likes": 43,
+    "reposts": 3,
+    "quotes": 1,
+    "replies": 2,
+    "views": 2380
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Arena: Muse Wonder Full (Max) ranks #7 in Agent Arena",
+   "url": "https://x.com/arena/status/2112639437482176693",
+   "handle": "@arena",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "On more than 6,500 real agentic sessions, Meta's Muse Wonder Full (Max) reached #7 with a +11.3% net score, 7.5 points above Muse Wonder (Max), placing Meta fourth among labs. It ranks #5 in Chat, #6 in Code and #7 in Work.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Arena / Meta",
+   "posted_at": "2026-10-20T20:17:47Z",
+   "metrics": {
+    "likes": 112,
+    "reposts": 11,
+    "quotes": 2,
+    "replies": 11,
+    "views": 8609
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "MiniMax M3.1 Flash tops Parallel's search leaderboard on efficiency",
+   "url": "https://x.com/MiniMax_AI/status/2112638721040482341",
+   "handle": "@MiniMax_AI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Parallel Web Systems measured MiniMax M3.1 Flash matching DeepSeek V4.1 Flash on web research with Parallel Search at about a third of the cost, the best efficiency on its leaderboard.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "MiniMax / Parallel Web Systems",
+   "posted_at": "2026-10-20T20:14:56Z",
+   "metrics": {
+    "likes": 91,
+    "reposts": 5,
+    "quotes": 2,
+    "replies": 7,
+    "views": 4255
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Snowflake adds snowflake-decision-fast, a low-latency typed decision model",
+   "url": "https://x.com/Snowflake/status/2112643778947301489",
+   "handle": "@Snowflake",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "In private preview, snowflake-decision-fast returns typed answers such as categories, scores or probabilities with lower latency and cost, callable from SQL through AI_COMPLETE or from outside Snowflake through a new Cortex AI Gateway REST API.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://www.snowflake.com/en/blog/snowflake-decision-fast-low-latency-ai-decisions/"
+   ],
+   "vendor": "Snowflake",
+   "posted_at": "2026-10-20T20:35:02Z",
+   "metrics": {
+    "likes": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 407
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Cline Desktop adds a Goal plugin that keeps the agent working until verified",
+   "url": "https://x.com/cline/status/2112644617141371061",
+   "handle": "@cline",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "The Goal plugin adds a /goal command and an afterRun hook that pushes Cline to verify its work, and only lets it finish once it calls a mark-complete tool. It also shows the new plugin system: TypeScript files that add commands, tools, lifecycle hooks and rules.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Cline",
+   "posted_at": "2026-10-20T20:38:22Z",
+   "metrics": {
+    "likes": 31,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 6,
+    "views": 2148
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "VS Code previews canvases, shared workspaces for you and your coding agent",
+   "url": "https://x.com/code/status/2112636251782201602",
+   "handle": "@code",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "VS Code 1.142 adds canvases in preview: boards where developers and the agent organize releases, backlog and resources and turn cards into plans with context the agent can act on. Canvases can be created or installed per workflow.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://code.visualstudio.com/updates/v1_142#_canvases-preview"
+   ],
+   "vendor": "Microsoft",
+   "posted_at": "2026-10-20T20:05:07Z",
+   "metrics": {
+    "likes": 29,
+    "reposts": 3,
+    "quotes": 2,
+    "replies": 3,
+    "views": 5664
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Zed's Delta agent can search and read your past threads",
+   "url": "https://x.com/zeddotdev/status/2112619676509548625",
+   "handle": "@zeddotdev",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Delta now has built-in tools to find and read earlier agent threads from a plain description, so lost context can be pulled back into a new session.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Zed",
+   "posted_at": "2026-10-20T18:59:16Z",
+   "metrics": {
+    "likes": 45,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 7,
+    "views": 4061
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "v0 for iOS adds Browser Use annotations",
+   "url": "https://x.com/v0/status/2112618285900685530",
+   "handle": "@v0",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "The v0 iOS app now supports Browser Use annotations, letting users mark up pages for the agent from a phone.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Vercel",
+   "posted_at": "2026-10-20T18:53:44Z",
+   "metrics": {
+    "likes": 67,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 4,
+    "views": 6692
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Browserbase publishes a Cookbook repo of browser-agent integrations",
+   "url": "https://x.com/browserbase/status/2112620355311603919",
+   "handle": "@browserbase",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "A cloneable collection of example builds on Browserbase, meant to be handed to a coding agent so it can wire headless browser sessions into a product.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/browserbase/cookbook"
+   ],
+   "vendor": "Browserbase",
+   "posted_at": "2026-10-20T19:01:57Z",
+   "metrics": {
+    "likes": 10,
+    "reposts": 4,
+    "quotes": 1,
+    "replies": 7,
+    "views": 907
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Cohere's changelog lists Rerank 5 Pro and Fast, dated October 21",
+   "url": "https://x.com/aitrackerbot/status/2112651379600716051",
+   "handle": "@aitrackerbot",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Cohere's release notes describe rerank-v5.0-pro and rerank-v5.0-fast with 32K context, 100+ languages and a Context Focus option that returns the most relevant passages inside each document; Cohere says Rerank 5 Fast beats Rerank 4 Pro.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://docs.cohere.com/v2/changelog"
+   ],
+   "vendor": "Cohere",
+   "posted_at": "2026-10-20T21:05:14Z",
+   "metrics": {
+    "likes": 4,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 348
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Entry is dated a day ahead and no official Cohere post confirms availability yet.",
+    "source": null
+   }
+  },
+  {
+   "title": "Grok Bot cleared 204 incident tickets in about 10 minutes with one human approval",
+   "url": "https://x.com/bot/status/2112645531076096330",
+   "handle": "@bot",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "SpaceXSI says Grok Bot watches its support queue for incident spikes, drafts replies for every linked ticket, and sends them once an engineer approves the batch; in one incident that cleared 204 tickets in about 10 minutes.",
+   "kind": "demo",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "SpaceXSI",
+   "posted_at": "2026-10-20T20:42:00Z",
+   "metrics": {
+    "likes": 1128,
+    "reposts": 63,
+    "quotes": 18,
+    "replies": 73,
+    "views": 40976
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "A single internal anecdote with no method or error rate; several repliers say their own support tickets went unanswered or auto-closed.",
+    "source": "https://x.com/maxifirtman/status/2112649340342661546"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Quote posts praised the human sign-off on the batch as the part worth copying; many replies used the thread to complain about unanswered Grok Bot support tickets and usage caps rather than the workflow.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Simon Willison builds a browser RTS with Claude Opus 5.5, with multiplayer over audio",
+   "url": "https://x.com/simonw/status/2112630778068881543",
+   "handle": "@simonw",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Battle Drones is a Command and Conquer style real-time strategy game built mostly with Claude Opus 5.5 that runs in the browser, lets LLMs play each other by pausing every few seconds, and links two nearby devices for multiplayer over sound with no server.",
+   "kind": "demo",
+   "evidence": "artifact",
+   "links": [
+    "https://simonwillison.net/2026/Oct/20/battledrones/"
+   ],
+   "vendor": "Simon Willison",
+   "posted_at": "2026-10-20T19:43:22Z",
+   "metrics": {
+    "likes": 306,
+    "reposts": 15,
+    "quotes": 6,
+    "replies": 81,
+    "views": 15732
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers liked the serverless audio multiplayer and the pause-to-think loop as an LLM test bench; some tried it and asked about map controls and noisy rooms, and the author warned the audio link emits a constant high-pitched tone.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "NVIDIA slide claims AI sped up CUDA optimization 2x in one month",
+   "url": "https://x.com/SemiAnalysis_/status/2112650722315510047",
+   "handle": "@SemiAnalysis_",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "SemiAnalysis relays a PyTorch Conference slide from NVIDIA engineers: 5x throughput gains over a year of expert tuning, then 2x in one month with AI assistance and 1.5x more from AI orchestration plus megakernels.",
+   "kind": "technique",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-10-20T21:02:38Z",
+   "metrics": {
+    "likes": 201,
+    "reposts": 20,
+    "quotes": 6,
+    "replies": 19,
+    "views": 16234
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 2,
+    "community_note": null,
+    "pushback": "Repliers point out the three panels measure different things: the 5x is per-GPU throughput on R1 on GB200 while the 2x and 1.5x are per-MW on GB300 runs of other models, so the gains do not stack or compare.",
+    "source": "https://x.com/yusufksadek/status/2112658260134068598"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Most replies were excited takes on AI speeding up its own stack, while the more specific ones questioned whether the figures cover comparable workloads; no one reports reproducing it.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "IBM details an open MLIR dataflow backend taking PyTorch to its Spyre accelerator",
+   "url": "https://x.com/PyTorch/status/2112619930755465245",
+   "handle": "@PyTorch",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "IBM's Spyre team explains how KTIR and a dataflow scheduler turn PyTorch Inductor's work distribution, memory placement and tiling decisions into dataflow pipelines on Spyre, as open-source compiler code.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://pytorch.org/blog/from-ktir-to-spyrecode-an-mlir-dataflow-backend-for-ibm-spyre/"
+   ],
+   "vendor": "IBM",
+   "posted_at": "2026-10-20T19:00:16Z",
+   "metrics": {
+    "likes": 9,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 3,
+    "views": 2547
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": []
+}

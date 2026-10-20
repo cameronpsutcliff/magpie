@@ -1,19 +1,19 @@
 {
- "updated_at": "2026-10-20T18:10:00Z",
+ "updated_at": "2026-10-20T22:20:00Z",
  "job": "sweep",
- "prompt": "v3",
- "calls_used_today": 106,
+ "prompt": "v4",
+ "calls_used_today": 127,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-10-20T18:10:00Z",
-  "items": 7,
-  "queries": 12,
-  "deep_reads": 2,
+  "ran_at": "2026-10-20T22:08:00Z",
+  "items": 24,
+  "queries": 10,
+  "deep_reads": 3,
   "rechecks": 8,
-  "flagged": 2,
+  "flagged": 5,
   "saved_in": 0,
   "saved_kept": 0,
-  "videos": 1
+  "videos": 0
  },
  "roster": {
   "curated": 223,
@@ -24,6 +24,7 @@
  "follows_this_week": 0,
  "unfollow_suggestions": [],
  "prompt_feedback": [
+  "Prompt v4 still says to read saves through the X plugin; in practice they come from the Twitter Profile archive (see below), so a sweep only sees saves as fresh as that bot's last sync (20:44Z for the 22:08Z sweep).",
   "Community Notes are not available through the X API here: post.fields community_notes is rejected, so doubt levels this run come from replies and quote posts only, with no browser check.",
   "Saves are read from the Twitter Profile archive on the box (/workspace/x-ai-bookmarks/bookmarks_ai.jsonl and discarded.jsonl), not from the X plugin bookmarks call; the prompt should say so and name the captured_at field for the time window.",
   "The archive fields (id, url, text, created_at, author_username, links, github_repos, category, reason, first_seen_at, captured_at, posted_at) differ from what the prompt implies; 97 backfill records share one captured_at near 2026-10-14T04:4xZ, so captured_at plus posted_at is needed to find new saves.",
@@ -31,13 +32,17 @@
   "get_posts_quoted_posts returns plain reposts unless exclude retweets,replies is passed; the prompt should specify that.",
   "The min_likes search operator appears to be ignored by search_posts_all, so discovery queries return mostly low-engagement posts.",
   "Video analysis needs a video-capable reader; this run only downloaded 3 clips over 60 seconds for later analysis and left the video field out of items.",
-  "config/scout.json has follow_mode browser, but runs so far have no browser and are told to report follow candidates to the parent instead of following or logging; through the 18:10Z sweep no account has 3 qualifying sweep-file posts yet.",
   "search_posts_all returns a next_token even when result_count is below max_results; following it for a 30-minute window returned nothing, so treat result_count under max_results as the end of the window and skip the extra page.",
   "Post public_metrics come back as repost_count, not retweet_count; the prompt's metrics.reposts should map from repost_count.",
-  "TorchTPU (announced around 11:30Z by Google Cloud accounts) only reached the sweep through a later @PyTorch post; @googlecloud, @GoogleOSS or a Google Cloud Tech account may be worth a roster review look."
+  "TorchTPU (announced around 11:30Z by Google Cloud accounts) only reached the sweep through a later @PyTorch post; @googlecloud, @GoogleOSS or a Google Cloud Tech account may be worth a roster review look.",
+  "config/scout.json has follow_mode browser, but sweeps run without a browser and report follow candidates to the parent instead of following or logging; as of the 22:08Z sweep only @arena has 3 qualifying sweep-file posts with no doubt flag of 2 or more (@ValsAI has 4 but one level-2 flag).",
+  "search_posts_all rejects until_id or since_id together with start_time (400); page within a window with next_token or with end_time set to the oldest result's created_at.",
+  "Search results return long posts truncated without note_tweet text or unwound links; one get_posts_by_ids call on the shortlisted ids is needed to read full text and primary links before writing summaries.",
+  "The sweep file schema has no place for re-check outcomes; re-checks that change nothing are visible only as a count in last_sweep.",
+  "Releases that a lab does not post on X itself can slip through roster sweeps (Muse Spark Open, out about 12:00Z Oct 20, surfaced only via a Fireworks day-0 post at 20:28Z); a discovery query for huggingface.co links that several roster accounts mention would catch these earlier."
  ],
  "errors": [
   "Accounts unavailable and skipped: @xai (moved, @SpaceXAI not found), @heygen_official (suspended); @lmarena_ai swept as @arena.",
-  "One Warp Factories clip (341 s) was downloaded outside the repo for later analysis; no video record was added because this run cannot analyze video."
+  "Two page-2 searches (builders, applied) failed with 400 because until_id was combined with start_time; both were rerun with end_time and all four calls are counted."
  ]
 }
