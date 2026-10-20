@@ -249,6 +249,19 @@ def same_action(doc: str | None, url: str | None, rec: dict) -> bool:
     return bool(mine & theirs)
 
 
+def issuer_status(extra: dict, date: str) -> str | None:
+    """Status from the Federal Register's own document type, which beats the model's reading."""
+    kind = (extra.get("doc_type") or "").lower()
+    if kind == "proposed rule":
+        return "draft"
+    if kind == "rule":
+        eff = extra.get("effective_on")
+        return "in_force" if eff and eff <= date else "final"
+    if kind == "presidential document":
+        return "in_force"
+    return None
+
+
 def signature(c: dict) -> str:
     """What a candidate says; when it changes, Magpie classifies it again."""
     extra = c.get("extra") or {}
@@ -334,7 +347,7 @@ def classify(cands: list[dict], date: str, recorded: list[dict] | None = None, t
             verdicts[c["_key"]] = {
                 "kept": True, "date": date, "same_as": v.get("same_as"), "_id": c["_id"], "sig": sig,
                 **words,
-                "status": v.get("status") if v.get("status") in STATUSES else "proposed",
+                "status": issuer_status(extra, date) or (v.get("status") if v.get("status") in STATUSES else "proposed"),
                 "instrument": v.get("instrument") if v.get("instrument") in INSTRUMENTS else "guidance",
                 "layers": [l for l in v.get("layers") or [] if l in LAYERS][:3],
                 "jurisdiction": clean(v.get("jurisdiction") or extra.get("jurisdiction") or ""),
@@ -343,7 +356,7 @@ def classify(cands: list[dict], date: str, recorded: list[dict] | None = None, t
                 "effective": extra.get("effective_on") or grounded_date(v.get("effective"), source),
                 "comment_deadline": extra.get("comments_close_on") or grounded_date(v.get("comment_deadline"), source),
                 # Only an in-force action from the issuer's own document may cut access on the page.
-                "access_now": bool(v.get("access_now")) and v.get("status") == "in_force" and c["_primary"],
+                "access_now": bool(v.get("access_now")) and (issuer_status(extra, date) or v.get("status")) == "in_force" and c["_primary"],
                 "impact": impact,
                 "ripples": ripples,
                 "hats": hat_words,
@@ -436,9 +449,10 @@ def generate(items: list[dict], date: str, data_dir, state_dir, *, llm: bool = T
     events = [_event(r, date) for r in records if r["first_seen"] == date]
     sighted = sorted((dict(r, new=r["first_seen"] == date) for r in records), key=lambda r: (not r["new"], -r["signal"]))
     carried = []
+    candidate_keys = {c["_key"] for c in cands}
     for r in register.get("items", []):
-        if r["key"] in today or not is_open(r, date):
-            continue
+        if r["key"] in today or r["key"] in candidate_keys or not is_open(r, date):
+            continue  # sighted today but not re-kept: its document changed, so its old words are not shown
         r = dict(r)
         r["signal"], r["parts"] = _signal(r, date)
         carried.append(dict(r, new=False))

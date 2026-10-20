@@ -201,6 +201,22 @@ class ConstraintTests(unittest.TestCase):
         self.assertEqual({s["url"] for s in item["sources"]},
                          {"https://www.federalregister.gov/d/2099-12345", "https://x.com/agency/status/6"})
 
+    def test_a_changed_document_that_is_not_re_kept_drops_its_old_words(self):
+        K.LANES.clear()
+        K.LANES["claude"] = FakeLane(self._keep(access_now=False))
+        it = policy_item("https://www.federalregister.gov/d/2099-33333", "Rule", num="2099-33333", comments_close_on="2099-03-01")
+        _, section = K.generate([it], DATE, self.data, self.state)
+        K.update_register(section, DATE, self.data)
+        K.LANES["claude"] = lambda prompt, timeout: json.dumps({"constraints": []})
+        _, section2 = K.generate([dict(it, summary="Rule withdrawn")], "2099-01-11", self.data, self.state)
+        self.assertEqual(section2["items"], [])  # still open by date, but its document changed and was not re-kept
+
+    def test_federal_register_type_sets_the_status(self):
+        self.assertEqual(K.issuer_status({"doc_type": "Proposed Rule"}, DATE), "draft")
+        self.assertEqual(K.issuer_status({"doc_type": "Rule", "effective_on": "2099-02-01"}, DATE), "final")
+        self.assertEqual(K.issuer_status({"doc_type": "Rule", "effective_on": "2099-01-01"}, DATE), "in_force")
+        self.assertIsNone(K.issuer_status({"doc_type": "Notice"}, DATE))
+
     def test_same_issuer_is_not_the_same_action(self):
         rec = {"doc_url": "https://www.federalregister.gov/d/2099-11111", "url": "https://www.federalregister.gov/d/2099-11111",
                "issuer": "Commerce", "jurisdiction": "US", "sources": []}
