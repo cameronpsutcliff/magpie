@@ -34,7 +34,7 @@ Schema `magpie.day/1`. Anything downstream can pull these files; nothing needs t
 
 ## Where it runs
 
-- **Cloud tier** (`cloud/edition.yml`, enabled by copying it to `.github/workflows/`): GitHub Actions, no personal computer involved. With no
+- **Cloud tier** (`.github/workflows/edition.yml`): GitHub Actions, no personal computer involved. With no
   secrets it publishes a plain edition from every keyless source. Add `CLAUDE_CODE_OAUTH_TOKEN` (from
   `claude setup-token`) or `ANTHROPIC_API_KEY` as a repository secret and the cloud run edits too.
 - **Home tier** (`scripts/home-run.sh`): an always-on machine adds the YouTube watch list, the Grok X
