@@ -162,24 +162,31 @@ class ConstraintTests(unittest.TestCase):
                     "layers": ["publishing"], "jurisdiction": "US", "issuer": "Commerce", "impact": 3, "access_now": True, **over}
         return make
 
-    def test_a_later_sighting_joins_the_recorded_action(self):
+    def test_a_later_sighting_of_the_same_document_joins_its_record(self):
         K.LANES.clear()
         K.LANES["claude"] = FakeLane(self._keep())
-        first = policy_item("https://www.federalregister.gov/d/2099-1", "Registration rule", num="2099-1")
+        first = policy_item("https://www.federalregister.gov/d/2099-12345", "Registration rule", num="2099-12345")
         events, section = K.generate([first], DATE, self.data, self.state)
         K.update_register(section, DATE, self.data)
         rec_id = section["items"][0]["id"]
         K.LANES["claude"] = FakeLane(self._keep(same_as=rec_id))
-        post = Item(source_id="eu-digital-strategy", source_kind="policy", source_name="Newsroom", url="https://ec.europa.eu/news/1",
-                    title="Registration rule explained", summary="explainer", published_at="2099-01-11T09:00:00+00:00",
-                    extra={"primary": True}).finalize().to_dict()
+        # A post linking the same document by its long URL form.
+        post = Item(source_id="x-grok-bot", source_kind="policy", source_name="X: @agency", url="https://x.com/agency/status/5",
+                    title="Registration rule published", summary="rule", published_at="2099-01-11T09:00:00+00:00",
+                    extra={"primary": False, "links": ["https://www.federalregister.gov/documents/2099/01/10/2099-12345/registration"]}).finalize().to_dict()
         events2, section2 = K.generate([post], "2099-01-11", self.data, self.state)
         self.assertEqual(events2, [])  # not a second "new" action
         self.assertEqual(len(section2["items"]), 1)
         item = section2["items"][0]
         self.assertFalse(item["new"])
         self.assertEqual(item["first_seen"], DATE)
-        self.assertEqual({s["url"] for s in item["sources"]}, {"https://www.federalregister.gov/d/2099-1", "https://ec.europa.eu/news/1"})
+        self.assertIn("https://x.com/agency/status/5", {s["url"] for s in item["sources"]})
+
+    def test_same_issuer_is_not_the_same_action(self):
+        rec = {"doc_url": "https://www.federalregister.gov/d/2099-11111", "url": "https://www.federalregister.gov/d/2099-11111",
+               "issuer": "Commerce", "jurisdiction": "US", "sources": []}
+        self.assertFalse(K.same_action("https://www.federalregister.gov/d/2099-22222", "https://www.federalregister.gov/d/2099-22222", rec))
+        self.assertTrue(K.same_action("https://www.federalregister.gov/documents/2099/01/10/2099-11111/x", "https://x.com/a/status/1", rec))
 
     def test_a_changed_document_is_classified_again(self):
         K.LANES.clear()

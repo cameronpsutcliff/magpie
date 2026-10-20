@@ -222,13 +222,27 @@ GROUND_ALL = ("title", "summary", "issuer", "jurisdiction", "document_type", "ac
 GROUND_DOC = ("text", "effective_on", "comments_close_on", "dates")  # a post's own words never ground a number
 
 
-def same_action(issuer: str, jurisdiction: str, doc: str | None, rec: dict) -> bool:
-    """Code-side check before two sightings become one action: the same document, or the same jurisdiction and issuer."""
-    if doc and (doc == rec.get("doc_url") or doc in {s.get("url") for s in rec.get("sources", [])}):
-        return True
-    a, b = (issuer or "").strip().lower(), (rec.get("issuer") or "").strip().lower()
-    same_place = (jurisdiction or "").strip().lower() == (rec.get("jurisdiction") or "").strip().lower() != ""
-    return same_place and bool(a) and bool(b) and (a in b or b in a)
+FR_DOC = re.compile(r"federalregister\.gov/(?:d|documents/\d{4}/\d{2}/\d{2})/(\d{4}-\d{4,6})", re.I)
+
+
+def doc_ids(*urls: str | None) -> set[str]:
+    """Identities of the documents behind some URLs: the page key, and the Federal Register number in either URL form."""
+    out = set()
+    for u in urls:
+        if not u:
+            continue
+        out.add(url_key(u))
+        m = FR_DOC.search(u)
+        if m:
+            out.add(f"fr:{m.group(1)}")
+    return out
+
+
+def same_action(doc: str | None, url: str | None, rec: dict) -> bool:
+    """Two sightings become one action only when they share a document. Model-written fields never decide it."""
+    mine = doc_ids(doc, url)
+    theirs = doc_ids(rec.get("doc_url"), rec.get("url"), *(s.get("url") for s in rec.get("sources", [])))
+    return bool(mine & theirs)
 
 
 def signature(c: dict) -> str:
@@ -360,7 +374,7 @@ def generate(items: list[dict], date: str, data_dir, state_dir, *, llm: bool = T
     joined: dict[str, list[dict]] = {}
     for c, v in kept:
         r = reg_by_id.get(v.get("same_as"))
-        if r and r["key"] != c["_key"] and same_action(v.get("issuer"), v.get("jurisdiction"), c.get("_doc"), r):
+        if r and r["key"] != c["_key"] and same_action(c.get("_doc"), c["url"], r):
             joined.setdefault(r["key"], []).append(c)
     kept = [(c, v) for c, v in kept if not any(c in cs for cs in joined.values())]
     records = []
@@ -385,9 +399,8 @@ def generate(items: list[dict], date: str, data_dir, state_dir, *, llm: bool = T
         if lead not in lead_of:
             lead = c["_key"]
         elif lead != c["_key"]:
-            lc, lv = lead_of[lead]
-            target = {"doc_url": lc.get("_doc"), "sources": [{"url": lc["url"]}], "issuer": lv.get("issuer"), "jurisdiction": lv.get("jurisdiction")}
-            if not same_action(v.get("issuer"), v.get("jurisdiction"), c.get("_doc"), target):
+            lc, _ = lead_of[lead]
+            if not same_action(c.get("_doc"), c["url"], {"doc_url": lc.get("_doc"), "url": lc["url"]}):
                 lead = c["_key"]
         groups.setdefault(lead, []).append(c)
     for lead_key, group in groups.items():
