@@ -318,12 +318,16 @@ class DiscoverTests(unittest.TestCase):
             # A Scout addition does not vouch, and neither does a low signal-to-noise account.
             {"kind": "blog", "name": "Example blog", "url": "https://blog.example.org/", "seen_via": ["@vetted", "@ontrial"]},
             {"kind": "changelog", "name": "Tool", "url": "https://tool.example.net/changelog.xml", "seen_via": ["@vetted", "@lowsnr"]},
-            {"kind": "blog", "url": "not a url", "seen_via": ["@vetted", "@noisy"]}, "junk"]})
+            {"kind": "blog", "url": "not a url", "seen_via": ["@vetted", "@noisy"]}, "junk",
+            {"kind": "blog", "url": "https://odd.example.com/", "seen_via": 1},
+            {"kind": "blog", "url": "https://odder.example.com/", "seen_via": "@vetted"},
+            {"kind": "blog", "url": "https://oddest.example.com/", "seen_via": [None, 3, {"h": 1}, "@vetted"]}]})
         out = r.run()
         self.assertEqual({e["id"] for e in out["result"]["promoted"]},
                          {"newsletter:leadletter.substack.com", "youtube:channel/ucleadleadleadleadlead12"})
         watching = {e["id"]: e for e in out["result"]["watching"]}
-        self.assertEqual(set(watching), {"newsletter:blog.example.org", "newsletter:tool.example.net"})
+        self.assertEqual(set(watching), {"newsletter:blog.example.org", "newsletter:tool.example.net",
+                                         "newsletter:oddest.example.com"})
         self.assertEqual(watching["newsletter:tool.example.net"]["feed_url"], "https://tool.example.net/changelog.xml")
         self.assertEqual(watching["newsletter:blog.example.org"]["feed_url"], "https://blog.example.org/feed")
         self.assertEqual(r.read("config/youtube.json")["channels"][-1]["name"], "Lead Talks")

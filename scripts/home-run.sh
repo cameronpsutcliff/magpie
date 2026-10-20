@@ -25,17 +25,30 @@ echo "=== $(date '+%F %T %Z') home run" >>"$log"
 git pull --rebase -X theirs --quiet >>"$log" 2>&1 || echo "pull failed; continuing on local main" >>"$log"
 
 # Sundays, before the edition: review the last full week, then run discovery over the seven days of runs
-# that end yesterday. Neither may block the edition; a failed discovery leaves config as it was.
+# that end yesterday. Neither may block the edition. Only a step that succeeded is committed; a failed one
+# has everything it may have written put back.
+weekly_undo() {
+  git checkout -- "$@" >>"$log" 2>&1
+  git clean -fq -- "$@" >>"$log" 2>&1
+}
 if [ "$(date +%u)" = 7 ]; then
   echo "--- weekly review and discovery" >>"$log"
   last_week="$(date -v-7d +%F 2>/dev/null || date -d '7 days ago' +%F)"
   yesterday="$(date -v-1d +%F 2>/dev/null || date -d yesterday +%F)"
-  python3 -m magpie review --week "$last_week" >>"$log" 2>&1 || echo "review failed; the edition goes ahead" >>"$log"
-  if ! python3 -m magpie discover --date "$yesterday" >>"$log" 2>&1; then
-    echo "discover failed; the edition goes ahead" >>"$log"
-    git checkout -- config/sources.json config/youtube.json config/candidates.json >>"$log" 2>&1
+  review_out="reports/review"
+  discover_out="config/sources.json config/youtube.json config/candidates.json reports/discovery"
+  if python3 -m magpie review --week "$last_week" >>"$log" 2>&1; then
+    git add $review_out
+  else
+    echo "review failed; the edition goes ahead" >>"$log"
+    weekly_undo $review_out
   fi
-  git add config/sources.json config/youtube.json config/candidates.json reports
+  if python3 -m magpie discover --date "$yesterday" >>"$log" 2>&1; then
+    git add $discover_out
+  else
+    echo "discover failed; the edition goes ahead" >>"$log"
+    weekly_undo $discover_out
+  fi
   git diff --cached --quiet || git commit -qm "weekly review and discovery $(date +%F)"
 fi
 

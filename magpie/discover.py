@@ -199,9 +199,12 @@ def add_leads(ents: dict, leads: list[dict], updated: str | None, roster: dict, 
         ref = lead_ref(lead)
         if not ref:
             continue
+        via = lead.get("seen_via")
+        if not isinstance(via, list):
+            continue
         title = f"Scout lead: {lead.get('why') or lead.get('name') or ref['label']}"[:160]
-        for h in lead.get("seen_via") or []:
-            h = str(h).strip().lstrip("@").lower()
+        for h in via:
+            h = h.strip().lstrip("@").lower() if isinstance(h, str) else ""
             if not h:
                 continue
             acct = roster.get(f"@{h}") or {}
