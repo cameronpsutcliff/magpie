@@ -511,6 +511,55 @@
      }
     }
    }
+  },
+  "read": {
+   "type": "object",
+   "description": "The read under the headline: two or three paragraphs on the day's top-ranked events, each leading with its finding and citing the events it draws on. A paragraph that states a number its events do not is dropped.",
+   "properties": {
+    "items": {
+     "type": "array",
+     "maxItems": 3,
+     "items": {
+      "type": "object",
+      "required": [
+       "lead",
+       "ids"
+      ],
+      "properties": {
+       "lead": {
+        "type": "string"
+       },
+       "body": {
+        "type": "string"
+       },
+       "ids": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       }
+      }
+     }
+    },
+    "lane": {
+     "type": "string"
+    },
+    "offered": {
+     "type": "integer"
+    },
+    "kept": {
+     "type": "integer"
+    },
+    "note": {
+     "type": "string"
+    },
+    "errors": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   }
   }
  },
  "$defs": {

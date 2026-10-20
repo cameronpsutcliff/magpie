@@ -205,7 +205,7 @@ def grounded_date(value, text: str) -> str | None:
 
 
 # A number counts only as a whole token: not inside a word, version, identifier or path ("x10", "v10", "/10/").
-NUMBER = re.compile(r"(?<![\w./-])\d[\d,]*(?:\.\d+)?(?![\w/-])")
+NUMBER = re.compile(r"(?<![\w./-])\d[\d,]*(?:\.\d+)?")  # "10x" and "10-fold" count; "v10" and "/10/" do not
 
 
 def _numbers(text: str) -> set[str]:

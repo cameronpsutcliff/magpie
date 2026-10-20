@@ -195,6 +195,7 @@ def write_feed(limit: int = 30) -> None:
         best = f"<p><strong>New possibility:</strong> {escape(poss[0]['title'])}</p>" if poss else ""
         watch = (d.get("viewing") or {}).get("items") or []
         vids = ("<p><strong>Worth watching:</strong> " + "; ".join(f'<a href="{escape(v["url"])}">{escape(v["title"])}</a>' for v in watch[:3]) + "</p>") if watch else ""
+        read = "".join(f"<p><strong>{escape(p['lead'])}</strong> {escape(p.get('body', ''))}</p>" for p in (d.get("read") or {}).get("items", []))
         fresh = [c for c in (d.get("constraints") or {}).get("items", []) if c.get("new")]
         cons = ("<p><strong>Newly constrained:</strong> " + "; ".join(f'<a href="{escape(c["doc_url"] or c["url"])}">{escape(c["headline"])}</a>' for c in fresh[:3]) + "</p>") if fresh else ""
         text = " ".join(filter(None, [ed.get("dek"), *[((e.get("brief") or {}).get("headline") or e["title"]) for e in top]]))
@@ -203,7 +204,7 @@ def write_feed(limit: int = 30) -> None:
             "url": f"{SITE}/{d['date']}",
             "title": ed.get("headline") or f"Magpie, {d['date']}",
             "summary": ed.get("dek") or "",
-            "content_html": f"<p>{escape(ed.get('dek', ''))}</p><ol>{leads}</ol>{best}{vids}{cons}",
+            "content_html": f"<p>{escape(ed.get('dek', ''))}</p>{read}<ol>{leads}</ol>{best}{vids}{cons}",
             "content_text": text,
             "date_published": d.get("generated_at"),
             "tags": sorted({t for e in top for t in e.get("topics", [])}),
