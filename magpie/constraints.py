@@ -198,7 +198,8 @@ def grounded_date(value, text: str) -> str | None:
     return d if d in stated_dates(text) else None
 
 
-NUMBER = re.compile(r"\d[\d,]*(?:\.\d+)?")
+# A number counts only as a whole token: not inside a word, version, identifier or path ("x10", "v10", "/10/").
+NUMBER = re.compile(r"(?<![\w./-])\d[\d,]*(?:\.\d+)?(?![\w/-])")
 
 
 def _numbers(text: str) -> set[str]:
@@ -209,6 +210,25 @@ def ungrounded(fields: list[str], source: str) -> list[str]:
     """Whole numbers in the words that the source never states ("10" is not grounded by "100")."""
     known = _numbers(source)
     return sorted(n for n in _numbers(" ".join(fields)) if n not in known)
+
+
+def prose(row: dict, keys: tuple[str, ...]) -> str:
+    """The words a claim may be grounded in: document text and the issuer's fields, never URLs or ids."""
+    return " \n ".join(str(row.get(k) or "") for k in keys)
+
+
+GROUND_ALL = ("title", "summary", "issuer", "jurisdiction", "document_type", "action", "effective_on", "comments_close_on",
+              "dates", "published", "text")
+GROUND_DOC = ("text", "effective_on", "comments_close_on", "dates")  # a post's own words never ground a number
+
+
+def same_action(issuer: str, jurisdiction: str, doc: str | None, rec: dict) -> bool:
+    """Code-side check before two sightings become one action: the same document, or the same jurisdiction and issuer."""
+    if doc and (doc == rec.get("doc_url") or doc in {s.get("url") for s in rec.get("sources", [])}):
+        return True
+    a, b = (issuer or "").strip().lower(), (rec.get("issuer") or "").strip().lower()
+    same_place = (jurisdiction or "").strip().lower() == (rec.get("jurisdiction") or "").strip().lower() != ""
+    return same_place and bool(a) and bool(b) and (a in b or b in a)
 
 
 def signature(c: dict) -> str:
@@ -271,9 +291,9 @@ def classify(cands: list[dict], date: str, recorded: list[dict] | None = None, t
                     dropped.append({"title": c["title"], "why": "its document could not be read"})
                     verdicts[c["_key"]] = {"kept": False, "date": date, "dropped": True, "sig": sig}
                     continue
-                source = json.dumps({k: row[k] for k in ("text", "document_url", "effective_on", "comments_close_on", "dates")}, ensure_ascii=False)
+                source = prose(row, GROUND_DOC)
             else:
-                source = json.dumps(row, ensure_ascii=False)
+                source = prose(row, GROUND_ALL)
             words = {k: clean(v.get(k) or "") for k in ("headline", "harder", "who", "why", "limits")}
             ripples = [{"topic": r["topic"], "effect": clean(r.get("effect") or "")} for r in v.get("ripples") or []
                        if isinstance(r, dict) and r.get("topic") in topics][:2]
@@ -340,7 +360,7 @@ def generate(items: list[dict], date: str, data_dir, state_dir, *, llm: bool = T
     joined: dict[str, list[dict]] = {}
     for c, v in kept:
         r = reg_by_id.get(v.get("same_as"))
-        if r and r["key"] != c["_key"]:
+        if r and r["key"] != c["_key"] and same_action(v.get("issuer"), v.get("jurisdiction"), c.get("_doc"), r):
             joined.setdefault(r["key"], []).append(c)
     kept = [(c, v) for c, v in kept if not any(c in cs for cs in joined.values())]
     records = []
@@ -359,10 +379,16 @@ def generate(items: list[dict], date: str, data_dir, state_dir, *, llm: bool = T
     # Merge duplicates the editor named among today's candidates, then build one record per new action.
     id_to_key = {v.get("_id"): c["_key"] for c, v in kept}
     groups: dict[str, list[dict]] = {}
+    lead_of = {c["_key"]: (c, v) for c, v in kept}
     for c, v in kept:
         lead = id_to_key.get(v.get("same_as")) or c["_key"]
-        if lead not in {cc["_key"] for cc, _ in kept}:
+        if lead not in lead_of:
             lead = c["_key"]
+        elif lead != c["_key"]:
+            lc, lv = lead_of[lead]
+            target = {"doc_url": lc.get("_doc"), "sources": [{"url": lc["url"]}], "issuer": lv.get("issuer"), "jurisdiction": lv.get("jurisdiction")}
+            if not same_action(v.get("issuer"), v.get("jurisdiction"), c.get("_doc"), target):
+                lead = c["_key"]
         groups.setdefault(lead, []).append(c)
     for lead_key, group in groups.items():
         v = cache[lead_key]

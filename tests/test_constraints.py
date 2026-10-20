@@ -119,6 +119,24 @@ class ConstraintTests(unittest.TestCase):
     def test_numbers_must_be_whole_tokens(self):
         self.assertEqual(K.ungrounded(["Cuts 10 models"], "covers 100 models in 2099"), ["10"])
         self.assertEqual(K.ungrounded(["Needs 1,200 GB/s"], "a 1200 GB/s link"), [])
+        self.assertEqual(K.ungrounded(["Cuts 10 models"], "see x10 and v10 at https://example.gov/rules/10/a"), ["10"])
+        self.assertEqual(K.ungrounded(["Due in 10 days."], "Comments are due in 10 days."), [])
+        self.assertNotIn("https://", K.prose({"title": "t", "url": "https://example.gov/10", "text": "x"}, K.GROUND_ALL))
+
+    def test_a_model_cannot_merge_unrelated_actions(self):
+        K.LANES.clear()
+        K.LANES["claude"] = FakeLane(self._keep())
+        first = policy_item("https://www.federalregister.gov/d/2099-1", "Registration rule", num="2099-1")
+        _, section = K.generate([first], DATE, self.data, self.state)
+        K.update_register(section, DATE, self.data)
+        rec_id = section["items"][0]["id"]
+        # The model claims an EU decision by another body is the same action: code keeps them apart.
+        K.LANES["claude"] = FakeLane(self._keep(same_as=rec_id, jurisdiction="EU", issuer="European Commission"))
+        other = Item(source_id="eu-digital-strategy", source_kind="policy", source_name="Newsroom", url="https://ec.europa.eu/news/2",
+                     title="Another rule", summary="other", published_at="2099-01-11T09:00:00+00:00", extra={"primary": True}).finalize().to_dict()
+        events, section2 = K.generate([other], "2099-01-11", self.data, self.state)
+        self.assertEqual(len(events), 1)
+        self.assertTrue(any(i["new"] and i["url"] == "https://ec.europa.eu/news/2" for i in section2["items"]))
 
     def test_dates_must_be_written_whole(self):
         self.assertEqual(K.grounded_date("2099-11-15", "Comments by November 15, 2099."), "2099-11-15")
