@@ -108,7 +108,8 @@ def main() -> None:
     pk.add_argument("--date", help="edition date, default latest")
     pe = sub.add_parser("elements", help="fold an edition into the element pages, or rebuild them all")
     pe.add_argument("--date", help="edition date, default latest")
-    pe.add_argument("--rebuild", action="store_true", help="regenerate every element page from the day files")
+    pe.add_argument("--rebuild", action="store_true", help="regenerate every element page from the editions since the pages start")
+    pe.add_argument("--since", help="with --rebuild: start the pages on this edition date (default: the current start, else the last 7 editions)")
     bf = sub.add_parser("backfill", help="rebuild past editions from archives")
     bf.add_argument("--from", dest="start", required=True, help="first edition date, YYYY-MM-DD")
     bf.add_argument("--to", dest="end", required=True, help="last edition date, YYYY-MM-DD")
@@ -149,7 +150,7 @@ def main() -> None:
         return
     if a.cmd == "elements":
         from .elements import run as elements_run
-        elements_run(a.date, full=a.rebuild)
+        elements_run(a.date, full=a.rebuild, since=a.since)
         return
     if a.cmd == "reindex":
         from .publish import reindex

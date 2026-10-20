@@ -122,11 +122,17 @@ class ElementTests(unittest.TestCase):
         index = json.loads((self.data / "elements" / "index.json").read_text())
         self.assertNotIn("gh:beta/kit", {e["key"] for e in index["elements"]})
 
-    def test_action_on_record_only_counts_from_its_first_sighting(self):
-        early = dict(ACTION, first_seen="2099-01-03")  # recorded after acme/other appeared
-        write_json(self.data / "constraints.json", {"schema": "magpie.constraints/1", "items": [early]})
+    def test_an_action_naming_a_maker_backfills_its_one_off_items(self):
+        write_json(self.data / "constraints.json", {"schema": "magpie.constraints/1", "items": []})
+        for d in sorted(self.days):
+            E.update(d, self.data)
+        self.assertFalse((self.data / "elements" / "gh-acme--other.json").exists())  # one day, no action yet
+        write_json(self.data / "constraints.json", {"schema": "magpie.constraints/1", "items": [ACTION]})
+        E.update("2099-01-02", self.data)  # the register changed: everything the action could touch is recomputed
+        self.assertEqual([c["match"] for c in self.page("gh-acme--other")["constraints"]], ["maker"])
+        built = self.pages()
         E.rebuild(self.data)
-        self.assertFalse((self.data / "elements" / "gh-acme--other.json").exists())
+        self.assertEqual(self.pages(), built)
 
     def test_action_page_lists_the_pages_it_names(self):
         d2 = self.days["2099-01-02"]
@@ -189,7 +195,7 @@ class ElementTests(unittest.TestCase):
             for d in sorted(p.stem for p in (seq / "days").glob("*.json")):
                 E.update(d, seq)
             E.update(dates[12], seq)  # re-publishing a day inside the window changes nothing
-            E.rebuild(self.data)
+            E.rebuild(self.data, since="2099-01-01")
             self.assertEqual(self.pages(seq), self.pages())
             page = self.page("gh-fold--me")
             self.assertEqual((len(page["timeline"]), len(page["appearances"])), (10, 5))
@@ -226,7 +232,7 @@ class ElementTests(unittest.TestCase):
         shutil.copytree(self.data, seq)
         for d in sorted(p.stem for p in (seq / "days").glob("*.json")):
             E.update(d, seq)
-        E.rebuild(self.data)
+        E.rebuild(self.data, since="2099-01-01")  # the daily run started on the first edition
         self.assertEqual(self.pages(seq), self.pages())
         page = self.page("gh-long--runner")
         self.assertEqual(len(page["appearances"]), E.FULL_APPEARANCES)
@@ -245,6 +251,111 @@ class ElementTests(unittest.TestCase):
         E.rebuild(self.data)
         E.update("2099-01-02", self.data)
         self.assertEqual(len(self.page("gh-acme--agent")["possibilities"]), 45)
+
+    def test_pages_start_today_when_nothing_was_seeded(self):
+        E.update("2099-01-02", self.data)  # no index yet: the pages start on this edition
+        index = json.loads((self.data / "elements" / "index.json").read_text())
+        self.assertEqual(index["since"], "2099-01-02")
+        # beta/kit also appeared on 2099-01-01, before the start: one appearance, no links, so no page
+        self.assertNotIn("gh:beta/kit", {e["key"] for e in index["elements"]})
+        E.update("2099-01-01", self.data)  # an edition before the start is never folded in
+        self.assertEqual(json.loads((self.data / "elements" / "index.json").read_text()), index)
+
+    def test_a_seed_reaches_back_seven_editions_at_most(self):
+        import datetime as dt
+        for i in range(10):
+            d = (dt.date(2099, 4, 1) + dt.timedelta(days=i)).isoformat()
+            write_json(self.data / "days" / f"{d}.json", day(d, [ev("gh:old/one", "old/one")] if i < 3 else []), compact=True)
+        result = E.rebuild(self.data)
+        self.assertEqual(result["since"], "2099-04-04")  # the last seven of the edition files
+        self.assertFalse((self.data / "elements" / "gh-old--one.json").exists())  # seen only before the seed window
+        E.rebuild(self.data, since="2099-04-01")
+        self.assertTrue((self.data / "elements" / "gh-old--one.json").exists())
+
+    def test_a_corrected_document_reaches_existing_pages_and_the_action_page(self):
+        E.rebuild(self.data)
+        # beta/kit (two days, maker "Open source") links nothing; the action now cites the newsletter that covered it
+        fixed = dict(ACTION, sources=[{"name": "AI News", "url": NEWS["url"], "title": "Issue 7"}], status="in_force")
+        d2 = self.days["2099-01-02"]
+        d2["events"].append(dict(ev(ACTION["key"], ACTION["title"], maker="An agency", kind="constraint"), evidence="official",
+                                 constraint={"status": "final"}, brief={"headline": ACTION["headline"]}))
+        write_json(self.data / "days" / "2099-01-02.json", d2, compact=True)
+        E.rebuild(self.data)
+        write_json(self.data / "constraints.json", {"schema": "magpie.constraints/1", "items": [fixed]})  # same dates
+        E.update("2099-01-01", self.data)
+        self.assertEqual([c["match"] for c in self.page("gh-beta--kit")["constraints"]], ["reported"])
+        self.assertEqual(self.page("policy-fr-2099-1")["constraint"]["status"], "in_force")
+        built = self.pages()
+        E.rebuild(self.data)
+        self.assertEqual(self.pages(), built)
+
+    def test_evidence_that_leaves_the_full_window_still_links_and_new_actions_find_it(self):
+        import datetime as dt
+        full = E.FULL_APPEARANCES
+        E.FULL_APPEARANCES = 3
+        try:
+            write_json(self.data / "constraints.json", {"schema": "magpie.constraints/1", "items": []})
+            dates = [(dt.date(2099, 5, 1) + dt.timedelta(days=i)).isoformat() for i in range(8)]
+            for i, d in enumerate(dates):
+                srcs = [{"name": "Wire", "url": ACTION["doc_url"], "title": "Order"}] if i == 0 else []
+                write_json(self.data / "days" / f"{d}.json", day(d, [ev("gh:win/dow", "win/dow", sources=srcs)]), compact=True)
+            seq = self.tmp / "seq"
+            shutil.copytree(self.data, seq)
+            for d in sorted(p.stem for p in (seq / "days").glob("*.json")):
+                E.update(d, seq)
+            # the action arrives after the document left the full window
+            write_json(seq / "constraints.json", {"schema": "magpie.constraints/1", "items": [dict(ACTION, first_seen=dates[-1], last_seen=dates[-1])]})
+            E.update(dates[-1], seq)
+            page = json.loads((seq / "elements" / "gh-win--dow.json").read_text())
+            self.assertEqual([c["match"] for c in page["constraints"]], ["document"])
+            self.assertEqual(page["older"]["links"], {ACTION["key"]: "document"})
+            E.update(dates[-1], seq)  # and a quiet day keeps it
+            write_json(self.data / "constraints.json", {"schema": "magpie.constraints/1", "items": [dict(ACTION, first_seen=dates[-1], last_seen=dates[-1])]})
+            E.rebuild(self.data, since="2099-01-01")
+            self.assertEqual(self.pages(seq), self.pages())
+        finally:
+            E.FULL_APPEARANCES = full
+
+    def test_republishing_a_day_the_page_no_longer_holds_recomputes_it(self):
+        import datetime as dt
+        rows = E.TIMELINE_ROWS
+        E.TIMELINE_ROWS = 3
+        try:
+            dates = [(dt.date(2099, 6, 1) + dt.timedelta(days=i)).isoformat() for i in range(6)]
+            for d in dates:
+                e = ev("gh:re/pub", "re/pub")
+                write_json(self.data / "days" / f"{d}.json", day(d, [e], top=[e["id"]]), compact=True)
+            for d in sorted(p.stem for p in (self.data / "days").glob("*.json")):
+                E.update(d, self.data)
+            self.assertEqual(self.page("gh-re--pub")["days_featured"], 6)
+            first = self.days.get(dates[0]) or day(dates[0], [ev("gh:re/pub", "re/pub")])  # corrected: it did not lead
+            write_json(self.data / "days" / f"{dates[0]}.json", first, compact=True)
+            E.update(dates[0], self.data)
+            self.assertEqual(self.page("gh-re--pub")["days_featured"], 5)
+            built = self.pages()
+            E.rebuild(self.data, since="2099-01-01")
+            self.assertEqual(self.pages(), built)
+        finally:
+            E.TIMELINE_ROWS = rows
+
+    def test_possibilities_fold_past_the_newest_sixty(self):
+        kept = E.POSSIBILITIES_KEPT
+        E.POSSIBILITIES_KEPT = 10
+        try:
+            d2 = self.days["2099-01-02"]
+            a, c = self.days["2099-01-01"]["events"][0], d2["events"][1]
+            d2["possibilities"] = {"items": [{"title": f"Idea {i}", "ingredients": [a["id"], c["id"]],
+                                              "ingredient_refs": [{"id": a["id"], "title": "A", "date": "2099-01-01"}, {"id": c["id"], "title": "C", "date": "2099-01-02"}]}
+                                             for i in range(15)]}
+            write_json(self.data / "days" / "2099-01-02.json", d2, compact=True)
+            E.rebuild(self.data)
+            page = self.page("gh-acme--agent")
+            self.assertEqual((len(page["possibilities"]), page["possibilities_total"], page["older"]["possibilities"]), (10, 15, 5))
+            built = self.pages()
+            E.update("2099-01-02", self.data)  # the day's ideas are partly folded: recomputed, not double counted
+            self.assertEqual(self.pages(), built)
+        finally:
+            E.POSSIBILITIES_KEPT = kept
 
     def test_pages_validate(self):
         try:

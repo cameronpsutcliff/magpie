@@ -2,7 +2,7 @@
  "$schema": "https://json-schema.org/draft/2020-12/schema",
  "$id": "https://www.cameronsutcliff.com/magpie-data/schema/element.schema.json",
  "title": "Magpie element (magpie.element/1)",
- "description": "One thing Magpie keeps meeting (a repo, model, paper, tool or official action) across every edition: what it is, where to find it, what it works with and connects to, and its history. Computed from the published editions and the constraints register; no model writes anything here. Pages exist for elements seen on two or more days, that fed a new possibility, that are official actions, that carried an action's document or reported it, or whose maker an action already on record names.",
+ "description": "One thing Magpie keeps meeting (a repo, model, paper, tool or official action) across every edition: what it is, where to find it, what it works with and connects to, and its history. Computed from the published editions and the constraints register; no model writes anything here. Pages exist for elements seen on two or more days, that fed a new possibility, that are official actions, or that an official action rests on, cites, or names the maker of.",
  "type": "object",
  "required": [
   "schema",
@@ -26,7 +26,8 @@
   "works_with",
   "constraints",
   "appearances",
-  "timeline"
+  "timeline",
+  "possibilities_total"
  ],
  "additionalProperties": false,
  "properties": {
@@ -95,7 +96,8 @@
   },
   "first_seen": {
    "type": "string",
-   "format": "date"
+   "format": "date",
+   "description": "First edition it appeared in since element pages started (elements/index.json `since`)."
   },
   "last_seen": {
    "type": "string",
@@ -332,7 +334,7 @@
     },
     "additionalProperties": false
    },
-   "description": "New possibilities it was an ingredient of, newest first."
+   "description": "The newest 60 new possibilities it was an ingredient of, newest first; `possibilities_total` counts all."
   },
   "works_with": {
    "type": "array",
@@ -756,12 +758,7 @@
   },
   "older": {
    "type": "object",
-   "description": "Appearances past the timeline window, folded into counts and extremes.",
-   "required": [
-    "days",
-    "first_seen",
-    "days_featured"
-   ],
+   "description": "What the page no longer holds in full: appearances past the timeline window (counts and extremes), URL matches of appearances past the full window (by action key), and possibilities past the newest 60 (a count).",
    "additionalProperties": false,
    "properties": {
     "days": {
@@ -802,8 +799,27 @@
        "format": "date"
       }
      }
+    },
+    "links": {
+     "type": "object",
+     "additionalProperties": {
+      "enum": [
+       "document",
+       "reported"
+      ]
+     },
+     "description": "Action key to match type, from appearances that left the full window."
+    },
+    "possibilities": {
+     "type": "integer",
+     "minimum": 1
     }
    }
+  },
+  "possibilities_total": {
+   "type": "integer",
+   "minimum": 0,
+   "description": "New possibilities it fed in all: the newest 60 listed in `possibilities`, plus older ones counted in `older`."
   }
  }
 }

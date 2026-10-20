@@ -6,7 +6,9 @@
  "type": "object",
  "required": [
   "schema",
+  "since",
   "updated",
+  "actions",
   "elements"
  ],
  "additionalProperties": false,
@@ -88,7 +90,8 @@
      },
      "possibilities": {
       "type": "integer",
-      "minimum": 0
+      "minimum": 0,
+      "description": "New possibilities it fed in all."
      },
      "constraints": {
       "type": "integer",
@@ -105,6 +108,21 @@
     },
     "additionalProperties": false
    }
+  },
+  "since": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "format": "date",
+   "description": "The first edition element pages draw on. Nothing earlier is counted: first_seen means first seen since this date."
+  },
+  "actions": {
+   "type": "object",
+   "additionalProperties": {
+    "type": "string"
+   },
+   "description": "Fingerprint of each constraints-register record when the pages were last written; a change makes the next update recompute every element the action could touch."
   }
  }
 }

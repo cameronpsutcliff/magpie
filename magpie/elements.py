@@ -12,8 +12,10 @@ Bounded: a page keeps its newest 60 appearances in full (words, sources, ties) a
 short timeline row (date, signal, place, impact), so counts and peaks cover its whole history.
 
 The update is incremental: a day's contributions replace that day's entries in each element file, so
-publishing a day twice never counts it twice. `rebuild` regenerates every page from the day files; the
-tests check that it agrees with a run of daily updates.
+publishing a day twice never counts it twice. Pages start on a date (`since` in the index): the first daily
+update starts them that day, or a rebuild seeds them from the last seven editions. Nothing before `since` is read
+for appearances. `rebuild` regenerates every page from `since`; the tests check that it agrees with a run of daily
+updates from that date.
 
     data/v1/elements/<slug>.json   one element (magpie.element/1)
     data/v1/elements/index.json    every element page (magpie.elements/1)
@@ -32,10 +34,14 @@ INDEX_SCHEMA = "magpie.elements/1"
 GENERIC_MAKERS = {"Open source", "Research", "Other"}
 FULL_APPEARANCES = 60   # the newest appearances kept in full
 TIMELINE_ROWS = 730     # two years of short rows; older ones fold into one summary, so a page is bounded
+SEED_EDITIONS = 7       # a first rebuild reaches back this many editions at most; after that, pages grow day by day
+POSSIBILITIES_KEPT = 60 # the newest possibilities kept in full; older ones fold into a count
 CROWD = 6               # a post that ties more than this many items in a day is a roundup, not a connection
 PER_APPEARANCE = 8      # sources, mentions and ties kept per appearance
 METRICS = ("stars_total", "stars_day", "stars_week", "stars_month", "forks", "hn_points", "hn_comments", "hf_likes",
            "hf_downloads", "hf_upvotes")
+ACTION_FIELDS = ("status", "instrument", "layers", "jurisdiction", "issuer", "effective", "comment_deadline", "access_now",
+                 "doc_url", "who", "quote", "harder")
 LINK_LABEL = {"gh": "GitHub", "hf": "Hugging Face", "hfs": "Hugging Face Space", "arxiv": "arXiv", "policy": "The document"}
 
 
@@ -217,21 +223,44 @@ def _norm_url(u: str) -> str:
     return re.sub(r"^https?://(www\.)?", "", (u or "").split("#", 1)[0]).rstrip("/").lower()
 
 
-def constraint_links(key: str, maker: str | None, urls: set[str], register: list[dict]) -> list[dict]:
-    """Official actions that name this element's maker or rest on a document it links to."""
+def _action_text(c: dict) -> str:
+    return " ".join(str(c.get(k) or "") for k in ("headline", "title", "harder", "who", "quote"))
+
+
+def url_matches(key: str, urls: set[str], register: list[dict]) -> dict[str, str]:
+    """Actions whose document this element links to ("document"), or that cite it as a source ("reported")."""
     urls = {_norm_url(u) for u in urls if u}
-    out = []
+    out: dict[str, str] = {}
     for c in register:
         if c.get("key") == key:
             continue
         docs = {_norm_url(c.get("doc_url") or ""), _norm_url(c.get("url") or "")} - {""}
         reports = {_norm_url(s.get("url", "")) for s in c.get("sources") or []} - {""} - docs
-        why = None
         if urls & docs:
-            why = "document"
+            out[c["key"]] = "document"
         elif urls & reports:
-            why = "reported"
-        elif _names(" ".join(str(c.get(k) or "") for k in ("headline", "title", "harder", "who", "quote")), maker):
+            out[c["key"]] = "reported"
+    return out
+
+
+def _merge_matches(a: dict[str, str], b: dict[str, str]) -> dict[str, str]:
+    out = dict(a)
+    for k, m in b.items():
+        if out.get(k) != "document":
+            out[k] = m
+    return dict(sorted(out.items()))
+
+
+def constraint_links(key: str, maker: str | None, urls: set[str], register: list[dict], carried: dict[str, str] | None = None) -> list[dict]:
+    """Official actions that rest on a document this element links to, cite it, or name its maker. `carried` holds the
+    URL matches of appearances that already left the full window (their URLs are no longer on the page)."""
+    matched = _merge_matches(carried or {}, url_matches(key, urls, register))
+    out = []
+    for c in register:
+        if c.get("key") == key:
+            continue
+        why = matched.get(c["key"])
+        if not why and _names(_action_text(c), maker):
             why = "maker"
         if why:
             out.append({"key": c["key"], "id": c.get("id"), "headline": c.get("headline") or c.get("title") or "",
@@ -244,21 +273,19 @@ def constraint_links(key: str, maker: str | None, urls: set[str], register: list
     return out
 
 
-def qualifies(contribs: dict[str, dict], key: str, register: list[dict]) -> bool:
-    """Seen on two or more days, fed a possibility, is an official action, rests on a document an action cites,
-    or an action already on record when it appeared names its maker."""
+def qualifies(contribs: dict[str, dict], key: str, register: list[dict], older: dict | None = None) -> bool:
+    """Seen on two or more days, fed a possibility, is an official action, or an action rests on a document it
+    linked to, cites it, or names its maker."""
     seen = sorted((c["appearance"] for c in contribs.values() if c.get("appearance")), key=lambda a: a["date"], reverse=True)
     if not seen:
         return False
-    if len(seen) >= 2 or any(c.get("possibilities") for c in contribs.values()):
+    o = older or {}
+    if len(seen) + o.get("days", 0) >= 2 or o.get("possibilities") or any(c.get("possibilities") for c in contribs.values()):
         return True
     if seen[0].get("kind") == "constraint" or key.startswith("policy:"):
         return True
-    if constraint_links(key, None, _urls(seen), register):  # without a maker, only document and source matches count
-        return True
     maker = next((a["maker"] for a in seen if a.get("maker")), None)
-    on_record = [c for c in register if (c.get("first_seen") or "") <= seen[0]["date"]]
-    return bool(constraint_links(key, maker, set(), on_record))
+    return bool(constraint_links(key, maker, _urls(seen), register, o.get("links")))
 
 
 def _urls(apps: list[dict]) -> set[str]:
@@ -273,8 +300,19 @@ def assemble(key: str, slug: str, contribs: dict[str, dict], register: list[dict
     rows = [row(a) for a in every]
     timeline, older = rows[:TIMELINE_ROWS], fold(rows[TIMELINE_ROWS:], older)
     # Words, sources and ties come from the newest appearances kept in full; counts and peaks from every one.
-    apps = [a for a in every if not a.get("row")][:FULL_APPEARANCES]
-    poss = sorted((p for c in contribs.values() for p in c.get("possibilities") or []), key=lambda p: (p["date"], -p["rank"]), reverse=True)
+    full = [a for a in every if not a.get("row")]
+    keep = min(FULL_APPEARANCES, TIMELINE_ROWS)  # a full appearance is always also a timeline row
+    apps = full[:keep]
+    # An appearance leaving the full window takes its URLs with it, so keep what they matched in the register.
+    carried = _merge_matches((older or {}).get("links") or {}, url_matches(key, _urls(full[keep:]), register))
+    every_poss = sorted((p for c in contribs.values() for p in c.get("possibilities") or []), key=lambda p: (p["date"], -p["rank"]), reverse=True)
+    poss = every_poss[:POSSIBILITIES_KEPT]
+    if carried or len(every_poss) > POSSIBILITIES_KEPT:
+        older = dict(older or {})
+        if carried:
+            older["links"] = carried
+        if len(every_poss) > POSSIBILITIES_KEPT:
+            older["possibilities"] = older.get("possibilities", 0) + len(every_poss) - POSSIBILITIES_KEPT
     latest = apps[0]
     first_seen, last_seen = (older or {}).get("first_seen") or timeline[-1]["date"], timeline[0]["date"]
     headline = next((a["headline"] for a in apps if a.get("headline")), None)
@@ -356,7 +394,7 @@ def assemble(key: str, slug: str, contribs: dict[str, dict], register: list[dict
     works_with = sorted(partners.values(), key=lambda q: (q["possibilities"], q["together"], q["last"], q["key"]), reverse=True)[:24]
 
     urls = {link["url"]} | {f["url"] for f in where}
-    constraints = constraint_links(key, maker, urls, register)
+    constraints = constraint_links(key, maker, urls, register, carried)
     o = older or {}
     ranks = [a["rank"] for a in timeline if a.get("rank")] + ([o["best_rank"]] if o.get("best_rank") else [])
     impacts = [a["impact"] for a in timeline if a.get("impact")] + ([o["best_impact"]] if o.get("best_impact") else [])
@@ -377,6 +415,7 @@ def assemble(key: str, slug: str, contribs: dict[str, dict], register: list[dict
         "first_seen": first_seen,
         "last_seen": last_seen,
         "updated": max([last_seen] + [p["date"] for p in poss]),
+        "possibilities_total": len(poss) + (older or {}).get("possibilities", 0),
         "days_seen": len(timeline) + o.get("days", 0),
         "days_featured": len([a for a in timeline if a.get("rank")]) + o.get("days_featured", 0),
         **({"best_rank": min(ranks)} if ranks else {}),
@@ -395,9 +434,7 @@ def assemble(key: str, slug: str, contribs: dict[str, dict], register: list[dict
     if key.startswith("policy:") or latest["kind"] == "constraint":
         rec = next((c for c in register if c.get("key") == key), None)
         if rec:
-            page["constraint"] = {k: rec.get(k) for k in ("status", "instrument", "layers", "jurisdiction", "issuer", "effective",
-                                                          "comment_deadline", "access_now", "doc_url", "who", "quote", "harder")
-                                  if rec.get(k) not in (None, "", [])}
+            page["constraint"] = {k: rec.get(k) for k in ACTION_FIELDS if rec.get(k) not in (None, "", [])}
         page["names"] = names or []
     return page
 
@@ -446,12 +483,12 @@ def fold(rows: list[dict], older: dict | None = None) -> dict | None:
     count, a minimum or a maximum, so folding a row at a time (daily) equals folding them all (rebuild)."""
     if not rows:
         return dict(older) if older else None
-    out = dict(older) if older else {"days": 0, "first_seen": rows[0]["date"], "days_featured": 0}
+    out = dict(older or {})
     for r in rows:
-        out["days"] += 1
-        out["first_seen"] = min(out["first_seen"], r["date"])
+        out["days"] = out.get("days", 0) + 1
+        out["first_seen"] = min(out.get("first_seen") or r["date"], r["date"])
         if r.get("rank"):
-            out["days_featured"] += 1
+            out["days_featured"] = out.get("days_featured", 0) + 1
             out["best_rank"] = min(out.get("best_rank", r["rank"]), r["rank"])
         if r.get("impact"):
             out["best_impact"] = max(out.get("best_impact", r["impact"]), r["impact"])
@@ -484,7 +521,7 @@ def index_entry(page: dict) -> dict:
         "first_seen": page["first_seen"], "last_seen": page["last_seen"],
         "days_seen": page["days_seen"], "days_featured": page["days_featured"],
         **({"best_impact": page["best_impact"]} if page.get("best_impact") else {}),
-        "possibilities": len(page["possibilities"]),
+        "possibilities": page.get("possibilities_total", len(page["possibilities"])),
         "constraints": len(page["constraints"]),
         "dates": dates,
     }
@@ -505,8 +542,10 @@ class Store:
         from .util import ROOT
         topics = load_json(ROOT / "config/topics.json", {}).get("topics", {})
         self.topic_labels = {k: v.get("label", k) for k, v in topics.items()}
-        self.index = load_json(self.dir / "index.json", None) or {"schema": INDEX_SCHEMA, "updated": None, "elements": []}
+        self.index = load_json(self.dir / "index.json", None) or {"schema": INDEX_SCHEMA, "since": None, "updated": None, "elements": []}
         self.by_key = {e["key"]: e for e in self.index["elements"]}
+        # Element pages start on `since`: no edition before it is ever read for appearances.
+        self.since: str | None = self.index.get("since")
 
     def day(self, date: str) -> dict | None:
         if date not in self._days:
@@ -519,8 +558,12 @@ class Store:
             self._contribs[date] = contributions(day, self.day) if day else {}
         return self._contribs[date]
 
-    def dates(self) -> list[str]:
+    def all_dates(self) -> list[str]:
         return sorted(p.stem for p in (self.data / "days").glob("*.json"))
+
+    def dates(self) -> list[str]:
+        """The editions element pages draw on: from `since` onwards."""
+        return [d for d in self.all_dates() if not self.since or d >= self.since]
 
     def load(self, slug: str) -> dict | None:
         return load_json(self.dir / f"{slug}.json", None)
@@ -557,7 +600,7 @@ class Store:
     def save_index(self, date: str | None) -> None:
         elements = sorted(self.by_key.values(), key=lambda e: (e["last_seen"], e["days_seen"], e["key"]), reverse=True)
         updated = max([date or ""] + [e["last_seen"] for e in elements]) or None
-        self.index = {"schema": INDEX_SCHEMA, "updated": updated, "elements": elements}
+        self.index = {"schema": INDEX_SCHEMA, "since": self.since, "updated": updated, "actions": self.action_digests(), "elements": elements}
         write_json(self.dir / "index.json", self.index, compact=True)
 
     def history_first_seen(self, key: str) -> str | None:
@@ -567,103 +610,128 @@ class Store:
             self._history = load_json(self.state / "history.json", {"keys": {}}).get("keys", {})
         return (self._history.get(key) or {}).get("first_seen")
 
-    def refresh_names(self) -> None:
-        """Official actions list the pages whose maker they name; pages come and go, so recompute every time."""
+    def action_digests(self) -> dict[str, str]:
+        import json
+        return {c["key"]: short_hash(json.dumps(c, sort_keys=True, ensure_ascii=False), 12) for c in self.register if c.get("key")}
+
+    def changed_actions(self) -> set[str]:
+        """Actions added, changed or removed since the pages were last written (by fingerprint)."""
+        now, before = self.action_digests(), self.index.get("actions") or {}
+        return {k for k in now if before.get(k) != now[k]} | {k for k in before if k not in now}
+
+    def refresh_actions(self) -> None:
+        """An action's own page follows the register (status, document, who it hits) and lists the pages whose
+        maker it names; both change without the action appearing again, so recompute them every run."""
         for e in list(self.by_key.values()):
             if not e["key"].startswith("policy:") and e["kind"] != "constraint":
                 continue
             page = self.load(e["slug"])
             if not page:
                 continue
-            names = self.names_for(e["key"])
-            if page.get("names") != names:
-                page["names"] = names
-                self.write(page)
-
-    def refresh_constraints(self) -> None:
-        """Official-action links follow the register: every page that has one, or whose maker an action names,
-        is checked on every run, so a new action or a corrected record reaches the pages it touches."""
-        texts = [" ".join(str(c.get(k) or "") for k in ("headline", "title", "harder", "who", "quote")) for c in self.register]
-        for e in list(self.by_key.values()):
-            if not e.get("constraints") and not any(_names(t, e.get("maker")) for t in texts):
-                continue
-            page = self.load(e["slug"])
-            if not page:
-                continue
-            urls = {page["link"]["url"]} | {f["url"] for f in page.get("find", [])}
-            fresh = constraint_links(page["key"], page.get("maker"), urls, self.register)
-            if fresh != page.get("constraints"):
-                page["constraints"] = fresh
-                self.write(page)
+            rec = next((c for c in self.register if c.get("key") == e["key"]), None)
+            fresh = dict(page, names=self.names_for(e["key"]))
+            if rec:
+                fresh["constraint"] = {k: rec.get(k) for k in ACTION_FIELDS if rec.get(k) not in (None, "", [])}
+            if fresh != page:
+                self.write(fresh)
 
 
 def update(date: str, data_dir: Path, state_dir: Path | None = None) -> dict:
     """Fold one published edition into the element pages. Safe to run again for the same date."""
     store = Store(data_dir, state_dir)
-    today = store.contribs(date)
     if store.day(date) is None:
         raise FileNotFoundError(f"no edition for {date}")
+    if not store.since:
+        store.since = date  # the first update with no seed starts the pages today
+    if date < store.since:
+        print(f"elements: {date} is before the pages start ({store.since}); nothing to fold", file=sys.stderr)
+        return {"date": date, "written": 0, "dropped": 0, "elements": len(store.by_key)}
+    today = store.contribs(date)
+    changed = store.changed_actions()
     touched = set(today) | {e["key"] for e in store.by_key.values() if date in e["dates"]}
-    written = dropped = 0
+    counts = {"written": 0, "dropped": 0}
+
+    def put(key: str, contribs: dict[str, dict], older: dict | None) -> None:
+        if not qualifies(contribs, key, store.register, older):
+            if key in store.by_key:
+                store.drop(key)
+                counts["dropped"] += 1
+            return
+        names = store.names_for(key) if key.startswith("policy:") else None
+        counts["written"] += store.write(assemble(key, slug_for(key), contribs, store.register, store.topic_labels, names, older))
+
     for key in sorted(touched):
-        entry = store.by_key.get(key)
-        older = None
-        if entry:
-            page = store.load(entry["slug"])
-            # A listed page whose file is missing or unreadable (a merge race) is rebuilt from the editions.
-            contribs = page_contribs(page) if page else earlier(store, key, date)
-            older = (page or {}).get("older")
-            slug = entry["slug"]
+        page = store.load(store.by_key[key]["slug"]) if key in store.by_key else None
+        if key in store.by_key and (page is None or not patchable(page, date)):
+            put(key, from_editions(store, key), None)  # a lost file, or a day the page no longer holds in full
+            continue
+        if page:
+            contribs, older = page_contribs(page), page.get("older")
         else:
-            if key not in today:
-                continue
-            contribs = earlier(store, key, date)
-            slug = slug_for(key)
+            contribs, older = earlier(store, key, date), None
         contribs.pop(date, None)
         if key in today:
             contribs[date] = today[key]
-            if older and contribs[date].get("appearance") and date < min(r["date"] for r in page["timeline"]):
-                # A re-published day older than the window is already in the folded summary: keep only its ideas.
-                contribs[date] = {"appearance": None, "possibilities": today[key]["possibilities"]}
-        if not qualifies(contribs, key, store.register):
-            if entry:
-                store.drop(key)
-                dropped += 1
-            continue
-        names = store.names_for(key) if key.startswith("policy:") else None
-        written += store.write(assemble(key, slug, contribs, store.register, store.topic_labels, names, older))
-    written += backfill_documents(store, date, touched)
+        put(key, contribs, older)
+
+    # A new, corrected or removed action can link or unlink any element since the pages started: recompute those
+    # from the editions, exactly as a rebuild would.
+    for key in sorted(affected_by(store, changed)):
+        put(key, from_editions(store, key), None)
+    store.refresh_actions()
     store.save_index(date)
-    store.refresh_constraints()
-    store.refresh_names()
-    store.save_index(date)
-    result = {"date": date, "written": written, "dropped": dropped, "elements": len(store.by_key)}
-    print(f"elements {date}: {written} written, {dropped} dropped, {len(store.by_key)} pages", file=sys.stderr)
+    result = {"date": date, **counts, "elements": len(store.by_key), "actions_changed": len(changed)}
+    print(f"elements {date}: {counts['written']} written, {counts['dropped']} dropped, {len(store.by_key)} pages, "
+          f"{len(changed)} actions changed", file=sys.stderr)
     return result
 
 
-def backfill_documents(store: Store, date: str, touched: set[str]) -> int:
-    """An action recorded or seen again today may rest on a document, or cite a post, that an older one-off item
-    carried. Give that item its page now, as a rebuild would. Reads the earlier editions only on such days."""
-    seen_today = [c for c in store.register if c.get("last_seen") == date]
-    wanted = set()
-    for c in seen_today:
-        wanted |= {_norm_url(c.get("doc_url") or ""), _norm_url(c.get("url") or "")} | {_norm_url(s.get("url", "")) for s in c.get("sources") or []}
-    wanted.discard("")
-    if not wanted:
-        return 0
-    written = 0
+def patchable(page: dict, date: str) -> bool:
+    """Whether replacing `date` in the page is exact: the page must still hold that day in full."""
+    older = page.get("older") or {}
+    oldest_row = min((r["date"] for r in page.get("timeline", [])), default=date)
+    oldest_full = min((a["date"] for a in page.get("appearances", [])), default=date)
+    oldest_idea = min((p["date"] for p in page.get("possibilities", [])), default=date)
+    if older.get("days") and date < oldest_row:
+        return False
+    if older.get("links") and date < oldest_full:
+        return False
+    if older.get("possibilities") and date <= oldest_idea:  # folded ideas may share the oldest kept date
+        return False
+    return True
+
+
+def from_editions(store: Store, key: str) -> dict[str, dict]:
+    """Every contribution to `key` in the editions since the pages started."""
+    out = {}
     for d in store.dates():
-        if d >= date:
-            continue
+        c = store.contribs(d).get(key)
+        if c:
+            out[d] = c
+    return out
+
+
+def affected_by(store: Store, changed: set[str]) -> set[str]:
+    """Elements a changed action could link or unlink: pages that link it now, and every element in the editions since
+    the pages started whose URLs match its document or sources, or whose maker it names."""
+    if not changed:
+        return set()
+    keys = set()
+    for e in store.by_key.values():
+        if e.get("constraints"):
+            page = store.load(e["slug"])
+            if page and ({c["key"] for c in page.get("constraints", [])} | set((page.get("older") or {}).get("links", {}))) & changed:
+                keys.add(e["key"])
+    actions = [c for c in store.register if c.get("key") in changed]
+    texts = [_action_text(c) for c in actions]
+    for d in store.dates():
         for key, c in store.contribs(d).items():
             a = c.get("appearance")
-            if key in store.by_key or key in touched or not a or not ({_norm_url(u) for u in _urls([a])} & wanted):
+            if not a or key in keys:
                 continue
-            contribs = earlier(store, key, date)
-            if qualifies(contribs, key, store.register):
-                written += store.write(assemble(key, slug_for(key), contribs, store.register, store.topic_labels))
-    return written
+            if url_matches(key, _urls([a]), actions) or any(_names(t, a.get("maker")) for t in texts):
+                keys.add(key)
+    return keys
 
 
 def earlier(store: Store, key: str, date: str) -> dict[str, dict]:
@@ -681,10 +749,13 @@ def earlier(store: Store, key: str, date: str) -> dict[str, dict]:
     return out
 
 
-def rebuild(data_dir: Path, state_dir: Path | None = None) -> dict:
-    """Every page from every day file. Agrees byte for byte with a run of daily updates from empty."""
+def rebuild(data_dir: Path, state_dir: Path | None = None, since: str | None = None) -> dict:
+    """Every page from the editions since `since` (default: the pages' current start, else the last
+    SEED_EDITIONS editions). Agrees byte for byte with a run of daily updates from that date."""
     store = Store(data_dir, state_dir)
-    store.index = {"schema": INDEX_SCHEMA, "updated": None, "elements": []}
+    every = store.all_dates()
+    store.since = since or store.since or (every[-SEED_EDITIONS] if len(every) >= SEED_EDITIONS else (every[0] if every else None))
+    store.index = {"schema": INDEX_SCHEMA, "since": store.since, "updated": None, "elements": []}
     store.by_key = {}
     if store.dir.exists():
         for p in store.dir.glob("*.json"):
@@ -702,15 +773,15 @@ def rebuild(data_dir: Path, state_dir: Path | None = None) -> dict:
             store.write(assemble(key, slug, contribs, store.register, store.topic_labels, store.names_for(key)))
     last = store.dates()[-1] if store.dates() else None
     store.save_index(last)
-    print(f"elements rebuilt: {len(store.by_key)} pages from {len(store.dates())} editions", file=sys.stderr)
-    return {"elements": len(store.by_key), "editions": len(store.dates())}
+    print(f"elements rebuilt: {len(store.by_key)} pages from {len(store.dates())} editions since {store.since}", file=sys.stderr)
+    return {"elements": len(store.by_key), "editions": len(store.dates()), "since": store.since}
 
 
-def run(date: str | None = None, *, full: bool = False) -> None:
+def run(date: str | None = None, *, full: bool = False, since: str | None = None) -> None:
     from .publish import DATA, STATE
 
     if full:
-        rebuild(DATA, STATE)
+        rebuild(DATA, STATE, since)
         return
     if not date:
         date = load_json(DATA / "index.json", {}).get("latest")
