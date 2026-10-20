@@ -143,8 +143,7 @@ def candidates(items: list[dict]) -> list[dict]:
         doc = next((l for l in [it["url"], *(extra.get("links") or [])] if PRIMARY_LINK.search(l or "")), None)
         vendor_notice = it["source_kind"] == "changelog" or (it["source_kind"] == "news" and it.get("vendor_hint"))
         if doc or vendor_notice:
-            out.append({**it, "_key": constraint_key(it, doc), "_primary": True, "_doc": doc or it["url"],
-                        "_vendor": bool(vendor_notice and not doc)})
+            out.append({**it, "_key": constraint_key(it, doc), "_primary": bool(doc), "_doc": doc or it["url"]})
     out.sort(key=lambda c: c.get("published_at") or "", reverse=True)
     out.sort(key=lambda c: (not c["_primary"], -c.get("trust", 0.5)))  # stable: newest first within each tier
     by_key = {}
@@ -276,11 +275,21 @@ def issuer_status(extra: dict, date: str) -> str | None:
     return None
 
 
-def signature(c: dict) -> str:
-    """What a candidate says; when it changes, Magpie classifies it again."""
+def signature(c: dict, prior: str | None = None) -> str:
+    """What a candidate says, its document's text included; when it changes, Magpie classifies it again.
+
+    A document that could not be fetched this time keeps the text part of the prior signature, so a passing
+    network failure never forces a new verdict.
+    """
     extra = c.get("extra") or {}
-    return short_hash("|".join(str(x or "") for x in (c["title"], c["summary"], extra.get("effective_on"),
+    meta = short_hash("|".join(str(x or "") for x in (c["title"], c["summary"], extra.get("effective_on"),
                                                          extra.get("comments_close_on"), c.get("_doc"))), 12)
+    text = c.get("_text") or ""
+    if text:
+        part = short_hash(_norm(text), 8)
+    else:
+        part = prior.split(":", 1)[1] if prior and ":" in prior else "none"
+    return f"{meta}:{part}"
 
 
 def _merge_sources(old: list[dict], group: list[dict]) -> list[dict]:
@@ -310,9 +319,12 @@ def classify(cands: list[dict], date: str, recorded: list[dict] | None = None, t
     hats = [h["id"] for h in load_json(ROOT / "config/hats.json", {}).get("hats", [])]
     for c in cands:
         c["_id"] = short_hash(c["_key"], 8)
-    with cf.ThreadPoolExecutor(max_workers=8) as pool:
-        texts = list(pool.map(lambda c: _page_text(c["_doc"]) if c.get("_doc") else "", cands))
-    rows = [_row(c, t) for c, t in zip(cands, texts)]
+    missing = [c for c in cands if "_text" not in c]
+    if missing:
+        with cf.ThreadPoolExecutor(max_workers=8) as pool:
+            for c, t in zip(missing, pool.map(lambda c: _page_text(c["_doc"]) if c.get("_doc") else "", missing)):
+                c["_text"] = t
+    rows = [_row(c, c["_text"]) for c in cands]
     by_id = {r["id"]: (c, r) for c, r in zip(cands, rows)}
     shown = [{k: r.get(k) for k in ("id", "headline", "issuer", "jurisdiction", "instrument", "status", "first_seen", "doc_url")}
              for r in recorded or []]
@@ -332,7 +344,7 @@ def classify(cands: list[dict], date: str, recorded: list[dict] | None = None, t
             if not hit:
                 continue
             c, row = hit
-            sig = signature(c)
+            sig = c.get("_sig") or signature(c)
             if v.get("keep") is not True:
                 verdicts[c["_key"]] = {"kept": False, "date": date, "sig": sig}
                 continue
@@ -373,8 +385,8 @@ def classify(cands: list[dict], date: str, recorded: list[dict] | None = None, t
                 "effective": extra.get("effective_on") or grounded_date(v.get("effective"), source),
                 "comment_deadline": extra.get("comments_close_on") or grounded_date(v.get("comment_deadline"), source),
                 # Only an in-force action from the issuer's own document may cut access on the page.
-                "access_now": bool(v.get("access_now")) and c["_primary"] and (
-                    issuer_status(extra, date) == "in_force" or (c.get("_vendor") and v.get("status") == "in_force")),
+                # Only a Federal Register rule that code shows is in force may cut access and lead the page.
+                "access_now": bool(v.get("access_now")) and c["_primary"] and issuer_status(extra, date) == "in_force",
                 "impact": impact,
                 "ripples": ripples,
                 "hats": hat_words,
@@ -394,7 +406,12 @@ def generate(items: list[dict], date: str, data_dir, state_dir, *, llm: bool = T
     register = load_json(data_dir / "constraints.json", {"items": []})
     known = {r["key"]: r for r in register.get("items", [])}
     cands = candidates(items)
-    fresh = [c for c in cands if c["_key"] not in cache or cache[c["_key"]].get("sig") != signature(c)]
+    with cf.ThreadPoolExecutor(max_workers=8) as pool:  # every candidate's document, so edits to it are noticed
+        for c, t in zip(cands, pool.map(lambda c: _page_text(c["_doc"]) if c.get("_doc") else "", cands)):
+            c["_text"] = t
+    for c in cands:
+        c["_sig"] = signature(c, cache.get(c["_key"], {}).get("sig"))
+    fresh = [c for c in cands if c["_key"] not in cache or cache[c["_key"]].get("sig") != c["_sig"]]
     deferred = max(0, len(fresh) - PER_RUN * BATCHES)
     fresh = fresh[:PER_RUN * BATCHES]  # already ordered: issuer documents first, then by trust, newest first
     receipt = {"lane": None, "classified": 0, "errors": []}
@@ -413,7 +430,7 @@ def generate(items: list[dict], date: str, data_dir, state_dir, *, llm: bool = T
         receipt["errors"].append("the editor did not run; new candidates wait for the next edited run")
 
     # A sighting of an action already recorded joins that record: one action, one entry, its first date kept.
-    current = lambda c: cache.get(c["_key"], {}).get("sig") == signature(c)  # noqa: E731
+    current = lambda c: cache.get(c["_key"], {}).get("sig") == c["_sig"]  # noqa: E731
     kept = [(c, cache[c["_key"]]) for c in cands if cache.get(c["_key"], {}).get("kept") and current(c)]
     reg_by_id = {r["id"]: r for r in register.get("items", [])}
     joined: dict[str, list[dict]] = {}

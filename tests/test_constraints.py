@@ -237,6 +237,27 @@ class ConstraintTests(unittest.TestCase):
         K.generate([dict(it, summary="Rule, corrected effective date")], DATE, self.data, self.state)
         self.assertEqual(len(lane.prompts), 2)
 
+    def test_an_edited_document_page_is_classified_again(self):
+        K.LANES.clear()
+        lane = FakeLane(self._keep(access_now=False))
+        K.LANES["claude"] = lane
+        it = policy_item("https://www.federalregister.gov/d/2099-66666", "Rule", num="2099-66666")
+        K.generate([it], DATE, self.data, self.state)
+        K._page_text = lambda url, limit=3000: ""  # the page could not be fetched: no new verdict
+        K.generate([it], DATE, self.data, self.state)
+        self.assertEqual(len(lane.prompts), 1)
+        K._page_text = lambda url, limit=3000: "This rule is withdrawn and has no effect on any model."
+        K.generate([it], DATE, self.data, self.state)
+        self.assertEqual(len(lane.prompts), 2)
+
+    def test_vendor_news_is_reported_not_primary(self):
+        news = Item(source_id="anthropic-news", source_kind="news", source_name="Anthropic news (mirror)",
+                    url="https://example.com/mirror/1", title="Model access restricted under export controls in some regions",
+                    summary="AI model access restricted", vendor_hint="Anthropic").finalize().to_dict()
+        got = K.candidates([news])
+        self.assertEqual(len(got), 1)
+        self.assertFalse(got[0]["_primary"])
+
     def test_only_a_primary_in_force_action_cuts_access(self):
         K.LANES.clear()
         K.LANES["claude"] = FakeLane(self._keep())
