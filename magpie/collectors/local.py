@@ -104,10 +104,10 @@ def x_pulse(timeout: int = 1500) -> list[Item]:
     grok = shutil.which("grok") or str(Path.home() / ".local/bin/grok")
     if not Path(grok).exists() or os.environ.get("MAGPIE_SKIP_X"):
         return []
-    roster = json.loads((ROOT / "config/x-accounts.json").read_text())
+    from .inbox import roster
     by_group: dict[str, list[str]] = {}
     legacy = {1: "labs", 2: "devtools", 3: "opensource", 4: "research", 5: "builders", 6: "applied", 7: "builders"}
-    for a in roster["accounts"]:
+    for a in roster():
         if a.get("signal_to_noise", 3) >= 3:
             group = a.get("group") or legacy.get(a.get("category"), "builders")
             by_group.setdefault(group, []).append(a["handle"])
