@@ -136,12 +136,16 @@ def publish_day(day: dict, events: list[dict], top_events: list[dict], *, force:
     index["days"].sort(key=lambda d: d["date"], reverse=True)
     index["latest"] = index["days"][0]["date"]
     write_json(DATA / "index.json", index, compact=False)
-    if day.get("constraints") is not None:
-        from .constraints import update_register
-        update_register(day["constraints"], date, DATA)
-    if (day.get("trackers") or {}).get("hardware"):
-        from .trackers import persist
-        persist(date, DATA)
+    # The register and the price history are side files: a failure there must never fail the edition.
+    try:
+        if day.get("constraints") is not None:
+            from .constraints import update_register
+            update_register(day["constraints"], date, DATA)
+        if (day.get("trackers") or {}).get("hardware"):
+            from .trackers import persist
+            persist(date, DATA)
+    except Exception as ex:
+        print(f"constraints register or hardware history not updated: {type(ex).__name__}: {str(ex)[:160]}", file=sys.stderr)
     write_feed()
     print(f"published {date}: {len(events)} events, top {len(top_events)}, {day['run']['seconds']}s", file=sys.stderr)
     return True
