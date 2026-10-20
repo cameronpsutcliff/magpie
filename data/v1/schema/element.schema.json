@@ -381,6 +381,49 @@
    },
    "description": "What it was combined with in new possibilities, then what was covered alongside it."
   },
+  "named_integrations": {
+   "type": "array",
+   "maxItems": 24,
+   "items": {
+    "type": "object",
+    "required": [
+     "name",
+     "days",
+     "first_seen",
+     "last_seen",
+     "how"
+    ],
+    "properties": {
+     "name": {
+      "type": "string",
+      "description": "Its latest spelling in the sources."
+     },
+     "days": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Appearances in which the editor named it."
+     },
+     "first_seen": {
+      "type": "string",
+      "format": "date"
+     },
+     "last_seen": {
+      "type": "string",
+      "format": "date"
+     },
+     "how": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      },
+      "maxItems": 3,
+      "description": "Up to three ways the editor said they connect, newest first."
+     }
+    },
+    "additionalProperties": false
+   },
+   "description": "Beside the computed works_with: tools, models or platforms the editor named from the sources' own words in the appearances kept in full, most often named first. Absent when there are none."
+  },
   "constraints": {
    "type": "array",
    "items": {
@@ -630,6 +673,13 @@
        },
        "additionalProperties": false
       }
+     },
+     "named_integrations": {
+      "type": "array",
+      "items": {
+       "$ref": "day.schema.json#/$defs/integration"
+      },
+      "description": "The editor's named integrations that day (the brief's works_with), each spelled in that day's own text."
      },
      "metrics": {
       "type": "object",

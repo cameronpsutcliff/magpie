@@ -1,20 +1,22 @@
 """The editor: one model call writes the words for the day's strongest events.
 
 Code has already scored and clustered everything. The model only writes headlines, what became
-possible, ripple targets, an impact weight and the role "hats", grounded in the supplied
-items. Any lane can do it; the first one available wins. With no lane, the edition still
+possible, ripple targets, an impact weight, the role "hats" and the integrations the sources
+name, grounded in the supplied items; code keeps a named integration only if the event's own text
+spells it. Any lane can do it; the first one available wins. With no lane, the edition still
 publishes with deterministic copy.
 """
 from __future__ import annotations
 
 import json
 import os
+import re
 import shutil
 import subprocess
 import tempfile
 from pathlib import Path
 
-from .util import ROOT, clean, load_json
+from .util import ROOT, WS, clean, load_json, ungrounded_numbers
 
 PROMPT = """You are the editor of Magpie, a daily brief on what became newly possible in AI.
 Today is {date}. Below are today's {n} strongest candidate events, already clustered and scored by code.
@@ -45,6 +47,11 @@ For each event return:
 - topics: up to 3 topic ids
 - vendor: the company or project behind it, or "Open source"
 - hype: true if the evidence is mostly launch claims or screenshots
+- works_with: up to 5 objects {{"name": "...", "how": "..."}} for the tools, models or platforms this capability
+  integrates with, runs on or plugs into, as this event's own title, summary, context or source titles state it.
+  Copy each name exactly as it is written there; never the capability itself, its maker, a site that reported it, or
+  a model, harness, benchmark or machine used only to test or measure it.
+  "how": up to 10 words on how they connect. [] when the input names none.
 
 Also return an "edition" object:
 - headline: up to 14 words, in the style of a "next new thing" episode title: the day's top capabilities as
@@ -73,6 +80,87 @@ def _payload(events: list[dict]) -> str:
             "context": (e.get("_context") or [""])[0][:700],
         })
     return json.dumps(rows, ensure_ascii=False, indent=0)
+
+
+def _own_text(e: dict) -> str:
+    """The event's own words as the editor saw them: title, summary, context and its sources' titles (not who posted them)."""
+    parts = [e.get("title"), (e.get("summary") or "")[:400], (e.get("_context") or [""])[0][:700],
+             *(s.get("title") for s in (e.get("sources") or [])[:5] if isinstance(s, dict))]
+    return WS.sub(" ", " ".join(p for p in parts if isinstance(p, str)))
+
+
+_ALNUM = lambda s: re.sub(r"[^a-z0-9]", "", s.lower())  # noqa: E731  "Llama-3.1" and "llama 3.1" are one name
+_TOKENS = lambda s: re.findall(r"[a-z0-9]+", s.lower())  # noqa: E731
+_VERSION = re.compile(r"v?\d+[a-z]*")  # "2", "v2", "8b"
+_PARTS = re.compile(r"\s+[|\u2013-]\s+|:\s+")  # "Canvas | GitHub Copilot", "Show HN: Kit"
+
+
+def _itself(name: list[str], e: dict) -> bool:
+    """Whether a name (as tokens) is the capability, its maker or a source that reported it. The capability: its title, a
+    part of the title set off by "|", " - " or ":", its repo or model, its owner, or any of those without a version
+    ("Product" for "Product 2.0"). The maker: any leading part of its name ("Acme" for "Acme, Inc.")."""
+    title = e.get("title") if isinstance(e.get("title"), str) else ""
+    key = str(e.get("key") or "")
+    path = key.split(":", 1)[-1]
+    forms = [title, *_PARTS.split(title), path.rsplit("/", 1)[-1]]
+    if key.startswith(("gh:", "hf:", "hfs:")):
+        forms.append(path.split("/", 1)[0])
+    for f in forms:
+        t = _TOKENS(f)
+        if t[:len(name)] == name and (len(t) == len(name) or _VERSION.fullmatch(t[len(name)])):
+            return True
+    if isinstance(e.get("maker"), str) and _TOKENS(e["maker"])[:len(name)] == name:
+        return True
+    reporters = [s.get("name") for s in (e.get("sources") or []) + (e.get("mentions") or []) if isinstance(s, dict)]
+    return any(isinstance(r, str) and _TOKENS(r) == name for r in reporters)
+
+
+def _blocked(*texts: str) -> bool:
+    """Whether the redaction gate publish runs would stop on these words. Such an item is dropped here, so a name or clause
+    (which may draw on a transcript that is never published) can never stop an edition."""
+    from .publish import scrub
+    try:
+        scrub(list(texts))
+    except SystemExit:
+        return True
+    return False
+
+
+def works_with(raw, e: dict) -> list[dict]:
+    """The editor's named integrations, kept only when the name is written in the event's own text, is not the event, its
+    maker or a source that reported it, every number in it is in that text, and the redaction gate passes it."""
+    if not isinstance(raw, list):
+        return []
+    text = _own_text(e)
+    out, seen = [], set()
+    for w in raw:
+        if not isinstance(w, dict) or not isinstance(w.get("name"), str):
+            continue
+        name = clean(WS.sub(" ", w["name"])).strip(" .,;:")
+        how = clean(WS.sub(" ", w["how"])).strip() if isinstance(w.get("how"), str) else ""
+        if len(how.split()) > 16:
+            how = ""  # the name is what was checked; an overlong clause is dropped, not cut mid-thought
+        if not 2 <= len(name) <= 60 or not re.search(r"[A-Za-z]", name) or _ALNUM(name) in seen or _itself(_TOKENS(name), e):
+            continue
+        found = re.search(rf"(?<![A-Za-z0-9]){re.escape(name)}(?![A-Za-z0-9])", text, re.I)
+        if not found or ungrounded_numbers([name, how], text) or _blocked(name, how):
+            continue
+        seen.add(_ALNUM(name))
+        out.append({"name": found.group(0), **({"how": how} if how else {})})  # spelled as the sources spell it
+    return out[:5]
+
+
+def keep_works_with(brief: dict, e: dict) -> None:
+    """Leave on the brief only the names that pass `works_with` against this event, or none. Run on a fresh answer and on
+    a cached brief reused for a rebuilt event, whose text may have changed. Never raises: names are never worth an edition."""
+    try:
+        named = works_with(brief.get("works_with"), e)
+    except Exception:
+        named = []
+    if named:
+        brief["works_with"] = named
+    else:
+        brief.pop("works_with", None)
 
 
 QUOTAS = {"repo": 8, "model": 5, "space": 2, "paper": 5, "social": 5, "video": 4, "news": 3, "changelog": 3, "blog": 2, "community": 2}
@@ -170,6 +258,7 @@ def enrich(events: list[dict], date: str, limit: int = 26, timeout: int = 1200) 
             if b.get("vendor") and b["vendor"] not in ("Open source", e.get("maker")):
                 e["maker"] = b["vendor"]
                 e["vendors"] = [b["vendor"]] + [v for v in e["vendors"] if v != b["vendor"]][:2]
+            keep_works_with(brief, e)  # after the maker is settled, so the maker never counts as an integration
             e["brief"] = brief
             n += 1
         edition = {k: clean(v) if isinstance(v, str) else v for k, v in (data.get("edition") or {}).items()}

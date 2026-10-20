@@ -157,6 +157,11 @@ def appearance(e: dict, day: dict, ties: list[dict], read: dict[str, str]) -> di
                for r in b.get("ripples") or [] if isinstance(r, dict) and r.get("topic")]
     if ripples:
         a["ripples"] = ripples
+    ww = b.get("works_with") if isinstance(b.get("works_with"), list) else []
+    named = [{"name": w["name"], **({"how": w["how"]} if isinstance(w.get("how"), str) and w["how"] else {})}
+             for w in ww if isinstance(w, dict) and isinstance(w.get("name"), str) and w["name"]]
+    if named:
+        a["named_integrations"] = named  # checked against that day's sources by the editor step
     m = {k: e["metrics"][k] for k in METRICS if (e.get("metrics") or {}).get(k) is not None}
     if m:
         a["metrics"] = m
@@ -217,6 +222,11 @@ def _names(text: str, maker: str | None) -> bool:
     if not maker or maker in GENERIC_MAKERS or len(maker) < 3:
         return False
     return re.search(rf"(?<![a-z0-9]){re.escape(maker.lower())}(?![a-z0-9])", text.lower()) is not None
+
+
+def _name_key(name: str) -> str:
+    """One integration under its spellings: "Llama-3.1" and "llama 3.1" are the same name."""
+    return re.sub(r"[^a-z0-9]", "", name.lower()) or name
 
 
 def _norm_url(u: str) -> str:
@@ -393,6 +403,18 @@ def assemble(key: str, slug: str, contribs: dict[str, dict], register: list[dict
                 q["via"].append(via)
     works_with = sorted(partners.values(), key=lambda q: (q["possibilities"], q["together"], q["last"], q["key"]), reverse=True)[:24]
 
+    # Named integrations: tools, models or platforms the editor named that the sources' own words spell, by how often.
+    integrations: dict[str, dict] = {}
+    for a in apps:  # newest first: the latest spelling and clauses lead
+        for k, w in {_name_key(w["name"]): w for w in reversed(a.get("named_integrations", []))}.items():
+            g = integrations.setdefault(k, {"name": w["name"], "days": 0, "first_seen": a["date"], "last_seen": a["date"], "how": []})
+            g["days"] += 1
+            g["first_seen"] = a["date"]
+            if w.get("how") and len(g["how"]) < 3 and w["how"] not in g["how"]:
+                g["how"].append(w["how"])
+    named = sorted(integrations.values(), key=lambda g: g["name"].lower())
+    named = sorted(named, key=lambda g: (g["days"], g["last_seen"]), reverse=True)[:24]
+
     urls = {link["url"]} | {f["url"] for f in where}
     constraints = constraint_links(key, maker, urls, register, carried)
     o = older or {}
@@ -426,6 +448,7 @@ def assemble(key: str, slug: str, contribs: dict[str, dict], register: list[dict
         "knock_on": knock_on,
         "possibilities": poss,
         "works_with": works_with,
+        **({"named_integrations": named} if named else {}),
         "constraints": constraints,
         "appearances": apps,
         "timeline": timeline,

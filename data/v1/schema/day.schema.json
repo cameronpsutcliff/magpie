@@ -596,6 +596,23 @@
     }
    }
   },
+  "integration": {
+   "type": "object",
+   "required": [
+    "name"
+   ],
+   "properties": {
+    "name": {
+     "type": "string",
+     "description": "The tool, model or platform, spelled as the event's own title, summary, context or source titles spell it."
+    },
+    "how": {
+     "type": "string",
+     "description": "Up to about ten words on how they connect."
+    }
+   },
+   "additionalProperties": false
+  },
   "event": {
    "type": "object",
    "required": [
@@ -770,6 +787,14 @@
         "type": "string"
        },
        "description": "The same capability read through roles such as architect or security engineer."
+      },
+      "works_with": {
+       "type": "array",
+       "maxItems": 5,
+       "items": {
+        "$ref": "#/$defs/integration"
+       },
+       "description": "Named integrations: tools, models or platforms the capability integrates with, runs on or plugs into. Code keeps a name only if the event's own text spells it; it is not the capability (its title, a part of the title, its repo, model or owner, with or without a version), a leading part of its maker's name, or a source that reported it; every number in the item is in that text; and the redaction gate passes it. Checked again when a cached brief is reused. Absent when none survive."
       },
       "harder": {
        "type": "string",

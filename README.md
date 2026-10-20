@@ -19,7 +19,9 @@ list, and a roster of 72 vetted X accounts read through Grok's live search.
    (stars gained, not totals), independent pickup, source trust and spread across topics.
 4. **Edit.** A model writes the words for the strongest candidates (what became possible, why it
    matters, what to try, what is not proven) and rates **impact** from 1 to 5: how far a capability
-   ripples into other technology. It cannot change a score or add a fact.
+   ripples into other technology. It also names the tools, models or platforms a capability works with; code keeps
+   a name only if the event's own titles, summaries or sources spell it and every number in it is theirs. It cannot
+   change a score or add a fact.
 5. **Publish.** A redaction gate checks the output, then the edition lands in `data/v1/`.
 
 ## The feed
@@ -42,7 +44,7 @@ it carried, cites it, or names its maker. Pages start on a date (`since` in the 
 editions at most, and after that they grow from each day's edition; nothing earlier is read. Pages are computed from the published editions and the constraints
 register, with no model call: every appearance, where to find it, which sources spotted it, the knock-on areas the
 editor named, the possibilities it fed, what it works with (combined in a possibility, or covered by the same post
-on the same day), and the actions that touch it. Each publish folds that day in and replaces any earlier copy of
+on the same day, and beside that the integrations the editor named from the sources' own words), and the actions that touch it. Each publish folds that day in and replaces any earlier copy of
 the same day; `python3 -m magpie elements --rebuild` regenerates them all from the day files and matches a run of
 daily updates byte for byte. When an action is added, corrected or removed, every element it could touch is
 recomputed from the editions. Pages are bounded: the newest 60 appearances and 60 possibilities in full, two years of
