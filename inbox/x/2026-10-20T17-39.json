@@ -88,6 +88,18 @@
     "summary": "Mostly positive; questions about turn-taking, interruption handling and open weights, plus one complaint that the voice sounds robotic.",
     "tried": false,
     "replies_read": 30
+   },
+   "video": {
+    "duration_s": 128,
+    "shows": "An unedited live conversation between two people and a Voxtral 3 voice agent, with real-time transcription and speaker labels on screen.",
+    "worth_watching": true,
+    "why": "A continuous live demo showing real turn-taking, interruptions and tool calls with no cuts.",
+    "learn": [
+     "Voxtral 3 runs transcription and turn detection, Mistral Large reasoning, and Voxtral speech as three parallel streams",
+     "The agent stops mid-sentence when interrupted and switches between English, French and German",
+     "It can run a web search tool call mid-conversation"
+    ],
+    "audience": "Developers building voice agents or speech-to-speech products."
    }
   },
   {
@@ -124,6 +136,17 @@
     "summary": "Positive; repliers asked about pricing and language coverage, and nobody reported testing it yet.",
     "tried": false,
     "replies_read": 25
+   },
+   "video": {
+    "duration_s": 71,
+    "shows": "An animated launch video for the Eleven Realtime Mini and Max speech-to-speech models, using abstract graphics and simulated voice exchanges.",
+    "worth_watching": false,
+    "why": "A polished concept montage with no real interface or live output.",
+    "learn": [
+     "Eleven Realtime ships two speech-to-speech models: Mini for fast conversation and Max for complex tasks and tool calling",
+     "It claims 400 to 800 ms latency, with turn-taking and interruption handled natively"
+    ],
+    "audience": "Product leads wanting a high-level overview."
    }
   },
   {
@@ -234,6 +257,18 @@
     "summary": "Many generic congratulations; serious repliers asked about multi-file edits and editor support, and quote posts note people questioning the value of a fast Luna-level model.",
     "tried": false,
     "replies_read": 30
+   },
+   "video": {
+    "duration_s": 138,
+    "shows": "A developer introduces Mercury 3, then a side-by-side terminal recording of a coding agent building six arcade games with Mercury 3 and with Claude Sonnet 5.5, ending in a cost and latency chart (video post: https://x.com/_inception_ai/status/2112588104955773059).",
+    "worth_watching": true,
+    "why": "A working head-to-head agent run with real output and cost and time numbers.",
+    "learn": [
+     "Mercury 3 is a diffusion LLM claiming over 1,000 tokens per second",
+     "In the demo it built six games in under 5 minutes for about $0.10, versus over 50 minutes and nearly $5 for Sonnet 5.5",
+     "The speed suits agent workflows that fan out many sub-agents and tool calls"
+    ],
+    "audience": "Engineers building coding agents or high-throughput LLM apps."
    }
   },
   {
