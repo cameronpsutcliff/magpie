@@ -203,6 +203,12 @@ def build(items: list[dict], history: dict, date: str, repo_meta: dict | None = 
             if days_since <= 7:
                 signal = round(signal - 15, 1)
 
+        # Doubt from X (a Community Note or credible pushback) marks the event down and travels with it.
+        flags = [d for d in ((x.get("extra") or {}).get("doubt") for x in its + mentions.get(c, [])) if d and d.get("level", 0) >= 2]
+        doubt = max(flags, key=lambda d: d["level"]) if flags else None
+        if doubt:
+            signal = round(signal - 6 * doubt["level"], 1)
+
         runnable = any(x["source_kind"] in ("repo", "model", "space") for x in its) or any(
             k.startswith(("gh:", "hf:", "hfs:")) for k in keys) or bool(lead["extra"].get("github"))
         if n_groups >= 3:
@@ -227,6 +233,7 @@ def build(items: list[dict], history: dict, date: str, repo_meta: dict | None = 
             "kind": lead["source_kind"],
             "title": title,
             "summary": summary,
+            "doubt": doubt,
             "url": lead["url"],
             "date": date,
             "published_at": newest.isoformat() if newest else None,

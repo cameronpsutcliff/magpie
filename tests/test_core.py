@@ -1,8 +1,9 @@
+import json
 import unittest
 
 from magpie.build import build, rank_and_select
 from magpie.items import Item
-from magpie.util import canonical_keys
+from magpie.util import canonical_keys, now_utc
 import magpie.__main__ as cli
 
 
@@ -60,6 +61,38 @@ class CoreTests(unittest.TestCase):
         quick = {"effort": "a week", "scores": {"value": 4, "feasibility": 4, "evidence": 3, "novelty": 3}}
         slow = {"effort": "a quarter", "scores": {"value": 5, "feasibility": 4, "evidence": 3, "novelty": 3}}
         self.assertIs(rank([slow, quick])[0], quick)
+
+    def test_scout_inbox_doubt_and_roster(self):
+        import tempfile
+        from pathlib import Path
+        from magpie.collectors import inbox
+        with tempfile.TemporaryDirectory() as tmp:
+            box = Path(tmp) / "x"
+            box.mkdir()
+            ran = now_utc().isoformat()
+            (box / "a.json").write_text(json.dumps({"ran_at": ran, "items": [
+                {"title": "Model X claims SOTA", "url": "https://x.com/a/status/1", "handle": "@a", "summary": "Claims a record.",
+                 "links": ["https://github.com/a/x"], "evidence": "claim",
+                 "doubt": {"level": 1, "community_note": "The benchmark was run on its own training set."}},
+                {"title": "Repo Y", "url": "https://x.com/b/status/2", "handle": "@b", "summary": "Ships Y.", "evidence": "artifact"}]}))
+            roster_file = Path(tmp) / "roster.json"
+            roster_file.write_text(json.dumps({"accounts": [
+                {"handle": "@new_lab", "group": "labs", "status": "trial"},
+                {"handle": "@_inception_ai", "status": "retired", "retired_reason": "test"}]}))
+            old = inbox.INBOX, inbox.ROSTER
+            inbox.INBOX, inbox.ROSTER = box, roster_file
+            try:
+                items = {i.url: i for i in inbox.x_from_grok_bot()}
+                handles = {a["handle"] for a in inbox.roster()}
+            finally:
+                inbox.INBOX, inbox.ROSTER = old
+        flagged = items["https://x.com/a/status/1"]
+        self.assertEqual(flagged.extra["doubt"]["level"], 2)
+        self.assertIn("Flagged on X: Community Note", flagged.summary)
+        self.assertLessEqual(flagged.trust, 0.4)
+        self.assertEqual(items["https://x.com/b/status/2"].trust, 0.7)
+        self.assertIn("@new_lab", handles)
+        self.assertNotIn("@_inception_ai", handles)
 
 
 if __name__ == "__main__":
