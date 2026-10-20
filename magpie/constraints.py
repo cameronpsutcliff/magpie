@@ -334,7 +334,8 @@ def generate(items: list[dict], date: str, data_dir, state_dir, *, llm: bool = T
         receipt["errors"].append("the editor did not run; new candidates wait for the next edited run")
 
     # A sighting of an action already recorded joins that record: one action, one entry, its first date kept.
-    kept = [(c, cache[c["_key"]]) for c in cands if cache.get(c["_key"], {}).get("kept")]
+    current = lambda c: cache.get(c["_key"], {}).get("sig") == signature(c)  # noqa: E731
+    kept = [(c, cache[c["_key"]]) for c in cands if cache.get(c["_key"], {}).get("kept") and current(c)]
     reg_by_id = {r["id"]: r for r in register.get("items", [])}
     joined: dict[str, list[dict]] = {}
     for c, v in kept:
@@ -384,16 +385,19 @@ def generate(items: list[dict], date: str, data_dir, state_dir, *, llm: bool = T
 
     today = {r["key"] for r in records}
     events = [_event(r, date) for r in records if r["first_seen"] == date]
-    section_items = [dict(r, new=r["first_seen"] == date) for r in records]
+    sighted = sorted((dict(r, new=r["first_seen"] == date) for r in records), key=lambda r: (not r["new"], -r["signal"]))
+    carried = []
     for r in register.get("items", []):
         if r["key"] in today or not is_open(r, date):
             continue
         r = dict(r)
         r["signal"], r["parts"] = _signal(r, date)
-        section_items.append(dict(r, new=False))
-    section_items.sort(key=lambda r: (not r["new"], -r["signal"]))
+        carried.append(dict(r, new=False))
+    carried.sort(key=lambda r: -r["signal"])
+    # Everything sighted today stays in the section, so the register (built from it) never misses an action.
+    section_items = sighted + carried[:max(0, 12 - len(sighted))]
     rejected = sum(1 for c in cands if cache.get(c["_key"], {}).get("kept") is False and cache[c["_key"]].get("date") == date)
-    section = {"items": section_items[:12], "lane": receipt.get("lane"), "candidates": len(cands),
+    section = {"items": section_items, "lane": receipt.get("lane"), "candidates": len(cands),
                "classified": receipt.get("classified", 0), "rejected": rejected, "deferred": deferred,
                "dropped": dropped, "errors": receipt.get("errors", []), "layers": LAYERS,
                "note": "Official actions with a document that make AI harder, slower or costlier to train, publish, host, reach or buy. "
