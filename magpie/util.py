@@ -151,6 +151,20 @@ def canonical_keys(url: str | None, text: str = "") -> list[str]:
 _TRACKING = {"si", "ref", "ref_src", "fbclid", "gclid", "feature", "source", "s", "t"}
 
 
+# Links to other sources (X accounts, YouTube channels, newsletters) inside a body. Items keep them so the
+# weekly discovery loop can find sources the watch list does not cover yet.
+SOURCE_LINK = re.compile(
+    r"https?://(?:www\.)?(?:(?:x|twitter)\.com/[A-Za-z0-9_]{1,15}|youtube\.com/(?:@|channel/|c/|user/)[\w.-]+|"
+    r"[a-z0-9-]+\.substack\.com|[a-z0-9-]+\.beehiiv\.com|buttondown\.(?:email|com)/[\w-]+|"
+    r"[a-z0-9-]+(?:\.[a-z0-9-]+)+/p/[\w-]+)[^\s\"'<>)]*",
+    re.I,
+)
+
+
+def source_links(text: str, limit: int = 30) -> list[str]:
+    return list(dict.fromkeys(SOURCE_LINK.findall(text or "")))[:limit]
+
+
 def url_key(url: str) -> str:
     """Host, path and the meaningful query (YouTube's v=, Hacker News' id=); tracking parameters dropped."""
     p = urllib.parse.urlsplit(url)

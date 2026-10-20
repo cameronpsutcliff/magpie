@@ -3,19 +3,19 @@
     python -m magpie run              # full run (local collectors and the editor when available)
     python -m magpie run --no-llm     # deterministic edition only
     python -m magpie run --cloud      # skip collectors that need the owner's machine
+    python -m magpie discover         # weekly: grow and prune the watch list (see discover.py)
+    python -m magpie review --week    # weekly: quality report on the week's editions (see review.py)
 """
 from __future__ import annotations
 
 import argparse
 import concurrent.futures as cf
-import json
-import os
-import re
 import sys
 import time
 import traceback
 
 from . import build as B
+from . import discover, review
 from .collectors import feeds, github, inbox, local, web, youtube
 from .enrich import enrich
 from .util import ROOT, edition_date, iso, load_json, now_utc, write_json
@@ -36,6 +36,9 @@ def collect(cloud: bool) -> tuple[list, dict, list]:
     }
     for f in reg.get("feeds", []):
         jobs[f["id"]] = (lambda src=f: feeds.collect_feed(src))
+    orgs = [o["org"] for o in reg.get("github_orgs", [])]
+    if orgs:
+        jobs["github-watched-orgs"] = lambda: github.watched_orgs(orgs)
     if not cloud:
         jobs["youtube-watchlist"] = local.youtube
         jobs["youtube-channels"] = youtube.channels
@@ -86,6 +89,14 @@ def main() -> None:
     bf.add_argument("--to", dest="end", required=True, help="last edition date, YYYY-MM-DD")
     bf.add_argument("--no-llm", action="store_true")
     bf.add_argument("--recollect", action="store_true", help="ignore cached archive pulls")
+    d = sub.add_parser("discover", help="weekly: promote and demote watch-list sources by explicit rules")
+    d.add_argument("--dry-run", action="store_true", help="print the change log without writing anything")
+    d.add_argument("--offline", action="store_true", help="do not fetch candidate newsletter feeds (holds them)")
+    d.add_argument("--veto", action="append", metavar="ID", help="undo a change and remember it, e.g. x:@handle")
+    d.add_argument("--date", help="week ending on this date (default: today's edition date)")
+    v = sub.add_parser("review", help="weekly: quality report on a week of editions")
+    v.add_argument("--week", nargs="?", const="latest", default="latest",
+                   help="YYYY-Www or a date inside the week (default: the week of the latest edition)")
     a = ap.parse_args()
     if a.cmd == "possibilities":
         from .possibilities import run_for
@@ -99,6 +110,10 @@ def main() -> None:
         from .backfill import run as backfill_run
         backfill_run(a.start, a.end, llm=not a.no_llm, recollect=a.recollect)
         return
+    if a.cmd == "discover":
+        return discover.main(a)
+    if a.cmd == "review":
+        return review.main(a)
 
     t0 = time.monotonic()
     date = edition_date()

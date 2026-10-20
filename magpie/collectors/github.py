@@ -4,6 +4,7 @@ from __future__ import annotations
 import datetime as dt
 import html
 import re
+import urllib.parse
 
 from ..items import Item
 from ..util import fetch, fetch_json, github_headers, iso, now_utc, strip_html
@@ -89,6 +90,35 @@ def new_and_rising(days: int = 10, limit: int = 30) -> list[Item]:
                    "license": (r.get("license") or {}).get("spdx_id"), "created_at": r.get("created_at"),
                    "ai": bool(AI_HINT.search(text))},
         ).finalize())
+    return out
+
+
+def watched_orgs(orgs: list[str], days: int = 3, chunk: int = 6) -> list[Item]:
+    """New repos from GitHub owners the discovery loop promoted (config/sources.json github_orgs)."""
+    since = (now_utc() - dt.timedelta(days=days)).date().isoformat()
+    out = []
+    for i in range(0, len(orgs), chunk):
+        q = " ".join(f"user:{o}" for o in orgs[i:i + chunk]) + f" created:>{since}"
+        data = fetch_json(
+            f"https://api.github.com/search/repositories?q={urllib.parse.quote_plus(q)}&sort=stars&order=desc&per_page=30",
+            headers=github_headers(),
+        )
+        for r in data.get("items", []):
+            text = f"{r['full_name']} {r.get('description') or ''} {' '.join(r.get('topics') or [])}"
+            out.append(Item(
+                source_id="github-watched-orgs",
+                source_kind="repo",
+                source_name="GitHub watched orgs",
+                url=r["html_url"],
+                title=r["full_name"],
+                summary=strip_html(r.get("description") or "", 300),
+                published_at=r.get("created_at"),
+                trust=0.7,
+                metrics={"stars_total": r.get("stargazers_count"), "forks": r.get("forks_count")},
+                extra={"language": r.get("language"), "topics": r.get("topics") or [],
+                       "license": (r.get("license") or {}).get("spdx_id"), "created_at": r.get("created_at"),
+                       "ai": bool(AI_HINT.search(text))},
+            ).finalize())
     return out
 
 
