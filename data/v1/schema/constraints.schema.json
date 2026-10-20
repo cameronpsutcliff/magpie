@@ -1,0 +1,32 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://www.cameronsutcliff.com/magpie-data/schema/constraints.schema.json",
+ "title": "Magpie constraints register (magpie.constraints/1)",
+ "description": "Every official action Magpie has recorded that makes AI harder, slower or costlier to train, publish, host, reach or buy. Newest sighting first.",
+ "type": "object",
+ "required": [
+  "schema",
+  "items"
+ ],
+ "properties": {
+  "schema": {
+   "const": "magpie.constraints/1"
+  },
+  "updated": {
+   "type": "string",
+   "format": "date"
+  },
+  "layers": {
+   "type": "object",
+   "additionalProperties": {
+    "type": "string"
+   }
+  },
+  "items": {
+   "type": "array",
+   "items": {
+    "$ref": "day.schema.json#/$defs/constraint"
+   }
+  }
+ }
+}

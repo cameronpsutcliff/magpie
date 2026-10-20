@@ -67,11 +67,16 @@ became newly possible in AI: {group_label}. Find the most important NEW capabili
 demonstrated or measured on X in the last 30 hours: new models, open weights, repos, agent and coding-tool
 features, techniques, evals. Read these accounts first, and anyone they amplify: {handles}.
 
-Skip opinion, fundraising, hiring, politics and memes. Merge duplicates. Up to 18 items.
+Skip opinion, fundraising, hiring, memes and political argument. One exception: an official action that changes
+who can train, publish, host, use or buy AI (a rule, order, bill text, export-control list, procurement ban,
+regulator or court decision, or a company's notice that it is restricting access to comply with one) is in scope
+when the post links the document. Mark that item "constraint": true and put the document first in links. Report
+what the action does, never who is right. Merge duplicates. Up to 18 items.
 
 Return ONLY one JSON object: {{"items": [{{"title": "short neutral headline", "url": "https://x.com/<handle>/status/<id>",
 "handle": "@...", "summary": "one or two plain sentences on what is newly possible", "links": ["any repo, model,
-paper or product URL in the post"], "vendor": "company or project", "posted_at": "ISO date if known"}}]}}.
+paper or product URL in the post"], "vendor": "company or project", "posted_at": "ISO date if known",
+"constraint": false}}]}}.
 No prose outside the JSON. Do not use the em-dash character."""
 
 GROUPS = {
@@ -132,9 +137,10 @@ def x_pulse(timeout: int = 1500) -> list[Item]:
             continue
         seen.add(url)
         links = " ".join(x.get("links") or [])
+        constraint = x.get("constraint") is True  # an official action: the constraints lane takes it
         it = Item(
             source_id="x-grok-pulse",
-            source_kind="social",
+            source_kind="policy" if constraint else "social",
             source_name=f"X: {x.get('handle', '')}".strip(),
             url=url,
             title=clean(x.get("title", ""))[:200],
@@ -143,10 +149,10 @@ def x_pulse(timeout: int = 1500) -> list[Item]:
             author=x.get("handle"),
             vendor_hint=x.get("vendor"),
             trust=0.65,
-            extra={"links": x.get("links") or [], "x_group": x.get("group")},
+            extra={"links": x.get("links") or [], "x_group": x.get("group"), **({"primary": False} if constraint else {})},
         ).finalize(links)
         # A post about a repo or model should cluster with it.
-        if it.mentions:
+        if it.mentions and not constraint:
             it.keys = it.mentions[:1] + it.keys
             it.mentions = it.mentions[1:]
         out.append(it)

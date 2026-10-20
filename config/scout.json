@@ -16,5 +16,7 @@
   "max_items_per_sweep": 40,
   "roster_cap": 400,
   "roster_review_reads": 80,
-  "level3_wide_reposts": 500
+  "level3_wide_reposts": 500,
+  "price_check_cron": "0 9 * * 0",
+  "price_check_file": "inbox/hardware-prices.json"
 }

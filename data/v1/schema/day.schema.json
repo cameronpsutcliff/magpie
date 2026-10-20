@@ -227,6 +227,282 @@
      }
     }
    }
+  },
+  "constraints": {
+   "type": "object",
+   "description": "Official actions with a document that make AI harder, slower or costlier to train, publish, host, reach or buy. New ones first, then those still open.",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/constraint"
+     }
+    },
+    "layers": {
+     "type": "object",
+     "additionalProperties": {
+      "type": "string"
+     }
+    },
+    "lane": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "candidates": {
+     "type": "integer"
+    },
+    "classified": {
+     "type": "integer"
+    },
+    "dropped": {
+     "type": "array"
+    },
+    "errors": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "note": {
+     "type": "string"
+    }
+   }
+  },
+  "trackers": {
+   "type": "object",
+   "properties": {
+    "gap": {
+     "type": "object",
+     "description": "How far open-weight models trail the closed frontier on Epoch AI's Capabilities Index (CC BY 4.0).",
+     "properties": {
+      "lag_months": {
+       "type": "number",
+       "description": "At the open frontier's latest release: months since a closed model first reached the same score."
+      },
+      "today_months": {
+       "type": "number",
+       "description": "From that closed model to this edition's date; grows until an open model moves the frontier."
+      },
+      "points_behind": {
+       "type": "number"
+      },
+      "open": {
+       "type": [
+        "object",
+        "null"
+       ],
+       "properties": {
+        "model": {
+         "type": "string"
+        },
+        "org": {
+         "type": "string"
+        },
+        "country": {
+         "type": "string"
+        },
+        "date": {
+         "type": "string"
+        },
+        "eci": {
+         "type": "number"
+        }
+       }
+      },
+      "closed_match": {
+       "type": [
+        "object",
+        "null"
+       ],
+       "properties": {
+        "model": {
+         "type": "string"
+        },
+        "org": {
+         "type": "string"
+        },
+        "country": {
+         "type": "string"
+        },
+        "date": {
+         "type": "string"
+        },
+        "eci": {
+         "type": "number"
+        }
+       }
+      },
+      "closed_frontier": {
+       "type": [
+        "object",
+        "null"
+       ],
+       "properties": {
+        "model": {
+         "type": "string"
+        },
+        "org": {
+         "type": "string"
+        },
+        "country": {
+         "type": "string"
+        },
+        "date": {
+         "type": "string"
+        },
+        "eci": {
+         "type": "number"
+        }
+       }
+      },
+      "china": {
+       "type": [
+        "object",
+        "null"
+       ],
+       "properties": {
+        "model": {
+         "type": "string"
+        },
+        "org": {
+         "type": "string"
+        },
+        "country": {
+         "type": "string"
+        },
+        "date": {
+         "type": "string"
+        },
+        "eci": {
+         "type": "number"
+        }
+       }
+      },
+      "us": {
+       "type": [
+        "object",
+        "null"
+       ],
+       "properties": {
+        "model": {
+         "type": "string"
+        },
+        "org": {
+         "type": "string"
+        },
+        "country": {
+         "type": "string"
+        },
+        "date": {
+         "type": "string"
+        },
+        "eci": {
+         "type": "number"
+        }
+       }
+      },
+      "history": {
+       "type": "array"
+      },
+      "source": {
+       "type": "object"
+      },
+      "method": {
+       "type": "string"
+      }
+     }
+    },
+    "hardware": {
+     "type": "object",
+     "description": "What it costs to run open weights at home: specs from makers, dated list and street prices.",
+     "properties": {
+      "reference": {
+       "type": "object"
+      },
+      "finding": {
+       "type": "string"
+      },
+      "method": {
+       "type": "string"
+      },
+      "devices": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "id": {
+          "type": "string"
+         },
+         "name": {
+          "type": "string"
+         },
+         "memory_gb": {
+          "type": "number"
+         },
+         "bandwidth_gbs": {
+          "type": "number"
+         },
+         "list": {
+          "type": [
+           "object",
+           "null"
+          ]
+         },
+         "street": {
+          "type": [
+           "object",
+           "null"
+          ]
+         },
+         "first_list": {
+          "type": [
+           "object",
+           "null"
+          ]
+         },
+         "list_change_pct": {
+          "type": [
+           "number",
+           "null"
+          ]
+         },
+         "street_premium_pct": {
+          "type": [
+           "number",
+           "null"
+          ]
+         },
+         "ceiling_tps": {
+          "type": "number",
+          "description": "Bandwidth divided by the reference model's size: the decode ceiling."
+         },
+         "fits_b": {
+          "type": "integer",
+          "description": "Largest model, in billions of parameters at 4-bit, that fits in memory."
+         },
+         "dollars_per_gbs": {
+          "type": [
+           "number",
+           "null"
+          ]
+         },
+         "stale": {
+          "type": "boolean"
+         }
+        }
+       }
+      }
+     }
+    },
+    "errors": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   }
   }
  },
  "$defs": {
@@ -289,7 +565,7 @@
     },
     "kind": {
      "type": "string",
-     "description": "The lead source's kind."
+     "description": "The lead source's kind, or `constraint` for an official action that makes AI harder to use (see `constraint`)."
     },
     "title": {
      "type": "string"
@@ -325,9 +601,10 @@
      "enum": [
       "reported",
       "reproduced",
-      "corroborated"
+      "corroborated",
+      "official"
      ],
-     "description": "reported: one source group. reproduced: something runnable plus two or more groups. corroborated: three or more groups."
+     "description": "reported: one source group. reproduced: something runnable plus two or more groups. corroborated: three or more groups. official: the issuer's own document (constraints only)."
     },
     "signal": {
      "type": "number",
@@ -436,8 +713,20 @@
         "type": "string"
        },
        "description": "The same capability read through roles such as architect or security engineer."
+      },
+      "harder": {
+       "type": "string",
+       "description": "Constraints only: what becomes harder, slower, costlier or impossible, and for whom."
+      },
+      "who": {
+       "type": "string",
+       "description": "Constraints only: who is affected."
       }
      }
+    },
+    "constraint": {
+     "$ref": "#/$defs/constraint_fields",
+     "description": "Present when kind is constraint."
     }
    }
   },
@@ -710,6 +999,210 @@
     "event_id": {
      "type": "string",
      "description": "The capability event for this repo, when it is published."
+    }
+   }
+  },
+  "constraint_fields": {
+   "type": "object",
+   "properties": {
+    "status": {
+     "enum": [
+      "proposed",
+      "draft",
+      "final",
+      "in_force",
+      "withdrawn"
+     ]
+    },
+    "instrument": {
+     "enum": [
+      "law",
+      "bill",
+      "rule",
+      "order",
+      "export_control",
+      "procurement",
+      "standard",
+      "guidance",
+      "court",
+      "company_notice"
+     ]
+    },
+    "layers": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "training",
+       "publishing",
+       "hosting",
+       "access",
+       "chips",
+       "distribution",
+       "data",
+       "use"
+      ]
+     },
+     "description": "Where it acts: training runs, publishing weights, hosting and procurement, access to models, chips and memory, model hubs, training data, or use in one sector."
+    },
+    "jurisdiction": {
+     "type": "string"
+    },
+    "issuer": {
+     "type": "string"
+    },
+    "effective": {
+     "type": [
+      "string",
+      "null"
+     ],
+     "format": "date",
+     "description": "From the issuer's own data, or a date the document text states."
+    },
+    "comment_deadline": {
+     "type": [
+      "string",
+      "null"
+     ],
+     "format": "date"
+    },
+    "access_now": {
+     "type": "boolean",
+     "description": "In force and changes who can use an existing model or product today. Only these may lead the page."
+    },
+    "doc_url": {
+     "type": "string",
+     "format": "uri"
+    },
+    "primary": {
+     "type": "boolean",
+     "description": "The source is the issuer's own document or notice."
+    }
+   }
+  },
+  "constraint": {
+   "type": "object",
+   "required": [
+    "id",
+    "key",
+    "headline",
+    "harder",
+    "status",
+    "layers",
+    "url",
+    "first_seen",
+    "signal"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "key": {
+     "type": "string",
+     "description": "policy:fr:<document number> for the Federal Register, else policy:<page key>."
+    },
+    "headline": {
+     "type": "string"
+    },
+    "title": {
+     "type": "string",
+     "description": "The document's own title."
+    },
+    "harder": {
+     "type": "string"
+    },
+    "who": {
+     "type": "string"
+    },
+    "why": {
+     "type": "string"
+    },
+    "limits": {
+     "type": "string"
+    },
+    "status": {
+     "$ref": "#/$defs/constraint_fields/properties/status"
+    },
+    "instrument": {
+     "$ref": "#/$defs/constraint_fields/properties/instrument"
+    },
+    "layers": {
+     "$ref": "#/$defs/constraint_fields/properties/layers"
+    },
+    "jurisdiction": {
+     "type": "string"
+    },
+    "issuer": {
+     "type": "string"
+    },
+    "effective": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "comment_deadline": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "access_now": {
+     "type": "boolean"
+    },
+    "impact": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 5
+    },
+    "ripples": {
+     "type": "array"
+    },
+    "hats": {
+     "type": "object"
+    },
+    "url": {
+     "type": "string",
+     "format": "uri"
+    },
+    "doc_url": {
+     "type": "string",
+     "format": "uri"
+    },
+    "primary": {
+     "type": "boolean"
+    },
+    "sources": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "name": {
+        "type": "string"
+       },
+       "url": {
+        "type": "string"
+       },
+       "title": {
+        "type": "string"
+       }
+      }
+     }
+    },
+    "first_seen": {
+     "type": "string",
+     "format": "date"
+    },
+    "last_seen": {
+     "type": "string",
+     "format": "date"
+    },
+    "signal": {
+     "type": "number",
+     "description": "Computed by code from status, reach, primary source, novelty, urgency and impact."
+    },
+    "new": {
+     "type": "boolean",
+     "description": "First seen in this edition. The rest are still open: a deadline or effective date ahead, or seen in the last 7 days."
     }
    }
   }

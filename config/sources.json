@@ -1213,6 +1213,13 @@
    "kind": "social",
    "url": "repo:inbox/x",
    "trust": 0.65
+  },
+  {
+   "id": "federal-register",
+   "name": "Federal Register (US rules, orders and notices)",
+   "kind": "policy",
+   "url": "https://www.federalregister.gov/api/v1/documents.json",
+   "trust": 0.95
   }
  ],
  "github_orgs": [
@@ -1236,6 +1243,75 @@
      "url": "https://x.com/deepseek_ai/status/2112476496283775135"
     }
    ]
+  }
+ ],
+ "policy_feeds": [
+  {
+   "id": "whitehouse-actions",
+   "name": "The White House: presidential actions",
+   "kind": "policy",
+   "url": "https://www.whitehouse.gov/presidential-actions/feed/",
+   "trust": 0.9,
+   "jurisdiction": "US",
+   "issuer": "The White House",
+   "window_hours": 96,
+   "max_entries": 40
+  },
+  {
+   "id": "nist-news",
+   "name": "NIST news (includes CAISI)",
+   "kind": "policy",
+   "url": "https://www.nist.gov/news-events/news/rss.xml",
+   "trust": 0.85,
+   "jurisdiction": "US",
+   "issuer": "NIST",
+   "window_hours": 96,
+   "max_entries": 40
+  },
+  {
+   "id": "eu-digital-strategy",
+   "name": "European Commission: digital strategy (AI Act)",
+   "kind": "policy",
+   "url": "https://digital-strategy.ec.europa.eu/en/rss.xml",
+   "trust": 0.9,
+   "jurisdiction": "EU",
+   "issuer": "European Commission",
+   "window_hours": 96,
+   "max_entries": 40
+  },
+  {
+   "id": "uk-aisi",
+   "name": "UK AI Security Institute",
+   "kind": "policy",
+   "url": "https://www.gov.uk/search/news-and-communications.atom?organisations%5B%5D=ai-security-institute",
+   "trust": 0.85,
+   "jurisdiction": "UK",
+   "issuer": "UK AI Security Institute",
+   "window_hours": 96,
+   "max_entries": 40
+  },
+  {
+   "id": "uk-dsit",
+   "name": "UK Department for Science, Innovation and Technology",
+   "kind": "policy",
+   "url": "https://www.gov.uk/search/news-and-communications.atom?organisations%5B%5D=department-for-science-innovation-and-technology",
+   "trust": 0.85,
+   "jurisdiction": "UK",
+   "issuer": "UK Department for Science, Innovation and Technology",
+   "window_hours": 96,
+   "max_entries": 40
+  },
+  {
+   "id": "china-law-translate",
+   "name": "China Law Translate (translations of Chinese rules)",
+   "kind": "policy",
+   "url": "https://www.chinalawtranslate.com/en/feed/",
+   "trust": 0.75,
+   "jurisdiction": "China",
+   "issuer": "China Law Translate",
+   "primary": false,
+   "window_hours": 168,
+   "max_entries": 30
   }
  ]
 }
