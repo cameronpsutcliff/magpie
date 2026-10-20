@@ -42,7 +42,7 @@
     "properties": {
      "slug": {
       "type": "string",
-      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+      "pattern": "^[a-z0-9][a-z0-9._-]*$"
      },
      "key": {
       "type": "string"
@@ -100,7 +100,7 @@
        "type": "string",
        "format": "date"
       },
-      "description": "Editions that contributed to the page, newest first."
+      "description": "Editions in the page's timeline window and its possibilities, newest first."
      }
     },
     "additionalProperties": false

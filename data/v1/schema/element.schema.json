@@ -2,7 +2,7 @@
  "$schema": "https://json-schema.org/draft/2020-12/schema",
  "$id": "https://www.cameronsutcliff.com/magpie-data/schema/element.schema.json",
  "title": "Magpie element (magpie.element/1)",
- "description": "One thing Magpie keeps meeting (a repo, model, paper, tool or official action) across every edition: what it is, where to find it, what it works with and connects to, and its history. Computed from the published editions and the constraints register; no model writes anything here. Pages exist for elements seen on two or more days, that fed a new possibility, that are official actions, or that an action already on record names.",
+ "description": "One thing Magpie keeps meeting (a repo, model, paper, tool or official action) across every edition: what it is, where to find it, what it works with and connects to, and its history. Computed from the published editions and the constraints register; no model writes anything here. Pages exist for elements seen on two or more days, that fed a new possibility, that are official actions, that carried an action's document or reported it, or whose maker an action already on record names.",
  "type": "object",
  "required": [
   "schema",
@@ -25,7 +25,8 @@
   "possibilities",
   "works_with",
   "constraints",
-  "appearances"
+  "appearances",
+  "timeline"
  ],
  "additionalProperties": false,
  "properties": {
@@ -34,8 +35,8 @@
   },
   "slug": {
    "type": "string",
-   "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
-   "description": "The file name and the page: /magpie/e/<slug>."
+   "pattern": "^[a-z0-9][a-z0-9._-]*$",
+   "description": "The file name and the page: /magpie/e/<slug>. A pure function of the key: gh-owner--repo, hf-org--model, hfs-owner--space, arxiv-<id>, policy-fr-<document number>, else a readable stem plus a hash of the key."
   },
   "key": {
    "type": "string",
@@ -103,11 +104,12 @@
   "updated": {
    "type": "string",
    "format": "date",
-   "description": "The latest edition that changed this page."
+   "description": "The latest edition that contributed to the page: an appearance or a possibility."
   },
   "days_seen": {
    "type": "integer",
-   "minimum": 1
+   "minimum": 1,
+   "description": "Editions it appeared in over its whole history: the timeline plus any folded rows."
   },
   "days_featured": {
    "type": "integer",
@@ -439,9 +441,10 @@
      "match": {
       "enum": [
        "document",
+       "reported",
        "maker"
       ],
-      "description": "document = the action rests on a document this element links to; maker = the action names its maker."
+      "description": "document = the action rests on a document this element links to; reported = this element is one of the action's sources; maker = the action names its maker."
      }
     },
     "additionalProperties": false
@@ -705,7 +708,102 @@
     },
     "additionalProperties": false
    },
-   "description": "One per edition, newest first. The newest 60 are complete; older ones keep their numbers and words without source lists."
+   "description": "The newest 60 appearances in full, newest first. Where to find it, who spotted it, knock-on effects and ties come from these; the timeline has every appearance."
+  },
+  "timeline": {
+   "type": "array",
+   "description": "Every appearance in the last two years of its history (up to 730 rows) as one short row, newest first. Older rows fold into `older`; counts, peaks and best places cover both.",
+   "items": {
+    "type": "object",
+    "required": [
+     "date",
+     "id",
+     "signal",
+     "evidence"
+    ],
+    "additionalProperties": false,
+    "properties": {
+     "date": {
+      "type": "string",
+      "format": "date"
+     },
+     "id": {
+      "type": "string"
+     },
+     "signal": {
+      "type": "number"
+     },
+     "evidence": {
+      "enum": [
+       "reported",
+       "reproduced",
+       "corroborated",
+       "official"
+      ]
+     },
+     "rank": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+     },
+     "impact": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+     }
+    }
+   }
+  },
+  "older": {
+   "type": "object",
+   "description": "Appearances past the timeline window, folded into counts and extremes.",
+   "required": [
+    "days",
+    "first_seen",
+    "days_featured"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "days": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "first_seen": {
+     "type": "string",
+     "format": "date"
+    },
+    "days_featured": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "best_rank": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 5
+    },
+    "best_impact": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 5
+    },
+    "peak": {
+     "type": "object",
+     "required": [
+      "signal",
+      "date"
+     ],
+     "additionalProperties": false,
+     "properties": {
+      "signal": {
+       "type": "number"
+      },
+      "date": {
+       "type": "string",
+       "format": "date"
+      }
+     }
+    }
+   }
   }
  }
 }

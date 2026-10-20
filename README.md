@@ -37,12 +37,15 @@ can pull these files; nothing needs this code.
 
 An **element** is one thing Magpie keeps meeting: a repo, model, paper, tool or official action, keyed the way the
 editions cluster it (`gh:owner/repo`, `hf:org/model`, `arxiv:id`, `url:...`, `policy:...`). It gets a page when it
-appears on two or more days, feeds a new possibility, is an official action, or an action already on record names
-its maker or rests on a document it links to. Pages are computed from the published editions and the constraints
+appears on two or more days, feeds a new possibility, is an official action, carried an action's document or reported
+it, or an action already on record when it appeared names its maker. Pages are computed from the published editions and the constraints
 register, with no model call: every appearance, where to find it, which sources spotted it, the knock-on areas the
 editor named, the possibilities it fed, what it works with (combined in a possibility, or covered by the same post
 on the same day), and the actions that touch it. Each publish folds that day in and replaces any earlier copy of
-the same day; `python3 -m magpie elements --rebuild` regenerates them all from the day files.
+the same day; `python3 -m magpie elements --rebuild` regenerates them all from the day files and matches a run of
+daily updates byte for byte. Pages are bounded: the newest 60 appearances in full, two years of one-line timeline
+rows, and a folded summary before that. Slugs are a pure function of the key (`gh-owner--repo`, `arxiv-<id>`,
+`policy-fr-<number>`, else a readable stem plus a hash), so a page's URL never changes.
 
 ## Where it runs
 

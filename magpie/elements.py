@@ -5,7 +5,11 @@ with and connects to, and every edition it appeared in. Everything here is compu
 editions and the constraints register; no model is called.
 
 A page exists for an element seen on two or more days, one that fed a new possibility, an official action,
-or one that shares a document with an official action. Everything else stays in the editions.
+one that carried an action's document or reported it, or one whose maker an action already on record names.
+Everything else stays in the editions.
+
+Bounded: a page keeps its newest 60 appearances in full (words, sources, ties) and every appearance as one
+short timeline row (date, signal, place, impact), so counts and peaks cover its whole history.
 
 The update is incremental: a day's contributions replace that day's entries in each element file, so
 publishing a day twice never counts it twice. `rebuild` regenerates every page from the day files; the
@@ -26,7 +30,8 @@ from .util import load_json, short_hash, write_json
 SCHEMA = "magpie.element/1"
 INDEX_SCHEMA = "magpie.elements/1"
 GENERIC_MAKERS = {"Open source", "Research", "Other"}
-FULL_APPEARANCES = 60   # newest first in full; older ones keep their numbers, so a page stays bounded
+FULL_APPEARANCES = 60   # the newest appearances kept in full
+TIMELINE_ROWS = 730     # two years of short rows; older ones fold into one summary, so a page is bounded
 CROWD = 6               # a post that ties more than this many items in a day is a roundup, not a connection
 PER_APPEARANCE = 8      # sources, mentions and ties kept per appearance
 METRICS = ("stars_total", "stars_day", "stars_week", "stars_month", "forks", "hn_points", "hn_comments", "hf_likes",
@@ -36,22 +41,27 @@ LINK_LABEL = {"gh": "GitHub", "hf": "Hugging Face", "hfs": "Hugging Face Space",
 
 # ---------- names ----------
 
-def slug_base(key: str) -> str:
-    """A readable, URL-safe slug from a canonical key: gh:owner/repo -> gh-owner-repo."""
+_SIMPLE = re.compile(r"^[a-z0-9._-]+$")
+
+
+def slug_for(key: str) -> str:
+    """The page's slug, a pure function of the key, so a URL never depends on which element came first.
+
+    Code and weights read as owner--name (gh-deepseek-ai--deepinfer; neither GitHub nor Hugging Face allows
+    "--" in an owner, so the split is unambiguous). Papers and Federal Register documents keep their ids.
+    Anything else gets a readable stem and a hash of the key.
+    """
     prefix, _, rest = key.partition(":")
-    body = re.sub(r"[^a-z0-9]+", "-", rest.lower()).strip("-")
-    slug = f"{prefix}-{body}" if body else prefix
-    if len(slug) > 72:
-        slug = slug[:63].rstrip("-") + "-" + short_hash(key, 8)
-    return slug
-
-
-def slug_for(key: str, taken: dict[str, str]) -> str:
-    """The base slug, or the base plus a hash of the key when another key already holds it."""
-    base = slug_base(key)
-    if taken.get(base, key) == key:
-        return base
-    return f"{base[:63].rstrip('-')}-{short_hash(key, 8)}"
+    if prefix in ("gh", "hf", "hfs"):
+        owner, _, name = rest.partition("/")
+        if owner and name and "--" not in owner and _SIMPLE.match(owner) and _SIMPLE.match(name) and len(rest) <= 160:
+            return f"{prefix}-{owner}--{name}"
+    elif prefix == "arxiv" and re.fullmatch(r"\d{4}\.\d{4,5}(v\d+)?", rest):
+        return f"arxiv-{rest}"
+    elif prefix == "policy" and re.fullmatch(r"fr:[0-9]+(-[0-9]+)*", rest):
+        return f"policy-fr-{rest[3:]}"
+    body = re.sub(r"[^a-z0-9]+", "-", rest.lower()).strip("-")[:48].rstrip("-")
+    return f"{prefix}-{body}-{short_hash(key, 8)}" if body else f"{prefix}-{short_hash(key, 8)}"
 
 
 def canonical_link(key: str, url: str | None) -> dict:
@@ -214,47 +224,59 @@ def constraint_links(key: str, maker: str | None, urls: set[str], register: list
     for c in register:
         if c.get("key") == key:
             continue
-        docs = {_norm_url(c.get("doc_url") or ""), _norm_url(c.get("url") or "")} | {_norm_url(s.get("url", "")) for s in c.get("sources") or []}
-        docs.discard("")
+        docs = {_norm_url(c.get("doc_url") or ""), _norm_url(c.get("url") or "")} - {""}
+        reports = {_norm_url(s.get("url", "")) for s in c.get("sources") or []} - {""} - docs
         why = None
         if urls & docs:
             why = "document"
+        elif urls & reports:
+            why = "reported"
         elif _names(" ".join(str(c.get(k) or "") for k in ("headline", "title", "harder", "who", "quote")), maker):
             why = "maker"
         if why:
             out.append({"key": c["key"], "id": c.get("id"), "headline": c.get("headline") or c.get("title") or "",
                         "status": c.get("status"), "jurisdiction": c.get("jurisdiction"), "issuer": c.get("issuer"),
                         "url": c.get("doc_url") or c.get("url"), "first_seen": c.get("first_seen"),
-                        "why": "It rests on a document this element links to." if why == "document" else f"It names {maker}.",
+                        "why": {"document": "It rests on a document this element links to.",
+                                "reported": "This element is one of the sources that reported it."}.get(why, f"It names {maker}."),
                         "match": why})
-    out.sort(key=lambda c: (c["match"] != "document", c["key"]))
+    out.sort(key=lambda c: (["document", "reported", "maker"].index(c["match"]), c["key"]))
     return out
 
 
 def qualifies(contribs: dict[str, dict], key: str, register: list[dict]) -> bool:
-    """Seen on two or more days, fed a possibility, is an official action, or an action already on record
-    when it appeared names its maker or rests on a document it links to."""
+    """Seen on two or more days, fed a possibility, is an official action, rests on a document an action cites,
+    or an action already on record when it appeared names its maker."""
     seen = sorted((c["appearance"] for c in contribs.values() if c.get("appearance")), key=lambda a: a["date"], reverse=True)
     if not seen:
         return False
     if len(seen) >= 2 or any(c.get("possibilities") for c in contribs.values()):
         return True
-    if seen[0]["kind"] == "constraint" or key.startswith("policy:"):
+    if seen[0].get("kind") == "constraint" or key.startswith("policy:"):
         return True
-    urls = {u for a in seen for s in a.get("sources", []) + a.get("mentions", []) for u in (s["url"], s.get("discussion")) if u}
+    if constraint_links(key, None, _urls(seen), register):  # without a maker, only document and source matches count
+        return True
     maker = next((a["maker"] for a in seen if a.get("maker")), None)
     on_record = [c for c in register if (c.get("first_seen") or "") <= seen[0]["date"]]
-    return bool(constraint_links(key, maker, urls, on_record))
+    return bool(constraint_links(key, maker, set(), on_record))
+
+
+def _urls(apps: list[dict]) -> set[str]:
+    return {u for a in apps for s in a.get("sources", []) + a.get("mentions", []) for u in (s["url"], s.get("discussion")) if u}
 
 
 def assemble(key: str, slug: str, contribs: dict[str, dict], register: list[dict], topic_labels: dict[str, str],
-             names: list[dict] | None = None) -> dict:
-    """The element page from every edition's contribution (date -> {"appearance", "possibilities"})."""
-    apps = sorted((c["appearance"] for c in contribs.values() if c.get("appearance")), key=lambda a: a["date"], reverse=True)
-    apps = apps[:FULL_APPEARANCES] + [compact(a) for a in apps[FULL_APPEARANCES:]]
+             names: list[dict] | None = None, older: dict | None = None) -> dict:
+    """The element page from every edition's contribution (date -> {"appearance", "possibilities"}), plus the
+    summary of rows that already left the timeline window (`older`, from the existing page)."""
+    every = sorted((c["appearance"] for c in contribs.values() if c.get("appearance")), key=lambda a: a["date"], reverse=True)
+    rows = [row(a) for a in every]
+    timeline, older = rows[:TIMELINE_ROWS], fold(rows[TIMELINE_ROWS:], older)
+    # Words, sources and ties come from the newest appearances kept in full; counts and peaks from every one.
+    apps = [a for a in every if not a.get("row")][:FULL_APPEARANCES]
     poss = sorted((p for c in contribs.values() for p in c.get("possibilities") or []), key=lambda p: (p["date"], -p["rank"]), reverse=True)
     latest = apps[0]
-    first_seen, last_seen = apps[-1]["date"], latest["date"]
+    first_seen, last_seen = (older or {}).get("first_seen") or timeline[-1]["date"], timeline[0]["date"]
     headline = next((a["headline"] for a in apps if a.get("headline")), None)
     lede = next((a.get("newly_possible") or a.get("newly_constrained") for a in apps if a.get("newly_possible") or a.get("newly_constrained")), None)
     summary = next((a["summary"] for a in apps if a.get("summary")), None)
@@ -335,9 +357,10 @@ def assemble(key: str, slug: str, contribs: dict[str, dict], register: list[dict
 
     urls = {link["url"]} | {f["url"] for f in where}
     constraints = constraint_links(key, maker, urls, register)
-    ranks = [a["rank"] for a in apps if a.get("rank")]
-    impacts = [a["impact"] for a in apps if a.get("impact")]
-    peak = max(apps, key=lambda a: (a["signal"], a["date"]))
+    o = older or {}
+    ranks = [a["rank"] for a in timeline if a.get("rank")] + ([o["best_rank"]] if o.get("best_rank") else [])
+    impacts = [a["impact"] for a in timeline if a.get("impact")] + ([o["best_impact"]] if o.get("best_impact") else [])
+    peak = max(timeline + ([o["peak"]] if o.get("peak") else []), key=lambda a: (a["signal"], a["date"]))
     page = {
         "schema": SCHEMA,
         "slug": slug,
@@ -354,18 +377,20 @@ def assemble(key: str, slug: str, contribs: dict[str, dict], register: list[dict
         "first_seen": first_seen,
         "last_seen": last_seen,
         "updated": max([last_seen] + [p["date"] for p in poss]),
-        "days_seen": len(apps),
-        "days_featured": len(ranks),
+        "days_seen": len(timeline) + o.get("days", 0),
+        "days_featured": len([a for a in timeline if a.get("rank")]) + o.get("days_featured", 0),
         **({"best_rank": min(ranks)} if ranks else {}),
         **({"best_impact": max(impacts)} if impacts else {}),
         "peak": {"signal": peak["signal"], "date": peak["date"]},
         "find": where,
         "spotted_by": spotted_by,
         "knock_on": knock_on,
-        "possibilities": poss[:40],
+        "possibilities": poss,
         "works_with": works_with,
         "constraints": constraints,
         "appearances": apps,
+        "timeline": timeline,
+        **({"older": older} if older else {}),
     }
     if key.startswith("policy:") or latest["kind"] == "constraint":
         rec = next((c for c in register if c.get("key") == key), None)
@@ -407,14 +432,41 @@ def display_name(key: str, link: dict, apps: list[dict]) -> str:
     return latest["title"]
 
 
-def compact(a: dict) -> dict:
-    """An old appearance keeps its numbers and words; its source lists go (the newer ones carry the links)."""
-    return {k: v for k, v in a.items() if k not in ("sources", "mentions", "with", "why", "limits", "summary", "read")}
+def row(a: dict) -> dict:
+    """An appearance as one timeline row: enough for counts, peaks and the strip, nothing that grows."""
+    out = {"date": a["date"], "id": a["id"], "signal": a["signal"], "evidence": a["evidence"]}
+    for k in ("rank", "impact"):
+        if a.get(k):
+            out[k] = a[k]
+    return out
+
+
+def fold(rows: list[dict], older: dict | None = None) -> dict | None:
+    """Rows past the timeline window, folded into the summary the page already carries. Every part of it is a
+    count, a minimum or a maximum, so folding a row at a time (daily) equals folding them all (rebuild)."""
+    if not rows:
+        return dict(older) if older else None
+    out = dict(older) if older else {"days": 0, "first_seen": rows[0]["date"], "days_featured": 0}
+    for r in rows:
+        out["days"] += 1
+        out["first_seen"] = min(out["first_seen"], r["date"])
+        if r.get("rank"):
+            out["days_featured"] += 1
+            out["best_rank"] = min(out.get("best_rank", r["rank"]), r["rank"])
+        if r.get("impact"):
+            out["best_impact"] = max(out.get("best_impact", r["impact"]), r["impact"])
+        pk = out.get("peak")
+        if not pk or (r["signal"], r["date"]) > (pk["signal"], pk["date"]):
+            out["peak"] = {"signal": r["signal"], "date": r["date"]}
+    return out
 
 
 def page_contribs(page: dict) -> dict[str, dict]:
-    """Back from a page to its per-edition contributions, so one edition's entries can be replaced."""
+    """Back from a page to its per-edition contributions, so one edition's entries can be replaced.
+    Editions older than the full window come back as timeline rows, which is all the page keeps of them."""
     out: dict[str, dict] = {}
+    for r in page.get("timeline", []):
+        out.setdefault(r["date"], {"appearance": None, "possibilities": []})["appearance"] = dict(r, row=True)
     for a in page.get("appearances", []):
         out.setdefault(a["date"], {"appearance": None, "possibilities": []})["appearance"] = a
     for p in page.get("possibilities", []):
@@ -423,7 +475,7 @@ def page_contribs(page: dict) -> dict[str, dict]:
 
 
 def index_entry(page: dict) -> dict:
-    dates = sorted({a["date"] for a in page["appearances"]} | {p["date"] for p in page["possibilities"]}, reverse=True)
+    dates = sorted({r["date"] for r in page["timeline"]} | {p["date"] for p in page["possibilities"]}, reverse=True)
     return {
         "slug": page["slug"], "key": page["key"], "kind": page["kind"], "name": page["name"],
         **({"headline": page["headline"]} if page.get("headline") else {}),
@@ -470,9 +522,6 @@ class Store:
     def dates(self) -> list[str]:
         return sorted(p.stem for p in (self.data / "days").glob("*.json"))
 
-    def taken(self) -> dict[str, str]:
-        return {e["slug"]: e["key"] for e in self.index["elements"]}
-
     def load(self, slug: str) -> dict | None:
         return load_json(self.dir / f"{slug}.json", None)
 
@@ -482,7 +531,9 @@ class Store:
         try:
             scrub(page)
         except SystemExit as ex:
-            print(f"element {page['slug']} not written: {ex}", file=sys.stderr)
+            print(f"element {page['slug']} not written, and any older copy removed: {ex}", file=sys.stderr)
+            self.drop(page["key"])
+            (self.dir / f"{page['slug']}.json").unlink(missing_ok=True)
             return False
         write_json(self.dir / f"{page['slug']}.json", page, compact=True)
         self.by_key[page["key"]] = index_entry(page)
@@ -529,11 +580,12 @@ class Store:
                 page["names"] = names
                 self.write(page)
 
-    def refresh_constraints(self, keys: set[str]) -> None:
-        """When an action is new or changed, every page whose maker it names gets it."""
-        changed = [c for c in self.register if c.get("key") in keys]
+    def refresh_constraints(self) -> None:
+        """Official-action links follow the register: every page that has one, or whose maker an action names,
+        is checked on every run, so a new action or a corrected record reaches the pages it touches."""
+        texts = [" ".join(str(c.get(k) or "") for k in ("headline", "title", "harder", "who", "quote")) for c in self.register]
         for e in list(self.by_key.values()):
-            if not any(_names(" ".join(str(c.get(k) or "") for k in ("headline", "title", "harder", "who", "quote")), e.get("maker")) for c in changed):
+            if not e.get("constraints") and not any(_names(t, e.get("maker")) for t in texts):
                 continue
             page = self.load(e["slug"])
             if not page:
@@ -555,33 +607,63 @@ def update(date: str, data_dir: Path, state_dir: Path | None = None) -> dict:
     written = dropped = 0
     for key in sorted(touched):
         entry = store.by_key.get(key)
+        older = None
         if entry:
             page = store.load(entry["slug"])
             # A listed page whose file is missing or unreadable (a merge race) is rebuilt from the editions.
             contribs = page_contribs(page) if page else earlier(store, key, date)
+            older = (page or {}).get("older")
             slug = entry["slug"]
         else:
             if key not in today:
                 continue
             contribs = earlier(store, key, date)
-            slug = slug_for(key, store.taken())
+            slug = slug_for(key)
         contribs.pop(date, None)
         if key in today:
             contribs[date] = today[key]
+            if older and contribs[date].get("appearance") and date < min(r["date"] for r in page["timeline"]):
+                # A re-published day older than the window is already in the folded summary: keep only its ideas.
+                contribs[date] = {"appearance": None, "possibilities": today[key]["possibilities"]}
         if not qualifies(contribs, key, store.register):
             if entry:
                 store.drop(key)
                 dropped += 1
             continue
         names = store.names_for(key) if key.startswith("policy:") else None
-        written += store.write(assemble(key, slug, contribs, store.register, store.topic_labels, names))
+        written += store.write(assemble(key, slug, contribs, store.register, store.topic_labels, names, older))
+    written += backfill_documents(store, date, touched)
     store.save_index(date)
-    store.refresh_constraints({c["key"] for c in store.register if c.get("last_seen") == date or c.get("first_seen") == date})
+    store.refresh_constraints()
     store.refresh_names()
     store.save_index(date)
     result = {"date": date, "written": written, "dropped": dropped, "elements": len(store.by_key)}
     print(f"elements {date}: {written} written, {dropped} dropped, {len(store.by_key)} pages", file=sys.stderr)
     return result
+
+
+def backfill_documents(store: Store, date: str, touched: set[str]) -> int:
+    """An action recorded or seen again today may rest on a document, or cite a post, that an older one-off item
+    carried. Give that item its page now, as a rebuild would. Reads the earlier editions only on such days."""
+    seen_today = [c for c in store.register if c.get("last_seen") == date]
+    wanted = set()
+    for c in seen_today:
+        wanted |= {_norm_url(c.get("doc_url") or ""), _norm_url(c.get("url") or "")} | {_norm_url(s.get("url", "")) for s in c.get("sources") or []}
+    wanted.discard("")
+    if not wanted:
+        return 0
+    written = 0
+    for d in store.dates():
+        if d >= date:
+            continue
+        for key, c in store.contribs(d).items():
+            a = c.get("appearance")
+            if key in store.by_key or key in touched or not a or not ({_norm_url(u) for u in _urls([a])} & wanted):
+                continue
+            contribs = earlier(store, key, date)
+            if qualifies(contribs, key, store.register):
+                written += store.write(assemble(key, slug_for(key), contribs, store.register, store.topic_labels))
+    return written
 
 
 def earlier(store: Store, key: str, date: str) -> dict[str, dict]:
@@ -600,7 +682,7 @@ def earlier(store: Store, key: str, date: str) -> dict[str, dict]:
 
 
 def rebuild(data_dir: Path, state_dir: Path | None = None) -> dict:
-    """Every page from every day file, oldest edition first (slugs are claimed in that order)."""
+    """Every page from every day file. Agrees byte for byte with a run of daily updates from empty."""
     store = Store(data_dir, state_dir)
     store.index = {"schema": INDEX_SCHEMA, "updated": None, "elements": []}
     store.by_key = {}
@@ -608,20 +690,10 @@ def rebuild(data_dir: Path, state_dir: Path | None = None) -> dict:
         for p in store.dir.glob("*.json"):
             p.unlink()
     by_key: dict[str, dict[str, dict]] = defaultdict(dict)
-    order: dict[str, tuple] = {}
     for d in store.dates():
         for key, c in store.contribs(d).items():
             by_key[key][d] = c
-            order.setdefault(key, (d, key))
-    taken: dict[str, str] = {}
-    pages = []
-    for key in sorted(by_key, key=lambda k: order[k]):
-        contribs = by_key[key]
-        if not qualifies(contribs, key, store.register):
-            continue
-        slug = slug_for(key, taken)
-        taken[slug] = key
-        pages.append((key, slug, contribs))
+    pages = [(key, slug_for(key), contribs) for key, contribs in sorted(by_key.items()) if qualifies(contribs, key, store.register)]
     for key, slug, contribs in pages:
         if not key.startswith("policy:"):
             store.write(assemble(key, slug, contribs, store.register, store.topic_labels))
