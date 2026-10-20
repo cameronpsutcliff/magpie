@@ -30,6 +30,27 @@ class WorksWithTests(unittest.TestCase):
         got = N.works_with([{"name": "Kit"}, {"name": "Acme"}, {"name": "Hacker News"}, {"name": "AI News"}, {"name": "Ollama"}], e)
         self.assertEqual(got, [{"name": "Ollama"}])
 
+    def test_never_the_capability_or_maker_under_another_form(self):
+        page = ev(key="url:product.example/launch", title="Product 2.0", summary="Product 2.0 plugs into Ollama.", maker="Acme, Inc.")
+        self.assertEqual(N.works_with([{"name": "Product"}, {"name": "Ollama"}], page), [{"name": "Ollama"}])  # Product, without its version
+        acme = ev(summary="Acme ships a kit for Ollama.", maker="Acme, Inc.")
+        self.assertEqual(N.works_with([{"name": "Acme"}, {"name": "Ollama"}], acme), [{"name": "Ollama"}])
+        video = ev(key="url:youtube.com/watch?v=x", title="Track tokens with the Usage Canvas | GitHub Copilot", summary="A canvas in VS Code.")
+        self.assertEqual(N.works_with([{"name": "GitHub Copilot"}, {"name": "VS Code"}], video), [{"name": "VS Code"}])
+        weights = ev(key="hf:meta-llama/llama-3.1-8b", title="meta-llama/Llama-3.1-8B", summary="Llama 3.1 8B runs in Ollama and llama.cpp.")
+        self.assertEqual(N.works_with([{"name": "Llama"}, {"name": "Llama 3.1"}, {"name": "meta-llama"}, {"name": "llama.cpp"}], weights),
+                         [{"name": "llama.cpp"}])
+        engine = ev(key="gh:deepseek-ai/deepinfer", title="deepseek-ai/DeepInfer", summary="Serves DeepSeek models at scale.", maker="DeepSeek")
+        self.assertEqual(N.works_with([{"name": "deepseek-ai"}, {"name": "DeepSeek"}, {"name": "DeepSeek models"}], engine), [{"name": "DeepSeek models"}])
+
+    def test_what_it_plugs_into_may_lead_its_title(self):
+        plugin = ev(key="url:zed.dev/blog/plugin", title="Claude Code plugin for Zed", summary="A plugin.", maker="Zed Industries")
+        self.assertEqual(N.works_with([{"name": "Claude Code"}, {"name": "Zed"}], plugin), [{"name": "Claude Code"}])  # Zed leads its maker
+
+    def test_an_item_the_redaction_gate_would_stop_is_dropped(self):
+        got = N.works_with([{"name": "Ollama", "how": "loads weights from /Users/someone/models"}, {"name": "vLLM", "how": "serves it"}], ev())
+        self.assertEqual(got, [{"name": "vLLM", "how": "serves it"}])
+
     def test_a_whole_name_not_part_of_a_word(self):
         e = ev(summary="Works with vLLMx and Ollama.")
         self.assertEqual(N.works_with([{"name": "vLLM"}, {"name": "Olla"}, {"name": "Ollama"}], e), [{"name": "Ollama"}])
@@ -81,6 +102,22 @@ class EditorTests(unittest.TestCase):
         self.assertEqual(receipt["enriched"], 2)
         self.assertEqual([e["brief"]["headline"] for e in events], ["One", "Two"])
         self.assertTrue(all("works_with" not in e["brief"] for e in events))  # none survive: no field
+
+    def test_a_cached_brief_is_checked_again_against_the_rebuilt_event(self):
+        cached = {"headline": "Kit", "works_with": [{"name": "Ollama"}, {"name": "vLLM"}]}
+        N.keep_works_with(cached, ev(summary="Now only Ollama."))  # the text changed between the editor run and the reuse
+        self.assertEqual(cached["works_with"], [{"name": "Ollama"}])
+        N.keep_works_with(cached, ev(summary="Neither any more."))
+        self.assertNotIn("works_with", cached)
+        broken = {"headline": "Kit", "works_with": [{"name": "Ollama"}]}
+        with mock.patch.object(N, "works_with", side_effect=RuntimeError("boom")):
+            N.keep_works_with(broken, ev())
+        self.assertEqual(broken, {"headline": "Kit"})
+
+    def test_the_reuse_path_checks_cached_names(self):
+        main = (ROOT / "magpie/__main__.py").read_text()
+        reuse = main[main.index("if a.reuse_editor"):main.index("elif not a.no_llm")]
+        self.assertIn('keep_works_with(e["brief"], e)', reuse)
 
     def test_the_vendor_becomes_the_maker_before_names_are_checked(self):
         events = [ev(maker="Open source", summary="A kit from Ollama that drives Claude Code.")]

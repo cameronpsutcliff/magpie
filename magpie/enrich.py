@@ -90,18 +90,49 @@ def _own_text(e: dict) -> str:
 
 
 _ALNUM = lambda s: re.sub(r"[^a-z0-9]", "", s.lower())  # noqa: E731  "Llama-3.1" and "llama 3.1" are one name
+_TOKENS = lambda s: re.findall(r"[a-z0-9]+", s.lower())  # noqa: E731
+_VERSION = re.compile(r"v?\d+[a-z]*")  # "2", "v2", "8b"
+_PARTS = re.compile(r"\s+[|\u2013-]\s+|:\s+")  # "Canvas | GitHub Copilot", "Show HN: Kit"
+
+
+def _itself(name: list[str], e: dict) -> bool:
+    """Whether a name (as tokens) is the capability, its maker or a source that reported it. The capability: its title, a
+    part of the title set off by "|", " - " or ":", its repo or model, its owner, or any of those without a version
+    ("Product" for "Product 2.0"). The maker: any leading part of its name ("Acme" for "Acme, Inc.")."""
+    title = e.get("title") if isinstance(e.get("title"), str) else ""
+    key = str(e.get("key") or "")
+    path = key.split(":", 1)[-1]
+    forms = [title, *_PARTS.split(title), path.rsplit("/", 1)[-1]]
+    if key.startswith(("gh:", "hf:", "hfs:")):
+        forms.append(path.split("/", 1)[0])
+    for f in forms:
+        t = _TOKENS(f)
+        if t[:len(name)] == name and (len(t) == len(name) or _VERSION.fullmatch(t[len(name)])):
+            return True
+    if isinstance(e.get("maker"), str) and _TOKENS(e["maker"])[:len(name)] == name:
+        return True
+    reporters = [s.get("name") for s in (e.get("sources") or []) + (e.get("mentions") or []) if isinstance(s, dict)]
+    return any(isinstance(r, str) and _TOKENS(r) == name for r in reporters)
+
+
+def _blocked(*texts: str) -> bool:
+    """Whether the redaction gate publish runs would stop on these words. Such an item is dropped here, so a name or clause
+    (which may draw on a transcript that is never published) can never stop an edition."""
+    from .publish import scrub
+    try:
+        scrub(list(texts))
+    except SystemExit:
+        return True
+    return False
 
 
 def works_with(raw, e: dict) -> list[dict]:
     """The editor's named integrations, kept only when the name is written in the event's own text, is not the event, its
-    maker or a source that reported it, and every number in it is in that text. A malformed answer gives [], never an error."""
+    maker or a source that reported it, every number in it is in that text, and the redaction gate passes it."""
     if not isinstance(raw, list):
         return []
     text = _own_text(e)
-    key = str(e.get("key") or "").split(":", 1)[-1]
-    reporters = [s.get("name") for s in (e.get("sources") or []) + (e.get("mentions") or []) if isinstance(s, dict)]
-    taken = {_ALNUM(x) for x in [e.get("maker"), e.get("title"), key, key.rsplit("/", 1)[-1], *reporters] if isinstance(x, str)} - {""}
-    out = []
+    out, seen = [], set()
     for w in raw:
         if not isinstance(w, dict) or not isinstance(w.get("name"), str):
             continue
@@ -109,14 +140,27 @@ def works_with(raw, e: dict) -> list[dict]:
         how = clean(WS.sub(" ", w["how"])).strip() if isinstance(w.get("how"), str) else ""
         if len(how.split()) > 16:
             how = ""  # the name is what was checked; an overlong clause is dropped, not cut mid-thought
-        if not 2 <= len(name) <= 60 or not re.search(r"[A-Za-z]", name) or _ALNUM(name) in taken:
+        if not 2 <= len(name) <= 60 or not re.search(r"[A-Za-z]", name) or _ALNUM(name) in seen or _itself(_TOKENS(name), e):
             continue
         found = re.search(rf"(?<![A-Za-z0-9]){re.escape(name)}(?![A-Za-z0-9])", text, re.I)
-        if not found or ungrounded_numbers([name, how], text):
+        if not found or ungrounded_numbers([name, how], text) or _blocked(name, how):
             continue
-        taken.add(_ALNUM(name))
+        seen.add(_ALNUM(name))
         out.append({"name": found.group(0), **({"how": how} if how else {})})  # spelled as the sources spell it
     return out[:5]
+
+
+def keep_works_with(brief: dict, e: dict) -> None:
+    """Leave on the brief only the names that pass `works_with` against this event, or none. Run on a fresh answer and on
+    a cached brief reused for a rebuilt event, whose text may have changed. Never raises: names are never worth an edition."""
+    try:
+        named = works_with(brief.get("works_with"), e)
+    except Exception:
+        named = []
+    if named:
+        brief["works_with"] = named
+    else:
+        brief.pop("works_with", None)
 
 
 QUOTAS = {"repo": 8, "model": 5, "space": 2, "paper": 5, "social": 5, "video": 4, "news": 3, "changelog": 3, "blog": 2, "community": 2}
@@ -202,7 +246,7 @@ def enrich(events: list[dict], date: str, limit: int = 26, timeout: int = 1200) 
             if b.get("keep") is False:
                 e["dropped"] = True
                 continue
-            brief = {k: clean(v) if isinstance(v, str) else v for k, v in b.items() if k not in ("id", "keep", "works_with")}
+            brief = {k: clean(v) if isinstance(v, str) else v for k, v in b.items() if k not in ("id", "keep")}
             brief["hats"] = {k: clean(v) for k, v in (b.get("hats") or {}).items() if isinstance(v, str) and v.strip() and k in hats}
             brief["ripples"] = [r for r in (b.get("ripples") or []) if isinstance(r, dict) and r.get("topic") in topics][:3]
             try:
@@ -214,12 +258,7 @@ def enrich(events: list[dict], date: str, limit: int = 26, timeout: int = 1200) 
             if b.get("vendor") and b["vendor"] not in ("Open source", e.get("maker")):
                 e["maker"] = b["vendor"]
                 e["vendors"] = [b["vendor"]] + [v for v in e["vendors"] if v != b["vendor"]][:2]
-            try:  # after the maker is settled, so the maker never counts as an integration
-                named = works_with(b.get("works_with"), e)
-            except Exception:  # never worth an edition
-                named = []
-            if named:
-                brief["works_with"] = named
+            keep_works_with(brief, e)  # after the maker is settled, so the maker never counts as an integration
             e["brief"] = brief
             n += 1
         edition = {k: clean(v) if isinstance(v, str) else v for k, v in (data.get("edition") or {}).items()}

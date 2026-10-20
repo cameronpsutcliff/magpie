@@ -19,7 +19,7 @@ import traceback
 from . import build as B
 from . import discover, review
 from .collectors import feeds, github, inbox, local, policy, web
-from .enrich import enrich
+from .enrich import enrich, keep_works_with
 from .util import ROOT, edition_date, iso, load_json, now_utc, write_json
 
 from .publish import DATA, STATE, compose_day, publish_day, scrub  # noqa: F401  (scrub re-exported for tests)
@@ -201,6 +201,7 @@ def main() -> None:
                 e["topics"] = briefs[e["key"]].get("topics") or e["topics"]
                 e["vendors"] = briefs[e["key"]].get("vendors") or e["vendors"]
                 e["maker"] = briefs[e["key"]].get("maker") or e["maker"]
+                keep_works_with(e["brief"], e)  # cached names must still be spelled in this build's text
         edition, receipt = saved.get("edition", {}), saved.get("receipt", receipt)
     elif not a.no_llm:
         edition, receipt = enrich(events, date)
