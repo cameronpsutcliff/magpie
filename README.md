@@ -66,7 +66,7 @@ mentioned, then applies two rules:
 | Rule | When |
 |---|---|
 | Promote | Two or more trusted, independent sources cited it within the week. |
-| Demote | Zero kept items in 21 days of live editions, or three hype flags in that window. Backfilled editions never count toward zero kept. |
+| Demote | Zero kept items in its last 21 live editions, or three hype flags in 21 days. Backfilled editions never count toward zero kept. |
 
 Trusted means owner-curated: a registry source with trust 0.65 or more, an X roster account the Grok
 sweeps read (the pulse and Grok Bot count as one), or a high-priority YouTube channel. Discovered

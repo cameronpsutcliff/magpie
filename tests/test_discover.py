@@ -162,6 +162,17 @@ class DiscoverTests(unittest.TestCase):
         ])
         self.assertEqual(r.run(dry_run=True)["result"]["promoted"], [])
 
+    def test_promoted_feed_ids_stay_unique(self):
+        r = self.repo
+        hosts = ["https://foo.example.com/p/a", "https://foo-example.com/p/b"]
+        r.run_items([
+            item("trusted-letter", "newsletter", "https://trusted.example/p/u", "U", body=" ".join(hosts)),
+            item("x-grok-pulse", "social", "https://x.com/vetted/status/11", "U", author="@vetted", links=hosts),
+        ])
+        r.run()
+        ids = [f["id"] for f in r.read("config/sources.json")["feeds"] if f.get("origin") == "discovery"]
+        self.assertEqual(sorted(ids), ["nl-foo-example-com", "nl-foo-example-com-2"])
+
     def test_failed_feed_check_and_offline_hold_newsletters(self):
         r = self.repo
         r.run_items([
@@ -180,7 +191,7 @@ class DiscoverTests(unittest.TestCase):
         r.editions(20, kept)
         out = r.run(dry_run=True)
         self.assertEqual(out["result"]["demoted"], [])
-        self.assertIn("waiting for 21 days", out["log"])
+        self.assertIn("waiting for 21 live editions", out["log"])
         r.editions(21, kept)
         out = r.run()
         self.assertEqual([d["id"] for d in out["result"]["demoted"]], ["feed:quiet-letter"])
@@ -249,6 +260,22 @@ class DiscoverTests(unittest.TestCase):
         out = r.run(dry_run=True)
         self.assertEqual(out["result"]["demoted"], [])
         self.assertIn("30 backfilled editions do not count", out["log"])
+
+    def test_zero_kept_needs_21_live_editions_not_21_days(self):
+        r = self.repo
+        kept = lambda d: [event("gh:a/b", ["Trusted Letter", "Weak Letter", "X: @vetted", "X: @noisy", "X: @lowsnr"])]
+        # 21 days old, but a five-day backfilled gap leaves 16 live editions: still waiting.
+        r.editions(10, kept)
+        r.editions(5, skip=10, backfilled=True)
+        r.editions(6, kept, skip=15)
+        out = r.run(dry_run=True)
+        self.assertEqual(out["result"]["demoted"], [])
+        self.assertIn("16 so far", out["log"])
+        # Five more live editions before the gap make 21: the window reaches back past it.
+        r.editions(5, kept, skip=21)
+        out = r.run(dry_run=True)
+        self.assertEqual([d["id"] for d in out["result"]["demoted"]], ["feed:quiet-letter"])
+        self.assertIn(f"live editions from {r.day(25)} to {r.end}", out["log"])
 
     def test_hype_flags_count_in_backfilled_editions(self):
         r = self.repo

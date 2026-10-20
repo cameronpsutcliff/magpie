@@ -5,8 +5,8 @@ sources Magpie does not watch yet: X accounts, YouTube channels, newsletters and
 other sources linked or mentioned. Explicit rules then change the watch list:
 
 - Promote a new source when two or more trusted, independent sources cited it within the week.
-- Demote a watched source after zero kept items in 21 days of live editions, or three hype flags in that
-  window. Backfilled editions never count toward zero kept: they were rebuilt from archives that cover
+- Demote a watched source after zero kept items in its last 21 live editions, or three hype flags in
+  21 days. Backfilled editions never count toward zero kept: they were rebuilt from archives that cover
   only some sources.
 
 A trusted source is an owner-curated one: a registry source with trust of at least 0.65, an X roster
@@ -226,25 +226,22 @@ def _live(day: dict) -> bool:
 
 
 def kept_stats(days_dir: Path, date: str, window: int = DEMOTE_DAYS) -> dict:
-    """Kept counts come from live editions only; hype flags from every edition in the window."""
+    """Kept counts come from the last `window` live editions, wherever they fall; hype flags from every
+    edition in the last `window` calendar days."""
     start = (_day(date) - dt.timedelta(days=window - 1)).isoformat()
-    stems = sorted(p.stem for p in days_dir.glob("*.json") if p.stem <= date)
-    first_live, backfilled = None, 0
-    for d in stems:  # only the editions before the first live one are read outside the window
-        if d >= start:
-            break
-        if _live(load_json(days_dir / f"{d}.json", {})):
-            first_live = d
-            break
-        backfilled += 1
+    stems = sorted((p.stem for p in days_dir.glob("*.json") if p.stem <= date), reverse=True)
+    live, read, backfilled = [], [], 0
     kept, hype = Counter(), {}
-    used = [d for d in stems if d >= start]
-    for d in used:
+    for d in stems:  # newest first, until both windows are covered
+        if d < start and len(live) >= window:
+            break
         day = load_json(days_dir / f"{d}.json", {})
-        live = _live(day)
-        if live and first_live is None:
-            first_live = d
-        backfilled += not live
+        read.append(d)
+        counts = _live(day) and len(live) < window
+        if counts:
+            live.append(d)
+        elif not _live(day):
+            backfilled += 1
         for e in day.get("events", []):
             subjects = {f"name:{s['name'].lower()}" for s in e.get("sources", [])}
             names = subjects | {f"name:{s['name'].lower()}" for s in e.get("mentions", [])}
@@ -252,12 +249,14 @@ def kept_stats(days_dir: Path, date: str, window: int = DEMOTE_DAYS) -> dict:
                 owner = f"github:{e['key'][3:].split('/')[0]}"
                 names.add(owner)
                 subjects.add(owner)
-            if live:
+            if counts:
                 kept.update(names)
-            if (e.get("brief") or {}).get("hype"):
+            if d >= start and (e.get("brief") or {}).get("hype"):
                 for n in subjects:
                     hype.setdefault(n, set()).add(e["key"])
-    return {"start": start, "first_day": first_live, "days": used, "backfilled": backfilled, "kept": kept, "hype": hype}
+    ready = len(live) >= window
+    return {"start": start, "kept_start": live[-1] if ready else None, "first_day": live[-1] if live else None,
+            "live": len(live), "days": sorted(read), "backfilled": backfilled, "kept": kept, "hype": hype}
 
 
 # 4. The rules.
@@ -300,7 +299,7 @@ def plan(ents: dict, watched: set, vetoes: dict, avoided: set, check_feed) -> di
 
 def demotions(sources: dict, roster_cfg: dict, vetoes: dict, stats: dict) -> tuple[list[dict], bool]:
     pinned = set(vetoes.get("never_demote", []))
-    ready = stats["first_day"] is not None and stats["first_day"] <= stats["start"]
+    ready = stats["live"] >= DEMOTE_DAYS
     out = []
     for eid, label, owner, lst, entry, kept_key in entries(sources, roster_cfg):
         if kept_key is None or eid in pinned or entry.get("pinned"):
@@ -308,8 +307,8 @@ def demotions(sources: dict, roster_cfg: dict, vetoes: dict, stats: dict) -> tup
         flags = len(stats["hype"].get(kept_key, ()))
         if flags >= HYPE_LIMIT:
             reason = f"hype-flagged {flags} times in the last {DEMOTE_DAYS} days"
-        elif ready and stats["kept"][kept_key] == 0 and (entry.get("since") or "") <= stats["start"]:
-            reason = f"zero kept items in the last {DEMOTE_DAYS} days of editions"
+        elif ready and stats["kept"][kept_key] == 0 and (entry.get("since") or "") <= stats["kept_start"]:
+            reason = f"zero kept items in the last {DEMOTE_DAYS} live editions"
         else:
             continue
         out.append({"id": eid, "label": label, "owner": owner, "list": lst, "entry": entry, "reason": reason})
@@ -324,7 +323,17 @@ def _slug(s: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
 
 
+def _feed_id(label: str, taken: set) -> str:
+    base = fid = f"nl-{_slug(label)}"
+    n = 2
+    while fid in taken:
+        fid, n = f"{base}-{n}", n + 1
+    taken.add(fid)
+    return fid
+
+
 def apply(result: dict, sources: dict, roster_cfg: dict, youtube_cfg: dict, date: str) -> None:
+    feed_ids = {f["id"] for f in sources.get("feeds", []) + sources.get("benched", []) if "id" in f}
     for e in result["promoted"]:
         evidence = [ev for ev in _evidence(e) if ev["source"] in trusted_citers(e)][:3]
         base = {"origin": "discovery", "since": date, "discovered_as": e["id"], "evidence": evidence}
@@ -334,7 +343,7 @@ def apply(result: dict, sources: dict, roster_cfg: dict, youtube_cfg: dict, date
                 "why": _why(e, date), "signal_to_noise": X_TRUSTED_SNR, **base})
         elif e["kind"] == "newsletter":
             sources.setdefault("feeds", []).append({
-                "id": f"nl-{_slug(e['label'])}", "name": e["label"].removesuffix(".substack.com"), "kind": "newsletter",
+                "id": _feed_id(e["label"], feed_ids), "name": e["label"].removesuffix(".substack.com"), "kind": "newsletter",
                 "url": e["feed_url"], "trust": NEW_FEED_TRUST, "vendor": None, "product": None, "window_hours": 72,
                 "why": _why(e, date), **base})
         elif e["kind"] == "github":
@@ -403,8 +412,8 @@ def render_log(date: str, week: list, stats: dict, result: dict, zero_ready: boo
     L += [f"Mined {n_items} items from {len(week)} days of runs ({start} to {date}) and checked "
           f"{len(stats['days'])} published editions for demotions.", "",
           "Rules: promote a new source when two or more trusted, independent sources cite it within the week. "
-          f"Demote a watched source after zero kept items in {DEMOTE_DAYS} days of live editions, or {HYPE_LIMIT} hype flags "
-          "in that window. Discovered sources never vouch for others.", "",
+          f"Demote a watched source after zero kept items in its last {DEMOTE_DAYS} live editions, or {HYPE_LIMIT} hype "
+          f"flags in {DEMOTE_DAYS} days. Discovered sources never vouch for others.", "",
           "To undo a change, run its veto command. config/vetoes.json remembers every veto.", ""]
     promoted, demoted, held, watching = result["promoted"], result["demoted"], result["held"], result["watching"]
     effect = {"x": "joins the X pulse roster", "newsletter": "added as a feed", "github": "added to GitHub watched orgs",
@@ -437,12 +446,13 @@ def render_log(date: str, week: list, stats: dict, result: dict, zero_ready: boo
         L += ["", f"Skipped {len(result['skipped'])} sources the owner vetoed or the X roster avoids."]
     L += ["", "## Rule status", ""]
     if zero_ready:
-        L.append(f"- Zero-kept demotion: active, over live editions from {stats['start']} to {date}.")
+        L.append(f"- Zero-kept demotion: active, over the {DEMOTE_DAYS} live editions from {stats['kept_start']} to {date}.")
     else:
         first = stats["first_day"] or date
-        due = (_day(first) + dt.timedelta(days=DEMOTE_DAYS - 1)).isoformat()
-        L.append(f"- Zero-kept demotion: waiting for {DEMOTE_DAYS} days of live editions (first live edition {first}; "
-                 f"first check {due}; {stats.get('backfilled', 0)} backfilled editions do not count).")
+        due = (_day(date) + dt.timedelta(days=DEMOTE_DAYS - stats["live"])).isoformat()
+        L.append(f"- Zero-kept demotion: waiting for {DEMOTE_DAYS} live editions ({stats['live']} so far, first live "
+                 f"edition {first}; first check {due} at the earliest; {stats['backfilled']} backfilled editions "
+                 "do not count).")
     L.append(f"- Hype demotion: active, {HYPE_LIMIT} flags on a source's own stories in {DEMOTE_DAYS} days.")
     return "\n".join(L) + "\n"
 
@@ -484,7 +494,8 @@ def run(root: Path = ROOT, date: str | None = None, dry_run: bool = False, check
         "window": {"start": (_day(date) - dt.timedelta(days=WEEK_DAYS - 1)).isoformat(), "end": date,
                    "run_days": [d for d, _ in week]},
         "rules": {"promote": "two or more trusted, independent sources cite it within the week",
-                  "demote": f"zero kept items in {DEMOTE_DAYS} days of editions, or {HYPE_LIMIT} hype flags in that window",
+                  "demote": f"zero kept items in the last {DEMOTE_DAYS} live editions, or {HYPE_LIMIT} hype flags in "
+                            f"{DEMOTE_DAYS} days",
                   "trusted": f"owner-curated sources with trust >= {MIN_TRUST}, X roster accounts with signal_to_noise >= "
                              f"{X_TRUSTED_SNR}, high-priority YouTube channels; discovered sources never vouch"},
         "candidates": [_record(e, "promoted") for e in result["promoted"]] +
