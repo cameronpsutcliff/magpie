@@ -564,7 +564,7 @@ def run_for(date: str | None = None) -> None:
 
     from . import trackers
     from .collectors import policy
-    from .publish import DATA, STATE, index_entry, scrub, write_feed
+    from .publish import DATA, STATE, index_entry, refresh_elements, scrub, write_feed
 
     from .util import edition_date
 
@@ -602,5 +602,6 @@ def run_for(date: str | None = None) -> None:
     write_json(DATA / "index.json", index)
     update_register(section, day["date"], DATA)
     trackers.persist(day["date"], DATA)
+    refresh_elements(day["date"])
     write_feed()
     print(f"constraints for {day['date']}: {len(section['items'])} ({section.get('lane') or section.get('errors')})", file=sys.stderr)

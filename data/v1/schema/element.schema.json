@@ -1,0 +1,825 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://www.cameronsutcliff.com/magpie-data/schema/element.schema.json",
+ "title": "Magpie element (magpie.element/1)",
+ "description": "One thing Magpie keeps meeting (a repo, model, paper, tool or official action) across every edition: what it is, where to find it, what it works with and connects to, and its history. Computed from the published editions and the constraints register; no model writes anything here. Pages exist for elements seen on two or more days, that fed a new possibility, that are official actions, or that an official action rests on, cites, or names the maker of.",
+ "type": "object",
+ "required": [
+  "schema",
+  "slug",
+  "key",
+  "kind",
+  "name",
+  "title",
+  "topics",
+  "link",
+  "first_seen",
+  "last_seen",
+  "updated",
+  "days_seen",
+  "days_featured",
+  "peak",
+  "find",
+  "spotted_by",
+  "knock_on",
+  "possibilities",
+  "works_with",
+  "constraints",
+  "appearances",
+  "timeline",
+  "possibilities_total"
+ ],
+ "additionalProperties": false,
+ "properties": {
+  "schema": {
+   "const": "magpie.element/1"
+  },
+  "slug": {
+   "type": "string",
+   "pattern": "^[a-z0-9][a-z0-9._-]*$",
+   "description": "The file name and the page: /magpie/e/<slug>. A pure function of the key: gh-owner--repo, hf-org--model, hfs-owner--space, arxiv-<id>, policy-fr-<document number>, else a readable stem plus a hash of the key."
+  },
+  "key": {
+   "type": "string",
+   "description": "Canonical key: gh:owner/repo, hf:org/model, hfs:owner/space, arxiv:id, url:host/path, policy:..."
+  },
+  "kind": {
+   "type": "string",
+   "description": "Kind at its latest appearance."
+  },
+  "name": {
+   "type": "string",
+   "description": "What to call it: owner/repo for code and weights, the feed's name for a changelog, else its title."
+  },
+  "title": {
+   "type": "string",
+   "description": "The lead source's title at its latest appearance."
+  },
+  "headline": {
+   "type": "string",
+   "description": "The editor's latest headline."
+  },
+  "lede": {
+   "type": "string",
+   "description": "The editor's latest sentence on what became possible (or, for an action, harder)."
+  },
+  "summary": {
+   "type": "string",
+   "description": "The source's own words, when the editor never wrote a lede."
+  },
+  "maker": {
+   "type": "string"
+  },
+  "topics": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   },
+   "description": "Topic ids, most frequent first."
+  },
+  "link": {
+   "type": "object",
+   "required": [
+    "url",
+    "label"
+   ],
+   "properties": {
+    "url": {
+     "type": "string",
+     "format": "uri"
+    },
+    "label": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "first_seen": {
+   "type": "string",
+   "format": "date",
+   "description": "First edition it appeared in since element pages started (elements/index.json `since`)."
+  },
+  "last_seen": {
+   "type": "string",
+   "format": "date"
+  },
+  "updated": {
+   "type": "string",
+   "format": "date",
+   "description": "The latest edition that contributed to the page: an appearance or a possibility."
+  },
+  "days_seen": {
+   "type": "integer",
+   "minimum": 1,
+   "description": "Editions it appeared in over its whole history: the timeline plus any folded rows."
+  },
+  "days_featured": {
+   "type": "integer",
+   "minimum": 0,
+   "description": "Editions in which it was one of Today's five."
+  },
+  "best_rank": {
+   "type": "integer",
+   "minimum": 1,
+   "maximum": 5
+  },
+  "best_impact": {
+   "type": "integer",
+   "minimum": 1,
+   "maximum": 5
+  },
+  "peak": {
+   "type": "object",
+   "required": [
+    "signal",
+    "date"
+   ],
+   "properties": {
+    "signal": {
+     "type": "number"
+    },
+    "date": {
+     "type": "string",
+     "format": "date"
+    }
+   },
+   "additionalProperties": false
+  },
+  "find": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "url",
+     "name",
+     "title",
+     "role",
+     "first_seen",
+     "last_seen",
+     "days"
+    ],
+    "properties": {
+     "url": {
+      "type": "string",
+      "format": "uri"
+     },
+     "name": {
+      "type": "string"
+     },
+     "title": {
+      "type": "string"
+     },
+     "kind": {
+      "type": "string"
+     },
+     "role": {
+      "enum": [
+       "source",
+       "discussion",
+       "mention"
+      ]
+     },
+     "first_seen": {
+      "type": "string",
+      "format": "date"
+     },
+     "last_seen": {
+      "type": "string",
+      "format": "date"
+     },
+     "days": {
+      "type": "integer",
+      "minimum": 1
+     }
+    },
+    "additionalProperties": false
+   },
+   "description": "Every address besides the canonical link where it was found, sources first, then discussions, then mentions."
+  },
+  "spotted_by": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "name",
+     "role",
+     "days",
+     "first_seen",
+     "last_seen"
+    ],
+    "properties": {
+     "name": {
+      "type": "string"
+     },
+     "role": {
+      "enum": [
+       "source",
+       "mention"
+      ]
+     },
+     "days": {
+      "type": "integer",
+      "minimum": 1
+     },
+     "first_seen": {
+      "type": "string",
+      "format": "date"
+     },
+     "last_seen": {
+      "type": "string",
+      "format": "date"
+     }
+    },
+    "additionalProperties": false
+   },
+   "description": "Which sources surfaced it, and on how many days."
+  },
+  "knock_on": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "topic",
+     "label",
+     "days",
+     "effects"
+    ],
+    "properties": {
+     "topic": {
+      "type": "string"
+     },
+     "label": {
+      "type": "string"
+     },
+     "days": {
+      "type": "integer",
+      "minimum": 1
+     },
+     "effects": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "required": [
+        "effect",
+        "date"
+       ],
+       "properties": {
+        "effect": {
+         "type": "string"
+        },
+        "date": {
+         "type": "string",
+         "format": "date"
+        }
+       },
+       "additionalProperties": false
+      }
+     }
+    },
+    "additionalProperties": false
+   },
+   "description": "Areas the editor said it ripples into, with the effects named."
+  },
+  "possibilities": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "date",
+     "rank",
+     "title",
+     "with"
+    ],
+    "properties": {
+     "date": {
+      "type": "string",
+      "format": "date",
+      "description": "The edition that published the possibility."
+     },
+     "rank": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Its place among that day's new possibilities."
+     },
+     "title": {
+      "type": "string"
+     },
+     "connection": {
+      "type": "string"
+     },
+     "effort": {
+      "type": "string"
+     },
+     "with": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "required": [
+        "key",
+        "title"
+       ],
+       "properties": {
+        "key": {
+         "type": "string",
+         "description": "The other element's canonical key; elements/index.json maps it to a page when it has one."
+        },
+        "title": {
+         "type": "string"
+        }
+       },
+       "additionalProperties": false
+      },
+      "description": "The other ingredients."
+     }
+    },
+    "additionalProperties": false
+   },
+   "description": "The newest 60 new possibilities it was an ingredient of, newest first; `possibilities_total` counts all."
+  },
+  "works_with": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "key",
+     "title",
+     "possibilities",
+     "together",
+     "last",
+     "via"
+    ],
+    "properties": {
+     "key": {
+      "type": "string"
+     },
+     "title": {
+      "type": "string"
+     },
+     "possibilities": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "New possibilities that combined the two."
+     },
+     "together": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Editions in which one post, video or thread covered both."
+     },
+     "last": {
+      "type": "string",
+      "format": "date"
+     },
+     "via": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      },
+      "description": "Up to three possibility titles or shared sources."
+     }
+    },
+    "additionalProperties": false
+   },
+   "description": "What it was combined with in new possibilities, then what was covered alongside it."
+  },
+  "constraints": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "key",
+     "headline",
+     "why",
+     "match"
+    ],
+    "properties": {
+     "key": {
+      "type": "string"
+     },
+     "id": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "headline": {
+      "type": "string"
+     },
+     "status": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "jurisdiction": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "issuer": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "url": {
+      "type": [
+       "string",
+       "null"
+      ],
+      "format": "uri"
+     },
+     "first_seen": {
+      "type": [
+       "string",
+       "null"
+      ],
+      "format": "date"
+     },
+     "why": {
+      "type": "string",
+      "description": "Plain-English reason for the link."
+     },
+     "match": {
+      "enum": [
+       "document",
+       "reported",
+       "maker"
+      ],
+      "description": "document = the action rests on a document this element links to; reported = this element is one of the action's sources; maker = the action names its maker."
+     }
+    },
+    "additionalProperties": false
+   },
+   "description": "Official actions that name its maker or rest on a document it links to."
+  },
+  "constraint": {
+   "type": "object",
+   "description": "For an official action: its current record in constraints.json.",
+   "properties": {
+    "status": {
+     "type": "string"
+    },
+    "instrument": {
+     "type": "string"
+    },
+    "layers": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "jurisdiction": {
+     "type": "string"
+    },
+    "issuer": {
+     "type": "string"
+    },
+    "effective": {
+     "type": "string",
+     "format": "date"
+    },
+    "comment_deadline": {
+     "type": "string",
+     "format": "date"
+    },
+    "access_now": {
+     "type": "boolean"
+    },
+    "doc_url": {
+     "type": "string",
+     "format": "uri"
+    },
+    "who": {
+     "type": "string"
+    },
+    "quote": {
+     "type": "string"
+    },
+    "harder": {
+     "type": "string"
+    }
+   }
+  },
+  "names": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "key",
+     "title",
+     "maker"
+    ],
+    "properties": {
+     "key": {
+      "type": "string"
+     },
+     "title": {
+      "type": "string"
+     },
+     "maker": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "description": "For an official action: element pages whose maker it names."
+  },
+  "appearances": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "date",
+     "id",
+     "kind",
+     "title",
+     "signal",
+     "evidence"
+    ],
+    "properties": {
+     "date": {
+      "type": "string",
+      "format": "date",
+      "description": "The edition (US Central date) it appeared in. One appearance per edition."
+     },
+     "id": {
+      "type": "string",
+      "description": "The event id in that edition: days/<date>.json events[].id."
+     },
+     "kind": {
+      "type": "string",
+      "description": "repo, model, space, paper, social, video, newsletter, blog, changelog, community, news or constraint."
+     },
+     "title": {
+      "type": "string",
+      "description": "The title the lead source gave it that day."
+     },
+     "maker": {
+      "type": "string"
+     },
+     "headline": {
+      "type": "string",
+      "description": "The editor's headline that day."
+     },
+     "newly_possible": {
+      "type": "string",
+      "description": "The editor's sentence on what became possible."
+     },
+     "newly_constrained": {
+      "type": "string",
+      "description": "For an official action: what it makes harder."
+     },
+     "summary": {
+      "type": "string",
+      "description": "The source's own words, when the editor did not write any."
+     },
+     "why": {
+      "type": "string"
+     },
+     "limits": {
+      "type": "string",
+      "description": "What the claim does not prove yet."
+     },
+     "signal": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Computed by code; see the day schema."
+     },
+     "impact": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "The editor's rating that day. Absent when the editor did not rate it."
+     },
+     "evidence": {
+      "enum": [
+       "reported",
+       "reproduced",
+       "corroborated",
+       "official"
+      ]
+     },
+     "rank": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "Its place in Today's five, when it led the page."
+     },
+     "topics": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "ripples": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "required": [
+        "topic"
+       ],
+       "properties": {
+        "topic": {
+         "type": "string"
+        },
+        "effect": {
+         "type": "string"
+        }
+       },
+       "additionalProperties": false
+      }
+     },
+     "metrics": {
+      "type": "object",
+      "additionalProperties": {
+       "type": "number"
+      },
+      "description": "Stars, forks, Hacker News points and Hugging Face counts that day."
+     },
+     "doubt": {
+      "type": "string",
+      "description": "The note when X flagged it (a Community Note or credible pushback)."
+     },
+     "hype": {
+      "type": "boolean",
+      "description": "The editor judged the evidence mostly launch claims."
+     },
+     "read": {
+      "type": "string",
+      "description": "The lead of the read paragraph that cited it that day."
+     },
+     "status": {
+      "type": "string"
+     },
+     "jurisdiction": {
+      "type": "string"
+     },
+     "instrument": {
+      "type": "string"
+     },
+     "sources": {
+      "type": "array",
+      "items": {
+       "$ref": "day.schema.json#/$defs/source"
+      },
+      "description": "Up to eight sources that carried it that day. Older appearances drop their lists."
+     },
+     "mentions": {
+      "type": "array",
+      "items": {
+       "$ref": "day.schema.json#/$defs/source"
+      },
+      "description": "Up to eight posts that mentioned it in passing."
+     },
+     "with": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "required": [
+        "key",
+        "title",
+        "via",
+        "url"
+       ],
+       "properties": {
+        "key": {
+         "type": "string"
+        },
+        "title": {
+         "type": "string"
+        },
+        "via": {
+         "type": "string",
+         "description": "The source that covered both."
+        },
+        "item": {
+         "type": "string",
+         "description": "That post, video or thread's title."
+        },
+        "url": {
+         "type": "string",
+         "format": "uri"
+        }
+       },
+       "additionalProperties": false
+      },
+      "description": "Other items the same post, video or thread covered that day (posts covering more than six items are left out)."
+     }
+    },
+    "additionalProperties": false
+   },
+   "description": "The newest 60 appearances in full, newest first. Where to find it, who spotted it, knock-on effects and ties come from these; the timeline has every appearance."
+  },
+  "timeline": {
+   "type": "array",
+   "description": "Every appearance in the last two years of its history (up to 730 rows) as one short row, newest first. Older rows fold into `older`; counts, peaks and best places cover both.",
+   "items": {
+    "type": "object",
+    "required": [
+     "date",
+     "id",
+     "signal",
+     "evidence"
+    ],
+    "additionalProperties": false,
+    "properties": {
+     "date": {
+      "type": "string",
+      "format": "date"
+     },
+     "id": {
+      "type": "string"
+     },
+     "signal": {
+      "type": "number"
+     },
+     "evidence": {
+      "enum": [
+       "reported",
+       "reproduced",
+       "corroborated",
+       "official"
+      ]
+     },
+     "rank": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+     },
+     "impact": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+     }
+    }
+   }
+  },
+  "older": {
+   "type": "object",
+   "description": "What the page no longer holds in full: appearances past the timeline window (counts and extremes), URL matches of appearances past the full window (by action key), and possibilities past the newest 60 (a count).",
+   "additionalProperties": false,
+   "properties": {
+    "days": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "first_seen": {
+     "type": "string",
+     "format": "date"
+    },
+    "days_featured": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "best_rank": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 5
+    },
+    "best_impact": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 5
+    },
+    "peak": {
+     "type": "object",
+     "required": [
+      "signal",
+      "date"
+     ],
+     "additionalProperties": false,
+     "properties": {
+      "signal": {
+       "type": "number"
+      },
+      "date": {
+       "type": "string",
+       "format": "date"
+      }
+     }
+    },
+    "links": {
+     "type": "object",
+     "additionalProperties": {
+      "enum": [
+       "document",
+       "reported"
+      ]
+     },
+     "description": "Action key to match type, from appearances that left the full window."
+    },
+    "possibilities": {
+     "type": "integer",
+     "minimum": 1
+    }
+   }
+  },
+  "possibilities_total": {
+   "type": "integer",
+   "minimum": 0,
+   "description": "New possibilities it fed in all: the newest 60 listed in `possibilities`, plus older ones counted in `older`."
+  }
+ }
+}

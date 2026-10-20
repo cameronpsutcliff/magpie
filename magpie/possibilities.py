@@ -166,3 +166,5 @@ def run_for(date: str | None = None) -> None:
     if index.get("latest") == day["date"]:
         write_json(DATA / "latest.json", day, compact=True)
     print(f"possibilities for {day['date']}: {len(result.get('items', []))} ({result.get('lane') or result.get('errors')})", file=sys.stderr)
+    from .publish import refresh_elements
+    refresh_elements(day["date"])
