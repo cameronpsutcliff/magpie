@@ -1,0 +1,8 @@
+{
+  "note": "Owner-controlled switches for Magpie Scout and the Twitter Profile bot. The bots read this file and never edit it.",
+  "posting_enabled": false,
+  "follows_per_day": 5,
+  "follows_per_week": 20,
+  "max_items_per_sweep": 40,
+  "roster_cap": 400
+}

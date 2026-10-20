@@ -15,9 +15,8 @@ from .util import CENTRAL, ROOT, load_json, now_utc, parse_time, short_hash, url
 ACTIONABLE = {"repo": 1.0, "model": 1.0, "space": 0.9, "changelog": 0.95, "paper": 0.5, "news": 0.6,
               "blog": 0.6, "newsletter": 0.45, "video": 0.5, "social": 0.6, "community": 0.5}
 KIND_ORDER = ["repo", "model", "space", "changelog", "paper", "news", "blog", "social", "video", "community", "newsletter"]
-AI_SOURCES = {"hf-trending-models", "hf-trending-spaces", "hf-daily-papers", "x-grok-pulse", "x-grok-bot", "youtube-watchlist",
-              "youtube-channels"}
-FRESH_BY_NATURE = {"x-grok-pulse", "x-grok-bot", "youtube-watchlist", "youtube-channels"}
+AI_SOURCES = {"x-saved", "hf-trending-models", "hf-trending-spaces", "hf-daily-papers", "x-grok-pulse", "x-grok-bot", "youtube-watchlist"}
+FRESH_BY_NATURE = {"x-grok-pulse", "x-grok-bot", "x-saved", "youtube-watchlist"}
 WEIGHTS = {"novelty": 0.24, "actionability": 0.18, "momentum": 0.24, "corroboration": 0.16, "trust": 0.08, "ripple": 0.10}
 
 
@@ -208,6 +207,8 @@ def build(items: list[dict], history: dict, date: str, repo_meta: dict | None = 
         doubt = max(flags, key=lambda d: d["level"]) if flags else None
         if doubt:
             signal = round(signal - 6 * doubt["level"], 1)
+        elif any((x.get("extra") or {}).get("saved") for x in its + mentions.get(c, [])):
+            signal = round(signal + 5, 1)  # the owner saved it while scrolling: a small taste boost, never shown
 
         runnable = any(x["source_kind"] in ("repo", "model", "space") for x in its) or any(
             k.startswith(("gh:", "hf:", "hfs:")) for k in keys) or bool(lead["extra"].get("github"))

@@ -10,3 +10,4 @@ state/last-run.log
 state/launchd.log
 state/backfill/
 state/*.log
+state/viewing/

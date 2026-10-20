@@ -1185,16 +1185,16 @@
   },
   {
    "id": "youtube-watchlist",
-   "name": "YouTube watch list (about 90 channels)",
+   "name": "YouTube: every transcribed video from the merged channel roster",
    "kind": "video",
    "url": "local",
    "trust": 0.6,
    "where": "always-on machine"
   },
   {
-   "id": "youtube-channels",
-   "name": "YouTube: Magpie's own channel list",
-   "kind": "video",
+   "id": "x-saved",
+   "name": "X: posts saved while scrolling, vetted by Magpie Scout",
+   "kind": "social",
    "url": "local",
    "trust": 0.6,
    "where": "always-on machine"

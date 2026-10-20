@@ -19,7 +19,8 @@ from ..items import Item
 from ..util import CENTRAL, ROOT, clean, now_utc, strip_html
 
 YT_HOME = Path(os.environ["MAGPIE_YT_HOME"]) if os.environ.get("MAGPIE_YT_HOME") else None
-ENTRY = re.compile(r"^## \d+\. (?P<title>.+?)\n\n\*\*(?P<channel>.+?)\*\* \| (?P<dur>[^|]+)\|[^|]*\| \[Watch\]\((?P<url>[^)]+)\)\n\nTranscript: (?P<text>.*?)(?:\n\n---|\Z)", re.S | re.M)
+# Fields stay on their own lines, so an entry without a transcript cannot swallow the next one.
+ENTRY = re.compile(r"^## \d+\. (?P<title>[^\n]+?)\n\n\*\*(?P<channel>[^*\n]+?)\*\* \| (?P<dur>[^|\n]+)\|[^|\n]*\| \[Watch\]\((?P<url>[^)\s]+)\)\n\nTranscript: (?P<text>.*?)(?:\n\n---|\Z)", re.S | re.M)
 
 
 def youtube(days: int = 1) -> list[Item]:
