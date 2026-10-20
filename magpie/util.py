@@ -198,3 +198,14 @@ def write_json(path: Path, obj, *, compact: bool = False) -> None:
         text = json.dumps(obj, indent=1, ensure_ascii=False)
     tmp.write_text(text + "\n")
     tmp.replace(path)
+
+
+# A number counts only as a whole token: not inside a word, version, identifier or path ("x10", "v10", "/10/").
+NUMBER_TOKEN = re.compile(r"(?<![\w./-])\d[\d,]*(?:\.\d+)?(?![\w/-])")
+
+
+def ungrounded_numbers(claims: list[str], source: str) -> list[str]:
+    """Whole numbers in the claims that the source never states ("10" is not grounded by "100")."""
+    norm = lambda text: {n.replace(",", "").rstrip(".") for n in NUMBER_TOKEN.findall(text or "")}  # noqa: E731
+    known = norm(source)
+    return sorted(n for n in norm(" ".join(claims)) if n not in known)

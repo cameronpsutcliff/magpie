@@ -153,6 +153,11 @@
    "devin",
    "cognition",
    "windsurf"
+  ],
+  "Thoughtworks": [
+   "thoughtworks",
+   "agentworks",
+   "technology radar"
   ]
  },
  "owners": {
@@ -221,6 +226,7 @@
   "amazon": "Amazon",
   "aws": "Amazon",
   "awslabs": "Amazon",
-  "mlx-community": "Apple"
+  "mlx-community": "Apple",
+  "thoughtworks": "Thoughtworks"
  }
 }

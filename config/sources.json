@@ -1131,6 +1131,30 @@
    "vendor": null,
    "product": null,
    "window_hours": 36
+  },
+  {
+   "id": "thoughtworks-insights",
+   "name": "Thoughtworks Insights",
+   "kind": "blog",
+   "url": "https://www.thoughtworks.com/rss/insights.xml",
+   "trust": 0.65,
+   "vendor": "Thoughtworks",
+   "product": null,
+   "window_hours": 72,
+   "max_entries": 40,
+   "ai_only": true
+  },
+  {
+   "id": "martin-fowler",
+   "name": "martinfowler.com (Thoughtworks authors on building with AI)",
+   "kind": "blog",
+   "url": "https://martinfowler.com/feed.atom",
+   "trust": 0.7,
+   "vendor": null,
+   "product": null,
+   "window_hours": 72,
+   "max_entries": 30,
+   "ai_only": true
   }
  ],
  "apis": [
@@ -1243,6 +1267,12 @@
      "url": "https://x.com/deepseek_ai/status/2112476496283775135"
     }
    ]
+  },
+  {
+   "org": "thoughtworks",
+   "why": "Owner added 2026-10-20: Thoughtworks open source.",
+   "origin": "owner",
+   "since": "2026-10-20"
   }
  ],
  "policy_feeds": [

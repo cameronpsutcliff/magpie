@@ -101,6 +101,8 @@ def main() -> None:
     py.add_argument("--hours", type=int, help="lookback window, default 36 (MAGPIE_YT_LOOKBACK_HOURS)")
     pv = sub.add_parser("viewing", help="pick the videos worth watching from their transcripts")
     pv.add_argument("--date", help="edition date, default latest")
+    prd = sub.add_parser("read", help="write the read: a few paragraphs on the day's biggest items")
+    prd.add_argument("--date", help="edition date, default latest")
     pk = sub.add_parser("constraints", help="add official actions that constrain AI, and the trackers, to an edition")
     pk.add_argument("--date", help="edition date, default latest")
     bf = sub.add_parser("backfill", help="rebuild past editions from archives")
@@ -132,6 +134,10 @@ def main() -> None:
     if a.cmd == "viewing":
         from .viewing import run_for as viewing_for
         viewing_for(a.date)
+        return
+    if a.cmd == "read":
+        from .read import run_for as read_for
+        read_for(a.date)
         return
     if a.cmd == "constraints":
         from .constraints import run_for as constraints_for
@@ -229,6 +235,12 @@ def main() -> None:
         except Exception as ex:  # viewing must never block the edition
             day["viewing"] = {"items": [], "errors": [f"{type(ex).__name__}: {str(ex)[:160]}"]}
         print(f"viewing: {len(day['viewing'].get('items', []))}", file=sys.stderr)
+        try:
+            from .read import generate as write_read
+            day["read"] = write_read(day)
+        except Exception as ex:  # the read must never block the edition
+            day["read"] = {"items": [], "errors": [f"{type(ex).__name__}: {str(ex)[:160]}"]}
+        print(f"read: {len(day['read'].get('items', []))}", file=sys.stderr)
     publish_day(day, events, top_events, force=a.force)
 
 if __name__ == "__main__":
