@@ -29,7 +29,7 @@ git pull --rebase -X theirs --quiet >>"$log" 2>&1 || echo "pull failed; continui
 # has everything it may have written put back.
 weekly_undo() {
   git checkout -- "$@" >>"$log" 2>&1
-  git clean -fq -- "$@" >>"$log" 2>&1
+  git clean -fdq -- "$@" >>"$log" 2>&1
 }
 if [ "$(date +%u)" = 7 ]; then
   echo "--- weekly review and discovery" >>"$log"
