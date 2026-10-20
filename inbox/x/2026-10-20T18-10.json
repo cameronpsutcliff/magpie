@@ -194,6 +194,19 @@
     "summary": "Posted minutes before the sweep; no replies or quote posts were readable yet.",
     "tried": false,
     "replies_read": 0
+   },
+   "video": {
+    "duration_s": 341,
+    "shows": "A Warp solutions engineer walks through Warp Factories: configuring five built-in agents (Foreman, Spec, Implement, Review, Triage), triggering the Foreman from Slack to file a Jira ticket, write a spec PR and build the feature after approval, then the run timeline and artifacts, triggers, the factory defined as code, a metrics dashboard, LLM-judge scorers with prompt self-improvement, and a per-task model benchmark.",
+    "worth_watching": true,
+    "why": "A full product walkthrough with real runs and artifacts, though it shows only absolute dashboard numbers and no baseline for the 40% and 67% claims.",
+    "learn": [
+     "How an orchestrator agent hands spec, implementation, review and triage to specialized agents with human approval on the spec PR",
+     "Using LLM-judge scorers on agent runs and feeding failures back into proposed prompt changes",
+     "Benchmarking models on your own past tasks to pick by correctness against cost"
+    ],
+    "audience": "Engineering leads and platform engineers running coding agents across a team.",
+    "thumbnail": "https://pbs.twimg.com/media/HVFrPIAW8AANRe1.jpg"
    }
   },
   {
