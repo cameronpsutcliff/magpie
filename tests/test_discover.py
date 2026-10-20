@@ -302,8 +302,9 @@ class DiscoverTests(unittest.TestCase):
 
     def test_scout_roster_is_left_to_the_scout(self):
         r = self.repo
+        # The Scout may write a handle without its @; it is the same account.
         r.write("inbox/x-roster.json", {"accounts": [{"handle": "@ontrial", "status": "trial", "signal_to_noise": 5},
-                                                      {"handle": "@gone", "status": "retired"}]})
+                                                      {"handle": "Gone", "status": "retired"}, {"status": "trial"}]})
         r.run_items([
             # A Scout trial account is already watched, and it does not vouch for anyone.
             item("x-grok-bot", "social", "https://x.com/ontrial/status/1", "Kit", author="@ontrial",
@@ -316,6 +317,9 @@ class DiscoverTests(unittest.TestCase):
         out = r.run(dry_run=True)
         self.assertEqual(out["result"]["promoted"], [])
         self.assertIn("github:scouted", {e["id"] for e in out["result"]["watching"]})
+        for broken in ("", "[]", '{"accounts": null}', '{"accounts": ["@x", 3]}'):
+            (r.root / "inbox/x-roster.json").write_text(broken)
+            self.assertEqual(discover.scout_ids(r.root / "inbox/x-roster.json"), set())
 
     def test_doubted_x_posts_do_not_vouch(self):
         r = self.repo

@@ -383,6 +383,18 @@ def save_youtube(path: Path, obj: dict) -> None:
     save_config(path, obj, indent=2, newline=True)
 
 
+def scout_ids(path: Path) -> set[str]:
+    """Every handle Magpie Scout lists, in any status, as x:@handle."""
+    data = load_json(path, {})
+    accounts = data.get("accounts") if isinstance(data, dict) else None
+    out = set()
+    for a in accounts if isinstance(accounts, list) else []:
+        h = str(a.get("handle") or "").strip().lstrip("@") if isinstance(a, dict) else ""
+        if h:
+            out.add(f"x:@{h.lower()}")
+    return out
+
+
 def load_week(runs_dir: Path, date: str, days: int = WEEK_DAYS) -> list[tuple[str, list[dict]]]:
     out = []
     for back in range(days - 1, -1, -1):
@@ -481,8 +493,7 @@ def run(root: Path = ROOT, date: str | None = None, dry_run: bool = False, check
     vetoes = load_json(cfg / "vetoes.json", {"never_promote": [], "never_demote": []})
     week = load_week(root / "state/runs", date)
     roster = {a["handle"].lower(): a for a in roster_cfg.get("accounts", [])}  # curated only: the ones that vouch
-    scout = {f"x:{a['handle'].lower()}" for a in load_json(root / "inbox/x-roster.json", {}).get("accounts", [])
-             if a.get("handle")}
+    scout = scout_ids(root / "inbox/x-roster.json")
     # Repos from promoted GitHub owners are discovered too, so they never vouch for others.
     discovered = {f["id"] for f in sources.get("feeds", []) if f.get("origin") == "discovery"} | {"github-watched-orgs"}
     avoided = ({f"x:{a['handle'].lower()}" for a in roster_cfg.get("avoid", [])} |
