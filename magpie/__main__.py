@@ -84,6 +84,8 @@ def main() -> None:
     sub.add_parser("reindex", help="rebuild index.json and latest.json from the day files")
     pz = sub.add_parser("possibilities", help="combine the day's capabilities into new possibilities")
     pz.add_argument("--date", help="edition date, default latest")
+    pr = sub.add_parser("rising", help="attach README openings and buzz to the rising repos")
+    pr.add_argument("--date", help="edition date, default latest")
     py = sub.add_parser("youtube", help="find, transcribe and brief the day's videos (the one YouTube job)")
     py.add_argument("--hours", type=int, help="lookback window, default 36 (MAGPIE_YT_LOOKBACK_HOURS)")
     pv = sub.add_parser("viewing", help="pick the videos worth watching from their transcripts")
@@ -105,6 +107,10 @@ def main() -> None:
     if a.cmd == "possibilities":
         from .possibilities import run_for
         run_for(a.date)
+        return
+    if a.cmd == "rising":
+        from .rising import run_for as rising_for
+        rising_for(a.date)
         return
     if a.cmd == "youtube":
         from .ytintel import run as youtube_run

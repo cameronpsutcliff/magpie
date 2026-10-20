@@ -11,3 +11,4 @@ state/launchd.log
 state/backfill/
 state/*.log
 state/viewing/
+state/readme/

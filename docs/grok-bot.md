@@ -1,7 +1,7 @@
 # Grok Bot: the X lane
 
 Grok Bot runs Magpie's X lane as **Magpie Scout** on its own cloud computer, with no personal computer
-involved. It sweeps the roster every 3 hours, checks each post for Community Notes and credible pushback,
+involved. It sweeps the roster five times a day, checks posts for Community Notes and credible pushback,
 keeps the roster current by adding new players and retiring stale or noisy ones, and pushes its files to
 `inbox/`. Every Magpie run (cloud and home) reads sweep files from the last 30 hours.
 
@@ -10,12 +10,16 @@ keeps the roster current by adding new players and retiring stale or noisy ones,
 1. In the Grok Bot desktop app, create a Bot named **Magpie Scout** and connect the **X** plugin.
 2. Create a fine-grained GitHub token: repository access `cameronpsutcliff/magpie` only, permission
    **Contents: read and write**, nothing else. Paste it into the Bot's masked credential field as
-   `MAGPIE_GITHUB_TOKEN`. Never paste it into chat.
-3. Paste [`magpie-scout-prompt.md`](magpie-scout-prompt.md) into the Bot as its first message. It introduces
+   `MAGPIE_GITHUB_TOKEN` when the Bot asks for it. Never paste it into chat.
+2b. Give the Twitter Profile bot its role: paste [`twitter-profile-bot.md`](twitter-profile-bot.md) as its
+   description.
+3. Point the Bot at [`magpie-scout-prompt.md`](magpie-scout-prompt.md) (v3) as its first message, or, for a
+   Bot already holding an older prompt, at [`magpie-scout-update.md`](magpie-scout-update.md). It introduces
    itself to the Twitter Profile bot and agrees the handoff for saved posts. It sets
    itself up, saves two skills (**Magpie X sweep** and **Magpie roster review**), runs once, and either
-   schedules its routines or replies with the exact settings to enter: the sweep every 3 hours from 05:00
-   to 23:00 Central, the roster review daily at 04:30 Central.
+   schedules its routines or replies with the exact settings to enter: five sweeps a day (05:00, 09:00,
+   13:00, 17:00 and 21:00 Central), the roster review daily at 04:30 Central. Budgets and switches
+   (X reads, follows, posting) live in `config/scout.json`, which only the owner edits.
 
 ## What the Bot writes
 

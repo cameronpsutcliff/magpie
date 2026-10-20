@@ -1,8 +1,20 @@
 {
-  "note": "Owner-controlled switches for Magpie Scout and the Twitter Profile bot. The bots read this file and never edit it.",
+  "note": "Owner-controlled switches for Magpie Scout and the Twitter Profile bot. The bots read this file every run and never edit it.",
   "posting_enabled": false,
-  "follows_per_day": 5,
-  "follows_per_week": 20,
+  "follow_mode": "browser",
+  "follows_per_day": 3,
+  "follows_per_week": 15,
+  "x_reads_per_day": 450,
+  "x_reads_shared_cap": 1000,
+  "sweeps_per_day": 5,
+  "deep_reads_per_sweep": 10,
+  "deep_read_min_likes": 200,
+  "deep_read_min_reposts": 50,
+  "rechecks_per_sweep": 8,
+  "videos_per_sweep": 3,
+  "video_min_seconds": 60,
   "max_items_per_sweep": 40,
-  "roster_cap": 400
+  "roster_cap": 400,
+  "roster_review_reads": 80,
+  "level3_wide_reposts": 500
 }
