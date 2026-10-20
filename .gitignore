@@ -8,3 +8,5 @@ __pycache__/
 state/home-run.log
 state/last-run.log
 state/launchd.log
+state/backfill/
+state/*.log

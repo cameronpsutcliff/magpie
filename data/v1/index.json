@@ -3,54 +3,83 @@
  "days": [
   {
    "date": "2026-10-20",
-   "headline": "Run a local 30B agent, serve DeepSeek, audit code with agents, and more",
-   "events": 172,
+   "headline": "Serve DeepSeek, speed up local inference, build speech tools and more",
+   "events": 443,
+   "sources": 434,
    "enriched": true,
    "top": [
     {
      "id": "c710b6d73fe4",
-     "title": "DeepSeek open-sources its DeepInfer inference stack",
+     "title": "DeepSeek opens its DeepInfer inference framework",
      "impact": 4,
      "vendor": "DeepSeek"
     },
     {
-     "id": "afd21fa67ca5",
-     "title": "Meta publishes Muse Glimmer 30B for local agents",
-     "impact": 5,
-     "vendor": "Meta"
-    },
-    {
-     "id": "94ba3bb50ccd",
-     "title": "Hindsight offers agent memory that learns",
+     "id": "35a108147b66",
+     "title": "Hyperframes turns agent-written HTML into video",
      "impact": 4,
-     "vendor": "Open source"
+     "vendor": "hyperframes"
     },
     {
-     "id": "e487fe51b82b",
-     "title": "Cloudflare ships a security audit skill for coding agents",
+     "id": "724f4e3eb743",
+     "title": "Bedrock adds structured outputs across Claude models",
      "impact": 4,
-     "vendor": "Cloudflare"
+     "vendor": "AWS"
     },
     {
-     "id": "b95deaced653",
-     "title": "MemT-1.0 builds memory into model computation",
+     "id": "829ccb656836",
+     "title": "Google lists EmbeddingGemma 2 feature extractor",
      "impact": 3,
-     "vendor": "Research"
+     "vendor": "Google"
+    },
+    {
+     "id": "6813b8a55e39",
+     "title": "OpenCode offers an open coding agent",
+     "impact": 2,
+     "vendor": "opencode"
     }
    ],
    "vendors": [
     "Open source",
-    "Research",
     "Anthropic",
+    "OpenAI",
+    "Google",
     "DeepSeek",
-    "Qwen",
-    "Meta"
-   ]
+    "Qwen"
+   ],
+   "topics": {
+    "models": 139,
+    "agents": 120,
+    "coding": 102,
+    "multimodal": 80,
+    "infra": 60,
+    "memory": 43,
+    "evals": 38,
+    "local": 32,
+    "research": 29,
+    "mcp": 16,
+    "reverse": 14,
+    "security": 12,
+    "robotics": 5
+   },
+   "kinds": {
+    "video": 142,
+    "social": 80,
+    "repo": 41,
+    "newsletter": 40,
+    "blog": 39,
+    "community": 33,
+    "model": 29,
+    "changelog": 20,
+    "space": 18,
+    "news": 1
+   }
   },
   {
    "date": "2026-10-19",
    "headline": "Download Meta's open Muse Spark, diffuse text fast, forecast time series, and more",
    "events": 177,
+   "sources": 35,
    "enriched": true,
    "top": [
     {
@@ -91,7 +120,2085 @@
     "DeepSeek",
     "Meta",
     "Qwen"
-   ]
+   ],
+   "topics": {
+    "agents": 61,
+    "models": 52,
+    "multimodal": 52,
+    "coding": 34,
+    "memory": 20,
+    "infra": 19,
+    "evals": 19,
+    "research": 17,
+    "local": 11,
+    "mcp": 8,
+    "robotics": 5,
+    "reverse": 5,
+    "security": 5
+   },
+   "kinds": {
+    "paper": 40,
+    "repo": 36,
+    "model": 29,
+    "social": 24,
+    "space": 18,
+    "community": 16,
+    "changelog": 5,
+    "blog": 4,
+    "newsletter": 3,
+    "news": 1,
+    "video": 1
+   }
+  },
+  {
+   "date": "2026-10-18",
+   "headline": "Quizzes your AI's code, drives Android, searches the web cheaply, and more",
+   "events": 86,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "f7c1160bd9e2",
+     "title": "DeepSeek releases V4.1 Flash 1017 weights",
+     "impact": 4,
+     "vendor": "DeepSeek"
+    },
+    {
+     "id": "0abf7d9f7f3a",
+     "title": "Sphinx quizzes you on agent-written code",
+     "impact": 3,
+     "vendor": "Open source"
+    },
+    {
+     "id": "b5aed835eaa8",
+     "title": "DeepSeek API adds search and fetch",
+     "impact": 3,
+     "vendor": "DeepSeek"
+    },
+    {
+     "id": "5739a81a8468",
+     "title": "RuneScape Bench tests agents in an MMO",
+     "impact": 2,
+     "vendor": "Open source"
+    },
+    {
+     "id": "a2938911ac4d",
+     "title": "Echo Dot becomes a local Home Assistant satellite",
+     "impact": 2,
+     "vendor": "Open source"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Anthropic",
+    "OpenAI",
+    "DeepSeek",
+    "Google",
+    "Ollama"
+   ],
+   "topics": {
+    "coding": 36,
+    "agents": 26,
+    "models": 12,
+    "mcp": 9,
+    "infra": 8,
+    "memory": 6,
+    "multimodal": 6,
+    "evals": 4,
+    "local": 4,
+    "research": 4,
+    "reverse": 3,
+    "security": 2,
+    "robotics": 1
+   },
+   "kinds": {
+    "repo": 47,
+    "video": 29,
+    "community": 9,
+    "changelog": 1
+   }
+  },
+  {
+   "date": "2026-10-17",
+   "headline": "Matches spatial tasks in one pass, opens computer-use agents, automates Android, and more",
+   "events": 141,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "062441ae52a8",
+     "title": "OpenGCUA offers an open stack for computer-use agents",
+     "impact": 4,
+     "vendor": "Qwen"
+    },
+    {
+     "id": "f8cfd2cfd90b",
+     "title": "MAI-Gym unifies GUI agent evaluation and RL training",
+     "impact": 4,
+     "vendor": "Qwen"
+    },
+    {
+     "id": "39aecec30ea6",
+     "title": "ARTEMIS turns plain instructions into Android automation",
+     "impact": 3,
+     "vendor": "Google"
+    },
+    {
+     "id": "a18fa7f842c3",
+     "title": "Mercor maps where AI benchmarks miss US work",
+     "impact": 2,
+     "vendor": "Mercor"
+    },
+    {
+     "id": "52a54799f7eb",
+     "title": "opencode2api proxies OpenCode Zen with OpenAI and Anthropic APIs",
+     "impact": 2,
+     "vendor": "Open source"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Research",
+    "Anthropic",
+    "Google",
+    "Apple",
+    "Qwen"
+   ],
+   "topics": {
+    "agents": 45,
+    "models": 43,
+    "coding": 34,
+    "multimodal": 33,
+    "infra": 23,
+    "research": 21,
+    "evals": 16,
+    "memory": 12,
+    "local": 12,
+    "mcp": 9,
+    "security": 6,
+    "robotics": 3,
+    "reverse": 3
+   },
+   "kinds": {
+    "paper": 50,
+    "repo": 44,
+    "video": 25,
+    "community": 22
+   }
+  },
+  {
+   "date": "2026-10-16",
+   "headline": "Generates consistent long video, reverse engineers faster, runs offline on phones, and more",
+   "events": 137,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "2a74f7132e75",
+     "title": "Agentic video generation with world-state memory",
+     "impact": 3,
+     "vendor": "Research"
+    },
+    {
+     "id": "968bba4a84b7",
+     "title": "Player-1 learns game control from synthetic experience",
+     "impact": 3,
+     "vendor": "Research"
+    },
+    {
+     "id": "9c41e5d12c25",
+     "title": "Trail of Bits publishes Claude Code security skills",
+     "impact": 3,
+     "vendor": "Open source"
+    },
+    {
+     "id": "624469577400",
+     "title": "Using AI to reverse engineer hardware",
+     "impact": 3,
+     "vendor": "Open source"
+    },
+    {
+     "id": "054dc089fc63",
+     "title": "MiniCPM-V apps run multimodal chat offline on phones",
+     "impact": 3,
+     "vendor": "OpenBMB"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Research",
+    "Anthropic",
+    "Google",
+    "Microsoft",
+    "OpenAI"
+   ],
+   "topics": {
+    "agents": 45,
+    "models": 39,
+    "multimodal": 26,
+    "research": 23,
+    "coding": 22,
+    "infra": 19,
+    "memory": 15,
+    "evals": 15,
+    "mcp": 11,
+    "local": 10,
+    "robotics": 6,
+    "security": 6,
+    "reverse": 6
+   },
+   "kinds": {
+    "paper": 50,
+    "repo": 43,
+    "video": 36,
+    "community": 8
+   }
+  },
+  {
+   "date": "2026-10-15",
+   "headline": "Runs on-device agents, prices HTML against markdown, reviews agent docs, and more",
+   "events": 136,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "d9d1c633d3a4",
+     "title": "Jeva: a decision-native architecture for structured choices",
+     "impact": 3,
+     "vendor": "Research"
+    },
+    {
+     "id": "d7c76d8462da",
+     "title": "Harness^2 refines agent harnesses without ground-truth verifiers",
+     "impact": 3,
+     "vendor": "Google"
+    },
+    {
+     "id": "2fa95920a2b2",
+     "title": "Measured: HTML costs far more tokens than markdown",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "4f57092d051a",
+     "title": "Jarvis: private offline desktop assistant with memory and MCP",
+     "impact": 3,
+     "vendor": "Open source"
+    },
+    {
+     "id": "316fd7c40b4d",
+     "title": "Slashdocs lets agents publish reviewable HTML documents",
+     "impact": 3,
+     "vendor": "Razorpay"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Research",
+    "Anthropic",
+    "OpenAI",
+    "Google",
+    "Qwen"
+   ],
+   "topics": {
+    "agents": 46,
+    "models": 37,
+    "coding": 32,
+    "multimodal": 30,
+    "research": 23,
+    "evals": 18,
+    "infra": 15,
+    "memory": 12,
+    "local": 10,
+    "mcp": 10,
+    "robotics": 7,
+    "reverse": 6,
+    "security": 5
+   },
+   "kinds": {
+    "paper": 50,
+    "repo": 40,
+    "video": 33,
+    "community": 13
+   }
+  },
+  {
+   "date": "2026-10-14",
+   "headline": "Grounds objects faster, serves audio models, answers calls, audits coding agents, and more",
+   "events": 130,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "f65c36eedb36",
+     "title": "GroundingPI: 4B model for precise object localization",
+     "impact": 3,
+     "vendor": "Research"
+    },
+    {
+     "id": "222c7ba038da",
+     "title": "Thinking Inertia: models keep reasoning when told not to",
+     "impact": 3,
+     "vendor": "Research"
+    },
+    {
+     "id": "ab792688f615",
+     "title": "Self-hosted AI call center with realtime voice bots",
+     "impact": 3,
+     "vendor": "Open source"
+    },
+    {
+     "id": "c1bc21113fe9",
+     "title": "SGLang-Omni serves audio and multimodal models",
+     "impact": 3,
+     "vendor": "vLLM"
+    },
+    {
+     "id": "090721c8eaa3",
+     "title": "last30days skill researches topics across social sources",
+     "impact": 2,
+     "vendor": "Open source"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Research",
+    "Google",
+    "Anthropic",
+    "OpenAI",
+    "vLLM"
+   ],
+   "topics": {
+    "agents": 36,
+    "coding": 30,
+    "models": 28,
+    "multimodal": 25,
+    "infra": 16,
+    "evals": 12,
+    "local": 12,
+    "research": 12,
+    "mcp": 7,
+    "security": 6,
+    "robotics": 5,
+    "memory": 5,
+    "reverse": 2
+   },
+   "kinds": {
+    "video": 49,
+    "repo": 39,
+    "paper": 26,
+    "community": 16
+   }
+  },
+  {
+   "date": "2026-10-13",
+   "headline": "Trim vision tokens, clone voices, ship agents from YAML, and more",
+   "events": 105,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "d8cd449ebf6e",
+     "title": "DiffusionART stabilizes reinforcement fine-tuning of diffusion models",
+     "impact": 3,
+     "vendor": "Research"
+    },
+    {
+     "id": "fb2aace24285",
+     "title": "VisionWeave cuts visual token use by 43%",
+     "impact": 3,
+     "vendor": "Qwen"
+    },
+    {
+     "id": "3201d6827eb0",
+     "title": "VoxCPM2 offers tokenizer-free multilingual speech and voice cloning",
+     "impact": 4,
+     "vendor": "OpenBMB"
+    },
+    {
+     "id": "663b118a946f",
+     "title": "Transformers ships releases v5.18.0 and v5.19.0",
+     "impact": 4,
+     "vendor": "Hugging Face"
+    },
+    {
+     "id": "4b91360fbdb6",
+     "title": "Managed Agents resources defined in YAML for CI/CD",
+     "impact": 4,
+     "vendor": "Anthropic"
+    }
+   ],
+   "vendors": [
+    "Research",
+    "Open source",
+    "Anthropic",
+    "OpenAI",
+    "Qwen",
+    "NVIDIA"
+   ],
+   "topics": {
+    "models": 41,
+    "agents": 31,
+    "multimodal": 30,
+    "infra": 23,
+    "research": 19,
+    "coding": 18,
+    "evals": 18,
+    "local": 12,
+    "reverse": 9,
+    "memory": 9,
+    "mcp": 7,
+    "security": 5,
+    "robotics": 4
+   },
+   "kinds": {
+    "paper": 50,
+    "repo": 27,
+    "community": 16,
+    "video": 12
+   }
+  },
+  {
+   "date": "2026-10-12",
+   "headline": "Fine-tunes embeddings, sandboxes agents, maps codebases, and more",
+   "events": 139,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "663b118a946f",
+     "title": "Transformers ships releases 5.18.0 and 5.19.0",
+     "impact": 4,
+     "vendor": "Hugging Face"
+    },
+    {
+     "id": "c6e24c84890b",
+     "title": "Fine-tuning Gemini embedding 2 on your data",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "562dbe2d5492",
+     "title": "Goodfire on how agents choose critical tokens",
+     "impact": 2,
+     "vendor": "Goodfire"
+    },
+    {
+     "id": "6107951b2993",
+     "title": "CubeSandbox: instant sandbox for AI agents",
+     "impact": 4,
+     "vendor": "Tencent Cloud"
+    },
+    {
+     "id": "81d9947366f6",
+     "title": "Repowise serves codebase health data over MCP",
+     "impact": 3,
+     "vendor": "Open source"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Anthropic",
+    "Google",
+    "OpenAI",
+    "NVIDIA",
+    "Microsoft"
+   ],
+   "topics": {
+    "coding": 21,
+    "agents": 19,
+    "models": 18,
+    "multimodal": 17,
+    "mcp": 10,
+    "infra": 10,
+    "memory": 8,
+    "local": 6,
+    "evals": 4,
+    "security": 4,
+    "reverse": 3,
+    "research": 3,
+    "robotics": 1
+   },
+   "kinds": {
+    "video": 109,
+    "repo": 29,
+    "community": 1
+   }
+  },
+  {
+   "date": "2026-10-11",
+   "headline": "Decompiling games, running agents free, gating agent access, and more",
+   "events": 36,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "6448a080e87c",
+     "title": "AI agents decompile a first-person shooter",
+     "impact": 3,
+     "vendor": "Open source"
+    },
+    {
+     "id": "18620704ad4b",
+     "title": "Casdoor adds identity and gateway for agents and MCP",
+     "impact": 3,
+     "vendor": "Open source"
+    },
+    {
+     "id": "b48bbb494698",
+     "title": "Microsoft TRELLIS.2 for compact 3D generation",
+     "impact": 3,
+     "vendor": "Microsoft"
+    },
+    {
+     "id": "663b118a946f",
+     "title": "Transformers ships v5.18 and v5.19 releases",
+     "impact": 3,
+     "vendor": "Hugging Face"
+    },
+    {
+     "id": "39718df61fac",
+     "title": "LingBot-Map streams 3D reconstruction from video",
+     "impact": 3,
+     "vendor": "Open source"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Microsoft",
+    "Hugging Face",
+    "vLLM",
+    "Tencent",
+    "Anthropic"
+   ],
+   "topics": {
+    "agents": 14,
+    "coding": 9,
+    "mcp": 8,
+    "multimodal": 8,
+    "models": 7,
+    "infra": 6,
+    "security": 4,
+    "local": 4,
+    "reverse": 1,
+    "research": 1,
+    "memory": 1
+   },
+   "kinds": {
+    "repo": 33,
+    "community": 3
+   }
+  },
+  {
+   "date": "2026-10-10",
+   "headline": "Compacts agent memory, simulates worlds, routes tokens, steers robots, and more",
+   "events": 110,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "ed5ecb5a1abe",
+     "title": "AgentGarten builds interactive code worlds for agents",
+     "impact": 3,
+     "vendor": "Research"
+    },
+    {
+     "id": "383eeec0c0f0",
+     "title": "REMORY adds learned soft tokens to agent memory summaries",
+     "impact": 3,
+     "vendor": "Research"
+    },
+    {
+     "id": "6e5a59669df2",
+     "title": "LiteLLM gateway calls 100+ LLM APIs in one format",
+     "impact": 3,
+     "vendor": "Open source"
+    },
+    {
+     "id": "39718df61fac",
+     "title": "LingBot-Map reconstructs 3D scenes from streaming input",
+     "impact": 3,
+     "vendor": "Open source"
+    },
+    {
+     "id": "f02d3b4c00b5",
+     "title": "Talorys runs a personal AI agent on Cloudflare free tier",
+     "impact": 2,
+     "vendor": "Open source"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Research",
+    "Microsoft",
+    "NVIDIA",
+    "OpenAI",
+    "Anthropic"
+   ],
+   "topics": {
+    "agents": 49,
+    "models": 48,
+    "coding": 31,
+    "multimodal": 27,
+    "research": 18,
+    "evals": 17,
+    "infra": 14,
+    "local": 14,
+    "mcp": 11,
+    "robotics": 9,
+    "security": 6,
+    "memory": 6,
+    "reverse": 5
+   },
+   "kinds": {
+    "paper": 50,
+    "repo": 45,
+    "community": 15
+   }
+  },
+  {
+   "date": "2026-10-09",
+   "headline": "Shrinks speech to text, plugs Jira into agents, scales robot memory, and more",
+   "events": 100,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "1ffc5a4eee9f",
+     "title": "Whistle fits speech to text in 16.9 MB",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "cf5b4a3a7696",
+     "title": "Atlassian ships official remote MCP server",
+     "impact": 4,
+     "vendor": "Atlassian"
+    },
+    {
+     "id": "f8824ad6f5a6",
+     "title": "STEPQuant shrinks recurrent state memory in linear attention",
+     "impact": 3,
+     "vendor": "Research"
+    },
+    {
+     "id": "f3dbf64096db",
+     "title": "Long-WAM gives robot world models longer visual history",
+     "impact": 3,
+     "vendor": "NVIDIA"
+    },
+    {
+     "id": "13d9f1a2c3fa",
+     "title": "Windows-MCP lets agents use Windows computers",
+     "impact": 3,
+     "vendor": "Open source"
+    }
+   ],
+   "vendors": [
+    "Research",
+    "Open source",
+    "Anthropic",
+    "OpenAI",
+    "Microsoft",
+    "Atlassian"
+   ],
+   "topics": {
+    "models": 34,
+    "agents": 31,
+    "multimodal": 26,
+    "coding": 26,
+    "research": 21,
+    "infra": 17,
+    "memory": 11,
+    "evals": 9,
+    "local": 9,
+    "mcp": 7,
+    "robotics": 5,
+    "security": 4,
+    "reverse": 3
+   },
+   "kinds": {
+    "paper": 50,
+    "repo": 34,
+    "community": 16
+   }
+  },
+  {
+   "date": "2026-10-08",
+   "headline": "GPT-6 ships Intelligent UI, Haiku 5.5 lands, 4-bit RL stabilizes, and more",
+   "events": 108,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "e076dc562cad",
+     "title": "Anthropic releases Claude Haiku 5.5",
+     "impact": 4,
+     "vendor": "Anthropic"
+    },
+    {
+     "id": "62b7409cd673",
+     "title": "Kinematic MeanFlow generates robot actions in one step",
+     "impact": 3,
+     "vendor": "Research"
+    },
+    {
+     "id": "00f41ca7f7f3",
+     "title": "HuatuoGPT-3 adapts base models to medicine with RL only",
+     "impact": 3,
+     "vendor": "Research"
+    },
+    {
+     "id": "3d261e862a30",
+     "title": "olmocr turns PDFs into text for LLM data",
+     "impact": 3,
+     "vendor": "Ai2"
+    },
+    {
+     "id": "862fc518df3f",
+     "title": "Uber open-sources ADR to secure AI agents",
+     "impact": 3,
+     "vendor": "Open source"
+    }
+   ],
+   "vendors": [
+    "Research",
+    "Open source",
+    "Microsoft",
+    "Anthropic",
+    "OpenAI",
+    "NVIDIA"
+   ],
+   "topics": {
+    "models": 46,
+    "agents": 34,
+    "coding": 25,
+    "research": 24,
+    "multimodal": 20,
+    "evals": 14,
+    "infra": 14,
+    "local": 11,
+    "memory": 11,
+    "security": 9,
+    "robotics": 9,
+    "mcp": 7,
+    "reverse": 4
+   },
+   "kinds": {
+    "paper": 50,
+    "repo": 41,
+    "community": 16,
+    "news": 1
+   }
+  },
+  {
+   "date": "2026-10-07",
+   "headline": "Generates synced video and audio, proves new math results, runs faster on Macs, and more",
+   "events": 108,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "db49536c5f05",
+     "title": "OpenAI shares new math results with Lean proofs",
+     "impact": 4,
+     "vendor": "OpenAI"
+    },
+    {
+     "id": "e1c4efc2664c",
+     "title": "Kandinsky 6.0 Video generates lip-synced audio and video",
+     "impact": 3,
+     "vendor": "Research"
+    },
+    {
+     "id": "b5e119a7b03b",
+     "title": "ALoDLM spends more compute on harder tokens",
+     "impact": 3,
+     "vendor": "Amazon"
+    },
+    {
+     "id": "255943bb67b8",
+     "title": "EmbeddingGemma 2 is an open multimodal embedder",
+     "impact": 3,
+     "vendor": "Google"
+    },
+    {
+     "id": "3f33cecd41b7",
+     "title": "Community plugin marketplace for Claude Code",
+     "impact": 2,
+     "vendor": "Anthropic"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Research",
+    "Google",
+    "OpenAI",
+    "NVIDIA",
+    "Anthropic"
+   ],
+   "topics": {
+    "models": 46,
+    "agents": 41,
+    "coding": 30,
+    "multimodal": 23,
+    "research": 22,
+    "evals": 15,
+    "memory": 15,
+    "infra": 14,
+    "mcp": 8,
+    "local": 8,
+    "security": 5,
+    "robotics": 3,
+    "reverse": 3
+   },
+   "kinds": {
+    "paper": 50,
+    "repo": 43,
+    "community": 13,
+    "news": 2
+   }
+  },
+  {
+   "date": "2026-10-06",
+   "headline": "Opens a 501B model, finds magnet candidates, steers robots, and more",
+   "events": 93,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "4f4138766732",
+     "title": "MotorMind drives robots with general vision-language models",
+     "impact": 4,
+     "vendor": "Research"
+    },
+    {
+     "id": "f75949cd2bd9",
+     "title": "VeriHarness verifies long agent outputs without reference answers",
+     "impact": 3,
+     "vendor": "Google"
+    },
+    {
+     "id": "b11085bff798",
+     "title": "OptMem gives agents permanent memory in 426 tokens",
+     "impact": 3,
+     "vendor": "Open source"
+    },
+    {
+     "id": "5b8c7e01236e",
+     "title": "Reflection releases Beam, a 501B open-weight model",
+     "impact": 4,
+     "vendor": "Reflection"
+    },
+    {
+     "id": "1f0cb24e8382",
+     "title": "Opus 5.5 agents propose two magnetic semiconductor candidates",
+     "impact": 4,
+     "vendor": "Anthropic"
+    }
+   ],
+   "vendors": [
+    "Research",
+    "Open source",
+    "Anthropic",
+    "Google",
+    "OpenAI",
+    "Reflection"
+   ],
+   "topics": {
+    "models": 47,
+    "agents": 34,
+    "coding": 24,
+    "research": 23,
+    "infra": 19,
+    "multimodal": 18,
+    "evals": 15,
+    "memory": 13,
+    "robotics": 7,
+    "local": 6,
+    "reverse": 4,
+    "mcp": 4,
+    "security": 1
+   },
+   "kinds": {
+    "paper": 50,
+    "repo": 33,
+    "community": 10
+   }
+  },
+  {
+   "date": "2026-10-05",
+   "headline": "Run large models locally, search video, automate production and more",
+   "events": 57,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "44bcd5469d56",
+     "title": "Uniterm combines remote access with shell agents",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "f5f75fe2fd05",
+     "title": "Strata reports running Qwen on RTX 4090",
+     "impact": 5,
+     "vendor": "Strata"
+    },
+    {
+     "id": "13637d1f91cf",
+     "title": "Pstack workflows reach more coding agents",
+     "impact": 3,
+     "vendor": "Open source"
+    },
+    {
+     "id": "c1896988f122",
+     "title": "User Scanner exposes footprint searches through MCP",
+     "impact": 3,
+     "vendor": "Open source"
+    },
+    {
+     "id": "639835f8c060",
+     "title": "Crusoe describes automatic recovery from GPU failures",
+     "impact": 3,
+     "vendor": "Crusoe"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Anthropic",
+    "Strata",
+    "Crusoe",
+    "Agent-Reach",
+    "OpenMontage"
+   ],
+   "topics": {
+    "agents": 22,
+    "coding": 15,
+    "models": 11,
+    "infra": 8,
+    "mcp": 8,
+    "local": 5,
+    "security": 4,
+    "memory": 4,
+    "reverse": 3,
+    "multimodal": 3,
+    "research": 1,
+    "evals": 1
+   },
+   "kinds": {
+    "repo": 38,
+    "video": 15,
+    "community": 4
+   }
+  },
+  {
+   "date": "2026-10-04",
+   "headline": "Sandbox agents in microVMs, read messy documents, run a sovereign open model, and more",
+   "events": 91,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "5376a1a4591b",
+     "title": "Docker SBX: microVM sandboxes for any agent",
+     "impact": 4,
+     "vendor": "Docker"
+    },
+    {
+     "id": "a9fa3c0f3703",
+     "title": "Official Python SDK for MCP servers and clients",
+     "impact": 3,
+     "vendor": "Open source"
+    },
+    {
+     "id": "0ae792926f95",
+     "title": "Chandra OCR handles tables, forms and handwriting",
+     "impact": 3,
+     "vendor": "Open source"
+    },
+    {
+     "id": "706742b0f54c",
+     "title": "Argument: agents need documentation, not memory",
+     "impact": 2,
+     "vendor": "Open source"
+    },
+    {
+     "id": "710e64117a71",
+     "title": "Guide to getting the most from Opus 5.5",
+     "impact": 2,
+     "vendor": "Anthropic"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Anthropic",
+    "Google",
+    "GitHub",
+    "Apple",
+    "Docker"
+   ],
+   "topics": {
+    "agents": 30,
+    "coding": 29,
+    "mcp": 14,
+    "models": 12,
+    "memory": 8,
+    "security": 6,
+    "infra": 5,
+    "multimodal": 5,
+    "local": 4,
+    "reverse": 1,
+    "research": 1,
+    "robotics": 1
+   },
+   "kinds": {
+    "repo": 54,
+    "video": 27,
+    "community": 10
+   }
+  },
+  {
+   "date": "2026-10-03",
+   "headline": "Runs models locally, shares caches across models, remembers streaming video, and more",
+   "events": 150,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "a739b515f379",
+     "title": "HeteroFold reuses KV caches across different model families",
+     "impact": 4,
+     "vendor": "Research"
+    },
+    {
+     "id": "1766e397098b",
+     "title": "ds4 runs LLMs locally, from the creator of Redis",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "1a803981b2d9",
+     "title": "OneStreamer adds reusable memory to streaming video models",
+     "impact": 3,
+     "vendor": "Research"
+    },
+    {
+     "id": "ebbdf5955b14",
+     "title": "Agent-Reach gives agents search across social sites via one CLI",
+     "impact": 3,
+     "vendor": "Open source"
+    },
+    {
+     "id": "24ee976ab5ea",
+     "title": "Kolibri: Aleph Alpha releases a sovereign open-weight model",
+     "impact": 4,
+     "vendor": "Aleph Alpha"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Research",
+    "Anthropic",
+    "Apple",
+    "Google",
+    "Microsoft"
+   ],
+   "topics": {
+    "agents": 48,
+    "models": 47,
+    "coding": 40,
+    "multimodal": 26,
+    "research": 22,
+    "evals": 18,
+    "infra": 18,
+    "mcp": 14,
+    "memory": 10,
+    "local": 9,
+    "security": 7,
+    "robotics": 5,
+    "reverse": 2
+   },
+   "kinds": {
+    "paper": 50,
+    "repo": 50,
+    "video": 35,
+    "community": 15
+   }
+  },
+  {
+   "date": "2026-10-02",
+   "headline": "Open decision models, faster computer use, distilling past RL teachers, and more",
+   "events": 134,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "655cb1d5e04a",
+     "title": "RIDE extrapolates RL shifts during on-policy distillation",
+     "impact": 3,
+     "vendor": "Research"
+    },
+    {
+     "id": "4a6f78877638",
+     "title": "AREX-2 trains agents to improve their own work",
+     "impact": 3,
+     "vendor": "Qwen"
+    },
+    {
+     "id": "03312a2d348b",
+     "title": "SGLang serves language and multimodal models fast",
+     "impact": 3,
+     "vendor": "SGLang"
+    },
+    {
+     "id": "c7307bfa16c0",
+     "title": "Clef: open-weight decision models and RL fine-tuning",
+     "impact": 4,
+     "vendor": "Cloudflare"
+    },
+    {
+     "id": "1763692ef589",
+     "title": "Google publishes Agent Skills for its products",
+     "impact": 2,
+     "vendor": "Google"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Research",
+    "OpenAI",
+    "Google",
+    "NVIDIA",
+    "Amazon"
+   ],
+   "topics": {
+    "agents": 47,
+    "models": 43,
+    "coding": 28,
+    "multimodal": 26,
+    "research": 24,
+    "infra": 20,
+    "evals": 15,
+    "memory": 12,
+    "mcp": 11,
+    "local": 9,
+    "security": 5,
+    "reverse": 4,
+    "robotics": 2
+   },
+   "kinds": {
+    "paper": 50,
+    "repo": 45,
+    "video": 26,
+    "community": 13
+   }
+  },
+  {
+   "date": "2026-10-01",
+   "headline": "Google ships Gemini 4 Argon, agent guardrails move outside, Ollama gains decision models, and more",
+   "events": 144,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "bd6b89e1da2b",
+     "title": "Omni-IO Skills lets agents handle mixed media",
+     "impact": 3,
+     "vendor": "Research"
+    },
+    {
+     "id": "5e256b27ce8f",
+     "title": "MaLiang-Harness makes image and video generation programmable",
+     "impact": 3,
+     "vendor": "Research"
+    },
+    {
+     "id": "1dd46533cee2",
+     "title": "Agent controls move outside the agent",
+     "impact": 4,
+     "vendor": "Anthropic"
+    },
+    {
+     "id": "6649e9947ea6",
+     "title": "Ollama adds local decision models",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "53c20bf00e96",
+     "title": "AWS ships official MCP servers for agents",
+     "impact": 3,
+     "vendor": "Amazon"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Research",
+    "Anthropic",
+    "Google",
+    "OpenAI",
+    "Amazon"
+   ],
+   "topics": {
+    "agents": 41,
+    "models": 40,
+    "coding": 33,
+    "multimodal": 27,
+    "research": 23,
+    "infra": 18,
+    "local": 18,
+    "memory": 15,
+    "mcp": 15,
+    "evals": 14,
+    "robotics": 6,
+    "reverse": 6,
+    "security": 5
+   },
+   "kinds": {
+    "paper": 50,
+    "repo": 50,
+    "video": 33,
+    "community": 11
+   }
+  },
+  {
+   "date": "2026-09-30",
+   "headline": "OpenAI cuts frontier prices, ships always-on agents, Kubernetes gets agent sandboxes, and more",
+   "events": 158,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "65ecb40fc077",
+     "title": "VisionHOPE: Vision Backbone That Modifies Itself",
+     "impact": 3,
+     "vendor": "Research"
+    },
+    {
+     "id": "d9bad10ffddb",
+     "title": "YuE2 Unifies Score and Audio Music Generation",
+     "impact": 3,
+     "vendor": "Research"
+    },
+    {
+     "id": "add2cec0c452",
+     "title": "Kubernetes agent-sandbox: Isolated Stateful Workloads for Agents",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "a9d1ed18ff49",
+     "title": "GPT-6.1 Sol: Near-Astra Quality at One-Fifth Price",
+     "impact": 5,
+     "vendor": "OpenAI"
+    },
+    {
+     "id": "d97cde3fad4a",
+     "title": "DeerFlow: ByteDance Long-Horizon Agent Harness",
+     "impact": 3,
+     "vendor": "ByteDance"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Research",
+    "OpenAI",
+    "Anthropic",
+    "Google",
+    "NVIDIA"
+   ],
+   "topics": {
+    "models": 48,
+    "agents": 48,
+    "research": 30,
+    "multimodal": 29,
+    "coding": 26,
+    "infra": 23,
+    "evals": 19,
+    "memory": 19,
+    "local": 14,
+    "security": 8,
+    "robotics": 5,
+    "mcp": 5,
+    "reverse": 1
+   },
+   "kinds": {
+    "paper": 50,
+    "repo": 50,
+    "video": 39,
+    "community": 17,
+    "news": 2
+   }
+  },
+  {
+   "date": "2026-09-29",
+   "headline": "Refine agent skills, run security tools, retain memories, and more",
+   "events": 85,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "b96906590e86",
+     "title": "Disaggregated quantization separates prefill and decode formats",
+     "impact": 3,
+     "vendor": "Research"
+    },
+    {
+     "id": "a3e76ae53148",
+     "title": "RayOrch preserves lineage in distributed data preparation",
+     "impact": 3,
+     "vendor": "Research"
+    },
+    {
+     "id": "215a261f674f",
+     "title": "HexStrike connects agents to cybersecurity tools",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "1531d3b5d163",
+     "title": "TensorFold serves local decoding on Apple Silicon",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "75c01080133f",
+     "title": "SkillOpt optimizes reusable skills for frozen agents",
+     "impact": 4,
+     "vendor": "Microsoft"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Research",
+    "OpenAI",
+    "Anthropic",
+    "Apple",
+    "NVIDIA"
+   ],
+   "topics": {
+    "models": 32,
+    "agents": 20,
+    "research": 16,
+    "multimodal": 15,
+    "infra": 13,
+    "coding": 12,
+    "local": 11,
+    "evals": 10,
+    "security": 8,
+    "mcp": 7,
+    "robotics": 7,
+    "memory": 5,
+    "reverse": 1
+   },
+   "kinds": {
+    "repo": 34,
+    "paper": 32,
+    "community": 19
+   }
+  },
+  {
+   "date": "2026-09-28",
+   "headline": "Run any model locally, clone voices offline, and manage coding agents from one terminal, and more",
+   "events": 51,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "1b08933e4a72",
+     "title": "NVIDIA Model-Optimizer bundles compression techniques for faster inference",
+     "impact": 4,
+     "vendor": "NVIDIA"
+    },
+    {
+     "id": "97256ad2958a",
+     "title": "LocalAI runs LLMs, vision, voice and video locally",
+     "impact": 3,
+     "vendor": "Open source"
+    },
+    {
+     "id": "61635776e356",
+     "title": "Official prompting guide for Claude Opus 5.5",
+     "impact": 2,
+     "vendor": "Anthropic"
+    },
+    {
+     "id": "de2aa30e16a4",
+     "title": "Agent-manager tracks coding agents from one tmux TUI",
+     "impact": 2,
+     "vendor": "Open source"
+    },
+    {
+     "id": "68684bf50c21",
+     "title": "Data Formulator explores and visualizes data with AI",
+     "impact": 2,
+     "vendor": "Microsoft"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Microsoft",
+    "Apple",
+    "NVIDIA",
+    "Anthropic",
+    "Vercel"
+   ],
+   "topics": {
+    "models": 9,
+    "agents": 9,
+    "coding": 8,
+    "local": 7,
+    "multimodal": 7,
+    "infra": 4,
+    "reverse": 3,
+    "research": 2,
+    "mcp": 2,
+    "memory": 1,
+    "evals": 1,
+    "security": 1
+   },
+   "kinds": {
+    "repo": 34,
+    "video": 13,
+    "community": 4
+   }
+  },
+  {
+   "date": "2026-09-27",
+   "headline": "Fine-tune on a small GPU, let agents run research loops, and more",
+   "events": 80,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "8e77d2068967",
+     "title": "One plugin marketplace for seven coding agent tools",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "70aaebabbe0e",
+     "title": "Claude Code and Codex race human researchers",
+     "impact": 4,
+     "vendor": "Prime Intellect"
+    },
+    {
+     "id": "d541f1ebf904",
+     "title": "Drawgent runs a coding agent on Excalidraw",
+     "impact": 3,
+     "vendor": "Open source"
+    },
+    {
+     "id": "86ac90a0ff48",
+     "title": "Beads adds memory to your coding agent",
+     "impact": 3,
+     "vendor": "Open source"
+    },
+    {
+     "id": "7bc4dbef2d9a",
+     "title": "DeepSeek describes Elastic Compute (DSec) in a paper",
+     "impact": 2,
+     "vendor": "DeepSeek"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "OpenAI",
+    "Anthropic",
+    "NVIDIA",
+    "GitHub",
+    "Prime Intellect"
+   ],
+   "topics": {
+    "agents": 27,
+    "coding": 25,
+    "models": 13,
+    "multimodal": 8,
+    "mcp": 7,
+    "infra": 7,
+    "memory": 6,
+    "research": 6,
+    "local": 3,
+    "security": 1,
+    "reverse": 1
+   },
+   "kinds": {
+    "repo": 43,
+    "video": 27,
+    "community": 10
+   }
+  },
+  {
+   "date": "2026-09-26",
+   "headline": "Revise agent reasoning, retain coding memory, test unfamiliar worlds and more",
+   "events": 117,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "198f29a4bc9f",
+     "title": "Benchmark object permanence in video world models",
+     "impact": 3,
+     "vendor": "Research"
+    },
+    {
+     "id": "6ef91636f4fe",
+     "title": "AEWM revises agent reasoning before decisions",
+     "impact": 3,
+     "vendor": "Research"
+    },
+    {
+     "id": "ddb95245964e",
+     "title": "Engram provides persistent coding agent memory",
+     "impact": 3,
+     "vendor": "Open source"
+    },
+    {
+     "id": "f4c2d6fb3a45",
+     "title": "Free Claude Code adds browser harness sessions",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "85cb7fa66183",
+     "title": "YouTube agent links creation and publishing",
+     "impact": 4,
+     "vendor": "Open source"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Research",
+    "Anthropic",
+    "OpenAI",
+    "Microsoft",
+    "Google"
+   ],
+   "topics": {
+    "agents": 32,
+    "coding": 31,
+    "models": 25,
+    "multimodal": 15,
+    "research": 11,
+    "mcp": 10,
+    "memory": 9,
+    "evals": 8,
+    "infra": 6,
+    "local": 5,
+    "security": 4,
+    "reverse": 4,
+    "robotics": 2
+   },
+   "kinds": {
+    "repo": 49,
+    "video": 28,
+    "paper": 22,
+    "community": 18
+   }
+  },
+  {
+   "date": "2026-09-25",
+   "headline": "Exposes benchmark memorization, compresses models, benchmarks world-model serving, and more",
+   "events": 117,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "3981a327e4e4",
+     "title": "SchrodingerRepo tests if agents memorized SWE-bench",
+     "impact": 4,
+     "vendor": "Research"
+    },
+    {
+     "id": "5894cfc1db7f",
+     "title": "SpeakerMem-R1 tracks who said what",
+     "impact": 3,
+     "vendor": "Research"
+    },
+    {
+     "id": "1b08933e4a72",
+     "title": "NVIDIA Model-Optimizer unifies model compression techniques",
+     "impact": 4,
+     "vendor": "NVIDIA"
+    },
+    {
+     "id": "657386351d4c",
+     "title": "Benchmarks for serving NVIDIA Cosmos 3 Super",
+     "impact": 4,
+     "vendor": "NVIDIA"
+    },
+    {
+     "id": "94ba3bb50ccd",
+     "title": "Hindsight: agent memory that learns",
+     "impact": 3,
+     "vendor": "Open source"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Research",
+    "Anthropic",
+    "NVIDIA",
+    "OpenAI",
+    "Qwen"
+   ],
+   "topics": {
+    "agents": 31,
+    "models": 30,
+    "coding": 29,
+    "multimodal": 18,
+    "evals": 14,
+    "infra": 14,
+    "mcp": 11,
+    "robotics": 10,
+    "memory": 9,
+    "research": 9,
+    "local": 9,
+    "security": 3,
+    "reverse": 1
+   },
+   "kinds": {
+    "repo": 50,
+    "paper": 29,
+    "video": 28,
+    "community": 10
+   }
+  },
+  {
+   "date": "2026-09-24",
+   "headline": "Claude finds an enzyme, agents get cheaper code context, and more",
+   "events": 120,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "f0ae490dc209",
+     "title": "Taste-Bench scores agent judgment at trajectory forks",
+     "impact": 3,
+     "vendor": "Microsoft"
+    },
+    {
+     "id": "785f782851f1",
+     "title": "Ovis-Embedding unifies text, image, video and audio retrieval",
+     "impact": 3,
+     "vendor": "Research"
+    },
+    {
+     "id": "ebcd7e58787a",
+     "title": "817 cybersecurity skills packaged for coding agents",
+     "impact": 3,
+     "vendor": "Open source"
+    },
+    {
+     "id": "686e173dd33b",
+     "title": "llama-swap swaps local models behind one compatible endpoint",
+     "impact": 3,
+     "vendor": "Open source"
+    },
+    {
+     "id": "98f503c22dc1",
+     "title": "Claude reportedly discovers a novel CRISPR-like enzyme system",
+     "impact": 4,
+     "vendor": "Anthropic"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Research",
+    "OpenAI",
+    "Anthropic",
+    "Google",
+    "Microsoft"
+   ],
+   "topics": {
+    "models": 36,
+    "agents": 34,
+    "coding": 22,
+    "multimodal": 20,
+    "infra": 13,
+    "mcp": 12,
+    "evals": 9,
+    "memory": 9,
+    "research": 7,
+    "local": 6,
+    "security": 4,
+    "reverse": 3,
+    "robotics": 1
+   },
+   "kinds": {
+    "repo": 42,
+    "video": 33,
+    "paper": 24,
+    "community": 20,
+    "news": 1
+   }
+  },
+  {
+   "date": "2026-09-23",
+   "headline": "Ships GPT-6 Sol and Luna, lands Opus 5.5, edits video with agents, and more",
+   "events": 113,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "754d138004db",
+     "title": "Anthropic releases Claude Opus 5.5",
+     "impact": 5,
+     "vendor": "Anthropic"
+    },
+    {
+     "id": "45ace70a3cda",
+     "title": "Regularized self-improvement for agent harnesses",
+     "impact": 3,
+     "vendor": "Google"
+    },
+    {
+     "id": "032ae39a7b47",
+     "title": "Realtime-Venus: full-duplex voice with background delegation",
+     "impact": 3,
+     "vendor": "Research"
+    },
+    {
+     "id": "5e3c87aedddf",
+     "title": "OpenAI launches GPT-6 Sol and Luna",
+     "impact": 5,
+     "vendor": "OpenAI"
+    },
+    {
+     "id": "99041173111a",
+     "title": "Radar: Kubernetes UI with built-in MCP server",
+     "impact": 3,
+     "vendor": "Open source"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Research",
+    "OpenAI",
+    "Anthropic",
+    "Google",
+    "Qwen"
+   ],
+   "topics": {
+    "agents": 38,
+    "models": 34,
+    "coding": 23,
+    "infra": 22,
+    "multimodal": 19,
+    "research": 17,
+    "mcp": 13,
+    "evals": 11,
+    "memory": 6,
+    "security": 5,
+    "local": 5,
+    "robotics": 4,
+    "reverse": 2
+   },
+   "kinds": {
+    "repo": 39,
+    "paper": 34,
+    "video": 21,
+    "community": 18,
+    "news": 1
+   }
+  },
+  {
+   "date": "2026-09-22",
+   "headline": "Agents learn skills from code, query messy data, train on code tasks, and more",
+   "events": 104,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "92ab72e380f2",
+     "title": "EvoOntology lets data agents query mixed sources",
+     "impact": 3,
+     "vendor": "Research"
+    },
+    {
+     "id": "8410ac528b7f",
+     "title": "Code2Skill extracts agent skills from source code",
+     "impact": 3,
+     "vendor": "Research"
+    },
+    {
+     "id": "05e08f8e54fd",
+     "title": "new-api gateway converts between LLM API formats",
+     "impact": 3,
+     "vendor": "Open source"
+    },
+    {
+     "id": "5deafb2b257b",
+     "title": "Official Lark CLI ships with 20+ agent skills",
+     "impact": 3,
+     "vendor": "Open source"
+    },
+    {
+     "id": "6cd725d2a989",
+     "title": "xAI announces Grok 4.7",
+     "impact": 4,
+     "vendor": "xAI"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Research",
+    "OpenAI",
+    "Qwen",
+    "Microsoft",
+    "Anthropic"
+   ],
+   "topics": {
+    "models": 32,
+    "agents": 28,
+    "coding": 23,
+    "multimodal": 18,
+    "memory": 11,
+    "evals": 11,
+    "mcp": 10,
+    "infra": 9,
+    "local": 8,
+    "research": 7,
+    "robotics": 4,
+    "reverse": 2,
+    "security": 2
+   },
+   "kinds": {
+    "repo": 36,
+    "paper": 31,
+    "video": 21,
+    "community": 16
+   }
+  },
+  {
+   "date": "2026-09-21",
+   "headline": "Shares memory across coding agents, constrains browser model output, orchestrates agents and more",
+   "events": 50,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "e5e780f6bdbf",
+     "title": "deja-vu shares one memory across coding agents",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "3224d60223aa",
+     "title": "Kev: tiny decision models on Qwen3.5",
+     "impact": 3,
+     "vendor": "Open source"
+    },
+    {
+     "id": "44e436be5582",
+     "title": "Transformers.js 4.3 adds structured output in browser",
+     "impact": 4,
+     "vendor": "Hugging Face"
+    },
+    {
+     "id": "ed64ecc6f82a",
+     "title": "Google releases AX, an open agent orchestrator",
+     "impact": 4,
+     "vendor": "Google"
+    },
+    {
+     "id": "51d28bcbf81e",
+     "title": "Heretic removes restrictions from language models",
+     "impact": 2,
+     "vendor": "Open source"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "OpenAI",
+    "Hugging Face",
+    "Google",
+    "Cloudflare",
+    "Qwen"
+   ],
+   "topics": {
+    "coding": 13,
+    "agents": 12,
+    "models": 8,
+    "multimodal": 8,
+    "memory": 6,
+    "local": 6,
+    "mcp": 6,
+    "reverse": 4,
+    "infra": 3,
+    "security": 3,
+    "robotics": 2
+   },
+   "kinds": {
+    "repo": 31,
+    "video": 10,
+    "community": 9
+   }
+  },
+  {
+   "date": "2026-09-20",
+   "headline": "Tunnels private MCP, shrinks tool-calling models, indexes documents without vectors, and more",
+   "events": 73,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "9a8f0b15f2b6",
+     "title": "Tool-calling model small enough for microcontrollers",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "87fd07121fe9",
+     "title": "Secure tunnel connects private MCP servers to OpenAI",
+     "impact": 4,
+     "vendor": "OpenAI"
+    },
+    {
+     "id": "dd45ef060c4a",
+     "title": "Vectorless, reasoning-based RAG document index",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "d051bdcc2769",
+     "title": "Apple publishes recipes for on-device model export",
+     "impact": 3,
+     "vendor": "Apple"
+    },
+    {
+     "id": "e403b5db0550",
+     "title": "Open-source gateway for 100+ LLMs with failover",
+     "impact": 3,
+     "vendor": "Open source"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "OpenAI",
+    "NVIDIA",
+    "Cloudflare",
+    "Anthropic",
+    "Apple"
+   ],
+   "topics": {
+    "agents": 24,
+    "models": 19,
+    "coding": 15,
+    "local": 12,
+    "mcp": 10,
+    "infra": 9,
+    "multimodal": 7,
+    "memory": 4,
+    "security": 4,
+    "research": 3,
+    "reverse": 2,
+    "robotics": 1,
+    "evals": 1
+   },
+   "kinds": {
+    "repo": 50,
+    "video": 17,
+    "community": 6
+   }
+  },
+  {
+   "date": "2026-09-19",
+   "headline": "Claude Code reads AGENTS.md, DeepSeek shrinks KV cache, skills get scanned, and more",
+   "events": 112,
+   "sources": 434,
+   "enriched": true,
+   "backfilled": true,
+   "top": [
+    {
+     "id": "0b0e1a2f613e",
+     "title": "DeepSeek-V4.1-Flash compresses KV cache hard",
+     "impact": 4,
+     "vendor": "DeepSeek"
+    },
+    {
+     "id": "dd8b8355709b",
+     "title": "Claude Code falls back to AGENTS.md",
+     "impact": 4,
+     "vendor": "Anthropic"
+    },
+    {
+     "id": "8970b58c32ef",
+     "title": "SoL-Pi cuts coding agent token costs by a third",
+     "impact": 3,
+     "vendor": "NVIDIA"
+    },
+    {
+     "id": "bfd4eccdf4cc",
+     "title": "SkillSpector scans agent skills before install",
+     "impact": 3,
+     "vendor": "NVIDIA"
+    },
+    {
+     "id": "6b6041427b81",
+     "title": "Unsloth runs and trains models in a local UI",
+     "impact": 3,
+     "vendor": "Unsloth"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Research",
+    "Microsoft",
+    "OpenAI",
+    "NVIDIA",
+    "Google"
+   ],
+   "topics": {
+    "agents": 36,
+    "models": 34,
+    "coding": 30,
+    "multimodal": 16,
+    "infra": 14,
+    "research": 12,
+    "evals": 11,
+    "local": 10,
+    "mcp": 9,
+    "memory": 9,
+    "security": 5,
+    "reverse": 3
+   },
+   "kinds": {
+    "repo": 48,
+    "video": 27,
+    "paper": 24,
+    "community": 13
+   }
   }
  ],
  "latest": "2026-10-20"

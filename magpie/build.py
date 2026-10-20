@@ -10,12 +10,14 @@ import datetime as dt
 import re
 from collections import Counter, defaultdict
 
-from .util import CENTRAL, ROOT, load_json, now_utc, parse_time, short_hash
+from .util import CENTRAL, ROOT, load_json, now_utc, parse_time, short_hash, url_key
 
 ACTIONABLE = {"repo": 1.0, "model": 1.0, "space": 0.9, "changelog": 0.95, "paper": 0.5, "news": 0.6,
               "blog": 0.6, "newsletter": 0.45, "video": 0.5, "social": 0.6, "community": 0.5}
 KIND_ORDER = ["repo", "model", "space", "changelog", "paper", "news", "blog", "social", "video", "community", "newsletter"]
-AI_SOURCES = {"hf-trending-models", "hf-trending-spaces", "hf-daily-papers", "x-grok-pulse", "youtube-watchlist"}
+AI_SOURCES = {"hf-trending-models", "hf-trending-spaces", "hf-daily-papers", "x-grok-pulse", "x-grok-bot", "youtube-watchlist",
+              "youtube-channels"}
+FRESH_BY_NATURE = {"x-grok-pulse", "x-grok-bot", "youtube-watchlist", "youtube-channels"}
 WEIGHTS = {"novelty": 0.24, "actionability": 0.18, "momentum": 0.24, "corroboration": 0.16, "trust": 0.08, "ripple": 0.10}
 
 
@@ -106,6 +108,10 @@ def build(items: list[dict], history: dict, date: str, repo_meta: dict | None = 
     now = now_utc()
     fresh_cut = now - dt.timedelta(hours=40)
 
+    # 0. Re-key page URLs with the current rule (cached items may carry older keys).
+    for it in items:
+        it["keys"] = [url_key(it["url"]) if k.startswith("url:") else k for k in it["keys"]] or [url_key(it["url"])]
+
     # 1. Cluster on shared subject keys (union-find).
     parent: dict[str, str] = {}
 
@@ -152,7 +158,7 @@ def build(items: list[dict], history: dict, date: str, repo_meta: dict | None = 
         times = [t for t in times if t]
         newest = max(times) if times else None
         trending = any(x["source_id"].startswith(("github-trending", "hf-trending", "hacker-news", "hf-daily")) for x in its)
-        is_fresh = trending or (newest is not None and newest >= fresh_cut) or lead["source_id"] in ("x-grok-pulse", "youtube-watchlist")
+        is_fresh = trending or (newest is not None and newest >= fresh_cut) or lead["source_id"] in FRESH_BY_NATURE
         if not is_fresh:
             continue
         text = " ".join(f"{x['title']} {x['summary']} {' '.join(x['extra'].get('topics') or [])} {' '.join(x['extra'].get('keywords') or [])}" for x in its)

@@ -263,11 +263,871 @@
    "window_hours": 336
   },
   {
-   "id": "localllama",
-   "name": "r/LocalLLaMA (top, day)",
+   "id": "anthropic-engineering",
+   "name": "Anthropic engineering (mirror)",
+   "kind": "blog",
+   "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_engineering.xml",
+   "trust": 0.8,
+   "vendor": "Anthropic",
+   "product": null,
+   "window_hours": 72
+  },
+  {
+   "id": "anthropic-research",
+   "name": "Anthropic research (mirror)",
+   "kind": "blog",
+   "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_research.xml",
+   "trust": 0.8,
+   "vendor": "Anthropic",
+   "product": null,
+   "window_hours": 72
+  },
+  {
+   "id": "claude-blog",
+   "name": "Claude blog (mirror)",
+   "kind": "blog",
+   "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_claude.xml",
+   "trust": 0.75,
+   "vendor": "Anthropic",
+   "product": null,
+   "window_hours": 72
+  },
+  {
+   "id": "openai-developer-blog",
+   "name": "OpenAI developer blog",
+   "kind": "blog",
+   "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_openai_developer.xml",
+   "trust": 0.8,
+   "vendor": "OpenAI",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "google-research",
+   "name": "Google Research blog",
+   "kind": "blog",
+   "url": "https://research.google/blog/rss/",
+   "trust": 0.8,
+   "vendor": "Google",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "google-cloud-ai",
+   "name": "Google Cloud AI and ML blog",
+   "kind": "blog",
+   "url": "https://cloudblog.withgoogle.com/products/ai-machine-learning/rss/",
+   "trust": 0.75,
+   "vendor": "Google",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "gemini-product-blog",
+   "name": "Google Gemini product blog",
+   "kind": "news",
+   "url": "https://blog.google/products/gemini/rss/",
+   "trust": 0.75,
+   "vendor": "Google",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "meta-engineering-ai",
+   "name": "Meta engineering: AI research",
+   "kind": "blog",
+   "url": "https://engineering.fb.com/category/ai-research/feed/",
+   "trust": 0.75,
+   "vendor": "Meta",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "nvidia-tech-blog",
+   "name": "NVIDIA technical blog",
+   "kind": "blog",
+   "url": "https://developer.nvidia.com/blog/feed/",
+   "trust": 0.75,
+   "vendor": "NVIDIA",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "microsoft-research",
+   "name": "Microsoft Research blog",
+   "kind": "blog",
+   "url": "https://www.microsoft.com/en-us/research/feed/",
+   "trust": 0.8,
+   "vendor": "Microsoft",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "aws-ml-blog",
+   "name": "AWS Machine Learning blog",
+   "kind": "blog",
+   "url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+   "trust": 0.75,
+   "vendor": "AWS",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "apple-ml-research",
+   "name": "Apple Machine Learning Research",
+   "kind": "blog",
+   "url": "https://machinelearning.apple.com/rss.xml",
+   "trust": 0.8,
+   "vendor": "Apple",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "cohere-blog",
+   "name": "Cohere blog (mirror)",
+   "kind": "blog",
+   "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_cohere.xml",
+   "trust": 0.75,
+   "vendor": "Cohere",
+   "product": null,
+   "window_hours": 72
+  },
+  {
+   "id": "together-blog",
+   "name": "Together AI blog",
+   "kind": "blog",
+   "url": "https://www.together.ai/blog/rss.xml",
+   "trust": 0.75,
+   "vendor": "Together AI",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "groq-blog",
+   "name": "Groq blog (mirror)",
+   "kind": "blog",
+   "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_groq.xml",
+   "trust": 0.75,
+   "vendor": "Groq",
+   "product": null,
+   "window_hours": 72
+  },
+  {
+   "id": "modal-blog",
+   "name": "Modal blog",
+   "kind": "blog",
+   "url": "https://modal.com/blog/atom.xml",
+   "trust": 0.75,
+   "vendor": "Modal",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "langchain-blog",
+   "name": "LangChain blog",
+   "kind": "blog",
+   "url": "https://www.langchain.com/blog/rss.xml",
+   "trust": 0.75,
+   "vendor": "LangChain",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "vercel-blog",
+   "name": "Vercel blog and changelog",
+   "kind": "blog",
+   "url": "https://vercel.com/atom",
+   "trust": 0.75,
+   "vendor": "Vercel",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "cloudflare-ai-blog",
+   "name": "Cloudflare blog: AI",
+   "kind": "blog",
+   "url": "https://blog.cloudflare.com/tag/ai/rss/",
+   "trust": 0.75,
+   "vendor": "Cloudflare",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "github-blog-ai",
+   "name": "GitHub blog: AI and ML",
+   "kind": "blog",
+   "url": "https://github.blog/ai-and-ml/feed/",
+   "trust": 0.75,
+   "vendor": "GitHub",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "databricks-blog",
+   "name": "Databricks blog",
+   "kind": "blog",
+   "url": "https://www.databricks.com/feed",
+   "trust": 0.75,
+   "vendor": "Databricks",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "ai2-blog",
+   "name": "Ai2 (Allen Institute for AI) blog",
+   "kind": "blog",
+   "url": "https://allenai.org/rss.xml",
+   "trust": 0.8,
+   "vendor": "Ai2",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "eleutherai-papers",
+   "name": "EleutherAI papers (mirror)",
+   "kind": "blog",
+   "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_eleuther_papers.xml",
+   "trust": 0.75,
+   "vendor": "EleutherAI",
+   "product": null,
+   "window_hours": 72
+  },
+  {
+   "id": "stability-news",
+   "name": "Stability AI news",
+   "kind": "news",
+   "url": "https://stability.ai/news-updates?format=rss",
+   "trust": 0.75,
+   "vendor": "Stability AI",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "xai-news",
+   "name": "xAI news (mirror)",
+   "kind": "news",
+   "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_xainews.xml",
+   "trust": 0.75,
+   "vendor": "xAI",
+   "product": null,
+   "window_hours": 72
+  },
+  {
+   "id": "pytorch-blog",
+   "name": "PyTorch blog",
+   "kind": "blog",
+   "url": "https://pytorch.org/feed/",
+   "trust": 0.75,
+   "vendor": "PyTorch Foundation",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "elevenlabs-blog",
+   "name": "ElevenLabs blog",
+   "kind": "blog",
+   "url": "https://elevenlabs.io/blog/rss.xml",
+   "trust": 0.75,
+   "vendor": "ElevenLabs",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "midjourney-updates",
+   "name": "Midjourney updates",
+   "kind": "news",
+   "url": "https://updates.midjourney.com/rss/",
+   "trust": 0.75,
+   "vendor": "Midjourney",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "uk-aisi",
+   "name": "UK AI Security Institute (mirror)",
+   "kind": "blog",
+   "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_aisi.xml",
+   "trust": 0.75,
+   "vendor": "UK AISI",
+   "product": null,
+   "window_hours": 72
+  },
+  {
+   "id": "tldr-ai",
+   "name": "TLDR AI",
+   "kind": "newsletter",
+   "url": "https://tldr.tech/api/rss/ai",
+   "trust": 0.6,
+   "vendor": null,
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "last-week-in-ai",
+   "name": "Last Week in AI",
+   "kind": "newsletter",
+   "url": "https://lastweekin.ai/feed",
+   "trust": 0.6,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96
+  },
+  {
+   "id": "turing-post",
+   "name": "The Turing Post",
+   "kind": "newsletter",
+   "url": "https://turingpost.substack.com/feed",
+   "trust": 0.7,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96
+  },
+  {
+   "id": "alphasignal",
+   "name": "AlphaSignal",
+   "kind": "newsletter",
+   "url": "https://alphasignal.ai/feed.xml",
+   "trust": 0.6,
+   "vendor": null,
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "the-batch",
+   "name": "The Batch (DeepLearning.AI)",
+   "kind": "newsletter",
+   "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_the_batch.xml",
+   "trust": 0.75,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96
+  },
+  {
+   "id": "gradient-flow",
+   "name": "Gradient Flow",
+   "kind": "newsletter",
+   "url": "https://gradientflow.substack.com/feed",
+   "trust": 0.75,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96
+  },
+  {
+   "id": "exponential-view",
+   "name": "Exponential View",
+   "kind": "newsletter",
+   "url": "https://www.exponentialview.co/feed",
+   "trust": 0.7,
+   "vendor": null,
+   "product": null,
+   "window_hours": 72
+  },
+  {
+   "id": "one-useful-thing",
+   "name": "One Useful Thing (Ethan Mollick)",
+   "kind": "newsletter",
+   "url": "https://www.oneusefulthing.org/feed",
+   "trust": 0.8,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96
+  },
+  {
+   "id": "understanding-ai",
+   "name": "Understanding AI (Timothy B. Lee)",
+   "kind": "newsletter",
+   "url": "https://www.understandingai.org/feed",
+   "trust": 0.8,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96
+  },
+  {
+   "id": "hamel-husain",
+   "name": "Hamel Husain",
+   "kind": "blog",
+   "url": "https://hamel.dev/index.xml",
+   "trust": 0.8,
+   "vendor": null,
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "zvi",
+   "name": "Don't Worry About the Vase (Zvi)",
+   "kind": "newsletter",
+   "url": "https://thezvi.substack.com/feed",
+   "trust": 0.75,
+   "vendor": null,
+   "product": null,
+   "window_hours": 48
+  },
+  {
+   "id": "dwarkesh",
+   "name": "Dwarkesh Podcast",
+   "kind": "newsletter",
+   "url": "https://www.dwarkesh.com/feed",
+   "trust": 0.75,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96
+  },
+  {
+   "id": "semianalysis",
+   "name": "SemiAnalysis",
+   "kind": "newsletter",
+   "url": "https://newsletter.semianalysis.com/feed",
+   "trust": 0.8,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96
+  },
+  {
+   "id": "epoch-ai",
+   "name": "Epoch AI newsletter",
+   "kind": "newsletter",
+   "url": "https://epochai.substack.com/feed",
+   "trust": 0.85,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96
+  },
+  {
+   "id": "metr",
+   "name": "METR",
+   "kind": "blog",
+   "url": "https://metr.org/feed.xml",
+   "trust": 0.85,
+   "vendor": null,
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "thursdai",
+   "name": "ThursdAI",
+   "kind": "newsletter",
+   "url": "https://sub.thursdai.news/feed",
+   "trust": 0.7,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96
+  },
+  {
+   "id": "ai-as-normal-tech",
+   "name": "AI as Normal Technology (Narayanan and Kapoor)",
+   "kind": "newsletter",
+   "url": "https://www.normaltech.ai/feed",
+   "trust": 0.8,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96
+  },
+  {
+   "id": "coding-with-intelligence",
+   "name": "Coding with Intelligence",
+   "kind": "newsletter",
+   "url": "https://codingwithintelligence.com/feed",
+   "trust": 0.7,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96
+  },
+  {
+   "id": "vertex-ai-notes",
+   "name": "Vertex AI release notes",
+   "kind": "changelog",
+   "url": "https://docs.cloud.google.com/feeds/vertex-ai-product-group-release-notes.xml",
+   "trust": 0.8,
+   "vendor": "Google",
+   "product": "Vertex AI",
+   "window_hours": 336
+  },
+  {
+   "id": "google-genai-sdk-releases",
+   "name": "Google Gen AI Python SDK releases",
+   "kind": "changelog",
+   "url": "https://github.com/googleapis/python-genai/releases.atom",
+   "trust": 0.75,
+   "vendor": "Google",
+   "product": "Gemini API Python SDK",
+   "window_hours": 336
+  },
+  {
+   "id": "gemini-cli-releases",
+   "name": "Gemini CLI releases",
+   "kind": "changelog",
+   "url": "https://github.com/google-gemini/gemini-cli/releases.atom",
+   "trust": 0.75,
+   "vendor": "Google",
+   "product": "Gemini CLI",
+   "window_hours": 336
+  },
+  {
+   "id": "openai-python-releases",
+   "name": "OpenAI Python SDK releases",
+   "kind": "changelog",
+   "url": "https://github.com/openai/openai-python/releases.atom",
+   "trust": 0.75,
+   "vendor": "OpenAI",
+   "product": "OpenAI API Python SDK",
+   "window_hours": 336
+  },
+  {
+   "id": "openai-agents-releases",
+   "name": "OpenAI Agents SDK releases",
+   "kind": "changelog",
+   "url": "https://github.com/openai/openai-agents-python/releases.atom",
+   "trust": 0.75,
+   "vendor": "OpenAI",
+   "product": "Agents SDK",
+   "window_hours": 336
+  },
+  {
+   "id": "claude-agent-sdk-releases",
+   "name": "Claude Agent SDK (Python) releases",
+   "kind": "changelog",
+   "url": "https://github.com/anthropics/claude-agent-sdk-python/releases.atom",
+   "trust": 0.75,
+   "vendor": "Anthropic",
+   "product": "Claude Agent SDK",
+   "window_hours": 336
+  },
+  {
+   "id": "windsurf-changelog",
+   "name": "Windsurf changelog (mirror)",
+   "kind": "changelog",
+   "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_windsurf_changelog.xml",
+   "trust": 0.75,
+   "vendor": "Cognition",
+   "product": "Windsurf",
+   "window_hours": 336
+  },
+  {
+   "id": "zed-releases",
+   "name": "Zed releases",
+   "kind": "changelog",
+   "url": "https://github.com/zed-industries/zed/releases.atom",
+   "trust": 0.75,
+   "vendor": "Zed",
+   "product": "Zed",
+   "window_hours": 336
+  },
+  {
+   "id": "replit-blog",
+   "name": "Replit blog",
+   "kind": "blog",
+   "url": "https://blog.replit.com/feed.xml",
+   "trust": 0.75,
+   "vendor": "Replit",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "bolt-changelog",
+   "name": "Bolt release notes",
+   "kind": "changelog",
+   "url": "https://support.bolt.new/release-notes/rss.xml",
+   "trust": 0.75,
+   "vendor": "StackBlitz",
+   "product": "Bolt",
+   "window_hours": 336
+  },
+  {
+   "id": "lovable-changelog",
+   "name": "Lovable changelog",
+   "kind": "changelog",
+   "url": "https://docs.lovable.dev/changelog/rss.xml",
+   "trust": 0.75,
+   "vendor": "Lovable",
+   "product": "Lovable",
+   "window_hours": 336
+  },
+  {
+   "id": "devin-release-notes",
+   "name": "Devin release notes",
+   "kind": "changelog",
+   "url": "https://docs.devin.ai/release-notes/overview/rss.xml",
+   "trust": 0.8,
+   "vendor": "Cognition",
+   "product": "Devin",
+   "window_hours": 336
+  },
+  {
+   "id": "amp-news",
+   "name": "Amp news",
+   "kind": "changelog",
+   "url": "https://ampcode.com/news.rss",
+   "trust": 0.75,
+   "vendor": "Amp",
+   "product": "Amp",
+   "window_hours": 336
+  },
+  {
+   "id": "cline-releases",
+   "name": "Cline releases",
+   "kind": "changelog",
+   "url": "https://github.com/cline/cline/releases.atom",
+   "trust": 0.75,
+   "vendor": "Cline",
+   "product": "Cline",
+   "window_hours": 336
+  },
+  {
+   "id": "openhands-releases",
+   "name": "OpenHands releases",
+   "kind": "changelog",
+   "url": "https://github.com/OpenHands/OpenHands/releases.atom",
+   "trust": 0.75,
+   "vendor": "All Hands AI",
+   "product": "OpenHands",
+   "window_hours": 336
+  },
+  {
+   "id": "goose-releases",
+   "name": "Goose releases",
+   "kind": "changelog",
+   "url": "https://github.com/block/goose/releases.atom",
+   "trust": 0.75,
+   "vendor": "Block",
+   "product": "Goose",
+   "window_hours": 336
+  },
+  {
+   "id": "kiro-changelog",
+   "name": "Kiro changelog",
+   "kind": "changelog",
+   "url": "https://kiro.dev/changelog/feed.atom",
+   "trust": 0.8,
+   "vendor": "AWS",
+   "product": "Kiro",
+   "window_hours": 336
+  },
+  {
+   "id": "langgraph-releases",
+   "name": "LangGraph releases",
+   "kind": "changelog",
+   "url": "https://github.com/langchain-ai/langgraph/releases.atom",
+   "trust": 0.75,
+   "vendor": "LangChain",
+   "product": "LangGraph",
+   "window_hours": 336
+  },
+  {
+   "id": "llama-cpp-releases",
+   "name": "llama.cpp releases",
+   "kind": "changelog",
+   "url": "https://github.com/ggml-org/llama.cpp/releases.atom",
+   "trust": 0.75,
+   "vendor": "ggml",
+   "product": "llama.cpp",
+   "window_hours": 336
+  },
+  {
+   "id": "mlx-releases",
+   "name": "MLX releases",
+   "kind": "changelog",
+   "url": "https://github.com/ml-explore/mlx/releases.atom",
+   "trust": 0.75,
+   "vendor": "Apple",
+   "product": "MLX",
+   "window_hours": 336
+  },
+  {
+   "id": "lm-studio-blog",
+   "name": "LM Studio blog",
+   "kind": "blog",
+   "url": "https://lmstudio.ai/rss.xml",
+   "trust": 0.75,
+   "vendor": "LM Studio",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "openrouter-blog",
+   "name": "OpenRouter blog and announcements",
+   "kind": "blog",
+   "url": "https://openrouter.ai/blog/feed.xml",
+   "trust": 0.75,
+   "vendor": "OpenRouter",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "sglang-releases",
+   "name": "SGLang releases",
+   "kind": "changelog",
+   "url": "https://github.com/sgl-project/sglang/releases.atom",
+   "trust": 0.75,
+   "vendor": "SGLang",
+   "product": "SGLang",
+   "window_hours": 336
+  },
+  {
+   "id": "unsloth-releases",
+   "name": "Unsloth releases",
+   "kind": "changelog",
+   "url": "https://github.com/unslothai/unsloth/releases.atom",
+   "trust": 0.75,
+   "vendor": "Unsloth",
+   "product": "Unsloth",
+   "window_hours": 336
+  },
+  {
+   "id": "mcp-python-sdk-releases",
+   "name": "MCP Python SDK releases",
+   "kind": "changelog",
+   "url": "https://github.com/modelcontextprotocol/python-sdk/releases.atom",
+   "trust": 0.75,
+   "vendor": "Model Context Protocol",
+   "product": "MCP Python SDK",
+   "window_hours": 336
+  },
+  {
+   "id": "mcp-ts-sdk-releases",
+   "name": "MCP TypeScript SDK releases",
+   "kind": "changelog",
+   "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases.atom",
+   "trust": 0.75,
+   "vendor": "Model Context Protocol",
+   "product": "MCP TypeScript SDK",
+   "window_hours": 336
+  },
+  {
+   "id": "mcp-blog",
+   "name": "Model Context Protocol blog",
+   "kind": "blog",
+   "url": "https://blog.modelcontextprotocol.io/index.xml",
+   "trust": 0.8,
+   "vendor": "Model Context Protocol",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "copilot-cli-releases",
+   "name": "GitHub Copilot CLI releases",
+   "kind": "changelog",
+   "url": "https://github.com/github/copilot-cli/releases.atom",
+   "trust": 0.75,
+   "vendor": "GitHub",
+   "product": "Copilot CLI",
+   "window_hours": 336
+  },
+  {
+   "id": "opencode-releases",
+   "name": "opencode releases",
+   "kind": "changelog",
+   "url": "https://github.com/sst/opencode/releases.atom",
+   "trust": 0.75,
+   "vendor": "SST",
+   "product": "opencode",
+   "window_hours": 336
+  },
+  {
+   "id": "fireworks-changelog",
+   "name": "Fireworks changelog",
+   "kind": "changelog",
+   "url": "https://docs.fireworks.ai/updates/changelog/rss.xml",
+   "trust": 0.75,
+   "vendor": "Fireworks AI",
+   "product": "Fireworks platform",
+   "window_hours": 336
+  },
+  {
+   "id": "cerebras-changelog",
+   "name": "Cerebras inference changelog",
+   "kind": "changelog",
+   "url": "https://inference-docs.cerebras.ai/support/change-log/rss.xml",
+   "trust": 0.75,
+   "vendor": "Cerebras",
+   "product": "Cerebras Inference",
+   "window_hours": 336
+  },
+  {
+   "id": "perplexity-api-changelog",
+   "name": "Perplexity API changelog",
+   "kind": "changelog",
+   "url": "https://docs.perplexity.ai/docs/resources/changelog/rss.xml",
+   "trust": 0.75,
+   "vendor": "Perplexity",
+   "product": "Sonar API",
+   "window_hours": 336
+  },
+  {
+   "id": "factory-changelog",
+   "name": "Factory changelog",
+   "kind": "changelog",
+   "url": "https://docs.factory.ai/changelog/rss.xml",
+   "trust": 0.75,
+   "vendor": "Factory",
+   "product": "Droid",
+   "window_hours": 336
+  },
+  {
+   "id": "lobsters-ai",
+   "name": "Lobsters: ai tag",
    "kind": "community",
-   "url": "https://www.reddit.com/r/LocalLLaMA/top/.rss?t=day",
+   "url": "https://lobste.rs/t/ai.rss",
+   "trust": 0.6,
+   "vendor": null,
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "lobsters-vibecoding",
+   "name": "Lobsters: vibecoding tag",
+   "kind": "community",
+   "url": "https://lobste.rs/t/vibecoding.rss",
+   "trust": 0.55,
+   "vendor": null,
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "hn-best",
+   "name": "Hacker News best (hnrss)",
+   "kind": "community",
+   "url": "https://hnrss.org/best",
+   "trust": 0.55,
+   "vendor": null,
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "hn-daily",
+   "name": "Hacker News Daily (top 10 per day)",
+   "kind": "community",
+   "url": "https://www.daemonology.net/hn-daily/index.rss",
+   "trust": 0.55,
+   "vendor": null,
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "hn-ai-150",
+   "name": "Hacker News stories matching AI, 150+ points (hnrss)",
+   "kind": "community",
+   "url": "https://hnrss.org/newest?q=AI&points=150",
+   "trust": 0.55,
+   "vendor": null,
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "producthunt-ai",
+   "name": "Product Hunt: AI",
+   "kind": "community",
+   "url": "https://www.producthunt.com/feed?category=artificial-intelligence",
    "trust": 0.5,
+   "vendor": null,
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "hf-daily-papers",
+   "name": "Hugging Face Daily Papers (takara.ai mirror)",
+   "kind": "community",
+   "url": "https://papers.takara.ai/api/feed",
+   "trust": 0.55,
    "vendor": null,
    "product": null,
    "window_hours": 36
@@ -325,12 +1185,27 @@
    "where": "always-on machine"
   },
   {
+   "id": "youtube-channels",
+   "name": "YouTube: Magpie's own channel list",
+   "kind": "video",
+   "url": "local",
+   "trust": 0.6,
+   "where": "always-on machine"
+  },
+  {
    "id": "x-grok-pulse",
-   "name": "X, via Grok live search over 72 vetted accounts",
+   "name": "X, via dedicated Grok sweeps over the developer roster",
    "kind": "social",
    "url": "local",
    "trust": 0.65,
    "where": "always-on machine"
+  },
+  {
+   "id": "x-grok-bot",
+   "name": "X, via Grok Bot routines (inbox/x)",
+   "kind": "social",
+   "url": "repo:inbox/x",
+   "trust": 0.65
   }
  ]
 }
