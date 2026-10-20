@@ -11,7 +11,7 @@ from magpie.items import Item
 def item(source_id, kind, url, title, body="", trust=0.7, author=None, links=None):
     it = Item(source_id=source_id, source_kind=kind, source_name=source_id, url=url, title=title, summary=title,
               published_at="2099-01-01T00:00:00Z", trust=trust, author=author, extra={"links": links} if links else {})
-    if source_id == "x-grok-pulse":
+    if source_id in ("x-grok-pulse", "x-grok-bot"):
         it.source_name = f"X: {author}"
     return it.finalize(body or " ".join(links or [])).to_dict()
 
@@ -28,6 +28,9 @@ SOURCES = {"version": 1, "feeds": [
     {"id": "quiet-letter", "name": "Quiet Letter", "kind": "newsletter", "url": "https://quiet.example/feed", "trust": 0.7},
     {"id": "weak-letter", "name": "Weak Letter", "kind": "newsletter", "url": "https://weak.example/feed", "trust": 0.5},
 ], "apis": []}
+YOUTUBE = {"channels": [
+    {"channel_id": "UCwatchedwatchedwatched1", "handle": "@Watched", "name": "Watched", "priority": "high"},
+], "dropped": [{"channel_id": "UCdroppeddroppeddropped1", "name": "Dropped"}]}
 ROSTER = {"accounts": [
     {"handle": "@vetted", "signal_to_noise": 5},
     {"handle": "@noisy", "signal_to_noise": 4},
@@ -45,6 +48,7 @@ class Repo:
         (self.root / "config").mkdir()
         self.write("config/sources.json", SOURCES)
         self.write("config/x-accounts.json", ROSTER)
+        (self.root / "config/youtube.json").write_text(json.dumps(YOUTUBE, indent=2) + "\n")
 
     def write(self, rel, obj):
         p = self.root / rel
@@ -60,10 +64,11 @@ class Repo:
     def run_items(self, items, back=0):
         self.write(f"state/runs/{self.day(back)}/items.json", {"items": items, "rising": {}, "health": []})
 
-    def editions(self, days, events_for=lambda d: []):
-        for back in range(days):
+    def editions(self, days, events_for=lambda d: [], skip=0, backfilled=False):
+        for back in range(skip, skip + days):
             d = self.day(back)
-            self.write(f"data/v1/days/{d}.json", {"date": d, "events": events_for(d), "top": []})
+            extra = {"run": {"where": "backfill"}, "edition": {"backfilled": True}} if backfilled else {}
+            self.write(f"data/v1/days/{d}.json", {"date": d, "events": events_for(d), "top": [], **extra})
 
     def run(self, **kw):
         kw.setdefault("check_feed", lambda url: (True, "ok"))
@@ -235,6 +240,72 @@ class DiscoverTests(unittest.TestCase):
         out = r.run(dry_run=True)
         self.assertEqual(len(out["result"]["promoted"]), discover.CAPS["github"])
         self.assertEqual(len(out["result"]["held"]), 8 - discover.CAPS["github"])
+
+    def test_backfilled_editions_do_not_count_toward_zero_kept(self):
+        r = self.repo
+        kept = lambda d: [event("gh:a/b", ["Trusted Letter", "Weak Letter", "X: @vetted", "X: @noisy", "X: @lowsnr"])]
+        r.editions(5, kept)
+        r.editions(30, skip=5, backfilled=True)
+        out = r.run(dry_run=True)
+        self.assertEqual(out["result"]["demoted"], [])
+        self.assertIn("30 backfilled editions do not count", out["log"])
+
+    def test_hype_flags_count_in_backfilled_editions(self):
+        r = self.repo
+        r.editions(3, lambda d: [event(f"gh:hype/{d}", ["X: @noisy"], hype=True)], backfilled=True)
+        self.assertEqual([d["id"] for d in r.run(dry_run=True)["result"]["demoted"]], ["x:@noisy"])
+
+    def test_grok_bot_posts_cite_like_the_pulse(self):
+        r = self.repo
+        r.run_items([
+            # The same roster account through the pulse and Grok Bot is one citer.
+            item("x-grok-pulse", "social", "https://x.com/vetted/status/7", "Kit", author="@vetted",
+                 links=["https://github.com/one/kit"]),
+            item("x-grok-bot", "social", "https://x.com/vetted/status/8", "Kit", author="@vetted",
+                 links=["https://github.com/one/kit"]),
+            # Grok Bot surfacing an account outside the roster counts as the pulse citing it.
+            item("x-grok-bot", "social", "https://x.com/outsider/status/9", "Outsider ships", author="@outsider"),
+            item("trusted-letter", "newsletter", "https://trusted.example/p/h", "H", body="https://x.com/outsider/status/9"),
+        ])
+        out = r.run()
+        self.assertEqual([e["id"] for e in out["result"]["promoted"]], ["x:@outsider"])
+        self.assertIn("github:one", {e["id"] for e in out["result"]["watching"]})
+        acct = next(a for a in r.read("config/x-accounts.json")["accounts"] if a["handle"] == "@outsider")
+        self.assertEqual((acct["group"], acct["name"], acct["signal_to_noise"]), ("builders", "outsider", 4))
+
+    def test_youtube_promotes_into_youtube_json_by_channel_id(self):
+        r = self.repo
+        links = ["https://www.youtube.com/channel/UCnewnewnewnewnewnewnew1", "https://www.youtube.com/@Watched",
+                 "https://www.youtube.com/channel/UCdroppeddroppeddropped1", "https://www.youtube.com/@HandleOnly"]
+        r.run_items([
+            item("trusted-letter", "newsletter", "https://trusted.example/p/v", "V", body=" ".join(links)),
+            item("x-grok-pulse", "social", "https://x.com/vetted/status/10", "V", author="@vetted", links=links),
+        ])
+        out = r.run()
+        self.assertEqual([e["id"] for e in out["result"]["promoted"]], ["youtube:channel/ucnewnewnewnewnewnewnew1"])
+        self.assertEqual([e["id"] for e in out["result"]["held"]], ["youtube:@handleonly"])
+        self.assertIn("channel id", out["result"]["held"][0]["reason"])
+        self.assertEqual(out["result"]["skipped"], ["youtube:channel/ucdroppeddroppeddropped1"])
+        raw = (r.root / "config/youtube.json").read_text()
+        self.assertTrue(raw.endswith("}\n") and raw.startswith('{\n  "channels"'))
+        added = json.loads(raw)["channels"][-1]
+        self.assertEqual((added["channel_id"], added["priority"], added["origin"]),
+                         ("UCnewnewnewnewnewnewnew1", "medium", "discovery"))
+        msgs = discover.veto(r.root, ["youtube:channel/ucnewnewnewnewnewnewnew1"])
+        self.assertIn("promotion undone", msgs[0])
+        self.assertEqual([c["name"] for c in r.read("config/youtube.json")["channels"]], ["Watched"])
+
+    def test_youtube_channels_are_independent_citers_and_medium_ones_do_not_vouch(self):
+        r = self.repo
+        r.run_items([
+            item("youtube-channels", "video", "https://www.youtube.com/watch?v=a1", "A", author="Watched",
+                 links=["https://github.com/vid/tool"]),
+            item("youtube-channels", "video", "https://www.youtube.com/watch?v=a2", "B", author="Other", trust=0.55,
+                 links=["https://github.com/vid/tool"]),
+        ])
+        out = r.run(dry_run=True)
+        self.assertEqual(out["result"]["promoted"], [])
+        self.assertIn("github:vid", {e["id"] for e in out["result"]["watching"]})
 
 
 if __name__ == "__main__":
