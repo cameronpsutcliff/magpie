@@ -33,7 +33,7 @@ def scrub(obj) -> None:
 def watch_counts() -> dict:
     """What Magpie watches, as a reader would count it: feeds, APIs, channels and accounts."""
     reg = load_json(ROOT / "config/sources.json", {})
-    feeds = len(reg.get("feeds", []))
+    feeds = len(reg.get("feeds", [])) + len(reg.get("policy_feeds", []))
     apis = len([a for a in reg.get("apis", []) if str(a.get("url", "")).startswith("http")])
     from .ytintel import roster as yt_roster
     yt = len(yt_roster()) or len(load_json(ROOT / "config/youtube.json", {}).get("channels", []))
@@ -43,8 +43,10 @@ def watch_counts() -> dict:
 
 
 def compose_day(date: str, items: list[dict], rising: dict, health: list[dict], events: list[dict], edition: dict,
-                receipt: dict, *, where: str, seconds: float, note: str | None = None) -> tuple[dict, list[dict]]:
+                receipt: dict, *, where: str, seconds: float, note: str | None = None,
+                constraints: dict | None = None, trackers: dict | None = None) -> tuple[dict, list[dict]]:
     top = B.rank_and_select(events)
+    caps = [e for e in events if e["kind"] != "constraint"]  # counts and comparisons are about capabilities
     topics_cfg = load_json(ROOT / "config/topics.json", {}).get("topics", {})
     by_id = {e["id"]: e for e in events}
     top_events = [by_id[i] for i in top]
@@ -52,7 +54,7 @@ def compose_day(date: str, items: list[dict], rising: dict, health: list[dict], 
     if not edition:
         heads = [e["title"].split("/")[-1] for e in top_events[:3]]
         edition = {"headline": (", ".join(heads) + (", and more" if len(top_events) > 3 else "")) if heads else "A quiet day",
-                   "dek": f"{len(events)} capability events from {ok} sources. "
+                   "dek": f"{len(caps)} capability events from {ok} sources. "
                           "Ranked by code; the editor did not run this edition, so copy is the sources' own words.",
                    "quiet": len(top_events) < 3}
     words = len(" ".join([edition.get("headline", ""), edition.get("dek", "")] + [
@@ -66,11 +68,11 @@ def compose_day(date: str, items: list[dict], rising: dict, health: list[dict], 
     for e in events:
         e.pop("_context", None)
     facets = {
-        "vendors": Counter(e.get("maker") or "Open source" for e in events).most_common(),
-        "ecosystem": Counter(v for e in events for v in e["vendors"][1:]).most_common(),
-        "topics": Counter(t for e in events for t in e["topics"]).most_common(),
+        "vendors": Counter(e.get("maker") or "Open source" for e in caps).most_common(),
+        "ecosystem": Counter(v for e in caps for v in e["vendors"][1:]).most_common(),
+        "topics": Counter(t for e in caps for t in e["topics"]).most_common(),
         "kinds": Counter(e["kind"] for e in events).most_common(),
-        "evidence": Counter(e["evidence"] for e in events).most_common(),
+        "evidence": Counter(e["evidence"] for e in caps).most_common(),
     }
     day = {
         "schema": "magpie.day/1",
@@ -78,7 +80,7 @@ def compose_day(date: str, items: list[dict], rising: dict, health: list[dict], 
         "generated_at": iso(now_utc()),
         "run": {"where": where, "editor": receipt.get("lane"), "enriched": receipt.get("enriched", 0), "seconds": round(seconds, 1)},
         "edition": edition,
-        "coverage": {"sources": health, "sources_ok": ok, "sources_total": len(health), "items": len(items), "events": len(events),
+        "coverage": {"sources": health, "sources_ok": ok, "sources_total": len(health), "items": len(items), "events": len(caps),
                      "watch": watch_counts()},
         "top": top,
         "events": events[:260],
@@ -88,10 +90,15 @@ def compose_day(date: str, items: list[dict], rising: dict, health: list[dict], 
              "ai": i["extra"].get("ai")} for i in items if i["source_id"] == "github-new-rising"]},
         "updates": B.updates_calendar(items),
         "facets": facets,
-        "graph": B.ripple_graph(top_events + [e for e in events if e["id"] not in top and e.get("brief")], topics_cfg),
+        "graph": B.ripple_graph([e for e in top_events if e["kind"] != "constraint"]
+                                + [e for e in caps if e["id"] not in top and e.get("brief")], topics_cfg),
         "topics": {k: v["label"] for k, v in topics_cfg.items()},
         "hats": load_json(ROOT / "config/hats.json", {}).get("hats", []),
     }
+    if constraints is not None:
+        day["constraints"] = constraints
+    if trackers:
+        day["trackers"] = trackers
     from .rising import enrich as enrich_rising
     day["rising"] = enrich_rising(day["rising"], events, STATE / "readme", fetch=where != "backfill")
     return day, top_events
@@ -130,6 +137,16 @@ def publish_day(day: dict, events: list[dict], top_events: list[dict], *, force:
     index["days"].sort(key=lambda d: d["date"], reverse=True)
     index["latest"] = index["days"][0]["date"]
     write_json(DATA / "index.json", index, compact=False)
+    # The register and the price history are side files: a failure there must never fail the edition.
+    try:
+        if day.get("constraints") is not None:
+            from .constraints import update_register
+            update_register(day["constraints"], date, DATA)
+        if (day.get("trackers") or {}).get("hardware"):
+            from .trackers import persist
+            persist(date, DATA)
+    except Exception as ex:
+        print(f"constraints register or hardware history not updated: {type(ex).__name__}: {str(ex)[:160]}", file=sys.stderr)
     write_feed()
     print(f"published {date}: {len(events)} events, top {len(top_events)}, {day['run']['seconds']}s", file=sys.stderr)
     return True
@@ -150,6 +167,9 @@ def index_entry(day: dict) -> dict:
         # Per-topic and per-source counts give every later day a "typical day" to compare against.
         "topics": dict(day["facets"].get("topics", [])),
         "kinds": dict(day["facets"].get("kinds", [])),
+        **({"constraints": [{"id": c["id"], "headline": c["headline"], "status": c["status"], "jurisdiction": c["jurisdiction"]}
+                            for c in (day.get("constraints") or {}).get("items", []) if c.get("new")]}
+           if (day.get("constraints") or {}).get("items") else {}),
     }
 
 
@@ -175,13 +195,15 @@ def write_feed(limit: int = 30) -> None:
         best = f"<p><strong>New possibility:</strong> {escape(poss[0]['title'])}</p>" if poss else ""
         watch = (d.get("viewing") or {}).get("items") or []
         vids = ("<p><strong>Worth watching:</strong> " + "; ".join(f'<a href="{escape(v["url"])}">{escape(v["title"])}</a>' for v in watch[:3]) + "</p>") if watch else ""
+        fresh = [c for c in (d.get("constraints") or {}).get("items", []) if c.get("new")]
+        cons = ("<p><strong>Newly constrained:</strong> " + "; ".join(f'<a href="{escape(c["doc_url"] or c["url"])}">{escape(c["headline"])}</a>' for c in fresh[:3]) + "</p>") if fresh else ""
         text = " ".join(filter(None, [ed.get("dek"), *[((e.get("brief") or {}).get("headline") or e["title"]) for e in top]]))
         items.append({
             "id": d["date"],
             "url": f"{SITE}/{d['date']}",
             "title": ed.get("headline") or f"Magpie, {d['date']}",
             "summary": ed.get("dek") or "",
-            "content_html": f"<p>{escape(ed.get('dek', ''))}</p><ol>{leads}</ol>{best}{vids}",
+            "content_html": f"<p>{escape(ed.get('dek', ''))}</p><ol>{leads}</ol>{best}{vids}{cons}",
             "content_text": text,
             "date_published": d.get("generated_at"),
             "tags": sorted({t for e in top for t in e.get("topics", [])}),

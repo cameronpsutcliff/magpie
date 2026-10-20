@@ -32,7 +32,9 @@ Recommend "watch" only when the video shows or explains something substantive ab
 demo, a build walkthrough, a measured result, an expert explaining how something works, or a first-hand account
 from the people who built it. Use "skim" when there is one useful idea inside a lot of filler. Use "skip" for
 news recaps, reactions, clickbait titles the content does not back up, sponsored pitches, course or community
-sales, finance and politics, and anything that is mostly speculation.
+sales, finance, political argument, and anything that is mostly speculation. One exception: a video that explains
+what a specific rule, ban or export control does to building or running AI, with the mechanism and the document,
+is in scope; a video about who is right is not.
 
 Rules: judge only from the excerpt and title. Plain English, short sentences. No numbers that are not in the
 excerpt. Never use the em-dash character.

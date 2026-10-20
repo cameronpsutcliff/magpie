@@ -1,0 +1,77 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://www.cameronsutcliff.com/magpie-data/schema/hardware.schema.json",
+ "title": "Magpie local-hardware prices (magpie.hardware/1)",
+ "description": "Devices for running open weights at home, and every dated price observation with the page it was read from.",
+ "type": "object",
+ "required": [
+  "schema",
+  "devices",
+  "observations"
+ ],
+ "properties": {
+  "schema": {
+   "const": "magpie.hardware/1"
+  },
+  "updated": {
+   "type": "string",
+   "format": "date"
+  },
+  "devices": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "name",
+     "memory_gb",
+     "bandwidth_gbs"
+    ]
+   }
+  },
+  "observations": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "device",
+     "date",
+     "kind",
+     "price",
+     "url"
+    ],
+    "properties": {
+     "device": {
+      "type": "string"
+     },
+     "date": {
+      "type": "string",
+      "format": "date"
+     },
+     "kind": {
+      "enum": [
+       "list",
+       "street"
+      ]
+     },
+     "price": {
+      "type": "number"
+     },
+     "currency": {
+      "type": "string"
+     },
+     "url": {
+      "type": "string",
+      "format": "uri"
+     },
+     "by": {
+      "type": "string"
+     },
+     "note": {
+      "type": "string"
+     }
+    }
+   }
+  }
+ }
+}

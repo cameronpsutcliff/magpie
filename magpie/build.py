@@ -107,6 +107,9 @@ def build(items: list[dict], history: dict, date: str, repo_meta: dict | None = 
     now = now_utc()
     fresh_cut = now - dt.timedelta(hours=40)
 
+    # Policy documents belong to the constraints lane (constraints.py), not the capability list.
+    items = [it for it in items if it["source_kind"] != "policy"]
+
     # 0. Re-key page URLs with the current rule (cached items may carry older keys).
     for it in items:
         it["keys"] = [url_key(it["url"]) if k.startswith("url:") else k for k in it["keys"]] or [url_key(it["url"])]
@@ -278,6 +281,8 @@ def rank_and_select(events: list[dict], top_n: int = 5, per_vendor: int = 2) -> 
     events.sort(key=lambda e: -e["rank_score"])
     top, per = [], Counter()
     for e in events:
+        if e["kind"] == "constraint" and not (e.get("constraint") or {}).get("access_now"):
+            continue  # constraints have their own section; one leads only when it changes access today
         if edited and not e.get("brief"):
             continue
         if e["kind"] in ("newsletter", "community") and not e.get("brief"):

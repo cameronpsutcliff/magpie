@@ -1,0 +1,28 @@
+{
+  "note": "Devices for the local-hardware tracker. Specs come from each maker's spec page. Prices are dated observations with the page they were read from: 'list' is the maker's own store, 'street' is the lowest new, in-stock price at a major US retailer. Magpie Scout appends a weekly check to inbox/hardware-prices.json; the owner edits this file.",
+  "reference": {"name": "a 27B-parameter model at 4-bit", "gb": 16},
+  "devices": [
+    {"id": "rtx-5090", "name": "GeForce RTX 5090", "maker": "NVIDIA", "form": "Graphics card",
+     "memory_gb": 32, "bandwidth_gbs": 1792,
+     "spec_url": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
+     "store_url": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/"},
+    {"id": "dgx-spark", "name": "DGX Spark", "maker": "NVIDIA", "form": "Desktop system, 128GB unified memory",
+     "memory_gb": 128, "bandwidth_gbs": 273,
+     "spec_url": "https://www.nvidia.com/en-us/products/workstations/dgx-spark/",
+     "store_url": "https://marketplace.nvidia.com/en-us/enterprise/personal-ai-supercomputers/dgx-spark/"},
+    {"id": "mac-studio-m5-max", "name": "Mac Studio, M5 Max", "maker": "Apple", "form": "Desktop, 36GB unified memory (base)",
+     "memory_gb": 36, "bandwidth_gbs": 460,
+     "spec_url": "https://www.apple.com/mac-studio/specs/",
+     "store_url": "https://www.apple.com/shop/buy-mac/mac-studio"},
+    {"id": "mac-studio-m5-ultra", "name": "Mac Studio, M5 Ultra", "maker": "Apple", "form": "Desktop, 96GB unified memory (base)",
+     "memory_gb": 96, "bandwidth_gbs": 1200,
+     "spec_url": "https://www.apple.com/mac-studio/specs/",
+     "store_url": "https://www.apple.com/shop/buy-mac/mac-studio"}
+  ],
+  "observations": [
+    {"device": "rtx-5090", "date": "2026-10-20", "kind": "list", "price": 1999, "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/", "by": "magpie", "note": "Starting at $1999"},
+    {"device": "dgx-spark", "date": "2026-10-20", "kind": "list", "price": 6950, "url": "https://marketplace.nvidia.com/en-us/enterprise/personal-ai-supercomputers/dgx-spark/", "by": "magpie"},
+    {"device": "mac-studio-m5-max", "date": "2026-10-20", "kind": "list", "price": 2499, "url": "https://www.apple.com/shop/buy-mac/mac-studio", "by": "magpie", "note": "Buy from $2499"},
+    {"device": "mac-studio-m5-ultra", "date": "2026-10-20", "kind": "list", "price": 5499, "url": "https://www.apple.com/shop/buy-mac/mac-studio", "by": "magpie", "note": "Buy from $5499"}
+  ]
+}

@@ -80,9 +80,10 @@ def x_from_grok_bot(hours: int = 30) -> list[Item]:
                 if doubt["level"] >= 2 and doubt["note"]:
                     summary = f"{summary} Flagged on X: {doubt['note']}".strip()
             links = " ".join(x.get("links") or [])
+            constraint = x.get("kind") == "constraint"  # an official action: the constraints lane takes it
             it = Item(
                 source_id="x-grok-bot",
-                source_kind="social",
+                source_kind="policy" if constraint else "social",
                 source_name=f"X: {x.get('handle', '')}".strip(),
                 url=url,
                 title=clean(x.get("title", ""))[:200],
@@ -93,9 +94,10 @@ def x_from_grok_bot(hours: int = 30) -> list[Item]:
                 trust=trust,
                 extra={"links": x.get("links") or [], "x_group": x.get("group"), "x_kind": x.get("kind"),
                        "x_metrics": x.get("metrics") or {}, "confirmed_by": x.get("confirmed_by") or [], "doubt": doubt,
-                       "reception": x.get("reception") or {}, "video": x.get("video") or {}, "saved": saved},
+                       "reception": x.get("reception") or {}, "video": x.get("video") or {}, "saved": saved,
+                       **({"primary": False, "jurisdiction": x.get("jurisdiction"), "issuer": x.get("issuer")} if constraint else {})},
             ).finalize(links)
-            if it.mentions:
+            if it.mentions and not constraint:
                 it.keys = it.mentions[:1] + it.keys
                 it.mentions = it.mentions[1:]
             out.append(it)

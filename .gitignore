@@ -12,3 +12,5 @@ state/backfill/
 state/*.log
 state/viewing/
 state/readme/
+state/constraints/
+state/epoch/

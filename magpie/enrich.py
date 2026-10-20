@@ -27,7 +27,8 @@ Hat ids: {hat_ids}
 
 For each event return:
 - id: copy it
-- keep: false if it is not a real AI capability (job posts, generic lists, drama, duplicates of another id)
+- keep: false if it is not a real AI capability (job posts, generic lists, drama, policy, regulation or political
+  news, duplicates of another id)
 - headline: 4 to 10 words, plain, names the thing
 - newly_possible: one sentence on what someone can now do that they could not do before
 - why: one sentence on why a builder or consultant should care

@@ -5,6 +5,7 @@
     python -m magpie run --cloud      # skip collectors that need the owner's machine
     python -m magpie discover         # weekly: grow and prune the watch list (see discover.py)
     python -m magpie review --week    # weekly: quality report on the week's editions (see review.py)
+    python -m magpie constraints      # add the constraints lane and trackers to a published edition
 """
 from __future__ import annotations
 
@@ -16,15 +17,15 @@ import traceback
 
 from . import build as B
 from . import discover, review
-from .collectors import feeds, github, inbox, local, web
+from .collectors import feeds, github, inbox, local, policy, web
 from .enrich import enrich
 from .util import ROOT, edition_date, iso, load_json, now_utc, write_json
 
 from .publish import DATA, STATE, compose_day, publish_day, scrub  # noqa: F401  (scrub re-exported for tests)
 
 
-def collect(cloud: bool) -> tuple[list, dict, list]:
-    reg = load_json(ROOT / "config/sources.json", {})
+def jobs_for(reg: dict, cloud: bool) -> dict:
+    """Every collector to run, by source id. Feeds, APIs and policy feeds come from config/sources.json."""
     jobs = {
         "github-trending": github.trending,
         "github-new-rising": github.new_and_rising,
@@ -33,17 +34,27 @@ def collect(cloud: bool) -> tuple[list, dict, list]:
         "hf-trending-spaces": web.hf_spaces,
         "hf-daily-papers": web.hf_papers,
         "x-grok-bot": inbox.x_from_grok_bot,
+        "federal-register": policy.federal_register,
     }
     for f in reg.get("feeds", []):
         jobs[f["id"]] = (lambda src=f: feeds.collect_feed(src))
+    for f in reg.get("policy_feeds", []):
+        jobs[f["id"]] = (lambda src=f: policy.policy_feed(src))
     orgs = [o["org"] for o in reg.get("github_orgs", [])]
     if orgs:
         jobs["github-watched-orgs"] = lambda: github.watched_orgs(orgs)
     if not cloud:
         jobs["youtube-watchlist"] = local.youtube  # the brief written by `magpie youtube`, the one YouTube job
         jobs["x-saved"] = inbox.x_saved
-    names = {s["id"]: s["name"] for s in reg.get("feeds", []) + reg.get("apis", [])}
-    kinds = {s["id"]: s["kind"] for s in reg.get("feeds", []) + reg.get("apis", [])}
+    return jobs
+
+
+def collect(cloud: bool) -> tuple[list, dict, list]:
+    reg = load_json(ROOT / "config/sources.json", {})
+    jobs = jobs_for(reg, cloud)
+    listed = reg.get("feeds", []) + reg.get("apis", []) + reg.get("policy_feeds", [])
+    names = {s["id"]: s["name"] for s in listed}
+    kinds = {s["id"]: s["kind"] for s in listed}
 
     items, rising, health = [], {}, []
 
@@ -90,6 +101,8 @@ def main() -> None:
     py.add_argument("--hours", type=int, help="lookback window, default 36 (MAGPIE_YT_LOOKBACK_HOURS)")
     pv = sub.add_parser("viewing", help="pick the videos worth watching from their transcripts")
     pv.add_argument("--date", help="edition date, default latest")
+    pk = sub.add_parser("constraints", help="add official actions that constrain AI, and the trackers, to an edition")
+    pk.add_argument("--date", help="edition date, default latest")
     bf = sub.add_parser("backfill", help="rebuild past editions from archives")
     bf.add_argument("--from", dest="start", required=True, help="first edition date, YYYY-MM-DD")
     bf.add_argument("--to", dest="end", required=True, help="last edition date, YYYY-MM-DD")
@@ -119,6 +132,10 @@ def main() -> None:
     if a.cmd == "viewing":
         from .viewing import run_for as viewing_for
         viewing_for(a.date)
+        return
+    if a.cmd == "constraints":
+        from .constraints import run_for as constraints_for
+        constraints_for(a.date)
         return
     if a.cmd == "reindex":
         from .publish import reindex
@@ -179,8 +196,21 @@ def main() -> None:
     events = [e for e in events if not e.get("dropped")]
     print(f"editor: {receipt}", file=sys.stderr)
 
+    # Constraints: official actions that make AI harder to train, publish, host, reach or buy.
+    from . import constraints as K, trackers as T
+    try:
+        c_events, c_section = K.generate(items, date, DATA, STATE, llm=not a.no_llm)
+        used = {s["url"] for r in c_section["items"] if r.get("last_seen") == date for s in r.get("sources", [])}
+        # A post that only reports the same action leaves the capability list; the constraint carries it.
+        events = [e for e in events if not (e["sources"] and all(s["url"] in used for s in e["sources"]))] + c_events
+    except Exception as ex:  # the lane must never block the edition
+        c_section = {"items": [], "errors": [f"{type(ex).__name__}: {str(ex)[:160]}"]}
+    print(f"constraints: {len(c_section['items'])} ({c_section.get('lane') or c_section.get('errors')})", file=sys.stderr)
+    trackers = T.build(date, DATA, STATE)
+
     day, top_events = compose_day(date, items, rising, health, events, edition, receipt,
-                                  where="cloud" if a.cloud else "home", seconds=time.monotonic() - t0)
+                                  where="cloud" if a.cloud else "home", seconds=time.monotonic() - t0,
+                                  constraints=c_section, trackers=trackers)
     if receipt.get("enriched"):
         from .possibilities import generate, prior_days
         pcache = run_dir / "possibilities.json"
