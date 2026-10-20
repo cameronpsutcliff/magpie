@@ -2,6 +2,52 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-10-20",
+   "headline": "Run Meta's agent model locally, audit code with agents, search leaner, and more",
+   "events": 175,
+   "enriched": true,
+   "top": [
+    {
+     "id": "afd21fa67ca5",
+     "title": "Meta's Muse Glimmer 30B runs agents on one consumer GPU",
+     "impact": 5,
+     "vendor": "Meta"
+    },
+    {
+     "id": "94ba3bb50ccd",
+     "title": "Hindsight gives agents memory that learns",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "e487fe51b82b",
+     "title": "Cloudflare releases a security audit skill for coding agents",
+     "impact": 4,
+     "vendor": "Cloudflare"
+    },
+    {
+     "id": "f8dbde01fb3a",
+     "title": "Exa 3.0 ties for first on search with fewer tokens",
+     "impact": 4,
+     "vendor": "Exa"
+    },
+    {
+     "id": "f68fca3fdcc5",
+     "title": "DeepSeek V4.1 Flash jumps to second among open models",
+     "impact": 4,
+     "vendor": "DeepSeek"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Research",
+    "Anthropic",
+    "DeepSeek",
+    "Meta",
+    "NVIDIA"
+   ]
+  },
+  {
    "date": "2026-10-19",
    "headline": "Download Meta's open Muse Spark, diffuse text fast, forecast time series, and more",
    "events": 177,
@@ -48,5 +94,5 @@
    ]
   }
  ],
- "latest": "2026-10-19"
+ "latest": "2026-10-20"
 }
