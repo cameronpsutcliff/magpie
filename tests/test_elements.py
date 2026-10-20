@@ -316,6 +316,31 @@ class ElementTests(unittest.TestCase):
         finally:
             E.FULL_APPEARANCES = full
 
+    def test_republishing_away_old_evidence_drops_the_carried_link(self):
+        import datetime as dt
+        full = E.FULL_APPEARANCES
+        E.FULL_APPEARANCES = 3
+        try:
+            dates = [(dt.date(2099, 7, 1) + dt.timedelta(days=i)).isoformat() for i in range(8)]
+            for i, d in enumerate(dates):
+                srcs = [{"name": "Wire", "url": ACTION["doc_url"], "title": "Order"}] if i == 0 else []
+                write_json(self.data / "days" / f"{d}.json", day(d, [ev("gh:old/proof", "old/proof", sources=srcs)]), compact=True)
+            for d in sorted(p.stem for p in (self.data / "days").glob("*.json")):
+                E.update(d, self.data)
+            page = self.page("gh-old--proof")
+            self.assertEqual(page["older"]["links"], {ACTION["key"]: "document"})  # the document left the full window
+            # the first day is corrected: it never carried the document
+            write_json(self.data / "days" / f"{dates[0]}.json", day(dates[0], [ev("gh:old/proof", "old/proof")]), compact=True)
+            E.update(dates[0], self.data)
+            page = self.page("gh-old--proof")
+            self.assertNotIn("links", page.get("older") or {})
+            self.assertEqual([c["key"] for c in page["constraints"] if c["match"] != "maker"], [])
+            built = self.pages()
+            E.rebuild(self.data, since="2099-01-01")
+            self.assertEqual(self.pages(), built)
+        finally:
+            E.FULL_APPEARANCES = full
+
     def test_republishing_a_day_the_page_no_longer_holds_recomputes_it(self):
         import datetime as dt
         rows = E.TIMELINE_ROWS
