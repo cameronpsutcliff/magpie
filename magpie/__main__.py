@@ -3,32 +3,26 @@
     python -m magpie run              # full run (local collectors and the editor when available)
     python -m magpie run --no-llm     # deterministic edition only
     python -m magpie run --cloud      # skip collectors that need the owner's machine
+    python -m magpie discover         # weekly: grow and prune the watch list (see discover.py)
+    python -m magpie review --week    # weekly: quality report on the week's editions (see review.py)
 """
 from __future__ import annotations
 
 import argparse
 import concurrent.futures as cf
-import json
-import os
-import re
 import sys
 import time
 import traceback
 
 from . import build as B
+from . import discover, review
 from .collectors import feeds, github, local, web
 from .enrich import enrich
+from .redact import FORBIDDEN, scrub  # noqa: F401  (scrub is part of this module's interface)
 from .util import ROOT, edition_date, iso, load_json, now_utc, write_json
 
 DATA = ROOT / "data/v1"
 STATE = ROOT / "state"
-FORBIDDEN = [re.compile(p, re.I) for p in (r"/Users/", r"/home/[a-z]", r"sk-ant-[A-Za-z0-9]", r"ghp_[A-Za-z0-9]{20}",
-                                            r"github_pat_[A-Za-z0-9_]{20}", r"xai-[A-Za-z0-9]{20}")]
-# Machine names, internal hosts and folder names never ship in the repo either: list them, one regex
-# per line, in the untracked file .redact.local on the machine that runs the home tier.
-_local = ROOT / ".redact.local"
-if _local.exists():
-    FORBIDDEN += [re.compile(l.strip(), re.I) for l in _local.read_text().splitlines() if l.strip() and not l.startswith("#")]
 
 
 def collect(cloud: bool) -> tuple[list, dict, list]:
@@ -43,6 +37,9 @@ def collect(cloud: bool) -> tuple[list, dict, list]:
     }
     for f in reg.get("feeds", []):
         jobs[f["id"]] = (lambda src=f: feeds.collect_feed(src))
+    orgs = [o["org"] for o in reg.get("github_orgs", [])]
+    if orgs:
+        jobs["github-watched-orgs"] = lambda: github.watched_orgs(orgs)
     if not cloud:
         jobs["youtube-watchlist"] = local.youtube
     names = {s["id"]: s["name"] for s in reg.get("feeds", []) + reg.get("apis", [])}
@@ -75,13 +72,6 @@ def collect(cloud: bool) -> tuple[list, dict, list]:
     return items, rising, health
 
 
-def scrub(obj):
-    text = json.dumps(obj, ensure_ascii=False)
-    hits = [p.pattern for p in FORBIDDEN if p.search(text)]
-    if hits:
-        raise SystemExit(f"redaction gate blocked publish: {hits}")
-
-
 def main() -> None:
     ap = argparse.ArgumentParser(prog="magpie")
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -91,7 +81,19 @@ def main() -> None:
     r.add_argument("--force", action="store_true", help="overwrite an enriched edition with a plain one")
     r.add_argument("--items", help="reuse a saved items file instead of collecting")
     r.add_argument("--reuse-editor", action="store_true", help="apply today's saved editor output instead of calling a model")
+    d = sub.add_parser("discover", help="weekly: promote and demote watch-list sources by explicit rules")
+    d.add_argument("--dry-run", action="store_true", help="print the change log without writing anything")
+    d.add_argument("--offline", action="store_true", help="do not fetch candidate newsletter feeds (holds them)")
+    d.add_argument("--veto", action="append", metavar="ID", help="undo a change and remember it, e.g. x:@handle")
+    d.add_argument("--date", help="week ending on this date (default: today's edition date)")
+    v = sub.add_parser("review", help="weekly: quality report on a week of editions")
+    v.add_argument("--week", nargs="?", const="latest", default="latest",
+                   help="YYYY-Www or a date inside the week (default: the week of the latest edition)")
     a = ap.parse_args()
+    if a.cmd == "discover":
+        return discover.main(a)
+    if a.cmd == "review":
+        return review.main(a)
 
     t0 = time.monotonic()
     date = edition_date()

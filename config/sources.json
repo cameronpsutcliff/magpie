@@ -296,6 +296,13 @@
    "trust": 0.65
   },
   {
+   "id": "github-watched-orgs",
+   "name": "GitHub watched orgs (search API, owners the discovery loop promoted)",
+   "kind": "repo",
+   "url": "https://api.github.com/search/repositories",
+   "trust": 0.7
+  },
+  {
    "id": "hf-trending-models",
    "name": "Hugging Face trending models",
    "kind": "model",
@@ -331,6 +338,29 @@
    "url": "local",
    "trust": 0.65,
    "where": "always-on machine"
+  }
+ ],
+ "github_orgs": [
+  {
+   "org": "deepseek-ai",
+   "why": "Discovered 2026-10-20: cited by Hacker News, X: @deepseek_ai within a week.",
+   "origin": "discovery",
+   "since": "2026-10-20",
+   "discovered_as": "github:deepseek-ai",
+   "evidence": [
+    {
+     "date": "2026-10-20",
+     "source": "Hacker News",
+     "title": "DeepSeek just open-sourced its inference engine",
+     "url": "https://github.com/deepseek-ai/DeepInfer"
+    },
+    {
+     "date": "2026-10-20",
+     "source": "X: @deepseek_ai",
+     "title": "DeepSeek open-sources the DeepInfer inference stack",
+     "url": "https://x.com/deepseek_ai/status/2112476496283775135"
+    }
+   ]
   }
  ]
 }

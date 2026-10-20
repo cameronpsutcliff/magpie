@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from dataclasses import asdict, dataclass, field
 
-from .util import canonical_keys, short_hash, url_key
+from .util import canonical_keys, short_hash, source_links, url_key
 
 
 @dataclass
@@ -29,6 +29,9 @@ class Item:
             self.keys = own or [url_key(self.url)]
         if body:
             self.mentions = [k for k in canonical_keys(None, body) if k not in self.keys][:40]
+            links = source_links(body)
+            if links:
+                self.extra.setdefault("links", links)
         return self
 
     @property

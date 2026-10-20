@@ -51,6 +51,35 @@ python3 -m unittest discover -s tests
 
 Python 3.12, standard library only.
 
+## Every week
+
+```bash
+python3 -m magpie discover                    # grow and prune the watch list, write a change log
+python3 -m magpie discover --veto x:@handle   # undo one change and remember the decision
+python3 -m magpie review --week               # quality report for the week of the latest edition
+```
+
+**Discover** runs on the home tier, where `state/runs/` keeps each day's items. It mines the last seven
+days for X accounts, YouTube channels, newsletters and GitHub owners that other sources linked or
+mentioned, then applies two rules:
+
+| Rule | When |
+|---|---|
+| Promote | Two or more trusted, independent sources cited it within the week. |
+| Demote | Zero kept items in 21 days of editions, or three hype flags in that window. |
+
+Trusted means owner-curated: a registry source with trust 0.65 or more, an X roster account the pulse
+reads, or a high-priority YouTube channel. Discovered sources never vouch for others. Promoted X
+accounts join the Grok pulse, newsletters become feeds (only after their feed parses), GitHub owners
+feed the `github-watched-orgs` collector, and YouTube channels are listed in `youtube_channels` for the
+transcript pipeline. Demoted sources move to a `benched` list. Candidates and their evidence land in
+`config/candidates.json` and the change log in `reports/discovery/`; review both, veto what you don't
+want (vetoes live in `config/vetoes.json`), then commit `config/` and `reports/`.
+
+**Review** reads the published editions and writes `reports/review/YYYY-Www.md`: each day's top five,
+every hype flag, how many leads had a runnable artifact, and which top stories later reached
+Corroborated. Pass `--week 2026-W43` or any date in the week for an earlier one.
+
 ## Evidence labels
 
 | Label | Rule |
