@@ -38,7 +38,8 @@ class ElementTests(unittest.TestCase):
         self.data = self.tmp / "v1"
         a, b = ev("gh:acme/agent", "acme/Agent", maker="Acme"), ev("gh:beta/kit", "beta/kit", mentions=[NEWS])
         c = ev("gh:gamma/tool", "gamma/tool", mentions=[NEWS], brief={"headline": "Gamma tool ships", "newly_possible": "Run gamma.",
-                                                                        "impact": 4, "ripples": [{"topic": "agents", "effect": "Agents get gamma"}]})
+                                                                        "impact": 4, "ripples": [{"topic": "agents", "effect": "Agents get gamma"}],
+                                                                        "works_with": [{"name": "Ollama", "how": "serves its models"}]})
         lone = ev("gh:solo/once", "solo/once")
         self.days = {
             "2099-01-01": day("2099-01-01", [a, b, lone]),
@@ -106,6 +107,32 @@ class ElementTests(unittest.TestCase):
         self.assertEqual(tie["together"], 1)  # the same newsletter covered both on 2099-01-02
         self.assertIn("AI News: Issue 7", tie["via"])
         self.assertEqual([f["url"] for f in beta["find"]], [NEWS["url"]])  # the repo link itself is the canonical link
+
+    def test_named_integrations_roll_up_beside_the_computed_ones(self):
+        named = {"2099-01-01": [{"name": "Ollama", "how": "serves its models"}, {"name": "vLLM"}, "junk", {"how": "no name"}],
+                 "2099-01-02": [{"name": "ollama", "how": "runs it locally"}, {"name": "LangChain"}, {"name": "Ollama"}]}
+        for d, payload in self.days.items():
+            payload["events"] = [dict(e, brief={"headline": "Beta kit", "works_with": named[d]}) if e["key"] == "gh:beta/kit" else e
+                                 for e in payload["events"]]
+            write_json(self.data / "days" / f"{d}.json", payload, compact=True)
+        E.rebuild(self.data)
+        beta = self.page("gh-beta--kit")
+        self.assertEqual(beta["appearances"][0]["named_integrations"],
+                         [{"name": "ollama", "how": "runs it locally"}, {"name": "LangChain"}, {"name": "Ollama"}])
+        self.assertEqual(beta["named_integrations"], [
+            {"name": "ollama", "days": 2, "first_seen": "2099-01-01", "last_seen": "2099-01-02", "how": ["runs it locally", "serves its models"]},
+            {"name": "LangChain", "days": 1, "first_seen": "2099-01-02", "last_seen": "2099-01-02", "how": []},
+            {"name": "vLLM", "days": 1, "first_seen": "2099-01-01", "last_seen": "2099-01-01", "how": []}])
+        self.assertEqual(beta["works_with"][0]["key"], "gh:gamma/tool")  # the computed list is untouched
+        self.assertNotIn("named_integrations", self.page("gh-acme--agent"))  # none named: no field, as before
+
+        built = self.pages()
+        seq = self.tmp / "seq"
+        shutil.copytree(self.data, seq)
+        shutil.rmtree(seq / "elements")
+        for d in sorted(self.days):
+            E.update(d, seq)
+        self.assertEqual(self.pages(seq), built)
 
     def test_update_is_idempotent_and_matches_rebuild(self):
         E.rebuild(self.data)

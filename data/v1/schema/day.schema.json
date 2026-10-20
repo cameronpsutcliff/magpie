@@ -596,6 +596,23 @@
     }
    }
   },
+  "integration": {
+   "type": "object",
+   "required": [
+    "name"
+   ],
+   "properties": {
+    "name": {
+     "type": "string",
+     "description": "The tool, model or platform, spelled as the event's own title, summary, context or source titles spell it."
+    },
+    "how": {
+     "type": "string",
+     "description": "Up to about ten words on how they connect."
+    }
+   },
+   "additionalProperties": false
+  },
   "event": {
    "type": "object",
    "required": [
@@ -770,6 +787,14 @@
         "type": "string"
        },
        "description": "The same capability read through roles such as architect or security engineer."
+      },
+      "works_with": {
+       "type": "array",
+       "maxItems": 5,
+       "items": {
+        "$ref": "#/$defs/integration"
+       },
+       "description": "Named integrations: tools, models or platforms the capability integrates with, runs on or plugs into. Code keeps a name only if the event's own text spells it, it is not the capability, its maker or a source that reported it, and every number in the item is in that text. Absent when none survive."
       },
       "harder": {
        "type": "string",
