@@ -51,6 +51,45 @@ python3 -m unittest discover -s tests
 
 Python 3.12, standard library only.
 
+## Every week
+
+```bash
+python3 -m magpie discover                    # grow and prune the watch list, write a change log
+python3 -m magpie discover --veto feed:<id>   # undo one change and remember the decision
+python3 -m magpie review --week               # quality report for the week of the latest edition
+```
+
+`scripts/home-run.sh` runs both on Sundays before the edition: review for the last full week, then discover
+for the seven days of runs that end on Saturday. It commits what they write (`config/sources.json`,
+`config/youtube.json`, `config/candidates.json`, `reports/`) and pushes with the edition. A failure in
+either is logged and never blocks the edition.
+
+**Discover** runs on the home tier, where `state/runs/` keeps each day's items. It mines the last seven
+days for newsletters and blogs, YouTube channels and GitHub owners that other sources linked or mentioned,
+plus the `source_leads` Magpie Scout writes to `inbox/x-roster.json`, then applies two rules:
+
+| Rule | When |
+|---|---|
+| Promote | Two or more trusted, independent sources cited it within the week. |
+| Demote | Zero kept items in its last 21 live editions, or three hype flags in 21 days. Backfilled editions never count toward zero kept. Official lab and vendor feeds (a feed with a `vendor`) are pinned: hype still marks their items down, but they are never benched. |
+
+Trusted means owner-curated: a registry source with trust 0.65 or more, an account in
+`config/x-accounts.json` (the pulse and Grok Bot count as one), or a high-priority YouTube channel.
+Discovered sources never vouch for others, and neither do Magpie Scout's own roster additions or an X post
+with doubt of level 2 or more. A Scout lead counts as cited by the accounts it was seen via.
+
+X accounts are not the loop's: Magpie Scout keeps `inbox/x-roster.json` and `config/x-accounts.json` stays
+owner-curated, so discover never promotes or benches an X account. Newsletters, blogs and changelogs become
+feeds (only after their feed parses), GitHub owners feed the `github-watched-orgs` collector, and YouTube
+channels join `config/youtube.json` at medium priority when a link gave their channel id (a bare handle is
+held for you to add by hand). Demoted feeds move to a `benched` list; YouTube channels are pruned by hand
+through the `dropped` list. Candidates and their evidence land in `config/candidates.json` and the change
+log in `reports/discovery/`; read both and veto what you don't want (vetoes live in `config/vetoes.json`).
+
+**Review** reads the published editions and writes `reports/review/YYYY-Www.md`: each day's top five,
+every hype flag, how many leads had a runnable artifact, and which top stories later reached
+Corroborated. Pass `--week 2026-W43` or any date in the week for an earlier one.
+
 ## Evidence labels
 
 | Label | Rule |
