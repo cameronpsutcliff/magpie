@@ -92,6 +92,8 @@ def compose_day(date: str, items: list[dict], rising: dict, health: list[dict], 
         "topics": {k: v["label"] for k, v in topics_cfg.items()},
         "hats": load_json(ROOT / "config/hats.json", {}).get("hats", []),
     }
+    from .rising import enrich as enrich_rising
+    day["rising"] = enrich_rising(day["rising"], events, STATE / "readme", fetch=where != "backfill")
     return day, top_events
 
 

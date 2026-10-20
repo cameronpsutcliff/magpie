@@ -124,6 +124,21 @@ class CoreTests(unittest.TestCase):
         self.assertTrue(saved[0].extra["saved"])
         self.assertTrue(bot[0].extra["saved"])
 
+    def test_rising_readme_and_buzz(self):
+        import tempfile
+        from pathlib import Path
+        from magpie import rising
+        md = "# Tool\n\nEnglish \u00b7 Deutsch \u00b7 Espanol\n\n[![b](x.svg)](y)\n\nTool serves **local models** with [fast decoding](z) on a laptop.\n"
+        self.assertEqual(rising._plain(md), "Tool serves local models with fast decoding on a laptop.")
+        events = [{"id": "e1", "key": "gh:a/tool", "sources": [
+            {"name": "GitHub trending", "kind": "repo", "url": "https://github.com/a/tool", "title": "a/tool"},
+            {"name": "X: @a", "kind": "social", "url": "https://x.com/a/status/1", "title": "Tool ships"}], "mentions": []}]
+        with tempfile.TemporaryDirectory() as tmp:
+            out = rising.enrich({"day": [{"repo": "a/Tool"}]}, events, Path(tmp), fetch=False)
+        row = out["day"][0]
+        self.assertEqual(row["event_id"], "e1")
+        self.assertEqual([b["url"] for b in row["buzz"]], ["https://x.com/a/status/1"])
+
 
 if __name__ == "__main__":
     unittest.main()
