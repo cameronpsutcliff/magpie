@@ -1,0 +1,1057 @@
+{
+ "schema": "magpie.candidates/1",
+ "generated": "2026-10-20",
+ "window": {
+  "start": "2026-10-14",
+  "end": "2026-10-20",
+  "run_days": [
+   "2026-10-19",
+   "2026-10-20"
+  ]
+ },
+ "rules": {
+  "promote": "two or more trusted, independent sources cite it within the week",
+  "demote": "zero kept items in 21 days of editions, or 3 hype flags in that window",
+  "trusted": "owner-curated sources with trust >= 0.65, X roster accounts with signal_to_noise >= 4, high-priority YouTube channels; discovered sources never vouch"
+ },
+ "candidates": [
+  {
+   "id": "github:deepseek-ai",
+   "kind": "github",
+   "label": "deepseek-ai",
+   "url": "https://github.com/deepseek-ai",
+   "status": "promoted",
+   "trusted_citers": [
+    "Hacker News",
+    "X: @deepseek_ai"
+   ],
+   "citers": [
+    "GitHub",
+    "Hacker News",
+    "X: @deepseek_ai"
+   ],
+   "first_seen": "2026-10-20",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-20",
+     "source": "Hacker News",
+     "title": "DeepSeek just open-sourced its inference engine",
+     "url": "https://github.com/deepseek-ai/DeepInfer"
+    },
+    {
+     "date": "2026-10-20",
+     "source": "X: @deepseek_ai",
+     "title": "DeepSeek open-sources the DeepInfer inference stack",
+     "url": "https://x.com/deepseek_ai/status/2112476496283775135"
+    },
+    {
+     "date": "2026-10-20",
+     "source": "GitHub",
+     "title": "deepseek-ai/DeepInfer",
+     "url": "https://github.com/deepseek-ai/DeepInfer"
+    }
+   ]
+  }
+ ],
+ "demoted": [],
+ "watching": [
+  {
+   "id": "github:simonw",
+   "kind": "github",
+   "label": "simonw",
+   "url": "https://github.com/simonw",
+   "status": "watching",
+   "trusted_citers": [
+    "Simon Willison"
+   ],
+   "citers": [
+    "Simon Willison"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "Simon Willison",
+     "title": "llm-tools-datasette 0.1.1",
+     "url": "https://simonwillison.net/2026/Oct/18/llm-tools-datasette/"
+    },
+    {
+     "date": "2026-10-19",
+     "source": "Simon Willison",
+     "title": "llm-echo 0.5",
+     "url": "https://simonwillison.net/2026/Oct/18/llm-echo/"
+    }
+   ]
+  },
+  {
+   "id": "github:affaan-m",
+   "kind": "github",
+   "label": "affaan-m",
+   "url": "https://github.com/affaan-m",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "affaan-m/ECC",
+     "url": "https://github.com/affaan-m/ECC"
+    }
+   ]
+  },
+  {
+   "id": "github:agent-substrate",
+   "kind": "github",
+   "label": "agent-substrate",
+   "url": "https://github.com/agent-substrate",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "agent-substrate/substrate",
+     "url": "https://github.com/agent-substrate/substrate"
+    }
+   ]
+  },
+  {
+   "id": "github:akitaonrails",
+   "kind": "github",
+   "label": "akitaonrails",
+   "url": "https://github.com/akitaonrails",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "akitaonrails/ai-memory",
+     "url": "https://github.com/akitaonrails/ai-memory"
+    }
+   ]
+  },
+  {
+   "id": "github:anomalyco",
+   "kind": "github",
+   "label": "anomalyco",
+   "url": "https://github.com/anomalyco",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "anomalyco/opencode",
+     "url": "https://github.com/anomalyco/opencode"
+    }
+   ]
+  },
+  {
+   "id": "github:cathrynlavery",
+   "kind": "github",
+   "label": "cathrynlavery",
+   "url": "https://github.com/cathrynlavery",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "cathrynlavery/diagram-design",
+     "url": "https://github.com/cathrynlavery/diagram-design"
+    }
+   ]
+  },
+  {
+   "id": "github:cloudflare",
+   "kind": "github",
+   "label": "cloudflare",
+   "url": "https://github.com/cloudflare",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "cloudflare/security-audit-skill",
+     "url": "https://github.com/cloudflare/security-audit-skill"
+    }
+   ]
+  },
+  {
+   "id": "github:comfy-org",
+   "kind": "github",
+   "label": "comfy-org",
+   "url": "https://github.com/comfy-org",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "Comfy-Org/ComfyUI",
+     "url": "https://github.com/Comfy-Org/ComfyUI"
+    }
+   ]
+  },
+  {
+   "id": "github:cursor",
+   "kind": "github",
+   "label": "cursor",
+   "url": "https://github.com/cursor",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "cursor/plugins",
+     "url": "https://github.com/cursor/plugins"
+    }
+   ]
+  },
+  {
+   "id": "github:debpalash",
+   "kind": "github",
+   "label": "debpalash",
+   "url": "https://github.com/debpalash",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "debpalash/VoiceStudio",
+     "url": "https://github.com/debpalash/VoiceStudio"
+    }
+   ]
+  },
+  {
+   "id": "github:earthtojake",
+   "kind": "github",
+   "label": "earthtojake",
+   "url": "https://github.com/earthtojake",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "earthtojake/text-to-cad",
+     "url": "https://github.com/earthtojake/text-to-cad"
+    }
+   ]
+  },
+  {
+   "id": "github:google-research",
+   "kind": "github",
+   "label": "google-research",
+   "url": "https://github.com/google-research",
+   "status": "watching",
+   "trusted_citers": [
+    "Hacker News"
+   ],
+   "citers": [
+    "Hacker News"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "Hacker News",
+     "title": "Harness2 by Google Research – Recursive Agent Harnessing",
+     "url": "https://github.com/google-research/harness2"
+    }
+   ]
+  },
+  {
+   "id": "github:headroomlabs-ai",
+   "kind": "github",
+   "label": "headroomlabs-ai",
+   "url": "https://github.com/headroomlabs-ai",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "headroomlabs-ai/headroom",
+     "url": "https://github.com/headroomlabs-ai/headroom"
+    }
+   ]
+  },
+  {
+   "id": "github:heygen-com",
+   "kind": "github",
+   "label": "heygen-com",
+   "url": "https://github.com/heygen-com",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "heygen-com/hyperframes",
+     "url": "https://github.com/heygen-com/hyperframes"
+    }
+   ]
+  },
+  {
+   "id": "github:hkuds",
+   "kind": "github",
+   "label": "hkuds",
+   "url": "https://github.com/hkuds",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "HKUDS/CLI-Anything",
+     "url": "https://github.com/HKUDS/CLI-Anything"
+    }
+   ]
+  },
+  {
+   "id": "github:isurumaduranga",
+   "kind": "github",
+   "label": "isurumaduranga",
+   "url": "https://github.com/isurumaduranga",
+   "status": "watching",
+   "trusted_citers": [
+    "Hacker News"
+   ],
+   "citers": [
+    "Hacker News"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "Hacker News",
+     "title": "Harness Engineering 101: The LLM is the brain, the harness is the body",
+     "url": "https://github.com/IsuruMaduranga/harness-engineering-101"
+    }
+   ]
+  },
+  {
+   "id": "github:k-dense-ai",
+   "kind": "github",
+   "label": "k-dense-ai",
+   "url": "https://github.com/k-dense-ai",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "K-Dense-AI/scientific-agent-skills",
+     "url": "https://github.com/K-Dense-AI/scientific-agent-skills"
+    }
+   ]
+  },
+  {
+   "id": "github:kitlangton",
+   "kind": "github",
+   "label": "kitlangton",
+   "url": "https://github.com/kitlangton",
+   "status": "watching",
+   "trusted_citers": [
+    "X: @kitlangton"
+   ],
+   "citers": [
+    "X: @kitlangton"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-19",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "X: @kitlangton",
+     "title": "Scrawl open-sources visual steering for coding agents",
+     "url": "https://x.com/kitlangton/status/2111955962781384846"
+    }
+   ]
+  },
+  {
+   "id": "github:kividbio",
+   "kind": "github",
+   "label": "kividbio",
+   "url": "https://github.com/kividbio",
+   "status": "watching",
+   "trusted_citers": [
+    "Hacker News"
+   ],
+   "citers": [
+    "Hacker News"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "Hacker News",
+     "title": "Show HN: KiviDB, a faster Redis-compatible memory database and vector cache",
+     "url": "https://github.com/kividbio/kividb"
+    }
+   ]
+  },
+  {
+   "id": "github:lightseekorg",
+   "kind": "github",
+   "label": "lightseekorg",
+   "url": "https://github.com/lightseekorg",
+   "status": "watching",
+   "trusted_citers": [
+    "X: @lightseekorg"
+   ],
+   "citers": [
+    "X: @lightseekorg"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "X: @lightseekorg",
+     "title": "LightSeek shows TokenSpeed kernels for multi-silicon inference",
+     "url": "https://x.com/lightseekorg/status/2112404160285126911"
+    }
+   ]
+  },
+  {
+   "id": "github:madslorentzen",
+   "kind": "github",
+   "label": "madslorentzen",
+   "url": "https://github.com/madslorentzen",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "MadsLorentzen/ai-job-search",
+     "url": "https://github.com/MadsLorentzen/ai-job-search"
+    }
+   ]
+  },
+  {
+   "id": "github:mksglu",
+   "kind": "github",
+   "label": "mksglu",
+   "url": "https://github.com/mksglu",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "mksglu/context-mode",
+     "url": "https://github.com/mksglu/context-mode"
+    }
+   ]
+  },
+  {
+   "id": "github:morluto",
+   "kind": "github",
+   "label": "morluto",
+   "url": "https://github.com/morluto",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "morluto/rea",
+     "url": "https://github.com/morluto/rea"
+    }
+   ]
+  },
+  {
+   "id": "github:nvidia",
+   "kind": "github",
+   "label": "nvidia",
+   "url": "https://github.com/nvidia",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "NVIDIA/OpenShell",
+     "url": "https://github.com/NVIDIA/OpenShell"
+    }
+   ]
+  },
+  {
+   "id": "github:paperclipai",
+   "kind": "github",
+   "label": "paperclipai",
+   "url": "https://github.com/paperclipai",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "paperclipai/paperclip",
+     "url": "https://github.com/paperclipai/paperclip"
+    }
+   ]
+  },
+  {
+   "id": "github:pbakaus",
+   "kind": "github",
+   "label": "pbakaus",
+   "url": "https://github.com/pbakaus",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "pbakaus/impeccable",
+     "url": "https://github.com/pbakaus/impeccable"
+    }
+   ]
+  },
+  {
+   "id": "github:pydantic",
+   "kind": "github",
+   "label": "pydantic",
+   "url": "https://github.com/pydantic",
+   "status": "watching",
+   "trusted_citers": [
+    "Simon Willison"
+   ],
+   "citers": [
+    "Simon Willison"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "Simon Willison",
+     "title": "llm-tools-datasette 0.1.1",
+     "url": "https://simonwillison.net/2026/Oct/18/llm-tools-datasette/"
+    }
+   ]
+  },
+  {
+   "id": "github:rohitg00",
+   "kind": "github",
+   "label": "rohitg00",
+   "url": "https://github.com/rohitg00",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "rohitg00/ai-engineering-from-scratch",
+     "url": "https://github.com/rohitg00/ai-engineering-from-scratch"
+    }
+   ]
+  },
+  {
+   "id": "github:ruvnet",
+   "kind": "github",
+   "label": "ruvnet",
+   "url": "https://github.com/ruvnet",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "ruvnet/ruflo",
+     "url": "https://github.com/ruvnet/ruflo"
+    }
+   ]
+  },
+  {
+   "id": "github:shiyu-coder",
+   "kind": "github",
+   "label": "shiyu-coder",
+   "url": "https://github.com/shiyu-coder",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "shiyu-coder/Kronos",
+     "url": "https://github.com/shiyu-coder/Kronos"
+    }
+   ]
+  },
+  {
+   "id": "github:stablyai",
+   "kind": "github",
+   "label": "stablyai",
+   "url": "https://github.com/stablyai",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "stablyai/orca",
+     "url": "https://github.com/stablyai/orca"
+    }
+   ]
+  },
+  {
+   "id": "github:tashfeenahmed",
+   "kind": "github",
+   "label": "tashfeenahmed",
+   "url": "https://github.com/tashfeenahmed",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "tashfeenahmed/freellmapi",
+     "url": "https://github.com/tashfeenahmed/freellmapi"
+    }
+   ]
+  },
+  {
+   "id": "github:tencentcloud",
+   "kind": "github",
+   "label": "tencentcloud",
+   "url": "https://github.com/tencentcloud",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "TencentCloud/Octop",
+     "url": "https://github.com/TencentCloud/Octop"
+    }
+   ]
+  },
+  {
+   "id": "github:vectorize-io",
+   "kind": "github",
+   "label": "vectorize-io",
+   "url": "https://github.com/vectorize-io",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "vectorize-io/hindsight",
+     "url": "https://github.com/vectorize-io/hindsight"
+    }
+   ]
+  },
+  {
+   "id": "github:yujunzhixue",
+   "kind": "github",
+   "label": "yujunzhixue",
+   "url": "https://github.com/yujunzhixue",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "YuJunZhiXue/dsh-purge",
+     "url": "https://github.com/YuJunZhiXue/dsh-purge"
+    }
+   ]
+  },
+  {
+   "id": "newsletter:normaltech.ai",
+   "kind": "newsletter",
+   "label": "normaltech.ai",
+   "url": "https://normaltech.ai",
+   "status": "watching",
+   "trusted_citers": [
+    "X: @sayashk"
+   ],
+   "citers": [
+    "X: @sayashk"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-19",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "X: @sayashk",
+     "title": "New paper lists open problems in agent evaluation",
+     "url": "https://x.com/sayashk/status/2112279490667626716"
+    }
+   ],
+   "feed_url": "https://normaltech.ai/feed"
+  },
+  {
+   "id": "x:@antlingagi",
+   "kind": "x",
+   "label": "@AntLingAGI",
+   "url": "https://x.com/antlingagi",
+   "status": "watching",
+   "trusted_citers": [
+    "X pulse (Grok)"
+   ],
+   "citers": [
+    "X pulse (Grok)"
+   ],
+   "first_seen": "2026-10-20",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-20",
+     "source": "X pulse (Grok)",
+     "title": "Ant Group open-sources five Ming-3.0 speech models",
+     "url": "https://x.com/AntLingAGI/status/2112210811997540475"
+    }
+   ]
+  },
+  {
+   "id": "x:@emilsnotes",
+   "kind": "x",
+   "label": "@emilsnotes",
+   "url": "https://x.com/emilsnotes",
+   "status": "watching",
+   "trusted_citers": [
+    "X pulse (Grok)"
+   ],
+   "citers": [
+    "X pulse (Grok)"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-19",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "X pulse (Grok)",
+     "title": "LangChain agents can search a kapa company index",
+     "url": "https://x.com/emilsnotes/status/2112169925712232949"
+    }
+   ]
+  },
+  {
+   "id": "x:@franknoeberlin",
+   "kind": "x",
+   "label": "@FrankNoeBerlin",
+   "url": "https://x.com/franknoeberlin",
+   "status": "watching",
+   "trusted_citers": [
+    "X pulse (Grok)"
+   ],
+   "citers": [
+    "X pulse (Grok)"
+   ],
+   "first_seen": "2026-10-20",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-20",
+     "source": "X pulse (Grok)",
+     "title": "Microsoft previews BioEmu2 with open weights",
+     "url": "https://x.com/FrankNoeBerlin/status/2112472173336240499"
+    }
+   ]
+  },
+  {
+   "id": "x:@primeintellect",
+   "kind": "x",
+   "label": "@PrimeIntellect",
+   "url": "https://x.com/primeintellect",
+   "status": "watching",
+   "trusted_citers": [
+    "X pulse (Grok)"
+   ],
+   "citers": [
+    "X pulse (Grok)"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "X pulse (Grok)",
+     "title": "Prime Intellect ships IPO for async agent RL",
+     "url": "https://x.com/PrimeIntellect/status/2112288736692355388"
+    }
+   ]
+  },
+  {
+   "id": "x:@spisallyouneed",
+   "kind": "x",
+   "label": "@spisallyouneed",
+   "url": "https://x.com/spisallyouneed",
+   "status": "watching",
+   "trusted_citers": [
+    "X pulse (Grok)"
+   ],
+   "citers": [
+    "X pulse (Grok)"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "X pulse (Grok)",
+     "title": "Skyfall introduces SKY-001 engineering world model",
+     "url": "https://x.com/spisallyouneed/status/2112242023805964327"
+    }
+   ]
+  },
+  {
+   "id": "x:@stefanoermon",
+   "kind": "x",
+   "label": "@StefanoErmon",
+   "url": "https://x.com/stefanoermon",
+   "status": "watching",
+   "trusted_citers": [
+    "X pulse (Grok)"
+   ],
+   "citers": [
+    "X pulse (Grok)"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-20",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "X pulse (Grok)",
+     "title": "Inception releases Mercury 3 diffusion LLM",
+     "url": "https://x.com/StefanoErmon/status/2112222911218291051"
+    }
+   ]
+  },
+  {
+   "id": "x:@thsottiaux",
+   "kind": "x",
+   "label": "@thsottiaux",
+   "url": "https://x.com/thsottiaux",
+   "status": "watching",
+   "trusted_citers": [
+    "X pulse (Grok)"
+   ],
+   "citers": [
+    "X pulse (Grok)"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-19",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "X pulse (Grok)",
+     "title": "Codex desktop can edit a message and resume",
+     "url": "https://x.com/thsottiaux/status/2111990254408434095"
+    }
+   ]
+  }
+ ],
+ "skipped": []
+}

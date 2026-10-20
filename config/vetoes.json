@@ -1,0 +1,5 @@
+{
+ "note": "Owner decisions the discovery loop must respect. Ids look like x:@handle, github:owner, newsletter:host, youtube:@handle or feed:<id>. Add them with: python -m magpie discover --veto <id>",
+ "never_promote": [],
+ "never_demote": []
+}
