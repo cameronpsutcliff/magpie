@@ -307,7 +307,11 @@ class ElementTests(unittest.TestCase):
         with self.assertRaises(ValueError):  # with the old start in place, a date between it and the seed is refused
             E.rebuild(self.data, since=dates[10])
         self.assertEqual(json.loads((self.data / "elements" / "index.json").read_text())["since"], dates[0])
-        self.assertEqual(E.rebuild(self.data, since=dates[-7])["since"], dates[-7])  # within the last seven
+        self.assertEqual(E.rebuild(self.data, since=dates[-7])["since"], dates[-7])  # one of the last seven
+        for bad in ("2100-01-01", "2099-08-31", "not-a-date"):  # a future date, a day with no edition, nonsense
+            with self.assertRaises(ValueError):
+                E.rebuild(self.data, since=bad)
+        self.assertEqual(json.loads((self.data / "elements" / "index.json").read_text())["since"], dates[-7])
 
     def test_a_corrected_document_reaches_existing_pages_and_the_action_page(self):
         E.rebuild(self.data)
