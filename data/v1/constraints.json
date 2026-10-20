@@ -1,0 +1,119 @@
+{
+ "schema": "magpie.constraints/1",
+ "updated": "2026-10-20",
+ "layers": {
+  "training": "Training runs and compute",
+  "publishing": "Publishing model weights",
+  "hosting": "Hosting and deployment",
+  "access": "Access to models and APIs",
+  "chips": "Chips, memory and hardware",
+  "distribution": "Model hubs and app stores",
+  "data": "Training data",
+  "use": "Use in a sector"
+ },
+ "items": [
+  {
+   "id": "7fcc5ec3286b",
+   "key": "policy:fr:2026-21447",
+   "headline": "DHS order bars DeepSeek products from federal civilian agencies",
+   "title": "Notice of Order Regarding Exclusion and Removal of DeepSeek Products From Federal Civilian Executive Branch Information Technology Systems and Procurements",
+   "harder": "Federal civilian agencies can no longer buy DeepSeek IT products and services and must remove them, along with third-party products built using DeepSeek implementations, from their systems.",
+   "quote": "removing all DeepSeek and DeepSeek-affiliate products, and third-party products and services developed using DeepSeek implementations, from civilian agency information technology.",
+   "who": "DeepSeek, its affiliates, and vendors whose products use DeepSeek",
+   "why": "Vendors selling to US federal civilian agencies cannot ship products developed using DeepSeek implementations.",
+   "limits": "effective date not stated in the notice",
+   "status": "final",
+   "instrument": "procurement",
+   "layers": [
+    "hosting",
+    "access"
+   ],
+   "jurisdiction": "US",
+   "issuer": "Homeland Security Department",
+   "effective": null,
+   "comment_deadline": null,
+   "access_now": false,
+   "impact": 3,
+   "ripples": [
+    {
+     "topic": "models",
+     "effect": "DeepSeek models leave federal civilian agency IT systems"
+    },
+    {
+     "topic": "security",
+     "effect": "Vendors must trace DeepSeek components inside third-party products"
+    }
+   ],
+   "hats": {
+    "architect": "Federal-facing products need a model layer that can drop DeepSeek implementations.",
+    "quality": "Test that replacement models meet the behavior previously delivered by DeepSeek components.",
+    "security": "Inventory dependencies for DeepSeek or DeepSeek-affiliate code before federal civilian deployments.",
+    "product": "DeepSeek-based features cannot be offered to federal civilian agency customers.",
+    "scout": "Watch for which affiliated entities the applicable regulations cover."
+   },
+   "url": "https://www.federalregister.gov/documents/2026/10/20/2026-21447/notice-of-order-regarding-exclusion-and-removal-of-deepseek-products-from-federal-civilian-executive",
+   "doc_url": "https://www.federalregister.gov/documents/2026/10/20/2026-21447/notice-of-order-regarding-exclusion-and-removal-of-deepseek-products-from-federal-civilian-executive",
+   "primary": true,
+   "sources": [
+    {
+     "name": "Federal Register",
+     "url": "https://www.federalregister.gov/documents/2026/10/20/2026-21447/notice-of-order-regarding-exclusion-and-removal-of-deepseek-products-from-federal-civilian-executive",
+     "title": "Notice of Order Regarding Exclusion and Removal of DeepSeek Products From Federal Civilian Executive Branch Information Technology Systems and Procurements"
+    }
+   ],
+   "published_at": "2026-10-20T12:00:00+00:00",
+   "first_seen": "2026-10-20",
+   "last_seen": "2026-10-20",
+   "signal": 77.7
+  },
+  {
+   "id": "2a7852da610c",
+   "key": "policy:url:digital-strategy.ec.europa.eu/en/library/first-harmonised-standard-supporting-ai-act-published-official-journal",
+   "headline": "EU publishes first AI Act harmonised standard for high-risk providers",
+   "title": "First harmonised standard supporting the AI Act published in the Official Journal",
+   "harder": "Providers of high-risk AI systems in the EU now have a defined operational quality management system to build or adopt in order to gain presumption of conformity with Article 17.",
+   "quote": "Organisations without ISO/IEC 42001 that plan to place or put into service high-risk AI systems in the EU market can use EN 18286 to expand an existing QMS or build one that fulfills the requirements of article 17 requirements.",
+   "who": "Providers of high-risk AI systems in the EU",
+   "why": "Teams placing high-risk AI systems on the EU market now have a concrete QMS benchmark to meet.",
+   "limits": "further harmonised standards still expected; high-risk requirements not yet applying",
+   "status": "final",
+   "instrument": "standard",
+   "layers": [
+    "use"
+   ],
+   "jurisdiction": "EU",
+   "issuer": "European Commission",
+   "effective": null,
+   "comment_deadline": null,
+   "access_now": false,
+   "impact": 2,
+   "ripples": [
+    {
+     "topic": "evals",
+     "effect": "Lifecycle QMS processes become the reference for high-risk compliance"
+    }
+   ],
+   "hats": {
+    "architect": "Design high-risk AI system lifecycles to map onto EN 18286 QMS processes.",
+    "quality": "QMS processes mapped to Article 17 become the benchmark for high-risk systems.",
+    "product": "Budget QMS work before shipping high-risk AI systems into the EU market.",
+    "scout": "Watch for further harmonised standards supporting the AI Act.",
+    "combinator": "EN 18286 layers on ISO/IEC 42001, ISO 9001 or sectoral QMS like ISO 13485."
+   },
+   "url": "https://digital-strategy.ec.europa.eu/en/library/first-harmonised-standard-supporting-ai-act-published-official-journal",
+   "doc_url": "https://digital-strategy.ec.europa.eu/en/library/first-harmonised-standard-supporting-ai-act-published-official-journal",
+   "primary": true,
+   "sources": [
+    {
+     "name": "European Commission: digital strategy (AI Act)",
+     "url": "https://digital-strategy.ec.europa.eu/en/library/first-harmonised-standard-supporting-ai-act-published-official-journal",
+     "title": "First harmonised standard supporting the AI Act published in the Official Journal"
+    }
+   ],
+   "published_at": "2026-10-19T07:37:54+00:00",
+   "first_seen": "2026-10-20",
+   "last_seen": "2026-10-20",
+   "signal": 63.9
+  }
+ ]
+}

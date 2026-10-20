@@ -63,17 +63,31 @@
     "robotics": 5
    },
    "kinds": {
-    "video": 142,
-    "social": 80,
-    "repo": 41,
-    "newsletter": 40,
-    "blog": 39,
-    "community": 33,
+    "social": 63,
+    "video": 35,
+    "repo": 33,
     "model": 29,
-    "changelog": 20,
-    "space": 18,
-    "news": 1
-   }
+    "newsletter": 28,
+    "blog": 24,
+    "community": 19,
+    "changelog": 17,
+    "space": 12,
+    "constraint": 2
+   },
+   "constraints": [
+    {
+     "id": "7fcc5ec3286b",
+     "headline": "DHS order bars DeepSeek products from federal civilian agencies",
+     "status": "final",
+     "jurisdiction": "US"
+    },
+    {
+     "id": "2a7852da610c",
+     "headline": "EU publishes first AI Act harmonised standard for high-risk providers",
+     "status": "final",
+     "jurisdiction": "EU"
+    }
+   ]
   },
   {
    "date": "2026-10-19",
