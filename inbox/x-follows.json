@@ -1,3 +1,16 @@
 {
- "follows": []
+ "follows": [
+  {
+   "handle": "@arena",
+   "date": "2026-10-20",
+   "by": "magpie-scout",
+   "status": "followed",
+   "why": "Curated eval platform (Arena.ai) with 3 qualifying capability posts in today's sweeps and no doubt flags; Twitter Profile confirmed it cannot check or act, and the browser showed @sutcliffcc was not yet following.",
+   "evidence": [
+    "https://x.com/arena/status/2112578867521319377",
+    "https://x.com/arena/status/2112600237491810662",
+    "https://x.com/arena/status/2112639437482176693"
+   ]
+  }
+ ]
 }

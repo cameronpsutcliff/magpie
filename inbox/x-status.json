@@ -21,7 +21,7 @@
   "active": 0,
   "retired": 0
  },
- "follows_this_week": 0,
+ "follows_this_week": 1,
  "unfollow_suggestions": [],
  "prompt_feedback": [
   "Prompt v4 still says to read saves through the X plugin; in practice they come from the Twitter Profile archive (see below), so a sweep only sees saves as fresh as that bot's last sync (20:44Z for the 22:08Z sweep).",
@@ -44,5 +44,6 @@
  "errors": [
   "Accounts unavailable and skipped: @xai (moved, @SpaceXAI not found), @heygen_official (suspended); @lmarena_ai swept as @arena.",
   "Two page-2 searches (builders, applied) failed with 400 because until_id was combined with start_time; both were rerun with end_time and all four calls are counted."
- ]
+ ],
+ "follows_today": 1
 }
