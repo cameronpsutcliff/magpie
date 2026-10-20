@@ -9,9 +9,12 @@ other sources linked or mentioned. Explicit rules then change the watch list:
   21 days. Backfilled editions never count toward zero kept: they were rebuilt from archives that cover
   only some sources.
 
-A trusted source is an owner-curated one: a registry source with trust of at least 0.65, an X roster
-account the Grok sweeps read (signal_to_noise 4 or more), or a high-priority YouTube channel.
-Discovered sources never vouch for others, so the list cannot snowball from its own picks.
+A trusted source is an owner-curated one: a registry source with trust of at least 0.65, an account in
+config/x-accounts.json with signal_to_noise 4 or more, or a high-priority YouTube channel. Discovered
+sources never vouch for others, so the list cannot snowball from its own picks; that includes the
+accounts Magpie Scout keeps in inbox/x-roster.json, and an X post carrying doubt of level 2 or more.
+The Scout maintains its own part of the X roster, so every handle it lists (trial, active or retired) is
+left to it: the loop neither promotes nor re-promotes those.
 
 Every change lands in config/ (sources.json, x-accounts.json, youtube.json) with its evidence, candidates in config/candidates.json, and a readable
 change log in reports/discovery/. The owner undoes any change with `--veto <id>`; config/vetoes.json
@@ -124,7 +127,8 @@ def citer_of(item: dict, roster: dict, discovered: set) -> tuple[str, str, bool]
     if sid in X_SWEEPS:
         h = (item.get("author") or "").lower()
         acct = roster.get(h) or {}
-        trusted = acct.get("signal_to_noise", 0) >= X_TRUSTED_SNR and acct.get("origin") != "discovery"
+        doubted = (((item.get("extra") or {}).get("doubt") or {}).get("level") or 0) >= 2
+        trusted = acct.get("signal_to_noise", 0) >= X_TRUSTED_SNR and acct.get("origin") != "discovery" and not doubted
         return f"x:{h}", f"X: {item.get('author') or ''}", trusted
     if sid in YOUTUBE:
         # High priority is trust 0.7; discovered channels join at medium priority (0.55), so they never vouch.
@@ -476,14 +480,16 @@ def run(root: Path = ROOT, date: str | None = None, dry_run: bool = False, check
     youtube_cfg = load_json(cfg / "youtube.json", {"channels": []})
     vetoes = load_json(cfg / "vetoes.json", {"never_promote": [], "never_demote": []})
     week = load_week(root / "state/runs", date)
-    roster = {a["handle"].lower(): a for a in roster_cfg.get("accounts", [])}
+    roster = {a["handle"].lower(): a for a in roster_cfg.get("accounts", [])}  # curated only: the ones that vouch
+    scout = {f"x:{a['handle'].lower()}" for a in load_json(root / "inbox/x-roster.json", {}).get("accounts", [])
+             if a.get("handle")}
     # Repos from promoted GitHub owners are discovered too, so they never vouch for others.
     discovered = {f["id"] for f in sources.get("feeds", []) if f.get("origin") == "discovery"} | {"github-watched-orgs"}
     avoided = ({f"x:{a['handle'].lower()}" for a in roster_cfg.get("avoid", [])} |
                {f"youtube:channel/{c['channel_id'].lower()}" for c in youtube_cfg.get("dropped", [])})
 
     ents = mine(week, roster, discovered)
-    result = plan(ents, watched_ids(sources, roster_cfg, week, youtube_cfg), vetoes, avoided, check_feed)
+    result = plan(ents, watched_ids(sources, roster_cfg, week, youtube_cfg) | scout, vetoes, avoided, check_feed)
     stats = kept_stats(root / "data/v1/days", date)
     result["demoted"], zero_ready = demotions(sources, roster_cfg, vetoes, stats)
     log = render_log(date, week, stats, result, zero_ready, dry_run)

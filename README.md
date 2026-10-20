@@ -68,9 +68,11 @@ mentioned, then applies two rules:
 | Promote | Two or more trusted, independent sources cited it within the week. |
 | Demote | Zero kept items in its last 21 live editions, or three hype flags in 21 days. Backfilled editions never count toward zero kept. |
 
-Trusted means owner-curated: a registry source with trust 0.65 or more, an X roster account the Grok
-sweeps read (the pulse and Grok Bot count as one), or a high-priority YouTube channel. Discovered
-sources never vouch for others. Promoted X accounts join the roster in the `builders` group,
+Trusted means owner-curated: a registry source with trust 0.65 or more, an account in
+`config/x-accounts.json` (the pulse and Grok Bot count as one), or a high-priority YouTube channel.
+Discovered sources never vouch for others, and neither do Magpie Scout's own roster additions or an X post
+with doubt of level 2 or more. Handles in `inbox/x-roster.json` belong to the Scout, so the loop never
+promotes them. Promoted X accounts join the roster in the `builders` group,
 newsletters become feeds (only after their feed parses), GitHub owners feed the `github-watched-orgs`
 collector, and YouTube channels join `config/youtube.json` at medium priority when a link gave their
 channel id (a bare handle is held for you to add by hand). Demoted sources move to a `benched` list;

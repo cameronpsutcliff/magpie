@@ -300,6 +300,34 @@ class DiscoverTests(unittest.TestCase):
         acct = next(a for a in r.read("config/x-accounts.json")["accounts"] if a["handle"] == "@outsider")
         self.assertEqual((acct["group"], acct["name"], acct["signal_to_noise"]), ("builders", "outsider", 4))
 
+    def test_scout_roster_is_left_to_the_scout(self):
+        r = self.repo
+        r.write("inbox/x-roster.json", {"accounts": [{"handle": "@ontrial", "status": "trial", "signal_to_noise": 5},
+                                                      {"handle": "@gone", "status": "retired"}]})
+        r.run_items([
+            # A Scout trial account is already watched, and it does not vouch for anyone.
+            item("x-grok-bot", "social", "https://x.com/ontrial/status/1", "Kit", author="@ontrial",
+                 links=["https://github.com/scouted/kit"]),
+            item("trusted-letter", "newsletter", "https://trusted.example/p/s", "S",
+                 body="https://github.com/scouted/kit https://x.com/ontrial/status/1 https://x.com/gone/status/2"),
+            item("x-grok-pulse", "social", "https://x.com/vetted/status/12", "S", author="@vetted",
+                 links=["https://x.com/ontrial/status/1", "https://x.com/gone/status/2"]),
+        ])
+        out = r.run(dry_run=True)
+        self.assertEqual(out["result"]["promoted"], [])
+        self.assertIn("github:scouted", {e["id"] for e in out["result"]["watching"]})
+
+    def test_doubted_x_posts_do_not_vouch(self):
+        r = self.repo
+        bot = item("x-grok-bot", "social", "https://x.com/vetted/status/13", "Claim", author="@vetted",
+                   links=["https://github.com/claimed/model"])
+        bot["extra"]["doubt"] = {"level": 2, "note": "Community Note: benchmark not reproduced", "url": None}
+        r.run_items([bot, item("trusted-letter", "newsletter", "https://trusted.example/p/t", "T",
+                               body="https://github.com/claimed/model")])
+        out = r.run(dry_run=True)
+        self.assertEqual(out["result"]["promoted"], [])
+        self.assertIn("github:claimed", {e["id"] for e in out["result"]["watching"]})
+
     def test_youtube_promotes_into_youtube_json_by_channel_id(self):
         r = self.repo
         links = ["https://www.youtube.com/channel/UCnewnewnewnewnewnewnew1", "https://www.youtube.com/@Watched",
