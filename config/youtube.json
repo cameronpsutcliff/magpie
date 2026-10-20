@@ -1,0 +1,1258 @@
+{
+  "channels": [
+    {
+      "channel_id": "UCYO_jab_esuFRV4b17AJtAw",
+      "handle": "@3blue1brown",
+      "name": "3Blue1Brown",
+      "class": "analysis",
+      "priority": "medium",
+      "cadence_per_week": 0.2,
+      "why": "Rare but definitive visual explainers of ML ideas; recent run covers compression as intelligence and the last IMO problem AI could not solve.",
+      "source": "existing",
+      "last_upload": "2026-10-18"
+    },
+    {
+      "channel_id": "UCD-gasIQYzXqQ4dr7mGPRfw",
+      "handle": "@AgenticLab1",
+      "name": "Agentic Lab",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 0.4,
+      "why": "Claude Code skills, hooks and agent internals from first principles; cadence has slowed to about one video every few weeks.",
+      "source": "existing",
+      "last_upload": "2026-09-21"
+    },
+    {
+      "channel_id": "UCLKPca3kwwd-B59HNr-_lvA",
+      "handle": "@aiDotEngineer",
+      "name": "AI Engineer",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 35.0,
+      "why": "AI Engineer conference talks from builders shipping agents, evals and infra; uploads arrive in large batches after each event.",
+      "source": "existing",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UCNJ1Ymd5yFuUPtn21xtRbbw",
+      "handle": "@aiexplained-official",
+      "name": "AI Explained",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 1.2,
+      "why": "Fast, benchmark-literate breakdowns of each frontier release (Opus 5.5, GPT 6 Astra) with its own SimpleBench testing.",
+      "source": "existing",
+      "last_upload": "2026-10-14"
+    },
+    {
+      "channel_id": "UCelfWQr9sXVMTvBzviPGlFw",
+      "handle": "@AILABS-393",
+      "name": "AI LABS",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 3.9,
+      "why": "Surfaces trending GitHub AI repos, skills and coding workflows within days of them taking off.",
+      "source": "existing",
+      "last_upload": "2026-10-19"
+    },
+    {
+      "channel_id": "UC0C-17n9iuUQPylguM1d-lQ",
+      "handle": "@NateBJones",
+      "name": "AI News & Strategy Daily | Nate B Jones",
+      "class": "analysis",
+      "priority": "medium",
+      "cadence_per_week": 5.0,
+      "why": "Daily strategy read on agent and model news; good for what a release means, less for hands-on proof.",
+      "source": "existing",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UCXUPKJO5MZQN11PqgIvyuvQ",
+      "handle": "@AndrejKarpathy",
+      "name": "Andrej Karpathy",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 0.0,
+      "why": "Dormant by the 60-day rule (last upload about a year ago) but kept as a watch-only exception: any new Karpathy upload is a landmark capability explainer.",
+      "source": "existing",
+      "last_upload": "2025-10-21"
+    },
+    {
+      "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+      "handle": "@anthropic-ai",
+      "name": "Anthropic",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 0.6,
+      "why": "First-party Claude model and research launches (Claude Fable 5.1, Model Hardware Standard).",
+      "source": "existing",
+      "last_upload": "2026-09-30"
+    },
+    {
+      "channel_id": "UC-yRDvpR99LUc5l7i7jLzew",
+      "handle": "@Bg2Pod",
+      "name": "Bg2 Pod",
+      "class": "analysis",
+      "priority": "medium",
+      "cadence_per_week": 0.1,
+      "why": "Gerstner and Gurley on AI capex, chips and lab economics; market framing for capability shifts.",
+      "source": "existing",
+      "last_upload": "2026-10-16"
+    },
+    {
+      "channel_id": "UCoy6cTJ7Tg0dqS-DI-_REsA",
+      "handle": "@Chase-H-AI",
+      "name": "Chase AI",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 3.2,
+      "why": "Hands-on Claude Code upgrades, skills and viral open-source repos, tested with honest results.",
+      "source": "existing",
+      "last_upload": "2026-10-19"
+    },
+    {
+      "channel_id": "UCV03SRZXJEz-hchIAogeJOg",
+      "handle": "@claude",
+      "name": "Claude",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 3.2,
+      "why": "Official Claude product channel: feature launches and how-tos (Claude Dashboards, Claude Motion, Claude Code Projects) the day they ship.",
+      "source": "existing",
+      "last_upload": "2026-10-15"
+    },
+    {
+      "channel_id": "UCjNRVMBVI30Sak_p6HRWhIA",
+      "handle": "@CognitiveRevolutionPodcast",
+      "name": "Cognitive Revolution \"How AI Changes Everything\"",
+      "class": "analysis",
+      "priority": "high",
+      "cadence_per_week": 3.2,
+      "why": "Long technical interviews with founders and researchers on agents, governance and AI-for-science, several per week.",
+      "source": "existing",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UC_a85mUHqsy5j0CYCgLnkEQ",
+      "handle": "@DIYSmartCode",
+      "name": "DIY Smart Code",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 17.5,
+      "why": "High-volume measured tests of new models and Claude Code tooling (token-cost runs, model accuracy checks).",
+      "source": "existing",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UCXl4i9dYBrFOabk0xGmbkRA",
+      "handle": "@DwarkeshPatel",
+      "name": "Dwarkesh Patel",
+      "class": "analysis",
+      "priority": "high",
+      "cadence_per_week": 1.2,
+      "why": "Deep interviews with frontier lab researchers (agent swarms, recursive self-improvement); some episodes are non-AI history.",
+      "source": "existing",
+      "last_upload": "2026-10-07"
+    },
+    {
+      "channel_id": "UCOXRjenlq9PmlTqd_JhAbMQ",
+      "handle": "@EricWTech",
+      "name": "Eric Tech",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 4.4,
+      "why": "Practical agent builds for marketing and SEO plus interviews with tool builders; applied rather than frontier.",
+      "source": "existing",
+      "last_upload": "2026-10-19"
+    },
+    {
+      "channel_id": "UCsBjURrPoezykLs9EqgamOA",
+      "handle": "@Fireship",
+      "name": "Fireship",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 2.7,
+      "why": "Quick, widely watched takes on new dev and AI tooling news; good early signal, light on depth.",
+      "source": "existing",
+      "last_upload": "2026-10-17"
+    },
+    {
+      "channel_id": "UCP7jMXSY2xbc3KCAE0MHQ-A",
+      "handle": "@googledeepmind",
+      "name": "Google DeepMind",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 2.7,
+      "why": "First-party Gemini 4 Argon and DeepMind research demos (codebase maintenance, cyber defense, robotics).",
+      "source": "existing",
+      "last_upload": "2026-10-15"
+    },
+    {
+      "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+      "handle": "@GoogleDevelopers",
+      "name": "Google for Developers",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 3.9,
+      "why": "Official Google developer launches and walkthroughs (Gemini 4 Argon, Antigravity) as they ship.",
+      "source": "existing",
+      "last_upload": "2026-10-17"
+    },
+    {
+      "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
+      "handle": "@HuggingFace",
+      "name": "Hugging Face",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 3.2,
+      "why": "Open-model ecosystem hub: local agents, hardware comparisons and new open releases from Hugging Face.",
+      "source": "existing",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UC_x36zCEGilGpB1m-V4gmjg",
+      "handle": "@indydevdan",
+      "name": "IndyDevDan",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 1.3,
+      "why": "Agentic engineering experiments with new agent runtimes and model routing, built live.",
+      "source": "existing",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UCxBcwypKK-W3GHd_RZ9FZrQ",
+      "handle": "@LatentSpacePod",
+      "name": "Latent Space",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 4.2,
+      "why": "The AI engineer podcast: tool reviews, RL environments and world-model interviews with the people building them.",
+      "source": "existing",
+      "last_upload": "2026-10-18"
+    },
+    {
+      "channel_id": "UCMLtBahI5DMrt0NPvDSoIRQ",
+      "handle": "@MachineLearningStreetTalk",
+      "name": "Machine Learning Street Talk",
+      "class": "analysis",
+      "priority": "high",
+      "cadence_per_week": 1.8,
+      "why": "Research-depth interviews (voice agents, formal math, evolution of intelligence); strong on why methods work.",
+      "source": "existing",
+      "last_upload": "2026-10-11"
+    },
+    {
+      "channel_id": "UC2ojq-nuP8ceeHqiroeKhBA",
+      "handle": "@nateherk",
+      "name": "Nate Herk | AI Automation",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 5.8,
+      "why": "Automation and agent tool roundups (multiplayer agents, tool rankings); practical, business-leaning.",
+      "source": "existing",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UCSI7h9hydQ40K5MJHnCrQvw",
+      "handle": "@NoPriorsPodcast",
+      "name": "No Priors: AI, Machine Learning, Tech, & Startups",
+      "class": "analysis",
+      "priority": "medium",
+      "cadence_per_week": 1.2,
+      "why": "Founder and lab interviews (OpenAI, Reflection, frontier chips) from two prominent AI investors.",
+      "source": "existing",
+      "last_upload": "2026-10-16"
+    },
+    {
+      "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+      "handle": "@NVIDIADeveloper",
+      "name": "NVIDIA Developer",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 8.8,
+      "why": "First-party NVIDIA model and inference releases (Nemotron 3.5, Dynamo, RTX Spark) with build guides.",
+      "source": "existing",
+      "last_upload": "2026-10-19"
+    },
+    {
+      "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
+      "handle": "@OpenAI",
+      "name": "OpenAI",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 35.0,
+      "why": "First-party OpenAI launches; cadence is inflated by bursts of localized product spots (GPT Live voice).",
+      "source": "existing",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UCDq7SjbgRKty5TgGafW8Clg",
+      "handle": "@engineerprompt",
+      "name": "Prompt Engineering",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 4.4,
+      "why": "Hands-on with new techniques and open models (RL on small Qwen models, efficient reasoning, agent security).",
+      "source": "existing",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UCKk_IEA0wbkibod2u7NctCQ",
+      "handle": "@SoftwareEngineerMeetsAI",
+      "name": "Software Engineer Meets AI",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 0.6,
+      "why": "Deep dives on Claude Code and Codex internals (memory, worktrees, parallelism); slower cadence.",
+      "source": "existing",
+      "last_upload": "2026-09-21"
+    },
+    {
+      "channel_id": "UC4JX40jDee_tINbkjycV4Sg",
+      "handle": "@TechWithTim",
+      "name": "Tech With Tim",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 3.9,
+      "why": "Builds and tries new agent tools in Python; tutorial-leaning but frequent.",
+      "source": "existing",
+      "last_upload": "2026-10-19"
+    },
+    {
+      "channel_id": "UCwvXnrOCRlhokHlJwohf2OA",
+      "handle": "@TheAIAutomators",
+      "name": "The AI Automators",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 2.9,
+      "why": "Head-to-head tests of new releases (Gemini 4 Argon vs Opus 5.5, Meta Muse Wonder) soon after launch.",
+      "source": "existing",
+      "last_upload": "2026-10-17"
+    },
+    {
+      "channel_id": "UCKelCK4ZaO6HeEI1KQjqzWA",
+      "handle": "@AIDailyBrief",
+      "name": "The AI Daily Brief: Artificial Intelligence News",
+      "class": "analysis",
+      "priority": "high",
+      "cadence_per_week": 11.7,
+      "why": "Near-daily AI news and strategy show, including weekly roundups of the major model announcements.",
+      "source": "existing",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UCbfYPyITQ-7l4upoX8nvctg",
+      "handle": "@TwoMinutePapers",
+      "name": "Two Minute Papers",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 2.7,
+      "why": "Short visual explainers of new papers and model releases (Gemini 4 Argon, DeepSeek memory work).",
+      "source": "existing",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UChpleBmo18P08aKCIgti38g",
+      "handle": "@mreflow",
+      "name": "Matt Wolfe",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 1.8,
+      "why": "Weekly roundup of every notable model and tool launch with demos; id corrected (the list had MLST's id under this name).",
+      "source": "existing",
+      "last_upload": "2026-10-18"
+    },
+    {
+      "channel_id": "UC55ODQSvARtgSyc8ThfiepQ",
+      "handle": "@samwitteveenai",
+      "name": "Sam Witteveen",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 2.7,
+      "why": "Early hands-on tests of new Google and open models (Gemini 4 Argon, Mercury 3, Holo4); id corrected (the list id pointed to another channel).",
+      "source": "existing",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UCNZEktrsM5oJZ-MK4jKPMOQ",
+      "handle": "@TheNextNewThingAI",
+      "name": "The Next New Thing",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 11.7,
+      "why": "Andrew Warner's near-daily first looks at new agent tools and GitHub's top new repos; about 67k subs and very early on what just became possible.",
+      "source": "new",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UC5qxlwEKM7-5YZudb24l0bg",
+      "handle": "@AIatMeta",
+      "name": "AI at Meta",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 0.1,
+      "why": "Meta's first-party launch channel (Muse Wonder frontier models, SAM Audio, SAM 3D); rare uploads but each one is a release.",
+      "source": "new",
+      "last_upload": "2026-10-16"
+    },
+    {
+      "channel_id": "UC7c3Kb6jYCRj4JOHHZTxKsQ",
+      "handle": "@GitHub",
+      "name": "GitHub",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 8.8,
+      "why": "First-party Copilot agent and platform features (issue-to-PR agents, AI usage tracking) as they ship.",
+      "source": "new",
+      "last_upload": "2026-10-19"
+    },
+    {
+      "channel_id": "UCC-lyoTfSrcJzA1ab3APAgw",
+      "handle": "@LangChain",
+      "name": "LangChain",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 8.8,
+      "why": "First-party agent framework launches (Managed Deep Agents, LangSmith) and agent research talks.",
+      "source": "new",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UCNW6J6bFBIAmvbrnE0rCPnA",
+      "handle": "@GoogleGemini",
+      "name": "Google Gemini",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 7.0,
+      "why": "Official Gemini app and model demos (Gemini 4 Argon builds) several times a week.",
+      "source": "new",
+      "last_upload": "2026-10-19"
+    },
+    {
+      "channel_id": "UCawZsQWqfGSbCI5yjkdVkTA",
+      "handle": "@matthew_berman",
+      "name": "Matthew Berman",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 4.4,
+      "why": "Same-week tests of frontier and open models plus lab interviews (Gemini 4 Argon, Sam Altman).",
+      "source": "new",
+      "last_upload": "2026-10-19"
+    },
+    {
+      "channel_id": "UC2WmuBuFq6gL08QYG-JjXKw",
+      "handle": "@intheworldofai",
+      "name": "WorldofAI",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 11.7,
+      "why": "Near-daily coverage of new model drops, leaks and open-source releases, often hands-on within hours.",
+      "source": "new",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UCMwVTLZIRRUyyVrkjDpn4pA",
+      "handle": "@ColeMedin",
+      "name": "Cole Medin",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 3.2,
+      "why": "Production agent builds and honest post-mortems on agentic coding workflows.",
+      "source": "new",
+      "last_upload": "2026-10-17"
+    },
+    {
+      "channel_id": "UCq_MHfMX5FBBB3bqnJPAEzA",
+      "handle": "@RayFernando1337",
+      "name": "Ray Fernando",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 35.0,
+      "why": "Long sessions testing new models in real coding work (Gemini 4 Argon vs Opus, multi-agent crews); about 30k subs.",
+      "source": "new",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UC0m81bQuthaQZmFbXEY9QSw",
+      "handle": "@AICodeKing",
+      "name": "AICodeKing",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 17.5,
+      "why": "Daily tests of new coding agents, Claude Code mods and model combos, usually among the first on YouTube to try them.",
+      "source": "new",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UCbRP3c757lWg9M-U7TyEkXA",
+      "handle": "@t3dotgg",
+      "name": "Theo - t3․gg",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 5.0,
+      "why": "Informed dev takes on new models and tools within a day of launch (Gemini 4, Anthropic's git rebuild).",
+      "source": "new",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+      "handle": "@fahdmirza",
+      "name": "Fahd Mirza",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 35.0,
+      "why": "Installs and tests almost every new open model and local agent on release day; highest-volume local-model tester.",
+      "source": "new",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UCOCahKBCEUuzDJawM7yN1dg",
+      "handle": "@Bijanbowen",
+      "name": "Bijan Bowen",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 5.8,
+      "why": "Hands-on local and frontier model tests the day they drop (DeepSeek V4.1 Flash, Gemini 4 Argon); about 79k subs.",
+      "source": "new",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UCkVfrGwV-iG9bSsgCbrNPxQ",
+      "handle": "@betterstack",
+      "name": "Better Stack",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 17.5,
+      "why": "Fast, well-researched explainers of new dev and AI tools, repos and lab announcements, several per day.",
+      "source": "new",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UCgfe2ooZD3VJPB6aJAnuQng",
+      "handle": "@bycloudAI",
+      "name": "bycloud",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 1.3,
+      "why": "Research-level breakdowns of new model architectures and optimizations (DeepSeek V4.1 Flash, decision models).",
+      "source": "new",
+      "last_upload": "2026-10-17"
+    },
+    {
+      "channel_id": "UCfOvNb3xj28SNqPQ_JIbumg",
+      "handle": "@code4AI",
+      "name": "Discover AI",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 11.7,
+      "why": "Discover AI: daily explainers of the newest arXiv papers on reasoning, RAG, memory and agent harnesses; about 92k subs.",
+      "source": "new",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UCoW_WzQNJVAjxo4osNAxd_g",
+      "handle": "@venelin_valkov",
+      "name": "Venelin Valkov",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 5.0,
+      "why": "First-test videos of each new open model (MiniMax M3.1 Flash, DeepSeek V4.1 Flash) with reproducible local runs; about 36k subs.",
+      "source": "new",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UCHvm5vA2Rey8ukVdpEXb-jg",
+      "handle": "@altryne",
+      "name": "Alex Volkov from ThursdAI",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 5.8,
+      "why": "ThursdAI weekly live show: every model, open-source and tool release of the week with lab guests; about 55k subs.",
+      "source": "new",
+      "last_upload": "2026-10-17"
+    },
+    {
+      "channel_id": "UCIgnGlGkVRhd4qNFcEwLL4A",
+      "handle": "@theAIsearch",
+      "name": "AI Search",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 2.7,
+      "why": "Catches new open-source models and AI tools early (GLM 5.2, local image generators) with quick hands-on demos.",
+      "source": "new",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UC9Rrud-8CaHokDtK9FszvRg",
+      "handle": "@GithubAwesome",
+      "name": "Github Awesome",
+      "class": "capability",
+      "priority": "high",
+      "cadence_per_week": 3.9,
+      "why": "Daily and weekly GitHub trending roundups: a direct feed of newly popular AI repos; about 63k subs.",
+      "source": "new",
+      "last_upload": "2026-10-19"
+    },
+    {
+      "channel_id": "UCsMica-v34Irf9KVTh6xx-g",
+      "handle": "@MicrosoftDeveloper",
+      "name": "Microsoft Developer",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 8.8,
+      "why": "First-party Microsoft agent and Foundry dev content; high volume, mixed with enterprise data topics.",
+      "source": "new",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UCJS9pqu9BzkAMNTmzNMNhvg",
+      "handle": "@googlecloudtech",
+      "name": "Google Cloud Tech",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 4.7,
+      "why": "Google Cloud model and agent launches with demos (Gemini 4 Argon 1M-token output, Looker with LLM skills).",
+      "source": "new",
+      "last_upload": "2026-10-15"
+    },
+    {
+      "channel_id": "UCcIXc5mJsHVYTZR1maL5l9w",
+      "handle": "@Deeplearningai",
+      "name": "DeepLearningAI",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 1.2,
+      "why": "Andrew Ng's team: short courses and talks on new agent and memory techniques, usually with the vendor that built them.",
+      "source": "new",
+      "last_upload": "2026-10-16"
+    },
+    {
+      "channel_id": "UCs5Y5_7XK8HLDX0SLNwkd3w",
+      "handle": "@code",
+      "name": "Visual Studio Code",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 1.8,
+      "why": "VS Code team on Copilot agent mode and new editor AI features, often the first demo of each release.",
+      "source": "new",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UC3QIolTSR29ba4_u15vtEUQ",
+      "handle": "@CloudflareDevelopers",
+      "name": "Cloudflare Developers",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 1.2,
+      "why": "Cloudflare's agent platform launches (Artifacts beta, new CLI) for building and hosting agents.",
+      "source": "new",
+      "last_upload": "2026-10-13"
+    },
+    {
+      "channel_id": "UC5-pBdfdA3KUo-vq72l-umA",
+      "handle": "@MistralAIOfficial",
+      "name": "Mistral",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 0.4,
+      "why": "Mistral's official channel: agent build guides and keynotes for new Mistral models; low cadence.",
+      "source": "new",
+      "last_upload": "2026-10-07"
+    },
+    {
+      "channel_id": "UCxgo0OMZU9SiaYpJsuZKWkQ",
+      "handle": "@Grok",
+      "name": "Grok",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 2.7,
+      "why": "Appears to be xAI's official Grok product channel (Grok Bot updates, 'What's new in Grok'); no separate xAI channel found.",
+      "source": "new",
+      "last_upload": "2026-10-18"
+    },
+    {
+      "channel_id": "UCB5ofLXaAv_a1QopZ801K7A",
+      "handle": "@GoogleLabs",
+      "name": "Google Labs",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 0.2,
+      "why": "Google Labs experiment launches (Playground, vibe-coding tools); rare but each one is a new product.",
+      "source": "new",
+      "last_upload": "2026-10-08"
+    },
+    {
+      "channel_id": "UCWXI5YeOsh03QvJ59PMaXFw",
+      "handle": "@PyTorch",
+      "name": "PyTorch",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 8.8,
+      "why": "PyTorch conference and community talks on new inference and training techniques (KV-cache tiering, diffusion LLM inference).",
+      "source": "new",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UC6YYHJzM6PhZ2Yey9BQiUaw",
+      "handle": "@cursor_ai",
+      "name": "Cursor",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 1.2,
+      "why": "Cursor's first-party feature launches and customer workflows for its coding agents.",
+      "source": "new",
+      "last_upload": "2026-10-07"
+    },
+    {
+      "channel_id": "UCPGrgwfbkjTIgPoOh2q1BAg",
+      "handle": "@DavidOndrej",
+      "name": "David Ondrej",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 2.7,
+      "why": "Fast reactions and demos of new coding agents and agentic engineering setups; hype-leaning titles.",
+      "source": "new",
+      "last_upload": "2026-10-19"
+    },
+    {
+      "channel_id": "UCpV_X0VrL8-jg3t6wYGS-1g",
+      "handle": "@1littlecoder",
+      "name": "1littlecoder",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 0.6,
+      "why": "Quick first looks at new frontier and Chinese open models (GPT 6 Astra, Minimax H3); cadence has slowed.",
+      "source": "new",
+      "last_upload": "2026-09-21"
+    },
+    {
+      "channel_id": "UCajiMK_CY9icRhLepS8_3ug",
+      "handle": "@AZisk",
+      "name": "Alex Ziskind",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 2.7,
+      "why": "Benchmarks local models on real hardware (120B models, DGX Station vs GPU rigs).",
+      "source": "new",
+      "last_upload": "2026-10-17"
+    },
+    {
+      "channel_id": "UCiaQzXI5528Il6r2NNkrkJA",
+      "handle": "@DigitalSpaceport",
+      "name": "Digital Spaceport",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 1.8,
+      "why": "Local AI rig builds running new open models on budget hardware (DeepSeek V4.1 Flash, Qwen 3.8).",
+      "source": "new",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UC5Wz4fFacYuON6IKbhSa7Zw",
+      "handle": "@MattVidPro",
+      "name": "MattVidPro",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 1.8,
+      "why": "Early hands-on with new image, video and multimodal models and their cost tradeoffs.",
+      "source": "new",
+      "last_upload": "2026-10-18"
+    },
+    {
+      "channel_id": "UC9Ryt3XOGYBoAJVsBHNGDzA",
+      "handle": "@TheoreticallyMedia",
+      "name": "Theoretically Media",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 2.7,
+      "why": "Tests each new AI video and world-model release for creators (ByteDance world model, Gemini 4 Argon).",
+      "source": "new",
+      "last_upload": "2026-10-17"
+    },
+    {
+      "channel_id": "UCkQS_dP6GJTmYnMlox-YiKQ",
+      "handle": "@jbhuang0604",
+      "name": "Jia-Bin Huang",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 1.2,
+      "why": "Professor-quality explainers of training and memory techniques (ZeRO, self-editing memory); about 50k subs.",
+      "source": "new",
+      "last_upload": "2026-10-15"
+    },
+    {
+      "channel_id": "UC_CzsS7UTjcxJ-xXp1ftxtA",
+      "handle": "@SebastianRaschka",
+      "name": "Sebastian Raschka",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 1.2,
+      "why": "Build-from-scratch series on reasoning models from a leading LLM educator.",
+      "source": "new",
+      "last_upload": "2026-10-18"
+    },
+    {
+      "channel_id": "UCnpBg7yqNauHtlNSpOl5-cg",
+      "handle": "@PeterYangYT",
+      "name": "Peter Yang",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 2.7,
+      "why": "Side-by-side model tests and new AI product walkthroughs for builders (Gemini 4 vs Opus 5.5 vs GPT 6 Astra).",
+      "source": "new",
+      "last_upload": "2026-10-19"
+    },
+    {
+      "channel_id": "UCGmR6lhKMlCkvrvb39vPtdA",
+      "handle": "@Steve8708",
+      "name": "Steve (Builder.io)",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 1.2,
+      "why": "Builder.io CEO on new agent frameworks and verifiable agent loops (Agent-Native).",
+      "source": "new",
+      "last_upload": "2026-10-15"
+    },
+    {
+      "channel_id": "UCRYY7IEbkHLH_ScJCu9eWDQ",
+      "handle": "@howiaipodcast",
+      "name": "How I AI",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 2.7,
+      "why": "Claire Vo's show of real AI workflows and first takes on new models (Meta Muse Wonder).",
+      "source": "new",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UC6MhHkSosYXAD-LTXBWyLMg",
+      "handle": "@avb_fj",
+      "name": "Neural Breakdown with AVB",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 1.2,
+      "why": "Neural Breakdown: rising research explainer on new inference and interpretability papers; about 38k subs.",
+      "source": "new",
+      "last_upload": "2026-10-17"
+    },
+    {
+      "channel_id": "UCI5dM9hNYAXwuvhQRXwzzww",
+      "handle": "@hu-po",
+      "name": "hu-po",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 1.2,
+      "why": "Long live paper-reading streams on the newest robotics, self-play and agent research; about 18k subs.",
+      "source": "new",
+      "last_upload": "2026-10-11"
+    },
+    {
+      "channel_id": "UCJgIbYl6C5no72a0NUAPcTA",
+      "handle": "@GPUMODE",
+      "name": "GPU MODE",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 1.2,
+      "why": "Weekly lecture series on GPU kernels, compilers and quantization from the practitioners writing them.",
+      "source": "new",
+      "last_upload": "2026-10-18"
+    },
+    {
+      "channel_id": "UCuU9jE4MHHEIyYMbDfUPSew",
+      "handle": "@CalebWritesCode",
+      "name": "Caleb Writes Code",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 2.7,
+      "why": "Short explainers of new model releases and research results within days (Haiku 5.5, MiMo RL scaling).",
+      "source": "new",
+      "last_upload": "2026-10-18"
+    },
+    {
+      "channel_id": "UCG6qpjVnBTTT8wLGBygANOQ",
+      "handle": "@AAIFLive-x1r",
+      "name": "AAIF Live",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 2.7,
+      "why": "Agentic AI Foundation talks and reading group on agent protocols, safety and policy; also carries MLOps Community sessions.",
+      "source": "new",
+      "last_upload": "2026-10-16"
+    },
+    {
+      "channel_id": "UCgUfJoPtkt7-RiiuYh4vmGA",
+      "handle": "@kaiexplainsYT",
+      "name": "Kai",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 11.7,
+      "why": "Rising local-AI channel (about 48k subs): frontier-level results on small VRAM, model roundups and hardware paths.",
+      "source": "new",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UCvN3QmpWy_eFG8gIU_Ij-RQ",
+      "handle": "@ZeroToMVP",
+      "name": "Zero to MVP",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 7.0,
+      "why": "Pits new local models against frontier APIs on real app builds (DeepSeek V4.1 Flash vs Opus 5.5); about 33k subs.",
+      "source": "new",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UCIYC0IZ4fKmXaeGl95WIf5Q",
+      "handle": "@oxen-ai",
+      "name": "Oxen",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 0.6,
+      "why": "Oxen.ai Arxiv Dives: deep dives on new model releases with their authors (FLUX 3); under 10k subs.",
+      "source": "new",
+      "last_upload": "2026-10-07"
+    },
+    {
+      "channel_id": "UConVfxXodg78Tzh5nNu85Ew",
+      "handle": "@WelchLabs",
+      "name": "Welch Labs",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 0.1,
+      "why": "High-craft visual explainers of landmark AI papers and debates; slow cadence.",
+      "source": "new",
+      "last_upload": "2026-09-21"
+    },
+    {
+      "channel_id": "UCMUy_WsUIYbM_hKR9drb9dA",
+      "handle": "@juliaturc1",
+      "name": "Julia Turc",
+      "class": "capability",
+      "priority": "medium",
+      "cadence_per_week": 0.6,
+      "why": "Ex-Google researcher explaining new AI systems and voice models clearly; slow cadence.",
+      "source": "new",
+      "last_upload": "2026-10-08"
+    },
+    {
+      "channel_id": "UCqcbQf6yw5KzRoDDcZ_wBSw",
+      "handle": "@WesRoth",
+      "name": "Wes Roth",
+      "class": "analysis",
+      "priority": "medium",
+      "cadence_per_week": 2.9,
+      "why": "Daily commentary on lab news and releases; fast but more reaction than test.",
+      "source": "new",
+      "last_upload": "2026-10-16"
+    },
+    {
+      "channel_id": "UC7kjWIK1H8tfmFlzZO-wHMw",
+      "handle": "@twimlai",
+      "name": "The TWIML AI Podcast with Sam Charrington",
+      "class": "analysis",
+      "priority": "medium",
+      "cadence_per_week": 1.2,
+      "why": "Long-running ML podcast interviewing researchers on new models and methods.",
+      "source": "new",
+      "last_upload": "2026-10-16"
+    },
+    {
+      "channel_id": "UCjIMtrzxYc0lblGhmOgC_CA",
+      "handle": "@EveryInc",
+      "name": "Every",
+      "class": "analysis",
+      "priority": "medium",
+      "cadence_per_week": 2.7,
+      "why": "Every's team uses new models for a week and reports how they change real work (Gemini 4 Argon, OpenAI Dots).",
+      "source": "new",
+      "last_upload": "2026-10-16"
+    },
+    {
+      "channel_id": "UC9cn0TuPq4dnbTY-CBsm8XA",
+      "handle": "@a16z",
+      "name": "a16z",
+      "class": "analysis",
+      "priority": "medium",
+      "cadence_per_week": 5.8,
+      "why": "Investor and founder takes on agent infrastructure and agentic commerce; frequent.",
+      "source": "new",
+      "last_upload": "2026-10-19"
+    },
+    {
+      "channel_id": "UCcefcZRL2oaA_uBNeo5UOWg",
+      "handle": "@ycombinator",
+      "name": "Y Combinator",
+      "class": "analysis",
+      "priority": "medium",
+      "cadence_per_week": 1.2,
+      "why": "YC Paper Club and founder talks on new research directions and AI startup patterns.",
+      "source": "new",
+      "last_upload": "2026-10-18"
+    },
+    {
+      "channel_id": "UCWrF0oN6unbXrWsTN7RctTw",
+      "handle": "@sequoiacapital",
+      "name": "Sequoia Capital",
+      "class": "analysis",
+      "priority": "medium",
+      "cadence_per_week": 1.2,
+      "why": "Training Data podcast interviews with frontier researchers (David Silver) and robotics founders.",
+      "source": "new",
+      "last_upload": "2026-10-20"
+    },
+    {
+      "channel_id": "UC_NafIo-Ku2loOLrzm45ABA",
+      "handle": "@vanishinggradients",
+      "name": "Vanishing Gradients",
+      "class": "analysis",
+      "priority": "medium",
+      "cadence_per_week": 1.2,
+      "why": "Hugo Bowne-Anderson on agent evals and agentic software factories with practitioners; about 6k subs.",
+      "source": "new",
+      "last_upload": "2026-10-15"
+    }
+  ],
+  "dropped": [
+    {
+      "channel_id": "UCf0PBRjhf0rF8fWBIxTuoWA",
+      "name": "20VC with Harry Stebbings",
+      "reason": "off-scope: venture and deal news; AI covered at market level only"
+    },
+    {
+      "channel_id": "UCyFqFYfTW2VoIQKylJ04Rtw",
+      "name": "Acquired",
+      "reason": "off-scope: business history podcast"
+    },
+    {
+      "channel_id": "UCbLgNh6L8TosTPc2O4uiWZA",
+      "name": "AI Adopters Club",
+      "reason": "low signal: channel is now 'Kamil Banc', beginner AI adoption for small business, no new-capability coverage"
+    },
+    {
+      "channel_id": "UCJ-KJeHzrnZkGX7qAM2V74Q",
+      "name": "AI Pathways",
+      "reason": "off-scope: AI for trading and markets"
+    },
+    {
+      "channel_id": "UCMT1Aw4R4nf_sFNDeuJqc6w",
+      "name": "AI Warehouse",
+      "reason": "dead: last upload about Dec 2025; RL entertainment content"
+    },
+    {
+      "channel_id": "UCi2EHUT6as0raCsTBpnIR0w",
+      "name": "AI Wave",
+      "reason": "dead: last upload about Feb 2026"
+    },
+    {
+      "channel_id": "UC2vBJ4InzgqlrLEpfZFMXaA",
+      "name": "Anduril Industries",
+      "reason": "off-scope: defense hardware company channel; last upload about 2 months ago"
+    },
+    {
+      "channel_id": "UCOFH59uoSs8SUF0L_p3W0sg",
+      "name": "BadSeed Tech",
+      "reason": "off-scope: consumer hardware reviews"
+    },
+    {
+      "channel_id": "UCIALMKvObZNtJ6AmdCLP7Lg",
+      "name": "Bloomberg Television",
+      "reason": "off-scope: markets and finance TV"
+    },
+    {
+      "channel_id": "UCjc1vfduI7BhVMXBLJLDjmA",
+      "name": "Brock Mesarich | AI for Non Techies",
+      "reason": "low signal: beginner AI news recaps duplicating stronger news channels"
+    },
+    {
+      "channel_id": "UCr5jq6MC_VCe1c5ciIZtk_w",
+      "name": "Center for Strategic & International Studies",
+      "reason": "off-scope: geopolitics think tank"
+    },
+    {
+      "channel_id": "UCdGzmwOeaTl8OEF0jQ_NjKg",
+      "name": "CERAWeek",
+      "reason": "off-scope: energy conference; channel has no videos tab"
+    },
+    {
+      "channel_id": "UCrp_UI8XtuYfpiqluWLD7Lw",
+      "name": "CNBC Television",
+      "reason": "off-scope: markets and finance TV"
+    },
+    {
+      "channel_id": "UC0e3QhIYukixgh5VVpKHH9Q",
+      "name": "Code Bullet",
+      "reason": "off-scope: AI entertainment builds, no new-capability coverage"
+    },
+    {
+      "channel_id": "UC5CMtpogD_P3mOoeiDHD5eQ",
+      "name": "Codecademy",
+      "reason": "dead: last upload about Dec 2025"
+    },
+    {
+      "channel_id": "UCO9kIeDrtsX0j83HbVljzSQ",
+      "name": "CodeMiko",
+      "reason": "off-scope: entertainment"
+    },
+    {
+      "channel_id": "UCKTxvtC106sWs6hGyemEwow",
+      "name": "Defense & Aerospace Report",
+      "reason": "dead and off-scope: last upload about 2022, defense trade shows"
+    },
+    {
+      "channel_id": "UCHVuflj9gCRlYXRAgafl29w",
+      "name": "EOTECH",
+      "reason": "off-scope: firearms optics; last upload about Jun 2026"
+    },
+    {
+      "channel_id": "UCqD1A4HwU-61yjmIk2yosNw",
+      "name": "EPB Research",
+      "reason": "off-scope: macroeconomics"
+    },
+    {
+      "channel_id": "UCVo8RnJ32A1I9BcxEps6sow",
+      "name": "Family von Venture AK",
+      "reason": "dead and off-scope: last upload about 2024, travel vlog"
+    },
+    {
+      "channel_id": "UCnoO1O3KdScFJb3jaYDTlQA",
+      "name": "Fireforce Ventures",
+      "reason": "dead and off-scope: last upload about 2024, military surplus"
+    },
+    {
+      "channel_id": "UCP2gdh7HfjgCoi8lO50dA5w",
+      "name": "Fortune Magazine",
+      "reason": "off-scope: general business media"
+    },
+    {
+      "channel_id": "UCTRjA0gl308YljQ1WcLmF0A",
+      "name": "gptars",
+      "reason": "off-scope: AI-themed short films"
+    },
+    {
+      "channel_id": "UCgunHNFzbhGggx96Iy10ReA",
+      "name": "Haci Productions",
+      "reason": "off-scope: military aircraft documentaries"
+    },
+    {
+      "channel_id": "UCIKYGgjBmZ6V_Xu2WboBzzQ",
+      "name": "HonorYourOath Civil Rights Investigations",
+      "reason": "off-scope: civil rights investigations"
+    },
+    {
+      "channel_id": "UC8qxhdxV0U2NQ9vinFffDJQ",
+      "name": "ICOR with Tom | AI Productivity",
+      "reason": "low signal: productivity app tutorials"
+    },
+    {
+      "channel_id": "UCX7Y2qWriXpqocG97SFW2OQ",
+      "name": "Jeremy Howard",
+      "reason": "dead: last upload about Jun 2026 (over 60 days)"
+    },
+    {
+      "channel_id": "UCMLtBahI5DMrt0NPvDSoIRQ",
+      "name": "Matt Wolfe",
+      "reason": "duplicate id: this id belongs to Machine Learning Street Talk (kept); Matt Wolfe re-added under correct id UChpleBmo18P08aKCIgti38g"
+    },
+    {
+      "channel_id": "UCIRzxohZ6SbwsPqHFQGMJ7A",
+      "name": "Milken Institute",
+      "reason": "off-scope: finance and policy conference"
+    },
+    {
+      "channel_id": "UC9HYBiPoQze-PPJY_ymP-2Q",
+      "name": "Nex Gen AI",
+      "reason": "off-scope: SEO tactics"
+    },
+    {
+      "channel_id": "UCRhQsN8AVIfZuBNeRV1A37w",
+      "name": "Norges Bank Investment Management",
+      "reason": "off-scope: investment management CEO interviews"
+    },
+    {
+      "channel_id": "UC20ym9gONEFppwhBuE0Q3ZA",
+      "name": "Open Government Investigations",
+      "reason": "dead and off-scope: last upload about Oct 2025, police accountability"
+    },
+    {
+      "channel_id": "UCMOqf8ab-42UUQIdVoKwjlQ",
+      "name": "Practical Engineering",
+      "reason": "off-scope: civil engineering"
+    },
+    {
+      "channel_id": "UCAL3JXZSzSm8AlZyD3nQdBA",
+      "name": "Primitive Technology",
+      "reason": "off-scope: primitive technology"
+    },
+    {
+      "channel_id": "UCVTQunGrE3p7Oq8Owao5y_Q",
+      "name": "Reventure Consulting",
+      "reason": "off-scope: real estate market"
+    },
+    {
+      "channel_id": "UCLB7AzTwc6VFZrBsO2ucBMg",
+      "name": "Sam Witteveen",
+      "reason": "wrong id: listed as 'Sam Witteveen' but resolves to Robert Miles AI Safety, last upload about Jun 2026 (dead); Sam Witteveen kept under UC55ODQSvARtgSyc8ThfiepQ"
+    },
+    {
+      "channel_id": "UCGwuxdEeCf0TIA2RbPOj-8g",
+      "name": "Stanford Graduate School of Business",
+      "reason": "off-scope: business school talks"
+    },
+    {
+      "channel_id": "UChIZGfcnjHI0DG4nweWEduw",
+      "name": "TechSource",
+      "reason": "off-scope: PC builds"
+    },
+    {
+      "channel_id": "UCbzAhbNfR5jT1T4lC8ux2WA",
+      "name": "The AI Growth Lab with Tom",
+      "reason": "low signal: channel is now 'Tom Crawshaw | The AI Architects', AI ads and marketing"
+    },
+    {
+      "channel_id": "UCMxg9TQdOZSu21CHffziZlw",
+      "name": "The Economic Club of Washington, D.C.",
+      "reason": "off-scope: economics and leadership interviews"
+    },
+    {
+      "channel_id": "UCK7tptUDHh-RYDsdxO1-5QQ",
+      "name": "The Wall Street Journal",
+      "reason": "off-scope: general news"
+    },
+    {
+      "channel_id": "UCHCCGSnjLpHwL2bv-d4yz7g",
+      "name": "There's An AI For That",
+      "reason": "low signal: sensational AI headlines without hands-on detail"
+    },
+    {
+      "channel_id": "UCkkhmBWfS7pILYIk0izkc3A",
+      "name": "This Week in Startups",
+      "reason": "off-scope: startup and venture news"
+    },
+    {
+      "channel_id": "UC6yJlQ2wi4JF3utPickt9QQ",
+      "name": "Tommy Chryst | AI Voice",
+      "reason": "dead: last upload about Jun 2026 (over 60 days)"
+    },
+    {
+      "channel_id": "UCw-kH-Od73XDAt7qtH9uBYA",
+      "name": "World Economic Forum",
+      "reason": "off-scope: global economics forum"
+    },
+    {
+      "channel_id": "UCEAZeUIeJs0IjQiqTCdVSIg",
+      "name": "Yahoo Finance",
+      "reason": "off-scope: markets and finance"
+    },
+    {
+      "channel_id": "UCZHmQk67mSJgfCCTn7xBfew",
+      "name": "Yannic Kilcher",
+      "reason": "dead: last upload about Mar 2026 (over 60 days)"
+    },
+    {
+      "channel_id": "UC9C_9mgehMUp8BHeug6F8Dw",
+      "name": "ZNA Productions",
+      "reason": "off-scope: forging and workshop"
+    }
+  ]
+}

@@ -16,19 +16,11 @@ import time
 import traceback
 
 from . import build as B
-from .collectors import feeds, github, local, web
+from .collectors import feeds, github, inbox, local, web, youtube
 from .enrich import enrich
 from .util import ROOT, edition_date, iso, load_json, now_utc, write_json
 
-DATA = ROOT / "data/v1"
-STATE = ROOT / "state"
-FORBIDDEN = [re.compile(p, re.I) for p in (r"/Users/", r"/home/[a-z]", r"sk-ant-[A-Za-z0-9]", r"ghp_[A-Za-z0-9]{20}",
-                                            r"github_pat_[A-Za-z0-9_]{20}", r"xai-[A-Za-z0-9]{20}")]
-# Machine names, internal hosts and folder names never ship in the repo either: list them, one regex
-# per line, in the untracked file .redact.local on the machine that runs the home tier.
-_local = ROOT / ".redact.local"
-if _local.exists():
-    FORBIDDEN += [re.compile(l.strip(), re.I) for l in _local.read_text().splitlines() if l.strip() and not l.startswith("#")]
+from .publish import DATA, STATE, compose_day, publish_day, scrub  # noqa: F401  (scrub re-exported for tests)
 
 
 def collect(cloud: bool) -> tuple[list, dict, list]:
@@ -40,11 +32,13 @@ def collect(cloud: bool) -> tuple[list, dict, list]:
         "hf-trending-models": web.hf_models,
         "hf-trending-spaces": web.hf_spaces,
         "hf-daily-papers": web.hf_papers,
+        "x-grok-bot": inbox.x_from_grok_bot,
     }
     for f in reg.get("feeds", []):
         jobs[f["id"]] = (lambda src=f: feeds.collect_feed(src))
     if not cloud:
         jobs["youtube-watchlist"] = local.youtube
+        jobs["youtube-channels"] = youtube.channels
     names = {s["id"]: s["name"] for s in reg.get("feeds", []) + reg.get("apis", [])}
     kinds = {s["id"]: s["kind"] for s in reg.get("feeds", []) + reg.get("apis", [])}
 
@@ -75,13 +69,6 @@ def collect(cloud: bool) -> tuple[list, dict, list]:
     return items, rising, health
 
 
-def scrub(obj):
-    text = json.dumps(obj, ensure_ascii=False)
-    hits = [p.pattern for p in FORBIDDEN if p.search(text)]
-    if hits:
-        raise SystemExit(f"redaction gate blocked publish: {hits}")
-
-
 def main() -> None:
     ap = argparse.ArgumentParser(prog="magpie")
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -91,7 +78,27 @@ def main() -> None:
     r.add_argument("--force", action="store_true", help="overwrite an enriched edition with a plain one")
     r.add_argument("--items", help="reuse a saved items file instead of collecting")
     r.add_argument("--reuse-editor", action="store_true", help="apply today's saved editor output instead of calling a model")
+    sub.add_parser("reindex", help="rebuild index.json and latest.json from the day files")
+    pz = sub.add_parser("possibilities", help="combine the day's capabilities into new possibilities")
+    pz.add_argument("--date", help="edition date, default latest")
+    bf = sub.add_parser("backfill", help="rebuild past editions from archives")
+    bf.add_argument("--from", dest="start", required=True, help="first edition date, YYYY-MM-DD")
+    bf.add_argument("--to", dest="end", required=True, help="last edition date, YYYY-MM-DD")
+    bf.add_argument("--no-llm", action="store_true")
+    bf.add_argument("--recollect", action="store_true", help="ignore cached archive pulls")
     a = ap.parse_args()
+    if a.cmd == "possibilities":
+        from .possibilities import run_for
+        run_for(a.date)
+        return
+    if a.cmd == "reindex":
+        from .publish import reindex
+        reindex()
+        return
+    if a.cmd == "backfill":
+        from .backfill import run as backfill_run
+        backfill_run(a.start, a.end, llm=not a.no_llm, recollect=a.recollect)
+        return
 
     t0 = time.monotonic()
     date = edition_date()
@@ -139,85 +146,21 @@ def main() -> None:
     events = [e for e in events if not e.get("dropped")]
     print(f"editor: {receipt}", file=sys.stderr)
 
-    top = B.rank_and_select(events)
-    topics_cfg = load_json(ROOT / "config/topics.json", {}).get("topics", {})
-    by_id = {e["id"]: e for e in events}
-    top_events = [by_id[i] for i in top]
-    if not edition:
-        heads = [e["title"].split("/")[-1] for e in top_events[:3]]
-        edition = {"headline": (", ".join(heads) + (", and more" if len(top_events) > 3 else "")) if heads else "A quiet day",
-                   "dek": f"{len(events)} capability events from {sum(h['ok'] for h in health)} sources. "
-                          "Ranked by code; the editor did not run this edition, so copy is the sources' own words.",
-                   "quiet": len(top_events) < 3}
-
-    words = len(" ".join([edition.get("headline", ""), edition.get("dek", "")] + [
-        " ".join(str((e.get("brief") or {}).get(k, "")) for k in ("headline", "newly_possible", "why", "try")) for e in top_events]).split())
-    edition["read_minutes"] = max(1, round(words / 200 + 1.5))
-
-    for e in events:
-        e.pop("_context", None)
-    facets = {
-        "vendors": B.Counter(e.get("maker") or "Open source" for e in events).most_common(),
-        "ecosystem": B.Counter(v for e in events for v in e["vendors"][1:]).most_common(),
-        "topics": B.Counter(t for e in events for t in e["topics"]).most_common(),
-        "kinds": B.Counter(e["kind"] for e in events).most_common(),
-        "evidence": B.Counter(e["evidence"] for e in events).most_common(),
-    }
-    day = {
-        "schema": "magpie.day/1",
-        "date": date,
-        "generated_at": iso(now_utc()),
-        "run": {"where": "cloud" if a.cloud else "home", "editor": receipt["lane"], "enriched": receipt["enriched"],
-                "seconds": round(time.monotonic() - t0, 1)},
-        "edition": edition,
-        "coverage": {"sources": health, "sources_ok": sum(h["ok"] for h in health), "sources_total": len(health),
-                     "items": len(items), "events": len(events)},
-        "top": top,
-        "events": events[:260],
-        "rising": rising | {"new": [
-            {"repo": i["title"], "description": i["summary"], "language": i["extra"].get("language"),
-             "stars_total": i["metrics"].get("stars_total"), "created_at": i["extra"].get("created_at"),
-             "ai": i["extra"].get("ai")} for i in items if i["source_id"] == "github-new-rising"]},
-        "updates": B.updates_calendar(items),
-        "facets": facets,
-        "graph": B.ripple_graph([by_id[i] for i in top] + [e for e in events if e["id"] not in top and e.get("brief")], topics_cfg),
-        "topics": {k: v["label"] for k, v in topics_cfg.items()},
-        "hats": load_json(ROOT / "config/hats.json", {}).get("hats", []),
-    }
-    scrub(day)
-
-    day_path = DATA / "days" / f"{date}.json"
-    prior = load_json(day_path, None)
-    if prior and prior.get("run", {}).get("enriched") and not receipt["enriched"] and not a.force:
-        print("kept the enriched edition already published for today", file=sys.stderr)
-        return
-    write_json(day_path, day, compact=True)
-    write_json(DATA / "latest.json", day, compact=True)
-
-    # History: first sighting per capability, and the last day it led the page.
-    keys = history.setdefault("keys", {})
-    for e in events:
-        k = keys.setdefault(e["key"], {"first_seen": date, "title": e["title"]})
-        k["last_seen"] = date
-        if e["id"] in top:
-            k["featured"] = date
-    history["updated"] = date
-    write_json(STATE / "history.json", history, compact=True)
-
-    index = load_json(DATA / "index.json", {"schema": "magpie.index/1", "days": []})
-    index["days"] = [d for d in index["days"] if d["date"] != date]
-    index["days"].append({
-        "date": date, "headline": edition.get("headline"), "events": len(events),
-        "enriched": bool(receipt["enriched"]),
-        "top": [{"id": e["id"], "title": (e.get("brief") or {}).get("headline") or e["title"], "impact": e["impact"],
-                 "vendor": e.get("maker")} for e in top_events],
-        "vendors": [v for v, _ in facets["vendors"][:6]],
-    })
-    index["days"].sort(key=lambda d: d["date"], reverse=True)
-    index["latest"] = index["days"][0]["date"]
-    write_json(DATA / "index.json", index, compact=False)
-    print(f"published {date}: {len(events)} events, top {len(top)}, {day['run']['seconds']}s", file=sys.stderr)
-
+    day, top_events = compose_day(date, items, rising, health, events, edition, receipt,
+                                  where="cloud" if a.cloud else "home", seconds=time.monotonic() - t0)
+    if receipt.get("enriched"):
+        from .possibilities import generate, prior_days
+        pcache = run_dir / "possibilities.json"
+        if a.reuse_editor and pcache.exists():
+            day["possibilities"] = load_json(pcache, {})
+        else:
+            try:
+                day["possibilities"] = generate(day, prior_days(date, DATA))
+                write_json(pcache, day["possibilities"])
+            except Exception as ex:  # an idea pass must never block the edition
+                day["possibilities"] = {"items": [], "errors": [f"{type(ex).__name__}: {str(ex)[:160]}"]}
+        print(f"possibilities: {len(day['possibilities'].get('items', []))}", file=sys.stderr)
+    publish_day(day, events, top_events, force=a.force)
 
 if __name__ == "__main__":
     try:

@@ -82,6 +82,10 @@ def hf_spaces(limit: int = 20) -> list[Item]:
 
 def hf_papers(limit: int = 40) -> list[Item]:
     data = fetch_json(f"https://huggingface.co/api/daily_papers?limit={limit}")
+    if not data:
+        # Today's list fills in during the day; early runs read yesterday's.
+        yesterday = (now_utc() - dt.timedelta(days=1)).date().isoformat()
+        data = fetch_json(f"https://huggingface.co/api/daily_papers?date={yesterday}&limit={limit}")
     out = []
     for p in data:
         paper = p.get("paper") or {}

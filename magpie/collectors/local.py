@@ -61,42 +61,75 @@ def youtube(days: int = 1) -> list[Item]:
     return out
 
 
-X_PROMPT = """Use your live X search. Today is {today}. Find the most important NEW AI capabilities that were
-announced, released, demonstrated or measured on X in the last 30 hours: new models, open weights, repos,
-agent and coding-tool features, techniques, evals. Prefer first-hand posts from these accounts and anyone
-they amplify: {handles}.
+X_PROMPT = """Use your live X search. Today is {today}. You are covering one community for a daily brief on what
+became newly possible in AI: {group_label}. Find the most important NEW capabilities announced, released,
+demonstrated or measured on X in the last 30 hours: new models, open weights, repos, agent and coding-tool
+features, techniques, evals. Read these accounts first, and anyone they amplify: {handles}.
 
-Skip opinion, fundraising, hiring, politics and memes. Merge duplicates. Up to 25 items.
+Skip opinion, fundraising, hiring, politics and memes. Merge duplicates. Up to 18 items.
 
 Return ONLY one JSON object: {{"items": [{{"title": "short neutral headline", "url": "https://x.com/<handle>/status/<id>",
 "handle": "@...", "summary": "one or two plain sentences on what is newly possible", "links": ["any repo, model,
 paper or product URL in the post"], "vendor": "company or project", "posted_at": "ISO date if known"}}]}}.
 No prose outside the JSON. Do not use the em-dash character."""
 
+GROUPS = {
+    "labs": "frontier and open-model labs and the people who announce their releases",
+    "devtools": "builders of agent and coding tools",
+    "opensource": "open-source and local-model developers",
+    "research": "researchers and paper curators",
+    "builders": "independent developers and educators who ship and test new things hands-on",
+    "applied": "AI engineering practice, evals, infrastructure, security and enterprise deployment",
+}
 
-def x_pulse(timeout: int = 1500) -> list[Item]:
-    grok = shutil.which("grok") or str(Path.home() / ".local/bin/grok")
-    if not Path(grok).exists() or os.environ.get("MAGPIE_SKIP_X"):
-        return []
-    roster = json.loads((ROOT / "config/x-accounts.json").read_text())
-    handles = ", ".join(a["handle"] for a in roster["accounts"] if a.get("signal_to_noise", 0) >= 4)
-    prompt = X_PROMPT.format(today=now_utc().date().isoformat(), handles=handles)
-    work = ROOT / "state/.grok"
+
+def _sweep(grok: str, group: str, handles: list[str], timeout: int) -> list[dict]:
+    work = ROOT / "state/.grok" / group
     work.mkdir(parents=True, exist_ok=True)
+    prompt = X_PROMPT.format(today=now_utc().date().isoformat(), group_label=GROUPS.get(group, group),
+                             handles=", ".join(handles))
     (work / "prompt.md").write_text(prompt)
     r = subprocess.run([grok, "--prompt-file", "prompt.md", "--output-format", "plain", "--no-alt-screen",
                         "--always-approve", "--max-turns", "40", "--cwd", str(work)],
                        cwd=work, capture_output=True, text=True, timeout=timeout)
-    text = r.stdout
-    start = text.find("{")
+    start = r.stdout.find("{")
     if start < 0:
-        raise RuntimeError(f"grok returned no JSON (rc {r.returncode})")
-    data, _ = json.JSONDecoder().raw_decode(text[start:])
-    out = []
-    for x in data.get("items", []):
+        raise RuntimeError(f"grok returned no JSON for {group} (rc {r.returncode})")
+    data, _ = json.JSONDecoder().raw_decode(r.stdout[start:])
+    return [dict(x, group=group) for x in data.get("items", [])]
+
+
+def x_pulse(timeout: int = 1500) -> list[Item]:
+    """Dedicated Grok sweeps, one per community on the roster, two at a time."""
+    grok = shutil.which("grok") or str(Path.home() / ".local/bin/grok")
+    if not Path(grok).exists() or os.environ.get("MAGPIE_SKIP_X"):
+        return []
+    roster = json.loads((ROOT / "config/x-accounts.json").read_text())
+    by_group: dict[str, list[str]] = {}
+    legacy = {1: "labs", 2: "devtools", 3: "opensource", 4: "research", 5: "builders", 6: "applied", 7: "builders"}
+    for a in roster["accounts"]:
+        if a.get("signal_to_noise", 3) >= 3:
+            group = a.get("group") or legacy.get(a.get("category"), "builders")
+            by_group.setdefault(group, []).append(a["handle"])
+    wanted = [g for g in os.environ.get("MAGPIE_X_SWEEPS", ",".join(GROUPS)).split(",") if g in by_group]
+    raw: list[dict] = []
+    errors = []
+    import concurrent.futures as cf
+    with cf.ThreadPoolExecutor(max_workers=int(os.environ.get("MAGPIE_X_PARALLEL", "2"))) as pool:
+        futs = {pool.submit(_sweep, grok, g, by_group[g][:45], timeout): g for g in wanted}
+        for fu in cf.as_completed(futs):
+            try:
+                raw += fu.result()
+            except Exception as ex:
+                errors.append(f"{futs[fu]}: {str(ex)[:120]}")
+    if not raw and errors:
+        raise RuntimeError("; ".join(errors))
+    out, seen = [], set()
+    for x in raw:
         url = x.get("url") or ""
-        if not url.startswith("https://"):
+        if not url.startswith("https://") or url in seen:
             continue
+        seen.add(url)
         links = " ".join(x.get("links") or [])
         it = Item(
             source_id="x-grok-pulse",
@@ -109,11 +142,11 @@ def x_pulse(timeout: int = 1500) -> list[Item]:
             author=x.get("handle"),
             vendor_hint=x.get("vendor"),
             trust=0.65,
-            extra={"links": x.get("links") or []},
-        )
-        out.append(it.finalize(links))
+            extra={"links": x.get("links") or [], "x_group": x.get("group")},
+        ).finalize(links)
         # A post about a repo or model should cluster with it.
-        if out[-1].mentions:
-            out[-1].keys = out[-1].mentions[:1] + out[-1].keys
-            out[-1].mentions = out[-1].mentions[1:]
+        if it.mentions:
+            it.keys = it.mentions[:1] + it.keys
+            it.mentions = it.mentions[1:]
+        out.append(it)
     return out

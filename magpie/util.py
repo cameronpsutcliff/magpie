@@ -99,8 +99,11 @@ TAG = re.compile(r"<[^>]+>")
 WS = re.compile(r"\s+")
 
 
+_DASH = re.compile(r"\s*" + LONG_DASH + r"\s*")
+
+
 def clean(s: str) -> str:
-    return s.replace(LONG_DASH, ", ")
+    return _DASH.sub(", ", s)
 
 
 def strip_html(s: str | None, limit: int | None = None) -> str:
@@ -145,11 +148,20 @@ def canonical_keys(url: str | None, text: str = "") -> list[str]:
     return out
 
 
+_TRACKING = {"si", "ref", "ref_src", "fbclid", "gclid", "feature", "source", "s", "t"}
+
+
 def url_key(url: str) -> str:
+    """Host, path and the meaningful query (YouTube's v=, Hacker News' id=); tracking parameters dropped."""
     p = urllib.parse.urlsplit(url)
-    host = p.netloc.lower().removeprefix("www.")
+    host = p.netloc.lower().removeprefix("www.").removeprefix("m.")
     path = p.path.rstrip("/")
-    return f"url:{host}{path}"
+    if host == "youtu.be" and path:
+        return f"url:youtube.com/watch?v={path.lstrip('/')}"
+    query = [(k, v) for k, v in urllib.parse.parse_qsl(p.query)
+             if not k.lower().startswith("utm_") and k.lower() not in _TRACKING]
+    q = urllib.parse.urlencode(sorted(query))
+    return f"url:{host}{path}" + (f"?{q}" if q else "")
 
 
 def short_hash(s: str, n: int = 10) -> str:

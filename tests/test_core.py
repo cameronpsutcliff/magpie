@@ -17,6 +17,14 @@ class CoreTests(unittest.TestCase):
         self.assertEqual(canonical_keys("https://huggingface.co/papers/2510.12345"), ["arxiv:2510.12345"])
         self.assertEqual(canonical_keys("https://github.com/sponsors/someone"), [])
 
+    def test_url_key_keeps_identity_query(self):
+        from magpie.util import url_key
+        a = url_key("https://www.youtube.com/watch?v=abc123&si=xyz")
+        self.assertEqual(a, url_key("https://youtu.be/abc123"))
+        self.assertNotEqual(a, url_key("https://www.youtube.com/watch?v=def456"))
+        self.assertNotEqual(url_key("https://news.ycombinator.com/item?id=1"), url_key("https://news.ycombinator.com/item?id=2"))
+        self.assertEqual(url_key("https://example.com/post/?utm_source=x"), "url:example.com/post")
+
     def test_mentions_corroborate_without_new_events(self):
         items = [
             item("github-trending-daily", "repo", "https://github.com/acme/agentkit", "acme/agentkit", stars_day=900),
@@ -42,6 +50,16 @@ class CoreTests(unittest.TestCase):
         with self.assertRaises(SystemExit):
             cli.scrub({"x": "/Users/someone/secret"})
         cli.scrub({"x": "Apache Spark ships a new connector"})
+
+    def test_possibilities_ground_and_rank(self):
+        from magpie.possibilities import rank, ungrounded_numbers
+        rows = [{"id": "a", "what": "runs 7B models in 4 GB"}, {"id": "b", "what": "adds JSON output"}]
+        ok = {"connection": "A 7B model in 4 GB can emit JSON", "chain": ["then a test with 20 files"]}
+        self.assertEqual(ungrounded_numbers(ok, rows), ["20"])
+        self.assertEqual(ungrounded_numbers({"connection": "A 7B model", "chain": []}, rows), [])
+        quick = {"effort": "a week", "scores": {"value": 4, "feasibility": 4, "evidence": 3, "novelty": 3}}
+        slow = {"effort": "a quarter", "scores": {"value": 5, "feasibility": 4, "evidence": 3, "novelty": 3}}
+        self.assertIs(rank([slow, quick])[0], quick)
 
 
 if __name__ == "__main__":
