@@ -57,6 +57,14 @@ class ElementTests(unittest.TestCase):
         d = (data or self.data) / "elements"
         return {p.name: p.read_text() for p in sorted(d.glob("*.json"))}
 
+    def rebuild_like(self, seq=None):
+        """Rebuild self.data from where its daily run started (its own index, or seq's): never a backfill."""
+        src = (seq or self.data) / "elements" / "index.json"
+        since = json.loads(src.read_text())["since"] if src.exists() else "2099-01-01"
+        (self.data / "elements").mkdir(parents=True, exist_ok=True)
+        write_json(self.data / "elements" / "index.json", {"schema": E.INDEX_SCHEMA, "since": since, "updated": None, "elements": []})
+        return E.rebuild(self.data)
+
     def page(self, slug):
         return json.loads((self.data / "elements" / f"{slug}.json").read_text())
 
@@ -173,6 +181,21 @@ class ElementTests(unittest.TestCase):
         index = json.loads((self.data / "elements" / "index.json").read_text())
         self.assertNotIn("gh:beta/kit", {e["key"] for e in index["elements"]})
 
+    def test_a_removed_action_leaves_no_details_on_its_page(self):
+        d2 = self.days["2099-01-02"]
+        d2["events"].append(dict(ev(ACTION["key"], ACTION["title"], maker="An agency", kind="constraint"), evidence="official",
+                                 constraint={"status": "final"}, brief={"headline": ACTION["headline"]}))
+        write_json(self.data / "days" / "2099-01-02.json", d2, compact=True)
+        E.rebuild(self.data)
+        self.assertIn("constraint", self.page("policy-fr-2099-1"))
+        write_json(self.data / "constraints.json", {"schema": "magpie.constraints/1", "items": []})
+        E.update("2099-01-02", self.data)
+        self.assertNotIn("constraint", self.page("policy-fr-2099-1"))
+        self.assertFalse((self.data / "elements" / "gh-acme--other.json").exists())  # it qualified only through the action
+        built = self.pages()
+        E.rebuild(self.data)
+        self.assertEqual(self.pages(), built)
+
     def test_a_corrected_action_reaches_the_pages_it_touches(self):
         E.rebuild(self.data)
         fixed = dict(ACTION, headline="Agency bars Acme models and services")  # same dates, new words
@@ -195,7 +218,7 @@ class ElementTests(unittest.TestCase):
             for d in sorted(p.stem for p in (seq / "days").glob("*.json")):
                 E.update(d, seq)
             E.update(dates[12], seq)  # re-publishing a day inside the window changes nothing
-            E.rebuild(self.data, since="2099-01-01")
+            self.rebuild_like(seq)
             self.assertEqual(self.pages(seq), self.pages())
             page = self.page("gh-fold--me")
             self.assertEqual((len(page["timeline"]), len(page["appearances"])), (10, 5))
@@ -232,7 +255,7 @@ class ElementTests(unittest.TestCase):
         shutil.copytree(self.data, seq)
         for d in sorted(p.stem for p in (seq / "days").glob("*.json")):
             E.update(d, seq)
-        E.rebuild(self.data, since="2099-01-01")  # the daily run started on the first edition
+        self.rebuild_like(seq)  # the daily run started on the first edition
         self.assertEqual(self.pages(seq), self.pages())
         page = self.page("gh-long--runner")
         self.assertEqual(len(page["appearances"]), E.FULL_APPEARANCES)
@@ -269,8 +292,9 @@ class ElementTests(unittest.TestCase):
         result = E.rebuild(self.data)
         self.assertEqual(result["since"], "2099-04-04")  # the last seven of the edition files
         self.assertFalse((self.data / "elements" / "gh-old--one.json").exists())  # seen only before the seed window
-        E.rebuild(self.data, since="2099-04-01")
-        self.assertTrue((self.data / "elements" / "gh-old--one.json").exists())
+        with self.assertRaises(ValueError):  # reaching further back would backfill the archive
+            E.rebuild(self.data, since="2099-04-01")
+        self.assertFalse((self.data / "elements" / "gh-old--one.json").exists())
 
     def test_a_corrected_document_reaches_existing_pages_and_the_action_page(self):
         E.rebuild(self.data)
@@ -311,7 +335,7 @@ class ElementTests(unittest.TestCase):
             self.assertEqual(page["older"]["links"], {ACTION["key"]: "document"})
             E.update(dates[-1], seq)  # and a quiet day keeps it
             write_json(self.data / "constraints.json", {"schema": "magpie.constraints/1", "items": [dict(ACTION, first_seen=dates[-1], last_seen=dates[-1])]})
-            E.rebuild(self.data, since="2099-01-01")
+            self.rebuild_like(seq)
             self.assertEqual(self.pages(seq), self.pages())
         finally:
             E.FULL_APPEARANCES = full
@@ -336,7 +360,7 @@ class ElementTests(unittest.TestCase):
             self.assertNotIn("links", page.get("older") or {})
             self.assertEqual([c["key"] for c in page["constraints"] if c["match"] != "maker"], [])
             built = self.pages()
-            E.rebuild(self.data, since="2099-01-01")
+            self.rebuild_like()
             self.assertEqual(self.pages(), built)
         finally:
             E.FULL_APPEARANCES = full
@@ -358,7 +382,7 @@ class ElementTests(unittest.TestCase):
             E.update(dates[0], self.data)
             self.assertEqual(self.page("gh-re--pub")["days_featured"], 5)
             built = self.pages()
-            E.rebuild(self.data, since="2099-01-01")
+            self.rebuild_like()
             self.assertEqual(self.pages(), built)
         finally:
             E.TIMELINE_ROWS = rows

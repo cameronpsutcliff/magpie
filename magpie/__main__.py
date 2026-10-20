@@ -109,7 +109,7 @@ def main() -> None:
     pe = sub.add_parser("elements", help="fold an edition into the element pages, or rebuild them all")
     pe.add_argument("--date", help="edition date, default latest")
     pe.add_argument("--rebuild", action="store_true", help="regenerate every element page from the editions since the pages start")
-    pe.add_argument("--since", help="with --rebuild: start the pages on this edition date (default: the current start, else the last 7 editions)")
+    pe.add_argument("--since", help="with --rebuild: start the pages on this edition date, within the last 7 editions or at their current start")
     bf = sub.add_parser("backfill", help="rebuild past editions from archives")
     bf.add_argument("--from", dest="start", required=True, help="first edition date, YYYY-MM-DD")
     bf.add_argument("--to", dest="end", required=True, help="last edition date, YYYY-MM-DD")
