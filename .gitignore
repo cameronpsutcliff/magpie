@@ -1,0 +1,9 @@
+state/runs/
+state/.grok/
+__pycache__/
+*.tmp
+.venv/
+.env.local
+.redact.local
+state/home-run.log
+state/last-run.log

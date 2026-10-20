@@ -1,0 +1,336 @@
+{
+ "version": 1,
+ "note": "Public sources only. trust is how much one mention counts (0..1). window_hours bounds what each run keeps.",
+ "feeds": [
+  {
+   "id": "ainews",
+   "name": "AINews (smol.ai)",
+   "kind": "newsletter",
+   "url": "https://news.smol.ai/rss.xml",
+   "trust": 0.75,
+   "vendor": null,
+   "product": null,
+   "window_hours": 48
+  },
+  {
+   "id": "latent-space",
+   "name": "Latent Space",
+   "kind": "newsletter",
+   "url": "https://www.latent.space/feed",
+   "trust": 0.75,
+   "vendor": null,
+   "product": null,
+   "window_hours": 48
+  },
+  {
+   "id": "interconnects",
+   "name": "Interconnects",
+   "kind": "newsletter",
+   "url": "https://www.interconnects.ai/feed",
+   "trust": 0.75,
+   "vendor": null,
+   "product": null,
+   "window_hours": 72
+  },
+  {
+   "id": "import-ai",
+   "name": "Import AI",
+   "kind": "newsletter",
+   "url": "https://jack-clark.net/feed/",
+   "trust": 0.7,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96
+  },
+  {
+   "id": "ahead-of-ai",
+   "name": "Ahead of AI",
+   "kind": "newsletter",
+   "url": "https://magazine.sebastianraschka.com/feed",
+   "trust": 0.75,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96
+  },
+  {
+   "id": "bens-bites",
+   "name": "Ben's Bites",
+   "kind": "newsletter",
+   "url": "https://www.bensbites.com/feed",
+   "trust": 0.55,
+   "vendor": null,
+   "product": null,
+   "window_hours": 48
+  },
+  {
+   "id": "the-rundown",
+   "name": "The Rundown AI",
+   "kind": "newsletter",
+   "url": "https://www.therundown.ai/feed",
+   "trust": 0.5,
+   "vendor": null,
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "simon-willison",
+   "name": "Simon Willison",
+   "kind": "blog",
+   "url": "https://simonwillison.net/atom/everything/",
+   "trust": 0.85,
+   "vendor": null,
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "hf-blog",
+   "name": "Hugging Face blog",
+   "kind": "blog",
+   "url": "https://huggingface.co/blog/feed.xml",
+   "trust": 0.7,
+   "vendor": "Hugging Face",
+   "product": null,
+   "window_hours": 48
+  },
+  {
+   "id": "openai-news",
+   "name": "OpenAI news",
+   "kind": "news",
+   "url": "https://openai.com/news/rss.xml",
+   "trust": 0.8,
+   "vendor": "OpenAI",
+   "product": null,
+   "window_hours": 48
+  },
+  {
+   "id": "anthropic-news",
+   "name": "Anthropic news",
+   "kind": "news",
+   "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml",
+   "trust": 0.8,
+   "vendor": "Anthropic",
+   "product": null,
+   "window_hours": 72
+  },
+  {
+   "id": "deepmind-blog",
+   "name": "Google DeepMind blog",
+   "kind": "news",
+   "url": "https://deepmind.google/blog/rss.xml",
+   "trust": 0.8,
+   "vendor": "Google",
+   "product": null,
+   "window_hours": 72
+  },
+  {
+   "id": "google-ai-blog",
+   "name": "Google AI blog",
+   "kind": "news",
+   "url": "https://blog.google/technology/ai/rss/",
+   "trust": 0.7,
+   "vendor": "Google",
+   "product": null,
+   "window_hours": 48
+  },
+  {
+   "id": "google-dev-blog",
+   "name": "Google Developers blog",
+   "kind": "news",
+   "url": "https://developers.googleblog.com/rss/",
+   "trust": 0.65,
+   "vendor": "Google",
+   "product": null,
+   "window_hours": 48
+  },
+  {
+   "id": "mistral-news",
+   "name": "Mistral news",
+   "kind": "news",
+   "url": "https://mistral.ai/news/rss",
+   "trust": 0.75,
+   "vendor": "Mistral",
+   "product": null,
+   "window_hours": 72
+  },
+  {
+   "id": "claude-code-changelog",
+   "name": "Claude Code changelog",
+   "kind": "changelog",
+   "url": "https://code.claude.com/docs/en/changelog/rss.xml",
+   "trust": 0.8,
+   "vendor": "Anthropic",
+   "product": "Claude Code",
+   "window_hours": 336
+  },
+  {
+   "id": "claude-platform-notes",
+   "name": "Claude Platform release notes",
+   "kind": "changelog",
+   "url": "https://platform.claude.com/docs/en/release-notes/feed.xml",
+   "trust": 0.8,
+   "vendor": "Anthropic",
+   "product": "Claude API",
+   "window_hours": 336
+  },
+  {
+   "id": "codex-changelog",
+   "name": "Codex and ChatGPT changelog",
+   "kind": "changelog",
+   "url": "https://developers.openai.com/codex/changelog/rss.xml",
+   "trust": 0.8,
+   "vendor": "OpenAI",
+   "product": "Codex",
+   "window_hours": 336
+  },
+  {
+   "id": "cursor-changelog",
+   "name": "Cursor changelog",
+   "kind": "changelog",
+   "url": "https://cursor.com/changelog/rss.xml",
+   "trust": 0.8,
+   "vendor": "Cursor",
+   "product": "Cursor",
+   "window_hours": 336
+  },
+  {
+   "id": "copilot-changelog",
+   "name": "GitHub Copilot changelog",
+   "kind": "changelog",
+   "url": "https://github.blog/changelog/label/copilot/feed/",
+   "trust": 0.75,
+   "vendor": "GitHub",
+   "product": "Copilot",
+   "window_hours": 336
+  },
+  {
+   "id": "claude-code-releases",
+   "name": "Claude Code releases",
+   "kind": "changelog",
+   "url": "https://github.com/anthropics/claude-code/releases.atom",
+   "trust": 0.7,
+   "vendor": "Anthropic",
+   "product": "Claude Code CLI",
+   "window_hours": 336
+  },
+  {
+   "id": "codex-releases",
+   "name": "Codex CLI releases",
+   "kind": "changelog",
+   "url": "https://github.com/openai/codex/releases.atom",
+   "trust": 0.7,
+   "vendor": "OpenAI",
+   "product": "Codex CLI",
+   "window_hours": 336
+  },
+  {
+   "id": "ollama-releases",
+   "name": "Ollama releases",
+   "kind": "changelog",
+   "url": "https://github.com/ollama/ollama/releases.atom",
+   "trust": 0.7,
+   "vendor": "Ollama",
+   "product": "Ollama",
+   "window_hours": 336
+  },
+  {
+   "id": "vllm-releases",
+   "name": "vLLM releases",
+   "kind": "changelog",
+   "url": "https://github.com/vllm-project/vllm/releases.atom",
+   "trust": 0.7,
+   "vendor": "vLLM",
+   "product": "vLLM",
+   "window_hours": 336
+  },
+  {
+   "id": "transformers-releases",
+   "name": "Transformers releases",
+   "kind": "changelog",
+   "url": "https://github.com/huggingface/transformers/releases.atom",
+   "trust": 0.7,
+   "vendor": "Hugging Face",
+   "product": "Transformers",
+   "window_hours": 336
+  },
+  {
+   "id": "xai-sdk-releases",
+   "name": "xAI SDK releases",
+   "kind": "changelog",
+   "url": "https://github.com/xai-org/xai-sdk-python/releases.atom",
+   "trust": 0.65,
+   "vendor": "xAI",
+   "product": "xAI SDK",
+   "window_hours": 336
+  },
+  {
+   "id": "localllama",
+   "name": "r/LocalLLaMA (top, day)",
+   "kind": "community",
+   "url": "https://www.reddit.com/r/LocalLLaMA/top/.rss?t=day",
+   "trust": 0.5,
+   "vendor": null,
+   "product": null,
+   "window_hours": 36
+  }
+ ],
+ "apis": [
+  {
+   "id": "github-trending",
+   "name": "GitHub trending (day, week, month)",
+   "kind": "repo",
+   "url": "https://github.com/trending",
+   "trust": 0.7
+  },
+  {
+   "id": "github-new-rising",
+   "name": "GitHub new and rising (search API)",
+   "kind": "repo",
+   "url": "https://api.github.com/search/repositories",
+   "trust": 0.6
+  },
+  {
+   "id": "hacker-news",
+   "name": "Hacker News (Algolia)",
+   "kind": "community",
+   "url": "https://hn.algolia.com/api/v1/search",
+   "trust": 0.65
+  },
+  {
+   "id": "hf-trending-models",
+   "name": "Hugging Face trending models",
+   "kind": "model",
+   "url": "https://huggingface.co/api/models?sort=trendingScore",
+   "trust": 0.7
+  },
+  {
+   "id": "hf-trending-spaces",
+   "name": "Hugging Face trending spaces",
+   "kind": "space",
+   "url": "https://huggingface.co/api/spaces?sort=trendingScore",
+   "trust": 0.55
+  },
+  {
+   "id": "hf-daily-papers",
+   "name": "Hugging Face daily papers",
+   "kind": "paper",
+   "url": "https://huggingface.co/api/daily_papers",
+   "trust": 0.6
+  },
+  {
+   "id": "youtube-watchlist",
+   "name": "YouTube watch list (about 90 channels)",
+   "kind": "video",
+   "url": "local",
+   "trust": 0.6,
+   "where": "always-on machine"
+  },
+  {
+   "id": "x-grok-pulse",
+   "name": "X, via Grok live search over 72 vetted accounts",
+   "kind": "social",
+   "url": "local",
+   "trust": 0.65,
+   "where": "always-on machine"
+  }
+ ]
+}

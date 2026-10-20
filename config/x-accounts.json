@@ -1,0 +1,753 @@
+{
+ "accounts": [
+  {
+   "handle": "@OpenAI",
+   "display_name": "OpenAI",
+   "category": 1,
+   "affiliation": "OpenAI",
+   "why": "Primary product feed: names the feature, who gets it, and what new workflow it unlocks.",
+   "cadence": "several times a week",
+   "signal_to_noise": 5,
+   "example": "2026-10-16: GPT-6 Astra Pro in ChatGPT can run multiple agents on one task in parallel, with per-agent progress."
+  },
+  {
+   "handle": "@gdb",
+   "display_name": "Greg Brockman",
+   "category": 1,
+   "affiliation": "OpenAI, president and co-founder",
+   "why": "Turns a new model into a concrete outcome, including security results, instead of launch adjectives.",
+   "cadence": "a few times a week",
+   "signal_to_noise": 4,
+   "example": "2026-10-13: GPT-5.6 Sol with XBOW built a Chrome full-chain exploit in 6 days and about $40,000 of compute, Google's first 2026 full-chain bounty."
+  },
+  {
+   "handle": "@AnthropicAI",
+   "display_name": "Anthropic",
+   "category": 1,
+   "affiliation": "Anthropic",
+   "why": "Ships Claude capability notes with a method, not just a benchmark screenshot.",
+   "cadence": "several times a week",
+   "signal_to_noise": 4,
+   "example": "2026-10-16: Claude Mythos 5 designed quantum circuits from plain language that beat published circuits, sometimes by an order of magnitude."
+  },
+  {
+   "handle": "@DarioAmodei",
+   "display_name": "Dario Amodei",
+   "category": 1,
+   "affiliation": "Anthropic, CEO",
+   "why": "When he posts, he explains what the model actually did, what humans still did, and what is not yet known.",
+   "cadence": "about monthly",
+   "signal_to_noise": 5,
+   "example": "2026-09-23: Claude found a candidate new gene-editing enzyme system in bacteriophage DNA; the lab ran the wet-lab checks."
+  },
+  {
+   "handle": "@GoogleDeepMind",
+   "display_name": "Google DeepMind",
+   "category": 1,
+   "affiliation": "Google DeepMind",
+   "why": "Official Gemini and science-tool feed, with demos that show the new behavior.",
+   "cadence": "several times a week",
+   "signal_to_noise": 4,
+   "example": "2026-10-16: four Gemini 4 Argon agents beat Minecraft from scratch in 27 hours by writing 2,783 programs and coordinating over chat."
+  },
+  {
+   "handle": "@deepseek_ai",
+   "display_name": "DeepSeek",
+   "category": 1,
+   "affiliation": "DeepSeek",
+   "why": "Release notes say what changed in quality, speed, and cost, and which harness to upgrade.",
+   "cadence": "burst on release days, otherwise quiet",
+   "signal_to_noise": 5,
+   "example": "2026-10-17: DeepSeek-V4.1-Flash-1017, stronger benchmarks with shorter outputs, tuned for DeepSeek Harness 0.2.1."
+  },
+  {
+   "handle": "@Alibaba_Qwen",
+   "display_name": "Qwen",
+   "category": 1,
+   "affiliation": "Alibaba Qwen",
+   "why": "Posts the training or serving technique with the model it was scaled on, plus a paper link.",
+   "cadence": "about weekly",
+   "signal_to_noise": 5,
+   "example": "2026-10-12: QwenGyre elastic RL for extreme-long-horizon agents, scaled to Qwen3.8-2.4T-A95B, lifting NL2RepoBench from 52.5% to 58.5%."
+  },
+  {
+   "handle": "@Kimi_Moonshot",
+   "display_name": "Kimi.ai",
+   "category": 1,
+   "affiliation": "Moonshot AI",
+   "why": "Shows new Kimi agent surfaces with the workflow, not only the model name.",
+   "cadence": "about weekly",
+   "signal_to_noise": 4,
+   "example": "2026-09-22: Kimi browser extension records a workflow once and replays it as a skill; 2026-10-15 tutorial covers Swarm and Goal mode in Kimi Work."
+  },
+  {
+   "handle": "@Zai_org",
+   "display_name": "Z.ai",
+   "category": 1,
+   "affiliation": "Z.ai (Zhipu GLM)",
+   "why": "GLM release account for new model variants and where they can be called.",
+   "cadence": "a few times a month",
+   "signal_to_noise": 5,
+   "example": "2026-10-12: GLM-Legal, built on GLM-5.3-Flash, aimed at contract review, evidence, and compliance."
+  },
+  {
+   "handle": "@AIatMeta",
+   "display_name": "AI at Meta",
+   "category": 1,
+   "affiliation": "Meta",
+   "why": "Posts open-weight model cards with hardware, precision, and the task the model is for.",
+   "cadence": "several times a week in this window",
+   "signal_to_noise": 5,
+   "example": "2026-10-19: Muse Glimmer, a 30B open-weight agent model that runs at 4-bit on a single consumer GPU."
+  },
+  {
+   "handle": "@MistralAI",
+   "display_name": "Mistral AI",
+   "category": 1,
+   "affiliation": "Mistral",
+   "why": "European lab feed for new Mistral model results and where the model is being applied.",
+   "cadence": "several times a week",
+   "signal_to_noise": 4,
+   "example": "2026-10-16: Mistral Large 4 scored well on engineering and astronomy in Ulam STEMBench."
+  },
+  {
+   "handle": "@MiniMax_AI",
+   "display_name": "MiniMax (official)",
+   "category": 1,
+   "affiliation": "MiniMax",
+   "why": "Posts model economics (price, speed, context) alongside the benchmark claim.",
+   "cadence": "burst on launch days",
+   "signal_to_noise": 4,
+   "example": "2026-10-19: MiniMax M3.1 Flash (the earlier Space Bunny) at $0.15/$0.60 per 1M tokens, weights planned for 2026-10-23."
+  },
+  {
+   "handle": "@cursor_ai",
+   "display_name": "Cursor",
+   "category": 2,
+   "affiliation": "Cursor",
+   "why": "Ships agent-product changes with a short demo of the new unit of work.",
+   "cadence": "several times a week",
+   "signal_to_noise": 5,
+   "example": "2026-10-16: cloud agents can build an interactive canvas (dashboard or report) and share it as a link."
+  },
+  {
+   "handle": "@cognition",
+   "display_name": "Cognition",
+   "category": 2,
+   "affiliation": "Cognition (Devin)",
+   "why": "Reports Devin changes against a named external coding-agent index, with cost.",
+   "cadence": "several times a week",
+   "signal_to_noise": 4,
+   "example": "2026-10-19: Devin Fusion scored 68 on the Artificial Analysis Coding Agent Index using Opus 5.5 plus a GPT-6 Luna sidekick, cheaper than Claude Code with Opus 5.5."
+  },
+  {
+   "handle": "@bcherny",
+   "display_name": "Boris Cherny",
+   "category": 2,
+   "affiliation": "Anthropic, Claude Code",
+   "why": "Shows the Claude surface he actually uses for production work, with the path to try it.",
+   "cadence": "most days",
+   "signal_to_noise": 4,
+   "example": "2026-10-16: Claude Slides as his default deck workflow, linked from Claude artifacts."
+  },
+  {
+   "handle": "@trq212",
+   "display_name": "Thariq",
+   "category": 2,
+   "affiliation": "Anthropic, Claude Code",
+   "why": "Claude Code engineer who says which surface is working now, separate from the launch post.",
+   "cadence": "most days, mixed with working advice",
+   "signal_to_noise": 4,
+   "example": "2026-10-14: called the Claude code tab the best current way to use Claude Code."
+  },
+  {
+   "handle": "@OpenAIDevs",
+   "display_name": "OpenAI Developers",
+   "category": 2,
+   "affiliation": "OpenAI, Codex and API",
+   "why": "Developer channel for what Codex and the platform can do this week.",
+   "cadence": "several times a week",
+   "signal_to_noise": 4,
+   "example": "2026-10-19: public roundup of what people are building with Codex, plus a live 'what we're cooking' broadcast."
+  },
+  {
+   "handle": "@FactoryAI",
+   "display_name": "Factory",
+   "category": 2,
+   "affiliation": "Factory (Droids)",
+   "why": "Enterprise coding-agent deployments, including where the agent is allowed to run.",
+   "cadence": "a few times a week",
+   "signal_to_noise": 4,
+   "example": "2026-10-19: Droids can build, migrate, and secure software on Databricks under existing governance."
+  },
+  {
+   "handle": "@cline",
+   "display_name": "Cline",
+   "category": 2,
+   "affiliation": "Cline",
+   "why": "Open coding agent that turns new model launches into something you can run the same day.",
+   "cadence": "several times a week",
+   "signal_to_noise": 4,
+   "example": "2026-10-19: MiniMax M3.1 Flash available free inside Cline, positioned near Opus and GPT on coding at much lower cost."
+  },
+  {
+   "handle": "@sqs",
+   "display_name": "Quinn Slack",
+   "category": 2,
+   "affiliation": "Amp, CEO; founded Sourcegraph",
+   "why": "Ships Amp harness changes himself and says what user behavior the change is for.",
+   "cadence": "several times a week",
+   "signal_to_noise": 4,
+   "example": "2026-10-19: Amp usage view that bills long-lived threads across their life, not only on the day the thread was created."
+  },
+  {
+   "handle": "@badlogicgames",
+   "display_name": "Mario Zechner",
+   "category": 2,
+   "affiliation": "Pi coding agent",
+   "why": "Pi maintainer who posts the runtime feature when it hits main, not a teaser.",
+   "cadence": "most days",
+   "signal_to_noise": 5,
+   "example": "2026-10-17 to 2026-10-20: pi-durable hibernation on Cloudflare Durable Objects and Vercel, plus telemetry, landed on main."
+  },
+  {
+   "handle": "@bot",
+   "display_name": "Grok Bot",
+   "category": 2,
+   "affiliation": "xAI, Grok Bot",
+   "why": "The xAI agent product account; this window had no posts from the @xai org handle.",
+   "cadence": "several times a week",
+   "signal_to_noise": 4,
+   "example": "2026-10-19: Grok Bot can be bound to the iPhone Action Button and talked to by pressing it."
+  },
+  {
+   "handle": "@reach_vb",
+   "display_name": "Vaibhav (VB) Srivastav",
+   "category": 2,
+   "affiliation": "OpenAI (ex Hugging Face)",
+   "why": "Still writes the practical 'you can do this today' note for new ChatGPT and open-model surfaces.",
+   "cadence": "several times a week",
+   "signal_to_noise": 4,
+   "example": "2026-10-19: ChatGPT works in existing Chrome tabs via an extension, including a Work mode that fills forms and downloads files."
+  },
+  {
+   "handle": "@DeepSeekHarness",
+   "display_name": "DeepSeek Harness",
+   "category": 2,
+   "affiliation": "DeepSeek",
+   "why": "Agent harness releases tied to a specific model build, with the version to upgrade to.",
+   "cadence": "release days, a few times a month",
+   "signal_to_noise": 5,
+   "example": "2026-10-17: Harness 0.2.1 supports V4.1-Flash-1017, which was trained against the harness so tasks finish faster and cheaper."
+  },
+  {
+   "handle": "@ggerganov",
+   "display_name": "Georgi Gerganov",
+   "category": 3,
+   "affiliation": "llama.cpp; engineer at Hugging Face",
+   "why": "The shortest accurate note on what just became runnable locally, including the exact command.",
+   "cadence": "several times a week",
+   "signal_to_noise": 5,
+   "example": "2026-10-16: llama.cpp v0.7.0 serving Qwen3.8-Flash-Next IQ4_NL with draft MTP on a 128GB Mac or Spark."
+  },
+  {
+   "handle": "@ollama",
+   "display_name": "ollama",
+   "category": 3,
+   "affiliation": "Ollama",
+   "why": "Same-day path from a new model to a local or hosted run, including Claude Code and Codex launch lines.",
+   "cadence": "most days",
+   "signal_to_noise": 5,
+   "example": "2026-10-19: MiniMax M3.1 Flash on Ollama Cloud with image input and a 1M context, free for three days."
+  },
+  {
+   "handle": "@UnslothAI",
+   "display_name": "Unsloth AI",
+   "category": 3,
+   "affiliation": "Unsloth",
+   "why": "Publishes the GGUF, the accuracy drop, and the RAM target when a new open model drops.",
+   "cadence": "several times a week",
+   "signal_to_noise": 5,
+   "example": "2026-10-19: 1-bit DeepSeek V4.1-Flash-1017 GGUF, 508GB down to 250GB, about 88.2% accuracy, for 128GB RAM machines."
+  },
+  {
+   "handle": "@danielhanchen",
+   "display_name": "Daniel Han",
+   "category": 3,
+   "affiliation": "Unsloth, founder",
+   "why": "Explains which quantization of which tensor actually held up, not just that a GGUF exists.",
+   "cadence": "several times a week",
+   "signal_to_noise": 5,
+   "example": "2026-10-19: llama.cpp path for DeepSeek V4.1-Flash where the engram streams from disk and Q6_K roughly matches MXFP8."
+  },
+  {
+   "handle": "@awnihannun",
+   "display_name": "Awni Hannun",
+   "category": 3,
+   "affiliation": "MLX",
+   "why": "First-person notes on what Apple-silicon MLX can run now.",
+   "cadence": "a few times a week",
+   "signal_to_noise": 4,
+   "example": "2026-10-15: two M5 Ultras plus MLX running workloads that were impractical on that stack before."
+  },
+  {
+   "handle": "@huggingface",
+   "display_name": "Hugging Face",
+   "category": 3,
+   "affiliation": "Hugging Face",
+   "why": "Hub account for new open weights, local-inference techniques, and demos.",
+   "cadence": "several times a week",
+   "signal_to_noise": 4,
+   "example": "2026-10-19: local speculative-decoding session on getting large speed-ups without a new base model."
+  },
+  {
+   "handle": "@lmsysorg",
+   "display_name": "LMSYS Org",
+   "category": 3,
+   "affiliation": "LMSYS (SGLang, previously Chatbot Arena)",
+   "why": "Posts serving results on named new models with hardware and tokens per second.",
+   "cadence": "several times a week",
+   "signal_to_noise": 5,
+   "example": "2026-10-20: SGLang low-latency mode, up to 1.38x tok/s on GB300 and 1.56x on MI355X for DeepSeek-V4.1-Flash."
+  },
+  {
+   "handle": "@sgl_project",
+   "display_name": "SGLang",
+   "category": 3,
+   "affiliation": "SGLang",
+   "why": "Day-0 serving support is often the first proof a new open model is actually usable.",
+   "cadence": "several times a week",
+   "signal_to_noise": 4,
+   "example": "2026-10-19: day-0 SGLang-Omni support for Ming-3.0 ASR, TTS, and the audio MoE."
+  },
+  {
+   "handle": "@maximelabonne",
+   "display_name": "Maxime Labonne",
+   "category": 3,
+   "affiliation": "Liquid AI, head of post-training",
+   "why": "Shows small specialized models beating frontier models after a short fine-tune, with the recipe nearby. About 44k followers.",
+   "cadence": "several times a week",
+   "signal_to_noise": 4,
+   "example": "2026-10-16: fine-tuned d1-omni-600M decision model beats general models on the game and format it was trained on; Liquid published Unsloth and TRL notebooks."
+  },
+  {
+   "handle": "@osanseviero",
+   "display_name": "Omar Sanseviero",
+   "category": 3,
+   "affiliation": "Google DeepMind (Gemma); ex Hugging Face",
+   "why": "Still the person who turns an open model family into docs, demos, and a runnable hub.",
+   "cadence": "several times a week",
+   "signal_to_noise": 4,
+   "example": "2026-10-15: gemma.ai hub with inference guides, architecture guides, and in-browser demos; docs repo opened 2026-10-16."
+  },
+  {
+   "handle": "@soumithchintala",
+   "display_name": "Soumith Chintala",
+   "category": 3,
+   "affiliation": "Thinking Machines (Tinker); PyTorch cofounder",
+   "why": "Post-training API changes that make new open models cheap enough to fine-tune.",
+   "cadence": "a few times a week",
+   "signal_to_noise": 4,
+   "example": "2026-10-09: Tinker long-context RL price cuts up to 70%, with GLM-5.3-Flash and DeepSeek-V4.1-Flash live."
+  },
+  {
+   "handle": "@DrJimFan",
+   "display_name": "Jim Fan",
+   "category": 3,
+   "affiliation": "NVIDIA, director of robotics, GEAR lab",
+   "why": "Open-sources the robotics agent stack when a new frontier model moves the numbers.",
+   "cadence": "a few times a week",
+   "signal_to_noise": 5,
+   "example": "2026-10-16: ASPIRE v1.0 open-sourced with real-robot skill discovery; lab swapped in Astra and saw simulation benches jump toward 99%."
+  },
+  {
+   "handle": "@_akhaliq",
+   "display_name": "AK",
+   "category": 4,
+   "affiliation": "Hugging Face / Gradio",
+   "why": "Highest-volume same-day paper feed, each post is a title plus the paper link.",
+   "cadence": "many times a day",
+   "signal_to_noise": 4,
+   "example": "2026-10-19: BizBench, a paper on hidden failures of long-horizon agents in real business tasks."
+  },
+  {
+   "handle": "@dair_ai",
+   "display_name": "DAIR.AI",
+   "category": 4,
+   "affiliation": "DAIR.AI",
+   "why": "Reads one new agent or training paper closely enough to say which ablation mattered.",
+   "cadence": "most days",
+   "signal_to_noise": 4,
+   "example": "2026-10-19: Meta ProPerAgent harness raised proactive-assistant accuracy from at most 15% to 38% without changing weights."
+  },
+  {
+   "handle": "@omarsar0",
+   "display_name": "elvis",
+   "category": 4,
+   "affiliation": "DAIR.AI; previously Papers with Code and Meta AI",
+   "why": "Filters new agent-interface ideas against tools he has already run.",
+   "cadence": "most days",
+   "signal_to_noise": 4,
+   "example": "2026-10-20: compared a new visual agent-steering demo to an orchestrator tool he had already used for months, and said where it does not help."
+  },
+  {
+   "handle": "@TheTuringPost",
+   "display_name": "Turing Post (Ksenia Se)",
+   "category": 4,
+   "affiliation": "Turing Post",
+   "why": "Weekly paper list that is short enough to scan and still links the sources.",
+   "cadence": "several times a week, with a weekly digest",
+   "signal_to_noise": 4,
+   "example": "2026-10-20: weekly set including Librarian Agents, OpenGCUA, Mosaic multi-session agentic RL, and HexaShell."
+  },
+  {
+   "handle": "@trending_repos",
+   "display_name": "Trending GitHub Repositories",
+   "category": 4,
+   "affiliation": "Independent bot by @marcelcruz",
+   "why": "One post a day for the most-starred new repo, which is how tools like rea surfaced.",
+   "cadence": "daily, plus weekly and monthly",
+   "signal_to_noise": 4,
+   "example": "2026-10-14: rea, reverse-engineering finished software with agents, at about 41k stars in a day."
+  },
+  {
+   "handle": "@aitrackerbot",
+   "display_name": "AI Tracker Bot",
+   "category": 4,
+   "affiliation": "Automated tracker run by @SSHCodes",
+   "why": "Flags model strings in open pull requests before the lab post, and labels them unconfirmed.",
+   "cadence": "when a new model string appears; full rate not measured",
+   "signal_to_noise": 3,
+   "example": "2026-10-20: leak note for moonshotai/Kimi-K3.1 from an sglang PR, marked not released and unconfirmed."
+  },
+  {
+   "handle": "@simonw",
+   "display_name": "Simon Willison",
+   "category": 5,
+   "affiliation": "Independent; Datasette",
+   "why": "Tests new model behavior the day it appears and says what it does not imply.",
+   "cadence": "most days",
+   "signal_to_noise": 5,
+   "example": "2026-10-13: identified Gemini 4 Argon generating a Fourier-epicycle animation as a new behavior, not just a prettier demo."
+  },
+  {
+   "handle": "@karpathy",
+   "display_name": "Andrej Karpathy",
+   "category": 5,
+   "affiliation": "Independent; Eureka Labs",
+   "why": "Clearest public map of which capabilities are real, for whom, and where they are still jagged.",
+   "cadence": "occasional long essays",
+   "signal_to_noise": 5,
+   "example": "2026-10-11: described the split between free-tier chat and frontier coding agents that restructure a repo or hunt vulnerabilities in one run."
+  },
+  {
+   "handle": "@emollick",
+   "display_name": "Ethan Mollick",
+   "category": 5,
+   "affiliation": "Wharton",
+   "why": "Uses the new product himself and reports the interface trick that made it work.",
+   "cadence": "most days",
+   "signal_to_noise": 4,
+   "example": "2026-10-19: new Claude Projects as a usable multi-agent setup, with a coordinator model and independent threads."
+  },
+  {
+   "handle": "@rasbt",
+   "display_name": "Sebastian Raschka",
+   "category": 5,
+   "affiliation": "Independent; author of Build a Large Language Model From Scratch",
+   "why": "Reimplements the new training trick and shows the loss and the eval, not a slogan.",
+   "cadence": "about weekly, long form",
+   "signal_to_noise": 5,
+   "example": "2026-10-17: distillation lecture training Qwen3-0.6B on DeepSeek R1 MATH traces, with MATH-500 comparisons."
+  },
+  {
+   "handle": "@natolambert",
+   "display_name": "Nathan Lambert",
+   "category": 5,
+   "affiliation": "Trillium Labs; previously Ai2 Olmo; Interconnects",
+   "why": "Says when a launch that looks strong on coding fails on ordinary knowledge work.",
+   "cadence": "most days",
+   "signal_to_noise": 4,
+   "example": "2026-10-19: using current models for slides, plans, and long content still feels far from the coding-agent story."
+  },
+  {
+   "handle": "@sayashk",
+   "display_name": "Sayash Kapoor",
+   "category": 5,
+   "affiliation": "Incoming UC Berkeley; AI Snake Oil",
+   "why": "Writes the eval rules that separate a real agent gain from a leaderboard trick. About 16k followers, long-standing rather than new.",
+   "cadence": "a few times a week",
+   "signal_to_noise": 5,
+   "example": "2026-10-19: paper of open problems and best practices for evaluating agents, with recommendations for labs and buyers."
+  },
+  {
+   "handle": "@ArtificialAnlys",
+   "display_name": "Artificial Analysis",
+   "category": 5,
+   "affiliation": "Artificial Analysis",
+   "why": "Independent leaderboards with sample size, Elo, and open-weight versus closed called out.",
+   "cadence": "most days",
+   "signal_to_noise": 5,
+   "example": "2026-10-20: Ant Group Ming-3.0-tts, a 0.5B open TTS model, took the open-weight lead on their controlled-voice and pronunciation boards."
+  },
+  {
+   "handle": "@arena",
+   "display_name": "Arena.ai",
+   "category": 5,
+   "affiliation": "Arena (formerly LMSYS Chatbot Arena)",
+   "why": "Side-by-side human prefs on new models, including ones labs have just named.",
+   "cadence": "several times a week",
+   "signal_to_noise": 5,
+   "example": "2026-10-20: Muse Wonder and Muse Wonder Full compared with Opus 5.5, Sonnet 5.5, Fable 5.1, GPT-6.1 Sol, GPT-6 Astra, and Gemini 4 Argon."
+  },
+  {
+   "handle": "@teortaxesTex",
+   "display_name": "Teortaxes",
+   "category": 5,
+   "affiliation": "Independent, DeepSeek-focused",
+   "why": "Reads Chinese lab releases against fresh third-party numbers the same day.",
+   "cadence": "many times a day",
+   "signal_to_noise": 4,
+   "example": "2026-10-20: on the updated Vals index, DeepSeek 1017 still above Kimi K3, MiMo V2.6 Pro, and GLM 5.3, with the price gap spelled out."
+  },
+  {
+   "handle": "@scaling01",
+   "display_name": "Lisan al Gaib",
+   "category": 5,
+   "affiliation": "Independent; LisanBench",
+   "why": "Technical check on whether a new lab claim changes the picture. Follower count was not returned, so this is not in the under-50k bucket.",
+   "cadence": "most days",
+   "signal_to_noise": 4,
+   "example": "2026-10-19: answered OpenAI's COBOL, Fortran, and Visual Basic claim by asking for perspective, not another launch clip."
+  },
+  {
+   "handle": "@goodside",
+   "display_name": "Riley Goodside",
+   "category": 5,
+   "affiliation": "Independent; formerly Google DeepMind and Scale",
+   "why": "Screenshot feed of what a model actually did, which catches failures launch posts skip.",
+   "cadence": "several times a week",
+   "signal_to_noise": 4,
+   "example": "2026-10-13: screenshot on the OpenAI office-device thread showing a model failure mode rather than the security headline."
+  },
+  {
+   "handle": "@akshay_pachaar",
+   "display_name": "Akshay",
+   "category": 5,
+   "affiliation": "Daily Dose of DS",
+   "why": "Hands-on API walkthroughs of new model types, with enough code to try them. Format is also built for reach.",
+   "cadence": "most days",
+   "signal_to_noise": 3,
+   "example": "2026-10-16 to 2026-10-19: Jev decision model gained image input and a Box locator that returns a rectangle."
+  },
+  {
+   "handle": "@HamelHusain",
+   "display_name": "Hamel Husain",
+   "category": 6,
+   "affiliation": "OpenAI, evals",
+   "why": "Evals practitioner who points at tools that make production agent traces inspectable.",
+   "cadence": "several times a week, often short",
+   "signal_to_noise": 4,
+   "example": "2026-10-12: flagged neatlogs as a new eval tool for looking at agent data before production."
+  },
+  {
+   "handle": "@hwchase17",
+   "display_name": "Harrison Chase",
+   "category": 6,
+   "affiliation": "LangChain",
+   "why": "Agent-framework integrations that change what a company agent can search or do.",
+   "cadence": "most days",
+   "signal_to_noise": 4,
+   "example": "2026-10-19: LangChain agents can search a synced index of docs, GitHub, Notion, Slack, and Zendesk via the kapa plugin."
+  },
+  {
+   "handle": "@levie",
+   "display_name": "Aaron Levie",
+   "category": 6,
+   "affiliation": "Box, CEO",
+   "why": "Writes the enterprise implication of a new agent pattern in operational language.",
+   "cadence": "most days",
+   "signal_to_noise": 4,
+   "example": "2026-10-19: agent swarms as the point where research, QA, and security work become limited by compute rather than headcount."
+  },
+  {
+   "handle": "@amasad",
+   "display_name": "Amjad Masad",
+   "category": 6,
+   "affiliation": "Replit, CEO",
+   "why": "Says which model won the default in a real coding product, and why.",
+   "cadence": "several times a week",
+   "signal_to_noise": 4,
+   "example": "2026-10-17: Replit stays multi-model, but OpenAI is now the preferred Agent default on performance, cost, and partnership."
+  },
+  {
+   "handle": "@Replit",
+   "display_name": "Replit",
+   "category": 6,
+   "affiliation": "Replit",
+   "why": "Changelog of model access and deployment options for a widely used coding agent.",
+   "cadence": "several times a week",
+   "signal_to_noise": 4,
+   "example": "2026-10-19: Claude Haiku 5.5 in the model selector, plus enterprise bring-your-own-cloud for published apps."
+  },
+  {
+   "handle": "@perplexity_ai",
+   "display_name": "Perplexity",
+   "category": 6,
+   "affiliation": "Perplexity",
+   "why": "Shows when a frontier model becomes available inside a work product, with the plan gate.",
+   "cadence": "several times a week",
+   "signal_to_noise": 4,
+   "example": "2026-10-16: Gemini 4 Argon available to Pro and Max, with a new record on their WANDR eval."
+  },
+  {
+   "handle": "@SemiAnalysis_",
+   "display_name": "SemiAnalysis",
+   "category": 6,
+   "affiliation": "SemiAnalysis",
+   "why": "Connects a new system to the cost of long-context agent inference, which decides what you can deploy.",
+   "cadence": "most days",
+   "signal_to_noise": 4,
+   "example": "2026-10-20: Vera Rubin NVL72 up to 7.3x better perf per dollar than GB300 NVL72 for 1M-context agent inference."
+  },
+  {
+   "handle": "@modal",
+   "display_name": "Modal",
+   "category": 6,
+   "affiliation": "Modal",
+   "why": "Infra account that is often how a brand-new model becomes callable the day it ships.",
+   "cadence": "several times a week",
+   "signal_to_noise": 4,
+   "example": "2026-10-19: Inception Mercury 3, a diffusion LLM claimed above GPT-6 Luna and Haiku 5.5, running at 1,000+ tokens per second."
+  },
+  {
+   "handle": "@AndrewYNg",
+   "display_name": "Andrew Ng",
+   "category": 6,
+   "affiliation": "DeepLearning.AI, AI Fund, Coursera",
+   "why": "Applied-skills and enterprise-adoption view, lighter on same-day model specs.",
+   "cadence": "a few times a month",
+   "signal_to_noise": 3,
+   "example": "2026-09-29: Workera's agent-led skill assessments, the system he chairs, being acquired by Pearson."
+  },
+  {
+   "handle": "@mustafasuleyman",
+   "display_name": "Mustafa Suleyman",
+   "category": 6,
+   "affiliation": "Microsoft AI, CEO",
+   "why": "Microsoft model drops aimed at agents already in production, especially speech.",
+   "cadence": "a few times a week",
+   "signal_to_noise": 3,
+   "example": "2026-10-16: MAI claimed as the most accurate transcription model on OpenRouter across languages."
+  },
+  {
+   "handle": "@swyx",
+   "display_name": "swyx",
+   "category": 6,
+   "affiliation": "smol.ai, Cognition, AI Engineer, Latent Space",
+   "why": "AI-engineering practice feed: which agent patterns teams are actually hiring and arguing about.",
+   "cadence": "most days",
+   "signal_to_noise": 3,
+   "example": "2026-10-09: named the scarce 'technical operator who can ship with agents' role and the pay frontier agent labs were offering."
+  },
+  {
+   "handle": "@lightseekorg",
+   "display_name": "LightSeek Foundation",
+   "category": 7,
+   "affiliation": "LightSeek (TokenSpeed)",
+   "why": "About 3.1k followers and already posting day-0 serving numbers labs then quote.",
+   "cadence": "several times a week",
+   "signal_to_noise": 4,
+   "example": "2026-10-14: 685 output tokens/s per user on Qwen3.8-Flash-Next with TokenSpeed on 4x GB300 NVFP4. Qwen reposted it."
+  },
+  {
+   "handle": "@maxencefaldor",
+   "display_name": "Maxence Faldor",
+   "category": 7,
+   "affiliation": "Google DeepMind, open-endedness",
+   "why": "About 1.1k followers. His writeup is the primary source; the lab account amplified it the same day.",
+   "cadence": "a few times a month",
+   "signal_to_noise": 5,
+   "example": "2026-10-16: four Gemini 4 Argon agents, 27 hours, 2,783 self-written programs, Ender Dragon down, no human in the loop."
+  },
+  {
+   "handle": "@nrehiew_",
+   "display_name": "wh",
+   "category": 7,
+   "affiliation": "Independent engineer",
+   "why": "About 19k followers. Short posts on training math and agent-harness failure modes before they become blog posts.",
+   "cadence": "most days",
+   "signal_to_noise": 4,
+   "example": "2026-10-16: stop-gradient correction for cross-entropy drift, computed from the top 128 vocabulary tokens plus a tail rescale."
+  },
+  {
+   "handle": "@kitlangton",
+   "display_name": "Kit Langton",
+   "category": 7,
+   "affiliation": "opencode",
+   "why": "About 25k followers. Builds and demos new agent-control tools instead of restating launches.",
+   "cadence": "several times a week",
+   "signal_to_noise": 4,
+   "example": "2026-10-18: Scrawl, a critique surface for steering coding agents, which he ranked as his biggest jump since speech-to-text."
+  },
+  {
+   "handle": "@CommandCodeAI",
+   "display_name": "Command Code",
+   "category": 7,
+   "affiliation": "Command Code",
+   "why": "About 27k followers. Coding agent aimed at open models, with tool repair, shipping new weights the day labs do.",
+   "cadence": "most days",
+   "signal_to_noise": 4,
+   "example": "2026-10-19: MiniMax M3.1 Flash live and free in Command Code, 1M context, for every plan."
+  },
+  {
+   "handle": "@ValsAI",
+   "display_name": "Vals AI",
+   "category": 7,
+   "affiliation": "Vals AI",
+   "why": "About 28k followers. Enterprise-task evals (finance, Excel, code migration, legal) versioned in public.",
+   "cadence": "a few times a week",
+   "signal_to_noise": 5,
+   "example": "2026-10-20: Vals Index v2.2 with Finance Agent v2.1, Excel Modeling v1.1, Code Migration v1.1, and Harvey LAB v1.1."
+  },
+  {
+   "handle": "@casper_hansen_",
+   "display_name": "Casper Hansen",
+   "category": 7,
+   "affiliation": "Independent; author of AutoAWQ",
+   "why": "About 12k followers. Local quantizer who says when a compression idea is still unsolved.",
+   "cadence": "several times a week",
+   "signal_to_noise": 4,
+   "example": "2026-10-17: ternarizing DeepSeek V4.1 Flash 1017 might fit a 3090 plus 64GB RAM, but keeping agent accuracy is the open problem."
+  }
+ ],
+ "lists": [],
+ "avoid": [
+  {
+   "handle": "@elonmusk",
+   "display_name": "Elon Musk",
+   "why": "Enormous reach, but the AI posts in this window were 'hire Grok Bot' slogans, not a spec of a new capability."
+  },
+  {
+   "handle": "@bindureddy",
+   "display_name": "Bindu Reddy",
+   "why": "On 2026-10-20 named unreleased models (Gemini Carbon, Fable 5.5, Terra) as if they were dropping, with prices and rankings and no source."
+  },
+  {
+   "handle": "@kimmonismus",
+   "display_name": "Chubby",
+   "why": "Fast aggregator who repeats 'world's first' and near-parity router claims without a method a reader can check."
+  },
+  {
+   "handle": "@rowancheung",
+   "display_name": "Rowan Cheung",
+   "why": "Newsletter voice. Recent post was a moat slogan; the brand account recaps stories instead of testing what shipped."
+  },
+  {
+   "handle": "@DAIEvolutionHub",
+   "display_name": "Kshitij Mishra",
+   "why": "Posts 'the only AI list you need' threads that include his own account. That is distribution, not a test of a new capability."
+  }
+ ],
+ "method_note": "Searched live X on 2026-10-20 with keyword queries (from:handle since:2026-09-19), user lookup for follower counts, and a semantic search for recent frontier-model posts. Every included account has a post on or after 2026-09-19. Capability examples are from 2026-08-20 onward. Cadence is inferred from returned posts, not a full archive. No public X List IDs could be verified: searching x.com/i/lists and 'AI list' posts returned engagement threads, not a maintained list whose members I could check, so lists is empty. @xai returned no posts; xAI product signal in this window is on @bot (included) and @grok (active 2026-10-13 on a Supabase plugin, not slotted). No qualifying posts from @ylecun, @fchollet, @ilyasut, @ch402, @lilianweng, @OriolVinyalsML, @OpenHands and nearby OpenHands handles, @bartowski, @TheBloke, @cognitivecompai, or @GroqInc. @chipro last visible post was 2026-09-15, outside 30 days. @vllm_project's latest post was a conference listing, so it was left out. @arankomatsuzaki's latest post was a cofounder note, not a paper. @lmarena_ai returned nothing; the live arena account is @arena. Follower counts were not returned for @scaling01, @helloiamleonie, or @aitrackerbot. Also verified and left out only to stay inside 12 per category: @demishassabis (2026-10-13 Gemini 4 Argon rollout; the org account and @maxencefaldor cover it), @alexalbert__ (2026-10-07 Haiku 5.5 faster and about 75% cheaper than Haiku 4.5), @jietang (2026-10-06 GLM-5.3 on Bedrock), @_inception_ai (2026-10-19 Mercury 3 diffusion LLM, also surfaced via @modal), @allen_ai (2026-10-14 HiRO-ACEv2 weather model), @grok. @Teknium posted about Hermes Agent on 2026-10-19 as a direction, not a shipped feature."
+}

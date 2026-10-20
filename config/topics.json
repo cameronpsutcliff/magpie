@@ -1,0 +1,211 @@
+{
+ "version": 1,
+ "topics": {
+  "models": {
+   "label": "Models and weights",
+   "kw": [
+    "model",
+    "weights",
+    "open-weight",
+    "open weights",
+    "checkpoint",
+    "release",
+    "llm",
+    "moe",
+    "parameters",
+    "instruct",
+    "base model",
+    "frontier"
+   ]
+  },
+  "agents": {
+   "label": "Agents and harnesses",
+   "kw": [
+    "agent",
+    "agents",
+    "agentic",
+    "harness",
+    "autonomous",
+    "multi-agent",
+    "swarm",
+    "workflow",
+    "orchestrat",
+    "durable",
+    "computer use",
+    "browser use"
+   ]
+  },
+  "coding": {
+   "label": "Coding tools",
+   "kw": [
+    "coding",
+    "code",
+    "ide",
+    "copilot",
+    "codex",
+    "claude code",
+    "cursor",
+    "developer",
+    "cli",
+    "refactor",
+    "terminal",
+    "pull request",
+    "devin",
+    "programming"
+   ]
+  },
+  "local": {
+   "label": "Local and on-device",
+   "kw": [
+    "local",
+    "on-device",
+    "gguf",
+    "quantiz",
+    "llama.cpp",
+    "ollama",
+    "mlx",
+    "consumer gpu",
+    "4-bit",
+    "1-bit",
+    "edge",
+    "offline",
+    "self-host"
+   ]
+  },
+  "multimodal": {
+   "label": "Vision, video and voice",
+   "kw": [
+    "image",
+    "video",
+    "vision",
+    "audio",
+    "voice",
+    "speech",
+    "tts",
+    "music",
+    "3d",
+    "multimodal",
+    "diffusion",
+    "ocr",
+    "avatar"
+   ]
+  },
+  "memory": {
+   "label": "Retrieval and memory",
+   "kw": [
+    "rag",
+    "retrieval",
+    "memory",
+    "embedding",
+    "vector",
+    "search",
+    "knowledge graph",
+    "context window",
+    "long context",
+    "index"
+   ]
+  },
+  "evals": {
+   "label": "Evals and benchmarks",
+   "kw": [
+    "eval",
+    "benchmark",
+    "leaderboard",
+    "arena",
+    "score",
+    "sota",
+    "bench"
+   ]
+  },
+  "security": {
+   "label": "Security and safety",
+   "kw": [
+    "security",
+    "safety",
+    "jailbreak",
+    "prompt injection",
+    "exploit",
+    "vulnerab",
+    "red team",
+    "alignment",
+    "interpretab",
+    "sandbox",
+    "privacy"
+   ]
+  },
+  "infra": {
+   "label": "Serving and infrastructure",
+   "kw": [
+    "inference",
+    "serving",
+    "latency",
+    "throughput",
+    "gpu",
+    "kernel",
+    "vllm",
+    "sglang",
+    "cluster",
+    "training",
+    "distributed",
+    "cost",
+    "token"
+   ]
+  },
+  "mcp": {
+   "label": "MCP and integrations",
+   "kw": [
+    "mcp",
+    "model context protocol",
+    "plugin",
+    "integration",
+    "api",
+    "sdk",
+    "connector",
+    "skills",
+    "tool use",
+    "tool calling"
+   ]
+  },
+  "robotics": {
+   "label": "Robotics and embodied",
+   "kw": [
+    "robot",
+    "embodied",
+    "humanoid",
+    "manipulation",
+    "autonomous driving",
+    "world model",
+    "simulation"
+   ]
+  },
+  "research": {
+   "label": "Research and methods",
+   "kw": [
+    "paper",
+    "arxiv",
+    "method",
+    "training",
+    "reinforcement",
+    "rl",
+    "reasoning",
+    "distillation",
+    "scaling",
+    "architecture",
+    "attention"
+   ]
+  },
+  "reverse": {
+   "label": "Reverse engineering and clean-room",
+   "kw": [
+    "reverse engineer",
+    "clean-room",
+    "decompil",
+    "ghidra",
+    "port",
+    "rebuild",
+    "rewrite in rust",
+    "emulat"
+   ]
+  }
+ }
+}

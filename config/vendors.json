@@ -1,0 +1,226 @@
+{
+ "version": 1,
+ "vendors": {
+  "OpenAI": [
+   "openai",
+   "chatgpt",
+   "gpt-",
+   "gpt5",
+   "gpt6",
+   "codex",
+   "sora",
+   "o3",
+   "o4"
+  ],
+  "Anthropic": [
+   "anthropic",
+   "claude",
+   "mythos",
+   "opus",
+   "sonnet",
+   "haiku"
+  ],
+  "Google": [
+   "google",
+   "gemini",
+   "deepmind",
+   "gemma",
+   "veo",
+   "jules",
+   "antigravity",
+   "notebooklm",
+   "argon",
+   "imagen"
+  ],
+  "xAI": [
+   "xai",
+   "grok"
+  ],
+  "Meta": [
+   "meta ai",
+   "llama",
+   "aiatmeta",
+   "facebookresearch",
+   "muse glimmer",
+   "segment anything",
+   "sam 3"
+  ],
+  "Mistral": [
+   "mistral",
+   "codestral",
+   "devstral",
+   "magistral"
+  ],
+  "DeepSeek": [
+   "deepseek"
+  ],
+  "Qwen": [
+   "qwen",
+   "alibaba",
+   "tongyi"
+  ],
+  "Moonshot": [
+   "kimi",
+   "moonshot"
+  ],
+  "Zhipu": [
+   "glm",
+   "zhipu",
+   "z.ai",
+   "zai-org"
+  ],
+  "MiniMax": [
+   "minimax"
+  ],
+  "Microsoft": [
+   "microsoft",
+   "phi-",
+   "azure",
+   "foundry"
+  ],
+  "GitHub": [
+   "github copilot",
+   "copilot"
+  ],
+  "Cursor": [
+   "cursor"
+  ],
+  "NVIDIA": [
+   "nvidia",
+   "nemotron",
+   "cuda"
+  ],
+  "Apple": [
+   "apple",
+   "mlx"
+  ],
+  "Amazon": [
+   "amazon",
+   "aws",
+   "bedrock",
+   "kiro",
+   "nova"
+  ],
+  "Hugging Face": [
+   "hugging face",
+   "huggingface",
+   "smolagents",
+   "transformers"
+  ],
+  "Ollama": [
+   "ollama"
+  ],
+  "llama.cpp": [
+   "llama.cpp",
+   "ggml",
+   "gguf",
+   "ggerganov"
+  ],
+  "vLLM": [
+   "vllm",
+   "sglang"
+  ],
+  "LangChain": [
+   "langchain",
+   "langgraph"
+  ],
+  "Perplexity": [
+   "perplexity"
+  ],
+  "Cohere": [
+   "cohere"
+  ],
+  "Stability": [
+   "stability ai",
+   "stable diffusion"
+  ],
+  "Black Forest Labs": [
+   "black forest",
+   "flux"
+  ],
+  "Exa": [
+   "exa.ai",
+   "exa "
+  ],
+  "Vercel": [
+   "vercel",
+   "v0"
+  ],
+  "Replit": [
+   "replit"
+  ],
+  "Cognition": [
+   "devin",
+   "cognition",
+   "windsurf"
+  ]
+ },
+ "owners": {
+  "openai": "OpenAI",
+  "anthropics": "Anthropic",
+  "google": "Google",
+  "google-deepmind": "Google",
+  "google-gemini": "Google",
+  "googleapis": "Google",
+  "xai-org": "xAI",
+  "meta-llama": "Meta",
+  "facebookresearch": "Meta",
+  "mistralai": "Mistral",
+  "deepseek-ai": "DeepSeek",
+  "qwenlm": "Qwen",
+  "qwen": "Qwen",
+  "moonshotai": "Moonshot",
+  "zai-org": "Zhipu",
+  "thudm": "Zhipu",
+  "minimaxai": "MiniMax",
+  "microsoft": "Microsoft",
+  "nvidia": "NVIDIA",
+  "apple": "Apple",
+  "huggingface": "Hugging Face",
+  "ollama": "Ollama",
+  "ggml-org": "llama.cpp",
+  "ggerganov": "llama.cpp",
+  "vllm-project": "vLLM",
+  "sgl-project": "vLLM",
+  "langchain-ai": "LangChain",
+  "github": "GitHub",
+  "unsloth": "Unsloth",
+  "unslothai": "Unsloth",
+  "stabilityai": "Stability",
+  "black-forest-labs": "Black Forest Labs",
+  "cursor": "Cursor",
+  "meta-models": "Meta",
+  "openbmb": "OpenBMB",
+  "fishaudio": "Fish Audio",
+  "comfy-org": "ComfyUI",
+  "cloudflare": "Cloudflare",
+  "vercel": "Vercel",
+  "anomalyco": "opencode",
+  "tencent": "Tencent",
+  "bytedance": "ByteDance",
+  "bytedance-seed": "ByteDance",
+  "baidu": "Baidu",
+  "ibm-granite": "IBM",
+  "ibm": "IBM",
+  "salesforce": "Salesforce",
+  "allenai": "Ai2",
+  "lmsys": "LMSYS",
+  "exa-labs": "Exa",
+  "perplexityai": "Perplexity",
+  "cohere": "Cohere",
+  "cohereforai": "Cohere",
+  "stepfun-ai": "StepFun",
+  "xiaomimimo": "Xiaomi",
+  "lightricks": "Lightricks",
+  "resemble-ai": "Resemble AI",
+  "kyutai": "Kyutai",
+  "liquidai": "Liquid AI",
+  "servicenow": "ServiceNow",
+  "snowflake": "Snowflake",
+  "databricks": "Databricks",
+  "amazon": "Amazon",
+  "aws": "Amazon",
+  "awslabs": "Amazon",
+  "mlx-community": "Apple"
+ }
+}

@@ -1,0 +1,7 @@
+[project]
+name = "magpie"
+version = "0.1.0"
+description = "Every shiny new thing in AI, collected each morning and ranked by what it makes possible."
+requires-python = ">=3.12"
+license = { text = "Apache-2.0" }
+dependencies = []

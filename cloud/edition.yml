@@ -1,0 +1,62 @@
+name: Daily edition
+
+# The cloud tier. Runs with no personal computer on: every source that needs no key, scored and
+# published as a plain edition. If a Claude token is configured as a repository secret
+# (CLAUDE_CODE_OAUTH_TOKEN for a subscription, or ANTHROPIC_API_KEY), the editor runs here too.
+# A richer edition already published for the day (from the home tier) is never overwritten.
+
+on:
+  schedule:
+    - cron: "10 11 * * *" # 06:10 Central in daylight time, 05:10 in standard time
+    - cron: "10 13 * * *" # backstop, two hours later
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Overwrite an edited edition with a plain one"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: magpie-publish
+  cancel-in-progress: false
+
+jobs:
+  edition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      GITHUB_TOKEN: ${{ github.token }}
+      MAGPIE_LANES: claude
+      MAGPIE_SAFE_MODE: "0"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install the editor
+        if: env.CLAUDE_CODE_OAUTH_TOKEN != '' || env.ANTHROPIC_API_KEY != ''
+        run: npm install -g @anthropic-ai/claude-code
+      - name: Build the edition
+        run: |
+          args="--cloud"
+          if [ -z "$CLAUDE_CODE_OAUTH_TOKEN$ANTHROPIC_API_KEY" ]; then args="$args --no-llm"; fi
+          if [ "${{ inputs.force }}" = "true" ]; then args="$args --force"; fi
+          python -m magpie run $args
+      - name: Publish
+        run: |
+          git config user.name "magpie-bot"
+          git config user.email "magpie-bot@users.noreply.github.com"
+          git add data state/history.json
+          if git diff --cached --quiet; then echo "nothing new to publish"; exit 0; fi
+          git commit -m "edition $(TZ=America/Chicago date +%F) (cloud)"
+          for i in 1 2 3; do
+            git push && exit 0
+            # On a race with the home tier, keep whatever is already on main.
+            git pull --rebase -X ours
+          done
+          exit 1

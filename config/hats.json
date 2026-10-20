@@ -1,0 +1,41 @@
+{
+ "version": 1,
+ "note": "Roles from the Practice Atlas used as lenses. Default hats are written for top events every day.",
+ "hats": [
+  {
+   "id": "architect",
+   "label": "Architect",
+   "question": "What boundary, contract or building block just appeared?"
+  },
+  {
+   "id": "quality",
+   "label": "Quality engineer",
+   "question": "What can now be checked, and what is still only a claim?"
+  },
+  {
+   "id": "security",
+   "label": "Security engineer",
+   "question": "What new authority, execution or supply-chain surface showed up?"
+  },
+  {
+   "id": "data",
+   "label": "Data scientist",
+   "question": "What can now be trained, evaluated or run, and at what cost?"
+  },
+  {
+   "id": "product",
+   "label": "Product manager",
+   "question": "What can a user now do that they could not yesterday?"
+  },
+  {
+   "id": "scout",
+   "label": "Capability scout",
+   "question": "Is it worth a trial, and what evidence would settle it?"
+  },
+  {
+   "id": "combinator",
+   "label": "Combination strategist",
+   "question": "What does it unlock when paired with something else already here?"
+  }
+ ]
+}

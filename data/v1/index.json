@@ -1,0 +1,52 @@
+{
+ "schema": "magpie.index/1",
+ "days": [
+  {
+   "date": "2026-10-19",
+   "headline": "Download Meta's open Muse Spark, diffuse text fast, forecast time series, and more",
+   "events": 177,
+   "enriched": true,
+   "top": [
+    {
+     "id": "8615bdd7d491",
+     "title": "Meta posts open Muse Spark 816B multimodal model",
+     "impact": 5,
+     "vendor": "Meta"
+    },
+    {
+     "id": "f7c1160bd9e2",
+     "title": "DeepSeek V4.1 Flash 1017 trends on Hugging Face",
+     "impact": 4,
+     "vendor": "DeepSeek"
+    },
+    {
+     "id": "a625503275f6",
+     "title": "Mistral launches Timestral time-series foundation models",
+     "impact": 4,
+     "vendor": "Mistral"
+    },
+    {
+     "id": "4439bb6ce3b7",
+     "title": "VoiceStudio offers local voice suite in 646 languages",
+     "impact": 3,
+     "vendor": "Open source"
+    },
+    {
+     "id": "6e9ca4b2faae",
+     "title": "OpenVLHarness adds memory to visual tool-using agents",
+     "impact": 3,
+     "vendor": "Research"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Research",
+    "Anthropic",
+    "DeepSeek",
+    "Meta",
+    "Qwen"
+   ]
+  }
+ ],
+ "latest": "2026-10-19"
+}
