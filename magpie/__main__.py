@@ -194,7 +194,7 @@ def main() -> None:
     from . import constraints as K, trackers as T
     try:
         c_events, c_section = K.generate(items, date, DATA, STATE, llm=not a.no_llm)
-        used = {s["url"] for r in c_section["items"] for s in r.get("sources", [])}
+        used = {s["url"] for r in c_section["items"] if r.get("last_seen") == date for s in r.get("sources", [])}
         # A post that only reports the same action leaves the capability list; the constraint carries it.
         events = [e for e in events if not (e["sources"] and all(s["url"] in used for s in e["sources"]))] + c_events
     except Exception as ex:  # the lane must never block the edition

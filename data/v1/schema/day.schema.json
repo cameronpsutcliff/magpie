@@ -267,6 +267,14 @@
     },
     "note": {
      "type": "string"
+    },
+    "rejected": {
+     "type": "integer",
+     "description": "Candidates the editor judged not to be an official action today."
+    },
+    "deferred": {
+     "type": "integer",
+     "description": "New candidates over the per-run limit; they are classified on the next run."
     }
    }
   },

@@ -86,7 +86,8 @@ def gap(date: str, state_dir) -> dict:
         "as_of": date,
         "lag_months": lag(lead),
         "today_months": today,
-        "points_behind": round(closed[-1]["eci"] - lead["eci"], 1),
+        "points_behind": round(max(0.0, closed[-1]["eci"] - lead["eci"]), 1),
+        "open_leads": lead["eci"] > closed[-1]["eci"],
         "open": _brief(lead),
         "closed_match": _brief(m),
         "closed_frontier": _brief(closed[-1]),
@@ -113,6 +114,8 @@ def observations(data_dir) -> list[dict]:
             continue
         if o["device"] not in known or key in seen or not str(o.get("url", "")).startswith("https://"):
             continue
+        if o.get("currency", "USD") != "USD":
+            continue  # every comparison here is in dollars
         seen.add(key)
         out.append({"device": o["device"], "date": o["date"][:10], "kind": o.get("kind", "list"), "price": float(o["price"]),
                     "currency": o.get("currency", "USD"), "url": o["url"], "by": o.get("by", "magpie"),

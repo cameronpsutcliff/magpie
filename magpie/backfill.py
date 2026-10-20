@@ -256,6 +256,8 @@ def run(start: str, end: str, *, llm: bool = True, recollect: bool = False) -> N
                 else:
                     os.environ["MAGPIE_MODEL"] = prev
             events = [e for e in events if not e.get("dropped")]
+        # No constraints lane or trackers here: policy feeds keep no archive to rebuild a past day from, and the
+        # page and the MCP server treat an edition without them as one that predates the lane.
         day, top_events = compose_day(d, saved["items"], saved["rising"], saved["health"], events, edition, receipt,
                                       where="backfill", seconds=time.monotonic() - t0, note=NOTE)
         publish_day(day, events, top_events)
