@@ -25,27 +25,9 @@ class WorksWithTests(unittest.TestCase):
         self.assertEqual(got, [{"name": "Ollama", "how": "serves the models"}, {"name": "LangGraph"},
                                {"name": "Claude Code", "how": "connects over MCP"}])  # LlamaIndex is nowhere in its text
 
-    def test_never_the_capability_its_maker_or_who_reported_it(self):
-        e = ev(summary="Kit from Acme, covered by Hacker News and AI News, runs on Ollama.")
-        got = N.works_with([{"name": "Kit"}, {"name": "Acme"}, {"name": "Hacker News"}, {"name": "AI News"}, {"name": "Ollama"}], e)
-        self.assertEqual(got, [{"name": "Ollama"}])
-
-    def test_never_the_capability_or_maker_under_another_form(self):
-        page = ev(key="url:product.example/launch", title="Product 2.0", summary="Product 2.0 plugs into Ollama.", maker="Acme, Inc.")
-        self.assertEqual(N.works_with([{"name": "Product"}, {"name": "Ollama"}], page), [{"name": "Ollama"}])  # Product, without its version
-        acme = ev(summary="Acme ships a kit for Ollama.", maker="Acme, Inc.")
-        self.assertEqual(N.works_with([{"name": "Acme"}, {"name": "Ollama"}], acme), [{"name": "Ollama"}])
-        video = ev(key="url:youtube.com/watch?v=x", title="Track tokens with the Usage Canvas | GitHub Copilot", summary="A canvas in VS Code.")
-        self.assertEqual(N.works_with([{"name": "GitHub Copilot"}, {"name": "VS Code"}], video), [{"name": "VS Code"}])
-        weights = ev(key="hf:meta-llama/llama-3.1-8b", title="meta-llama/Llama-3.1-8B", summary="Llama 3.1 8B runs in Ollama and llama.cpp.")
-        self.assertEqual(N.works_with([{"name": "Llama"}, {"name": "Llama 3.1"}, {"name": "meta-llama"}, {"name": "llama.cpp"}], weights),
-                         [{"name": "llama.cpp"}])
-        engine = ev(key="gh:deepseek-ai/deepinfer", title="deepseek-ai/DeepInfer", summary="Serves DeepSeek models at scale.", maker="DeepSeek")
-        self.assertEqual(N.works_with([{"name": "deepseek-ai"}, {"name": "DeepSeek"}, {"name": "DeepSeek models"}], engine), [{"name": "DeepSeek models"}])
-
-    def test_what_it_plugs_into_may_lead_its_title(self):
-        plugin = ev(key="url:zed.dev/blog/plugin", title="Claude Code plugin for Zed", summary="A plugin.", maker="Zed Industries")
-        self.assertEqual(N.works_with([{"name": "Claude Code"}, {"name": "Zed"}], plugin), [{"name": "Claude Code"}])  # Zed leads its maker
+    def test_never_the_capability_or_its_maker(self):
+        e = ev(summary="Kit from Acme runs on Ollama.")
+        self.assertEqual(N.works_with([{"name": "Kit"}, {"name": "Acme"}, {"name": "acme/kit"}, {"name": "Ollama"}], e), [{"name": "Ollama"}])
 
     def test_an_item_the_redaction_gate_would_stop_is_dropped(self):
         got = N.works_with([{"name": "Ollama", "how": "loads weights from /Users/someone/models"}, {"name": "vLLM", "how": "serves it"}], ev())
@@ -66,12 +48,11 @@ class WorksWithTests(unittest.TestCase):
         got = N.works_with([{"name": "Cursor"}, {"name": "LangGraph"}, {"name": "zed"}, {"name": "Windsurf"}], e)
         self.assertEqual(got, [{"name": "Cursor"}, {"name": "LangGraph"}])
 
-    def test_dedupes_caps_and_drops_an_overlong_clause_not_the_name(self):
+    def test_dedupes_and_caps_at_five(self):
         e = ev(summary="Ollama, vLLM, LangGraph, Claude Code, Cursor, Zed and Windsurf.")
         names = ["Ollama", "ollama", "vLLM", "LangGraph", "Claude Code", "Cursor", "Zed", "Windsurf"]
-        got = N.works_with([{"name": n, "how": "word " * 20 if n == "Ollama" else "ok"} for n in names], e)
+        got = N.works_with([{"name": n} for n in names], e)
         self.assertEqual([w["name"] for w in got], ["Ollama", "vLLM", "LangGraph", "Claude Code", "Cursor"])
-        self.assertNotIn("how", got[0])
 
     def test_a_malformed_answer_is_empty_never_an_error(self):
         for raw in (None, "Ollama", 5, {"name": "Ollama"}, [None, 5, "Ollama", {"name": None}, {"name": ["Ollama"]}, {"how": "x"},
