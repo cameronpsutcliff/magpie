@@ -6,8 +6,9 @@ they were ever featured. Retrieval is stdlib only (shared words weighted by rari
 either way, the same maker) so the cloud tier runs it as the home tier does. No model is called.
 
 A library row carries the same fields as a row from today, from its latest edited appearance, plus its history before the
-day: first and last seen, days seen, days featured, peak signal, stars gained, and its element page's works-with count as
-last built (in the daily run, from the editions before the day; a re-run of a past day sees the pages as they are now).
+day: first and last seen, days seen, days featured, peak signal, stars gained, and works-with neighbours (what it was
+combined with in a new possibility or covered with in the same post, as on its element page). All of it comes from the
+editions before the day, so re-running a past day sees what that day saw.
 `adoption` turns that history into one 0 to 1 score; the possibility ranking uses it as the amplification term.
 """
 from __future__ import annotations
@@ -15,7 +16,7 @@ from __future__ import annotations
 import math
 import re
 import urllib.error
-from collections import Counter
+from collections import Counter, defaultdict
 from pathlib import Path
 
 from .util import fetch_json, github_headers, load_json
@@ -49,8 +50,12 @@ def _named(brief: dict) -> list[str]:
 def build(date: str, data_dir: Path) -> dict[str, dict]:
     """key -> library entry, from every edition before `date`. An entry is {"event", "date", "first_seen", "last_seen",
     "days_seen", "featured", "peak", "stars_gained", "works_with"}; "event" is its latest edited appearance, from "date"."""
+    from .elements import _ties
+
     lib: dict[str, dict] = {}
     totals: dict[str, list[int]] = {}
+    partners: dict[str, set[str]] = defaultdict(set)
+    key_of: dict[str, str] = {}  # event id -> key; ids are a hash of the key, the same on every day
     for path in sorted(Path(data_dir, "days").glob("*.json")):
         if path.stem >= date:
             continue
@@ -72,13 +77,18 @@ def build(date: str, data_dir: Path) -> dict[str, dict]:
                 totals.setdefault(k, []).append(int(m["stars_total"]))
             if e.get("brief"):
                 s["event"], s["date"] = e, day["date"]
+            key_of[e["id"]] = k
+        # Works with, as element pages count it: covered by the same post that day, or combined in a new possibility.
+        for k, ties in _ties(day.get("events") or []).items():
+            partners[k] |= {t["key"] for t in ties}
+        for p in (day.get("possibilities") or {}).get("items") or []:
+            keys = {key_of[i] for i in p.get("ingredients") or [] if i in key_of}
+            for k in keys:
+                partners[k] |= keys - {k}
     for k, t in totals.items():
         lib[k]["stars_gained"] = max(lib[k]["stars_gained"], max(t) - min(t))
-    from .elements import slug_for
     for k, s in lib.items():
-        if s["event"]:
-            page = load_json(Path(data_dir, "elements", f"{slug_for(k)}.json"), None)
-            s["works_with"] = len((page or {}).get("works_with") or [])
+        s["works_with"] = len(partners[k])
     return {k: s for k, s in lib.items() if s["event"]}
 
 
@@ -129,7 +139,8 @@ def related(arrival: dict, entry: dict, vec) -> float:
 
 
 def neighbours(arrivals: list[dict], lib: dict[str, dict], exclude: set[str]) -> dict[str, list[tuple[str, float]]]:
-    """arrival id -> [(library key, relatedness)], best first, every candidate above MIN_SCORE. Relatedness is weighted by
+    """arrival id -> [(library key, relatedness)], best first: every candidate at or above MIN_SCORE, or when none is, every
+    candidate that relates at all, so a lone arrival on a quiet day still has partners to try. Relatedness is weighted by
     the candidate's adoption, so of two equally related capabilities the one that has taken hold comes first."""
     keys = [k for k in lib if k not in exclude]
     docs = {k: _doc(lib[k]["event"]) for k in keys}
@@ -147,7 +158,7 @@ def neighbours(arrivals: list[dict], lib: dict[str, dict], exclude: set[str]) ->
     out = {}
     for a in arrivals:
         scored = [(k, related(a, lib[k], vec)) for k in keys if not same(a, lib[k]["event"])]
-        scored = [(k, s) for k, s in scored if s >= MIN_SCORE]
+        scored = [(k, s) for k, s in scored if s >= MIN_SCORE] or [(k, s) for k, s in scored if s > 0]
         scored.sort(key=lambda ks: (-(ks[1] * (1 + adoption(lib[ks[0]]))), ks[0]))
         out[a["id"]] = scored
     return out

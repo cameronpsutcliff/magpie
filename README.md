@@ -61,7 +61,7 @@ edition. For each of today's strongest arrivals, code retrieves the existing cap
 words, shared topics, either naming the other as an integration, the same maker), whatever their age, and keeps only
 repos, models and spaces that still exist and are not archived. A quiet day with one new repo still pairs it with what it
 lifts. Each idea carries its `mix` and an `amplification` term: 1 plus the adoption (0 to 1) of its most established
-ingredient, from days seen, peak signal and stars gained before that day and its element page's works-with neighbours. The rank multiplies by
+ingredient, from days seen, peak signal, stars gained and works-with neighbours before that day. The rank multiplies by
 it, and at least one idea of each mix is kept when both were proposed. Code ranks; the model only proposes.
 
 ## Threats

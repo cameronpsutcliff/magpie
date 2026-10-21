@@ -1056,7 +1056,7 @@
        "type": "number",
        "minimum": 0,
        "maximum": 1,
-       "description": "The mean of days seen (of 7), peak signal (of 100) and stars gained (log scale, of 10,000) before that day, and works-with neighbours on its element page as last built (of 6), each capped at 1."
+       "description": "The mean of days seen (of 7), peak signal (of 100), stars gained (log scale, of 10,000) and works-with neighbours (of 6; combined in a possibility or covered by the same post), each capped at 1, all from the editions before that day."
       },
       "signals": {
        "type": "object",

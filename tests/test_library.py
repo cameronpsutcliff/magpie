@@ -64,6 +64,31 @@ class LibraryTests(unittest.TestCase):
         self.assertTrue(L.same(TILES, launch))
         self.assertFalse(L.same(TILES, EYE))
 
+    def test_works_with_counts_only_earlier_editions(self):
+        post = {"name": "AI News", "url": "https://news.example/7", "title": "Issue 7"}
+        a, b, c = (dict(ev(k, k), mentions=[post] if k != "gh:c/three" else []) for k in ("gh:a/one", "gh:b/two", "gh:c/three"))
+        later = day("2099-02-02", [c])
+        later["possibilities"] = {"items": [{"title": "One with three", "ingredients": [a["id"], c["id"]]}]}
+        data = self.tmp / "w"
+        for d in (day("2099-02-01", [a, b]), later):
+            write_json(data / "days" / f"{d['date']}.json", d, compact=True)
+        self.assertEqual(L.build("2099-02-02", data)["gh:a/one"]["works_with"], 1)  # covered with b; the idea came later
+        self.assertEqual(L.build("2099-02-03", data)["gh:a/one"]["works_with"], 2)
+
+    def test_a_lone_arrival_keeps_its_best_weak_partner(self):
+        filler = " ".join(f"word{i}" for i in range(40))
+        lone = ev("gh:new/ledgerline", "Ledgerline reconciles invoices", what=f"Ledgerline reconciles invoices. {filler}", topics=("finance",))
+        weak = ev("gh:old/quill", "Quill drafts letters", what=f"Quill drafts letters and invoices. {' '.join(f'other{i}' for i in range(40))}",
+                  topics=("writing",))
+        data = self.tmp / "q"
+        for d in (day("2099-03-01", [weak]), day("2099-03-02", [lone])):
+            write_json(data / "days" / f"{d['date']}.json", d, compact=True)
+        lib = L.build("2099-03-02", data)
+        near = L.neighbours([lone], lib, set())[lone["id"]]
+        self.assertEqual([k for k, _ in near], ["gh:old/quill"])
+        self.assertLess(near[0][1], L.MIN_SCORE)  # below the floor, kept because it is the arrival's only partner
+        self.assertEqual(L.pick([lone], lib, set(), check=lambda k: True)[0], ["gh:old/quill"])
+
     def test_pick_uses_live_capabilities_only(self):
         lib = L.build("2099-01-05", self.data)
         keys, receipt = L.pick([TILES], lib, set(), check=lambda k: False)
