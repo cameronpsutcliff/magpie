@@ -1,14 +1,14 @@
 {
- "updated_at": "2026-10-20T22:20:00Z",
+ "updated_at": "2026-10-21T02:20:00Z",
  "job": "sweep",
  "prompt": "v4",
- "calls_used_today": 127,
+ "calls_used_today": 14,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-10-20T22:08:00Z",
-  "items": 24,
-  "queries": 10,
-  "deep_reads": 3,
+  "ran_at": "2026-10-21T02:08:00Z",
+  "items": 11,
+  "queries": 8,
+  "deep_reads": 2,
   "rechecks": 8,
   "flagged": 5,
   "saved_in": 0,
@@ -39,11 +39,13 @@
   "search_posts_all rejects until_id or since_id together with start_time (400); page within a window with next_token or with end_time set to the oldest result's created_at.",
   "Search results return long posts truncated without note_tweet text or unwound links; one get_posts_by_ids call on the shortlisted ids is needed to read full text and primary links before writing summaries.",
   "The sweep file schema has no place for re-check outcomes; re-checks that change nothing are visible only as a count in last_sweep.",
-  "Releases that a lab does not post on X itself can slip through roster sweeps (Muse Spark Open, out about 12:00Z Oct 20, surfaced only via a Fireworks day-0 post at 20:28Z); a discovery query for huggingface.co links that several roster accounts mention would catch these earlier."
+  "Releases that a lab does not post on X itself can slip through roster sweeps (Muse Spark Open, out about 12:00Z Oct 20, surfaced only via a Fireworks day-0 post at 20:28Z); a discovery query for huggingface.co links that several roster accounts mention would catch these earlier.",
+  "calls_used_today is counted per UTC day to match X's 00:00 UTC reset, so the 21:00 Central sweep starts a new count; the prompt could say which day boundary to use.",
+  "Follow check at the 02:08Z sweep: no new account qualifies (@arena already followed; @ValsAI has a level-2 flag), so the browser was not used."
  ],
  "errors": [
   "Accounts unavailable and skipped: @xai (moved, @SpaceXAI not found), @heygen_official (suspended); @lmarena_ai swept as @arena.",
-  "Two page-2 searches (builders, applied) failed with 400 because until_id was combined with start_time; both were rerun with end_time and all four calls are counted."
+  "No new saves since the last sweep: the Twitter Profile archive's latest sync (00:45Z) added no bookmarks."
  ],
- "follows_today": 1
+ "follows_today": 0
 }

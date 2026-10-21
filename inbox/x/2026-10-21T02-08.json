@@ -1,0 +1,348 @@
+{
+ "ran_at": "2026-10-21T02:08:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v4",
+ "since": "2026-10-20T22:08:00Z",
+ "queries": 8,
+ "calls": 14,
+ "items": [
+  {
+   "title": "FastVideo open-sources FastH3 Omni, a real-time distilled MiniMax H3 video model, with training code",
+   "url": "https://x.com/haoailab/status/2112625528805208257",
+   "handle": "@haoailab",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "Hao AI Lab's FastVideo released FastH3 Omni, a fast distilled version of MiniMax's H3 video model, with weights and training code. It mixes image, video and audio references, ships NVFP4 and FP8 builds for DGX Spark and RTX cards, has day-0 ComfyUI support, and vLLM-Omni serves it from launch, so creators can run near-real-time video generation on consumer GPUs and adapt it.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/hao-ai-lab/FastVideo",
+    "https://huggingface.co/FastVideo/FastH3-Omni-Comfy"
+   ],
+   "vendor": "Hao AI Lab (FastVideo) / MiniMax",
+   "posted_at": "2026-10-20T19:22:31Z",
+   "metrics": {
+    "likes": 374,
+    "reposts": 43,
+    "quotes": 28,
+    "replies": 23,
+    "views": 28084
+   },
+   "confirmed_by": [
+    "@vllm_project"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No quality evaluation against the full H3 model was published, and one replier reported no visible speed difference from H3.",
+    "source": "https://x.com/DoctorTollywood/status/2112698881020756202"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers welcomed the training-code release and asked about the quality gap of the 8-layer fast decoder; a few asked for quality evals and one saw no speed gain over H3.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "vLLM matches DeepSeek's DeepInfer decode throughput within 6% using Wide-EP and EPLB",
+   "url": "https://x.com/vllm_project/status/2112703311933747347",
+   "handle": "@vllm_project",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "vLLM reports that with wide expert parallelism and expert load balancing it gets within 6% of DeepSeek's published DeepInfer decode throughput for DeepSeek-V4.1-Flash on GB200 across batch sizes 8 to 256, and up to 826 tokens per second per user with new low-latency kernels on GB300. Teams serving DeepSeek models can get close to DeepSeek's own efficiency on a standard open stack.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "vLLM",
+   "posted_at": "2026-10-21T00:31:36Z",
+   "metrics": {
+    "likes": 244,
+    "reposts": 30,
+    "quotes": 13,
+    "replies": 12,
+    "views": 16901
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers note DeepInfer's open release is offline-only without its KV cache system or prefill/decode split, so the 6% compares vLLM's full stack to DeepSeek's own published online numbers, and the revenue figure depends on unstated prefix-cache assumptions.",
+    "source": "https://x.com/leehoo48415921/status/2112709053797573078"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Mostly positive quotes from vLLM contributors and users; technical repliers asked whether it is stock vLLM, whether batch 512 holds, and how cache hit rate affects the revenue math.",
+    "tried": false,
+    "replies_read": 12
+   }
+  },
+  {
+   "title": "Ornith-1.5-122B gets day-0 SGLang serving and Unsloth dynamic quants down to 44.5 GB",
+   "url": "https://x.com/sgl_project/status/2112692463513288843",
+   "handle": "@sgl_project",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "SGLang added day-0 support for the open-weight Ornith-1.5-122B coding model, including reasoning, tool calling and 262K context configurations. Unsloth published dynamic quants, with a 2-bit build of 44.5 GB that it says keeps most of the model's quality at 82% smaller than BF16, and an NVFP4 build fits a single RTX 6000-class card.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/ornith-ai/Ornith-1.5-122B-NVFP4"
+   ],
+   "vendor": "SGLang / Unsloth / Ornith",
+   "posted_at": "2026-10-20T23:48:29Z",
+   "metrics": {
+    "likes": 14,
+    "reposts": 2,
+    "quotes": 1,
+    "replies": 1,
+    "views": 2157
+   },
+   "confirmed_by": [
+    "@danielhanchen"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "DeepSeek-V4.1-Flash ranks #1 open model in Arena's Agent and WebDev leaderboards",
+   "url": "https://x.com/arena/status/2112683123406479810",
+   "handle": "@arena",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Arena reports that DeepSeek-V4.1-Flash-20261017 (Max) is now the top open model in both its Agent Arena and its Code Arena WebDev leaderboard, based on head-to-head human votes.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://www.youtube.com/watch?v=cfwsrShJusQ"
+   ],
+   "vendor": "DeepSeek",
+   "posted_at": "2026-10-20T23:11:23Z",
+   "metrics": {
+    "likes": 189,
+    "reposts": 16,
+    "quotes": 10,
+    "replies": 21,
+    "views": 22112
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Vals AI releases SAFE-Teen, a clinician-built teen safety benchmark over whole conversations",
+   "url": "https://x.com/ValsAI/status/2112689980976050281",
+   "handle": "@ValsAI",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Vals AI tested 18 chatbots on SAFE-Teen, a benchmark built with clinicians that scores whole multi-turn conversations rather than first replies. At least one safety failure occurred in 54% of conversations overall, ranging from 14% for GPT-6.1 Sol to 62.4% for Gemini 3.8 Flash.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Vals AI",
+   "posted_at": "2026-10-20T23:38:38Z",
+   "metrics": {
+    "likes": 24,
+    "reposts": 2,
+    "quotes": 1,
+    "replies": 3,
+    "views": 1580
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "1.66 bpw EXL3 quant runs Qwen3.8-Flash-Next on one RTX 5090 at 200 to 300 tokens per second",
+   "url": "https://x.com/turboderp_/status/2112695266767724627",
+   "handle": "@turboderp_",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "The ExLlamaV3 author published a 1.66 bits-per-weight quant of Qwen3.8-Flash-Next that runs entirely on a single 32 GB RTX 5090 without offloading experts to the CPU, reporting 200 to 300 tokens per second and stable long agentic runs, at the cost of a small context window.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/turboderp/Qwen3.8-Flash-Next-exl3"
+   ],
+   "vendor": "ExLlamaV3 (turboderp)",
+   "posted_at": "2026-10-20T23:59:38Z",
+   "metrics": {
+    "likes": 8,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 0,
+    "views": 269
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Hex dictation app adds faster Parakeet streaming speech-to-text models",
+   "url": "https://x.com/kitlangton/status/2112674328034857049",
+   "handle": "@kitlangton",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Hex, a free multi-platform speech-to-text app, added faster streaming Parakeet models, so local dictation transcribes with lower delay.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Hex (Kit Langton)",
+   "posted_at": "2026-10-20T22:36:26Z",
+   "metrics": {
+    "likes": 190,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 24,
+    "views": 5784
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Modal adds Sticky Sessions to route a session to the same container",
+   "url": "https://x.com/modal/status/2112670659335893127",
+   "handle": "@modal",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Modal's serverless Servers now support sticky sessions, routing every request in a session to the same container while still autoscaling, which suits voice agents, multiplayer games and other stateful workloads.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Modal",
+   "posted_at": "2026-10-20T22:21:51Z",
+   "metrics": {
+    "likes": 27,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 4,
+    "views": 1742
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Databricks launches Agent Bricks Memory, a memory service for custom agents",
+   "url": "https://x.com/matei_zaharia/status/2112726322619556186",
+   "handle": "@matei_zaharia",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Databricks introduced Agent Bricks Memory, the memory system behind Genie, as a service for builders' own agents. Its MemCurrent method synthesizes new memories from agent traces; Databricks says it beats alternatives but this post gives no numbers.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Databricks",
+   "posted_at": "2026-10-21T02:03:02Z",
+   "metrics": {
+    "likes": 4,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 252
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No benchmark numbers or method in the post.",
+    "source": null
+   }
+  },
+  {
+   "title": "Gradium open-sources Phonon, offline text-to-speech that runs in a browser or on a CPU",
+   "url": "https://x.com/botmancer/status/2112695383201566826",
+   "handle": "@botmancer",
+   "group": "opensource",
+   "origin": "discovery",
+   "summary": "Gradium released Phonon text-to-speech models that run offline in a browser or on a laptop CPU; the English 31M model is 64 MB and Apache 2.0, while larger and multilingual versions are non-commercial.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/gradium/phonon-31m-en"
+   ],
+   "vendor": "Gradium",
+   "posted_at": "2026-10-21T00:00:05Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 1
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Reported second-hand by a small account; license split taken from the post, not verified.",
+    "source": null
+   }
+  },
+  {
+   "title": "MLX-Serve pre-release streams MoE experts from SSD to run GLM-5.3-Flash with 1M context on a 128 GB Mac",
+   "url": "https://x.com/kaimi_local/status/2112705778767249771",
+   "handle": "@kaimi_local",
+   "group": "builders",
+   "origin": "discovery",
+   "summary": "A pre-release of MLX-Serve reads model experts from SSD, which the poster says lets GLM-5.3-Flash run on a 128 GB Mac with its full 1M-token context at about 35 tokens per second, and can split larger models across two Macs over Thunderbolt 5.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/ddalcu/mlx-serve/releases/tag/v26.10.3-pre-release.1"
+   ],
+   "vendor": "MLX-Serve (ddalcu)",
+   "posted_at": "2026-10-21T00:41:24Z",
+   "metrics": {
+    "likes": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 110
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Pre-release; speed figures come from a third-party post and are not independently measured.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": []
+}
