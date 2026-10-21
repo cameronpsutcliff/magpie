@@ -117,6 +117,11 @@
    "format": "date",
    "description": "The first edition element pages draw on. Nothing earlier is counted: first_seen means first seen since this date."
   },
+  "rules": {
+   "type": "integer",
+   "minimum": 1,
+   "description": "The rules the pages were computed under. When they change, the next update rebuilds every page from `since`. Absent means 1."
+  },
   "actions": {
    "type": "object",
    "additionalProperties": {

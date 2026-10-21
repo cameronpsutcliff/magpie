@@ -50,7 +50,11 @@ For each event return:
 - works_with: up to 5 objects {{"name": "...", "how": "..."}} for the tools, models or platforms this capability
   integrates with, runs on or plugs into, as this event's own title, summary, context or source titles state it.
   Copy each name exactly as it is written there; never the capability itself, its maker, a site that reported it, or
-  a model, harness, benchmark or machine used only to test or measure it.
+  a model, harness, benchmark or machine used only to test or measure it. Proper names only (a product, project,
+  model, library, protocol or service), never a generic term, category, file format or endpoint type ("an
+  OpenAI-compatible endpoint", "HTML", "local models"), and never an API the text names only as a bare word in a list
+  ("the Responses and Converse APIs"). Never the model it was quantized, fine-tuned or distilled from: that is what it
+  is, not what it works with.
   "how": up to 10 words on how they connect. [] when the input names none.
 
 Also return an "edition" object:
@@ -92,13 +96,20 @@ def _own_text(e: dict) -> str:
 _ALNUM = lambda s: re.sub(r"[^a-z0-9]", "", s.lower())  # noqa: E731  "Llama-3.1" and "llama 3.1" are one name
 _TOKENS = lambda s: re.findall(r"[a-z0-9]+", s.lower())  # noqa: E731
 _VERSION = re.compile(r"v?\d+[a-z]*")  # "2", "v2", "8b"
+# Another build of the same model: quant formats and widths ("exl3", "gguf", "4bit", "q4"), and the usual variant words.
+_QUANT = re.compile(r"exl\d*|gguf|ggml|awq|gptq|mlx|onnx|bnb|hqq|eetq|nf4|fp\d+|bf16|int\d+|q\d+|w\d+a\d+|\d+bit|\d+bpw|quant(ized)?")
+_VARIANT = {"instruct", "chat", "base", "it", "hf"}
+# Terms, not names, when a name is made only of them ("HTML", "API", "agents").
+_GENERIC = {"html", "css", "json", "yaml", "xml", "csv", "markdown", "pdf", "http", "https", "rest", "url", "api", "apis", "sdk",
+            "cli", "gpu", "gpus", "cpu", "cpus", "llm", "llms", "endpoint", "endpoints", "agent", "agents", "model", "models"}
 _PARTS = re.compile(r"\s+[|\u2013-]\s+|:\s+")  # "Canvas | GitHub Copilot", "Show HN: Kit"
 
 
 def _itself(name: list[str], e: dict) -> bool:
     """Whether a name (as tokens) is the capability, its maker or a source that reported it. The capability: its title, a
     part of the title set off by "|", " - " or ":", its repo or model, its owner, or any of those without a version
-    ("Product" for "Product 2.0"). The maker: any leading part of its name ("Acme" for "Acme, Inc.")."""
+    ("Product" for "Product 2.0") or as another build ("Qwen3-8B" for qwen3-8b-instruct-gguf, the model a quant is of).
+    The maker: any leading part of its name ("Acme" for "Acme, Inc.")."""
     title = e.get("title") if isinstance(e.get("title"), str) else ""
     key = str(e.get("key") or "")
     path = key.split(":", 1)[-1]
@@ -107,12 +118,27 @@ def _itself(name: list[str], e: dict) -> bool:
         forms.append(path.split("/", 1)[0])
     for f in forms:
         t = _TOKENS(f)
-        if t[:len(name)] == name and (len(t) == len(name) or _VERSION.fullmatch(t[len(name)])):
+        rest = t[len(name):]
+        if t[:len(name)] == name and (not rest or _VERSION.fullmatch(rest[0]) or _QUANT.fullmatch(rest[0])
+                                      or all(_QUANT.fullmatch(x) or x in _VARIANT for x in rest)):
             return True
     if isinstance(e.get("maker"), str) and _TOKENS(e["maker"])[:len(name)] == name:
         return True
     reporters = [s.get("name") for s in (e.get("sources") or []) + (e.get("mentions") or []) if isinstance(s, dict)]
     return any(isinstance(r, str) and _TOKENS(r) == name for r in reporters)
+
+
+def _generic(name: str) -> bool:
+    """A term, not a name: a category ("OpenAI-compatible endpoint"), a phrase in plain lowercase ("local models"), or
+    only formats and common nouns ("HTML", "API", "agents")."""
+    lowered = name == name.lower() and " " in name and not re.search(r"\d", name)
+    return "compatible" in name.lower() or lowered or all(w in _GENERIC for w in _TOKENS(name))
+
+
+def plain_name(name: str, e: dict) -> bool:
+    """Whether a name can stand as one of this event's integrations: a proper name, and not the capability, its maker or
+    a source in any form. Needs only the published event, so element pages apply it to earlier editions too."""
+    return bool(re.search(r"[A-Za-z]", name)) and not _generic(name) and not _itself(_TOKENS(name), e)
 
 
 def _blocked(*texts: str) -> bool:
@@ -127,8 +153,9 @@ def _blocked(*texts: str) -> bool:
 
 
 def works_with(raw, e: dict) -> list[dict]:
-    """The editor's named integrations, kept only when the name is written in the event's own text, is not the event, its
-    maker or a source that reported it, every number in it is in that text, and the redaction gate passes it."""
+    """The editor's named integrations, kept only when the name is written in the event's own text, passes `plain_name`
+    (a proper name, not the event, its maker or a source that reported it), every number in it is in that text, and the
+    redaction gate passes it."""
     if not isinstance(raw, list):
         return []
     text = _own_text(e)
@@ -140,7 +167,7 @@ def works_with(raw, e: dict) -> list[dict]:
         how = clean(WS.sub(" ", w["how"])).strip() if isinstance(w.get("how"), str) else ""
         if len(how.split()) > 16:
             how = ""  # the name is what was checked; an overlong clause is dropped, not cut mid-thought
-        if not 2 <= len(name) <= 60 or not re.search(r"[A-Za-z]", name) or _ALNUM(name) in seen or _itself(_TOKENS(name), e):
+        if not 2 <= len(name) <= 60 or _ALNUM(name) in seen or not plain_name(name, e):
             continue
         found = re.search(rf"(?<![A-Za-z0-9]){re.escape(name)}(?![A-Za-z0-9])", text, re.I)
         if not found or ungrounded_numbers([name, how], text) or _blocked(name, how):

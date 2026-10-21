@@ -422,7 +422,7 @@
     },
     "additionalProperties": false
    },
-   "description": "Beside the computed works_with: tools, models or platforms the editor named from the sources' own words in the appearances kept in full, most often named first. Absent when there are none."
+   "description": "Beside the computed works_with: tools, models or platforms the editor named from the sources' own words in the appearances kept in full, each passing the editor step's name rules again, most often named first. Absent when there are none."
   },
   "constraints": {
    "type": "array",

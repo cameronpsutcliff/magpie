@@ -2,6 +2,7 @@ import json
 import shutil
 import tempfile
 import unittest
+from unittest import mock
 from pathlib import Path
 
 from magpie import elements as E
@@ -133,6 +134,28 @@ class ElementTests(unittest.TestCase):
         for d in sorted(self.days):
             E.update(d, seq)
         self.assertEqual(self.pages(seq), built)
+
+    def test_pages_built_under_older_rules_are_rebuilt_once(self):
+        d1 = self.days["2099-01-01"]
+        d1["events"] = [dict(e, brief={"headline": "Beta kit", "works_with": [{"name": "OpenAI-compatible endpoint"}, {"name": "Ollama"}]})
+                        if e["key"] == "gh:beta/kit" else e for e in d1["events"]]
+        write_json(self.data / "days" / "2099-01-01.json", d1, compact=True)
+        with mock.patch.object(E, "plain_name", lambda name, e: True):  # the name rules before this change
+            E.rebuild(self.data)
+        path = self.data / "elements" / "index.json"
+        old = json.loads(path.read_text())
+        old.pop("rules")  # an index from before rules were recorded
+        write_json(path, old, compact=True)
+        self.assertEqual([w["name"] for w in self.page("gh-beta--kit")["named_integrations"]], ["Ollama", "OpenAI-compatible endpoint"])
+
+        E.update("2099-01-02", self.data)  # a daily update under the new rules recomputes every page, not only today's
+        self.assertEqual([w["name"] for w in self.page("gh-beta--kit")["named_integrations"]], ["Ollama"])
+        self.assertEqual(json.loads(path.read_text())["rules"], E.RULES)
+        built = self.pages()
+        E.update("2099-01-02", self.data)  # once
+        self.assertEqual(self.pages(), built)
+        self.rebuild_like()
+        self.assertEqual(self.pages(), built)
 
     def test_update_is_idempotent_and_matches_rebuild(self):
         E.rebuild(self.data)

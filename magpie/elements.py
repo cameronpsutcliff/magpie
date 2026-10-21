@@ -15,7 +15,8 @@ The update is incremental: a day's contributions replace that day's entries in e
 publishing a day twice never counts it twice. Pages start on a date (`since` in the index): the first daily
 update starts them that day, or a rebuild seeds them from the last seven editions. Nothing before `since` is read
 for appearances. `rebuild` regenerates every page from `since`; the tests check that it agrees with a run of daily
-updates from that date.
+updates from that date. When the rules that compute a page change (`RULES`), the next daily update rebuilds every page
+from `since` once, so the change reaches pages built before it.
 
     data/v1/elements/<slug>.json   one element (magpie.element/1)
     data/v1/elements/index.json    every element page (magpie.elements/1)
@@ -27,10 +28,12 @@ import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
+from .enrich import plain_name
 from .util import load_json, short_hash, write_json
 
 SCHEMA = "magpie.element/1"
 INDEX_SCHEMA = "magpie.elements/1"
+RULES = 2               # how pages are computed from the editions; an index under other rules is rebuilt from `since` once
 GENERIC_MAKERS = {"Open source", "Research", "Other"}
 FULL_APPEARANCES = 60   # the newest appearances kept in full
 TIMELINE_ROWS = 730     # two years of short rows; older ones fold into one summary, so a page is bounded
@@ -159,9 +162,9 @@ def appearance(e: dict, day: dict, ties: list[dict], read: dict[str, str]) -> di
         a["ripples"] = ripples
     ww = b.get("works_with") if isinstance(b.get("works_with"), list) else []
     named = [{"name": w["name"], **({"how": w["how"]} if isinstance(w.get("how"), str) and w["how"] else {})}
-             for w in ww if isinstance(w, dict) and isinstance(w.get("name"), str) and w["name"]]
+             for w in ww if isinstance(w, dict) and isinstance(w.get("name"), str) and w["name"] and plain_name(w["name"], e)]
     if named:
-        a["named_integrations"] = named  # checked against that day's sources by the editor step
+        a["named_integrations"] = named  # grounded in that day's sources by the editor step; the name rules apply again here
     m = {k: e["metrics"][k] for k in METRICS if (e.get("metrics") or {}).get(k) is not None}
     if m:
         a["metrics"] = m
@@ -623,7 +626,8 @@ class Store:
     def save_index(self, date: str | None) -> None:
         elements = sorted(self.by_key.values(), key=lambda e: (e["last_seen"], e["days_seen"], e["key"]), reverse=True)
         updated = max([date or ""] + [e["last_seen"] for e in elements]) or None
-        self.index = {"schema": INDEX_SCHEMA, "since": self.since, "updated": updated, "actions": self.action_digests(), "elements": elements}
+        self.index = {"schema": INDEX_SCHEMA, "since": self.since, "rules": RULES, "updated": updated, "actions": self.action_digests(),
+                      "elements": elements}
         write_json(self.dir / "index.json", self.index, compact=True)
 
     def history_first_seen(self, key: str) -> str | None:
@@ -671,6 +675,11 @@ def update(date: str, data_dir: Path, state_dir: Path | None = None) -> dict:
     if date < store.since:
         print(f"elements: {date} is before the pages start ({store.since}); nothing to fold", file=sys.stderr)
         return {"date": date, "written": 0, "dropped": 0, "elements": len(store.by_key)}
+    if store.by_key and store.index.get("rules", 1) != RULES:
+        # Pages computed under other rules: recompute every one from where they start (never a backfill). The edition is
+        # already on disk, so the rebuild folds it in too.
+        print(f"elements: pages were built under rules {store.index.get('rules', 1)}, now {RULES}; rebuilding", file=sys.stderr)
+        return {"date": date, "rebuilt": True, **rebuild(data_dir, state_dir, store.since)}
     today = store.contribs(date)
     changed = store.changed_actions()
     touched = set(today) | {e["key"] for e in store.by_key.values() if date in e["dates"]}

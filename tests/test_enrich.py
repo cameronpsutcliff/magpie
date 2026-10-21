@@ -43,6 +43,20 @@ class WorksWithTests(unittest.TestCase):
         engine = ev(key="gh:deepseek-ai/deepinfer", title="deepseek-ai/DeepInfer", summary="Serves DeepSeek models at scale.", maker="DeepSeek")
         self.assertEqual(N.works_with([{"name": "deepseek-ai"}, {"name": "DeepSeek"}, {"name": "DeepSeek models"}], engine), [{"name": "DeepSeek models"}])
 
+    def test_generic_terms_are_not_names(self):
+        e = ev(summary="Routes any OpenAI-compatible endpoint, writes HTML, runs local models via Ollama behind one API, and speaks MCP with JSON Schema.")
+        names = ["OpenAI-compatible endpoint", "HTML", "local models", "API", "Ollama", "MCP", "JSON Schema"]
+        self.assertEqual([w["name"] for w in N.works_with([{"name": n} for n in names], e)], ["Ollama", "MCP", "JSON Schema"])
+
+    def test_the_model_a_quant_is_of_is_the_capability(self):
+        exl3 = ev(key="hf:turboderp/qwen3.8-flash-next-exl3", title="1.66 bpw EXL3 quant runs Qwen3.8-Flash-Next on one RTX 5090",
+                  summary="A quant of Qwen3.8-Flash-Next for one RTX 5090.", maker="ExLlamaV3 (turboderp)")
+        self.assertEqual(N.works_with([{"name": "Qwen3.8-Flash-Next"}, {"name": "RTX 5090"}], exl3), [{"name": "RTX 5090"}])
+        gguf = ev(key="hf:bartowski/qwen3-8b-instruct-gguf", title="bartowski/Qwen3-8B-Instruct-GGUF",
+                  summary="GGUF builds of Qwen3-8B-Instruct for llama.cpp and LM Studio.", maker="bartowski")
+        got = N.works_with([{"name": "Qwen3-8B"}, {"name": "Qwen3-8B-Instruct"}, {"name": "llama.cpp"}, {"name": "LM Studio"}], gguf)
+        self.assertEqual(got, [{"name": "llama.cpp"}, {"name": "LM Studio"}])
+
     def test_what_it_plugs_into_may_lead_its_title(self):
         plugin = ev(key="url:zed.dev/blog/plugin", title="Claude Code plugin for Zed", summary="A plugin.", maker="Zed Industries")
         self.assertEqual(N.works_with([{"name": "Claude Code"}, {"name": "Zed"}], plugin), [{"name": "Claude Code"}])  # Zed leads its maker
