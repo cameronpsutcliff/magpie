@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-21T14:15:00Z",
+ "updated_at": "2026-10-21T14:16:00Z",
  "job": "sweep",
  "prompt": "v4",
  "calls_used_today": 72,
@@ -21,7 +21,7 @@
   "active": 0,
   "retired": 0
  },
- "follows_this_week": 1,
+ "follows_this_week": 2,
  "unfollow_suggestions": [],
  "prompt_feedback": [
   "Prompt v4 still says to read saves through the X plugin; in practice they come from the Twitter Profile archive (see below), so a sweep only sees saves as fresh as that bot's last sync (20:44Z for the 22:08Z sweep).",
@@ -56,7 +56,7 @@
   "Sweep 14:12Z follow check: the prompt defines active as curated or promoted, so curated @OpenAI now has 3 qualifying sweep-file items with no level-2 flag and is a follow candidate (not followed or logged: no browser this run); @NVIDIAAI also has 3 but is curated at signal_to_noise 3 with many event and keynote promo posts, so it is a near-miss."
  ],
  "errors": [],
- "follows_today": 0,
+ "follows_today": 1,
  "last_roster_review": {
   "ran_at": "2026-10-21T09:50:00Z",
   "reads": 23,
