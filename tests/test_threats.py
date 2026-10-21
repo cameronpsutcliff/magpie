@@ -621,6 +621,28 @@ class OSVCollectorTests(unittest.TestCase):
         self.assertEqual(S.NOTES["osv"]["pages"], 2)
         self.assertEqual(calls[1]["queries"][0]["page_token"], "p2")
 
+    def test_a_run_that_hits_the_page_limit_resumes_where_it_stopped(self):
+        ids = [f"GHSA-{i:04d}-rrrr-ssss" for i in range(3)]
+
+        def batch(url, body, timeout=40):
+            out = []
+            for q in body["queries"]:
+                n = int(q["page_token"][1:]) if q.get("page_token") else 0
+                out.append({"vulns": [{"id": ids[n], "modified": "2099-01-09T00:00:00Z"}],
+                            **({"next_page_token": f"p{n + 1}"} if n + 1 < len(ids) else {})})
+            return {"results": out}
+        S._post_json = batch
+        S.fetch = lambda url, **kw: json.dumps(self.record(url.rsplit("/", 1)[1])).encode()
+        pages = S.RETRY.parent / "osv-pages.json"
+        first = S.osv(packages=[{"ecosystem": "PyPI", "name": "vllm"}], max_pages=1)
+        self.assertEqual(len(first), 1)
+        self.assertEqual(S.NOTES["osv"]["unfinished_queries"], ["vllm"])
+        self.assertEqual(json.loads(pages.read_text())["resume"], [{"name": "vllm", "ecosystem": "PyPI", "page_token": "p1"}])
+        second = S.osv(packages=[{"ecosystem": "PyPI", "name": "vllm"}], max_pages=5)
+        self.assertEqual(sorted(i.extra["ids"][0] for i in second), ids)  # the resumed query reached what the first run missed
+        self.assertEqual(S.NOTES["osv"]["resumed"], 1)
+        self.assertEqual(json.loads(pages.read_text())["resume"], [])
+
     def test_a_modified_only_advisory_is_marked(self):
         S._post_json = lambda url, body, timeout=40: {"results": [{"vulns": [{"id": "GHSA-old0-0000-0000", "modified": "2099-01-09T00:00:00Z"}]}]}
         S.fetch = lambda url, **kw: json.dumps(self.record("GHSA-old0-0000-0000", published="2098-03-01T00:00:00Z")).encode()
@@ -1020,3 +1042,25 @@ class FailureTests(Base):
         self.run_lane([self.report()], register=False)
         self.assertIn("model-or-agent-failure", lane.prompts[0])
         self.assertIn("Report it; do not advise.", lane.prompts[0])
+
+
+class ReviewFixTests(unittest.TestCase):
+    def test_a_summary_never_names_a_package_its_documents_do_not(self):
+        src = "A crafted request crashes vLLM. Fixed in vllm 0.30.0 and llama.cpp b4000."
+        got = T.clean_summary("A crafted request crashes vLLM. It also affects SGLang and @acme/agent-sdk. The llama.cpp server is safe.",
+                              [], [], src)
+        self.assertEqual(got, "A crafted request crashes vLLM. The llama.cpp server is safe.")
+        self.assertEqual(T.clean_summary("Requests from AI agents to the TLS endpoint crash it.", [], [], src),
+                         "Requests from AI agents to the TLS endpoint crash it.")  # ordinary words and acronyms are not packages
+
+    def test_only_structured_sources_skip_the_pairing_check(self):
+        doc = "Update pip to 26.2.2. Node.js is unaffected."
+        claimed = {"fixed_in": [{"name": "pip", "version": "26.2.2"}, {"name": "Node.js", "version": "22.23.4"}]}
+        inbox = {"_origin": "inbox", "_text": doc, "extra": claimed}
+        osv = {"_origin": "osv", "_text": doc, "extra": claimed}
+        self.assertEqual([p["name"] for p in T.own_pairs(inbox, "fixed_in", ("name", "version"), 8)], ["pip"])
+        self.assertEqual([p["name"] for p in T.own_pairs(osv, "fixed_in", ("name", "version"), 8)], ["pip", "Node.js"])
+
+    def test_every_grounded_fix_becomes_an_action(self):
+        fixes = [{"name": f"pkg{i}", "version": f"1.{i}.0"} for i in range(8)]
+        self.assertEqual(len(T.code_actions(fixes, [], False)), 8)
