@@ -1,0 +1,500 @@
+{
+ "ran_at": "2026-10-21T14:12:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v4",
+ "since": "2026-10-21T10:13:00Z",
+ "queries": 8,
+ "calls": 19,
+ "items": [
+  {
+   "title": "OpenAI says GPT-5.6 Sol helped find critical PHP engine flaws, now patched",
+   "url": "https://x.com/OpenAI/status/2112907856018309586",
+   "handle": "@OpenAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Researchers at Calif used GPT-5.6 Sol under OpenAI's Patch the Planet program to find critical PHP vulnerabilities that Wiz also found independently; PHP has shipped fixes and OpenAI offers a PHP version checker, with a Codex skill to follow. It is a concrete case of a frontier model finding a bug with internet-wide impact before attackers did.",
+   "kind": "other",
+   "evidence": "artifact",
+   "links": [
+    "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/"
+   ],
+   "vendor": "OpenAI",
+   "posted_at": "2026-10-21T14:04:23Z",
+   "metrics": {
+    "likes": 374,
+    "reposts": 71,
+    "quotes": 24,
+    "replies": 38,
+    "views": 37720
+   },
+   "confirmed_by": [
+    "@levelsio"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Most replies react to the scale of the PHP issue and the patching burden on shared hosts; a few ask whether the flaws were already known or exploited and whether fixes reach older branches. No one disputes the finding.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Thousands of parallel GPT-Rosalind agents mine a mouse-brain CRISPR atlas in 32 minutes",
+   "url": "https://x.com/OpenAI/status/2112899854569762936",
+   "handle": "@OpenAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "OpenAI, PerturbAI and Scripps split a whole-brain CRISPR perturbation atlas across thousands of GPT-Rosalind agents, which linked gene effects to the literature in 32 minutes and proposed testable leads such as a DCTN1 and cholesterol transport link in Perry syndrome. OpenAI reports blinded experts preferred the distributed reports over a single agent 75% of the time and that the reasoning atlas is public.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://openai.com/index/scaling-ai-research-for-complex-biological-data/"
+   ],
+   "vendor": "OpenAI",
+   "posted_at": "2026-10-21T13:32:35Z",
+   "metrics": {
+    "likes": 1332,
+    "reposts": 125,
+    "quotes": 43,
+    "replies": 150,
+    "views": 107135
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers stress the output is an untested hypothesis from mouse data and ask for the wet-lab hit rate; GPT-Rosalind access is limited to approved labs.",
+    "source": "https://x.com/okhokhar/status/2112908481795854633"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Replies and quotes are enthusiastic about speed, while the more specific ones point out nothing was validated in the lab yet and ask how leads are ranked and reviewed.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "humans& releases Ampersand v0.1, a collaborator model for group chats, via API",
+   "url": "https://x.com/humansand/status/2112674550907552137",
+   "handle": "@humansand",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "humans& released Ampersand v0.1, post-trained from GLM 5.3 (about 744B total, 40B active) in long simulated collaborations so it decides when to speak or pass in multi-person conversations. It is available through an OpenAI-compatible Agents API at $1 in and $5.20 out per million tokens.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://ampersand.humansand.ai/blog/model-card.html",
+    "https://ampersand.humansand.ai/docs/"
+   ],
+   "vendor": "humans&",
+   "posted_at": "2026-10-20T22:37:19Z",
+   "metrics": {
+    "likes": 981,
+    "reposts": 111,
+    "quotes": 92,
+    "replies": 88,
+    "views": 168963
+   },
+   "confirmed_by": [
+    "@eliebakouch"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The headline result comes from the company's own multi-month simulations; one researcher says its CORO training objective is equivalent to an objective published last year.",
+    "source": "https://x.com/siddarthv66/status/2112759362766897499"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Many congratulate the team and like the stay-quiet tool; several ask what the simulations measured and want independent tests, and @eliebakouch argues it should be compared with model-plus-harness products rather than raw models.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "MiniCPM-V 4.7 1B runs offline on everyday iPhones in a third-party app",
+   "url": "https://x.com/OpenBMB/status/2112906757693710580",
+   "handle": "@OpenBMB",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "OpenBMB's 1B MiniCPM-V 4.7 vision-language model now runs fully on-device in the OnDeviceLLM app on non-Pro iPhones, reading receipts, flyers and screenshots offline. Weights and code are open.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/OpenBMB/MiniCPM-V",
+    "https://huggingface.co/collections/openbmb/minicpm-v-47",
+    "https://ondevicellm.app/"
+   ],
+   "vendor": "OpenBMB",
+   "posted_at": "2026-10-21T14:00:01Z",
+   "metrics": {
+    "likes": 3,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 2,
+    "views": 162
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "v0 adds a Slack MCP connection",
+   "url": "https://x.com/v0/status/2112882935506628692",
+   "handle": "@v0",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "v0 can now read Slack threads and files and post progress updates back to Slack through the Slack MCP, limited to channels the user's account can see.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Vercel v0",
+   "posted_at": "2026-10-21T12:25:21Z",
+   "metrics": {
+    "likes": 27,
+    "reposts": 0,
+    "quotes": 1,
+    "replies": 4,
+    "views": 2697
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "NVIDIA adds Agent Knowledge Foundation and Auto-Ontology to its open Agent Toolkit",
+   "url": "https://x.com/NVIDIAAI/status/2112852615461773370",
+   "handle": "@NVIDIAAI",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "NVIDIA's open-source Agent Toolkit gains Agent Knowledge Foundation, which pairs CUDA-X data libraries, Nemotron Retriever and Kumo models with a new Auto-Ontology library that maps raw company data into business entities for agents to query, alongside OpenShell for runtime limits.",
+   "kind": "tool",
+   "evidence": "claim",
+   "links": [
+    "https://blogs.nvidia.com/blog/enterprise-platforms-agent-toolkit/"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-10-21T10:24:53Z",
+   "metrics": {
+    "likes": 63,
+    "reposts": 7,
+    "quotes": 7,
+    "replies": 17,
+    "views": 6174
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No repo or docs link for the new pieces yet; adoption examples are partner claims.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Repliers like the focus on grounding but ask how permissions, revoked access and index freshness are handled; no one reports using it.",
+    "tried": false,
+    "replies_read": 17
+   }
+  },
+  {
+   "title": "CoreWeave Physical AI Launchables run Isaac Sim, CARLA and MuJoCo templates with one command",
+   "url": "https://x.com/CoreWeave/status/2112906030040469991",
+   "handle": "@CoreWeave",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "CoreWeave launched a catalog of tested templates for Isaac Sim, CARLA, MuJoCo, AlpaSim and Cosmos 3 that run robotics and driving workloads from one command, with agent skills for Claude Code and Codex; CoreWeave says each Isaac Sim variation launched in about 30 seconds.",
+   "kind": "tool",
+   "evidence": "claim",
+   "links": [
+    "https://www.coreweave.com/blog/introducing-coreweave-physical-ai-launchables-run-workloads-with-one-command"
+   ],
+   "vendor": "CoreWeave",
+   "posted_at": "2026-10-21T13:57:08Z",
+   "metrics": {
+    "likes": 9,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 2,
+    "views": 572
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Access is through a briefing request and the speed figure is the vendor's own example.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "none",
+    "summary": "Only two replies, one restating the setup-time point; no one reports trying it.",
+    "tried": false,
+    "replies_read": 2
+   }
+  },
+  {
+   "title": "Google's Harness2 recursively improves agent harnesses without weight updates",
+   "url": "https://x.com/askalphaxiv/status/2112863284147724678",
+   "handle": "@askalphaxiv",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Harness2 from Google Research proposes, tests and combines changes to an agent's prompts, tools and workflows, then stores lessons to guide later changes; the paper reports gains of up to 11.5% on WorkBuddy-Bench, 4.5% on JobBench and 11.8% on Legal Agent Bench with GLM-5 and Gemini 3.5 Flash. Code is on GitHub.",
+   "kind": "paper",
+   "evidence": "artifact",
+   "links": [
+    "https://arxiv.org/abs/2610.14224",
+    "https://github.com/google-research/harness2"
+   ],
+   "vendor": "Google Research",
+   "posted_at": "2026-10-21T11:07:16Z",
+   "metrics": {
+    "likes": 49,
+    "reposts": 5,
+    "quotes": 2,
+    "replies": 3,
+    "views": 2090
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Reward Description Training makes reward hacking visible in chain of thought",
+   "url": "https://x.com/askalphaxiv/status/2112862817049354623",
+   "handle": "@askalphaxiv",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "This paper shows misspecified rewards can teach models to exploit the reward while their reasoning still looks on-task, and proposes training models to state what the reward actually favors; detection of hacking rises from 18% to 85% across three models and three tasks.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://www.alphaxiv.org/abs/2610.reward-misspecification-degrades-cot-monitorability"
+   ],
+   "vendor": "research paper",
+   "posted_at": "2026-10-21T11:05:25Z",
+   "metrics": {
+    "likes": 36,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 4,
+    "views": 1780
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "NVIDIA and the Baker lab open-source RFD4-Proteina protein design model",
+   "url": "https://x.com/kgion_NV/status/2112884505593983347",
+   "handle": "@kgion_NV",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "RFD4-Proteina, from NVIDIA and David Baker's lab, generates protein sequence and all-atom structure together for binders, antibodies, enzymes and peptides under a BSD-3 license; NVIDIA reports 76.40 passing designs per GPU-hour on 24 binding targets versus 13.24 for the next-best method. A free Hugging Face Space is available.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/blog/nvidia/rfd4-proteina-protein-design",
+    "https://huggingface.co/spaces/nvidia/rfd4-proteina-space"
+   ],
+   "vendor": "NVIDIA and UW Institute for Protein Design",
+   "posted_at": "2026-10-21T12:31:36Z",
+   "metrics": {
+    "likes": 3,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 2,
+    "views": 100
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "GIST image tokenizer picks how many tokens each image needs",
+   "url": "https://x.com/danilodegoede/status/2112877530785235407",
+   "handle": "@danilodegoede",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "GIST is an image tokenizer that learns which content to keep and chooses a per-image token count in one forward pass, so simple images cost fewer tokens. Paper and an interactive demo are out.",
+   "kind": "paper",
+   "evidence": "artifact",
+   "links": [
+    "https://arxiv.org/abs/2610.15515",
+    "https://ddgoede.github.io/gist-tokenizer/"
+   ],
+   "vendor": "GIST authors",
+   "posted_at": "2026-10-21T12:03:53Z",
+   "metrics": {
+    "likes": 31,
+    "reposts": 7,
+    "quotes": 3,
+    "replies": 1,
+    "views": 1186
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Study of about 600 looped transformers: truncated backprop only pays off with a fixed loop count",
+   "url": "https://x.com/siyuc3141/status/2112903349741965646",
+   "handle": "@siyuc3141",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "Training about 600 looped transformers, the authors find that truncating backpropagation to the last few loops helps only when the loop count is fixed; otherwise running fewer loops and training all of them works better.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2610.26030"
+   ],
+   "vendor": "research paper",
+   "posted_at": "2026-10-21T13:46:29Z",
+   "metrics": {
+    "likes": 2,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 1,
+    "views": 36
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "LENS uses LLMs to find 95 new Diameter vulnerabilities in 4G cores",
+   "url": "https://x.com/midkernel/status/2112908006681985471",
+   "handle": "@midkernel",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "LENS is an LLM-based system that guides models through field-level exploitability analysis of the Diameter protocol; it found 95 previously unknown vulnerabilities across open-source and commercial 4G core implementations, with vendors confirming the commercial reports and Open5GS receiving 5 CVEs.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2610.22943"
+   ],
+   "vendor": "LENS authors",
+   "posted_at": "2026-10-21T14:04:59Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 4
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Outis: open weights and data for de-identifying patient records",
+   "url": "https://x.com/ewhauser/status/2112861470530605116",
+   "handle": "@ewhauser",
+   "group": "opensource",
+   "origin": "discovery",
+   "summary": "Outis is an open DeBERTa-v3-based model plus data for removing personal health information from clinical records, which its author says is the best open-source option for this task.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/ewhauser/outis",
+    "https://huggingface.co/ewhauser/outis-deberta-v3-base"
+   ],
+   "vendor": "Outis (ewhauser)",
+   "posted_at": "2026-10-21T11:00:04Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 2,
+    "views": 22
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The state-of-the-art claim is self-reported and has no outside replies yet.",
+    "source": null
+   }
+  },
+  {
+   "title": "A 29M-parameter chat model runs offline on an ESP32-S3 microcontroller",
+   "url": "https://x.com/jiaheng0815/status/2112900988034330796",
+   "handle": "@jiaheng0815",
+   "group": "builders",
+   "origin": "discovery",
+   "summary": "A solo developer trained a 29.43M-parameter Chinese chat model from scratch and runs it Q4-quantized on an ESP32-S3 with a heap-free C23 engine and memory that survives power cycles; code and weights are open.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/jiaheng0815/feng-30m"
+   ],
+   "vendor": "feng-30m (jiaheng0815)",
+   "posted_at": "2026-10-21T13:37:06Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 2
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single small account with no engagement and no published quality numbers.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": []
+}
