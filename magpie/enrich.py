@@ -50,7 +50,11 @@ For each event return:
 - works_with: up to 5 objects {{"name": "...", "how": "..."}} for the tools, models or platforms this capability
   integrates with, runs on or plugs into, as this event's own title, summary, context or source titles state it.
   Copy each name exactly as it is written there; never the capability itself, its maker, a site that reported it, or
-  a model, harness, benchmark or machine used only to test or measure it.
+  a model, harness, benchmark or machine used only to test or measure it. Proper names only (a product, project,
+  model, library, protocol or service), never a generic term, category, file format or endpoint type ("an
+  OpenAI-compatible endpoint", "HTML", "local models"), and never an API the text names only as a bare word in a list
+  ("the Responses and Converse APIs"). Never the model it was quantized, fine-tuned or distilled from: that is what it
+  is, not what it works with.
   "how": up to 10 words on how they connect. [] when the input names none.
 
 Also return an "edition" object:
