@@ -23,6 +23,31 @@
     "https://x.com/OpenAI/status/2112907856018309586",
     "https://x.com/OpenAI/status/2112899854569762936"
    ]
+  },
+  {
+   "handle": "@ArtificialAnlys",
+   "date": "2026-10-21",
+   "by": "magpie-scout",
+   "status": "followed",
+   "why": "Curated first-hand eval lab (signal_to_noise 5) with 4 qualifying capability posts in recent sweep files and no doubt flag above level 1; the browser showed @sutcliffcc was not yet following.",
+   "evidence": [
+    "https://x.com/ArtificialAnlys/status/2112318755321868493",
+    "https://x.com/ArtificialAnlys/status/2112961069526249973",
+    "https://x.com/ArtificialAnlys/status/2112960933177770071",
+    "https://x.com/ArtificialAnlys/status/2112935427422527584"
+   ]
+  },
+  {
+   "handle": "@witcheer",
+   "date": "2026-10-21",
+   "by": "magpie-scout",
+   "status": "followed",
+   "why": "Curated first-hand local-model tester (signal_to_noise 4) with 3 qualifying capability posts in recent sweep files and no doubt flag above level 1; the browser showed @sutcliffcc was not yet following.",
+   "evidence": [
+    "https://x.com/witcheer/status/2112830183820685787",
+    "https://x.com/witcheer/status/2112793011864121658",
+    "https://x.com/witcheer/status/2112936955168141754"
+   ]
   }
  ]
 }
