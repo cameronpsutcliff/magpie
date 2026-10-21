@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-10-21T02:20:00Z",
- "job": "sweep",
+ "updated_at": "2026-10-21T09:50:00Z",
+ "job": "roster",
  "prompt": "v4",
- "calls_used_today": 14,
+ "calls_used_today": 37,
  "notes_via_api": false,
  "last_sweep": {
   "ran_at": "2026-10-21T02:08:00Z",
@@ -17,7 +17,7 @@
  },
  "roster": {
   "curated": 223,
-  "trial": 19,
+  "trial": 26,
   "active": 0,
   "retired": 0
  },
@@ -41,11 +41,25 @@
   "The sweep file schema has no place for re-check outcomes; re-checks that change nothing are visible only as a count in last_sweep.",
   "Releases that a lab does not post on X itself can slip through roster sweeps (Muse Spark Open, out about 12:00Z Oct 20, surfaced only via a Fireworks day-0 post at 20:28Z); a discovery query for huggingface.co links that several roster accounts mention would catch these earlier.",
   "calls_used_today is counted per UTC day to match X's 00:00 UTC reset, so the 21:00 Central sweep starts a new count; the prompt could say which day boundary to use.",
-  "Follow check at the 02:08Z sweep: no new account qualifies (@arena already followed; @ValsAI has a level-2 flag), so the browser was not used."
+  "Follow check at the 02:08Z sweep: no new account qualifies (@arena already followed; @ValsAI has a level-2 flag), so the browser was not used.",
+  "Roster review 2026-10-21: no promotions possible yet; every trial account was added on 2026-10-20, so the first 14-day promotion check is 2026-11-03.",
+  "Roster review: sweep files only go back to 2026-10-20, so the 45-day no-qualifying-post rule is judged from config last_post (oldest 2026-09-23, 28 days); no curated account can meet it before about 2026-11-07.",
+  "Roster review: curated @xai (moved) and @heygen_official (suspended) cannot post but meet no retire rule as written; the prompt could add 'account unavailable' as a retire reason.",
+  "Roster review: get_users_posts returns at most 25 posts, so for busy accounts the 'fewer than 1 in 5 promotion or politics' test is judged on the latest 25 posts, not 30 days.",
+  "Roster review: the x-roster.json schema has no place for rejected candidates, so the same accounts may be re-checked. Rejected 2026-10-21: @togethercompute, @ViggleAI, @FluidVoiceApp, @krea_ai, @ComfyUI, @GradiumAI, @liquidai (promotion and events over 1 in 5); @googlecloud, @GoogleOSS, @Cloudflare, @OpenHandsDev (mostly enterprise or event marketing); @kaimi_local (mostly crypto and DeFi); @botmancer (tool-review aggregator, 1 follower); @PhysisAGI (account one day old, one thread); @Lightricks (no posts in 30 days, @ltx_model redirects to @ltx_io).",
+  "Roster review: no off-roster original poster was quoted by two or more roster accounts in this week's sweep files (confirmed_by lists only roster handles), and no save passed vetting in the sweeps (saved_kept 0), so those two candidate sources gave nothing and no search reads were spent on them."
  ],
- "errors": [
-  "Accounts unavailable and skipped: @xai (moved, @SpaceXAI not found), @heygen_official (suspended); @lmarena_ai swept as @arena.",
-  "No new saves since the last sweep: the Twitter Profile archive's latest sync (00:45Z) added no bookmarks."
- ],
- "follows_today": 0
+ "errors": [],
+ "follows_today": 0,
+ "last_roster_review": {
+  "ran_at": "2026-10-21T09:50:00Z",
+  "reads": 23,
+  "budget": 80,
+  "candidates_checked": 22,
+  "added": 7,
+  "promoted": 0,
+  "retired": 0,
+  "source_leads_added": 7,
+  "sweep_files_pruned": 0
+ }
 }

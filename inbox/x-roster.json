@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-20T17:39:00Z",
+ "updated_at": "2026-10-21T09:50:00Z",
  "accounts": [
   {
    "handle": "@thsottiaux",
@@ -304,6 +304,124 @@
    ],
    "last_qualifying_post": "2026-10-16",
    "retired_reason": null
+  },
+  {
+   "handle": "@haoailab",
+   "name": "Hao AI Lab",
+   "group": "research",
+   "affiliation": "UCSD Hao AI Lab",
+   "why": "First-hand on FastVideo: open distilled real-time video models with training code, NVFP4 quantization-aware recipes and measured latency on Blackwell and DGX Spark.",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-10-21",
+   "evidence": [
+    "https://x.com/haoailab/status/2112625528805208257",
+    "https://x.com/haoailab/status/2112305087225983427",
+    "https://x.com/haoailab/status/2110904952839372895"
+   ],
+   "last_qualifying_post": "2026-10-20",
+   "retired_reason": null
+  },
+  {
+   "handle": "@somarkai",
+   "name": "SoMark",
+   "group": "opensource",
+   "affiliation": "SoMark",
+   "why": "Ships OXR, a 1.3B open document-parsing model with weights and code and benchmark numbers (olmOCR-Bench, OmniDocBench), plus the open Docision agent.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-10-21",
+   "evidence": [
+    "https://x.com/somarkai/status/2112574994152636502",
+    "https://x.com/somarkai/status/2110405408045019299"
+   ],
+   "last_qualifying_post": "2026-10-20",
+   "retired_reason": null
+  },
+  {
+   "handle": "@StefanoErmon",
+   "name": "Stefano Ermon",
+   "group": "research",
+   "affiliation": "Stanford, Inception",
+   "why": "Diffusion LLM researcher and Inception cofounder: Mercury model launches with benchmark claims and his lab's constrained-decoding research for diffusion LLMs.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-10-21",
+   "evidence": [
+    "https://x.com/StefanoErmon/status/2112222911218291051",
+    "https://x.com/StefanoErmon/status/2106106429568643460",
+    "https://x.com/StefanoErmon/status/2104979630394614258"
+   ],
+   "last_qualifying_post": "2026-10-19",
+   "retired_reason": null
+  },
+  {
+   "handle": "@chem_safety",
+   "name": "Jennifer Zhou",
+   "group": "research",
+   "affiliation": "Preference Model",
+   "why": "RL environment and eval auditing: published a TerminalBench 4.0 task audit with a writeup, open-sourced the Karotte RL-environment framework, and ran a long-horizon game benchmark.",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-10-21",
+   "evidence": [
+    "https://x.com/chem_safety/status/2112212878132744674",
+    "https://x.com/chem_safety/status/2107893216515133719",
+    "https://x.com/chem_safety/status/2109685886472602082"
+   ],
+   "last_qualifying_post": "2026-10-19",
+   "retired_reason": null
+  },
+  {
+   "handle": "@htihle",
+   "name": "Havard Ihle",
+   "group": "research",
+   "affiliation": "WeirdML",
+   "why": "Runs the WeirdML benchmark and posts per-model scores with cost and token notes for new frontier and open models soon after release.",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-10-21",
+   "evidence": [
+    "https://x.com/htihle/status/2112517036261695823",
+    "https://x.com/htihle/status/2111782267345682840",
+    "https://x.com/htihle/status/2110288604605882405"
+   ],
+   "last_qualifying_post": "2026-10-20",
+   "retired_reason": null
+  },
+  {
+   "handle": "@datalabto",
+   "name": "Datalab",
+   "group": "applied",
+   "affiliation": "Datalab",
+   "why": "Document intelligence (Chandra OCR, Marker): API releases with speed and accuracy numbers and the open OmniExtractBench scoring tool.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-10-21",
+   "evidence": [
+    "https://x.com/datalabto/status/2110822718341845484",
+    "https://x.com/datalabto/status/2112664733522211160",
+    "https://x.com/datalabto/status/2102852413363494978"
+   ],
+   "last_qualifying_post": "2026-10-20",
+   "retired_reason": null
+  },
+  {
+   "handle": "@NaceAI",
+   "name": "Nace AI",
+   "group": "labs",
+   "affiliation": "Nace AI",
+   "why": "Small decision models: open Drex 2.0 weights and code, plus measured Drex Max and browser-use harness results (WebArena-Verified, cost per 1,000 tasks).",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-10-21",
+   "evidence": [
+    "https://x.com/NaceAI/status/2109755218716188674",
+    "https://x.com/NaceAI/status/2112642730228944958",
+    "https://x.com/NaceAI/status/2112175183448461683"
+   ],
+   "last_qualifying_post": "2026-10-20",
+   "retired_reason": null
   }
  ],
  "source_leads": [
@@ -370,6 +488,71 @@
    "seen_via": [
     "@_inception_ai",
     "@tri_dao"
+   ]
+  },
+  {
+   "kind": "changelog",
+   "name": "VS Code release notes",
+   "url": "https://code.visualstudio.com/feed.xml",
+   "why": "Monthly VS Code updates with Copilot and agent features (for example canvases and shared agent workspaces); only the Copilot changelog is watched today.",
+   "seen_via": [
+    "@code"
+   ]
+  },
+  {
+   "kind": "blog",
+   "name": "SGLang blog",
+   "url": "https://sglang.io/blog",
+   "why": "SGLang team writeups with serving benchmarks (low-latency modes, SGLang-Omni); Magpie watches only the GitHub releases.",
+   "seen_via": [
+    "@lmsysorg",
+    "@sgl_project"
+   ]
+  },
+  {
+   "kind": "changelog",
+   "name": "Cohere changelog",
+   "url": "https://docs.cohere.com/changelog",
+   "why": "Dated model and API changes (for example Rerank 5) that appear before the Cohere blog mirror picks them up.",
+   "seen_via": [
+    "@aitrackerbot"
+   ]
+  },
+  {
+   "kind": "blog",
+   "name": "Reflection AI blog",
+   "url": "https://reflection.ai/blog",
+   "why": "Primary posts for Reflection's open-weight Beam models.",
+   "seen_via": [
+    "@ValsAI",
+    "@reflection_ai"
+   ]
+  },
+  {
+   "kind": "blog",
+   "name": "LightSeek blog",
+   "url": "https://lightseek.org/blog",
+   "why": "Speculative decoding work (EAGLE-4, TorchSpec) with measured speedups.",
+   "seen_via": [
+    "@lightseekorg"
+   ]
+  },
+  {
+   "kind": "blog",
+   "name": "Hao AI Lab blog",
+   "url": "https://hao-ai-lab.github.io/blogs/",
+   "why": "FastVideo and agent research writeups with code and numbers.",
+   "seen_via": [
+    "@haoailab"
+   ]
+  },
+  {
+   "kind": "feed",
+   "name": "WeirdML benchmark results",
+   "url": "https://htihle.github.io/weirdml.html",
+   "why": "Independent per-model benchmark results with cost, updated as new models ship.",
+   "seen_via": [
+    "@htihle"
    ]
   }
  ]
