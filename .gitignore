@@ -14,3 +14,5 @@ state/viewing/
 state/readme/
 state/constraints/
 state/epoch/
+data/v1/.elements-new-*/
+data/v1/.elements-old-*/

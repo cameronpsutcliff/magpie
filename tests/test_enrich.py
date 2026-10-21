@@ -74,6 +74,20 @@ class WorksWithTests(unittest.TestCase):
         quant = ev(key="url:reddit.com/r/localllama/1", title="A tiny quant for one card", summary="A 2-bit quant of GLM-5 that runs in llama.cpp.")
         self.assertEqual(N.works_with([{"name": "GLM-5"}, {"name": "llama.cpp"}], quant), [{"name": "llama.cpp"}])
 
+    def test_lineage_and_api_lists_in_other_words(self):
+        for text in ("It was fine-tuned from the base model Qwen3.8-27B.", "It was fine-tuned from Alibaba's Qwen3.8-27B.",
+                     "Weights quantized from an adapted Qwen3.8-27B.", "A model fine-tuned from the open base known as Qwen3.8-27B."):
+            self.assertEqual(N.works_with([{"name": "Qwen3.8-27B"}], ev(summary=text)), [], text)
+        lower = ev(summary="Invoke via the responses, chat completions, and converse apis on Bedrock.")
+        self.assertEqual(N.works_with([{"name": "responses"}, {"name": "converse"}, {"name": "Bedrock"}], lower), [{"name": "Bedrock"}])
+
+    def test_lineage_and_api_lists_never_reach_past_their_clause(self):
+        cases = [("Ollama", "Fine-tuned from Qwen and served in Ollama."), ("Cursor", "Distilled from DeepSeek R1 for use in Cursor."),
+                 ("GitHub", "The PR merged on GitHub today."), ("Ollama", "Works with Ollama and other APIs."),
+                 ("Bedrock", "Use Bedrock to call models, or the Converse API.")]
+        for name, text in cases:
+            self.assertEqual(N.works_with([{"name": name}], ev(summary=text)), [{"name": name}], text)
+
     def test_the_rules_leave_real_names_alone(self):
         e = ev(key="url:example.com/tools", title="MLX ONNX converter", maker="Example",
                summary="An MLX ONNX converter with a Backward Compatible Layer, tested with open webui and Claude Code.")

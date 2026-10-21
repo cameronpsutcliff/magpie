@@ -23,8 +23,11 @@ from `since` once, so the change reaches pages built before it.
 """
 from __future__ import annotations
 
+import os
 import re
+import shutil
 import sys
+import tempfile
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -126,6 +129,13 @@ def _ties(events: list[dict]) -> dict[str, list[dict]]:
     return {k: sorted(v.values(), key=lambda t: t["key"])[:PER_APPEARANCE] for k, v in ties.items()}
 
 
+def _plain(name: str, e: dict) -> bool:
+    try:
+        return plain_name(name, e)
+    except Exception:  # a rule that fails costs the name, never the page update
+        return False
+
+
 def appearance(e: dict, day: dict, ties: list[dict], read: dict[str, str]) -> dict:
     b = e.get("brief") or {}
     top = day.get("top") or []
@@ -162,7 +172,7 @@ def appearance(e: dict, day: dict, ties: list[dict], read: dict[str, str]) -> di
         a["ripples"] = ripples
     ww = b.get("works_with") if isinstance(b.get("works_with"), list) else []
     named = [{"name": w["name"], **({"how": w["how"]} if isinstance(w.get("how"), str) and w["how"] else {})}
-             for w in ww if isinstance(w, dict) and isinstance(w.get("name"), str) and w["name"] and plain_name(w["name"], e)]
+             for w in ww if isinstance(w, dict) and isinstance(w.get("name"), str) and w["name"] and _plain(w["name"], e)]
     if named:
         a["named_integrations"] = named  # grounded in that day's sources by the editor step; the name rules apply again here
     m = {k: e["metrics"][k] for k in METRICS if (e.get("metrics") or {}).get(k) is not None}
@@ -562,6 +572,9 @@ class Store:
         self.data = Path(data_dir)
         self.dir = self.data / "elements"
         self.state = Path(state_dir) if state_dir else None
+        old = sorted(self.data.glob(".elements-old-*"))
+        if old and not self.dir.exists():
+            os.replace(old[-1], self.dir)  # a commit stopped between its two renames: the pages it was replacing come back
         self._days: dict[str, dict | None] = {}
         self._contribs: dict[str, dict] = {}
         self.register = load_json(self.data / "constraints.json", {}).get("items", [])
@@ -621,16 +634,26 @@ class Store:
             (self.dir / f"{entry['slug']}.json").unlink(missing_ok=True)
 
     def commit(self) -> None:
-        """Write a staged rebuild: every page, then remove the pages it no longer has, the index last. Nothing on disk
-        changes until every page is computed, so a rebuild that fails leaves the pages and index as they were."""
+        """Write a staged rebuild as a whole: every page and the index into a new folder beside the old one, then swap the
+        two folders by rename. A rebuild that fails before the swap leaves the pages and index exactly as they were."""
         pages, self.staged = self.staged or {}, None
-        self.dir.mkdir(parents=True, exist_ok=True)
-        for slug, page in pages.items():
-            write_json(self.dir / f"{slug}.json", page, compact=True)
-        for p in self.dir.glob("*.json"):
-            if p.name != "index.json" and p.stem not in pages:
-                p.unlink()
-        write_json(self.dir / "index.json", self.index, compact=True)
+        fresh = Path(tempfile.mkdtemp(prefix=".elements-new-", dir=self.data))
+        try:
+            for slug, page in pages.items():
+                write_json(fresh / f"{slug}.json", page, compact=True)
+            write_json(fresh / "index.json", self.index, compact=True)
+            old = self.data / f".elements-old-{os.getpid()}"
+            if self.dir.exists():
+                os.replace(self.dir, old)
+            try:
+                os.replace(fresh, self.dir)
+            except OSError:
+                if old.exists():
+                    os.replace(old, self.dir)
+                raise
+            shutil.rmtree(old, ignore_errors=True)
+        finally:
+            shutil.rmtree(fresh, ignore_errors=True)
 
     def names_for(self, key: str) -> list[dict]:
         """For an official action: the element pages whose maker it names."""

@@ -1,4 +1,5 @@
 import json
+import os
 import shutil
 import tempfile
 import unittest
@@ -177,6 +178,39 @@ class ElementTests(unittest.TestCase):
         self.assertEqual(self.pages(), before)  # nothing written, nothing removed, the old index still asks for a rebuild
         E.update("2099-01-02", self.data)
         self.assertEqual(json.loads(path.read_text())["rules"], E.RULES)
+
+    def test_a_commit_that_fails_while_writing_leaves_every_page_as_it_was(self):
+        E.rebuild(self.data)
+        before = self.pages()
+        real, calls = E.write_json, []
+
+        def flaky(path, obj, **kw):
+            calls.append(path)
+            if len(calls) == 2:
+                raise OSError("disk full")
+            return real(path, obj, **kw)
+
+        with mock.patch.object(E, "write_json", flaky), self.assertRaises(OSError):
+            E.rebuild(self.data)
+        self.assertEqual(self.pages(), before)
+        self.assertEqual(sorted(p.name for p in self.data.iterdir() if p.name.startswith(".elements")), [])  # nothing left behind
+
+    def test_a_swap_stopped_between_its_renames_is_recovered(self):
+        E.rebuild(self.data)
+        before = self.pages()
+        os.replace(self.data / "elements", self.data / ".elements-old-123")  # the old folder moved, the new one never arrived
+        store = E.Store(self.data)
+        self.assertEqual(self.pages(), before)
+        self.assertEqual(store.since, "2099-01-01")
+
+    def test_a_name_rule_that_fails_costs_the_name_not_the_update(self):
+        d1 = self.days["2099-01-01"]
+        d1["events"] = [dict(e, brief={"headline": "Beta kit", "works_with": [{"name": "Ollama"}]}) if e["key"] == "gh:beta/kit" else e
+                        for e in d1["events"]]
+        write_json(self.data / "days" / "2099-01-01.json", d1, compact=True)
+        with mock.patch.object(E, "plain_name", side_effect=RuntimeError("bad rule")):
+            E.rebuild(self.data)
+        self.assertNotIn("named_integrations", self.page("gh-beta--kit"))
 
     def test_update_is_idempotent_and_matches_rebuild(self):
         E.rebuild(self.data)

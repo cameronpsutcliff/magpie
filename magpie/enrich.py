@@ -107,11 +107,17 @@ _GENERIC = {"html", "css", "json", "yaml", "xml", "csv", "markdown", "pdf", "htt
             "weights", "inference", "format", "formats", "file", "files", "local", "open", "source", "custom", "hosted", "remote",
             "cloud", "self", "any", "other", "third", "party"}
 _CATEGORY = re.compile(r"\w-compatible\b|\bcompatible\s+(?:endpoint|api|server|provider|backend|client|interface)s?\b", re.I)
-# What the capability came from, not what it works with: "fine-tuned from X", "distilled from X", "a quant of X".
-_LINEAGE = re.compile(r"(?:fine[- ]?tuned|distilled|quanti[sz]ed|post[- ]trained|merged)\s+(?:from|on|of)\s+(?:the\s+|a\s+)?$"
-                      r"|(?:quants?|quanti[sz]ations?|fine[- ]?tunes?|distillations?|merges?|gguf|exl\d|awq|gptq)\s+of\s+(?:the\s+|a\s+)?$", re.I)
-# A bare word in a list of APIs: what follows "Responses" in "the Responses, Chat Completions, and Converse APIs".
-_API_LIST = re.compile(r"(?:(?:\s*,\s*(?:and\s+|or\s+)?|\s+(?:and|or)\s+)[A-Z][\w.-]*(?:\s+[A-Z][\w.-]*)*)*\s+APIs?\b")
+# What the capability came from, not what it works with: "fine-tuned from X", "distilled from the base model X", "a quant of
+# Alibaba's X". The words between may describe X ("the base model", "an adapted", "known as") but never start another clause.
+_LINEAGE = re.compile(r"(?:fine[- ]?tuned|post[- ]trained)\s+(?:from|on)\b|(?:distilled|quanti[sz]ed|merged)\s+from\b"
+                      r"|(?:fine[- ]?tuned|distilled|quanti[sz]ed)\s+versions?\s+of\b"
+                      r"|(?:quants?|quanti[sz]ations?|fine[- ]?tunes?|distillations?|merges?|gguf|exl\d|awq|gptq)\s+of\b", re.I)
+_CLAUSE = re.compile(r"[,;:()]|\b(?:and|or|but|nor|plus|then|while|whereas|with|without|via|using|through|in|into|inside|within|on|"
+                     r"onto|for|to|at|by|under|over|so|that|which|who|where|when|is|are|was|were|be|runs?|running|served|serves|"
+                     r"serving|works?|plugs?|integrates?|supports?|uses?|used)\b", re.I)
+# A bare word in a list of APIs: what follows "Responses" in "the Responses, Chat Completions, and Converse APIs" (any case).
+_API_LIST = re.compile(r"(?:(?:\s*,\s*(?:and\s+|or\s+)?|\s+(?:and|or)\s+)(?!(?:other|any|many|several|all|most|some|their|its|the|a|an|"
+                       r"more)\b)[\w.-]+(?:\s+[\w.-]+){0,2})*\s+APIs?\b", re.I)
 _PARTS = re.compile(r"\s+[|\u2013-]\s+|:\s+")  # "Canvas | GitHub Copilot", "Show HN: Kit"
 
 
@@ -145,11 +151,22 @@ def _generic(name: str) -> bool:
     return bool(_CATEGORY.search(name)) or all(w in _GENERIC for w in _TOKENS(name))
 
 
+def _came_from(text: str, start: int) -> bool:
+    """Whether the sentence before `start` says the capability came from what stands there: a lineage phrase, then at most
+    six words that describe it and start no other clause."""
+    sentence = re.split(r"[.!?]\s", text[max(0, start - 240):start])[-1]
+    for m in _LINEAGE.finditer(sentence):
+        gap = sentence[m.end():]
+        if len(gap.split()) <= 6 and not _CLAUSE.search(gap):
+            return True
+    return False
+
+
 def _not_an_integration(name: str, text: str) -> bool:
     """Whether the event's own text makes the name something other than an integration: what it was fine-tuned,
-    distilled, quantized or merged from (anywhere), or only ever a bare word in a list of APIs."""
+    distilled, quantized or merged from (anywhere in the text), or only ever a bare word in a list of APIs."""
     spots = list(re.finditer(rf"(?<![A-Za-z0-9]){re.escape(name)}(?![A-Za-z0-9])", text, re.I))
-    if any(_LINEAGE.search(text[max(0, m.start() - 48):m.start()]) for m in spots):
+    if any(_came_from(text, m.start()) for m in spots):
         return True
     return bool(spots) and all(_API_LIST.match(text, m.end()) for m in spots)
 
