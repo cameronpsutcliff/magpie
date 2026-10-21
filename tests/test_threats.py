@@ -1127,5 +1127,44 @@ class ReviewFixTests(unittest.TestCase):
         rec, why = T.judge(c, dict(base, title="AWS crash from one request"), DATE)  # an acronym opening a title counts
         self.assertEqual(why, "its title or headline uses a name its documents do not")
 
+
+class ReachTests(unittest.TestCase):
+    """Today's published threats (2026-10-21), ranked by reach: eMudhra, an editor-rated high that reaches every
+    non-browser TLS client, leads the advisory-rated single-package MCP SDK bugs."""
+
+    def setUp(self):
+        frozen = json.loads((ROOT / "tests/data/threats-2026-10-21.json").read_text())
+        self.date = frozen["date"]
+        self.threats = [{k: v for k, v in t.items() if k not in ("reach", "wide")} for t in frozen["threats"]]
+
+    def test_the_wide_incident_leads_the_day(self):
+        from magpie import publish as P
+        got = T.arrange(self.threats, self.date)
+        self.assertTrue(got[0]["title"].startswith("Eight eMudhra"))
+        self.assertEqual(got[0]["severity_basis"], "editor")  # its basis does not demote it
+        self.assertTrue(got[0]["wide"])
+        self.assertEqual([t.get("incident") for t in got[1:4]], [got[0]["id"]] * 3)  # its advisories follow it
+        mcp = [t for t in got if t["title"].startswith("MCP")]
+        self.assertTrue(all(not t["wide"] and t["reach"] < got[0]["reach"] for t in mcp))
+        self.assertEqual(P.stories(got)[0]["id"], got[0]["id"])  # the feed and the index tell it first
+
+    def test_wide_ranks_with_critical_and_reach_orders_within(self):
+        from magpie import publish as P
+        narrow = dict(self.threats[4], id="thr-narrow", key="threat:narrow", severity="critical", exploited=True,
+                      idents=["GHSA-zzzz-zzzz-zzzz"], children=[], incident=None)
+        got = T.arrange([*self.threats, narrow], self.date)
+        self.assertTrue(got[0]["title"].startswith("Eight eMudhra"))  # same tier as a critical, and wider
+        self.assertEqual(P.stories(got)[1]["id"], "thr-narrow")  # a critical narrow bug still leads the high ones
+
+    def test_recent_threats_use_the_same_ranking(self):
+        data = Path(tempfile.mkdtemp())
+        T.update_register(T.arrange(self.threats, self.date), self.date, data)
+        rows = json.loads((data / "threats.json").read_text())["threats"]
+        self.assertTrue(all("reach" in r and "wide" in r for r in rows))
+        recent = R.threats("2026-10-25", data)
+        self.assertTrue(recent[0]["title"].startswith("Eight eMudhra"))
+        self.assertEqual(len(recent), 5)  # the three advisories are told through their incident
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -1623,6 +1623,15 @@
       "type": "string"
      },
      "description": "Ids of recorded threats merged into this one because they share a document identity, directly or through another sighting; old links to them resolve here."
+    },
+    "reach": {
+     "type": "integer",
+     "minimum": 0,
+     "description": "How far it reaches, computed by code from stored fields: the distinct packages in affects and fixed_in and the ecosystems in affects (with those of its nested package advisories), one for each nested advisory, plus 10 for trust infrastructure. Threats are listed by tier, then reach."
+    },
+    "wide": {
+     "type": "boolean",
+     "description": "Trust infrastructure, any nested package advisory, or two or more ecosystems: it ranks with the critical threats whatever its own severity or severity_basis."
     }
    }
   },

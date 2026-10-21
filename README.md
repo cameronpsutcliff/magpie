@@ -83,6 +83,14 @@ numbers and URLs), and package advisories that belong to an umbrella incident ca
 in the day's list. The day's list carries what was sighted today, then critical and high threats from the last week;
 `data/v1/threats.json` keeps them all.
 
+**Ranked by reach.** Code computes each threat's `reach` from stored fields: the distinct packages in `affects` and
+`fixed_in` and the ecosystems in `affects`, with those of its nested package advisories, one for each nested advisory,
+and 10 more for trust infrastructure. A threat that is trust infrastructure, has a nested advisory or spans two or more
+ecosystems is `wide` and ranks with the critical ones whatever its own severity or its basis, so an incident like
+eMudhra's (every non-browser TLS client) leads a single-package bug. Order: new first, then that tier, then reach, then
+exploited, a fix, official evidence and newest. The day's list, the section's lead line, `recent.threats` and the feed
+all use it.
+
 **No blank sections.** When a section's own list is empty (constraints, threats, possibilities, ripples, viewing), the
 day's `recent` block carries up to five of the most impactful recent items, each with its date, copied with no model
 call from the registers (the last 90 days; an older constraint only while it is in force) and the last 14 editions.

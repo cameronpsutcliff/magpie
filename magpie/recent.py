@@ -61,12 +61,15 @@ def constraints(date: str, data_dir) -> list[dict]:
 
 
 def _threat_rank(r: dict) -> tuple:
-    return (-SEV_RANK.get(r.get("severity") or "", 0), r.get("exploited") is not True, _desc(r["first_seen"]))
+    """The threats lane's ranking (threats.tier and threats.reach, stored on each record): a wide threat ranks with the
+    critical ones, then reach, then exploited, then newest."""
+    tier = SEV_RANK["critical"] if r.get("wide") else SEV_RANK.get(r.get("severity") or "", 0)
+    return (-tier, -(r.get("reach") or 0), r.get("exploited") is not True, _desc(r["first_seen"]))
 
 
 def threats(date: str, data_dir) -> list[dict]:
-    """Severity, then exploited, then newest, from the last 90 days. A package advisory that belongs to an incident is
-    shown through the incident."""
+    """By reach (see _threat_rank), from the last 90 days. A package advisory that belongs to an incident is shown
+    through the incident."""
     rows = _within(_recorded(load_json(data_dir / "threats.json", {}).get("threats", []), date), date)
     rows = sorted((r for r in rows if not r.get("incident")), key=_threat_rank)
     return [{"date": r["first_seen"], "id": r["id"], "title": r.get("title") or "", "severity": r.get("severity"),
