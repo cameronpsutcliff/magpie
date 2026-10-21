@@ -3,35 +3,174 @@
  "updated": "2026-10-21",
  "threats": [
   {
+   "id": "thr-2026-10-20-uv-bundled-ca-store-trusts-compromised-emsign",
+   "kind": "threat",
+   "category": "trust-infrastructure",
+   "title": "uv bundled CA store trusts compromised emSign root",
+   "headline": "uv's vendored root bundle trusts compromised eMudhra intermediates, exposing uv TLS connections to MITM attacks.",
+   "summary": "By default, uv verifies TLS connections against a vendored copy of the webpki-root-certs bundle that includes the emSign ECC Root CA - G3 root. Eight eMudhra intermediates that chain to that root have compromised private keys. An attacker with one of the keys can issue certificates that uv accepts for any hostname and use them for MITM attacks.",
+   "severity": "critical",
+   "severity_basis": "advisory rating",
+   "exploited": null,
+   "exploited_quote": null,
+   "status": "patched",
+   "act_now": true,
+   "affects": [
+    {
+     "name": "uv",
+     "ecosystem": "PyPI",
+     "versions": "< 0.13.4"
+    }
+   ],
+   "fixed_in": [
+    {
+     "name": "uv",
+     "version": "0.13.4"
+    }
+   ],
+   "actions": [
+    "Update uv to 0.13.4 or later"
+   ],
+   "action_quotes": [],
+   "who": [
+    "uv users",
+    "Python developers installing packages with uv"
+   ],
+   "published": "2026-10-20",
+   "first_seen": "2026-10-21",
+   "updated": "2026-10-21",
+   "cves": [],
+   "kev": false,
+   "doc": "https://osv.dev/vulnerability/GHSA-hq85-5cpj-mr62",
+   "sources": [
+    {
+     "name": "OSV.dev",
+     "url": "https://osv.dev/vulnerability/GHSA-hq85-5cpj-mr62",
+     "primary": true
+    }
+   ],
+   "quote": "An attacker with one of the compromised keys can issue certificates that uv accepts for any hostname, and can be used to issue certificates to enable MITM attacks.",
+   "evidence": "official",
+   "incident": "thr-2026-10-20-eight-emudhra-intermediate-ca-private-keys-compromised",
+   "children": [],
+   "merged_ids": [],
+   "key": "threat:GHSA-hq85-5cpj-mr62",
+   "idents": [
+    "GHSA-hq85-5cpj-mr62",
+    "PYSEC-2026-4321",
+    "url:osv.dev/vulnerability/GHSA-hq85-5cpj-mr62"
+   ],
+   "last_seen": "2026-10-21"
+  },
+  {
+   "id": "thr-2026-10-20-certifi-bundle-includes-root-with-compromised-intermediates",
+   "kind": "threat",
+   "category": "trust-infrastructure",
+   "title": "certifi bundle includes root with compromised intermediates",
+   "headline": "certifi's CA bundle trusts compromised eMudhra intermediates, exposing requests, urllib3 and pip traffic to interception.",
+   "summary": "An attacker with one of the keys can issue valid-looking certificates for any hostname.",
+   "severity": "critical",
+   "severity_basis": "advisory rating",
+   "exploited": null,
+   "exploited_quote": null,
+   "status": "patched",
+   "act_now": true,
+   "affects": [
+    {
+     "name": "certifi",
+     "ecosystem": "PyPI",
+     "versions": ">= 2019.03.09, < 2026.10.19"
+    }
+   ],
+   "fixed_in": [
+    {
+     "name": "certifi",
+     "version": "2026.10.19"
+    }
+   ],
+   "actions": [
+    "Update certifi to 2026.10.19 or later",
+    "Rebuild container images that vendor certifi."
+   ],
+   "action_quotes": [
+    {
+     "action": "Rebuild container images that vendor certifi.",
+     "quote": "Upgrade to 2026.10.19 or later, and rebuild container images that vendor certifi."
+    }
+   ],
+   "who": [
+    "Python apps using requests, urllib3 or pip",
+    "Container images that vendor certifi",
+    "Python.org macOS installer users"
+   ],
+   "published": "2026-10-20",
+   "first_seen": "2026-10-21",
+   "updated": "2026-10-21",
+   "cves": [],
+   "kev": false,
+   "doc": "https://osv.dev/vulnerability/GHSA-6q48-6c7w-9gw2",
+   "sources": [
+    {
+     "name": "OSV.dev",
+     "url": "https://osv.dev/vulnerability/GHSA-6q48-6c7w-9gw2",
+     "primary": true
+    }
+   ],
+   "quote": "If the attacker is also on-path, they can intercept or modify TLS traffic from clients that trust the certifi bundle.",
+   "evidence": "official",
+   "incident": "thr-2026-10-20-eight-emudhra-intermediate-ca-private-keys-compromised",
+   "children": [],
+   "merged_ids": [],
+   "key": "threat:GHSA-6q48-6c7w-9gw2",
+   "idents": [
+    "GHSA-6q48-6c7w-9gw2",
+    "PYSEC-2026-4320",
+    "url:osv.dev/vulnerability/GHSA-6q48-6c7w-9gw2"
+   ],
+   "last_seen": "2026-10-21"
+  },
+  {
    "id": "thr-2026-10-20-eight-emudhra-intermediate-ca-private-keys-compromised",
    "kind": "threat",
    "category": "trust-infrastructure",
    "title": "Eight eMudhra intermediate CA private keys compromised",
-   "headline": "Flawed key generation exposed eight eMudhra intermediate CA keys, risking site impersonation for non-browser TLS clients",
-   "summary": "The private keys of eight eMudhra intermediate CA certificates were incorrectly generated and can be recovered from the certificates. An attacker with any of these keys could impersonate any website or service, mainly against clients that do not enforce Certificate Transparency or consume revocation information. Major browsers block the intermediates, the CA revoked them, and many trust stores and developer packages have shipped updates.",
-   "severity": "critical",
+   "headline": "Flawed key generation exposed eMudhra intermediate CA keys, letting attackers impersonate sites to clients outside browsers.",
+   "summary": "The private keys of eight eMudhra intermediate CA certificates were incorrectly generated by the CA, so anyone can recover them from the certificates. An attacker with any of these keys could impersonate any website or service. Browsers block the certificates, but many clients outside the browser ecosystem do not consume revocation information or enforce Certificate Transparency.",
+   "severity": "high",
+   "severity_basis": "editor",
    "exploited": null,
-   "status": "mitigated",
+   "exploited_quote": null,
+   "status": "patched",
    "act_now": true,
    "affects": [
     {
-     "name": "eMudhra intermediate CA certificates",
-     "ecosystem": "PKI",
+     "name": "Python certifi",
+     "ecosystem": "PyPI",
      "versions": ""
     },
     {
-     "name": "macOS built-in curl, git, python3, perl, ruby and openssl",
-     "ecosystem": "OS",
+     "name": "pip",
+     "ecosystem": "PyPI",
      "versions": ""
     },
     {
-     "name": "FreeBSD ca_root_nss",
-     "ecosystem": "OS",
+     "name": "uv",
+     "ecosystem": "PyPI",
      "versions": ""
     },
     {
-     "name": "Bun",
+     "name": "Node.js",
      "ecosystem": "runtime",
+     "versions": ""
+    },
+    {
+     "name": "Go",
+     "ecosystem": "runtime",
+     "versions": ""
+    },
+    {
+     "name": "curl CA bundle",
+     "ecosystem": "CLI",
      "versions": ""
     }
    ],
@@ -57,28 +196,37 @@
      "version": "1.27.3, 1.26.10"
     },
     {
+     "name": "NSS",
+     "version": "3.131.1"
+    },
+    {
      "name": "Rust rustls-webpki",
      "version": "0.103.16"
     },
     {
-     "name": "Ubuntu ca-certificates",
-     "version": "20260816ubuntu0.22.04.1, 20260816ubuntu0.24.04.1, 20260816ubuntu0.26.04.1, 20260816ubuntu0.26.10.1"
-    },
-    {
-     "name": "NSS",
-     "version": "3.131.1"
+     "name": "Electron",
+     "version": "44.9.1, 43.8.1, 42.11.16"
     }
    ],
    "actions": [
-    "Update browsers, operating systems and language runtimes to the patched versions.",
-    "Upgrade bundled trust stores in your Python, Node.js, Go and Rust toolchains.",
-    "Check that TLS clients outside the browser no longer trust the compromised intermediates.",
-    "On macOS, remember that built-in command-line tools still use an outdated certificate file."
+    "Update Python certifi to 2026.10.19 or later",
+    "Update pip to 26.2.2 or later",
+    "Update uv to 0.13.4 or later",
+    "Update Node.js to 22.23.4, 24.22.1, 26.12.1 or later",
+    "Update Go to 1.27.3, 1.26.10 or later",
+    "Update NSS to 3.131.1 or later",
+    "Test whether your command-line clients still trust the compromised intermediates."
+   ],
+   "action_quotes": [
+    {
+     "action": "Test whether your command-line clients still trust the compromised intermediates.",
+     "quote": "A certificate error means the client does not trust the compromised intermediates."
+    }
    ],
    "who": [
-    "TLS clients that do not enforce Certificate Transparency",
-    "Developers relying on bundled trust stores",
-    "macOS built-in command-line tools"
+    "TLS clients outside browsers",
+    "Python, Node.js and Go developers",
+    "Trust store operators"
    ],
    "published": "2026-10-20",
    "first_seen": "2026-10-21",
@@ -105,7 +253,13 @@
    ],
    "quote": "An attacker with the private key of any of the compromised intermediate CAs could impersonate any website or service.",
    "evidence": "official",
-   "severity_basis": "editor",
+   "incident": null,
+   "children": [
+    "thr-2026-10-20-uv-bundled-ca-store-trusts-compromised-emsign",
+    "thr-2026-10-20-certifi-bundle-includes-root-with-compromised-intermediates",
+    "thr-2026-10-20-rustls-webpki-may-accept-distrusted-emsign-intermediates"
+   ],
+   "merged_ids": [],
    "key": "threat:url:emudhra.we-have-a-problem.com",
    "idents": [
     "bz:2083449",
@@ -116,127 +270,80 @@
    "last_seen": "2026-10-21"
   },
   {
-   "id": "thr-2026-10-20-uv-bundled-ca-store-trusts-compromised-emsign",
+   "id": "thr-2026-10-20-rustls-webpki-may-accept-distrusted-emsign-intermediates",
    "kind": "threat",
    "category": "trust-infrastructure",
-   "title": "uv bundled CA store trusts compromised emSign root",
-   "headline": "uv before 0.13.4 accepts certificates from compromised eMudhra intermediates, enabling MITM attacks on its TLS connections",
-   "summary": "uv verifies TLS against a vendored webpki-root-certs bundle that included the emSign ECC Root CA - G3 root before version 0.13.4. Eight eMudhra intermediates chaining to that root have compromised private keys, so an attacker holding one could issue certificates uv accepts for any hostname and mount MITM attacks. uv 0.13.4 removes the root from its bundle.",
-   "severity": "critical",
+   "title": "rustls-webpki may accept distrusted emSign intermediates",
+   "headline": "rustls-webpki could accept certificate paths through emSign intermediates whose private keys are now well known.",
+   "summary": "The private keys for these intermediates are now well known. Fixed versions reject paths containing these public keys.",
+   "severity": "high",
+   "severity_basis": "editor",
    "exploited": null,
+   "exploited_quote": null,
    "status": "patched",
    "act_now": true,
    "affects": [
     {
-     "name": "uv",
-     "ecosystem": "PyPI",
-     "versions": "< 0.13.4"
+     "name": "rustls-webpki",
+     "ecosystem": "crates.io",
+     "versions": ">= 0.0.0-0, < 0.103.16; >= 0.104.0-alpha.1, < 0.104.0-alpha.8"
     }
    ],
    "fixed_in": [
     {
-     "name": "uv",
-     "version": "0.13.4"
+     "name": "rustls-webpki",
+     "version": "0.103.16, 0.104.0-alpha.8"
     }
    ],
    "actions": [
-    "Upgrade uv to 0.13.4 or later.",
-    "Rebuild environments and CI images that pin an older uv."
+    "Update rustls-webpki to 0.103.16, 0.104.0-alpha.8 or later"
    ],
+   "action_quotes": [],
    "who": [
-    "Python developers using uv",
-    "CI pipelines that install packages with uv"
+    "Rust apps verifying TLS with rustls-webpki"
    ],
    "published": "2026-10-20",
    "first_seen": "2026-10-21",
    "updated": "2026-10-21",
-   "cves": [],
+   "cves": [
+    "CVE-2026-111943"
+   ],
    "kev": false,
-   "doc": "https://osv.dev/vulnerability/GHSA-hq85-5cpj-mr62",
+   "doc": "https://osv.dev/vulnerability/RUSTSEC-2026-0382",
    "sources": [
     {
      "name": "OSV.dev",
-     "url": "https://osv.dev/vulnerability/GHSA-hq85-5cpj-mr62",
+     "url": "https://osv.dev/vulnerability/RUSTSEC-2026-0382",
      "primary": true
     }
    ],
-   "quote": "An attacker with one of the compromised keys can issue certificates that uv accepts for any hostname, and can be used to issue certificates to enable MITM attacks.",
+   "quote": "The private keys corresponding to these intermediates are now well known.",
    "evidence": "official",
-   "severity_basis": "advisory rating",
-   "key": "threat:GHSA-hq85-5cpj-mr62",
+   "incident": "thr-2026-10-20-eight-emudhra-intermediate-ca-private-keys-compromised",
+   "children": [],
+   "merged_ids": [],
+   "key": "threat:RUSTSEC-2026-0382",
    "idents": [
-    "GHSA-hq85-5cpj-mr62",
-    "PYSEC-2026-4321",
-    "url:osv.dev/vulnerability/GHSA-hq85-5cpj-mr62"
+    "CVE-2026-111943",
+    "GO-2026-6809",
+    "RUSTSEC-2026-0381",
+    "RUSTSEC-2026-0382",
+    "RUSTSEC-2026-0383",
+    "url:osv.dev/vulnerability/RUSTSEC-2026-0382"
    ],
    "last_seen": "2026-10-21"
   },
   {
-   "id": "thr-2026-10-20-certifi-bundle-includes-root-with-compromised-intermediates",
-   "kind": "threat",
-   "category": "trust-infrastructure",
-   "title": "certifi bundle includes root with compromised intermediates",
-   "headline": "certifi before 2026.10.19 trusts a root over compromised eMudhra intermediates, exposing requests, urllib3 and pip",
-   "summary": "Certifi bundled the emSign ECC Root CA - G3 root, to which eight eMudhra intermediates with compromised private keys chain. An attacker with one key can issue valid-looking certificates for any hostname and, if on-path, intercept or modify TLS traffic from clients such as requests, urllib3 and pip. Certifi 2026.10.19 removes the affected roots and keeps the unaffected emSign roots.",
-   "severity": "critical",
-   "exploited": null,
-   "status": "patched",
-   "act_now": true,
-   "affects": [
-    {
-     "name": "certifi",
-     "ecosystem": "PyPI",
-     "versions": ">= 2019.03.09, < 2026.10.19"
-    }
-   ],
-   "fixed_in": [
-    {
-     "name": "certifi",
-     "version": "2026.10.19"
-    }
-   ],
-   "actions": [
-    "Upgrade certifi to 2026.10.19 or later.",
-    "Rebuild container images that vendor certifi."
-   ],
-   "who": [
-    "Python apps using requests, urllib3 or pip",
-    "Users of the Python.org macOS installer",
-    "Container images that vendor certifi"
-   ],
-   "published": "2026-10-20",
-   "first_seen": "2026-10-21",
-   "updated": "2026-10-21",
-   "cves": [],
-   "kev": false,
-   "doc": "https://osv.dev/vulnerability/GHSA-6q48-6c7w-9gw2",
-   "sources": [
-    {
-     "name": "OSV.dev",
-     "url": "https://osv.dev/vulnerability/GHSA-6q48-6c7w-9gw2",
-     "primary": true
-    }
-   ],
-   "quote": "If the attacker is also on-path, they can intercept or modify TLS traffic from clients that trust the certifi bundle.",
-   "evidence": "official",
-   "severity_basis": "advisory rating",
-   "key": "threat:GHSA-6q48-6c7w-9gw2",
-   "idents": [
-    "GHSA-6q48-6c7w-9gw2",
-    "PYSEC-2026-4320",
-    "url:osv.dev/vulnerability/GHSA-6q48-6c7w-9gw2"
-   ],
-   "last_seen": "2026-10-21"
-  },
-  {
-   "id": "thr-2026-10-20-mcp-typescript-sdk-servers-crashable-by-one",
+   "id": "thr-2026-10-20-mcp-typescript-sdk-servers-exhaust-memory-on",
    "kind": "threat",
    "category": "ai-framework-vuln",
-   "title": "MCP TypeScript SDK servers crashable by one request",
-   "headline": "A single unauthenticated HTTP request can exhaust memory and crash MCP TypeScript SDK servers",
-   "summary": "Affected MCP TypeScript SDK servers did not limit how many array elements and object keys they validated in one request. One request under the default 4 MiB size limit could exhaust memory and abort the process, with no credentials needed. Patched versions add a maxToolInputElements option that is off by default, so builders must turn it on and also lower the request size limit.",
+   "title": "MCP TypeScript SDK servers exhaust memory on crafted requests",
+   "headline": "One unauthenticated HTTP request could crash MCP TypeScript SDK servers by exhausting memory during validation.",
+   "summary": "Affected servers put no limit on how many array elements and object keys they validated in one request.",
    "severity": "high",
+   "severity_basis": "advisory rating",
    "exploited": null,
+   "exploited_quote": null,
    "status": "patched",
    "act_now": true,
    "affects": [
@@ -262,13 +369,24 @@
     }
    ],
    "actions": [
-    "Upgrade the SDK and set maxToolInputElements just above your largest expected tool input.",
-    "Lower the request body size limit to what your tools need.",
-    "If you cannot upgrade, cap request size at the transport or a reverse proxy."
+    "Update @modelcontextprotocol/sdk to 1.32.0 or later",
+    "Update @modelcontextprotocol/server to 2.3.0 or later",
+    "Turn on the new tool input element limit, since it is off by default.",
+    "Lower the request body size limit to what your tools need."
+   ],
+   "action_quotes": [
+    {
+     "action": "Turn on the new tool input element limit, since it is off by default.",
+     "quote": "The patched versions add an McpServer option, maxToolInputElements , that is off by default."
+    },
+    {
+     "action": "Lower the request body size limit to what your tools need.",
+     "quote": "Lower the request size limit to what your tools need."
+    }
    ],
    "who": [
-    "MCP servers reachable over HTTP by untrusted clients",
-    "McpServer tools that accept arrays or records"
+    "MCP servers reachable over HTTP",
+    "Builders using the MCP TypeScript SDK"
    ],
    "published": "2026-10-20",
    "first_seen": "2026-10-21",
@@ -285,9 +403,11 @@
      "primary": true
     }
    ],
-   "quote": "In affected versions, servers put no limit on how many array elements and object keys they validated in one request.",
+   "quote": "One HTTP request within the default 4 MiB size limit could exhaust the server's memory, and the process aborted with JavaScript heap out of memory .",
    "evidence": "official",
-   "severity_basis": "advisory rating",
+   "incident": null,
+   "children": [],
+   "merged_ids": [],
    "key": "threat:GHSA-46jr-4wx8-v453",
    "idents": [
     "CVE-2026-111768",
@@ -297,14 +417,16 @@
    "last_seen": "2026-10-21"
   },
   {
-   "id": "thr-2026-10-20-mcp-typescript-sdk-experimental-tasks-lacked-session",
+   "id": "thr-2026-10-20-mcp-typescript-sdk-experimental-tasks-leak-across",
    "kind": "threat",
    "category": "ai-framework-vuln",
-   "title": "MCP TypeScript SDK experimental tasks lacked session isolation",
-   "headline": "MCP SDK servers sharing a task store let clients list, read and cancel other sessions' tasks",
-   "summary": "The deprecated experimental tasks feature in the MCP TypeScript SDK did not check which session created a task. Clients sharing one InMemoryTaskStore could list, read and cancel each other's tasks. Version 1.32.0 ties each task to the session that created it.",
+   "title": "MCP TypeScript SDK experimental tasks leak across sessions",
+   "headline": "Clients sharing an MCP SDK task store could list, read and cancel each other's experimental tasks.",
+   "summary": "In affected versions, the experimental tasks feature did not check which session created a task. Clients sharing one InMemoryTaskStore could list, read and cancel each other's tasks. Only HTTP servers that pass taskStore to McpServer or Server are affected, and the 2.x packages are not.",
    "severity": "high",
+   "severity_basis": "advisory rating",
    "exploited": null,
+   "exploited_quote": null,
    "status": "patched",
    "act_now": true,
    "affects": [
@@ -321,12 +443,22 @@
     }
    ],
    "actions": [
+    "Update @modelcontextprotocol/sdk to 1.32.0 or later",
     "Stop using the deprecated experimental tasks feature.",
-    "Upgrade to the fixed SDK version if your HTTP server passes a task store.",
-    "If you cannot upgrade, remove the task store or use one per session."
+    "If you cannot upgrade, give each session its own task store."
+   ],
+   "action_quotes": [
+    {
+     "action": "Stop using the deprecated experimental tasks feature.",
+     "quote": "The best course of action is to stop using them."
+    },
+    {
+     "action": "If you cannot upgrade, give each session its own task store.",
+     "quote": "If you cannot upgrade yet, remove taskStore , or create one InMemoryTaskStore per session."
+    }
    ],
    "who": [
-    "HTTP MCP servers that pass taskStore to McpServer or Server"
+    "MCP HTTP servers that use taskStore"
    ],
    "published": "2026-10-20",
    "first_seen": "2026-10-21",
@@ -345,7 +477,9 @@
    ],
    "quote": "Clients sharing one InMemoryTaskStore could list, read and cancel each other's tasks.",
    "evidence": "official",
-   "severity_basis": "advisory rating",
+   "incident": null,
+   "children": [],
+   "merged_ids": [],
    "key": "threat:GHSA-22jm-h49p-29qw",
    "idents": [
     "CVE-2026-111767",
@@ -355,74 +489,16 @@
    "last_seen": "2026-10-21"
   },
   {
-   "id": "thr-2026-10-20-rustls-webpki-may-accept-distrusted-emsign-intermediates",
-   "kind": "threat",
-   "category": "trust-infrastructure",
-   "title": "rustls-webpki may accept distrusted emSign intermediates",
-   "headline": "rustls-webpki could accept certificate paths through emSign intermediates whose private keys are now well known",
-   "summary": "Affected rustls-webpki versions may accept certificate paths containing distrusted emSign intermediate public keys when the configured trust anchors allow such paths. The private keys for these intermediates are now well known. Versions 0.103.16 and 0.104.0-alpha.8 reject paths containing these public keys.",
-   "severity": "high",
-   "exploited": null,
-   "status": "patched",
-   "act_now": true,
-   "affects": [
-    {
-     "name": "rustls-webpki",
-     "ecosystem": "crates.io",
-     "versions": ">= 0.0.0-0, < 0.103.16; >= 0.104.0-alpha.1, < 0.104.0-alpha.8"
-    }
-   ],
-   "fixed_in": [
-    {
-     "name": "rustls-webpki",
-     "version": "0.103.16, 0.104.0-alpha.8"
-    }
-   ],
-   "actions": [
-    "Upgrade rustls-webpki to a fixed version.",
-    "Rebuild and redeploy Rust binaries that link it."
-   ],
-   "who": [
-    "Rust apps and tools that verify TLS with rustls-webpki"
-   ],
-   "published": "2026-10-20",
-   "first_seen": "2026-10-21",
-   "updated": "2026-10-21",
-   "cves": [
-    "CVE-2026-111943"
-   ],
-   "kev": false,
-   "doc": "https://osv.dev/vulnerability/RUSTSEC-2026-0382",
-   "sources": [
-    {
-     "name": "OSV.dev",
-     "url": "https://osv.dev/vulnerability/RUSTSEC-2026-0382",
-     "primary": true
-    }
-   ],
-   "quote": "The private keys corresponding to these intermediates are now well known.",
-   "evidence": "official",
-   "severity_basis": "editor",
-   "key": "threat:RUSTSEC-2026-0382",
-   "idents": [
-    "CVE-2026-111943",
-    "GO-2026-6809",
-    "RUSTSEC-2026-0381",
-    "RUSTSEC-2026-0382",
-    "RUSTSEC-2026-0383",
-    "url:osv.dev/vulnerability/RUSTSEC-2026-0382"
-   ],
-   "last_seen": "2026-10-21"
-  },
-  {
-   "id": "thr-2026-10-20-mcp-typescript-sdk-bearer-auth-skipped-audience",
+   "id": "thr-2026-10-20-mcp-typescript-sdk-bearer-auth-skips-token",
    "kind": "threat",
    "category": "ai-framework-vuln",
-   "title": "MCP TypeScript SDK bearer auth skipped audience checks",
-   "headline": "MCP servers using SDK bearer authentication accepted tokens issued for other services by shared authorization servers",
-   "summary": "The MCP TypeScript SDK's server-side bearer authentication had no way to check that a token was issued for your server. Where one authorization server issues tokens for several services, a valid token for another service was also accepted. Patched versions add an expectedResource setting that is off by default and must be enabled along with returning the token audience.",
+   "title": "MCP TypeScript SDK bearer auth skips token audience check",
+   "headline": "MCP servers using SDK bearer auth could accept tokens issued for other services by the same authorization server.",
+   "summary": "This affects HTTP servers using requireBearerAuth() or verifyBearerToken() whose verifyAccessToken() does not check the audience itself.",
    "severity": "medium",
+   "severity_basis": "advisory rating",
    "exploited": null,
+   "exploited_quote": null,
    "status": "patched",
    "act_now": false,
    "affects": [
@@ -466,13 +542,26 @@
     }
    ],
    "actions": [
-    "Upgrade and enable the expectedResource setting with your server's audience.",
-    "Return the token audience from your access token verifier.",
-    "Until you upgrade, reject tokens whose audience does not include your server."
+    "Update @modelcontextprotocol/sdk to 1.32.0 or later",
+    "Update @modelcontextprotocol/server to 2.3.0 or later",
+    "Update @modelcontextprotocol/express to 2.0.2 or later",
+    "Update @modelcontextprotocol/server-legacy to 2.3.1 or later",
+    "Turn on the new expected resource check, since it is off by default.",
+    "Reject tokens whose audience does not include your server in your token verifier."
+   ],
+   "action_quotes": [
+    {
+     "action": "Turn on the new expected resource check, since it is off by default.",
+     "quote": "The patched versions add an expectedResource setting that is off by default."
+    },
+    {
+     "action": "Reject tokens whose audience does not include your server in your token verifier.",
+     "quote": "If you cannot upgrade yet, reject any token whose aud does not include your server inside verifyAccessToken() ."
+    }
    ],
    "who": [
-    "MCP servers using requireBearerAuth() or verifyBearerToken()",
-    "Deployments whose authorization server issues tokens for several services"
+    "MCP HTTP servers using SDK bearer auth",
+    "Deployments where one authorization server serves several services"
    ],
    "published": "2026-10-20",
    "first_seen": "2026-10-21",
@@ -491,7 +580,9 @@
    ],
    "quote": "Where one authorization server issues tokens for several services, a valid token for another service was also accepted by your MCP server.",
    "evidence": "official",
-   "severity_basis": "advisory rating",
+   "incident": null,
+   "children": [],
+   "merged_ids": [],
    "key": "threat:GHSA-rvq5-wwqv-78pq",
    "idents": [
     "CVE-2026-111771",
@@ -501,14 +592,16 @@
    "last_seen": "2026-10-21"
   },
   {
-   "id": "thr-2026-10-20-mcp-typescript-client-sdk-leaked-secrets-on",
+   "id": "thr-2026-10-20-mcp-typescript-client-sdk-leaks-headers-on",
    "kind": "threat",
    "category": "ai-framework-vuln",
-   "title": "MCP TypeScript client SDK leaked secrets on cross-origin redirects",
-   "headline": "MCP SDK clients followed redirects to any origin, re-sending API keys, session IDs and OAuth secrets",
-   "summary": "The MCP TypeScript SDK's HTTP client transports and OAuth requests followed redirects to any origin. A redirect could send custom headers and the mcp-session-id header to another origin, and on a 307 or 308 also the request body, including refresh_token and client_secret. Patched versions follow redirects only within the same origin, and not at all in browsers.",
+   "title": "MCP TypeScript client SDK leaks headers on cross-origin redirects",
+   "headline": "MCP SDK clients followed cross-origin redirects, sending API keys, session IDs and OAuth secrets to other origins.",
+   "summary": "A server that redirected a request to another origin caused that origin to receive custom request headers, such as an API key, and the mcp-session-id header. On a 307 or 308 the request body also went along, including OAuth token requests with their refresh_token and client_secret.",
    "severity": "medium",
+   "severity_basis": "advisory rating",
    "exploited": null,
+   "exploited_quote": null,
    "status": "patched",
    "act_now": false,
    "affects": [
@@ -534,12 +627,23 @@
     }
    ],
    "actions": [
-    "Upgrade the client SDK and keep the new same-origin redirect behaviour.",
-    "Configure final URLs instead of relying on cross-origin redirects.",
-    "Rotate API keys and client secrets and revoke tokens if a redirect may have reached an untrusted host."
+    "Update @modelcontextprotocol/sdk to 1.32.0 or later",
+    "Update @modelcontextprotocol/client to 2.3.0 or later",
+    "Rotate API keys and client secrets and revoke tokens if a redirect may have reached a host you do not control.",
+    "Do not restore the old redirect behaviour on transports."
+   ],
+   "action_quotes": [
+    {
+     "action": "Rotate API keys and client secrets and revoke tokens if a redirect may have reached a host you do not control.",
+     "quote": "If a redirect may have reached a host you do not control, rotate the API keys and client_secret your application held and revoke its tokens."
+    },
+    {
+     "action": "Do not restore the old redirect behaviour on transports.",
+     "quote": "Setting redirectPolicy: 'follow' on a transport restores the old behaviour and the exposure."
+    }
    ],
    "who": [
-    "Apps using StreamableHTTPClientTransport or SSEClientTransport",
+    "MCP clients using HTTP or SSE transports",
     "Apps using the SDK's OAuth client functions"
    ],
    "published": "2026-10-20",
@@ -557,71 +661,16 @@
      "primary": true
     }
    ],
-   "quote": "In affected versions, the SDK's HTTP client transports and OAuth requests followed redirects to any origin.",
+   "quote": "On a 307 or 308 it also received the request body, including OAuth token requests with their refresh_token and client_secret .",
    "evidence": "official",
-   "severity_basis": "advisory rating",
+   "incident": null,
+   "children": [],
+   "merged_ids": [],
    "key": "threat:GHSA-6prh-2h8m-c8cw",
    "idents": [
     "CVE-2026-111769",
     "GHSA-6prh-2h8m-c8cw",
     "url:osv.dev/vulnerability/GHSA-6prh-2h8m-c8cw"
-   ],
-   "last_seen": "2026-10-21"
-  },
-  {
-   "id": "thr-2026-10-06-vllm-penalty-handler-denial-of-service",
-   "kind": "threat",
-   "category": "ai-framework-vuln",
-   "title": "vLLM penalty handler denial of service",
-   "headline": "Remote manipulation of vLLM's penalty handler can cause denial of service, with a public exploit",
-   "summary": "A flaw in vLLM affects the get_token_bin_counts_and_mask function in the Penalty Handler component. A remote attacker can manipulate it to cause denial of service, and an exploit has been released to the public. The advisory lists vLLM 0.32.0 as fixed.",
-   "severity": "medium",
-   "exploited": null,
-   "status": "patched",
-   "act_now": false,
-   "affects": [
-    {
-     "name": "vllm",
-     "ecosystem": "PyPI",
-     "versions": "< 0.32.0"
-    }
-   ],
-   "fixed_in": [
-    {
-     "name": "vllm",
-     "version": "0.32.0"
-    }
-   ],
-   "actions": [
-    "Upgrade vLLM to 0.32.0 or later.",
-    "Limit who can send requests to your vLLM servers until upgraded."
-   ],
-   "who": [
-    "Teams serving models with vLLM"
-   ],
-   "published": "2026-10-06",
-   "first_seen": "2026-10-21",
-   "updated": "2026-10-21",
-   "cves": [
-    "CVE-2026-105922"
-   ],
-   "kev": false,
-   "doc": "https://osv.dev/vulnerability/PYSEC-2026-4319",
-   "sources": [
-    {
-     "name": "OSV.dev",
-     "url": "https://osv.dev/vulnerability/PYSEC-2026-4319",
-     "primary": true
-    }
-   ],
-   "quote": "The exploit has been released to the public and may be used for attacks.",
-   "evidence": "official",
-   "severity_basis": "CVSS 5.3 (CNA)",
-   "key": "threat:PYSEC-2026-4319",
-   "idents": [
-    "CVE-2026-105922",
-    "PYSEC-2026-4319",
-    "url:osv.dev/vulnerability/PYSEC-2026-4319"
    ],
    "last_seen": "2026-10-21"
   }
