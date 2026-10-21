@@ -1175,6 +1175,7 @@ class ReachTests(unittest.TestCase):
         write_json(data / "threats.json", {"schema": "magpie.threats/1", "threats": [action_only, fixed]})
         self.assertEqual([r["id"] for r in R.threats("2026-10-22", data)], ["thr-fixed", "thr-action"])
         self.assertLess(T.rank_key(fixed), T.rank_key(action_only))
+        self.assertEqual(T.rank_key({**fixed, "fixed_in": [{"name": "a"}]}), T.rank_key(action_only))  # a name alone is no fix
 
     def test_a_package_is_its_name_in_its_ecosystem(self):
         twin = {"category": "ai-framework-vuln", "affects": [{"name": "core", "ecosystem": "npm"}, {"name": "core", "ecosystem": "PyPI"}],

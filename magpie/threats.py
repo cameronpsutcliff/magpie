@@ -1011,8 +1011,8 @@ def tier(t: dict) -> int:
 def rank_key(t: dict) -> tuple:
     """The order every surface shares (the day list puts new first, then this; the site and MCP use the same keys): tier,
     reach, exploited, a fixed version, official evidence."""
-    return (-tier(t), -(t.get("reach") or 0), t.get("exploited") is not True, not t.get("fixed_in"),
-            t.get("evidence") != "official")
+    fixed = any(isinstance(f, dict) and f.get("name") and f.get("version") for f in t.get("fixed_in") or [])
+    return (-tier(t), -(t.get("reach") or 0), t.get("exploited") is not True, not fixed, t.get("evidence") != "official")
 
 
 def _order(r: dict, date: str) -> tuple:
