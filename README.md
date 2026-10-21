@@ -62,18 +62,28 @@ serving stack, agent toolkit or SDK, a demonstrated attack on models or agents, 
 CISA KEV entry in the AI or developer stack. Each one rests on a primary document (an advisory, a CVE or GHSA record, an
 incident report, a root-program bug or the reporter's disclosure site).
 
-Sources are keyless and primary: the CISA KEV catalog, OSV.dev for a watch list of AI and developer packages, Mozilla's
-CA incident bugs, and `inbox/threats.json` for items added by hand (watch lists in `config/security.json`). Posts and
-news that name a vulnerability and link its advisory join through that link. One cached model call per batch writes the
-words; code checks every number, version and date against the documents, requires a verbatim quote, and sets every enum:
-severity from the source when it states one, KEV means exploited, and `evidence` and `act_now` are computed. Sightings
-of the same document merge into one threat. The day's list carries what was sighted today, then critical and high threats
-from the last week; `data/v1/threats.json` keeps them all.
+Sources are keyless and primary: the CISA KEV catalog, OSV.dev for a watch list of AI and developer packages (every
+page; an advisory only modified recently can update a recorded threat but never start one), Mozilla's CA incident bugs,
+and `inbox/threats.json` for items added by hand (watch lists in `config/security.json`). Posts and news that name a
+vulnerability and link its advisory join through that link. One cached model call per batch writes the words; candidates
+over the per-run limit wait in a queue and the receipt says so.
+
+Code decides every field that states a fact. Severity comes from the source when it states one; otherwise it is the
+editor's estimate, capped at high for trust infrastructure and labelled `severity_basis: "editor"`. `exploited` is true
+only for a KEV entry or when the primary document says so (the sentence is kept in `exploited_quote`), else null.
+`status` comes from the documents (an explicit dispute, a stated fixed version, a stated revocation, else active). Every
+package and version pair in `affects` and `fixed_in` is structured data or appears together in one line, table row or
+sentence of a source document; `actions` are built from those fixed versions, plus at most two editor actions that each
+rest on a verbatim quote. Sightings of the same document merge transitively (union-find over CVE, GHSA and OSV ids, bug
+numbers and URLs), and package advisories that belong to an umbrella incident carry its id in `incident` and follow it
+in the day's list. The day's list carries what was sighted today, then critical and high threats from the last week;
+`data/v1/threats.json` keeps them all.
 
 **No blank sections.** When a section's own list is empty (constraints, threats, possibilities, ripples, viewing), the
-day's `recent` block carries up to five of the most impactful recent items, each with its date, copied from the registers
-and the last 14 editions with no model call, and `findings` carries a dated line such as
-"No new constraint today. Latest: <title> (<date>)".
+day's `recent` block carries up to five of the most impactful recent items, each with its date, copied with no model
+call from the registers (the last 90 days; an older constraint only while it is in force) and the last 14 editions.
+`findings` carries a dated line such as "No new constraint today. Latest: <title> (<date>)" or, for threats, the most
+serious item still open; with nothing recent it says when the last one was recorded.
 
 ## Where it runs
 

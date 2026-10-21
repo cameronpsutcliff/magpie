@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import concurrent.futures as cf
 import datetime as dt
+import html as htmllib
 import json
 import math
 import re
@@ -20,10 +21,12 @@ import urllib.parse
 import urllib.request
 
 from ..items import Item
-from ..util import ROOT, UA, edition_date, fetch, load_json, parse_time, strip_html, url_key
+from ..util import ELLIPSIS, ROOT, TAG, UA, clean, edition_date, fetch, load_json, parse_time, strip_html, url_key, write_json
 
 CONFIG = ROOT / "config/security.json"
 INBOX = ROOT / "inbox/threats.json"
+RETRY = ROOT / "state/threats/osv-retry.json"  # advisories that could not be read; the next run reads them first
+NOTES: dict[str, dict] = {}  # what each collector could not do this run; the lane's receipt carries it
 KEV_URL = "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
 KEV_PAGE = "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve={}"
 OSV_BATCH = "https://api.osv.dev/v1/querybatch"
@@ -55,6 +58,21 @@ def _since(days: int) -> dt.date:
 def redact(text: str) -> str:
     """Email addresses in a document never reach the editor or the page."""
     return EMAIL.sub("[email]", text or "")
+
+
+_SPACES = re.compile(r"[ \t\r\f\v]+")
+
+
+def plain(text: str | None, limit: int | None = None) -> str:
+    """Tags and entities out, line breaks kept: a line, a table row or a sentence stays one unit for the proximity check."""
+    if not text:
+        return ""
+    text = htmllib.unescape(TAG.sub(" ", text))
+    lines = [clean(_SPACES.sub(" ", l)).strip() for l in text.split("\n")]
+    out = "\n".join(l for l in lines if l)
+    if limit and len(out) > limit:
+        out = out[: limit - 1].rsplit(" ", 1)[0] + ELLIPSIS
+    return out
 
 
 def norm_id(s: str) -> str:
@@ -208,8 +226,8 @@ def kev(days: int | None = None) -> list[Item]:
                    "source_severity": sev, "severity_basis": basis, "status_hint": "active", "category": "exploited-vuln",
                    "affects": [{"name": strip_html(f"{v.get('vendorProject', '')} {v.get('product', '')}".strip(), 120),
                                 "ecosystem": "product", "versions": ""}],
-                   "fixed_in": [], "published": v["dateAdded"], "doc": url, "text": redact(strip_html(text, 6000)),
-                   "refs": notes[:6] + [CVE_PAGE.format(cve)]},
+                   "fixed_in": [], "published": v["dateAdded"], "due": v.get("dueDate"), "doc": url,
+                   "text": redact(plain(text, 6000)), "refs": notes[:6] + [CVE_PAGE.format(cve)]},
         ))
     return out
 
@@ -257,8 +275,8 @@ def _osv_item(v: dict, group: list[dict]) -> Item:
         affects.append({"name": pkg["name"], "ecosystem": pkg.get("ecosystem") or "", "versions": versions})
         if fixed:
             fixed_in.append({"name": pkg["name"], "version": ", ".join(fixed)})
-    details = re.sub(r"[#*`>|]+", " ", v.get("details") or "")
-    text = redact(strip_html(f"{v.get('summary') or ''}\n{details}", 6000))
+    details = re.sub(r"[#*`>]+", " ", v.get("details") or "")
+    text = redact(plain(f"{v.get('summary') or ''}\n{details}", 6000))
     url = OSV_PAGE.format(vid)
     refs = [r["url"] for r in v.get("references") or [] if str(r.get("url", "")).startswith("https://")]
     malicious = vid.startswith("MAL-")
@@ -271,44 +289,73 @@ def _osv_item(v: dict, group: list[dict]) -> Item:
                "status_hint": None if malicious else ("patched" if fixed_in else "active"),
                "category": "supply-chain" if malicious else None, "withdrawn": bool(v.get("withdrawn")),
                "affects": affects[:6], "fixed_in": fixed_in[:8], "published": (v.get("published") or "")[:10] or None,
-               "modified": v.get("modified"), "doc": url, "text": text, "refs": refs[:8]},
+               "modified": v.get("modified"), "update_only": False, "doc": url, "text": text, "refs": refs[:8]},
     )
 
 
 PREFER = ("GHSA-", "MAL-", "PYSEC-", "GO-", "RUSTSEC-", "CVE-")
 
 
-def osv(days: int | None = None, packages: list[dict] | None = None) -> list[Item]:
-    """Advisories for the watched packages published, or changed, in the recent window. One record per vulnerability."""
+def osv(days: int | None = None, packages: list[dict] | None = None, max_pages: int = 50) -> list[Item]:
+    """Advisories for the watched packages changed in the recent window, every page of them, one record per vulnerability.
+
+    Only an advisory published inside the window may become a new threat; one that was only modified carries
+    `update_only` and can just update a threat already recorded under the same ids. Nothing is capped silently: an
+    advisory that cannot be read goes to a retry queue the next run reads first, and NOTES["osv"] says what happened.
+    """
     cfg = config()
     window = days or cfg.get("window_days", 4)
     since = dt.datetime.combine(_since(window), dt.time(), dt.timezone.utc)
-    young = since - dt.timedelta(days=30)  # an old advisory that was only re-edited is not news
     pkgs = packages if packages is not None else cfg.get("osv_packages", [])
+    note = {"pages": 0, "unread": [], "retried": 0, "update_only": 0}
+    NOTES["osv"] = note
     if not pkgs:
         return []
-    res = _post_json(OSV_BATCH, {"queries": [{"package": {"name": p["name"], "ecosystem": p["ecosystem"]}} for p in pkgs]})
-    ids = []
-    for r in res.get("results", []):
-        for v in r.get("vulns") or []:
-            t = parse_time(v.get("modified"))
-            if v.get("id") and t and t >= since and v["id"] not in ids:
-                ids.append(v["id"])
+    queries = [{"package": {"name": p["name"], "ecosystem": p["ecosystem"]}} for p in pkgs]
+    ids: list[str] = []
+    pending, tokens = list(range(len(queries))), {}
+    while pending:
+        if note["pages"] >= max_pages:
+            note["unfinished_queries"] = [queries[i]["package"]["name"] for i in pending]
+            break
+        batch = [dict(queries[i], **({"page_token": tokens[i]} if i in tokens else {})) for i in pending]
+        res = _post_json(OSV_BATCH, {"queries": batch})
+        note["pages"] += 1
+        nxt = []
+        for i, r in zip(pending, res.get("results", [])):
+            for v in r.get("vulns") or []:
+                t = parse_time(v.get("modified"))
+                if v.get("id") and t and t >= since and v["id"] not in ids:
+                    ids.append(v["id"])
+            if r.get("next_page_token"):
+                tokens[i] = r["next_page_token"]
+                nxt.append(i)
+        pending = nxt
+    retry = [i for i in load_json(RETRY, {}).get("ids", []) if i not in ids]
+    note["retried"] = len(retry)
+    ids += retry
 
     def one(vid):
         try:
             return json.loads(fetch(OSV_VULN.format(urllib.parse.quote(vid)), timeout=20, retries=1))
         except Exception:
-            return None  # one advisory that cannot be read never loses the rest
+            return None  # one advisory that cannot be read never loses the rest; it is retried next run
 
     with cf.ThreadPoolExecutor(max_workers=6) as pool:
-        records = [v for v in pool.map(one, ids[:80]) if v]
+        got = list(pool.map(one, ids))
+    note["unread"] = [vid for vid, v in zip(ids, got) if v is None]
+    try:
+        write_json(RETRY, {"ids": note["unread"]})
+    except OSError:
+        pass
+    records = [v for v in got if v]
     keep = []
     for v in records:
         pub, mod = parse_time(v.get("published")), parse_time(v.get("modified"))
         if v.get("withdrawn") or not pub:
             continue
-        if pub >= since or (mod and mod >= since and pub >= young):
+        if pub >= since or (mod and mod >= since):
+            v["_update_only"] = pub < since
             keep.append(v)
     # One vulnerability, many ids (GHSA, PYSEC, CVE): group by alias and lead with the best-described record.
     groups: list[list[dict]] = []
@@ -324,6 +371,8 @@ def osv(days: int | None = None, packages: list[dict] | None = None) -> list[Ite
         g.sort(key=lambda x: next((i for i, p in enumerate(PREFER) if norm_id(x["id"]).startswith(p)), len(PREFER)))
         lead = g[0]
         item = _osv_item(lead, g)
+        item.extra["update_only"] = all(x.get("_update_only") for x in g)
+        note["update_only"] += item.extra["update_only"]
         if not item.extra["source_severity"]:
             cve = next(iter(item.extra["cves"]), None)
             if cve:
@@ -359,7 +408,7 @@ def mozilla_ca(days: int | None = None) -> list[Item]:
     for b, first in zip(bugs, firsts):
         url = BZ_PAGE.format(b["id"])
         resolved = b.get("status") in ("RESOLVED", "VERIFIED") and b.get("resolution") == "FIXED"
-        text = redact(strip_html(f"{b['summary']}\n{first}", 6000))
+        text = redact(plain(f"{b['summary']}\n{first}", 6000))
         out.append(Item(
             source_id="mozilla-ca-incidents", source_kind="security", source_name="Mozilla CA incident reports (Bugzilla)",
             url=url, title=strip_html(b["summary"], 300), summary=redact(strip_html(first, 900)),
@@ -414,6 +463,7 @@ JOBS = {"cisa-kev": kev, "osv": osv, "mozilla-ca-incidents": mozilla_ca, "threat
 
 def collect_all() -> tuple[list[dict], list[dict]]:
     """Every security source, each on its own: (items, health)."""
+    NOTES.clear()
     items, health = [], []
     for sid, fn in JOBS.items():
         try:

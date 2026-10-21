@@ -194,9 +194,15 @@ def index_entry(day: dict) -> dict:
                             for c in (day.get("constraints") or {}).get("items", []) if c.get("new")]}
            if (day.get("constraints") or {}).get("items") else {}),
         **({"threats": [{"id": t["id"], "title": t["title"], "severity": t["severity"], "exploited": t.get("exploited")}
-                        for t in day["threats"] if t.get("first_seen") == day["date"]]}
+                        for t in stories(day["threats"]) if t.get("first_seen") == day["date"]]}
            if day.get("threats") else {}),
     }
+
+
+def stories(threats: list[dict]) -> list[dict]:
+    """The threats a reader sees as stories: a package advisory that belongs to a listed incident is told through it."""
+    ids = {t["id"] for t in threats}
+    return [t for t in threats if t.get("incident") not in ids]
 
 
 SITE = "https://www.cameronsutcliff.com/magpie"
@@ -235,12 +241,15 @@ def write_feed(limit: int = 30) -> None:
             cons = "<p><strong>Still open:</strong> " + "; ".join(f'<a href="{escape(c["doc_url"] or c["url"])}">{escape(c["headline"])}</a> ({escape(c.get("first_seen") or "")})' for c in listed[:3]) + "</p>"
         else:
             cons = f"<p><strong>Constraints:</strong> {escape(found['constraints'])}</p>" if found.get("constraints") else ""
-        day_threats = d.get("threats") or []
+        day_threats = stories(d.get("threats") or [])
         new_threats = [t for t in day_threats if t.get("first_seen") == d["date"]]
 
         def threat_link(t):
-            marks = ", ".join(filter(None, [t.get("severity"), "exploited" if t.get("exploited") else "", t.get("status")]))
-            return f'<a href="{escape(t.get("doc") or "")}">{escape(t["title"])}</a> ({escape(marks)})'
+            marks = ", ".join(filter(None, [(t.get("severity") or "") + (" (editor's estimate)" if t.get("severity_basis") == "editor" else ""),
+                                            "exploited" if t.get("exploited") else "", t.get("status")]))
+            kids = len(t.get("children") or [])
+            more = f"; {kids} package advisor{'y' if kids == 1 else 'ies'}" if kids else ""
+            return f'<a href="{escape(t.get("doc") or "")}">{escape(t["title"])}</a> ({escape(marks + more)})'
         if new_threats:
             thr = "<p><strong>Threats:</strong> " + "; ".join(threat_link(t) for t in new_threats[:3]) + "</p>"
         elif day_threats:

@@ -2,8 +2,10 @@
 
 `recent.<section>` is filled only when the day's own list for that section is empty. Constraints and threats come
 from their registers; possibilities, ripples and viewing from the last 14 editions. Every line is copied from stored,
-already grounded fields: no model call, no new words. `findings` carries one code-built line per empty section
-("No new constraint today. Latest: <title> (<date>)"), so nothing generated ever says only that nothing happened.
+already grounded fields: no model call, no new words. Registers count as recent for 90 days; a constraint older than
+that is shown only while it is in force. `findings` carries one code-built line per empty section ("No new constraint
+today. Latest: <title> (<date>)"; for threats, the most serious item still open), and when nothing is recent it says
+when the last one was recorded, so nothing generated ever says only that nothing happened.
 """
 from __future__ import annotations
 
@@ -13,7 +15,7 @@ from .util import load_json
 
 LIMIT = 5
 EDITIONS = 14      # editions read for possibilities, ripples and viewing
-REGISTER_DAYS = 30  # a register item counts as recent this long after Magpie first saw it
+REGISTER_DAYS = 90  # a register item counts as recent this long after Magpie first saw it
 SEV_RANK = {"critical": 3, "high": 2, "medium": 1, "low": 0}
 NOUN = {"constraints": "constraint", "threats": "threat", "possibilities": "possibility", "ripples": "ripple",
         "viewing": "video pick"}
@@ -38,30 +40,48 @@ def editions(date: str, data_dir, days: int = EDITIONS) -> list[dict]:
     return out
 
 
-def _window(rows: list[dict], date: str, field: str = "first_seen") -> list[dict]:
-    """Register rows seen on or before `date`, the last REGISTER_DAYS of them when there are any, else all of them."""
-    rows = [r for r in rows if r.get(field) and r[field] <= date]
+def _recorded(rows: list[dict], date: str) -> list[dict]:
+    """Register rows Magpie had recorded by `date`."""
+    return [r for r in rows if r.get("first_seen") and r["first_seen"] <= date]
+
+
+def _within(rows: list[dict], date: str, days: int = REGISTER_DAYS) -> list[dict]:
     d0 = dt.date.fromisoformat(date)
-    near = [r for r in rows if (d0 - dt.date.fromisoformat(r[field][:10])).days <= REGISTER_DAYS]
-    return near or rows
+    return [r for r in rows if (d0 - dt.date.fromisoformat(r["first_seen"][:10])).days <= days]
 
 
 def constraints(date: str, data_dir) -> list[dict]:
-    """In force first, then newest."""
-    rows = [r for r in load_json(data_dir / "constraints.json", {}).get("items", []) if r.get("status") != "withdrawn"]
-    rows = sorted(_window(rows, date), key=lambda r: (r.get("status") != "in_force", _desc(r["first_seen"]), -(r.get("signal") or 0)))
+    """In force first, then newest, from the last 90 days. With nothing that recent, older actions still in force."""
+    rows = _recorded([r for r in load_json(data_dir / "constraints.json", {}).get("items", []) if r.get("status") != "withdrawn"], date)
+    rows = _within(rows, date) or [r for r in rows if r.get("status") == "in_force"]
+    rows = sorted(rows, key=lambda r: (r.get("status") != "in_force", _desc(r["first_seen"]), -(r.get("signal") or 0)))
     return [{"date": r["first_seen"], "id": r["id"], "title": r.get("headline") or r.get("title") or "",
              "status": r.get("status"), "doc": r.get("doc_url") or r.get("url"), "why": r.get("why") or r.get("harder") or ""}
             for r in rows[:LIMIT] if r.get("id")]
 
 
+def _threat_rank(r: dict) -> tuple:
+    return (-SEV_RANK.get(r.get("severity") or "", 0), r.get("exploited") is not True, _desc(r["first_seen"]))
+
+
 def threats(date: str, data_dir) -> list[dict]:
-    """Severity, then exploited, then newest."""
-    rows = load_json(data_dir / "threats.json", {}).get("threats", [])
-    rows = sorted(_window(rows, date), key=lambda r: (-SEV_RANK.get(r.get("severity") or "", 0), r.get("exploited") is not True,
-                                                      _desc(r["first_seen"])))
+    """Severity, then exploited, then newest, from the last 90 days. A package advisory that belongs to an incident is
+    shown through the incident."""
+    rows = _within(_recorded(load_json(data_dir / "threats.json", {}).get("threats", []), date), date)
+    rows = sorted((r for r in rows if not r.get("incident")), key=_threat_rank)
     return [{"date": r["first_seen"], "id": r["id"], "title": r.get("title") or "", "severity": r.get("severity"),
-             "doc": r.get("doc"), "why": r.get("headline") or ""} for r in rows[:LIMIT] if r.get("id")]
+             "status": r.get("status"), "doc": r.get("doc"), "why": r.get("headline") or ""} for r in rows[:LIMIT] if r.get("id")]
+
+
+def last_recorded(section: str, date: str, data_dir) -> str | None:
+    """When nothing is recent: the newest entry the register holds, as an honest line."""
+    name, field = {"constraints": ("constraints.json", "items"), "threats": ("threats.json", "threats")}[section]
+    rows = _recorded(load_json(data_dir / name, {}).get(field, []), date)
+    if not rows:
+        return None
+    r = max(rows, key=lambda r: r["first_seen"])
+    title = r.get("title") if section == "threats" else (r.get("headline") or r.get("title"))
+    return f"No {section} recorded since {r['first_seen']} ({title}, {r.get('status') or 'status unknown'})"
 
 
 def _spread(rows: list[tuple[int, str, dict]]) -> list[dict]:
@@ -141,9 +161,18 @@ def build(day: dict, data_dir) -> dict:
 
 
 def finding(section: str, rows: list[dict]) -> str | None:
-    """The line for an empty section, built from its latest recent item; None when there is nothing to point to."""
+    """The line for an empty section, from its recent items; None when there is nothing to point to.
+
+    Threats lead with the most serious item still open, in the same ranking as recent.threats; the other sections with
+    the newest item."""
     if not rows:
         return None
+    if section == "threats":
+        r = next((x for x in rows if x.get("status") != "patched"), None)
+        if r:
+            return f"No new threat today. Most serious still open: {r['title']} ({r.get('severity')}, {r['date']})"
+        r = rows[0]
+        return f"No new threat today. Most serious recent: {r['title']} ({r.get('severity')}, {r.get('status')}, {r['date']})"
     r = max(rows, key=lambda x: x.get("date") or "")  # the newest; the first listed among equals
     what = f"{r['from']}, {r['why']}" if section == "ripples" else r.get("title")
     if not what:
@@ -162,5 +191,11 @@ def attach(day: dict, data_dir) -> dict:
         recent = {}
     day["recent"] = recent
     lines = {s: finding(s, rows) for s, rows in recent.items()}
+    for s in ("constraints", "threats"):
+        if s in empty_sections(day) and s not in recent:
+            try:
+                lines[s] = last_recorded(s, day["date"], data_dir)
+            except Exception:
+                lines[s] = None
     day["findings"] = {s: line for s, line in lines.items() if line}
     return recent

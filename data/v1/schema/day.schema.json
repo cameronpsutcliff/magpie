@@ -609,7 +609,7 @@
   },
   "findings": {
    "type": "object",
-   "description": "One code-built line per empty section, from its latest recent item, e.g. \"No new constraint today. Latest: <title> (<date>)\".",
+   "description": "One code-built line per empty section: \"No new constraint today. Latest: <title> (<date>)\"; for threats \"No new threat today. Most serious still open: <title> (<severity>, <date>)\"; with nothing recent, \"No threats recorded since <date> (<title>, <status>)\".",
    "properties": {
     "constraints": {
      "type": "string"
@@ -1412,21 +1412,21 @@
       "high",
       "medium"
      ],
-     "description": "From the source when it states one (CVSS or the vendor's rating); otherwise proposed by the editor and clamped by code. Anything below medium is dropped."
+     "description": "From the source when it states one (the advisory's rating, a CVSS score, the CVE record). Otherwise the editor's estimate, clamped, capped at high for trust infrastructure, with severity_basis \"editor\" (show it as an editor's estimate). Anything below medium is dropped."
     },
     "severity_basis": {
      "type": [
       "string",
       "null"
      ],
-     "description": "Where the severity came from: the advisory's rating, a CVSS score, the CVE record, editor or default."
+     "description": "Where the severity came from: advisory rating, CVSS <score>, CVSS <score> (CNA or ADP), or editor."
     },
     "exploited": {
      "type": [
       "boolean",
       "null"
      ],
-     "description": "true for every CISA KEV entry, or when the document says so; null when unknown."
+     "description": "true only for a CISA KEV entry or when the primary document says so in an unnegated sentence (see exploited_quote); otherwise null, never false. Never set by the model."
     },
     "status": {
      "enum": [
@@ -1434,7 +1434,8 @@
       "mitigated",
       "patched",
       "disputed"
-     ]
+     ],
+     "description": "Set by code from the documents: disputed when one disputes it explicitly, patched when a fixed version is stated, mitigated when a revocation or block is stated, else active."
     },
     "act_now": {
      "type": "boolean",
@@ -1458,7 +1459,8 @@
         "type": "string"
        }
       }
-     }
+     },
+     "description": "Each package and its versions come from structured data or appear together in one line, table row or sentence of a source document."
     },
     "fixed_in": {
      "type": "array",
@@ -1475,13 +1477,15 @@
         "type": "string"
        }
       }
-     }
+     },
+     "description": "As affects: structured, or package and version together in one line, table row or sentence of a source document."
     },
     "actions": {
      "type": "array",
      "items": {
       "type": "string"
-     }
+     },
+     "description": "Built by code from fixed_in (\"Update <package> to <version> or later\"), then at most two editor actions, each backed by a verbatim quote (action_quotes)."
     },
     "who": {
      "type": "array",
@@ -1571,12 +1575,59 @@
       "type": "string"
      },
      "description": "Every document identity merged into it."
+    },
+    "exploited_quote": {
+     "type": [
+      "string",
+      "null"
+     ],
+     "description": "The words of the primary document that state exploitation, verbatim."
+    },
+    "action_quotes": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "action",
+       "quote"
+      ],
+      "properties": {
+       "action": {
+        "type": "string"
+       },
+       "quote": {
+        "type": "string"
+       }
+      }
+     },
+     "description": "The editor's actions and the verbatim sentence from the primary document behind each."
+    },
+    "incident": {
+     "type": [
+      "string",
+      "null"
+     ],
+     "description": "For a package advisory that belongs to an umbrella incident: the umbrella's id. Found by code: the advisory cites the incident's documents, the incident's document links the advisory, or both name the same package fixed in the same version within 30 days."
+    },
+    "children": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "For an umbrella incident: the ids of its package advisories, which follow it in the day's list. Show them nested under the umbrella, not as separate stories."
+    },
+    "merged_ids": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Ids of recorded threats merged into this one because they share a document identity, directly or through another sighting; old links to them resolve here."
     }
    }
   },
   "recent": {
    "type": "object",
-   "description": "For each section whose own list is empty today, up to 5 of the most impactful recent items, each with its date. Copied from stored fields of the registers and the last 14 editions; no model call.",
+   "description": "For each section whose own list is empty today, up to 5 of the most impactful recent items, each with its date. Copied from stored fields of the registers (the last 90 days; older constraints only while in force) and the last 14 editions; no model call. Package advisories that belong to an incident are left to the incident.",
    "properties": {
     "constraints": {
      "type": "array",
@@ -1650,6 +1701,12 @@
        },
        "why": {
         "type": "string"
+       },
+       "status": {
+        "type": [
+         "string",
+         "null"
+        ]
        }
       }
      }
