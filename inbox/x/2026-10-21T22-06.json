@@ -1,0 +1,818 @@
+{
+ "ran_at": "2026-10-21T22:06:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v4",
+ "since": "2026-10-21T18:10:00Z",
+ "queries": 10,
+ "calls": 28,
+ "items": [
+  {
+   "title": "Anthropic opens a research preview of Claude Duet, a proactive agent app",
+   "url": "https://x.com/claudeai/status/2112984664256241837",
+   "handle": "@claudeai",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Claude Duet is a standalone app (iOS, Android, claude.ai) where Claude, running on Opus 5.5 in its own cloud VM with a browser, checks connected apps every few hours, sends a morning brief, works on tasks in the background and asks approval before sending, paying, signing or deleting. It is a waitlisted research preview for US Pro and Max subscribers and shares their usage limits.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://claude.com/resources/articles/claude-duet",
+    "https://support.claude.com/es/articles/17631495-comienza-con-claude-duet"
+   ],
+   "vendor": "Anthropic",
+   "posted_at": "2026-10-21T19:09:35Z",
+   "metrics": {
+    "likes": 27628,
+    "reposts": 1782,
+    "quotes": 2187,
+    "replies": 1185,
+    "views": 2364523
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Waitlist only, US Pro and Max only; repliers ask how long approval takes, who decides what needs attention, and some refuse to give it access to sensitive accounts.",
+    "source": "https://x.com/67inSeattle/status/2113029315294376033"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Many are excited about an agent that comes to you first and compare it with OpenAI Dots, Meta Muse and Grok Bot; others complain it is US only and waitlisted, question how it judges when to interrupt, and a few distrust giving it account access. No one reports using it yet.",
+    "tried": false,
+    "replies_read": 24
+   }
+  },
+  {
+   "title": "OpenAI models and Codex workflows are coming to Google Cloud Model Garden",
+   "url": "https://x.com/OpenAI/status/2112988118471295323",
+   "handle": "@OpenAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "OpenAI's frontier models and Codex agentic workflows will be sold through Google Cloud's Model Garden and Marketplace, so GCP customers can use them under Google Cloud access controls and draw down existing GCP commitments; OpenAI says the models will also come to Google Antigravity and the Gemini Agent. General availability is planned in the coming weeks, with access by request now.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [
+    "https://openai.com/index/openai-models-google-cloud/"
+   ],
+   "vendor": "OpenAI and Google Cloud",
+   "posted_at": "2026-10-21T19:23:19Z",
+   "metrics": {
+    "likes": 2100,
+    "reposts": 126,
+    "quotes": 65,
+    "replies": 180,
+    "views": 147773
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Not generally available yet (request access, GA in the coming weeks); repliers ask about data region, per-run spend limits and latency versus OpenAI's own API.",
+    "source": "https://x.com/BertEuraika/status/2113017081277165737"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Replies and quotes are mostly about procurement (spending existing GCP commitments, no cloud migration) and jokes about the OpenAI and Google rivalry; practical questions cover EU data residency, per-run budget caps and latency, and some expect OpenAI models in Antigravity. No one has tried it yet.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Claude API ships version 2026-10-21, its first new API version since 2023",
+   "url": "https://x.com/ClaudeDevs/status/2113013247209021918",
+   "handle": "@ClaudeDevs",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Anthropic released Claude API version 2026-10-21, the first official version since 2023-06-01, and plans more frequent versions so breaking changes land before a new model requires them. Per replies and quote posts, it removes temperature, top_p and top_k from the Messages API (sending them returns a 400), changes some document and citation handling and renames Admin API fields; new major SDK versions use it, and 2023-06-01 is not deprecated.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Anthropic",
+   "posted_at": "2026-10-21T21:03:10Z",
+   "metrics": {
+    "likes": 1347,
+    "reposts": 38,
+    "quotes": 17,
+    "replies": 53,
+    "views": 70025
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Developers welcome explicit versioning but the removal of temperature, top_p and top_k dominates: several say it breaks wrappers that pin temperature 0 or use custom sampling, and many plan to stay pinned to 2023-06-01; an SDK maintainer notes new major SDK versions with a few breaking changes.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Gemini 4 Argon demo: an interactive 3D human anatomy model built from three open datasets",
+   "url": "https://x.com/GoogleDeepMind/status/2112974723659247896",
+   "handle": "@GoogleDeepMind",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Google DeepMind shows Gemini 4 Argon combining three open anatomy datasets into an interactive 3D visualization where layers can be toggled in motion, muscles isolated and a beating heart explored. It is a capability demo in a video; no public link or code was shared.",
+   "kind": "demo",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Google DeepMind",
+   "posted_at": "2026-10-21T18:30:05Z",
+   "metrics": {
+    "likes": 1103,
+    "reposts": 81,
+    "quotes": 19,
+    "replies": 114,
+    "views": 45648
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Video-only demo with no public link or repo; repliers asking for the project were told none is available yet.",
+    "source": "https://x.com/grok/status/2113002773918724118"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers find it impressive for teaching anatomy and note that registering three open datasets is the hard part, but several ask for a link or repo and one wants an anatomist to verify the layers.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Hermes Agent closes Jensen Huang's GTC Berlin keynote by building a robot training environment",
+   "url": "https://x.com/NousResearch/status/2113010017645244623",
+   "handle": "@NousResearch",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "In NVIDIA's GTC Berlin keynote, a customized open-source Hermes Agent was set up from one prompt on an RTX Spark, then planned an obstacle course with Nemotron, had another model build it with FreeCAD, Omniverse, Blender, Newton and Isaac Lab, and trained simulated Hugging Face Microduck robots until a policy was ready for the real robot.",
+   "kind": "demo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/NousResearch/hermes-agent"
+   ],
+   "vendor": "Nous Research",
+   "posted_at": "2026-10-21T20:50:20Z",
+   "metrics": {
+    "likes": 1612,
+    "reposts": 129,
+    "quotes": 24,
+    "replies": 85,
+    "views": 46429
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "A stage demo; repliers note the sim-to-real step only counts once the learned policy is shown working on hardware without heavy retraining.",
+    "source": "https://x.com/SlimAssiliX/status/2113027728928587897"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Overwhelmingly celebratory, with many crediting Nous and open-source local agents; a few call it a hardware sales pitch and one asks for proof of sim-to-real transfer. Some users describe running their own Hermes setups.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Grok Bot can now build reports, memos and dashboards as live pages",
+   "url": "https://x.com/bot/status/2112992872857252082",
+   "handle": "@bot",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Grok Bot can now produce pages (reports, memos and dashboards with tables and charts) that the user edits together with the bot or has the bot keep up to date, saved in a library; users report it can also publish simple static sites.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Grok Bot",
+   "posted_at": "2026-10-21T19:42:13Z",
+   "metrics": {
+    "likes": 4199,
+    "reposts": 281,
+    "quotes": 153,
+    "replies": 546,
+    "views": 431668
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Users who tried it describe live dashboards and visual explainers replacing walls of chat text and simple published sites; many replies ask their own bots for use cases, and one notes it resembles a canvas feature elsewhere.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Fireworks Ultrafast serves DeepSeek V4.1 Flash at 1,521+ tokens per second",
+   "url": "https://x.com/FireworksAI_HQ/status/2112973992097468795",
+   "handle": "@FireworksAI_HQ",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Fireworks says its Ultrafast mode runs DeepSeek V4.1 Flash 1017 at more than 1,521 tokens per second, shown generating a Tetris game in 11 seconds, about 7x faster than Claude Opus 5.5. It is a private preview behind a waitlist.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Fireworks AI",
+   "posted_at": "2026-10-21T18:27:11Z",
+   "metrics": {
+    "likes": 504,
+    "reposts": 31,
+    "quotes": 10,
+    "replies": 18,
+    "views": 20252
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Waitlist-only vendor demo; repliers ask for cost per task and pricing, whether the speed holds outside ideal low-concurrency runs, and whether the Tetris code passes tests.",
+    "source": "https://x.com/abenz95/status/2113011819673743775"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Many are excited about iteration at this speed and say tool calls become the bottleneck; others ask about pricing, OpenRouter availability, an intelligence benchmark and where the 11-second clock stops. Only apparently affiliated quoters report running it.",
+    "tried": false,
+    "replies_read": 21
+   }
+  },
+  {
+   "title": "Vals AI releases the Vals Finance Index",
+   "url": "https://x.com/ValsAI/status/2113020631147311482",
+   "handle": "@ValsAI",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "The Vals Finance Index combines Finance Agent v2.1, Excel Modeling Benchmark v1.1 and Tax Agent Bench, weighted by each sector's share of US GDP, to measure finance work. Claude Opus 5.5 leads at 65.6% with Gemini 4 Argon at 64.9% within the margin of error, no model leads every component, and even leaders fail more than half the tax questions.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Vals AI",
+   "posted_at": "2026-10-21T21:32:31Z",
+   "metrics": {
+    "likes": 30,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 1,
+    "views": 947
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "none",
+    "summary": "No outside replies yet; the thread itself adds the method and the leaderboard.",
+    "tried": false,
+    "replies_read": 0
+   }
+  },
+  {
+   "title": "Modal releases an LLM training library for RL and fine-tuning on its clusters",
+   "url": "https://x.com/modal/status/2113019312474878265",
+   "handle": "@modal",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Modal launched a training library with building blocks, tuned defaults and observability for production LLM training, including long-context RL, on its on-demand multi-node GPU clusters. Customer examples include 64K-context RL runs on DeepSeek V4.1 Flash and 256K-context training on Kimi and DeepSeek models.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://modal.com/blog/get-started-with-llm-training-on-modal"
+   ],
+   "vendor": "Modal",
+   "posted_at": "2026-10-21T21:27:16Z",
+   "metrics": {
+    "likes": 41,
+    "reposts": 7,
+    "quotes": 7,
+    "replies": 2,
+    "views": 1674
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "none",
+    "summary": "No substantive replies yet; the only outside reply is an automated pitch.",
+    "tried": false,
+    "replies_read": 1
+   }
+  },
+  {
+   "title": "MiniMax M3.1 Flash plugs into SGLang Omni for interruptible voice agents",
+   "url": "https://x.com/MiniMax_AI/status/2112987176053215566",
+   "handle": "@MiniMax_AI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "SGLang Omni, an interactive runtime with streaming, conversation state and playback-aware interruption handling, now runs MiniMax M3.1 Flash as the LLM stage next to local speech recognition and TTS, so developers can build voice agents that users can talk over and redirect mid-task.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://www.sglang.io/blog/omni-interactive-runtime"
+   ],
+   "vendor": "MiniMax and SGLang",
+   "posted_at": "2026-10-21T19:19:34Z",
+   "metrics": {
+    "likes": 91,
+    "reposts": 9,
+    "quotes": 7,
+    "replies": 8,
+    "views": 5051
+   },
+   "confirmed_by": [
+    "@sgl_project"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "VS Code 1.143 makes the Copilot SDK harness the default and adds model comparisons",
+   "url": "https://x.com/code/status/2113005484298883281",
+   "handle": "@code",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "The latest VS Code release makes the Copilot SDK-based agent harness the default for new chat sessions, adds side-by-side model comparisons and shows a file list for multi-file diffs.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://code.visualstudio.com/updates/v1_143"
+   ],
+   "vendor": "Microsoft",
+   "posted_at": "2026-10-21T20:32:19Z",
+   "metrics": {
+    "likes": 60,
+    "reposts": 9,
+    "quotes": 0,
+    "replies": 8,
+    "views": 5780
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "TorchTitan adds 5D parallelism for new open models and the TitanRL post-training framework",
+   "url": "https://x.com/PyTorch/status/2112997399081676921",
+   "handle": "@PyTorch",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "TorchTitan, PyTorch's native large-scale training stack, adds full 5D parallelism for DeepSeek-V4, Qwen3.5, Kimi K3 and Muse Spark Open, a TitanRL framework for post-training and agentic workloads, FlexShard (up to 79% less distributed Muon optimizer time) and checkpointing that blocks for 34 ms on 512 GPUs.",
+   "kind": "repo",
+   "evidence": "measured",
+   "links": [
+    "https://pytorch.org/blog/torchtitan-update-new-sota-models-performance-at-scale-titanrl/"
+   ],
+   "vendor": "PyTorch",
+   "posted_at": "2026-10-21T20:00:12Z",
+   "metrics": {
+    "likes": 10,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 1838
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "vLLM-TorchTPU brings native PyTorch vLLM serving to Google TPUs",
+   "url": "https://x.com/vllm_project/status/2112979682421596162",
+   "handle": "@vllm_project",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Built with Google and Inferact, vLLM-TorchTPU runs vLLM on TPUs through native PyTorch (TorchTPU), with prefix caching, speculative decoding and disaggregated serving, following the SGLang-TorchTPU port earlier today.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "vLLM, Google and Inferact",
+   "posted_at": "2026-10-21T18:49:48Z",
+   "metrics": {
+    "likes": 48,
+    "reposts": 10,
+    "quotes": 1,
+    "replies": 1,
+    "views": 2931
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Tinker adds StableReinforce to keep off-policy RL runs from collapsing",
+   "url": "https://x.com/tinkerapi/status/2113019700661862805",
+   "handle": "@tinkerapi",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Thinking Machines' Tinker training API adds StableReinforce, a loss for off-policy and async RL that is meant to keep runs stable when the learner drifts from the sampler through staleness or numerical mismatch.",
+   "kind": "technique",
+   "evidence": "artifact",
+   "links": [
+    "https://tinker-docs.thinkingmachines.ai/tinker/losses/stable-reinforce/"
+   ],
+   "vendor": "Thinking Machines",
+   "posted_at": "2026-10-21T21:28:49Z",
+   "metrics": {
+    "likes": 48,
+    "reposts": 4,
+    "quotes": 1,
+    "replies": 2,
+    "views": 1631
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "FastH3 Omni video generation runs locally on DGX Spark, RTX GPUs and Apple MLX",
+   "url": "https://x.com/haoailab/status/2112988929112826177",
+   "handle": "@haoailab",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "FastVideo's distilled FastH3 Omni now runs locally with an 8-step NVFP4 checkpoint: a 5 second 480p clip from a photo and prompt takes about 3 minutes on one DGX Spark (about 2 on two), and FastH3 text-to-audio-video takes 52.6 s on one Spark. A cookbook and Hugging Face weights are published.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [
+    "https://haoailab.com/blogs/fasth3-omni-local/",
+    "https://huggingface.co/collections/FastVideo/fasth3-omni",
+    "https://haoailab.com/FastVideo/cookbook/"
+   ],
+   "vendor": "Hao AI Lab (FastVideo)",
+   "posted_at": "2026-10-21T19:26:32Z",
+   "metrics": {
+    "likes": 27,
+    "reposts": 10,
+    "quotes": 4,
+    "replies": 2,
+    "views": 2939
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Rapid-MLX publishes a high-fidelity MLX quant of DeepSeek-V4.1-Flash-1017 for 256GB Macs",
+   "url": "https://x.com/rapidmlx/status/2113026522890273123",
+   "handle": "@rapidmlx",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Rapid-MLX released an MLX quantization of DeepSeek-V4.1-Flash-1017 for Macs with 256GB or more that keeps all experts, uses sensitivity-driven mixed precision and streams Engram tables from SSD; it reports 35 to 44% lower mean KL and 85.1% top-1 agreement versus 79.3% for the leading 2-bit MLX quant.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/rapid-mlx/DeepSeek-V4.1-Flash-1017-MLX"
+   ],
+   "vendor": "Rapid-MLX",
+   "posted_at": "2026-10-21T21:55:55Z",
+   "metrics": {
+    "likes": 6,
+    "reposts": 0,
+    "quotes": 1,
+    "replies": 1,
+    "views": 94
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "NVIDIA's sub-1B Nemotron 3.5 Parse takes first place on ParseBench",
+   "url": "https://x.com/jerryjliu0/status/2113008819328700439",
+   "handle": "@jerryjliu0",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "LlamaIndex reports that NVIDIA's open-weight Nemotron 3.5 Parse, under 1B parameters, ranks first on ParseBench, its real-world document parsing benchmark covering more than 150 frontier, open and specialized systems.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://www.parsebench.ai/",
+    "https://huggingface.co/blog/nvidia/nemotron-retriever-world-class-agentic-retrieval"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-10-21T20:45:34Z",
+   "metrics": {
+    "likes": 117,
+    "reposts": 9,
+    "quotes": 8,
+    "replies": 8,
+    "views": 7900
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Perplexity's JOLT post-training matches GRPO on MATH with 6.5x fewer training tokens",
+   "url": "https://x.com/perplexity_ai/status/2112978260808376411",
+   "handle": "@perplexity_ai",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "JOLT is a post-training method in which one model acts as both teacher and student, with the teacher trained to give feedback the student can use; Perplexity reports it matched GRPO accuracy on MATH using 6.5x fewer training tokens.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://www.perplexity.ai/hub/blog/a-good-teacher-meets-the-student-where-they-are"
+   ],
+   "vendor": "Perplexity",
+   "posted_at": "2026-10-21T18:44:09Z",
+   "metrics": {
+    "likes": 157,
+    "reposts": 11,
+    "quotes": 6,
+    "replies": 34,
+    "views": 19681
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Fireworks fine-tunes Meta's Muse Glimmer on Kalshi outcomes for forecasting",
+   "url": "https://x.com/FireworksAI_HQ/status/2113011534909800864",
+   "handle": "@FireworksAI_HQ",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Fireworks says one SFT pass on Kalshi market outcomes put Meta's Muse Glimmer 11.2 points ahead of a baseline in prediction accuracy and returned +7.1% versus -8.1% in a hypothetical backtest; it published the recipe, with free SFT for the model through Nov 30.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://fireworks.ai/blog/train-muse-glimmer-for-free"
+   ],
+   "vendor": "Fireworks AI",
+   "posted_at": "2026-10-21T20:56:22Z",
+   "metrics": {
+    "likes": 38,
+    "reposts": 3,
+    "quotes": 6,
+    "replies": 0,
+    "views": 1565
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Vendor-run backtest with hypothetical money, posted alongside a free-training promotion; nothing independent yet.",
+    "source": null
+   }
+  },
+  {
+   "title": "HeyGen Video and HeyGen Voice models go live on fal",
+   "url": "https://x.com/fal/status/2113013413592842486",
+   "handle": "@fal",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "HeyGen's video model (text, image and reference to video with dialogue, ambience and effects, 5 to 15 second clips up to 2K) and its voice model (39 languages, instant voice cloning, a faster Turbo tier) are now available through fal's API.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "HeyGen",
+   "posted_at": "2026-10-21T21:03:50Z",
+   "metrics": {
+    "likes": 31,
+    "reposts": 5,
+    "quotes": 3,
+    "replies": 10,
+    "views": 2963
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "E2B cookbook: Pydantic AI coding agents that survive worker crashes via Temporal",
+   "url": "https://x.com/e2b/status/2113019428493475980",
+   "handle": "@e2b",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "A new E2B cookbook example shows a Temporal workflow handing a Pydantic AI coding agent's task to a new worker after a crash, resuming in the same E2B sandbox with files and diagnosis intact.",
+   "kind": "technique",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/e2b-dev/e2b-cookbook/tree/main/examples/pydantic-ai-temporal-python",
+    "https://docs.e2b.dev/agents/pydantic-ai"
+   ],
+   "vendor": "E2B",
+   "posted_at": "2026-10-21T21:27:44Z",
+   "metrics": {
+    "likes": 14,
+    "reposts": 1,
+    "quotes": 3,
+    "replies": 2,
+    "views": 618
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "alphaXiv's open-source OpenResearch runs research tasks locally with Flint",
+   "url": "https://x.com/askalphaxiv/status/2113020369200353455",
+   "handle": "@askalphaxiv",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "alphaXiv's OpenResearch agent can now run research tasks fully on a laptop using Recursive's open-weight Flint coding model, which it reports at 125+ tokens per second on a MacBook Pro.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/alphaXiv/OpenResearch",
+    "https://huggingface.co/RecursiveSI/flint"
+   ],
+   "vendor": "alphaXiv",
+   "posted_at": "2026-10-21T21:31:28Z",
+   "metrics": {
+    "likes": 11,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 757
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Qwen3.8 27B on one RTX 5090 builds an animated voxel diorama in an hour unattended",
+   "url": "https://x.com/witcheer/status/2112974700800299344",
+   "handle": "@witcheer",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Hands-on test: given one prompt and an hour with the /goal command in Hermes Agent, Qwen3.8 27B running locally on an RTX 5090 built an interactive voxel diorama of Mont-Saint-Michel with a tide loop, weather and night toggles.",
+   "kind": "demo",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Qwen (Alibaba)",
+   "posted_at": "2026-10-21T18:30:00Z",
+   "metrics": {
+    "likes": 29,
+    "reposts": 2,
+    "quotes": 1,
+    "replies": 8,
+    "views": 1346
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single video of the output; no code or metrics to check.",
+    "source": null
+   }
+  },
+  {
+   "title": "FlashMap: flow-map speculative decoding for over 6x faster inference on Qwen3-8B",
+   "url": "https://x.com/jeff_shen_/status/2112379880390131738",
+   "handle": "@jeff_shen_",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "FlashMap is a speculative decoding algorithm based on flow maps; the authors report more than 6x faster inference on Qwen3-8B and have released the paper, code and weights.",
+   "kind": "technique",
+   "evidence": "artifact",
+   "links": [
+    "https://arxiv.org/abs/2610.24365",
+    "https://github.com/al-jshen/flashmap",
+    "https://jshen.net/flashmap"
+   ],
+   "vendor": "FlashMap authors",
+   "posted_at": "2026-10-20T03:06:24Z",
+   "metrics": {
+    "likes": 515,
+    "reposts": 52,
+    "quotes": 8,
+    "replies": 26,
+    "views": 25451
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "IBM releases Granite Speech 5.0 2B open weights, #2 open model on Open ASR English WER",
+   "url": "https://x.com/burnrate_ai/status/2113014511082844292",
+   "handle": "@burnrate_ai",
+   "group": "labs",
+   "origin": "discovery",
+   "summary": "IBM's granite-speech-5.0-2b (Apache 2.0) transcribes six languages and translates to and from English, with keyword biasing up to 2,000 terms and 5.06% average English WER (#2 among open-weight models on the Open ASR Leaderboard); IBM also updated Turbo CTC (now multilingual, about 19,870 RTFx) and 4.1 2B Plus for speaker attribution. Support covers Transformers, vLLM, llama.cpp and mlx-audio.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/blog/ibm-granite/granite-speech-5"
+   ],
+   "vendor": "IBM",
+   "posted_at": "2026-10-21T21:08:12Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 2
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/J4ck3LSyN/status/2112728631118385153",
+   "reason": "Exploit release for the PHP 8.x CVEs; security research with no AI capability (linked exploit not opened)."
+  },
+  {
+   "url": "https://x.com/NSACyber/status/2112903220209098897",
+   "reason": "Government advisory on PHP vulnerabilities; general security news, no AI capability and not an AI constraint."
+  }
+ ]
+}

@@ -1,16 +1,16 @@
 {
- "updated_at": "2026-10-21T18:14:47Z",
+ "updated_at": "2026-10-21T22:24:00Z",
  "job": "sweep",
  "prompt": "v4",
- "calls_used_today": 103,
+ "calls_used_today": 131,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-10-21T18:10:00Z",
-  "items": 30,
+  "ran_at": "2026-10-21T22:06:00Z",
+  "items": 25,
   "queries": 10,
-  "deep_reads": 10,
+  "deep_reads": 9,
   "rechecks": 8,
-  "flagged": 9,
+  "flagged": 7,
   "saved_in": 2,
   "saved_kept": 0,
   "videos": 0
@@ -56,7 +56,13 @@
   "Sweep 14:12Z follow check: the prompt defines active as curated or promoted, so curated @OpenAI now has 3 qualifying sweep-file items with no level-2 flag and is a follow candidate (not followed or logged: no browser this run); @NVIDIAAI also has 3 but is curated at signal_to_noise 3 with many event and keynote promo posts, so it is a near-miss.",
   "Sweep 18:10Z: both new saves (captured 14:48Z) failed Scope at the first gate (general security news), so they got no deep read; the prompt says saves always get a deep read, which would spend reads on posts already rejected. The deep-read Flint launch post has a 161 s video, still with no video-capable reader, so no video record.",
   "Sweep 18:10Z follow check: curated @ArtificialAnlys (4 qualifying items, no level-2 flag, first-hand evals) and @witcheer (3, hands-on local model tests) qualify; @PyTorch also has 3 but posted mostly conference talk promos this window; @omarsar0 has 3 but is a paper explainer like @dair_ai. Not followed or logged: no browser this run.",
-  "Sweep 18:10Z follow check: followed @ArtificialAnlys and @witcheer in the browser as @sutcliffcc (no warnings); @PyTorch is a near-miss (mostly conference promotion). Daily follow limit of 3 is now reached for 2026-10-21."
+  "Sweep 18:10Z follow check: followed @ArtificialAnlys and @witcheer in the browser as @sutcliffcc (no warnings); @PyTorch is a near-miss (mostly conference promotion). Daily follow limit of 3 is now reached for 2026-10-21.",
+  "Sweep 22:06Z: both new saves (captured 18:43Z: a PHP exploit release and an NSA advisory on the PHP flaws) failed Scope at the first gate, so no deep reads were spent on them. The X tool reported 870 of 1000 shared reads left after this sweep's 27th call, which matches calls_used_today, so no other agent had used X reads today by then.",
+  "Sweep 22:06Z: three deep-read items have clips over 60 s (Claude Duet 100 s, Hermes Agent keynote 395 s, Fireworks Ultrafast 92 s), but the sweep still has no video-capable reader, so no video records were written.",
+  "Sweep 22:06Z: 8 re-checks (Flint, php2shell checker, Claude Security, PDD Kit, Mirendil, Busy Beaver, Kling 4.0, ElevenLabs translation) showed higher engagement but no notes and no new pushback, so no doubt levels changed; as noted before, the schema has no place to record re-check outcomes.",
+  "Sweep 22:06Z: discovery searches again returned mostly low-engagement posts. Two were kept: FlashMap (posted Oct 20, missed by roster sweeps) and IBM Granite Speech 5.0, found only through an aggregator because a search for IBM's own post returned nothing. @IBMResearch or an IBM Granite account may be worth a roster review look.",
+  "Sweep 22:06Z: OpenHands, Pi, OpenRouter and alphaXiv posted day-after Flint support. The schema can't add confirmed_by to an item in an earlier sweep file, so those confirmations are kept only when they add a new capability (alphaXiv OpenResearch).",
+  "Sweep 22:06Z follow check: the daily limit was already reached for 2026-10-21 (3 follows). @vllm_project now has 3 qualifying sweep-file items, max doubt 1, and is a first-hand project, so it is a follow candidate for 2026-10-22 (reported to the parent, not logged). Near-misses: @PyTorch (4 items, but mostly PyTorchCon promotion this window), @FireworksAI_HQ (3, waitlist and free-training promotion), @askalphaxiv (3, mostly paper explainers), @fal (trial, not active), @ValsAI (level-2 flag on 2026-10-20)."
  ],
  "errors": [],
  "follows_today": 3,
