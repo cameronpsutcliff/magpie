@@ -247,13 +247,13 @@ def main() -> None:
                                   where="cloud" if a.cloud else "home", seconds=time.monotonic() - t0,
                                   constraints=c_section, trackers=trackers, threats=t_items, threats_run=t_receipt)
     if receipt.get("enriched"):
-        from .possibilities import generate, prior_days
+        from .possibilities import generate
         pcache = run_dir / "possibilities.json"
         if a.reuse_editor and pcache.exists():
             day["possibilities"] = load_json(pcache, {})
         else:
             try:
-                day["possibilities"] = generate(day, prior_days(date, DATA))
+                day["possibilities"] = generate(day, DATA)
                 write_json(pcache, day["possibilities"])
             except Exception as ex:  # an idea pass must never block the edition
                 day["possibilities"] = {"items": [], "errors": [f"{type(ex).__name__}: {str(ex)[:160]}"]}

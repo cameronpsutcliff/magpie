@@ -80,7 +80,7 @@ def fetch(url: str, *, timeout: int = 25, headers: dict | None = None, retries: 
         except Exception as e:  # network errors, timeouts
             last = e
         time.sleep(1.5 * (attempt + 1))
-    raise RuntimeError(f"fetch failed for {url}: {last}")
+    raise RuntimeError(f"fetch failed for {url}: {last}") from last
 
 
 def fetch_json(url: str, **kw):

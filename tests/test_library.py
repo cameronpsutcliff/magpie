@@ -1,0 +1,120 @@
+import json
+import shutil
+import tempfile
+import unittest
+from pathlib import Path
+
+from magpie import library as L
+from magpie import possibilities as P
+from magpie.util import short_hash, write_json
+
+
+def ev(key, headline, *, what="", topics=("agents",), maker="Open source", works_with=(), metrics=None, signal=50.0, brief=True):
+    e = {"id": short_hash(key, 12), "key": key, "kind": "repo", "title": key.split(":", 1)[1], "summary": what,
+         "url": f"https://github.com/{key.split(':', 1)[1]}", "maker": maker, "topics": list(topics), "evidence": "reported",
+         "signal": signal, "metrics": metrics or {}}
+    if brief:
+        e["brief"] = {"headline": headline, "newly_possible": what, "why": "", "limits": "",
+                      "works_with": [{"name": n, "how": "plugs in"} for n in works_with]}
+    return e
+
+
+def day(date, events, top=()):
+    return {"schema": "magpie.day/1", "date": date, "events": events, "top": list(top)}
+
+
+# The god's-eye case: a viewer people liked last week, and today a single repo that makes it far better.
+EYE = ev("gh:bilal/gods-eye-view", "God's-eye view maps live satellite imagery in the browser",
+         what="Browse live satellite and drone imagery as one zoomable globe.", topics=("multimodal",), signal=80.0,
+         metrics={"stars_total": 900})
+LATER_EYE = dict(EYE, metrics={"stars_total": 4100})
+OLD = ev("gh:old/memory-kit", "Memory kit stores agent notes", what="Agents keep notes across sessions.")
+TILES = ev("gh:new/tile-fuse", "Tile Fuse stitches satellite imagery into live 3D tiles",
+           what="Stream satellite imagery as 3D tiles to any globe viewer.", topics=("multimodal",), works_with=("gods-eye-view",))
+
+
+class LibraryTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = Path(tempfile.mkdtemp())
+        self.data = self.tmp / "v1"
+        days = [day("2099-01-01", [EYE, OLD], top=[EYE["id"]]), day("2099-01-03", [LATER_EYE]),
+                day("2099-01-05", [TILES])]
+        for d in days:
+            write_json(self.data / "days" / f"{d['date']}.json", d, compact=True)
+        self.today = days[-1]
+
+    def tearDown(self):
+        shutil.rmtree(self.tmp)
+
+    def test_build_keeps_history_before_the_day(self):
+        lib = L.build("2099-01-05", self.data)
+        self.assertEqual(set(lib), {EYE["key"], OLD["key"]})  # today's arrival is not yet in the library
+        eye = lib[EYE["key"]]
+        self.assertEqual((eye["first_seen"], eye["last_seen"], eye["date"]), ("2099-01-01", "2099-01-03", "2099-01-03"))
+        self.assertEqual((eye["days_seen"], eye["featured"], eye["stars_gained"]), (2, 1, 3200))
+        self.assertGreater(L.adoption(eye), L.adoption(lib[OLD["key"]]))
+        self.assertEqual(L.adoption(None), 0.0)
+
+    def test_neighbours_relate_and_skip_the_same_release(self):
+        lib = L.build("2099-01-05", self.data)
+        near = L.neighbours([TILES], lib, set())[TILES["id"]]
+        self.assertEqual(near[0][0], EYE["key"])  # shared words, topic, and Tile Fuse names it as an integration
+        self.assertNotIn(OLD["key"], [k for k, _ in near])  # unrelated
+        launch = ev("url:new.example/blog/tile-fuse", "Tile Fuse stitches satellite imagery into live 3D tiles")
+        self.assertTrue(L.same(TILES, launch))
+        self.assertFalse(L.same(TILES, EYE))
+
+    def test_pick_uses_live_capabilities_only(self):
+        lib = L.build("2099-01-05", self.data)
+        keys, receipt = L.pick([TILES], lib, set(), check=lambda k: False)
+        self.assertEqual((keys, receipt["not_live"]), ([], [EYE["key"]]))
+        keys, receipt = L.pick([TILES], lib, set(), check=lambda k: None)
+        self.assertEqual((keys, receipt["unchecked"]), ([], [EYE["key"]]))  # a check that cannot run does not let it in
+        keys, _ = L.pick([TILES], lib, set(), check=lambda k: True)
+        self.assertEqual(keys, [EYE["key"]])
+
+    def test_a_quiet_day_with_one_repo_still_combines_with_the_library(self):
+        seen = {}
+
+        def lane(prompt, timeout):
+            seen["prompt"] = prompt
+            return json.dumps({"possibilities": [
+                {"title": "Live 3D globe of any region", "connection": "Tile Fuse feeds the viewer.",
+                 "ingredients": [TILES["id"], EYE["id"]], "chain": ["a", "b", "c"], "effort": "a week",
+                 "scores": {"novelty": 4, "feasibility": 4, "value": 4, "evidence": 3}},
+                {"title": "Made-up pairing", "ingredients": [EYE["id"], OLD["id"]], "chain": []}]})
+
+        P.LANES["claude"], saved = lane, P.LANES["claude"]
+        try:
+            out = P.generate(self.today, self.data, check=lambda k: True)
+        finally:
+            P.LANES["claude"] = saved
+        self.assertIn('"first_seen": "2099-01-01"', seen["prompt"])
+        self.assertEqual(out["pool"]["today"], 1)
+        self.assertEqual(out["pool"]["library"], 1)
+        [item] = out["items"]  # the pairing without a today ingredient was dropped
+        self.assertEqual(item["mix"], "today_x_library")
+        self.assertEqual(item["amplification"]["lifts"], EYE["id"])
+        self.assertGreater(item["amplification"]["factor"], 1)
+        self.assertEqual(item["amplification"]["signals"]["first_seen"], "2099-01-01")
+        refs = {r["id"]: r for r in item["ingredient_refs"]}
+        self.assertEqual((refs[TILES["id"]]["today"], refs[TILES["id"]]["first_seen"]), (True, "2099-01-05"))
+        self.assertEqual((refs[EYE["id"]]["today"], refs[EYE["id"]]["date"], refs[EYE["id"]]["first_seen"]),
+                         (False, "2099-01-03", "2099-01-01"))
+
+    def test_amplification_lifts_the_rank_and_both_mixes_survive(self):
+        base = {"effort": "a week", "scores": {"value": 4, "feasibility": 4, "evidence": 3, "novelty": 3}}
+        flat = dict(base, mix="today_x_today", amplification={"factor": 1.0})
+        lifted = dict(base, mix="today_x_library", amplification={"factor": 1.5})
+        self.assertIs(P.rank([flat, lifted])[0], lifted)
+        strong = [dict(base, mix="today_x_library", amplification={"factor": 1.5}) for _ in range(5)]
+        weak = dict(base, mix="today_x_today", amplification={"factor": 1.0})
+        kept = P.choose(P.rank(strong + [weak]), 5)
+        self.assertEqual(len(kept), 5)
+        self.assertEqual({p["mix"] for p in kept}, {"today_x_today", "today_x_library"})
+        only = P.choose(P.rank([dict(p) for p in strong]), 3)
+        self.assertEqual(len(only), 3)  # one mix proposed: rank alone decides
+
+
+if __name__ == "__main__":
+    unittest.main()

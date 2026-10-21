@@ -154,9 +154,36 @@
     },
     "note": {
      "type": "string"
+    },
+    "pool": {
+     "type": "object",
+     "description": "What the ideas were drawn from: today's edited capabilities, the library capabilities retrieved for them, how many were checked live, and which were dropped as gone or archived (`not_live`) or could not be checked (`unchecked`).",
+     "properties": {
+      "today": {
+       "type": "integer"
+      },
+      "library": {
+       "type": "integer"
+      },
+      "checked": {
+       "type": "integer"
+      },
+      "not_live": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       }
+      },
+      "unchecked": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       }
+      }
+     }
     }
    },
-   "description": "Reasoned ideas built from the day's capabilities, not reported news."
+   "description": "Reasoned ideas built from the day's capabilities and the earlier ones they lift (the library), not reported news."
   },
   "viewing": {
    "type": "object",
@@ -898,7 +925,7 @@
      "items": {
       "type": "string"
      },
-     "description": "Event ids, at least one from that day."
+     "description": "Event ids, at least one from that day. Others may come from any earlier edition (the library)."
     },
     "ingredient_refs": {
      "type": "array",
@@ -913,10 +940,12 @@
        },
        "date": {
         "type": "string",
-        "format": "date"
+        "format": "date",
+        "description": "The edition the ingredient's text comes from."
        },
        "today": {
-        "type": "boolean"
+        "type": "boolean",
+        "description": "True when the ingredient is in that day's edition."
        },
        "maker": {
         "type": [
@@ -929,6 +958,11 @@
          "string",
          "null"
         ]
+       },
+       "first_seen": {
+        "type": "string",
+        "format": "date",
+        "description": "The first edition the ingredient appeared in."
        }
       }
      }
@@ -992,7 +1026,63 @@
      }
     },
     "rank": {
-     "type": "number"
+     "type": "number",
+     "description": "amplification x value x feasibility x sqrt(evidence) x sqrt(novelty) / (1 + effort days / 30)."
+    },
+    "mix": {
+     "enum": [
+      "today_x_today",
+      "today_x_library"
+     ],
+     "description": "today_x_today: every ingredient is in that day's edition. today_x_library: at least one comes from an earlier edition."
+    },
+    "amplification": {
+     "type": "object",
+     "required": [
+      "factor"
+     ],
+     "description": "How much the idea lifts something that had already taken hold: 1 plus the adoption of its most established ingredient. The rank is multiplied by `factor`; 1 when every ingredient is new that day.",
+     "properties": {
+      "factor": {
+       "type": "number",
+       "minimum": 1,
+       "maximum": 2
+      },
+      "lifts": {
+       "type": "string",
+       "description": "The id of that ingredient."
+      },
+      "adoption": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1,
+       "description": "The mean of days seen (of 7), peak signal (of 100), stars gained (log scale, of 10,000) and works-with neighbours (of 6), each capped at 1, before that day."
+      },
+      "signals": {
+       "type": "object",
+       "properties": {
+        "first_seen": {
+         "type": "string",
+         "format": "date"
+        },
+        "days_seen": {
+         "type": "integer"
+        },
+        "featured": {
+         "type": "integer"
+        },
+        "peak": {
+         "type": "number"
+        },
+        "stars_gained": {
+         "type": "integer"
+        },
+        "works_with": {
+         "type": "integer"
+        }
+       }
+      }
+     }
     }
    }
   },

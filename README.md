@@ -48,9 +48,21 @@ the knock-on areas the editor named, the possibilities it fed, what it works wit
 by the same post on the same day, or named by the editor and spelled in the sources), and the actions that touch it.
 
 Every publish rebuilds all the pages from scratch, from the editions since the pages started (`since` in the index;
-the first build starts seven editions back, and nothing earlier is read). No model is called and nothing is patched in
+the first build starts seven editions back, and an earlier edition is read only for the appearance a possibility
+ingredient from the library was drawn from). No model is called and nothing is patched in
 place, so a page always says what the editions and the constraints register say. Slugs are a pure function of the key
 (`gh-owner--repo`, `arxiv-<id>`, `policy-fr-<number>`, else a readable stem plus a hash), so a page's URL never changes.
+
+## New possibilities
+
+Each edition combines capabilities into ideas with a causal chain, a smallest test and what would prove them wrong. Two
+pools are ranked together: today with today, and today with the library, which is every capability edited in any earlier
+edition. For each of today's strongest arrivals, code retrieves the existing capabilities it relates to most (shared rare
+words, shared topics, either naming the other as an integration, the same maker), whatever their age, and keeps only
+repos, models and spaces that still exist and are not archived. A quiet day with one new repo still pairs it with what it
+lifts. Each idea carries its `mix` and an `amplification` term: 1 plus the adoption (0 to 1) of its most established
+ingredient, from days seen, peak signal, stars gained and works-with neighbours before that day. The rank multiplies by
+it, and at least one idea of each mix is kept when both were proposed. Code ranks; the model only proposes.
 
 ## Threats
 
