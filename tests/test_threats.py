@@ -1050,8 +1050,11 @@ class ReviewFixTests(unittest.TestCase):
         got = T.clean_summary("A crafted request crashes vLLM. It also affects SGLang and @acme/agent-sdk. The llama.cpp server is safe.",
                               [], [], src)
         self.assertEqual(got, "A crafted request crashes vLLM. The llama.cpp server is safe.")
-        self.assertEqual(T.clean_summary("Requests from AI agents to the TLS endpoint crash it.", [], [], src),
-                         "Requests from AI agents to the TLS endpoint crash it.")  # ordinary words and acronyms are not packages
+        tls = "Requests from AI agents reach the TLS endpoint."
+        self.assertEqual(T.clean_summary("Requests from AI agents to the TLS endpoint crash it.", [], [], tls),
+                         "Requests from AI agents to the TLS endpoint crash it.")  # names the documents use stay
+        self.assertEqual(T.clean_summary("Requests from AI agents crash it. Acme Cloud is hit too.", [], [], tls),
+                         "Requests from AI agents crash it.")  # a name they never use goes, with its sentence
 
     def test_only_structured_sources_skip_the_pairing_check(self):
         doc = "Update pip to 26.2.2. Node.js is unaffected."
@@ -1064,3 +1067,12 @@ class ReviewFixTests(unittest.TestCase):
     def test_every_grounded_fix_becomes_an_action(self):
         fixes = [{"name": f"pkg{i}", "version": f"1.{i}.0"} for i in range(8)]
         self.assertEqual(len(T.code_actions(fixes, [], False)), 8)
+
+    def test_title_and_headline_never_name_an_undocumented_package(self):
+        c = {"_origin": "news", "_text": "A crafted request crashes vLLM. Fixed in vllm 0.30.0.", "extra": {}, "_sig": "s",
+             "url": "https://news.example/a", "_doc": "https://news.example/a", "_also": []}
+        v = {"keep": True, "title": "SGLang crash from one request", "headline": "A crafted request crashes the SGLang engine core",
+             "summary": "A crafted request crashes vLLM.", "quote": "A crafted request crashes vLLM.", "who": []}
+        rec, why = T.judge(c, v, DATE)
+        self.assertFalse(rec["kept"])
+        self.assertEqual(why, "its title or headline names a package its documents do not")
