@@ -73,7 +73,63 @@
     "changelog": 20,
     "space": 18,
     "news": 6
-   }
+   },
+   "threats": [
+    {
+     "id": "thr-2026-10-20-eight-emudhra-intermediate-ca-private-keys-compromised",
+     "title": "Eight eMudhra intermediate CA private keys compromised",
+     "severity": "critical",
+     "exploited": null
+    },
+    {
+     "id": "thr-2026-10-20-uv-bundled-ca-store-trusts-compromised-emsign",
+     "title": "uv bundled CA store trusts compromised emSign root",
+     "severity": "critical",
+     "exploited": null
+    },
+    {
+     "id": "thr-2026-10-20-certifi-bundle-includes-root-with-compromised-intermediates",
+     "title": "certifi bundle includes root with compromised intermediates",
+     "severity": "critical",
+     "exploited": null
+    },
+    {
+     "id": "thr-2026-10-20-mcp-typescript-sdk-servers-crashable-by-one",
+     "title": "MCP TypeScript SDK servers crashable by one request",
+     "severity": "high",
+     "exploited": null
+    },
+    {
+     "id": "thr-2026-10-20-mcp-typescript-sdk-experimental-tasks-lacked-session",
+     "title": "MCP TypeScript SDK experimental tasks lacked session isolation",
+     "severity": "high",
+     "exploited": null
+    },
+    {
+     "id": "thr-2026-10-20-rustls-webpki-may-accept-distrusted-emsign-intermediates",
+     "title": "rustls-webpki may accept distrusted emSign intermediates",
+     "severity": "high",
+     "exploited": null
+    },
+    {
+     "id": "thr-2026-10-20-mcp-typescript-sdk-bearer-auth-skipped-audience",
+     "title": "MCP TypeScript SDK bearer auth skipped audience checks",
+     "severity": "medium",
+     "exploited": null
+    },
+    {
+     "id": "thr-2026-10-20-mcp-typescript-client-sdk-leaked-secrets-on",
+     "title": "MCP TypeScript client SDK leaked secrets on cross-origin redirects",
+     "severity": "medium",
+     "exploited": null
+    },
+    {
+     "id": "thr-2026-10-06-vllm-penalty-handler-denial-of-service",
+     "title": "vLLM penalty handler denial of service",
+     "severity": "medium",
+     "exploited": null
+    }
+   ]
   },
   {
    "date": "2026-10-20",
