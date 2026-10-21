@@ -1,0 +1,999 @@
+{
+ "ran_at": "2026-10-21T18:10:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v4",
+ "since": "2026-10-21T14:12:00Z",
+ "queries": 10,
+ "calls": 31,
+ "items": [
+  {
+   "title": "Recursive releases Flint, an open-weight 40B MoE coding model built for laptops",
+   "url": "https://x.com/RichardSocher/status/2112944385415426249",
+   "handle": "@RichardSocher",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Recursive's first model, Flint, is a 40B mixture-of-experts with about 2.5B active parameters and a 262K context, released with open weights under Apache 2.0 for local agentic coding. Recursive says its automated research system built it in under four months; it needs about 24GB and is reported at 125+ tokens/s on a MacBook Pro, with day-0 support in vLLM, SGLang, LM Studio and Ollama and 54.9% on Terminal-Bench 2.1 per Cline.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/RecursiveSI/flint",
+    "https://vllm.ai/blog/2026-10-21-flint"
+   ],
+   "vendor": "Recursive",
+   "posted_at": "2026-10-21T16:29:32Z",
+   "metrics": {
+    "likes": 1534,
+    "reposts": 214,
+    "quotes": 239,
+    "replies": 208,
+    "views": 264820
+   },
+   "confirmed_by": [
+    "@ollama",
+    "@lmstudio",
+    "@vllm_project",
+    "@sgl_project",
+    "@cline",
+    "@omarsar0",
+    "@eliebakouch",
+    "@Thom_Wolf"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Replies and quotes are overwhelmingly excited about fast private local coding; MLX maintainer @Prince_Canuma reports 419 tok/s at batch 8 on an M3 Ultra, while a few ask for named benchmark scores and whether the speed holds on long agentic runs.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "OpenAI ships an open php2shell checker as a Codex skill",
+   "url": "https://x.com/OpenAI/status/2112945805686604033",
+   "handle": "@OpenAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Following its PHP disclosure, OpenAI published a GitHub repo that a Codex agent can follow to check whether a website runs a PHP version affected by the php2shell flaws and to guide the upgrade. Greg Brockman called php2shell one of the most severe open source bugs in recent memory, found through OpenAI's Patch the Planet work.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/openai/php2shell-checker",
+    "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/"
+   ],
+   "vendor": "OpenAI",
+   "posted_at": "2026-10-21T16:35:11Z",
+   "metrics": {
+    "likes": 4234,
+    "reposts": 511,
+    "quotes": 124,
+    "replies": 205,
+    "views": 361689
+   },
+   "confirmed_by": [
+    "@gdb",
+    "@levelsio",
+    "@emollick"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers note the checker infers risk from the PHP version a server exposes, so an OK result means the version is patched, not that the fix was verified, and one disputes the 70% of websites figure.",
+    "source": "https://x.com/esau_jisazero/status/2112958470475350027"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Many call shipping a check skill with the advisory a good template; others joke about AI both finding and checking the bug, ask about Node.js, and point out it only reads version headers; one user ported it to Claude Code.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Claude Security now re-scans connected repositories as code changes",
+   "url": "https://x.com/claudeai/status/2112962248218148878",
+   "handle": "@claudeai",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Claude Security, Anthropic's vulnerability scanner, now runs a deep first scan of a connected GitHub repository and then re-scans as changes land, marking findings fixed or reopened so results track the current code. It is in public beta for Claude Enterprise.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://claude.com/product/claude-security",
+    "https://support.claude.com/en/articles/14661296-use-claude-security"
+   ],
+   "vendor": "Anthropic",
+   "posted_at": "2026-10-21T17:40:31Z",
+   "metrics": {
+    "likes": 1166,
+    "reposts": 57,
+    "quotes": 50,
+    "replies": 123,
+    "views": 64306
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Enterprise-only beta; repliers ask how it handles false-positive fatigue and cost on large monorepos.",
+    "source": "https://x.com/cikociscore/status/2112968392298680598"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Repliers like continuous scans over point-in-time audits and fix tracking, but many complain it is Enterprise only and ask about noise, cost and how regressions are matched; a large share of quotes are about a different awaited model release.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "GitHub Next and Microsoft Research preview PDD Kit: formally proving agent-written Rust code",
+   "url": "https://x.com/GitHubNext/status/2112936525457740139",
+   "handle": "@GitHubNext",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "PDD Kit turns a plan into a formal spec in Verus, a proof language for Rust, and once a human approves the spec the verifier proves the agent's code meets it for every input, falling back to tests and computer-use agents where proof is not possible. It is integrated with GitHub Next's Chopin and is in limited research preview, Rust only.",
+   "kind": "tool",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "GitHub Next and Microsoft Research",
+   "posted_at": "2026-10-21T15:58:18Z",
+   "metrics": {
+    "likes": 286,
+    "reposts": 16,
+    "quotes": 18,
+    "replies": 19,
+    "views": 28853
+   },
+   "confirmed_by": [
+    "@github"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Limited research preview with no public download yet; repliers note the spec itself still has to be reviewed and may not capture intent.",
+    "source": "https://x.com/SlimAssiliX/status/2112949963554742671"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Builders welcome reviewing specs instead of diffs; the specific caveats are that a proof only covers what the spec says, it is Rust only, and people ask for other languages and for the license.",
+    "tried": false,
+    "replies_read": 24
+   }
+  },
+  {
+   "title": "Mirendil says one researcher with agents pretrained a 100B-500B coding model in 3.5 months",
+   "url": "https://x.com/bneyshabur/status/2112941025862008949",
+   "handle": "@bneyshabur",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Mirendil reports that Mirendil-Base, a coding-specialized base model in the 100B to 500B parameter range, was pretrained from scratch on public data by one researcher directing agents that wrote over 99% of the code, for under $10M of compute all-in. Larger Large and XL runs are in progress; weights, independent evals and API access are not out yet.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [
+    "https://mirendil.com/news/pretraining-at-scale-without-a-pretraining-team/"
+   ],
+   "vendor": "Mirendil",
+   "posted_at": "2026-10-21T16:16:11Z",
+   "metrics": {
+    "likes": 508,
+    "reposts": 41,
+    "quotes": 45,
+    "replies": 69,
+    "views": 41970
+   },
+   "confirmed_by": [
+    "@eliebakouch"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Results are on Mirendil's own held-out code-loss metric with no independent evaluation or weights yet; one reader questions whether the compute figure fits the parameter range.",
+    "source": "https://x.com/TSC/status/2112955149123453409"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Replies are congratulatory and amazed by the one-researcher setup; the critical ones point out there is no independent eval yet and do back-of-envelope FLOP math on the $10M claim.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "DeepMind pipeline finds 20 new potential Busy Beaver cryptids with Lean 4 proofs",
+   "url": "https://x.com/TZahavy/status/2112922030165090573",
+   "handle": "@TZahavy",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Google DeepMind's Discovery team used a Gemini-powered pipeline that compresses Turing machine traces, conjectures transition rules and proves them in Lean 4, finding 20 new potential cryptids (machines whose halting is equivalent to open number theory problems) in BB(6) and verifying 33 known machines. Proofs are open-sourced.",
+   "kind": "paper",
+   "evidence": "artifact",
+   "links": [
+    "https://arxiv.org/abs/2610.22603",
+    "https://github.com/google-deepmind/cryptids/tree/main/BusyBeaver"
+   ],
+   "vendor": "Google DeepMind",
+   "posted_at": "2026-10-21T15:00:42Z",
+   "metrics": {
+    "likes": 249,
+    "reposts": 50,
+    "quotes": 7,
+    "replies": 17,
+    "views": 19211
+   },
+   "confirmed_by": [
+    "@maxencefaldor"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "A reader notes the paper names Gemini 3.1 while the post credits Gemini 4 Argon.",
+    "source": "https://x.com/MatejStraka4/status/2112947365305008277"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers find discovering new open problems more interesting than solving benchmarks and like that Lean makes hallucinated math fail; the only specific doubt is the model-version mismatch.",
+    "tried": false,
+    "replies_read": 19
+   }
+  },
+  {
+   "title": "Meta Muse Wonder is available in OpenCode",
+   "url": "https://x.com/opencode/status/2112948459745763530",
+   "handle": "@opencode",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "OpenCode added Meta's Muse Wonder frontier agent model (1M-token context) to its coding agent through paid OpenCode Console credits.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "OpenCode",
+   "posted_at": "2026-10-21T16:45:44Z",
+   "metrics": {
+    "likes": 1346,
+    "reposts": 35,
+    "quotes": 28,
+    "replies": 63,
+    "views": 33429
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Most replies ask why it is not free like other OpenCode models; a few ask about speed, and one says it is worse than a cheaper model without details.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Cohere launches Rerank 5 Pro and Fast with Context Focus",
+   "url": "https://x.com/cohere/status/2112923503100125326",
+   "handle": "@cohere",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Cohere's Rerank 5 comes in Pro and Fast tiers; Cohere says Pro leads its tests on nanoMTEB, ViDoRe V3 and BRIGHT and Fast has about 3x Pro's throughput. A new Context Focus option returns only the relevant passages inside each document to cut tokens sent to the LLM. Available via the Cohere API, Microsoft Foundry and Amazon SageMaker.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://cohere.com/blog/rerank-5",
+    "https://docs.cohere.com/v2/changelog"
+   ],
+   "vendor": "Cohere",
+   "posted_at": "2026-10-21T15:06:34Z",
+   "metrics": {
+    "likes": 205,
+    "reposts": 25,
+    "quotes": 12,
+    "replies": 14,
+    "views": 13435
+   },
+   "confirmed_by": [
+    "@aidangomez"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Replies and staff quotes like Context Focus and the Pro/Fast split; questions are about open weights, whether the token savings apply to both tiers, and calibration for no-answer queries.",
+    "tried": false,
+    "replies_read": 19
+   }
+  },
+  {
+   "title": "OO-Harness evolves a class hierarchy of agent harnesses, AutomationBench 61.6% to 77.4%",
+   "url": "https://x.com/omarsar0/status/2112911038098317422",
+   "handle": "@omarsar0",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Google Cloud AI Research's OO-Harness has an evolution agent build specialized subclasses of a base agent harness from execution records, with a router picking one per task. With the same Gemini 3.5 Flash executor it lifts AutomationBench from 61.6% to 77.4% and Workspace-Bench from 25.5% to 39.5%.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2610.28380"
+   ],
+   "vendor": "Google Cloud AI Research",
+   "posted_at": "2026-10-21T14:17:02Z",
+   "metrics": {
+    "likes": 210,
+    "reposts": 23,
+    "quotes": 6,
+    "replies": 46,
+    "views": 11763
+   },
+   "confirmed_by": [
+    "@dair_ai"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers take it as evidence the harness matters as much as the model; specific questions ask whether gains hold with a different executor and how often the router misroutes, and an author added takeaways.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Kling 4.0 video model goes live on fal",
+   "url": "https://x.com/fal/status/2112922156845641823",
+   "handle": "@fal",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Kling 4.0, a native multimodal video model with better complex motion and reference consistency across characters and scenes, is available on fal's UI and fal Agent for text, image and reference to video plus editing; API access is coming later.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Kuaishou Kling",
+   "posted_at": "2026-10-21T15:01:13Z",
+   "metrics": {
+    "likes": 265,
+    "reposts": 20,
+    "quotes": 10,
+    "replies": 20,
+    "views": 20127
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Available only through fal's UI and agent with no API yet, and users call it expensive at about $0.157 per generated second.",
+    "source": "https://x.com/AdamHoltererer/status/2112925693650813304"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Creators are excited about consistency and longer clips; one shared a paid test (3 s at 720p for $0.47), others complain about price and the missing API.",
+    "tried": true,
+    "replies_read": 23
+   }
+  },
+  {
+   "title": "SGLang-TorchTPU brings SGLang serving to Google TPUs",
+   "url": "https://x.com/sgl_project/status/2112948714453262363",
+   "handle": "@sgl_project",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "SGLang-TorchTPU is an open TPU plugin for SGLang built with Google and Meta on top of the newly open-sourced TorchTPU backend, serving open models such as Muse Spark Open, GLM-5.3 Flash and Kimi K3 on TPU; the team reports a custom MegaKernel reaching 770 tok/s decode at batch 1 for Muse Spark Open.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/sgl-project/sglang-torchtpu",
+    "https://cloud.google.com/blog/topics/ai-infrastructure/torchtpu-is-now-open-source-run-native-pytorch-on-tpus"
+   ],
+   "vendor": "SGLang",
+   "posted_at": "2026-10-21T16:46:44Z",
+   "metrics": {
+    "likes": 38,
+    "reposts": 5,
+    "quotes": 5,
+    "replies": 3,
+    "views": 2029
+   },
+   "confirmed_by": [
+    "@lmsysorg",
+    "@PyTorch"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "FlyDSL kernel DSL plugs into PyTorch on AMD MI350 GPUs",
+   "url": "https://x.com/PyTorch/status/2112967243956945293",
+   "handle": "@PyTorch",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "FlyDSL, an open source Python kernel DSL, now works with torch.compile and eager mode on AMD MI350-series GPUs; the PyTorch blog reports up to 1.68x geomean speedups on scaled GEMM kernels and up to 3.01x end-to-end vLLM serving.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://pytorch.org/blog/accelerating-pytorch-on-amd-gpus-with-flydsl/"
+   ],
+   "vendor": "AMD and PyTorch",
+   "posted_at": "2026-10-21T18:00:22Z",
+   "metrics": {
+    "likes": 2,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 609
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Agent S4 evolves its own computer-use interfaces; open 27B model hits 21.3% on OSWorld V2",
+   "url": "https://x.com/dair_ai/status/2112914561590546695",
+   "handle": "@dair_ai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Simular's Agent S4 uses a meta-agent that reads task trajectories without success labels and writes new tools and usage notes for the task agent. With the evolved interfaces an open 27B model reaches 21.3% on OSWorld V2, 3.8x the same model with hand-built interfaces, at a fraction of frontier model cost.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2610.28601"
+   ],
+   "vendor": "Simular",
+   "posted_at": "2026-10-21T14:31:02Z",
+   "metrics": {
+    "likes": 80,
+    "reposts": 11,
+    "quotes": 1,
+    "replies": 12,
+    "views": 6474
+   },
+   "confirmed_by": [
+    "@omarsar0"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Cache engineering lets long-running agents edit their own KV cache",
+   "url": "https://x.com/dair_ai/status/2112968165680640143",
+   "handle": "@dair_ai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A paper gives agents two operations on their own KV cache (drop entries from future attention, shift remaining key positions) so trimming history does not force a full re-prefill; a rolling drop of old tool responses scores 1.7 points higher at 27.7% lower cost, and self-improved cache policies cut cost a further 7.1%.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2610.28577"
+   ],
+   "vendor": "Research paper",
+   "posted_at": "2026-10-21T18:04:02Z",
+   "metrics": {
+    "likes": 2,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 2,
+    "views": 650
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Reactive optimizers: an agent rewrites the optimizer's code during training",
+   "url": "https://x.com/SimulatedAnneal/status/2112936831398375800",
+   "handle": "@SimulatedAnneal",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "An agent watches training dynamics and edits the optimizer's source as training runs; the authors report it matches or beats the best one-shot recipe in untuned language and image settings and guards against loss spikes. Code is on GitHub.",
+   "kind": "technique",
+   "evidence": "artifact",
+   "links": [
+    "https://xingjianbai.com/reactive-optimizers/",
+    "https://github.com/xingjian-bai/opal"
+   ],
+   "vendor": "Research project",
+   "posted_at": "2026-10-21T15:59:31Z",
+   "metrics": {
+    "likes": 177,
+    "reposts": 25,
+    "quotes": 11,
+    "replies": 13,
+    "views": 12199
+   },
+   "confirmed_by": [
+    "@phillip_isola"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "TokenGate adds learned token pruning for up to 11x faster prefill",
+   "url": "https://x.com/lianapatel_/status/2112924355240099875",
+   "handle": "@lianapatel_",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "TokenGate is a small drop-in module, trained like a LoRA, that scores context tokens and forwards only the top ones through later layers. The paper reports 1.4x to 11.3x faster time to first token and 1.5x to 3.4x lower peak prefill memory with no accuracy loss on Qwen3 and Qwen3.5; code is released.",
+   "kind": "paper",
+   "evidence": "artifact",
+   "links": [
+    "https://arxiv.org/abs/2610.26754",
+    "https://github.com/tokengate-models/TokenGate"
+   ],
+   "vendor": "Stanford and UC Berkeley",
+   "posted_at": "2026-10-21T15:09:57Z",
+   "metrics": {
+    "likes": 109,
+    "reposts": 21,
+    "quotes": 5,
+    "replies": 12,
+    "views": 5293
+   },
+   "confirmed_by": [
+    "@matei_zaharia"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Baseten releases elephant-1 (9B) and mammoth-1 (27B) open decision models",
+   "url": "https://x.com/baseten/status/2112955524207825053",
+   "handle": "@baseten",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Baseten's research team released two open models tuned for decision tasks, which it says rank first on the Jev Decision Index and tie for first on the Artificial Analysis Decision Index; both are free on Baseten's Model APIs until Oct 27.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://www.baseten.co/library/mammoth-1/",
+    "https://www.baseten.co/library/elephant-1/"
+   ],
+   "vendor": "Baseten",
+   "posted_at": "2026-10-21T17:13:48Z",
+   "metrics": {
+    "likes": 96,
+    "reposts": 22,
+    "quotes": 11,
+    "replies": 3,
+    "views": 4132
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Corridor's argos-1, a 9B security context model fine-tuned from Qwen 3.5",
+   "url": "https://x.com/corridor/status/2112961411504800039",
+   "handle": "@corridor",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Corridor fine-tuned Qwen 3.5 9B into corridor-argos-1 for selecting the right code context for security review, using LangChain's trace-based tuning workflow; Corridor says it beats GPT-6 Astra and Claude Opus 5.5 on its own 14-model security context benchmark with the lowest time to first token.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Corridor",
+   "posted_at": "2026-10-21T17:37:12Z",
+   "metrics": {
+    "likes": 9,
+    "reposts": 0,
+    "quotes": 6,
+    "replies": 1,
+    "views": 876
+   },
+   "confirmed_by": [
+    "@LangChain"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Results are on Corridor's own benchmark with no public weights or eval set linked.",
+    "source": null
+   }
+  },
+  {
+   "title": "HeyGen Voice Turbo takes #1 on Artificial Analysis Controlled Voice TTS Arena",
+   "url": "https://x.com/ArtificialAnlys/status/2112961069526249973",
+   "handle": "@ArtificialAnlys",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "In Artificial Analysis's arena that compares TTS models on the same eight cloned voices, HeyGen Voice Turbo leads with an Elo of 1,202 over 1,663 appearances, ahead of HeyGen Voice and Qwen-Audio-3.1-TTS-Plus, at $4 per million characters.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Artificial Analysis",
+   "posted_at": "2026-10-21T17:35:50Z",
+   "metrics": {
+    "likes": 23,
+    "reposts": 4,
+    "quotes": 3,
+    "replies": 4,
+    "views": 4160
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "AA-PersonalityBench ranks models on traits such as sycophancy",
+   "url": "https://x.com/ArtificialAnlys/status/2112960933177770071",
+   "handle": "@ArtificialAnlys",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Artificial Analysis's new benchmark scores model personality traits; on sycophancy the oldest models measured (GPT-4o, Llama 4 Maverick, GPT-3.5 Turbo) rank highest and Grok 4.7, Claude Fable 5.1 and Inkling lowest, with Meta models clustered high and Claude models low.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Artificial Analysis",
+   "posted_at": "2026-10-21T17:35:18Z",
+   "metrics": {
+    "likes": 74,
+    "reposts": 5,
+    "quotes": 2,
+    "replies": 5,
+    "views": 5615
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "MLCR-AA medical long-context benchmark revised; Claude Sonnet 5.5 and GPT-6 Astra tie at 41.7%",
+   "url": "https://x.com/ArtificialAnlys/status/2112935427422527584",
+   "handle": "@ArtificialAnlys",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Artificial Analysis changed how it prompts and grades Wisedocs' medical long-context reasoning benchmark (reviewer-style answers, a three-model judge panel, 15 of 60 reference answers refined); Claude Sonnet 5.5 and GPT-6 Astra tie for first and Qwen3.8 leads open weights at 30.6%.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Artificial Analysis",
+   "posted_at": "2026-10-21T15:53:56Z",
+   "metrics": {
+    "likes": 135,
+    "reposts": 13,
+    "quotes": 3,
+    "replies": 26,
+    "views": 13547
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Keenable search API tops the Vals Web Search Index at 49.1%",
+   "url": "https://x.com/ValsAI/status/2112954845426806898",
+   "handle": "@ValsAI",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Vals tested Keenable's Pro search API paired with GPT-5.6 Sol, which now ranks first on its Web Search Index at 49.1% overall, leading finance at 53.9% and second in legal.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Vals AI",
+   "posted_at": "2026-10-21T17:11:06Z",
+   "metrics": {
+    "likes": 43,
+    "reposts": 2,
+    "quotes": 5,
+    "replies": 6,
+    "views": 4380
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Spark-X2.6-4B runs at 64K context on one RTX 5090 via llama.cpp",
+   "url": "https://x.com/witcheer/status/2112936955168141754",
+   "handle": "@witcheer",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A hands-on test of SparkLLM's 4B on-device model using the maker's 4-bit GGUF in llama.cpp: it served with tools at the 64K context Hermes Agent needs while leaving most of the GPU free, since 27 of its 36 layers only attend to the last 512 tokens; the first tool call came back clean.",
+   "kind": "demo",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/XHToken/Spark-X2.6-4B"
+   ],
+   "vendor": "SparkLLM",
+   "posted_at": "2026-10-21T16:00:01Z",
+   "metrics": {
+    "likes": 11,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 5,
+    "views": 777
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The tester has only measured speed and one tool call so far; a full agent session is still pending.",
+    "source": "https://x.com/witcheer/status/2112936955168141754"
+   }
+  },
+  {
+   "title": "ElevenLabs opens a limited alpha of Eleven Realtime Translation for live calls",
+   "url": "https://x.com/ElevenLabs/status/2112922442691928256",
+   "handle": "@ElevenLabs",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Eleven Realtime Translation adds live two-way voice translation inside calls in more than 90 languages, detecting each speaker's language automatically; the alpha is open to enterprise customers only.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "ElevenLabs",
+   "posted_at": "2026-10-21T15:02:21Z",
+   "metrics": {
+    "likes": 95,
+    "reposts": 9,
+    "quotes": 10,
+    "replies": 13,
+    "views": 8057
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Enterprise-only limited alpha with nothing public to try or measure yet.",
+    "source": null
+   }
+  },
+  {
+   "title": "Reflection publishes Beam customization recipes across major RL and SFT stacks",
+   "url": "https://x.com/reflection_ai/status/2112921348272189923",
+   "handle": "@reflection_ai",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Reflection released fine-tuning recipes for its open-weight Beam model, now supported in Axolotl, NeMo RL, NeMo AutoModel, Megatron Bridge, Miles, SkyRL and TRL, with a cookbook repo.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://developers.reflection.ai/customization-overview"
+   ],
+   "vendor": "Reflection AI",
+   "posted_at": "2026-10-21T14:58:00Z",
+   "metrics": {
+    "likes": 57,
+    "reposts": 1,
+    "quotes": 2,
+    "replies": 4,
+    "views": 2617
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Aleph Alpha's Kolibri 1 models run natively in Transformers 5.20",
+   "url": "https://x.com/Aleph__Alpha/status/2112921948686585870",
+   "handle": "@Aleph__Alpha",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Kolibri 1 is now supported natively in Hugging Face Transformers 5.20, so the models load in a few lines without custom code.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Aleph Alpha",
+   "posted_at": "2026-10-21T15:00:23Z",
+   "metrics": {
+    "likes": 36,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 2,
+    "views": 1304
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Factory adds Jira delegations for its Droid agents",
+   "url": "https://x.com/FactoryAI/status/2112952123709440249",
+   "handle": "@FactoryAI",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Teams can assign Jira tasks and sub-tasks to Factory and a Droid agent starts working on them.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Factory",
+   "posted_at": "2026-10-21T17:00:17Z",
+   "metrics": {
+    "likes": 34,
+    "reposts": 2,
+    "quotes": 1,
+    "replies": 6,
+    "views": 2806
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Kiro IDE and CLI add persistent, editable memory",
+   "url": "https://x.com/kirodotdev/status/2112965805914603663",
+   "handle": "@kirodotdev",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Kiro now remembers preferences, repo conventions, corrections and ruled-out approaches across sessions and surfaces them when relevant, with a view to inspect and manage what it stored.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "http://spr.ly/6017BHnfPW"
+   ],
+   "vendor": "Kiro (AWS)",
+   "posted_at": "2026-10-21T17:54:39Z",
+   "metrics": {
+    "likes": 5,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 0,
+    "views": 293
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Replit Agent can incorporate a business through Stripe Atlas via MCP",
+   "url": "https://x.com/Replit/status/2112959588387725412",
+   "handle": "@Replit",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Through the Stripe MCP integration, Replit Agent can now run the Stripe Atlas incorporation flow from a prompt.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Replit",
+   "posted_at": "2026-10-21T17:29:57Z",
+   "metrics": {
+    "likes": 16,
+    "reposts": 4,
+    "quotes": 1,
+    "replies": 7,
+    "views": 1889
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Databricks AI Runtime is GA with serverless on-demand GPUs",
+   "url": "https://x.com/databricks/status/2112912125379109222",
+   "handle": "@databricks",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Databricks AI Runtime is generally available, providing serverless GPUs inside Databricks with seconds-level launch, multinode training and Unity Catalog governance; Databricks is also adding NVIDIA NeMo containers for customizing open models.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://www.databricks.com/blog/ai-runtime-generally-available"
+   ],
+   "vendor": "Databricks",
+   "posted_at": "2026-10-21T14:21:21Z",
+   "metrics": {
+    "likes": 55,
+    "reposts": 6,
+    "quotes": 0,
+    "replies": 2,
+    "views": 2587
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/theSouilos/status/2112619963328631228",
+   "reason": "General security news (compromised certificate authority keys), no AI capability."
+  },
+  {
+   "url": "https://x.com/markgadala/status/2112789730995933567",
+   "reason": "Alarmist aggregator post on the PHP flaws with no AI angle; the AI-found disclosure is covered from OpenAI's own posts."
+  }
+ ]
+}

@@ -1,17 +1,17 @@
 {
- "updated_at": "2026-10-21T14:16:00Z",
+ "updated_at": "2026-10-21T18:16:00Z",
  "job": "sweep",
  "prompt": "v4",
- "calls_used_today": 72,
+ "calls_used_today": 103,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-10-21T14:12:00Z",
-  "items": 15,
-  "queries": 8,
-  "deep_reads": 5,
+  "ran_at": "2026-10-21T18:10:00Z",
+  "items": 30,
+  "queries": 10,
+  "deep_reads": 10,
   "rechecks": 8,
-  "flagged": 6,
-  "saved_in": 0,
+  "flagged": 9,
+  "saved_in": 2,
   "saved_kept": 0,
   "videos": 0
  },
@@ -53,7 +53,9 @@
   "Sweep 10:13Z follow check: no new account qualifies (@dair_ai reaches 3 sweep-file items but is a paper aggregator, not first-hand; @ValsAI has a level-2 flag; @arena already followed), so the browser was not used.",
   "Sweep 14:12Z: get_posts_by_ids also returned no url entities for some long posts (both OpenAI posts, vLLM Humming), so primary links were found by resolving the t.co redirect with a plain HTTP request outside the X budget.",
   "Sweep 14:12Z: no new saves (Twitter Profile archive last synced 12:49Z with nothing new); no deep-read item had a clip over 60 s, so no video record was needed, and there is still no video-capable reader in the sweep.",
-  "Sweep 14:12Z follow check: the prompt defines active as curated or promoted, so curated @OpenAI now has 3 qualifying sweep-file items with no level-2 flag and is a follow candidate (not followed or logged: no browser this run); @NVIDIAAI also has 3 but is curated at signal_to_noise 3 with many event and keynote promo posts, so it is a near-miss."
+  "Sweep 14:12Z follow check: the prompt defines active as curated or promoted, so curated @OpenAI now has 3 qualifying sweep-file items with no level-2 flag and is a follow candidate (not followed or logged: no browser this run); @NVIDIAAI also has 3 but is curated at signal_to_noise 3 with many event and keynote promo posts, so it is a near-miss.",
+  "Sweep 18:10Z: both new saves (captured 14:48Z) failed Scope at the first gate (general security news), so they got no deep read; the prompt says saves always get a deep read, which would spend reads on posts already rejected. The deep-read Flint launch post has a 161 s video, still with no video-capable reader, so no video record.",
+  "Sweep 18:10Z follow check: curated @ArtificialAnlys (4 qualifying items, no level-2 flag, first-hand evals) and @witcheer (3, hands-on local model tests) qualify; @PyTorch also has 3 but posted mostly conference talk promos this window; @omarsar0 has 3 but is a paper explainer like @dair_ai. Not followed or logged: no browser this run."
  ],
  "errors": [],
  "follows_today": 1,
