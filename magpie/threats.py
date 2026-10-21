@@ -76,9 +76,15 @@ THREAT_WORDS = re.compile(
 # A model or agent failure a builder should know about: the words a report of one uses. Its document is the article,
 # post-mortem or status page the item is or links, never a social post.
 FAILURE_WORDS = re.compile(
-    r"\b(?:post-?mortem|incident report|outage|deleted (?:the |a |an |its |our |their )?(?:production|prod|live|database|"
-    r"data|files|repo\w*|codebase)|wiped|data loss|rolled back|roll(?:ed|ing) back|pulled (?:the |its )?(?:model|release|"
-    r"update|version)|went rogue|misbehav\w*|sycophan\w*|(?:model|agent) (?:failure|failed|regression|incident))\b", re.I)
+    r"\b(?:post-?mortem|incident report|outage|wiped|data loss|data leak\w*|data exposure|rolled back|roll(?:ed|ing) back|"
+    r"(?:deleted|dropped|truncated|overwrote|corrupted) (?:the |a |an |its |our |their |all )?(?:(?:customers?|users?|"
+    r"production|prod|live) )?(?:production|prod|live|database|data|files|records|tables?|repo\w*|codebase)|"
+    r"(?:changed|modified|altered) (?:the |its |our |their |all )?(?:customers?|users?|production|prod|live) "
+    r"(?:data(?:base)?|records|tables?)|"
+    r"(?:leaked|leaking|exposed|exposing) (?:the |a |its |our |their |all )?(?:\w+ ){0,2}(?:data|records|information|"
+    r"conversations|chats|prompts|source code|secrets)|"
+    r"pulled (?:the |its )?(?:model|release|update|version)|went rogue|misbehav\w*|sycophan\w*|"
+    r"(?:model|agent) (?:failure|failed|regression|incident))\b", re.I)
 SOCIAL_HOST = re.compile(r"https?://(?:[a-z0-9-]+\.)*(?:x\.com|twitter\.com|youtube\.com|youtu\.be|news\.ycombinator\.com|"
                          r"reddit\.com|linkedin\.com|threads\.net|bsky\.app|mastodon\.\w+)/", re.I)
 ADVISORY_LINK = re.compile(
@@ -750,11 +756,11 @@ def code_actions(fixed_in: list[dict], affects: list[dict], kev: bool) -> list[s
 
 
 def _category(c: dict, v: dict | None) -> str:
+    if c.get("_failure"):  # before any category a source carries: a failure is never published as an attack
+        return FAILURE  # it named no vulnerability, compromise or exploit, so it is no attack
     x = c.get("extra") or {}
     if x.get("category") in CATEGORIES:
         return x["category"]
-    if c.get("_failure"):
-        return FAILURE  # it named no vulnerability, compromise or exploit, so it is no attack
     allowed = ALLOWED.get(c["_origin"], UNLISTED)
     proposal = (v or {}).get("category")
     return proposal if proposal in allowed else DEFAULT_CATEGORY.get(c["_origin"], "ai-framework-vuln")
