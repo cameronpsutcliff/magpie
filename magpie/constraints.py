@@ -128,6 +128,8 @@ def candidates(items: list[dict]) -> list[dict]:
     out = []
     for it in items:
         extra = it.get("extra") or {}
+        if it["source_kind"] == "security":
+            continue  # advisories and incident reports belong to the threats lane
         if it["source_kind"] == "policy":
             if extra.get("primary", True):
                 out.append({**it, "_key": constraint_key(it), "_primary": True, "_doc": it["url"]})
@@ -593,6 +595,8 @@ def run_for(date: str | None = None) -> None:
     day["top"] = rank_and_select(day["events"])  # an action that cuts access today may lead the page
     day["constraints"] = section
     day["trackers"] = trackers.build(day["date"], DATA, STATE)
+    from .recent import attach
+    attach(day, DATA)  # an empty section carries its latest items instead of a blank
     scrub(day)
     write_json(DATA / "days" / f"{day['date']}.json", day, compact=True)
     index = load_json(DATA / "index.json", {"schema": "magpie.index/1", "days": []})

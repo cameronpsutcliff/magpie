@@ -73,7 +73,39 @@
     "changelog": 20,
     "space": 18,
     "news": 6
-   }
+   },
+   "threats": [
+    {
+     "id": "thr-2026-10-20-eight-emudhra-intermediate-ca-private-keys-compromised",
+     "title": "Eight eMudhra intermediate CA private keys compromised",
+     "severity": "high",
+     "exploited": null
+    },
+    {
+     "id": "thr-2026-10-20-mcp-typescript-sdk-servers-exhaust-memory-on",
+     "title": "MCP TypeScript SDK servers exhaust memory on crafted requests",
+     "severity": "high",
+     "exploited": null
+    },
+    {
+     "id": "thr-2026-10-20-mcp-typescript-sdk-experimental-tasks-leak-across",
+     "title": "MCP TypeScript SDK experimental tasks leak across sessions",
+     "severity": "high",
+     "exploited": null
+    },
+    {
+     "id": "thr-2026-10-20-mcp-typescript-sdk-bearer-auth-skips-token",
+     "title": "MCP TypeScript SDK bearer auth skips token audience check",
+     "severity": "medium",
+     "exploited": null
+    },
+    {
+     "id": "thr-2026-10-20-mcp-typescript-client-sdk-leaks-headers-on",
+     "title": "MCP TypeScript client SDK leaks headers on cross-origin redirects",
+     "severity": "medium",
+     "exploited": null
+    }
+   ]
   },
   {
    "date": "2026-10-20",

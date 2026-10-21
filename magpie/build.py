@@ -107,8 +107,9 @@ def build(items: list[dict], history: dict, date: str, repo_meta: dict | None = 
     now = now_utc()
     fresh_cut = now - dt.timedelta(hours=40)
 
-    # Policy documents belong to the constraints lane (constraints.py), not the capability list.
-    items = [it for it in items if it["source_kind"] != "policy"]
+    # Policy documents belong to the constraints lane (constraints.py) and security advisories to the threats lane
+    # (threats.py), not the capability list.
+    items = [it for it in items if it["source_kind"] not in ("policy", "security")]
 
     # 0. Re-key page URLs with the current rule (cached items may carry older keys).
     for it in items:

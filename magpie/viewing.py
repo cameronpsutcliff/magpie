@@ -231,6 +231,8 @@ def run_for(date: str | None = None) -> None:
         raise SystemExit(f"no edition at {path}")
     items = load_json(STATE / "runs" / day["date"] / "items.json", {}).get("items", [])
     day["viewing"] = generate(day["date"], items, DATA, STATE)
+    from .recent import attach
+    attach(day, DATA)  # the section may have filled or emptied: refresh its fallback
     scrub(day)
     write_json(DATA / "days" / f"{day['date']}.json", day, compact=True)
     if load_json(DATA / "index.json", {}).get("latest") == day["date"]:

@@ -1,0 +1,16 @@
+{
+ "note": "Threats added by hand for the threats lane (magpie/threats.py). One entry per threat: url is its primary document (an advisory, an incident report, a root-program bug or the reporter's disclosure site); also lists further primary documents; note is context for the editor, never a source. An entry is read for 14 days after its added date; after that the register keeps it. Never write a threat's words here: the lane writes them from the documents.",
+ "items": [
+  {
+   "url": "https://emudhra.we-have-a-problem.com/",
+   "source": "we-have-a-problem.com (reporter disclosure)",
+   "added": "2026-10-21",
+   "by": "owner",
+   "note": "Reported as an eMudhra intermediate CA key compromise that matters for TLS clients outside the browser (Node, Python certifi, pip, uv, Go, curl, Homebrew and distro ca-certificates).",
+   "also": [
+    {"url": "https://bugzilla.mozilla.org/show_bug.cgi?id=2083449", "name": "Mozilla Bugzilla (incident report)"},
+    {"url": "https://groups.google.com/a/mozilla.org/g/dev-security-policy/c/0R3XLJL6FuE", "name": "Mozilla dev-security-policy"}
+   ]
+  }
+ ]
+}

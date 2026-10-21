@@ -2,7 +2,7 @@
  "$schema": "https://json-schema.org/draft/2020-12/schema",
  "$id": "https://www.cameronsutcliff.com/magpie-data/schema/day.schema.json",
  "title": "Magpie edition (magpie.day/1)",
- "description": "One morning's edition of Magpie: every AI capability collected that day, ranked, with the editor's words, new possibilities, recommended viewing, rising repos and product updates. Fields may be added; existing fields keep their meaning within magpie.day/1.",
+ "description": "One morning's edition of Magpie: every AI capability collected that day, ranked, with the editor's words, new possibilities, recommended viewing, rising repos, product updates, official constraints and security threats. Fields may be added; existing fields keep their meaning within magpie.day/1.",
  "type": "object",
  "required": [
   "schema",
@@ -45,6 +45,42 @@
     },
     "seconds": {
      "type": "number"
+    },
+    "threats": {
+     "type": "object",
+     "description": "The threats lane's receipt: editor lane, candidate counts, what was dropped and why, and each security source's health.",
+     "properties": {
+      "lane": {
+       "type": [
+        "string",
+        "null"
+       ]
+      },
+      "candidates": {
+       "type": "integer"
+      },
+      "classified": {
+       "type": "integer"
+      },
+      "rejected": {
+       "type": "integer"
+      },
+      "deferred": {
+       "type": "integer"
+      },
+      "dropped": {
+       "type": "array"
+      },
+      "errors": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       }
+      },
+      "sources": {
+       "type": "array"
+      }
+     }
     }
    }
   },
@@ -558,6 +594,37 @@
      "items": {
       "type": "string"
      }
+    }
+   }
+  },
+  "threats": {
+   "type": "array",
+   "items": {
+    "$ref": "#/$defs/threat"
+   },
+   "description": "Threats sighted today, newest and most severe first, then critical and high threats first seen in the last week. Every threat stays in the register at threats.json."
+  },
+  "recent": {
+   "$ref": "#/$defs/recent"
+  },
+  "findings": {
+   "type": "object",
+   "description": "One code-built line per empty section: \"No new constraint today. Latest: <title> (<date>)\"; for threats \"No new threat today. Most serious still open: <title> (<severity>, <date>)\"; with nothing recent, \"No threats recorded since <date> (<title>, <status>)\".",
+   "properties": {
+    "constraints": {
+     "type": "string"
+    },
+    "threats": {
+     "type": "string"
+    },
+    "possibilities": {
+     "type": "string"
+    },
+    "ripples": {
+     "type": "string"
+    },
+    "viewing": {
+     "type": "string"
     }
    }
   }
@@ -1285,6 +1352,445 @@
     "new": {
      "type": "boolean",
      "description": "First seen in this edition. The rest are still open: a deadline or effective date ahead, or seen in the last 7 days."
+    }
+   }
+  },
+  "threat": {
+   "type": "object",
+   "description": "A security event that changes what is safe to run, trust or depend on when building with or running AI. It always rests on a primary document. Code sets every enum; title, headline, summary and actions are the editor's words, checked against the documents (numbers, versions and dates must appear there; quote is verbatim).",
+   "required": [
+    "id",
+    "kind",
+    "category",
+    "title",
+    "headline",
+    "summary",
+    "severity",
+    "exploited",
+    "status",
+    "act_now",
+    "affects",
+    "fixed_in",
+    "actions",
+    "who",
+    "first_seen",
+    "doc",
+    "sources",
+    "quote",
+    "evidence"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "description": "thr-<published or first seen>-<slug>; stable once recorded."
+    },
+    "kind": {
+     "const": "threat"
+    },
+    "category": {
+     "enum": [
+      "trust-infrastructure",
+      "supply-chain",
+      "ai-framework-vuln",
+      "model-or-agent-attack",
+      "platform-breach",
+      "exploited-vuln"
+     ]
+    },
+    "title": {
+     "type": "string"
+    },
+    "headline": {
+     "type": "string"
+    },
+    "summary": {
+     "type": "string"
+    },
+    "severity": {
+     "enum": [
+      "critical",
+      "high",
+      "medium"
+     ],
+     "description": "From the source when it states one (the advisory's rating, a CVSS score, the CVE record). Otherwise the editor's estimate, clamped, capped at high for trust infrastructure, with severity_basis \"editor\" (show it as an editor's estimate). Anything below medium is dropped."
+    },
+    "severity_basis": {
+     "type": [
+      "string",
+      "null"
+     ],
+     "description": "Where the severity came from: advisory rating, CVSS <score>, CVSS <score> (CNA or ADP), or editor."
+    },
+    "exploited": {
+     "type": [
+      "boolean",
+      "null"
+     ],
+     "description": "true only for a CISA KEV entry or when the primary document says so in an unnegated sentence (see exploited_quote); otherwise null, never false. Never set by the model."
+    },
+    "status": {
+     "enum": [
+      "active",
+      "mitigated",
+      "patched",
+      "disputed"
+     ],
+     "description": "Set by code from the documents: disputed when one disputes it explicitly, patched when a fixed version is stated, mitigated when a revocation or block is stated, else active."
+    },
+    "act_now": {
+     "type": "boolean",
+     "description": "Computed: severity critical or high, and something to do (fixed versions or actions)."
+    },
+    "affects": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "name"
+      ],
+      "properties": {
+       "name": {
+        "type": "string"
+       },
+       "ecosystem": {
+        "type": "string"
+       },
+       "versions": {
+        "type": "string"
+       }
+      }
+     },
+     "description": "Each package and its versions come from structured data or appear together in one line, table row or sentence of a source document."
+    },
+    "fixed_in": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "name"
+      ],
+      "properties": {
+       "name": {
+        "type": "string"
+       },
+       "version": {
+        "type": "string"
+       }
+      }
+     },
+     "description": "As affects: structured, or package and version together in one line, table row or sentence of a source document."
+    },
+    "actions": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Built by code from fixed_in (\"Update <package> to <version> or later\"), then at most two editor actions, each backed by a verbatim quote (action_quotes)."
+    },
+    "who": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "published": {
+     "type": [
+      "string",
+      "null"
+     ],
+     "format": "date"
+    },
+    "first_seen": {
+     "type": "string",
+     "format": "date"
+    },
+    "updated": {
+     "type": "string",
+     "format": "date"
+    },
+    "last_seen": {
+     "type": "string",
+     "format": "date",
+     "description": "The last edition that sighted it."
+    },
+    "cves": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "kev": {
+     "type": "boolean",
+     "description": "Listed in CISA's Known Exploited Vulnerabilities catalog."
+    },
+    "doc": {
+     "type": "string",
+     "format": "uri",
+     "description": "The primary document."
+    },
+    "sources": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "name",
+       "url"
+      ],
+      "properties": {
+       "name": {
+        "type": "string"
+       },
+       "url": {
+        "type": "string",
+        "format": "uri"
+       },
+       "primary": {
+        "type": "boolean"
+       },
+       "official": {
+        "type": "boolean"
+       }
+      }
+     }
+    },
+    "quote": {
+     "type": "string",
+     "description": "4 to 60 words copied verbatim from the primary document."
+    },
+    "evidence": {
+     "enum": [
+      "official",
+      "reported",
+      "corroborated"
+     ],
+     "description": "official: a primary document from the issuer, the affected vendor or an advisory authority; corroborated: two or more independent sources; reported: one."
+    },
+    "key": {
+     "type": "string",
+     "description": "Internal identity: threat:<CVE, GHSA or OSV id>, threat:bz:<bug>, or a page key."
+    },
+    "idents": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Every document identity merged into it."
+    },
+    "exploited_quote": {
+     "type": [
+      "string",
+      "null"
+     ],
+     "description": "The words of the primary document that state exploitation, verbatim."
+    },
+    "action_quotes": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "action",
+       "quote"
+      ],
+      "properties": {
+       "action": {
+        "type": "string"
+       },
+       "quote": {
+        "type": "string"
+       }
+      }
+     },
+     "description": "The editor's actions and the verbatim sentence from the primary document behind each."
+    },
+    "incident": {
+     "type": [
+      "string",
+      "null"
+     ],
+     "description": "For a package advisory that belongs to an umbrella incident: the umbrella's id. Found by code: the advisory cites the incident's documents, the incident's document links the advisory, or both name the same package fixed in the same version within 30 days."
+    },
+    "children": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "For an umbrella incident: the ids of its package advisories, which follow it in the day's list. Show them nested under the umbrella, not as separate stories."
+    },
+    "merged_ids": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Ids of recorded threats merged into this one because they share a document identity, directly or through another sighting; old links to them resolve here."
+    }
+   }
+  },
+  "recent": {
+   "type": "object",
+   "description": "For each section whose own list is empty today, up to 5 of the most impactful recent items, each with its date. Copied from stored fields of the registers (the last 90 days; older constraints only while in force) and the last 14 editions; no model call. Package advisories that belong to an incident are left to the incident.",
+   "properties": {
+    "constraints": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "date",
+       "id",
+       "title"
+      ],
+      "properties": {
+       "date": {
+        "type": "string",
+        "format": "date"
+       },
+       "id": {
+        "type": "string"
+       },
+       "title": {
+        "type": "string"
+       },
+       "status": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "doc": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "why": {
+        "type": "string"
+       }
+      }
+     }
+    },
+    "threats": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "date",
+       "id",
+       "title"
+      ],
+      "properties": {
+       "date": {
+        "type": "string",
+        "format": "date"
+       },
+       "id": {
+        "type": "string"
+       },
+       "title": {
+        "type": "string"
+       },
+       "severity": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "doc": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "why": {
+        "type": "string"
+       },
+       "status": {
+        "type": [
+         "string",
+         "null"
+        ]
+       }
+      }
+     }
+    },
+    "possibilities": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "date",
+       "title"
+      ],
+      "properties": {
+       "date": {
+        "type": "string",
+        "format": "date"
+       },
+       "id": {
+        "type": "string"
+       },
+       "title": {
+        "type": "string"
+       },
+       "why": {
+        "type": "string"
+       }
+      }
+     }
+    },
+    "ripples": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "date",
+       "from",
+       "to"
+      ],
+      "properties": {
+       "date": {
+        "type": "string",
+        "format": "date"
+       },
+       "from": {
+        "type": "string"
+       },
+       "to": {
+        "type": "string"
+       },
+       "why": {
+        "type": "string"
+       }
+      }
+     }
+    },
+    "viewing": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "date",
+       "title",
+       "url"
+      ],
+      "properties": {
+       "date": {
+        "type": "string",
+        "format": "date"
+       },
+       "id": {
+        "type": "string"
+       },
+       "title": {
+        "type": "string"
+       },
+       "url": {
+        "type": "string",
+        "format": "uri"
+       },
+       "why": {
+        "type": "string"
+       }
+      }
+     }
     }
    }
   }
