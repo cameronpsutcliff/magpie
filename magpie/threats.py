@@ -334,18 +334,33 @@ def unnamed_proper(sent: str, source: str) -> list[str]:
     return [t for t in named if not re.search(rf"(?<![\w@/-]){re.escape(t.lower())}(?![\w-])", low)]
 
 
+def ungrounded_names(text: str, source: str) -> list[str]:
+    """Names in a title, headline, who line or summary sentence that the documents never use (whole words, any case):
+    package-like tokens and watched packages anywhere, acronyms anywhere, and capitalized words after the first. A plain
+    capitalized first word is not checked: sentence case capitalizes every first word, so it cannot be told from a name."""
+    out = unnamed_packages(text, source) + unnamed_proper(text, source)
+    toks = [t.strip(".,;:()'\"") for t in re.findall(r"[@\w][\w.@/-]*", text)]
+    first = toks[0] if toks else ""
+    if len(first) >= 2 and first.isalpha() and first.isupper() and first not in out:  # an acronym opening the sentence
+        if not re.search(rf"(?<![\w@/-]){re.escape(first.lower())}(?![\w-])", source.lower()):
+            out.append(first)
+    return out
+
+
+names_missing = ungrounded_names
+
+
 def clean_summary(summary: str, pairs: list[dict], ungrounded_names: list[str], source: str = "") -> str:
     """The editor's summary without any sentence that advises, ties a version to the wrong package, names a package whose
-    claimed versions the documents do not support, or uses a name the documents never use (a package, a capitalized name
-    or an acronym). A lowercase plain word that is also some package's name cannot be told from English; that is the
-    one gap left."""
+    claimed versions the documents do not support, or uses a name the documents never use (ungrounded_names, the same
+    check the title, headline and who lines pass). Two gaps are stated: a plain lowercase word that is also some
+    package's name cannot be told from English, and a plain capitalized first word cannot be told from sentence case."""
     bad = {key_token(n) for n in ungrounded_names if key_token(n)}
     keep = []
     for sent in SENTENCE.split(summary or ""):
         if not sent.strip() or IMPERATIVE.match(sent):
             continue
-        if not versions_tied(sent, pairs) or bad & _tokens(sent) or unnamed_packages(sent, source) or (
-                source and unnamed_proper(sent, source)):
+        if not versions_tied(sent, pairs) or bad & _tokens(sent) or (source and names_missing(sent, source)):
             continue
         keep.append(sent.strip())
     return " ".join(keep)
@@ -587,7 +602,7 @@ def judge(c: dict, v: dict, date: str) -> tuple[dict, str | None]:
     summary = clean_summary(clean(v.get("summary") or "").strip(), pairs, bad_a + bad_f, source)
     quote = clean(v.get("quote") or "").strip()
     who = [w for w in (clean(w).strip() for w in v.get("who") or [] if isinstance(w, str))
-           if w and not unnamed_packages(w, source)][:3]
+           if w and not names_missing(w, source)][:3]
     actions = []
     for a in v.get("actions") or []:
         if not isinstance(a, dict) or not isinstance(a.get("action"), str) or not isinstance(a.get("quote"), str):
@@ -600,8 +615,8 @@ def judge(c: dict, v: dict, date: str) -> tuple[dict, str | None]:
         return drop("no title or headline")
     if any(unsafe_words(w) for w in [title, headline, summary, *who, quote]):
         return drop("its words carry a link, a command or an address")
-    if unnamed_packages(f"{title}. {headline}", source):
-        return drop("its title or headline names a package its documents do not")
+    if names_missing(title, source) or names_missing(headline, source):
+        return drop("its title or headline uses a name its documents do not")
     if not versions_tied(title, pairs) or not versions_tied(headline, pairs):
         return drop("its headline ties a version to a package the documents do not")
     if not quoted(quote, doc):
