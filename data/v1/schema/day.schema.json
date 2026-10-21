@@ -1627,7 +1627,7 @@
     "reach": {
      "type": "integer",
      "minimum": 0,
-     "description": "How far it reaches, computed by code from stored fields: the distinct packages in affects and fixed_in and the ecosystems in affects (with those of its nested package advisories), one for each nested advisory, plus 10 for trust infrastructure. Threats are listed by tier, then reach."
+     "description": "How far it reaches, computed by code from stored fields: each affected package (its full name in its ecosystem) and each fixed package no affected one names, the ecosystems in affects (with those of its nested package advisories), one for each nested advisory, plus 10 for trust infrastructure. Threats are listed by tier, then reach."
     },
     "wide": {
      "type": "boolean",

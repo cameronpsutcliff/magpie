@@ -83,9 +83,9 @@ numbers and URLs), and package advisories that belong to an umbrella incident ca
 in the day's list. The day's list carries what was sighted today, then critical and high threats from the last week;
 `data/v1/threats.json` keeps them all.
 
-**Ranked by reach.** Code computes each threat's `reach` from stored fields: the distinct packages in `affects` and
-`fixed_in` and the ecosystems in `affects`, with those of its nested package advisories, one for each nested advisory,
-and 10 more for trust infrastructure. A threat that is trust infrastructure, has a nested advisory or spans two or more
+**Ranked by reach.** Code computes each threat's `reach` from stored fields: each affected package (its full name in its
+ecosystem) and each fixed package no affected one names, the ecosystems in `affects`, with those of its nested package
+advisories, one for each nested advisory, and 10 more for trust infrastructure. A threat that is trust infrastructure, has a nested advisory or spans two or more
 ecosystems is `wide` and ranks with the critical ones whatever its own severity or its basis, so an incident like
 eMudhra's (every non-browser TLS client) leads a single-package bug. Every surface shares one order (`rank_key`): that
 tier, then reach, then exploited, then a fixed version, then official evidence. The day's list puts new threats first and

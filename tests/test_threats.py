@@ -1176,5 +1176,13 @@ class ReachTests(unittest.TestCase):
         self.assertEqual([r["id"] for r in R.threats("2026-10-22", data)], ["thr-fixed", "thr-action"])
         self.assertLess(T.rank_key(fixed), T.rank_key(action_only))
 
+    def test_a_package_is_its_name_in_its_ecosystem(self):
+        twin = {"category": "ai-framework-vuln", "affects": [{"name": "core", "ecosystem": "npm"}, {"name": "core", "ecosystem": "PyPI"}],
+                "fixed_in": [{"name": "core", "version": "2"}]}
+        self.assertEqual(T.reach(twin), (4, True))  # two packages, two ecosystems; the fix names one already counted
+        cas = {"category": "ai-framework-vuln", "affects": [{"name": "EM EV TLS CA - G3B", "ecosystem": "CA"},
+                                                            {"name": "EM OV TLS CA - G3B", "ecosystem": "CA"}]}
+        self.assertEqual(T.reach(cas)[0], 3)  # distinct names that end alike stay distinct
+
 if __name__ == "__main__":
     unittest.main()

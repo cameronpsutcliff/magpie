@@ -990,11 +990,17 @@ def reach(t: dict, children: list[dict] = ()) -> tuple[int, bool]:
     ecosystems they sit in, with those of its nested package advisories, plus one for each advisory, plus TRUST_REACH for
     trust infrastructure. Trust infrastructure, any nested advisory or two or more ecosystems make it wide."""
     rows = [t, *children]
-    names = {key_token(p["name"]) for r in rows for p in [*(r.get("affects") or []), *(r.get("fixed_in") or [])]
-             if p.get("name")} - {None}
-    ecosystems = {p["ecosystem"] for r in rows for p in r.get("affects") or [] if p.get("ecosystem")}
+    norm = lambda name: " ".join(name.lower().split())  # noqa: E731
+    affected = [p for r in rows for p in r.get("affects") or [] if p.get("name")]
+    # A package is its full name in its ecosystem; a fixed name counts only when no affected package already names it
+    # ("Python certifi" fixes the affected certifi).
+    packages = {(p.get("ecosystem") or "", norm(p["name"])) for p in affected}
+    tokens = {key_token(p["name"]) for p in affected} - {None}
+    packages |= {("", norm(p["name"])) for r in rows for p in r.get("fixed_in") or []
+                 if p.get("name") and key_token(p["name"]) not in tokens}
+    ecosystems = {p["ecosystem"] for p in affected if p.get("ecosystem")}
     trust = t.get("category") == "trust-infrastructure"
-    return len(names) + len(ecosystems) + len(children) + (TRUST_REACH if trust else 0), trust or bool(children) or len(ecosystems) >= 2
+    return len(packages) + len(ecosystems) + len(children) + (TRUST_REACH if trust else 0), trust or bool(children) or len(ecosystems) >= 2
 
 
 def tier(t: dict) -> int:
