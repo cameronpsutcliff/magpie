@@ -326,15 +326,26 @@ def unnamed_packages(sent: str, source: str) -> list[str]:
     return [t for t in named if not re.search(rf"(?<![\w@/-]){re.escape(t.lower())}(?![\w-])", low)]
 
 
+def unnamed_proper(sent: str, source: str) -> list[str]:
+    """Names in a sentence that the documents never use: capitalized words after the first, and acronyms."""
+    low = source.lower()
+    toks = [t.strip(".,;:()'\"") for t in re.findall(r"[@\w][\w.@/-]*", sent)][1:]
+    named = [t for t in toks if t and t[0].isupper() and t.lower() not in ("i",)]
+    return [t for t in named if not re.search(rf"(?<![\w@/-]){re.escape(t.lower())}(?![\w-])", low)]
+
+
 def clean_summary(summary: str, pairs: list[dict], ungrounded_names: list[str], source: str = "") -> str:
     """The editor's summary without any sentence that advises, ties a version to the wrong package, names a package whose
-    claimed versions the documents do not support, or names a package the documents never name."""
+    claimed versions the documents do not support, or uses a name the documents never use (a package, a capitalized name
+    or an acronym). A lowercase plain word that is also some package's name cannot be told from English; that is the
+    one gap left."""
     bad = {key_token(n) for n in ungrounded_names if key_token(n)}
     keep = []
     for sent in SENTENCE.split(summary or ""):
         if not sent.strip() or IMPERATIVE.match(sent):
             continue
-        if not versions_tied(sent, pairs) or bad & _tokens(sent) or unnamed_packages(sent, source):
+        if not versions_tied(sent, pairs) or bad & _tokens(sent) or unnamed_packages(sent, source) or (
+                source and unnamed_proper(sent, source)):
             continue
         keep.append(sent.strip())
     return " ".join(keep)
@@ -570,11 +581,13 @@ def judge(c: dict, v: dict, date: str) -> tuple[dict, str | None]:
     docs = _docs(c)
     affects, bad_a = _grounded_pairs(v.get("affects"), ("name", "ecosystem", "versions"), AFFECTS_LIMIT, docs)
     fixed_in, bad_f = _grounded_pairs(v.get("fixed_in"), ("name", "version"), FIXED_LIMIT, docs)
-    pairs = [*(x.get("affects") or []), *(x.get("fixed_in") or []), *affects, *fixed_in]
+    pairs = [*own_pairs(c, "affects", ("name", "ecosystem", "versions"), AFFECTS_LIMIT),
+             *own_pairs(c, "fixed_in", ("name", "version"), FIXED_LIMIT), *affects, *fixed_in]
     title, headline = clean(v.get("title") or "").strip(), clean(v.get("headline") or "").strip()
     summary = clean_summary(clean(v.get("summary") or "").strip(), pairs, bad_a + bad_f, source)
     quote = clean(v.get("quote") or "").strip()
-    who = [clean(w).strip() for w in v.get("who") or [] if isinstance(w, str) and w.strip()][:3]
+    who = [w for w in (clean(w).strip() for w in v.get("who") or [] if isinstance(w, str))
+           if w and not unnamed_packages(w, source)][:3]
     actions = []
     for a in v.get("actions") or []:
         if not isinstance(a, dict) or not isinstance(a.get("action"), str) or not isinstance(a.get("quote"), str):
@@ -587,6 +600,8 @@ def judge(c: dict, v: dict, date: str) -> tuple[dict, str | None]:
         return drop("no title or headline")
     if any(unsafe_words(w) for w in [title, headline, summary, *who, quote]):
         return drop("its words carry a link, a command or an address")
+    if unnamed_packages(f"{title}. {headline}", source):
+        return drop("its title or headline names a package its documents do not")
     if not versions_tied(title, pairs) or not versions_tied(headline, pairs):
         return drop("its headline ties a version to a package the documents do not")
     if not quoted(quote, doc):
