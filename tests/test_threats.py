@@ -993,9 +993,6 @@ class NoBareLinesTests(Base):
             self.assertEqual([e.message for e in v.iter_errors(t)], [])
 
 
-if __name__ == "__main__":
-    unittest.main()
-
 
 FAILURE_DOC = "https://blog.agent-maker.example/postmortem"
 FAILURE_TEXT = "\n".join([
@@ -1090,3 +1087,6 @@ class ReviewFixTests(unittest.TestCase):
         self.assertEqual(why, "its title or headline uses a name its documents do not")
         rec, why = T.judge(c, dict(base, title="AWS crash from one request"), DATE)  # an acronym opening a title counts
         self.assertEqual(why, "its title or headline uses a name its documents do not")
+
+if __name__ == "__main__":
+    unittest.main()
