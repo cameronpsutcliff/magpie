@@ -903,11 +903,11 @@ class RecentTests(unittest.TestCase):
         """Point 6: the same ranking as recent.threats, never simply the newest."""
         d = self.day()
         R.attach(d, self.data)
-        self.assertEqual(d["findings"]["threats"], "No new threat today. Most serious still open: High still open (high, 2099-01-02)")
+        self.assertEqual(d["findings"]["threats"], "No new threat today. Widest reach still open: High still open (high, 2099-01-02)")
         self.threats([{"id": "thr-p", "title": "Patched one", "severity": "critical", "status": "patched", "first_seen": "2099-01-04"}])
         d = self.day()
         R.attach(d, self.data)
-        self.assertEqual(d["findings"]["threats"], "No new threat today. Most serious recent: Patched one (critical, patched, 2099-01-04)")
+        self.assertEqual(d["findings"]["threats"], "No new threat today. Widest reach recent: Patched one (critical, patched, 2099-01-04)")
 
     def test_threats_older_than_ninety_days_are_not_recent(self):
         """Point 5: no fallback to arbitrarily old threats; an honest line instead."""
@@ -958,7 +958,7 @@ class RecentTests(unittest.TestCase):
 
 
 class NoBareLinesTests(Base):
-    BARE = re.compile(r"\b(?:no|nothing|none)\b[^.\"'\n]{0,80}?\btoday\b(?!\.\s*(?:Latest|Most serious))", re.I)
+    BARE = re.compile(r"\b(?:no|nothing|none)\b[^.\"'\n]{0,80}?\btoday\b(?!\.\s*(?:Latest|Widest reach))", re.I)
 
     def test_no_generated_string_says_only_that_nothing_happened(self):
         hits = []
@@ -1165,6 +1165,16 @@ class ReachTests(unittest.TestCase):
         self.assertTrue(recent[0]["title"].startswith("Eight eMudhra"))
         self.assertEqual(len(recent), 5)  # the three advisories are told through their incident
 
+
+    def test_ties_break_on_a_fixed_version_before_newest(self):
+        base = {"severity": "high", "wide": False, "reach": 3, "exploited": None, "evidence": "official", "incident": None}
+        fixed = {**base, "id": "thr-fixed", "title": "Older, fixed", "first_seen": "2026-10-19", "fixed_in": [{"name": "a", "version": "2"}]}
+        action_only = {**base, "id": "thr-action", "title": "Newer, action only", "first_seen": "2026-10-21", "fixed_in": [],
+                       "actions": ["Turn the feature off"], "act_now": True}
+        data = Path(tempfile.mkdtemp())
+        write_json(data / "threats.json", {"schema": "magpie.threats/1", "threats": [action_only, fixed]})
+        self.assertEqual([r["id"] for r in R.threats("2026-10-22", data)], ["thr-fixed", "thr-action"])
+        self.assertLess(T.rank_key(fixed), T.rank_key(action_only))
 
 if __name__ == "__main__":
     unittest.main()

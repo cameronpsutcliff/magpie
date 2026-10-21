@@ -1002,6 +1002,13 @@ def tier(t: dict) -> int:
     return SEV_RANK["critical"] if t.get("wide") else SEV_RANK.get(t.get("severity") or "", 0)
 
 
+def rank_key(t: dict) -> tuple:
+    """The order every surface shares (the day list puts new first, then this; the site and MCP use the same keys): tier,
+    reach, exploited, a fixed version, official evidence."""
+    return (-tier(t), -(t.get("reach") or 0), t.get("exploited") is not True, not t.get("fixed_in"),
+            t.get("evidence") != "official")
+
+
 def _order(r: dict, date: str) -> tuple:
     """New first, then severity, exploited, something to do, official evidence, more sources, newest."""
     return (r.get("first_seen") != date, -SEV_RANK.get(r.get("severity") or "", 0), r.get("exploited") is not True,
@@ -1010,8 +1017,9 @@ def _order(r: dict, date: str) -> tuple:
 
 
 def arrange(threats: list[dict], date: str) -> list[dict]:
-    """Each umbrella incident followed by its children. Groups: new first, then by reach: tier (a wide threat ranks with
-    the critical ones), then reach, then their most serious member. Every threat carries its reach and wide."""
+    """Each umbrella incident followed by its children. Groups: new first, then rank_key (tier, where a wide threat ranks
+    with the critical ones; reach; exploited; a fixed version; official evidence), then their most serious member and
+    newest (_order). Every threat carries its reach and wide."""
     ids = {t["id"] for t in threats}
     kids: dict[str, list[dict]] = {}
     for t in threats:
@@ -1023,7 +1031,7 @@ def arrange(threats: list[dict], date: str) -> list[dict]:
 
     def rank(t):
         group = [t, *kids.get(t["id"], [])]
-        return (all(m.get("first_seen") != date for m in group), -tier(t), -t["reach"], min(_order(m, date) for m in group))
+        return (all(m.get("first_seen") != date for m in group), *rank_key(t), min(_order(m, date) for m in group))
     out = []
     for t in sorted(tops, key=rank):
         children = sorted(kids.get(t["id"], []), key=lambda k: _order(k, date))

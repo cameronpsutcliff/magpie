@@ -87,15 +87,16 @@ in the day's list. The day's list carries what was sighted today, then critical 
 `fixed_in` and the ecosystems in `affects`, with those of its nested package advisories, one for each nested advisory,
 and 10 more for trust infrastructure. A threat that is trust infrastructure, has a nested advisory or spans two or more
 ecosystems is `wide` and ranks with the critical ones whatever its own severity or its basis, so an incident like
-eMudhra's (every non-browser TLS client) leads a single-package bug. Order: new first, then that tier, then reach, then
-exploited, a fix, official evidence and newest. The day's list, the section's lead line, `recent.threats` and the feed
-all use it.
+eMudhra's (every non-browser TLS client) leads a single-package bug. Every surface shares one order (`rank_key`): that
+tier, then reach, then exploited, then a fixed version, then official evidence. The day's list puts new threats first and
+breaks remaining ties by its most serious member and newest; `recent.threats` and the site's register fallback break them
+by newest. The feed and the index follow the day's list; the lead line reads "Widest reach".
 
 **No blank sections.** When a section's own list is empty (constraints, threats, possibilities, ripples, viewing), the
 day's `recent` block carries up to five of the most impactful recent items, each with its date, copied with no model
 call from the registers (the last 90 days; an older constraint only while it is in force) and the last 14 editions.
-`findings` carries a dated line such as "No new constraint today. Latest: <title> (<date>)" or, for threats, the most
-serious item still open; with nothing recent it says when the last one was recorded.
+`findings` carries a dated line such as "No new constraint today. Latest: <title> (<date>)" or, for threats, the
+widest-reaching item still open; with nothing recent it says when the last one was recorded.
 
 ## Where it runs
 
