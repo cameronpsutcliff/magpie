@@ -166,11 +166,11 @@ def publish_day(day: dict, events: list[dict], top_events: list[dict], *, force:
     return True
 
 
-def refresh_elements(date: str) -> None:
-    """Fold the edition into the element pages (data/v1/elements). A side file: it never fails the edition."""
+def refresh_elements(date: str | None = None) -> None:
+    """Rebuild the element pages (data/v1/elements) from the editions. A side file: it never fails the edition."""
     try:
-        from .elements import update
-        update(date, DATA, STATE)
+        from .elements import build
+        build(DATA, STATE)
     except (Exception, SystemExit) as ex:  # the redaction gate raises SystemExit; here it must not end the run
         print(f"element pages not updated: {type(ex).__name__}: {str(ex)[:160]}", file=sys.stderr)
 

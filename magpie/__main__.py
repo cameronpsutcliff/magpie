@@ -7,7 +7,7 @@
     python -m magpie review --week    # weekly: quality report on the week's editions (see review.py)
     python -m magpie constraints      # add the constraints lane and trackers to a published edition
     python -m magpie threats          # add the threats lane and the recent fallbacks to today's edition
-    python -m magpie elements         # fold the latest edition into the element pages (--rebuild for all)
+    python -m magpie elements         # rebuild the element pages from the editions since they started
 """
 from __future__ import annotations
 
@@ -111,10 +111,8 @@ def main() -> None:
     pk.add_argument("--date", help="edition date, default latest")
     pt = sub.add_parser("threats", help="add security threats and the recent fallbacks to today's edition")
     pt.add_argument("--date", help="edition date, default latest")
-    pe = sub.add_parser("elements", help="fold an edition into the element pages, or rebuild them all")
-    pe.add_argument("--date", help="edition date, default latest")
-    pe.add_argument("--rebuild", action="store_true", help="regenerate every element page from the editions since the pages start")
-    pe.add_argument("--since", help="with --rebuild: start the pages on this edition date, within the last 7 editions or at their current start")
+    pe = sub.add_parser("elements", help="rebuild the element pages from the editions since they started")
+    pe.add_argument("--since", help="start the pages on this edition: the current start or one of the last 7 editions")
     bf = sub.add_parser("backfill", help="rebuild past editions from archives")
     bf.add_argument("--from", dest="start", required=True, help="first edition date, YYYY-MM-DD")
     bf.add_argument("--to", dest="end", required=True, help="last edition date, YYYY-MM-DD")
@@ -159,7 +157,7 @@ def main() -> None:
         return
     if a.cmd == "elements":
         from .elements import run as elements_run
-        elements_run(a.date, full=a.rebuild, since=a.since)
+        elements_run(a.since)
         return
     if a.cmd == "reindex":
         from .publish import reindex

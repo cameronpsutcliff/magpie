@@ -2,13 +2,12 @@
  "$schema": "https://json-schema.org/draft/2020-12/schema",
  "$id": "https://www.cameronsutcliff.com/magpie-data/schema/elements.schema.json",
  "title": "Magpie element index (magpie.elements/1)",
- "description": "Every element page, most recently seen first. Fetch one with elements/<slug>.json; look one up by canonical key with the key field.",
+ "description": "Every element page, most recently seen first, rebuilt from the editions since `since` on every publish. Fetch one with elements/<slug>.json; look one up by canonical key with the key field.",
  "type": "object",
  "required": [
   "schema",
   "since",
   "updated",
-  "actions",
   "elements"
  ],
  "additionalProperties": false,
@@ -38,8 +37,7 @@
      "days_seen",
      "days_featured",
      "possibilities",
-     "constraints",
-     "dates"
+     "constraints"
     ],
     "properties": {
      "slug": {
@@ -96,14 +94,6 @@
      "constraints": {
       "type": "integer",
       "minimum": 0
-     },
-     "dates": {
-      "type": "array",
-      "items": {
-       "type": "string",
-       "format": "date"
-      },
-      "description": "Editions in the page's timeline window and its possibilities, newest first."
      }
     },
     "additionalProperties": false
@@ -116,13 +106,6 @@
    ],
    "format": "date",
    "description": "The first edition element pages draw on. Nothing earlier is counted: first_seen means first seen since this date."
-  },
-  "actions": {
-   "type": "object",
-   "additionalProperties": {
-    "type": "string"
-   },
-   "description": "Fingerprint of each constraints-register record when the pages were last written; a change makes the next update recompute every element the action could touch."
   }
  }
 }

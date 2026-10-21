@@ -43,16 +43,14 @@ can pull these files; nothing needs this code.
 An **element** is one thing Magpie keeps meeting: a repo, model, paper, tool or official action, keyed the way the
 editions cluster it (`gh:owner/repo`, `hf:org/model`, `arxiv:id`, `url:...`, `policy:...`). It gets a page when it
 appears on two or more days, feeds a new possibility, is an official action, or an official action rests on a document
-it carried, cites it, or names its maker. Pages start on a date (`since` in the index): a seed reaches back seven
-editions at most, and after that they grow from each day's edition; nothing earlier is read. Pages are computed from the published editions and the constraints
-register, with no model call: every appearance, where to find it, which sources spotted it, the knock-on areas the
-editor named, the possibilities it fed, what it works with (combined in a possibility, or covered by the same post
-on the same day, and beside that the integrations the editor named from the sources' own words), and the actions that touch it. Each publish folds that day in and replaces any earlier copy of
-the same day; `python3 -m magpie elements --rebuild` regenerates them all from the day files and matches a run of
-daily updates byte for byte. When an action is added, corrected or removed, every element it could touch is
-recomputed from the editions. Pages are bounded: the newest 60 appearances and 60 possibilities in full, two years of
-one-line timeline rows, and a folded summary of the rest (counts, extremes, and the actions older sources matched). Slugs are a pure function of the key (`gh-owner--repo`, `arxiv-<id>`,
-`policy-fr-<number>`, else a readable stem plus a hash), so a page's URL never changes.
+it carried, cites it, or names its maker. A page shows every appearance, where to find it, which sources spotted it,
+the knock-on areas the editor named, the possibilities it fed, what it works with (combined in a possibility, covered
+by the same post on the same day, or named by the editor and spelled in the sources), and the actions that touch it.
+
+Every publish rebuilds all the pages from scratch, from the editions since the pages started (`since` in the index;
+the first build starts seven editions back, and nothing earlier is read). No model is called and nothing is patched in
+place, so a page always says what the editions and the constraints register say. Slugs are a pure function of the key
+(`gh-owner--repo`, `arxiv-<id>`, `policy-fr-<number>`, else a readable stem plus a hash), so a page's URL never changes.
 
 ## Threats
 
@@ -100,7 +98,7 @@ serious item still open; with nothing recent it says when the last one was recor
 python3 -m magpie run --no-llm --cloud   # keyless sources, no editor
 python3 -m magpie run                    # everything available on this machine
 python3 -m magpie threats                # add the threats lane and the recent fallbacks to today's edition
-python3 -m magpie elements --rebuild     # regenerate every element page from the day files
+python3 -m magpie elements               # rebuild every element page from the editions
 python3 -m unittest discover -s tests
 ```
 
