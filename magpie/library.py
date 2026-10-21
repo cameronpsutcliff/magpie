@@ -6,7 +6,8 @@ they were ever featured. Retrieval is stdlib only (shared words weighted by rari
 either way, the same maker) so the cloud tier runs it as the home tier does. No model is called.
 
 A library row carries the same fields as a row from today, from its latest edited appearance, plus its history before the
-day: first and last seen, days seen, days featured, peak signal, stars gained and its element page's works-with count.
+day: first and last seen, days seen, days featured, peak signal, stars gained, and its element page's works-with count as
+last built (in the daily run, from the editions before the day; a re-run of a past day sees the pages as they are now).
 `adoption` turns that history into one 0 to 1 score; the possibility ranking uses it as the amplification term.
 """
 from __future__ import annotations

@@ -74,6 +74,7 @@ def _pool(day: dict, lib: dict[str, dict], limit_today: int = 24, check=library.
     """Today's edited capabilities, then the live library capabilities its strongest arrivals relate to most."""
     edited = [e for e in day["events"] if e.get("brief")][:limit_today]
     rows = [_row(e, day["date"], True, lib.get(e["key"])) for e in edited]
+    # The day's events are ranked, so the first edited ones are its strongest arrivals.
     keys, receipt = library.pick(edited[:library.STRONG], lib, {e["key"] for e in day["events"]}, check)
     rows += [_row(lib[k]["event"], lib[k]["date"], False, lib[k]) for k in keys]
     return rows, {"today": len(edited), "library": len(keys), **receipt}
