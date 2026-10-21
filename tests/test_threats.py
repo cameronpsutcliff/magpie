@@ -1,4 +1,6 @@
 import ast
+import contextlib
+import io
 import json
 import os
 import re
@@ -642,6 +644,25 @@ class OSVCollectorTests(unittest.TestCase):
         self.assertEqual(sorted(i.extra["ids"][0] for i in second), ids)  # the resumed query reached what the first run missed
         self.assertEqual(S.NOTES["osv"]["resumed"], 1)
         self.assertEqual(json.loads(pages.read_text())["resume"], [])
+
+    def test_state_it_cannot_save_is_named_in_the_receipt(self):
+        def batch(url, body, timeout=40):
+            return {"results": [{"vulns": [{"id": "GHSA-0000-tttt-uuuu", "modified": "2099-01-09T00:00:00Z"}], "next_page_token": "p1"}]}
+
+        def unwritable(path, data):
+            raise OSError("read-only file system")
+        S._post_json, write = batch, S.write_json
+        S.fetch = lambda url, **kw: (_ for _ in ()).throw(OSError("offline"))
+        S.write_json = unwritable
+        try:
+            with contextlib.redirect_stderr(io.StringIO()) as err:
+                S.osv(packages=[{"ecosystem": "PyPI", "name": "vllm"}], max_pages=1)
+        finally:
+            S.write_json = write
+        note = S.NOTES["osv"]
+        self.assertEqual(note["resume_not_saved"]["queries"], ["vllm"])  # the next run restarts it, and says so
+        self.assertEqual(note["retry_not_saved"]["ids"], ["GHSA-0000-tttt-uuuu"])
+        self.assertIn("resume state not saved", err.getvalue())
 
     def test_a_modified_only_advisory_is_marked(self):
         S._post_json = lambda url, body, timeout=40: {"results": [{"vulns": [{"id": "GHSA-old0-0000-0000", "modified": "2099-01-09T00:00:00Z"}]}]}

@@ -17,6 +17,7 @@ import html as htmllib
 import json
 import math
 import re
+import sys
 import urllib.parse
 import urllib.request
 
@@ -303,7 +304,8 @@ def osv(days: int | None = None, packages: list[dict] | None = None, max_pages: 
     `max_pages` is a safety stop, not a cap: a run that reaches it saves each unfinished query's page token, and the next
     run continues those queries from where they stopped, beside its own. Only an advisory published inside the window may become a new threat; one that was only modified carries
     `update_only` and can just update a threat already recorded under the same ids. Nothing is capped silently: an
-    advisory that cannot be read goes to a retry queue the next run reads first, and NOTES["osv"] says what happened.
+    advisory that cannot be read goes to a retry queue the next run reads first, and NOTES["osv"] says what happened,
+    including any resume or retry state it could not save.
     """
     cfg = config()
     window = days or cfg.get("window_days", 4)
@@ -343,8 +345,9 @@ def osv(days: int | None = None, packages: list[dict] | None = None, max_pages: 
         pending = nxt
     try:
         write_json(pages_file, {"resume": left})
-    except OSError:
-        pass
+    except OSError as ex:  # the next run cannot resume: say which queries restart from their first page
+        note["resume_not_saved"] = {"queries": [q["name"] for q in left], "error": str(ex)[:160]}
+        print(f"osv: resume state not saved ({len(left)} queries restart next run): {ex}", file=sys.stderr)
     retry = [i for i in load_json(RETRY, {}).get("ids", []) if i not in ids]
     note["retried"] = len(retry)
     ids += retry
@@ -360,8 +363,9 @@ def osv(days: int | None = None, packages: list[dict] | None = None, max_pages: 
     note["unread"] = [vid for vid, v in zip(ids, got) if v is None]
     try:
         write_json(RETRY, {"ids": note["unread"]})
-    except OSError:
-        pass
+    except OSError as ex:  # the next run cannot retry these: say which
+        note["retry_not_saved"] = {"ids": note["unread"][:40], "error": str(ex)[:160]}
+        print(f"osv: retry queue not saved ({len(note['unread'])} advisories): {ex}", file=sys.stderr)
     records = [v for v in got if v]
     keep = []
     for v in records:
