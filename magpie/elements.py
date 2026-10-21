@@ -572,6 +572,7 @@ class Store:
         self.by_key = {e["key"]: e for e in self.index["elements"]}
         # Element pages start on `since`: no edition before it is ever read for appearances.
         self.since: str | None = self.index.get("since")
+        self.staged: dict[str, dict] | None = None  # a rebuild holds its pages here until every one is computed
 
     def day(self, date: str) -> dict | None:
         if date not in self._days:
@@ -602,16 +603,34 @@ class Store:
         except SystemExit as ex:
             print(f"element {page['slug']} not written, and any older copy removed: {ex}", file=sys.stderr)
             self.drop(page["key"])
-            (self.dir / f"{page['slug']}.json").unlink(missing_ok=True)
+            if self.staged is None:
+                (self.dir / f"{page['slug']}.json").unlink(missing_ok=True)
             return False
-        write_json(self.dir / f"{page['slug']}.json", page, compact=True)
+        if self.staged is None:
+            write_json(self.dir / f"{page['slug']}.json", page, compact=True)
+        else:
+            self.staged[page["slug"]] = page
         self.by_key[page["key"]] = index_entry(page)
         return True
 
     def drop(self, key: str) -> None:
         entry = self.by_key.pop(key, None)
-        if entry:
+        if entry and self.staged is not None:
+            self.staged.pop(entry["slug"], None)
+        elif entry:
             (self.dir / f"{entry['slug']}.json").unlink(missing_ok=True)
+
+    def commit(self) -> None:
+        """Write a staged rebuild: every page, then remove the pages it no longer has, the index last. Nothing on disk
+        changes until every page is computed, so a rebuild that fails leaves the pages and index as they were."""
+        pages, self.staged = self.staged or {}, None
+        self.dir.mkdir(parents=True, exist_ok=True)
+        for slug, page in pages.items():
+            write_json(self.dir / f"{slug}.json", page, compact=True)
+        for p in self.dir.glob("*.json"):
+            if p.name != "index.json" and p.stem not in pages:
+                p.unlink()
+        write_json(self.dir / "index.json", self.index, compact=True)
 
     def names_for(self, key: str) -> list[dict]:
         """For an official action: the element pages whose maker it names."""
@@ -628,7 +647,8 @@ class Store:
         updated = max([date or ""] + [e["last_seen"] for e in elements]) or None
         self.index = {"schema": INDEX_SCHEMA, "since": self.since, "rules": RULES, "updated": updated, "actions": self.action_digests(),
                       "elements": elements}
-        write_json(self.dir / "index.json", self.index, compact=True)
+        if self.staged is None:
+            write_json(self.dir / "index.json", self.index, compact=True)
 
     def history_first_seen(self, key: str) -> str | None:
         if self.state is None:
@@ -796,9 +816,7 @@ def rebuild(data_dir: Path, state_dir: Path | None = None, since: str | None = N
     store.since = since or store.since or seed
     store.index = {"schema": INDEX_SCHEMA, "since": store.since, "updated": None, "elements": []}
     store.by_key = {}
-    if store.dir.exists():
-        for p in store.dir.glob("*.json"):
-            p.unlink()
+    store.staged = {}  # computed in full before anything on disk changes
     by_key: dict[str, dict[str, dict]] = defaultdict(dict)
     for d in store.dates():
         for key, c in store.contribs(d).items():
@@ -812,6 +830,7 @@ def rebuild(data_dir: Path, state_dir: Path | None = None, since: str | None = N
             store.write(assemble(key, slug, contribs, store.register, store.topic_labels, store.names_for(key)))
     last = store.dates()[-1] if store.dates() else None
     store.save_index(last)
+    store.commit()
     print(f"elements rebuilt: {len(store.by_key)} pages from {len(store.dates())} editions since {store.since}", file=sys.stderr)
     return {"elements": len(store.by_key), "editions": len(store.dates()), "since": store.since}
 

@@ -794,7 +794,7 @@
        "items": {
         "$ref": "#/$defs/integration"
        },
-       "description": "Named integrations: tools, models or platforms the capability integrates with, runs on or plugs into. Code keeps a name only if the event's own text spells it; it is a proper name, not a generic term (a category such as \"OpenAI-compatible endpoint\", a plain lowercase phrase, or only formats and common nouns such as \"HTML\"); it is not the capability (its title, a part of the title, its repo, model or owner, with or without a version, or another build of it such as the model a quant is of), a leading part of its maker's name, or a source that reported it; every number in the item is in that text; and the redaction gate passes it. Checked again when a cached brief is reused. Absent when none survive."
+       "description": "Named integrations: tools, models or platforms the capability integrates with, runs on or plugs into. Code keeps a name only if the event's own text spells it and: it is a proper name, not a category (\"OpenAI-compatible endpoint\") or a name made only of formats, common nouns and their usual modifiers (\"HTML\", \"API\", \"local models\"); it is not the capability (its title, a part of the title, its repo, model or owner, any of those before a version, or followed only by build tokens such as a quant format), a leading part of its maker's name, or a source that reported it; the text does not make it what the capability was fine-tuned, distilled, quantized or merged from, nor only ever a bare word in a list of APIs; every number in the item is in that text; and the redaction gate passes it. Checked again when a cached brief is reused. Absent when none survive."
       },
       "harder": {
        "type": "string",

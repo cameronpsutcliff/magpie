@@ -157,6 +157,27 @@ class ElementTests(unittest.TestCase):
         self.rebuild_like()
         self.assertEqual(self.pages(), built)
 
+    def test_a_rebuild_that_fails_leaves_every_page_as_it_was(self):
+        E.rebuild(self.data)
+        path = self.data / "elements" / "index.json"
+        old = json.loads(path.read_text())
+        old.pop("rules")  # the next update will rebuild
+        write_json(path, old, compact=True)
+        before = self.pages()
+        real, calls = E.assemble, []
+
+        def flaky(*args, **kw):
+            calls.append(1)
+            if len(calls) == 2:
+                raise RuntimeError("disk on fire")
+            return real(*args, **kw)
+
+        with mock.patch.object(E, "assemble", flaky), self.assertRaises(RuntimeError):
+            E.update("2099-01-02", self.data)
+        self.assertEqual(self.pages(), before)  # nothing written, nothing removed, the old index still asks for a rebuild
+        E.update("2099-01-02", self.data)
+        self.assertEqual(json.loads(path.read_text())["rules"], E.RULES)
+
     def test_update_is_idempotent_and_matches_rebuild(self):
         E.rebuild(self.data)
         built = self.pages()

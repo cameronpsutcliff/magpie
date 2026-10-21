@@ -99,17 +99,28 @@ _VERSION = re.compile(r"v?\d+[a-z]*")  # "2", "v2", "8b"
 # Another build of the same model: quant formats and widths ("exl3", "gguf", "4bit", "q4"), and the usual variant words.
 _QUANT = re.compile(r"exl\d*|gguf|ggml|awq|gptq|mlx|onnx|bnb|hqq|eetq|nf4|fp\d+|bf16|int\d+|q\d+|w\d+a\d+|\d+bit|\d+bpw|quant(ized)?")
 _VARIANT = {"instruct", "chat", "base", "it", "hf"}
-# Terms, not names, when a name is made only of them ("HTML", "API", "agents").
+# Terms, not names, when a name is made only of them ("HTML", "API", "agents", "local models", "open source").
 _GENERIC = {"html", "css", "json", "yaml", "xml", "csv", "markdown", "pdf", "http", "https", "rest", "url", "api", "apis", "sdk",
-            "cli", "gpu", "gpus", "cpu", "cpus", "llm", "llms", "endpoint", "endpoints", "agent", "agents", "model", "models"}
+            "cli", "gpu", "gpus", "cpu", "cpus", "llm", "llms", "endpoint", "endpoints", "agent", "agents", "model", "models",
+            "server", "servers", "provider", "providers", "tool", "tools", "plugin", "plugins", "framework", "frameworks", "library",
+            "libraries", "app", "apps", "backend", "backends", "client", "clients", "platform", "platforms", "service", "services",
+            "weights", "inference", "format", "formats", "file", "files", "local", "open", "source", "custom", "hosted", "remote",
+            "cloud", "self", "any", "other", "third", "party"}
+_CATEGORY = re.compile(r"\w-compatible\b|\bcompatible\s+(?:endpoint|api|server|provider|backend|client|interface)s?\b", re.I)
+# What the capability came from, not what it works with: "fine-tuned from X", "distilled from X", "a quant of X".
+_LINEAGE = re.compile(r"(?:fine[- ]?tuned|distilled|quanti[sz]ed|post[- ]trained|merged)\s+(?:from|on|of)\s+(?:the\s+|a\s+)?$"
+                      r"|(?:quants?|quanti[sz]ations?|fine[- ]?tunes?|distillations?|merges?|gguf|exl\d|awq|gptq)\s+of\s+(?:the\s+|a\s+)?$", re.I)
+# A bare word in a list of APIs: what follows "Responses" in "the Responses, Chat Completions, and Converse APIs".
+_API_LIST = re.compile(r"(?:(?:\s*,\s*(?:and\s+|or\s+)?|\s+(?:and|or)\s+)[A-Z][\w.-]*(?:\s+[A-Z][\w.-]*)*)*\s+APIs?\b")
 _PARTS = re.compile(r"\s+[|\u2013-]\s+|:\s+")  # "Canvas | GitHub Copilot", "Show HN: Kit"
 
 
 def _itself(name: list[str], e: dict) -> bool:
     """Whether a name (as tokens) is the capability, its maker or a source that reported it. The capability: its title, a
-    part of the title set off by "|", " - " or ":", its repo or model, its owner, or any of those without a version
-    ("Product" for "Product 2.0") or as another build ("Qwen3-8B" for qwen3-8b-instruct-gguf, the model a quant is of).
-    The maker: any leading part of its name ("Acme" for "Acme, Inc.")."""
+    part of the title set off by "|", " - " or ":", its repo or model, its owner, any of those before a version
+    ("Product" for "Product 2.0 adds agents"), or any of those followed only by build tokens ("Qwen3-8B" for
+    qwen3-8b-instruct-gguf, the model a quant is of; but not "MLX" for "MLX ONNX converter"). The maker: any leading part
+    of its name ("Acme" for "Acme, Inc.")."""
     title = e.get("title") if isinstance(e.get("title"), str) else ""
     key = str(e.get("key") or "")
     path = key.split(":", 1)[-1]
@@ -119,8 +130,8 @@ def _itself(name: list[str], e: dict) -> bool:
     for f in forms:
         t = _TOKENS(f)
         rest = t[len(name):]
-        if t[:len(name)] == name and (not rest or _VERSION.fullmatch(rest[0]) or _QUANT.fullmatch(rest[0])
-                                      or all(_QUANT.fullmatch(x) or x in _VARIANT for x in rest)):
+        if t[:len(name)] == name and ((rest and _VERSION.fullmatch(rest[0]))
+                                      or all(_VERSION.fullmatch(x) or _QUANT.fullmatch(x) or x in _VARIANT for x in rest)):
             return True
     if isinstance(e.get("maker"), str) and _TOKENS(e["maker"])[:len(name)] == name:
         return True
@@ -129,16 +140,26 @@ def _itself(name: list[str], e: dict) -> bool:
 
 
 def _generic(name: str) -> bool:
-    """A term, not a name: a category ("OpenAI-compatible endpoint"), a phrase in plain lowercase ("local models"), or
-    only formats and common nouns ("HTML", "API", "agents")."""
-    lowered = name == name.lower() and " " in name and not re.search(r"\d", name)
-    return "compatible" in name.lower() or lowered or all(w in _GENERIC for w in _TOKENS(name))
+    """A term, not a name: a category ("OpenAI-compatible endpoint") or only formats, common nouns and their usual
+    modifiers ("HTML", "API", "agents", "local models")."""
+    return bool(_CATEGORY.search(name)) or all(w in _GENERIC for w in _TOKENS(name))
+
+
+def _not_an_integration(name: str, text: str) -> bool:
+    """Whether the event's own text makes the name something other than an integration: what it was fine-tuned,
+    distilled, quantized or merged from (anywhere), or only ever a bare word in a list of APIs."""
+    spots = list(re.finditer(rf"(?<![A-Za-z0-9]){re.escape(name)}(?![A-Za-z0-9])", text, re.I))
+    if any(_LINEAGE.search(text[max(0, m.start() - 48):m.start()]) for m in spots):
+        return True
+    return bool(spots) and all(_API_LIST.match(text, m.end()) for m in spots)
 
 
 def plain_name(name: str, e: dict) -> bool:
-    """Whether a name can stand as one of this event's integrations: a proper name, and not the capability, its maker or
-    a source in any form. Needs only the published event, so element pages apply it to earlier editions too."""
-    return bool(re.search(r"[A-Za-z]", name)) and not _generic(name) and not _itself(_TOKENS(name), e)
+    """Whether a name can stand as one of this event's integrations: a proper name, not the capability, its maker or a
+    source in any form, and not what the text says it came from or a bare API word. Needs only the published event, so
+    element pages apply it to earlier editions too (without the transcript context, which is never published)."""
+    return (bool(re.search(r"[A-Za-z]", name)) and not _generic(name) and not _itself(_TOKENS(name), e)
+            and not _not_an_integration(name, _own_text(e)))
 
 
 def _blocked(*texts: str) -> bool:

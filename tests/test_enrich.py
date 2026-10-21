@@ -57,6 +57,29 @@ class WorksWithTests(unittest.TestCase):
         got = N.works_with([{"name": "Qwen3-8B"}, {"name": "Qwen3-8B-Instruct"}, {"name": "llama.cpp"}, {"name": "LM Studio"}], gguf)
         self.assertEqual(got, [{"name": "llama.cpp"}, {"name": "LM Studio"}])
 
+    def test_a_bare_word_in_a_list_of_apis_is_not_a_name(self):
+        aws = ev(key="url:aws.amazon.com/blogs/gpt-on-bedrock", title="Access OpenAI GPT models on Amazon Bedrock", maker="AWS",
+                 summary="How to invoke them with the Responses, Chat Completions, and Converse APIs on Amazon Bedrock.")
+        names = ["Responses", "Chat Completions", "Converse", "Amazon Bedrock"]
+        self.assertEqual([w["name"] for w in N.works_with([{"name": n} for n in names], aws)], ["Amazon Bedrock"])
+        only = ev(summary="Calls the Claude API and plugs into Cursor.")
+        self.assertEqual(N.works_with([{"name": "Claude"}, {"name": "Cursor"}], only), [{"name": "Cursor"}])  # only ever "Claude API"
+        also = ev(summary="Calls the Claude API and plugs into Claude Code.")  # "Claude" also stands on its own here
+        self.assertEqual(N.works_with([{"name": "Claude"}, {"name": "Claude Code"}], also), [{"name": "Claude"}, {"name": "Claude Code"}])
+
+    def test_what_it_came_from_is_not_what_it_works_with(self):
+        clef = ev(key="url:x.com/ollama/status/1", title="Cloudflare's Clef 27B decision model runs locally in Ollama", maker="Cloudflare",
+                  summary="Clef, a 27B multimodal model fine-tuned from Qwen3.8-27B, runs locally in Ollama.")
+        self.assertEqual(N.works_with([{"name": "Qwen3.8-27B"}, {"name": "Ollama"}], clef), [{"name": "Ollama"}])
+        quant = ev(key="url:reddit.com/r/localllama/1", title="A tiny quant for one card", summary="A 2-bit quant of GLM-5 that runs in llama.cpp.")
+        self.assertEqual(N.works_with([{"name": "GLM-5"}, {"name": "llama.cpp"}], quant), [{"name": "llama.cpp"}])
+
+    def test_the_rules_leave_real_names_alone(self):
+        e = ev(key="url:example.com/tools", title="MLX ONNX converter", maker="Example",
+               summary="An MLX ONNX converter with a Backward Compatible Layer, tested with open webui and Claude Code.")
+        names = ["MLX", "Backward Compatible Layer", "open webui", "Claude Code"]
+        self.assertEqual([w["name"] for w in N.works_with([{"name": n} for n in names], e)], names)
+
     def test_what_it_plugs_into_may_lead_its_title(self):
         plugin = ev(key="url:zed.dev/blog/plugin", title="Claude Code plugin for Zed", summary="A plugin.", maker="Zed Industries")
         self.assertEqual(N.works_with([{"name": "Claude Code"}, {"name": "Zed"}], plugin), [{"name": "Claude Code"}])  # Zed leads its maker
