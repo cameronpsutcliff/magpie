@@ -2,6 +2,80 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-10-21",
+   "headline": "Run PyTorch on TPUs, Serve DeepSeek at Scale, Download Meta's Muse Spark, and more",
+   "events": 479,
+   "sources": 497,
+   "enriched": true,
+   "top": [
+    {
+     "id": "8c43d4598688",
+     "title": "TorchTPU brings native PyTorch to Google TPUs",
+     "impact": 5,
+     "vendor": "Google / Meta PyTorch"
+    },
+    {
+     "id": "c710b6d73fe4",
+     "title": "DeepSeek open-sources DeepInfer, its production inference framework",
+     "impact": 4,
+     "vendor": "DeepSeek"
+    },
+    {
+     "id": "8615bdd7d491",
+     "title": "Meta releases Muse Spark Open, an 816B multimodal model",
+     "impact": 4,
+     "vendor": "Meta"
+    },
+    {
+     "id": "7f346be9d572",
+     "title": "Reflection releases open-weight Beam 1.0, a 501B MoE",
+     "impact": 3,
+     "vendor": "Reflection AI"
+    },
+    {
+     "id": "3d94fde7a49b",
+     "title": "1.66 bpw quant runs Qwen3.8-Flash-Next on one RTX 5090",
+     "impact": 4,
+     "vendor": "ExLlamaV3 (turboderp)"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Anthropic",
+    "OpenAI",
+    "AWS",
+    "NVIDIA",
+    "DeepSeek"
+   ],
+   "topics": {
+    "models": 173,
+    "agents": 150,
+    "coding": 118,
+    "multimodal": 95,
+    "infra": 71,
+    "memory": 54,
+    "evals": 48,
+    "local": 42,
+    "research": 41,
+    "mcp": 28,
+    "security": 20,
+    "reverse": 18,
+    "robotics": 9
+   },
+   "kinds": {
+    "social": 98,
+    "video": 95,
+    "community": 74,
+    "blog": 52,
+    "newsletter": 45,
+    "repo": 41,
+    "model": 30,
+    "changelog": 20,
+    "space": 18,
+    "news": 6
+   }
+  },
+  {
    "date": "2026-10-20",
    "headline": "Serve DeepSeek, speed up local inference, build speech tools and more",
    "events": 443,
@@ -2215,5 +2289,5 @@
    }
   }
  ],
- "latest": "2026-10-20"
+ "latest": "2026-10-21"
 }

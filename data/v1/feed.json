@@ -13,6 +13,29 @@
  ],
  "items": [
   {
+   "id": "2026-10-21",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-10-21",
+   "title": "Run PyTorch on TPUs, Serve DeepSeek at Scale, Download Meta's Muse Spark, and more",
+   "summary": "Infrastructure led the day: Google and Meta opened a native PyTorch path to TPUs and DeepSeek released its production inference framework. Large open-weight models from Meta, Reflection and Ornith landed alongside aggressive local quantization and a steady stream of agent tooling updates.",
+   "content_html": "<p>Infrastructure led the day: Google and Meta opened a native PyTorch path to TPUs and DeepSeek released its production inference framework. Large open-weight models from Meta, Reflection and Ornith landed alongside aggressive local quantization and a steady stream of agent tooling updates.</p><p><strong>PyTorch teams can now treat Google TPUs as a real alternative to GPUs without rewriting their code.</strong> Existing models can train with TorchTitan and serve through vLLM or SGLang on TPUs, with eager mode and torch.compile intact. That lowers the cost of switching hardware, which gives buyers leverage on compute. No public speed comparisons against GPUs are available yet, so the price and performance case is still open.</p><p><strong>Self-hosting very large models got easier on two fronts: DeepSeek published the serving stack it runs in production, and new big open-weight models arrived ready to use.</strong> Teams running DeepSeek models no longer have to guess at the vendor&#x27;s serving methods. Meta&#x27;s 816B image and text model can be hosted and fine-tuned on Fireworks from day one, and Reflection&#x27;s 501B mixture-of-experts model runs only 23B parameters at a time, which Vals rates fastest on its index. Licenses, Meta&#x27;s benchmark results and independent throughput tests are all still missing.</p><p><strong>At the other end, an aggressive quantization puts Qwen3.8-Flash-Next fully on one 32 GB RTX 5090.</strong> A single consumer card reportedly reaches 200 to 300 tokens per second with no CPU offload, enough for quick local agent runs. The context window is small, and the results come from one author so far.</p><ol><li><a href=\"https://x.com/PyTorch/status/2112601000670322787\">TorchTPU brings native PyTorch to Google TPUs</a>: Teams can run existing PyTorch code on TPUs with eager execution, torch.compile, vLLM or SGLang serving and TorchTitan training, with minimal changes.</li><li><a href=\"https://github.com/deepseek-ai/DeepInfer\">DeepSeek open-sources DeepInfer, its production inference framework</a>: Anyone can run DeepSeek models with the same large-scale inference framework DeepSeek uses in production.</li><li><a href=\"https://huggingface.co/meta-models/Muse-Spark-Open-816B-A42B\">Meta releases Muse Spark Open, an 816B multimodal model</a>: Builders can use Meta&#x27;s open-weight 816B image and text model, hosted and fine-tunable on Fireworks from day zero.</li><li><a href=\"https://huggingface.co/reflection/Beam-1.0-501B-A23B\">Reflection releases open-weight Beam 1.0, a 501B MoE</a>: Builders can download and run Reflection&#x27;s 501B mixture-of-experts text model with 23B active parameters.</li><li><a href=\"https://x.com/turboderp_/status/2112695266767724627\">1.66 bpw quant runs Qwen3.8-Flash-Next on one RTX 5090</a>: Qwen3.8-Flash-Next can run fully on a single 32 GB RTX 5090 at 200 to 300 tokens per second without CPU offload.</li></ol><p><strong>New possibility:</strong> Canadian regulated teams gain a two-vendor AWS setup, but residency review becomes the bottleneck</p><p><strong>Worth watching:</strong> <a href=\"https://www.youtube.com/watch?v=cUeZMUGCxrw\">New top local AI image generator is here!</a>; <a href=\"https://www.youtube.com/watch?v=YvQ4BVTWfHI\">Is a Faster Model Actually Faster? Test the Whole Job, Morgan Suo, MiniMax</a>; <a href=\"https://www.youtube.com/watch?v=l6DPAwgUr-8\">A World Model of Life: Biohub&#x27;s Alex Rives on Virtual Cells, Measurement, &amp; the $1.8B Data Push</a></p>",
+   "content_text": "Infrastructure led the day: Google and Meta opened a native PyTorch path to TPUs and DeepSeek released its production inference framework. Large open-weight models from Meta, Reflection and Ornith landed alongside aggressive local quantization and a steady stream of agent tooling updates. TorchTPU brings native PyTorch to Google TPUs DeepSeek open-sources DeepInfer, its production inference framework Meta releases Muse Spark Open, an 816B multimodal model Reflection releases open-weight Beam 1.0, a 501B MoE 1.66 bpw quant runs Qwen3.8-Flash-Next on one RTX 5090",
+   "date_published": "2026-10-21T10:32:51Z",
+   "tags": [
+    "agents",
+    "coding",
+    "infra",
+    "local",
+    "models",
+    "multimodal",
+    "research"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-21.json",
+    "backfilled": false,
+    "capabilities": 479
+   }
+  },
+  {
    "id": "2026-10-20",
    "url": "https://www.cameronsutcliff.com/magpie/2026-10-20",
    "title": "Serve DeepSeek, speed up local inference, build speech tools and more",
@@ -687,29 +710,6 @@
     "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-09-22.json",
     "backfilled": true,
     "capabilities": 104
-   }
-  },
-  {
-   "id": "2026-09-21",
-   "url": "https://www.cameronsutcliff.com/magpie/2026-09-21",
-   "title": "Shares memory across coding agents, constrains browser model output, orchestrates agents and more",
-   "summary": "The strongest items today are tooling that makes agents and small models easier to run: shared agent memory, schema-bound output in the browser, and an open orchestrator from Google. Several headline items, including Qwen Image 2.1 and AX, arrive with little detail beyond their own pages, so treat them as leads to check.",
-   "content_html": "<p>The strongest items today are tooling that makes agents and small models easier to run: shared agent memory, schema-bound output in the browser, and an open orchestrator from Google. Several headline items, including Qwen Image 2.1 and AX, arrive with little detail beyond their own pages, so treat them as leads to check.</p><ol><li><a href=\"https://github.com/vshulcz/deja-vu\">deja-vu shares one memory across coding agents</a>: You can search and reuse fixes from past sessions across Claude Code, Codex, Cursor, Copilot CLI and others, using history already on disk.</li><li><a href=\"https://github.com/jaredpalmer/kev/tree/main\">Kev: tiny decision models on Qwen3.5</a>: You can use a family of small decision models built on top of Qwen3.5, modeled on Jev.</li><li><a href=\"https://www.youtube.com/watch?v=3V9CPisNs1g\">Transformers.js 4.3 adds structured output in browser</a>: You can force a model running in the browser to follow a JSON schema or a regex, token by token.</li><li><a href=\"https://agentexecutor.io\">Google releases AX, an open agent orchestrator</a>: You can look at an open agentic orchestrator from Google for coordinating agent runs.</li><li><a href=\"https://heretic-project.org/\">Heretic removes restrictions from language models</a>: You can use a tool that strips built-in restrictions from a language model.</li></ol>",
-   "content_text": "The strongest items today are tooling that makes agents and small models easier to run: shared agent memory, schema-bound output in the browser, and an open orchestrator from Google. Several headline items, including Qwen Image 2.1 and AX, arrive with little detail beyond their own pages, so treat them as leads to check. deja-vu shares one memory across coding agents Kev: tiny decision models on Qwen3.5 Transformers.js 4.3 adds structured output in browser Google releases AX, an open agent orchestrator Heretic removes restrictions from language models",
-   "date_published": "2026-10-20T15:52:19Z",
-   "tags": [
-    "agents",
-    "coding",
-    "infra",
-    "local",
-    "memory",
-    "models",
-    "security"
-   ],
-   "_magpie": {
-    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-09-21.json",
-    "backfilled": true,
-    "capabilities": 50
    }
   }
  ]
