@@ -38,6 +38,7 @@ from .util import TAG, clean, fetch, load_json, short_hash, ungrounded_numbers, 
 CATEGORIES = ("trust-infrastructure", "supply-chain", "ai-framework-vuln", "model-or-agent-attack", "platform-breach",
               "exploited-vuln")
 SEVERITIES = ("critical", "high", "medium")  # anything rated below medium is dropped
+AFFECTS_LIMIT, FIXED_LIMIT = S.AFFECTS_LIMIT, S.FIXED_LIMIT
 SEV_RANK = {"critical": 3, "high": 2, "medium": 1, "low": 0}
 STATUSES = ("active", "mitigated", "patched", "disputed")
 EVIDENCE = ("official", "reported", "corroborated")
@@ -48,7 +49,6 @@ BATCHES = 3         # classifier calls a run may make; the rest wait in a queue 
 QUEUE_DAYS = 14     # a queued candidate is dropped (and said so) after this long
 TEXT_LIMIT = 9000   # characters of a primary document the editor reads
 ALSO_LIMIT = 3000   # characters of each further primary document
-MAX_CODE_ACTIONS = 6
 MAX_EDITOR_ACTIONS = 2
 PROMPT_VERSION = 3  # part of every verdict's signature: a changed prompt classifies again
 
@@ -140,10 +140,10 @@ For each item return:
   exploited-vuln
 - severity: critical, high, medium or low, your estimate from the document, only when source_severity is null; else null
 - published: the YYYY-MM-DD date the document gives for the disclosure, or null
-- affects: up to 6 objects {{"name": "software or package", "ecosystem": "one short word such as PyPI, npm, Go,
+- affects: up to 10 objects {{"name": "software or package", "ecosystem": "one short word such as PyPI, npm, Go,
   runtime, OS, browser", "versions": "affected versions exactly as the document writes them, or empty"}}. Name and
   versions must come from the same line, table row or sentence of the document.
-- fixed_in: up to 8 objects {{"name": "software or package", "version": "fixed versions exactly as the document
+- fixed_in: up to 12 objects {{"name": "software or package", "version": "fixed versions exactly as the document
   writes them"}}, each from one line, table row or sentence of the document. Leave out fixes that are pending.
 - actions: at most 2 objects {{"action": "one short imperative sentence in your own words, with no versions, commands
   or URLs", "quote": "the sentence from the document, copied word for word (4 to 40 words), that supports it"}}.
@@ -303,15 +303,38 @@ def versions_tied(text: str, pairs: list[dict]) -> bool:
     return True
 
 
-def clean_summary(summary: str, pairs: list[dict], ungrounded_names: list[str]) -> str:
-    """The editor's summary without any sentence that advises, ties a version to the wrong package, or names a package
-    whose claimed versions the documents do not support."""
+COMMON_WORDS = {"ai", "requests", "uv", "pip", "mcp", "openai", "anthropic", "torch", "transformers", "safetensors"}
+
+
+def _package_like(tok: str) -> bool:
+    """A token that names a package or product: a scope or path (@scope/name, org/name), product-style mixed case
+    (vLLM, PyTorch, SGLang) or a dotted name (llama.cpp). Acronyms and ordinary hyphenated words are not."""
+    if "/" in tok or tok.startswith("@"):
+        return True
+    if re.search(r"[a-z]", tok) and re.search(r"[a-z][A-Z]|[A-Z]{2}[a-z]", tok):
+        return True
+    return len(tok) >= 5 and bool(re.fullmatch(r"[A-Za-z][\w-]*\.[A-Za-z][\w.-]*", tok))
+
+
+def unnamed_packages(sent: str, source: str) -> list[str]:
+    """Packages a sentence names that the documents never do (whole words, any case): package-like tokens, and watched
+    packages whose names are not ordinary words."""
+    low = source.lower()
+    watched = {p["name"].lower() for p in S.config().get("osv_packages", []) if p.get("name")} - COMMON_WORDS
+    toks = [t.strip(".,;:()'\"") for t in re.findall(r"[@\w][\w.@/-]*", sent)]
+    named = [t for t in toks if t and (_package_like(t) or t.lower() in watched)]
+    return [t for t in named if not re.search(rf"(?<![\w@/-]){re.escape(t.lower())}(?![\w-])", low)]
+
+
+def clean_summary(summary: str, pairs: list[dict], ungrounded_names: list[str], source: str = "") -> str:
+    """The editor's summary without any sentence that advises, ties a version to the wrong package, names a package whose
+    claimed versions the documents do not support, or names a package the documents never name."""
     bad = {key_token(n) for n in ungrounded_names if key_token(n)}
     keep = []
     for sent in SENTENCE.split(summary or ""):
         if not sent.strip() or IMPERATIVE.match(sent):
             continue
-        if not versions_tied(sent, pairs) or bad & _tokens(sent):
+        if not versions_tied(sent, pairs) or bad & _tokens(sent) or unnamed_packages(sent, source):
             continue
         keep.append(sent.strip())
     return " ".join(keep)
@@ -545,11 +568,11 @@ def judge(c: dict, v: dict, date: str) -> tuple[dict, str | None]:
     x = c.get("extra") or {}
     source, doc = _ground(c)
     docs = _docs(c)
-    affects, bad_a = _grounded_pairs(v.get("affects"), ("name", "ecosystem", "versions"), 6, docs)
-    fixed_in, bad_f = _grounded_pairs(v.get("fixed_in"), ("name", "version"), 8, docs)
+    affects, bad_a = _grounded_pairs(v.get("affects"), ("name", "ecosystem", "versions"), AFFECTS_LIMIT, docs)
+    fixed_in, bad_f = _grounded_pairs(v.get("fixed_in"), ("name", "version"), FIXED_LIMIT, docs)
     pairs = [*(x.get("affects") or []), *(x.get("fixed_in") or []), *affects, *fixed_in]
     title, headline = clean(v.get("title") or "").strip(), clean(v.get("headline") or "").strip()
-    summary = clean_summary(clean(v.get("summary") or "").strip(), pairs, bad_a + bad_f)
+    summary = clean_summary(clean(v.get("summary") or "").strip(), pairs, bad_a + bad_f, source)
     quote = clean(v.get("quote") or "").strip()
     who = [clean(w).strip() for w in v.get("who") or [] if isinstance(w, str) and w.strip()][:3]
     actions = []
@@ -665,7 +688,7 @@ def status_of(facts: list[dict], fixed_in: list[dict]) -> str:
 
 
 def code_actions(fixed_in: list[dict], affects: list[dict], kev: bool) -> list[str]:
-    out = [f"Update {p['name']} to {p['version']} or later" for p in fixed_in if p.get("version")][:MAX_CODE_ACTIONS]
+    out = [f"Update {p['name']} to {p['version']} or later" for p in fixed_in if p.get("version")]  # one per fix
     if kev and not out and affects:
         out.append(f"Apply the vendor's fix or mitigations for {affects[0]['name']}: CISA lists it as exploited")
     return out
@@ -680,6 +703,17 @@ def _category(c: dict, v: dict | None) -> str:
     return proposal if proposal in allowed else DEFAULT_CATEGORY.get(c["_origin"], "ai-framework-vuln")
 
 
+STRUCTURED = ("osv", "kev")  # sources whose package and version fields are data, not words
+
+
+def own_pairs(c: dict, field: str, keys: tuple[str, ...], limit: int) -> list[dict]:
+    """A sighting's own package pairs: as given for structured sources, else only those its documents state together."""
+    raw = (c.get("extra") or {}).get(field) or []
+    if c["_origin"] in STRUCTURED:
+        return list(raw)
+    return _grounded_pairs(raw, keys, limit, _docs(c))[0]
+
+
 def cand_facts(c: dict, v: dict | None) -> dict:
     """What a sighting states, decided by code: from its source's structured fields, the editor's grounded pairs (when it
     has a verdict), and phrases code finds in its documents."""
@@ -691,8 +725,8 @@ def cand_facts(c: dict, v: dict | None) -> dict:
         "cves": set(x.get("cves") or []) | {i for i in c["_idents"] if i.startswith("CVE-")},
         "kev": bool(x.get("kev")), "exploited_quote": stated(EXPLOITED_SAID, c.get("_text") or ""),
         "source_severity": source_sev, "severity_basis": x.get("severity_basis") if source_sev else None,
-        "affects": list(x.get("affects") or (v or {}).get("affects") or []),
-        "fixed_in": list(x.get("fixed_in") or (v or {}).get("fixed_in") or []),
+        "affects": own_pairs(c, "affects", ("name", "ecosystem", "versions"), AFFECTS_LIMIT) or list((v or {}).get("affects") or []),
+        "fixed_in": own_pairs(c, "fixed_in", ("name", "version"), FIXED_LIMIT) or list((v or {}).get("fixed_in") or []),
         "published": x.get("published") or (v or {}).get("published"),
         "revoked": x.get("status_hint") == "mitigated" or bool(stated(REVOKED_SAID, docs)),
         "disputed": bool(stated(DISPUTED_SAID, docs)),
@@ -743,8 +777,8 @@ def build(identity: dict, words: dict, facts: list[dict], date: str, prior: dict
         severity, basis = estimate(words.get("severity"), category, kev), "editor"
     if severity not in SEVERITIES:
         return None
-    fixed_in = _union_pairs([p for f in facts for p in f["fixed_in"]], 8)
-    affects = _union_pairs([p for f in facts for p in f["affects"]], 6)
+    fixed_in = _union_pairs([p for f in facts for p in f["fixed_in"]], FIXED_LIMIT)
+    affects = _union_pairs([p for f in facts for p in f["affects"]], AFFECTS_LIMIT)
     quote_ex = next((f["exploited_quote"] for f in facts if f.get("exploited_quote")), None)
     editor_actions = (words.get("action_quotes") or [])[:MAX_EDITOR_ACTIONS]
     rec = {

@@ -25,6 +25,7 @@ from ..util import ELLIPSIS, ROOT, TAG, UA, clean, edition_date, fetch, load_jso
 
 CONFIG = ROOT / "config/security.json"
 INBOX = ROOT / "inbox/threats.json"
+AFFECTS_LIMIT, FIXED_LIMIT = 10, 12  # packages kept per threat; one incident can touch many clients
 RETRY = ROOT / "state/threats/osv-retry.json"  # advisories that could not be read; the next run reads them first
 NOTES: dict[str, dict] = {}  # what each collector could not do this run; the lane's receipt carries it
 KEV_URL = "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
@@ -288,7 +289,7 @@ def _osv_item(v: dict, group: list[dict]) -> Item:
                "source_severity": sev, "severity_basis": basis,
                "status_hint": None if malicious else ("patched" if fixed_in else "active"),
                "category": "supply-chain" if malicious else None, "withdrawn": bool(v.get("withdrawn")),
-               "affects": affects[:6], "fixed_in": fixed_in[:8], "published": (v.get("published") or "")[:10] or None,
+               "affects": affects[:AFFECTS_LIMIT], "fixed_in": fixed_in[:FIXED_LIMIT], "published": (v.get("published") or "")[:10] or None,
                "modified": v.get("modified"), "update_only": False, "doc": url, "text": text, "refs": refs[:8]},
     )
 
@@ -299,7 +300,8 @@ PREFER = ("GHSA-", "MAL-", "PYSEC-", "GO-", "RUSTSEC-", "CVE-")
 def osv(days: int | None = None, packages: list[dict] | None = None, max_pages: int = 50) -> list[Item]:
     """Advisories for the watched packages changed in the recent window, every page of them, one record per vulnerability.
 
-    Only an advisory published inside the window may become a new threat; one that was only modified carries
+    `max_pages` is a safety stop, not a cap: a run that reaches it saves each unfinished query's page token, and the next
+    run continues those queries from where they stopped, beside its own. Only an advisory published inside the window may become a new threat; one that was only modified carries
     `update_only` and can just update a threat already recorded under the same ids. Nothing is capped silently: an
     advisory that cannot be read goes to a retry queue the next run reads first, and NOTES["osv"] says what happened.
     """
@@ -313,10 +315,18 @@ def osv(days: int | None = None, packages: list[dict] | None = None, max_pages: 
         return []
     queries = [{"package": {"name": p["name"], "ecosystem": p["ecosystem"]}} for p in pkgs]
     ids: list[str] = []
-    pending, tokens = list(range(len(queries))), {}
+    tokens: dict[int, str] = {}
+    pages_file = RETRY.parent / "osv-pages.json"  # where a run that hit the safety stop left off
+    for r in load_json(pages_file, {}).get("resume", []):
+        if isinstance(r, dict) and r.get("name") and r.get("ecosystem") and r.get("page_token"):
+            queries.append({"package": {"name": r["name"], "ecosystem": r["ecosystem"]}})
+            tokens[len(queries) - 1] = r["page_token"]
+    note["resumed"] = len(tokens)
+    pending, left = list(range(len(queries))), []
     while pending:
         if note["pages"] >= max_pages:
             note["unfinished_queries"] = [queries[i]["package"]["name"] for i in pending]
+            left = [{**queries[i]["package"], "page_token": tokens[i]} for i in pending if i in tokens]
             break
         batch = [dict(queries[i], **({"page_token": tokens[i]} if i in tokens else {})) for i in pending]
         res = _post_json(OSV_BATCH, {"queries": batch})
@@ -331,6 +341,10 @@ def osv(days: int | None = None, packages: list[dict] | None = None, max_pages: 
                 tokens[i] = r["next_page_token"]
                 nxt.append(i)
         pending = nxt
+    try:
+        write_json(pages_file, {"resume": left})
+    except OSError:
+        pass
     retry = [i for i in load_json(RETRY, {}).get("ids", []) if i not in ids]
     note["retried"] = len(retry)
     ids += retry
