@@ -1075,4 +1075,18 @@ class ReviewFixTests(unittest.TestCase):
              "summary": "A crafted request crashes vLLM.", "quote": "A crafted request crashes vLLM.", "who": []}
         rec, why = T.judge(c, v, DATE)
         self.assertFalse(rec["kept"])
-        self.assertEqual(why, "its title or headline names a package its documents do not")
+        self.assertEqual(why, "its title or headline uses a name its documents do not")
+
+    def test_title_headline_and_who_use_only_names_the_documents_use(self):
+        c = {"_origin": "news", "_text": "A crafted request crashes vLLM on Linux. Fixed in vllm 0.30.0.", "extra": {}, "_sig": "s",
+             "url": "https://news.example/b", "_doc": "https://news.example/b", "_also": []}
+        base = {"keep": True, "title": "vLLM crash from one request", "headline": "A crafted request crashes vLLM on Linux servers",
+                "summary": "A crafted request crashes vLLM.", "quote": "A crafted request crashes vLLM on Linux.",
+                "who": ["teams running vLLM on Linux", "Microsoft Azure customers"]}
+        rec, why = T.judge(c, base, DATE)
+        self.assertTrue(rec["kept"], why)
+        self.assertEqual(rec["who"], ["teams running vLLM on Linux"])  # a who line naming what the documents never do goes
+        rec, why = T.judge(c, dict(base, headline="A crafted request crashes vLLM for Microsoft customers"), DATE)
+        self.assertEqual(why, "its title or headline uses a name its documents do not")
+        rec, why = T.judge(c, dict(base, title="AWS crash from one request"), DATE)  # an acronym opening a title counts
+        self.assertEqual(why, "its title or headline uses a name its documents do not")
