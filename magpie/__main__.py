@@ -6,6 +6,7 @@
     python -m magpie discover         # weekly: grow and prune the watch list (see discover.py)
     python -m magpie review --week    # weekly: quality report on the week's editions (see review.py)
     python -m magpie constraints      # add the constraints lane and trackers to a published edition
+    python -m magpie threats          # add the threats lane and the recent fallbacks to today's edition
     python -m magpie elements         # fold the latest edition into the element pages (--rebuild for all)
 """
 from __future__ import annotations
@@ -18,7 +19,7 @@ import traceback
 
 from . import build as B
 from . import discover, review
-from .collectors import feeds, github, inbox, local, policy, web
+from .collectors import feeds, github, inbox, local, policy, security, web
 from .enrich import enrich, keep_works_with
 from .util import ROOT, edition_date, iso, load_json, now_utc, write_json
 
@@ -41,6 +42,8 @@ def jobs_for(reg: dict, cloud: bool) -> dict:
         jobs[f["id"]] = (lambda src=f: feeds.collect_feed(src))
     for f in reg.get("policy_feeds", []):
         jobs[f["id"]] = (lambda src=f: policy.policy_feed(src))
+    # The threats lane's primary sources, after the constraints lane's: each one fails alone.
+    jobs.update(security.JOBS)
     orgs = [o["org"] for o in reg.get("github_orgs", [])]
     if orgs:
         jobs["github-watched-orgs"] = lambda: github.watched_orgs(orgs)
@@ -106,6 +109,8 @@ def main() -> None:
     prd.add_argument("--date", help="edition date, default latest")
     pk = sub.add_parser("constraints", help="add official actions that constrain AI, and the trackers, to an edition")
     pk.add_argument("--date", help="edition date, default latest")
+    pt = sub.add_parser("threats", help="add security threats and the recent fallbacks to today's edition")
+    pt.add_argument("--date", help="edition date, default latest")
     pe = sub.add_parser("elements", help="fold an edition into the element pages, or rebuild them all")
     pe.add_argument("--date", help="edition date, default latest")
     pe.add_argument("--rebuild", action="store_true", help="regenerate every element page from the editions since the pages start")
@@ -147,6 +152,10 @@ def main() -> None:
     if a.cmd == "constraints":
         from .constraints import run_for as constraints_for
         constraints_for(a.date)
+        return
+    if a.cmd == "threats":
+        from .threats import run_for as threats_for
+        threats_for(a.date)
         return
     if a.cmd == "elements":
         from .elements import run as elements_run
@@ -224,9 +233,21 @@ def main() -> None:
     print(f"constraints: {len(c_section['items'])} ({c_section.get('lane') or c_section.get('errors')})", file=sys.stderr)
     trackers = T.build(date, DATA, STATE)
 
+    # Threats: security events that change what is safe to run, trust or depend on when building with AI.
+    from . import threats as TH
+    try:
+        t_items, t_receipt = TH.generate(items, date, DATA, STATE, llm=not a.no_llm)
+        used = TH.used_urls(t_items)
+        # A post that only reports the same threat leaves the capability list; the threat carries it.
+        events = [e for e in events if e["kind"] == "constraint" or not (e["sources"] and all(s["url"] in used for s in e["sources"]))]
+    except Exception as ex:  # the lane must never block the edition
+        t_items, t_receipt = [], {"errors": [f"{type(ex).__name__}: {str(ex)[:160]}"]}
+    t_receipt["sources"] = [{k: h[k] for k in ("id", "ok", "count", "error") if k in h} for h in health if h["id"] in security.JOBS]
+    print(f"threats: {len(t_items)} ({t_receipt.get('lane') or t_receipt.get('errors')})", file=sys.stderr)
+
     day, top_events = compose_day(date, items, rising, health, events, edition, receipt,
                                   where="cloud" if a.cloud else "home", seconds=time.monotonic() - t0,
-                                  constraints=c_section, trackers=trackers)
+                                  constraints=c_section, trackers=trackers, threats=t_items, threats_run=t_receipt)
     if receipt.get("enriched"):
         from .possibilities import generate, prior_days
         pcache = run_dir / "possibilities.json"

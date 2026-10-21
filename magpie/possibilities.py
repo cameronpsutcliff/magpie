@@ -160,6 +160,8 @@ def run_for(date: str | None = None) -> None:
         raise SystemExit(f"no edition at {path}")
     result = generate(day, prior_days(day["date"], DATA))
     day["possibilities"] = result
+    from .recent import attach
+    attach(day, DATA)  # the section may have filled or emptied: refresh its fallback
     scrub(day)
     write_json(DATA / "days" / f"{day['date']}.json", day, compact=True)
     index = load_json(DATA / "index.json", {})

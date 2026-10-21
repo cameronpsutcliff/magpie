@@ -1,0 +1,26 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://www.cameronsutcliff.com/magpie-data/schema/threats.schema.json",
+ "title": "Magpie threats register (magpie.threats/1)",
+ "description": "Every security threat Magpie has recorded that changes what is safe to run, trust or depend on when building with or running AI. Newest first; one entry per document (CVE, GHSA or OSV id, bug number or URL).",
+ "type": "object",
+ "required": [
+  "schema",
+  "threats"
+ ],
+ "properties": {
+  "schema": {
+   "const": "magpie.threats/1"
+  },
+  "updated": {
+   "type": "string",
+   "format": "date"
+  },
+  "threats": {
+   "type": "array",
+   "items": {
+    "$ref": "day.schema.json#/$defs/threat"
+   }
+  }
+ }
+}

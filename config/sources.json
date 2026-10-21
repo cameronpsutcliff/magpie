@@ -1245,6 +1245,34 @@
    "kind": "policy",
    "url": "https://www.federalregister.gov/api/v1/documents.json",
    "trust": 0.95
+  },
+  {
+   "id": "cisa-kev",
+   "name": "CISA Known Exploited Vulnerabilities (AI and developer stack)",
+   "kind": "security",
+   "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+   "trust": 0.95
+  },
+  {
+   "id": "osv",
+   "name": "OSV.dev advisories for watched AI and developer packages",
+   "kind": "security",
+   "url": "https://api.osv.dev/v1/querybatch",
+   "trust": 0.9
+  },
+  {
+   "id": "mozilla-ca-incidents",
+   "name": "Mozilla CA incident reports (Bugzilla)",
+   "kind": "security",
+   "url": "https://bugzilla.mozilla.org/rest/bug",
+   "trust": 0.9
+  },
+  {
+   "id": "threats-inbox",
+   "name": "Threats added by hand (inbox/threats.json)",
+   "kind": "security",
+   "url": "repo:inbox/threats.json",
+   "trust": 0.85
   }
  ],
  "github_orgs": [

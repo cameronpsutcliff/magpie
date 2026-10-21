@@ -44,7 +44,8 @@ def watch_counts() -> dict:
 
 def compose_day(date: str, items: list[dict], rising: dict, health: list[dict], events: list[dict], edition: dict,
                 receipt: dict, *, where: str, seconds: float, note: str | None = None,
-                constraints: dict | None = None, trackers: dict | None = None) -> tuple[dict, list[dict]]:
+                constraints: dict | None = None, trackers: dict | None = None, threats: list[dict] | None = None,
+                threats_run: dict | None = None) -> tuple[dict, list[dict]]:
     top = B.rank_and_select(events)
     caps = [e for e in events if e["kind"] != "constraint"]  # counts and comparisons are about capabilities
     topics_cfg = load_json(ROOT / "config/topics.json", {}).get("topics", {})
@@ -97,6 +98,10 @@ def compose_day(date: str, items: list[dict], rising: dict, health: list[dict], 
     }
     if constraints is not None:
         day["constraints"] = constraints
+    if threats is not None:
+        day["threats"] = threats
+        if threats_run is not None:
+            day["run"]["threats"] = threats_run
     if trackers:
         day["trackers"] = trackers
     from .rising import enrich as enrich_rising
@@ -106,6 +111,8 @@ def compose_day(date: str, items: list[dict], rising: dict, health: list[dict], 
 
 def publish_day(day: dict, events: list[dict], top_events: list[dict], *, force: bool = False) -> bool:
     """Write the day; move `latest` only forward; record first sightings. Returns False if it kept a richer edition."""
+    from .recent import attach
+    attach(day, DATA)  # no blank sections: an empty one carries its latest items from the registers and past editions
     scrub(day)
     date = day["date"]
     day_path = DATA / "days" / f"{date}.json"
@@ -147,6 +154,12 @@ def publish_day(day: dict, events: list[dict], top_events: list[dict], *, force:
             persist(date, DATA)
     except Exception as ex:
         print(f"constraints register or hardware history not updated: {type(ex).__name__}: {str(ex)[:160]}", file=sys.stderr)
+    try:
+        if day.get("threats") is not None:
+            from .threats import update_register as update_threats
+            update_threats(day["threats"], date, DATA)
+    except Exception as ex:
+        print(f"threats register not updated: {type(ex).__name__}: {str(ex)[:160]}", file=sys.stderr)
     refresh_elements(date)
     write_feed()
     print(f"published {date}: {len(events)} events, top {len(top_events)}, {day['run']['seconds']}s", file=sys.stderr)
@@ -180,6 +193,9 @@ def index_entry(day: dict) -> dict:
         **({"constraints": [{"id": c["id"], "headline": c["headline"], "status": c["status"], "jurisdiction": c["jurisdiction"]}
                             for c in (day.get("constraints") or {}).get("items", []) if c.get("new")]}
            if (day.get("constraints") or {}).get("items") else {}),
+        **({"threats": [{"id": t["id"], "title": t["title"], "severity": t["severity"], "exploited": t.get("exploited")}
+                        for t in day["threats"] if t.get("first_seen") == day["date"]]}
+           if day.get("threats") else {}),
     }
 
 
@@ -206,15 +222,39 @@ def write_feed(limit: int = 30) -> None:
         watch = (d.get("viewing") or {}).get("items") or []
         vids = ("<p><strong>Worth watching:</strong> " + "; ".join(f'<a href="{escape(v["url"])}">{escape(v["title"])}</a>' for v in watch[:3]) + "</p>") if watch else ""
         read = "".join(f"<p><strong>{escape(p['lead'])}</strong> {escape(p.get('body', ''))}</p>" for p in (d.get("read") or {}).get("items", []))
-        fresh = [c for c in (d.get("constraints") or {}).get("items", []) if c.get("new")]
-        cons = ("<p><strong>Newly constrained:</strong> " + "; ".join(f'<a href="{escape(c["doc_url"] or c["url"])}">{escape(c["headline"])}</a>' for c in fresh[:3]) + "</p>") if fresh else ""
-        text = " ".join(filter(None, [ed.get("dek"), *[((e.get("brief") or {}).get("headline") or e["title"]) for e in top]]))
+        found = d.get("findings") or {}
+        if not best and found.get("possibilities"):
+            best = f"<p><strong>Possibilities:</strong> {escape(found['possibilities'])}</p>"
+        if not vids and found.get("viewing"):
+            vids = f"<p><strong>Worth watching:</strong> {escape(found['viewing'])}</p>"
+        listed = (d.get("constraints") or {}).get("items", [])
+        fresh = [c for c in listed if c.get("new")]
+        if fresh:
+            cons = "<p><strong>Newly constrained:</strong> " + "; ".join(f'<a href="{escape(c["doc_url"] or c["url"])}">{escape(c["headline"])}</a>' for c in fresh[:3]) + "</p>"
+        elif listed:
+            cons = "<p><strong>Still open:</strong> " + "; ".join(f'<a href="{escape(c["doc_url"] or c["url"])}">{escape(c["headline"])}</a> ({escape(c.get("first_seen") or "")})' for c in listed[:3]) + "</p>"
+        else:
+            cons = f"<p><strong>Constraints:</strong> {escape(found['constraints'])}</p>" if found.get("constraints") else ""
+        day_threats = d.get("threats") or []
+        new_threats = [t for t in day_threats if t.get("first_seen") == d["date"]]
+
+        def threat_link(t):
+            marks = ", ".join(filter(None, [t.get("severity"), "exploited" if t.get("exploited") else "", t.get("status")]))
+            return f'<a href="{escape(t.get("doc") or "")}">{escape(t["title"])}</a> ({escape(marks)})'
+        if new_threats:
+            thr = "<p><strong>Threats:</strong> " + "; ".join(threat_link(t) for t in new_threats[:3]) + "</p>"
+        elif day_threats:
+            thr = "<p><strong>Threats still open:</strong> " + "; ".join(threat_link(t) for t in day_threats[:3]) + "</p>"
+        else:
+            thr = f"<p><strong>Threats:</strong> {escape(found['threats'])}</p>" if found.get("threats") else ""
+        text = " ".join(filter(None, [ed.get("dek"), *[((e.get("brief") or {}).get("headline") or e["title"]) for e in top],
+                                      *[t["headline"] for t in new_threats[:3]]]))
         items.append({
             "id": d["date"],
             "url": f"{SITE}/{d['date']}",
             "title": ed.get("headline") or f"Magpie, {d['date']}",
             "summary": ed.get("dek") or "",
-            "content_html": f"<p>{escape(ed.get('dek', ''))}</p>{read}<ol>{leads}</ol>{best}{vids}{cons}",
+            "content_html": f"<p>{escape(ed.get('dek', ''))}</p>{read}<ol>{leads}</ol>{best}{vids}{cons}{thr}",
             "content_text": text,
             "date_published": d.get("generated_at"),
             "tags": sorted({t for e in top for t in e.get("topics", [])}),

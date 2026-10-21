@@ -31,10 +31,13 @@ list, and a roster of 72 vetted X accounts read through Grok's live search.
 | `data/v1/latest.json` | Today's edition |
 | `data/v1/days/YYYY-MM-DD.json` | Every past edition |
 | `data/v1/index.json` | The archive: date, headline, lead stories, counts |
+| `data/v1/constraints.json` | Every official action Magpie has recorded that makes AI harder to train, publish, host, reach or buy |
+| `data/v1/threats.json` | Every security threat Magpie has recorded that changes what is safe to run, trust or depend on |
 | `data/v1/elements/<slug>.json` | One element across every edition: what it is, where to find it, what it works with, its history |
 | `data/v1/elements/index.json` | Every element page, with its canonical key, first and last sighting and counts |
 
-Schemas `magpie.day/1`, `magpie.element/1` and `magpie.elements/1` live in `data/v1/schema/`. Anything downstream
+Schemas `magpie.day/1`, `magpie.element/1`, `magpie.elements/1`, `magpie.constraints/1` and `magpie.threats/1` live in
+`data/v1/schema/`. Anything downstream
 can pull these files; nothing needs this code.
 
 An **element** is one thing Magpie keeps meeting: a repo, model, paper, tool or official action, keyed the way the
@@ -51,6 +54,27 @@ recomputed from the editions. Pages are bounded: the newest 60 appearances and 6
 one-line timeline rows, and a folded summary of the rest (counts, extremes, and the actions older sources matched). Slugs are a pure function of the key (`gh-owner--repo`, `arxiv-<id>`,
 `policy-fr-<number>`, else a readable stem plus a hash), so a page's URL never changes.
 
+## Threats
+
+A threat is a security event that changes what is safe to run, trust or depend on when building with or running AI: a
+compromised certificate authority or signing key, a malicious or hijacked package, a vulnerability in an AI framework,
+serving stack, agent toolkit or SDK, a demonstrated attack on models or agents, a breach an AI provider confirms, or a
+CISA KEV entry in the AI or developer stack. Each one rests on a primary document (an advisory, a CVE or GHSA record, an
+incident report, a root-program bug or the reporter's disclosure site).
+
+Sources are keyless and primary: the CISA KEV catalog, OSV.dev for a watch list of AI and developer packages, Mozilla's
+CA incident bugs, and `inbox/threats.json` for items added by hand (watch lists in `config/security.json`). Posts and
+news that name a vulnerability and link its advisory join through that link. One cached model call per batch writes the
+words; code checks every number, version and date against the documents, requires a verbatim quote, and sets every enum:
+severity from the source when it states one, KEV means exploited, and `evidence` and `act_now` are computed. Sightings
+of the same document merge into one threat. The day's list carries what was sighted today, then critical and high threats
+from the last week; `data/v1/threats.json` keeps them all.
+
+**No blank sections.** When a section's own list is empty (constraints, threats, possibilities, ripples, viewing), the
+day's `recent` block carries up to five of the most impactful recent items, each with its date, copied from the registers
+and the last 14 editions with no model call, and `findings` carries a dated line such as
+"No new constraint today. Latest: <title> (<date>)".
+
 ## Where it runs
 
 - **Cloud tier** (`.github/workflows/edition.yml`): GitHub Actions, no personal computer involved. With no
@@ -65,6 +89,7 @@ one-line timeline rows, and a folded summary of the rest (counts, extremes, and 
 ```bash
 python3 -m magpie run --no-llm --cloud   # keyless sources, no editor
 python3 -m magpie run                    # everything available on this machine
+python3 -m magpie threats                # add the threats lane and the recent fallbacks to today's edition
 python3 -m magpie elements --rebuild     # regenerate every element page from the day files
 python3 -m unittest discover -s tests
 ```

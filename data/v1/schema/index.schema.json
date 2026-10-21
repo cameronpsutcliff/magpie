@@ -86,6 +86,51 @@
       "items": {
        "type": "string"
       }
+     },
+     "constraints": {
+      "type": "array",
+      "description": "Official actions first seen that day.",
+      "items": {
+       "type": "object",
+       "properties": {
+        "id": {
+         "type": "string"
+        },
+        "headline": {
+         "type": "string"
+        },
+        "status": {
+         "type": "string"
+        },
+        "jurisdiction": {
+         "type": "string"
+        }
+       }
+      }
+     },
+     "threats": {
+      "type": "array",
+      "description": "Security threats first seen that day.",
+      "items": {
+       "type": "object",
+       "properties": {
+        "id": {
+         "type": "string"
+        },
+        "title": {
+         "type": "string"
+        },
+        "severity": {
+         "type": "string"
+        },
+        "exploited": {
+         "type": [
+          "boolean",
+          "null"
+         ]
+        }
+       }
+      }
      }
     }
    }
