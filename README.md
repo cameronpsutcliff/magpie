@@ -60,6 +60,12 @@ serving stack, agent toolkit or SDK, a demonstrated attack on models or agents, 
 CISA KEV entry in the AI or developer stack. Each one rests on a primary document (an advisory, a CVE or GHSA record, an
 incident report, a root-program bug or the reporter's disclosure site).
 
+The lane also carries model and agent failures builders should be aware of (`model-or-agent-failure`): an agent that
+deleted, changed or leaked data, a model release rolled back or pulled for its behavior, a widely reproduced harmful or
+broken behavior, an outage that stopped work at scale. Such an item comes from a post or news item that reports one and
+is, or links, an article, post-mortem or status page (never a social post alone). It is reported, not advised: no editor
+actions, and the severity is the editor's estimate, never critical.
+
 Sources are keyless and primary: the CISA KEV catalog, OSV.dev for a watch list of AI and developer packages (every
 page; an advisory only modified recently can update a recorded threat but never start one), Mozilla's CA incident bugs,
 and `inbox/threats.json` for items added by hand (watch lists in `config/security.json`). Posts and news that name a

@@ -1394,7 +1394,8 @@
       "ai-framework-vuln",
       "model-or-agent-attack",
       "platform-breach",
-      "exploited-vuln"
+      "exploited-vuln",
+      "model-or-agent-failure"
      ]
     },
     "title": {

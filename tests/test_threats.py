@@ -1015,6 +1015,71 @@ class NoBareLinesTests(Base):
 
 
 
+FAILURE_DOC = "https://blog.agent-maker.example/postmortem"
+FAILURE_TEXT = "\n".join([
+    "Post-mortem: our coding agent deleted a production database",
+    "The agent ran a destructive migration against the production database.",
+    "It deleted 1,200 customer records before an engineer stopped it.",
+    "We have since removed the agent's write access to production.",
+])
+
+
+class FailureTests(Base):
+    def setUp(self):
+        super().setUp()
+        T._fetch_doc = lambda url, limit=T.TEXT_LIMIT: {"text": FAILURE_TEXT, "links": []} if url == FAILURE_DOC else fake_doc(url, limit)
+
+    def report(self, links=(FAILURE_DOC,), title="An AI coding agent deleted a production database"):
+        return post("https://x.com/a/status/7", title, links=list(links))
+
+    def test_a_failure_report_with_a_write_up_is_a_candidate(self):
+        social_only = post("https://x.com/a/status/8", "An AI coding agent deleted a production database", links=["https://youtu.be/abc"])
+        opinion = post("https://x.com/a/status/9", "Agents will change how we ship", links=[FAILURE_DOC])
+        cands, _ = T.candidates([self.report(), social_only, opinion])
+        self.assertEqual([c["url"] for c in cands], ["https://x.com/a/status/7"])
+        self.assertEqual(cands[0]["_doc"], FAILURE_DOC)
+        self.assertTrue(cands[0]["_failure"])
+
+    def test_a_failure_is_reported_never_advised(self):
+        self.lane(editor(category="ai-framework-vuln", severity="critical", title="Coding agent deleted a production database",
+                         headline="A coding agent ran a destructive migration and deleted production records",
+                         summary="The agent ran a destructive migration against the production database.",
+                         quote="It deleted 1,200 customer records before an engineer stopped it.",
+                         actions=[{"action": "Take write access to production away from agents",
+                                   "quote": "We have since removed the agent's write access to production."}],
+                         who=["teams that let agents touch production"]))
+        threats, _ = self.run_lane([self.report()], register=False)
+        t = threats[0]
+        self.assertEqual(t["category"], "model-or-agent-failure")  # it named no vulnerability, compromise or exploit
+        self.assertEqual((t["severity"], t["severity_basis"]), ("high", "editor"))  # an estimate, never critical
+        self.assertEqual((t["actions"], t["action_quotes"], t["act_now"]), ([], [], False))
+        self.assertIsNone(t["exploited"])
+
+    def test_reports_of_leaked_or_changed_data_are_candidates(self):
+        leaked = post("https://x.com/a/status/10", "AI coding agent leaked customer data", links=[FAILURE_DOC])
+        changed = post("https://x.com/a/status/11", "AI agent changed production data", links=[FAILURE_DOC])
+        cands, _ = T.candidates([leaked, changed])
+        self.assertEqual(sorted(c["url"] for c in cands), ["https://x.com/a/status/10", "https://x.com/a/status/11"])
+        self.assertTrue(all(c["_failure"] for c in cands))
+
+    def test_a_category_the_source_carries_never_outranks_failure(self):
+        self.lane(editor(severity="critical", title="Coding agent deleted a production database",
+                         headline="A coding agent ran a destructive migration and deleted production records",
+                         summary="The agent ran a destructive migration against the production database.",
+                         quote="It deleted 1,200 customer records before an engineer stopped it."))
+        item = self.report()
+        item["extra"]["category"] = "platform-breach"
+        threats, _ = self.run_lane([item], register=False)
+        self.assertEqual(threats[0]["category"], "model-or-agent-failure")
+        self.assertEqual(threats[0]["severity"], "high")  # the failure cap still holds
+
+    def test_the_prompt_names_the_failure_category(self):
+        lane = self.lane(editor(category="model-or-agent-failure"))
+        self.run_lane([self.report()], register=False)
+        self.assertIn("model-or-agent-failure", lane.prompts[0])
+        self.assertIn("Report it; do not advise.", lane.prompts[0])
+
+
 class ReviewFixTests(unittest.TestCase):
     def test_a_summary_never_names_a_package_its_documents_do_not(self):
         src = "A crafted request crashes vLLM. Fixed in vllm 0.30.0 and llama.cpp b4000."
