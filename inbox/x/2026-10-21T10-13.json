@@ -1,0 +1,645 @@
+{
+ "ran_at": "2026-10-21T10:13:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v4",
+ "since": "2026-10-21T02:08:00Z",
+ "queries": 9,
+ "calls": 16,
+ "items": [
+  {
+   "title": "vLLM and Ant Group open-source Humming, one quantized GEMM kernel library across formats and GPUs",
+   "url": "https://x.com/vllm_project/status/2112760256120197333",
+   "handle": "@vllm_project",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "vLLM and Ant Group released Humming, a JIT-compiled kernel library for quantized inference that covers many weight formats and GPU generations, including consumer SM120 cards. They report up to 5x kernel speedups and 14 to 43% higher end-to-end MoE throughput, so quantized models can run closer to their theoretical speed without a separate kernel per format.",
+   "kind": "repo",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/vllm-project/humming",
+    "https://vllm.ai/blog/2026-10-21-humming"
+   ],
+   "vendor": "vLLM / Ant Group",
+   "posted_at": "2026-10-21T04:17:52Z",
+   "metrics": {
+    "likes": 225,
+    "reposts": 17,
+    "quotes": 4,
+    "replies": 14,
+    "views": 10444
+   },
+   "confirmed_by": [
+    "@witcheer"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers note the 5x figure is kernel-level and the 14 to 43% end-to-end gain was measured on H20; a maintainer replied that the kernel speedups also hold on H200.",
+    "source": "https://x.com/emorennov/status/2112847804599243204"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Mostly welcoming; technical repliers asked whether the gains hold beyond H20, whether GGUF-style 4-bit is covered, and whether it replaces Marlin and Machete inside vLLM, and one called the 5x a benchmark-rig number.",
+    "tried": false,
+    "replies_read": 15
+   }
+  },
+  {
+   "title": "Spark-X2.6-4B: Apache 2.0 4B model with 1M context and controllable thinking, served day 0 by vLLM",
+   "url": "https://x.com/SparkLLM/status/2112614036227408363",
+   "handle": "@SparkLLM",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "iFlytek's Spark team released Spark-X2.6-4B, a 4B open-weight model under Apache 2.0 with a 1M-token context and none, low or high thinking modes, improved for coding, agents and long context through post-training on the X2.5 architecture. vLLM, Ollama and Hugging Face support it at launch, so small-GPU and on-device users get a long-context agent model.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/XHToken/Spark-X2.6-4B"
+   ],
+   "vendor": "iFlytek Spark",
+   "posted_at": "2026-10-20T18:36:51Z",
+   "metrics": {
+    "likes": 630,
+    "reposts": 72,
+    "quotes": 17,
+    "replies": 29,
+    "views": 27928
+   },
+   "confirmed_by": [
+    "@vllm_project"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers ask why the launch table compares against Qwen3.5 9B rather than the newer Qwen 3.8, and whether the scores are benchmark-tuned.",
+    "source": "https://x.com/ZM2Dev/status/2112835954117324924"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers and quote posts were impressed that a 4B model matches a 9B one and plan to run it locally or on phones; several asked for independent benchmarks and questioned the choice of comparison model.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Browser Use open-sources rl-env-use, which builds verified RL environments from a one-line skill description",
+   "url": "https://x.com/browser_use/status/2112767614468694286",
+   "handle": "@browser_use",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Browser Use released rl-env-use, an open-source tool where you describe a skill in one line and its agents mine real cases from the web to build a verified reinforcement learning environment for training on that skill in any domain.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/browser-use/rl-env-use"
+   ],
+   "vendor": "Browser Use",
+   "posted_at": "2026-10-21T04:47:07Z",
+   "metrics": {
+    "likes": 166,
+    "reposts": 11,
+    "quotes": 2,
+    "replies": 12,
+    "views": 12824
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Amp can deterministically ask before running chosen MCP tools",
+   "url": "https://x.com/sqs/status/2112777759563174061",
+   "handle": "@sqs",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Amp, Sourcegraph's coding agent, can now be set to always ask for approval before calling specific MCP tools such as money transfers or sending email, a deterministic check rather than a model judgment, which lets teams give the agent broader access safely.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://ampcode.com/podcast/season-02/episode-02"
+   ],
+   "vendor": "Amp",
+   "posted_at": "2026-10-21T05:27:26Z",
+   "metrics": {
+    "likes": 65,
+    "reposts": 6,
+    "quotes": 0,
+    "replies": 16,
+    "views": 2355
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Meta open-sources Dist-MoE fused communication and compute kernels for MoE training and inference",
+   "url": "https://x.com/sanketpurandare/status/2112623942150357082",
+   "handle": "@sanketpurandare",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Meta Superintelligence Labs released Dist-MoE, fused communication and compute kernels for mixture-of-experts layers with full CUDA graph support, BF16 and MXFP8 training and NVFP4 inference on SM100+ GPUs. On GB300 NVL72 they report up to 1.40x over Mixture-of-Kittens on an imbalanced MXFP8 training workload and about 3.09 useful PFLOP/s per GPU for NVFP4 inference; PyTorch's ezyang says it solved dropless, CUDA-graphable MoE for them.",
+   "kind": "repo",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/meta-pytorch/dist_moe"
+   ],
+   "vendor": "Meta (MSL)",
+   "posted_at": "2026-10-20T19:16:13Z",
+   "metrics": {
+    "likes": 103,
+    "reposts": 18,
+    "quotes": 4,
+    "replies": 6,
+    "views": 11949
+   },
+   "confirmed_by": [
+    "@ezyang"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "TRL makes AMD GPUs officially supported, with the full test suite on MI300X",
+   "url": "https://x.com/QGallouedec/status/2112827228988080385",
+   "handle": "@QGallouedec",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Hugging Face's TRL post-training library now officially supports AMD GPUs and runs its whole test suite on MI300X for every pull request, so fine-tuning and RL recipes are tested on AMD hardware rather than working by accident.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/docs/trl/main/en/amd_gpus"
+   ],
+   "vendor": "Hugging Face TRL",
+   "posted_at": "2026-10-21T08:44:00Z",
+   "metrics": {
+    "likes": 9,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 392
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Co-evolving the agent harness and the model lifts Qwen3.5-35B-A3B coding resolve rate from 57.8% to 64.8%",
+   "url": "https://x.com/dair_ai/status/2112729341306220739",
+   "handle": "@dair_ai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A Microsoft-led paper alternates between letting the policy propose changes to its own harness from its failures and RL-training it under the chosen harness. The joint loop raises average resolve rate on three coding benchmarks from 57.8% to 64.8%, more than harness-only plus policy-only gains combined, and a frontier model can act as the harness proposer to transfer its judgment to a smaller model.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2610.22791"
+   ],
+   "vendor": "Microsoft",
+   "posted_at": "2026-10-21T02:15:02Z",
+   "metrics": {
+    "likes": 49,
+    "reposts": 10,
+    "quotes": 2,
+    "replies": 11,
+    "views": 4981
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "DeepMind study: self-evolving agents forget more the more they adapt",
+   "url": "https://x.com/omarsar0/status/2112728082042015769",
+   "handle": "@omarsar0",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A Google DeepMind paper tests ReasoningBank, GEPA and Meta-Harness on four task streams that drift in topic, workflow or domain, built from BIRD, BFCL and ScienceWorld. Self-evolution raises scores on most streams, but more adaptation consistently brings more forgetting, and static benchmarks hide it, so builders should evaluate self-improving agents on changing streams.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2610.25858"
+   ],
+   "vendor": "Google DeepMind",
+   "posted_at": "2026-10-21T02:10:02Z",
+   "metrics": {
+    "likes": 154,
+    "reposts": 22,
+    "quotes": 0,
+    "replies": 38,
+    "views": 8186
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "BAAI's AutoResearchBench, a NeurIPS 2026 benchmark for agent literature search, released with dataset and environment",
+   "url": "https://x.com/BAAIBeijing/status/2112797256038613454",
+   "handle": "@BAAIBeijing",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "BAAI and Renmin University released AutoResearchBench, which tests AI agents on scientific literature discovery: concept understanding, full-text verification and open-ended search. BAAI says the dataset, evaluation suite and DeepXiv environment are open source; a summary of the paper reports that frontier agents score poorly on precise answers and that more searching does not raise coverage.",
+   "kind": "eval",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "BAAI / Renmin University",
+   "posted_at": "2026-10-21T06:44:54Z",
+   "metrics": {
+    "likes": 2,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 169
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The post gives no link to the paper, code or dataset.",
+    "source": null
+   }
+  },
+  {
+   "title": "EAGLE-4 speculative decoding triples Qwen 3.8 27B speed on one RTX 5090",
+   "url": "https://x.com/witcheer/status/2112830183820685787",
+   "handle": "@witcheer",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A builder ran EAGLE-4 tree speculative decoding with a 4-bit Qwen 3.8 27B on a single RTX 5090 and measured one request going from 57.6 to 175.9 tokens per second, a first-hand check that the new drafter pays off on a consumer card.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "EAGLE (community result)",
+   "posted_at": "2026-10-21T08:55:44Z",
+   "metrics": {
+    "likes": 19,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 3,
+    "views": 822
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Muse Glimmer 30B completes 10 of 10 everyday agent tasks in Hermes Agent on one RTX 5090",
+   "url": "https://x.com/witcheer/status/2112793011864121658",
+   "handle": "@witcheer",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Running Meta's Muse Glimmer 30B as a Q4_K_M GGUF on llama.cpp at 64K context, a builder reports it finished all 10 short real tasks in Hermes Agent with no malformed tool calls, including fixing code and rerunning tests and recovering from a blocked sandbox by using the shell.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Meta / Nous Research Hermes Agent",
+   "posted_at": "2026-10-21T06:28:02Z",
+   "metrics": {
+    "likes": 14,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 6,
+    "views": 1090
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The author notes these were short self-written tasks run once each, so they show tool use, not long-session reliability.",
+    "source": null
+   }
+  },
+  {
+   "title": "Memory Pane plugin shows and lets you edit everything Hermes Desktop remembers",
+   "url": "https://x.com/adolandev/status/2112774433567891465",
+   "handle": "@adolandev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A new plugin in the official Hermes plugin catalog shows, live beside the chat, everything Nous Research's Hermes Desktop agent saves, updates or forgets about you, with edit, delete and undo, all local with no network calls.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/Adolanium/hermes-memory-pane"
+   ],
+   "vendor": "Adolanium (Hermes plugin)",
+   "posted_at": "2026-10-21T05:14:13Z",
+   "metrics": {
+    "likes": 37,
+    "reposts": 3,
+    "quotes": 1,
+    "replies": 5,
+    "views": 3176
+   },
+   "confirmed_by": [
+    "@witcheer"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "GameForge plugin lets Hermes Agent build and playtest a Godot game offline",
+   "url": "https://x.com/DecruxR/status/2112781937303851341",
+   "handle": "@DecruxR",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A Hermes Agent plugin with 9 tools and 10 skills had the agent produce sprites, sound, music, 3D assets and a playable Godot build, then play the build and catch a crash, offline by default and without core changes.",
+   "kind": "demo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/DECRUX9812/hermes-plugin-gameforge"
+   ],
+   "vendor": "DECRUX (Hermes plugin)",
+   "posted_at": "2026-10-21T05:44:02Z",
+   "metrics": {
+    "likes": 65,
+    "reposts": 6,
+    "quotes": 1,
+    "replies": 8,
+    "views": 9317
+   },
+   "confirmed_by": [
+    "@Teknium"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "NVIDIA releases new open model families at GTC Berlin, including Nemotron 3.5, Kumo tabular models and Cosmos 3.5",
+   "url": "https://x.com/NVIDIAAI/status/2112847569827348804",
+   "handle": "@NVIDIAAI",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "NVIDIA announced new open models for language and vision (Nemotron 3.5 Super VL and Bolt, Nemotron Retriever), structured business data (the Kumo family and Kumo Engine library), robotics and driving (Cosmos 3.5, Alpamayo 2 Edge), biology and quantum computing, including a real-time surgical world model on Hugging Face, for teams that want to fine-tune and host on their own infrastructure.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://blogs.nvidia.com/blog/open-models-europe-industry/",
+    "https://huggingface.co/nvidia/Cosmos3-H-Dreams"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-10-21T10:04:50Z",
+   "metrics": {
+    "likes": 20,
+    "reposts": 2,
+    "quotes": 4,
+    "replies": 5,
+    "views": 1458
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Few replies so far; repliers welcomed open weights on their own servers for regulated European companies, and one asked which models were actually released.",
+    "tried": false,
+    "replies_read": 6
+   }
+  },
+  {
+   "title": "NVIDIA OpenShell Reference Architecture for runtime controls on AI agents",
+   "url": "https://x.com/NVIDIAAI/status/2112846708527018339",
+   "handle": "@NVIDIAAI",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "NVIDIA published a reference architecture that pairs agent compute with runtime controls the agent cannot rewrite, governing which tools and data it can reach and stopping it when it steps outside set boundaries.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [
+    "https://developer.nvidia.com/blog/how-nvidia-openshell-reference-architecture-secures-and-governs-ai-agent-workloads-at-scale/"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-10-21T10:01:24Z",
+   "metrics": {
+    "likes": 17,
+    "reposts": 3,
+    "quotes": 3,
+    "replies": 4,
+    "views": 1694
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "A reference design and keynote material, with no code or measurements in the post.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Early repliers liked controls the agent cannot edit and said logs of denied calls are the most useful part for tightening allowlists.",
+    "tried": false,
+    "replies_read": 4
+   }
+  },
+  {
+   "title": "KRAFTON releases Raon-1 mini preview, a 30B MoE trained from scratch with Apache 2.0 weights",
+   "url": "https://x.com/WireDeskAI/status/2112834388459471227",
+   "handle": "@WireDeskAI",
+   "group": "labs",
+   "origin": "discovery",
+   "summary": "KRAFTON, the PUBG maker, released open weights for Raon-1 mini preview, a 30B mixture-of-experts model with 4B active parameters trained from scratch, Korean-first and fluent in English, with a DFlash drafter. KRAFTON reports 70.8 on SWE-bench Verified and 84.3 on GPQA Diamond.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/KRAFTON/Raon-1-mini-preview"
+   ],
+   "vendor": "KRAFTON",
+   "posted_at": "2026-10-21T09:12:27Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 5
+   },
+   "confirmed_by": [
+    "@KlauseSchip"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Found through small second-hand accounts; benchmark scores are self-reported.",
+    "source": null
+   }
+  },
+  {
+   "title": "DFlash 2 speculative-decoding drafter released for Qwen3.8-Flash-Next",
+   "url": "https://x.com/zhijianliu/status/2112735515216908783",
+   "handle": "@zhijianliu",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "The DFlash team released its DFlash 2 drafter model for Qwen3.8-Flash-Next on Hugging Face, so servers can add block speculative decoding to that model for faster generation.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/incoai/Qwen3.8-Flash-Next-DFlash2"
+   ],
+   "vendor": "DFlash (Inco AI)",
+   "posted_at": "2026-10-21T02:39:34Z",
+   "metrics": {
+    "likes": 101,
+    "reposts": 9,
+    "quotes": 5,
+    "replies": 8,
+    "views": 9826
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "FluidAudio runs Pocket TTS and Phonon text-to-speech on the Apple Neural Engine",
+   "url": "https://x.com/Alex_tra_memory/status/2112731253304594671",
+   "handle": "@Alex_tra_memory",
+   "group": "builders",
+   "origin": "discovery",
+   "summary": "FluidAudio ported the 18M, 7M and 2M Pocket TTS models and Gradium's Phonon 31M to CoreML with the flow model on the Neural Engine. On an M5 Pro the author reports 24x to 51x real time, about 25 ms to first audio and under 110 MB of memory, so apps can ship fast offline speech on Macs and iPhones.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/FluidInference/FluidAudio",
+    "https://huggingface.co/FluidInference/pocket-tts-coreml"
+   ],
+   "vendor": "FluidInference",
+   "posted_at": "2026-10-21T02:22:38Z",
+   "metrics": {
+    "likes": 42,
+    "reposts": 5,
+    "quotes": 1,
+    "replies": 4,
+    "views": 1583
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "bekko-static-embedding-v1: multilingual static embeddings that run fast on CPU",
+   "url": "https://x.com/hotchpotch/status/2112732588884508682",
+   "handle": "@hotchpotch",
+   "group": "builders",
+   "origin": "discovery",
+   "summary": "A new multilingual static embedding model covering 40 languages uses only token lookup and mean pooling, with no transformer layers or GPU, and its author reports state-of-the-art retrieval among static embedding models.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/blog/hotchpotch/bekko-static-embedding"
+   ],
+   "vendor": "hotchpotch",
+   "posted_at": "2026-10-21T02:27:56Z",
+   "metrics": {
+    "likes": 82,
+    "reposts": 19,
+    "quotes": 4,
+    "replies": 4,
+    "views": 4610
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Embodied Playground: 410 simulated environments testing agents' physical and spatial reasoning",
+   "url": "https://x.com/Winniechen02/status/2112808992728891766",
+   "handle": "@Winniechen02",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "Embodied Playground is a new benchmark of 410 simulated task environments, from Angry Birds-style physics to strategy and spatial puzzles, for measuring how LLM agents reason about the physical world, released with paper and code.",
+   "kind": "eval",
+   "evidence": "artifact",
+   "links": [
+    "https://arxiv.org/abs/2610.27039",
+    "https://github.com/Winniechen2002/Embodied-Playground"
+   ],
+   "vendor": "Embodied Playground authors",
+   "posted_at": "2026-10-21T07:31:32Z",
+   "metrics": {
+    "likes": 35,
+    "reposts": 6,
+    "quotes": 4,
+    "replies": 4,
+    "views": 1191
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": []
+}

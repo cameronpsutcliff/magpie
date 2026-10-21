@@ -1,16 +1,16 @@
 {
- "updated_at": "2026-10-21T09:50:00Z",
- "job": "roster",
+ "updated_at": "2026-10-21T10:15:00Z",
+ "job": "sweep",
  "prompt": "v4",
- "calls_used_today": 37,
+ "calls_used_today": 53,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-10-21T02:08:00Z",
-  "items": 11,
-  "queries": 8,
-  "deep_reads": 2,
+  "ran_at": "2026-10-21T10:13:00Z",
+  "items": 20,
+  "queries": 9,
+  "deep_reads": 4,
   "rechecks": 8,
-  "flagged": 5,
+  "flagged": 6,
   "saved_in": 0,
   "saved_kept": 0,
   "videos": 0
@@ -47,7 +47,10 @@
   "Roster review: curated @xai (moved) and @heygen_official (suspended) cannot post but meet no retire rule as written; the prompt could add 'account unavailable' as a retire reason.",
   "Roster review: get_users_posts returns at most 25 posts, so for busy accounts the 'fewer than 1 in 5 promotion or politics' test is judged on the latest 25 posts, not 30 days.",
   "Roster review: the x-roster.json schema has no place for rejected candidates, so the same accounts may be re-checked. Rejected 2026-10-21: @togethercompute, @ViggleAI, @FluidVoiceApp, @krea_ai, @ComfyUI, @GradiumAI, @liquidai (promotion and events over 1 in 5); @googlecloud, @GoogleOSS, @Cloudflare, @OpenHandsDev (mostly enterprise or event marketing); @kaimi_local (mostly crypto and DeFi); @botmancer (tool-review aggregator, 1 follower); @PhysisAGI (account one day old, one thread); @Lightricks (no posts in 30 days, @ltx_model redirects to @ltx_io).",
-  "Roster review: no off-roster original poster was quoted by two or more roster accounts in this week's sweep files (confirmed_by lists only roster handles), and no save passed vetting in the sweeps (saved_kept 0), so those two candidate sources gave nothing and no search reads were spent on them."
+  "Roster review: no off-roster original poster was quoted by two or more roster accounts in this week's sweep files (confirmed_by lists only roster handles), and no save passed vetting in the sweeps (saved_kept 0), so those two candidate sources gave nothing and no search reads were spent on them.",
+  "Sweep 10:13Z: no new saves reached the Twitter Profile archive since 14:45Z Oct 20 (its 04:48Z sync found nothing new), so saved_in is 0.",
+  "Sweep 10:13Z: the deep-read NVIDIA OpenShell post has a 184 s video, but there is still no video-capable reader in the sweep, so no video record was written.",
+  "Sweep 10:13Z follow check: no new account qualifies (@dair_ai reaches 3 sweep-file items but is a paper aggregator, not first-hand; @ValsAI has a level-2 flag; @arena already followed), so the browser was not used."
  ],
  "errors": [],
  "follows_today": 0,
