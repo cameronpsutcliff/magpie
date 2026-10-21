@@ -174,7 +174,9 @@ def appearance(e: dict, day: dict, ties: list[dict], read: dict[str, str]) -> di
 def contributions(day: dict, load_day) -> dict[str, dict]:
     """key -> {"appearance": ... or None, "possibilities": [...]} for one published edition.
 
-    `load_day(date)` returns another edition (for possibility ingredients from the past week) or None.
+    `load_day(date)` returns another edition (for possibility ingredients from earlier editions) or None. An ingredient
+    from another edition also carries "origin", its appearance there, so a library capability last seen before the
+    pages started still gets a page.
     """
     events = day.get("events") or []
     out: dict[str, dict] = {}
@@ -198,6 +200,8 @@ def contributions(day: dict, load_day) -> dict[str, dict]:
             e = by_date[d].get(i)
             if e:
                 found.append((e["key"], (refs.get(i) or {}).get("title") or (e.get("brief") or {}).get("headline") or e["title"]))
+                if d != day["date"] and e["key"] not in out:
+                    out[e["key"]] = {"appearance": None, "possibilities": [], "origin": appearance(e, load_day(d), [], {})}
         for key, _ in found:
             rec = {"date": day["date"], "rank": rank, "title": p.get("title") or "",
                    "with": [{"key": k, "title": t} for k, t in found if k != key]}
@@ -466,6 +470,7 @@ def build(data_dir: Path, state_dir: Path | None = None, since: str | None = Non
 
     apps: dict[str, list[dict]] = defaultdict(list)
     poss: dict[str, list[dict]] = defaultdict(list)
+    origin: dict[str, dict] = {}
     for d in (d for d in every if start and d >= start):
         if not day(d):
             continue
@@ -473,6 +478,12 @@ def build(data_dir: Path, state_dir: Path | None = None, since: str | None = Non
             if c["appearance"]:
                 apps[key].append(c["appearance"])
             poss[key] += c["possibilities"]
+            if c.get("origin"):
+                origin.setdefault(key, c["origin"])
+    # A library ingredient seen only before the pages started: its page rests on the appearance the idea drew on.
+    for key, a in origin.items():
+        if not apps[key] and poss[key]:
+            apps[key].append(a)
 
     register = load_json(data / "constraints.json", {}).get("items", [])
     labels = {k: v.get("label", k) for k, v in load_json(ROOT / "config/topics.json", {}).get("topics", {}).items()}

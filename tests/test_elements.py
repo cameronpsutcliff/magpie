@@ -79,6 +79,17 @@ class ElementTests(unittest.TestCase):
         self.assertEqual(keys, {"gh:beta/kit", "gh:acme/agent", "gh:gamma/tool", "gh:acme/other"})
         self.assertNotIn("gh:solo/once", keys)  # one day, no links
 
+    def test_a_library_ingredient_from_before_the_start_gets_a_page(self):
+        # acme/agent appeared only on 2099-01-01; pages start on 2099-01-02, where an idea combined it with gamma.
+        E.build(self.data, since="2099-01-02")
+        agent = self.page("gh-acme--agent")
+        self.assertEqual(agent["first_seen"], "2099-01-01")
+        self.assertEqual([p["title"] for p in agent["possibilities"]], ["Agent plus gamma"])
+        self.assertEqual(agent["works_with"][0]["key"], "gh:gamma/tool")
+        self.assertEqual(self.page("gh-gamma--tool")["works_with"][0]["key"], "gh:acme/agent")
+        index = json.loads((self.data / "elements" / "index.json").read_text())
+        self.assertNotIn("gh:solo/once", {e["key"] for e in index["elements"]})  # seen before the start, never combined
+
     def test_page_contents(self):
         E.build(self.data)
         agent = self.page("gh-acme--agent")
