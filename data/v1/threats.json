@@ -60,7 +60,9 @@
     "PYSEC-2026-4321",
     "url:osv.dev/vulnerability/GHSA-hq85-5cpj-mr62"
    ],
-   "last_seen": "2026-10-21"
+   "last_seen": "2026-10-21",
+   "reach": 12,
+   "wide": true
   },
   {
    "id": "thr-2026-10-20-certifi-bundle-includes-root-with-compromised-intermediates",
@@ -127,7 +129,9 @@
     "PYSEC-2026-4320",
     "url:osv.dev/vulnerability/GHSA-6q48-6c7w-9gw2"
    ],
-   "last_seen": "2026-10-21"
+   "last_seen": "2026-10-21",
+   "reach": 12,
+   "wide": true
   },
   {
    "id": "thr-2026-10-20-rustls-webpki-may-accept-distrusted-emsign-intermediates",
@@ -191,7 +195,9 @@
     "RUSTSEC-2026-0383",
     "url:osv.dev/vulnerability/RUSTSEC-2026-0382"
    ],
-   "last_seen": "2026-10-21"
+   "last_seen": "2026-10-21",
+   "reach": 12,
+   "wide": true
   },
   {
    "id": "thr-2026-10-20-mcp-typescript-sdk-servers-exhaust-memory-on",
@@ -274,7 +280,9 @@
     "GHSA-46jr-4wx8-v453",
     "url:osv.dev/vulnerability/GHSA-46jr-4wx8-v453"
    ],
-   "last_seen": "2026-10-21"
+   "last_seen": "2026-10-21",
+   "reach": 3,
+   "wide": false
   },
   {
    "id": "thr-2026-10-20-mcp-typescript-sdk-experimental-tasks-leak-across",
@@ -346,7 +354,9 @@
     "GHSA-22jm-h49p-29qw",
     "url:osv.dev/vulnerability/GHSA-22jm-h49p-29qw"
    ],
-   "last_seen": "2026-10-21"
+   "last_seen": "2026-10-21",
+   "reach": 2,
+   "wide": false
   },
   {
    "id": "thr-2026-10-20-eight-emudhra-intermediate-ca-private-keys-compromised",
@@ -493,7 +503,9 @@
     "url:emudhra.we-have-a-problem.com",
     "url:groups.google.com/a/mozilla.org/g/dev-security-policy/c/0R3XLJL6FuE"
    ],
-   "last_seen": "2026-10-21"
+   "last_seen": "2026-10-21",
+   "reach": 31,
+   "wide": true
   },
   {
    "id": "thr-2026-10-20-mcp-typescript-sdk-bearer-auth-skips-token",
@@ -596,7 +608,9 @@
     "GHSA-rvq5-wwqv-78pq",
     "url:osv.dev/vulnerability/GHSA-rvq5-wwqv-78pq"
    ],
-   "last_seen": "2026-10-21"
+   "last_seen": "2026-10-21",
+   "reach": 5,
+   "wide": false
   },
   {
    "id": "thr-2026-10-20-mcp-typescript-client-sdk-leaks-headers-on",
@@ -679,7 +693,9 @@
     "GHSA-6prh-2h8m-c8cw",
     "url:osv.dev/vulnerability/GHSA-6prh-2h8m-c8cw"
    ],
-   "last_seen": "2026-10-21"
+   "last_seen": "2026-10-21",
+   "reach": 3,
+   "wide": false
   }
  ]
 }

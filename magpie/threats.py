@@ -874,7 +874,7 @@ CONTENT = ("title", "headline", "summary", "severity", "status", "exploited", "a
 PUBLIC = ("id", "kind", "category", "title", "headline", "summary", "severity", "severity_basis", "exploited",
           "exploited_quote", "status", "act_now", "affects", "fixed_in", "actions", "action_quotes", "who", "published",
           "first_seen", "updated", "cves", "kev", "doc", "sources", "quote", "evidence", "incident", "children",
-          "merged_ids", "key", "idents", "last_seen")
+          "merged_ids", "key", "idents", "last_seen", "reach", "wide")
 
 
 def public(rec: dict) -> dict:
@@ -982,6 +982,39 @@ def link_incidents(threats: list[dict]) -> None:
         u["children"] = [t["id"] for t in threats if t.get("incident") == u["id"]]
 
 
+TRUST_REACH = 10  # trust infrastructure reaches every client that trusts it, far past the packages it names
+
+
+def reach(t: dict, children: list[dict] = ()) -> tuple[int, bool]:
+    """(reach, wide), from stored, grounded fields only: the distinct packages its affected and fixed lists name and the
+    ecosystems they sit in, with those of its nested package advisories, plus one for each advisory, plus TRUST_REACH for
+    trust infrastructure. Trust infrastructure, any nested advisory or two or more ecosystems make it wide."""
+    rows = [t, *children]
+    norm = lambda name: " ".join(name.lower().split())  # noqa: E731
+    affected = [p for r in rows for p in r.get("affects") or [] if p.get("name")]
+    # A package is its full name in its ecosystem; a fixed name counts only when no affected package already names it
+    # ("Python certifi" fixes the affected certifi).
+    packages = {(p.get("ecosystem") or "", norm(p["name"])) for p in affected}
+    tokens = {key_token(p["name"]) for p in affected} - {None}
+    packages |= {("", norm(p["name"])) for r in rows for p in r.get("fixed_in") or []
+                 if p.get("name") and key_token(p["name"]) not in tokens}
+    ecosystems = {p["ecosystem"] for p in affected if p.get("ecosystem")}
+    trust = t.get("category") == "trust-infrastructure"
+    return len(packages) + len(ecosystems) + len(children) + (TRUST_REACH if trust else 0), trust or bool(children) or len(ecosystems) >= 2
+
+
+def tier(t: dict) -> int:
+    """Severity for ranking: a wide threat ranks with the critical ones, whatever its own rating or that rating's basis."""
+    return SEV_RANK["critical"] if t.get("wide") else SEV_RANK.get(t.get("severity") or "", 0)
+
+
+def rank_key(t: dict) -> tuple:
+    """The order every surface shares (the day list puts new first, then this; the site and MCP use the same keys): tier,
+    reach, exploited, a fixed version, official evidence."""
+    fixed = any(isinstance(f, dict) and f.get("name") and f.get("version") for f in t.get("fixed_in") or [])
+    return (-tier(t), -(t.get("reach") or 0), t.get("exploited") is not True, not fixed, t.get("evidence") != "official")
+
+
 def _order(r: dict, date: str) -> tuple:
     """New first, then severity, exploited, something to do, official evidence, more sources, newest."""
     return (r.get("first_seen") != date, -SEV_RANK.get(r.get("severity") or "", 0), r.get("exploited") is not True,
@@ -990,15 +1023,23 @@ def _order(r: dict, date: str) -> tuple:
 
 
 def arrange(threats: list[dict], date: str) -> list[dict]:
-    """Each umbrella incident followed by its children; groups ordered by their most serious member."""
+    """Each umbrella incident followed by its children. Groups: new first, then rank_key (tier, where a wide threat ranks
+    with the critical ones; reach; exploited; a fixed version; official evidence), then their most serious member and
+    newest (_order). Every threat carries its reach and wide."""
     ids = {t["id"] for t in threats}
     kids: dict[str, list[dict]] = {}
     for t in threats:
         if t.get("incident") in ids:
             kids.setdefault(t["incident"], []).append(t)
     tops = [t for t in threats if t.get("incident") not in ids]
+    for t in threats:
+        t["reach"], t["wide"] = reach(t, kids.get(t["id"], []) if t.get("incident") not in ids else [])
+
+    def rank(t):
+        group = [t, *kids.get(t["id"], [])]
+        return (all(m.get("first_seen") != date for m in group), *rank_key(t), min(_order(m, date) for m in group))
     out = []
-    for t in sorted(tops, key=lambda t: min([_order(t, date)] + [_order(k, date) for k in kids.get(t["id"], [])])):
+    for t in sorted(tops, key=rank):
         children = sorted(kids.get(t["id"], []), key=lambda k: _order(k, date))
         t["children"] = [k["id"] for k in children]
         out += [t, *children]
@@ -1158,6 +1199,10 @@ def update_register(threats: list[dict], date: str, data_dir) -> None:
         merged.append(group[0] if len(group) == 1 else coalesce(group, date))
     items = sorted(merged, key=lambda r: (r.get("first_seen") or "", SEV_RANK.get(r.get("severity") or "", 0),
                                           r.get("published") or ""), reverse=True)
+    by_id = {r["id"]: r for r in items if r.get("id")}
+    for r in items:  # reach from the register's own links, so a recorded threat ranks as it would today
+        children = [by_id[c] for c in r.get("children") or [] if c in by_id and c != r.get("id")]
+        r["reach"], r["wide"] = reach(r, children if not r.get("incident") else [])
     write_json(path, {"schema": "magpie.threats/1", "updated": date, "threats": items})
     print(f"threats register: {len(items)} threats", file=sys.stderr)
 

@@ -903,11 +903,11 @@ class RecentTests(unittest.TestCase):
         """Point 6: the same ranking as recent.threats, never simply the newest."""
         d = self.day()
         R.attach(d, self.data)
-        self.assertEqual(d["findings"]["threats"], "No new threat today. Most serious still open: High still open (high, 2099-01-02)")
+        self.assertEqual(d["findings"]["threats"], "No new threat today. Widest reach still open: High still open (high, 2099-01-02)")
         self.threats([{"id": "thr-p", "title": "Patched one", "severity": "critical", "status": "patched", "first_seen": "2099-01-04"}])
         d = self.day()
         R.attach(d, self.data)
-        self.assertEqual(d["findings"]["threats"], "No new threat today. Most serious recent: Patched one (critical, patched, 2099-01-04)")
+        self.assertEqual(d["findings"]["threats"], "No new threat today. Widest reach recent: Patched one (critical, patched, 2099-01-04)")
 
     def test_threats_older_than_ninety_days_are_not_recent(self):
         """Point 5: no fallback to arbitrarily old threats; an honest line instead."""
@@ -958,7 +958,7 @@ class RecentTests(unittest.TestCase):
 
 
 class NoBareLinesTests(Base):
-    BARE = re.compile(r"\b(?:no|nothing|none)\b[^.\"'\n]{0,80}?\btoday\b(?!\.\s*(?:Latest|Most serious))", re.I)
+    BARE = re.compile(r"\b(?:no|nothing|none)\b[^.\"'\n]{0,80}?\btoday\b(?!\.\s*(?:Latest|Widest reach))", re.I)
 
     def test_no_generated_string_says_only_that_nothing_happened(self):
         hits = []
@@ -1126,6 +1126,64 @@ class ReviewFixTests(unittest.TestCase):
         self.assertEqual(why, "its title or headline uses a name its documents do not")
         rec, why = T.judge(c, dict(base, title="AWS crash from one request"), DATE)  # an acronym opening a title counts
         self.assertEqual(why, "its title or headline uses a name its documents do not")
+
+
+class ReachTests(unittest.TestCase):
+    """Today's published threats (2026-10-21), ranked by reach: eMudhra, an editor-rated high that reaches every
+    non-browser TLS client, leads the advisory-rated single-package MCP SDK bugs."""
+
+    def setUp(self):
+        frozen = json.loads((ROOT / "tests/data/threats-2026-10-21.json").read_text())
+        self.date = frozen["date"]
+        self.threats = [{k: v for k, v in t.items() if k not in ("reach", "wide")} for t in frozen["threats"]]
+
+    def test_the_wide_incident_leads_the_day(self):
+        from magpie import publish as P
+        got = T.arrange(self.threats, self.date)
+        self.assertTrue(got[0]["title"].startswith("Eight eMudhra"))
+        self.assertEqual(got[0]["severity_basis"], "editor")  # its basis does not demote it
+        self.assertTrue(got[0]["wide"])
+        self.assertEqual([t.get("incident") for t in got[1:4]], [got[0]["id"]] * 3)  # its advisories follow it
+        mcp = [t for t in got if t["title"].startswith("MCP")]
+        self.assertTrue(all(not t["wide"] and t["reach"] < got[0]["reach"] for t in mcp))
+        self.assertEqual(P.stories(got)[0]["id"], got[0]["id"])  # the feed and the index tell it first
+
+    def test_wide_ranks_with_critical_and_reach_orders_within(self):
+        from magpie import publish as P
+        narrow = dict(self.threats[4], id="thr-narrow", key="threat:narrow", severity="critical", exploited=True,
+                      idents=["GHSA-zzzz-zzzz-zzzz"], children=[], incident=None)
+        got = T.arrange([*self.threats, narrow], self.date)
+        self.assertTrue(got[0]["title"].startswith("Eight eMudhra"))  # same tier as a critical, and wider
+        self.assertEqual(P.stories(got)[1]["id"], "thr-narrow")  # a critical narrow bug still leads the high ones
+
+    def test_recent_threats_use_the_same_ranking(self):
+        data = Path(tempfile.mkdtemp())
+        T.update_register(T.arrange(self.threats, self.date), self.date, data)
+        rows = json.loads((data / "threats.json").read_text())["threats"]
+        self.assertTrue(all("reach" in r and "wide" in r for r in rows))
+        recent = R.threats("2026-10-25", data)
+        self.assertTrue(recent[0]["title"].startswith("Eight eMudhra"))
+        self.assertEqual(len(recent), 5)  # the three advisories are told through their incident
+
+
+    def test_ties_break_on_a_fixed_version_before_newest(self):
+        base = {"severity": "high", "wide": False, "reach": 3, "exploited": None, "evidence": "official", "incident": None}
+        fixed = {**base, "id": "thr-fixed", "title": "Older, fixed", "first_seen": "2026-10-19", "fixed_in": [{"name": "a", "version": "2"}]}
+        action_only = {**base, "id": "thr-action", "title": "Newer, action only", "first_seen": "2026-10-21", "fixed_in": [],
+                       "actions": ["Turn the feature off"], "act_now": True}
+        data = Path(tempfile.mkdtemp())
+        write_json(data / "threats.json", {"schema": "magpie.threats/1", "threats": [action_only, fixed]})
+        self.assertEqual([r["id"] for r in R.threats("2026-10-22", data)], ["thr-fixed", "thr-action"])
+        self.assertLess(T.rank_key(fixed), T.rank_key(action_only))
+        self.assertEqual(T.rank_key({**fixed, "fixed_in": [{"name": "a"}]}), T.rank_key(action_only))  # a name alone is no fix
+
+    def test_a_package_is_its_name_in_its_ecosystem(self):
+        twin = {"category": "ai-framework-vuln", "affects": [{"name": "core", "ecosystem": "npm"}, {"name": "core", "ecosystem": "PyPI"}],
+                "fixed_in": [{"name": "core", "version": "2"}]}
+        self.assertEqual(T.reach(twin), (4, True))  # two packages, two ecosystems; the fix names one already counted
+        cas = {"category": "ai-framework-vuln", "affects": [{"name": "EM EV TLS CA - G3B", "ecosystem": "CA"},
+                                                            {"name": "EM OV TLS CA - G3B", "ecosystem": "CA"}]}
+        self.assertEqual(T.reach(cas)[0], 3)  # distinct names that end alike stay distinct
 
 if __name__ == "__main__":
     unittest.main()

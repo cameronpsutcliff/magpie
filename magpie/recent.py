@@ -4,7 +4,7 @@
 from their registers; possibilities, ripples and viewing from the last 14 editions. Every line is copied from stored,
 already grounded fields: no model call, no new words. Registers count as recent for 90 days; a constraint older than
 that is shown only while it is in force. `findings` carries one code-built line per empty section ("No new constraint
-today. Latest: <title> (<date>)"; for threats, the most serious item still open), and when nothing is recent it says
+today. Latest: <title> (<date>)"; for threats, the widest-reaching item still open), and when nothing is recent it says
 when the last one was recorded, so nothing generated ever says only that nothing happened.
 """
 from __future__ import annotations
@@ -61,11 +61,13 @@ def constraints(date: str, data_dir) -> list[dict]:
 
 
 def _threat_rank(r: dict) -> tuple:
-    return (-SEV_RANK.get(r.get("severity") or "", 0), r.get("exploited") is not True, _desc(r["first_seen"]))
+    """The threats lane's shared order (threats.rank_key, from the reach and wide each record stores), then newest."""
+    from .threats import rank_key
+    return (*rank_key(r), _desc(r["first_seen"]), r.get("id") or "")
 
 
 def threats(date: str, data_dir) -> list[dict]:
-    """Severity, then exploited, then newest, from the last 90 days. A package advisory that belongs to an incident is
+    """Widest reach first (see _threat_rank), from the last 90 days. A package advisory that belongs to an incident is
     shown through the incident."""
     rows = _within(_recorded(load_json(data_dir / "threats.json", {}).get("threats", []), date), date)
     rows = sorted((r for r in rows if not r.get("incident")), key=_threat_rank)
@@ -163,16 +165,16 @@ def build(day: dict, data_dir) -> dict:
 def finding(section: str, rows: list[dict]) -> str | None:
     """The line for an empty section, from its recent items; None when there is nothing to point to.
 
-    Threats lead with the most serious item still open, in the same ranking as recent.threats; the other sections with
+    Threats lead with the widest-reaching item still open, in the same ranking as recent.threats; the other sections with
     the newest item."""
     if not rows:
         return None
     if section == "threats":
         r = next((x for x in rows if x.get("status") != "patched"), None)
         if r:
-            return f"No new threat today. Most serious still open: {r['title']} ({r.get('severity')}, {r['date']})"
+            return f"No new threat today. Widest reach still open: {r['title']} ({r.get('severity')}, {r['date']})"
         r = rows[0]
-        return f"No new threat today. Most serious recent: {r['title']} ({r.get('severity')}, {r.get('status')}, {r['date']})"
+        return f"No new threat today. Widest reach recent: {r['title']} ({r.get('severity')}, {r.get('status')}, {r['date']})"
     r = max(rows, key=lambda x: x.get("date") or "")  # the newest; the first listed among equals
     what = f"{r['from']}, {r['why']}" if section == "ripples" else r.get("title")
     if not what:
