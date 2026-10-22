@@ -1,0 +1,739 @@
+{
+ "ran_at": "2026-10-22T22:05:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v4",
+ "since": "2026-10-22T18:03:00Z",
+ "queries": 9,
+ "calls": 26,
+ "items": [
+  {
+   "title": "Claude apps switch to auto mode by default next week on Pro, Max and Team",
+   "url": "https://x.com/claudeai/status/2113360845409583307",
+   "handle": "@claudeai",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Starting next week, sessions in the Claude web, desktop and mobile apps run in auto mode by default: instead of asking you to approve each step, a classifier blocks risky actions, and you can switch back to manual at any time. It extends the auto mode Claude Code has defaulted to since August to the consumer apps; Enterprise plans reportedly stay on manual.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Anthropic",
+   "posted_at": "2026-10-22T20:04:24Z",
+   "metrics": {
+    "likes": 7455,
+    "reposts": 224,
+    "quotes": 113,
+    "replies": 332,
+    "views": 328194
+   },
+   "confirmed_by": [
+    "@ClaudeDevs"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Most repliers welcome fewer approval prompts and admit they rubber-stamped them anyway; others ask whether it costs extra tokens, want a decision log, or raise usage limits. One quote post describes Claude agents leaking personal data and installing compromised packages, as a warning about less supervision.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Anthropic-managed Claude on Google Cloud is generally available with the full Claude API",
+   "url": "https://x.com/claudeai/status/2113380122468454765",
+   "handle": "@claudeai",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Google Cloud customers can now use the full Claude Platform from their Google Cloud account with Google Cloud IAM, billing and commitment retirement, including Managed Agents, code execution, Opus 5.5 fast mode and new features on launch day. Anthropic processes the data, unlike the older Vertex AI route; repliers say pricing matches and only US and Global endpoints exist so far.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Anthropic (on Google Cloud)",
+   "posted_at": "2026-10-22T21:21:00Z",
+   "metrics": {
+    "likes": 1371,
+    "reposts": 70,
+    "quotes": 36,
+    "replies": 104,
+    "views": 94591
+   },
+   "confirmed_by": [
+    "@ClaudeDevs"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Replies focus on procurement: commitment retirement lets GCP budgets buy Claude, and people ask how it differs from Vertex, which IAM roles are needed and how to point Claude Code at it. Many off-topic 'Fable 5.5' requests.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Claude formally verifies security properties in over 100 real-world open-source libraries",
+   "url": "https://x.com/AnthropicAI/status/2113390212911083894",
+   "handle": "@AnthropicAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Anthropic's Frontier Red Team and Theorem Labs used Claude to write machine-checked proofs of security properties for over one hundred real open-source libraries in a few weeks, work that used to need expert time per project. A quote post summarizes the scope as 123 libraries proven free of memory-safety errors for every input under 64 MB, checked at RISC-V assembly level for single-threaded static binaries.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://www.anthropic.com/research/formal-verification"
+   ],
+   "vendor": "Anthropic with Theorem Labs",
+   "posted_at": "2026-10-22T22:01:06Z",
+   "metrics": {
+    "likes": 196,
+    "reposts": 18,
+    "quotes": 7,
+    "replies": 22,
+    "views": 13710
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers are impressed by the scale and ask the classic question of who checks the specs Claude writes and whether proofs survive library updates; one notes a 20 MB decompressor bug fuzzers would miss.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Grok Bot can sign in to sites for you through 1Password",
+   "url": "https://x.com/bot/status/2113332983226831339",
+   "handle": "@bot",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Part of today's 1Password for Agents launch: you approve which logins to share and the bot signs in, with 1Password filling the credential directly so the agent never sees the password. Rolling out over the next few days; 1Password lists Muse, Claude, OpenAI, Browserbase, Browser Use, Perplexity and others as launch partners.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://1password.com/personal-ai-agent-integrations"
+   ],
+   "vendor": "SpaceX Super Intelligence (Grok Bot) with 1Password",
+   "posted_at": "2026-10-22T18:13:41Z",
+   "metrics": {
+    "likes": 4653,
+    "reposts": 253,
+    "quotes": 129,
+    "replies": 655,
+    "views": 177606
+   },
+   "confirmed_by": [
+    "@browserbase"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Most replies ask their bot to set it up or ask for Apple Passwords and Dashlane support; a few call it risky. One early user reports every fill failing with '1Password could not resolve this login'.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "OpenAI's Decisions API is generally available",
+   "url": "https://x.com/OpenAIDevs/status/2113346642787086538",
+   "handle": "@OpenAIDevs",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "The Decisions API classifies text and images, evaluates inputs and picks the next step, returning probabilities or choices without generating a full response, for cheap routing and checks inside apps and agents. Repliers quoting OpenAI's docs cite $0.10 per million input tokens with no charge for output, and GA adds cache discounts and a higher question limit.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "OpenAI",
+   "posted_at": "2026-10-22T19:07:58Z",
+   "metrics": {
+    "likes": 715,
+    "reposts": 42,
+    "quotes": 25,
+    "replies": 89,
+    "views": 46216
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Builders see it as the cheap way to do the classify-or-route steps in agent loops and compare its field names with Jev; several say calibration still needs checking on your own labeled data.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Canva launches Craft, its own frontier image model built for design",
+   "url": "https://x.com/canva/status/2113348707223753165",
+   "handle": "@canva",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Canva Craft is a two-stage image model (it plans the layout, then renders) trained by Canva Research, available to all Canva users and via a public API, with an MCP server coming. Outputs can be split into editable layers with Magic Layers, and Canva says it places it as the second-best lab on the DesignArena image leaderboard.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Canva",
+   "posted_at": "2026-10-22T19:16:10Z",
+   "metrics": {
+    "likes": 1235,
+    "reposts": 5145,
+    "quotes": 159,
+    "replies": 126,
+    "views": 214729
+   },
+   "confirmed_by": [
+    "@omarsar0"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Surprise and praise (including @lennysan) that a design company trained a frontier image model; people ask about open weights and video next. The post shows about four times more reposts than likes, which is unusual and may reflect amplification.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Microsoft's MAI Diagnostic Orchestrator, in Science, outscores ED physicians 1.7x",
+   "url": "https://x.com/mustafasuleyman/status/2113332931423039945",
+   "handle": "@mustafasuleyman",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Microsoft AI's multi-agent diagnostic orchestrator, published in Science, reached about 80% accuracy against 47% for emergency physicians with web access on ED cases, while ordering fewer tests. A prospective study is planned next.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Microsoft AI",
+   "posted_at": "2026-10-22T18:13:29Z",
+   "metrics": {
+    "likes": 168,
+    "reposts": 31,
+    "quotes": 18,
+    "replies": 25,
+    "views": 40882
+   },
+   "confirmed_by": [
+    "@satyanadella"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The ED cases are text-only and come from discharge summaries written in hindsight, not live patients; a fact-check quote says the most accurate setup actually spent more on tests.",
+    "source": "https://x.com/jdudley/status/2113339646386340129"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Admiration for the peer-reviewed result and the fewer-tests angle, balanced by clinicians asking for the raw numbers and a prospective trial on messy real ED intake.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Gemini can use your Google Maps searches and saved places with Calendar for daily plans",
+   "url": "https://x.com/GeminiApp/status/2113343041805127839",
+   "handle": "@GeminiApp",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "With permission, the Gemini app now draws on your Google Maps searches and saved places alongside Google Calendar to tailor recommendations for your day. It is opt-in under connected apps, and quote posts say it is not available in the EU.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Google",
+   "posted_at": "2026-10-22T18:53:39Z",
+   "metrics": {
+    "likes": 425,
+    "reposts": 31,
+    "quotes": 14,
+    "replies": 42,
+    "views": 27300
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Users like the planning use case and stress that the permission controls will decide adoption; one reply points to where the off switch hides, others note the training-data terms for connected apps.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Modal open-sources Spindle, a Tinker-compatible post-training server you run yourself",
+   "url": "https://x.com/modal/status/2113383878215827664",
+   "handle": "@modal",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Spindle is an open-source training server that speaks the Tinker API and runs in your own Modal workspace, so existing Tinker post-training scripts run unchanged while you pay for GPU time instead of per-token prices and can use models the hosted provider does not support.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Modal",
+   "posted_at": "2026-10-22T21:35:55Z",
+   "metrics": {
+    "likes": 54,
+    "reposts": 7,
+    "quotes": 3,
+    "replies": 3,
+    "views": 1285
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Cognition open-sources a vulnerability-fixes plugin that any coding agent can install",
+   "url": "https://x.com/cognition/status/2113356319751119359",
+   "handle": "@cognition",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "An open-source agent plugin that helps patch systems against recent cybersecurity threats; it installs into any agent and is built into Devin.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://devin.ai/blog/vulnerability-fixes-plugin"
+   ],
+   "vendor": "Cognition",
+   "posted_at": "2026-10-22T19:46:25Z",
+   "metrics": {
+    "likes": 154,
+    "reposts": 20,
+    "quotes": 6,
+    "replies": 9,
+    "views": 10682
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Hermes Agent gets a Cua Spaces plugin: a shared Linux, macOS or Windows computer for agent and team",
+   "url": "https://x.com/NousResearch/status/2113391397760041329",
+   "handle": "@NousResearch",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "The new trycua Spaces plugin gives Hermes its own Linux, macOS or Windows Space on hardware you already own; teammates can open it, watch live, take over and hand it back while Hermes keeps working.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://hermes-agent.nousresearch.com/docs/plugins/cua-spaces"
+   ],
+   "vendor": "Nous Research with Cua",
+   "posted_at": "2026-10-22T22:05:48Z",
+   "metrics": {
+    "likes": 1,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 1,
+    "views": 780
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Replit Monitoring Agent watches deployed apps and ships fixes on its own",
+   "url": "https://x.com/Replit/status/2113376576230637629",
+   "handle": "@Replit",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Replit's Monitoring Agent acts as an on-call engineer for apps built on Replit: it can see problems, fix them and deploy the changes autonomously.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://replit.com/blog/replit-monitoring-agent"
+   ],
+   "vendor": "Replit",
+   "posted_at": "2026-10-22T21:06:55Z",
+   "metrics": {
+    "likes": 24,
+    "reposts": 8,
+    "quotes": 4,
+    "replies": 10,
+    "views": 2542
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Rapid-MLX 0.16.8 ships Flint as a pinned alias and doubles concurrent MTP throughput",
+   "url": "https://x.com/rapidmlx/status/2113379036865175640",
+   "handle": "@rapidmlx",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Flint 40B-A2.5B now installs from a release with an alias pinned to the benchmarked checkpoint (rapid-mlx serve flint-40b-a2.5b-4bit). Concurrent MTP chats now decode together: 4 parallel Qwen3.8-27B requests went from 35 to 75 tok/s on a Mac.",
+   "kind": "repo",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/raullenchai/Rapid-MLX/releases/tag/v0.16.8"
+   ],
+   "vendor": "Rapid-MLX",
+   "posted_at": "2026-10-22T21:16:41Z",
+   "metrics": {
+    "likes": 9,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 353
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Ant Group's 0.5B Ming-3.0-tts reaches top-3 text-to-speech quality under an MIT license",
+   "url": "https://x.com/ArtificialAnlys/status/2113380805552857591",
+   "handle": "@ArtificialAnlys",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Artificial Analysis finds Ming-3.0-tts is the only sub-1B model in the top 3 of any of its text-to-speech leaderboards; every other open-weights TTS model in its Controlled Voice Arena top 10 is 3.5B or larger, so it matches that tier with 7x to 70x fewer parameters. Small enough for local use.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Ant Group (Ant Ling)",
+   "posted_at": "2026-10-22T21:23:43Z",
+   "metrics": {
+    "likes": 48,
+    "reposts": 4,
+    "quotes": 1,
+    "replies": 9,
+    "views": 4796
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "SubQ Snap 1.1 ties for first on the Artificial Analysis Decision Index at $0.04 per million input tokens",
+   "url": "https://x.com/ArtificialAnlys/status/2113360449156890662",
+   "handle": "@ArtificialAnlys",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Subquadratic's new decision model scores 65 on the Decision Index v1.0, tied with d1-ultra and Elephant 9B and 8 points ahead of Jev 1.14, driven by an 86% non-hallucination rate. It costs $0.04 per million input tokens and takes a 384K context, against 32K and 16K for the other two leaders.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Subquadratic",
+   "posted_at": "2026-10-22T20:02:50Z",
+   "metrics": {
+    "likes": 63,
+    "reposts": 6,
+    "quotes": 4,
+    "replies": 9,
+    "views": 7214
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "fal explains how FLUX 3 Max makes a 10-second video in 12.45 seconds",
+   "url": "https://x.com/fal/status/2113375005698576393",
+   "handle": "@fal",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "A fal write-up on the post-training and inference optimizations behind FLUX 3 Max: a 10-second video in 12.45 seconds against 277.8 seconds for Seedance 2.5, at the same 1,139 Elo on a third-party evaluation.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://fal.ai/blog/introducing-flux-3-max-by-fal"
+   ],
+   "vendor": "fal",
+   "posted_at": "2026-10-22T21:00:40Z",
+   "metrics": {
+    "likes": 31,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 7,
+    "views": 2014
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Braintrust compares decision models and safety classifiers at spotting harmful content",
+   "url": "https://x.com/braintrust/status/2113368124154126515",
+   "handle": "@braintrust",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "On thousands of human-labeled examples from three public safety benchmarks, Jev performed best for its low cost, Mammoth-1 raised the fewest false alarms among decision models, and Luna caught more harmful answers than Jev but flagged safe ones three times as often.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://braintrustdata.link/safety-classification"
+   ],
+   "vendor": "Braintrust",
+   "posted_at": "2026-10-22T20:33:19Z",
+   "metrics": {
+    "likes": 6,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 0,
+    "views": 324
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Modular makes its MAX inference framework source-available in Modular 26.7",
+   "url": "https://x.com/Modular/status/2113332816301928487",
+   "handle": "@Modular",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "With release 26.7, Modular has opened the source of MAX, its hardware-portable inference framework, as part of an effort to keep AI compute from being locked to one chip vendor.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/modular/modular"
+   ],
+   "vendor": "Modular",
+   "posted_at": "2026-10-22T18:13:01Z",
+   "metrics": {
+    "likes": 28,
+    "reposts": 5,
+    "quotes": 2,
+    "replies": 4,
+    "views": 70676
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "turbopuffer v3 runs filters directly on compressed columns",
+   "url": "https://x.com/turbopuffer/status/2113331624192696542",
+   "handle": "@turbopuffer",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "turbopuffer v3 compresses columns with composable encodings (a million zeros becomes one value and a length), and predicates run on the compressed data, so a filter can do one comparison instead of a million.",
+   "kind": "technique",
+   "evidence": "artifact",
+   "links": [
+    "https://turbopuffer.com/v3#note-columnar-encoding"
+   ],
+   "vendor": "turbopuffer",
+   "posted_at": "2026-10-22T18:08:17Z",
+   "metrics": {
+    "likes": 61,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 0,
+    "views": 1771
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Warp keeps an agent software factory's whole setup in a repo as markdown and YAML",
+   "url": "https://x.com/vikvang1/status/2113342891435208900",
+   "handle": "@vikvang1",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Warp lets teams define agents, automations, runners, benchmarks and custom model routers as files in a repo, so agents can propose changes to their own setup and humans review them like code. A 3-minute walkthrough video shows a typical config.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Warp",
+   "posted_at": "2026-10-22T18:53:03Z",
+   "metrics": {
+    "likes": 33,
+    "reposts": 1,
+    "quotes": 4,
+    "replies": 3,
+    "views": 4014
+   },
+   "confirmed_by": [
+    "@zachlloydtweets"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Black Forest Labs upgrades the FLUX Video Upscaler to 4K, claiming it beats Topaz Astra 2",
+   "url": "https://x.com/bfl_ai/status/2113357248546341023",
+   "handle": "@bfl_ai",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "The upgraded FLUX Video Upscaler takes any video up to 4K; BFL says it is the best on the market, twice as fast as Topaz Astra 2 and cheaper.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Black Forest Labs",
+   "posted_at": "2026-10-22T19:50:06Z",
+   "metrics": {
+    "likes": 192,
+    "reposts": 17,
+    "quotes": 3,
+    "replies": 17,
+    "views": 6409
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No benchmark, samples or method back the 'best on the market' and 2x speed claims.",
+    "source": null
+   }
+  },
+  {
+   "title": "fastino releases GLiDE v1.2 as open weights, claiming first place on the HF Decision Index",
+   "url": "https://x.com/NeoAIForecast/status/2113378813707169918",
+   "handle": "@NeoAIForecast",
+   "group": "opensource",
+   "origin": "discovery",
+   "summary": "GLiDE v1.2 is an open-weights decision model from fastino that now takes text, JSON and images; the post cites 71.5 overall on Hugging Face's Decision Index with among the lowest calibration error.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/fastino/GLiDE"
+   ],
+   "vendor": "fastino",
+   "posted_at": "2026-10-22T21:15:48Z",
+   "metrics": {
+    "likes": 3,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 179
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The scores are fastino's own numbers relayed by an aggregator account; no independent run yet.",
+    "source": null
+   }
+  },
+  {
+   "title": "Subspace Tuning limits where weight updates land to cut forgetting during fine-tuning",
+   "url": "https://x.com/ArnavChavan6/status/2113345935233429543",
+   "handle": "@ArnavChavan6",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "SST is a fine-tuning method that controls which weight subspace updates touch, improving the trade-off between learning new skills from offline data and forgetting old ones. Paper and blog are linked.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2610.22293"
+   ],
+   "vendor": "Arnav Chavan and coauthors",
+   "posted_at": "2026-10-22T19:05:09Z",
+   "metrics": {
+    "likes": 14,
+    "reposts": 6,
+    "quotes": 1,
+    "replies": 2,
+    "views": 896
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": []
+}

@@ -1,16 +1,16 @@
 {
- "updated_at": "2026-10-22T18:12:00Z",
+ "updated_at": "2026-10-22T22:20:00Z",
  "job": "sweep",
  "prompt": "v4",
- "calls_used_today": 89,
+ "calls_used_today": 115,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-10-22T18:03:00Z",
-  "items": 24,
-  "queries": 10,
-  "deep_reads": 9,
+  "ran_at": "2026-10-22T22:05:00Z",
+  "items": 23,
+  "queries": 9,
+  "deep_reads": 8,
   "rechecks": 8,
-  "flagged": 7,
+  "flagged": 3,
   "saved_in": 0,
   "saved_kept": 0,
   "videos": 0
@@ -94,7 +94,11 @@
   "Sweep 18:03Z roster leads: @MangQiuyang (FrontierCS 2, via @OfirPress, @teortaxesTex and @modal), @asymptotelabs (Beacon repo, via @akshay_pachaar), @GenrobotAI (open robotics dataset, discovery).",
   "Sweep 18:03Z: follows_this_week corrected to 7 per inbox/x-follows.json (a count of 10 passed to the scout did not match the log).",
   "Sweep 18:03Z: quote posts on Ling-3.0-flash-Sante included many near-identical promo posts with matching like and repost counts; treated as weak signal, not independent confirmation.",
-  "Sweep 18:03Z videos: no deep-read clip exceeded 60 s (OCRia-1 53 s, Cerebras 30 s); Factory's Slack clip (66 s) was not deep-read and not watched."
+  "Sweep 18:03Z videos: no deep-read clip exceeded 60 s (OCRia-1 53 s, Cerebras 30 s); Factory's Slack clip (66 s) was not deep-read and not watched.",
+  "Sweep 22:05Z follow candidates meeting the bar (3+ qualifying posts in sweep files, no doubt 2+, first-hand), not followed because today's 3 follows are used and the scout had no browser: @fal (6), @claudeai (4), @lmsysorg (3), @modal (3), @NousResearch (3). Whether @sutcliffcc already follows them was not checked.",
+  "Sweep 22:05Z: @canva's Craft launch post showed about 4x more reposts (5,145) than likes (1,235), unusual for an organic launch; treated as possible amplification, not as extra confirmation.",
+  "Sweep 22:05Z videos: no deep-read clip exceeded 60 s; the 177 s Warp factory-config walkthrough (@vikvang1) was kept on its text and not watched.",
+  "Sweep 22:05Z re-checks (OCRia-1, Ling-3.0-flash-Sante, RIPL, MemoryTax, Agent4Sci, SGLang Trainium, MiniCPM-OCR, DeepSeek V8 exploit claim): engagement grew, no new pushback, no doubt levels changed; the V8 claim stays at 2 (51 reposts plus quotes, far below the 500 needed for level 3)."
  ],
  "errors": [
   "Sweep 14:07Z, possible injection lure, not followed: in the quote posts of https://x.com/cnm13ryan/status/2113121138205499443, @lumpenspace tells readers to have their model 'check out my x bio'. Ignored; no bio was read."
