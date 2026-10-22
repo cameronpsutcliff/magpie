@@ -21,7 +21,7 @@
   "active": 0,
   "retired": 0
  },
- "follows_this_week": 6,
+ "follows_this_week": 7,
  "unfollow_suggestions": [],
  "prompt_feedback": [
   "Prompt v4 still says to read saves through the X plugin; in practice they come from the Twitter Profile archive (see below), so a sweep only sees saves as fresh as that bot's last sync (20:44Z for the 22:08Z sweep).",
