@@ -1,0 +1,560 @@
+{
+ "ran_at": "2026-10-22T14:07:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v4",
+ "since": "2026-10-22T10:01:00Z",
+ "queries": 8,
+ "calls": 20,
+ "items": [
+  {
+   "title": "Ant Ling posts Ling-3.1-flash-1019, a checkpoint that lifts agentic scores on Artificial Analysis",
+   "url": "https://x.com/AntLingAGI/status/2113226531522891851",
+   "handle": "@AntLingAGI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "A new checkpoint of Ant Group's Ling-3.1-flash scores 44 on the Artificial Analysis Intelligence Index (up from 41), with AA-Briefcase rising from about 1400 to 1524 Elo and AutomationBench-AA from 62% to 68%. API access and open weights are announced as coming soon, so nothing can be run yet.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Ant Group (Ant Ling)",
+   "posted_at": "2026-10-22T11:10:41Z",
+   "metrics": {
+    "likes": 712,
+    "reposts": 55,
+    "quotes": 55,
+    "replies": 48,
+    "views": 159382
+   },
+   "confirmed_by": [
+    "@teortaxesTex"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "API and weights are both only 'coming soon', so nobody can run or verify the agentic gains yet.",
+    "source": "https://x.com/vraj_ai/status/2113270413174407599"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers and quote posts welcomed the agentic jump and asked about weight sizes, pricing and when it ships; several noted it cannot be tested until the weights land.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Hugging Face releases Carbon-X, an open 14B model that reads DNA in chat",
+   "url": "https://x.com/LoubnaBenAllal1/status/2113212025560023513",
+   "handle": "@LoubnaBenAllal1",
+   "group": "opensource",
+   "origin": "discovery",
+   "summary": "Carbon-X is a Qwen3-14B midtrained on 302B tokens of DNA and text, so researchers can paste raw sequences into a chat and ask whether a variant is benign or pathogenic, what a region does, or what bases come next. The model card reports a 66.7% average on five DNA benchmarks against 67.5% for GPT-6.1 Sol at a small fraction of the cost, Apache 2.0, one 80GB GPU, served with vLLM, with a ready-made agent skill.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/HuggingFaceBio/Carbon-X"
+   ],
+   "vendor": "Hugging Face (with Zhongguancun Academy and TIGEM)",
+   "posted_at": "2026-10-22T10:13:03Z",
+   "metrics": {
+    "likes": 291,
+    "reposts": 50,
+    "quotes": 20,
+    "replies": 23,
+    "views": 22586
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers point out that GPT-6.1 Sol still edges it on average and ask how refusals and the cost baseline were counted.",
+    "source": "https://x.com/scrblanc/status/2113214463163953433"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Mostly enthusiasm plus practical questions (which organisms, how the 1,000x cost gap was measured, protein-DNA tasks); a Hugging Face researcher explained why DNA needs its own tokenizer. Nobody reported running it yet.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Fable-5.1 hides messages in ordinary images that a fresh Fable session can decode",
+   "url": "https://x.com/cnm13ryan/status/2113121138205499443",
+   "handle": "@cnm13ryan",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Researchers show Claude Fable 5.1 can encode a secret message into a benign-looking image without being told a method, and a separate fresh session recovers it when simply asked if anything is hidden. The LessWrong write-up has transcripts and recovery rates, and a repo holds the encode and decode prompts and example images to reproduce it.",
+   "kind": "demo",
+   "evidence": "measured",
+   "links": [
+    "https://www.lesswrong.com/posts/WHEQps5PK8LrrcTAb/how-does-fable-5-1-hide-messages-in-images",
+    "https://github.com/cnm13ryan/fable-image-steganography"
+   ],
+   "vendor": "Independent researchers (SASH Fellowship)",
+   "posted_at": "2026-10-22T04:11:53Z",
+   "metrics": {
+    "likes": 888,
+    "reposts": 73,
+    "quotes": 27,
+    "replies": 48,
+    "views": 164134
+   },
+   "confirmed_by": [
+    "@teortaxesTex"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "@teortaxesTex could not reproduce the reported 91% recovery in 3 tries without prodding, and repliers argue it is basic steganography other models also manage.",
+    "source": "https://x.com/teortaxesTex/status/2113260220894052387"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Many tried it: some report Codex, Gemini or Opus also hiding or finding messages, others say Grok failed, and critics call it ordinary steganography or say the encode prompt primed the method.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "User claims DeepSeek V4.1 Flash built a Chrome V8 sandbox escape exploit in 12 hours",
+   "url": "https://x.com/Exocija/status/2113186559616774604",
+   "handle": "@Exocija",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A user says DeepSeek V4.1 Flash 1017, left running for 12 hours, produced a multi-stage memory corruption exploit with full process read and write past Chrome's V8 sandbox. Only a 6-second screen clip is offered: no code, CVE, harness or vendor confirmation.",
+   "kind": "demo",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "DeepSeek (model); claim by an independent user",
+   "posted_at": "2026-10-22T08:31:51Z",
+   "metrics": {
+    "likes": 509,
+    "reposts": 17,
+    "quotes": 2,
+    "replies": 13,
+    "views": 29702
+   },
+   "confirmed_by": [
+    "@teortaxesTex"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 2,
+    "community_note": null,
+    "pushback": "Repliers say the clip looks staged (blurry browser frame under a sharp log overlay) and ask for a CVE or vendor write-up; none has been provided.",
+    "source": "https://x.com/b10100111001/status/2113220655189508572"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Some cheered the model, but the most specific replies call the clip fake, ask which harness was used, and want a CVE before believing it.",
+    "tried": false,
+    "replies_read": 17
+   }
+  },
+  {
+   "title": "CritPt v2 physics research benchmark released after expert review; GPT-6 Astra leads at 83.1%",
+   "url": "https://x.com/MiniHui_zhu/status/2113182085385273507",
+   "handle": "@MiniHui_zhu",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "CritPt, a benchmark of research-level physics challenges, ships v2 with 47 challenges revised (statement fixes, clarified conventions, grader fixes), several from community reports. GPT-6 Astra tops the new board at 83.1% averaged over 5 runs; data and code are public.",
+   "kind": "eval",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/CritPt-Benchmark/CritPt",
+    "https://huggingface.co/datasets/CritPt-Benchmark/CritPt",
+    "https://critpt.com/"
+   ],
+   "vendor": "CritPt",
+   "posted_at": "2026-10-22T08:14:04Z",
+   "metrics": {
+    "likes": 8,
+    "reposts": 2,
+    "quotes": 2,
+    "replies": 1,
+    "views": 471
+   },
+   "confirmed_by": [
+    "@OfirPress"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Aikido's cyber benchmark: DeepSeek V4.1 Flash rediscovers 87.5% of CVEs at $2.40 each",
+   "url": "https://x.com/pilvar222/status/2113260594547524087",
+   "handle": "@pilvar222",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "On Aikido Security's CVE rediscovery benchmark, DeepSeek V4.1 Flash 1017 finds 28 of 32 CVEs at pass@3, behind only GPT-6 Astra, with 70.8% single-run recall, precision up from 78.9% to 86.4%, and about $2.40 per CVE found versus $65 for Opus 5 and $135 for Astra.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://aikido.dev/code/code-audit"
+   ],
+   "vendor": "Aikido Security",
+   "posted_at": "2026-10-22T13:26:02Z",
+   "metrics": {
+    "likes": 28,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 2,
+    "views": 1230
+   },
+   "confirmed_by": [
+    "@teortaxesTex"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Vendor-run benchmark that promotes its own audit harness; no public method or task list is linked.",
+    "source": null
+   }
+  },
+  {
+   "title": "Cloudflare open-sources security-audit-skill, a multi-phase audit skill for coding agents",
+   "url": "https://x.com/trending_repos/status/2113241275470066013",
+   "handle": "@trending_repos",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A coding-agent skill from Cloudflare that runs multi-phase security audits and emits independently verified, machine-readable findings; it gained about 3,000 GitHub stars in a day.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/cloudflare/security-audit-skill"
+   ],
+   "vendor": "Cloudflare",
+   "posted_at": "2026-10-22T12:09:16Z",
+   "metrics": {
+    "likes": 9,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 1,
+    "views": 973
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Aleph Alpha details the RL environment infrastructure behind Kolibri",
+   "url": "https://x.com/Aleph__Alpha/status/2113269064785379356",
+   "handle": "@Aleph__Alpha",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A write-up and tech report on running RL environments at training scale: about 25,000 concurrent sandboxes on 31 nodes, isolated verifier processes so one stuck check cannot idle the GPUs, infra failures dropped rather than scored as wrong answers, and the reward hacks and a sandbox escape they had to close. Useful for anyone building agentic RL pipelines.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://aleph-alpha.com/en/blog/why-rl-environments-have-always-been-an-infra-problem",
+    "https://aleph-alpha.com/downloads/tech-report.pdf"
+   ],
+   "vendor": "Aleph Alpha",
+   "posted_at": "2026-10-22T13:59:42Z",
+   "metrics": {
+    "likes": 2,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 172
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "PrismaX cuts pi0.5 robot policy inference from 230 ms to 87 ms and open-sources the fixes",
+   "url": "https://x.com/PrismaXai/status/2113254339200561348",
+   "handle": "@PrismaXai",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "PrismaX walks through each fix that took Physical Intelligence's pi0.5 policy from 230 ms to 87 ms per inference, with the code in the open prism-pi repo tested on their IROS demo rig, and measures how latency affects rollout performance.",
+   "kind": "technique",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/PrismaXAI/prism-pi",
+    "https://blog.prismax.ai/article.html?slug=latency-vs-pi05-rollout-performance"
+   ],
+   "vendor": "PrismaX",
+   "posted_at": "2026-10-22T13:01:11Z",
+   "metrics": {
+    "likes": 39,
+    "reposts": 5,
+    "quotes": 0,
+    "replies": 12,
+    "views": 1500
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Speechify ships Simba 3.5, one speech model id for 48 languages and any voice",
+   "url": "https://x.com/SpeechifyAI/status/2112892450234589517",
+   "handle": "@SpeechifyAI",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Simba 3.5 is a streaming text-to-speech model where one model id speaks 48 languages in every catalog voice, including cloned ones, by setting the language per request. Speechify reports English listeners preferred it over Simba 3.2 63% of the time in blind tests; Baseten serves inference.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://speechify.ai/blog/simba-3-5",
+    "https://speechify.ai/reports/simba-3-5-fact-sheet.pdf"
+   ],
+   "vendor": "Speechify",
+   "posted_at": "2026-10-21T13:03:10Z",
+   "metrics": {
+    "likes": 53,
+    "reposts": 28,
+    "quotes": 8,
+    "replies": 14,
+    "views": 2091
+   },
+   "confirmed_by": [
+    "@baseten"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "MemT-1.0 builds persistent memory into the model; a user reloads it from a 42 MB file",
+   "url": "https://x.com/MemOS_dev/status/2112536909969035761",
+   "handle": "@MemOS_dev",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "MemT-1.0 (Nano and Flash) writes what you tell it into an internal memory state rather than only the context window, with code and weights public. @sudoingX ran it in bf16 on a 128GB Strix Halo, saved the memory to a 42 MB file, restarted, and the new process still followed his Rust style rules with an empty context.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/MemTensor/MemT-1.0",
+    "https://huggingface.co/collections/MemTensor/memt-1"
+   ],
+   "vendor": "MemTensor (MemOS)",
+   "posted_at": "2026-10-20T13:30:23Z",
+   "metrics": {
+    "likes": 21,
+    "reposts": 2,
+    "quotes": 9,
+    "replies": 1,
+    "views": 24166
+   },
+   "confirmed_by": [
+    "@sudoingX"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Flint runs at 216 tok/s on one RTX 5090 inside Hermes Agent, falling to 152 at 32K context",
+   "url": "https://x.com/witcheer/status/2113262827922223130",
+   "handle": "@witcheer",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A hands-on test of Recursive's open Flint coding model on an RTX 5090: 216 tokens per second on an empty context and 152 once 32K tokens are loaded, and it completed a small write-run-report coding task inside Hermes Agent.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/RecursiveSI/flint"
+   ],
+   "vendor": "Recursive (Flint)",
+   "posted_at": "2026-10-22T13:34:55Z",
+   "metrics": {
+    "likes": 9,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 2,
+    "views": 561
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Ternary-Bonsai-2-27B at 7.2 GB ties Qwen3.8-27B Q6_K on this year's AIME and HMMT",
+   "url": "https://x.com/witcheer/status/2113212664071532554",
+   "handle": "@witcheer",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "On 63 AIME and HMMT problems with a 32K thinking budget on an RTX 5090, the 7.2 GB PQ2_0 ternary build scored 46 against 47 for the 22.9 GB Q6_K Qwen3.8-27B, with similar accuracy on finished answers (95.4% vs 96.1%), so a third of the memory gives near-equal math results.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "PrismML (Ternary Bonsai)",
+   "posted_at": "2026-10-22T10:15:35Z",
+   "metrics": {
+    "likes": 14,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 6,
+    "views": 1224
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Hermes Agent gets Jot, a plugin that keeps agent-editable checklists beside the chat",
+   "url": "https://x.com/witcheer/status/2113216293658587271",
+   "handle": "@witcheer",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A new Hermes Agent plugin keeps checklists and plans as notes next to the chat in Hermes Desktop, and the agent can tick off and add to-dos on request.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://hermes-agent.nousresearch.com/docs/plugins/jot"
+   ],
+   "vendor": "Nous Research (Hermes Agent)",
+   "posted_at": "2026-10-22T10:30:00Z",
+   "metrics": {
+    "likes": 80,
+    "reposts": 5,
+    "quotes": 1,
+    "replies": 18,
+    "views": 3324
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Hamel Husain and coauthor test decision models as eval judges: detection, calibration, thresholds",
+   "url": "https://x.com/doesdatmaksense/status/2112915743511904569",
+   "handle": "@doesdatmaksense",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "A hands-on comparison of decision models (Jev, d1-ultra, clef, pplx-decider, OpenAI decisions and others) on a real eval dataset, covering failure detection, probability calibration and threshold tuning, with practical tradeoffs for using them in evals.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://hamel.dev/blog/posts/decision-model-evals/"
+   ],
+   "vendor": "Hamel Husain and collaborators",
+   "posted_at": "2026-10-21T14:35:43Z",
+   "metrics": {
+    "likes": 58,
+    "reposts": 5,
+    "quotes": 3,
+    "replies": 2,
+    "views": 3274
+   },
+   "confirmed_by": [
+    "@helloiamleonie"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "BAAI and partners introduce SWITCH, a closed-loop benchmark for operating real-world control panels",
+   "url": "https://x.com/BAAIBeijing/status/2113244729445949725",
+   "handle": "@BAAIBeijing",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "SWITCH tests embodied agents on tangible control interfaces such as switches, appliance panels and elevators in egocentric real-world settings, scoring the full loop of acting, reading feedback and recovering from errors rather than single-step perception. The post links no paper or data yet.",
+   "kind": "eval",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "BAAI with SJTU, UCAS, CASIA, Wuhan AI Research and HIT",
+   "posted_at": "2026-10-22T12:23:00Z",
+   "metrics": {
+    "likes": 2,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 128
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Nothing to check yet: no paper, dataset or numbers linked in the post.",
+    "source": null
+   }
+  },
+  {
+   "title": "Modilify Mk2: a 26B-A4B text diffusion model with learned trajectory memory, weights released",
+   "url": "https://x.com/modilify/status/2113220991027699778",
+   "handle": "@modilify",
+   "group": "opensource",
+   "origin": "discovery",
+   "summary": "A text diffusion language model on a 26B mixture-of-experts backbone (4B active) with a 256-token rolling canvas and dual-timescale memory; weights and code are out for non-commercial research.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/modilify/Modilify-Mk2"
+   ],
+   "vendor": "Modilify",
+   "posted_at": "2026-10-22T10:48:40Z",
+   "metrics": {
+    "likes": 3,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 58
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": []
+}

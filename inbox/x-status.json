@@ -1,16 +1,16 @@
 {
- "updated_at": "2026-10-22T10:12:00Z",
+ "updated_at": "2026-10-22T14:22:00Z",
  "job": "sweep",
  "prompt": "v4",
- "calls_used_today": 54,
+ "calls_used_today": 59,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-10-22T10:01:00Z",
-  "items": 15,
+  "ran_at": "2026-10-22T14:07:00Z",
+  "items": 17,
   "queries": 8,
   "deep_reads": 4,
   "rechecks": 8,
-  "flagged": 4,
+  "flagged": 6,
   "saved_in": 0,
   "saved_kept": 0,
   "videos": 0
@@ -78,9 +78,19 @@
   "Sweep 10:01Z: no new saves; the Twitter Profile archive last synced at 04:48Z with nothing newer than the 18:43Z Oct 21 captures, so saved_in is 0. The overnight window was thin (5 to 24 results per roster group, all under 25), so one page per group covered it; the 8 re-checks rode along in the single hydrate call at no extra cost and changed no doubt levels.",
   "Sweep 10:01Z: @_philschmid's 'no AI posts today' warning adds GitLab and Node (brotli) to the Railway, LiteLLM and PHP incidents; skipped as general security news, but it widens the list the owner may want checked.",
   "Sweep 10:01Z follow check: no browser this run, so nothing followed or logged. @vllm_project (3 own items plus 5 confirmations, max doubt 1) and @sgl_project (3 plus 3, max doubt 0) remain the 2026-10-22 candidates; @lmsysorg, @rapidmlx and @sqs now also reach 3 qualifying items with max doubt 0 (first-hand SGLang org, Rapid-MLX project, Amp co-founder). Near-misses unchanged: @askalphaxiv and @dair_ai (paper explainers), @aitrackerbot (leak tracker, 4 items, doubt 1), @PyTorch (event promotion), @ValsAI (level-2 flag).",
-  "Sweep 10:01Z follow check: followed @vllm_project and @sgl_project in the browser as @sutcliffcc (no warnings). @lmsysorg also reaches 3 items but overlaps with @sgl_project, so it was held back; @rapidmlx and @sqs newly reach 3 items and can be reviewed next."
+  "Sweep 10:01Z follow check: followed @vllm_project and @sgl_project in the browser as @sutcliffcc (no warnings). @lmsysorg also reaches 3 items but overlaps with @sgl_project, so it was held back; @rapidmlx and @sqs newly reach 3 items and can be reviewed next.",
+  "Sweep 14:07Z: calls_used_today now follows the America/Chicago day as the parent run instruction says (Oct 22 Central began 05:00Z): roster review 23 + 10:01Z sweep 17 + this sweep 20 = 59. On the UTC-day count used before it would be 73. The prompt should name one day boundary for this field.",
+  "Sweep 14:07Z: 20 X reads (6 roster searches, 1 extra builders page because that group hit 25 results, 1 self-reply search to recover links that the posts carried only as images, 1 hydrate that also carried the 8 re-checks, 2 discovery searches, 8 deep-read calls for Ling-3.1-flash-1019, Fable steganography, the V8 exploit claim and Carbon-X, 1 bookmarks read). Re-checks (Amp orbs, MiniMax Mini Apps, AA DeepSeek Search, tinygrad tinybox, Nemotron 4 leak, Kalmia and Kibitz tokenizer probes, Unsloth Flint GGUFs) showed engagement gains only; no doubt levels changed.",
+  "Sweep 14:07Z: saves read directly through the X plugin bookmarks call (20 newest) as well as the Twitter Profile archive (last sync 12:50Z); all 20 were already seen, so saved_in is 0.",
+  "Sweep 14:07Z: Cohere Labs' CulturalRiddles post was skipped because its linked blog is a feature story with no dataset, method or scores; BAAI's SWITCH was kept as a claim because the post links nothing yet. AA-PersonalityBench's new Anthropic results were skipped as a follow-up to the item already in the 18:10Z Oct 21 file.",
+  "Sweep 14:07Z: flagged items: the Chrome V8 sandbox exploit claim (doubt 2: repliers say the clip looks staged, no CVE or code), plus doubt 1 for Ling-3.1-flash-1019 (weights and API not out), Carbon-X (GPT-6.1 Sol still slightly ahead, cost baseline questions), Fable steganography (failed replication at n=3), the Aikido cyber benchmark (vendor benchmark, no public method), and SWITCH (no link).",
+  "Sweep 14:07Z: no deep-read item had a clip over 60 s (the V8 clip is 6.5 s); SWITCH has a 95 s clip but was not deep-read, so no video records.",
+  "Sweep 14:07Z: three originals reached the sweep only through roster quotes (CritPt v2 by @MiniHui_zhu via @OfirPress, Aikido's cyber benchmark by @pilvar222 via @teortaxesTex, Fable steganography by @cnm13ryan via @teortaxesTex); @SpeechifyAI (via @baseten), @MemOS_dev (via @sudoingX) and @LoubnaBenAllal1 (Carbon-X, found by discovery) may also be worth a roster review look.",
+  "Sweep 14:07Z follow check: no browser this run, so nothing followed or logged. With 2 follows already made on 2026-10-22, 1 follow is left today (9 left this week). Best candidate: @rapidmlx (curated s/n 5, 3 qualifying items, max doubt 0, first-hand project). Next in line: @sqs (3 items, max doubt 0) and @lmsysorg (3 items, overlaps with the followed @sgl_project). Near-misses unchanged: @dair_ai, @askalphaxiv and @omarsar0 (paper explainers), @aitrackerbot (leak tracker), @PyTorch (event promotion), @ValsAI (level-2 flag), @Aleph__Alpha and @fal (trial, not active)."
  ],
- "errors": [],
+ "errors": [
+  "Sweep 14:07Z, possible injection lure, not followed: in the quote posts of https://x.com/cnm13ryan/status/2113121138205499443, @lumpenspace tells readers to have their model 'check out my x bio'. Ignored; no bio was read."
+ ],
  "follows_today": 2,
  "last_roster_review": {
   "ran_at": "2026-10-22T09:36:00Z",
