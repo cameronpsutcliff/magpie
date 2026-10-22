@@ -48,6 +48,30 @@
     "https://x.com/witcheer/status/2112793011864121658",
     "https://x.com/witcheer/status/2112936955168141754"
    ]
+  },
+  {
+   "handle": "@vllm_project",
+   "date": "2026-10-22",
+   "by": "magpie-scout",
+   "status": "followed",
+   "why": "Curated first-hand open-source inference project with 3 qualifying capability posts in recent sweep files and no doubt flag above level 1; the browser showed @sutcliffcc was not yet following.",
+   "evidence": [
+    "https://x.com/vllm_project/status/2112703311933747347",
+    "https://x.com/vllm_project/status/2112760256120197333",
+    "https://x.com/vllm_project/status/2112979682421596162"
+   ]
+  },
+  {
+   "handle": "@sgl_project",
+   "date": "2026-10-22",
+   "by": "magpie-scout",
+   "status": "followed",
+   "why": "Curated first-hand open-source inference project (SGLang) with 3 qualifying capability posts in recent sweep files and no doubt flags; the browser showed @sutcliffcc was not yet following.",
+   "evidence": [
+    "https://x.com/sgl_project/status/2112692463513288843",
+    "https://x.com/sgl_project/status/2112948714453262363",
+    "https://x.com/sgl_project/status/2113060793994686852"
+   ]
   }
  ]
 }
