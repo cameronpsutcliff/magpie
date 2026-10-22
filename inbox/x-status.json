@@ -1,16 +1,16 @@
 {
- "updated_at": "2026-10-22T14:22:00Z",
+ "updated_at": "2026-10-22T18:12:00Z",
  "job": "sweep",
  "prompt": "v4",
- "calls_used_today": 59,
+ "calls_used_today": 89,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-10-22T14:07:00Z",
-  "items": 17,
-  "queries": 8,
-  "deep_reads": 4,
+  "ran_at": "2026-10-22T18:03:00Z",
+  "items": 24,
+  "queries": 10,
+  "deep_reads": 9,
   "rechecks": 8,
-  "flagged": 6,
+  "flagged": 7,
   "saved_in": 0,
   "saved_kept": 0,
   "videos": 0
@@ -86,12 +86,20 @@
   "Sweep 14:07Z: flagged items: the Chrome V8 sandbox exploit claim (doubt 2: repliers say the clip looks staged, no CVE or code), plus doubt 1 for Ling-3.1-flash-1019 (weights and API not out), Carbon-X (GPT-6.1 Sol still slightly ahead, cost baseline questions), Fable steganography (failed replication at n=3), the Aikido cyber benchmark (vendor benchmark, no public method), and SWITCH (no link).",
   "Sweep 14:07Z: no deep-read item had a clip over 60 s (the V8 clip is 6.5 s); SWITCH has a 95 s clip but was not deep-read, so no video records.",
   "Sweep 14:07Z: three originals reached the sweep only through roster quotes (CritPt v2 by @MiniHui_zhu via @OfirPress, Aikido's cyber benchmark by @pilvar222 via @teortaxesTex, Fable steganography by @cnm13ryan via @teortaxesTex); @SpeechifyAI (via @baseten), @MemOS_dev (via @sudoingX) and @LoubnaBenAllal1 (Carbon-X, found by discovery) may also be worth a roster review look.",
-  "Sweep 14:07Z follow check: no browser this run, so nothing followed or logged. With 2 follows already made on 2026-10-22, 1 follow is left today (9 left this week). Best candidate: @rapidmlx (curated s/n 5, 3 qualifying items, max doubt 0, first-hand project). Next in line: @sqs (3 items, max doubt 0) and @lmsysorg (3 items, overlaps with the followed @sgl_project). Near-misses unchanged: @dair_ai, @askalphaxiv and @omarsar0 (paper explainers), @aitrackerbot (leak tracker), @PyTorch (event promotion), @ValsAI (level-2 flag), @Aleph__Alpha and @fal (trial, not active)."
+  "Sweep 14:07Z follow check: no browser this run, so nothing followed or logged. With 2 follows already made on 2026-10-22, 1 follow is left today (9 left this week). Best candidate: @rapidmlx (curated s/n 5, 3 qualifying items, max doubt 0, first-hand project). Next in line: @sqs (3 items, max doubt 0) and @lmsysorg (3 items, overlaps with the followed @sgl_project). Near-misses unchanged: @dair_ai, @askalphaxiv and @omarsar0 (paper explainers), @aitrackerbot (leak tracker), @PyTorch (event promotion), @ValsAI (level-2 flag), @Aleph__Alpha and @fal (trial, not active).",
+  "Sweep 18:03Z: the X MCP guide path given to the scout was missing; the guide actually lives under plugins/cache/cursor-public/x/<hash>/skills/x-api-mcp-guide/SKILL.md. Suggest pointing the prompt or skill at a stable path.",
+  "Sweep 18:03Z: the x namespace rejects $file: arguments, so long roster queries must be pasted inline.",
+  "Sweep 18:03Z re-checks: 8 prior items re-read (V8 claim, Ling-3.1-flash, Carbon-X, Fable, Aikido, AA DeepSeek Search, Nemotron 4 leak, Kalmia); no new pushback, the V8 claim stays doubt 2 and below the level-3 threshold (31 reposts, 4 quotes).",
+  "Sweep 18:03Z follow check: daily limit already reached (3 follows on 2026-10-22: @vllm_project, @sgl_project, @rapidmlx), so nothing followed. Next candidates for a future day: @lmsysorg (SGLang Trainium beta, 4th qualifying item), @trycua (Cua Spaces, first-hand measured), @llama_index or @jerryjliu0 (OCRia-1), @KLieret (SWE-sweep).",
+  "Sweep 18:03Z roster leads: @MangQiuyang (FrontierCS 2, via @OfirPress, @teortaxesTex and @modal), @asymptotelabs (Beacon repo, via @akshay_pachaar), @GenrobotAI (open robotics dataset, discovery).",
+  "Sweep 18:03Z: follows_this_week corrected to 7 per inbox/x-follows.json (a count of 10 passed to the scout did not match the log).",
+  "Sweep 18:03Z: quote posts on Ling-3.0-flash-Sante included many near-identical promo posts with matching like and repost counts; treated as weak signal, not independent confirmation.",
+  "Sweep 18:03Z videos: no deep-read clip exceeded 60 s (OCRia-1 53 s, Cerebras 30 s); Factory's Slack clip (66 s) was not deep-read and not watched."
  ],
  "errors": [
   "Sweep 14:07Z, possible injection lure, not followed: in the quote posts of https://x.com/cnm13ryan/status/2113121138205499443, @lumpenspace tells readers to have their model 'check out my x bio'. Ignored; no bio was read."
  ],
- "follows_today": 2,
+ "follows_today": 3,
  "last_roster_review": {
   "ran_at": "2026-10-22T09:36:00Z",
   "reads": 23,

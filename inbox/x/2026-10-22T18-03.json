@@ -1,0 +1,776 @@
+{
+ "ran_at": "2026-10-22T18:03:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v4",
+ "since": "2026-10-22T14:07:00Z",
+ "queries": 10,
+ "calls": 30,
+ "items": [
+  {
+   "title": "LlamaIndex releases OCRia-1, a 4B document-parsing model now running inside LlamaParse",
+   "url": "https://x.com/jerryjliu0/status/2113291928292790725",
+   "handle": "@jerryjliu0",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "LlamaIndex's own 4B vision-language model for parsing documents, aimed at nested and merged-cell tables, unlabeled charts and formatting. It reports 87.4 on its ParseBench plus leads on olmOCR-bench (83.5, 92.9 on tables), PulseBench-Tab and fr-bench-pdf2md, and now powers LlamaParse at the same price; no open weights were announced.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "LlamaIndex",
+   "posted_at": "2026-10-22T15:30:33Z",
+   "metrics": {
+    "likes": 434,
+    "reposts": 56,
+    "quotes": 25,
+    "replies": 67,
+    "views": 26393
+   },
+   "confirmed_by": [
+    "@llama_index",
+    "@disiok"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "A document-OCR researcher objects that olmOCR-bench scores were re-run at one fixed 1,288px rendering for all models, which can disadvantage rivals; ParseBench is LlamaIndex's own benchmark.",
+    "source": "https://x.com/staghado/status/2113318689516777484"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers praised the table scores for a 4B model and asked about scanned merged-cell tables, native-resolution results and per-cell bounding boxes; one planned to benchmark it against an existing pipeline.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Ant Ling open-sources Ling-3.0-flash-Sante, a 124B MoE (5.1B active) healthcare model",
+   "url": "https://x.com/AntLingAGI/status/2113293431435149349",
+   "handle": "@AntLingAGI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Weights for Ant Group's healthcare-tuned MoE are now on Hugging Face and ModelScope under MIT, after an earlier API-only debut. Ant reports HealthBench Professional 54.29 (from 45.73), AFUMED-ComplexReasoning 76.92 and stronger tool use and multi-agent deep research, so medical-AI builders can self-host it.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/inclusionAI/Ling-3.0-flash-Sante",
+    "https://modelscope.cn/models/inclusionAI/Ling-3.0-flash-Sante"
+   ],
+   "vendor": "Ant Group (Ant Ling)",
+   "posted_at": "2026-10-22T15:36:31Z",
+   "metrics": {
+    "likes": 265,
+    "reposts": 28,
+    "quotes": 22,
+    "replies": 18,
+    "views": 12152
+   },
+   "confirmed_by": [
+    "@TheInclusionAI"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "All scores are Ant's own; a replier asked for outside runs before trusting the bars, and many quote posts read like coordinated promotion.",
+    "source": "https://x.com/Greg_GL_87/status/2113307219240563050"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers welcomed open weights for patient-data settings and the cheap 5.1B active count, asked about the license, API and whether this matches the earlier API checkpoint; one wanted independent evaluation.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Google DeepMind releases ForTy, a 10 m global map separating natural, planted and farmed forest",
+   "url": "https://x.com/GoogleDeepMind/status/2113278710795153785",
+   "handle": "@GoogleDeepMind",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Forest Typology (ForTy), built on AlphaEarth Foundations, labels every 10 m patch as natural forest, plantation or farmed trees, with a 2020 map and a 2017 to 2025 annual series reported free on Earth Engine. It lets deforestation and EUDR-compliance tools tell a cleared old forest from a replanted plantation.",
+   "kind": "dataset",
+   "evidence": "artifact",
+   "links": [
+    "https://deepmind.google/blog/beyond-tree-cover-mapping-the-worlds-forest-types/"
+   ],
+   "vendor": "Google DeepMind",
+   "posted_at": "2026-10-22T14:38:02Z",
+   "metrics": {
+    "likes": 378,
+    "reposts": 39,
+    "quotes": 34,
+    "replies": 77,
+    "views": 34850
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers saw it as useful for deforestation and EUDR checks and asked about refresh cadence, uncertainty on class boundaries and raster access; nobody reported using it yet.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Gemini app can export the web apps it builds straight to a Google Sites draft",
+   "url": "https://x.com/GeminiApp/status/2113290464623493373",
+   "handle": "@GeminiApp",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Interactive web apps built in the Gemini app can now be exported to a private Google Sites draft, edited and published without copying code. Work accounts need Sites enabled with permission to create sites; personal accounts get it too.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://x.com/ChanduThota/status/2112927102261465551"
+   ],
+   "vendor": "Google",
+   "posted_at": "2026-10-22T15:24:44Z",
+   "metrics": {
+    "likes": 473,
+    "reposts": 39,
+    "quotes": 5,
+    "replies": 34,
+    "views": 34635
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers liked skipping the copy-and-rebuild step but asked whether the Sites copy stays linked to the prompt, and about backends, auth and custom domains.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Liquid AI launches RIPL, a low-latency inference engine for LFMs in real-time request paths",
+   "url": "https://x.com/liquidai/status/2113314744711143577",
+   "handle": "@liquidai",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "RIPL serves Liquid's LFM models end to end in under 50 ms for search, ads, fraud and payments, with Liquid reporting 14.4 to 28.4x lower p95 latency for LFM2.5-1.2B than Qwen3.5-0.8B on vLLM and production use at Shopify. It is enterprise-only on H100, H200, B200 and RTX PRO 6000, not open source.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://www.liquid.ai/blog/low-latency"
+   ],
+   "vendor": "Liquid AI",
+   "posted_at": "2026-10-22T17:01:13Z",
+   "metrics": {
+    "likes": 151,
+    "reposts": 15,
+    "quotes": 12,
+    "replies": 8,
+    "views": 5191
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Comparisons are vendor-run against vLLM; repliers asked for p99 under bursty load and cost per decision versus classical classifiers.",
+    "source": "https://x.com/cdiamond/status/2113331268871979250"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers and quote posts were impressed by full-response latency and flat p95 under load, while asking for p99 tails, fallback behavior and whether it will be open-sourced.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Cerebras Inference is now subscribable from an existing AWS account via AWS Marketplace",
+   "url": "https://x.com/cerebras/status/2113284952758387091",
+   "handle": "@cerebras",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Teams can now buy Cerebras's fast inference through AWS Marketplace on their current AWS bill, avoiding a separate vendor procurement.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://aws.amazon.com/marketplace/pp/prodview-ph4bdvplhhz3o"
+   ],
+   "vendor": "Cerebras",
+   "posted_at": "2026-10-22T15:02:50Z",
+   "metrics": {
+    "likes": 215,
+    "reposts": 14,
+    "quotes": 4,
+    "replies": 21,
+    "views": 10777
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "negative",
+    "summary": "Most replies were angry shareholders about the stock price rather than the product; a few asked whether the model list matches the Cerebras console and noted AWS billing eases enterprise adoption.",
+    "tried": false,
+    "replies_read": 23
+   }
+  },
+  {
+   "title": "SGLang opens a beta AWS Trainium plugin for serving and RL rollouts on Trainium2 and Trainium3",
+   "url": "https://x.com/sgl_project/status/2113299489394205121",
+   "handle": "@sgl_project",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Built on the new TorchNeuron with AWS, the beta covers inference serving and RL rollouts for Qwen3, DeepSeek and GLM families, plus an early heterogeneous-RL preview with rollouts on Trainium and training via Miles.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "SGLang (LMSYS)",
+   "posted_at": "2026-10-22T16:00:36Z",
+   "metrics": {
+    "likes": 19,
+    "reposts": 5,
+    "quotes": 5,
+    "replies": 6,
+    "views": 1954
+   },
+   "confirmed_by": [
+    "@lmsysorg"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No docs, repo path or numbers linked in the post; it is a beta announcement.",
+    "source": null
+   }
+  },
+  {
+   "title": "Rapid-MLX adds Recursive's Flint 40B MoE with measured Mac speeds",
+   "url": "https://x.com/rapidmlx/status/2113304786758255094",
+   "handle": "@rapidmlx",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "On a 36 GB M5 Max with 4-bit weights, Flint decodes about 131 tok/s at 1K context and 118 tok/s at 8K, 193 tok/s across 4 requests, peaking near 24 GB, with tool calls via an OpenAI-compatible API. It ships next release and builds from main now.",
+   "kind": "feature",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Rapid-MLX",
+   "posted_at": "2026-10-22T16:21:39Z",
+   "metrics": {
+    "likes": 7,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 1,
+    "views": 323
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Cua Spaces adds bring-your-own-cloud sandboxes on Hetzner and AWS, compatible with E2B and Daytona code",
+   "url": "https://x.com/trycua/status/2113315281787617537",
+   "handle": "@trycua",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Agent sandboxes can now run on your own Hetzner or AWS account or self-hosted Macs and Linux boxes with the same E2B and Daytona SDK code. Cua prices 256 RL sandboxes, 8 hours a day for a month, at about $700 versus $10.2k on E2B. Early access.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Cua",
+   "posted_at": "2026-10-22T17:03:21Z",
+   "metrics": {
+    "likes": 117,
+    "reposts": 10,
+    "quotes": 6,
+    "replies": 9,
+    "views": 5113
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Kiro's kiro-trace lets the model propose agent fixes while deterministic checks decide",
+   "url": "https://x.com/kirodotdev/status/2113320378680414209",
+   "handle": "@kirodotdev",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Kiro's science team describes a self-improvement loop where the model proposes, deterministic code accepts or rejects and a human merges, after one fix's gain turned out to be a lucky run. Surviving fixes cut redundant file re-reads about 83% and raised compaction retention from 0.82 to 0.92.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://kiro.dev/blog/how-kiro-fixes-itself/"
+   ],
+   "vendor": "AWS Kiro",
+   "posted_at": "2026-10-22T17:23:36Z",
+   "metrics": {
+    "likes": 8,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 1,
+    "views": 611
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Nous Research opens a Hermes Labs Plugins repo of experimental agent plugins",
+   "url": "https://x.com/Teknium/status/2113278395945779386",
+   "handle": "@Teknium",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "A new repo collects experimental community plugins for the Hermes agent, meant to be forked and extended, with more to come.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/nousresearch/hermes-labs-plugins"
+   ],
+   "vendor": "Nous Research",
+   "posted_at": "2026-10-22T14:36:47Z",
+   "metrics": {
+    "likes": 198,
+    "reposts": 20,
+    "quotes": 0,
+    "replies": 15,
+    "views": 15721
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Factory accepts task delegations from Slack threads",
+   "url": "https://x.com/FactoryAI/status/2113300287649874260",
+   "handle": "@FactoryAI",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Teams can hand a task to Factory's Droids from a Slack conversation and get a pull request back in the same thread.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Factory",
+   "posted_at": "2026-10-22T16:03:46Z",
+   "metrics": {
+    "likes": 35,
+    "reposts": 5,
+    "quotes": 2,
+    "replies": 9,
+    "views": 2353
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Browser Use Cloud signs in to sites autonomously through 1Password",
+   "url": "https://x.com/browser_use/status/2113299829489279126",
+   "handle": "@browser_use",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "With the native 1Password integration, a user approves a login once and Browser Use Cloud agents then authenticate on their own.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://x.com/i/status/2113276767582498943"
+   ],
+   "vendor": "Browser Use",
+   "posted_at": "2026-10-22T16:01:57Z",
+   "metrics": {
+    "likes": 32,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 2,
+    "views": 2694
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "LM Studio adds Read Aloud with Gradium's local Phonon TTS",
+   "url": "https://x.com/lmstudio/status/2113303191257244136",
+   "handle": "@lmstudio",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "LM Studio can now read responses aloud using the small on-device Phonon text-to-speech model, so voice output stays local.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "LM Studio",
+   "posted_at": "2026-10-22T16:15:18Z",
+   "metrics": {
+    "likes": 83,
+    "reposts": 15,
+    "quotes": 3,
+    "replies": 8,
+    "views": 5639
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "FrontierCS 2 benchmark asks agents to beat a paper's method after its contribution is deleted",
+   "url": "https://x.com/MangQiuyang/status/2113299554317791539",
+   "handle": "@MangQiuyang",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Each task takes a CS paper's released code with the contribution removed and asks an agent, without the paper or web, to outdo the original method on the authors' own metrics.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "FrontierCS",
+   "posted_at": "2026-10-22T16:00:51Z",
+   "metrics": {
+    "likes": 118,
+    "reposts": 25,
+    "quotes": 19,
+    "replies": 10,
+    "views": 10005
+   },
+   "confirmed_by": [
+    "@OfirPress",
+    "@teortaxesTex",
+    "@modal"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Updated SWE-sweep leaderboard: frontier models find twice the real bugs at half the cost, still under 10%",
+   "url": "https://x.com/KLieret/status/2113272881098756165",
+   "handle": "@KLieret",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "The bug-finding benchmark's update shows OpenAI and Anthropic models doubling bugs found while halving cost, with Astra on top but catching under 10% of real-world bugs tested.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "SWE-sweep",
+   "posted_at": "2026-10-22T14:14:52Z",
+   "metrics": {
+    "likes": 32,
+    "reposts": 4,
+    "quotes": 3,
+    "replies": 3,
+    "views": 5848
+   },
+   "confirmed_by": [
+    "@OfirPress"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Anthropic's Agent4Sci: coding agents beat the published best on 20 scientific ML benchmarks",
+   "url": "https://x.com/dair_ai/status/2113275187236147707",
+   "handle": "@dair_ai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Per the summary, Claude Opus beat the published best model on all 20 benchmarks across 11 domains (10.4% average), rising to about 20% with three light skills for ideation, experiment management and scheduled check-ins; gains came mostly from standard ML engineering, and a scoring wall stopped earlier eval gaming.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Anthropic",
+   "posted_at": "2026-10-22T14:24:02Z",
+   "metrics": {
+    "likes": 76,
+    "reposts": 9,
+    "quotes": 1,
+    "replies": 15,
+    "views": 5568
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No paper link in the post; repliers note pilots gamed 5 of 12 tasks before the test set was walled off, and that task environments were human-prepared.",
+    "source": "https://x.com/neuralloot/status/2113278495640171008"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers focused on the scaffolding result and the structural anti-gaming design, and asked about matched-compute comparisons and how novelty was scored.",
+    "tried": false,
+    "replies_read": 18
+   }
+  },
+  {
+   "title": "MemoryTax study: strong models searching raw history beat agent memory frameworks",
+   "url": "https://x.com/omarsar0/status/2113272925558305191",
+   "handle": "@omarsar0",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "On a 419-turn LoCoMo conversation, Mem0 only beat full context with GPT-4o-mini, and a Pi agent with Claude Opus 5.5 searching raw history scored 99% at under half the full-context cost, suggesting better search tools over designed memory.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "MemoryTax authors",
+   "posted_at": "2026-10-22T14:15:02Z",
+   "metrics": {
+    "likes": 113,
+    "reposts": 18,
+    "quotes": 3,
+    "replies": 58,
+    "views": 7146
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 2,
+    "community_note": null,
+    "pushback": "Zep's founder says the system labeled Zep is actually Graphiti, not the Zep service, and calls the paper fundamentally flawed; another replier notes one conversation and one run per cell.",
+    "source": "https://x.com/danielchalef/status/2113315817748414677"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Many repliers agreed thin memory layers age badly, but Zep's founder disputed the setup and others questioned results from a single short conversation.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Microsoft Research's Flint-interactive gives agents a language for interactive charts",
+   "url": "https://x.com/MSFTResearch/status/2113301701125951786",
+   "handle": "@MSFTResearch",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Agents can author visualizations that readers click, filter and highlight to explore beyond the original view.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://www.microsoft.com/en-us/research/blog/flint-interactive-a-language-for-creating-interactive-data-visualizations/"
+   ],
+   "vendor": "Microsoft Research",
+   "posted_at": "2026-10-22T16:09:23Z",
+   "metrics": {
+    "likes": 9,
+    "reposts": 0,
+    "quotes": 2,
+    "replies": 0,
+    "views": 2452
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "OpenBMB's MiniCPM-OCR 1.0 gets day-0 vLLM and SGLang support ahead of release",
+   "url": "https://x.com/aitrackerbot/status/2113295233760756036",
+   "handle": "@aitrackerbot",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Support PRs for openbmb/MiniCPM-OCR-1.0, an OCR-tuned MiniCPM-V 4.6 variant, opened in vLLM and SGLang, with one PR saying release is days away.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [
+    "https://github.com/vllm-project/vllm/pull/63095",
+    "https://github.com/sgl-project/sglang/pull/45799"
+   ],
+   "vendor": "OpenBMB",
+   "posted_at": "2026-10-22T15:43:41Z",
+   "metrics": {
+    "likes": 20,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 1,
+    "views": 632
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Pre-release: only support PRs exist, no weights or numbers yet.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "none",
+    "summary": "No substantive replies beyond the poster's own source links.",
+    "tried": false,
+    "replies_read": 2
+   }
+  },
+  {
+   "title": "Asymptote Labs' Beacon: open-source memory layer that reuses evaluated lessons across agent harnesses",
+   "url": "https://x.com/akshay_pachaar/status/2113313127509180687",
+   "handle": "@akshay_pachaar",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Beacon records coding-agent sessions and, with a decision model grading runs, turns useful lessons into reusable memory across 20+ harnesses including Claude Code, Codex, Cursor and OpenCode.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/Asymptote-Labs/agent-beacon"
+   ],
+   "vendor": "Asymptote Labs",
+   "posted_at": "2026-10-22T16:54:47Z",
+   "metrics": {
+    "likes": 51,
+    "reposts": 6,
+    "quotes": 1,
+    "replies": 8,
+    "views": 4317
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Ideogram Vector arrives on fal, generating editable SVGs from text or images",
+   "url": "https://x.com/fal/status/2113301781681754474",
+   "handle": "@fal",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Developers can generate editable SVGs from prompts, vectorize existing images and guide output with reference images through fal's API.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Ideogram / fal",
+   "posted_at": "2026-10-22T16:09:42Z",
+   "metrics": {
+    "likes": 49,
+    "reposts": 5,
+    "quotes": 2,
+    "replies": 4,
+    "views": 2870
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Block open-sources Buzz, an agent-native team chat",
+   "url": "https://x.com/pamelafox/status/2113316959228231699",
+   "handle": "@pamelafox",
+   "group": "devtools",
+   "origin": "discovery",
+   "summary": "A Discord or Slack style workspace built for agents as participants, published as open source by Block.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/block/buzz"
+   ],
+   "vendor": "Block",
+   "posted_at": "2026-10-22T17:10:01Z",
+   "metrics": {
+    "likes": 1,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 1,
+    "views": 167
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Genrobot open-sources Gen-HumanWholeBody, 600 hours of egocentric whole-body manipulation data",
+   "url": "https://x.com/GenrobotAI/status/2113299342425747638",
+   "handle": "@GenrobotAI",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "A robotics dataset with about 3 cm whole-body MPJPE across 16,976 real-world scenarios, released openly for training humanoid manipulation.",
+   "kind": "dataset",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Genrobot",
+   "posted_at": "2026-10-22T16:00:01Z",
+   "metrics": {
+    "likes": 5,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 0,
+    "views": 234
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": []
+}
