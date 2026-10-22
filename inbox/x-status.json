@@ -1,16 +1,16 @@
 {
- "updated_at": "2026-10-22T09:36:00Z",
- "job": "roster",
+ "updated_at": "2026-10-22T10:12:00Z",
+ "job": "sweep",
  "prompt": "v4",
- "calls_used_today": 37,
+ "calls_used_today": 54,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-10-22T02:05:00Z",
-  "items": 11,
+  "ran_at": "2026-10-22T10:01:00Z",
+  "items": 15,
   "queries": 8,
-  "deep_reads": 2,
+  "deep_reads": 4,
   "rechecks": 8,
-  "flagged": 2,
+  "flagged": 4,
   "saved_in": 0,
   "saved_kept": 0,
   "videos": 0
@@ -74,7 +74,10 @@
   "Roster review 2026-10-22: no promotions possible yet (earliest trial added 2026-10-20, first 14-day check 2026-11-03) and no retirements (no account has two level-2 flags in 30 days; @ValsAI and @SemiAnalysis_ have one each; the 45-day rule cannot bite before about 2026-11-07).",
   "Roster review 2026-10-22: Flint (@RichardSocher) is the first off-roster original quoted by two or more roster accounts (8). @RichardSocher was rejected (one capability post in 30 days, the rest promote his book) and @Recursive_SI too (one release); revisit Recursive after its next release.",
   "Roster review 2026-10-22 rejected, so they are not re-checked soon: one qualifying post in 30 days: @humansand, @Anikait_Singh_, @GitHubNext, @lianapatel_, @TZahavy, @SimulatedAnneal, @bneyshabur, @sanketpurandare, @Recursive_SI; promotion or events over 1 in 5: @nvidiaomniverse (GTC Berlin and livestream promotion), @zhijianliu (talk promotion; his lab @inco_ai was added instead), @spisallyouneed (one launch with waitlist, investor thank-yous), @emilsnotes (kapa product integrations, enterprise marketing); too small: @kgion_NV (4 followers), @jeff_shen_ (15 posts ever). @IBMResearch returned no original posts in 30 days via get_users_posts, and no IBM Granite handle was found (tried @IBMGranite, @ibm_granite).",
-  "Roster review: get_users_posts with exclude retweets,replies counts each thread reply as a separate original post, so threads inflate post counts; the 1-in-5 promotion test was judged on top-level posts."
+  "Roster review: get_users_posts with exclude retweets,replies counts each thread reply as a separate original post, so threads inflate post counts; the 1-in-5 promotion test was judged on top-level posts.",
+  "Sweep 10:01Z: no new saves; the Twitter Profile archive last synced at 04:48Z with nothing newer than the 18:43Z Oct 21 captures, so saved_in is 0. The overnight window was thin (5 to 24 results per roster group, all under 25), so one page per group covered it; the 8 re-checks rode along in the single hydrate call at no extra cost and changed no doubt levels.",
+  "Sweep 10:01Z: @_philschmid's 'no AI posts today' warning adds GitLab and Node (brotli) to the Railway, LiteLLM and PHP incidents; skipped as general security news, but it widens the list the owner may want checked.",
+  "Sweep 10:01Z follow check: no browser this run, so nothing followed or logged. @vllm_project (3 own items plus 5 confirmations, max doubt 1) and @sgl_project (3 plus 3, max doubt 0) remain the 2026-10-22 candidates; @lmsysorg, @rapidmlx and @sqs now also reach 3 qualifying items with max doubt 0 (first-hand SGLang org, Rapid-MLX project, Amp co-founder). Near-misses unchanged: @askalphaxiv and @dair_ai (paper explainers), @aitrackerbot (leak tracker, 4 items, doubt 1), @PyTorch (event promotion), @ValsAI (level-2 flag)."
  ],
  "errors": [],
  "follows_today": 0,

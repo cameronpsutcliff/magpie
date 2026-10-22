@@ -1,0 +1,484 @@
+{
+ "ran_at": "2026-10-22T10:01:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v4",
+ "since": "2026-10-22T02:05:00Z",
+ "queries": 8,
+ "calls": 17,
+ "items": [
+  {
+   "title": "Shanghai AI Lab releases Sage-A1.5, a 35B MoE (3B active) agentic model with open weights",
+   "url": "https://x.com/sageai_official/status/2113192901073309849",
+   "handle": "@sageai_official",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Open weights for a 35B mixture-of-experts model with 3B active parameters, tuned for agentic work that spawns parallel subagents and verifies its own steps; the lab reports 61.2% on SWE-Bench Pro. It runs locally through vLLM (day-0 support), SGLang, llama.cpp and LM Studio, about 20GB at Q4_K_M.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/InternScience/Sage-A1.5",
+    "https://modelscope.cn/collections/InternScience/Sage-A15"
+   ],
+   "vendor": "Shanghai AI Lab (InternScience)",
+   "posted_at": "2026-10-22T08:57:03Z",
+   "metrics": {
+    "likes": 18,
+    "reposts": 5,
+    "quotes": 1,
+    "replies": 2,
+    "views": 1277
+   },
+   "confirmed_by": [
+    "@vllm_project"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Tencent Hunyuan WorkForge builds 16.7K verifiable training environments for long-horizon work agents",
+   "url": "https://x.com/TencentHunyuan/status/2113196619667763211",
+   "handle": "@TencentHunyuan",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "A framework that turns expert workflows and real files into checkable workspaces, with programmatic and semantic verifiers, scaled to 16.7K environments across 40 professional domains and 60 file types. The paper reports steady gains on long-horizon work benchmarks as data and horizon grow.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2610.04906"
+   ],
+   "vendor": "Tencent Hunyuan",
+   "posted_at": "2026-10-22T09:11:50Z",
+   "metrics": {
+    "likes": 28,
+    "reposts": 1,
+    "quotes": 3,
+    "replies": 3,
+    "views": 2039
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Rapid-MLX 0.16.7 runs DeepSeek V4.1 Flash up to about 2x faster on a Mac",
+   "url": "https://x.com/rapidmlx/status/2113095409623245208",
+   "handle": "@rapidmlx",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A new engine release decodes its GPTQ quant of DeepSeek-V4.1-Flash-1017 at 33 to 45 tok/s single-stream on an M3 Ultra, using lighter speculative drafting and fused mixed-bit MoE kernels while every token is still verified by the full model. Installs with pip.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://rapidmlx.com/download"
+   ],
+   "vendor": "Rapid-MLX",
+   "posted_at": "2026-10-22T02:29:39Z",
+   "metrics": {
+    "likes": 23,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 5,
+    "views": 1331
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "SGLang adds Elastic EP scaling: grow a live MoE deployment with new GPUs without a restart",
+   "url": "https://x.com/lmsysorg/status/2113093747261243448",
+   "handle": "@lmsysorg",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "SGLang can now add expert-parallel ranks to a running MoE deployment through NIXL while existing ranks keep serving, including CUDA graph recapture after scale-up. The blog covers the design, benchmarks and practical limits.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://www.lmsys.org/blog/2026-10-21-elastic-ep-scaling-nixl"
+   ],
+   "vendor": "SGLang (LMSYS)",
+   "posted_at": "2026-10-22T02:23:03Z",
+   "metrics": {
+    "likes": 37,
+    "reposts": 4,
+    "quotes": 1,
+    "replies": 2,
+    "views": 1549
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Amp lets teams self-host orbs, its agent sandboxes, on their own infrastructure",
+   "url": "https://x.com/thorstenball/status/2113140757410521159",
+   "handle": "@thorstenball",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Amp's coding-agent machines (orbs) can now run on your own compute: you run an orb provider that dispatches spawn, pause and delete requests to your own script, with examples for Docker, Kubernetes, E2B, Modal, Daytona and Apple containers. Free for individuals and teams.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://ampcode.com/news/self-hosted-orbs"
+   ],
+   "vendor": "Amp",
+   "posted_at": "2026-10-22T05:29:51Z",
+   "metrics": {
+    "likes": 581,
+    "reposts": 43,
+    "quotes": 19,
+    "replies": 47,
+    "views": 124732
+   },
+   "confirmed_by": [
+    "@sqs"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers welcomed bring-your-own-infra and cost control; one user had Amp build a dispatcher on a k3s cluster and another is testing Docker orbs on a VPS, with questions about browsers in orbs and Kubernetes support.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Amp adds first-party GitHub Copilot subscription support",
+   "url": "https://x.com/sqs/status/2113126346113339404",
+   "handle": "@sqs",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Amp users can now connect a GitHub Copilot subscription as a model provider in model-routing settings, so the agent runs on that plan instead of separate API keys.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://ampcode.com/settings/model-routing"
+   ],
+   "vendor": "Amp",
+   "posted_at": "2026-10-22T04:32:35Z",
+   "metrics": {
+    "likes": 44,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 3,
+    "views": 1899
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "MiniMax Code makes Mini Apps an open standard: agent-built tools with their own port, agent and data directory",
+   "url": "https://x.com/Ronny_MiniMax/status/2113106034185453773",
+   "handle": "@Ronny_MiniMax",
+   "group": "devtools",
+   "origin": "discovery",
+   "summary": "In MiniMax Code a user describes a tool and the agent builds a persistent mini app (manifest, frontend and Node server) that keeps its own data and stays usable across conversations; the spec and a community repo are public.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/MiniMax-AI/MiniMax-Code-MiniApps",
+    "https://agent.minimax.io/docs/miniapp/overview"
+   ],
+   "vendor": "MiniMax",
+   "posted_at": "2026-10-22T03:11:52Z",
+   "metrics": {
+    "likes": 278,
+    "reposts": 5,
+    "quotes": 8,
+    "replies": 26,
+    "views": 54688
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Replies were mostly congratulations and questions about sandboxing, write scope and permission review for community apps; one quote notes Mini Apps only run in the desktop app, not cloud or SSH sessions.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Artificial Analysis benchmarks DeepSeek Search: 69 on its Search Index, cheapest paid search API",
+   "url": "https://x.com/ArtificialAnlys/status/2113124084410425362",
+   "handle": "@ArtificialAnlys",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "DeepSeek's new Search API scored 69 (17th of 27) in an agent harness running BrowseComp, DeepSearchQA and AA-Omniscience tasks, at $0.75 per 1k searches, the lowest per-search price measured. It returns about 7k tokens per search and rejects queries over 128 characters.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Artificial Analysis",
+   "posted_at": "2026-10-22T04:23:36Z",
+   "metrics": {
+    "likes": 252,
+    "reposts": 14,
+    "quotes": 11,
+    "replies": 23,
+    "views": 26253
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Some repliers argue the ranking is skewed because one vendor holds several board slots and DeepSeek was run in passage-only mode, and ask whether a fixed GPT-5.6 caller is fair to every API.",
+    "source": "https://x.com/ArtificialAnlys/status/2113124084410425362/quotes"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Repliers liked the price but pointed to the 7k-token results raising model cost per task, the 128-character query cap, and asked for methodology details and more APIs; one quote poster reports testing the API for two days.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "tinygrad reports 220 tok/s decode for GLM-5.3-Flash on a $19k tinybox red",
+   "url": "https://x.com/__tinygrad__/status/2113167243857260758",
+   "handle": "@__tinygrad__",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "tinygrad now measures 3,200 tok/s prefill and 220 tok/s decode for GLM-5.3-Flash on its base tinybox red flash, up from 155 tok/s on Oct 18, and offers a test API on its network.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "tinygrad (tiny corp)",
+   "posted_at": "2026-10-22T07:15:06Z",
+   "metrics": {
+    "likes": 103,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 4,
+    "views": 4271
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The vendor's own benchmark of hardware it sells, posted as a limited-time offer with no method or setup details.",
+    "source": null
+   }
+  },
+  {
+   "title": "Hugging Face kernels cookbook shows how to kernelize a model with Hub-hosted compute kernels",
+   "url": "https://x.com/ariG23498/status/2113175062803316933",
+   "handle": "@ariG23498",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A beginner guide to swapping model layers for optimized compute kernels pulled from the Hugging Face Hub, for faster inference without writing kernels yourself.",
+   "kind": "technique",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/docs/kernels/use_layers"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-10-22T07:46:10Z",
+   "metrics": {
+    "likes": 17,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 579
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "cram: test-time training shrinks a long document's KV cache 8x while keeping 90% recall",
+   "url": "https://x.com/TatraLabs/status/2113168128654078439",
+   "handle": "@TatraLabs",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "Instead of evicting cache entries, cram trains a compact KV cache on a document once; at 8x compression Qwen3 keeps 90% of phonebook lookups versus 5% with eviction. Open-source code implements the linked paper.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/tatra-labs/cram",
+    "https://arxiv.org/abs/2610.20582"
+   ],
+   "vendor": "Tatra Labs",
+   "posted_at": "2026-10-22T07:18:37Z",
+   "metrics": {
+    "likes": 3,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 22
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "VLA-Delta trains robot VLA models to predict physical state changes, 98.4% on LIBERO",
+   "url": "https://x.com/askalphaxiv/status/2113177157661069540",
+   "handle": "@askalphaxiv",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Vision-language-action models are trained with auxiliary targets for object positions, contacts, optical flow and text descriptions of state changes, used only in training so inference cost is unchanged. Reported 98.4% on LIBERO, 90.1% on RoboTwin Clean and 68% on five real-robot tasks, ahead of pi0.5.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2610.21306"
+   ],
+   "vendor": "VLA-Delta authors",
+   "posted_at": "2026-10-22T07:54:29Z",
+   "metrics": {
+    "likes": 16,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 2,
+    "views": 1209
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Correction Training lets diffusion models beat CFG without guidance",
+   "url": "https://x.com/askalphaxiv/status/2113172026236207533",
+   "handle": "@askalphaxiv",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A separate corrector model refines the denoiser's predictions at each sampling step, improving ImageNet-256 quality by about 80% for DiT and SiT without classifier-free guidance at similar cost, and lifting GenEval from 28.3% to 50.1% without CFG.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2610.14136"
+   ],
+   "vendor": "Correction Training authors",
+   "posted_at": "2026-10-22T07:34:06Z",
+   "metrics": {
+    "likes": 18,
+    "reposts": 2,
+    "quotes": 1,
+    "replies": 0,
+    "views": 1340
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "NVIDIA Nemotron 4 Nano preview specs surface in TensorRT-LLM and FlashInfer code",
+   "url": "https://x.com/aitrackerbot/status/2113166533690073245",
+   "handle": "@aitrackerbot",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Public repo activity points to an unreleased Nemotron 4 family: a Nano preview onboarded on GB300 in TensorRT-LLM with 44 layers (mostly Gated DeltaProduct linear attention), 512 experts with 10 active, 1M context, vision input and multi-token prediction. Nothing is released yet.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-10-22T07:12:17Z",
+   "metrics": {
+    "likes": 32,
+    "reposts": 4,
+    "quotes": 2,
+    "replies": 2,
+    "views": 2015
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Unreleased model inferred from code branches; the names were scrubbed and NVIDIA has not announced it.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "none",
+    "summary": "Only two replies, both off-topic remarks about who uses Nemotron; one quote post repeats the repo findings.",
+    "tried": false,
+    "replies_read": 2
+   }
+  },
+  {
+   "title": "Tokenizer probe links Arena's anonymous Kalmia model to Qwen's tokenizer",
+   "url": "https://x.com/aitrackerbot/status/2113096168863375668",
+   "handle": "@aitrackerbot",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "The same chat-only tokenizer test used for Kibitz shows Kalmia garbling 6 of 8 Qwen-specific tokens and none of 40 from other labs, matching Qwen 3.7 and 3.8, which suggests an unreleased Alibaba model, though other labs also reuse Qwen's tokenizer.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "aitrackerbot",
+   "posted_at": "2026-10-22T02:32:40Z",
+   "metrics": {
+    "likes": 58,
+    "reposts": 4,
+    "quotes": 2,
+    "replies": 2,
+    "views": 3681
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Several labs build on Qwen's tokenizer, so the test points to a tokenizer family, not a confirmed maker.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": []
+}
