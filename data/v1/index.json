@@ -2,6 +2,82 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-10-22",
+   "headline": "Code locally with Flint, grow live MoE deployments, open Muse Spark, and more",
+   "events": 471,
+   "sources": 506,
+   "enriched": true,
+   "top": [
+    {
+     "id": "90dd623e653c",
+     "title": "Recursive releases Flint, an open 40B MoE coding model",
+     "impact": 4,
+     "vendor": "Recursive"
+    },
+    {
+     "id": "0169ce1a354b",
+     "title": "OpenAI models and Codex come to Google Cloud",
+     "impact": 4,
+     "vendor": "OpenAI"
+    },
+    {
+     "id": "8615bdd7d491",
+     "title": "Meta posts Muse-Spark-Open-816B-A42B multimodal model",
+     "impact": 4,
+     "vendor": "Meta"
+    },
+    {
+     "id": "48da793fd3c1",
+     "title": "Shanghai AI Lab opens Sage-A1.5 agentic MoE model",
+     "impact": 3,
+     "vendor": "Shanghai AI Lab (InternScience)"
+    },
+    {
+     "id": "12722205bbbc",
+     "title": "Spark-X2.6-4B brings 1M context to a 4B open model",
+     "impact": 3,
+     "vendor": "iFlytek Spark"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Anthropic",
+    "OpenAI",
+    "NVIDIA",
+    "Microsoft",
+    "Google"
+   ],
+   "topics": {
+    "models": 160,
+    "agents": 130,
+    "coding": 110,
+    "multimodal": 84,
+    "infra": 83,
+    "local": 49,
+    "memory": 48,
+    "research": 45,
+    "evals": 38,
+    "mcp": 32,
+    "security": 26,
+    "reverse": 21,
+    "robotics": 7
+   },
+   "kinds": {
+    "social": 111,
+    "video": 95,
+    "community": 77,
+    "blog": 39,
+    "repo": 37,
+    "newsletter": 35,
+    "model": 30,
+    "space": 18,
+    "changelog": 17,
+    "news": 12
+   },
+   "constraints": [],
+   "threats": []
+  },
+  {
    "date": "2026-10-21",
    "headline": "Run PyTorch on TPUs, Serve DeepSeek at Scale, Download Meta's Muse Spark, and more",
    "events": 479,
@@ -2321,5 +2397,5 @@
    }
   }
  ],
- "latest": "2026-10-21"
+ "latest": "2026-10-22"
 }
