@@ -1,0 +1,364 @@
+{
+ "ran_at": "2026-10-22T02:05:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v4",
+ "since": "2026-10-21T22:06:00Z",
+ "queries": 8,
+ "calls": 14,
+ "items": [
+  {
+   "title": "Unsloth Dynamic GGUFs run Recursive's Flint MoE locally in 24GB of RAM",
+   "url": "https://x.com/UnslothAI/status/2113046042908541083",
+   "handle": "@UnslothAI",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Unsloth published Dynamic GGUF quants of Flint (39.8B total, 2.5B active, Apache 2.0) so it runs locally on machines with about 24GB of RAM; Unsloth reports about 125 tokens per second on a Mac and 150 on an RTX Spark, with tool calling working in Unsloth Desktop.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/unsloth/flint-GGUF",
+    "https://unsloth.ai/docs/models/flint"
+   ],
+   "vendor": "Unsloth / Recursive",
+   "posted_at": "2026-10-21T23:13:29Z",
+   "metrics": {
+    "likes": 264,
+    "reposts": 39,
+    "quotes": 6,
+    "replies": 12,
+    "views": 12382
+   },
+   "confirmed_by": [
+    "@danielhanchen"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers note the 24GB figure assumes a 4-bit quant with short context, that speed reportedly drops past about 8K tokens, and that the Q3 quant shows high KL divergence.",
+    "source": "https://x.com/emorennov/status/2113089036814299347"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Mostly welcoming, with users starting local tests, but several caveats on the 24GB headline (4-bit, short context, Mac GPU memory limits) and one saying it still trails Qwen.",
+    "tried": true,
+    "replies_read": 17
+   }
+  },
+  {
+   "title": "Hermes Agent gets an official Meshy plugin for text- and photo-to-3D models",
+   "url": "https://x.com/NousResearch/status/2113077994315034967",
+   "handle": "@NousResearch",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Hermes Agent can now generate 3D models through Meshy's MCP server, for example a low-poly game asset for Godot or a printable model from a photo; Hermes Desktop renders and animates rigged models inline and keeps a gallery of models and prompts.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "http://hermes-agent.nousresearch.com/docs/plugins/meshy"
+   ],
+   "vendor": "Nous Research / Meshy",
+   "posted_at": "2026-10-22T01:20:27Z",
+   "metrics": {
+    "likes": 216,
+    "reposts": 25,
+    "quotes": 2,
+    "replies": 24,
+    "views": 10827
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers liked photo-to-printable and inline rigged previews; the only cautions were that printable meshes still need tolerance checks and that topology and poly count may need cleanup before Godot.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "SGLang v0.5.22: 10x faster weight loading, 2.3x DeepSeek-V4.1-Flash throughput on Hopper",
+   "url": "https://x.com/sgl_project/status/2113060793994686852",
+   "handle": "@sgl_project",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "SGLang v0.5.22 adds InstantTensor weight loading (up to 10x faster), up to 2.3x output throughput for DeepSeek-V4.1-Flash on Hopper, 2.1x faster GLM-5.3 decode with context parallelism and MTP, up to 27% more throughput for PD disaggregation on agentic tasks, a PyTorch MPS backend on Apple Silicon, and GGUF and LoRA support in SGLang Diffusion.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/sgl-project/sglang/releases/tag/v0.5.22"
+   ],
+   "vendor": "SGLang",
+   "posted_at": "2026-10-22T00:12:06Z",
+   "metrics": {
+    "likes": 23,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 3,
+    "views": 1475
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Amp agent can now hand you an interactive mini-app inside the thread",
+   "url": "https://x.com/sqs/status/2113060928292053382",
+   "handle": "@sqs",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "The Amp coding agent can now generate a small interactive app in the conversation to collect input or let you try options, instead of relying on typed replies.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://ampcode.com"
+   ],
+   "vendor": "Amp",
+   "posted_at": "2026-10-22T00:12:38Z",
+   "metrics": {
+    "likes": 77,
+    "reposts": 3,
+    "quotes": 1,
+    "replies": 11,
+    "views": 1759
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "NVIDIA puts 2,000+ simulation-ready 3D assets on Hugging Face (SimReady Central Library)",
+   "url": "https://x.com/nvidiaomniverse/status/2112986174906384735",
+   "handle": "@nvidiaomniverse",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "NVIDIA's SimReady Central Library publishes more than 2,000 open simulation-ready 3D assets on the Hugging Face Hub for robotics simulation and digital twins.",
+   "kind": "dataset",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/blog/nvidia/simready-central-assets-robotics-ai-factories"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-10-21T19:15:36Z",
+   "metrics": {
+    "likes": 40,
+    "reposts": 13,
+    "quotes": 5,
+    "replies": 6,
+    "views": 8242
+   },
+   "confirmed_by": [
+    "@mervenoyann"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Librarian Agents: agents curate their own long-context workspace, 30%+ gains out of domain",
+   "url": "https://x.com/Anikait_Singh_/status/2112196825314926891",
+   "handle": "@Anikait_Singh_",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Librarian Agents has an agent reorganize a large body of unstructured context ahead of time for downstream use instead of relying only on agentic search; the authors report 30%+ gains, including on out-of-domain tasks, and release paper and code.",
+   "kind": "paper",
+   "evidence": "artifact",
+   "links": [
+    "https://arxiv.org/pdf/2610.22273",
+    "https://github.com/teresaz05/librarian-agents",
+    "https://librarian-agents.github.io/"
+   ],
+   "vendor": "Librarian Agents authors (Stanford)",
+   "posted_at": "2026-10-19T14:59:00Z",
+   "metrics": {
+    "likes": 137,
+    "reposts": 27,
+    "quotes": 3,
+    "replies": 5,
+    "views": 21031
+   },
+   "confirmed_by": [
+    "@chelseabfinn"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Letta's FrontierMemory benchmark scores agent memory by downstream task gains",
+   "url": "https://x.com/Letta_AI/status/2112957074644873289",
+   "handle": "@Letta_AI",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "FrontierMemory has a model or harness turn 674 past agent trajectories into memory, then measures how much that memory helps a fixed agent on 15 coding and knowledge-work tasks; Opus 5.5 and GLM-5.3 tie at 73.3%, and Letta Dream leads the harness table.",
+   "kind": "eval",
+   "evidence": "artifact",
+   "links": [
+    "https://www.frontiermemory.com/",
+    "https://www.frontiermemory.com/blog/v1/",
+    "https://huggingface.co/datasets/letta-ai/frontier-memory-corpus"
+   ],
+   "vendor": "Letta",
+   "posted_at": "2026-10-21T17:19:58Z",
+   "metrics": {
+    "likes": 134,
+    "reposts": 19,
+    "quotes": 14,
+    "replies": 24,
+    "views": 21824
+   },
+   "confirmed_by": [
+    "@omarsar0"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Artificial Analysis compares 14 models on MLCR-AA and HealthBench Professional",
+   "url": "https://x.com/ArtificialAnlys/status/2113089188161782208",
+   "handle": "@ArtificialAnlys",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Across two medical benchmarks, Anthropic models give the most complete answers and top HealthBench Professional raw scores, while OpenAI models are more accurate and concise; GPT-6 Astra ties Claude Sonnet 5.5 on MLCR-AA and leads the length-adjusted HealthBench score.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://artificialanalysis.ai"
+   ],
+   "vendor": "Artificial Analysis",
+   "posted_at": "2026-10-22T02:04:56Z",
+   "metrics": {
+    "likes": 4,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 2,
+    "views": 1040
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "PrismaX open-sources pi0.5 rollout code cutting inference from 230 ms to 87 ms on a laptop GPU",
+   "url": "https://x.com/PrismaXai/status/2113042694721491381",
+   "handle": "@PrismaXai",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "PrismaX released the rollout code from its IROS robotics demo, which runs the pi0.5 vision-language-action policy at 87 ms per inference on a laptop GPU (from 230 ms) without pruning or distillation.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/PrismaXAI/prism-pi"
+   ],
+   "vendor": "PrismaX",
+   "posted_at": "2026-10-21T23:00:11Z",
+   "metrics": {
+    "likes": 19,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 4,
+    "views": 1301
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "turbopuffer adds NVIDIA Nemotron-3.5-Embed as a native embedding model",
+   "url": "https://x.com/turbopuffer/status/2113042657471836354",
+   "handle": "@turbopuffer",
+   "group": "applied",
+   "origin": "discovery",
+   "summary": "turbopuffer can now embed with Nemotron-3.5-Embed natively; on its enterprise PDF search benchmark the 8B model improves recall@20 by about 5% over the next best model.",
+   "kind": "feature",
+   "evidence": "measured",
+   "links": [
+    "https://turbopuffer.com/docs/embedding#models"
+   ],
+   "vendor": "turbopuffer / NVIDIA",
+   "posted_at": "2026-10-21T23:00:02Z",
+   "metrics": {
+    "likes": 34,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 4,
+    "views": 1110
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Chat-only tokenizer probe ties Arena's anonymous Kibitz model to Kimi's tokenizer",
+   "url": "https://x.com/aitrackerbot/status/2113069020781875472",
+   "handle": "@aitrackerbot",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A probe using 11 Moonshot-only test tokens reads a model's tokenizer through a chat box alone: Kibitz garbled them like every Kimi model tested, while models from 7 other labs copied them exactly.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "AI Tracker",
+   "posted_at": "2026-10-22T00:44:48Z",
+   "metrics": {
+    "likes": 16,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 0,
+    "views": 1135
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No method write-up or code to check, and the guess that Kibitz is Kimi K3.1 is unconfirmed (based on a closed SGLang PR).",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": []
+}
