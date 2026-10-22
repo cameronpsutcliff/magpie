@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-10-22T02:25:00Z",
- "job": "sweep",
+ "updated_at": "2026-10-22T09:36:00Z",
+ "job": "roster",
  "prompt": "v4",
- "calls_used_today": 14,
+ "calls_used_today": 37,
  "notes_via_api": false,
  "last_sweep": {
   "ran_at": "2026-10-22T02:05:00Z",
@@ -17,7 +17,7 @@
  },
  "roster": {
   "curated": 223,
-  "trial": 26,
+  "trial": 32,
   "active": 0,
   "retired": 0
  },
@@ -70,19 +70,23 @@
   "Sweep 02:05Z: 8 re-checks (Claude Duet, OpenAI on Google Cloud, Claude API version, Gemini 4 Argon anatomy, Hermes GTC keynote, Grok Bot pages, Fireworks Ultrafast, Vals Finance Index) used one metrics call: engagement rose (Duet about 38K likes) but no notes are visible via API and reply pushback was not re-read, so no doubt levels changed.",
   "Sweep 02:05Z: SemiAnalysis' megakernel thread (Inferact TPU, AMD TileRT/FlyDSL, NVIDIA GB300) was skipped as a recap of results already covered; TorchTitan blog repost skipped as a duplicate of the 22:06Z item; Reflection's Beam build contest skipped as a giveaway.",
   "Sweep 02:05Z: three originals reached the sweep only through roster quotes (Letta FrontierMemory, NVIDIA SimReady via @nvidiaomniverse, Librarian Agents by @Anikait_Singh_); @Letta_AI and @nvidiaomniverse may be worth a roster review look.",
-  "Sweep 02:05Z follow check: no browser this run, so nothing followed or logged. @sgl_project now has 3 qualifying sweep-file items (max doubt 0, first-hand project) and joins @vllm_project (3 items, max doubt 1) as follow candidates for 2026-10-22 Central. Near-misses: @NousResearch (2 items), @UnslothAI (1 item as poster, more as day-0 quant partner), @omarsar0 (3, paper explainer), @PyTorch (4, mostly event promotion)."
+  "Sweep 02:05Z follow check: no browser this run, so nothing followed or logged. @sgl_project now has 3 qualifying sweep-file items (max doubt 0, first-hand project) and joins @vllm_project (3 items, max doubt 1) as follow candidates for 2026-10-22 Central. Near-misses: @NousResearch (2 items), @UnslothAI (1 item as poster, more as day-0 quant partner), @omarsar0 (3, paper explainer), @PyTorch (4, mostly event promotion).",
+  "Roster review 2026-10-22: no promotions possible yet (earliest trial added 2026-10-20, first 14-day check 2026-11-03) and no retirements (no account has two level-2 flags in 30 days; @ValsAI and @SemiAnalysis_ have one each; the 45-day rule cannot bite before about 2026-11-07).",
+  "Roster review 2026-10-22: Flint (@RichardSocher) is the first off-roster original quoted by two or more roster accounts (8). @RichardSocher was rejected (one capability post in 30 days, the rest promote his book) and @Recursive_SI too (one release); revisit Recursive after its next release.",
+  "Roster review 2026-10-22 rejected, so they are not re-checked soon: one qualifying post in 30 days: @humansand, @Anikait_Singh_, @GitHubNext, @lianapatel_, @TZahavy, @SimulatedAnneal, @bneyshabur, @sanketpurandare, @Recursive_SI; promotion or events over 1 in 5: @nvidiaomniverse (GTC Berlin and livestream promotion), @zhijianliu (talk promotion; his lab @inco_ai was added instead), @spisallyouneed (one launch with waitlist, investor thank-yous), @emilsnotes (kapa product integrations, enterprise marketing); too small: @kgion_NV (4 followers), @jeff_shen_ (15 posts ever). @IBMResearch returned no original posts in 30 days via get_users_posts, and no IBM Granite handle was found (tried @IBMGranite, @ibm_granite).",
+  "Roster review: get_users_posts with exclude retweets,replies counts each thread reply as a separate original post, so threads inflate post counts; the 1-in-5 promotion test was judged on top-level posts."
  ],
  "errors": [],
  "follows_today": 0,
  "last_roster_review": {
-  "ran_at": "2026-10-21T09:50:00Z",
+  "ran_at": "2026-10-22T09:36:00Z",
   "reads": 23,
   "budget": 80,
   "candidates_checked": 22,
-  "added": 7,
+  "added": 6,
   "promoted": 0,
   "retired": 0,
-  "source_leads_added": 7,
+  "source_leads_added": 4,
   "sweep_files_pruned": 0
  }
 }

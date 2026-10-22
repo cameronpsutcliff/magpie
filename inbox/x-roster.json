@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-21T09:50:00Z",
+ "updated_at": "2026-10-22T09:36:00Z",
  "accounts": [
   {
    "handle": "@thsottiaux",
@@ -422,6 +422,108 @@
    ],
    "last_qualifying_post": "2026-10-20",
    "retired_reason": null
+  },
+  {
+   "handle": "@Letta_AI",
+   "name": "Letta",
+   "group": "devtools",
+   "affiliation": "Letta",
+   "why": "First-hand on agent memory: Letta Code features and the FrontierMemory benchmark (open corpus, scores memory by downstream task performance).",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-10-22",
+   "evidence": [
+    "https://x.com/Letta_AI/status/2112957074644873289",
+    "https://x.com/Letta_AI/status/2105015179855704164"
+   ],
+   "last_qualifying_post": "2026-10-21",
+   "retired_reason": null
+  },
+  {
+   "handle": "@turbopuffer",
+   "name": "turbopuffer",
+   "group": "applied",
+   "affiliation": "turbopuffer",
+   "why": "Search engine for agents and RAG; posts measured engine changes (v3 batched full-text reads about 9x faster, filter latency cut about 95%, native reranking GA, Nemotron embeddings with recall numbers).",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-10-22",
+   "evidence": [
+    "https://x.com/turbopuffer/status/2106060390916636850",
+    "https://x.com/turbopuffer/status/2108615796415234422",
+    "https://x.com/turbopuffer/status/2112569613804580898",
+    "https://x.com/turbopuffer/status/2113042657471836354"
+   ],
+   "last_qualifying_post": "2026-10-21",
+   "retired_reason": null
+  },
+  {
+   "handle": "@inco_ai",
+   "name": "Inco AI",
+   "group": "opensource",
+   "affiliation": "Inco AI",
+   "why": "Ships DFlash 2 speculative-decoding drafters on Hugging Face and the open-source Splash local inference runtime, with measured speedups.",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-10-22",
+   "evidence": [
+    "https://x.com/inco_ai/status/2112576331850682540",
+    "https://x.com/inco_ai/status/2107981893903982901",
+    "https://x.com/inco_ai/status/2103228024275730863"
+   ],
+   "last_qualifying_post": "2026-10-20",
+   "retired_reason": null
+  },
+  {
+   "handle": "@PrismaXai",
+   "name": "PrismaX",
+   "group": "applied",
+   "affiliation": "PrismaX",
+   "why": "Robotics data and policy team publishing open-source pi0.5 rollout code and a path-traced YAM simulator, with measured latency and fine-tuning ablations.",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-10-22",
+   "evidence": [
+    "https://x.com/PrismaXai/status/2113042694721491381",
+    "https://x.com/PrismaXai/status/2112295123879079964",
+    "https://x.com/PrismaXai/status/2112554927675593207"
+   ],
+   "last_qualifying_post": "2026-10-21",
+   "retired_reason": null
+  },
+  {
+   "handle": "@hotchpotch",
+   "name": "Yuichi Tateno",
+   "group": "opensource",
+   "affiliation": "Independent",
+   "why": "Independent builder releasing small open embedding and decision models with benchmarks (bekko-static-embedding-v1, saihai, S1MB), often in Japanese.",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-10-22",
+   "evidence": [
+    "https://x.com/hotchpotch/status/2112732588884508682",
+    "https://x.com/hotchpotch/status/2110548623905960409",
+    "https://x.com/hotchpotch/status/2105529252028539371"
+   ],
+   "last_qualifying_post": "2026-10-21",
+   "retired_reason": null
+  },
+  {
+   "handle": "@SparkLLM",
+   "name": "iFlytek Spark",
+   "group": "labs",
+   "affiliation": "iFlytek",
+   "why": "Official account for the Apache 2.0 Spark-X small open models (Spark-X2.6-4B with benchmark numbers) plus local llama.cpp demos.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-10-22",
+   "evidence": [
+    "https://x.com/SparkLLM/status/2112614036227408363",
+    "https://x.com/SparkLLM/status/2111045024322642365",
+    "https://x.com/SparkLLM/status/2110692981665579293"
+   ],
+   "last_qualifying_post": "2026-10-20",
+   "retired_reason": null
   }
  ],
  "source_leads": [
@@ -553,6 +655,44 @@
    "why": "Independent per-model benchmark results with cost, updated as new models ship.",
    "seen_via": [
     "@htihle"
+   ]
+  },
+  {
+   "kind": "blog",
+   "name": "Inco AI blog",
+   "url": "https://inco.ai/blog/",
+   "why": "Write-ups for DFlash and DFlash 2 speculative decoding and Splash local inference releases.",
+   "seen_via": [
+    "@inco_ai",
+    "@zhijianliu"
+   ]
+  },
+  {
+   "kind": "changelog",
+   "name": "turbopuffer changelog",
+   "url": "https://turbopuffer.com/changelog",
+   "why": "Monthly search-engine changes (v3 engine, native embedding and reranking) with performance numbers.",
+   "seen_via": [
+    "@turbopuffer"
+   ]
+  },
+  {
+   "kind": "blog",
+   "name": "Letta blog",
+   "url": "https://www.letta.com/blog",
+   "why": "Agent memory research and Letta Code releases, including the FrontierMemory benchmark.",
+   "seen_via": [
+    "@Letta_AI",
+    "@omarsar0"
+   ]
+  },
+  {
+   "kind": "blog",
+   "name": "PrismaX blog",
+   "url": "https://www.prismax.ai/blog",
+   "why": "Hands-on robot policy write-ups (pi0.5 latency, camera and lighting ablations) with open code.",
+   "seen_via": [
+    "@PrismaXai"
    ]
   }
  ]
