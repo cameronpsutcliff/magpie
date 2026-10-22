@@ -211,6 +211,21 @@ class StatedIntegrationTests(unittest.TestCase):
         listed = dict(opt, brief=dict(opt["brief"], works_with=[{"name": "vllm", "how": "deploys to it"}]))
         self.assertEqual(score(listed, text_named=True), score(listed, text_named=False))  # main's rule fired; no second 0.5
 
+    def test_the_library_side_can_state_it_and_a_common_name_says_nothing(self):
+        serve = ev("gh:acme/tensorserve", "TensorServe serves models on any GPU", what="Serve models fast.", topics=("inference",))
+        tool = ev("gh:b/quantkit", "QuantKit shrinks models", what="Quantise a model, then deploy to TensorServe.",
+                  topics=("efficiency",))
+        fill = [ev(f"gh:f/filler-{i}", f"Filler {i} does a thing", what=f"Unrelated thing {i}.") for i in range(7)]
+
+        def bonus(library):
+            lib = {e["key"]: entry(e) for e in library}
+            on, off = (dict(L.neighbours([serve], lib, set(), text_named=t)[serve["id"]]).get(tool["key"], 0.0) for t in (True, False))
+            return round(on - off, 3)
+
+        self.assertEqual(bonus([tool, *fill]), 0.5)  # the library capability's text names the arrival
+        crowd = [dict(f, summary=f["summary"] + " Runs on TensorServe.") for f in fill]
+        self.assertEqual(bonus([tool, *crowd]), 0.0)  # TensorServe is in more than 15% of the library: too common
+
 
 if __name__ == "__main__":
     unittest.main()

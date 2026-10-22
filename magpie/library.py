@@ -247,7 +247,8 @@ def _states(windows: list[list[str]], phrases: set[tuple[str, ...]]) -> bool:
 
 class Integrations:
     """Product names and stated-integration windows for one pool, built once. `stated(a, e)` is true when either side's
-    windows hold the other's product name; product names common to more than NAME_MAX_DF of the library do not count."""
+    windows hold the other's product name; a product name (the arrival's or a library capability's) found in more than
+    NAME_MAX_DF of the library does not count."""
 
     def __init__(self, lib: dict[str, dict], keys: list[str], docs: dict[str, list[str]]):
         cap, low = Counter(), Counter()
@@ -262,19 +263,25 @@ class Integrations:
                         low[w] += 1
         self.proper = {w for w, c in cap.items() if low[w] * 4 <= c}
         self.repos = {_tok(_name(k)) for k in keys if k.split(":", 1)[0] in ("gh", "hf", "hfs")}
-        self.products = {k: products(lib[k]["event"], self.proper, self.repos) for k in keys}
+        self._joined = [f" {' '.join(_tok(w) for w in _WORD.findall(' '.join(docs[k])))} " for k in keys]
+        self._limit = NAME_MAX_DF * len(keys)
+        self._common: dict[tuple[str, ...], bool] = {}
+        self.products = {k: self._usable(products(lib[k]["event"], self.proper, self.repos)) for k in keys}
         self.windows = {k: _windows(lib[k]["event"]) for k in keys}
-        joined = {k: f" {' '.join(_tok(w) for w in _WORD.findall(' '.join(docs[k])))} " for k in keys}
-        names = {p for s in self.products.values() for p in s}
-        self.common = {p for p in names if sum(f" {' '.join(p)} " in j for j in joined.values()) > NAME_MAX_DF * len(keys)}
         self._arrivals: dict[str, tuple] = {}
+
+    def _usable(self, phrases: set[tuple[str, ...]]) -> set[tuple[str, ...]]:
+        """The phrases not too common in the library to say anything."""
+        for p in phrases - self._common.keys():
+            self._common[p] = sum(f" {' '.join(p)} " in j for j in self._joined) > self._limit
+        return {p for p in phrases if not self._common[p]}
 
     def stated(self, arrival: dict, event: dict) -> bool:
         if arrival["key"] not in self._arrivals:
-            self._arrivals[arrival["key"]] = (products(arrival, self.proper, self.repos) - self.common, _windows(arrival))
+            self._arrivals[arrival["key"]] = (self._usable(products(arrival, self.proper, self.repos)), _windows(arrival))
         prod, win = self._arrivals[arrival["key"]]
         k = event["key"]
-        return _states(self.windows[k], prod) or _states(win, self.products[k] - self.common)
+        return _states(self.windows[k], prod) or _states(win, self.products[k])
 
 
 def related(arrival: dict, entry: dict, vec, integrations: Integrations | None = None) -> float:
