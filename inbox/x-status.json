@@ -1,16 +1,16 @@
 {
- "updated_at": "2026-10-23T09:38:00Z",
- "job": "roster",
+ "updated_at": "2026-10-23T14:13:00Z",
+ "job": "sweep",
  "prompt": "v4",
- "calls_used_today": 16,
+ "calls_used_today": 42,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-10-23T02:01:00Z",
-  "items": 13,
+  "ran_at": "2026-10-23T14:13:00Z",
+  "items": 9,
   "queries": 9,
-  "deep_reads": 3,
+  "deep_reads": 2,
   "rechecks": 8,
-  "flagged": 4,
+  "flagged": 1,
   "saved_in": 0,
   "saved_kept": 0,
   "videos": 0
@@ -110,10 +110,17 @@
   "Roster review 2026-10-23: added 5 trials (@SpeechifyAI, @LoubnaBenAllal1, @KLieret, @sageai_official, @Alex_tra_memory). No promotions (earliest 14-day check 2026-11-03) and no retirements (no account has two level-2 flags; @ValsAI, @SemiAnalysis_, @omarsar0 and off-roster @Exocija have one each; the 45-day rule cannot bite before about 2026-11-07).",
   "Roster review 2026-10-23 rejected, so they are not re-checked soon: promotion or events over 1 in 5: @pilvar222 (near-miss: strong first-hand Aikido cyber benchmark posts, but livestream, colleague-video and event plugs make about 3 of 14 top-level posts), @corridor (happy hours, press), @GenrobotAI (partner congrats, IROS booth), @ltx_io (events, film credits, challenge), @asymptotelabs (seed round and hiring posts, emoji quotes), @Baidu_Inc (corporate PR, robotaxi news); one qualifying post in 30 days: @MemOS_dev, @MangQiuyang; mostly opinion or quotes, product covered by curated accounts: @thorstenball (@AmpCode, @sqs), @Ronny_MiniMax (@MiniMax_AI); too small or too new, judged from profile only: @Modilify (1 post, created 2026-10-20), @ajbarryiii (8 followers), @danilodegoede (12 posts), @TatraLabs (22 followers), @cnm13ryan (22 posts ever), @MiniHui_zhu (32 posts ever); not first-hand AI capability accounts: @canva (brand account), @pamelafox (cloud advocate), @gadievron (security CEO, mostly commentary), @vikvang1 (DevEx engineer). @fastino_ai does not exist; fastino's handle for GLiDE was not found.",
   "Roster review 2026-10-23: candidate sources used were the 'worth a roster review look' notes from the Oct 22 sweeps, off-roster originals in sweep files, and makers in data/v1/latest.json plus the last 7 days. Only @MangQiuyang (FrontierCS 2, via 3 roster accounts) was an off-roster original quoted by two or more roster accounts this window. No saves passed vetting this week, so that source gave nothing. Editions' maker field names companies, not X handles, so mapping makers to handles is manual.",
-  "Roster review 2026-10-23: no sweep files older than 14 days (oldest is 2026-10-20T17-39), so nothing was pruned; the first prune is due 2026-11-03. Today is Friday, so no drafts were written."
+  "Roster review 2026-10-23: no sweep files older than 14 days (oldest is 2026-10-20T17-39), so nothing was pruned; the first prune is due 2026-11-03. Today is Friday, so no drafts were written.",
+  "Sweep 2026-10-23T14:13Z: the scheduled 10:0xZ (05:00 Central) sweep made about 9 X reads (7 roster searches, 1 hydrate, 1 bookmarks read) but never wrote or pushed a file. This sweep reused its search results for 02:01Z to 10:00Z and counted those 9 reads in calls_used_today (16 + 9 + 17 = 42). Suggest the sweep commit a partial file before deep reads so a crash still leaves a record.",
+  "Sweep 2026-10-23T14:13Z re-checks (8): MiniMax M3.1 Flash, AA Coding Agent Index v2.0, Sakana Aquarium, kea-b, MAI-DxO, bfl, GLiDE and MemoryTax all gained engagement, no Community Notes (API has none) and no new pushback, so no doubt levels changed.",
+  "Sweep 2026-10-23T14:13Z: two deep-read calls were spent on items later skipped or kept without deep_read: Teknium's webdev.teknium.io is a curated gallery of web library demos, not an AI capability, so it was skipped; the China export-registration post fell to 187 likes on hydrate, under the constraint deep-read threshold, so it is recorded with deep_read false. Suggest checking hydrated metrics before spending deep reads.",
+  "Sweep 2026-10-23T14:13Z constraint: MOFCOM and MOST Announcement No. 48 (Oct 16) was not captured by earlier sweeps; it entered today via state-media reports that DeepSeek and MiniMax completed export registration. X posts linked only a WeChat commentary, so the official MOFCOM PDF was found by web search and placed first in links. Suggest a constraints query for 'MOFCOM' or 'export control' plus 'AI' on roster accounts.",
+  "Sweep 2026-10-23T14:13Z roster leads worth a roster review look: @kinggary (Harvard, original of the AI peer-review paper quoted by @emollick and @teortaxesTex), @EmmaScharfmann (HF weather downscaling, via @ariG23498), @LeRobotHF (found by discovery; robotics releases), @ChenhaoTan (AI reviewing research, gave the strongest pushback).",
+  "Sweep 2026-10-23T14:13Z: Kimi K3.1 is still only a teaser (24 s Moonshot clip, Arena codename Kibitz already covered 2026-10-22); a 'tomorrow or Monday' leak points to a 2026-10-24 drop, worth watching next sweep. No new owner saves (archive last captured 2026-10-21T18:43Z; latest sync 12:50Z had no new ids). No follow candidates: roster has 0 active accounts."
  ],
  "errors": [
-  "Sweep 14:07Z, possible injection lure, not followed: in the quote posts of https://x.com/cnm13ryan/status/2113121138205499443, @lumpenspace tells readers to have their model 'check out my x bio'. Ignored; no bio was read."
+  "Sweep 14:07Z, possible injection lure, not followed: in the quote posts of https://x.com/cnm13ryan/status/2113121138205499443, @lumpenspace tells readers to have their model 'check out my x bio'. Ignored; no bio was read.",
+  "Sweep 14:13Z: no injection attempts seen. One bookmarks read (user-X get_users_bookmarks) returned content that the tool layer partly redacted when printed; ids were parsed and all 20 were already in seen_ids, so nothing from it was used."
  ],
  "follows_today": 0,
  "last_roster_review": {
