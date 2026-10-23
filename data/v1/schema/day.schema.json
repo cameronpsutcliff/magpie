@@ -1088,6 +1088,25 @@
        }
       }
      }
+    },
+    "builds_on": {
+     "type": "object",
+     "description": "The earlier Magpie possibility this one builds on (MAGPIE_BUILD_ON_IDEAS=1). It is not an ingredient; its url is that edition.",
+     "properties": {
+      "id": {
+       "type": "string"
+      },
+      "date": {
+       "type": "string",
+       "format": "date"
+      },
+      "title": {
+       "type": "string"
+      },
+      "url": {
+       "type": "string"
+      }
+     }
     }
    }
   },

@@ -11,13 +11,22 @@ Two pools are ranked together: today x today, and today x library, where the lib
 today (see library.py). A quiet day with one new repo still pairs it with the existing capabilities it lifts. The rank
 carries an amplification term: how far the most established ingredient had taken hold before today, so a new piece that
 lifts a widely used capability outranks an equally scored pairing of two unknowns.
+
+With MAGPIE_BUILD_ON_IDEAS=1, Magpie's own earlier possibilities join the pool as ideas (see earlier_ideas): when an
+arrival makes one of them much stronger, the new possibility builds on it ("On Oct 21 we suggested A with B; D, out
+today, removes B's limit") and records it in `builds_on`. An idea is never an ingredient: the ingredients stay
+capabilities, and only their words can vouch for a number, apart from the idea's date, which the connection names.
 """
 from __future__ import annotations
 
 import datetime as dt
 import json
+import math
+import os
 import re
 import sys
+from collections import Counter
+from pathlib import Path
 
 from . import library, pairing
 from .enrich import LANES, _extract_json
@@ -26,7 +35,7 @@ from .util import clean, load_json
 PROMPT = """You are the combination strategist for Magpie, a daily brief on what became newly possible in AI.
 Today is {date}. Below are capabilities, each with an id. Rows with "today": true appeared today. Rows with
 "today": false are the library: capabilities that already existed, of any age (see "first_seen"), picked because
-they relate to today's arrivals.{pairing}
+they relate to today's arrivals.{pairing}{ideas}
 
 Your job is not to list them and not to mash two together. Find {n} NON-OBVIOUS consequences: places where
 two to four of these capabilities, taken together with ordinary public conditions (falling costs, existing
@@ -68,6 +77,17 @@ CAPABILITIES:
 """
 
 EFFORT_DAYS = {"an afternoon": 0.5, "a week": 5, "a month": 20, "a quarter": 60}
+IDEAS_FLAG = "MAGPIE_BUILD_ON_IDEAS"  # "1" lets today's arrivals build on earlier editions' possibilities
+IDEA_EDITIONS = 7  # editions whose possibilities can be built on
+IDEA_ROWS = 6      # earlier ideas in one pool at most
+SITE = "https://www.cameronsutcliff.com/magpie"
+IDEAS = """ Rows with "kind": "idea" are possibilities Magpie published on an earlier
+"date", with the capabilities they combined in "recipe". When a capability from today makes one of them much
+stronger, cheaper or newly practical, you may return a possibility that builds on it: list the idea's id among the
+ingredients with at least one capability from today, open "connection" with what Magpie suggested on that date, and
+say what today's arrival adds and why that changes the outcome. An idea is never one of today's ingredients, one
+possibility builds on one idea at most, and every number other than the idea's date must come from a capability, not
+from the idea."""
 PAIRED = """ A library row with "pairing" was chosen by a panel of models as a partner for the
 arrival in "with", with the relation and the reason; treat that as a lead to test, not as a fact about either one."""
 
@@ -84,7 +104,65 @@ def _pool(day: dict, lib: dict[str, dict], limit_today: int = 24, check=library.
     else:
         keys, receipt = library.pick(strong, lib, exclude, check)
     rows += [_row(lib[k]["event"], lib[k]["date"], False, lib[k], notes.get(k)) for k in keys]
-    return rows, {"today": len(edited), "library": len(keys), **receipt}
+    ideas = earlier_ideas(day["date"], data_dir, strong) if ideas_enabled() and data_dir is not None else []
+    rows += ideas
+    return rows, {"today": len(edited), "library": len(keys), **({"ideas": len(ideas)} if ideas else {}), **receipt}
+
+
+def ideas_enabled() -> bool:
+    return os.environ.get(IDEAS_FLAG) == "1"
+
+
+def earlier_ideas(date: str, data_dir, arrivals: list[dict], editions: int = IDEA_EDITIONS, limit: int = IDEA_ROWS) -> list[dict]:
+    """The possibilities of the last `editions` editions before `date`, as pool rows of kind "idea": the `limit` closest
+    to any of today's strongest `arrivals`, newest first among equals; one that shares no word is left out. Closeness is
+    the cosine of TF-IDF weights over the library's word lists (library._words for the idea, library._doc for the
+    arrival), with document frequencies from these ideas and arrivals: only the shared-words part of library.related,
+    without its topic, integration or maker terms. An earlier edition file that cannot be read or parsed, or that is not
+    an edition with a date, is skipped and does not count toward `editions`; anything of the wrong type inside one is
+    skipped too."""
+    text = lambda v: v if isinstance(v, str) else ""  # noqa: E731
+    listed = lambda v: v if isinstance(v, list) else []  # noqa: E731
+    found = []
+    for path in sorted((Path(data_dir) / "days").glob("*.json"), reverse=True):
+        if len(found) >= editions:
+            break
+        if path.stem >= date:
+            continue
+        try:
+            d = json.loads(path.read_text())
+        except (OSError, ValueError):  # unreadable, not UTF-8, or not JSON
+            continue
+        if isinstance(d, dict) and isinstance(d.get("date"), str):
+            found.append(d)
+    rows = []
+    for d in found:
+        poss = d.get("possibilities")
+        for rank, p in enumerate(listed(poss.get("items") if isinstance(poss, dict) else None), 1):
+            if not isinstance(p, dict) or not text(p.get("title")).strip():
+                continue
+            recipe = [r["title"] for r in listed(p.get("ingredient_refs")) if isinstance(r, dict) and isinstance(r.get("title"), str)]
+            rows.append({"id": f"idea-{d['date']}-{rank}", "date": d["date"], "today": False, "first_seen": d["date"],
+                         "kind": "idea", "title": p["title"], "what": text(p.get("connection")), "recipe": recipe,
+                         "why": "", "limits": text(p.get("disconfirm")), "maker": None, "topics": [], "evidence": "idea",
+                         "_summary": " ".join(c for c in listed(p.get("chain")) if isinstance(c, str)),
+                         "_url": f"{SITE}/{d['date']}", "_adoption": 0.0, "_signals": None})
+    if not rows or not arrivals:
+        return []
+    docs = {r["id"]: library._words(" ".join([r["title"], r["what"], " ".join(r["recipe"]), r["_summary"]])) for r in rows}
+    targets = [library._doc(a) for a in arrivals]
+    df = Counter(t for d in [*docs.values(), *targets] for t in set(d))
+    n = len(docs) + len(targets) + 1
+    vec = lambda words: {t: c * (math.log(n / (1 + df[t])) + 1) for t, c in Counter(words).items()}  # noqa: E731
+
+    def cos(a: dict, b: dict) -> float:
+        norm = math.sqrt(sum(w * w for w in a.values())) * math.sqrt(sum(w * w for w in b.values()))
+        return sum(w * b.get(t, 0.0) for t, w in a.items()) / norm if norm else 0.0
+    tv = [vec(t) for t in targets]
+    scored = [(max(cos(vec(docs[r["id"]]), t) for t in tv), r) for r in rows]
+    scored = [(s, r) for s, r in scored if s > 0]
+    scored.sort(key=lambda sr: (-round(sr[0], 6), "".join(chr(0x10FFFF - ord(c)) for c in sr[1]["date"]), sr[1]["id"]))
+    return [r for _, r in scored[:limit]]
 
 
 def _row(e: dict, date: str, today: bool, hist: dict | None = None, paired: list[dict] | None = None) -> dict:
@@ -161,7 +239,8 @@ def generate(day: dict, data_dir, n: int = 5, timeout: int = 1200, check=library
     shown = [{k: v for k, v in r.items() if not k.startswith("_")} for r in pool]
     need = " and return at least 3 of each" if receipt["library"] and len(today_ids) > 1 else ""
     paired = PAIRED if any(r.get("pairing") for r in pool) else ""
-    prompt = PROMPT.format(date=day["date"], n=n + 3, need=need, pairing=paired,
+    idea_ids = [r["id"] for r in pool if r.get("kind") == "idea"]
+    prompt = PROMPT.format(date=day["date"], n=n + 3, need=need, pairing=paired, ideas=IDEAS if idea_ids else "",
                            pool=json.dumps(shown, ensure_ascii=False, indent=0))
     errors = []
     for lane in ("claude", "codex"):
@@ -176,18 +255,23 @@ def generate(day: dict, data_dir, n: int = 5, timeout: int = 1200, check=library
         out, dropped = [], []
         for p in data.get("possibilities", []):
             ing = list(dict.fromkeys(i for i in p.get("ingredients", []) if i in ids))
-            if len(ing) < 2 or not (set(ing) & today_ids):
-                dropped.append({"title": p.get("title"), "why": "needs two known ingredients, one from today"})
+            idea = next((i for i in ing if i in idea_ids), None)  # one idea at most: the first named
+            ing = [i for i in ing if i not in idea_ids]  # an idea is what it builds on, never an ingredient
+            if len(ing) + bool(idea) < 2 or not (set(ing) & today_ids):
+                dropped.append({"title": p.get("title"), "why": "needs two known ingredients (or one and an earlier idea), one from today"})
                 continue
             item = {k: clean(v) if isinstance(v, str) else v for k, v in p.items()}
             item["ingredients"] = ing
             item["chain"] = [clean(c) for c in p.get("chain", []) if isinstance(c, str)][:4]
-            loose = ungrounded_numbers(item, [by_id[i] for i in ing])
+            # Numbers rest on the capabilities' own words; of an idea, only its date counts (the connection names it).
+            loose = ungrounded_numbers(item, [by_id[i] for i in ing] + ([{"date": by_id[idea]["date"]}] if idea else []))
             if loose:
                 dropped.append({"title": item.get("title"), "why": f"numbers not in its sources: {', '.join(loose)}"})
                 continue
             item["ingredient_refs"] = refs(ing, by_id)
             item["mix"] = "today_x_today" if set(ing) <= today_ids else "today_x_library"
+            if idea:
+                item["builds_on"] = {"id": idea, "date": by_id[idea]["date"], "title": by_id[idea]["title"], "url": by_id[idea]["_url"]}
             item["amplification"] = amplification([by_id[i] for i in ing])
             out.append(item)
         return {"items": choose(rank(out), n), "lane": lane, "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
