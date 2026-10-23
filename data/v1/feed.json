@@ -13,6 +13,30 @@
  ],
  "items": [
   {
+   "id": "2026-10-23",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-10-23",
+   "title": "Verify code at scale, run Flint locally, serve MiniMax fast, and more",
+   "summary": "Open coding models led the day: MiniMax M3.1 Flash and Recursive's Flint arrived with day-one serving, quantized builds and measured local speeds. Around them, the agent stack firmed up, with Agent Skills moving to a foundation, a safe agent runtime from NVIDIA, and Claude used to formally verify over one hundred open-source libraries.",
+   "content_html": "<p>Open coding models led the day: MiniMax M3.1 Flash and Recursive&#x27;s Flint arrived with day-one serving, quantized builds and measured local speeds. Around them, the agent stack firmed up, with Agent Skills moving to a foundation, a safe agent runtime from NVIDIA, and Claude used to formally verify over one hundred open-source libraries.</p><p><strong>Formal proof of security properties now reaches real libraries in bulk, not just toy codebases.</strong> Anthropic used Claude to prove properties across more than one hundred open-source libraries in weeks, so a security or quality budget can start to cover verification. For buyers, this points to assurance that goes beyond testing. It covers only certain bug classes, and no runnable tool ships with the post.</p><p><strong>Two open coding models arrived ready to run, one tuned for servers and one for a single desktop GPU.</strong> MiniMax M3.1 Flash handles images and text and runs on SGLang from day one, at over 1,000 tokens per second single-stream. Flint, a 40B MoE model from Recursive, hits 216 tokens per second on one RTX 5090, so code can stay on the machine and API spend drops. Both speed figures come from SGLang or single community setups, and broad quality evals are still missing.</p><p><strong>The plumbing for agents got more neutral and more shared.</strong> Agent Skills, already used by more than 70 platforms, is now governed by a foundation, so skills written once are a safer long-term bet. NVIDIA&#x27;s Apache-2.0 runtime gives teams an isolation layer for agent fleets without building their own. The governance move adds no new capability, and the runtime&#x27;s safety and privacy claims are its own.</p><ol><li><a href=\"https://www.anthropic.com/research/formal-verification\">Claude proves security properties across 100+ open-source libraries</a>: Teams can use an LLM to formally prove security properties across many real-world libraries in weeks, not just small codebases.</li><li><a href=\"https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash\">MiniMax M3.1 Flash open weights with day-one SGLang serving</a>: Builders can self-host MiniMax M3.1 Flash, an image-and-text model, and serve it on SGLang at over 1,000 tokens per second single-stream.</li><li><a href=\"https://huggingface.co/RecursiveSI/flint\">Recursive releases Flint, a fast open coding model</a>: Developers can run Flint, an open 40B MoE coding model, locally at 216 tokens per second on one RTX 5090.</li><li><a href=\"https://github.com/NVIDIA/OpenShell\">NVIDIA OpenShell runtime for fleets of autonomous agents</a>: Teams can run fleets of autonomous AI agents inside an open, Apache-2.0 runtime built for safety and privacy.</li><li><a href=\"https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation\">Anthropic donates Agent Skills standard to Agentic AI Foundation</a>: Agent Skills, already integrated by more than 70 platforms, is now governed by a foundation instead of one vendor.</li></ol><p><strong>New possibility:</strong> Due diligence consultants can security-audit an acquisition target&#x27;s code entirely on one laptop</p><p><strong>Worth watching:</strong> <a href=\"https://www.youtube.com/watch?v=frYSOKvNiiE\">What will computer chips look like in 2045?</a>; <a href=\"https://www.youtube.com/watch?v=Ve2bAarPA2I\">Better AI Models Won&#x27;t Fix Your Engineering Team, Nicholas Arcolano, Jellyfish</a>; <a href=\"https://www.youtube.com/watch?v=UB6hoWyh3B0\">A Bank Trained Its Own Foundation Model to Catch Fraud, Freddy Lecue, Wells Fargo</a></p><p><strong>Still open:</strong> <a href=\"https://digital-strategy.ec.europa.eu/en/library/first-harmonised-standard-supporting-ai-act-published-official-journal\">EU publishes first AI Act harmonised standard for high-risk providers</a> (2026-10-20)</p><p><strong>Threats still open:</strong> <a href=\"https://emudhra.we-have-a-problem.com/\">Eight eMudhra intermediate CA private keys compromised</a> (high (editor&#x27;s estimate), patched; 3 package advisories); <a href=\"https://osv.dev/vulnerability/GHSA-46jr-4wx8-v453\">MCP TypeScript SDK server memory exhaustion</a> (high, patched); <a href=\"https://osv.dev/vulnerability/GHSA-22jm-h49p-29qw\">MCP TypeScript SDK experimental tasks lack session binding</a> (high, patched)</p>",
+   "content_text": "Open coding models led the day: MiniMax M3.1 Flash and Recursive's Flint arrived with day-one serving, quantized builds and measured local speeds. Around them, the agent stack firmed up, with Agent Skills moving to a foundation, a safe agent runtime from NVIDIA, and Claude used to formally verify over one hundred open-source libraries. Claude proves security properties across 100+ open-source libraries MiniMax M3.1 Flash open weights with day-one SGLang serving Recursive releases Flint, a fast open coding model NVIDIA OpenShell runtime for fleets of autonomous agents Anthropic donates Agent Skills standard to Agentic AI Foundation",
+   "date_published": "2026-10-23T10:33:08Z",
+   "tags": [
+    "agents",
+    "coding",
+    "infra",
+    "local",
+    "mcp",
+    "models",
+    "multimodal",
+    "security"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-23.json",
+    "backfilled": false,
+    "capabilities": 448
+   }
+  },
+  {
    "id": "2026-10-22",
    "url": "https://www.cameronsutcliff.com/magpie/2026-10-22",
    "title": "Code locally with Flint, grow live MoE deployments, open Muse Spark, and more",
@@ -687,29 +711,6 @@
     "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-09-24.json",
     "backfilled": true,
     "capabilities": 120
-   }
-  },
-  {
-   "id": "2026-09-23",
-   "url": "https://www.cameronsutcliff.com/magpie/2026-09-23",
-   "title": "Ships GPT-6 Sol and Luna, lands Opus 5.5, edits video with agents, and more",
-   "summary": "Two frontier model releases lead the day, with OpenAI's GPT-6 Sol and Luna and Anthropic's Opus 5.5. Below them sit agent tooling repos and a set of research papers without code.",
-   "content_html": "<p>Two frontier model releases lead the day, with OpenAI&#x27;s GPT-6 Sol and Luna and Anthropic&#x27;s Opus 5.5. Below them sit agent tooling repos and a set of research papers without code.</p><ol><li><a href=\"https://www.anthropic.com/claude-opus-5-5\">Anthropic releases Claude Opus 5.5</a>: You can use Claude Opus 5.5, the first model in the Claude 5.5 family, through Anthropic.</li><li><a href=\"https://huggingface.co/papers/2609.24972\">Regularized self-improvement for agent harnesses</a>: You can let an agent harness edit itself while constraining edits to favor reusable mechanisms over benchmark memorization.</li><li><a href=\"https://huggingface.co/papers/2609.13814\">Realtime-Venus: full-duplex voice with background delegation</a>: You can build a dialogue system that listens and speaks at once while tools run asynchronously in the background.</li><li><a href=\"https://openai.com/index/introducing-gpt-6-sol-and-luna\">OpenAI launches GPT-6 Sol and Luna</a>: You can pick between two GPT-6 models that trade capability against cost for everyday work.</li><li><a href=\"https://github.com/skyhook-io/radar\">Radar: Kubernetes UI with built-in MCP server</a>: You can let AI agents inspect cluster issues, topology, events and audits through an MCP server in one Go binary.</li></ol>",
-   "content_text": "Two frontier model releases lead the day, with OpenAI's GPT-6 Sol and Luna and Anthropic's Opus 5.5. Below them sit agent tooling repos and a set of research papers without code. Anthropic releases Claude Opus 5.5 Regularized self-improvement for agent harnesses Realtime-Venus: full-duplex voice with background delegation OpenAI launches GPT-6 Sol and Luna Radar: Kubernetes UI with built-in MCP server",
-   "date_published": "2026-10-20T15:50:33Z",
-   "tags": [
-    "agents",
-    "coding",
-    "evals",
-    "infra",
-    "mcp",
-    "models",
-    "multimodal"
-   ],
-   "_magpie": {
-    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-09-23.json",
-    "backfilled": true,
-    "capabilities": 113
    }
   }
  ]

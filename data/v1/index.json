@@ -2,6 +2,82 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-10-23",
+   "headline": "Verify code at scale, run Flint locally, serve MiniMax fast, and more",
+   "events": 448,
+   "sources": 512,
+   "enriched": true,
+   "top": [
+    {
+     "id": "54483c9a7cf1",
+     "title": "Claude proves security properties across 100+ open-source libraries",
+     "impact": 4,
+     "vendor": "Anthropic"
+    },
+    {
+     "id": "1542ac0d2f70",
+     "title": "MiniMax M3.1 Flash open weights with day-one SGLang serving",
+     "impact": 4,
+     "vendor": "MiniMax"
+    },
+    {
+     "id": "90dd623e653c",
+     "title": "Recursive releases Flint, a fast open coding model",
+     "impact": 4,
+     "vendor": "Recursive"
+    },
+    {
+     "id": "34ffaea16beb",
+     "title": "NVIDIA OpenShell runtime for fleets of autonomous agents",
+     "impact": 4,
+     "vendor": "NVIDIA"
+    },
+    {
+     "id": "913e54bc9d1a",
+     "title": "Anthropic donates Agent Skills standard to Agentic AI Foundation",
+     "impact": 5,
+     "vendor": "Anthropic"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Anthropic",
+    "OpenAI",
+    "AWS",
+    "NVIDIA",
+    "Google"
+   ],
+   "topics": {
+    "models": 142,
+    "agents": 127,
+    "coding": 103,
+    "multimodal": 87,
+    "infra": 63,
+    "memory": 49,
+    "local": 42,
+    "evals": 42,
+    "mcp": 34,
+    "research": 32,
+    "security": 31,
+    "reverse": 21,
+    "robotics": 5
+   },
+   "kinds": {
+    "video": 98,
+    "social": 87,
+    "community": 71,
+    "blog": 42,
+    "newsletter": 39,
+    "repo": 31,
+    "model": 30,
+    "changelog": 24,
+    "space": 19,
+    "news": 7
+   },
+   "constraints": [],
+   "threats": []
+  },
+  {
    "date": "2026-10-22",
    "headline": "Code locally with Flint, grow live MoE deployments, open Muse Spark, and more",
    "events": 471,
@@ -2397,5 +2473,5 @@
    }
   }
  ],
- "latest": "2026-10-22"
+ "latest": "2026-10-23"
 }
