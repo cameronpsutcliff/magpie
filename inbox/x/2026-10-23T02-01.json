@@ -1,0 +1,419 @@
+{
+ "ran_at": "2026-10-23T02:01:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v4",
+ "since": "2026-10-22T22:05:00Z",
+ "queries": 9,
+ "calls": 16,
+ "items": [
+  {
+   "title": "MiniMax publishes open weights for M3.1 Flash, a 428B MoE with 23B active",
+   "url": "https://x.com/MiniMax_AI/status/2113436864904610008",
+   "handle": "@MiniMax_AI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "The M3.1 Flash weights promised at its Oct 19 API launch are now on Hugging Face and ModelScope, so builders can self-host a 428B-total, 23B-active agentic coding model with sparse attention and DSpark speculative decoding. SGLang, TokenSpeed, NVIDIA and AMD shipped day-0 serving support.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash",
+    "https://modelscope.cn/models/MiniMax/MiniMax-M3.1-Flash",
+    "https://github.com/lightseekorg/tokenspeed"
+   ],
+   "vendor": "MiniMax",
+   "posted_at": "2026-10-23T01:06:29Z",
+   "metrics": {
+    "likes": 495,
+    "reposts": 59,
+    "quotes": 40,
+    "replies": 35,
+    "views": 16658
+   },
+   "confirmed_by": [
+    "@sgl_project",
+    "@lightseekorg",
+    "@inco_ai",
+    "@teortaxesTex",
+    "@MooncastOnline"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers say it is largely M3 with attention sparsified in three more layers plus quantization and DSpark, the benchmark scores are self-reported, and the license is a MiniMax community license, not Apache.",
+    "source": "https://x.com/teortaxesTex/status/2113447334021644595"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Mostly welcoming of open weights; one tester reports 35 of 35 one-shot builds for about 2 dollars, another says it faked a solution on a hard task, and others flag the restrictive license and the memory needed for 428B.",
+    "tried": true,
+    "replies_read": 49
+   }
+  },
+  {
+   "title": "SGLang serves MiniMax M3.1 Flash from day 0 at over 1,000 tokens per second single-stream",
+   "url": "https://x.com/sgl_project/status/2113437513692127424",
+   "handle": "@sgl_project",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "SGLang supports M3.1 Flash on NVIDIA Blackwell and Hopper and AMD MI350X and MI355X, reporting over 1K tok/s batch-1 decode, about 100K total tok/s per GPU on a 96-session coding-agent trace, and 2.15x faster single-request decode from MegaKernels. RL training via Miles is supported too.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash"
+   ],
+   "vendor": "SGLang (LMSYS)",
+   "posted_at": "2026-10-23T01:09:03Z",
+   "metrics": {
+    "likes": 32,
+    "reposts": 3,
+    "quotes": 7,
+    "replies": 9,
+    "views": 3962
+   },
+   "confirmed_by": [
+    "@MiniMax_AI"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Inco AI open-sources a DFlash 2 draft model for MiniMax M3.1 Flash",
+   "url": "https://x.com/inco_ai/status/2113450678245056795",
+   "handle": "@inco_ai",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "An Apache 2.0 block-diffusion drafter for speculative decoding with M3.1 Flash, claimed to make generation up to 3.5x faster with no change in output. Useful for anyone self-hosting the new weights on SGLang.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/incoai/MiniMax-M3.1-Flash-DFlash2"
+   ],
+   "vendor": "Inco AI",
+   "posted_at": "2026-10-23T02:01:22Z",
+   "metrics": {
+    "likes": 3,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 33
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Grok Bot can use Calendar, Reminders, Contacts and other phone apps on iOS and Android",
+   "url": "https://x.com/bot/status/2113393684209176718",
+   "handle": "@bot",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "The Grok Bot agent can now read and act on the phone's native calendar, reminders and contacts, rolling out on iOS and Android. Messages is not included yet.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "xAI",
+   "posted_at": "2026-10-22T22:14:53Z",
+   "metrics": {
+    "likes": 7023,
+    "reposts": 519,
+    "quotes": 434,
+    "replies": 1910,
+    "views": 502434
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Many users ask the account to set it up; one reports it merged duplicate contacts and meetings, others ask about iMessage (not included) and a few raise privacy concerns about handing over contacts.",
+    "tried": true,
+    "replies_read": 49
+   }
+  },
+  {
+   "title": "Artificial Analysis Coding Agent Index v2.0 swaps in FrontierCode; Opus 5.5 in Claude Code leads at 61.7",
+   "url": "https://x.com/ArtificialAnlys/status/2113424551396934134",
+   "handle": "@ArtificialAnlys",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "The index now scores model plus harness pairs on 290 tasks across software engineering, terminal use and repository Q&A, replacing DeepSWE with Cognition's private FrontierCode v1.1, which grades on whether a maintainer would merge the change. Claude Opus 5.5 in Claude Code leads at 61.7.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Artificial Analysis",
+   "posted_at": "2026-10-23T00:17:33Z",
+   "metrics": {
+    "likes": 217,
+    "reposts": 13,
+    "quotes": 23,
+    "replies": 58,
+    "views": 22497
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers question running DeepSeek and GLM in non-native harnesses and note that with 100 FrontierCode tasks, sampling noise of about 5 points makes mid-table scores effectively tied.",
+    "source": "https://x.com/ArtificialAnlys/status/2113424551396934134"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Many welcome the maintainer-merge grading and private test set; others ask about run-to-run stability, comparability with v1 scores, harness fairness and cost per task.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Sakana AI launches Aquarium, an agent platform for decision support with ontology and governance",
+   "url": "https://x.com/SakanaAILabs/status/2113435148792598986",
+   "handle": "@SakanaAILabs",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Aquarium connects existing tables and documents through an ontology, runs approval-gated agent workflows written as procedures, and logs what each agent decided and why. It is delivered with Sakana's forward-deployed engineers rather than as a self-serve product.",
+   "kind": "tool",
+   "evidence": "claim",
+   "links": [
+    "https://sakana.ai/aquarium/",
+    "https://sakana.ai/aquarium-release"
+   ],
+   "vendor": "Sakana AI",
+   "posted_at": "2026-10-23T00:59:39Z",
+   "metrics": {
+    "likes": 126,
+    "reposts": 22,
+    "quotes": 6,
+    "replies": 5,
+    "views": 6753
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Enterprise platform with no public access, demo or numbers to check.",
+    "source": null
+   }
+  },
+  {
+   "title": "SemiAnalysis measures Rubin NVL72 at 862 tok/s per user on GLM 5.3 agentic workloads",
+   "url": "https://x.com/SemiAnalysis_/status/2113445377655373980",
+   "handle": "@SemiAnalysis_",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "SemiAnalysis reports NVIDIA nearly doubled per-user interactivity on Rubin NVL72 in under 8 days through low-latency specialized kernels, reaching 862 tok/s per user on the 744B GLM 5.3.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-10-23T01:40:18Z",
+   "metrics": {
+    "likes": 33,
+    "reposts": 3,
+    "quotes": 2,
+    "replies": 6,
+    "views": 5791
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Liquid AI's d1-ultra gets all 1,960 ClaimBench claims right on Vals",
+   "url": "https://x.com/ValsAI/status/2113419379505602916",
+   "handle": "@ValsAI",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Vals reports Liquid AI's d1-ultra is the only decision model with a perfect ClaimBench score, matching Opus 5.5, Sonnet 5.5, Haiku 5.5 and GPT-6.1 Sol.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Vals AI",
+   "posted_at": "2026-10-22T23:57:00Z",
+   "metrics": {
+    "likes": 34,
+    "reposts": 6,
+    "quotes": 1,
+    "replies": 4,
+    "views": 2823
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Inception's Mercury 3 ranks 23rd on the Vals Index",
+   "url": "https://x.com/ValsAI/status/2113405970533786099",
+   "handle": "@ValsAI",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Vals places the Mercury 3 diffusion LLM at 23rd on its index, just ahead of Beam 1.0 and well ahead of Inkling and Inkling Small, an independent quality read on a speed-first model.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Vals AI",
+   "posted_at": "2026-10-22T23:03:43Z",
+   "metrics": {
+    "likes": 39,
+    "reposts": 7,
+    "quotes": 1,
+    "replies": 1,
+    "views": 2019
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Ling 3.1 flash builds a 3D scene unattended for 12 hours on four DGX Sparks",
+   "url": "https://x.com/sudoingX/status/2113450120075415813",
+   "handle": "@sudoingX",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A builder ran the 560B Ling 3.1 flash at Q4 over llama.cpp RPC across four DGX Sparks with Hermes Agent: one prompt, 12h26m, 325K output tokens at 7.5 tok/s, 12 of 12 tests passing, and self-checking renders with pixel stats instead of vision. Shows long-horizon local agent runs are possible but slow on this setup.",
+   "kind": "demo",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Ant Ling",
+   "posted_at": "2026-10-23T01:59:09Z",
+   "metrics": {
+    "likes": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 245
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Koi plans multi-cloud LLM inference fleets with an LLM hypothesis loop over a causal graph",
+   "url": "https://x.com/askalphaxiv/status/2113445564075680040",
+   "handle": "@askalphaxiv",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "The paper pairs recursive LLM reasoning with deterministic serving models and a causal graph of deployment choices, bottlenecks and outcomes, so each deployment updates a playbook for choosing accelerators, parallelism and replicas across clouds.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2610.24355"
+   ],
+   "vendor": "Koi authors",
+   "posted_at": "2026-10-23T01:41:03Z",
+   "metrics": {
+    "likes": 13,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 1,
+    "views": 725
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "kea-b: a 1-bit speech-to-text model distilled from NVIDIA Parakeet, open weights",
+   "url": "https://x.com/ajbarryiii/status/2113447568327979400",
+   "handle": "@ajbarryiii",
+   "group": "opensource",
+   "origin": "discovery",
+   "summary": "Wilderness Labs releases a binary-quantized, distilled Parakeet variant on Hugging Face (NeMo), claimed 23x smaller and about 1.5x faster than its parent, aimed at on-device transcription.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/rajb3/kea-b"
+   ],
+   "vendor": "Wilderness Labs",
+   "posted_at": "2026-10-23T01:49:00Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 4
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Size and speed numbers are the author's own, with no accuracy table in the post.",
+    "source": null
+   }
+  },
+  {
+   "title": "Knostic maps 13 places where AI vulnerability-discovery harnesses silently drop findings",
+   "url": "https://x.com/gadievron/status/2113393635815215158",
+   "handle": "@gadievron",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "Studying 12 open-source LLM vuln-hunting harnesses, the paper shows code selection, filtering and merge steps can drop real vulnerabilities before or after the model runs, often with no notice, and that attackers could exploit these rules to hide bugs. It proposes engineering patterns to fix or disclose the drops.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2610.29379",
+    "https://www.knostic.ai/blog/where-ai-vulnerability-scanners-go-quiet"
+   ],
+   "vendor": "Knostic",
+   "posted_at": "2026-10-22T22:14:42Z",
+   "metrics": {
+    "likes": 6,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 301
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": []
+}

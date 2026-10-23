@@ -1,16 +1,16 @@
 {
- "updated_at": "2026-10-22T22:20:00Z",
+ "updated_at": "2026-10-23T02:10:00Z",
  "job": "sweep",
  "prompt": "v4",
- "calls_used_today": 115,
+ "calls_used_today": 131,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-10-22T22:05:00Z",
-  "items": 23,
+  "ran_at": "2026-10-23T02:01:00Z",
+  "items": 13,
   "queries": 9,
-  "deep_reads": 8,
+  "deep_reads": 3,
   "rechecks": 8,
-  "flagged": 3,
+  "flagged": 4,
   "saved_in": 0,
   "saved_kept": 0,
   "videos": 0
@@ -98,7 +98,14 @@
   "Sweep 22:05Z follow candidates meeting the bar (3+ qualifying posts in sweep files, no doubt 2+, first-hand), not followed because today's 3 follows are used and the scout had no browser: @fal (6), @claudeai (4), @lmsysorg (3), @modal (3), @NousResearch (3). Whether @sutcliffcc already follows them was not checked.",
   "Sweep 22:05Z: @canva's Craft launch post showed about 4x more reposts (5,145) than likes (1,235), unusual for an organic launch; treated as possible amplification, not as extra confirmation.",
   "Sweep 22:05Z videos: no deep-read clip exceeded 60 s; the 177 s Warp factory-config walkthrough (@vikvang1) was kept on its text and not watched.",
-  "Sweep 22:05Z re-checks (OCRia-1, Ling-3.0-flash-Sante, RIPL, MemoryTax, Agent4Sci, SGLang Trainium, MiniCPM-OCR, DeepSeek V8 exploit claim): engagement grew, no new pushback, no doubt levels changed; the V8 claim stays at 2 (51 reposts plus quotes, far below the 500 needed for level 3)."
+  "Sweep 22:05Z re-checks (OCRia-1, Ling-3.0-flash-Sante, RIPL, MemoryTax, Agent4Sci, SGLang Trainium, MiniCPM-OCR, DeepSeek V8 exploit claim): engagement grew, no new pushback, no doubt levels changed; the V8 claim stays at 2 (51 reposts plus quotes, far below the 500 needed for level 3).",
+  "Sweep 02:01Z re-checks (MAI-DxO, bfl upscaler, GLiDE, Canva Craft, 1Password, Anthropic formal verification, Claude auto mode, OpenAI Decisions API): engagement grew, no new pushback, no doubt levels changed.",
+  "Metrics key mismatch: search_posts_all returns public_metrics.retweet_count while get_posts_by_ids returns repost_count (retweet_count absent). Map reposts from whichever key exists; the prompt could note this.",
+  "Labs query returned only 9 posts with the oldest at 00:59Z; a gap page with end_time 00:59Z returned 0, so no posts were missed.",
+  "No new saves since the last sweep: the newest bookmarks read through the X plugin were all already seen, and the Twitter Profile archive (sync 00:46Z) had no new candidates.",
+  "MiniMax M3.1 Flash weights ship under a MiniMax community license (attribution, and written permission above 20M dollars revenue per repliers), not Apache; worth a constraint-style note if Magpie tracks licenses.",
+  "Skipped Kimi_Moonshot 2113445757185606062: a 24 s teaser clip with no text and nothing released; watch for a K3.1 launch next sweep.",
+  "Follow candidates for a future day (no follows made; today's 3 are used): curated roster accounts with 3+ qualifying first-hand items in the last 30 days and max doubt under 2: @fal (6), @pytorch (4), @bot (4), @claudeai (4), @OpenAIDevs (3), @lmsysorg (3), @modal (3), @NousResearch (3), @MiniMax_AI (3), @FactoryAI (3), @kirodotdev (3), @Aleph__Alpha (3), @FireworksAI_HQ (3), @NVIDIAAI (3), @sqs (3). Excluded: @ValsAI and @omarsar0 (a doubt 2 item), @askalphaxiv, @dair_ai, and @aitrackerbot (aggregators, not first-hand)."
  ],
  "errors": [
   "Sweep 14:07Z, possible injection lure, not followed: in the quote posts of https://x.com/cnm13ryan/status/2113121138205499443, @lumpenspace tells readers to have their model 'check out my x bio'. Ignored; no bio was read."
