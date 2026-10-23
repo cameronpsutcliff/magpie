@@ -35,6 +35,20 @@ class IdTests(unittest.TestCase):
         self.assertEqual(V.idea_id("2026-10-23", "!!!"), "2026-10-23-idea")
         self.assertEqual(V.idea_id("2026-10-23", "Same words here", {"2026-10-23-same-words-here"}), "2026-10-23-same-words-here-2")
 
+    def test_an_id_stays_a_safe_page_id_however_long_the_title(self):
+        long = " ".join(["Supercalifragilisticexpialidocious" * 2] * 6)
+        i = V.idea_id("2099-01-01", long)
+        self.assertTrue(V.ID_SHAPE.fullmatch(i))
+        taken = {i}
+        for _ in range(12):  # repeats with a suffix stay safe too
+            j = V.idea_id("2099-01-01", long, taken)
+            self.assertTrue(V.ID_SHAPE.fullmatch(j), j)
+            taken.add(j)
+        day = {"date": "2099-01-01", "possibilities": {"items": [{"title": long}]}}
+        V.assign_ids(day)
+        self.assertEqual(V.assign_ids(day), 0)  # a generated id is kept on the next pass
+        self.assertEqual(V.idea_id("2099-01-01", "short words that fit"), "2099-01-01-short-words-that-fit")
+
     def test_ids_keep_their_own_and_never_repeat_in_a_day(self):
         items = [{"title": "Run it locally", "id": "2099-01-01-run-it-locally"}, {"title": "Run it locally"}, "junk", {"title": " "},
                  {"title": "Another one"}]

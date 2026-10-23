@@ -27,12 +27,12 @@
     "required": [
      "id",
      "date",
-     "position",
      "title"
     ],
     "properties": {
      "id": {
-      "type": "string"
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}-[a-z0-9][a-z0-9-]{0,99}$"
      },
      "date": {
       "type": "string",
@@ -40,7 +40,7 @@
      },
      "position": {
       "type": "integer",
-      "description": "Its place in that edition's list, from 1."
+      "description": "Its place in that edition's list, from 1. Absent on a retired id."
      },
      "title": {
       "type": "string"
@@ -115,6 +115,10 @@
        "type": "string"
       },
       "description": "Ids of later possibilities that build on this one."
+     },
+     "retired": {
+      "const": true,
+      "description": "An id no edition carries any more: its edition's possibilities were worked out again. Only id, date and title remain, so a link to it can still say so."
      }
     }
    }

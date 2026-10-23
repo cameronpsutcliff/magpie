@@ -27,6 +27,7 @@ from pathlib import Path
 from .util import load_json, write_json
 
 ID_WORDS = 6      # title words in an idea id
+ID_CHARS = 80     # the words part stops at a whole word within this, so an id with a "-NN" suffix stays a safe page id
 WINDOWS = {"week": 7, "month": 30}
 TOP_CAPABILITIES = 12
 TOP_IDEAS = 10
@@ -40,10 +41,17 @@ def _clip(v, n: int = CLIP) -> str:
 
 
 def idea_id(date: str, title: str, taken: set[str] | frozenset = frozenset()) -> str:
-    """The edition date and the first ID_WORDS words of the title, ASCII letters and digits only."""
+    """The edition date and the first ID_WORDS words of the title, ASCII letters and digits only, the words part at most
+    ID_CHARS characters, so the id always matches ID_SHAPE (with room for a "-2" and on)."""
     ascii_title = unicodedata.normalize("NFKD", title or "").encode("ascii", "ignore").decode().lower()
-    words = re.findall(r"[a-z0-9]+", ascii_title)[:ID_WORDS]
-    base = f"{date}-{'-'.join(words) or 'idea'}"
+    slug = ""
+    for w in re.findall(r"[a-z0-9]+", ascii_title)[:ID_WORDS]:
+        part = f"{slug}-{w}" if slug else w
+        if len(part) > ID_CHARS:
+            slug = slug or w[:ID_CHARS]  # one very long word is cut; otherwise the slug stops before the word that overruns
+            break
+        slug = part
+    base = f"{date}-{slug or 'idea'}"
     out, n = base, 2
     while out in taken:
         out, n = f"{base}-{n}", n + 1
