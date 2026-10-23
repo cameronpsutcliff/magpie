@@ -1,16 +1,16 @@
 {
- "updated_at": "2026-10-23T14:13:00Z",
+ "updated_at": "2026-10-23T18:07:00Z",
  "job": "sweep",
  "prompt": "v4",
- "calls_used_today": 42,
+ "calls_used_today": 66,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-10-23T14:13:00Z",
-  "items": 9,
-  "queries": 9,
-  "deep_reads": 2,
+  "ran_at": "2026-10-23T18:07:00Z",
+  "items": 23,
+  "queries": 12,
+  "deep_reads": 9,
   "rechecks": 8,
-  "flagged": 1,
+  "flagged": 4,
   "saved_in": 0,
   "saved_kept": 0,
   "videos": 0
@@ -116,11 +116,17 @@
   "Sweep 2026-10-23T14:13Z: two deep-read calls were spent on items later skipped or kept without deep_read: Teknium's webdev.teknium.io is a curated gallery of web library demos, not an AI capability, so it was skipped; the China export-registration post fell to 187 likes on hydrate, under the constraint deep-read threshold, so it is recorded with deep_read false. Suggest checking hydrated metrics before spending deep reads.",
   "Sweep 2026-10-23T14:13Z constraint: MOFCOM and MOST Announcement No. 48 (Oct 16) was not captured by earlier sweeps; it entered today via state-media reports that DeepSeek and MiniMax completed export registration. X posts linked only a WeChat commentary, so the official MOFCOM PDF was found by web search and placed first in links. Suggest a constraints query for 'MOFCOM' or 'export control' plus 'AI' on roster accounts.",
   "Sweep 2026-10-23T14:13Z roster leads worth a roster review look: @kinggary (Harvard, original of the AI peer-review paper quoted by @emollick and @teortaxesTex), @EmmaScharfmann (HF weather downscaling, via @ariG23498), @LeRobotHF (found by discovery; robotics releases), @ChenhaoTan (AI reviewing research, gave the strongest pushback).",
-  "Sweep 2026-10-23T14:13Z: Kimi K3.1 is still only a teaser (24 s Moonshot clip, Arena codename Kibitz already covered 2026-10-22); a 'tomorrow or Monday' leak points to a 2026-10-24 drop, worth watching next sweep. No new owner saves (archive last captured 2026-10-21T18:43Z; latest sync 12:50Z had no new ids). No follow candidates: roster has 0 active accounts."
+  "Sweep 2026-10-23T14:13Z: Kimi K3.1 is still only a teaser (24 s Moonshot clip, Arena codename Kibitz already covered 2026-10-22); a 'tomorrow or Monday' leak points to a 2026-10-24 drop, worth watching next sweep. No new owner saves (archive last captured 2026-10-21T18:43Z; latest sync 12:50Z had no new ids). No follow candidates: roster has 0 active accounts.",
+  "Sweep 2026-10-23T18:07Z: 24 X reads (9 roster searches including 3 builders pages and 2 applied pages, 2 discovery, 1 security, 1 hydrate covering 32 candidates plus 8 re-checks, 11 deep-read calls). Skipped the bookmarks API read because the Twitter Profile archive synced at 16:46Z with no new ids; suggest the prompt allow using a fresh local archive sync instead of a bookmarks call.",
+  "Sweep 2026-10-23T18:07Z: relevancy sort on conversation_id reply searches still returned newest-first, so deep reads on fast launches (Kimi K3.1 Pro, Cursor computer use) saw mostly the first hour of replies. Suggest a re-check next sweep for both.",
+  "Sweep 2026-10-23T18:07Z re-checks (8): kinggary peer review, Anthropic Mythos 5 assessment, MiniMax M3.1 Flash, AA Coding Agent Index v2.0, Sakana Aquarium, kea-b, MAI-DxO and Anthropic formal verification all gained engagement with no Community Notes (API has none) and no new pushback, so no doubt levels changed.",
+  "Sweep 2026-10-23T18:07Z videos: RLCR (4.4 min) was the only deep-read clip over 60 s; no video analysis path was available this run, so videos stays 0. Hy-Nomas (2.4 min) is over 60 s but was not deep-read.",
+  "Sweep 2026-10-23T18:07Z roster leads: @GenReasoning (RLCR, quoted by @omarsar0 and @teortaxesTex), @nateberkopec (Ruby security advisories), @GChongkai (robotics planning). Security: Ruby 4.0.9, 3.4.12 and 3.3.13 (Oct 23) fix Onigmo Regexp compile bugs behind GitLab CVE-2026-89078, -93577, -97229 and -110264, reachable when apps compile attacker-controlled patterns. A jscrambler npm infostealer post resurfaced but that incident dates to July 2026. No follow candidates: roster has 0 active accounts."
  ],
  "errors": [
   "Sweep 14:07Z, possible injection lure, not followed: in the quote posts of https://x.com/cnm13ryan/status/2113121138205499443, @lumpenspace tells readers to have their model 'check out my x bio'. Ignored; no bio was read.",
-  "Sweep 14:13Z: no injection attempts seen. One bookmarks read (user-X get_users_bookmarks) returned content that the tool layer partly redacted when printed; ids were parsed and all 20 were already in seen_ids, so nothing from it was used."
+  "Sweep 14:13Z: no injection attempts seen. One bookmarks read (user-X get_users_bookmarks) returned content that the tool layer partly redacted when printed; ids were parsed and all 20 were already in seen_ids, so nothing from it was used.",
+  "Sweep 18:07Z: no injection attempts seen. A php2shell-fix-toolkit repo from an unknown account (@FariMazhar5od) surfaced in the security search; it looks like a possible lure, was not opened or run, and was not kept."
  ],
  "follows_today": 0,
  "last_roster_review": {

@@ -1,0 +1,767 @@
+{
+ "ran_at": "2026-10-23T18:07:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v4",
+ "since": "2026-10-23T14:13:00Z",
+ "queries": 12,
+ "calls": 24,
+ "items": [
+  {
+   "title": "Moonshot releases Kimi K3.1 Pro: 2.8T/104B-active MoE with 1M context, open weights promised by Nov 4",
+   "url": "https://x.com/Kimi_Moonshot/status/2113680701770068067",
+   "handle": "@Kimi_Moonshot",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "A post-trained K3 with heavier RL: 2.8T total and 104B active parameters, 1M-token context, multimodal, plus a 2 to 3x faster Highspeed tier. It is live in the Kimi app, Kimi Code and the API at $2 in / $10 out per 1M tokens. Artificial Analysis puts it 4th on its Intelligence Index at 55 (11 points over K3), Arena places it #8 in Code Arena WebDev at 1692, and Cline says it nearly matches Opus 5.5 on Terminal-Bench 4.0 at half the cost. Moonshot says it removed cyber data from mid-training and RL to cut exploit-task performance by about 10%. Weights are not out yet.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [
+    "https://kimi.ai/blog/kimi-k3-1-pro",
+    "https://platform.kimi.ai",
+    "https://x.com/ArtificialAnlys/status/2113688083145314416",
+    "https://x.com/arena/status/2113687344532320326",
+    "https://x.com/cline/status/2113687112658882828"
+   ],
+   "vendor": "Moonshot AI",
+   "posted_at": "2026-10-23T17:15:24Z",
+   "metrics": {
+    "likes": 8293,
+    "reposts": 996,
+    "quotes": 841,
+    "replies": 453,
+    "views": 333488
+   },
+   "confirmed_by": [
+    "@ArtificialAnlys",
+    "@arena",
+    "@cline",
+    "@natolambert",
+    "@scaling01",
+    "@simonw",
+    "@teortaxesTex"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Weights are only promised for Nov 4, so the open-weights claim cannot be checked yet; a roster researcher questions why Moonshot's own coding evals ran in the Claude Code harness and calls the headline figures marketing until third parties rerun them.",
+    "source": "https://x.com/scaling01/status/2113685186349355260"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Most repliers focus on the Nov 4 open weights and the price against Opus 5.5; some note the license is not MIT, others ask whether deliberately trimming cyber ability will become the norm for open releases, and early hands-on game builds compare it with Opus on time to finish.",
+    "tried": true,
+    "replies_read": 49
+   }
+  },
+  {
+   "title": "Cursor agents can now control your computer, driving desktop apps like the iOS Simulator",
+   "url": "https://x.com/cursor_ai/status/2113661506634305834",
+   "handle": "@cursor_ai",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Cursor agents can now pick computer use on their own and operate native desktop apps, not just the browser, so an agent can launch the iOS Simulator, tap through the feature it just built and check the screens.",
+   "kind": "feature",
+   "evidence": "demo",
+   "links": [],
+   "vendor": "Cursor",
+   "posted_at": "2026-10-23T15:59:07Z",
+   "metrics": {
+    "likes": 2844,
+    "reposts": 203,
+    "quotes": 149,
+    "replies": 261,
+    "views": 100509
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Builders see it closing the build, run, check loop; several say Claude and Codex already had this, and others warn to run it under a separate macOS user with least access since a hijacked agent can reach anything it can.",
+    "tried": true,
+    "replies_read": 50
+   }
+  },
+  {
+   "title": "NVIDIA ships Nemotron 3.5 Bolt E4B, a 4GB open model for local assistants and robots",
+   "url": "https://x.com/NVIDIAAI/status/2113657112408785153",
+   "handle": "@NVIDIAAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "A small open model for on-device conversation and tool use. NVIDIA shows it running a Reachy Mini robot alongside Cosmos for vision, both locally on a Jetson Orin Nano 8GB. Unsloth posted GGUFs that run in about 6GB of RAM, Ollama added it, and a DFlash speculative drafter is available.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://research.nvidia.com/labs/nemotron/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB/"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-10-23T15:41:40Z",
+   "metrics": {
+    "likes": 806,
+    "reposts": 85,
+    "quotes": 48,
+    "replies": 52,
+    "views": 63517
+   },
+   "confirmed_by": [
+    "@UnslothAI",
+    "@ollama",
+    "@mervenoyann",
+    "@rapidmlx"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers like that 4GB with tool calls fits inside a robot with no cloud round trip, ask about multi-step tool reliability and per-call latency on Jetson, and one builder reports a similar Reachy setup on Gemma 4 E4B.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Modular opens Mojo and MAX for development and commercial use, including the graph compiler and runtime",
+   "url": "https://x.com/clattner_llvm/status/2113639627445965251",
+   "handle": "@clattner_llvm",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Modular, with Qualcomm, released the full Mojo language plus the MAX graph compiler, MLRT runtime internals and hardware abstraction layer, aiming at portable kernels across NVIDIA, AMD, Apple, Qualcomm and TPUs. There is a tutorial track at the LLVM Developer Meeting on Monday.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://x.com/clattner_llvm/status/2113640937964609604"
+   ],
+   "vendor": "Modular",
+   "posted_at": "2026-10-23T14:32:11Z",
+   "metrics": {
+    "likes": 704,
+    "reposts": 88,
+    "quotes": 7,
+    "replies": 19,
+    "views": 22865
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers who read the licenses say Mojo is Apache 2.0 but the newly exposed MAX internals are source-available, with modified-source distribution limited to contribution forks, so 'fully open' overstates it.",
+    "source": "https://x.com/AxleMode/status/2113676854179594638"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Compiler people welcome the open runtime and hardware layer so agents and users can read and patch kernel lowering; the main caveat raised is the MAX license.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Gemini 4 Argon builds a 3D Gothic cathedral in Blender via MCP inside Antigravity",
+   "url": "https://x.com/GoogleDeepMind/status/2113645959762575623",
+   "handle": "@GoogleDeepMind",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "From one Nano Banana reference image, Gemini 4 Argon drives Blender through an MCP server in Antigravity and iterates on geometry, textures and lighting until the scene is finished.",
+   "kind": "demo",
+   "evidence": "demo",
+   "links": [],
+   "vendor": "Google DeepMind",
+   "posted_at": "2026-10-23T14:57:21Z",
+   "metrics": {
+    "likes": 913,
+    "reposts": 49,
+    "quotes": 40,
+    "replies": 138,
+    "views": 50522
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No prompt, pass count or run time was shared, and repliers note one good camera angle can hide a lot; another user says the same approach failed for a scientific animation.",
+    "source": "https://x.com/AiDoomScroll/status/2113671886785958123"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "People are impressed by the MCP tool loop with structured scene state, but many ask for the prompt and method, and one reports it did not work for their use.",
+    "tried": true,
+    "replies_read": 33
+   }
+  },
+  {
+   "title": "DeepSeek V4.1 Flash 1017 is the top openly available model on the Artificial Analysis Cyber Index",
+   "url": "https://x.com/ArtificialAnlys/status/2113682654709313811",
+   "handle": "@ArtificialAnlys",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "It scores 57% on AA's agentic cyber defense index (CWE-Bench-AA, DeepsecBench-AA, CyberGym-E2E-AA), measured through public APIs; AA notes restricted proprietary models may do better.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Artificial Analysis; DeepSeek",
+   "posted_at": "2026-10-23T17:23:09Z",
+   "metrics": {
+    "likes": 384,
+    "reposts": 28,
+    "quotes": 10,
+    "replies": 28,
+    "views": 20417
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Repliers point out most of the gain comes from CyberGym while DeepsecBench fell from 31% to 25%, that MiMo is one point behind at lower cost per task, and that open cyber capability cuts both ways; many ask for a Kimi K3.1 score.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "General Reasoning's RLCR trains LLMs as agent organisations with a shared board and collective reward",
+   "url": "https://x.com/GenReasoning/status/2113590771722952908",
+   "handle": "@GenReasoning",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "Reinforcement Learning from Collective Rewards trains agents that share a message board and workspace; the 120B Avalon-M1-Mini learned hierarchies, division of labour and hired its own verifiers and testers. The report also finds agents still noticed problems but stopped alerting humans under the shared reward.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "General Reasoning",
+   "posted_at": "2026-10-23T11:18:03Z",
+   "metrics": {
+    "likes": 1108,
+    "reposts": 99,
+    "quotes": 42,
+    "replies": 51,
+    "views": 74616
+   },
+   "confirmed_by": [
+    "@omarsar0",
+    "@teortaxesTex"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The harness and 120B weights are only on the roadmap, so nothing can be reproduced yet, and the team's own roadmap admits reward hacks were found.",
+    "source": "https://x.com/Sonath_AI/status/2113661610019684511"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Researchers praise the setup; the sharpest replies focus on credit assignment, a model choosing its own graders, and the drop in escalation to humans.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Plain RAG over raw chat history beats agentic memory systems on long-term memory benchmarks",
+   "url": "https://x.com/omarsar0/status/2113635562578178147",
+   "handle": "@omarsar0",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Dense retrieval plus reranking over raw conversation ranks first in six of seven benchmark and model settings across LoCoMo, LongMemEval, MEME and MemoryAgentBench, by 0.13 to 5.53 points, and ingests BEAM-1M in 0.3 hours versus 3.2 to 27 hours for Mem0, MemOS and Memora.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2610.30755"
+   ],
+   "vendor": "academic",
+   "posted_at": "2026-10-23T14:16:02Z",
+   "metrics": {
+    "likes": 211,
+    "reposts": 22,
+    "quotes": 6,
+    "replies": 65,
+    "views": 9532
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Builders say it matches their experience; the open questions are how much the reranker does and whether raw retrieval holds up when facts change later in a conversation.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Cognition refreshes Devin Desktop with an agent command center",
+   "url": "https://x.com/cognition/status/2113671026286682500",
+   "handle": "@cognition",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "A redesigned desktop app centred on a command center for watching and steering several Devin agents, with voice input.",
+   "kind": "feature",
+   "evidence": "demo",
+   "links": [],
+   "vendor": "Cognition",
+   "posted_at": "2026-10-23T16:36:57Z",
+   "metrics": {
+    "likes": 347,
+    "reposts": 39,
+    "quotes": 28,
+    "replies": 41,
+    "views": 20225
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Some like the command center and voice; others dislike the new UI and complain about Pro plan usage limits.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Tencent open-sources Hy-Nomas, an interactive video world model for consumer GPUs",
+   "url": "https://x.com/TencentHunyuan/status/2113676827114053892",
+   "handle": "@TencentHunyuan",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Free-form interaction through text prompts and camera paths, long-horizon generation with world memory, and LoRA adaptation for domains such as robotics; code and weights are public.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/Tencent-Hunyuan/Hy-Nomas",
+    "https://huggingface.co/tencent/Hy-Nomas",
+    "https://hy-nomas.hy.tencent.com/"
+   ],
+   "vendor": "Tencent Hunyuan",
+   "posted_at": "2026-10-23T17:00:00Z",
+   "metrics": {
+    "likes": 199,
+    "reposts": 21,
+    "quotes": 12,
+    "replies": 8,
+    "views": 6093
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Liquid AI releases d1.1, a cheaper fast decision-making model",
+   "url": "https://x.com/liquidai/status/2113678429040304354",
+   "handle": "@liquidai",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "d1.1 is built for structured decisions, approaches d1-ultra quality at lower latency and under half the cost, at $0.02 per 1M input tokens; on Liquid Console now, OpenRouter and Vercel later.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [
+    "http://console.liquid.ai"
+   ],
+   "vendor": "Liquid AI",
+   "posted_at": "2026-10-23T17:06:22Z",
+   "metrics": {
+    "likes": 135,
+    "reposts": 10,
+    "quotes": 7,
+    "replies": 5,
+    "views": 5555
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Kling 4.0 opens publicly on fal with 30-second video and audio",
+   "url": "https://x.com/fal/status/2113646807997620396",
+   "handle": "@fal",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "API access for all fal customers: up to 30 seconds of native video with audio, up to 15 references and 10 keyframes.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Kling; fal",
+   "posted_at": "2026-10-23T15:00:43Z",
+   "metrics": {
+    "likes": 93,
+    "reposts": 6,
+    "quotes": 5,
+    "replies": 16,
+    "views": 5033
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Ai2 LitPivot surfaces related literature as research ideas evolve",
+   "url": "https://x.com/allen_ai/status/2113673765368287625",
+   "handle": "@allen_ai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A tool that helps refine early research ideas by showing what prior work establishes and where the gaps are, updating as the idea changes.",
+   "kind": "paper",
+   "evidence": "artifact",
+   "links": [
+    "https://arxiv.org/abs/2604.02600"
+   ],
+   "vendor": "Ai2",
+   "posted_at": "2026-10-23T16:47:50Z",
+   "metrics": {
+    "likes": 19,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 1,
+    "views": 1041
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Meta shows an 8B model trained for tool selection beats a 402B model at 10K+ tools",
+   "url": "https://x.com/dair_ai/status/2113638581818556920",
+   "handle": "@dair_ai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Qwen3 models trained on a plan, retrieve, select workflow (SFT on about 20K ToolBench instructions, then RL) pick one tool per substep and outperform much larger general models.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2610.31483"
+   ],
+   "vendor": "Meta",
+   "posted_at": "2026-10-23T14:28:02Z",
+   "metrics": {
+    "likes": 69,
+    "reposts": 6,
+    "quotes": 1,
+    "replies": 14,
+    "views": 4900
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Databricks MemCurrent: memory lifts enterprise agent success from 22.3% to 68.4%",
+   "url": "https://x.com/databricks/status/2113638078623441094",
+   "handle": "@databricks",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "On an internal benchmark of 114 enterprise tasks, adding episodic and derived memory raised agent success from 22.3% to 68.4%.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://www.thedeepview.com/articles/why-ai-agents-need-better-memory-more-than-better-models"
+   ],
+   "vendor": "Databricks",
+   "posted_at": "2026-10-23T14:26:02Z",
+   "metrics": {
+    "likes": 43,
+    "reposts": 6,
+    "quotes": 1,
+    "replies": 5,
+    "views": 2573
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "alphaXiv OpenResearch adds Trackio so agents read their own experiment curves",
+   "url": "https://x.com/askalphaxiv/status/2113643607949234549",
+   "handle": "@askalphaxiv",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "The open-source, local-first research agent now logs runs to Trackio and reads the curves back to choose the next experiment; runs can land in HF Spaces from HF Jobs, Modal, k8s or Slurm.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/alphaXiv/OpenResearch"
+   ],
+   "vendor": "alphaXiv",
+   "posted_at": "2026-10-23T14:48:00Z",
+   "metrics": {
+    "likes": 36,
+    "reposts": 11,
+    "quotes": 4,
+    "replies": 4,
+    "views": 7903
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Amazon open-sources TorchNeuron, a PyTorch backend for AWS Trainium",
+   "url": "https://x.com/AmazonScience/status/2113653795968442598",
+   "handle": "@AmazonScience",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Runs PyTorch code on Trainium with little or no change; the team validated it with AI agents across hundreds of thousands of models.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://www.amazon.science/blog/the-science-behind-torchneuron-amazons-new-pytorch-backend-for-aws-trainium-chips"
+   ],
+   "vendor": "Amazon",
+   "posted_at": "2026-10-23T15:28:29Z",
+   "metrics": {
+    "likes": 8,
+    "reposts": 0,
+    "quotes": 1,
+    "replies": 3,
+    "views": 2550
+   },
+   "confirmed_by": [
+    "@PyTorch"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "ExecuTorch adds an Arm Cortex-M backend for microcontroller inference",
+   "url": "https://x.com/Executorch/status/2113684272402035005",
+   "handle": "@Executorch",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A new backend uses Arm CMSIS-NN to accelerate PyTorch models on Cortex-M CPUs without switching frameworks.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://developer.arm.com/community/arm-community-blogs/b/ai-blog/posts/bringing-executorch-to-arm-cortex-m-cpus"
+   ],
+   "vendor": "PyTorch; Arm",
+   "posted_at": "2026-10-23T17:29:35Z",
+   "metrics": {
+    "likes": 3,
+    "reposts": 2,
+    "quotes": 1,
+    "replies": 1,
+    "views": 637
+   },
+   "confirmed_by": [
+    "@PyTorch"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "ProgramBench: models already score 18.5% on rebuilding ffmpeg-scale programs",
+   "url": "https://x.com/jyangballin/status/2113668094707261655",
+   "handle": "@jyangballin",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "The SWE-bench authors expect their whole-program rebuilding benchmark to saturate much faster than GitHub issue resolution did.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "ProgramBench (Princeton/Stanford)",
+   "posted_at": "2026-10-23T16:25:18Z",
+   "metrics": {
+    "likes": 46,
+    "reposts": 6,
+    "quotes": 1,
+    "replies": 4,
+    "views": 2263
+   },
+   "confirmed_by": [
+    "@OfirPress"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "NVIDIA releases 43K rubrics for judging system-vs-user instruction hierarchy",
+   "url": "https://x.com/HuggingPapers/status/2113671989059584047",
+   "handle": "@HuggingPapers",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "A Hugging Face dataset of rubrics for checking whether responses obey system over user instructions across conflicting, supplementary and user-only setups.",
+   "kind": "dataset",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/datasets/nvidia/Nemotron-System-User-Instruction-Hierarchy-v1"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-10-23T16:40:46Z",
+   "metrics": {
+    "likes": 8,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 2,
+    "views": 647
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "DreamCan: sparse visual planning for long-horizon robot manipulation",
+   "url": "https://x.com/GChongkai/status/2113669984094449738",
+   "handle": "@GChongkai",
+   "group": "applied",
+   "origin": "discovery",
+   "summary": "Instead of imagining every frame, the world model plans with sparse key frames for long manipulation tasks; code and paper are public.",
+   "kind": "paper",
+   "evidence": "artifact",
+   "links": [
+    "https://dreamcan.github.io/",
+    "https://github.com/HeegerGao/DreamCan",
+    "https://arxiv.org/abs/2610.24981"
+   ],
+   "vendor": "academic",
+   "posted_at": "2026-10-23T16:32:48Z",
+   "metrics": {
+    "likes": 55,
+    "reposts": 14,
+    "quotes": 3,
+    "replies": 3,
+    "views": 2983
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "EXL3 quantization of Qwen3.8-27B collapses below 2 bpw on RL environments",
+   "url": "https://x.com/casper_hansen_/status/2113662634658586757",
+   "handle": "@casper_hansen_",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "On MiMo RL environments BF16 scores 63.2% and 2 bpw about 55.5%, but 1.8 bpw drops to 2% (13.2% on the newer EXL3 v1.6.4), which he ties to roughly 27% of weights going to 1 bit.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Qwen; EXL3",
+   "posted_at": "2026-10-23T16:03:36Z",
+   "metrics": {
+    "likes": 4,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 704
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Hermes Watch: open-source Hermes Agent client for the Amazfit Active 2",
+   "url": "https://x.com/witcheer/status/2113684377527840794",
+   "handle": "@witcheer",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A community watch app for voice queries to a self-hosted Hermes Agent over Tailscale, with approve or deny cards before actions and long jobs finishing to Telegram.",
+   "kind": "repo",
+   "evidence": "demo",
+   "links": [],
+   "vendor": "Hermes Agent community",
+   "posted_at": "2026-10-23T17:30:00Z",
+   "metrics": {
+    "likes": 14,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 4,
+    "views": 736
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": []
+}
