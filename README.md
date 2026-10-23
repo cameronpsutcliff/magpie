@@ -64,6 +64,9 @@ lifts. Each idea carries its `mix` and an `amplification` term: 1 plus the adopt
 ingredient, from days seen, peak signal, stars gained and works-with neighbours before that day. The rank multiplies by
 it, and at least one idea of each mix is kept when both were proposed. Code ranks; the model only proposes.
 
+A named integration is read from works_with lists. `MAGPIE_TEXT_NAMED=1` also reads it from what either side's text states
+("deploys to vLLM", "configures ... OpenCode"), matching product names whole; it is off by default.
+
 ## Threats
 
 A threat is a security event that changes what is safe to run, trust or depend on when building with or running AI: a

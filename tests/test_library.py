@@ -1,8 +1,10 @@
 import json
+import os
 import shutil
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 from magpie import library as L
 from magpie import possibilities as P
@@ -139,6 +141,90 @@ class LibraryTests(unittest.TestCase):
         self.assertEqual({p["mix"] for p in kept}, {"today_x_today", "today_x_library"})
         only = P.choose(P.rank([dict(p) for p in strong]), 3)
         self.assertEqual(len(only), 3)  # one mix proposed: rank alone decides
+
+
+def entry(e):
+    return {"event": e, "first_seen": "2099-01-01", "days_seen": 1, "peak": 50.0, "stars_gained": 0, "works_with": 0}
+
+
+class StatedIntegrationTests(unittest.TestCase):
+    """Named integrations read from text (MAGPIE_TEXT_NAMED): the name heuristics, then the bonus through neighbours."""
+
+    def test_tok_drops_versions_but_not_names(self):
+        self.assertEqual([L._tok(w) for w in ("Qwen3.8", "GPT-6", "deepseek-v4.1-flash", "Code2Skill", "v4.1", "vLLM")],
+                         ["qwen", "gpt", "deepseek", "code2skill", "", "vllm"])
+
+    def test_shaped_names(self):
+        self.assertTrue(all(L._shaped(w) for w in ("DeepInfer", "vLLM", "Qwen3", "MCP")))
+        self.assertFalse(any(L._shaped(w) for w in ("Claude", "open-sources", "on-policy", "KV")))
+
+    def test_phrases_take_a_family_prefix_only_from_a_known_repo(self):
+        self.assertEqual(L._phrases("sglang-omni", {"sglang"}), {("sglang-omni",), ("sglang",)})
+        self.assertEqual(L._phrases("sglang-omni", set()), {("sglang-omni",)})
+        self.assertEqual(L._phrases("Claude Code", set()), {("claude", "code")})
+        self.assertEqual(L._phrases("Flash", set()), set())  # a tier word is not a name
+
+    def test_subject_is_the_product_not_the_maker_or_a_mention(self):
+        s = L._subject
+        self.assertEqual(s("DeepSeek opens its DeepInfer inference framework", {"deepseek"}, set()), "DeepInfer")
+        self.assertEqual(s("Claude Code falls back to AGENTS.md", set(), set()), "Claude Code")  # a run of capitals
+        self.assertEqual(s("Free Claude Code adds browser harness sessions", set(), set()), "")  # opens with a plain word
+        self.assertEqual(s("Marketing skills pack for Claude Code agents", set(), set()), "")
+        self.assertEqual(s("Claude designs protein binders", set(), {"claude"}), "Claude")
+        self.assertEqual(s("Claude designs protein binders", set(), set()), "")  # not a known proper noun here
+
+    def test_products_skip_posts_about_something(self):
+        post = dict(ev("url:x.com/a/status/1", "Claude reportedly discovers a novel enzyme"), kind="community")
+        repo = ev("gh:sgl-project/sglang-omni", "SGLang-Omni serves audio and multimodal models")
+        self.assertEqual(L.products(post, {"claude"}, set()), set())
+        self.assertEqual(L.products(repo, set(), {"sglang"}), {("sglang-omni",), ("sglang",)})
+
+    def test_states_whole_names_written_as_names(self):
+        def win(text):
+            return L._windows({"key": "gh:a/b", "title": "", "brief": {"newly_possible": text}})
+        self.assertTrue(L._states(win("Optimised models deploy to TensorRT-LLM or vLLM."), {("vllm",)}))
+        self.assertFalse(L._states(win("It works with Claude Code."), {("claude",)}))  # Claude is not Claude Code
+        self.assertTrue(L._states(win("It works with Claude Code."), {("claude", "code")}))
+        self.assertFalse(L._states(win("It runs on hindsight alone."), {("hindsight",)}))  # a plain word, not the repo
+        self.assertTrue(L._states(win("It configures the agents you use: Claude Code, Cursor, OpenCode, Codex."),
+                                  {("opencode",)}))  # a list item, not a two-word name
+        self.assertFalse(L._states(win("An open alternative to Muse."), {("muse",)}))  # not an integration
+        works = {"key": "gh:a/b", "title": "", "brief": {"works_with": [{"name": "SGLang", "how": "serves it"}]}}
+        self.assertTrue(L._states(L._windows(works), {("sglang",)}))
+
+    def test_the_bonus_comes_once_and_only_when_switched_on(self):
+        vllm = ev("gh:vllm-project/vllm", "vLLM serves models fast", what="High-throughput model serving.", topics=("inference",))
+        fill = [ev(f"gh:f/filler-{i}", f"Filler {i} does a thing", what=f"Unrelated thing {i}.") for i in range(7)]
+        lib = {e["key"]: entry(e) for e in [vllm, *fill]}  # big enough that one mention of vLLM is not common
+        opt = ev("gh:nvidia/model-optimizer", "Model-Optimizer compresses models", topics=("efficiency",),
+                 what="Quantise and prune a model, then deploy to TensorRT-LLM or vLLM.")
+
+        def score(arrival, **kw):
+            return dict(L.neighbours([arrival], lib, set(), **kw)[arrival["id"]]).get(vllm["key"], 0.0)
+
+        off, on = score(opt, text_named=False), score(opt, text_named=True)
+        self.assertEqual(round(on - off, 3), 0.5)
+        with mock.patch.dict(os.environ, {L.TEXT_NAMED: "1"}):
+            self.assertEqual(score(opt), on)
+        with mock.patch.dict(os.environ, {L.TEXT_NAMED: ""}):
+            self.assertEqual(score(opt), off)
+        listed = dict(opt, brief=dict(opt["brief"], works_with=[{"name": "vllm", "how": "deploys to it"}]))
+        self.assertEqual(score(listed, text_named=True), score(listed, text_named=False))  # main's rule fired; no second 0.5
+
+    def test_the_library_side_can_state_it_and_a_common_name_says_nothing(self):
+        serve = ev("gh:acme/tensorserve", "TensorServe serves models on any GPU", what="Serve models fast.", topics=("inference",))
+        tool = ev("gh:b/quantkit", "QuantKit shrinks models", what="Quantise a model, then deploy to TensorServe.",
+                  topics=("efficiency",))
+        fill = [ev(f"gh:f/filler-{i}", f"Filler {i} does a thing", what=f"Unrelated thing {i}.") for i in range(7)]
+
+        def bonus(library):
+            lib = {e["key"]: entry(e) for e in library}
+            on, off = (dict(L.neighbours([serve], lib, set(), text_named=t)[serve["id"]]).get(tool["key"], 0.0) for t in (True, False))
+            return round(on - off, 3)
+
+        self.assertEqual(bonus([tool, *fill]), 0.5)  # the library capability's text names the arrival
+        crowd = [dict(f, summary=f["summary"] + " Runs on TensorServe.") for f in fill]
+        self.assertEqual(bonus([tool, *crowd]), 0.0)  # TensorServe is in more than 15% of the library: too common
 
 
 if __name__ == "__main__":
