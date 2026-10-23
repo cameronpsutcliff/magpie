@@ -227,6 +227,65 @@ class PairJudgeTests(unittest.TestCase):
         with mock.patch.object(J.shutil, "which", return_value=str(fake)), self.assertRaises(RuntimeError):
             J._agy("prompt", "Gemini 4 Argon (High)", 20)
 
+    def test_agy_that_never_answers_is_killed_at_its_timeout(self):
+        fake = self.tmp / "agy"
+        pid_file = self.tmp / "agy.pid"
+        fake.write_text(f"#!/bin/sh\necho $$ > '{pid_file}'\nexec sleep 60\n")
+        fake.chmod(0o755)
+        t = time.time()
+        with mock.patch.object(J.shutil, "which", return_value=str(fake)), self.assertRaises(J.subprocess.TimeoutExpired):
+            J._agy("prompt", "Gemini 4 Argon (High)", 1)
+        self.assertLess(time.time() - t, 4)
+        with self.assertRaises(ProcessLookupError):
+            os.kill(int(pid_file.read_text()), 0)
+
+    def test_answers_that_are_not_json_objects_are_unreadable_not_a_crash(self):
+        cands = {CKPT["id"]: [UNSLOTH["key"]]}
+        for text in ("[]", "null", '"text"', "no JSON here"):
+            with self.assertRaises(ValueError):
+                J.parse(text, cands, self.lib)
+        odd = json.dumps({"arrivals": {"id": CKPT["id"]}})
+        self.assertEqual(J.parse(odd, cands, self.lib), {})
+        odd = json.dumps({"arrivals": [{"id": CKPT["id"], "picks": "all", "reject": {"id": UNSLOTH["id"]}},
+                                       {"id": ["not", "a", "string"]}]})
+        self.assertEqual(J.parse(odd, cands, self.lib), {CKPT["id"]: {"picks": [], "reject": {}}})
+        runners, _ = self.runners(claude=answer(AGREE, REJECT), codex=answer(AGREE, REJECT), agy="Sure: []")
+        keys, receipt, _ = self.pick(runners)
+        self.assertEqual(receipt["pair_judge"]["lanes"]["agy"]["status"], "unreadable")
+        self.assertIsNone(receipt["pair_judge"]["fallback"])
+
+    def test_a_cache_of_the_wrong_shape_is_ignored_and_rewritten(self):
+        path = self.cache / "2099-02-05.json"
+        for bad in ([], "text", {"claude": ["x"], "codex": {"m:d": 3}}):
+            write_json(path, bad)
+            runners, calls = self.runners(claude=answer(AGREE, REJECT), codex=answer(AGREE, REJECT), agy=answer(AGREE))
+            _, receipt, _ = self.pick(runners)
+            self.assertEqual(sorted(calls), ["agy", "claude", "codex"])
+            self.assertTrue(all(v["status"] == "ok" for v in receipt["pair_judge"]["lanes"].values()))
+            self.assertEqual(sorted(json.loads(path.read_text())), ["agy", "claude", "codex"])
+
+    def test_a_cache_written_meanwhile_by_another_run_is_kept(self):
+        path = self.cache / "2099-02-05.json"
+
+        def other_run_then_answer():
+            write_json(path, {"claude": {"other-model:abc": "another run's answer"}})
+            return answer(AGREE, REJECT)
+        runners, _ = self.runners(claude=other_run_then_answer, codex=answer(AGREE, REJECT), agy=answer(AGREE))
+        self.pick(runners)
+        cache = json.loads(path.read_text())
+        self.assertIn("other-model:abc", cache["claude"])
+        self.assertEqual(len(cache["claude"]), 2)
+        self.assertEqual(sorted(cache), ["agy", "claude", "codex"])
+
+    def test_a_lane_error_is_published_by_type_only(self):
+        runners, _ = self.runners(claude=answer(AGREE, REJECT), codex=answer(AGREE, REJECT),
+                                  agy=RuntimeError("agy failed in /Users/someone/.config with account a@b.c"))
+        with mock.patch("sys.stderr") as err:
+            _, receipt, _ = self.pick(runners)
+        self.assertEqual(receipt["pair_judge"]["lanes"]["agy"]["error"], "RuntimeError")
+        self.assertNotIn("/Users", json.dumps(receipt))
+        self.assertIn("/Users/someone", "".join(str(c) for c in err.write.call_args_list))
+
     def test_flag_and_lanes_come_from_the_environment(self):
         with mock.patch.dict(os.environ, {J.FLAG: ""}):
             self.assertFalse(J.enabled())

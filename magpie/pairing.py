@@ -7,7 +7,8 @@ MAGPIE_PAIR_JUDGE=1 this module asks a panel instead:
 
 1. Recall: about RECALL candidates per strong arrival, from the scorer's best and the arrival's earlier ties (covered by
    the same post, or combined in a possibility, on an earlier day).
-2. Judge: each lane (one model family each, run as a CLI on its subscription, in parallel within BUDGET seconds) picks
+2. Judge: each lane (one model family each, run as a CLI on its subscription, in parallel; the panel waits no more
+   than BUDGET seconds and each runner stops its own process then) picks
    up to PER_ARRIVAL partners best first, labels each relation (runs-on, trains, extends, complements) with a one-line
    reason, and rejects candidates that only share a maker or platform, duplicate the arrival or compete with it.
 3. Aggregate: a partner at least MIN_FAMILIES families pick wins, ordered by families, then Borda points, then the
@@ -20,12 +21,14 @@ and reason to the possibilities editor, and the votes go in the pool receipt.
 """
 from __future__ import annotations
 
+import fcntl
 import hashlib
 import json
 import os
 import re
 import shutil
 import subprocess
+import sys
 import tempfile
 import time
 from collections import defaultdict
@@ -216,36 +219,62 @@ def prompt(date: str, arrivals: list[dict], lib: dict[str, dict], cands: dict[st
 
 def parse(text: str, cands: dict[str, list[str]], lib: dict[str, dict]) -> dict[str, dict]:
     """arrival id -> {"picks": [(key, relation, reason)] best first, at most PER_ARRIVAL, "reject": {key: relation}}.
-    Unknown arrivals or candidates, unknown relations and repeats are dropped. ValueError when there is no JSON."""
+    Unknown arrivals or candidates, unknown relations, repeats and anything of the wrong shape are dropped. ValueError
+    (and nothing else) when the answer holds no JSON object."""
     start = (text or "").find("{")
     if start < 0:
         raise ValueError("no JSON object in the answer")
     data, _ = json.JSONDecoder().raw_decode(text[start:])
+    if not isinstance(data, dict):
+        raise ValueError("the answer is not a JSON object")
+    listed = lambda v: v if isinstance(v, list) else []  # noqa: E731
     out = {}
-    for row in data.get("arrivals") or []:
-        if not isinstance(row, dict) or row.get("id") not in cands:
+    for row in listed(data.get("arrivals")):
+        if not isinstance(row, dict) or not isinstance(row.get("id"), str) or row["id"] not in cands:
             continue
         by_id = {lib[k]["event"]["id"]: k for k in cands[row["id"]]}
         picks, seen = [], set()
-        for p in row.get("picks") or []:
-            k = by_id.get(p.get("id")) if isinstance(p, dict) else None
+        for p in listed(row.get("picks")):
+            k = by_id.get(p.get("id")) if isinstance(p, dict) and isinstance(p.get("id"), str) else None
             if k and k not in seen and p.get("relation") in RELATIONS and len(picks) < library.PER_ARRIVAL:
                 seen.add(k)
                 picks.append((k, p["relation"], re.sub(r"\s+", " ", str(p.get("reason") or "")).strip()[:240]))
         reject = {}
-        for r in row.get("reject") or []:
-            k = by_id.get(r.get("id")) if isinstance(r, dict) else None
+        for r in listed(row.get("reject")):
+            k = by_id.get(r.get("id")) if isinstance(r, dict) and isinstance(r.get("id"), str) else None
             if k and k not in seen and r.get("relation") in REJECTS:
                 reject[k] = r["relation"]
         out[row["id"]] = {"picks": picks, "reject": reject}
     return out
 
 
+def _cached(path: Path) -> dict[str, dict[str, str]]:
+    """The cache file as lane -> {"model:digest": answer}; anything of another shape is ignored."""
+    raw = load_json(path, {})
+    if not isinstance(raw, dict):
+        return {}
+    return {lane: {k: v for k, v in entries.items() if isinstance(v, str)} for lane, entries in raw.items()
+            if isinstance(lane, str) and isinstance(entries, dict)}
+
+
+def _remember(path: Path, new: dict[str, dict[str, str]]) -> None:
+    """Add answers to the cache file under a lock, merging with what another run may have written meanwhile."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path.with_suffix(".lock"), "w") as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        cache = _cached(path)
+        for lane, entries in new.items():
+            cache.setdefault(lane, {}).update(entries)
+        write_json(path, cache)
+
+
 def _ask(text: str, date: str, names: list[str], runners: dict, budget: int, cache_dir: Path) -> dict[str, dict]:
-    """lane -> {"status": ok|cached|timeout|error|absent, "seconds", "model", "text"}; lanes run in parallel and none
-    runs past `budget`. Answers are cached by date, lane, model and the prompt itself."""
+    """lane -> {"status": ok|cached|timeout|error|absent, "seconds", "model", "text"}. Lanes run in parallel and the panel
+    waits for them no longer than `budget`; each runner also stops its own process at `budget` (a subprocess timeout,
+    or agy's kill), so a lane cut here ends soon after. Answers are cached by date, lane, model and the prompt itself.
+    A failure is recorded by its type only, since the receipt is published; the detail goes to the local log."""
     path = Path(cache_dir) / f"{date}.json"
-    cache = load_json(path, {}) or {}
+    cache = _cached(path)
     digest = hashlib.sha256(f"{VERSION}\n{text}".encode()).hexdigest()[:16]
     out, todo = {}, []
     for lane in names:
@@ -267,18 +296,22 @@ def _ask(text: str, date: str, names: list[str], runners: dict, budget: int, cac
             return answer, round(time.time() - t, 1)
         futures = {pool.submit(call, lane, model): (lane, model) for lane, model in todo}
         done, _ = wait(futures, timeout=budget)
+        new: dict[str, dict[str, str]] = {}
         for f, (lane, model) in futures.items():
             if f not in done:
                 out[lane] = {"status": "timeout", "seconds": round(time.time() - t0, 1), "model": model, "text": ""}
             elif f.exception() is not None:
-                out[lane] = {"status": "error", "seconds": round(time.time() - t0, 1), "model": model,
-                             "text": "", "error": str(f.exception())[:200]}
+                ex = f.exception()
+                print(f"pair judge: {lane} failed: {str(ex)[:300]}", file=sys.stderr)
+                out[lane] = {"status": "error", "seconds": round(time.time() - t0, 1), "model": model, "text": "",
+                             "error": type(ex).__name__}
             else:
                 answer, seconds = f.result()
                 out[lane] = {"status": "ok", "seconds": seconds, "model": model, "text": answer}
-                cache.setdefault(lane, {})[f"{model}:{digest}"] = answer
+                new[lane] = {f"{model}:{digest}": answer}
         pool.shutdown(wait=False, cancel_futures=True)
-        write_json(path, cache)
+        if new:
+            _remember(path, new)
     return out
 
 
