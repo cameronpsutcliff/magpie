@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-10-23T02:10:00Z",
- "job": "sweep",
+ "updated_at": "2026-10-23T09:38:00Z",
+ "job": "roster",
  "prompt": "v4",
- "calls_used_today": 131,
+ "calls_used_today": 16,
  "notes_via_api": false,
  "last_sweep": {
   "ran_at": "2026-10-23T02:01:00Z",
@@ -17,7 +17,7 @@
  },
  "roster": {
   "curated": 223,
-  "trial": 32,
+  "trial": 37,
   "active": 0,
   "retired": 0
  },
@@ -105,18 +105,23 @@
   "No new saves since the last sweep: the newest bookmarks read through the X plugin were all already seen, and the Twitter Profile archive (sync 00:46Z) had no new candidates.",
   "MiniMax M3.1 Flash weights ship under a MiniMax community license (attribution, and written permission above 20M dollars revenue per repliers), not Apache; worth a constraint-style note if Magpie tracks licenses.",
   "Skipped Kimi_Moonshot 2113445757185606062: a 24 s teaser clip with no text and nothing released; watch for a K3.1 launch next sweep.",
-  "Follow candidates for a future day (no follows made; today's 3 are used): curated roster accounts with 3+ qualifying first-hand items in the last 30 days and max doubt under 2: @fal (6), @pytorch (4), @bot (4), @claudeai (4), @OpenAIDevs (3), @lmsysorg (3), @modal (3), @NousResearch (3), @MiniMax_AI (3), @FactoryAI (3), @kirodotdev (3), @Aleph__Alpha (3), @FireworksAI_HQ (3), @NVIDIAAI (3), @sqs (3). Excluded: @ValsAI and @omarsar0 (a doubt 2 item), @askalphaxiv, @dair_ai, and @aitrackerbot (aggregators, not first-hand)."
+  "Follow candidates for a future day (no follows made; today's 3 are used): curated roster accounts with 3+ qualifying first-hand items in the last 30 days and max doubt under 2: @fal (6), @pytorch (4), @bot (4), @claudeai (4), @OpenAIDevs (3), @lmsysorg (3), @modal (3), @NousResearch (3), @MiniMax_AI (3), @FactoryAI (3), @kirodotdev (3), @Aleph__Alpha (3), @FireworksAI_HQ (3), @NVIDIAAI (3), @sqs (3). Excluded: @ValsAI and @omarsar0 (a doubt 2 item), @askalphaxiv, @dair_ai, and @aitrackerbot (aggregators, not first-hand).",
+  "Roster review 2026-10-23: calls_used_today is 16 on the America/Chicago day (Oct 23 Central began 05:00Z; this review is its first job). On a UTC-day count it would be 147 (131 from the 02:01Z sweep plus 16). The prompt still needs to name one day boundary.",
+  "Roster review 2026-10-23: added 5 trials (@SpeechifyAI, @LoubnaBenAllal1, @KLieret, @sageai_official, @Alex_tra_memory). No promotions (earliest 14-day check 2026-11-03) and no retirements (no account has two level-2 flags; @ValsAI, @SemiAnalysis_, @omarsar0 and off-roster @Exocija have one each; the 45-day rule cannot bite before about 2026-11-07).",
+  "Roster review 2026-10-23 rejected, so they are not re-checked soon: promotion or events over 1 in 5: @pilvar222 (near-miss: strong first-hand Aikido cyber benchmark posts, but livestream, colleague-video and event plugs make about 3 of 14 top-level posts), @corridor (happy hours, press), @GenrobotAI (partner congrats, IROS booth), @ltx_io (events, film credits, challenge), @asymptotelabs (seed round and hiring posts, emoji quotes), @Baidu_Inc (corporate PR, robotaxi news); one qualifying post in 30 days: @MemOS_dev, @MangQiuyang; mostly opinion or quotes, product covered by curated accounts: @thorstenball (@AmpCode, @sqs), @Ronny_MiniMax (@MiniMax_AI); too small or too new, judged from profile only: @Modilify (1 post, created 2026-10-20), @ajbarryiii (8 followers), @danilodegoede (12 posts), @TatraLabs (22 followers), @cnm13ryan (22 posts ever), @MiniHui_zhu (32 posts ever); not first-hand AI capability accounts: @canva (brand account), @pamelafox (cloud advocate), @gadievron (security CEO, mostly commentary), @vikvang1 (DevEx engineer). @fastino_ai does not exist; fastino's handle for GLiDE was not found.",
+  "Roster review 2026-10-23: candidate sources used were the 'worth a roster review look' notes from the Oct 22 sweeps, off-roster originals in sweep files, and makers in data/v1/latest.json plus the last 7 days. Only @MangQiuyang (FrontierCS 2, via 3 roster accounts) was an off-roster original quoted by two or more roster accounts this window. No saves passed vetting this week, so that source gave nothing. Editions' maker field names companies, not X handles, so mapping makers to handles is manual.",
+  "Roster review 2026-10-23: no sweep files older than 14 days (oldest is 2026-10-20T17-39), so nothing was pruned; the first prune is due 2026-11-03. Today is Friday, so no drafts were written."
  ],
  "errors": [
   "Sweep 14:07Z, possible injection lure, not followed: in the quote posts of https://x.com/cnm13ryan/status/2113121138205499443, @lumpenspace tells readers to have their model 'check out my x bio'. Ignored; no bio was read."
  ],
- "follows_today": 3,
+ "follows_today": 0,
  "last_roster_review": {
-  "ran_at": "2026-10-22T09:36:00Z",
-  "reads": 23,
+  "ran_at": "2026-10-23T09:38:00Z",
+  "reads": 16,
   "budget": 80,
-  "candidates_checked": 22,
-  "added": 6,
+  "candidates_checked": 27,
+  "added": 5,
   "promoted": 0,
   "retired": 0,
   "source_leads_added": 4,

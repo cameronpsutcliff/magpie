@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-22T09:36:00Z",
+ "updated_at": "2026-10-23T09:35:00Z",
  "accounts": [
   {
    "handle": "@thsottiaux",
@@ -524,6 +524,88 @@
    ],
    "last_qualifying_post": "2026-10-20",
    "retired_reason": null
+  },
+  {
+   "handle": "@SpeechifyAI",
+   "name": "SpeechifyAI",
+   "group": "labs",
+   "affiliation": "Speechify",
+   "why": "First-hand speech model lab (Simba TTS): model releases with fact sheets and published latency benchmarks with every request.",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-10-23",
+   "evidence": [
+    "https://x.com/SpeechifyAI/status/2112892450234589517",
+    "https://x.com/SpeechifyAI/status/2112530144212513229",
+    "https://x.com/SpeechifyAI/status/2112167688189399225"
+   ],
+   "last_qualifying_post": "2026-10-21",
+   "retired_reason": null
+  },
+  {
+   "handle": "@LoubnaBenAllal1",
+   "name": "Loubna Ben Allal",
+   "group": "opensource",
+   "affiliation": "Hugging Face",
+   "why": "Hugging Face researcher first-hand on open model releases (Carbon family, Carbon-X DNA plus text model with weights).",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-10-23",
+   "evidence": [
+    "https://x.com/LoubnaBenAllal1/status/2113212025560023513",
+    "https://x.com/LoubnaBenAllal1/status/2108228619860656434"
+   ],
+   "last_qualifying_post": "2026-10-22",
+   "retired_reason": null
+  },
+  {
+   "handle": "@KLieret",
+   "name": "Kilian Lieret",
+   "group": "research",
+   "affiliation": "Meta Superintelligence (SWE-bench, SWE-agent)",
+   "why": "First-hand on coding-agent benchmarks: SWE-sweep benchmark and leaderboard, mini-SWE-agent, ProgramBench.",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-10-23",
+   "evidence": [
+    "https://x.com/KLieret/status/2113272881098756165",
+    "https://x.com/KLieret/status/2105670833574465933"
+   ],
+   "last_qualifying_post": "2026-10-22",
+   "retired_reason": null
+  },
+  {
+   "handle": "@sageai_official",
+   "name": "SageAI",
+   "group": "labs",
+   "affiliation": "Shanghai AI Lab (InternScience)",
+   "why": "Official Shanghai AI Lab science-model account: Sage-A1.5 open agentic MoE and Intern-S2 math results with write-ups.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-10-23",
+   "evidence": [
+    "https://x.com/sageai_official/status/2113192901073309849",
+    "https://x.com/sageai_official/status/2110924243798286547"
+   ],
+   "last_qualifying_post": "2026-10-22",
+   "retired_reason": null
+  },
+  {
+   "handle": "@Alex_tra_memory",
+   "name": "Alex",
+   "group": "builders",
+   "affiliation": "FluidInference (FluidAudio)",
+   "why": "Hands-on on-device builder: ports TTS, ASR and OCR models to Core ML and MLX on Apple silicon with open code and measured speeds.",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-10-23",
+   "evidence": [
+    "https://x.com/Alex_tra_memory/status/2112782259916865643",
+    "https://x.com/Alex_tra_memory/status/2112731253304594671",
+    "https://x.com/Alex_tra_memory/status/2109868778615976113"
+   ],
+   "last_qualifying_post": "2026-10-23",
+   "retired_reason": null
   }
  ],
  "source_leads": [
@@ -693,6 +775,43 @@
    "why": "Hands-on robot policy write-ups (pi0.5 latency, camera and lighting ablations) with open code.",
    "seen_via": [
     "@PrismaXai"
+   ]
+  },
+  {
+   "kind": "blog",
+   "name": "vLLM blog",
+   "url": "https://vllm.ai/blog",
+   "why": "Engineering write-ups behind vLLM features (TPU backend, kernels); Magpie watches only vLLM GitHub releases.",
+   "seen_via": [
+    "@vllm_project",
+    "@RichardSocher"
+   ]
+  },
+  {
+   "kind": "blog",
+   "name": "fal blog",
+   "url": "https://fal.ai/blog",
+   "why": "Hosted image, video and audio model launches and speed write-ups from a trial roster account.",
+   "seen_via": [
+    "@fal"
+   ]
+  },
+  {
+   "kind": "blog",
+   "name": "Liquid AI blog",
+   "url": "https://www.liquid.ai/blog",
+   "why": "Release notes and benchmarks for LFM on-device models, which Magpie sees only via Hugging Face.",
+   "seen_via": [
+    "@liquidai"
+   ]
+  },
+  {
+   "kind": "blog",
+   "name": "Speechify AI blog",
+   "url": "https://speechify.ai/blog",
+   "why": "Simba speech model releases plus reproducible TTS latency and pricing measurements.",
+   "seen_via": [
+    "@SpeechifyAI"
    ]
   }
  ]
