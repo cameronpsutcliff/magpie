@@ -903,6 +903,11 @@
     "constraint": {
      "$ref": "#/$defs/constraint_fields",
      "description": "Present when kind is constraint."
+    },
+    "reported": {
+     "type": "string",
+     "format": "date",
+     "description": "A follow-up: the latest earlier edition (of the last 14) that wrote this capability up. Its words say only what is new since then."
     }
    }
   },

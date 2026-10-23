@@ -107,6 +107,8 @@ def main() -> None:
     pv.add_argument("--date", help="edition date, default latest")
     prd = sub.add_parser("read", help="write the read: a few paragraphs on the day's biggest items")
     prd.add_argument("--date", help="edition date, default latest")
+    ped = sub.add_parser("edition", help="re-edit a published edition's headline, dek and follow-ups, then its read")
+    ped.add_argument("--date", help="edition date, default latest")
     pk = sub.add_parser("constraints", help="add official actions that constrain AI, and the trackers, to an edition")
     pk.add_argument("--date", help="edition date, default latest")
     pt = sub.add_parser("threats", help="add security threats and the recent fallbacks to today's edition")
@@ -146,6 +148,10 @@ def main() -> None:
     if a.cmd == "read":
         from .read import run_for as read_for
         read_for(a.date)
+        return
+    if a.cmd == "edition":
+        from .followups import run_for as edition_for
+        edition_for(a.date)
         return
     if a.cmd == "constraints":
         from .constraints import run_for as constraints_for
@@ -194,6 +200,9 @@ def main() -> None:
     if meta:
         built = B.build(items, history, date, meta)
         events = built["events"]
+    # A capability an earlier edition wrote up is a follow-up: the editor says only what is new about it.
+    from .followups import mark as mark_follow_ups
+    print(f"follow-ups: {mark_follow_ups(events, date, DATA)}", file=sys.stderr)
 
     edition, receipt = {}, {"lane": None, "enriched": 0, "errors": ["skipped"]}
     cache = run_dir / "editor.json"

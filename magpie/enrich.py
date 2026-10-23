@@ -27,6 +27,11 @@ Never use the em-dash character.
 Topic ids you may use for ripples and topics: {topic_ids}
 Hat ids: {hat_ids}
 
+Some events carry "reported": the date an earlier Magpie edition already wrote this capability up. Such an event
+is a follow-up. Its headline and newly_possible say only what is new since that date, as its title, summary and
+sources state it (a measurement, a new build, wider support), and never that it was released, launched, opened or
+arrived; if nothing is new, newly_possible says plainly that it is still drawing attention, and why.
+
 For each event return:
 - id: copy it
 - keep: false if it is not a real AI capability (job posts, generic lists, drama, policy, regulation or political
@@ -62,6 +67,8 @@ Also return an "edition" object:
   verbs, ending with "and more" if there were more than three
 - dek: two sentences on the shape of the day
 - quiet: true if fewer than three events are genuinely new capabilities
+Both the headline and the dek are about events without "reported" only: never name or describe a follow-up there,
+since readers have seen it. Follow-ups do not count as new for "quiet".
 
 Return ONLY one JSON object: {{"edition": {{...}}, "events": [{{...}}]}}. No markdown fences, no prose.
 
@@ -82,6 +89,7 @@ def _payload(events: list[dict]) -> str:
             "mentioned_by": [s["name"] for s in e["mentions"][:5]],
             "created": e.get("created_at"), "license": e.get("license"), "url": e["url"],
             "context": (e.get("_context") or [""])[0][:700],
+            **({"reported": e["reported"]} if e.get("reported") else {}),
         })
     return json.dumps(rows, ensure_ascii=False, indent=0)
 
@@ -226,6 +234,24 @@ def _run_codex(prompt: str, timeout: int) -> str:
 LANES = {"claude": _run_claude, "codex": _run_codex}
 
 
+def _keep_follow_ups_out(edition: dict, pool: list[dict], date: str, lane: str, timeout: int, receipt: dict) -> None:
+    """When the headline or dek names a follow-up despite the instructions, write them again from the new stories only,
+    with the same lane. A failed rewrite keeps the editor's words and says so in the receipt."""
+    from . import followups as F
+
+    old = [e for e in pool if e.get("reported") and (e.get("brief") or {}).get("headline")]
+    hit = F.named(edition, old)
+    if not hit:
+        return
+    new = sorted((e for e in pool if not e.get("reported") and (e.get("brief") or {}).get("headline")),
+                 key=lambda e: (-((e.get("brief") or {}).get("impact") or 0), -e.get("signal", 0)))
+    got = F.rewrite(date, new, old, lanes=[lane], timeout=timeout)
+    receipt["follow_ups_named"] = hit
+    receipt["edition_rewritten"] = bool(got)
+    if got:
+        edition.update(got["edition"])
+
+
 def enrich(events: list[dict], date: str, limit: int = 26, timeout: int = 1200) -> tuple[dict, dict]:
     """Returns (edition, receipt). Mutates events in place with a `brief` field."""
     topics = load_json(ROOT / "config/topics.json", {}).get("topics", {})
@@ -266,5 +292,7 @@ def enrich(events: list[dict], date: str, limit: int = 26, timeout: int = 1200) 
             e["brief"] = brief
             n += 1
         edition = {k: clean(v) if isinstance(v, str) else v for k, v in (data.get("edition") or {}).items()}
-        return edition, {"lane": lane, "enriched": n, "errors": errors}
+        receipt = {"lane": lane, "enriched": n, "errors": errors}
+        _keep_follow_ups_out(edition, pool, date, lane, timeout, receipt)
+        return edition, receipt
     return {}, {"lane": None, "enriched": 0, "errors": errors}
