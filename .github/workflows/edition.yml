@@ -33,6 +33,7 @@ jobs:
       GITHUB_TOKEN: ${{ github.token }}
       MAGPIE_LANES: claude
       MAGPIE_SAFE_MODE: "0"
+      MAGPIE_TEXT_NAMED: "1" # also read integrations named in item text, as the home tier does
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
