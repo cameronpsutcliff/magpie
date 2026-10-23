@@ -164,6 +164,25 @@
         "type": "object"
        },
        "description": "Constraints first seen in the window, by signal."
+      },
+      "prior": {
+       "type": "object",
+       "description": "The window just before, for comparison: its start, editions, capability events and possibilities.",
+       "properties": {
+        "from": {
+         "type": "string",
+         "format": "date"
+        },
+        "editions": {
+         "type": "integer"
+        },
+        "capabilities": {
+         "type": "integer"
+        },
+        "possibilities": {
+         "type": "integer"
+        }
+       }
       }
      }
     },
@@ -311,6 +330,25 @@
         "type": "object"
        },
        "description": "Constraints first seen in the window, by signal."
+      },
+      "prior": {
+       "type": "object",
+       "description": "The window just before, for comparison: its start, editions, capability events and possibilities.",
+       "properties": {
+        "from": {
+         "type": "string",
+         "format": "date"
+        },
+        "editions": {
+         "type": "integer"
+        },
+        "capabilities": {
+         "type": "integer"
+        },
+        "possibilities": {
+         "type": "integer"
+        }
+       }
       }
      }
     }

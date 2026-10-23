@@ -5,7 +5,8 @@
 - `ideas/index.json` lists every possibility of every edition with its id, ingredients, what it builds on and what
   later built on it, so a page can be found from its id and link both ways.
 - `rollups/<date>.json` holds the week (the 7 days ending on that edition) and the month (30 days): the highest-impact
-  capabilities, the strongest possibilities, and the threats and constraints first seen in the window. A capability's
+  capabilities, the strongest possibilities, and the threats and constraints first seen in the window, with the counts
+  of the window before for comparison. A capability's
   impact is the editor's 1 to 5 weight; ties go to the one that led the page on more days, then to the one seen on more
   days, then to the higher signal. Possibilities rank by their own rank score. Nothing here calls a model: every line
   is copied from a published edition, sources included, so a reader can click out to them.
@@ -200,12 +201,17 @@ def rollup(date: str, days: list[dict], index: dict, slugs: dict[str, str]) -> d
     for name, span in WINDOWS.items():
         start = (d0 - dt.timedelta(days=span - 1)).isoformat()
         window = [d for d in days if start <= d["date"] <= date]
+        before = (d0 - dt.timedelta(days=2 * span - 1)).isoformat()
+        prior = [d for d in days if before <= d["date"] < start]  # the window before, for comparison
         ideas = [x for x in index["ideas"] if start <= x["date"] <= date]
         ideas.sort(key=lambda x: (-(x.get("score") or 0), "".join(chr(0x10FFFF - ord(ch)) for ch in x["date"]), x["position"]))
         out["views"][name] = {
             "from": start, "to": date, "editions": len(window),
             "capabilities": sum(int(((d.get("coverage") or {}).get("events")) or 0) for d in window),
             "possibilities": len(ideas),
+            "prior": {"from": before, "editions": len(prior),
+                      "capabilities": sum(int(((d.get("coverage") or {}).get("events")) or 0) for d in prior),
+                      "possibilities": sum(1 for x in index["ideas"] if before <= x["date"] < start)},
             "top": _capabilities(window, slugs),
             "ideas": [{k: v for k, v in x.items() if k in ("id", "date", "title", "connection", "score", "effort", "builds_on", "built_on_by")}
                       for x in ideas[:TOP_IDEAS]],

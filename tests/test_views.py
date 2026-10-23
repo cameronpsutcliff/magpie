@@ -92,6 +92,8 @@ class ViewTests(unittest.TestCase):
         week, month = r["views"]["week"], r["views"]["month"]
         self.assertEqual((week["from"], week["editions"], week["capabilities"]), ("2098-12-30", 2, 200))
         self.assertEqual(month["editions"], 3)  # 2098-12-10 is outside the week, inside the month
+        self.assertEqual(week["prior"], {"from": "2098-12-23", "editions": 0, "capabilities": 0, "possibilities": 0})
+        self.assertEqual(r["views"]["month"]["prior"]["from"], "2098-11-07")
         self.assertEqual([c["key"] for c in week["top"]], ["hf:recursivesi/flint", "gh:acme/new", "gh:acme/kit"])
         flint = week["top"][0]
         # Impact 5 on both days and on top twice; its best appearance is the higher signal one.
