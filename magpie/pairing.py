@@ -114,9 +114,11 @@ def _agy(prompt: str, model: str, timeout: int) -> str:
 
 
 # lane -> (family, default model, runner). One lane per family; a model can be overridden with MAGPIE_PAIR_MODEL_<LANE>.
+# Argon Medium, not High: over 14 editions it chose the same partners for 82 of 112 arrivals, blind judges split on the
+# rest, and it answers in about 50 s against High's 170 s. Only Argon tiers belong on this lane.
 PANEL = {"claude": ("anthropic", "fable", _claude),
          "codex": ("openai", "gpt-6-astra", _codex),
-         "agy": ("google", "Gemini 4 Argon (High)", _agy)}
+         "agy": ("google", "Gemini 4 Argon (Medium)", _agy)}
 DEFAULT_LANES = ["claude", "codex", "agy"]
 RUNNERS = {lane: run for lane, (_, _, run) in PANEL.items()}
 

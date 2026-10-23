@@ -68,7 +68,7 @@ A named integration is read from works_with lists. `MAGPIE_TEXT_NAMED=1` also re
 ("deploys to vLLM", "configures ... OpenCode"), matching product names whole; it is off by default.
 
 `MAGPIE_PAIR_JUDGE=1` lets a panel of model families choose the library partners instead (`magpie/pairing.py`): Claude
-Fable, GPT-6 Astra and Argon (agy), each run as its CLI on a subscription, in parallel within 270 seconds. Each sees
+Fable, GPT-6 Astra and Argon Medium (agy), each run as its CLI on a subscription, in parallel within 270 seconds. Each sees
 about 12 candidates per strong arrival (the scorer's best and the arrival's earlier ties) and picks up to three that would
 combine with it, with a relation and a reason; it rejects candidates that only share a maker or platform, duplicate the
 arrival or compete with it. A partner two families pick wins; gaps take one family's picks, then the scorer. With fewer
