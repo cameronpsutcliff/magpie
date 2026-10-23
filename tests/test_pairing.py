@@ -215,6 +215,18 @@ class PairJudgeTests(unittest.TestCase):
         self.assertEqual(again[1]["pair_judge"]["lanes"]["claude"]["status"], "cached")
         self.assertTrue(list(self.cache.glob("2099-02-05.json")))
 
+    def test_agy_answer_is_read_when_complete_even_if_the_process_lingers(self):
+        fake = self.tmp / "agy"
+        fake.write_text("#!/bin/sh\nprintf '%s' '{\"status\": \"SUCCESS\", \"response\": \"{\\\"arrivals\\\": []}\"}'\nsleep 30\n")
+        fake.chmod(0o755)
+        t = time.time()
+        with mock.patch.object(J.shutil, "which", return_value=str(fake)):
+            self.assertEqual(J._agy("prompt", "Gemini 4 Argon (High)", 20), '{"arrivals": []}')
+        self.assertLess(time.time() - t, 5)  # not the 30 s the process would have lingered
+        fake.write_text("#!/bin/sh\nprintf '%s' '{\"status\": \"ERROR\", \"error\": \"quota\"}'\nsleep 30\n")
+        with mock.patch.object(J.shutil, "which", return_value=str(fake)), self.assertRaises(RuntimeError):
+            J._agy("prompt", "Gemini 4 Argon (High)", 20)
+
     def test_flag_and_lanes_come_from_the_environment(self):
         with mock.patch.dict(os.environ, {J.FLAG: ""}):
             self.assertFalse(J.enabled())

@@ -67,6 +67,14 @@ it, and at least one idea of each mix is kept when both were proposed. Code rank
 A named integration is read from works_with lists. `MAGPIE_TEXT_NAMED=1` also reads it from what either side's text states
 ("deploys to vLLM", "configures ... OpenCode"), matching product names whole; it is off by default.
 
+`MAGPIE_PAIR_JUDGE=1` lets a panel of model families choose the library partners instead (`magpie/pairing.py`): Claude
+Fable, GPT-6 Astra and Argon (agy), each run as its CLI on a subscription, in parallel within 270 seconds. Each sees
+about 12 candidates per strong arrival (the scorer's best and the arrival's earlier ties) and picks up to three that would
+combine with it, with a relation and a reason; it rejects candidates that only share a maker or platform, duplicate the
+arrival or compete with it. A partner two families pick wins; gaps take one family's picks, then the scorer. With fewer
+than two families answering it falls back to the scorer. `MAGPIE_PAIR_LANES` chooses the lanes and
+`MAGPIE_PAIR_MODEL_<LANE>` a lane's model; answers are cached in `state/pair-judge/`. Off by default.
+
 ## Threats
 
 A threat is a security event that changes what is safe to run, trust or depend on when building with or running AI: a

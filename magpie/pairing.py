@@ -77,18 +77,37 @@ def _codex(prompt: str, model: str, timeout: int) -> str:
 
 
 def _agy(prompt: str, model: str, timeout: int) -> str:
+    """agy prints its whole answer as one JSON object but can keep running long after, so the answer is read as soon as
+    it is complete and the process is then stopped."""
     exe = shutil.which("agy")
     if not exe:
         raise FileNotFoundError("agy")
     with tempfile.TemporaryDirectory() as tmp:
-        r = subprocess.run([exe, "-p", prompt, "--model", model, "--output-format", "json"], cwd=tmp,
-                           capture_output=True, text=True, timeout=timeout)
-    if r.returncode != 0:
-        raise RuntimeError(f"agy rc {r.returncode}: {r.stderr[-300:]}")
-    out = json.loads(r.stdout)
-    if out.get("status") != "SUCCESS":
-        raise RuntimeError(f"agy status {out.get('status')}: {str(out.get('error'))[:300]}")
-    return out.get("response", "")
+        out_path, err_path = Path(tmp) / "out.json", Path(tmp) / "err.txt"
+        with open(out_path, "w") as out, open(err_path, "w") as err:
+            p = subprocess.Popen([exe, "-p", prompt, "--model", model, "--output-format", "json"], cwd=tmp, stdout=out,
+                                 stderr=err, text=True)
+            deadline = time.time() + timeout
+            try:
+                while True:
+                    exited = p.poll() is not None
+                    try:
+                        answer = json.loads(out_path.read_text())
+                    except json.JSONDecodeError:
+                        answer = None
+                    if isinstance(answer, dict):
+                        if answer.get("status") != "SUCCESS":
+                            raise RuntimeError(f"agy status {answer.get('status')}: {str(answer.get('error'))[:300]}")
+                        return answer.get("response", "")
+                    if exited:
+                        raise RuntimeError(f"agy rc {p.returncode} with no answer: {err_path.read_text()[-300:]}")
+                    if time.time() > deadline:
+                        raise subprocess.TimeoutExpired(exe, timeout)
+                    time.sleep(0.5)
+            finally:
+                if p.poll() is None:
+                    p.kill()
+                    p.wait(10)
 
 
 # lane -> (family, default model, runner). One lane per family; a model can be overridden with MAGPIE_PAIR_MODEL_<LANE>.
