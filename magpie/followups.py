@@ -182,8 +182,10 @@ def edit_day(day: dict, data_dir, *, lanes: list[str] | None = None) -> dict:
     taken = {e["id"] for e in new}
     new += sorted((e for e in briefed if not e.get("reported") and e["id"] not in taken),
                   key=lambda e: (-((e.get("brief") or {}).get("impact") or 0), -(e.get("signal") or 0)))
-    old = [e for e in top if e.get("reported") and e["id"] in ids]
-    if not old and not named(day.get("edition") or {}, [e for e in briefed if e.get("reported")]):
+    told = [e for e in briefed if e.get("reported")]
+    hit = set(named(day.get("edition") or {}, told))
+    old = [e for e in top if e.get("reported") and e["id"] in ids] + [e for e in told if e["key"] in hit and e not in top]
+    if not old:
         return {"changed": False, "note": "no follow-up in the top, headline or dek"}
     got = rewrite(day["date"], new, old, follow_ups=True, earlier=_earlier(day["date"], data_dir, {e["key"] for e in old}),
                   style=(day.get("edition") or {}).get("headline") or "", lanes=lanes)

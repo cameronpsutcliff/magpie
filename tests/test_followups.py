@@ -90,7 +90,7 @@ class FollowUpTests(unittest.TestCase):
         self.assertTrue(receipt["edition_rewritten"])
         self.assertIn("ALREADY REPORTED", calls[1])
         self.assertIn('not its stories: "Run Flint locally, serve MiniMax"', calls[1])
-        self.assertNotIn("Flint runs at 216", calls[1].split("ALREADY REPORTED")[0])  # the follow-up is offered only as told
+        self.assertNotIn("Flint runs at 216", calls[1].split("ALREADY REPORTED:")[0])  # the follow-up is offered only as told
 
     def test_a_clean_headline_costs_no_second_call_and_a_failed_rewrite_keeps_the_words(self):
         clean = json.dumps({"edition": {"headline": "Serve MiniMax fast", "dek": "A day.", "quiet": False}, "events": self.BRIEFS})
@@ -153,6 +153,23 @@ class FollowUpTests(unittest.TestCase):
         day["top"], day["edition"]["headline"], day["edition"]["dek"] = ["m", "o"], "Serve MiniMax", "A day."
         with mock.patch.dict(N.LANES, {"fake": mock.Mock(side_effect=AssertionError("no call"))}):
             self.assertFalse(F.edit_day(day, self.data, lanes=["fake"])["changed"])
+
+    def test_a_follow_up_the_headline_names_outside_the_top_is_rewritten_too(self):
+        day = self.published()
+        day["top"] = ["m", "o"]
+        reply = json.dumps({"edition": {"headline": "Serve MiniMax M3.1 Flash fast", "dek": "One open coding model led.", "quiet": False},
+                            "follow_ups": [{"id": "f", "headline": "Flint measured at 216 tokens per second", "newly_possible": "A run on one GPU measured it."}]})
+        calls = []
+        with mock.patch.dict(N.LANES, {"fake": lambda p, t: calls.append(p) or reply}):
+            receipt = F.edit_day(day, self.data, lanes=["fake"])
+        self.assertTrue(receipt["changed"])
+        self.assertIn('"headline_then": "Recursive releases Flint, a 40B coding model"', calls[0].split("ALREADY REPORTED:")[1])
+        flint_says_flint = json.dumps({"edition": {"headline": "Run Flint again", "dek": "x"}})
+        day = self.published()
+        day["top"] = ["m", "o"]
+        with mock.patch.dict(N.LANES, {"fake": lambda p, t: flint_says_flint}):
+            self.assertFalse(F.edit_day(day, self.data, lanes=["fake"])["changed"])  # still naming it: nothing applied
+        self.assertEqual(day["edition"]["headline"], "Serve MiniMax, run Flint locally")
 
     def test_run_for_rewrites_the_day_latest_and_index_only(self):
         day = self.published()
