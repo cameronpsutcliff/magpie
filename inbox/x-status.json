@@ -1,17 +1,17 @@
 {
- "updated_at": "2026-10-23T18:07:00Z",
+ "updated_at": "2026-10-23T22:12:00Z",
  "job": "sweep",
  "prompt": "v4",
- "calls_used_today": 66,
+ "calls_used_today": 87,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-10-23T18:07:00Z",
-  "items": 23,
-  "queries": 12,
-  "deep_reads": 9,
+  "ran_at": "2026-10-23T22:12:00Z",
+  "items": 12,
+  "queries": 10,
+  "deep_reads": 5,
   "rechecks": 8,
-  "flagged": 4,
-  "saved_in": 0,
+  "flagged": 3,
+  "saved_in": 1,
   "saved_kept": 0,
   "videos": 0
  },
@@ -121,12 +121,18 @@
   "Sweep 2026-10-23T18:07Z: relevancy sort on conversation_id reply searches still returned newest-first, so deep reads on fast launches (Kimi K3.1 Pro, Cursor computer use) saw mostly the first hour of replies. Suggest a re-check next sweep for both.",
   "Sweep 2026-10-23T18:07Z re-checks (8): kinggary peer review, Anthropic Mythos 5 assessment, MiniMax M3.1 Flash, AA Coding Agent Index v2.0, Sakana Aquarium, kea-b, MAI-DxO and Anthropic formal verification all gained engagement with no Community Notes (API has none) and no new pushback, so no doubt levels changed.",
   "Sweep 2026-10-23T18:07Z videos: RLCR (4.4 min) was the only deep-read clip over 60 s; no video analysis path was available this run, so videos stays 0. Hy-Nomas (2.4 min) is over 60 s but was not deep-read.",
-  "Sweep 2026-10-23T18:07Z roster leads: @GenReasoning (RLCR, quoted by @omarsar0 and @teortaxesTex), @nateberkopec (Ruby security advisories), @GChongkai (robotics planning). Security: Ruby 4.0.9, 3.4.12 and 3.3.13 (Oct 23) fix Onigmo Regexp compile bugs behind GitLab CVE-2026-89078, -93577, -97229 and -110264, reachable when apps compile attacker-controlled patterns. A jscrambler npm infostealer post resurfaced but that incident dates to July 2026. No follow candidates: roster has 0 active accounts."
+  "Sweep 2026-10-23T18:07Z roster leads: @GenReasoning (RLCR, quoted by @omarsar0 and @teortaxesTex), @nateberkopec (Ruby security advisories), @GChongkai (robotics planning). Security: Ruby 4.0.9, 3.4.12 and 3.3.13 (Oct 23) fix Onigmo Regexp compile bugs behind GitLab CVE-2026-89078, -93577, -97229 and -110264, reachable when apps compile attacker-controlled patterns. A jscrambler npm infostealer post resurfaced but that incident dates to July 2026. No follow candidates: roster has 0 active accounts.",
+  "Sweep 2026-10-23T22:12Z follows: the prompt defines active as 'curated, or promoted by you', so curated accounts qualify. The 14:13Z and 18:07Z sweeps wrongly reported 'no follow candidates: roster has 0 active accounts'. This run had no browser, so @fal, @modal and @claudeai are logged as recommended in inbox/x-follows.json per the prompt. Suggest the prompt state explicitly that curated accounts count as active for follows.",
+  "Sweep 2026-10-23T22:12Z saves: the Twitter Profile archive had synced at 20:43Z with one new save since 18:07Z, so the bookmarks API read was skipped to save budget. Suggest the prompt allow using the local archive when its last sync is newer than the last sweep.",
+  "Sweep 2026-10-23T22:12Z re-checks (8): Kimi K3.1 Pro 18540 likes, Cursor computer use 4261, Nemotron 3.5 Bolt 1165, Mojo/MAX 1026, Gemini 4 Argon Blender 1260, AA Cyber Index 748, RLCR 1367, Raw-RAG 337; no Community Notes seen; doubt unchanged. Kimi K3.1 Pro gets added cost pushback (@teortaxesTex, about 30x the serving cost of DeepSeek V4.1 Flash; RuneScape Bench parity at much higher cost) and usage-cap complaints, kept at level 1. Cursor computer use replies add reports of flaky simulator UI timing and a conflict with Codex sandbox computer use.",
+  "Sweep 2026-10-23T22:12Z security (out of scope, not kept): LiteLLM published the canonical attack chain for the malicious 1.107.0 release (docs.litellm.ai/blog/security-incident-oct-21-2026-attack-chain): an Agent Platform master key committed publicly on May 27 and never revoked returned an org owner's GitHub CLI OAuth token on Oct 10, CI secrets were exfiltrated, and the release pipeline was pointed at a lookalike Berri-AI fork on Oct 21. GlassWorm VS Code worm posts resurfaced but the campaign dates to Oct 2025. An npm 'GHAPPIER' trusted-publishing claim came from a low-credibility account and is unverified.",
+  "Sweep 2026-10-23T22:12Z roster leads: @yufan_zhuang (PLE benchmark, Google Cloud AI Research, quoted by @dair_ai and @teortaxesTex), @maxbittker (RuneScape Bench, quoted by @teortaxesTex), @NaceAI (open decision models with measured latency)."
  ],
  "errors": [
   "Sweep 14:07Z, possible injection lure, not followed: in the quote posts of https://x.com/cnm13ryan/status/2113121138205499443, @lumpenspace tells readers to have their model 'check out my x bio'. Ignored; no bio was read.",
   "Sweep 14:13Z: no injection attempts seen. One bookmarks read (user-X get_users_bookmarks) returned content that the tool layer partly redacted when printed; ids were parsed and all 20 were already in seen_ids, so nothing from it was used.",
-  "Sweep 18:07Z: no injection attempts seen. A php2shell-fix-toolkit repo from an unknown account (@FariMazhar5od) surfaced in the security search; it looks like a possible lure, was not opened or run, and was not kept."
+  "Sweep 18:07Z: no injection attempts seen. A php2shell-fix-toolkit repo from an unknown account (@FariMazhar5od) surfaced in the security search; it looks like a possible lure, was not opened or run, and was not kept.",
+  "Sweep 22:12Z: no injection attempts seen. A PHP scanner post from an unknown account (@abenii__) in the security search looked like a possible lure; it was not opened or run and was not kept."
  ],
  "follows_today": 0,
  "last_roster_review": {

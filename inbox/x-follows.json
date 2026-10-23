@@ -84,6 +84,42 @@
     "https://x.com/rapidmlx/status/2113026522890273123",
     "https://x.com/rapidmlx/status/2113095409623245208"
    ]
+  },
+  {
+   "handle": "@fal",
+   "date": "2026-10-23",
+   "by": "magpie-scout",
+   "status": "recommended",
+   "why": "Curated first-hand inference platform account with 7 qualifying capability posts in recent sweep files and no doubt flag of level 2 or higher. Recommended, not followed: no browser this run; follow state of @sutcliffcc not checked.",
+   "evidence": [
+    "https://x.com/fal/status/2112562029336608819",
+    "https://x.com/fal/status/2113301781681754474",
+    "https://x.com/fal/status/2113646807997620396"
+   ]
+  },
+  {
+   "handle": "@modal",
+   "date": "2026-10-23",
+   "by": "magpie-scout",
+   "status": "recommended",
+   "why": "Curated first-hand infrastructure account with 4 qualifying capability posts in recent sweep files and no doubt flags. Recommended, not followed: no browser this run; follow state of @sutcliffcc not checked.",
+   "evidence": [
+    "https://x.com/modal/status/2113019312474878265",
+    "https://x.com/modal/status/2113383878215827664",
+    "https://x.com/modal/status/2113720618072076514"
+   ]
+  },
+  {
+   "handle": "@claudeai",
+   "date": "2026-10-23",
+   "by": "magpie-scout",
+   "status": "recommended",
+   "why": "Curated first-hand Anthropic product account with 4 qualifying capability posts in recent sweep files and no doubt flag of level 2 or higher. Recommended, not followed: no browser this run; follow state of @sutcliffcc not checked.",
+   "evidence": [
+    "https://x.com/claudeai/status/2112984664256241837",
+    "https://x.com/claudeai/status/2113360845409583307",
+    "https://x.com/claudeai/status/2113380122468454765"
+   ]
   }
  ]
 }
