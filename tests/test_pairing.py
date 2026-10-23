@@ -249,7 +249,7 @@ class PairJudgeTests(unittest.TestCase):
         odd = json.dumps({"arrivals": [{"id": CKPT["id"], "picks": "all", "reject": {"id": UNSLOTH["id"]}},
                                        {"id": ["not", "a", "string"]}]})
         self.assertEqual(J.parse(odd, cands, self.lib), {CKPT["id"]: {"picks": [], "reject": {}}})
-        for text in (None, 7, ["a"], {"arrivals": []}):
+        for text in (None, 7, ["a"], {"arrivals": []}, '{"arrivals": ' + "[" * 100000 + "]" * 100000 + "}"):
             with self.assertRaises(ValueError):
                 J.parse(text, cands, self.lib)
         for odd in ("Sure: []", ["a list"], {"a": "dict"}, None):

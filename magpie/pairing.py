@@ -228,7 +228,10 @@ def parse(text: str, cands: dict[str, list[str]], lib: dict[str, dict]) -> dict[
     start = text.find("{")
     if start < 0:
         raise ValueError("no JSON object in the answer")
-    data, _ = json.JSONDecoder().raw_decode(text[start:])
+    try:
+        data, _ = json.JSONDecoder().raw_decode(text[start:])
+    except RecursionError:
+        raise ValueError("the answer's JSON is nested too deeply") from None
     if not isinstance(data, dict):
         raise ValueError("the answer is not a JSON object")
     listed = lambda v: v if isinstance(v, list) else []  # noqa: E731
