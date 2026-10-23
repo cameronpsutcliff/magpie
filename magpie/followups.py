@@ -27,7 +27,7 @@ GENERIC = {"agent", "agents", "model", "models", "server", "tools", "skills", "r
 PROMPT = """You are the editor of Magpie, a daily brief on what became newly possible in AI. Today is {date}.
 Write the edition's headline and dek from today's NEW STORIES below, most important first.
 - headline: up to 14 words, in the style of a "next new thing" episode title: the day's top new capabilities as
-  verbs, ending with "and more" if there were more than three
+  verbs, ending with "and more" if there were more than three{style}
 - dek: two sentences on the shape of the day
 - quiet: true if fewer than three new stories are genuinely new capabilities
 The ALREADY REPORTED stories were told in earlier editions, on the date each carries. Never name or describe them in
@@ -116,16 +116,19 @@ def _grounding(rows: list[dict]) -> str:
 
 
 def rewrite(date: str, new: list[dict], old: list[dict], *, follow_ups: bool = False, earlier: dict | None = None,
-            lanes: list[str] | None = None, timeout: int = 600) -> dict | None:
+            style: str = "", lanes: list[str] | None = None, timeout: int = 600) -> dict | None:
     """A headline and dek from the new stories only, and with `follow_ups` the old stories' follow-up words. Returns
     {"edition": {...}, "follow_ups": {id: {"headline", "newly_possible"}}, "lane"}, or None when no lane gives an edition
-    that is grounded and names no follow-up. A follow-up whose words fail the same checks is left out."""
+    that is grounded and names no follow-up. A follow-up whose words fail the same checks is left out. `style` is the
+    headline being replaced: the new one takes its form (imperative verbs, sentence case), not its stories."""
     from .enrich import LANES, _extract_json
 
     new_rows = [_story(e) for e in new[:NEW_LIMIT]]
     old_rows = [_told(e, (earlier or {}).get(e["key"])) for e in old]
     prompt = PROMPT.format(date=date, new=json.dumps(new_rows, ensure_ascii=False, indent=0),
                            old=json.dumps(old_rows, ensure_ascii=False, indent=0),
+                           style=(f'. Match the form of the headline it replaces, imperative verbs in sentence case, but '
+                                  f'not its stories: {json.dumps(style, ensure_ascii=False)}') if style else "",
                            follow_up_rules=FOLLOW_UP_RULES if follow_ups else "",
                            follow_up_shape=FOLLOW_UP_SHAPE if follow_ups else "")
     order = lanes or [l.strip() for l in os.environ.get("MAGPIE_LANES", "claude,codex").split(",") if l.strip()]
@@ -183,7 +186,7 @@ def edit_day(day: dict, data_dir, *, lanes: list[str] | None = None) -> dict:
     if not old and not named(day.get("edition") or {}, [e for e in briefed if e.get("reported")]):
         return {"changed": False, "note": "no follow-up in the top, headline or dek"}
     got = rewrite(day["date"], new, old, follow_ups=True, earlier=_earlier(day["date"], data_dir, {e["key"] for e in old}),
-                  lanes=lanes)
+                  style=(day.get("edition") or {}).get("headline") or "", lanes=lanes)
     if not got:
         return {"changed": False, "note": "no lane gave a grounded headline and dek"}
     before = {"headline": day["edition"].get("headline"), "dek": day["edition"].get("dek")}

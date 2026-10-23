@@ -245,7 +245,7 @@ def _keep_follow_ups_out(edition: dict, pool: list[dict], date: str, lane: str, 
         return
     new = sorted((e for e in pool if not e.get("reported") and (e.get("brief") or {}).get("headline")),
                  key=lambda e: (-((e.get("brief") or {}).get("impact") or 0), -e.get("signal", 0)))
-    got = F.rewrite(date, new, old, lanes=[lane], timeout=timeout)
+    got = F.rewrite(date, new, old, style=edition.get("headline") or "", lanes=[lane], timeout=timeout)
     receipt["follow_ups_named"] = hit
     receipt["edition_rewritten"] = bool(got)
     if got:

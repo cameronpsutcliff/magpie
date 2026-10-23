@@ -89,6 +89,7 @@ class FollowUpTests(unittest.TestCase):
         self.assertEqual(receipt["follow_ups_named"], [FLINT])
         self.assertTrue(receipt["edition_rewritten"])
         self.assertIn("ALREADY REPORTED", calls[1])
+        self.assertIn('not its stories: "Run Flint locally, serve MiniMax"', calls[1])
         self.assertNotIn("Flint runs at 216", calls[1].split("ALREADY REPORTED")[0])  # the follow-up is offered only as told
 
     def test_a_clean_headline_costs_no_second_call_and_a_failed_rewrite_keeps_the_words(self):
@@ -144,6 +145,7 @@ class FollowUpTests(unittest.TestCase):
         flint = next(e for e in day["events"] if e["id"] == "f")
         self.assertEqual((flint["reported"], flint["brief"]["headline"]), ("2099-01-03", "Flint measured at 216 tokens per second"))
         self.assertIn('"headline_then": "Recursive releases Flint, a 40B coding model"', calls[0])
+        self.assertIn('imperative verbs in sentence case, but not its stories: "Serve MiniMax, run Flint locally"', calls[0])
         self.assertEqual(next(e for e in day["events"] if e["id"] == "o")["brief"]["headline"], "Other tool")
 
     def test_a_day_without_follow_ups_up_top_is_left_alone(self):
