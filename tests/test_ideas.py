@@ -112,6 +112,14 @@ class IdeaTests(unittest.TestCase):
             rows = P.earlier_ideas("2099-01-05", self.data, [self.speech])
             self.assertTrue(all(r["id"].startswith("idea-2099-01-0") for r in rows))
         self.assertEqual(rows[0], {**rows[0], "id": "idea-2099-01-04-1", "what": "", "recipe": [], "limits": "", "_summary": ""})
+        days = self.data / "days"
+        (days / "2099-01-02.json").write_text('{"date": "2099-01-02", "possibilities": ')  # cut off mid-file
+        (days / "2099-01-01.json").write_bytes(b"\xff\xfe not utf-8")
+        (days / "2098-12-31.json").write_text("[1, 2, 3]")  # JSON, but not an edition
+        write_json(days / "2098-12-30.json", {"date": "2098-12-30", "possibilities": {"items": [CLINIC]}}, compact=True)
+        got = P.earlier_ideas("2099-01-05", self.data, [self.speech], editions=3)
+        # The three files that cannot be read as editions do not count: the three read are 01-04, 01-03 and 12-30.
+        self.assertEqual(sorted(r["id"] for r in got), ["idea-2098-12-30-1", "idea-2099-01-03-1", "idea-2099-01-04-1"])
 
     def test_only_the_last_seven_editions_and_six_ideas_newest_first(self):
         shutil.rmtree(self.data)

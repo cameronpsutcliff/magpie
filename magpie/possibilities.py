@@ -26,6 +26,7 @@ import os
 import re
 import sys
 from collections import Counter
+from pathlib import Path
 
 from . import library, pairing
 from .enrich import LANES, _extract_json
@@ -85,7 +86,8 @@ IDEAS = """ Rows with "kind": "idea" are possibilities Magpie published on an ea
 stronger, cheaper or newly practical, you may return a possibility that builds on it: list the idea's id among the
 ingredients with at least one capability from today, open "connection" with what Magpie suggested on that date, and
 say what today's arrival adds and why that changes the outcome. An idea is never one of today's ingredients, one
-possibility builds on one idea at most, and every number must come from a capability, not from the idea."""
+possibility builds on one idea at most, and every number other than the idea's date must come from a capability, not
+from the idea."""
 PAIRED = """ A library row with "pairing" was chosen by a panel of models as a partner for the
 arrival in "with", with the relation and the reason; treat that as a lead to test, not as a fact about either one."""
 
@@ -116,15 +118,25 @@ def earlier_ideas(date: str, data_dir, arrivals: list[dict], editions: int = IDE
     to any of today's strongest `arrivals`, newest first among equals; one that shares no word is left out. Closeness is
     the cosine of TF-IDF weights over the library's word lists (library._words for the idea, library._doc for the
     arrival), with document frequencies from these ideas and arrivals: only the shared-words part of library.related,
-    without its topic, integration or maker terms. Anything malformed in an earlier edition is skipped."""
-    from .recent import editions as before
-
+    without its topic, integration or maker terms. An earlier edition file that cannot be read or parsed, or that is not
+    an edition with a date, is skipped and does not count toward `editions`; anything of the wrong type inside one is
+    skipped too."""
     text = lambda v: v if isinstance(v, str) else ""  # noqa: E731
     listed = lambda v: v if isinstance(v, list) else []  # noqa: E731
-    rows = []
-    for d in before(date, data_dir, editions):
-        if not isinstance(d, dict) or not isinstance(d.get("date"), str):
+    found = []
+    for path in sorted((Path(data_dir) / "days").glob("*.json"), reverse=True):
+        if len(found) >= editions:
+            break
+        if path.stem >= date:
             continue
+        try:
+            d = json.loads(path.read_text())
+        except (OSError, ValueError):  # unreadable, not UTF-8, or not JSON
+            continue
+        if isinstance(d, dict) and isinstance(d.get("date"), str):
+            found.append(d)
+    rows = []
+    for d in found:
         poss = d.get("possibilities")
         for rank, p in enumerate(listed(poss.get("items") if isinstance(poss, dict) else None), 1):
             if not isinstance(p, dict) or not text(p.get("title")).strip():
