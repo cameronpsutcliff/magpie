@@ -1,818 +1,835 @@
 {
- "updated_at": "2026-10-23T09:35:00Z",
- "accounts": [
-  {
-   "handle": "@thsottiaux",
-   "name": "Tibo",
-   "group": "devtools",
-   "affiliation": "OpenAI",
-   "why": "First-hand on OpenAI Codex product changes as its lead; posts concrete feature and usage-limit changes.",
-   "signal_to_noise": 4,
-   "status": "trial",
-   "added_on": "2026-10-20",
-   "evidence": [
-    "https://x.com/thsottiaux/status/2111990254408434095",
-    "https://x.com/thsottiaux/status/2111244596131111253"
-   ],
-   "last_qualifying_post": "2026-10-19",
-   "retired_reason": null
-  },
-  {
-   "handle": "@OpenBMB",
-   "name": "OpenBMB",
-   "group": "labs",
-   "affiliation": "OpenBMB / ModelBest",
-   "why": "Official account for MiniCPM open multimodal models, with on-device speed measurements.",
-   "signal_to_noise": 4,
-   "status": "trial",
-   "added_on": "2026-10-20",
-   "evidence": [
-    "https://x.com/OpenBMB/status/2109694573408866351",
-    "https://x.com/OpenBMB/status/2110364065822646570"
-   ],
-   "last_qualifying_post": "2026-10-14",
-   "retired_reason": null
-  },
-  {
-   "handle": "@FishAudio",
-   "name": "Fish Audio",
-   "group": "labs",
-   "affiliation": "Fish Audio",
-   "why": "Official account shipping open-weight TTS and ASR models (Drama 3).",
-   "signal_to_noise": 4,
-   "status": "trial",
-   "added_on": "2026-10-20",
-   "evidence": [
-    "https://x.com/FishAudio/status/2110038429199450126",
-    "https://x.com/FishAudio/status/2104617131920748857"
-   ],
-   "last_qualifying_post": "2026-10-13",
-   "retired_reason": null
-  },
-  {
-   "handle": "@fal",
-   "name": "fal",
-   "group": "applied",
-   "affiliation": "fal",
-   "why": "Generative media inference platform that also post-trains its own models (FLUX 3 Max) and posts speed numbers.",
-   "signal_to_noise": 4,
-   "status": "trial",
-   "added_on": "2026-10-20",
-   "evidence": [
-    "https://x.com/fal/status/2112251022047412492",
-    "https://x.com/fal/status/2110795863861674073"
-   ],
-   "last_qualifying_post": "2026-10-19",
-   "retired_reason": null
-  },
-  {
-   "handle": "@ExaAILabs",
-   "name": "Exa",
-   "group": "applied",
-   "affiliation": "Exa",
-   "why": "Search API for agents; posts versioned releases and its own benchmarks (Exa 3.0, ATLAS).",
-   "signal_to_noise": 4,
-   "status": "trial",
-   "added_on": "2026-10-20",
-   "evidence": [
-    "https://x.com/ExaAILabs/status/2112218730952601719",
-    "https://x.com/ExaAILabs/status/2108245582745850303"
-   ],
-   "last_qualifying_post": "2026-10-19",
-   "retired_reason": null
-  },
-  {
-   "handle": "@OfficialLoganK",
-   "name": "Logan Kilpatrick",
-   "group": "labs",
-   "affiliation": "Google",
-   "why": "Gemini product lead; first-hand on Gemini API and model releases.",
-   "signal_to_noise": 3,
-   "status": "trial",
-   "added_on": "2026-10-20",
-   "evidence": [
-    "https://x.com/OfficialLoganK/status/2110038940841545827",
-    "https://x.com/OfficialLoganK/status/2102785495726219305"
-   ],
-   "last_qualifying_post": "2026-10-13",
-   "retired_reason": null
-  },
-  {
-   "handle": "@Thom_Wolf",
-   "name": "Thomas Wolf",
-   "group": "opensource",
-   "affiliation": "Hugging Face",
-   "why": "Hugging Face co-founder sharing runnable open demos and minimal training code.",
-   "signal_to_noise": 3,
-   "status": "trial",
-   "added_on": "2026-10-20",
-   "evidence": [
-    "https://x.com/Thom_Wolf/status/2112141448019644458",
-    "https://x.com/Thom_Wolf/status/2110381625200795942"
-   ],
-   "last_qualifying_post": "2026-10-19",
-   "retired_reason": null
-  },
-  {
-   "handle": "@trycua",
-   "name": "Cua",
-   "group": "devtools",
-   "affiliation": "Cua",
-   "why": "Open computer-use agent infrastructure; ships SDK and sandbox (Cua Spaces) features.",
-   "signal_to_noise": 4,
-   "status": "trial",
-   "added_on": "2026-10-20",
-   "evidence": [
-    "https://x.com/trycua/status/2112228154651881479",
-    "https://x.com/trycua/status/2112589741879328979"
-   ],
-   "last_qualifying_post": "2026-10-20",
-   "retired_reason": null
-  },
-  {
-   "handle": "@PrismML",
-   "name": "PrismML",
-   "group": "labs",
-   "affiliation": "PrismML",
-   "why": "Ships ternary and 1-bit open models (Bonsai 2) with size and speed measurements.",
-   "signal_to_noise": 4,
-   "status": "trial",
-   "added_on": "2026-10-20",
-   "evidence": [
-    "https://x.com/PrismML/status/2110823964650164348",
-    "https://x.com/PrismML/status/2102859262062145966"
-   ],
-   "last_qualifying_post": "2026-10-15",
-   "retired_reason": null
-  },
-  {
-   "handle": "@Aleph__Alpha",
-   "name": "Aleph Alpha",
-   "group": "research",
-   "affiliation": "Aleph Alpha",
-   "why": "Posts evaluation methodology research with measurements (PriorBPB, multiple-choice spacing).",
-   "signal_to_noise": 4,
-   "status": "trial",
-   "added_on": "2026-10-20",
-   "evidence": [
-    "https://x.com/Aleph__Alpha/status/2110008600936800588",
-    "https://x.com/Aleph__Alpha/status/2112547676868817027"
-   ],
-   "last_qualifying_post": "2026-10-20",
-   "retired_reason": null
-  },
-  {
-   "handle": "@odysseyml",
-   "name": "Odyssey",
-   "group": "labs",
-   "affiliation": "Odyssey",
-   "why": "World model lab shipping interactive video models (Odyssey-3) with demos.",
-   "signal_to_noise": 4,
-   "status": "trial",
-   "added_on": "2026-10-20",
-   "evidence": [
-    "https://x.com/odysseyml/status/2108238378751967385",
-    "https://x.com/odysseyml/status/2105714716316438684"
-   ],
-   "last_qualifying_post": "2026-10-08",
-   "retired_reason": null
-  },
-  {
-   "handle": "@actualinc",
-   "name": "Actual Computer",
-   "group": "applied",
-   "affiliation": "Actual",
-   "why": "Ships open tooling with measurements (toks tokenizer, e engine).",
-   "signal_to_noise": 4,
-   "status": "trial",
-   "added_on": "2026-10-20",
-   "evidence": [
-    "https://x.com/actualinc/status/2107573418434629849",
-    "https://x.com/actualinc/status/2110759623435117020"
-   ],
-   "last_qualifying_post": "2026-10-15",
-   "retired_reason": null
-  },
-  {
-   "handle": "@GeminiApp",
-   "name": "Google Gemini",
-   "group": "labs",
-   "affiliation": "Google",
-   "why": "Official Gemini app account; first-hand on consumer Gemini features (Skills, Argon).",
-   "signal_to_noise": 3,
-   "status": "trial",
-   "added_on": "2026-10-20",
-   "evidence": [
-    "https://x.com/GeminiApp/status/2110039322229649783",
-    "https://x.com/GeminiApp/status/2105327839054835886"
-   ],
-   "last_qualifying_post": "2026-10-13",
-   "retired_reason": null
-  },
-  {
-   "handle": "@hume_ai",
-   "name": "Hume AI",
-   "group": "research",
-   "affiliation": "Hume AI",
-   "why": "Voice AI lab posting voice model evaluations (Real World VoiceEQ).",
-   "signal_to_noise": 4,
-   "status": "trial",
-   "added_on": "2026-10-20",
-   "evidence": [
-    "https://x.com/hume_ai/status/2102804812031270923",
-    "https://x.com/hume_ai/status/2108622420647248362"
-   ],
-   "last_qualifying_post": "2026-10-09",
-   "retired_reason": null
-  },
-  {
-   "handle": "@ElevenLabs",
-   "name": "ElevenLabs",
-   "group": "labs",
-   "affiliation": "ElevenLabs",
-   "why": "Official account for speech models (Eleven Realtime, v4) with latency and benchmark numbers.",
-   "signal_to_noise": 4,
-   "status": "trial",
-   "added_on": "2026-10-20",
-   "evidence": [
-    "https://x.com/ElevenLabs/status/2112550782063247521",
-    "https://x.com/ElevenLabs/status/2110759737583345706"
-   ],
-   "last_qualifying_post": "2026-10-20",
-   "retired_reason": null
-  },
-  {
-   "handle": "@mem0ai",
-   "name": "mem0",
-   "group": "applied",
-   "affiliation": "Mem0",
-   "why": "Agent memory layer; publishes its own memory benchmark (DolphinBench).",
-   "signal_to_noise": 3,
-   "status": "trial",
-   "added_on": "2026-10-20",
-   "evidence": [
-    "https://x.com/mem0ai/status/2102438126941876590",
-    "https://x.com/mem0ai/status/2105685414430523472"
-   ],
-   "last_qualifying_post": "2026-10-01",
-   "retired_reason": null
-  },
-  {
-   "handle": "@reflection_ai",
-   "name": "Reflection",
-   "group": "labs",
-   "affiliation": "Reflection AI",
-   "why": "Releases large open-weight models under Apache 2.0 (Beam 501B).",
-   "signal_to_noise": 4,
-   "status": "trial",
-   "added_on": "2026-10-20",
-   "evidence": [
-    "https://x.com/reflection_ai/status/2107186849370247235",
-    "https://x.com/reflection_ai/status/2111079965529968798"
-   ],
-   "last_qualifying_post": "2026-10-16",
-   "retired_reason": null
-  },
-  {
-   "handle": "@Gradio",
-   "name": "Gradio",
-   "group": "opensource",
-   "affiliation": "Hugging Face",
-   "why": "Open-source UI library account; posts runnable demos with cost numbers.",
-   "signal_to_noise": 3,
-   "status": "trial",
-   "added_on": "2026-10-20",
-   "evidence": [
-    "https://x.com/Gradio/status/2105615321222823964",
-    "https://x.com/Gradio/status/2104932384689082535"
-   ],
-   "last_qualifying_post": "2026-10-01",
-   "retired_reason": null
-  },
-  {
-   "handle": "@ElorianAI",
-   "name": "Elorian AI",
-   "group": "labs",
-   "affiliation": "Elorian",
-   "why": "New lab shipping a visual reasoning model (Glimpse) and its own benchmark.",
-   "signal_to_noise": 4,
-   "status": "trial",
-   "added_on": "2026-10-20",
-   "evidence": [
-    "https://x.com/ElorianAI/status/2111142036208501070",
-    "https://x.com/ElorianAI/status/2107973580319576356"
-   ],
-   "last_qualifying_post": "2026-10-16",
-   "retired_reason": null
-  },
-  {
-   "handle": "@haoailab",
-   "name": "Hao AI Lab",
-   "group": "research",
-   "affiliation": "UCSD Hao AI Lab",
-   "why": "First-hand on FastVideo: open distilled real-time video models with training code, NVFP4 quantization-aware recipes and measured latency on Blackwell and DGX Spark.",
-   "signal_to_noise": 4,
-   "status": "trial",
-   "added_on": "2026-10-21",
-   "evidence": [
-    "https://x.com/haoailab/status/2112625528805208257",
-    "https://x.com/haoailab/status/2112305087225983427",
-    "https://x.com/haoailab/status/2110904952839372895"
-   ],
-   "last_qualifying_post": "2026-10-20",
-   "retired_reason": null
-  },
-  {
-   "handle": "@somarkai",
-   "name": "SoMark",
-   "group": "opensource",
-   "affiliation": "SoMark",
-   "why": "Ships OXR, a 1.3B open document-parsing model with weights and code and benchmark numbers (olmOCR-Bench, OmniDocBench), plus the open Docision agent.",
-   "signal_to_noise": 3,
-   "status": "trial",
-   "added_on": "2026-10-21",
-   "evidence": [
-    "https://x.com/somarkai/status/2112574994152636502",
-    "https://x.com/somarkai/status/2110405408045019299"
-   ],
-   "last_qualifying_post": "2026-10-20",
-   "retired_reason": null
-  },
-  {
-   "handle": "@StefanoErmon",
-   "name": "Stefano Ermon",
-   "group": "research",
-   "affiliation": "Stanford, Inception",
-   "why": "Diffusion LLM researcher and Inception cofounder: Mercury model launches with benchmark claims and his lab's constrained-decoding research for diffusion LLMs.",
-   "signal_to_noise": 3,
-   "status": "trial",
-   "added_on": "2026-10-21",
-   "evidence": [
-    "https://x.com/StefanoErmon/status/2112222911218291051",
-    "https://x.com/StefanoErmon/status/2106106429568643460",
-    "https://x.com/StefanoErmon/status/2104979630394614258"
-   ],
-   "last_qualifying_post": "2026-10-19",
-   "retired_reason": null
-  },
-  {
-   "handle": "@chem_safety",
-   "name": "Jennifer Zhou",
-   "group": "research",
-   "affiliation": "Preference Model",
-   "why": "RL environment and eval auditing: published a TerminalBench 4.0 task audit with a writeup, open-sourced the Karotte RL-environment framework, and ran a long-horizon game benchmark.",
-   "signal_to_noise": 4,
-   "status": "trial",
-   "added_on": "2026-10-21",
-   "evidence": [
-    "https://x.com/chem_safety/status/2112212878132744674",
-    "https://x.com/chem_safety/status/2107893216515133719",
-    "https://x.com/chem_safety/status/2109685886472602082"
-   ],
-   "last_qualifying_post": "2026-10-19",
-   "retired_reason": null
-  },
-  {
-   "handle": "@htihle",
-   "name": "Havard Ihle",
-   "group": "research",
-   "affiliation": "WeirdML",
-   "why": "Runs the WeirdML benchmark and posts per-model scores with cost and token notes for new frontier and open models soon after release.",
-   "signal_to_noise": 4,
-   "status": "trial",
-   "added_on": "2026-10-21",
-   "evidence": [
-    "https://x.com/htihle/status/2112517036261695823",
-    "https://x.com/htihle/status/2111782267345682840",
-    "https://x.com/htihle/status/2110288604605882405"
-   ],
-   "last_qualifying_post": "2026-10-20",
-   "retired_reason": null
-  },
-  {
-   "handle": "@datalabto",
-   "name": "Datalab",
-   "group": "applied",
-   "affiliation": "Datalab",
-   "why": "Document intelligence (Chandra OCR, Marker): API releases with speed and accuracy numbers and the open OmniExtractBench scoring tool.",
-   "signal_to_noise": 3,
-   "status": "trial",
-   "added_on": "2026-10-21",
-   "evidence": [
-    "https://x.com/datalabto/status/2110822718341845484",
-    "https://x.com/datalabto/status/2112664733522211160",
-    "https://x.com/datalabto/status/2102852413363494978"
-   ],
-   "last_qualifying_post": "2026-10-20",
-   "retired_reason": null
-  },
-  {
-   "handle": "@NaceAI",
-   "name": "Nace AI",
-   "group": "labs",
-   "affiliation": "Nace AI",
-   "why": "Small decision models: open Drex 2.0 weights and code, plus measured Drex Max and browser-use harness results (WebArena-Verified, cost per 1,000 tasks).",
-   "signal_to_noise": 3,
-   "status": "trial",
-   "added_on": "2026-10-21",
-   "evidence": [
-    "https://x.com/NaceAI/status/2109755218716188674",
-    "https://x.com/NaceAI/status/2112642730228944958",
-    "https://x.com/NaceAI/status/2112175183448461683"
-   ],
-   "last_qualifying_post": "2026-10-20",
-   "retired_reason": null
-  },
-  {
-   "handle": "@Letta_AI",
-   "name": "Letta",
-   "group": "devtools",
-   "affiliation": "Letta",
-   "why": "First-hand on agent memory: Letta Code features and the FrontierMemory benchmark (open corpus, scores memory by downstream task performance).",
-   "signal_to_noise": 4,
-   "status": "trial",
-   "added_on": "2026-10-22",
-   "evidence": [
-    "https://x.com/Letta_AI/status/2112957074644873289",
-    "https://x.com/Letta_AI/status/2105015179855704164"
-   ],
-   "last_qualifying_post": "2026-10-21",
-   "retired_reason": null
-  },
-  {
-   "handle": "@turbopuffer",
-   "name": "turbopuffer",
-   "group": "applied",
-   "affiliation": "turbopuffer",
-   "why": "Search engine for agents and RAG; posts measured engine changes (v3 batched full-text reads about 9x faster, filter latency cut about 95%, native reranking GA, Nemotron embeddings with recall numbers).",
-   "signal_to_noise": 4,
-   "status": "trial",
-   "added_on": "2026-10-22",
-   "evidence": [
-    "https://x.com/turbopuffer/status/2106060390916636850",
-    "https://x.com/turbopuffer/status/2108615796415234422",
-    "https://x.com/turbopuffer/status/2112569613804580898",
-    "https://x.com/turbopuffer/status/2113042657471836354"
-   ],
-   "last_qualifying_post": "2026-10-21",
-   "retired_reason": null
-  },
-  {
-   "handle": "@inco_ai",
-   "name": "Inco AI",
-   "group": "opensource",
-   "affiliation": "Inco AI",
-   "why": "Ships DFlash 2 speculative-decoding drafters on Hugging Face and the open-source Splash local inference runtime, with measured speedups.",
-   "signal_to_noise": 4,
-   "status": "trial",
-   "added_on": "2026-10-22",
-   "evidence": [
-    "https://x.com/inco_ai/status/2112576331850682540",
-    "https://x.com/inco_ai/status/2107981893903982901",
-    "https://x.com/inco_ai/status/2103228024275730863"
-   ],
-   "last_qualifying_post": "2026-10-20",
-   "retired_reason": null
-  },
-  {
-   "handle": "@PrismaXai",
-   "name": "PrismaX",
-   "group": "applied",
-   "affiliation": "PrismaX",
-   "why": "Robotics data and policy team publishing open-source pi0.5 rollout code and a path-traced YAM simulator, with measured latency and fine-tuning ablations.",
-   "signal_to_noise": 4,
-   "status": "trial",
-   "added_on": "2026-10-22",
-   "evidence": [
-    "https://x.com/PrismaXai/status/2113042694721491381",
-    "https://x.com/PrismaXai/status/2112295123879079964",
-    "https://x.com/PrismaXai/status/2112554927675593207"
-   ],
-   "last_qualifying_post": "2026-10-21",
-   "retired_reason": null
-  },
-  {
-   "handle": "@hotchpotch",
-   "name": "Yuichi Tateno",
-   "group": "opensource",
-   "affiliation": "Independent",
-   "why": "Independent builder releasing small open embedding and decision models with benchmarks (bekko-static-embedding-v1, saihai, S1MB), often in Japanese.",
-   "signal_to_noise": 4,
-   "status": "trial",
-   "added_on": "2026-10-22",
-   "evidence": [
-    "https://x.com/hotchpotch/status/2112732588884508682",
-    "https://x.com/hotchpotch/status/2110548623905960409",
-    "https://x.com/hotchpotch/status/2105529252028539371"
-   ],
-   "last_qualifying_post": "2026-10-21",
-   "retired_reason": null
-  },
-  {
-   "handle": "@SparkLLM",
-   "name": "iFlytek Spark",
-   "group": "labs",
-   "affiliation": "iFlytek",
-   "why": "Official account for the Apache 2.0 Spark-X small open models (Spark-X2.6-4B with benchmark numbers) plus local llama.cpp demos.",
-   "signal_to_noise": 3,
-   "status": "trial",
-   "added_on": "2026-10-22",
-   "evidence": [
-    "https://x.com/SparkLLM/status/2112614036227408363",
-    "https://x.com/SparkLLM/status/2111045024322642365",
-    "https://x.com/SparkLLM/status/2110692981665579293"
-   ],
-   "last_qualifying_post": "2026-10-20",
-   "retired_reason": null
-  },
-  {
-   "handle": "@SpeechifyAI",
-   "name": "SpeechifyAI",
-   "group": "labs",
-   "affiliation": "Speechify",
-   "why": "First-hand speech model lab (Simba TTS): model releases with fact sheets and published latency benchmarks with every request.",
-   "signal_to_noise": 4,
-   "status": "trial",
-   "added_on": "2026-10-23",
-   "evidence": [
-    "https://x.com/SpeechifyAI/status/2112892450234589517",
-    "https://x.com/SpeechifyAI/status/2112530144212513229",
-    "https://x.com/SpeechifyAI/status/2112167688189399225"
-   ],
-   "last_qualifying_post": "2026-10-21",
-   "retired_reason": null
-  },
-  {
-   "handle": "@LoubnaBenAllal1",
-   "name": "Loubna Ben Allal",
-   "group": "opensource",
-   "affiliation": "Hugging Face",
-   "why": "Hugging Face researcher first-hand on open model releases (Carbon family, Carbon-X DNA plus text model with weights).",
-   "signal_to_noise": 4,
-   "status": "trial",
-   "added_on": "2026-10-23",
-   "evidence": [
-    "https://x.com/LoubnaBenAllal1/status/2113212025560023513",
-    "https://x.com/LoubnaBenAllal1/status/2108228619860656434"
-   ],
-   "last_qualifying_post": "2026-10-22",
-   "retired_reason": null
-  },
-  {
-   "handle": "@KLieret",
-   "name": "Kilian Lieret",
-   "group": "research",
-   "affiliation": "Meta Superintelligence (SWE-bench, SWE-agent)",
-   "why": "First-hand on coding-agent benchmarks: SWE-sweep benchmark and leaderboard, mini-SWE-agent, ProgramBench.",
-   "signal_to_noise": 4,
-   "status": "trial",
-   "added_on": "2026-10-23",
-   "evidence": [
-    "https://x.com/KLieret/status/2113272881098756165",
-    "https://x.com/KLieret/status/2105670833574465933"
-   ],
-   "last_qualifying_post": "2026-10-22",
-   "retired_reason": null
-  },
-  {
-   "handle": "@sageai_official",
-   "name": "SageAI",
-   "group": "labs",
-   "affiliation": "Shanghai AI Lab (InternScience)",
-   "why": "Official Shanghai AI Lab science-model account: Sage-A1.5 open agentic MoE and Intern-S2 math results with write-ups.",
-   "signal_to_noise": 3,
-   "status": "trial",
-   "added_on": "2026-10-23",
-   "evidence": [
-    "https://x.com/sageai_official/status/2113192901073309849",
-    "https://x.com/sageai_official/status/2110924243798286547"
-   ],
-   "last_qualifying_post": "2026-10-22",
-   "retired_reason": null
-  },
-  {
-   "handle": "@Alex_tra_memory",
-   "name": "Alex",
-   "group": "builders",
-   "affiliation": "FluidInference (FluidAudio)",
-   "why": "Hands-on on-device builder: ports TTS, ASR and OCR models to Core ML and MLX on Apple silicon with open code and measured speeds.",
-   "signal_to_noise": 4,
-   "status": "trial",
-   "added_on": "2026-10-23",
-   "evidence": [
-    "https://x.com/Alex_tra_memory/status/2112782259916865643",
-    "https://x.com/Alex_tra_memory/status/2112731253304594671",
-    "https://x.com/Alex_tra_memory/status/2109868778615976113"
-   ],
-   "last_qualifying_post": "2026-10-23",
-   "retired_reason": null
-  }
- ],
- "source_leads": [
-  {
-   "kind": "blog",
-   "name": "Anthropic Frontier Red Team (red.anthropic.com)",
-   "url": "https://red.anthropic.com/",
-   "why": "Security and cyber capability write-ups such as OSS Scanner that are not in the Anthropic news or research feeds.",
-   "seen_via": [
-    "@ClaudeDevs"
-   ]
-  },
-  {
-   "kind": "blog",
-   "name": "Sakana AI blog",
-   "url": "https://sakana.ai/blog/",
-   "why": "Research releases with code (QD-Rec and earlier) that Magpie does not watch.",
-   "seen_via": [
-    "@SakanaAILabs"
-   ]
-  },
-  {
-   "kind": "blog",
-   "name": "Meta AI blog",
-   "url": "https://ai.meta.com/blog/",
-   "why": "Muse model reports and infrastructure posts; the existing Meta engineering feed misses most of them.",
-   "seen_via": [
-    "@AIatMeta"
-   ]
-  },
-  {
-   "kind": "changelog",
-   "name": "prime-rl releases",
-   "url": "https://github.com/PrimeIntellect-ai/prime-rl/releases.atom",
-   "why": "Open RL training framework releases (v0.10.0 today).",
-   "seen_via": [
-    "@PrimeIntellect"
-   ]
-  },
-  {
-   "kind": "changelog",
-   "name": "TRL releases",
-   "url": "https://github.com/huggingface/trl/releases.atom",
-   "why": "Hugging Face post-training library releases (v1.16 Trainium support).",
-   "seen_via": [
-    "@QGallouedec"
-   ]
-  },
-  {
-   "kind": "changelog",
-   "name": "PyTorch releases",
-   "url": "https://github.com/pytorch/pytorch/releases.atom",
-   "why": "Core framework releases such as 2.15 with large Mac MPS speedups.",
-   "seen_via": [
-    "@LysandreJik",
-    "@Is36E"
-   ]
-  },
-  {
-   "kind": "blog",
-   "name": "Inception blog",
-   "url": "https://www.inceptionlabs.ai/blog",
-   "why": "Diffusion LLM releases (Mercury 3) from a lab not otherwise covered.",
-   "seen_via": [
-    "@_inception_ai",
-    "@tri_dao"
-   ]
-  },
-  {
-   "kind": "changelog",
-   "name": "VS Code release notes",
-   "url": "https://code.visualstudio.com/feed.xml",
-   "why": "Monthly VS Code updates with Copilot and agent features (for example canvases and shared agent workspaces); only the Copilot changelog is watched today.",
-   "seen_via": [
-    "@code"
-   ]
-  },
-  {
-   "kind": "blog",
-   "name": "SGLang blog",
-   "url": "https://sglang.io/blog",
-   "why": "SGLang team writeups with serving benchmarks (low-latency modes, SGLang-Omni); Magpie watches only the GitHub releases.",
-   "seen_via": [
-    "@lmsysorg",
-    "@sgl_project"
-   ]
-  },
-  {
-   "kind": "changelog",
-   "name": "Cohere changelog",
-   "url": "https://docs.cohere.com/changelog",
-   "why": "Dated model and API changes (for example Rerank 5) that appear before the Cohere blog mirror picks them up.",
-   "seen_via": [
-    "@aitrackerbot"
-   ]
-  },
-  {
-   "kind": "blog",
-   "name": "Reflection AI blog",
-   "url": "https://reflection.ai/blog",
-   "why": "Primary posts for Reflection's open-weight Beam models.",
-   "seen_via": [
-    "@ValsAI",
-    "@reflection_ai"
-   ]
-  },
-  {
-   "kind": "blog",
-   "name": "LightSeek blog",
-   "url": "https://lightseek.org/blog",
-   "why": "Speculative decoding work (EAGLE-4, TorchSpec) with measured speedups.",
-   "seen_via": [
-    "@lightseekorg"
-   ]
-  },
-  {
-   "kind": "blog",
-   "name": "Hao AI Lab blog",
-   "url": "https://hao-ai-lab.github.io/blogs/",
-   "why": "FastVideo and agent research writeups with code and numbers.",
-   "seen_via": [
-    "@haoailab"
-   ]
-  },
-  {
-   "kind": "feed",
-   "name": "WeirdML benchmark results",
-   "url": "https://htihle.github.io/weirdml.html",
-   "why": "Independent per-model benchmark results with cost, updated as new models ship.",
-   "seen_via": [
-    "@htihle"
-   ]
-  },
-  {
-   "kind": "blog",
-   "name": "Inco AI blog",
-   "url": "https://inco.ai/blog/",
-   "why": "Write-ups for DFlash and DFlash 2 speculative decoding and Splash local inference releases.",
-   "seen_via": [
-    "@inco_ai",
-    "@zhijianliu"
-   ]
-  },
-  {
-   "kind": "changelog",
-   "name": "turbopuffer changelog",
-   "url": "https://turbopuffer.com/changelog",
-   "why": "Monthly search-engine changes (v3 engine, native embedding and reranking) with performance numbers.",
-   "seen_via": [
-    "@turbopuffer"
-   ]
-  },
-  {
-   "kind": "blog",
-   "name": "Letta blog",
-   "url": "https://www.letta.com/blog",
-   "why": "Agent memory research and Letta Code releases, including the FrontierMemory benchmark.",
-   "seen_via": [
-    "@Letta_AI",
-    "@omarsar0"
-   ]
-  },
-  {
-   "kind": "blog",
-   "name": "PrismaX blog",
-   "url": "https://www.prismax.ai/blog",
-   "why": "Hands-on robot policy write-ups (pi0.5 latency, camera and lighting ablations) with open code.",
-   "seen_via": [
-    "@PrismaXai"
-   ]
-  },
-  {
-   "kind": "blog",
-   "name": "vLLM blog",
-   "url": "https://vllm.ai/blog",
-   "why": "Engineering write-ups behind vLLM features (TPU backend, kernels); Magpie watches only vLLM GitHub releases.",
-   "seen_via": [
-    "@vllm_project",
-    "@RichardSocher"
-   ]
-  },
-  {
-   "kind": "blog",
-   "name": "fal blog",
-   "url": "https://fal.ai/blog",
-   "why": "Hosted image, video and audio model launches and speed write-ups from a trial roster account.",
-   "seen_via": [
-    "@fal"
-   ]
-  },
-  {
-   "kind": "blog",
-   "name": "Liquid AI blog",
-   "url": "https://www.liquid.ai/blog",
-   "why": "Release notes and benchmarks for LFM on-device models, which Magpie sees only via Hugging Face.",
-   "seen_via": [
-    "@liquidai"
-   ]
-  },
-  {
-   "kind": "blog",
-   "name": "Speechify AI blog",
-   "url": "https://speechify.ai/blog",
-   "why": "Simba speech model releases plus reproducible TTS latency and pricing measurements.",
-   "seen_via": [
-    "@SpeechifyAI"
-   ]
-  }
- ]
+  "updated_at": "2026-10-23T22:22:39Z",
+  "accounts": [
+    {
+      "handle": "@thsottiaux",
+      "name": "Tibo",
+      "group": "devtools",
+      "affiliation": "OpenAI",
+      "why": "First-hand on OpenAI Codex product changes as its lead; posts concrete feature and usage-limit changes.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-20",
+      "evidence": [
+        "https://x.com/thsottiaux/status/2111990254408434095",
+        "https://x.com/thsottiaux/status/2111244596131111253"
+      ],
+      "last_qualifying_post": "2026-10-19",
+      "retired_reason": null
+    },
+    {
+      "handle": "@OpenBMB",
+      "name": "OpenBMB",
+      "group": "labs",
+      "affiliation": "OpenBMB / ModelBest",
+      "why": "Official account for MiniCPM open multimodal models, with on-device speed measurements.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-20",
+      "evidence": [
+        "https://x.com/OpenBMB/status/2109694573408866351",
+        "https://x.com/OpenBMB/status/2110364065822646570"
+      ],
+      "last_qualifying_post": "2026-10-14",
+      "retired_reason": null
+    },
+    {
+      "handle": "@FishAudio",
+      "name": "Fish Audio",
+      "group": "labs",
+      "affiliation": "Fish Audio",
+      "why": "Official account shipping open-weight TTS and ASR models (Drama 3).",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-20",
+      "evidence": [
+        "https://x.com/FishAudio/status/2110038429199450126",
+        "https://x.com/FishAudio/status/2104617131920748857"
+      ],
+      "last_qualifying_post": "2026-10-13",
+      "retired_reason": null
+    },
+    {
+      "handle": "@fal",
+      "name": "fal",
+      "group": "applied",
+      "affiliation": "fal",
+      "why": "Generative media inference platform that also post-trains its own models (FLUX 3 Max) and posts speed numbers.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-20",
+      "evidence": [
+        "https://x.com/fal/status/2112251022047412492",
+        "https://x.com/fal/status/2110795863861674073"
+      ],
+      "last_qualifying_post": "2026-10-19",
+      "retired_reason": null
+    },
+    {
+      "handle": "@ExaAILabs",
+      "name": "Exa",
+      "group": "applied",
+      "affiliation": "Exa",
+      "why": "Search API for agents; posts versioned releases and its own benchmarks (Exa 3.0, ATLAS).",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-20",
+      "evidence": [
+        "https://x.com/ExaAILabs/status/2112218730952601719",
+        "https://x.com/ExaAILabs/status/2108245582745850303"
+      ],
+      "last_qualifying_post": "2026-10-19",
+      "retired_reason": null
+    },
+    {
+      "handle": "@OfficialLoganK",
+      "name": "Logan Kilpatrick",
+      "group": "labs",
+      "affiliation": "Google",
+      "why": "Gemini product lead; first-hand on Gemini API and model releases.",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-10-20",
+      "evidence": [
+        "https://x.com/OfficialLoganK/status/2110038940841545827",
+        "https://x.com/OfficialLoganK/status/2102785495726219305"
+      ],
+      "last_qualifying_post": "2026-10-13",
+      "retired_reason": null
+    },
+    {
+      "handle": "@Thom_Wolf",
+      "name": "Thomas Wolf",
+      "group": "opensource",
+      "affiliation": "Hugging Face",
+      "why": "Hugging Face co-founder sharing runnable open demos and minimal training code.",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-10-20",
+      "evidence": [
+        "https://x.com/Thom_Wolf/status/2112141448019644458",
+        "https://x.com/Thom_Wolf/status/2110381625200795942"
+      ],
+      "last_qualifying_post": "2026-10-19",
+      "retired_reason": null
+    },
+    {
+      "handle": "@trycua",
+      "name": "Cua",
+      "group": "devtools",
+      "affiliation": "Cua",
+      "why": "Open computer-use agent infrastructure; ships SDK and sandbox (Cua Spaces) features.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-20",
+      "evidence": [
+        "https://x.com/trycua/status/2112228154651881479",
+        "https://x.com/trycua/status/2112589741879328979"
+      ],
+      "last_qualifying_post": "2026-10-20",
+      "retired_reason": null
+    },
+    {
+      "handle": "@PrismML",
+      "name": "PrismML",
+      "group": "labs",
+      "affiliation": "PrismML",
+      "why": "Ships ternary and 1-bit open models (Bonsai 2) with size and speed measurements.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-20",
+      "evidence": [
+        "https://x.com/PrismML/status/2110823964650164348",
+        "https://x.com/PrismML/status/2102859262062145966"
+      ],
+      "last_qualifying_post": "2026-10-15",
+      "retired_reason": null
+    },
+    {
+      "handle": "@Aleph__Alpha",
+      "name": "Aleph Alpha",
+      "group": "research",
+      "affiliation": "Aleph Alpha",
+      "why": "Posts evaluation methodology research with measurements (PriorBPB, multiple-choice spacing).",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-20",
+      "evidence": [
+        "https://x.com/Aleph__Alpha/status/2110008600936800588",
+        "https://x.com/Aleph__Alpha/status/2112547676868817027"
+      ],
+      "last_qualifying_post": "2026-10-20",
+      "retired_reason": null
+    },
+    {
+      "handle": "@odysseyml",
+      "name": "Odyssey",
+      "group": "labs",
+      "affiliation": "Odyssey",
+      "why": "World model lab shipping interactive video models (Odyssey-3) with demos.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-20",
+      "evidence": [
+        "https://x.com/odysseyml/status/2108238378751967385",
+        "https://x.com/odysseyml/status/2105714716316438684"
+      ],
+      "last_qualifying_post": "2026-10-08",
+      "retired_reason": null
+    },
+    {
+      "handle": "@actualinc",
+      "name": "Actual Computer",
+      "group": "applied",
+      "affiliation": "Actual",
+      "why": "Ships open tooling with measurements (toks tokenizer, e engine).",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-20",
+      "evidence": [
+        "https://x.com/actualinc/status/2107573418434629849",
+        "https://x.com/actualinc/status/2110759623435117020"
+      ],
+      "last_qualifying_post": "2026-10-15",
+      "retired_reason": null
+    },
+    {
+      "handle": "@GeminiApp",
+      "name": "Google Gemini",
+      "group": "labs",
+      "affiliation": "Google",
+      "why": "Official Gemini app account; first-hand on consumer Gemini features (Skills, Argon).",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-10-20",
+      "evidence": [
+        "https://x.com/GeminiApp/status/2110039322229649783",
+        "https://x.com/GeminiApp/status/2105327839054835886"
+      ],
+      "last_qualifying_post": "2026-10-13",
+      "retired_reason": null
+    },
+    {
+      "handle": "@hume_ai",
+      "name": "Hume AI",
+      "group": "research",
+      "affiliation": "Hume AI",
+      "why": "Voice AI lab posting voice model evaluations (Real World VoiceEQ).",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-20",
+      "evidence": [
+        "https://x.com/hume_ai/status/2102804812031270923",
+        "https://x.com/hume_ai/status/2108622420647248362"
+      ],
+      "last_qualifying_post": "2026-10-09",
+      "retired_reason": null
+    },
+    {
+      "handle": "@ElevenLabs",
+      "name": "ElevenLabs",
+      "group": "labs",
+      "affiliation": "ElevenLabs",
+      "why": "Official account for speech models (Eleven Realtime, v4) with latency and benchmark numbers.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-20",
+      "evidence": [
+        "https://x.com/ElevenLabs/status/2112550782063247521",
+        "https://x.com/ElevenLabs/status/2110759737583345706"
+      ],
+      "last_qualifying_post": "2026-10-20",
+      "retired_reason": null
+    },
+    {
+      "handle": "@mem0ai",
+      "name": "mem0",
+      "group": "applied",
+      "affiliation": "Mem0",
+      "why": "Agent memory layer; publishes its own memory benchmark (DolphinBench).",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-10-20",
+      "evidence": [
+        "https://x.com/mem0ai/status/2102438126941876590",
+        "https://x.com/mem0ai/status/2105685414430523472"
+      ],
+      "last_qualifying_post": "2026-10-01",
+      "retired_reason": null
+    },
+    {
+      "handle": "@reflection_ai",
+      "name": "Reflection",
+      "group": "labs",
+      "affiliation": "Reflection AI",
+      "why": "Releases large open-weight models under Apache 2.0 (Beam 501B).",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-20",
+      "evidence": [
+        "https://x.com/reflection_ai/status/2107186849370247235",
+        "https://x.com/reflection_ai/status/2111079965529968798"
+      ],
+      "last_qualifying_post": "2026-10-16",
+      "retired_reason": null
+    },
+    {
+      "handle": "@Gradio",
+      "name": "Gradio",
+      "group": "opensource",
+      "affiliation": "Hugging Face",
+      "why": "Open-source UI library account; posts runnable demos with cost numbers.",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-10-20",
+      "evidence": [
+        "https://x.com/Gradio/status/2105615321222823964",
+        "https://x.com/Gradio/status/2104932384689082535"
+      ],
+      "last_qualifying_post": "2026-10-01",
+      "retired_reason": null
+    },
+    {
+      "handle": "@ElorianAI",
+      "name": "Elorian AI",
+      "group": "labs",
+      "affiliation": "Elorian",
+      "why": "New lab shipping a visual reasoning model (Glimpse) and its own benchmark.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-20",
+      "evidence": [
+        "https://x.com/ElorianAI/status/2111142036208501070",
+        "https://x.com/ElorianAI/status/2107973580319576356"
+      ],
+      "last_qualifying_post": "2026-10-16",
+      "retired_reason": null
+    },
+    {
+      "handle": "@haoailab",
+      "name": "Hao AI Lab",
+      "group": "research",
+      "affiliation": "UCSD Hao AI Lab",
+      "why": "First-hand on FastVideo: open distilled real-time video models with training code, NVFP4 quantization-aware recipes and measured latency on Blackwell and DGX Spark.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-21",
+      "evidence": [
+        "https://x.com/haoailab/status/2112625528805208257",
+        "https://x.com/haoailab/status/2112305087225983427",
+        "https://x.com/haoailab/status/2110904952839372895"
+      ],
+      "last_qualifying_post": "2026-10-20",
+      "retired_reason": null
+    },
+    {
+      "handle": "@somarkai",
+      "name": "SoMark",
+      "group": "opensource",
+      "affiliation": "SoMark",
+      "why": "Ships OXR, a 1.3B open document-parsing model with weights and code and benchmark numbers (olmOCR-Bench, OmniDocBench), plus the open Docision agent.",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-10-21",
+      "evidence": [
+        "https://x.com/somarkai/status/2112574994152636502",
+        "https://x.com/somarkai/status/2110405408045019299"
+      ],
+      "last_qualifying_post": "2026-10-20",
+      "retired_reason": null
+    },
+    {
+      "handle": "@StefanoErmon",
+      "name": "Stefano Ermon",
+      "group": "research",
+      "affiliation": "Stanford, Inception",
+      "why": "Diffusion LLM researcher and Inception cofounder: Mercury model launches with benchmark claims and his lab's constrained-decoding research for diffusion LLMs.",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-10-21",
+      "evidence": [
+        "https://x.com/StefanoErmon/status/2112222911218291051",
+        "https://x.com/StefanoErmon/status/2106106429568643460",
+        "https://x.com/StefanoErmon/status/2104979630394614258"
+      ],
+      "last_qualifying_post": "2026-10-19",
+      "retired_reason": null
+    },
+    {
+      "handle": "@chem_safety",
+      "name": "Jennifer Zhou",
+      "group": "research",
+      "affiliation": "Preference Model",
+      "why": "RL environment and eval auditing: published a TerminalBench 4.0 task audit with a writeup, open-sourced the Karotte RL-environment framework, and ran a long-horizon game benchmark.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-21",
+      "evidence": [
+        "https://x.com/chem_safety/status/2112212878132744674",
+        "https://x.com/chem_safety/status/2107893216515133719",
+        "https://x.com/chem_safety/status/2109685886472602082"
+      ],
+      "last_qualifying_post": "2026-10-19",
+      "retired_reason": null
+    },
+    {
+      "handle": "@htihle",
+      "name": "Havard Ihle",
+      "group": "research",
+      "affiliation": "WeirdML",
+      "why": "Runs the WeirdML benchmark and posts per-model scores with cost and token notes for new frontier and open models soon after release.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-21",
+      "evidence": [
+        "https://x.com/htihle/status/2112517036261695823",
+        "https://x.com/htihle/status/2111782267345682840",
+        "https://x.com/htihle/status/2110288604605882405"
+      ],
+      "last_qualifying_post": "2026-10-20",
+      "retired_reason": null
+    },
+    {
+      "handle": "@datalabto",
+      "name": "Datalab",
+      "group": "applied",
+      "affiliation": "Datalab",
+      "why": "Document intelligence (Chandra OCR, Marker): API releases with speed and accuracy numbers and the open OmniExtractBench scoring tool.",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-10-21",
+      "evidence": [
+        "https://x.com/datalabto/status/2110822718341845484",
+        "https://x.com/datalabto/status/2112664733522211160",
+        "https://x.com/datalabto/status/2102852413363494978"
+      ],
+      "last_qualifying_post": "2026-10-20",
+      "retired_reason": null
+    },
+    {
+      "handle": "@NaceAI",
+      "name": "Nace AI",
+      "group": "labs",
+      "affiliation": "Nace AI",
+      "why": "Small decision models: open Drex 2.0 weights and code, plus measured Drex Max and browser-use harness results (WebArena-Verified, cost per 1,000 tasks).",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-10-21",
+      "evidence": [
+        "https://x.com/NaceAI/status/2109755218716188674",
+        "https://x.com/NaceAI/status/2112642730228944958",
+        "https://x.com/NaceAI/status/2112175183448461683"
+      ],
+      "last_qualifying_post": "2026-10-20",
+      "retired_reason": null
+    },
+    {
+      "handle": "@Letta_AI",
+      "name": "Letta",
+      "group": "devtools",
+      "affiliation": "Letta",
+      "why": "First-hand on agent memory: Letta Code features and the FrontierMemory benchmark (open corpus, scores memory by downstream task performance).",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-22",
+      "evidence": [
+        "https://x.com/Letta_AI/status/2112957074644873289",
+        "https://x.com/Letta_AI/status/2105015179855704164"
+      ],
+      "last_qualifying_post": "2026-10-21",
+      "retired_reason": null
+    },
+    {
+      "handle": "@turbopuffer",
+      "name": "turbopuffer",
+      "group": "applied",
+      "affiliation": "turbopuffer",
+      "why": "Search engine for agents and RAG; posts measured engine changes (v3 batched full-text reads about 9x faster, filter latency cut about 95%, native reranking GA, Nemotron embeddings with recall numbers).",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-22",
+      "evidence": [
+        "https://x.com/turbopuffer/status/2106060390916636850",
+        "https://x.com/turbopuffer/status/2108615796415234422",
+        "https://x.com/turbopuffer/status/2112569613804580898",
+        "https://x.com/turbopuffer/status/2113042657471836354"
+      ],
+      "last_qualifying_post": "2026-10-21",
+      "retired_reason": null
+    },
+    {
+      "handle": "@inco_ai",
+      "name": "Inco AI",
+      "group": "opensource",
+      "affiliation": "Inco AI",
+      "why": "Ships DFlash 2 speculative-decoding drafters on Hugging Face and the open-source Splash local inference runtime, with measured speedups.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-22",
+      "evidence": [
+        "https://x.com/inco_ai/status/2112576331850682540",
+        "https://x.com/inco_ai/status/2107981893903982901",
+        "https://x.com/inco_ai/status/2103228024275730863"
+      ],
+      "last_qualifying_post": "2026-10-20",
+      "retired_reason": null
+    },
+    {
+      "handle": "@PrismaXai",
+      "name": "PrismaX",
+      "group": "applied",
+      "affiliation": "PrismaX",
+      "why": "Robotics data and policy team publishing open-source pi0.5 rollout code and a path-traced YAM simulator, with measured latency and fine-tuning ablations.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-22",
+      "evidence": [
+        "https://x.com/PrismaXai/status/2113042694721491381",
+        "https://x.com/PrismaXai/status/2112295123879079964",
+        "https://x.com/PrismaXai/status/2112554927675593207"
+      ],
+      "last_qualifying_post": "2026-10-21",
+      "retired_reason": null
+    },
+    {
+      "handle": "@hotchpotch",
+      "name": "Yuichi Tateno",
+      "group": "opensource",
+      "affiliation": "Independent",
+      "why": "Independent builder releasing small open embedding and decision models with benchmarks (bekko-static-embedding-v1, saihai, S1MB), often in Japanese.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-22",
+      "evidence": [
+        "https://x.com/hotchpotch/status/2112732588884508682",
+        "https://x.com/hotchpotch/status/2110548623905960409",
+        "https://x.com/hotchpotch/status/2105529252028539371"
+      ],
+      "last_qualifying_post": "2026-10-21",
+      "retired_reason": null
+    },
+    {
+      "handle": "@SparkLLM",
+      "name": "iFlytek Spark",
+      "group": "labs",
+      "affiliation": "iFlytek",
+      "why": "Official account for the Apache 2.0 Spark-X small open models (Spark-X2.6-4B with benchmark numbers) plus local llama.cpp demos.",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-10-22",
+      "evidence": [
+        "https://x.com/SparkLLM/status/2112614036227408363",
+        "https://x.com/SparkLLM/status/2111045024322642365",
+        "https://x.com/SparkLLM/status/2110692981665579293"
+      ],
+      "last_qualifying_post": "2026-10-20",
+      "retired_reason": null
+    },
+    {
+      "handle": "@SpeechifyAI",
+      "name": "SpeechifyAI",
+      "group": "labs",
+      "affiliation": "Speechify",
+      "why": "First-hand speech model lab (Simba TTS): model releases with fact sheets and published latency benchmarks with every request.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-23",
+      "evidence": [
+        "https://x.com/SpeechifyAI/status/2112892450234589517",
+        "https://x.com/SpeechifyAI/status/2112530144212513229",
+        "https://x.com/SpeechifyAI/status/2112167688189399225"
+      ],
+      "last_qualifying_post": "2026-10-21",
+      "retired_reason": null
+    },
+    {
+      "handle": "@LoubnaBenAllal1",
+      "name": "Loubna Ben Allal",
+      "group": "opensource",
+      "affiliation": "Hugging Face",
+      "why": "Hugging Face researcher first-hand on open model releases (Carbon family, Carbon-X DNA plus text model with weights).",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-23",
+      "evidence": [
+        "https://x.com/LoubnaBenAllal1/status/2113212025560023513",
+        "https://x.com/LoubnaBenAllal1/status/2108228619860656434"
+      ],
+      "last_qualifying_post": "2026-10-22",
+      "retired_reason": null
+    },
+    {
+      "handle": "@KLieret",
+      "name": "Kilian Lieret",
+      "group": "research",
+      "affiliation": "Meta Superintelligence (SWE-bench, SWE-agent)",
+      "why": "First-hand on coding-agent benchmarks: SWE-sweep benchmark and leaderboard, mini-SWE-agent, ProgramBench.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-23",
+      "evidence": [
+        "https://x.com/KLieret/status/2113272881098756165",
+        "https://x.com/KLieret/status/2105670833574465933"
+      ],
+      "last_qualifying_post": "2026-10-22",
+      "retired_reason": null
+    },
+    {
+      "handle": "@sageai_official",
+      "name": "SageAI",
+      "group": "labs",
+      "affiliation": "Shanghai AI Lab (InternScience)",
+      "why": "Official Shanghai AI Lab science-model account: Sage-A1.5 open agentic MoE and Intern-S2 math results with write-ups.",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-10-23",
+      "evidence": [
+        "https://x.com/sageai_official/status/2113192901073309849",
+        "https://x.com/sageai_official/status/2110924243798286547"
+      ],
+      "last_qualifying_post": "2026-10-22",
+      "retired_reason": null
+    },
+    {
+      "handle": "@Alex_tra_memory",
+      "name": "Alex",
+      "group": "builders",
+      "affiliation": "FluidInference (FluidAudio)",
+      "why": "Hands-on on-device builder: ports TTS, ASR and OCR models to Core ML and MLX on Apple silicon with open code and measured speeds.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-23",
+      "evidence": [
+        "https://x.com/Alex_tra_memory/status/2112782259916865643",
+        "https://x.com/Alex_tra_memory/status/2112731253304594671",
+        "https://x.com/Alex_tra_memory/status/2109868778615976113"
+      ],
+      "last_qualifying_post": "2026-10-23",
+      "retired_reason": null
+    },
+    {
+      "handle": "@Bober_smart",
+      "name": "Bober_smart",
+      "group": "devtools",
+      "affiliation": null,
+      "why": "Owner-requested watch (2026-10-23). High-engagement AI workflow/tutorial posts (Claude Code, agent swarms, second-brain setups). Mostly promo-style quote of own guides rather than first-hand lab artifacts \u2014 trial for taste match; retire if noise.",
+      "signal_to_noise": 2,
+      "status": "trial",
+      "added_on": "2026-10-23",
+      "evidence": [
+        "https://x.com/Bober_smart/status/2112248400406253644",
+        "https://x.com/Bober_smart/status/2112889540612432250"
+      ],
+      "last_qualifying_post": "2026-10-21",
+      "retired_reason": null,
+      "owner_requested": true
+    }
+  ],
+  "source_leads": [
+    {
+      "kind": "blog",
+      "name": "Anthropic Frontier Red Team (red.anthropic.com)",
+      "url": "https://red.anthropic.com/",
+      "why": "Security and cyber capability write-ups such as OSS Scanner that are not in the Anthropic news or research feeds.",
+      "seen_via": [
+        "@ClaudeDevs"
+      ]
+    },
+    {
+      "kind": "blog",
+      "name": "Sakana AI blog",
+      "url": "https://sakana.ai/blog/",
+      "why": "Research releases with code (QD-Rec and earlier) that Magpie does not watch.",
+      "seen_via": [
+        "@SakanaAILabs"
+      ]
+    },
+    {
+      "kind": "blog",
+      "name": "Meta AI blog",
+      "url": "https://ai.meta.com/blog/",
+      "why": "Muse model reports and infrastructure posts; the existing Meta engineering feed misses most of them.",
+      "seen_via": [
+        "@AIatMeta"
+      ]
+    },
+    {
+      "kind": "changelog",
+      "name": "prime-rl releases",
+      "url": "https://github.com/PrimeIntellect-ai/prime-rl/releases.atom",
+      "why": "Open RL training framework releases (v0.10.0 today).",
+      "seen_via": [
+        "@PrimeIntellect"
+      ]
+    },
+    {
+      "kind": "changelog",
+      "name": "TRL releases",
+      "url": "https://github.com/huggingface/trl/releases.atom",
+      "why": "Hugging Face post-training library releases (v1.16 Trainium support).",
+      "seen_via": [
+        "@QGallouedec"
+      ]
+    },
+    {
+      "kind": "changelog",
+      "name": "PyTorch releases",
+      "url": "https://github.com/pytorch/pytorch/releases.atom",
+      "why": "Core framework releases such as 2.15 with large Mac MPS speedups.",
+      "seen_via": [
+        "@LysandreJik",
+        "@Is36E"
+      ]
+    },
+    {
+      "kind": "blog",
+      "name": "Inception blog",
+      "url": "https://www.inceptionlabs.ai/blog",
+      "why": "Diffusion LLM releases (Mercury 3) from a lab not otherwise covered.",
+      "seen_via": [
+        "@_inception_ai",
+        "@tri_dao"
+      ]
+    },
+    {
+      "kind": "changelog",
+      "name": "VS Code release notes",
+      "url": "https://code.visualstudio.com/feed.xml",
+      "why": "Monthly VS Code updates with Copilot and agent features (for example canvases and shared agent workspaces); only the Copilot changelog is watched today.",
+      "seen_via": [
+        "@code"
+      ]
+    },
+    {
+      "kind": "blog",
+      "name": "SGLang blog",
+      "url": "https://sglang.io/blog",
+      "why": "SGLang team writeups with serving benchmarks (low-latency modes, SGLang-Omni); Magpie watches only the GitHub releases.",
+      "seen_via": [
+        "@lmsysorg",
+        "@sgl_project"
+      ]
+    },
+    {
+      "kind": "changelog",
+      "name": "Cohere changelog",
+      "url": "https://docs.cohere.com/changelog",
+      "why": "Dated model and API changes (for example Rerank 5) that appear before the Cohere blog mirror picks them up.",
+      "seen_via": [
+        "@aitrackerbot"
+      ]
+    },
+    {
+      "kind": "blog",
+      "name": "Reflection AI blog",
+      "url": "https://reflection.ai/blog",
+      "why": "Primary posts for Reflection's open-weight Beam models.",
+      "seen_via": [
+        "@ValsAI",
+        "@reflection_ai"
+      ]
+    },
+    {
+      "kind": "blog",
+      "name": "LightSeek blog",
+      "url": "https://lightseek.org/blog",
+      "why": "Speculative decoding work (EAGLE-4, TorchSpec) with measured speedups.",
+      "seen_via": [
+        "@lightseekorg"
+      ]
+    },
+    {
+      "kind": "blog",
+      "name": "Hao AI Lab blog",
+      "url": "https://hao-ai-lab.github.io/blogs/",
+      "why": "FastVideo and agent research writeups with code and numbers.",
+      "seen_via": [
+        "@haoailab"
+      ]
+    },
+    {
+      "kind": "feed",
+      "name": "WeirdML benchmark results",
+      "url": "https://htihle.github.io/weirdml.html",
+      "why": "Independent per-model benchmark results with cost, updated as new models ship.",
+      "seen_via": [
+        "@htihle"
+      ]
+    },
+    {
+      "kind": "blog",
+      "name": "Inco AI blog",
+      "url": "https://inco.ai/blog/",
+      "why": "Write-ups for DFlash and DFlash 2 speculative decoding and Splash local inference releases.",
+      "seen_via": [
+        "@inco_ai",
+        "@zhijianliu"
+      ]
+    },
+    {
+      "kind": "changelog",
+      "name": "turbopuffer changelog",
+      "url": "https://turbopuffer.com/changelog",
+      "why": "Monthly search-engine changes (v3 engine, native embedding and reranking) with performance numbers.",
+      "seen_via": [
+        "@turbopuffer"
+      ]
+    },
+    {
+      "kind": "blog",
+      "name": "Letta blog",
+      "url": "https://www.letta.com/blog",
+      "why": "Agent memory research and Letta Code releases, including the FrontierMemory benchmark.",
+      "seen_via": [
+        "@Letta_AI",
+        "@omarsar0"
+      ]
+    },
+    {
+      "kind": "blog",
+      "name": "PrismaX blog",
+      "url": "https://www.prismax.ai/blog",
+      "why": "Hands-on robot policy write-ups (pi0.5 latency, camera and lighting ablations) with open code.",
+      "seen_via": [
+        "@PrismaXai"
+      ]
+    },
+    {
+      "kind": "blog",
+      "name": "vLLM blog",
+      "url": "https://vllm.ai/blog",
+      "why": "Engineering write-ups behind vLLM features (TPU backend, kernels); Magpie watches only vLLM GitHub releases.",
+      "seen_via": [
+        "@vllm_project",
+        "@RichardSocher"
+      ]
+    },
+    {
+      "kind": "blog",
+      "name": "fal blog",
+      "url": "https://fal.ai/blog",
+      "why": "Hosted image, video and audio model launches and speed write-ups from a trial roster account.",
+      "seen_via": [
+        "@fal"
+      ]
+    },
+    {
+      "kind": "blog",
+      "name": "Liquid AI blog",
+      "url": "https://www.liquid.ai/blog",
+      "why": "Release notes and benchmarks for LFM on-device models, which Magpie sees only via Hugging Face.",
+      "seen_via": [
+        "@liquidai"
+      ]
+    },
+    {
+      "kind": "blog",
+      "name": "Speechify AI blog",
+      "url": "https://speechify.ai/blog",
+      "why": "Simba speech model releases plus reproducible TTS latency and pricing measurements.",
+      "seen_via": [
+        "@SpeechifyAI"
+      ]
+    }
+  ]
 }
