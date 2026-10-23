@@ -15,7 +15,7 @@ lifts a widely used capability outranks an equally scored pairing of two unknown
 With MAGPIE_BUILD_ON_IDEAS=1, Magpie's own earlier possibilities join the pool as ideas (see earlier_ideas): when an
 arrival makes one of them much stronger, the new possibility builds on it ("On Oct 21 we suggested A with B; D, out
 today, removes B's limit") and records it in `builds_on`. An idea is never an ingredient: the ingredients stay
-capabilities, and only their words can vouch for a number.
+capabilities, and only their words can vouch for a number, apart from the idea's date, which the connection names.
 """
 from __future__ import annotations
 
