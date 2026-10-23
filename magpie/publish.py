@@ -112,7 +112,9 @@ def compose_day(date: str, items: list[dict], rising: dict, health: list[dict], 
 def publish_day(day: dict, events: list[dict], top_events: list[dict], *, force: bool = False) -> bool:
     """Write the day; move `latest` only forward; record first sightings. Returns False if it kept a richer edition."""
     from .recent import attach
+    from .views import assign_ids
     attach(day, DATA)  # no blank sections: an empty one carries its latest items from the registers and past editions
+    assign_ids(day)  # every possibility has its page id, a cached one included
     scrub(day)
     date = day["date"]
     day_path = DATA / "days" / f"{date}.json"
@@ -161,9 +163,19 @@ def publish_day(day: dict, events: list[dict], top_events: list[dict], *, force:
     except Exception as ex:
         print(f"threats register not updated: {type(ex).__name__}: {str(ex)[:160]}", file=sys.stderr)
     refresh_elements(date)
+    refresh_views(date)
     write_feed()
     print(f"published {date}: {len(events)} events, top {len(top_events)}, {day['run']['seconds']}s", file=sys.stderr)
     return True
+
+
+def refresh_views(date: str | None = None) -> None:
+    """Rewrite the ideas index and the date's week and month rollups (data/v1/ideas, data/v1/rollups). Never fails."""
+    try:
+        from .views import refresh
+        refresh(DATA, [date] if date else None)
+    except (Exception, SystemExit) as ex:  # views.refresh never raises; this covers its import
+        print(f"views not updated: {type(ex).__name__}: {str(ex)[:160]}", file=sys.stderr)
 
 
 def refresh_elements(date: str | None = None) -> None:

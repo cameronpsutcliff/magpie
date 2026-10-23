@@ -35,6 +35,8 @@ list, and a roster of 72 vetted X accounts read through Grok's live search.
 | `data/v1/threats.json` | Every security threat Magpie has recorded that changes what is safe to run, trust or depend on |
 | `data/v1/elements/<slug>.json` | One element across every edition: what it is, where to find it, what it works with, its history |
 | `data/v1/elements/index.json` | Every element page, with its canonical key, first and last sighting and counts |
+| `data/v1/ideas/index.json` | Every new possibility with its id (its page is `/magpie/i/<id>`), ingredients, what it builds on and what built on it |
+| `data/v1/rollups/YYYY-MM-DD.json` | The week and the month ending on that edition: highest-impact capabilities with their sources, strongest possibilities, new threats and constraints; built by code |
 
 Schemas `magpie.day/1`, `magpie.element/1`, `magpie.elements/1`, `magpie.constraints/1` and `magpie.threats/1` live in
 `data/v1/schema/`. Anything downstream

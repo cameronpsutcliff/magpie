@@ -1,0 +1,127 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://www.cameronsutcliff.com/magpie-data/schema/ideas.schema.json",
+ "title": "Magpie ideas index (magpie.ideas/1)",
+ "description": "Every new possibility of every edition, newest edition first, rebuilt on every publish. Each one's page is /magpie/i/<id>; its full text is in days/<date>.json under possibilities.items, matched by id.",
+ "type": "object",
+ "required": [
+  "schema",
+  "updated",
+  "ideas"
+ ],
+ "properties": {
+  "schema": {
+   "const": "magpie.ideas/1"
+  },
+  "updated": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "format": "date"
+  },
+  "ideas": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "date",
+     "title"
+    ],
+    "properties": {
+     "id": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}-[a-z0-9][a-z0-9-]{0,99}$"
+     },
+     "date": {
+      "type": "string",
+      "format": "date"
+     },
+     "position": {
+      "type": "integer",
+      "description": "Its place in that edition's list, from 1. Absent on a retired id."
+     },
+     "title": {
+      "type": "string"
+     },
+     "connection": {
+      "type": "string"
+     },
+     "score": {
+      "type": [
+       "number",
+       "null"
+      ],
+      "description": "Its rank score in that edition."
+     },
+     "effort": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "ingredients": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "id": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "title": {
+         "type": "string"
+        },
+        "date": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "url": {
+         "type": [
+          "string",
+          "null"
+         ]
+        }
+       }
+      }
+     },
+     "builds_on": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "date": {
+        "type": "string",
+        "format": "date"
+       },
+       "title": {
+        "type": "string"
+       }
+      },
+      "description": "The earlier possibility it builds on; id is null when that one cannot be found."
+     },
+     "built_on_by": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      },
+      "description": "Ids of later possibilities that build on this one."
+     },
+     "retired": {
+      "const": true,
+      "description": "An id no edition carries any more: its edition's possibilities were worked out again. Only id, date and title remain, so a link to it can still say so."
+     }
+    }
+   }
+  }
+ }
+}

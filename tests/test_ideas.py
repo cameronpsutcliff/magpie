@@ -45,11 +45,11 @@ class IdeaTests(unittest.TestCase):
 
     def test_earlier_ideas_are_the_related_possibilities_before_today(self):
         rows = P.earlier_ideas("2099-01-05", self.data, [self.speech])
-        self.assertEqual([r["id"] for r in rows], ["idea-2099-01-03-1"])  # trading shares no word; later and untitled are out
+        self.assertEqual([r["id"] for r in rows], ["2099-01-03-small-clinics-can-transcribe-visits-on"])  # trading shares no word; later and untitled are out
         r = rows[0]
         self.assertEqual((r["kind"], r["today"], r["date"]), ("idea", False, "2099-01-03"))
         self.assertEqual(r["recipe"], ["Whisper runs locally", "Flint codes on a laptop"])
-        self.assertEqual(r["_url"], "https://www.cameronsutcliff.com/magpie/2099-01-03")
+        self.assertEqual(r["_url"], "https://www.cameronsutcliff.com/magpie/i/2099-01-03-small-clinics-can-transcribe-visits-on")  # the idea's own page
         self.assertEqual(P.earlier_ideas("2099-01-05", self.data, []), [])
         self.assertEqual(P.earlier_ideas("2099-01-05", self.data, [self.speech], limit=0), [])
 
@@ -74,11 +74,11 @@ class IdeaTests(unittest.TestCase):
         base = {"connection": "On 2099-01-03 Magpie suggested local transcription; Fast Whisper at 10x speed makes it practical.",
                 "chain": ["a", "b", "c"], "effort": "a week", "scores": {"value": 4, "feasibility": 4, "evidence": 3, "novelty": 3}}
         answer = [
-            {**base, "title": "Clinics transcribe and review a visit in minutes", "ingredients": ["idea-2099-01-03-1", "s1"]},
-            {**base, "title": "Only an idea and nothing new", "ingredients": ["idea-2099-01-03-1"]},
-            {**base, "title": "Two ideas, one kept", "ingredients": ["idea-2099-01-03-1", "idea-2099-01-01-1", "s2", "s1"]},
-            {**base, "title": "Ungrounded", "connection": "It saves 90 minutes.", "ingredients": ["idea-2099-01-03-1", "s1"]},
-            {**base, "title": "The idea's own number", "connection": "Review takes 15 minutes now.", "ingredients": ["idea-2099-01-03-1", "s1"]},
+            {**base, "title": "Clinics transcribe and review a visit in minutes", "ingredients": ["2099-01-03-small-clinics-can-transcribe-visits-on", "s1"]},
+            {**base, "title": "Only an idea and nothing new", "ingredients": ["2099-01-03-small-clinics-can-transcribe-visits-on"]},
+            {**base, "title": "Two ideas, one kept", "ingredients": ["2099-01-03-small-clinics-can-transcribe-visits-on", "2099-01-01-quant-desks-can-backtest-with-agents", "s2", "s1"]},
+            {**base, "title": "Ungrounded", "connection": "It saves 90 minutes.", "ingredients": ["2099-01-03-small-clinics-can-transcribe-visits-on", "s1"]},
+            {**base, "title": "The idea's own number", "connection": "Review takes 15 minutes now.", "ingredients": ["2099-01-03-small-clinics-can-transcribe-visits-on", "s1"]},
         ]
         out, prompt = self.run_generate("1", answer)
         self.assertIn('"kind": "idea"', prompt)
@@ -87,19 +87,29 @@ class IdeaTests(unittest.TestCase):
         kept = {p["title"]: p for p in out["items"]}
         self.assertEqual(sorted(kept), ["Clinics transcribe and review a visit in minutes", "Two ideas, one kept"])
         p = kept["Clinics transcribe and review a visit in minutes"]
-        self.assertEqual(p["builds_on"], {"id": "idea-2099-01-03-1", "date": "2099-01-03",
+        self.assertEqual(p["builds_on"], {"id": "2099-01-03-small-clinics-can-transcribe-visits-on", "date": "2099-01-03",
                                           "title": "Small clinics can transcribe visits on one laptop",
-                                          "url": "https://www.cameronsutcliff.com/magpie/2099-01-03"})
+                                          "url": "https://www.cameronsutcliff.com/magpie/i/2099-01-03-small-clinics-can-transcribe-visits-on"})
         # The idea is what it builds on, not an ingredient: the page never shows it as a capability.
         self.assertEqual(p["ingredients"], ["s1"])
         self.assertEqual([r["id"] for r in p["ingredient_refs"]], ["s1"])
         self.assertEqual(p["mix"], "today_x_today")
         self.assertEqual(kept["Two ideas, one kept"]["ingredients"], ["s2", "s1"])
-        self.assertEqual(kept["Two ideas, one kept"]["builds_on"]["id"], "idea-2099-01-03-1")  # the first idea named
+        self.assertEqual(kept["Two ideas, one kept"]["builds_on"]["id"], "2099-01-03-small-clinics-can-transcribe-visits-on")  # the first idea named
         whys = {d["title"]: d["why"] for d in out["dropped"]}
         self.assertIn("one from today", whys["Only an idea and nothing new"])
         self.assertIn("90", whys["Ungrounded"])
         self.assertIn("15", whys["The idea's own number"])  # an idea's words never vouch for a number
+
+    def test_code_sets_the_id_and_builds_on_never_the_model(self):
+        base = {"connection": "Fast Whisper at 10x speed helps.", "chain": ["a", "b", "c"], "effort": "a week",
+                "scores": {"value": 4, "feasibility": 4, "evidence": 3, "novelty": 3}}
+        answer = [{**base, "title": "Clinics transcribe on laptops", "ingredients": ["s1", "s2"], "id": "evil",
+                   "builds_on": {"id": "made-up", "date": "2099-01-01", "title": "Never said", "url": "https://evil.example"}}]
+        out, _ = self.run_generate("1", answer)
+        p = out["items"][0]
+        self.assertEqual(p["id"], "2099-01-05-clinics-transcribe-on-laptops")
+        self.assertNotIn("builds_on", p)  # no idea among its ingredients: nothing it builds on
 
     def test_malformed_earlier_editions_are_skipped(self):
         bad = [{"date": "2099-01-02", "possibilities": ["not", "a", "dict"]},
@@ -110,8 +120,8 @@ class IdeaTests(unittest.TestCase):
         for i, d in enumerate(bad):
             write_json(self.data / "days" / f"2099-01-0{2 if i < 3 else 4}.json", d, compact=True)
             rows = P.earlier_ideas("2099-01-05", self.data, [self.speech])
-            self.assertTrue(all(r["id"].startswith("idea-2099-01-0") for r in rows))
-        self.assertEqual(rows[0], {**rows[0], "id": "idea-2099-01-04-1", "what": "", "recipe": [], "limits": "", "_summary": ""})
+            self.assertTrue(all(r["id"].startswith("2099-01-0") for r in rows))
+        self.assertEqual(rows[0], {**rows[0], "id": "2099-01-04-clinic-speech-notes", "what": "", "recipe": [], "limits": "", "_summary": ""})
         days = self.data / "days"
         (days / "2099-01-02.json").write_text('{"date": "2099-01-02", "possibilities": ')  # cut off mid-file
         (days / "2099-01-01.json").write_bytes(b"\xff\xfe not utf-8")
@@ -119,7 +129,7 @@ class IdeaTests(unittest.TestCase):
         write_json(days / "2098-12-30.json", {"date": "2098-12-30", "possibilities": {"items": [CLINIC]}}, compact=True)
         got = P.earlier_ideas("2099-01-05", self.data, [self.speech], editions=3)
         # The three files that cannot be read as editions do not count: the three read are 01-04, 01-03 and 12-30.
-        self.assertEqual(sorted(r["id"] for r in got), ["idea-2098-12-30-1", "idea-2099-01-03-1", "idea-2099-01-04-1"])
+        self.assertEqual(sorted(r["id"] for r in got), ["2098-12-30-small-clinics-can-transcribe-visits-on", "2099-01-03-small-clinics-can-transcribe-visits-on", "2099-01-04-clinic-speech-notes"])
 
     def test_only_the_last_seven_editions_and_six_ideas_newest_first(self):
         shutil.rmtree(self.data)
