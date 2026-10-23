@@ -249,10 +249,16 @@ class PairJudgeTests(unittest.TestCase):
         odd = json.dumps({"arrivals": [{"id": CKPT["id"], "picks": "all", "reject": {"id": UNSLOTH["id"]}},
                                        {"id": ["not", "a", "string"]}]})
         self.assertEqual(J.parse(odd, cands, self.lib), {CKPT["id"]: {"picks": [], "reject": {}}})
-        runners, _ = self.runners(claude=answer(AGREE, REJECT), codex=answer(AGREE, REJECT), agy="Sure: []")
-        keys, receipt, _ = self.pick(runners)
-        self.assertEqual(receipt["pair_judge"]["lanes"]["agy"]["status"], "unreadable")
-        self.assertIsNone(receipt["pair_judge"]["fallback"])
+        for text in (None, 7, ["a"], {"arrivals": []}):
+            with self.assertRaises(ValueError):
+                J.parse(text, cands, self.lib)
+        for odd in ("Sure: []", ["a list"], {"a": "dict"}, None):
+            shutil.rmtree(self.cache, ignore_errors=True)
+            runners, _ = self.runners(claude=answer(AGREE, REJECT), codex=answer(AGREE, REJECT), agy=lambda odd=odd: odd)
+            keys, receipt, _ = self.pick(runners)
+            self.assertEqual(receipt["pair_judge"]["lanes"]["agy"]["status"], "unreadable")
+            self.assertIsNone(receipt["pair_judge"]["fallback"])
+        self.assertEqual(sorted(json.loads((self.cache / "2099-02-05.json").read_text())), ["claude", "codex"])  # not None
 
     def test_a_cache_of_the_wrong_shape_is_ignored_and_rewritten(self):
         path = self.cache / "2099-02-05.json"

@@ -221,7 +221,9 @@ def parse(text: str, cands: dict[str, list[str]], lib: dict[str, dict]) -> dict[
     """arrival id -> {"picks": [(key, relation, reason)] best first, at most PER_ARRIVAL, "reject": {key: relation}}.
     Unknown arrivals or candidates, unknown relations, repeats and anything of the wrong shape are dropped. ValueError
     (and nothing else) when the answer holds no JSON object."""
-    start = (text or "").find("{")
+    if not isinstance(text, str):
+        raise ValueError("the answer is not text")
+    start = text.find("{")
     if start < 0:
         raise ValueError("no JSON object in the answer")
     data, _ = json.JSONDecoder().raw_decode(text[start:])
@@ -308,7 +310,8 @@ def _ask(text: str, date: str, names: list[str], runners: dict, budget: int, cac
             else:
                 answer, seconds = f.result()
                 out[lane] = {"status": "ok", "seconds": seconds, "model": model, "text": answer}
-                new[lane] = {f"{model}:{digest}": answer}
+                if isinstance(answer, str):
+                    new[lane] = {f"{model}:{digest}": answer}
         pool.shutdown(wait=False, cancel_futures=True)
         if new:
             _remember(path, new)
