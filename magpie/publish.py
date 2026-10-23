@@ -171,8 +171,11 @@ def publish_day(day: dict, events: list[dict], top_events: list[dict], *, force:
 
 def refresh_views(date: str | None = None) -> None:
     """Rewrite the ideas index and the date's week and month rollups (data/v1/ideas, data/v1/rollups). Never fails."""
-    from .views import refresh
-    refresh(DATA, [date] if date else None)
+    try:
+        from .views import refresh
+        refresh(DATA, [date] if date else None)
+    except (Exception, SystemExit) as ex:  # views.refresh never raises; this covers its import
+        print(f"views not updated: {type(ex).__name__}: {str(ex)[:160]}", file=sys.stderr)
 
 
 def refresh_elements(date: str | None = None) -> None:

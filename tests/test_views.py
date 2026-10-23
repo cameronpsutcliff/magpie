@@ -46,6 +46,16 @@ class IdTests(unittest.TestCase):
         self.assertEqual(V.assign_ids({"date": "2099-01-01", "possibilities": None}), 0)
 
 
+    def test_an_unsafe_or_repeated_stored_id_is_replaced(self):
+        items = [{"title": "Run it locally", "id": "../../etc"}, {"title": "Second", "id": "2099-01-01-second"},
+                 {"title": "Third", "id": "2099-01-01-second"}, {"title": "Fourth", "id": 7}, {"title": "Fifth", "id": "2099-01-02-fifth"}]
+        self.assertEqual(V.ids_for("2099-01-01", items),
+                         ["2099-01-01-run-it-locally", "2099-01-01-second", "2099-01-01-third", "2099-01-01-fourth", "2099-01-01-fifth"])
+        day = {"date": "2099-01-01", "possibilities": {"items": items}}
+        self.assertEqual(V.assign_ids(day), 4)  # every bad one is replaced; the good one is kept
+        self.assertEqual(items[1]["id"], "2099-01-01-second")
+
+
 class ViewTests(unittest.TestCase):
     def setUp(self):
         self.tmp = Path(tempfile.mkdtemp())
@@ -105,6 +115,40 @@ class ViewTests(unittest.TestCase):
         self.assertEqual([t["id"] for t in week["threats"]], ["T2"])  # first seen in the window, not part of an incident
         self.assertEqual(week["constraints"][0]["doc"], "https://gov.example/rule")
         self.assertEqual(len(month["top"]), 4)
+
+    def test_an_edition_counts_once_and_links_go_to_the_first_edition(self):
+        day = json.loads((self.data / "days" / "2099-01-05.json").read_text())
+        day["events"].append(cap("c2", "hf:recursivesi/flint", "Flint again in the same edition", 5, 10))
+        day["top"].append("c2")
+        write_json(self.data / "days" / "2099-01-05.json", day, compact=True)
+        later = edition("2099-01-06", [], threats=[{"id": "T2", "title": "New flaw, updated", "first_seen": "2099-01-05", "severity": "critical", "reach": 3}],
+                        constraints=[{"id": "C1", "headline": "A rule, updated", "first_seen": "2099-01-04", "signal": 40}])
+        write_json(self.data / "days" / "2099-01-06.json", later, compact=True)
+        days = V._days(self.data)
+        week = V.rollup("2099-01-06", days, V.ideas_index(days), {})["views"]["week"]
+        flint = next(c for c in week["top"] if c["key"] == "hf:recursivesi/flint")
+        self.assertEqual((flint["days"], flint["top_days"]), (2, 2))  # listed twice on 01-05, still two editions
+        t2 = week["threats"][0]
+        self.assertEqual((t2["date"], t2["title"]), ("2099-01-05", "New flaw, updated"))  # first edition's link, latest words
+        self.assertEqual((week["constraints"][0]["date"], week["constraints"][0]["headline"]), ("2099-01-05", "A rule, updated"))
+
+    def test_a_retired_id_stays_in_the_index_and_out_of_the_views(self):
+        V.refresh(self.data)
+        day = json.loads((self.data / "days" / "2099-01-05.json").read_text())
+        day["possibilities"]["items"][0]["title"] = "Desks backtest overnight on rented GPUs, regenerated"
+        write_json(self.data / "days" / "2099-01-05.json", day, compact=True)
+        V.refresh(self.data)
+        index = json.loads((self.data / "ideas" / "index.json").read_text())
+        gone = next(x for x in index["ideas"] if x["id"] == "2099-01-05-desks-backtest-overnight")
+        self.assertEqual(gone, {"id": "2099-01-05-desks-backtest-overnight", "date": "2099-01-05", "title": "Desks backtest overnight", "retired": True})
+        week = json.loads((self.data / "rollups" / "2099-01-05.json").read_text())["views"]["week"]
+        self.assertNotIn("2099-01-05-desks-backtest-overnight", [x["id"] for x in week["ideas"]])
+        self.assertEqual(week["possibilities"], 3)
+
+    def test_the_publish_hook_never_raises(self):
+        from magpie import publish
+        with mock.patch.object(publish, "DATA", self.data), mock.patch.object(V, "refresh", side_effect=ImportError("broken")):
+            publish.refresh_views("2099-01-05")  # does not raise
 
     def test_refresh_writes_the_index_and_the_rollup_and_never_raises(self):
         got = V.refresh(self.data)

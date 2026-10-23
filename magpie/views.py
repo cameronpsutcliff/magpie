@@ -1,7 +1,9 @@
 """Views: a public id for every new possibility, and the week's and month's best, built from published editions by code.
 
-- `idea_id` gives each possibility an id that is also its page, /magpie/i/<id>: the edition date and the first words of
-  its title ("2026-10-23-saas-vendors-can-hand-auditors-machine"), with "-2" and on for a repeat within that day.
+- `idea_id` gives each possibility an id that is also its page, /magpie/i/<id>: the edition date and the first six words
+  of its title ("2026-10-23-saas-vendors-can-hand-auditors-machine"), with "-2" and on for a repeat within that day. An id
+  names a title on a date: it holds while the edition's possibilities stand. Regenerating them (`possibilities --date`)
+  can retire ids; a retired id stays in the index, marked so, and its page says the idea was replaced.
 - `ideas/index.json` lists every possibility of every edition with its id, ingredients, what it builds on and what
   later built on it, so a page can be found from its id and link both ways.
 - `rollups/<date>.json` holds the week (the 7 days ending on that edition) and the month (30 days): the highest-impact
@@ -48,16 +50,34 @@ def idea_id(date: str, title: str, taken: set[str] | frozenset = frozenset()) ->
     return out
 
 
+ID_SHAPE = re.compile(r"\d{4}-\d{2}-\d{2}-[a-z0-9][a-z0-9-]{0,99}")
+
+
+def _own_id(date: str, p) -> str | None:
+    """A possibility's stored id, if it is a safe page id for that edition: its date, then lowercase letters, digits and
+    hyphens. Anything else is treated as no id."""
+    i = p.get("id") if isinstance(p, dict) else None
+    return i if isinstance(i, str) and ID_SHAPE.fullmatch(i) and i.startswith(f"{date}-") else None
+
+
 def ids_for(date: str, items: list) -> list[str | None]:
-    """The id of each possibility in an edition's list, in order: its own when it has one, else made from its title.
-    None for an entry that is not a titled possibility."""
-    taken: set[str] = {p["id"] for p in items if isinstance(p, dict) and isinstance(p.get("id"), str)}
+    """The id of each possibility in an edition's list, in order: its own when it is a safe page id not already used
+    earlier in the list, else made from its title. None for an entry that is not a titled possibility."""
+    titled = [isinstance(p, dict) and isinstance(p.get("title"), str) and bool(p["title"].strip()) for p in items]
+    keep: set[str] = set()
+    own = []
+    for p, ok in zip(items, titled):
+        i = _own_id(date, p) if ok else None
+        own.append(i if i and i not in keep else None)
+        if own[-1]:
+            keep.add(own[-1])
+    taken = set(keep)
     out: list[str | None] = []
-    for p in items:
-        if not isinstance(p, dict) or not isinstance(p.get("title"), str) or not p["title"].strip():
+    for p, ok, i in zip(items, titled, own):
+        if not ok:
             out.append(None)
-        elif isinstance(p.get("id"), str):
-            out.append(p["id"])
+        elif i:
+            out.append(i)
         else:
             i = idea_id(date, p["title"], taken)
             taken.add(i)
@@ -66,13 +86,14 @@ def ids_for(date: str, items: list) -> list[str | None]:
 
 
 def assign_ids(day: dict) -> int:
-    """Give every possibility of the day that lacks one its id, in place; returns how many were given."""
+    """Give every possibility of the day its id in place, replacing one that is missing, unsafe or a repeat; returns how
+    many were given."""
     items = (day.get("possibilities") or {}).get("items") if isinstance(day.get("possibilities"), dict) else None
     if not isinstance(items, list):
         return 0
     n = 0
     for p, i in zip(items, ids_for(day.get("date", ""), items)):
-        if i and "id" not in p:
+        if i and p.get("id") != i:
             p["id"] = i
             n += 1
     return n
@@ -116,8 +137,10 @@ def _idea(day: dict, p: dict, i: str, pos: int, ids_by_date: dict) -> dict:
     return out
 
 
-def ideas_index(days: list[dict]) -> dict:
-    """Every possibility of every edition, newest edition first, each with what it builds on and what built on it."""
+def ideas_index(days: list[dict], previous: dict | None = None) -> dict:
+    """Every possibility of every edition, newest edition first, each with what it builds on and what built on it. An id
+    in the `previous` index that no edition carries any more (its edition's ideas were regenerated) stays, marked
+    retired, with its date and title, so a link to it still opens a page that says so."""
     ids_by_date = {d["date"]: ids_for(d["date"], _items(d)) for d in days}
     ideas = []
     for d in sorted(days, key=lambda d: d["date"], reverse=True):
@@ -125,6 +148,12 @@ def ideas_index(days: list[dict]) -> dict:
             if i:
                 ideas.append(_idea(d, p, i, pos, ids_by_date))
     by_id = {x["id"]: x for x in ideas}
+    for old in (previous or {}).get("ideas") or [] if isinstance(previous, dict) else []:
+        if isinstance(old, dict) and isinstance(old.get("id"), str) and ID_SHAPE.fullmatch(old["id"]) and old["id"] not in by_id:
+            gone = {"id": old["id"], "date": old["id"][:10], "title": _clip(old.get("title"), 200), "retired": True}
+            ideas.append(gone)
+            by_id[gone["id"]] = gone
+    ideas.sort(key=lambda x: ("".join(chr(0x10FFFF - ord(ch)) for ch in x["date"]), x.get("retired", False), x.get("position", 0)))
     for x in ideas:
         target = (x.get("builds_on") or {}).get("id")
         if target in by_id:
@@ -141,21 +170,27 @@ def _capabilities(window: list[dict], slugs: dict[str, str]) -> list[dict]:
     seen: dict[str, dict] = {}
     for d in window:
         top = set(d.get("top") or [])
+        counted: set[str] = set()  # an edition counts once per capability, however often it lists it
         for e in d.get("events") or []:
             b = e.get("brief") if isinstance(e, dict) else None
             if not isinstance(b, dict) or not isinstance(b.get("headline"), str) or not isinstance(e.get("key"), str):
                 continue
             impact = b.get("impact") if isinstance(b.get("impact"), int) else 0
             signal = e.get("signal") if isinstance(e.get("signal"), (int, float)) else 0
-            c = seen.setdefault(e["key"], {"key": e["key"], "days": 0, "top_days": 0, "first": d["date"], "_best": None})
-            c["days"] += 1
-            c["top_days"] += e.get("id") in top
+            c = seen.setdefault(e["key"], {"key": e["key"], "days": 0, "top_days": 0, "first": d["date"], "_best": None, "_led": set()})
+            if e["key"] not in counted:
+                counted.add(e["key"])
+                c["days"] += 1
+            if e.get("id") in top:
+                c["_led"].add(d["date"])
+            c["top_days"] = len(c["_led"])
             c["last"] = d["date"]
             if c["_best"] is None or (impact, signal, d["date"]) >= c["_best"][:3]:
                 c["_best"] = (impact, signal, d["date"], e)
     out = []
     for c in seen.values():
         impact, signal, date, e = c.pop("_best")
+        c.pop("_led")
         b = e["brief"]
         out.append({**c, "slug": slugs.get(c["key"]), "title": _clip(b["headline"], 200), "newly_possible": _clip(b.get("newly_possible")),
                     "impact": impact or None, "signal": signal, "maker": e.get("maker"), "date": date, "event_id": e.get("id"),
@@ -172,7 +207,8 @@ def _threats(window: list[dict], start: str) -> list[dict]:
     for d in window:
         for t in d.get("threats") or []:
             if isinstance(t, dict) and isinstance(t.get("id"), str) and str(t.get("first_seen") or "") >= start and not t.get("incident"):
-                seen[t["id"]] = (d["date"], t)  # the latest edition's record of it wins
+                # The date is the first edition in the window that carried it (its link); the record, the latest copy.
+                seen[t["id"]] = (seen[t["id"]][0] if t["id"] in seen else d["date"], t)
     rows = sorted(seen.values(), key=lambda dt_: (*rank_key(dt_[1]), dt_[1]["id"]))
     return [{"id": t["id"], "date": date, "title": _clip(t.get("title"), 200), "headline": _clip(t.get("headline")),
              "severity": t.get("severity"), "status": t.get("status"), "exploited": t.get("exploited"),
@@ -186,7 +222,7 @@ def _constraints(window: list[dict], start: str) -> list[dict]:
         cons = d.get("constraints")
         for c in (cons.get("items") if isinstance(cons, dict) else None) or []:
             if isinstance(c, dict) and isinstance(c.get("id"), str) and str(c.get("first_seen") or "") >= start:
-                seen[c["id"]] = (d["date"], c)
+                seen[c["id"]] = (seen[c["id"]][0] if c["id"] in seen else d["date"], c)  # first edition's date, latest copy
     rows = sorted(seen.values(), key=lambda dc: (-(dc[1].get("signal") or 0), dc[1]["id"]))
     return [{"id": c["id"], "date": date, "headline": _clip(c.get("headline") or c.get("title"), 200), "status": c.get("status"),
              "jurisdiction": c.get("jurisdiction"), "first_seen": c.get("first_seen"),
@@ -203,7 +239,7 @@ def rollup(date: str, days: list[dict], index: dict, slugs: dict[str, str]) -> d
         window = [d for d in days if start <= d["date"] <= date]
         before = (d0 - dt.timedelta(days=2 * span - 1)).isoformat()
         prior = [d for d in days if before <= d["date"] < start]  # the window before, for comparison
-        ideas = [x for x in index["ideas"] if start <= x["date"] <= date]
+        ideas = [x for x in index["ideas"] if start <= x["date"] <= date and not x.get("retired")]
         ideas.sort(key=lambda x: (-(x.get("score") or 0), "".join(chr(0x10FFFF - ord(ch)) for ch in x["date"]), x["position"]))
         out["views"][name] = {
             "from": start, "to": date, "editions": len(window),
@@ -211,7 +247,7 @@ def rollup(date: str, days: list[dict], index: dict, slugs: dict[str, str]) -> d
             "possibilities": len(ideas),
             "prior": {"from": before, "editions": len(prior),
                       "capabilities": sum(int(((d.get("coverage") or {}).get("events")) or 0) for d in prior),
-                      "possibilities": sum(1 for x in index["ideas"] if before <= x["date"] < start)},
+                      "possibilities": sum(1 for x in index["ideas"] if before <= x["date"] < start and not x.get("retired"))},
             "top": _capabilities(window, slugs),
             "ideas": [{k: v for k, v in x.items() if k in ("id", "date", "title", "connection", "score", "effort", "builds_on", "built_on_by")}
                       for x in ideas[:TOP_IDEAS]],
@@ -223,13 +259,13 @@ def rollup(date: str, days: list[dict], index: dict, slugs: dict[str, str]) -> d
 
 def refresh(data_dir: Path, dates: list[str] | None = None) -> dict:
     """Write the ideas index and the rollups for `dates` (default: the latest edition). A side file: never raises."""
-    from .publish import scrub
-
     try:
+        from .publish import scrub
+
         days = _days(data_dir)
         if not days:
             return {"ideas": 0, "rollups": 0}
-        index = ideas_index(days)
+        index = ideas_index(days, load_json(Path(data_dir) / "ideas" / "index.json", None))
         scrub(index)
         write_json(Path(data_dir) / "ideas" / "index.json", index, compact=True)
         slugs = {e["key"]: e["slug"] for e in (load_json(Path(data_dir) / "elements" / "index.json", {}) or {}).get("elements", [])
