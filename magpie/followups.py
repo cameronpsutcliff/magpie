@@ -118,9 +118,11 @@ def _grounding(rows: list[dict]) -> str:
 def rewrite(date: str, new: list[dict], old: list[dict], *, follow_ups: bool = False, earlier: dict | None = None,
             style: str = "", lanes: list[str] | None = None, timeout: int = 600) -> dict | None:
     """A headline and dek from the new stories only, and with `follow_ups` the old stories' follow-up words. Returns
-    {"edition": {...}, "follow_ups": {id: {"headline", "newly_possible"}}, "lane"}, or None when no lane gives an edition
-    that is grounded and names no follow-up. A follow-up whose words fail the same checks is left out. `style` is the
-    headline being replaced: the new one takes its form (imperative verbs, sentence case), not its stories."""
+    {"edition": {...}, "follow_ups": {id: {"headline", "newly_possible"}}, "lane"}, or None when no lane gives a whole
+    answer: a headline and dek that name no follow-up and state no number the new stories do not, and with `follow_ups`
+    words for every old story, each stating no number its own text does not. Code checks numbers and names only; the
+    rest rests on the instructions, as in the editor. `style` is the headline being replaced: the new one takes its form
+    (imperative verbs, sentence case), not its stories."""
     from .enrich import LANES, _extract_json
 
     new_rows = [_story(e) for e in new[:NEW_LIMIT]]
@@ -145,9 +147,9 @@ def rewrite(date: str, new: list[dict], old: list[dict], *, follow_ups: bool = F
         if ungrounded_numbers([ed["headline"], ed["dek"]], _grounding(new_rows)) or named(ed, old):
             continue
         out = {}
-        if follow_ups and isinstance(data.get("follow_ups"), list):
+        if follow_ups:
             rows = {r["id"]: r for r in old_rows}
-            for f in data["follow_ups"]:
+            for f in data.get("follow_ups") if isinstance(data.get("follow_ups"), list) else []:
                 if not isinstance(f, dict) or f.get("id") not in rows or f["id"] in out:
                     continue
                 head, line = f.get("headline"), f.get("newly_possible")
@@ -156,8 +158,21 @@ def rewrite(date: str, new: list[dict], old: list[dict], *, follow_ups: bool = F
                 head, line = clean(head), clean(line)
                 if not ungrounded_numbers([head, line], _grounding([rows[f["id"]]])):
                     out[f["id"]] = {"headline": head, "newly_possible": line}
+            if set(out) != set(rows):
+                continue  # an old story left with its old words could still say it arrived today
         return {"edition": ed, "follow_ups": out, "lane": lane}
     return None
+
+
+def fallback(new: list[dict]) -> dict:
+    """Code-built words when no lane can write a headline and dek clear of follow-ups: the new stories' own edited
+    headlines and lines, nothing added."""
+    heads = [e["brief"]["headline"] for e in new[:3]]
+    if not heads:
+        return {"headline": "A quiet day", "dek": "Today's stories follow up ones Magpie has already reported.", "quiet": True}
+    lines = [e["brief"]["newly_possible"] for e in new[:2] if isinstance(e["brief"].get("newly_possible"), str) and e["brief"]["newly_possible"].strip()]
+    return {"headline": ", ".join(heads) + (", and more" if len(new) > 3 else ""), "dek": " ".join(lines) or heads[0],
+            "quiet": len(new) < 3}
 
 
 def _earlier(date: str, data_dir, keys: set[str]) -> dict[str, str]:
@@ -190,7 +205,7 @@ def edit_day(day: dict, data_dir, *, lanes: list[str] | None = None) -> dict:
     got = rewrite(day["date"], new, old, follow_ups=True, earlier=_earlier(day["date"], data_dir, {e["key"] for e in old}),
                   style=(day.get("edition") or {}).get("headline") or "", lanes=lanes)
     if not got:
-        return {"changed": False, "note": "no lane gave a grounded headline and dek"}
+        return {"changed": False, "note": "no lane gave a whole answer: nothing changed"}
     before = {"headline": day["edition"].get("headline"), "dek": day["edition"].get("dek")}
     day["edition"].update({k: got["edition"][k] for k in ("headline", "dek", "quiet")})
     for i, words in got["follow_ups"].items():
@@ -199,7 +214,9 @@ def edit_day(day: dict, data_dir, *, lanes: list[str] | None = None) -> dict:
 
 
 def run_for(date: str | None = None) -> None:
-    """Re-edit a published edition's headline, dek and top follow-ups, then its read. Nothing else is rebuilt."""
+    """Re-edit a published edition's headline, dek and follow-ups (those in the top or named in the headline), then its
+    read. It also refreshes `reported` on the day's events and `quiet`, and checks the day through the redaction gate
+    before writing; nothing else is rebuilt. Nothing is written when no lane gives a whole answer."""
     from .publish import DATA, index_entry, refresh_elements, scrub, write_feed
     from .read import generate as write_read
 
@@ -214,8 +231,11 @@ def run_for(date: str | None = None) -> None:
     read = write_read(day)
     if read.get("items"):
         day["read"] = read
-    else:
-        print(f"read kept as it was: {read.get('errors') or read.get('note')}", file=sys.stderr)
+    else:  # keep the old read, less any paragraph on a follow-up whose words just changed: it may say it arrived
+        changed = set(receipt["follow_ups"])
+        old = day.get("read") or {}
+        day["read"] = {**old, "items": [x for x in old.get("items") or [] if not changed & set(x.get("ids") or [])]}
+        print(f"read not rewritten ({read.get('errors') or read.get('note')}); kept {len(day['read']['items'])} paragraphs", file=sys.stderr)
     scrub(day)
     write_json(DATA / "days" / f"{day['date']}.json", day, compact=True)
     index = load_json(DATA / "index.json", {"schema": "magpie.index/1", "days": []})

@@ -236,7 +236,8 @@ LANES = {"claude": _run_claude, "codex": _run_codex}
 
 def _keep_follow_ups_out(edition: dict, pool: list[dict], date: str, lane: str, timeout: int, receipt: dict) -> None:
     """When the headline or dek names a follow-up despite the instructions, write them again from the new stories only,
-    with the same lane. A failed rewrite keeps the editor's words and says so in the receipt."""
+    with the editor's lane first. When no lane can, code builds them from the new stories' own headlines, so a told
+    story never leads the page. The receipt says which happened."""
     from . import followups as F
 
     old = [e for e in pool if e.get("reported") and (e.get("brief") or {}).get("headline")]
@@ -245,11 +246,11 @@ def _keep_follow_ups_out(edition: dict, pool: list[dict], date: str, lane: str, 
         return
     new = sorted((e for e in pool if not e.get("reported") and (e.get("brief") or {}).get("headline")),
                  key=lambda e: (-((e.get("brief") or {}).get("impact") or 0), -e.get("signal", 0)))
-    got = F.rewrite(date, new, old, style=edition.get("headline") or "", lanes=[lane], timeout=timeout)
+    order = [lane] + [l.strip() for l in os.environ.get("MAGPIE_LANES", "claude,codex").split(",") if l.strip() and l.strip() != lane]
+    got = F.rewrite(date, new, old, style=edition.get("headline") or "", lanes=order, timeout=timeout)
     receipt["follow_ups_named"] = hit
-    receipt["edition_rewritten"] = bool(got)
-    if got:
-        edition.update(got["edition"])
+    receipt["edition_rewritten"] = "model" if got else "code"
+    edition.update(got["edition"] if got else F.fallback(new))
 
 
 def enrich(events: list[dict], date: str, limit: int = 26, timeout: int = 1200) -> tuple[dict, dict]:

@@ -87,7 +87,7 @@ class FollowUpTests(unittest.TestCase):
         self.assertEqual(len(calls), 2)
         self.assertEqual(edition["headline"], "Serve MiniMax M3.1 Flash fast")
         self.assertEqual(receipt["follow_ups_named"], [FLINT])
-        self.assertTrue(receipt["edition_rewritten"])
+        self.assertEqual(receipt["edition_rewritten"], "model")
         self.assertIn("ALREADY REPORTED", calls[1])
         self.assertIn('not its stories: "Run Flint locally, serve MiniMax"', calls[1])
         self.assertNotIn("Flint runs at 216", calls[1].split("ALREADY REPORTED:")[0])  # the follow-up is offered only as told
@@ -100,8 +100,10 @@ class FollowUpTests(unittest.TestCase):
         named = json.dumps({"edition": {"headline": "Run Flint locally", "dek": "A day.", "quiet": False}, "events": self.BRIEFS})
         still = json.dumps({"edition": {"headline": "Run Flint at last", "dek": "Again.", "quiet": False}})
         edition, receipt, calls = self.run_editor([named, still])
-        self.assertEqual(edition["headline"], "Run Flint locally")
-        self.assertFalse(receipt["edition_rewritten"])
+        # No lane writes it clear of the follow-up: code builds it from the new story's own words.
+        self.assertEqual(edition, {"headline": "MiniMax M3.1 Flash serves code fast", "dek": "y", "quiet": True})
+        self.assertEqual(receipt["edition_rewritten"], "code")
+        self.assertEqual(F.fallback([])["headline"], "A quiet day")
 
     def test_rewrite_keeps_only_grounded_words(self):
         new, old = [ev("m", MINIMAX, "MiniMax M3.1 Flash serves code fast")], [ev("f", FLINT, "Flint runs at 216 tokens per second", reported="2099-01-03")]
@@ -118,8 +120,12 @@ class FollowUpTests(unittest.TestCase):
         self.assertEqual(got["follow_ups"], {"f": {"headline": "Flint hits 216 tokens per second", "newly_possible": "A community run measured it."}})
         bad = json.dumps({"edition": {"headline": "Serve MiniMax", "dek": "Fine."},
                           "follow_ups": [{"id": "f", "headline": "Flint hits 900 tokens per second", "newly_possible": "x"}]})
-        with mock.patch.dict(N.LANES, {"fake": lambda p, t: bad}):
-            self.assertEqual(F.rewrite("2099-01-04", new, old, follow_ups=True, lanes=["fake"])["follow_ups"], {})
+        with mock.patch.dict(N.LANES, {"fake": lambda p, t: bad}):  # the follow-up's words fail: the whole answer does
+            self.assertIsNone(F.rewrite("2099-01-04", new, old, follow_ups=True, lanes=["fake"]))
+        silent = json.dumps({"edition": {"headline": "Serve MiniMax", "dek": "Fine."}})  # no words for the follow-up at all
+        with mock.patch.dict(N.LANES, {"fake": lambda p, t: silent}):
+            self.assertIsNone(F.rewrite("2099-01-04", new, old, follow_ups=True, lanes=["fake"]))
+            self.assertEqual(F.rewrite("2099-01-04", new, old, lanes=["fake"])["edition"]["headline"], "Serve MiniMax")
         with mock.patch.dict(N.LANES, {"fake": lambda p, t: "[]"}):
             self.assertIsNone(F.rewrite("2099-01-04", new, old, lanes=["fake"]))
 
@@ -171,7 +177,7 @@ class FollowUpTests(unittest.TestCase):
             self.assertFalse(F.edit_day(day, self.data, lanes=["fake"])["changed"])  # still naming it: nothing applied
         self.assertEqual(day["edition"]["headline"], "Serve MiniMax, run Flint locally")
 
-    def test_run_for_rewrites_the_day_latest_and_index_only(self):
+    def test_run_for_writes_the_day_latest_index_entry_elements_and_feed(self):
         day = self.published()
         write_json(self.data / "days" / "2099-01-04.json", day, compact=True)
         write_json(self.data / "latest.json", day, compact=True)
@@ -182,15 +188,33 @@ class FollowUpTests(unittest.TestCase):
         read = {"items": [{"lead": "MiniMax serves code fast.", "body": "", "ids": ["m"]}], "lane": "fake"}
         with mock.patch.object(PUB, "DATA", self.data), mock.patch.dict(N.LANES, {"fake": lambda p, t: reply}), \
                 mock.patch.dict(os.environ, {"MAGPIE_LANES": "fake"}), mock.patch.object(R, "generate", return_value=read), \
-                mock.patch.object(PUB, "refresh_elements"), mock.patch.object(PUB, "write_feed"), \
+                mock.patch.object(PUB, "refresh_elements") as elements, mock.patch.object(PUB, "write_feed") as feed, \
                 mock.patch.object(PUB, "index_entry", side_effect=lambda d: {"date": d["date"], "headline": d["edition"]["headline"]}):
             F.run_for("2099-01-04")
+        elements.assert_called_once_with("2099-01-04")
+        feed.assert_called_once_with()
         for name in ("days/2099-01-04.json", "latest.json"):
             saved = json.loads((self.data / name).read_text())
             self.assertEqual(saved["edition"]["headline"], "Serve MiniMax M3.1 Flash fast")
             self.assertEqual(saved["read"], read)
         index = json.loads((self.data / "index.json").read_text())
         self.assertEqual([d["headline"] for d in index["days"]], ["Serve MiniMax M3.1 Flash fast", "Old"])
+
+    def test_a_failed_read_keeps_only_paragraphs_off_the_rewritten_follow_ups(self):
+        day = self.published()
+        day["read"] = {"items": [{"lead": "MiniMax serves code fast.", "body": "", "ids": ["m"]},
+                                 {"lead": "Flint arrived.", "body": "", "ids": ["m", "f"]}], "lane": "fake"}
+        write_json(self.data / "days" / "2099-01-04.json", day, compact=True)
+        write_json(self.data / "index.json", {"latest": "2099-01-03", "days": []})
+        reply = json.dumps({"edition": {"headline": "Serve MiniMax M3.1 Flash fast", "dek": "One open coding model led.", "quiet": False},
+                            "follow_ups": [{"id": "f", "headline": "Flint measured at 216 tokens per second", "newly_possible": "A run on one GPU measured it."}]})
+        with mock.patch.object(PUB, "DATA", self.data), mock.patch.dict(N.LANES, {"fake": lambda p, t: reply}), \
+                mock.patch.dict(os.environ, {"MAGPIE_LANES": "fake"}), mock.patch.object(R, "generate", return_value={"items": [], "errors": ["down"]}), \
+                mock.patch.object(PUB, "refresh_elements"), mock.patch.object(PUB, "write_feed"), mock.patch.object(PUB, "index_entry", side_effect=dict):
+            F.run_for("2099-01-04")
+        saved = json.loads((self.data / "days" / "2099-01-04.json").read_text())
+        self.assertEqual([x["lead"] for x in saved["read"]["items"]], ["MiniMax serves code fast."])
+        self.assertFalse((self.data / "latest.json").exists())  # not the latest edition: latest.json is not written
 
 
 if __name__ == "__main__":
