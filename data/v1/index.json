@@ -3,7 +3,7 @@
  "days": [
   {
    "date": "2026-10-23",
-   "headline": "Verify code at scale, run Flint locally, serve MiniMax fast, and more",
+   "headline": "Share Agent Skills under a foundation, prove library security, self-host MiniMax, and more",
    "events": 448,
    "sources": 512,
    "enriched": true,
@@ -22,7 +22,7 @@
     },
     {
      "id": "90dd623e653c",
-     "title": "Recursive releases Flint, a fast open coding model",
+     "title": "Flint measured at 216 tokens per second on RTX 5090",
      "impact": 4,
      "vendor": "Recursive"
     },
