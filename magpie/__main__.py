@@ -107,6 +107,9 @@ def main() -> None:
     pv.add_argument("--date", help="edition date, default latest")
     prd = sub.add_parser("read", help="write the read: a few paragraphs on the day's biggest items")
     prd.add_argument("--date", help="edition date, default latest")
+    pvw = sub.add_parser("views", help="give every possibility its page id, then write the ideas index and the rollups")
+    pvw.add_argument("--all", action="store_true", help="rollups for every edition, not only the latest")
+    pvw.add_argument("--date", help="rollups for this edition")
     ped = sub.add_parser("edition", help="re-edit a published edition's headline, dek and follow-ups, then its read")
     ped.add_argument("--date", help="edition date, default latest")
     pk = sub.add_parser("constraints", help="add official actions that constrain AI, and the trackers, to an edition")
@@ -148,6 +151,10 @@ def main() -> None:
     if a.cmd == "read":
         from .read import run_for as read_for
         read_for(a.date)
+        return
+    if a.cmd == "views":
+        from .views import run as views_run
+        views_run(a.all, a.date)
         return
     if a.cmd == "edition":
         from .followups import run_for as edition_for

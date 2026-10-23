@@ -135,18 +135,21 @@ def earlier_ideas(date: str, data_dir, arrivals: list[dict], editions: int = IDE
             continue
         if isinstance(d, dict) and isinstance(d.get("date"), str):
             found.append(d)
+    from .views import ids_for
+
     rows = []
     for d in found:
         poss = d.get("possibilities")
-        for rank, p in enumerate(listed(poss.get("items") if isinstance(poss, dict) else None), 1):
-            if not isinstance(p, dict) or not text(p.get("title")).strip():
+        items = listed(poss.get("items") if isinstance(poss, dict) else None)
+        for p, pid in zip(items, ids_for(d["date"], items)):
+            if not isinstance(p, dict) or not pid or not text(p.get("title")).strip():
                 continue
             recipe = [r["title"] for r in listed(p.get("ingredient_refs")) if isinstance(r, dict) and isinstance(r.get("title"), str)]
-            rows.append({"id": f"idea-{d['date']}-{rank}", "date": d["date"], "today": False, "first_seen": d["date"],
+            rows.append({"id": pid, "date": d["date"], "today": False, "first_seen": d["date"],
                          "kind": "idea", "title": p["title"], "what": text(p.get("connection")), "recipe": recipe,
                          "why": "", "limits": text(p.get("disconfirm")), "maker": None, "topics": [], "evidence": "idea",
                          "_summary": " ".join(c for c in listed(p.get("chain")) if isinstance(c, str)),
-                         "_url": f"{SITE}/{d['date']}", "_adoption": 0.0, "_signals": None})
+                         "_url": f"{SITE}/i/{pid}", "_adoption": 0.0, "_signals": None})
     if not rows or not arrivals:
         return []
     docs = {r["id"]: library._words(" ".join([r["title"], r["what"], " ".join(r["recipe"]), r["_summary"]])) for r in rows}
@@ -260,7 +263,9 @@ def generate(day: dict, data_dir, n: int = 5, timeout: int = 1200, check=library
             if len(ing) + bool(idea) < 2 or not (set(ing) & today_ids):
                 dropped.append({"title": p.get("title"), "why": "needs two known ingredients (or one and an earlier idea), one from today"})
                 continue
-            item = {k: clean(v) if isinstance(v, str) else v for k, v in p.items()}
+            # Fields code sets are never taken from the model: an id, a builds_on or a mix it invents would be published.
+            item = {k: clean(v) if isinstance(v, str) else v for k, v in p.items()
+                    if k not in ("id", "builds_on", "mix", "rank", "amplification", "ingredient_refs")}
             item["ingredients"] = ing
             item["chain"] = [clean(c) for c in p.get("chain", []) if isinstance(c, str)][:4]
             # Numbers rest on the capabilities' own words; of an idea, only its date counts (the connection names it).
@@ -274,7 +279,11 @@ def generate(day: dict, data_dir, n: int = 5, timeout: int = 1200, check=library
                 item["builds_on"] = {"id": idea, "date": by_id[idea]["date"], "title": by_id[idea]["title"], "url": by_id[idea]["_url"]}
             item["amplification"] = amplification([by_id[i] for i in ing])
             out.append(item)
-        return {"items": choose(rank(out), n), "lane": lane, "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
+        chosen = choose(rank(out), n)
+        from .views import ids_for
+        for item, pid in zip(chosen, ids_for(day["date"], chosen)):
+            item["id"] = pid  # its page: /magpie/i/<id>
+        return {"items": chosen, "lane": lane, "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
                 "dropped": dropped, "pool": receipt,
                 "note": "Reasoned ideas built from the day's capabilities and the earlier ones they lift, not reported news. Each one names the test that would prove it wrong."}
     return {"items": [], "pool": receipt, "errors": errors}
@@ -298,5 +307,6 @@ def run_for(date: str | None = None) -> None:
     if index.get("latest") == day["date"]:
         write_json(DATA / "latest.json", day, compact=True)
     print(f"possibilities for {day['date']}: {len(result.get('items', []))} ({result.get('lane') or result.get('errors')})", file=sys.stderr)
-    from .publish import refresh_elements
+    from .publish import refresh_elements, refresh_views
     refresh_elements(day["date"])
+    refresh_views(day["date"])

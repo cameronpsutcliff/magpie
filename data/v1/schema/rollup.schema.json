@@ -1,0 +1,320 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://www.cameronsutcliff.com/magpie-data/schema/rollup.schema.json",
+ "title": "Magpie week and month (magpie.rollup/1)",
+ "description": "rollups/<date>.json: the week (7 days) and the month (30 days) ending on that edition, built by code from the published editions; nothing is written by a model. Written on each publish for that edition.",
+ "type": "object",
+ "required": [
+  "schema",
+  "date",
+  "views"
+ ],
+ "properties": {
+  "schema": {
+   "const": "magpie.rollup/1"
+  },
+  "date": {
+   "type": "string",
+   "format": "date"
+  },
+  "views": {
+   "type": "object",
+   "properties": {
+    "week": {
+     "type": "object",
+     "required": [
+      "from",
+      "to",
+      "editions",
+      "top",
+      "ideas"
+     ],
+     "properties": {
+      "from": {
+       "type": "string",
+       "format": "date"
+      },
+      "to": {
+       "type": "string",
+       "format": "date"
+      },
+      "editions": {
+       "type": "integer"
+      },
+      "capabilities": {
+       "type": "integer",
+       "description": "Capability events across the window's editions."
+      },
+      "possibilities": {
+       "type": "integer"
+      },
+      "top": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "key": {
+          "type": "string"
+         },
+         "slug": {
+          "type": [
+           "string",
+           "null"
+          ],
+          "description": "Its element page, /magpie/e/<slug>, when it has one."
+         },
+         "title": {
+          "type": "string"
+         },
+         "newly_possible": {
+          "type": "string"
+         },
+         "impact": {
+          "type": [
+           "integer",
+           "null"
+          ],
+          "description": "The editor's 1 to 5 weight, the highest in the window."
+         },
+         "signal": {
+          "type": "number"
+         },
+         "days": {
+          "type": "integer",
+          "description": "Editions in the window that wrote it up."
+         },
+         "top_days": {
+          "type": "integer",
+          "description": "Editions in the window that led with it."
+         },
+         "first": {
+          "type": "string",
+          "format": "date"
+         },
+         "last": {
+          "type": "string",
+          "format": "date"
+         },
+         "date": {
+          "type": "string",
+          "format": "date",
+          "description": "The edition of the appearance shown."
+         },
+         "event_id": {
+          "type": [
+           "string",
+           "null"
+          ]
+         },
+         "maker": {
+          "type": [
+           "string",
+           "null"
+          ]
+         },
+         "url": {
+          "type": [
+           "string",
+           "null"
+          ]
+         },
+         "sources": {
+          "type": "array",
+          "items": {
+           "type": "object",
+           "properties": {
+            "name": {
+             "type": "string"
+            },
+            "title": {
+             "type": "string"
+            },
+            "url": {
+             "type": "string"
+            }
+           }
+          }
+         },
+         "reported": {
+          "type": "string",
+          "format": "date",
+          "description": "Present when that appearance was a follow-up of an earlier edition."
+         }
+        }
+       },
+       "description": "The highest-impact capabilities: impact, then editions that led with it, then editions that wrote it up, then signal."
+      },
+      "ideas": {
+       "type": "array",
+       "items": {
+        "type": "object"
+       },
+       "description": "The strongest possibilities by rank score, with id, date, title, connection, score, effort, builds_on, built_on_by."
+      },
+      "threats": {
+       "type": "array",
+       "items": {
+        "type": "object"
+       },
+       "description": "Threats first seen in the window, in the threats lane's order."
+      },
+      "constraints": {
+       "type": "array",
+       "items": {
+        "type": "object"
+       },
+       "description": "Constraints first seen in the window, by signal."
+      }
+     }
+    },
+    "month": {
+     "type": "object",
+     "required": [
+      "from",
+      "to",
+      "editions",
+      "top",
+      "ideas"
+     ],
+     "properties": {
+      "from": {
+       "type": "string",
+       "format": "date"
+      },
+      "to": {
+       "type": "string",
+       "format": "date"
+      },
+      "editions": {
+       "type": "integer"
+      },
+      "capabilities": {
+       "type": "integer",
+       "description": "Capability events across the window's editions."
+      },
+      "possibilities": {
+       "type": "integer"
+      },
+      "top": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "key": {
+          "type": "string"
+         },
+         "slug": {
+          "type": [
+           "string",
+           "null"
+          ],
+          "description": "Its element page, /magpie/e/<slug>, when it has one."
+         },
+         "title": {
+          "type": "string"
+         },
+         "newly_possible": {
+          "type": "string"
+         },
+         "impact": {
+          "type": [
+           "integer",
+           "null"
+          ],
+          "description": "The editor's 1 to 5 weight, the highest in the window."
+         },
+         "signal": {
+          "type": "number"
+         },
+         "days": {
+          "type": "integer",
+          "description": "Editions in the window that wrote it up."
+         },
+         "top_days": {
+          "type": "integer",
+          "description": "Editions in the window that led with it."
+         },
+         "first": {
+          "type": "string",
+          "format": "date"
+         },
+         "last": {
+          "type": "string",
+          "format": "date"
+         },
+         "date": {
+          "type": "string",
+          "format": "date",
+          "description": "The edition of the appearance shown."
+         },
+         "event_id": {
+          "type": [
+           "string",
+           "null"
+          ]
+         },
+         "maker": {
+          "type": [
+           "string",
+           "null"
+          ]
+         },
+         "url": {
+          "type": [
+           "string",
+           "null"
+          ]
+         },
+         "sources": {
+          "type": "array",
+          "items": {
+           "type": "object",
+           "properties": {
+            "name": {
+             "type": "string"
+            },
+            "title": {
+             "type": "string"
+            },
+            "url": {
+             "type": "string"
+            }
+           }
+          }
+         },
+         "reported": {
+          "type": "string",
+          "format": "date",
+          "description": "Present when that appearance was a follow-up of an earlier edition."
+         }
+        }
+       },
+       "description": "The highest-impact capabilities: impact, then editions that led with it, then editions that wrote it up, then signal."
+      },
+      "ideas": {
+       "type": "array",
+       "items": {
+        "type": "object"
+       },
+       "description": "The strongest possibilities by rank score, with id, date, title, connection, score, effort, builds_on, built_on_by."
+      },
+      "threats": {
+       "type": "array",
+       "items": {
+        "type": "object"
+       },
+       "description": "Threats first seen in the window, in the threats lane's order."
+      },
+      "constraints": {
+       "type": "array",
+       "items": {
+        "type": "object"
+       },
+       "description": "Constraints first seen in the window, by signal."
+      }
+     }
+    }
+   }
+  }
+ }
+}

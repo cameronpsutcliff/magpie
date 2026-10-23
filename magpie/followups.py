@@ -258,4 +258,6 @@ def run_for(date: str | None = None) -> None:
     index["days"] = [index_entry(day) if d.get("date") == day["date"] else d for d in index.get("days", [])]
     write_json(DATA / "index.json", index, compact=False)
     refresh_elements(day["date"])
+    from .publish import refresh_views
+    refresh_views(day["date"])
     write_feed()

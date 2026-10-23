@@ -1091,7 +1091,7 @@
     },
     "builds_on": {
      "type": "object",
-     "description": "The earlier Magpie possibility this one builds on (MAGPIE_BUILD_ON_IDEAS=1). It is not an ingredient; its url is that edition.",
+     "description": "The earlier Magpie possibility this one builds on (MAGPIE_BUILD_ON_IDEAS=1). It is not an ingredient. id is that possibility's id (in editions before 2026-10-24, its place in the pool: idea-<date>-<position>), url its page.",
      "properties": {
       "id": {
        "type": "string"
@@ -1107,6 +1107,11 @@
        "type": "string"
       }
      }
+    },
+    "id": {
+     "type": "string",
+     "pattern": "^\\d{4}-\\d{2}-\\d{2}-[a-z0-9-]+$",
+     "description": "Its page, /magpie/i/<id>: the edition date and the first six words of the title, with -2 and on for a repeat that day. Set by code, never by the model."
     }
    }
   },
