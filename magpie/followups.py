@@ -5,8 +5,9 @@ headline; an event that was only listed does not count, since no reader saw it a
 a follow-up (only what is new since that date) and keeps it out of the edition's headline and dek. Code checks the
 headline and dek for a follow-up's name; when one slips in, `rewrite` writes them again from today's new stories only.
 
-`run_for` applies the same to a published edition: headline, dek and the top follow-ups' words, then the read, without
-rebuilding the rest of the day.
+`run_for` applies the same to a published edition: headline, dek and the words of the follow-ups in its top or named
+in its headline or dek, then the read; the element pages and the feed are refreshed from the result, and nothing else
+in the day is rebuilt. What code checks is names and numbers; the rest of the wording rests on the instructions.
 """
 from __future__ import annotations
 
@@ -20,6 +21,7 @@ from .util import clean, load_json, ungrounded_numbers, write_json
 
 EDITIONS = 14  # editions looked back over for a story already told
 NEW_LIMIT = 10  # new stories offered for a headline and dek
+FALLBACK_WORDS = 20  # a code-built headline stops adding stories past this many words
 # Repo or model names too generic to show that a headline names one particular capability.
 GENERIC = {"agent", "agents", "model", "models", "server", "tools", "skills", "runtime", "awesome", "docs", "examples",
            "cookbook", "chat", "code", "demo", "app", "api", "sdk", "cli"}
@@ -164,15 +166,22 @@ def rewrite(date: str, new: list[dict], old: list[dict], *, follow_ups: bool = F
     return None
 
 
-def fallback(new: list[dict]) -> dict:
+def fallback(new: list[dict], old: list[dict]) -> dict:
     """Code-built words when no lane can write a headline and dek clear of follow-ups: the new stories' own edited
-    headlines and lines, nothing added."""
-    heads = [e["brief"]["headline"] for e in new[:3]]
+    headlines and lines, nothing added, skipping any story whose words name one of the `old` follow-ups. At most three
+    headlines, and none added past FALLBACK_WORDS words; with no story left, a plain quiet-day line. These words carry
+    whatever their stories' editor wrote: code adds no check beyond the names."""
+    clear = [e for e in new if not named({"headline": e["brief"]["headline"], "dek": e["brief"].get("newly_possible") or ""}, old)]
+    heads: list[str] = []
+    for e in clear[:3]:
+        if heads and len(" ".join([*heads, e["brief"]["headline"]]).split()) > FALLBACK_WORDS:
+            break
+        heads.append(e["brief"]["headline"])
     if not heads:
         return {"headline": "A quiet day", "dek": "Today's stories follow up ones Magpie has already reported.", "quiet": True}
-    lines = [e["brief"]["newly_possible"] for e in new[:2] if isinstance(e["brief"].get("newly_possible"), str) and e["brief"]["newly_possible"].strip()]
-    return {"headline": ", ".join(heads) + (", and more" if len(new) > 3 else ""), "dek": " ".join(lines) or heads[0],
-            "quiet": len(new) < 3}
+    lines = [e["brief"]["newly_possible"] for e in clear[:2] if isinstance(e["brief"].get("newly_possible"), str) and e["brief"]["newly_possible"].strip()]
+    return {"headline": ", ".join(heads) + (", and more" if len(clear) > len(heads) else ""), "dek": " ".join(lines) or heads[0],
+            "quiet": len(clear) < 3}
 
 
 def _earlier(date: str, data_dir, keys: set[str]) -> dict[str, str]:
@@ -214,9 +223,10 @@ def edit_day(day: dict, data_dir, *, lanes: list[str] | None = None) -> dict:
 
 
 def run_for(date: str | None = None) -> None:
-    """Re-edit a published edition's headline, dek and follow-ups (those in the top or named in the headline), then its
-    read. It also refreshes `reported` on the day's events and `quiet`, and checks the day through the redaction gate
-    before writing; nothing else is rebuilt. Nothing is written when no lane gives a whole answer."""
+    """Re-edit a published edition's headline, dek and follow-ups (those in the top or named in the headline or dek),
+    then its read. It also refreshes `reported` on the day's events and `quiet`, passes the day through the redaction
+    gate, and writes the day, latest.json (when latest) and its index entry, then refreshes the element pages and the
+    feed from it; nothing else in the day is rebuilt. Nothing is written when no lane gives a whole answer."""
     from .publish import DATA, index_entry, refresh_elements, scrub, write_feed
     from .read import generate as write_read
 

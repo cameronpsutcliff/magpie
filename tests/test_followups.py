@@ -103,7 +103,19 @@ class FollowUpTests(unittest.TestCase):
         # No lane writes it clear of the follow-up: code builds it from the new story's own words.
         self.assertEqual(edition, {"headline": "MiniMax M3.1 Flash serves code fast", "dek": "y", "quiet": True})
         self.assertEqual(receipt["edition_rewritten"], "code")
-        self.assertEqual(F.fallback([])["headline"], "A quiet day")
+        self.assertEqual(F.fallback([], [])["headline"], "A quiet day")
+
+    def test_the_code_built_headline_skips_new_stories_that_name_a_follow_up_and_stays_short(self):
+        old = [ev("f", FLINT, "Flint measured at 216 tokens per second", reported="2099-01-03")]
+        gguf = ev("g", "hf:unsloth/flint-gguf", "Unsloth publishes GGUF builds of Flint")
+        long = [ev(f"n{i}", f"gh:acme/n{i}", f"Acme ships tool number {i} with a fairly long and wordy headline") for i in range(3)]
+        got = F.fallback([gguf, *long], old)
+        self.assertNotIn("Flint", got["headline"] + got["dek"])
+        self.assertEqual(got["headline"], "Acme ships tool number 0 with a fairly long and wordy headline, and more")  # a second would pass 20 words
+        short = [ev(f"s{i}", f"gh:acme/s{i}", f"Acme ships tool {i}") for i in range(4)]
+        self.assertEqual(F.fallback([gguf, *short], old)["headline"], "Acme ships tool 0, Acme ships tool 1, Acme ships tool 2, and more")
+        self.assertEqual(F.fallback(short[:2], old)["headline"], "Acme ships tool 0, Acme ships tool 1")
+        self.assertEqual(F.fallback([gguf], old), {"headline": "A quiet day", "dek": "Today's stories follow up ones Magpie has already reported.", "quiet": True})
 
     def test_rewrite_keeps_only_grounded_words(self):
         new, old = [ev("m", MINIMAX, "MiniMax M3.1 Flash serves code fast")], [ev("f", FLINT, "Flint runs at 216 tokens per second", reported="2099-01-03")]

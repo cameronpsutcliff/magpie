@@ -236,8 +236,8 @@ LANES = {"claude": _run_claude, "codex": _run_codex}
 
 def _keep_follow_ups_out(edition: dict, pool: list[dict], date: str, lane: str, timeout: int, receipt: dict) -> None:
     """When the headline or dek names a follow-up despite the instructions, write them again from the new stories only,
-    with the editor's lane first. When no lane can, code builds them from the new stories' own headlines, so a told
-    story never leads the page. The receipt says which happened."""
+    with the editor's lane first. When no lane can, code builds them from the headlines of new stories whose words name
+    no follow-up (see followups.fallback). The receipt says which happened."""
     from . import followups as F
 
     old = [e for e in pool if e.get("reported") and (e.get("brief") or {}).get("headline")]
@@ -250,7 +250,7 @@ def _keep_follow_ups_out(edition: dict, pool: list[dict], date: str, lane: str, 
     got = F.rewrite(date, new, old, style=edition.get("headline") or "", lanes=order, timeout=timeout)
     receipt["follow_ups_named"] = hit
     receipt["edition_rewritten"] = "model" if got else "code"
-    edition.update(got["edition"] if got else F.fallback(new))
+    edition.update(got["edition"] if got else F.fallback(new, old))
 
 
 def enrich(events: list[dict], date: str, limit: int = 26, timeout: int = 1200) -> tuple[dict, dict]:
