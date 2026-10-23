@@ -250,7 +250,7 @@ def generate(day: dict, data_dir, n: int = 5, timeout: int = 1200, check=library
                 dropped.append({"title": item.get("title"), "why": f"numbers not in its sources: {', '.join(loose)}"})
                 continue
             item["ingredient_refs"] = refs(ing, by_id)
-            item["mix"] = "today_x_today" if set(ing) <= today_ids else "builds_on_idea" if idea else "today_x_library"
+            item["mix"] = "today_x_today" if set(ing) <= today_ids else "today_x_library"  # an idea is from an earlier edition
             if idea:
                 item["builds_on"] = {"id": idea, "date": by_id[idea]["date"], "title": by_id[idea]["title"], "url": by_id[idea]["_url"]}
             item["amplification"] = amplification([by_id[i] for i in ing])

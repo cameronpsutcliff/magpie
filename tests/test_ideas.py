@@ -86,7 +86,7 @@ class IdeaTests(unittest.TestCase):
         kept = {p["title"]: p for p in out["items"]}
         self.assertEqual(sorted(kept), ["Clinics transcribe and review a visit in minutes", "Two ideas, one kept"])
         p = kept["Clinics transcribe and review a visit in minutes"]
-        self.assertEqual(p["mix"], "builds_on_idea")
+        self.assertEqual(p["mix"], "today_x_library")  # an idea comes from an earlier edition
         self.assertEqual(p["builds_on"], {"id": "idea-2099-01-03-1", "date": "2099-01-03",
                                           "title": "Small clinics can transcribe visits on one laptop",
                                           "url": "https://www.cameronsutcliff.com/magpie/2099-01-03"})
