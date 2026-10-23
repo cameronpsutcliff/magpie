@@ -351,10 +351,12 @@ def live(key: str) -> bool | None:
     return not r.get("archived") and not r.get("disabled")
 
 
-def pick(arrivals: list[dict], lib: dict[str, dict], exclude: set[str], check=live) -> tuple[list[str], dict]:
+def pick(arrivals: list[dict], lib: dict[str, dict], exclude: set[str], check=live, near: dict | None = None,
+         per_arrival: dict[str, list[str]] | None = None) -> tuple[list[str], dict]:
     """The library keys for one pool, live ones only: up to PER_ARRIVAL for each arrival, best first, at most MAX_ROWS.
-    Returns the keys and a receipt of what was checked."""
-    near = neighbours(arrivals, lib, exclude)
+    Returns the keys and a receipt of what was checked. `near` replaces the scorer's ordering (the pair judge passes its
+    own); `per_arrival`, when given, is filled with each arrival's keys."""
+    near = neighbours(arrivals, lib, exclude) if near is None else near
     chosen: list[str] = []
     state: dict[str, bool | None] = {}
     for a in arrivals:
@@ -364,6 +366,8 @@ def pick(arrivals: list[dict], lib: dict[str, dict], exclude: set[str], check=li
                 break
             if k in chosen:
                 got += 1
+                if per_arrival is not None:
+                    per_arrival.setdefault(a["id"], []).append(k)
                 continue
             if k not in state:
                 if len(state) >= MAX_CHECKS:
@@ -372,5 +376,7 @@ def pick(arrivals: list[dict], lib: dict[str, dict], exclude: set[str], check=li
             if state[k]:
                 chosen.append(k)
                 got += 1
+                if per_arrival is not None:
+                    per_arrival.setdefault(a["id"], []).append(k)
     return chosen, {"checked": len(state), "not_live": sorted(k for k, v in state.items() if v is False),
                     "unchecked": sorted(k for k, v in state.items() if v is None)}

@@ -19,14 +19,14 @@ import json
 import re
 import sys
 
-from . import library
+from . import library, pairing
 from .enrich import LANES, _extract_json
 from .util import clean, load_json
 
 PROMPT = """You are the combination strategist for Magpie, a daily brief on what became newly possible in AI.
 Today is {date}. Below are capabilities, each with an id. Rows with "today": true appeared today. Rows with
 "today": false are the library: capabilities that already existed, of any age (see "first_seen"), picked because
-they relate to today's arrivals.
+they relate to today's arrivals.{pairing}
 
 Your job is not to list them and not to mash two together. Find {n} NON-OBVIOUS consequences: places where
 two to four of these capabilities, taken together with ordinary public conditions (falling costs, existing
@@ -68,33 +68,45 @@ CAPABILITIES:
 """
 
 EFFORT_DAYS = {"an afternoon": 0.5, "a week": 5, "a month": 20, "a quarter": 60}
+PAIRED = """ A library row with "pairing" was chosen by a panel of models as a partner for the
+arrival in "with", with the relation and the reason; treat that as a lead to test, not as a fact about either one."""
 
 
-def _pool(day: dict, lib: dict[str, dict], limit_today: int = 24, check=library.live) -> tuple[list[dict], dict]:
-    """Today's edited capabilities, then the live library capabilities its strongest arrivals relate to most."""
+def _pool(day: dict, lib: dict[str, dict], limit_today: int = 24, check=library.live, data_dir=None) -> tuple[list[dict], dict]:
+    """Today's edited capabilities, then the live library capabilities its strongest arrivals relate to most (or, with
+    MAGPIE_PAIR_JUDGE=1, the partners a panel of models chose for them; see pairing.py)."""
     edited = [e for e in day["events"] if e.get("brief")][:limit_today]
     rows = [_row(e, day["date"], True, lib.get(e["key"])) for e in edited]
     # The day's events are ranked, so the first edited ones are its strongest arrivals.
-    keys, receipt = library.pick(edited[:library.STRONG], lib, {e["key"] for e in day["events"]}, check)
-    rows += [_row(lib[k]["event"], lib[k]["date"], False, lib[k]) for k in keys]
+    strong, exclude, notes = edited[:library.STRONG], {e["key"] for e in day["events"]}, {}
+    if pairing.enabled() and data_dir is not None:
+        keys, receipt, notes = pairing.pick(day, strong, lib, exclude, check, data_dir)
+    else:
+        keys, receipt = library.pick(strong, lib, exclude, check)
+    rows += [_row(lib[k]["event"], lib[k]["date"], False, lib[k], notes.get(k)) for k in keys]
     return rows, {"today": len(edited), "library": len(keys), **receipt}
 
 
-def _row(e: dict, date: str, today: bool, hist: dict | None = None) -> dict:
-    """One capability as the model sees it; `hist` is its library entry (its history before today), if it has one."""
+def _row(e: dict, date: str, today: bool, hist: dict | None = None, paired: list[dict] | None = None) -> dict:
+    """One capability as the model sees it; `hist` is its library entry (its history before today), if it has one, and
+    `paired` the panel's reasons for choosing it as a partner of today's arrivals."""
     b = e.get("brief") or {}
-    return {"id": e["id"], "date": date, "today": today, "first_seen": (hist or {}).get("first_seen") or date,
-            "title": b.get("headline") or e["title"],
-            "what": b.get("newly_possible") or e.get("summary", "")[:300], "why": b.get("why", ""),
-            "limits": b.get("limits", ""), "maker": e.get("maker"), "kind": e["kind"], "topics": e.get("topics", []),
-            "evidence": e.get("evidence"), "_summary": e.get("summary", ""), "_url": e.get("url"),
-            "_adoption": library.adoption(hist), "_signals": library.signals(hist) if hist else None}
+    row = {"id": e["id"], "date": date, "today": today, "first_seen": (hist or {}).get("first_seen") or date,
+           "title": b.get("headline") or e["title"],
+           "what": b.get("newly_possible") or e.get("summary", "")[:300], "why": b.get("why", ""),
+           "limits": b.get("limits", ""), "maker": e.get("maker"), "kind": e["kind"], "topics": e.get("topics", []),
+           "evidence": e.get("evidence"), "_summary": e.get("summary", ""), "_url": e.get("url"),
+           "_adoption": library.adoption(hist), "_signals": library.signals(hist) if hist else None}
+    if paired:
+        row["pairing"] = paired
+    return row
 
 
 def ungrounded_numbers(p: dict, rows: list[dict]) -> list[str]:
     """Numbers in the connection or chain that no ingredient's own text contains. Tests may set thresholds; claims may not."""
     claim = " ".join([p.get("connection", ""), *p.get("chain", [])])
-    source = " ".join(json.dumps({k: v for k, v in r.items() if k not in ("_adoption", "_signals")}, ensure_ascii=False) for r in rows)
+    source = " ".join(json.dumps({k: v for k, v in r.items() if k not in ("_adoption", "_signals", "pairing")}, ensure_ascii=False)
+                      for r in rows)  # a panel's reason is not a source
     return sorted({n for n in re.findall(r"\d+(?:\.\d+)?", claim) if n not in source})
 
 
@@ -141,14 +153,16 @@ def choose(items: list[dict], n: int) -> list[dict]:
 def generate(day: dict, data_dir, n: int = 5, timeout: int = 1200, check=library.live) -> dict:
     """Up to n possibilities for one edition. The model proposes a few more than n across both mixes; code drops the
     ungrounded, ranks the rest and keeps n."""
-    pool, receipt = _pool(day, library.build(day["date"], data_dir), check=check)
+    pool, receipt = _pool(day, library.build(day["date"], data_dir), check=check, data_dir=data_dir)
     if not any(r["today"] for r in pool) or len(pool) < 2:
         return {"items": [], "pool": receipt, "note": "Too few edited capabilities today to combine."}
     ids = {r["id"] for r in pool}
     today_ids = {r["id"] for r in pool if r["today"]}
     shown = [{k: v for k, v in r.items() if not k.startswith("_")} for r in pool]
     need = " and return at least 3 of each" if receipt["library"] and len(today_ids) > 1 else ""
-    prompt = PROMPT.format(date=day["date"], n=n + 3, need=need, pool=json.dumps(shown, ensure_ascii=False, indent=0))
+    paired = PAIRED if any(r.get("pairing") for r in pool) else ""
+    prompt = PROMPT.format(date=day["date"], n=n + 3, need=need, pairing=paired,
+                           pool=json.dumps(shown, ensure_ascii=False, indent=0))
     errors = []
     for lane in ("claude", "codex"):
         raw = ""
