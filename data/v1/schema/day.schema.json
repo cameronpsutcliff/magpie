@@ -925,7 +925,7 @@
      "items": {
       "type": "string"
      },
-     "description": "Event ids, at least one from that day. Others may come from any earlier edition (the library). With MAGPIE_BUILD_ON_IDEAS=1, one may be an earlier possibility (id idea-<date>-<rank>)."
+     "description": "Event ids, at least one from that day. Others may come from any earlier edition (the library)."
     },
     "ingredient_refs": {
      "type": "array",
@@ -963,10 +963,6 @@
         "type": "string",
         "format": "date",
         "description": "The first edition the ingredient appeared in."
-       },
-       "kind": {
-        "const": "idea",
-        "description": "Present when the ingredient is an earlier Magpie possibility; its url is that edition."
        }
       }
      }
@@ -1090,7 +1086,7 @@
     },
     "builds_on": {
      "type": "object",
-     "description": "The earlier possibility this one builds on (MAGPIE_BUILD_ON_IDEAS=1).",
+     "description": "The earlier Magpie possibility this one builds on (MAGPIE_BUILD_ON_IDEAS=1). It is not an ingredient; its url is that edition.",
      "properties": {
       "id": {
        "type": "string"

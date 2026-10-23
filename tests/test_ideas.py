@@ -71,13 +71,14 @@ class IdeaTests(unittest.TestCase):
         self.assertNotIn("ideas", out["pool"])
 
     def test_a_possibility_can_build_on_an_earlier_idea(self):
-        base = {"connection": "On 2099-01-03 Magpie suggested local transcription; Fast Whisper at 10x speed makes review take 15 minutes.",
+        base = {"connection": "On 2099-01-03 Magpie suggested local transcription; Fast Whisper at 10x speed makes it practical.",
                 "chain": ["a", "b", "c"], "effort": "a week", "scores": {"value": 4, "feasibility": 4, "evidence": 3, "novelty": 3}}
         answer = [
             {**base, "title": "Clinics transcribe and review a visit in minutes", "ingredients": ["idea-2099-01-03-1", "s1"]},
             {**base, "title": "Only an idea and nothing new", "ingredients": ["idea-2099-01-03-1"]},
             {**base, "title": "Two ideas, one kept", "ingredients": ["idea-2099-01-03-1", "idea-2099-01-01-1", "s2", "s1"]},
             {**base, "title": "Ungrounded", "connection": "It saves 90 minutes.", "ingredients": ["idea-2099-01-03-1", "s1"]},
+            {**base, "title": "The idea's own number", "connection": "Review takes 15 minutes now.", "ingredients": ["idea-2099-01-03-1", "s1"]},
         ]
         out, prompt = self.run_generate("1", answer)
         self.assertIn('"kind": "idea"', prompt)
@@ -86,17 +87,46 @@ class IdeaTests(unittest.TestCase):
         kept = {p["title"]: p for p in out["items"]}
         self.assertEqual(sorted(kept), ["Clinics transcribe and review a visit in minutes", "Two ideas, one kept"])
         p = kept["Clinics transcribe and review a visit in minutes"]
-        self.assertEqual(p["mix"], "today_x_library")  # an idea comes from an earlier edition
         self.assertEqual(p["builds_on"], {"id": "idea-2099-01-03-1", "date": "2099-01-03",
                                           "title": "Small clinics can transcribe visits on one laptop",
                                           "url": "https://www.cameronsutcliff.com/magpie/2099-01-03"})
-        ref = next(r for r in p["ingredient_refs"] if r["id"] == "idea-2099-01-03-1")
-        self.assertEqual((ref["kind"], ref["today"]), ("idea", False))
-        self.assertEqual(kept["Two ideas, one kept"]["ingredients"], ["idea-2099-01-03-1", "s2", "s1"])  # the second idea is dropped
+        # The idea is what it builds on, not an ingredient: the page never shows it as a capability.
+        self.assertEqual(p["ingredients"], ["s1"])
+        self.assertEqual([r["id"] for r in p["ingredient_refs"]], ["s1"])
+        self.assertEqual(p["mix"], "today_x_today")
+        self.assertEqual(kept["Two ideas, one kept"]["ingredients"], ["s2", "s1"])
+        self.assertEqual(kept["Two ideas, one kept"]["builds_on"]["id"], "idea-2099-01-03-1")  # the first idea named
         whys = {d["title"]: d["why"] for d in out["dropped"]}
         self.assertIn("one from today", whys["Only an idea and nothing new"])
         self.assertIn("90", whys["Ungrounded"])
+        self.assertIn("15", whys["The idea's own number"])  # an idea's words never vouch for a number
 
+    def test_malformed_earlier_editions_are_skipped(self):
+        bad = [{"date": "2099-01-02", "possibilities": ["not", "a", "dict"]},
+               {"date": "2099-01-02", "possibilities": {"items": {"title": "a dict, not a list"}}},
+               {"possibilities": {"items": [CLINIC]}},  # no date
+               {"date": "2099-01-04", "possibilities": {"items": [{"title": "Clinic speech notes", "connection": 7, "chain": "a string",
+                                                                    "ingredient_refs": "a string", "disconfirm": ["x"]}, "junk", None]}}]
+        for i, d in enumerate(bad):
+            write_json(self.data / "days" / f"2099-01-0{2 if i < 3 else 4}.json", d, compact=True)
+            rows = P.earlier_ideas("2099-01-05", self.data, [self.speech])
+            self.assertTrue(all(r["id"].startswith("idea-2099-01-0") for r in rows))
+        self.assertEqual(rows[0], {**rows[0], "id": "idea-2099-01-04-1", "what": "", "recipe": [], "limits": "", "_summary": ""})
+
+    def test_only_the_last_seven_editions_and_six_ideas_newest_first(self):
+        shutil.rmtree(self.data)
+        for day in range(1, 10):  # nine earlier editions with the same related idea
+            write_json(self.data / "days" / f"2099-02-0{day}.json", {"date": f"2099-02-0{day}", "possibilities": {"items": [CLINIC]}}, compact=True)
+        rows = P.earlier_ideas("2099-02-10", self.data, [self.speech])
+        self.assertEqual([r["date"] for r in rows], [f"2099-02-0{d}" for d in range(9, 3, -1)])  # six, newest first
+        rows = P.earlier_ideas("2099-02-10", self.data, [self.speech], limit=20)
+        self.assertEqual(len(rows), 7)  # seven editions back, no more
+
+    def test_the_flag_off_prompt_is_the_old_template(self):
+        _, prompt = self.run_generate("", [])
+        with mock.patch.object(P, "PROMPT", P.PROMPT.replace("{ideas}", "")):
+            _, old = self.run_generate("", [])
+        self.assertEqual(prompt, old)
 
 if __name__ == "__main__":
     unittest.main()

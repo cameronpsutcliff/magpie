@@ -14,7 +14,8 @@ lifts a widely used capability outranks an equally scored pairing of two unknown
 
 With MAGPIE_BUILD_ON_IDEAS=1, Magpie's own earlier possibilities join the pool as ideas (see earlier_ideas): when an
 arrival makes one of them much stronger, the new possibility builds on it ("On Oct 21 we suggested A with B; D, out
-today, removes B's limit") and records the idea it builds on.
+today, removes B's limit") and records it in `builds_on`. An idea is never an ingredient: the ingredients stay
+capabilities, and only their words can vouch for a number.
 """
 from __future__ import annotations
 
@@ -83,8 +84,8 @@ IDEAS = """ Rows with "kind": "idea" are possibilities Magpie published on an ea
 "date", with the capabilities they combined in "recipe". When a capability from today makes one of them much
 stronger, cheaper or newly practical, you may return a possibility that builds on it: list the idea's id among the
 ingredients with at least one capability from today, open "connection" with what Magpie suggested on that date, and
-say what today's arrival adds and why that changes the outcome. An idea is never one of today's ingredients, and one
-possibility builds on one idea at most."""
+say what today's arrival adds and why that changes the outcome. An idea is never one of today's ingredients, one
+possibility builds on one idea at most, and every number must come from a capability, not from the idea."""
 PAIRED = """ A library row with "pairing" was chosen by a panel of models as a partner for the
 arrival in "with", with the relation and the reason; treat that as a lead to test, not as a fact about either one."""
 
@@ -111,22 +112,28 @@ def ideas_enabled() -> bool:
 
 
 def earlier_ideas(date: str, data_dir, arrivals: list[dict], editions: int = IDEA_EDITIONS, limit: int = IDEA_ROWS) -> list[dict]:
-    """The possibilities of the last `editions` editions before `date`, as pool rows of kind "idea": the `limit` that
-    share the most rare words with any of today's strongest `arrivals` (the same text measure as library.neighbours),
-    newest first among equals. One that shares none is left out."""
+    """The possibilities of the last `editions` editions before `date`, as pool rows of kind "idea": the `limit` closest
+    to any of today's strongest `arrivals`, newest first among equals; one that shares no word is left out. Closeness is
+    the cosine of TF-IDF weights over the library's word lists (library._words for the idea, library._doc for the
+    arrival), with document frequencies from these ideas and arrivals: only the shared-words part of library.related,
+    without its topic, integration or maker terms. Anything malformed in an earlier edition is skipped."""
     from .recent import editions as before
 
+    text = lambda v: v if isinstance(v, str) else ""  # noqa: E731
+    listed = lambda v: v if isinstance(v, list) else []  # noqa: E731
     rows = []
     for d in before(date, data_dir, editions):
-        for rank, p in enumerate((d.get("possibilities") or {}).get("items") or [], 1):
-            if not isinstance(p, dict) or not isinstance(p.get("title"), str) or not p["title"].strip():
+        if not isinstance(d, dict) or not isinstance(d.get("date"), str):
+            continue
+        poss = d.get("possibilities")
+        for rank, p in enumerate(listed(poss.get("items") if isinstance(poss, dict) else None), 1):
+            if not isinstance(p, dict) or not text(p.get("title")).strip():
                 continue
-            recipe = [r["title"] for r in p.get("ingredient_refs") or [] if isinstance(r, dict) and isinstance(r.get("title"), str)]
+            recipe = [r["title"] for r in listed(p.get("ingredient_refs")) if isinstance(r, dict) and isinstance(r.get("title"), str)]
             rows.append({"id": f"idea-{d['date']}-{rank}", "date": d["date"], "today": False, "first_seen": d["date"],
-                         "kind": "idea", "title": p["title"], "what": p.get("connection") if isinstance(p.get("connection"), str) else "",
-                         "recipe": recipe, "why": "", "limits": p.get("disconfirm") if isinstance(p.get("disconfirm"), str) else "",
-                         "maker": None, "topics": [], "evidence": "idea",
-                         "_summary": " ".join(c for c in p.get("chain") or [] if isinstance(c, str)),
+                         "kind": "idea", "title": p["title"], "what": text(p.get("connection")), "recipe": recipe,
+                         "why": "", "limits": text(p.get("disconfirm")), "maker": None, "topics": [], "evidence": "idea",
+                         "_summary": " ".join(c for c in listed(p.get("chain")) if isinstance(c, str)),
                          "_url": f"{SITE}/{d['date']}", "_adoption": 0.0, "_signals": None})
     if not rows or not arrivals:
         return []
@@ -172,8 +179,7 @@ def ungrounded_numbers(p: dict, rows: list[dict]) -> list[str]:
 def refs(ids: list[str], by_id: dict) -> list[dict]:
     """`date` is the edition the ingredient's text comes from; `first_seen` the first edition it appeared in."""
     return [{"id": i, "title": by_id[i]["title"], "date": by_id[i]["date"], "today": by_id[i]["today"],
-             "first_seen": by_id[i]["first_seen"], "maker": by_id[i].get("maker"), "url": by_id[i].get("_url"),
-             **({"kind": "idea"} if by_id[i].get("kind") == "idea" else {})} for i in ids]
+             "first_seen": by_id[i]["first_seen"], "maker": by_id[i].get("maker"), "url": by_id[i].get("_url")} for i in ids]
 
 
 def amplification(ings: list[dict]) -> dict:
@@ -237,20 +243,21 @@ def generate(day: dict, data_dir, n: int = 5, timeout: int = 1200, check=library
         out, dropped = [], []
         for p in data.get("possibilities", []):
             ing = list(dict.fromkeys(i for i in p.get("ingredients", []) if i in ids))
-            idea = next((i for i in ing if i in idea_ids), None)
-            ing = [i for i in ing if i not in idea_ids or i == idea]  # one idea at most: the first named
-            if len(ing) < 2 or not (set(ing) & today_ids):
-                dropped.append({"title": p.get("title"), "why": "needs two known ingredients, one from today"})
+            idea = next((i for i in ing if i in idea_ids), None)  # one idea at most: the first named
+            ing = [i for i in ing if i not in idea_ids]  # an idea is what it builds on, never an ingredient
+            if len(ing) + bool(idea) < 2 or not (set(ing) & today_ids):
+                dropped.append({"title": p.get("title"), "why": "needs two known ingredients (or one and an earlier idea), one from today"})
                 continue
             item = {k: clean(v) if isinstance(v, str) else v for k, v in p.items()}
             item["ingredients"] = ing
             item["chain"] = [clean(c) for c in p.get("chain", []) if isinstance(c, str)][:4]
-            loose = ungrounded_numbers(item, [by_id[i] for i in ing])
+            # Numbers rest on the capabilities' own words; of an idea, only its date counts (the connection names it).
+            loose = ungrounded_numbers(item, [by_id[i] for i in ing] + ([{"date": by_id[idea]["date"]}] if idea else []))
             if loose:
                 dropped.append({"title": item.get("title"), "why": f"numbers not in its sources: {', '.join(loose)}"})
                 continue
             item["ingredient_refs"] = refs(ing, by_id)
-            item["mix"] = "today_x_today" if set(ing) <= today_ids else "today_x_library"  # an idea is from an earlier edition
+            item["mix"] = "today_x_today" if set(ing) <= today_ids else "today_x_library"
             if idea:
                 item["builds_on"] = {"id": idea, "date": by_id[idea]["date"], "title": by_id[idea]["title"], "url": by_id[idea]["_url"]}
             item["amplification"] = amplification([by_id[i] for i in ing])
