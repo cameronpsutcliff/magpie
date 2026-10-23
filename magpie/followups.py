@@ -21,7 +21,8 @@ from .util import clean, load_json, ungrounded_numbers, write_json
 
 EDITIONS = 14  # editions looked back over for a story already told
 NEW_LIMIT = 10  # new stories offered for a headline and dek
-FALLBACK_WORDS = 20  # a code-built headline stops adding stories past this many words
+FALLBACK_WORDS = 20  # a code-built headline adds a further story only while it stays within this many words
+QUIET = {"headline": "A quiet day", "dek": "Today's stories follow up ones Magpie has already reported.", "quiet": True}
 # Repo or model names too generic to show that a headline names one particular capability.
 GENERIC = {"agent", "agents", "model", "models", "server", "tools", "skills", "runtime", "awesome", "docs", "examples",
            "cookbook", "chat", "code", "demo", "app", "api", "sdk", "cli"}
@@ -169,8 +170,9 @@ def rewrite(date: str, new: list[dict], old: list[dict], *, follow_ups: bool = F
 def fallback(new: list[dict], old: list[dict]) -> dict:
     """Code-built words when no lane can write a headline and dek clear of follow-ups: the new stories' own edited
     headlines and lines, nothing added, skipping any story whose words name one of the `old` follow-ups. At most three
-    headlines, and none added past FALLBACK_WORDS words; with no story left, a plain quiet-day line. These words carry
-    whatever their stories' editor wrote: code adds no check beyond the names."""
+    headlines: the first always, a further one only while the joined headlines stay within FALLBACK_WORDS words, then
+    ", and more" when stories were left out. With no story left, or should the joined words still name a follow-up, a
+    plain quiet-day line. These words carry whatever their stories' editor wrote: code adds no check beyond the names."""
     clear = [e for e in new if not named({"headline": e["brief"]["headline"], "dek": e["brief"].get("newly_possible") or ""}, old)]
     heads: list[str] = []
     for e in clear[:3]:
@@ -178,10 +180,11 @@ def fallback(new: list[dict], old: list[dict]) -> dict:
             break
         heads.append(e["brief"]["headline"])
     if not heads:
-        return {"headline": "A quiet day", "dek": "Today's stories follow up ones Magpie has already reported.", "quiet": True}
+        return dict(QUIET)
     lines = [e["brief"]["newly_possible"] for e in clear[:2] if isinstance(e["brief"].get("newly_possible"), str) and e["brief"]["newly_possible"].strip()]
-    return {"headline": ", ".join(heads) + (", and more" if len(clear) > len(heads) else ""), "dek": " ".join(lines) or heads[0],
-            "quiet": len(clear) < 3}
+    out = {"headline": ", ".join(heads) + (", and more" if len(clear) > len(heads) else ""), "dek": " ".join(lines) or heads[0],
+           "quiet": len(clear) < 3}
+    return dict(QUIET) if named(out, old) else out
 
 
 def _earlier(date: str, data_dir, keys: set[str]) -> dict[str, str]:
@@ -195,7 +198,8 @@ def _earlier(date: str, data_dir, keys: set[str]) -> dict[str, str]:
 
 
 def edit_day(day: dict, data_dir, *, lanes: list[str] | None = None) -> dict:
-    """Headline, dek and the top follow-ups' words for a published day, in place. Returns a receipt."""
+    """Headline, dek and the words of the follow-ups in the top or named in the headline or dek, for a published day,
+    in place. Returns a receipt."""
     events = day.get("events") or []
     mark(events, day["date"], data_dir)
     by = {e["id"]: e for e in events}
