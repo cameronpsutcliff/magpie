@@ -1,0 +1,209 @@
+{
+ "ran_at": "2026-10-24T22:07:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6",
+ "since": "2026-10-24T18:04:00Z",
+ "queries": [
+  [
+   "labs",
+   "(from:_inception_ai OR from:AIatMeta OR from:alexalbert__ OR from:allen_ai OR from:BAAIBeijing OR from:DarioAmodei OR from:deepseek_ai OR from:gdb OR from:GoogleDeepMind OR from:koraykv OR from:markchen90 OR from:MicrosoftAI OR from:OpenAI OR from:SakanaAILabs OR from:Skywork_ai OR from:TencentHunyuan OR from:TheInclusionAI OR from:XiaomiMiMo OR from:Zai_org OR from:aidangomez OR from:Alibaba_Qwen OR from:AnthropicAI OR from:AntLingAGI OR from:GoogleAI OR from:GuillaumeLample OR from:Kimi_Moonshot OR from:liquidai OR from:MiniMax_AI OR from:miramurati OR from:MistralAI OR from:RaiaHadsell OR from:sama OR from:satyanadella OR from:thinkymachines OR from:bfl_ai OR from:claudeai OR from:cohere OR from:JensenHuang OR from:nvidia OR from:sundarpichai) -is:retweet -is:reply"
+  ],
+  [
+   "devtools",
+   "(from:antigravity OR from:augmentcode OR from:badlogicgames OR from:ClaudeDevs OR from:cline OR from:cognition OR from:cursor_ai OR from:DeepSeekHarness OR from:e2b OR from:FactoryAI OR from:kirodotdev OR from:opencode OR from:OpenHandsDev OR from:pidotdev OR from:Replit OR from:Sourcegraph OR from:Stagehanddev OR from:AmpCode OR from:bot OR from:browser_use OR from:code OR from:daytonaio OR from:droid OR from:goose_oss OR from:Lovable OR from:mntruell OR from:OpenAIDevs OR from:sqs OR from:Teknium OR from:v0 OR from:warpdotdev OR from:zachlloydtweets OR from:zeddotdev OR from:boltdotnew OR from:browserbase OR from:github OR from:mitsuhiko OR from:NousResearch OR from:reach_vb OR from:thdxr) -is:retweet -is:reply"
+  ],
+  [
+   "opensource",
+   "(from:axolotl_ai OR from:danielhanchen OR from:ggerganov OR from:ggml_org OR from:Is36E OR from:lmsysorg OR from:LysandreJik OR from:PrimeIntellect OR from:QGallouedec OR from:rapidmlx OR from:sgl_project OR from:turboderp_ OR from:UnslothAI OR from:xenovacom OR from:__tinygrad__ OR from:_philschmid OR from:awnihannun OR from:ezyang OR from:huggingface OR from:maximelabonne OR from:ngxson OR from:ollama OR from:OpenWebUI OR from:PyTorch OR from:sudoingX OR from:Tim_Dettmers OR from:tinkerapi OR from:tri_dao OR from:vllm_project OR from:winglian OR from:yagilb OR from:bartowski1182 OR from:DrJimFan OR from:julien_c OR from:lmstudio OR from:osanseviero OR from:soumithchintala) -is:retweet -is:reply"
+  ],
+  [
+   "research",
+   "(from:_akhaliq OR from:askalphaxiv OR from:cwolferesearch OR from:dair_ai OR from:hyunw_kim OR from:omarsar0 OR from:sayashk OR from:ssokota OR from:aitrackerbot OR from:gabriberton OR from:gu_yuling OR from:jaseweston OR from:KumbongHermann OR from:larsankile OR from:MSFTResearch OR from:OfirPress OR from:percyliang OR from:phillip_isola OR from:qi2peng2 OR from:sam_paech OR from:simran_s_arora OR from:StanfordAILab OR from:stanfordnlp OR from:TheTuringPost OR from:wen_kaiyue OR from:zicokolter OR from:chelseabfinn OR from:lateinteraction OR from:srush_nlp OR from:tatsu_hashimoto OR from:trending_repos) -is:retweet -is:reply"
+  ],
+  [
+   "builders",
+   "(from:_davidgonmar OR from:adarshsolanki OR from:adityakrx OR from:arena OR from:ArtificialAnlys OR from:DominiqueCAPaul OR from:karpathy OR from:minimaxir OR from:rasbt OR from:simonw OR from:ValsAI OR from:yb2698 OR from:ariG23498 OR from:casper_hansen_ OR from:eliebakouch OR from:goodside OR from:helloiamleonie OR from:kitlangton OR from:labenz OR from:levelsio OR from:lightseekorg OR from:maxencefaldor OR from:MichaelThiessen OR from:natolambert OR from:nrehiew_ OR from:scaling01 OR from:teortaxesTex OR from:witcheer OR from:akshay_pachaar OR from:CommandCodeAI OR from:emollick OR from:matthewmillerai OR from:mervenoyann OR from:MooncastOnline) -is:retweet -is:reply"
+  ],
+  [
+   "applied",
+   "(from:anyscalecompute OR from:arizeai OR from:Box OR from:braintrust OR from:CoreWeave OR from:databricks OR from:glean OR from:GroqLLC OR from:HamelHusain OR from:hwchase17 OR from:latentspacepod OR from:levie OR from:llama_index OR from:modal OR from:NotionHQ OR from:OpenRouter OR from:SemiAnalysis_ OR from:aiDotEngineer OR from:AndrewYNg OR from:cerebras OR from:clattner_llvm OR from:dylan522p OR from:FireworksAI_HQ OR from:Get_Writer OR from:LangChain OR from:LiteLLM OR from:matei_zaharia OR from:Modular OR from:mustafasuleyman OR from:perplexity_ai OR from:replicate OR from:sh_reya OR from:Snowflake OR from:swyx OR from:wandb OR from:amasad OR from:baseten OR from:jerryjliu0 OR from:NVIDIAAI) -is:retweet -is:reply"
+  ],
+  [
+   "discovery-hf-arxiv",
+   "(url:huggingface.co OR url:arxiv.org) (release OR released OR open-source OR \"open weights\" OR introducing) lang:en -is:retweet -is:reply"
+  ],
+  [
+   "discovery-github",
+   "url:github.com (released OR introducing OR \"open source\" OR launch) (agent OR model OR inference OR LLM) lang:en -is:retweet -is:reply"
+  ]
+ ],
+ "calls": 17,
+ "items": [
+  {
+   "title": "SGLang matches DeepSeek's DeepInfer engine on DeepSeek-V4.1-Flash for both prefill and decode, with a reproduction guide",
+   "url": "https://x.com/sgl_project/status/2114071115605877043",
+   "handle": "@sgl_project",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "SGLang reports parity with DeepInfer on DeepSeek-V4.1-Flash: up to 1.04x prefill throughput on 4x GB300 and 4x B300, and up to 7.4% higher decode throughput on 64x GB300. It ships an end-to-end reproduction guide and a production serving stack, so open serving now keeps pace with DeepSeek's own engine.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://lmsys.org/blog/2026-10-24-dsv41-deepinfer"
+   ],
+   "vendor": "SGLang (LMSYS)",
+   "posted_at": "2026-10-24T19:06:46Z",
+   "metrics": {
+    "likes": 141,
+    "reposts": 19,
+    "quotes": 13,
+    "replies": 16,
+    "views": 12928
+   },
+   "confirmed_by": [
+    "@lmsysorg"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Kimi K3.1 ranks #1 among open-weight models on the Vals Index (#8 overall)",
+   "url": "https://x.com/ValsAI/status/2114089633135153238",
+   "handle": "@ValsAI",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Vals AI's aggregate index places Moonshot's Kimi K3.1 first among open-weight models and eighth overall, a second independent ranking after Agent Arena that puts it at the top of open models.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://www.vals.ai/"
+   ],
+   "vendor": "Vals AI",
+   "posted_at": "2026-10-24T20:20:21Z",
+   "metrics": {
+    "likes": 82,
+    "reposts": 5,
+    "quotes": 3,
+    "replies": 10,
+    "views": 3105
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Results are shown only as an image, and @scaling01 notes many users find Kimi K3.1 disappointing in practice despite its rankings.",
+    "source": "https://x.com/scaling01/status/2114089791113617432"
+   }
+  },
+  {
+   "title": "Anthropic guide: fold routers, planners and domain subagents into one agent loop with skills and tool search",
+   "url": "https://x.com/cherry_mx_reds/status/2113969070118666670",
+   "handle": "@cherry_mx_reds",
+   "group": "builders",
+   "origin": "discovery",
+   "summary": "Anthropic's Applied AI team (guide dated Oct 22) reports that across several enterprise deployments a single agent loop with skills often beat both one-prompt and subagent designs on quality, cost and latency, with one customer seeing about 2x faster runtime. It gives a migration method: fold one subagent at a time, check with a small end-to-end eval run repeatedly, and keep subagents only for context bloat, disposable parallel work, or tool-choice problems past 30 to 50 tools.",
+   "kind": "technique",
+   "evidence": "claim",
+   "links": [
+    "https://claude.com/resources/articles/building-agents-when-to-fold-subagents-into-your-main-agent-loop"
+   ],
+   "vendor": "Anthropic",
+   "posted_at": "2026-10-24T12:21:16Z",
+   "metrics": {
+    "likes": 1403,
+    "reposts": 91,
+    "quotes": 83,
+    "replies": 102,
+    "views": 217329
+   },
+   "confirmed_by": [
+    "@omarsar0"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The 2x figure is one customer's comparison, not a benchmark; repliers stress that merged agents can regress on specific tasks (Anthropic's own example skipped a required lookup), so evals need repeated runs per task.",
+    "source": "https://x.com/Alexcyzhou/status/2114088000862982547"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Most repliers say they reached the same conclusion building their own agents (fewer handoffs, less lost context, fewer shell commands), with a minority calling it lock-in or noting labs trained models to use subagents.",
+    "tried": true,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "LiteLLM adds official OpenCode Go support",
+   "url": "https://x.com/LiteLLM/status/2114099964045582622",
+   "handle": "@LiteLLM",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "LiteLLM can now route OpenCode Go subscription models through an existing proxy setup, picking the right upstream API, keeping the conversation session, and logging estimated usage under OpenCode Go.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://docs.litellm.ai/"
+   ],
+   "vendor": "LiteLLM",
+   "posted_at": "2026-10-24T21:01:24Z",
+   "metrics": {
+    "likes": 9,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 299
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No changelog or docs link in the post.",
+    "source": null
+   }
+  },
+  {
+   "title": "CUADebug traces computer-use agent failures to root causes and lifts OSWorld success from 61.2% to 66.5%",
+   "url": "https://x.com/CharlieDreemur/status/2114107143217377469",
+   "handle": "@CharlieDreemur",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "An EMNLP 2026 paper that diagnoses why a computer-use agent failed and guides its recovery, raising OSWorld success by about 5 points, with a project page and arXiv paper.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2608.02643",
+    "https://cuadebug.github.io"
+   ],
+   "vendor": "CUADebug authors",
+   "posted_at": "2026-10-24T21:29:55Z",
+   "metrics": {
+    "likes": 3,
+    "reposts": 2,
+    "quotes": 1,
+    "replies": 7,
+    "views": 50
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 98,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}

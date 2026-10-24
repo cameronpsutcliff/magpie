@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T18:04:00Z",
+  "updated_at": "2026-10-24T22:07:00Z",
   "by": "magpie-scout",
   "rules": "Quiet watch for on-the-horizon items. Check at most 2 reads per sweep, rotating by oldest last_checked. Stay silent until a trigger fires. A demo clip, teaser, waitlist, interview or opinion is never a trigger. When one fires: add one kept item to that sweep, set status to 'triggered' with triggered_at and evidence, and flag it in the status file for the parent to tell Cameron. Never put speculative what-ifs in sweep output.",
   "entries": [
@@ -33,8 +33,8 @@
         ],
         "handle_notes": "@ragavan is a different person (ex-Llama at Meta), not Ragavan Thurairatnam; his X handle is not yet known."
       },
-      "last_checked": "2026-10-24T18:04:00Z",
-      "last_result": "Still a research preview: block.xyz/dessa unchanged (waitlist, early access only for AI safety researchers); X shows only coverage of the preview. No weights, API or paper.",
+      "last_checked": "2026-10-24T22:07:00Z",
+      "last_result": "Still a research preview: X since 18:04Z shows only coverage and explainers (waitlist, safety-researcher early access, no weights, API or paper).",
       "status": "watching",
       "triggered_at": null,
       "evidence": []
