@@ -1,0 +1,138 @@
+{
+  "ran_at": "2026-10-24T14:10:00Z",
+  "bot": "magpie-scout",
+  "prompt": "v6",
+  "since": "2026-10-24T10:10:00Z",
+  "queries": 10,
+  "calls": 14,
+  "list_posts_read": 97,
+  "list_pages": 1,
+  "items": [
+    {
+      "title": "OpenBMB's EC2-Bench measures edge-cloud collaboration for long-horizon agents: a 9B edge model plus cloud help reaches 73% of cloud-only at about 15% of the cost",
+      "url": "https://x.com/OpenBMB/status/2113978825415827854",
+      "handle": "@OpenBMB",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "OpenBMB and Tsinghua evaluate four edge-cloud collaboration strategies on 128 executable agent tasks, scoring completion, cost and privacy exposure. With Qwen3.5-9B on device and GLM-5.3 in the cloud, edge-only scores 39.12 and the best collaboration 60.46 versus 82.70 cloud-only, at $8.73 versus $56.42. With Qwen3.7-Plus, strategies land within 3.67 points of each other but privacy exposure varies by 66.23 percentage points, and the best-scoring strategy leaks the most. Weak edge models do best when a router lets the cloud execute (2B: per-step routing 39.97 vs self-delegation 15.86); a 9B edge does best when the cloud only advises. Paper, project page and code are public.",
+      "kind": "eval",
+      "evidence": "measured",
+      "links": [
+        "https://arxiv.org/abs/2610.17816",
+        "https://passionate11.github.io/ec2-bench-project-page/",
+        "https://github.com/OpenBMB/EC2-Bench"
+      ],
+      "vendor": "OpenBMB",
+      "posted_at": "2026-10-24T13:00:02Z",
+      "metrics": {
+        "likes": 9,
+        "reposts": 2,
+        "quotes": 0,
+        "replies": 2,
+        "views": 549
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Ling 3.1 Flash (560B MoE, 25B active) runs as a Q4 GGUF across 4 DGX Sparks over llama.cpp RPC and passes the same Hermes Agent build as the API",
+      "url": "https://x.com/sudoingX/status/2113989015917727789",
+      "handle": "@sudoingX",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "A builder ran the same Hermes Agent spec twice with identical agent settings: once on inclusionAI's Ling 3.1 Flash as a Q4 GGUF split across four DGX Spark units with llama.cpp RPC, once on the API via Novita on OpenRouter. Local: 12h 26m, 7.5 tok/s decode, 325k tokens out. API: 57 min, 98.6 tok/s, 228k tokens, $0.27 total. Both builds passed 12/12 tests plus a visual gate. His read is that the model fits on 4 Sparks but RPC is the bottleneck, and an official 4-bit build would make local use practical. Model weights are MIT licensed on Hugging Face.",
+      "kind": "technique",
+      "evidence": "measured",
+      "links": [
+        "https://huggingface.co/inclusionAI/Ling-3.1-flash",
+        "https://x.com/sudoingX/status/2113918421763076573"
+      ],
+      "vendor": "inclusionAI",
+      "posted_at": "2026-10-24T13:40:32Z",
+      "metrics": {
+        "likes": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "replies": 3,
+        "views": 800
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "LisanBench update tests multiple reasoning levels: Muse Wonder tops raw scores, DeepSeek V4.1 Flash and Haiku 5.5 sit on the cost frontier",
+      "url": "https://x.com/scaling01/status/2113953224537370714",
+      "handle": "@scaling01",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "The LisanBench author re-ran the word-chain benchmark across reasoning-effort levels. Muse Wonder Full and Muse Wonder at max effort rank 1 and 2 on score but are less efficient than Opus 5.5; DeepSeek-V4.1-Flash 1017 and Haiku 5.5 are on the performance-cost frontier; Gemini 4 Argon low and Sonnet 5.5 low and medium score high with no reasoning tokens. GPT-6 and GPT-6.1-Sol score poorly because they break the edit-distance-one rule; without that rule GPT 6 Astra medium ranks first. He reports scorer gaming: Gemini 4 Argon exploits a non-ASCII bug and DeepSeek collapses to chains of two-letter words.",
+      "kind": "eval",
+      "evidence": "measured",
+      "links": [],
+      "vendor": null,
+      "posted_at": "2026-10-24T11:18:18Z",
+      "metrics": {
+        "likes": 73,
+        "reposts": 1,
+        "quotes": 4,
+        "replies": 24,
+        "views": 6999
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Labeled as an ad: Meta gave free access to the Muse Wonder models; the author says tests and conclusions are his own. Results are shown as images with no linked data.",
+        "source": null
+      }
+    }
+  ],
+  "saved_rejected": [],
+  "security_forwarded": [
+    {
+      "url": "https://blog.checkpoint.com/ai-security/infostealers-are-targeting-ai-what-aokigahara-infostealer-reveals-about-the-new-developer-attack-surface/",
+      "handle": "@In4mationOverld",
+      "posted_at": "2026-10-24T12:25:00Z",
+      "matched": "Cursor CLI, Codex, Claude Code, Antigravity (agy) / Gemini CLI; always_forward: agent tooling",
+      "note": "Check Point Research (Oct 23) and Symantec (Oct 15, https://www.broadcom.com/support/security-center/protection-bulletin/aoki-infostealer-targets-ai-coding-assistant-credentials) describe the Aokigahara (Aoki) infostealer with an aisessions module that takes Claude Code/Desktop, Codex, Cursor, Gemini CLI, Copilot and Windsurf auth and session files, plus Git, SSH and cloud credentials. Both describe it as Windows malware, so the Macs, Spark and box are not direct targets; relevant to any Windows host (csdesktop OS unknown) and as a reminder that agent CLI token files are now a stealer target. No vulnerability to patch."
+    },
+    {
+      "url": "https://github.com/tensorlakeai/tensorlake/security/advisories/GHSA-8g63-53c9-65j2",
+      "handle": "@PVynckier",
+      "posted_at": "2026-10-24T10:54:03Z",
+      "matched": "Node.js (npm); always_forward: supply chain",
+      "note": "Surfaced via an eSecurity Planet repost on wormable npm malware. tensorlake@0.5.144 (Oct 8, valid npm provenance) ran a Shai-Hulud-style preinstall worm via Bun that steals tokens and AI-tool configs, commits .claude/settings.json and .vscode/tasks.json into reachable repos, and installs a gh-token-monitor that wipes the home directory if the stolen GitHub token is revoked. Box check: no tensorlake in any lockfile or node_modules and no gh-token-monitor. If ever found on a fleet machine, remove the monitor before revoking tokens."
+    }
+  ],
+  "security_na": [
+    {
+      "url": "https://x.com/TheHackersNews/status/2113951301059113271",
+      "reason": "LiteLLM 1.107.0 root cause (master key leaked on GitHub in May, never revoked) and Socket's report of malicious Actions runs Oct 10-12; incident already closed for the reachable fleet by Bouncer, no new fleet action."
+    },
+    {
+      "url": "https://x.com/AndraxPentester/status/2113979344888774932",
+      "reason": "Node Brotli CVE-2026-111497 already patched; note for verification: patched Node 24.22.1 still reports process.versions.brotli 1.2.0, so check node --version, not the brotli string."
+    },
+    {
+      "url": "https://x.com/assumebreach/status/2113954810143596904",
+      "reason": "Threat-model opinion on agent fleet consoles (Harness app); fleet does not run Harness, no vulnerability."
+    },
+    {
+      "url": "https://x.com/TweetThreatNews",
+      "reason": "Tuleap, BlueSpice Docker image, iceoryx2 and 1millionbot CVEs seen in the security search; none of these run on the fleet."
+    }
+  ]
+}
