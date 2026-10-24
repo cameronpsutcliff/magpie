@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T04:30:00Z",
+  "updated_at": "2026-10-24T04:45:00Z",
   "accounts": [
     {
       "handle": "@thsottiaux",
@@ -15,7 +15,9 @@
         "https://x.com/thsottiaux/status/2111244596131111253"
       ],
       "last_qualifying_post": "2026-10-19",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "1953337039510003712",
+      "on_list": true
     },
     {
       "handle": "@OpenBMB",
@@ -31,7 +33,9 @@
         "https://x.com/OpenBMB/status/2110364065822646570"
       ],
       "last_qualifying_post": "2026-10-14",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "1496119294844825600",
+      "on_list": true
     },
     {
       "handle": "@FishAudio",
@@ -47,7 +51,9 @@
         "https://x.com/FishAudio/status/2104617131920748857"
       ],
       "last_qualifying_post": "2026-10-13",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "1779922590645235713",
+      "on_list": true
     },
     {
       "handle": "@fal",
@@ -63,7 +69,9 @@
         "https://x.com/fal/status/2110795863861674073"
       ],
       "last_qualifying_post": "2026-10-19",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "39622874",
+      "on_list": true
     },
     {
       "handle": "@ExaAILabs",
@@ -79,7 +87,9 @@
         "https://x.com/ExaAILabs/status/2108245582745850303"
       ],
       "last_qualifying_post": "2026-10-19",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "1423733191005724672",
+      "on_list": true
     },
     {
       "handle": "@OfficialLoganK",
@@ -95,7 +105,9 @@
         "https://x.com/OfficialLoganK/status/2102785495726219305"
       ],
       "last_qualifying_post": "2026-10-13",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "284333988",
+      "on_list": true
     },
     {
       "handle": "@Thom_Wolf",
@@ -111,7 +123,9 @@
         "https://x.com/Thom_Wolf/status/2110381625200795942"
       ],
       "last_qualifying_post": "2026-10-19",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "246939962",
+      "on_list": true
     },
     {
       "handle": "@trycua",
@@ -127,7 +141,9 @@
         "https://x.com/trycua/status/2112589741879328979"
       ],
       "last_qualifying_post": "2026-10-20",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "1883205292596359168",
+      "on_list": true
     },
     {
       "handle": "@PrismML",
@@ -143,7 +159,9 @@
         "https://x.com/PrismML/status/2102859262062145966"
       ],
       "last_qualifying_post": "2026-10-15",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "1905730305136455680",
+      "on_list": true
     },
     {
       "handle": "@Aleph__Alpha",
@@ -159,7 +177,9 @@
         "https://x.com/Aleph__Alpha/status/2112547676868817027"
       ],
       "last_qualifying_post": "2026-10-20",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "1073704329528438785",
+      "on_list": true
     },
     {
       "handle": "@odysseyml",
@@ -175,7 +195,9 @@
         "https://x.com/odysseyml/status/2105714716316438684"
       ],
       "last_qualifying_post": "2026-10-08",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "1719792902556225536",
+      "on_list": true
     },
     {
       "handle": "@actualinc",
@@ -191,7 +213,9 @@
         "https://x.com/actualinc/status/2110759623435117020"
       ],
       "last_qualifying_post": "2026-10-15",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "1432925558304919552",
+      "on_list": true
     },
     {
       "handle": "@GeminiApp",
@@ -207,7 +231,9 @@
         "https://x.com/GeminiApp/status/2105327839054835886"
       ],
       "last_qualifying_post": "2026-10-13",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "1806359170830172162",
+      "on_list": true
     },
     {
       "handle": "@hume_ai",
@@ -223,7 +249,9 @@
         "https://x.com/hume_ai/status/2108622420647248362"
       ],
       "last_qualifying_post": "2026-10-09",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "1369199443015176193",
+      "on_list": true
     },
     {
       "handle": "@ElevenLabs",
@@ -239,7 +267,9 @@
         "https://x.com/ElevenLabs/status/2110759737583345706"
       ],
       "last_qualifying_post": "2026-10-20",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "1478679005788311552",
+      "on_list": true
     },
     {
       "handle": "@mem0ai",
@@ -255,7 +285,9 @@
         "https://x.com/mem0ai/status/2105685414430523472"
       ],
       "last_qualifying_post": "2026-10-01",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "1670746017828859904",
+      "on_list": true
     },
     {
       "handle": "@reflection_ai",
@@ -271,7 +303,9 @@
         "https://x.com/reflection_ai/status/2111079965529968798"
       ],
       "last_qualifying_post": "2026-10-16",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "1800594921704898560",
+      "on_list": true
     },
     {
       "handle": "@Gradio",
@@ -287,7 +321,9 @@
         "https://x.com/Gradio/status/2104932384689082535"
       ],
       "last_qualifying_post": "2026-10-01",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "1116114127519244290",
+      "on_list": true
     },
     {
       "handle": "@ElorianAI",
@@ -303,7 +339,9 @@
         "https://x.com/ElorianAI/status/2107973580319576356"
       ],
       "last_qualifying_post": "2026-10-16",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "2008415823925571586",
+      "on_list": true
     },
     {
       "handle": "@haoailab",
@@ -320,7 +358,9 @@
         "https://x.com/haoailab/status/2110904952839372895"
       ],
       "last_qualifying_post": "2026-10-20",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "1768529398448492544",
+      "on_list": true
     },
     {
       "handle": "@somarkai",
@@ -336,7 +376,9 @@
         "https://x.com/somarkai/status/2110405408045019299"
       ],
       "last_qualifying_post": "2026-10-20",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "2054184075804708865",
+      "on_list": true
     },
     {
       "handle": "@StefanoErmon",
@@ -353,7 +395,9 @@
         "https://x.com/StefanoErmon/status/2104979630394614258"
       ],
       "last_qualifying_post": "2026-10-19",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "1145851147",
+      "on_list": true
     },
     {
       "handle": "@chem_safety",
@@ -370,7 +414,9 @@
         "https://x.com/chem_safety/status/2109685886472602082"
       ],
       "last_qualifying_post": "2026-10-19",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "1740993283927703552",
+      "on_list": true
     },
     {
       "handle": "@htihle",
@@ -387,7 +433,9 @@
         "https://x.com/htihle/status/2110288604605882405"
       ],
       "last_qualifying_post": "2026-10-20",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "229533071",
+      "on_list": true
     },
     {
       "handle": "@datalabto",
@@ -404,7 +452,9 @@
         "https://x.com/datalabto/status/2102852413363494978"
       ],
       "last_qualifying_post": "2026-10-20",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "1889030825879945216",
+      "on_list": true
     },
     {
       "handle": "@NaceAI",
@@ -421,7 +471,9 @@
         "https://x.com/NaceAI/status/2112175183448461683"
       ],
       "last_qualifying_post": "2026-10-20",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "1904210068704481280",
+      "on_list": true
     },
     {
       "handle": "@Letta_AI",
@@ -437,7 +489,9 @@
         "https://x.com/Letta_AI/status/2105015179855704164"
       ],
       "last_qualifying_post": "2026-10-21",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "1821252546469752832",
+      "on_list": true
     },
     {
       "handle": "@turbopuffer",
@@ -455,7 +509,9 @@
         "https://x.com/turbopuffer/status/2113042657471836354"
       ],
       "last_qualifying_post": "2026-10-21",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "1709608373275017219",
+      "on_list": true
     },
     {
       "handle": "@inco_ai",
@@ -472,7 +528,9 @@
         "https://x.com/inco_ai/status/2103228024275730863"
       ],
       "last_qualifying_post": "2026-10-20",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "2051925010420477953",
+      "on_list": true
     },
     {
       "handle": "@PrismaXai",
@@ -489,7 +547,9 @@
         "https://x.com/PrismaXai/status/2112554927675593207"
       ],
       "last_qualifying_post": "2026-10-21",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "1808395426628018176",
+      "on_list": true
     },
     {
       "handle": "@hotchpotch",
@@ -506,7 +566,9 @@
         "https://x.com/hotchpotch/status/2105529252028539371"
       ],
       "last_qualifying_post": "2026-10-21",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "9391722",
+      "on_list": true
     },
     {
       "handle": "@SparkLLM",
@@ -523,7 +585,9 @@
         "https://x.com/SparkLLM/status/2110692981665579293"
       ],
       "last_qualifying_post": "2026-10-20",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "2090418458085433344",
+      "on_list": true
     },
     {
       "handle": "@SpeechifyAI",
@@ -540,7 +604,9 @@
         "https://x.com/SpeechifyAI/status/2112167688189399225"
       ],
       "last_qualifying_post": "2026-10-21",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "841369525752807424",
+      "on_list": true
     },
     {
       "handle": "@LoubnaBenAllal1",
@@ -556,7 +622,9 @@
         "https://x.com/LoubnaBenAllal1/status/2108228619860656434"
       ],
       "last_qualifying_post": "2026-10-22",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "1303627850025705473",
+      "on_list": true
     },
     {
       "handle": "@KLieret",
@@ -572,7 +640,9 @@
         "https://x.com/KLieret/status/2105670833574465933"
       ],
       "last_qualifying_post": "2026-10-22",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "1388792248100442112",
+      "on_list": true
     },
     {
       "handle": "@sageai_official",
@@ -588,7 +658,9 @@
         "https://x.com/sageai_official/status/2110924243798286547"
       ],
       "last_qualifying_post": "2026-10-22",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "1667434783268548609",
+      "on_list": true
     },
     {
       "handle": "@Alex_tra_memory",
@@ -605,7 +677,9 @@
         "https://x.com/Alex_tra_memory/status/2109868778615976113"
       ],
       "last_qualifying_post": "2026-10-23",
-      "retired_reason": null
+      "retired_reason": null,
+      "x_user_id": "1947288873018531841",
+      "on_list": true
     },
     {
       "handle": "@Bober_smart",
@@ -622,7 +696,9 @@
       ],
       "last_qualifying_post": "2026-10-21",
       "retired_reason": null,
-      "owner_requested": true
+      "owner_requested": true,
+      "x_user_id": "1986121366232559616",
+      "on_list": true
     },
     {
       "handle": "@bcherny",
@@ -638,7 +714,9 @@
       ],
       "last_qualifying_post": null,
       "retired_reason": null,
-      "owner_requested": true
+      "owner_requested": true,
+      "x_user_id": "159337660",
+      "on_list": true
     },
     {
       "handle": "@addyosmani",
@@ -654,7 +732,9 @@
       ],
       "last_qualifying_post": null,
       "retired_reason": null,
-      "owner_requested": true
+      "owner_requested": true,
+      "x_user_id": "35432643",
+      "on_list": true
     },
     {
       "handle": "@lydiahallie",
@@ -670,7 +750,9 @@
       ],
       "last_qualifying_post": null,
       "retired_reason": null,
-      "owner_requested": true
+      "owner_requested": true,
+      "x_user_id": "879696238953865217",
+      "on_list": true
     },
     {
       "handle": "@_catwu",
@@ -686,7 +768,9 @@
       ],
       "last_qualifying_post": null,
       "retired_reason": null,
-      "owner_requested": true
+      "owner_requested": true,
+      "x_user_id": "974757274206978049",
+      "on_list": true
     },
     {
       "handle": "@trq212",
@@ -702,7 +786,66 @@
       ],
       "last_qualifying_post": null,
       "retired_reason": null,
-      "owner_requested": true
+      "owner_requested": true,
+      "x_user_id": "352806502",
+      "on_list": true
+    },
+    {
+      "handle": "@MatthewBerman",
+      "name": "Matthew Berman",
+      "group": "builders",
+      "affiliation": "Forward Future (independent)",
+      "why": "Owner saved 2 of his posts in 30 days (hands-on AI reverse-engineering demos). Trial from owner saves; watch for first-hand tests versus recap and promotion.",
+      "evidence": [
+        "https://x.com/MatthewBerman/status/2109015059653619955",
+        "https://x.com/MatthewBerman/status/2108245653843509415"
+      ],
+      "last_qualifying_post": "2026-10-10",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-10-24",
+      "retired_reason": null,
+      "source": "owner_saves",
+      "x_user_id": "6681172",
+      "on_list": true
+    },
+    {
+      "handle": "@HuggingModels",
+      "name": "Hugging Models",
+      "group": "opensource",
+      "affiliation": "Independent (Hugging Face model tracker)",
+      "why": "Owner saved 2 of its posts in 30 days (EmbeddingGemma 2 release, Unsloth fine-tuning resources). Trial from owner saves; likely an aggregator, so judge first-hand value at promotion.",
+      "evidence": [
+        "https://x.com/HuggingModels/status/2107516198959386895",
+        "https://x.com/HuggingModels/status/2108571197017579583"
+      ],
+      "last_qualifying_post": "2026-10-09",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-10-24",
+      "retired_reason": null,
+      "source": "owner_saves",
+      "x_user_id": "1996878964896550917",
+      "on_list": true
+    },
+    {
+      "handle": "@jankeesvw",
+      "name": "Jankees",
+      "group": "builders",
+      "affiliation": "Independent",
+      "why": "Owner saved 2 of his posts in 30 days (local whisper.cpp meeting recorder repo with Nemotron diarization). Trial from owner saves; first-hand local-AI builder.",
+      "evidence": [
+        "https://x.com/jankeesvw/status/2103187520821289085",
+        "https://x.com/jankeesvw/status/2103235751739793688"
+      ],
+      "last_qualifying_post": "2026-09-24",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-10-24",
+      "retired_reason": null,
+      "source": "owner_saves",
+      "x_user_id": "11835032",
+      "on_list": true
     }
   ],
   "source_leads": [
@@ -911,5 +1054,14 @@
         "@SpeechifyAI"
       ]
     }
-  ]
+  ],
+  "list": {
+    "id": "2113850075931713585",
+    "name": "Magpie roster",
+    "owner": "@CameronSutcliff",
+    "private": true,
+    "member_count": 46,
+    "scope": "every trial and active account in this file; curated config accounts are not members yet",
+    "updated_at": "2026-10-24T04:45:00Z"
+  }
 }

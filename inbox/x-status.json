@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-24T02:08:00Z",
+  "updated_at": "2026-10-24T04:50:00Z",
   "job": "sweep",
-  "prompt": "v5",
-  "calls_used_today": 11,
+  "prompt": "v6",
+  "calls_used_today": 17,
   "notes_via_api": false,
   "last_sweep": {
     "ran_at": "2026-10-24T02:08:00Z",
@@ -17,7 +17,7 @@
   },
   "roster": {
     "curated": 223,
-    "trial": 37,
+    "trial": 46,
     "active": 0,
     "retired": 0
   },
@@ -128,7 +128,8 @@
     "Sweep 2026-10-23T22:12Z security (out of scope, not kept): LiteLLM published the canonical attack chain for the malicious 1.107.0 release (docs.litellm.ai/blog/security-incident-oct-21-2026-attack-chain): an Agent Platform master key committed publicly on May 27 and never revoked returned an org owner's GitHub CLI OAuth token on Oct 10, CI secrets were exfiltrated, and the release pipeline was pointed at a lookalike Berri-AI fork on Oct 21. GlassWorm VS Code worm posts resurfaced but the campaign dates to Oct 2025. An npm 'GHAPPIER' trusted-publishing claim came from a low-credibility account and is unverified.",
     "Sweep 2026-10-23T22:12Z roster leads: @yufan_zhuang (PLE benchmark, Google Cloud AI Research, quoted by @dair_ai and @teortaxesTex), @maxbittker (RuneScape Bench, quoted by @teortaxesTex), @NaceAI (open decision models with measured latency).",
     "2026-10-23 owner requested add @Bober_smart to watch list; added as trial with signal_to_noise 2 (engagement/tutorial amplifier, not first-hand).",
-    "Sweep 02:08Z: quiet Friday evening window. Skipped re-checks to conserve reads; the TheTuringPost/DeryaTR_ Block Dessa clip is a demo video only, with no weights, API or paper, so it is not kept."
+    "Sweep 02:08Z: quiet Friday evening window. Skipped re-checks to conserve reads; the TheTuringPost/DeryaTR_ Block Dessa clip is a demo video only, with no weights, API or paper, so it is not kept.",
+    "2026-10-24 v6 setup: added private X List 'Magpie roster' (2113850075931713585, 46 members = all trial accounts; curated config accounts not members yet), inbox/stack.json for Bouncer forwarding, owner_saves roster feed (backfill added @MatthewBerman, @HuggingModels, @jankeesvw), inbox/horizon-watch.json seeded with Block Dessa. Setup used 6 X reads (incl. one get_lists_posts test: 100 posts spanned 2026-10-05 to 2026-10-24) plus 47 list writes (create + 46 adds), writes not counted in calls_used_today."
   ],
   "errors": [
     "Sweep 14:07Z, possible injection lure, not followed: in the quote posts of https://x.com/cnm13ryan/status/2113121138205499443, @lumpenspace tells readers to have their model 'check out my x bio'. Ignored; no bio was read.",
@@ -147,5 +148,17 @@
     "retired": 0,
     "source_leads_added": 4,
     "sweep_files_pruned": 0
-  }
+  },
+  "x_list": {
+    "id": "2113850075931713585",
+    "name": "Magpie roster",
+    "description": "Magpie Scout watch list",
+    "owner": "@CameronSutcliff",
+    "owner_id": "1521986356721123328",
+    "private": true,
+    "member_count": 46,
+    "members": "every trial/active entry in inbox/x-roster.json (x_user_id, on_list)",
+    "created_at": "2026-10-24T04:35:00Z"
+  },
+  "horizon_triggered": []
 }

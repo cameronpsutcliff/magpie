@@ -1,0 +1,662 @@
+{
+  "updated_at": "2026-10-24T04:45:00Z",
+  "by": "magpie-scout",
+  "purpose": "What the owner's fleet actually runs. A Magpie security lead goes to Bouncer only if it matches a component here (by name or match_terms) or is broad and high-impact (agent tooling, supply chain, containers). Anything else is logged as N/A and not forwarded.",
+  "conventions": {
+    "verified": "true when a version or presence was observed directly (box) or reported by Bouncer's fleet checks; false means best knowledge only, never a guessed version.",
+    "version_null": "null means the version is not known; do not infer one.",
+    "sources": [
+      "box: inspected directly 2026-10-24",
+      "bouncer: Bouncer fleet findings through 2026-10-23",
+      "fleet-notes: shared fleet notes and memory"
+    ]
+  },
+  "machines": {
+    "box": {
+      "os": "Debian 13 (13.7), kernel 6.12.94+",
+      "role": "Grok Bot box; runs Magpie Scout, X sweeps, bookmark archive",
+      "status": "online",
+      "verified": true,
+      "source": "box"
+    },
+    "mini": {
+      "os": "macOS (version unverified)",
+      "role": "Current git spine, most schedules, Hermes",
+      "status": "online",
+      "verified": true,
+      "source": "bouncer"
+    },
+    "air": {
+      "os": "macOS (version unverified)",
+      "role": "Laptop; Codex sessions (Project Weld)",
+      "status": "online",
+      "verified": true,
+      "source": "bouncer"
+    },
+    "spark": {
+      "os": "Ubuntu with an nvidia kernel",
+      "role": "DGX Spark; desired home of repos and jobs; IIP work",
+      "status": "online",
+      "verified": true,
+      "source": "bouncer",
+      "open_items": [
+        "libbrotli triage",
+        "Docker seccomp",
+        "kernel CVEs"
+      ]
+    },
+    "cspie": {
+      "os": "Raspberry Pi OS (version unverified)",
+      "role": "Raspberry Pi running Docker",
+      "status": "online",
+      "verified": true,
+      "source": "bouncer"
+    },
+    "mac-pro": {
+      "os": "macOS (unverified)",
+      "role": "Mac/Pro",
+      "status": "offline",
+      "verified": false,
+      "source": "bouncer",
+      "note": "Offline during the Oct 2026 checks; LiteLLM and Ruby still unchecked."
+    },
+    "csdesktop": {
+      "os": "Windows (unverified)",
+      "role": "Gaming desktop; preemptible GPU batch offload",
+      "status": "unchecked",
+      "verified": false,
+      "source": "fleet-notes",
+      "note": "SSH denied during Bouncer checks; nothing on it is verified."
+    }
+  },
+  "components": [
+    {
+      "name": "Node.js",
+      "match_terms": [
+        "node",
+        "nodejs",
+        "node.js",
+        "npm",
+        "npx",
+        "corepack",
+        "v8",
+        "undici"
+      ],
+      "installs": [
+        {
+          "machine": "box",
+          "version": "24.22.1",
+          "verified": true,
+          "source": "box"
+        },
+        {
+          "machine": "mini",
+          "version": "26.12.1",
+          "how": "Homebrew; 22.23.4 is first on PATH (hermes)",
+          "verified": true,
+          "source": "bouncer"
+        },
+        {
+          "machine": "mini",
+          "version": "22.23.4",
+          "how": "on PATH",
+          "verified": true,
+          "source": "bouncer"
+        },
+        {
+          "machine": "air",
+          "version": "26.12.1",
+          "how": "Homebrew; 22.23.4 is first on PATH",
+          "verified": true,
+          "source": "bouncer"
+        },
+        {
+          "machine": "air",
+          "version": "22.23.4",
+          "how": "on PATH",
+          "verified": true,
+          "source": "bouncer"
+        },
+        {
+          "machine": "spark",
+          "version": "22.23.4",
+          "verified": true,
+          "source": "bouncer"
+        },
+        {
+          "machine": "cspie",
+          "version": null,
+          "present": false,
+          "verified": true,
+          "source": "bouncer"
+        },
+        {
+          "machine": "mac-pro",
+          "version": null,
+          "verified": false,
+          "source": "bouncer"
+        },
+        {
+          "machine": "csdesktop",
+          "version": null,
+          "verified": false,
+          "source": "bouncer"
+        }
+      ]
+    },
+    {
+      "name": "Python",
+      "match_terms": [
+        "python",
+        "cpython",
+        "pip",
+        "venv",
+        "uv",
+        "pypi"
+      ],
+      "installs": [
+        {
+          "machine": "box",
+          "version": "3.13.5",
+          "verified": true,
+          "source": "box"
+        },
+        {
+          "machine": "mini",
+          "version": null,
+          "note": "system and Homebrew Python plus a hermes venv; Python brotli 1.2.1",
+          "verified": false,
+          "source": "bouncer"
+        },
+        {
+          "machine": "air",
+          "version": null,
+          "note": "scrapling venv",
+          "verified": false,
+          "source": "bouncer"
+        },
+        {
+          "machine": "spark",
+          "version": null,
+          "verified": false,
+          "source": "fleet-notes"
+        },
+        {
+          "machine": "cspie",
+          "version": null,
+          "verified": false,
+          "source": "fleet-notes"
+        }
+      ]
+    },
+    {
+      "name": "LiteLLM",
+      "match_terms": [
+        "litellm",
+        "berriai",
+        "berri-ai"
+      ],
+      "installs": [
+        {
+          "machine": "spark",
+          "version": null,
+          "note": "used by IIP (fleet routing); not 1.107.0 per Bouncer's re-check",
+          "verified": false,
+          "source": "bouncer"
+        },
+        {
+          "machine": "mini",
+          "version": null,
+          "note": "IIP checkout; not 1.107.0 per Bouncer",
+          "verified": false,
+          "source": "bouncer"
+        },
+        {
+          "machine": "box",
+          "version": null,
+          "present": false,
+          "verified": true,
+          "source": "box"
+        },
+        {
+          "machine": "mac-pro",
+          "version": null,
+          "note": "unchecked (offline)",
+          "verified": false,
+          "source": "bouncer"
+        },
+        {
+          "machine": "csdesktop",
+          "version": null,
+          "note": "unchecked",
+          "verified": false,
+          "source": "bouncer"
+        }
+      ]
+    },
+    {
+      "name": "Cursor CLI",
+      "match_terms": [
+        "cursor",
+        "cursor-agent",
+        "cursor cli",
+        "cursor ide"
+      ],
+      "installs": [
+        {
+          "machine": "mini",
+          "version": null,
+          "note": "fleet-wide headless Cursor CLI login (CURSOR_API_KEY)",
+          "verified": false,
+          "source": "fleet-notes"
+        },
+        {
+          "machine": "air",
+          "version": null,
+          "verified": false,
+          "source": "fleet-notes"
+        },
+        {
+          "machine": "spark",
+          "version": null,
+          "verified": false,
+          "source": "fleet-notes"
+        },
+        {
+          "machine": "box",
+          "version": null,
+          "present": false,
+          "verified": true,
+          "source": "box"
+        }
+      ]
+    },
+    {
+      "name": "Hermes agent",
+      "match_terms": [
+        "hermes",
+        "hermes agent",
+        "nous research"
+      ],
+      "installs": [
+        {
+          "machine": "mini",
+          "version": null,
+          "note": "hermes venv and its own Node on PATH",
+          "verified": true,
+          "source": "bouncer"
+        },
+        {
+          "machine": "spark",
+          "version": null,
+          "note": "no live Hermes cron on Spark (wave 1 constraint)",
+          "verified": false,
+          "source": "fleet-notes"
+        }
+      ]
+    },
+    {
+      "name": "Bun",
+      "match_terms": [
+        "bun",
+        "bun.sh",
+        "oven"
+      ],
+      "installs": [
+        {
+          "machine": "box",
+          "version": "1.4.4",
+          "verified": true,
+          "source": "box"
+        },
+        {
+          "machine": "mini",
+          "version": "1.4.4",
+          "verified": true,
+          "source": "bouncer"
+        }
+      ]
+    },
+    {
+      "name": "curl / libcurl",
+      "match_terms": [
+        "curl",
+        "libcurl"
+      ],
+      "installs": [
+        {
+          "machine": "box",
+          "version": "8.14.1-2+deb13u7",
+          "note": "libcurl links brotli 1.1.0",
+          "verified": true,
+          "source": "box"
+        },
+        {
+          "machine": "mini",
+          "version": null,
+          "verified": false,
+          "source": "fleet-notes"
+        },
+        {
+          "machine": "air",
+          "version": null,
+          "verified": false,
+          "source": "fleet-notes"
+        },
+        {
+          "machine": "spark",
+          "version": null,
+          "verified": false,
+          "source": "fleet-notes"
+        }
+      ]
+    },
+    {
+      "name": "Brotli (libbrotli and bindings)",
+      "match_terms": [
+        "brotli",
+        "libbrotli"
+      ],
+      "installs": [
+        {
+          "machine": "box",
+          "version": "1.1.0-2+deb13u1",
+          "how": "Debian libbrotli1",
+          "verified": true,
+          "source": "box"
+        },
+        {
+          "machine": "mini",
+          "version": "1.2.1",
+          "how": "Homebrew brotli",
+          "verified": true,
+          "source": "bouncer"
+        },
+        {
+          "machine": "mini",
+          "version": "1.2.1",
+          "how": "Python brotli package",
+          "verified": true,
+          "source": "bouncer"
+        },
+        {
+          "machine": "air",
+          "version": "1.2.1",
+          "how": "Homebrew brotli",
+          "verified": true,
+          "source": "bouncer"
+        },
+        {
+          "machine": "spark",
+          "version": null,
+          "how": "system libbrotli",
+          "note": "still needs triage",
+          "verified": false,
+          "source": "bouncer"
+        },
+        {
+          "machine": "box",
+          "version": "1.2.0",
+          "how": "bundled inside Pillow",
+          "verified": true,
+          "source": "bouncer"
+        },
+        {
+          "machine": "air",
+          "version": "1.2.0",
+          "how": "bundled inside Pillow",
+          "verified": true,
+          "source": "bouncer"
+        },
+        {
+          "machine": "spark",
+          "version": "1.2.0",
+          "how": "bundled inside Pillow",
+          "verified": true,
+          "source": "bouncer"
+        }
+      ]
+    },
+    {
+      "name": "Homebrew",
+      "match_terms": [
+        "homebrew",
+        "brew"
+      ],
+      "installs": [
+        {
+          "machine": "mini",
+          "version": null,
+          "verified": true,
+          "source": "bouncer"
+        },
+        {
+          "machine": "air",
+          "version": null,
+          "verified": true,
+          "source": "bouncer"
+        },
+        {
+          "machine": "box",
+          "version": null,
+          "present": false,
+          "verified": true,
+          "source": "box"
+        }
+      ]
+    },
+    {
+      "name": "Pillow",
+      "match_terms": [
+        "pillow",
+        "pil",
+        "python imaging"
+      ],
+      "installs": [
+        {
+          "machine": "box",
+          "version": "13.0.0",
+          "verified": true,
+          "source": "box"
+        },
+        {
+          "machine": "air",
+          "version": null,
+          "verified": true,
+          "source": "bouncer"
+        },
+        {
+          "machine": "spark",
+          "version": null,
+          "verified": true,
+          "source": "bouncer"
+        }
+      ]
+    },
+    {
+      "name": "Docker",
+      "match_terms": [
+        "docker",
+        "containerd",
+        "runc",
+        "moby",
+        "buildkit",
+        "seccomp",
+        "container escape"
+      ],
+      "installs": [
+        {
+          "machine": "spark",
+          "version": "29.6.2",
+          "note": "seccomp item open with Bouncer",
+          "verified": true,
+          "source": "bouncer"
+        },
+        {
+          "machine": "cspie",
+          "version": "29.9.1",
+          "verified": true,
+          "source": "bouncer"
+        },
+        {
+          "machine": "box",
+          "version": null,
+          "present": false,
+          "verified": true,
+          "source": "box"
+        }
+      ]
+    },
+    {
+      "name": "Antigravity (agy)",
+      "match_terms": [
+        "antigravity",
+        "agy",
+        "gemini cli"
+      ],
+      "installs": [
+        {
+          "machine": "unknown",
+          "version": null,
+          "note": "fleet standard for Google agents; which machines run it is unverified",
+          "verified": false,
+          "source": "fleet-notes"
+        }
+      ]
+    },
+    {
+      "name": "Codex",
+      "match_terms": [
+        "codex",
+        "openai codex",
+        "codex cli"
+      ],
+      "installs": [
+        {
+          "machine": "air",
+          "version": null,
+          "note": "Project Weld sessions",
+          "verified": false,
+          "source": "fleet-notes"
+        }
+      ]
+    },
+    {
+      "name": "Claude Code",
+      "match_terms": [
+        "claude code",
+        "claude-code"
+      ],
+      "installs": [
+        {
+          "machine": "mini",
+          "version": null,
+          "note": "~/.claude skills synced Mini<->Air",
+          "verified": false,
+          "source": "fleet-notes"
+        },
+        {
+          "machine": "air",
+          "version": null,
+          "verified": false,
+          "source": "fleet-notes"
+        },
+        {
+          "machine": "spark",
+          "version": null,
+          "verified": false,
+          "source": "fleet-notes"
+        }
+      ]
+    },
+    {
+      "name": "Chroma",
+      "match_terms": [
+        "chroma",
+        "chromadb"
+      ],
+      "installs": [
+        {
+          "machine": "unknown",
+          "version": null,
+          "note": "fleet recall store behind the tailnet recall facade; host and version unverified",
+          "verified": false,
+          "source": "fleet-notes"
+        }
+      ]
+    },
+    {
+      "name": "Linux kernel",
+      "match_terms": [
+        "linux kernel",
+        "kernel cve",
+        "nvidia driver"
+      ],
+      "installs": [
+        {
+          "machine": "box",
+          "version": "6.12.94+",
+          "verified": true,
+          "source": "box"
+        },
+        {
+          "machine": "spark",
+          "version": null,
+          "note": "nvidia kernel; kernel CVEs open with Bouncer",
+          "verified": false,
+          "source": "bouncer"
+        }
+      ]
+    },
+    {
+      "name": "Ruby",
+      "match_terms": [
+        "ruby",
+        "onigmo",
+        "rubygems"
+      ],
+      "installs": [
+        {
+          "machine": "mini",
+          "version": "2.6.10",
+          "how": "Apple system Ruby only",
+          "verified": true,
+          "source": "bouncer"
+        },
+        {
+          "machine": "box",
+          "version": null,
+          "present": false,
+          "verified": true,
+          "source": "bouncer"
+        },
+        {
+          "machine": "spark",
+          "version": null,
+          "present": false,
+          "verified": true,
+          "source": "bouncer"
+        },
+        {
+          "machine": "cspie",
+          "version": null,
+          "present": false,
+          "verified": true,
+          "source": "bouncer"
+        }
+      ]
+    }
+  ],
+  "always_forward": [
+    "agent tooling (MCP servers, coding agents, agent CLIs) even if not listed",
+    "software supply chain (npm, PyPI, GitHub Actions, Homebrew taps, release hijacks)",
+    "container runtimes and images"
+  ],
+  "checked_not_present": {
+    "note": "Bouncer found no exposure on the reachable fleet (Mac/Pro and csdesktop unchecked).",
+    "items": [
+      "PHP",
+      "GitLab"
+    ]
+  }
+}
