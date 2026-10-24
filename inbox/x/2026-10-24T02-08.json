@@ -1,0 +1,196 @@
+{
+  "ran_at": "2026-10-24T02:08:00Z",
+  "bot": "magpie-scout",
+  "prompt": "v5",
+  "since": "2026-10-23T22:12:00Z",
+  "queries": 8,
+  "calls": 11,
+  "items": [
+    {
+      "title": "OpenAI's red-team agents found an unauthenticated RCE in the Brotli decoder, now CVE-2026-111497 with fixed releases",
+      "url": "https://x.com/OpenAI/status/2113766354386084338",
+      "handle": "@OpenAI",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "An out-of-bounds write in Brotli's decoder (versions 1.0.3 through 1.2.0) lets crafted compressed data corrupt memory and potentially run code, on servers that accept compressed input and on clients such as curl --compressed. Brotli shipped 1.0.10, 1.1.1 and 1.2.1; Node.js fixed it in 22.23.4, 24.22.1 and 26.12.1, Envoy in 1.40.0 and backports. Anything that bundles or links libbrotli (system packages, Bun, Python brotli) needs its own update.",
+      "kind": "other",
+      "evidence": "artifact",
+      "links": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-111497",
+        "https://github.com/google/brotli/releases",
+        "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases",
+        "https://github.com/envoyproxy/envoy/security/advisories/GHSA-3wvj-j6qm-62mr"
+      ],
+      "vendor": "OpenAI",
+      "posted_at": "2026-10-23T22:55:45Z",
+      "metrics": {
+        "likes": 2346,
+        "reposts": 0,
+        "quotes": 155,
+        "replies": 243,
+        "views": 393840
+      },
+      "confirmed_by": [
+        "@gdb",
+        "@levelsio"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Artificial Analysis Cyber Index: Kimi K3.1 Pro is the top openly available model at 64%, 5 points behind trusted-access GPT-6 Sol",
+      "url": "https://x.com/ArtificialAnlys/status/2113765233462481276",
+      "handle": "@ArtificialAnlys",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "On the AA Cyber Index (CWE-Bench-AA, DeepsecBench-AA and CyberGym-E2E-AA, run through public APIs), Kimi K3.1 Pro scores 64%, up 23 points from Kimi K3 and ahead of DeepSeek V4.1 Flash 1017 at 57%; only GPT-6 Sol (Daybreak Blue, max) in OpenAI's trusted-access program scores higher at 69%. K3.1 Pro hit no safety refusals, while public proprietary models lose points to refusals. Moonshot promises open weights by Nov 4.",
+      "kind": "eval",
+      "evidence": "measured",
+      "links": [
+        "https://www.kimi.ai/blog/kimi-k3-1-pro"
+      ],
+      "vendor": "Artificial Analysis",
+      "posted_at": "2026-10-23T22:51:18Z",
+      "metrics": {
+        "likes": 375,
+        "reposts": 0,
+        "quotes": 11,
+        "replies": 22,
+        "views": 21961
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "@teortaxesTex points out an inconsistency in Moonshot's own blog numbers for Terminal-Bench 4.0, so vendor-side figures around the launch are not fully settled.",
+        "source": "https://x.com/teortaxesTex/status/2113810345470955618"
+      }
+    },
+    {
+      "title": "Meta's open-weights Muse Spark Open reaches about 150M tokens/s per MW on GB300 and B300 in AA-AgentPerf",
+      "url": "https://x.com/ArtificialAnlys/status/2113772381504438420",
+      "handle": "@ArtificialAnlys",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "Muse Spark Open is an 816B-parameter MoE (42B active) with 46 of 62 layers on 2,048-token sliding-window attention, cutting KV cache at 1M context by about 75%. Using Meta's NVFP4 and AMD's MXFP4 checkpoints, B300 and GB300 reach about 150M tokens/s per MW in throughput configs, NVIDIA's tuned SGLang configs give 1.6 to 1.8x the launch cookbook, and AMD MI355X reaches 70M tokens/s per MW at 65 tok/s. It scores 39 on the AA Intelligence Index.",
+      "kind": "eval",
+      "evidence": "measured",
+      "links": [],
+      "vendor": "Artificial Analysis",
+      "posted_at": "2026-10-23T23:19:42Z",
+      "metrics": {
+        "likes": 64,
+        "reposts": 0,
+        "quotes": 6,
+        "replies": 16,
+        "views": 8732
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Letta opens FrontierMemory so anyone can measure how a model or harness improves with experience, and opens leaderboard submissions",
+      "url": "https://x.com/Letta_AI/status/2113756969530253444",
+      "handle": "@Letta_AI",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "Letta released the FrontierMemory benchmark code, which scores how much an agent model or harness gets better across repeated tasks as it accumulates memory, and is now taking submissions to the official leaderboard.",
+      "kind": "eval",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/letta-ai/frontiermemory"
+      ],
+      "vendor": "Letta",
+      "posted_at": "2026-10-23T22:18:27Z",
+      "metrics": {
+        "likes": 18,
+        "reposts": 0,
+        "quotes": 0,
+        "replies": 1,
+        "views": 897
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Vals AI releases the Vals Legal Index, weighting legal tasks by each practice area's share of US law-office revenue",
+      "url": "https://x.com/ValsAI/status/2113767926935265636",
+      "handle": "@ValsAI",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "Vals AI launched a legal-work benchmark index that weights practice areas by their share of US law-office revenue, so scores track the work that matters most economically rather than an even task mix.",
+      "kind": "eval",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "Vals AI",
+      "posted_at": "2026-10-23T23:02:00Z",
+      "metrics": {
+        "likes": 24,
+        "reposts": 0,
+        "quotes": 0,
+        "replies": 4,
+        "views": 1781
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Codex: switching reasoning level mid-conversation no longer invalidates the prompt cache, plus a CLI update",
+      "url": "https://x.com/thsottiaux/status/2113770573994299544",
+      "handle": "@thsottiaux",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "OpenAI's Codex lead says changing the reasoning setting partway through a Codex conversation now keeps the prompt cache, so you can step effort up or down without paying to re-read the whole context, and the codex CLI got an update.",
+      "kind": "feature",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "OpenAI",
+      "posted_at": "2026-10-23T23:12:31Z",
+      "metrics": {
+        "likes": 4230,
+        "reposts": 0,
+        "quotes": 155,
+        "replies": 705,
+        "views": 331820
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    }
+  ],
+  "saved_rejected": [
+    {
+      "url": "https://x.com/Bober_smart/status/2113623439906841022",
+      "reason": "Passive-income hype quoting Elon Musk; no developer content or AI capability."
+    }
+  ]
+}
