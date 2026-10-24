@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T22:22:39Z",
+  "updated_at": "2026-10-24T04:30:00Z",
   "accounts": [
     {
       "handle": "@thsottiaux",
@@ -612,7 +612,7 @@
       "name": "Bober_smart",
       "group": "devtools",
       "affiliation": null,
-      "why": "Owner-requested watch (2026-10-23). High-engagement AI workflow/tutorial posts (Claude Code, agent swarms, second-brain setups). Mostly promo-style quote of own guides rather than first-hand lab artifacts \u2014 trial for taste match; retire if noise.",
+      "why": "Owner-requested watch (2026-10-23). High-engagement AI workflow/tutorial posts (Claude Code, agent swarms, second-brain setups). Mostly promo-style quote of own guides rather than first-hand lab artifacts — trial for taste match; retire if noise.",
       "signal_to_noise": 2,
       "status": "trial",
       "added_on": "2026-10-23",
@@ -621,6 +621,86 @@
         "https://x.com/Bober_smart/status/2112889540612432250"
       ],
       "last_qualifying_post": "2026-10-21",
+      "retired_reason": null,
+      "owner_requested": true
+    },
+    {
+      "handle": "@bcherny",
+      "name": "Boris Cherny",
+      "group": "devtools",
+      "affiliation": "Anthropic",
+      "why": "Owner-requested watch (2026-10-24), recommended in Thariq's departure post. Created Claude Code; first-hand Claude Code product and workflow posts.",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-10-24",
+      "evidence": [
+        "https://x.com/trq212/status/2113844051938054167"
+      ],
+      "last_qualifying_post": null,
+      "retired_reason": null,
+      "owner_requested": true
+    },
+    {
+      "handle": "@addyosmani",
+      "name": "Addy Osmani",
+      "group": "devtools",
+      "affiliation": "Anthropic",
+      "why": "Owner-requested watch (2026-10-24), recommended in Thariq's departure post. Claude Code at Anthropic; long-running dev-tooling and engineering educator.",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-10-24",
+      "evidence": [
+        "https://x.com/trq212/status/2113844051938054167"
+      ],
+      "last_qualifying_post": null,
+      "retired_reason": null,
+      "owner_requested": true
+    },
+    {
+      "handle": "@lydiahallie",
+      "name": "Lydia Hallie",
+      "group": "devtools",
+      "affiliation": "Anthropic",
+      "why": "Owner-requested watch (2026-10-24), recommended in Thariq's departure post. Claude Code / ClaudeDevs at Anthropic; first-hand feature explainers.",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-10-24",
+      "evidence": [
+        "https://x.com/trq212/status/2113844051938054167"
+      ],
+      "last_qualifying_post": null,
+      "retired_reason": null,
+      "owner_requested": true
+    },
+    {
+      "handle": "@_catwu",
+      "name": "cat",
+      "group": "devtools",
+      "affiliation": "Anthropic",
+      "why": "Owner-requested watch (2026-10-24), recommended in Thariq's departure post. Claude Code + Cowork product at Anthropic; first-hand launch and roadmap posts.",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-10-24",
+      "evidence": [
+        "https://x.com/trq212/status/2113844051938054167"
+      ],
+      "last_qualifying_post": null,
+      "retired_reason": null,
+      "owner_requested": true
+    },
+    {
+      "handle": "@trq212",
+      "name": "Thariq",
+      "group": "devtools",
+      "affiliation": "formerly Anthropic",
+      "why": "Owner-requested watch (2026-10-24), recommended in Thariq's departure post. Left Anthropic Claude Code team 2026-10-23; watch for what he builds next.",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-10-24",
+      "evidence": [
+        "https://x.com/trq212/status/2113844051938054167"
+      ],
+      "last_qualifying_post": null,
       "retired_reason": null,
       "owner_requested": true
     }
