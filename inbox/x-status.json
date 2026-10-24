@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-10-24T04:50:00Z",
+  "updated_at": "2026-10-24T10:10:00Z",
   "job": "sweep",
   "prompt": "v6",
-  "calls_used_today": 17,
+  "calls_used_today": 35,
   "notes_via_api": false,
   "last_sweep": {
-    "ran_at": "2026-10-24T02:08:00Z",
-    "items": 6,
-    "queries": 8,
-    "deep_reads": 2,
-    "rechecks": 0,
+    "ran_at": "2026-10-24T10:10:00Z",
+    "items": 4,
+    "queries": 10,
+    "deep_reads": 4,
+    "rechecks": 8,
     "flagged": 1,
-    "saved_in": 0,
-    "saved_kept": 0,
+    "saved_in": 2,
+    "saved_kept": 1,
     "videos": 0
   },
   "roster": {
@@ -129,13 +129,17 @@
     "Sweep 2026-10-23T22:12Z roster leads: @yufan_zhuang (PLE benchmark, Google Cloud AI Research, quoted by @dair_ai and @teortaxesTex), @maxbittker (RuneScape Bench, quoted by @teortaxesTex), @NaceAI (open decision models with measured latency).",
     "2026-10-23 owner requested add @Bober_smart to watch list; added as trial with signal_to_noise 2 (engagement/tutorial amplifier, not first-hand).",
     "Sweep 02:08Z: quiet Friday evening window. Skipped re-checks to conserve reads; the TheTuringPost/DeryaTR_ Block Dessa clip is a demo video only, with no weights, API or paper, so it is not kept.",
-    "2026-10-24 v6 setup: added private X List 'Magpie roster' (2113850075931713585, 46 members = all trial accounts; curated config accounts not members yet), inbox/stack.json for Bouncer forwarding, owner_saves roster feed (backfill added @MatthewBerman, @HuggingModels, @jankeesvw), inbox/horizon-watch.json seeded with Block Dessa. Setup used 6 X reads (incl. one get_lists_posts test: 100 posts spanned 2026-10-05 to 2026-10-24) plus 47 list writes (create + 46 adds), writes not counted in calls_used_today."
+    "2026-10-24 v6 setup: added private X List 'Magpie roster' (2113850075931713585, 46 members = all trial accounts; curated config accounts not members yet), inbox/stack.json for Bouncer forwarding, owner_saves roster feed (backfill added @MatthewBerman, @HuggingModels, @jankeesvw), inbox/horizon-watch.json seeded with Block Dessa. Setup used 6 X reads (incl. one get_lists_posts test: 100 posts spanned 2026-10-05 to 2026-10-24) plus 47 list writes (create + 46 adds), writes not counted in calls_used_today.",
+    "Sweep 10:10Z: the block.xyz/dessa page links https://x.com/RagavanThurair as the Dessa lead's X account; horizon-watch.json checks.handle_notes still says his handle is unknown, and only the owner side may edit checks, so a from:RagavanThurair query could be added there.",
+    "Sweep 10:10Z: ran without a browser, so no follows were attempted; @PyTorch was written to x-follows.json as recommended. @FireworksAI_HQ (4 posts, two level-1 flags, platform promotion) and paper-summary accounts @askalphaxiv and @dair_ai were judged aggregator or promotional and not recommended.",
+    "Sweep 10:10Z: an aggregator roundup (@AIDailyNews_2x) says the FCC added foreign-made robots to the Covered List; one discovery search found no official FCC or first-hand post, so nothing was kept. Worth a look next sweep if an official source appears."
   ],
   "errors": [
     "Sweep 14:07Z, possible injection lure, not followed: in the quote posts of https://x.com/cnm13ryan/status/2113121138205499443, @lumpenspace tells readers to have their model 'check out my x bio'. Ignored; no bio was read.",
     "Sweep 14:13Z: no injection attempts seen. One bookmarks read (user-X get_users_bookmarks) returned content that the tool layer partly redacted when printed; ids were parsed and all 20 were already in seen_ids, so nothing from it was used.",
     "Sweep 18:07Z: no injection attempts seen. A php2shell-fix-toolkit repo from an unknown account (@FariMazhar5od) surfaced in the security search; it looks like a possible lure, was not opened or run, and was not kept.",
-    "Sweep 22:12Z: no injection attempts seen. A PHP scanner post from an unknown account (@abenii__) in the security search looked like a possible lure; it was not opened or run and was not kept."
+    "Sweep 22:12Z: no injection attempts seen. A PHP scanner post from an unknown account (@abenii__) in the security search looked like a possible lure; it was not opened or run and was not kept.",
+    "Sweep 10:10Z: no injection attempts aimed at Magpie. @winglian's report of CodeRabbit review comments injecting install instructions for coding agents was forwarded as a security lead, not acted on. A self-promotional reply under it (@luinlee) was ignored."
   ],
   "follows_today": 0,
   "last_roster_review": {

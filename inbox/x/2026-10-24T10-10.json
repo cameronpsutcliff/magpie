@@ -1,0 +1,156 @@
+{
+  "ran_at": "2026-10-24T10:10:00Z",
+  "bot": "magpie-scout",
+  "prompt": "v6",
+  "since": "2026-10-24T02:08:00Z",
+  "queries": 10,
+  "calls": 18,
+  "list_posts_read": 97,
+  "list_pages": 1,
+  "items": [
+    {
+      "title": "macOS 27 ships an fm command-line tool for Apple's on-device Foundation Model, with an OpenAI-compatible local server",
+      "url": "https://x.com/dr_cintas/status/2113756925124882770",
+      "handle": "@dr_cintas",
+      "group": "devtools",
+      "origin": "saved",
+      "summary": "macOS 27 includes a built-in fm CLI that calls Apple's on-device Foundation Model on any Apple Silicon Mac: fm respond for one-shot prompts, shell piping, --schema for JSON output, saved sessions under ~/.fm/sessions, and fm serve for an OpenAI-compatible endpoint on localhost. Repliers who tried it say quality is limited and sessions cap at 4,096 tokens; one notes an fm chat mode and another says the Private Cloud Compute model is usable from 27.2. Not available in mainland China.",
+      "kind": "tool",
+      "evidence": "artifact",
+      "links": [],
+      "vendor": "Apple",
+      "posted_at": "2026-10-23T22:18:17Z",
+      "metrics": {
+        "likes": 748,
+        "reposts": 101,
+        "quotes": 10,
+        "replies": 44,
+        "views": 76786
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "reception": "mixed",
+      "tried": true,
+      "replies_read": 25,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Repliers who ran it report weak output quality and a 4,096-token session limit.",
+        "source": null
+      }
+    },
+    {
+      "title": "A Fix for Softmax and Cross-Entropy: stopping tiny gradients from rounding to zero",
+      "url": "https://x.com/askalphaxiv/status/2113885174673133971",
+      "handle": "@askalphaxiv",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "Barron, Gnanapragasam, Tschannen and co-authors show that standard softmax and cross-entropy round small gradients to zero once the target probability nears 1 (the cutoff tracks mantissa bits, about 5.5 nats for bf16 and 16.6 for fp32), which can destabilize training. Their reformulated functions keep those gradients without raising precision; reported results include grokking accuracy rising from 94.3% to 100% and distillation runs no longer drifting.",
+      "kind": "paper",
+      "evidence": "measured",
+      "links": [
+        "https://arxiv.org/abs/2610.31642",
+        "https://www.alphaxiv.org/abs/2610.31642"
+      ],
+      "vendor": null,
+      "posted_at": "2026-10-24T06:47:54Z",
+      "metrics": {
+        "likes": 226,
+        "reposts": 31,
+        "quotes": 4,
+        "replies": 5,
+        "views": 6621
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "reception": "positive",
+      "tried": false,
+      "replies_read": 6,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Layer-wise random feature models predict which training configs will spike, in seconds on a CPU",
+      "url": "https://x.com/askalphaxiv/status/2113885250929807487",
+      "handle": "@askalphaxiv",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "This paper models each layer with a simple quadratic random-feature model and shows heavy-tailed data plus noisy gradients can trigger loss spikes. The cheap simulation, about 5 seconds of CPU time per layer, flagged spike-prone hyperparameter settings that matched real runs of a 1.3B-parameter Transformer.",
+      "kind": "paper",
+      "evidence": "measured",
+      "links": [
+        "https://arxiv.org/abs/2610.13524",
+        "https://www.alphaxiv.org/abs/2610.13524"
+      ],
+      "vendor": null,
+      "posted_at": "2026-10-24T06:48:12Z",
+      "metrics": {
+        "likes": 35,
+        "reposts": 3,
+        "quotes": 1,
+        "replies": 4,
+        "views": 3861
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Microduck robot walk policies trained at home on one RTX 5090, with Hermes Agent running the training loop",
+      "url": "https://x.com/witcheer/status/2113933525669867989",
+      "handle": "@witcheer",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "A hobbyist trains walk policies for a small Microduck robot in simulation on a single RTX 5090, with Hermes Agent queuing runs, testing each walk and publishing it to Hugging Face. The new mixed-floor walk handles 25 mm steps, slippery floors, 2x shoves and gentle hills without switching policies; the walks and a skill-tree dataset are public.",
+      "kind": "model",
+      "evidence": "artifact",
+      "links": [
+        "https://huggingface.co/witcheer/microduck-walk-mix",
+        "https://huggingface.co/witcheer/microduck-walk-mixslope",
+        "https://huggingface.co/datasets/witcheer/microduck-skill-tree"
+      ],
+      "vendor": null,
+      "posted_at": "2026-10-24T10:00:02Z",
+      "metrics": {
+        "likes": 5,
+        "reposts": 1,
+        "quotes": 0,
+        "replies": 2,
+        "views": 178
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    }
+  ],
+  "saved_rejected": [
+    {
+      "url": "https://x.com/AbhinavXJ/status/2113590263373508704",
+      "reason": "Screenshot of a Reddit anecdote complaining that a Claude safety classifier blocks reverse-engineering playbooks; refusal complaint with no new capability."
+    }
+  ],
+  "security_forwarded": [
+    {
+      "url": "https://x.com/winglian/status/2113893244840952217",
+      "handle": "@winglian",
+      "posted_at": "2026-10-24T07:19:00Z",
+      "matched": "always_forward: agent tooling (coding agents)",
+      "note": "Axolotl maintainer reports the CodeRabbit PR review bot began adding prompt injections telling coding agents to install CodeRabbit's tool locally; axolotl added a prompt-injection mitigation to CONTRIBUTIONS.md. Single first-hand claim, 5 replies, no independent confirmation yet. Relevant if fleet coding agents (Cursor CLI, Claude Code, Codex) read PR review comments on repos that use CodeRabbit."
+    }
+  ],
+  "security_na": []
+}

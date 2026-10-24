@@ -11,19 +11,30 @@
       "added_on": "2026-10-24",
       "why": "Audio-only, text-free full-duplex speech model said to run faster than real time on an M4 Max MacBook Pro; a local-weights release could become a voice front end for the fleet.",
       "trigger": "A concrete release: downloadable weights, a public API or SDK, a technical paper or report (arXiv or similar), or public access beyond the safety-researcher early access.",
-      "not_trigger": ["new demo clips or sizzle videos", "waitlist or early-access sign-ups for safety researchers", "interviews, podcasts, opinion threads", "reposts of the original Oct 2026 demo page"],
+      "not_trigger": [
+        "new demo clips or sizzle videos",
+        "waitlist or early-access sign-ups for safety researchers",
+        "interviews, podcasts, opinion threads",
+        "reposts of the original Oct 2026 demo page"
+      ],
       "checks": {
         "queries": [
           "Dessa (weights OR huggingface.co OR arxiv OR API OR paper OR \"open source\") (Block OR @blocks) -is:retweet",
           "\"Ragavan Thurairatnam\" -is:retweet"
         ],
-        "handles": ["@blocks"],
-        "handles_unverified": ["@dessa_ai (exists, empty bio; may be the old Dessa startup account)"],
-        "pages": ["https://block.xyz/dessa"],
+        "handles": [
+          "@blocks"
+        ],
+        "handles_unverified": [
+          "@dessa_ai (exists, empty bio; may be the old Dessa startup account)"
+        ],
+        "pages": [
+          "https://block.xyz/dessa"
+        ],
         "handle_notes": "@ragavan is a different person (ex-Llama at Meta), not Ragavan Thurairatnam; his X handle is not yet known."
       },
-      "last_checked": "2026-10-24T02:08:00Z",
-      "last_result": "Demo page and clips only; no weights, API, paper or public access.",
+      "last_checked": "2026-10-24T10:10:00Z",
+      "last_result": "Research preview only: demo page and clips, early access for safety researchers and a waitlist; no weights, API, paper or public access.",
       "status": "watching",
       "triggered_at": null,
       "evidence": []
