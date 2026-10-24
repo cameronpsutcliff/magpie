@@ -2,6 +2,89 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-10-24",
+   "headline": "Run Apple's model from the shell, fit a robot assistant in 4GB, grade billable engineering, and more",
+   "events": 337,
+   "sources": 519,
+   "enriched": true,
+   "top": [
+    {
+     "id": "fefe8e8e95b5",
+     "title": "claude-mem adds persistent memory to agents",
+     "impact": 3,
+     "vendor": "Open source"
+    },
+    {
+     "id": "3332f27c7421",
+     "title": "Claude-Red offensive security skills library",
+     "impact": 3,
+     "vendor": "Open source"
+    },
+    {
+     "id": "d7c2bcf4a7e5",
+     "title": "Claude Haiku 5.5 in Kiro IDE",
+     "impact": 3,
+     "vendor": "Anthropic"
+    },
+    {
+     "id": "ab6e33f413d3",
+     "title": "Paperclip agent management app keeps climbing",
+     "impact": 3,
+     "vendor": "Open source"
+    },
+    {
+     "id": "c658010bd373",
+     "title": "ComfyUI diffusion GUI gains stars fast",
+     "impact": 3,
+     "vendor": "ComfyUI"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Anthropic",
+    "OpenAI",
+    "NVIDIA",
+    "Google",
+    "Moonshot"
+   ],
+   "topics": {
+    "models": 103,
+    "agents": 91,
+    "coding": 73,
+    "multimodal": 62,
+    "infra": 39,
+    "memory": 32,
+    "mcp": 32,
+    "local": 29,
+    "security": 20,
+    "evals": 20,
+    "research": 17,
+    "robotics": 10,
+    "reverse": 9
+   },
+   "kinds": {
+    "video": 82,
+    "social": 53,
+    "newsletter": 37,
+    "blog": 34,
+    "repo": 33,
+    "model": 30,
+    "changelog": 28,
+    "space": 20,
+    "community": 18,
+    "news": 2
+   },
+   "constraints": [],
+   "threats": [
+    {
+     "id": "thr-2026-10-23-vllm-multimodal-processor-kwargs-allow-out-of",
+     "title": "vLLM multimodal processor kwargs allow out-of-memory denial of service",
+     "severity": "high",
+     "exploited": null
+    }
+   ]
+  },
+  {
    "date": "2026-10-23",
    "headline": "Share Agent Skills under a foundation, prove library security, self-host MiniMax, and more",
    "events": 448,
@@ -2473,5 +2556,5 @@
    }
   }
  ],
- "latest": "2026-10-23"
+ "latest": "2026-10-24"
 }

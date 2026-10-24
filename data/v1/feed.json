@@ -13,6 +13,31 @@
  ],
  "items": [
   {
+   "id": "2026-10-24",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-10-24",
+   "title": "Run Apple's model from the shell, fit a robot assistant in 4GB, grade billable engineering, and more",
+   "summary": "The day leaned local: a built-in macOS CLI for Apple's on-device model, a 4GB NVIDIA model driving a robot on a Jetson, and a decision model answering in 113 ms on a Mac. A Google benchmark of licensed engineering deliverables caps the best agent at about half.",
+   "content_html": "<p>The day leaned local: a built-in macOS CLI for Apple&#x27;s on-device model, a 4GB NVIDIA model driving a robot on a Jetson, and a decision model answering in 113 ms on a Mac. A Google benchmark of licensed engineering deliverables caps the best agent at about half.</p><p><strong>Agents can now keep what they learned in one session and bring it into the next, across several coding tools.</strong> claude-mem compresses context from past sessions and carries it forward in Claude Code, Codex, Gemini, Copilot and others. For a team, that is the gap between re-explaining a project every time and an agent that builds up knowledge of it. How good the compression is, and what context survives it, is not measured.</p><p><strong>A fast, low-cost model with a very long context is now inside an agent IDE, which suits that kind of always-on work.</strong> Paid Kiro users can run Claude Haiku 5.5 with a 1M-token context in the IDE, CLI, Crew and Web. That changes what it costs to run agents at high volume. Support is experimental and limited to two AWS regions.</p><p><strong>Red-team methods are being packaged as agent skills, and the tools for running agents at work keep gaining users.</strong> Claude-Red turns testing methods for specific attack surfaces into reusable skills for authorized pentest and CTF work, though nobody has measured it on real engagements. Paperclip, the open-source app for managing agents at work, added 25,543 stars this month to pass 106k. Stars show attention, not reliability.</p><ol><li><a href=\"https://github.com/thedotmack/claude-mem\">claude-mem adds persistent memory to agents</a>: An agent can now carry compressed context from past sessions into new ones across Claude Code, Codex, Gemini, Copilot and more.</li><li><a href=\"https://github.com/SnailSploit/Claude-Red\">Claude-Red offensive security skills library</a>: Security testers can prime Claude with structured SKILL.md methodologies for specific attack surfaces within the Claude skills system.</li><li><a href=\"https://kiro.dev/changelog/models/claude-haiku-5-5\">Claude Haiku 5.5 in Kiro IDE</a>: Kiro users on paid tiers can run Claude Haiku 5.5 with a 1M-token context across IDE, CLI, Crew and Web in two regions.</li><li><a href=\"https://github.com/paperclipai/paperclip\">Paperclip agent management app keeps climbing</a>: Still drawing attention as the open-source app teams use to manage agents at work, now at over 106k stars.</li><li><a href=\"https://github.com/Comfy-Org/ComfyUI\">ComfyUI diffusion GUI gains stars fast</a>: Still the leading modular diffusion GUI and local inference backend, adding thousands of stars this week.</li></ol><p><strong>New possibility:</strong> Legacy codebases become cheap to query with auditable context</p><p><strong>Worth watching:</strong> <a href=\"https://www.youtube.com/watch?v=StDAmjuQOE4\">The Boring Version of Continual Learning</a>; <a href=\"https://www.youtube.com/watch?v=CSHNuebhoAM\">The Top 1% Spend 580x More on AI: State of AI 2026 with Nathan Benaich</a>; <a href=\"https://www.youtube.com/watch?v=opHmX7qClzE\">How OpenAI Built ChatGPT for Bankers and Analysts, Joseph Kim, OpenAI</a></p><p><strong>Still open:</strong> <a href=\"https://digital-strategy.ec.europa.eu/en/library/first-harmonised-standard-supporting-ai-act-published-official-journal\">EU publishes first AI Act harmonised standard for high-risk providers</a> (2026-10-20)</p><p><strong>Threats:</strong> <a href=\"https://osv.dev/vulnerability/GHSA-gx7p-2j49-hfq4\">vLLM multimodal processor kwargs allow out-of-memory denial of service</a> (high, patched)</p>",
+   "content_text": "The day leaned local: a built-in macOS CLI for Apple's on-device model, a 4GB NVIDIA model driving a robot on a Jetson, and a decision model answering in 113 ms on a Mac. A Google benchmark of licensed engineering deliverables caps the best agent at about half. claude-mem adds persistent memory to agents Claude-Red offensive security skills library Claude Haiku 5.5 in Kiro IDE Paperclip agent management app keeps climbing ComfyUI diffusion GUI gains stars fast Unvalidated per-request processor arguments let one request crash shared vLLM servers through memory exhaustion",
+   "date_published": "2026-10-24T10:35:15Z",
+   "tags": [
+    "agents",
+    "coding",
+    "local",
+    "mcp",
+    "memory",
+    "models",
+    "multimodal",
+    "research",
+    "security"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-24.json",
+    "backfilled": false,
+    "capabilities": 337
+   }
+  },
+  {
    "id": "2026-10-23",
    "url": "https://www.cameronsutcliff.com/magpie/2026-10-23",
    "title": "Share Agent Skills under a foundation, prove library security, self-host MiniMax, and more",
@@ -685,32 +710,6 @@
     "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-09-25.json",
     "backfilled": true,
     "capabilities": 117
-   }
-  },
-  {
-   "id": "2026-09-24",
-   "url": "https://www.cameronsutcliff.com/magpie/2026-09-24",
-   "title": "Claude finds an enzyme, agents get cheaper code context, and more",
-   "summary": "The day mixes one headline science claim from Anthropic with a run of practical agent tooling, from code graphs to model swapping. Most papers are incremental and ship without code.",
-   "content_html": "<p>The day mixes one headline science claim from Anthropic with a run of practical agent tooling, from code graphs to model swapping. Most papers are incremental and ship without code.</p><ol><li><a href=\"https://huggingface.co/papers/2609.25804\">Taste-Bench scores agent judgment at trajectory forks</a>: You can measure how well an agent chooses at decision points in long tasks, and train that judgment through distillation.</li><li><a href=\"https://huggingface.co/papers/2609.25165\">Ovis-Embedding unifies text, image, video and audio retrieval</a>: A single embedding model can retrieve across text, image, video and audio with one shared backbone.</li><li><a href=\"https://github.com/mukul975/Anthropic-Cybersecurity-Skills\">817 cybersecurity skills packaged for coding agents</a>: Agents can load structured security skills mapped to MITRE ATT&amp;CK, NIST CSF 2.0 and four other frameworks.</li><li><a href=\"https://github.com/mostlygeek/llama-swap\">llama-swap swaps local models behind one compatible endpoint</a>: One OpenAI or Anthropic compatible endpoint can switch between local servers like llama.cpp and vllm on demand.</li><li><a href=\"https://www.anthropic.com/news/claude-discovers-novel-enzyme-system\">Claude reportedly discovers a novel CRISPR-like enzyme system</a>: An AI model is reported to have found a new enzyme system with CRISPR-like repeats.</li></ol>",
-   "content_text": "The day mixes one headline science claim from Anthropic with a run of practical agent tooling, from code graphs to model swapping. Most papers are incremental and ship without code. Taste-Bench scores agent judgment at trajectory forks Ovis-Embedding unifies text, image, video and audio retrieval 817 cybersecurity skills packaged for coding agents llama-swap swaps local models behind one compatible endpoint Claude reportedly discovers a novel CRISPR-like enzyme system",
-   "date_published": "2026-10-20T15:49:48Z",
-   "tags": [
-    "agents",
-    "coding",
-    "evals",
-    "infra",
-    "local",
-    "memory",
-    "models",
-    "multimodal",
-    "research",
-    "security"
-   ],
-   "_magpie": {
-    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-09-24.json",
-    "backfilled": true,
-    "capabilities": 120
    }
   }
  ]
