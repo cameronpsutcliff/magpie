@@ -1,0 +1,224 @@
+{
+  "ran_at": "2026-10-24T18:04:00Z",
+  "bot": "magpie-scout",
+  "prompt": "v6",
+  "since": "2026-10-24T14:10:00Z",
+  "queries": [
+    [
+      "labs",
+      "(from:_inception_ai OR from:AIatMeta OR from:alexalbert__ OR from:allen_ai OR from:BAAIBeijing OR from:DarioAmodei OR from:deepseek_ai OR from:gdb OR from:GoogleDeepMind OR from:koraykv OR from:markchen90 OR from:MicrosoftAI OR from:OpenAI OR from:SakanaAILabs OR from:Skywork_ai OR from:TencentHunyuan OR from:TheInclusionAI OR from:XiaomiMiMo OR from:Zai_org OR from:aidangomez OR from:Alibaba_Qwen OR from:AnthropicAI OR from:AntLingAGI OR from:GoogleAI OR from:GuillaumeLample OR from:Kimi_Moonshot OR from:liquidai OR from:MiniMax_AI OR from:miramurati OR from:MistralAI OR from:RaiaHadsell OR from:sama OR from:satyanadella OR from:thinkymachines OR from:bfl_ai OR from:claudeai OR from:cohere OR from:JensenHuang OR from:nvidia OR from:sundarpichai) -is:retweet -is:reply"
+    ],
+    [
+      "devtools",
+      "(from:antigravity OR from:augmentcode OR from:badlogicgames OR from:ClaudeDevs OR from:cline OR from:cognition OR from:cursor_ai OR from:DeepSeekHarness OR from:e2b OR from:FactoryAI OR from:kirodotdev OR from:opencode OR from:OpenHandsDev OR from:pidotdev OR from:Replit OR from:Sourcegraph OR from:Stagehanddev OR from:AmpCode OR from:bot OR from:browser_use OR from:code OR from:daytonaio OR from:droid OR from:goose_oss OR from:Lovable OR from:mntruell OR from:OpenAIDevs OR from:sqs OR from:Teknium OR from:v0 OR from:warpdotdev OR from:zachlloydtweets OR from:zeddotdev OR from:boltdotnew OR from:browserbase OR from:github OR from:mitsuhiko OR from:NousResearch OR from:reach_vb OR from:thdxr) -is:retweet -is:reply"
+    ],
+    [
+      "opensource",
+      "(from:axolotl_ai OR from:danielhanchen OR from:ggerganov OR from:ggml_org OR from:Is36E OR from:lmsysorg OR from:LysandreJik OR from:PrimeIntellect OR from:QGallouedec OR from:rapidmlx OR from:sgl_project OR from:turboderp_ OR from:UnslothAI OR from:xenovacom OR from:__tinygrad__ OR from:_philschmid OR from:awnihannun OR from:ezyang OR from:huggingface OR from:maximelabonne OR from:ngxson OR from:ollama OR from:OpenWebUI OR from:PyTorch OR from:sudoingX OR from:Tim_Dettmers OR from:tinkerapi OR from:tri_dao OR from:vllm_project OR from:winglian OR from:yagilb OR from:bartowski1182 OR from:DrJimFan OR from:julien_c OR from:lmstudio OR from:osanseviero OR from:soumithchintala) -is:retweet -is:reply"
+    ],
+    [
+      "research",
+      "(from:_akhaliq OR from:askalphaxiv OR from:cwolferesearch OR from:dair_ai OR from:hyunw_kim OR from:omarsar0 OR from:sayashk OR from:ssokota OR from:aitrackerbot OR from:gabriberton OR from:gu_yuling OR from:jaseweston OR from:KumbongHermann OR from:larsankile OR from:MSFTResearch OR from:OfirPress OR from:percyliang OR from:phillip_isola OR from:qi2peng2 OR from:sam_paech OR from:simran_s_arora OR from:StanfordAILab OR from:stanfordnlp OR from:TheTuringPost OR from:wen_kaiyue OR from:zicokolter OR from:chelseabfinn OR from:lateinteraction OR from:srush_nlp OR from:tatsu_hashimoto OR from:trending_repos) -is:retweet -is:reply"
+    ],
+    [
+      "builders",
+      "(from:_davidgonmar OR from:adarshsolanki OR from:adityakrx OR from:arena OR from:ArtificialAnlys OR from:DominiqueCAPaul OR from:karpathy OR from:minimaxir OR from:rasbt OR from:simonw OR from:ValsAI OR from:yb2698 OR from:ariG23498 OR from:casper_hansen_ OR from:eliebakouch OR from:goodside OR from:helloiamleonie OR from:kitlangton OR from:labenz OR from:levelsio OR from:lightseekorg OR from:maxencefaldor OR from:MichaelThiessen OR from:natolambert OR from:nrehiew_ OR from:scaling01 OR from:teortaxesTex OR from:witcheer OR from:akshay_pachaar OR from:CommandCodeAI OR from:emollick OR from:matthewmillerai OR from:mervenoyann OR from:MooncastOnline) -is:retweet -is:reply"
+    ],
+    [
+      "applied",
+      "(from:anyscalecompute OR from:arizeai OR from:Box OR from:braintrust OR from:CoreWeave OR from:databricks OR from:glean OR from:GroqLLC OR from:HamelHusain OR from:hwchase17 OR from:latentspacepod OR from:levie OR from:llama_index OR from:modal OR from:NotionHQ OR from:OpenRouter OR from:SemiAnalysis_ OR from:aiDotEngineer OR from:AndrewYNg OR from:cerebras OR from:clattner_llvm OR from:dylan522p OR from:FireworksAI_HQ OR from:Get_Writer OR from:LangChain OR from:LiteLLM OR from:matei_zaharia OR from:Modular OR from:mustafasuleyman OR from:perplexity_ai OR from:replicate OR from:sh_reya OR from:Snowflake OR from:swyx OR from:wandb OR from:amasad OR from:baseten OR from:jerryjliu0 OR from:NVIDIAAI) -is:retweet -is:reply"
+    ],
+    "conversation_id:2114008313054527901 -from:arena",
+    "Dessa horizon watch (from:RagavanThurair OR from:blocks OR Dessa release terms)"
+  ],
+  "calls": 12,
+  "items": [
+    {
+      "title": "vLLM now matches DeepSeek's DeepInfer engine on DeepSeek-V4.1-Flash decode, using half the expert parallelism",
+      "url": "https://x.com/vllm_project/status/2114054277379641770",
+      "handle": "@vllm_project",
+      "group": "opensource",
+      "origin": "list",
+      "summary": "The vLLM team says its decode throughput curves for DeepSeek-V4.1-Flash now line up with DeepInfer, the engine DeepSeek open-sourced, on DeepSeek's own decode setup for batch sizes 8 to 256. vLLM gets there at DEP32 while DeepInfer uses EP64DP64. The gain came from pulling in DeepSeek's open kernels and tuning prefill and decode. Earlier this week the gap was about 6 percent.",
+      "kind": "technique",
+      "evidence": "measured",
+      "links": [
+        "https://github.com/vllm-project/vllm",
+        "https://github.com/deepseek-ai/DeepInfer"
+      ],
+      "vendor": "vLLM",
+      "posted_at": "2026-10-24T17:59:51Z",
+      "metrics": {
+        "likes": 11,
+        "replies": 2,
+        "reposts": 1,
+        "quotes": 0,
+        "bookmarks": 4,
+        "impressions": 315
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "reasons": [
+          "Numbers come only from a vLLM chart image; no benchmark script or blog linked yet."
+        ]
+      }
+    },
+    {
+      "title": "LlamaIndex releases OCRia-1, a 4B document parsing model that leads ParseBench by 12 points",
+      "url": "https://x.com/jerryjliu0/status/2114006946999402933",
+      "handle": "@jerryjliu0",
+      "group": "applied",
+      "origin": "search",
+      "summary": "OCRia-1 is a 4 billion parameter vision-language model that now powers LlamaParse. LlamaIndex reports 87.4 overall on ParseBench, 12.1 points ahead of the next parser, and top table scores on olmOCR-bench (92.9), PulseBench-Tab (84.1) and fr-bench-pdf2md. It turns charts into HTML tables of data points (85.1 on ParseBench charts) and keeps superscripts, checkboxes and LaTeX math. Training used about 100k hard pages with supervised fine-tuning plus RL with verifiable rewards.",
+      "kind": "model",
+      "evidence": "measured",
+      "links": [
+        "https://www.llamaindex.ai/blog/parse-ocria-1"
+      ],
+      "vendor": "LlamaIndex",
+      "posted_at": "2026-10-24T14:51:47Z",
+      "metrics": {
+        "likes": 42,
+        "replies": 16,
+        "reposts": 0,
+        "quotes": 0,
+        "bookmarks": 16,
+        "impressions": 2205
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "reasons": [
+          "All scores are vendor-reported.",
+          "The blog does not say whether weights are released or only available through LlamaParse."
+        ]
+      }
+    },
+    {
+      "title": "Kimi K3.1 Pro (Max) enters Agent Arena at #11, the top open model, at a $1.03 median cost per task",
+      "url": "https://x.com/arena/status/2114008313054527901",
+      "handle": "@arena",
+      "group": "research",
+      "origin": "search",
+      "summary": "Arena reports Kimi K3.1 Pro (Max) at +7.6 percent net improvement across more than 4,000 real agentic sessions, up from #25 for Kimi K3 (Max). That would make it the highest-ranked open model, ahead of DeepSeek-V4.1-Flash, once the promised open weights ship. By category it ranks #8 in Work, #9 in Code and #10 in Chat. Its median cost per task is 13 percent lower than the previous variant.",
+      "kind": "eval",
+      "evidence": "measured",
+      "links": [],
+      "vendor": "Moonshot AI",
+      "posted_at": "2026-10-24T14:57:12Z",
+      "metrics": {
+        "likes": 321,
+        "replies": 31,
+        "reposts": 14,
+        "quotes": 7,
+        "bookmarks": 18,
+        "impressions": 20481
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "reasons": [
+          "Replies point out it is #8 on user sentiment but only #26 on confirmed task success, so the headline rank leans on sentiment.",
+          "Net improvement is measured against the average model, not against Kimi K3, and that baseline moves over time."
+        ]
+      },
+      "reception": "Mixed. Replies praise the price, while several note the gap between the sentiment rank and the confirmed success rank."
+    },
+    {
+      "title": "Nous Research's advanced-delegation plugin lets Hermes Agent route each subagent to a different model",
+      "url": "https://x.com/witcheer/status/2114027890253918248",
+      "handle": "@witcheer",
+      "group": "builders",
+      "origin": "search",
+      "summary": "A user set up two routes on Nous Portal with the new plugin and gave one prompt containing two jobs. The main agent sent a short summary task to Claude Haiku 5.5, back in 3.0 seconds, and a logic puzzle to Claude Opus 5.5 at high reasoning, solved in 9.3 seconds, choosing each route on its own. The full run is shown in a video.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [],
+      "vendor": "Nous Research",
+      "posted_at": "2026-10-24T16:15:00Z",
+      "metrics": {
+        "likes": 68,
+        "replies": 7,
+        "reposts": 0,
+        "quotes": 2,
+        "bookmarks": 66,
+        "impressions": 2683
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "reasons": []
+      }
+    },
+    {
+      "title": "Study: frontier models rewriting their own agent harness gain only 2.8 points on held-out ARC-AGI-3 games",
+      "url": "https://x.com/omarsar0/status/2114050042705379461",
+      "handle": "@omarsar0",
+      "group": "research",
+      "origin": "search",
+      "summary": "Each model writes a full harness from a fixed coding bootstrap, plays five development games, then rewrites the whole codebase twice, with scoring on 20 games that never feed the rewrites. Across 27 lineages, two rewrites raise held-out scores by 2.80 points and the 95 percent interval crosses zero. Gains on the development games overstate held-out gains, cost-cutting revisions often lower scores, and human-steered harnesses still score higher.",
+      "kind": "paper",
+      "evidence": "measured",
+      "links": [
+        "https://arxiv.org/abs/2610.30499"
+      ],
+      "vendor": null,
+      "posted_at": "2026-10-24T17:43:01Z",
+      "metrics": {
+        "likes": 24,
+        "replies": 14,
+        "reposts": 3,
+        "quotes": 0,
+        "bookmarks": 13,
+        "impressions": 1700
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "reasons": []
+      }
+    },
+    {
+      "title": "Paper: coding agents pick skill granularity at runtime, falling back from macro skills to primitive tool calls",
+      "url": "https://x.com/dair_ai/status/2114050546189709424",
+      "handle": "@dair_ai",
+      "group": "research",
+      "origin": "search",
+      "summary": "For each task the agent chooses primitive tool calls, a macro skill, or a macro skill that drops to primitive steps when it fails. A controller decides from task structure, execution state and earlier macro failures, and a finite-state executor handles the fallback as an explicit transition rather than an ad hoc retry. In a 12-task routing study a learned router reaches 100 percent success where a hand-written heuristic fails.",
+      "kind": "paper",
+      "evidence": "measured",
+      "links": [
+        "https://arxiv.org/abs/2610.31461"
+      ],
+      "vendor": null,
+      "posted_at": "2026-10-24T17:45:02Z",
+      "metrics": {
+        "likes": 8,
+        "replies": 2,
+        "reposts": 0,
+        "quotes": 0,
+        "bookmarks": 6,
+        "impressions": 1165
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "reasons": [
+          "The routing study covers only 12 tasks."
+        ]
+      }
+    }
+  ],
+  "saved_rejected": [],
+  "list_posts_read": 97,
+  "list_pages": 1,
+  "security_forwarded": [],
+  "security_na": []
+}
