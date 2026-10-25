@@ -1302,6 +1302,117 @@
    "why": "Owner added 2026-10-20: Thoughtworks open source.",
    "origin": "owner",
    "since": "2026-10-20"
+  },
+  {
+   "org": "google-pytorch",
+   "why": "Discovered 2026-10-24: cited by Hacker News, PyTorch blog, X: @PyTorch within a week.",
+   "origin": "discovery",
+   "since": "2026-10-24",
+   "discovered_as": "github:google-pytorch",
+   "evidence": [
+    {
+     "date": "2026-10-21",
+     "source": "X: @PyTorch",
+     "title": "Google and Meta open-source TorchTPU, native PyTorch on TPUs",
+     "url": "https://x.com/PyTorch/status/2112601000670322787"
+    },
+    {
+     "date": "2026-10-21",
+     "source": "Hacker News",
+     "title": "Google open-sources TorchTPU, a native PyTorch back end for TPUs",
+     "url": "https://github.com/google-pytorch/torch_tpu"
+    },
+    {
+     "date": "2026-10-21",
+     "source": "PyTorch blog",
+     "title": "Introducing TorchTPU",
+     "url": "https://pytorch.org/blog/introducing-torchtpu/"
+    }
+   ]
+  },
+  {
+   "org": "openbmb",
+   "why": "Discovered 2026-10-24: cited by GitHub, PyTorch blog within a week.",
+   "origin": "discovery",
+   "since": "2026-10-24",
+   "discovered_as": "github:openbmb",
+   "evidence": [
+    {
+     "date": "2026-10-22",
+     "source": "PyTorch blog",
+     "title": "TorchTitan Update: New SOTA Models, Performance at Scale, TitanRL",
+     "url": "https://pytorch.org/blog/torchtitan-update-new-sota-models-performance-at-scale-titanrl/"
+    },
+    {
+     "date": "2026-10-24",
+     "source": "GitHub",
+     "title": "OpenBMB/VoxCPM",
+     "url": "https://github.com/OpenBMB/VoxCPM"
+    }
+   ]
+  },
+  {
+   "org": "nvidia",
+   "why": "Discovered 2026-10-24: cited by GitHub, Hacker News within a week.",
+   "origin": "discovery",
+   "since": "2026-10-24",
+   "discovered_as": "github:nvidia",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "NVIDIA/OpenShell",
+     "url": "https://github.com/NVIDIA/OpenShell"
+    },
+    {
+     "date": "2026-10-23",
+     "source": "Hacker News",
+     "title": "OpenShell – A safe, private runtime for fleets of autonomous AI agents",
+     "url": "https://github.com/NVIDIA/OpenShell"
+    }
+   ]
+  },
+  {
+   "org": "google-research",
+   "why": "Discovered 2026-10-24: cited by Hacker News, X: @askalphaxiv within a week.",
+   "origin": "discovery",
+   "since": "2026-10-24",
+   "discovered_as": "github:google-research",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "Hacker News",
+     "title": "Harness2 by Google Research – Recursive Agent Harnessing",
+     "url": "https://github.com/google-research/harness2"
+    },
+    {
+     "date": "2026-10-22",
+     "source": "X: @askalphaxiv",
+     "title": "Google's Harness2 recursively improves agent harnesses without weight updates",
+     "url": "https://x.com/askalphaxiv/status/2112863284147724678"
+    }
+   ]
+  },
+  {
+   "org": "meta-pytorch",
+   "why": "Discovered 2026-10-24: cited by PyTorch blog, SemiAnalysis within a week.",
+   "origin": "discovery",
+   "since": "2026-10-24",
+   "discovered_as": "github:meta-pytorch",
+   "evidence": [
+    {
+     "date": "2026-10-22",
+     "source": "PyTorch blog",
+     "title": "TorchTitan Update: New SOTA Models, Performance at Scale, TitanRL",
+     "url": "https://pytorch.org/blog/torchtitan-update-new-sota-models-performance-at-scale-titanrl/"
+    },
+    {
+     "date": "2026-10-24",
+     "source": "SemiAnalysis",
+     "title": "Amazon’s Trainium Takes a Strike at the Training King",
+     "url": "https://newsletter.semianalysis.com/p/amazons-trainium-takes-a-strike-at"
+    }
+   ]
   }
  ],
  "policy_feeds": [

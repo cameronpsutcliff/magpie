@@ -1,61 +1,870 @@
 {
  "schema": "magpie.candidates/1",
- "generated": "2026-10-20",
+ "generated": "2026-10-24",
  "window": {
-  "start": "2026-10-14",
-  "end": "2026-10-20",
+  "start": "2026-10-18",
+  "end": "2026-10-24",
   "run_days": [
    "2026-10-19",
-   "2026-10-20"
+   "2026-10-20",
+   "2026-10-21",
+   "2026-10-22",
+   "2026-10-23",
+   "2026-10-24"
   ]
  },
  "rules": {
   "promote": "two or more trusted, independent sources cite it within the week",
-  "demote": "zero kept items in 21 days of editions, or 3 hype flags in that window",
-  "trusted": "owner-curated sources with trust >= 0.65, X roster accounts with signal_to_noise >= 4, high-priority YouTube channels; discovered sources never vouch"
+  "demote": "zero kept items in the last 21 live editions, or 3 hype flags in 21 days",
+  "trusted": "owner-curated sources with trust >= 0.65, config/x-accounts.json accounts with signal_to_noise >= 4, high-priority YouTube channels; discovered sources never vouch",
+  "pinned": "official lab and vendor feeds (a vendor set) and owner pins are never benched",
+  "x": "X accounts are Magpie Scout's; the loop never promotes or benches them"
  },
  "candidates": [
   {
-   "id": "github:deepseek-ai",
+   "id": "github:google-pytorch",
    "kind": "github",
-   "label": "deepseek-ai",
-   "url": "https://github.com/deepseek-ai",
+   "label": "google-pytorch",
+   "url": "https://github.com/google-pytorch",
    "status": "promoted",
    "trusted_citers": [
     "Hacker News",
-    "X: @deepseek_ai"
+    "PyTorch blog",
+    "X: @PyTorch"
+   ],
+   "citers": [
+    "Hacker News",
+    "PyTorch blog",
+    "X: @PyTorch"
+   ],
+   "first_seen": "2026-10-21",
+   "last_seen": "2026-10-21",
+   "evidence": [
+    {
+     "date": "2026-10-21",
+     "source": "X: @PyTorch",
+     "title": "Google and Meta open-source TorchTPU, native PyTorch on TPUs",
+     "url": "https://x.com/PyTorch/status/2112601000670322787"
+    },
+    {
+     "date": "2026-10-21",
+     "source": "Hacker News",
+     "title": "Google open-sources TorchTPU, a native PyTorch back end for TPUs",
+     "url": "https://github.com/google-pytorch/torch_tpu"
+    },
+    {
+     "date": "2026-10-21",
+     "source": "PyTorch blog",
+     "title": "Introducing TorchTPU",
+     "url": "https://pytorch.org/blog/introducing-torchtpu/"
+    },
+    {
+     "date": "2026-10-21",
+     "source": "PyTorch blog",
+     "title": "PyTorch Foundation Welcomes Nine New Members As Momentum Builds Around Open Source AI Center of Gravity",
+     "url": "https://pytorch.org/blog/pytorch-foundation-welcomes-nine-new-members-as-momentum-builds-around-open-source-ai-center-of-gravity/"
+    }
+   ]
+  },
+  {
+   "id": "github:openbmb",
+   "kind": "github",
+   "label": "openbmb",
+   "url": "https://github.com/openbmb",
+   "status": "promoted",
+   "trusted_citers": [
+    "GitHub",
+    "PyTorch blog"
+   ],
+   "citers": [
+    "GitHub",
+    "Hugging Face",
+    "PyTorch blog",
+    "X: @OpenBMB"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-24",
+   "evidence": [
+    {
+     "date": "2026-10-22",
+     "source": "PyTorch blog",
+     "title": "TorchTitan Update: New SOTA Models, Performance at Scale, TitanRL",
+     "url": "https://pytorch.org/blog/torchtitan-update-new-sota-models-performance-at-scale-titanrl/"
+    },
+    {
+     "date": "2026-10-24",
+     "source": "GitHub",
+     "title": "OpenBMB/VoxCPM",
+     "url": "https://github.com/OpenBMB/VoxCPM"
+    },
+    {
+     "date": "2026-10-19",
+     "source": "Hugging Face",
+     "title": "Empowering Edge Agents: A Systematic Analysis of Edge-Cloud Collaboration in LLM Agent Execution",
+     "url": "https://huggingface.co/papers/2610.17816"
+    },
+    {
+     "date": "2026-10-22",
+     "source": "X: @OpenBMB",
+     "title": "MiniCPM-V 4.7 1B runs offline on everyday iPhones in a third-party app",
+     "url": "https://x.com/OpenBMB/status/2112906757693710580"
+    },
+    {
+     "date": "2026-10-24",
+     "source": "X: @OpenBMB",
+     "title": "OpenBMB releases StaffDeck 1.0.0-preview, an open-source platform for agent 'digital employees'",
+     "url": "https://x.com/OpenBMB/status/2113624077449691301"
+    }
+   ]
+  },
+  {
+   "id": "github:nvidia",
+   "kind": "github",
+   "label": "nvidia",
+   "url": "https://github.com/nvidia",
+   "status": "promoted",
+   "trusted_citers": [
+    "GitHub",
+    "Hacker News"
    ],
    "citers": [
     "GitHub",
     "Hacker News",
-    "X: @deepseek_ai"
+    "Hacker News best (hnrss)",
+    "Hacker News stories matching AI, 150+ points (hnrss)"
    ],
-   "first_seen": "2026-10-20",
-   "last_seen": "2026-10-20",
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-24",
    "evidence": [
     {
-     "date": "2026-10-20",
-     "source": "Hacker News",
-     "title": "DeepSeek just open-sourced its inference engine",
-     "url": "https://github.com/deepseek-ai/DeepInfer"
-    },
-    {
-     "date": "2026-10-20",
-     "source": "X: @deepseek_ai",
-     "title": "DeepSeek open-sources the DeepInfer inference stack",
-     "url": "https://x.com/deepseek_ai/status/2112476496283775135"
-    },
-    {
-     "date": "2026-10-20",
+     "date": "2026-10-19",
      "source": "GitHub",
-     "title": "deepseek-ai/DeepInfer",
-     "url": "https://github.com/deepseek-ai/DeepInfer"
+     "title": "NVIDIA/OpenShell",
+     "url": "https://github.com/NVIDIA/OpenShell"
+    },
+    {
+     "date": "2026-10-23",
+     "source": "Hacker News",
+     "title": "OpenShell – A safe, private runtime for fleets of autonomous AI agents",
+     "url": "https://github.com/NVIDIA/OpenShell"
+    },
+    {
+     "date": "2026-10-23",
+     "source": "Hacker News best (hnrss)",
+     "title": "OpenShell – A safe, private runtime for fleets of autonomous AI agents",
+     "url": "https://github.com/NVIDIA/OpenShell"
+    },
+    {
+     "date": "2026-10-23",
+     "source": "Hacker News stories matching AI, 150+ points (hnrss)",
+     "title": "OpenShell – A safe, private runtime for fleets of autonomous AI agents",
+     "url": "https://github.com/NVIDIA/OpenShell"
     }
    ]
+  },
+  {
+   "id": "github:google-research",
+   "kind": "github",
+   "label": "google-research",
+   "url": "https://github.com/google-research",
+   "status": "promoted",
+   "trusted_citers": [
+    "Hacker News",
+    "X: @askalphaxiv"
+   ],
+   "citers": [
+    "Hacker News",
+    "X: @askalphaxiv",
+    "X: @yufan_zhuang"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-24",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "Hacker News",
+     "title": "Harness2 by Google Research – Recursive Agent Harnessing",
+     "url": "https://github.com/google-research/harness2"
+    },
+    {
+     "date": "2026-10-22",
+     "source": "X: @askalphaxiv",
+     "title": "Google's Harness2 recursively improves agent harnesses without weight updates",
+     "url": "https://x.com/askalphaxiv/status/2112863284147724678"
+    },
+    {
+     "date": "2026-10-24",
+     "source": "X: @yufan_zhuang",
+     "title": "Google researchers release PLE, a benchmark of billable engineering deliverables where the best agent averages 50.6%",
+     "url": "https://x.com/yufan_zhuang/status/2113700290998518091"
+    }
+   ]
+  },
+  {
+   "id": "github:meta-pytorch",
+   "kind": "github",
+   "label": "meta-pytorch",
+   "url": "https://github.com/meta-pytorch",
+   "status": "promoted",
+   "trusted_citers": [
+    "PyTorch blog",
+    "SemiAnalysis"
+   ],
+   "citers": [
+    "PyTorch blog",
+    "SemiAnalysis",
+    "X: @sanketpurandare"
+   ],
+   "first_seen": "2026-10-21",
+   "last_seen": "2026-10-24",
+   "evidence": [
+    {
+     "date": "2026-10-22",
+     "source": "PyTorch blog",
+     "title": "TorchTitan Update: New SOTA Models, Performance at Scale, TitanRL",
+     "url": "https://pytorch.org/blog/torchtitan-update-new-sota-models-performance-at-scale-titanrl/"
+    },
+    {
+     "date": "2026-10-24",
+     "source": "SemiAnalysis",
+     "title": "Amazon’s Trainium Takes a Strike at the Training King",
+     "url": "https://newsletter.semianalysis.com/p/amazons-trainium-takes-a-strike-at"
+    },
+    {
+     "date": "2026-10-21",
+     "source": "X: @sanketpurandare",
+     "title": "Meta open-sources Dist-MoE fused communication and compute kernels for MoE training and inference",
+     "url": "https://x.com/sanketpurandare/status/2112623942150357082"
+    }
+   ]
+  },
+  {
+   "id": "github:anomalyco",
+   "kind": "github",
+   "label": "anomalyco",
+   "url": "https://github.com/anomalyco",
+   "status": "held",
+   "trusted_citers": [
+    "GitHub",
+    "opencode releases"
+   ],
+   "citers": [
+    "GitHub",
+    "opencode releases"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-24",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "anomalyco/opencode",
+     "url": "https://github.com/anomalyco/opencode"
+    },
+    {
+     "date": "2026-10-21",
+     "source": "opencode releases",
+     "title": "v2.1.2",
+     "url": "https://github.com/anomalyco/opencode/releases/tag/v2.1.2"
+    },
+    {
+     "date": "2026-10-21",
+     "source": "opencode releases",
+     "title": "github-v1.2.27",
+     "url": "https://github.com/anomalyco/opencode/releases/tag/github-v1.2.27"
+    },
+    {
+     "date": "2026-10-21",
+     "source": "opencode releases",
+     "title": "v2.1.1",
+     "url": "https://github.com/anomalyco/opencode/releases/tag/v2.1.1"
+    },
+    {
+     "date": "2026-10-21",
+     "source": "opencode releases",
+     "title": "v2.1.0",
+     "url": "https://github.com/anomalyco/opencode/releases/tag/v2.1.0"
+    },
+    {
+     "date": "2026-10-21",
+     "source": "opencode releases",
+     "title": "v2.0.32",
+     "url": "https://github.com/anomalyco/opencode/releases/tag/v2.0.32"
+    }
+   ],
+   "reason": "weekly cap of 5 new GitHub owners reached"
+  },
+  {
+   "id": "github:pytorch",
+   "kind": "github",
+   "label": "pytorch",
+   "url": "https://github.com/pytorch",
+   "status": "held",
+   "trusted_citers": [
+    "PyTorch blog",
+    "SemiAnalysis"
+   ],
+   "citers": [
+    "PyTorch blog",
+    "SemiAnalysis"
+   ],
+   "first_seen": "2026-10-22",
+   "last_seen": "2026-10-24",
+   "evidence": [
+    {
+     "date": "2026-10-22",
+     "source": "PyTorch blog",
+     "title": "TorchTitan Update: New SOTA Models, Performance at Scale, TitanRL",
+     "url": "https://pytorch.org/blog/torchtitan-update-new-sota-models-performance-at-scale-titanrl/"
+    },
+    {
+     "date": "2026-10-22",
+     "source": "PyTorch blog",
+     "title": "Accelerating PyTorch on AMD GPUs with FlyDSL",
+     "url": "https://pytorch.org/blog/accelerating-pytorch-on-amd-gpus-with-flydsl/"
+    },
+    {
+     "date": "2026-10-24",
+     "source": "SemiAnalysis",
+     "title": "Amazon’s Trainium Takes a Strike at the Training King",
+     "url": "https://newsletter.semianalysis.com/p/amazons-trainium-takes-a-strike-at"
+    }
+   ],
+   "reason": "weekly cap of 5 new GitHub owners reached"
+  },
+  {
+   "id": "github:lightseekorg",
+   "kind": "github",
+   "label": "lightseekorg",
+   "url": "https://github.com/lightseekorg",
+   "status": "held",
+   "trusted_citers": [
+    "X: @MiniMax_AI",
+    "X: @lightseekorg"
+   ],
+   "citers": [
+    "X: @MiniMax_AI",
+    "X: @lightseekorg"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-23",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "X: @lightseekorg",
+     "title": "LightSeek shows TokenSpeed kernels for multi-silicon inference",
+     "url": "https://x.com/lightseekorg/status/2112404160285126911"
+    },
+    {
+     "date": "2026-10-23",
+     "source": "X: @MiniMax_AI",
+     "title": "MiniMax publishes open weights for M3.1 Flash, a 428B MoE with 23B active",
+     "url": "https://x.com/MiniMax_AI/status/2113436864904610008"
+    }
+   ],
+   "reason": "weekly cap of 5 new GitHub owners reached"
   }
  ],
  "demoted": [],
  "watching": [
+  {
+   "id": "github:oosexgang",
+   "kind": "github",
+   "label": "oosexgang",
+   "url": "https://github.com/oosexgang",
+   "status": "watching",
+   "trusted_citers": [
+    "Hacker News"
+   ],
+   "citers": [
+    "GitHub",
+    "Hacker News",
+    "Hacker News Daily (top 10 per day)",
+    "Hacker News best (hnrss)"
+   ],
+   "first_seen": "2026-10-23",
+   "last_seen": "2026-10-24",
+   "evidence": [
+    {
+     "date": "2026-10-23",
+     "source": "Hacker News",
+     "title": "Run full iOS 16.5 firmware on Android Devices",
+     "url": "https://github.com/oosexgang/hackios-xnu-kernel"
+    },
+    {
+     "date": "2026-10-23",
+     "source": "Hacker News best (hnrss)",
+     "title": "Run full iOS 16.5 firmware on Android Devices",
+     "url": "https://github.com/oosexgang/hackios-xnu-kernel"
+    },
+    {
+     "date": "2026-10-24",
+     "source": "GitHub",
+     "title": "oosexgang/hackios-xnu-kernel",
+     "url": "https://github.com/oosexgang/hackios-xnu-kernel"
+    },
+    {
+     "date": "2026-10-24",
+     "source": "Hacker News Daily (top 10 per day)",
+     "title": "Daily Hacker News for 2026-10-23",
+     "url": "https://www.daemonology.net/hn-daily/2026-10-23.html"
+    }
+   ]
+  },
+  {
+   "id": "github:mitmproxy",
+   "kind": "github",
+   "label": "mitmproxy",
+   "url": "https://github.com/mitmproxy",
+   "status": "watching",
+   "trusted_citers": [
+    "Hacker News"
+   ],
+   "citers": [
+    "Hacker News",
+    "Hacker News Daily (top 10 per day)",
+    "Hacker News best (hnrss)"
+   ],
+   "first_seen": "2026-10-22",
+   "last_seen": "2026-10-24",
+   "evidence": [
+    {
+     "date": "2026-10-22",
+     "source": "Hacker News",
+     "title": "mitmproxy adds --emudhra option",
+     "url": "https://github.com/mitmproxy/mitmproxy/commit/169234499088fc2c414644a67efaed3d64ae2e3b"
+    },
+    {
+     "date": "2026-10-22",
+     "source": "Hacker News best (hnrss)",
+     "title": "mitmproxy adds --emudhra option",
+     "url": "https://github.com/mitmproxy/mitmproxy/commit/169234499088fc2c414644a67efaed3d64ae2e3b"
+    },
+    {
+     "date": "2026-10-23",
+     "source": "Hacker News Daily (top 10 per day)",
+     "title": "Daily Hacker News for 2026-10-22",
+     "url": "https://www.daemonology.net/hn-daily/2026-10-22.html"
+    }
+   ]
+  },
+  {
+   "id": "newsletter:pbs.substack.com",
+   "kind": "newsletter",
+   "label": "pbs.substack.com",
+   "url": "https://pbs.substack.com",
+   "status": "watching",
+   "trusted_citers": [
+    "Latent Space"
+   ],
+   "citers": [
+    "Ben's Bites",
+    "Latent Space"
+   ],
+   "first_seen": "2026-10-21",
+   "last_seen": "2026-10-24",
+   "evidence": [
+    {
+     "date": "2026-10-21",
+     "source": "Latent Space",
+     "title": "[AINews] DeepSeek DeepInfer: Open Source SOTA Inference running 155T toks/day/cluster making $22m/day at ~80% margin for a 81 day payback",
+     "url": "https://www.latent.space/p/ainews-deepseek-deepinfer-open-source"
+    },
+    {
+     "date": "2026-10-21",
+     "source": "Latent Space",
+     "title": "The Programmable Data Center, Evan Conrad, SF Compute",
+     "url": "https://www.latent.space/p/sfcompute2"
+    },
+    {
+     "date": "2026-10-21",
+     "source": "Latent Space",
+     "title": "[AINews] not much happened today",
+     "url": "https://www.latent.space/p/ainews-not-much-happened-today-f09"
+    },
+    {
+     "date": "2026-10-22",
+     "source": "Latent Space",
+     "title": "[AINews] OpenAI’s Patch the Planet program is 1 of 2 parties to discover PHP2Shell vulnerabilities in core PHP affecting 70% of the web, using GPT-5.6 Sol; coor",
+     "url": "https://www.latent.space/p/ainews-openais-patch-the-planet-program"
+    },
+    {
+     "date": "2026-10-21",
+     "source": "Ben's Bites",
+     "title": "How I built my ‘everything’ app",
+     "url": "https://www.bensbites.com/p/how-i-built-my-everything-app"
+    },
+    {
+     "date": "2026-10-23",
+     "source": "Ben's Bites",
+     "title": "Claude’s personal agent",
+     "url": "https://www.bensbites.com/p/claudes-personal-agent"
+    }
+   ],
+   "feed_url": "https://pbs.substack.com/feed"
+  },
+  {
+   "id": "github:cloudflare",
+   "kind": "github",
+   "label": "cloudflare",
+   "url": "https://github.com/cloudflare",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub",
+    "X: @trending_repos"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-24",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "cloudflare/security-audit-skill",
+     "url": "https://github.com/cloudflare/security-audit-skill"
+    },
+    {
+     "date": "2026-10-23",
+     "source": "X: @trending_repos",
+     "title": "Cloudflare open-sources security-audit-skill, a multi-phase audit skill for coding agents",
+     "url": "https://x.com/trending_repos/status/2113241275470066013"
+    }
+   ]
+  },
+  {
+   "id": "github:kitlangton",
+   "kind": "github",
+   "label": "kitlangton",
+   "url": "https://github.com/kitlangton",
+   "status": "watching",
+   "trusted_citers": [
+    "X: @kitlangton"
+   ],
+   "citers": [
+    "Ben's Bites",
+    "X: @kitlangton"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-24",
+   "evidence": [
+    {
+     "date": "2026-10-19",
+     "source": "X: @kitlangton",
+     "title": "Scrawl open-sources visual steering for coding agents",
+     "url": "https://x.com/kitlangton/status/2111955962781384846"
+    },
+    {
+     "date": "2026-10-23",
+     "source": "Ben's Bites",
+     "title": "Claude’s personal agent",
+     "url": "https://www.bensbites.com/p/claudes-personal-agent"
+    }
+   ]
+  },
+  {
+   "id": "github:nousresearch",
+   "kind": "github",
+   "label": "nousresearch",
+   "url": "https://github.com/nousresearch",
+   "status": "watching",
+   "trusted_citers": [
+    "X: @Teknium"
+   ],
+   "citers": [
+    "X: @NousResearch",
+    "X: @Teknium"
+   ],
+   "first_seen": "2026-10-22",
+   "last_seen": "2026-10-23",
+   "evidence": [
+    {
+     "date": "2026-10-23",
+     "source": "X: @Teknium",
+     "title": "Nous Research opens a Hermes Labs Plugins repo of experimental agent plugins",
+     "url": "https://x.com/Teknium/status/2113278395945779386"
+    },
+    {
+     "date": "2026-10-22",
+     "source": "X: @NousResearch",
+     "title": "Hermes Agent closes Jensen Huang's GTC Berlin keynote by building a robot training environment",
+     "url": "https://x.com/NousResearch/status/2113010017645244623"
+    }
+   ]
+  },
+  {
+   "id": "github:sakanaai",
+   "kind": "github",
+   "label": "sakanaai",
+   "url": "https://github.com/sakanaai",
+   "status": "watching",
+   "trusted_citers": [
+    "X: @SakanaAILabs"
+   ],
+   "citers": [
+    "Hugging Face",
+    "X: @SakanaAILabs"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-21",
+   "evidence": [
+    {
+     "date": "2026-10-21",
+     "source": "X: @SakanaAILabs",
+     "title": "Sakana AI releases QD-Rec, quality-diversity recommendations for decisions",
+     "url": "https://x.com/SakanaAILabs/status/2112507110290502109"
+    },
+    {
+     "date": "2026-10-19",
+     "source": "Hugging Face",
+     "title": "QD-Rec: Open-Ended Evolution of Recommendations via Quality-Diversity",
+     "url": "https://huggingface.co/papers/2610.23470"
+    }
+   ]
+  },
+  {
+   "id": "github:tencent-hunyuan",
+   "kind": "github",
+   "label": "tencent-hunyuan",
+   "url": "https://github.com/tencent-hunyuan",
+   "status": "watching",
+   "trusted_citers": [
+    "X: @TencentHunyuan"
+   ],
+   "citers": [
+    "GitHub",
+    "X: @TencentHunyuan"
+   ],
+   "first_seen": "2026-10-19",
+   "last_seen": "2026-10-24",
+   "evidence": [
+    {
+     "date": "2026-10-24",
+     "source": "X: @TencentHunyuan",
+     "title": "Tencent open-sources Hy-Nomas, an interactive video world model for consumer GPUs",
+     "url": "https://x.com/TencentHunyuan/status/2113676827114053892"
+    },
+    {
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "Tencent-Hunyuan/Hy-Memory",
+     "url": "https://github.com/Tencent-Hunyuan/Hy-Memory"
+    }
+   ]
+  },
+  {
+   "id": "github:aws-samples",
+   "kind": "github",
+   "label": "aws-samples",
+   "url": "https://github.com/aws-samples",
+   "status": "watching",
+   "trusted_citers": [
+    "AWS Machine Learning blog"
+   ],
+   "citers": [
+    "AWS Machine Learning blog"
+   ],
+   "first_seen": "2026-10-21",
+   "last_seen": "2026-10-24",
+   "evidence": [
+    {
+     "date": "2026-10-21",
+     "source": "AWS Machine Learning blog",
+     "title": "From data to decisions: Conversational supply chain intelligence with Amazon Quick and Amazon Bedrock AgentCore",
+     "url": "https://aws.amazon.com/blogs/machine-learning/from-data-to-decisions-conversational-supply-chain-intelligence-with-amazon-quick-and-amazon-bedrock-agentcore/"
+    },
+    {
+     "date": "2026-10-21",
+     "source": "AWS Machine Learning blog",
+     "title": "Fine-tuning GPT-OSS-20B for multilingual reasoning on Amazon SageMaker HyperPod",
+     "url": "https://aws.amazon.com/blogs/machine-learning/fine-tuning-gpt-oss-20b-for-multilingual-reasoning-on-amazon-sagemaker-hyperpod/"
+    },
+    {
+     "date": "2026-10-21",
+     "source": "AWS Machine Learning blog",
+     "title": "Securing AI agent identity with X.509 PKI on AWS",
+     "url": "https://aws.amazon.com/blogs/machine-learning/securing-ai-agent-identity-with-x-509-pki-on-aws/"
+    },
+    {
+     "date": "2026-10-21",
+     "source": "AWS Machine Learning blog",
+     "title": "Structured outputs for Anthropic Claude models on Amazon Bedrock",
+     "url": "https://aws.amazon.com/blogs/machine-learning/structured-outputs-for-anthropic-claude-models-on-amazon-bedrock/"
+    },
+    {
+     "date": "2026-10-22",
+     "source": "AWS Machine Learning blog",
+     "title": "5 production challenges in multi-agent systems and how Deep Insight solved them",
+     "url": "https://aws.amazon.com/blogs/machine-learning/5-production-challenges-in-multi-agent-systems-and-how-deep-insight-solved-them/"
+    },
+    {
+     "date": "2026-10-23",
+     "source": "AWS Machine Learning blog",
+     "title": "Stream low-latency speech from AI agents using Kokoro TTS on Amazon SageMaker AI",
+     "url": "https://aws.amazon.com/blogs/machine-learning/stream-low-latency-speech-from-ai-agents-using-kokoro-tts-on-amazon-sagemaker-ai/"
+    }
+   ]
+  },
+  {
+   "id": "newsletter:media.beehiiv.com",
+   "kind": "newsletter",
+   "label": "media.beehiiv.com",
+   "url": "https://media.beehiiv.com",
+   "status": "watching",
+   "trusted_citers": [
+    "Latent Space"
+   ],
+   "citers": [
+    "Latent Space"
+   ],
+   "first_seen": "2026-10-23",
+   "last_seen": "2026-10-24",
+   "evidence": [
+    {
+     "date": "2026-10-23",
+     "source": "Latent Space",
+     "title": "[AINews] Black October",
+     "url": "https://latent.space/p/ainews-black-october/"
+    },
+    {
+     "date": "2026-10-23",
+     "source": "Latent Space",
+     "title": "[AINews] OpenAI’s Patch the Planet program is 1 of 2 parties to discover PHP2Shell vulnerabilities in core PHP affecting 70% of the web, using GPT-5.6 Sol; coor",
+     "url": "https://latent.space/p/ainews-openais-patch-the-planet-program/"
+    },
+    {
+     "date": "2026-10-23",
+     "source": "Latent Space",
+     "title": "Claude Mods: Flipping the Harness Inside Out",
+     "url": "https://latent.space/p/claude-mods/"
+    },
+    {
+     "date": "2026-10-24",
+     "source": "Latent Space",
+     "title": "[AINews] Kimi 3.1 Pro 104BA-2.8T: Fable-5.1-Class Open Weights narrows Closed-AI lead to 1 month... and Pro Highspeed API with 2-3× speed",
+     "url": "https://latent.space/p/ainews-kimi-31/"
+    },
+    {
+     "date": "2026-10-24",
+     "source": "Latent Space",
+     "title": "AI Is Getting Good at Math. Here’s Why.",
+     "url": "https://latent.space/p/ai-is-getting-good-at-math/"
+    }
+   ],
+   "feed_url": null
+  },
+  {
+   "id": "github:aaif-goose",
+   "kind": "github",
+   "label": "aaif-goose",
+   "url": "https://github.com/aaif-goose",
+   "status": "watching",
+   "trusted_citers": [
+    "Goose releases"
+   ],
+   "citers": [
+    "Goose releases"
+   ],
+   "first_seen": "2026-10-21",
+   "last_seen": "2026-10-24",
+   "evidence": [
+    {
+     "date": "2026-10-21",
+     "source": "Goose releases",
+     "title": "v1.55.0",
+     "url": "https://github.com/aaif-goose/goose/releases/tag/v1.55.0"
+    },
+    {
+     "date": "2026-10-21",
+     "source": "Goose releases",
+     "title": "gdk-v0.1.0-alpha.12: chore(GDK): release v0.1.0-alpha.12 (#12561)",
+     "url": "https://github.com/aaif-goose/goose/releases/tag/gdk-v0.1.0-alpha.12"
+    },
+    {
+     "date": "2026-10-21",
+     "source": "Goose releases",
+     "title": "v1.54.0",
+     "url": "https://github.com/aaif-goose/goose/releases/tag/v1.54.0"
+    },
+    {
+     "date": "2026-10-24",
+     "source": "Goose releases",
+     "title": "v1.56.0",
+     "url": "https://github.com/aaif-goose/goose/releases/tag/v1.56.0"
+    }
+   ]
+  },
+  {
+   "id": "github:aws",
+   "kind": "github",
+   "label": "aws",
+   "url": "https://github.com/aws",
+   "status": "watching",
+   "trusted_citers": [
+    "AWS Machine Learning blog"
+   ],
+   "citers": [
+    "AWS Machine Learning blog"
+   ],
+   "first_seen": "2026-10-21",
+   "last_seen": "2026-10-23",
+   "evidence": [
+    {
+     "date": "2026-10-21",
+     "source": "AWS Machine Learning blog",
+     "title": "Access OpenAI GPT models on Amazon Bedrock from Canada with cross-Region inference",
+     "url": "https://aws.amazon.com/blogs/machine-learning/access-openai-gpt-models-on-amazon-bedrock-from-canada-with-cross-region-inference/"
+    },
+    {
+     "date": "2026-10-23",
+     "source": "AWS Machine Learning blog",
+     "title": "Announcing new ways to customize models with SageMaker AI, without managing GPUs",
+     "url": "https://aws.amazon.com/blogs/machine-learning/announcing-new-ways-to-customize-models-with-sagemaker-ai-without-managing-gpus/"
+    },
+    {
+     "date": "2026-10-23",
+     "source": "AWS Machine Learning blog",
+     "title": "Write your own training loop, without managing GPUs, with Amazon SageMaker training session APIs",
+     "url": "https://aws.amazon.com/blogs/machine-learning/write-your-own-training-loop-without-managing-gpus-with-amazon-sagemaker-training-sessions/"
+    }
+   ]
+  },
+  {
+   "id": "github:nelsoneu",
+   "kind": "github",
+   "label": "nelsoneu",
+   "url": "https://github.com/nelsoneu",
+   "status": "watching",
+   "trusted_citers": [
+    "Latent Space"
+   ],
+   "citers": [
+    "Latent Space"
+   ],
+   "first_seen": "2026-10-22",
+   "last_seen": "2026-10-24",
+   "evidence": [
+    {
+     "date": "2026-10-22",
+     "source": "Latent Space",
+     "title": "[AINews] OpenAI’s Patch the Planet program is 1 of 2 parties to discover PHP2Shell vulnerabilities in core PHP affecting 70% of the web, using GPT-5.6 Sol; coor",
+     "url": "https://www.latent.space/p/ainews-openais-patch-the-planet-program"
+    },
+    {
+     "date": "2026-10-23",
+     "source": "Latent Space",
+     "title": "[AINews] Black October",
+     "url": "https://latent.space/p/ainews-black-october/"
+    },
+    {
+     "date": "2026-10-23",
+     "source": "Latent Space",
+     "title": "[AINews] OpenAI’s Patch the Planet program is 1 of 2 parties to discover PHP2Shell vulnerabilities in core PHP affecting 70% of the web, using GPT-5.6 Sol; coor",
+     "url": "https://latent.space/p/ainews-openais-patch-the-planet-program/"
+    }
+   ]
+  },
   {
    "id": "github:simonw",
    "kind": "github",
@@ -69,7 +878,7 @@
     "Simon Willison"
    ],
    "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
+   "last_seen": "2026-10-21",
    "evidence": [
     {
      "date": "2026-10-19",
@@ -82,6 +891,349 @@
      "source": "Simon Willison",
      "title": "llm-echo 0.5",
      "url": "https://simonwillison.net/2026/Oct/18/llm-echo/"
+    },
+    {
+     "date": "2026-10-21",
+     "source": "Simon Willison",
+     "title": "Battle Drones - a vibe coded RTS with audio-based multiplayer",
+     "url": "https://simonwillison.net/2026/Oct/20/battledrones/"
+    }
+   ]
+  },
+  {
+   "id": "newsletter:lspace.beehiiv.com",
+   "kind": "newsletter",
+   "label": "lspace.beehiiv.com",
+   "url": "https://lspace.beehiiv.com",
+   "status": "watching",
+   "trusted_citers": [
+    "Latent Space"
+   ],
+   "citers": [
+    "Latent Space"
+   ],
+   "first_seen": "2026-10-23",
+   "last_seen": "2026-10-23",
+   "evidence": [
+    {
+     "date": "2026-10-23",
+     "source": "Latent Space",
+     "title": "[AINews] Black October",
+     "url": "https://latent.space/p/ainews-black-october/"
+    },
+    {
+     "date": "2026-10-23",
+     "source": "Latent Space",
+     "title": "[AINews] OpenAI’s Patch the Planet program is 1 of 2 parties to discover PHP2Shell vulnerabilities in core PHP affecting 70% of the web, using GPT-5.6 Sol; coor",
+     "url": "https://latent.space/p/ainews-openais-patch-the-planet-program/"
+    },
+    {
+     "date": "2026-10-23",
+     "source": "Latent Space",
+     "title": "Claude Mods: Flipping the Harness Inside Out",
+     "url": "https://latent.space/p/claude-mods/"
+    }
+   ],
+   "feed_url": null
+  },
+  {
+   "id": "github:alphaxiv",
+   "kind": "github",
+   "label": "alphaxiv",
+   "url": "https://github.com/alphaxiv",
+   "status": "watching",
+   "trusted_citers": [
+    "X: @askalphaxiv"
+   ],
+   "citers": [
+    "X: @askalphaxiv"
+   ],
+   "first_seen": "2026-10-22",
+   "last_seen": "2026-10-24",
+   "evidence": [
+    {
+     "date": "2026-10-22",
+     "source": "X: @askalphaxiv",
+     "title": "alphaXiv's open-source OpenResearch runs research tasks locally with Flint",
+     "url": "https://x.com/askalphaxiv/status/2113020369200353455"
+    },
+    {
+     "date": "2026-10-24",
+     "source": "X: @askalphaxiv",
+     "title": "alphaXiv OpenResearch adds Trackio so agents read their own experiment curves",
+     "url": "https://x.com/askalphaxiv/status/2113643607949234549"
+    }
+   ]
+  },
+  {
+   "id": "github:awslabs",
+   "kind": "github",
+   "label": "awslabs",
+   "url": "https://github.com/awslabs",
+   "status": "watching",
+   "trusted_citers": [
+    "AWS Machine Learning blog"
+   ],
+   "citers": [
+    "AWS Machine Learning blog"
+   ],
+   "first_seen": "2026-10-21",
+   "last_seen": "2026-10-23",
+   "evidence": [
+    {
+     "date": "2026-10-21",
+     "source": "AWS Machine Learning blog",
+     "title": "Fine-tuning GPT-OSS-20B for multilingual reasoning on Amazon SageMaker HyperPod",
+     "url": "https://aws.amazon.com/blogs/machine-learning/fine-tuning-gpt-oss-20b-for-multilingual-reasoning-on-amazon-sagemaker-hyperpod/"
+    },
+    {
+     "date": "2026-10-23",
+     "source": "AWS Machine Learning blog",
+     "title": "How Rescale built an AI triage agent with Strands Agents and AI-DLC",
+     "url": "https://aws.amazon.com/blogs/machine-learning/how-rescale-built-an-ai-triage-agent-with-strands-agents-and-ai-dlc/"
+    }
+   ]
+  },
+  {
+   "id": "github:dannymac180",
+   "kind": "github",
+   "label": "dannymac180",
+   "url": "https://github.com/dannymac180",
+   "status": "watching",
+   "trusted_citers": [
+    "Latent Space"
+   ],
+   "citers": [
+    "Latent Space"
+   ],
+   "first_seen": "2026-10-22",
+   "last_seen": "2026-10-23",
+   "evidence": [
+    {
+     "date": "2026-10-22",
+     "source": "Latent Space",
+     "title": "Claude Mods: Flipping the Harness Inside Out",
+     "url": "https://www.latent.space/p/claude-mods"
+    },
+    {
+     "date": "2026-10-23",
+     "source": "Latent Space",
+     "title": "Claude Mods: Flipping the Harness Inside Out",
+     "url": "https://latent.space/p/claude-mods/"
+    }
+   ]
+  },
+  {
+   "id": "github:eagle-hq",
+   "kind": "github",
+   "label": "eagle-hq",
+   "url": "https://github.com/eagle-hq",
+   "status": "watching",
+   "trusted_citers": [
+    "Latent Space"
+   ],
+   "citers": [
+    "Latent Space"
+   ],
+   "first_seen": "2026-10-22",
+   "last_seen": "2026-10-23",
+   "evidence": [
+    {
+     "date": "2026-10-22",
+     "source": "Latent Space",
+     "title": "[AINews] OpenAI’s Patch the Planet program is 1 of 2 parties to discover PHP2Shell vulnerabilities in core PHP affecting 70% of the web, using GPT-5.6 Sol; coor",
+     "url": "https://www.latent.space/p/ainews-openais-patch-the-planet-program"
+    },
+    {
+     "date": "2026-10-23",
+     "source": "Latent Space",
+     "title": "[AINews] OpenAI’s Patch the Planet program is 1 of 2 parties to discover PHP2Shell vulnerabilities in core PHP affecting 70% of the web, using GPT-5.6 Sol; coor",
+     "url": "https://latent.space/p/ainews-openais-patch-the-planet-program/"
+    }
+   ]
+  },
+  {
+   "id": "github:stardog-union",
+   "kind": "github",
+   "label": "stardog-union",
+   "url": "https://github.com/stardog-union",
+   "status": "watching",
+   "trusted_citers": [
+    "AWS Machine Learning blog"
+   ],
+   "citers": [
+    "AWS Machine Learning blog"
+   ],
+   "first_seen": "2026-10-21",
+   "last_seen": "2026-10-21",
+   "evidence": [
+    {
+     "date": "2026-10-21",
+     "source": "AWS Machine Learning blog",
+     "title": "Build a semantic layer for agentic AI on AWS with Denodo and Amazon Bedrock AgentCore",
+     "url": "https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-on-aws-with-denodo-and-amazon-bedrock-agentcore/"
+    },
+    {
+     "date": "2026-10-21",
+     "source": "AWS Machine Learning blog",
+     "title": "Build a semantic layer for agentic AI on AWS with AtScale and Amazon Bedrock AgentCore",
+     "url": "https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-on-aws-with-atscale-and-amazon-bedrock-agentcore/"
+    }
+   ]
+  },
+  {
+   "id": "github:strands-agents",
+   "kind": "github",
+   "label": "strands-agents",
+   "url": "https://github.com/strands-agents",
+   "status": "watching",
+   "trusted_citers": [
+    "AWS Machine Learning blog"
+   ],
+   "citers": [
+    "AWS Machine Learning blog"
+   ],
+   "first_seen": "2026-10-21",
+   "last_seen": "2026-10-21",
+   "evidence": [
+    {
+     "date": "2026-10-21",
+     "source": "AWS Machine Learning blog",
+     "title": "Securing AI agent identity with X.509 PKI on AWS",
+     "url": "https://aws.amazon.com/blogs/machine-learning/securing-ai-agent-identity-with-x-509-pki-on-aws/"
+    },
+    {
+     "date": "2026-10-21",
+     "source": "AWS Machine Learning blog",
+     "title": "Build a semantic layer for agentic AI on AWS with Denodo and Amazon Bedrock AgentCore",
+     "url": "https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-on-aws-with-denodo-and-amazon-bedrock-agentcore/"
+    }
+   ]
+  },
+  {
+   "id": "github:syv-ai",
+   "kind": "github",
+   "label": "syv-ai",
+   "url": "https://github.com/syv-ai",
+   "status": "watching",
+   "trusted_citers": [
+    "Latent Space"
+   ],
+   "citers": [
+    "Latent Space"
+   ],
+   "first_seen": "2026-10-22",
+   "last_seen": "2026-10-23",
+   "evidence": [
+    {
+     "date": "2026-10-22",
+     "source": "Latent Space",
+     "title": "[AINews] OpenAI’s Patch the Planet program is 1 of 2 parties to discover PHP2Shell vulnerabilities in core PHP affecting 70% of the web, using GPT-5.6 Sol; coor",
+     "url": "https://www.latent.space/p/ainews-openais-patch-the-planet-program"
+    },
+    {
+     "date": "2026-10-23",
+     "source": "Latent Space",
+     "title": "[AINews] OpenAI’s Patch the Planet program is 1 of 2 parties to discover PHP2Shell vulnerabilities in core PHP affecting 70% of the web, using GPT-5.6 Sol; coor",
+     "url": "https://latent.space/p/ainews-openais-patch-the-planet-program/"
+    }
+   ]
+  },
+  {
+   "id": "github:thelastoxygen",
+   "kind": "github",
+   "label": "thelastoxygen",
+   "url": "https://github.com/thelastoxygen",
+   "status": "watching",
+   "trusted_citers": [
+    "Latent Space"
+   ],
+   "citers": [
+    "Latent Space"
+   ],
+   "first_seen": "2026-10-23",
+   "last_seen": "2026-10-24",
+   "evidence": [
+    {
+     "date": "2026-10-23",
+     "source": "Latent Space",
+     "title": "[AINews] Black October",
+     "url": "https://latent.space/p/ainews-black-october/"
+    },
+    {
+     "date": "2026-10-24",
+     "source": "Latent Space",
+     "title": "[AINews] Kimi 3.1 Pro 104BA-2.8T: Fable-5.1-Class Open Weights narrows Closed-AI lead to 1 month... and Pro Highspeed API with 2-3× speed",
+     "url": "https://latent.space/p/ainews-kimi-31/"
+    }
+   ]
+  },
+  {
+   "id": "github:0xshug0",
+   "kind": "github",
+   "label": "0xshug0",
+   "url": "https://github.com/0xshug0",
+   "status": "watching",
+   "trusted_citers": [
+    "Latent Space"
+   ],
+   "citers": [
+    "Latent Space"
+   ],
+   "first_seen": "2026-10-23",
+   "last_seen": "2026-10-24",
+   "evidence": [
+    {
+     "date": "2026-10-23",
+     "source": "Latent Space",
+     "title": "[AINews] Black October",
+     "url": "https://latent.space/p/ainews-black-october/"
+    }
+   ]
+  },
+  {
+   "id": "github:abdullahalhariri",
+   "kind": "github",
+   "label": "abdullahalhariri",
+   "url": "https://github.com/abdullahalhariri",
+   "status": "watching",
+   "trusted_citers": [
+    "Hacker News"
+   ],
+   "citers": [
+    "Hacker News"
+   ],
+   "first_seen": "2026-10-21",
+   "last_seen": "2026-10-21",
+   "evidence": [
+    {
+     "date": "2026-10-21",
+     "source": "Hacker News",
+     "title": "Show HN: Penmentor – Claude marks up your handwritten math like a teacher",
+     "url": "https://github.com/AbdullahAlhariri/penmentor"
+    }
+   ]
+  },
+  {
+   "id": "github:ach1ntya",
+   "kind": "github",
+   "label": "ach1ntya",
+   "url": "https://github.com/ach1ntya",
+   "status": "watching",
+   "trusted_citers": [
+    "AWS Machine Learning blog"
+   ],
+   "citers": [
+    "AWS Machine Learning blog"
+   ],
+   "first_seen": "2026-10-21",
+   "last_seen": "2026-10-21",
+   "evidence": [
+    {
+     "date": "2026-10-21",
+     "source": "AWS Machine Learning blog",
+     "title": "Discover tools at runtime with AWS Agent Registry",
+     "url": "https://aws.amazon.com/blogs/machine-learning/discover-tools-at-runtime-with-aws-agent-registry/"
     }
    ]
   },
@@ -98,7 +1250,7 @@
     "GitHub"
    ],
    "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
+   "last_seen": "2026-10-24",
    "evidence": [
     {
      "date": "2026-10-19",
@@ -121,7 +1273,7 @@
     "GitHub"
    ],
    "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
+   "last_seen": "2026-10-21",
    "evidence": [
     {
      "date": "2026-10-19",
@@ -144,7 +1296,7 @@
     "GitHub"
    ],
    "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
+   "last_seen": "2026-10-24",
    "evidence": [
     {
      "date": "2026-10-19",
@@ -155,10 +1307,33 @@
    ]
   },
   {
-   "id": "github:anomalyco",
+   "id": "github:alonhor",
    "kind": "github",
-   "label": "anomalyco",
-   "url": "https://github.com/anomalyco",
+   "label": "alonhor",
+   "url": "https://github.com/alonhor",
+   "status": "watching",
+   "trusted_citers": [
+    "Simon Willison"
+   ],
+   "citers": [
+    "Simon Willison"
+   ],
+   "first_seen": "2026-10-21",
+   "last_seen": "2026-10-21",
+   "evidence": [
+    {
+     "date": "2026-10-21",
+     "source": "Simon Willison",
+     "title": "Battle Drones - a vibe coded RTS with audio-based multiplayer",
+     "url": "https://simonwillison.net/2026/Oct/20/battledrones/"
+    }
+   ]
+  },
+  {
+   "id": "github:android",
+   "kind": "github",
+   "label": "android",
+   "url": "https://github.com/android",
    "status": "watching",
    "trusted_citers": [
     "GitHub"
@@ -166,14 +1341,198 @@
    "citers": [
     "GitHub"
    ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
+   "first_seen": "2026-10-21",
+   "last_seen": "2026-10-24",
    "evidence": [
     {
-     "date": "2026-10-19",
+     "date": "2026-10-21",
      "source": "GitHub",
-     "title": "anomalyco/opencode",
-     "url": "https://github.com/anomalyco/opencode"
+     "title": "android/skills",
+     "url": "https://github.com/android/skills"
+    }
+   ]
+  },
+  {
+   "id": "github:areal-project",
+   "kind": "github",
+   "label": "areal-project",
+   "url": "https://github.com/areal-project",
+   "status": "watching",
+   "trusted_citers": [
+    "PyTorch blog"
+   ],
+   "citers": [
+    "PyTorch blog"
+   ],
+   "first_seen": "2026-10-22",
+   "last_seen": "2026-10-22",
+   "evidence": [
+    {
+     "date": "2026-10-22",
+     "source": "PyTorch blog",
+     "title": "TorchTitan Update: New SOTA Models, Performance at Scale, TitanRL",
+     "url": "https://pytorch.org/blog/torchtitan-update-new-sota-models-performance-at-scale-titanrl/"
+    }
+   ]
+  },
+  {
+   "id": "github:astral-sh",
+   "kind": "github",
+   "label": "astral-sh",
+   "url": "https://github.com/astral-sh",
+   "status": "watching",
+   "trusted_citers": [
+    "Simon Willison"
+   ],
+   "citers": [
+    "Simon Willison"
+   ],
+   "first_seen": "2026-10-21",
+   "last_seen": "2026-10-22",
+   "evidence": [
+    {
+     "date": "2026-10-21",
+     "source": "Simon Willison",
+     "title": "eMudhra Intermediate CA Compromise",
+     "url": "https://simonwillison.net/2026/Oct/20/emudhra-certificates/"
+    }
+   ]
+  },
+  {
+   "id": "github:atscaleinc",
+   "kind": "github",
+   "label": "atscaleinc",
+   "url": "https://github.com/atscaleinc",
+   "status": "watching",
+   "trusted_citers": [
+    "AWS Machine Learning blog"
+   ],
+   "citers": [
+    "AWS Machine Learning blog"
+   ],
+   "first_seen": "2026-10-21",
+   "last_seen": "2026-10-21",
+   "evidence": [
+    {
+     "date": "2026-10-21",
+     "source": "AWS Machine Learning blog",
+     "title": "Build a semantic layer for agentic AI on AWS with AtScale and Amazon Bedrock AgentCore",
+     "url": "https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-on-aws-with-atscale-and-amazon-bedrock-agentcore/"
+    }
+   ]
+  },
+  {
+   "id": "github:aws-neuron",
+   "kind": "github",
+   "label": "aws-neuron",
+   "url": "https://github.com/aws-neuron",
+   "status": "watching",
+   "trusted_citers": [
+    "AWS Machine Learning blog"
+   ],
+   "citers": [
+    "AWS Machine Learning blog"
+   ],
+   "first_seen": "2026-10-22",
+   "last_seen": "2026-10-22",
+   "evidence": [
+    {
+     "date": "2026-10-22",
+     "source": "AWS Machine Learning blog",
+     "title": "Train Qwen3 on AWS Trainium with torchtitan",
+     "url": "https://aws.amazon.com/blogs/machine-learning/train-qwen3-on-aws-trainium-with-torchtitan/"
+    }
+   ]
+  },
+  {
+   "id": "github:bjrasmussen-jpg",
+   "kind": "github",
+   "label": "bjrasmussen-jpg",
+   "url": "https://github.com/bjrasmussen-jpg",
+   "status": "watching",
+   "trusted_citers": [
+    "Latent Space"
+   ],
+   "citers": [
+    "Latent Space"
+   ],
+   "first_seen": "2026-10-24",
+   "last_seen": "2026-10-24",
+   "evidence": [
+    {
+     "date": "2026-10-24",
+     "source": "Latent Space",
+     "title": "[AINews] Kimi 3.1 Pro 104BA-2.8T: Fable-5.1-Class Open Weights narrows Closed-AI lead to 1 month... and Pro Highspeed API with 2-3× speed",
+     "url": "https://latent.space/p/ainews-kimi-31/"
+    }
+   ]
+  },
+  {
+   "id": "github:bogzx",
+   "kind": "github",
+   "label": "bogzx",
+   "url": "https://github.com/bogzx",
+   "status": "watching",
+   "trusted_citers": [
+    "Latent Space"
+   ],
+   "citers": [
+    "Latent Space"
+   ],
+   "first_seen": "2026-10-21",
+   "last_seen": "2026-10-22",
+   "evidence": [
+    {
+     "date": "2026-10-21",
+     "source": "Latent Space",
+     "title": "[AINews] DeepSeek DeepInfer: Open Source SOTA Inference running 155T toks/day/cluster making $22m/day at ~80% margin for a 81 day payback",
+     "url": "https://www.latent.space/p/ainews-deepseek-deepinfer-open-source"
+    }
+   ]
+  },
+  {
+   "id": "github:browser-use",
+   "kind": "github",
+   "label": "browser-use",
+   "url": "https://github.com/browser-use",
+   "status": "watching",
+   "trusted_citers": [
+    "X: @browser_use"
+   ],
+   "citers": [
+    "X: @browser_use"
+   ],
+   "first_seen": "2026-10-21",
+   "last_seen": "2026-10-22",
+   "evidence": [
+    {
+     "date": "2026-10-21",
+     "source": "X: @browser_use",
+     "title": "Browser Use open-sources rl-env-use, which builds verified RL environments from a one-line skill description",
+     "url": "https://x.com/browser_use/status/2112767614468694286"
+    }
+   ]
+  },
+  {
+   "id": "github:bytedance",
+   "kind": "github",
+   "label": "bytedance",
+   "url": "https://github.com/bytedance",
+   "status": "watching",
+   "trusted_citers": [
+    "AWS Machine Learning blog"
+   ],
+   "citers": [
+    "AWS Machine Learning blog"
+   ],
+   "first_seen": "2026-10-23",
+   "last_seen": "2026-10-23",
+   "evidence": [
+    {
+     "date": "2026-10-23",
+     "source": "AWS Machine Learning blog",
+     "title": "Write your own training loop, without managing GPUs, with Amazon SageMaker training session APIs",
+     "url": "https://aws.amazon.com/blogs/machine-learning/write-your-own-training-loop-without-managing-gpus-with-amazon-sagemaker-training-sessions/"
     }
    ]
   },
@@ -190,7 +1549,7 @@
     "GitHub"
    ],
    "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
+   "last_seen": "2026-10-21",
    "evidence": [
     {
      "date": "2026-10-19",
@@ -201,25 +1560,48 @@
    ]
   },
   {
-   "id": "github:cloudflare",
+   "id": "github:certifi",
    "kind": "github",
-   "label": "cloudflare",
-   "url": "https://github.com/cloudflare",
+   "label": "certifi",
+   "url": "https://github.com/certifi",
    "status": "watching",
    "trusted_citers": [
-    "GitHub"
+    "Simon Willison"
    ],
    "citers": [
-    "GitHub"
+    "Simon Willison"
    ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
+   "first_seen": "2026-10-21",
+   "last_seen": "2026-10-22",
    "evidence": [
     {
-     "date": "2026-10-19",
-     "source": "GitHub",
-     "title": "cloudflare/security-audit-skill",
-     "url": "https://github.com/cloudflare/security-audit-skill"
+     "date": "2026-10-21",
+     "source": "Simon Willison",
+     "title": "eMudhra Intermediate CA Compromise",
+     "url": "https://simonwillison.net/2026/Oct/20/emudhra-certificates/"
+    }
+   ]
+  },
+  {
+   "id": "github:charbull",
+   "kind": "github",
+   "label": "charbull",
+   "url": "https://github.com/charbull",
+   "status": "watching",
+   "trusted_citers": [
+    "AWS Machine Learning blog"
+   ],
+   "citers": [
+    "AWS Machine Learning blog"
+   ],
+   "first_seen": "2026-10-24",
+   "last_seen": "2026-10-24",
+   "evidence": [
+    {
+     "date": "2026-10-24",
+     "source": "AWS Machine Learning blog",
+     "title": "Multi-Turn Reinforcement Learning on Amazon SageMaker AI: A hands-on guide",
+     "url": "https://aws.amazon.com/blogs/machine-learning/multi-turn-reinforcement-learning-on-amazon-sagemaker-ai-a-hands-on-guide/"
     }
    ]
   },
@@ -236,7 +1618,7 @@
     "GitHub"
    ],
    "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
+   "last_seen": "2026-10-24",
    "evidence": [
     {
      "date": "2026-10-19",
@@ -259,13 +1641,36 @@
     "GitHub"
    ],
    "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
+   "last_seen": "2026-10-24",
    "evidence": [
     {
      "date": "2026-10-19",
      "source": "GitHub",
      "title": "cursor/plugins",
      "url": "https://github.com/cursor/plugins"
+    }
+   ]
+  },
+  {
+   "id": "github:datasette",
+   "kind": "github",
+   "label": "datasette",
+   "url": "https://github.com/datasette",
+   "status": "watching",
+   "trusted_citers": [
+    "Simon Willison"
+   ],
+   "citers": [
+    "Simon Willison"
+   ],
+   "first_seen": "2026-10-23",
+   "last_seen": "2026-10-23",
+   "evidence": [
+    {
+     "date": "2026-10-23",
+     "source": "Simon Willison",
+     "title": "Donating Agent Skills to the Agentic AI Foundation",
+     "url": "https://simonwillison.net/2026/Oct/22/donating-agent-skills/"
     }
    ]
   },
@@ -282,13 +1687,82 @@
     "GitHub"
    ],
    "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
+   "last_seen": "2026-10-24",
    "evidence": [
     {
      "date": "2026-10-19",
      "source": "GitHub",
      "title": "debpalash/VoiceStudio",
      "url": "https://github.com/debpalash/VoiceStudio"
+    }
+   ]
+  },
+  {
+   "id": "github:denodo",
+   "kind": "github",
+   "label": "denodo",
+   "url": "https://github.com/denodo",
+   "status": "watching",
+   "trusted_citers": [
+    "AWS Machine Learning blog"
+   ],
+   "citers": [
+    "AWS Machine Learning blog"
+   ],
+   "first_seen": "2026-10-21",
+   "last_seen": "2026-10-21",
+   "evidence": [
+    {
+     "date": "2026-10-21",
+     "source": "AWS Machine Learning blog",
+     "title": "Build a semantic layer for agentic AI on AWS with Denodo and Amazon Bedrock AgentCore",
+     "url": "https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-on-aws-with-denodo-and-amazon-bedrock-agentcore/"
+    }
+   ]
+  },
+  {
+   "id": "github:dietrichgebert",
+   "kind": "github",
+   "label": "dietrichgebert",
+   "url": "https://github.com/dietrichgebert",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-21",
+   "last_seen": "2026-10-23",
+   "evidence": [
+    {
+     "date": "2026-10-21",
+     "source": "GitHub",
+     "title": "DietrichGebert/ponytail",
+     "url": "https://github.com/DietrichGebert/ponytail"
+    }
+   ]
+  },
+  {
+   "id": "github:e2b-dev",
+   "kind": "github",
+   "label": "e2b-dev",
+   "url": "https://github.com/e2b-dev",
+   "status": "watching",
+   "trusted_citers": [
+    "X: @e2b"
+   ],
+   "citers": [
+    "X: @e2b"
+   ],
+   "first_seen": "2026-10-22",
+   "last_seen": "2026-10-22",
+   "evidence": [
+    {
+     "date": "2026-10-22",
+     "source": "X: @e2b",
+     "title": "E2B cookbook: Pydantic AI coding agents that survive worker crashes via Temporal",
+     "url": "https://x.com/e2b/status/2113019428493475980"
     }
    ]
   },
@@ -305,7 +1779,7 @@
     "GitHub"
    ],
    "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
+   "last_seen": "2026-10-24",
    "evidence": [
     {
      "date": "2026-10-19",
@@ -316,25 +1790,163 @@
    ]
   },
   {
-   "id": "github:google-research",
+   "id": "github:elie222",
    "kind": "github",
-   "label": "google-research",
-   "url": "https://github.com/google-research",
+   "label": "elie222",
+   "url": "https://github.com/elie222",
    "status": "watching",
    "trusted_citers": [
-    "Hacker News"
+    "GitHub"
    ],
    "citers": [
-    "Hacker News"
+    "GitHub"
    ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
+   "first_seen": "2026-10-24",
+   "last_seen": "2026-10-24",
    "evidence": [
     {
-     "date": "2026-10-19",
-     "source": "Hacker News",
-     "title": "Harness2 by Google Research – Recursive Agent Harnessing",
-     "url": "https://github.com/google-research/harness2"
+     "date": "2026-10-24",
+     "source": "GitHub",
+     "title": "elie222/rakazo",
+     "url": "https://github.com/elie222/rakazo"
+    }
+   ]
+  },
+  {
+   "id": "github:envoyproxy",
+   "kind": "github",
+   "label": "envoyproxy",
+   "url": "https://github.com/envoyproxy",
+   "status": "watching",
+   "trusted_citers": [
+    "X: @OpenAI"
+   ],
+   "citers": [
+    "X: @OpenAI"
+   ],
+   "first_seen": "2026-10-24",
+   "last_seen": "2026-10-24",
+   "evidence": [
+    {
+     "date": "2026-10-24",
+     "source": "X: @OpenAI",
+     "title": "OpenAI's red-team agents found an unauthenticated RCE in the Brotli decoder, now CVE-2026-111497 with fixed releases",
+     "url": "https://x.com/OpenAI/status/2113766354386084338"
+    }
+   ]
+  },
+  {
+   "id": "github:eokahya",
+   "kind": "github",
+   "label": "eokahya",
+   "url": "https://github.com/eokahya",
+   "status": "watching",
+   "trusted_citers": [
+    "Latent Space"
+   ],
+   "citers": [
+    "Latent Space"
+   ],
+   "first_seen": "2026-10-21",
+   "last_seen": "2026-10-22",
+   "evidence": [
+    {
+     "date": "2026-10-21",
+     "source": "Latent Space",
+     "title": "[AINews] DeepSeek DeepInfer: Open Source SOTA Inference running 155T toks/day/cluster making $22m/day at ~80% margin for a 81 day payback",
+     "url": "https://www.latent.space/p/ainews-deepseek-deepinfer-open-source"
+    }
+   ]
+  },
+  {
+   "id": "github:galadran",
+   "kind": "github",
+   "label": "galadran",
+   "url": "https://github.com/galadran",
+   "status": "watching",
+   "trusted_citers": [
+    "Simon Willison"
+   ],
+   "citers": [
+    "Simon Willison"
+   ],
+   "first_seen": "2026-10-21",
+   "last_seen": "2026-10-22",
+   "evidence": [
+    {
+     "date": "2026-10-21",
+     "source": "Simon Willison",
+     "title": "eMudhra Intermediate CA Compromise",
+     "url": "https://simonwillison.net/2026/Oct/20/emudhra-certificates/"
+    }
+   ]
+  },
+  {
+   "id": "github:ggerganov",
+   "kind": "github",
+   "label": "ggerganov",
+   "url": "https://github.com/ggerganov",
+   "status": "watching",
+   "trusted_citers": [
+    "Simon Willison"
+   ],
+   "citers": [
+    "Simon Willison"
+   ],
+   "first_seen": "2026-10-21",
+   "last_seen": "2026-10-21",
+   "evidence": [
+    {
+     "date": "2026-10-21",
+     "source": "Simon Willison",
+     "title": "Battle Drones - a vibe coded RTS with audio-based multiplayer",
+     "url": "https://simonwillison.net/2026/Oct/20/battledrones/"
+    }
+   ]
+  },
+  {
+   "id": "github:google",
+   "kind": "github",
+   "label": "google",
+   "url": "https://github.com/google",
+   "status": "watching",
+   "trusted_citers": [
+    "X: @OpenAI"
+   ],
+   "citers": [
+    "X: @OpenAI"
+   ],
+   "first_seen": "2026-10-24",
+   "last_seen": "2026-10-24",
+   "evidence": [
+    {
+     "date": "2026-10-24",
+     "source": "X: @OpenAI",
+     "title": "OpenAI's red-team agents found an unauthenticated RCE in the Brotli decoder, now CVE-2026-111497 with fixed releases",
+     "url": "https://x.com/OpenAI/status/2113766354386084338"
+    }
+   ]
+  },
+  {
+   "id": "github:graphify-labs",
+   "kind": "github",
+   "label": "graphify-labs",
+   "url": "https://github.com/graphify-labs",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-10-21",
+   "last_seen": "2026-10-23",
+   "evidence": [
+    {
+     "date": "2026-10-21",
+     "source": "GitHub",
+     "title": "Graphify-Labs/graphify",
+     "url": "https://github.com/Graphify-Labs/graphify"
     }
    ]
   },
@@ -351,7 +1963,7 @@
     "GitHub"
    ],
    "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
+   "last_seen": "2026-10-22",
    "evidence": [
     {
      "date": "2026-10-19",
@@ -374,7 +1986,7 @@
     "GitHub"
    ],
    "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
+   "last_seen": "2026-10-24",
    "evidence": [
     {
      "date": "2026-10-19",
@@ -385,670 +1997,25 @@
    ]
   },
   {
-   "id": "github:hkuds",
+   "id": "github:hicann",
    "kind": "github",
-   "label": "hkuds",
-   "url": "https://github.com/hkuds",
+   "label": "hicann",
+   "url": "https://github.com/hicann",
    "status": "watching",
    "trusted_citers": [
-    "GitHub"
+    "SemiAnalysis"
    ],
    "citers": [
-    "GitHub"
+    "SemiAnalysis"
    ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
+   "first_seen": "2026-10-22",
+   "last_seen": "2026-10-24",
    "evidence": [
     {
-     "date": "2026-10-19",
-     "source": "GitHub",
-     "title": "HKUDS/CLI-Anything",
-     "url": "https://github.com/HKUDS/CLI-Anything"
-    }
-   ]
-  },
-  {
-   "id": "github:isurumaduranga",
-   "kind": "github",
-   "label": "isurumaduranga",
-   "url": "https://github.com/isurumaduranga",
-   "status": "watching",
-   "trusted_citers": [
-    "Hacker News"
-   ],
-   "citers": [
-    "Hacker News"
-   ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
-   "evidence": [
-    {
-     "date": "2026-10-19",
-     "source": "Hacker News",
-     "title": "Harness Engineering 101: The LLM is the brain, the harness is the body",
-     "url": "https://github.com/IsuruMaduranga/harness-engineering-101"
-    }
-   ]
-  },
-  {
-   "id": "github:k-dense-ai",
-   "kind": "github",
-   "label": "k-dense-ai",
-   "url": "https://github.com/k-dense-ai",
-   "status": "watching",
-   "trusted_citers": [
-    "GitHub"
-   ],
-   "citers": [
-    "GitHub"
-   ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
-   "evidence": [
-    {
-     "date": "2026-10-19",
-     "source": "GitHub",
-     "title": "K-Dense-AI/scientific-agent-skills",
-     "url": "https://github.com/K-Dense-AI/scientific-agent-skills"
-    }
-   ]
-  },
-  {
-   "id": "github:kitlangton",
-   "kind": "github",
-   "label": "kitlangton",
-   "url": "https://github.com/kitlangton",
-   "status": "watching",
-   "trusted_citers": [
-    "X: @kitlangton"
-   ],
-   "citers": [
-    "X: @kitlangton"
-   ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-19",
-   "evidence": [
-    {
-     "date": "2026-10-19",
-     "source": "X: @kitlangton",
-     "title": "Scrawl open-sources visual steering for coding agents",
-     "url": "https://x.com/kitlangton/status/2111955962781384846"
-    }
-   ]
-  },
-  {
-   "id": "github:kividbio",
-   "kind": "github",
-   "label": "kividbio",
-   "url": "https://github.com/kividbio",
-   "status": "watching",
-   "trusted_citers": [
-    "Hacker News"
-   ],
-   "citers": [
-    "Hacker News"
-   ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
-   "evidence": [
-    {
-     "date": "2026-10-19",
-     "source": "Hacker News",
-     "title": "Show HN: KiviDB, a faster Redis-compatible memory database and vector cache",
-     "url": "https://github.com/kividbio/kividb"
-    }
-   ]
-  },
-  {
-   "id": "github:lightseekorg",
-   "kind": "github",
-   "label": "lightseekorg",
-   "url": "https://github.com/lightseekorg",
-   "status": "watching",
-   "trusted_citers": [
-    "X: @lightseekorg"
-   ],
-   "citers": [
-    "X: @lightseekorg"
-   ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
-   "evidence": [
-    {
-     "date": "2026-10-19",
-     "source": "X: @lightseekorg",
-     "title": "LightSeek shows TokenSpeed kernels for multi-silicon inference",
-     "url": "https://x.com/lightseekorg/status/2112404160285126911"
-    }
-   ]
-  },
-  {
-   "id": "github:madslorentzen",
-   "kind": "github",
-   "label": "madslorentzen",
-   "url": "https://github.com/madslorentzen",
-   "status": "watching",
-   "trusted_citers": [
-    "GitHub"
-   ],
-   "citers": [
-    "GitHub"
-   ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
-   "evidence": [
-    {
-     "date": "2026-10-19",
-     "source": "GitHub",
-     "title": "MadsLorentzen/ai-job-search",
-     "url": "https://github.com/MadsLorentzen/ai-job-search"
-    }
-   ]
-  },
-  {
-   "id": "github:mksglu",
-   "kind": "github",
-   "label": "mksglu",
-   "url": "https://github.com/mksglu",
-   "status": "watching",
-   "trusted_citers": [
-    "GitHub"
-   ],
-   "citers": [
-    "GitHub"
-   ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
-   "evidence": [
-    {
-     "date": "2026-10-19",
-     "source": "GitHub",
-     "title": "mksglu/context-mode",
-     "url": "https://github.com/mksglu/context-mode"
-    }
-   ]
-  },
-  {
-   "id": "github:morluto",
-   "kind": "github",
-   "label": "morluto",
-   "url": "https://github.com/morluto",
-   "status": "watching",
-   "trusted_citers": [
-    "GitHub"
-   ],
-   "citers": [
-    "GitHub"
-   ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
-   "evidence": [
-    {
-     "date": "2026-10-19",
-     "source": "GitHub",
-     "title": "morluto/rea",
-     "url": "https://github.com/morluto/rea"
-    }
-   ]
-  },
-  {
-   "id": "github:nvidia",
-   "kind": "github",
-   "label": "nvidia",
-   "url": "https://github.com/nvidia",
-   "status": "watching",
-   "trusted_citers": [
-    "GitHub"
-   ],
-   "citers": [
-    "GitHub"
-   ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
-   "evidence": [
-    {
-     "date": "2026-10-19",
-     "source": "GitHub",
-     "title": "NVIDIA/OpenShell",
-     "url": "https://github.com/NVIDIA/OpenShell"
-    }
-   ]
-  },
-  {
-   "id": "github:paperclipai",
-   "kind": "github",
-   "label": "paperclipai",
-   "url": "https://github.com/paperclipai",
-   "status": "watching",
-   "trusted_citers": [
-    "GitHub"
-   ],
-   "citers": [
-    "GitHub"
-   ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
-   "evidence": [
-    {
-     "date": "2026-10-19",
-     "source": "GitHub",
-     "title": "paperclipai/paperclip",
-     "url": "https://github.com/paperclipai/paperclip"
-    }
-   ]
-  },
-  {
-   "id": "github:pbakaus",
-   "kind": "github",
-   "label": "pbakaus",
-   "url": "https://github.com/pbakaus",
-   "status": "watching",
-   "trusted_citers": [
-    "GitHub"
-   ],
-   "citers": [
-    "GitHub"
-   ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
-   "evidence": [
-    {
-     "date": "2026-10-19",
-     "source": "GitHub",
-     "title": "pbakaus/impeccable",
-     "url": "https://github.com/pbakaus/impeccable"
-    }
-   ]
-  },
-  {
-   "id": "github:pydantic",
-   "kind": "github",
-   "label": "pydantic",
-   "url": "https://github.com/pydantic",
-   "status": "watching",
-   "trusted_citers": [
-    "Simon Willison"
-   ],
-   "citers": [
-    "Simon Willison"
-   ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
-   "evidence": [
-    {
-     "date": "2026-10-19",
-     "source": "Simon Willison",
-     "title": "llm-tools-datasette 0.1.1",
-     "url": "https://simonwillison.net/2026/Oct/18/llm-tools-datasette/"
-    }
-   ]
-  },
-  {
-   "id": "github:rohitg00",
-   "kind": "github",
-   "label": "rohitg00",
-   "url": "https://github.com/rohitg00",
-   "status": "watching",
-   "trusted_citers": [
-    "GitHub"
-   ],
-   "citers": [
-    "GitHub"
-   ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
-   "evidence": [
-    {
-     "date": "2026-10-19",
-     "source": "GitHub",
-     "title": "rohitg00/ai-engineering-from-scratch",
-     "url": "https://github.com/rohitg00/ai-engineering-from-scratch"
-    }
-   ]
-  },
-  {
-   "id": "github:ruvnet",
-   "kind": "github",
-   "label": "ruvnet",
-   "url": "https://github.com/ruvnet",
-   "status": "watching",
-   "trusted_citers": [
-    "GitHub"
-   ],
-   "citers": [
-    "GitHub"
-   ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
-   "evidence": [
-    {
-     "date": "2026-10-19",
-     "source": "GitHub",
-     "title": "ruvnet/ruflo",
-     "url": "https://github.com/ruvnet/ruflo"
-    }
-   ]
-  },
-  {
-   "id": "github:shiyu-coder",
-   "kind": "github",
-   "label": "shiyu-coder",
-   "url": "https://github.com/shiyu-coder",
-   "status": "watching",
-   "trusted_citers": [
-    "GitHub"
-   ],
-   "citers": [
-    "GitHub"
-   ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
-   "evidence": [
-    {
-     "date": "2026-10-19",
-     "source": "GitHub",
-     "title": "shiyu-coder/Kronos",
-     "url": "https://github.com/shiyu-coder/Kronos"
-    }
-   ]
-  },
-  {
-   "id": "github:stablyai",
-   "kind": "github",
-   "label": "stablyai",
-   "url": "https://github.com/stablyai",
-   "status": "watching",
-   "trusted_citers": [
-    "GitHub"
-   ],
-   "citers": [
-    "GitHub"
-   ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
-   "evidence": [
-    {
-     "date": "2026-10-19",
-     "source": "GitHub",
-     "title": "stablyai/orca",
-     "url": "https://github.com/stablyai/orca"
-    }
-   ]
-  },
-  {
-   "id": "github:tashfeenahmed",
-   "kind": "github",
-   "label": "tashfeenahmed",
-   "url": "https://github.com/tashfeenahmed",
-   "status": "watching",
-   "trusted_citers": [
-    "GitHub"
-   ],
-   "citers": [
-    "GitHub"
-   ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
-   "evidence": [
-    {
-     "date": "2026-10-19",
-     "source": "GitHub",
-     "title": "tashfeenahmed/freellmapi",
-     "url": "https://github.com/tashfeenahmed/freellmapi"
-    }
-   ]
-  },
-  {
-   "id": "github:tencentcloud",
-   "kind": "github",
-   "label": "tencentcloud",
-   "url": "https://github.com/tencentcloud",
-   "status": "watching",
-   "trusted_citers": [
-    "GitHub"
-   ],
-   "citers": [
-    "GitHub"
-   ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
-   "evidence": [
-    {
-     "date": "2026-10-19",
-     "source": "GitHub",
-     "title": "TencentCloud/Octop",
-     "url": "https://github.com/TencentCloud/Octop"
-    }
-   ]
-  },
-  {
-   "id": "github:vectorize-io",
-   "kind": "github",
-   "label": "vectorize-io",
-   "url": "https://github.com/vectorize-io",
-   "status": "watching",
-   "trusted_citers": [
-    "GitHub"
-   ],
-   "citers": [
-    "GitHub"
-   ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
-   "evidence": [
-    {
-     "date": "2026-10-19",
-     "source": "GitHub",
-     "title": "vectorize-io/hindsight",
-     "url": "https://github.com/vectorize-io/hindsight"
-    }
-   ]
-  },
-  {
-   "id": "github:yujunzhixue",
-   "kind": "github",
-   "label": "yujunzhixue",
-   "url": "https://github.com/yujunzhixue",
-   "status": "watching",
-   "trusted_citers": [
-    "GitHub"
-   ],
-   "citers": [
-    "GitHub"
-   ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
-   "evidence": [
-    {
-     "date": "2026-10-19",
-     "source": "GitHub",
-     "title": "YuJunZhiXue/dsh-purge",
-     "url": "https://github.com/YuJunZhiXue/dsh-purge"
-    }
-   ]
-  },
-  {
-   "id": "newsletter:normaltech.ai",
-   "kind": "newsletter",
-   "label": "normaltech.ai",
-   "url": "https://normaltech.ai",
-   "status": "watching",
-   "trusted_citers": [
-    "X: @sayashk"
-   ],
-   "citers": [
-    "X: @sayashk"
-   ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-19",
-   "evidence": [
-    {
-     "date": "2026-10-19",
-     "source": "X: @sayashk",
-     "title": "New paper lists open problems in agent evaluation",
-     "url": "https://x.com/sayashk/status/2112279490667626716"
-    }
-   ],
-   "feed_url": "https://normaltech.ai/feed"
-  },
-  {
-   "id": "x:@antlingagi",
-   "kind": "x",
-   "label": "@AntLingAGI",
-   "url": "https://x.com/antlingagi",
-   "status": "watching",
-   "trusted_citers": [
-    "X pulse (Grok)"
-   ],
-   "citers": [
-    "X pulse (Grok)"
-   ],
-   "first_seen": "2026-10-20",
-   "last_seen": "2026-10-20",
-   "evidence": [
-    {
-     "date": "2026-10-20",
-     "source": "X pulse (Grok)",
-     "title": "Ant Group open-sources five Ming-3.0 speech models",
-     "url": "https://x.com/AntLingAGI/status/2112210811997540475"
-    }
-   ]
-  },
-  {
-   "id": "x:@emilsnotes",
-   "kind": "x",
-   "label": "@emilsnotes",
-   "url": "https://x.com/emilsnotes",
-   "status": "watching",
-   "trusted_citers": [
-    "X pulse (Grok)"
-   ],
-   "citers": [
-    "X pulse (Grok)"
-   ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-19",
-   "evidence": [
-    {
-     "date": "2026-10-19",
-     "source": "X pulse (Grok)",
-     "title": "LangChain agents can search a kapa company index",
-     "url": "https://x.com/emilsnotes/status/2112169925712232949"
-    }
-   ]
-  },
-  {
-   "id": "x:@franknoeberlin",
-   "kind": "x",
-   "label": "@FrankNoeBerlin",
-   "url": "https://x.com/franknoeberlin",
-   "status": "watching",
-   "trusted_citers": [
-    "X pulse (Grok)"
-   ],
-   "citers": [
-    "X pulse (Grok)"
-   ],
-   "first_seen": "2026-10-20",
-   "last_seen": "2026-10-20",
-   "evidence": [
-    {
-     "date": "2026-10-20",
-     "source": "X pulse (Grok)",
-     "title": "Microsoft previews BioEmu2 with open weights",
-     "url": "https://x.com/FrankNoeBerlin/status/2112472173336240499"
-    }
-   ]
-  },
-  {
-   "id": "x:@primeintellect",
-   "kind": "x",
-   "label": "@PrimeIntellect",
-   "url": "https://x.com/primeintellect",
-   "status": "watching",
-   "trusted_citers": [
-    "X pulse (Grok)"
-   ],
-   "citers": [
-    "X pulse (Grok)"
-   ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
-   "evidence": [
-    {
-     "date": "2026-10-19",
-     "source": "X pulse (Grok)",
-     "title": "Prime Intellect ships IPO for async agent RL",
-     "url": "https://x.com/PrimeIntellect/status/2112288736692355388"
-    }
-   ]
-  },
-  {
-   "id": "x:@spisallyouneed",
-   "kind": "x",
-   "label": "@spisallyouneed",
-   "url": "https://x.com/spisallyouneed",
-   "status": "watching",
-   "trusted_citers": [
-    "X pulse (Grok)"
-   ],
-   "citers": [
-    "X pulse (Grok)"
-   ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
-   "evidence": [
-    {
-     "date": "2026-10-19",
-     "source": "X pulse (Grok)",
-     "title": "Skyfall introduces SKY-001 engineering world model",
-     "url": "https://x.com/spisallyouneed/status/2112242023805964327"
-    }
-   ]
-  },
-  {
-   "id": "x:@stefanoermon",
-   "kind": "x",
-   "label": "@StefanoErmon",
-   "url": "https://x.com/stefanoermon",
-   "status": "watching",
-   "trusted_citers": [
-    "X pulse (Grok)"
-   ],
-   "citers": [
-    "X pulse (Grok)"
-   ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-20",
-   "evidence": [
-    {
-     "date": "2026-10-19",
-     "source": "X pulse (Grok)",
-     "title": "Inception releases Mercury 3 diffusion LLM",
-     "url": "https://x.com/StefanoErmon/status/2112222911218291051"
-    }
-   ]
-  },
-  {
-   "id": "x:@thsottiaux",
-   "kind": "x",
-   "label": "@thsottiaux",
-   "url": "https://x.com/thsottiaux",
-   "status": "watching",
-   "trusted_citers": [
-    "X pulse (Grok)"
-   ],
-   "citers": [
-    "X pulse (Grok)"
-   ],
-   "first_seen": "2026-10-19",
-   "last_seen": "2026-10-19",
-   "evidence": [
-    {
-     "date": "2026-10-19",
-     "source": "X pulse (Grok)",
-     "title": "Codex desktop can edit a message and resume",
-     "url": "https://x.com/thsottiaux/status/2111990254408434095"
+     "date": "2026-10-22",
+     "source": "SemiAnalysis",
+     "title": "The Huawei-DeepSeek Symbiosis",
+     "url": "https://newsletter.semianalysis.com/p/huawei-deepseek"
     }
    ]
   }
