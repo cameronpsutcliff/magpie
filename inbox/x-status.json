@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-10-25T14:11:00Z",
+  "updated_at": "2026-10-25T18:09:00Z",
   "job": "sweep",
-  "prompt": "v6",
-  "calls_used_today": 147,
+  "prompt": "v6.1",
+  "calls_used_today": 161,
   "notes_via_api": false,
   "last_sweep": {
-    "ran_at": "2026-10-25T14:11:00Z",
-    "items": 3,
+    "ran_at": "2026-10-25T18:09:00Z",
+    "items": 4,
     "queries": 10,
-    "deep_reads": 2,
+    "deep_reads": 0,
     "rechecks": 8,
     "flagged": 0,
-    "saved_in": 0,
+    "saved_in": 1,
     "saved_kept": 0,
     "videos": 0
   },
@@ -147,7 +147,10 @@
     "2026-10-25T10:09Z: @HuggingModels automated posts again filled most of the list window (25 posts since 02:11Z were mostly theirs); retiring it from the List would free list reads for first-hand accounts.",
     "2026-10-25T14:11Z: @HuggingModels automated threads were all 15 List posts since 10:09Z; still worth retiring from the List. @teortaxesTex mixed useful model takes with culture-war and offensive posts this window; worth a look at the next roster review. @nanbeige (Nanbeige lab, open weights) could be a labs trial candidate. All 8 rechecks unchanged (posts up, no notes via API).",
     "Roster review 2026-10-25: @Bober_smart should be considered for the avoid list in config/x-accounts.json (gambling promo and injection lures). Not edited here because config is owner-only.",
-    "2026-10-25 owner reinstated @MatthewBerman (trial, owner_requested); prompt v6.1 allows AI-focused political/policy commentary. He was found off the List despite the earlier 403 and was re-added (member)."
+    "2026-10-25 owner reinstated @MatthewBerman (trial, owner_requested); prompt v6.1 allows AI-focused political/policy commentary. He was found off the List despite the earlier 403 and was re-added (member).",
+    "2026-10-25 18:09Z: @HuggingModels automated 5-post threads are still most of the List timeline (about 40 of 43 posts this window); recommend retiring from the roster and removing from the List.",
+    "2026-10-25 18:09Z: stack.json has no Tailscale component though the fleet runs a tailnet; Tailworm was forwarded on that basis. Suggest the owner add Tailscale (and headscale if used) to stack.json.",
+    "2026-10-25 18:09Z: quiet Sunday window; LFM2.5-24B-A2B and Monarch Latent Math 7B surfaced via small accounts but skipped (Liquid post dates to Oct 13; Monarch has no traction)."
   ],
   "errors": [
     "Sweep 14:07Z, possible injection lure, not followed: in the quote posts of https://x.com/cnm13ryan/status/2113121138205499443, @lumpenspace tells readers to have their model 'check out my x bio'. Ignored; no bio was read.",

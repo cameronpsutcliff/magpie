@@ -1,0 +1,267 @@
+{
+ "ran_at": "2026-10-25T18:09:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-10-25T14:11:00Z",
+ "queries": [
+  [
+   "labs",
+   "(from:_inception_ai OR from:AIatMeta OR from:alexalbert__ OR from:allen_ai OR from:BAAIBeijing OR from:DarioAmodei OR from:deepseek_ai OR from:gdb OR from:GoogleDeepMind OR from:koraykv OR from:markchen90 OR from:MicrosoftAI OR from:OpenAI OR from:SakanaAILabs OR from:Skywork_ai OR from:TencentHunyuan OR from:TheInclusionAI OR from:XiaomiMiMo OR from:Zai_org OR from:aidangomez OR from:Alibaba_Qwen OR from:AnthropicAI OR from:AntLingAGI OR from:GoogleAI OR from:GuillaumeLample OR from:Kimi_Moonshot OR from:liquidai OR from:MiniMax_AI OR from:miramurati OR from:MistralAI OR from:RaiaHadsell OR from:sama OR from:satyanadella OR from:thinkymachines OR from:bfl_ai OR from:claudeai OR from:cohere OR from:JensenHuang OR from:nvidia OR from:sundarpichai) -is:retweet -is:reply"
+  ],
+  [
+   "devtools",
+   "(from:antigravity OR from:augmentcode OR from:badlogicgames OR from:ClaudeDevs OR from:cline OR from:cognition OR from:cursor_ai OR from:DeepSeekHarness OR from:e2b OR from:FactoryAI OR from:kirodotdev OR from:opencode OR from:OpenHandsDev OR from:pidotdev OR from:Replit OR from:Sourcegraph OR from:Stagehanddev OR from:AmpCode OR from:bot OR from:browser_use OR from:code OR from:daytonaio OR from:droid OR from:goose_oss OR from:Lovable OR from:mntruell OR from:OpenAIDevs OR from:sqs OR from:Teknium OR from:v0 OR from:warpdotdev OR from:zachlloydtweets OR from:zeddotdev OR from:boltdotnew OR from:browserbase OR from:github OR from:mitsuhiko OR from:NousResearch OR from:reach_vb OR from:thdxr) -is:retweet -is:reply"
+  ],
+  [
+   "opensource",
+   "(from:axolotl_ai OR from:danielhanchen OR from:ggerganov OR from:ggml_org OR from:Is36E OR from:lmsysorg OR from:LysandreJik OR from:PrimeIntellect OR from:QGallouedec OR from:rapidmlx OR from:sgl_project OR from:turboderp_ OR from:UnslothAI OR from:xenovacom OR from:__tinygrad__ OR from:_philschmid OR from:awnihannun OR from:ezyang OR from:huggingface OR from:maximelabonne OR from:ngxson OR from:ollama OR from:OpenWebUI OR from:PyTorch OR from:sudoingX OR from:Tim_Dettmers OR from:tinkerapi OR from:tri_dao OR from:vllm_project OR from:winglian OR from:yagilb OR from:bartowski1182 OR from:DrJimFan OR from:julien_c OR from:lmstudio OR from:osanseviero OR from:soumithchintala) -is:retweet -is:reply"
+  ],
+  [
+   "research",
+   "(from:_akhaliq OR from:askalphaxiv OR from:cwolferesearch OR from:dair_ai OR from:hyunw_kim OR from:omarsar0 OR from:sayashk OR from:ssokota OR from:aitrackerbot OR from:gabriberton OR from:gu_yuling OR from:jaseweston OR from:KumbongHermann OR from:larsankile OR from:MSFTResearch OR from:OfirPress OR from:percyliang OR from:phillip_isola OR from:qi2peng2 OR from:sam_paech OR from:simran_s_arora OR from:StanfordAILab OR from:stanfordnlp OR from:TheTuringPost OR from:wen_kaiyue OR from:zicokolter OR from:chelseabfinn OR from:lateinteraction OR from:srush_nlp OR from:tatsu_hashimoto OR from:trending_repos) -is:retweet -is:reply"
+  ],
+  [
+   "builders",
+   "(from:_davidgonmar OR from:adarshsolanki OR from:adityakrx OR from:arena OR from:ArtificialAnlys OR from:DominiqueCAPaul OR from:karpathy OR from:minimaxir OR from:rasbt OR from:simonw OR from:ValsAI OR from:yb2698 OR from:ariG23498 OR from:casper_hansen_ OR from:eliebakouch OR from:goodside OR from:helloiamleonie OR from:kitlangton OR from:labenz OR from:levelsio OR from:lightseekorg OR from:maxencefaldor OR from:MichaelThiessen OR from:natolambert OR from:nrehiew_ OR from:scaling01 OR from:teortaxesTex OR from:witcheer OR from:akshay_pachaar OR from:CommandCodeAI OR from:emollick OR from:matthewmillerai OR from:mervenoyann OR from:MooncastOnline) -is:retweet -is:reply"
+  ],
+  [
+   "applied",
+   "(from:anyscalecompute OR from:arizeai OR from:Box OR from:braintrust OR from:CoreWeave OR from:databricks OR from:glean OR from:GroqLLC OR from:HamelHusain OR from:hwchase17 OR from:latentspacepod OR from:levie OR from:llama_index OR from:modal OR from:NotionHQ OR from:OpenRouter OR from:SemiAnalysis_ OR from:aiDotEngineer OR from:AndrewYNg OR from:cerebras OR from:clattner_llvm OR from:dylan522p OR from:FireworksAI_HQ OR from:Get_Writer OR from:LangChain OR from:LiteLLM OR from:matei_zaharia OR from:Modular OR from:mustafasuleyman OR from:perplexity_ai OR from:replicate OR from:sh_reya OR from:Snowflake OR from:swyx OR from:wandb OR from:amasad OR from:baseten OR from:jerryjliu0 OR from:NVIDIAAI) -is:retweet -is:reply"
+  ],
+  [
+   "discovery",
+   "open-weight model / release discovery query (min_faves)"
+  ],
+  [
+   "discovery",
+   "dev tooling / agent release discovery query (min_faves)"
+  ],
+  [
+   "security",
+   "stack.json security query (CVE, GHSA, supply chain, agent hijack)"
+  ],
+  [
+   "horizon",
+   "block-dessa check"
+  ]
+ ],
+ "calls": 14,
+ "items": [
+  {
+   "title": "Rapid-MLX 0.16.9: 47x faster first token on repeated long prompts (32K prompt 18.6 s to 0.39 s) and Flint 40B at 131 tok/s on a 36 GB Mac",
+   "url": "https://x.com/rapidmlx/status/2114379438515519588",
+   "handle": "@rapidmlx",
+   "group": "opensource",
+   "origin": "roster",
+   "summary": "Rapid-MLX 0.16.9 for Apple Silicon reuses prompt state so a repeated ~32K-token prompt starts in 0.39 s instead of 18.6 s. Flint 40B (A2.5B, 4-bit) runs at 131 tok/s on a 36 GB Mac with tool calls and reasoning, parallel chats decode together for 2x aggregate throughput on Qwen3.8-27B, Nemotron 3.5 Bolt E4B is added, and 'rapid-mlx launch codex' wires a coding agent to the local server. Numbers are the project's own.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://rapidmlx.com/download"
+   ],
+   "vendor": "Rapid-MLX",
+   "posted_at": "2026-10-25T15:31:56Z",
+   "metrics": {
+    "likes": 29,
+    "reposts": 3,
+    "quotes": 1,
+    "replies": 8
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": null
+  },
+  {
+   "title": "Hermes Agent: new 'hermes record' plugin turns a recorded browser session into a reusable skill; MCP tools can now declare cost and per-chat spend limits",
+   "url": "https://x.com/witcheer/status/2114405376959635912",
+   "handle": "@witcheer",
+   "group": "builders",
+   "origin": "roster",
+   "summary": "Nous Research's Hermes Labs plugin workflow-record ('hermes plugins install workflow-record') records what you do in the browser, /learn turns the recording into a skill, and the agent replays it with new details. Separately, recent Hermes Agent PRs let an MCP server entry declare per-tool cost and a per-chat spend limit shown at approval time (#142470), surface MCP progress for long tool calls (#141985) and pick a separate subagent model (#141312).",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://x.com/witcheer/status/2114378954530283815"
+   ],
+   "vendor": "Nous Research",
+   "posted_at": "2026-10-25T17:15:00Z",
+   "metrics": {
+    "likes": 54,
+    "reposts": 2,
+    "quotes": 1,
+    "replies": 13
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": null
+  },
+  {
+   "title": "LlamaIndex publishes a 37-page OCRia-1 technical report with evals against open-weight OCR models and full data/training pipeline details",
+   "url": "https://x.com/jerryjliu0/status/2114404538652217370",
+   "handle": "@jerryjliu0",
+   "group": "applied",
+   "origin": "roster",
+   "summary": "Follow-up to the OCRia-1 release (kept 2026-10-24): the report compares OCRia-1 with Infinity-Parser, LightOnOCR 3, Chandra 2 and dots.mocr on ParseBench, olmOCR-bench, PulseBench-Tab and fr-bench-pdf2md, claims 2x to 4x faster decoding than recent open-weight models, and includes 24 pages of appendix on data curation, training and eval findings.",
+   "kind": "paper",
+   "evidence": "artifact",
+   "links": [
+    "https://www.llamaindex.ai/ocria/ocria-1-technical-report.pdf",
+    "https://www.llamaindex.ai/blog/parse-ocria-1"
+   ],
+   "vendor": "LlamaIndex",
+   "posted_at": "2026-10-25T17:11:40Z",
+   "metrics": {
+    "likes": 30,
+    "reposts": 2,
+    "quotes": 1,
+    "replies": 10
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": null
+  },
+  {
+   "title": "NVIDIA AW-0 paper: one model generates skill code, predicts future video frames and outputs robot actions; 50.7% on RoboTwin 2.0 vs 41.3% for pi0.5",
+   "url": "https://x.com/askalphaxiv/status/2114414368104603773",
+   "handle": "@askalphaxiv",
+   "group": "research",
+   "origin": "roster",
+   "summary": "'Agentic World Action Models' (NVIDIA) generates reusable skill programs, future frames and actions together so code-based planning guides execution. Reported 50.7% average success on RoboTwin 2.0 vs 41.3% for pi0.5, and 71.1% vs 46.0% across eight real-world manipulation tasks. Paper-reported numbers.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://www.alphaxiv.org/abs/2610.30136"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-10-25T17:50:43Z",
+   "metrics": {
+    "likes": 2,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": null
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/IntCyberDigest/status/2114291878720151623",
+   "handle": "@IntCyberDigest",
+   "why": "General security news (Tailscale Tailworm), not AI capability; forwarded as a security lead instead."
+  }
+ ],
+ "list_posts_read": 43,
+ "list_pages": 1,
+ "security_forwarded": [
+  {
+   "url": "https://cybersecuritynews.com/tailscale-ssh-flaws/",
+   "handle": "@IntCyberDigest",
+   "post": "https://x.com/IntCyberDigest/status/2114291878720151623",
+   "posted_at": "2026-10-25T09:44:00Z",
+   "matched": "fleet tailnet (no Tailscale entry in stack.json); always_forward: containers/infra lateral movement",
+   "note": "Tailworm (Erica Windisch, Cyberdione Labs, published 2026-10-25): 11 unpatched findings tested on tailscale 1.104.2 and headscale 0.29.5. Tailscale SSH runs inside root tailscaled, so ssh -L/-R unix-socket forwarding reaches or replaces root-only sockets (lab: root, /etc/shadow, root RCE via a command daemon); path-check race; session-churn OOM; serve TCP forward to the localapi socket allows node takeover; conn25 app connector egress to any destination incl. cloud metadata; headscale unauthenticated memory/eviction and hostile-DERP 1.34 GB reads. Lab chain hopped device to device to root and enrolled a rogue node. No CVE, bulletin or fixed version yet; Tailscale has not confirmed. Interim: per-pair SSH grants (single src/dst), deny forwarding in SSH rules, 'tailscale set --ssh=false' where not needed (confirm other access first), drop unused app connector grants and serve forwards to unix sockets, enable node-key expiry, delete compromised nodes at the control plane. Also seen via @The_Cyber_News (2019 likes). Box: no tailscale/tailscaled/headscale binaries; fleet machines on the tailnet likely in scope.",
+   "box": "clean (Tailscale not installed on box)"
+  },
+  {
+   "url": "https://www.bleepingcomputer.com/news/security/ai-coding-agents-hijacked-using-agentsmd-file-in-downloads-folder/",
+   "handle": "@BleepinComputer",
+   "post": "https://x.com/BleepinComputer/status/2114383958028750884",
+   "posted_at": "2026-10-25T15:49:53Z",
+   "matched": "Codex, Claude Code, Cursor CLI; always_forward: agent tooling",
+   "note": "Forever Security found a malicious AGENTS.md in a customer's ~/Downloads (the agent's working directory) that made a coding agent install the rogue npm package 'function-color'. A web page can silently drop AGENTS.md into Downloads in Chrome/Edge/Firefox. Repro: Codex ran the payload ~90% of the time; a malicious CLAUDE.md redirected Claude Code API traffic, exposed its OAuth token and got code exec ~50%. No vendor patch (intended behavior). Mitigation: never launch agents from ~/Downloads or home/broad dirs, review unfamiliar AGENTS.md/CLAUDE.md, keep approvals/sandbox on; fleet scheduled agents should pin cwd to project dirs. Box: no ~/Downloads, no AGENTS.md/CLAUDE.md under any Downloads path.",
+   "box": "clean"
+  },
+  {
+   "url": "https://github.com/modelcontextprotocol/inspector/security/advisories/GHSA-6x67-4w4w-9f3w",
+   "handle": "@eapyk",
+   "post": "https://x.com/eapyk/status/2114382810794635361",
+   "posted_at": "2026-10-25T15:45:20Z",
+   "matched": "always_forward: agent tooling (MCP)",
+   "note": "Two critical (CVSS 9.6) MCP Inspector advisories published 2026-10-21. GHSA-6x67-4w4w-9f3w: a remote MCP App in the Inspector sandbox (same origin as the proxy) steals the proxy auth token via inherited sessionStorage and calls /stdio for local RCE. GHSA-4fc4-wcmh-4g86: attacker OAuth callback injects params that switch transport from remote HTTP to local stdio and runs an attacker command on reconnect. Affected @modelcontextprotocol/inspector, inspector-client, inspector-server >=0.20.0 <=1.0.2; fixed 1.0.3 (v2 line: security release 2.12.0). Check for npx/global installs of the Inspector on fleet machines. Box: not installed (no global npm, no node_modules copy, no npx cache).",
+   "box": "clean"
+  },
+  {
+   "url": "https://thehackernews.com/2026/10/opencode-console-breach-may-have.html",
+   "handle": "@ShlomoFaig",
+   "post": "https://x.com/ShlomoFaig/status/2114407571419271326",
+   "posted_at": "2026-10-25T17:23:43Z",
+   "matched": "always_forward: agent tooling (coding-agent hosted console)",
+   "note": "OpenCode Console (hosted gateway) breach of a legacy system the night of 2026-10-16/17: provider keys (OpenAI, Anthropic, Google) saved in Console workspaces of 1.4% of users may be exposed and were used for unauthorized charges (hundreds to >$1,000). Open-source CLI/desktop not affected (local keys stay local). Affected users got an email 'Action Required: Potential provider key breach' on 2026-10-17. Action only if any fleet provider key was ever pasted into OpenCode Console: revoke at the provider, replace, review billing from 2026-10-16. Not previously logged by Magpie. Box: no opencode install or config.",
+   "box": "clean"
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://github.com/trailofbits/brotli-checker",
+   "why": "Trail of Bits brotli-checker (Claude Code/Codex skill that finds Brotli decoder copies needing the CVE-2026-111497 patch). Brotli wave already tracked by Bouncer; useful aid for the open Spark libbrotli and Pillow-bundled items."
+  },
+  {
+   "url": "https://x.com/search?q=LiteLLM%201.107.0",
+   "why": "More LiteLLM 1.107.0 re-posts; already forwarded and closed."
+  },
+  {
+   "url": "https://x.com/search?q=Docker%20Security%20Dispatch",
+   "why": "Docker newsletter, no new advisory."
+  }
+ ],
+ "rechecks": [
+  {
+   "url": "https://x.com/nanbeige/status/2114328933181333798",
+   "result": "no community note; metrics up"
+  },
+  {
+   "url": "https://x.com/rasbt/status/2114325097653669940",
+   "result": "no community note; metrics up"
+  },
+  {
+   "url": "https://x.com/KBlueleaf/status/2113758295857184922",
+   "result": "no community note; metrics up"
+  },
+  {
+   "url": "https://x.com/vllm_project/status/2114135647040778667",
+   "result": "no community note; metrics up"
+  },
+  {
+   "url": "https://x.com/JoshuaSWarren/status/2114122761471988172",
+   "result": "no community note; metrics up"
+  },
+  {
+   "url": "https://x.com/ValsAI/status/2114089633135153238",
+   "result": "no community note; metrics up"
+  },
+  {
+   "url": "https://x.com/cherry_mx_reds/status/2113969070118666670",
+   "result": "no community note; metrics up"
+  },
+  {
+   "url": "https://x.com/LiteLLM/status/2114099964045582622",
+   "result": "no community note; metrics up"
+  }
+ ]
+}
