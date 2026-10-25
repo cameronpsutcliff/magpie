@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T09:40:00Z",
+  "updated_at": "2026-10-25T14:52:34Z",
   "accounts": [
     {
       "handle": "@thsottiaux",
@@ -806,12 +806,13 @@
       ],
       "last_qualifying_post": "2026-10-10",
       "signal_to_noise": 3,
-      "status": "retired",
+      "status": "trial",
       "added_on": "2026-10-24",
-      "retired_reason": "2026-10-25 roster review: fails the owner_saves screen (no politics). Posted an electoral endorsement against a Texas candidate (2113291592195031424); recent posts are mostly recap and reaction, not first-hand tests. List removal returned 403, so on_list stays true until removed.",
       "source": "owner_saves",
       "x_user_id": "6681172",
-      "on_list": true
+      "on_list": true,
+      "owner_requested": true,
+      "note": "owner reinstated 2026-10-25; keep"
     },
     {
       "handle": "@HuggingModels",
@@ -1205,6 +1206,6 @@
     "private": true,
     "member_count": 51,
     "scope": "every trial and active account in this file; curated config accounts are not members yet",
-    "updated_at": "2026-10-25T09:40:00Z"
+    "updated_at": "2026-10-25T14:52:34Z"
   }
 }
