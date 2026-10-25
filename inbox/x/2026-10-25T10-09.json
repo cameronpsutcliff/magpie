@@ -1,0 +1,138 @@
+{
+  "ran_at": "2026-10-25T10:09:00Z",
+  "bot": "magpie-scout",
+  "prompt": "v6",
+  "since": "2026-10-25T02:11:00Z",
+  "queries": [
+    [
+      "labs",
+      "(from:_inception_ai OR from:AIatMeta OR from:alexalbert__ OR from:allen_ai OR from:BAAIBeijing OR from:DarioAmodei OR from:deepseek_ai OR from:gdb OR from:GoogleDeepMind OR from:koraykv OR from:markchen90 OR from:MicrosoftAI OR from:OpenAI OR from:SakanaAILabs OR from:Skywork_ai OR from:TencentHunyuan OR from:TheInclusionAI OR from:XiaomiMiMo OR from:Zai_org OR from:aidangomez OR from:Alibaba_Qwen OR from:AnthropicAI OR from:AntLingAGI OR from:GoogleAI OR from:GuillaumeLample OR from:Kimi_Moonshot OR from:liquidai OR from:MiniMax_AI OR from:miramurati OR from:MistralAI OR from:RaiaHadsell OR from:sama OR from:satyanadella OR from:thinkymachines OR from:bfl_ai OR from:claudeai OR from:cohere OR from:JensenHuang OR from:nvidia OR from:sundarpichai) -is:retweet -is:reply"
+    ],
+    [
+      "devtools",
+      "(from:antigravity OR from:augmentcode OR from:badlogicgames OR from:ClaudeDevs OR from:cline OR from:cognition OR from:cursor_ai OR from:DeepSeekHarness OR from:e2b OR from:FactoryAI OR from:kirodotdev OR from:opencode OR from:OpenHandsDev OR from:pidotdev OR from:Replit OR from:Sourcegraph OR from:Stagehanddev OR from:AmpCode OR from:bot OR from:browser_use OR from:code OR from:daytonaio OR from:droid OR from:goose_oss OR from:Lovable OR from:mntruell OR from:OpenAIDevs OR from:sqs OR from:Teknium OR from:v0 OR from:warpdotdev OR from:zachlloydtweets OR from:zeddotdev OR from:boltdotnew OR from:browserbase OR from:github OR from:mitsuhiko OR from:NousResearch OR from:reach_vb OR from:thdxr) -is:retweet -is:reply"
+    ],
+    [
+      "opensource",
+      "(from:axolotl_ai OR from:danielhanchen OR from:ggerganov OR from:ggml_org OR from:Is36E OR from:lmsysorg OR from:LysandreJik OR from:PrimeIntellect OR from:QGallouedec OR from:rapidmlx OR from:sgl_project OR from:turboderp_ OR from:UnslothAI OR from:xenovacom OR from:__tinygrad__ OR from:_philschmid OR from:awnihannun OR from:ezyang OR from:huggingface OR from:maximelabonne OR from:ngxson OR from:ollama OR from:OpenWebUI OR from:PyTorch OR from:sudoingX OR from:Tim_Dettmers OR from:tinkerapi OR from:tri_dao OR from:vllm_project OR from:winglian OR from:yagilb OR from:bartowski1182 OR from:DrJimFan OR from:julien_c OR from:lmstudio OR from:osanseviero OR from:soumithchintala) -is:retweet -is:reply"
+    ],
+    [
+      "research",
+      "(from:_akhaliq OR from:askalphaxiv OR from:cwolferesearch OR from:dair_ai OR from:hyunw_kim OR from:omarsar0 OR from:sayashk OR from:ssokota OR from:aitrackerbot OR from:gabriberton OR from:gu_yuling OR from:jaseweston OR from:KumbongHermann OR from:larsankile OR from:MSFTResearch OR from:OfirPress OR from:percyliang OR from:phillip_isola OR from:qi2peng2 OR from:sam_paech OR from:simran_s_arora OR from:StanfordAILab OR from:stanfordnlp OR from:TheTuringPost OR from:wen_kaiyue OR from:zicokolter OR from:chelseabfinn OR from:lateinteraction OR from:srush_nlp OR from:tatsu_hashimoto OR from:trending_repos) -is:retweet -is:reply"
+    ],
+    [
+      "builders",
+      "(from:_davidgonmar OR from:adarshsolanki OR from:adityakrx OR from:arena OR from:ArtificialAnlys OR from:DominiqueCAPaul OR from:karpathy OR from:minimaxir OR from:rasbt OR from:simonw OR from:ValsAI OR from:yb2698 OR from:ariG23498 OR from:casper_hansen_ OR from:eliebakouch OR from:goodside OR from:helloiamleonie OR from:kitlangton OR from:labenz OR from:levelsio OR from:lightseekorg OR from:maxencefaldor OR from:MichaelThiessen OR from:natolambert OR from:nrehiew_ OR from:scaling01 OR from:teortaxesTex OR from:witcheer OR from:akshay_pachaar OR from:CommandCodeAI OR from:emollick OR from:matthewmillerai OR from:mervenoyann OR from:MooncastOnline) -is:retweet -is:reply"
+    ],
+    [
+      "applied",
+      "(from:anyscalecompute OR from:arizeai OR from:Box OR from:braintrust OR from:CoreWeave OR from:databricks OR from:glean OR from:GroqLLC OR from:HamelHusain OR from:hwchase17 OR from:latentspacepod OR from:levie OR from:llama_index OR from:modal OR from:NotionHQ OR from:OpenRouter OR from:SemiAnalysis_ OR from:aiDotEngineer OR from:AndrewYNg OR from:cerebras OR from:clattner_llvm OR from:dylan522p OR from:FireworksAI_HQ OR from:Get_Writer OR from:LangChain OR from:LiteLLM OR from:matei_zaharia OR from:Modular OR from:mustafasuleyman OR from:perplexity_ai OR from:replicate OR from:sh_reya OR from:Snowflake OR from:swyx OR from:wandb OR from:amasad OR from:baseten OR from:jerryjliu0 OR from:NVIDIAAI) -is:retweet -is:reply"
+    ],
+    [
+      "discovery",
+      "new open-source GitHub/Hugging Face releases with engagement since 02:11Z (OR of release/open-source/weights terms, -is:retweet)"
+    ],
+    [
+      "discovery",
+      "arXiv/paper-with-code posts since 02:11Z"
+    ],
+    [
+      "horizon",
+      "Dessa Block speech-to-speech"
+    ],
+    [
+      "security",
+      "supply chain / CVE / malicious package / agent exploit terms since 02:11Z"
+    ]
+  ],
+  "calls": 16,
+  "items": [
+    {
+      "title": "gpu-unlock: a Linux kernel module that roughly doubles FP16/BF16 tensor throughput on RTX 30-series cards (3090: 75 to 135 TFLOPS in PyTorch)",
+      "url": "https://x.com/KBlueleaf/status/2113758295857184922",
+      "handle": "@KBlueleaf",
+      "group": "builders",
+      "origin": "discovery",
+      "summary": "gpu-unlock (github.com/Zagitta/gpu-unlock, created Oct 18, about 4.3K stars, no license yet) is a Linux kernel module that lifts the halved FP16/BF16-into-FP32 tensor issue rate on GA102/103/104/106 consumer Ampere cards. KBlueleaf measured a 3090 going from 75 to 135 TFLOPS in PyTorch at 360W, and the README reports a 3090 Ti BF16 GEMM going from 87.5 to 157.4 TFLOPS, user reports of +25 to 81%, LLM prefill gains of 14 to 36%, unchanged decode and INT8, and bit-identical outputs. It is unofficial and Linux-only; KBlueleaf also reports a similar unlock on a 2080 Ti.",
+      "kind": "tool",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/Zagitta/gpu-unlock"
+      ],
+      "vendor": null,
+      "posted_at": "2026-10-23T22:23:44Z",
+      "metrics": {
+        "likes": 4070,
+        "reposts": 303,
+        "quotes": 73,
+        "replies": 129
+      },
+      "confirmed_by": [
+        "@teortaxesTex"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": "Open-source repo with reproducible GEMM numbers and multiple user reports in the README."
+      },
+      "reception": {
+        "sentiment": "positive",
+        "summary": "Repliers are excited and mostly ask about other cards (3060 Ti, 5070 Ti, A6000, DGX Spark) and Windows support; a few note decode stays bandwidth-bound and ask for prefill numbers, which the README provides. Quotes are mostly reposts of the result.",
+        "tried": true,
+        "replies_read": 25
+      }
+    },
+    {
+      "title": "Independent RTX 5090 test of vLLM's Humming kernels: 4-bit Qwen3.8-27B goes from 56.9 to 71.6 tok/s, about even with Marlin",
+      "url": "https://x.com/witcheer/status/2114259758169432567",
+      "handle": "@witcheer",
+      "group": "builders",
+      "origin": "list",
+      "summary": "An outside test of the Humming quantized-kernel library (released by vLLM and Ant Group on Oct 21) on a consumer RTX 5090: with NVFP4 Qwen3.8-27B in vLLM, switching to Humming took a single request from 56.9 to 71.6 tokens/s, 26% over the kernel vLLM picks by default on that card. Against the older Marlin 4-bit kernel it was a tie (75.8 vs 77.1 tok/s), so the gain on this card is mainly over vLLM's default choice.",
+      "kind": "technique",
+      "evidence": "measured",
+      "links": [
+        "https://github.com/vllm-project/humming",
+        "https://vllm.ai/blog/2026-10-21-humming"
+      ],
+      "vendor": "vLLM",
+      "posted_at": "2026-10-25T07:36:22Z",
+      "metrics": {
+        "likes": 27,
+        "reposts": 4,
+        "quotes": 0,
+        "replies": 7,
+        "views": 1617
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": "First-hand single-request benchmark on one card."
+      }
+    }
+  ],
+  "saved_rejected": [
+    {
+      "url": "https://x.com/henrikklee/status/2114025172911198677",
+      "why": "Omarchy Linux install on iPad teaser ('coming soon'); not AI, nothing shipped"
+    }
+  ],
+  "list_posts_read": 100,
+  "list_pages": 1,
+  "security_forwarded": [],
+  "security_na": [
+    {
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/",
+      "why": "Storm-0940 using the ARTEX offensive pentest agent (ConnectWise Cloud Backup compromise, Okta/Entra/M365 OAuth abuse; Wiz follow-up https://www.wiz.io/blog/artex-in-the-wild-storm-0940-expands-targeting-of-it-and-software-vendors). It is an attacker tool, not a package or agent the fleet runs; no ConnectWise, Okta, Entra or M365 tenant in stack.json. Seen via https://x.com/lunkertw/status/2114224156418179330"
+    },
+    {
+      "url": "https://x.com/levie/status/2114187326406766604",
+      "why": "Quote of @enclaveai Node2Shell / Brotli CVE-2026-111497: duplicate of the 2026-10-24 lead already forwarded and patched"
+    }
+  ]
+}
