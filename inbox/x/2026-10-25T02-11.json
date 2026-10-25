@@ -1,0 +1,141 @@
+{
+  "ran_at": "2026-10-25T02:11:00Z",
+  "bot": "magpie-scout",
+  "prompt": "v6",
+  "since": "2026-10-24T22:07:00Z",
+  "queries": [
+    [
+      "labs",
+      "(from:_inception_ai OR from:AIatMeta OR from:alexalbert__ OR from:allen_ai OR from:BAAIBeijing OR from:DarioAmodei OR from:deepseek_ai OR from:gdb OR from:GoogleDeepMind OR from:koraykv OR from:markchen90 OR from:MicrosoftAI OR from:OpenAI OR from:SakanaAILabs OR from:Skywork_ai OR from:TencentHunyuan OR from:TheInclusionAI OR from:XiaomiMiMo OR from:Zai_org OR from:aidangomez OR from:Alibaba_Qwen OR from:AnthropicAI OR from:AntLingAGI OR from:GoogleAI OR from:GuillaumeLample OR from:Kimi_Moonshot OR from:liquidai OR from:MiniMax_AI OR from:miramurati OR from:MistralAI OR from:RaiaHadsell OR from:sama OR from:satyanadella OR from:thinkymachines OR from:bfl_ai OR from:claudeai OR from:cohere OR from:JensenHuang OR from:nvidia OR from:sundarpichai) -is:retweet -is:reply"
+    ],
+    [
+      "devtools",
+      "(from:antigravity OR from:augmentcode OR from:badlogicgames OR from:ClaudeDevs OR from:cline OR from:cognition OR from:cursor_ai OR from:DeepSeekHarness OR from:e2b OR from:FactoryAI OR from:kirodotdev OR from:opencode OR from:OpenHandsDev OR from:pidotdev OR from:Replit OR from:Sourcegraph OR from:Stagehanddev OR from:AmpCode OR from:bot OR from:browser_use OR from:code OR from:daytonaio OR from:droid OR from:goose_oss OR from:Lovable OR from:mntruell OR from:OpenAIDevs OR from:sqs OR from:Teknium OR from:v0 OR from:warpdotdev OR from:zachlloydtweets OR from:zeddotdev OR from:boltdotnew OR from:browserbase OR from:github OR from:mitsuhiko OR from:NousResearch OR from:reach_vb OR from:thdxr) -is:retweet -is:reply"
+    ],
+    [
+      "opensource",
+      "(from:axolotl_ai OR from:danielhanchen OR from:ggerganov OR from:ggml_org OR from:Is36E OR from:lmsysorg OR from:LysandreJik OR from:PrimeIntellect OR from:QGallouedec OR from:rapidmlx OR from:sgl_project OR from:turboderp_ OR from:UnslothAI OR from:xenovacom OR from:__tinygrad__ OR from:_philschmid OR from:awnihannun OR from:ezyang OR from:huggingface OR from:maximelabonne OR from:ngxson OR from:ollama OR from:OpenWebUI OR from:PyTorch OR from:sudoingX OR from:Tim_Dettmers OR from:tinkerapi OR from:tri_dao OR from:vllm_project OR from:winglian OR from:yagilb OR from:bartowski1182 OR from:DrJimFan OR from:julien_c OR from:lmstudio OR from:osanseviero OR from:soumithchintala) -is:retweet -is:reply"
+    ],
+    [
+      "research",
+      "(from:_akhaliq OR from:askalphaxiv OR from:cwolferesearch OR from:dair_ai OR from:hyunw_kim OR from:omarsar0 OR from:sayashk OR from:ssokota OR from:aitrackerbot OR from:gabriberton OR from:gu_yuling OR from:jaseweston OR from:KumbongHermann OR from:larsankile OR from:MSFTResearch OR from:OfirPress OR from:percyliang OR from:phillip_isola OR from:qi2peng2 OR from:sam_paech OR from:simran_s_arora OR from:StanfordAILab OR from:stanfordnlp OR from:TheTuringPost OR from:wen_kaiyue OR from:zicokolter OR from:chelseabfinn OR from:lateinteraction OR from:srush_nlp OR from:tatsu_hashimoto OR from:trending_repos) -is:retweet -is:reply"
+    ],
+    [
+      "builders",
+      "(from:_davidgonmar OR from:adarshsolanki OR from:adityakrx OR from:arena OR from:ArtificialAnlys OR from:DominiqueCAPaul OR from:karpathy OR from:minimaxir OR from:rasbt OR from:simonw OR from:ValsAI OR from:yb2698 OR from:ariG23498 OR from:casper_hansen_ OR from:eliebakouch OR from:goodside OR from:helloiamleonie OR from:kitlangton OR from:labenz OR from:levelsio OR from:lightseekorg OR from:maxencefaldor OR from:MichaelThiessen OR from:natolambert OR from:nrehiew_ OR from:scaling01 OR from:teortaxesTex OR from:witcheer OR from:akshay_pachaar OR from:CommandCodeAI OR from:emollick OR from:matthewmillerai OR from:mervenoyann OR from:MooncastOnline) -is:retweet -is:reply"
+    ],
+    [
+      "applied",
+      "(from:anyscalecompute OR from:arizeai OR from:Box OR from:braintrust OR from:CoreWeave OR from:databricks OR from:glean OR from:GroqLLC OR from:HamelHusain OR from:hwchase17 OR from:latentspacepod OR from:levie OR from:llama_index OR from:modal OR from:NotionHQ OR from:OpenRouter OR from:SemiAnalysis_ OR from:aiDotEngineer OR from:AndrewYNg OR from:cerebras OR from:clattner_llvm OR from:dylan522p OR from:FireworksAI_HQ OR from:Get_Writer OR from:LangChain OR from:LiteLLM OR from:matei_zaharia OR from:Modular OR from:mustafasuleyman OR from:perplexity_ai OR from:replicate OR from:sh_reya OR from:Snowflake OR from:swyx OR from:wandb OR from:amasad OR from:baseten OR from:jerryjliu0 OR from:NVIDIAAI) -is:retweet -is:reply"
+    ],
+    [
+      "discovery-hf-arxiv",
+      "(url:huggingface.co OR url:arxiv.org) (release OR released OR open-source OR \"open weights\" OR introducing) lang:en -is:retweet -is:reply"
+    ],
+    [
+      "discovery-github",
+      "url:github.com (released OR introducing OR \"open source\" OR launch) (agent OR model OR inference OR LLM) lang:en -is:retweet -is:reply"
+    ]
+  ],
+  "calls": 13,
+  "items": [
+    {
+      "title": "vLLM posts the best DeepSeek-V4.1-Flash result on SemiAnalysis AgentX: 954K tokens/s per GPU on a GB300 NVL72 rack",
+      "url": "https://x.com/vllm_project/status/2114135647040778667",
+      "handle": "@vllm_project",
+      "group": "opensource",
+      "origin": "list",
+      "summary": "On SemiAnalysis AgentX, a benchmark built from real agentic workloads, vLLM serves DeepSeek-V4.1-Flash at 954K total tokens/s per GPU (cached, input and output) with 196 tokens/s P90 per user. That works out to $38.96 of revenue per GPU-hour at DeepSeek's off-peak prices. The setup uses prefill/decode disaggregation and wide expert parallelism across a GB300 NVL72 rack, 7.9x vLLM's single-node result. The engineering blog covers the work and how to reproduce it. This is separate from the DeepInfer decode-parity post kept at 18:04Z.",
+      "kind": "technique",
+      "evidence": "measured",
+      "links": [
+        "https://vllm.ai/blog/2026-10-23-deepseek-v41-flash-pd-wide-ep"
+      ],
+      "vendor": "vLLM",
+      "posted_at": "2026-10-24T23:23:11Z",
+      "metrics": {
+        "likes": 77,
+        "reposts": 13,
+        "quotes": 2,
+        "replies": 12,
+        "views": 4036
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": null,
+        "source": "Self-reported by the vLLM team; no independent SemiAnalysis post seen yet."
+      }
+    },
+    {
+      "title": "Generative Value Classifier (Stanford): a robot RL critic that learns from actions, reaching about 85% on RoboMimic Tool Hang where QC and RLPD stall near 50%",
+      "url": "https://x.com/alexjswerdlow/status/2113770131436585288",
+      "handle": "@alexjswerdlow",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "Swerdlow, Dong and Finn treat value learning as generative classification. A return-conditioned flow policy scores each action against a set of return bins, and Bayes' rule turns those scores into a Q-function, so every action in the data trains the critic. Online on RoboMimic Tool Hang, GVC gets to about 85% success within 0.5M steps, while QC and RLPD reach about 50% at 1M. Offline on OGBench (35 tasks, 8 seeds), it scores 98% vs 86% for BFN on scene-sparse and 41% vs 32% on puzzle-4x4. In offline-to-online runs, it goes from 67.1% to 98.9% on average. The cost: an update is about 5 to 9x slower than a scalar regression critic (15.6 ms on an H100).",
+      "kind": "paper",
+      "evidence": "measured",
+      "links": [
+        "https://alexanderswerdlow.github.io/gvc/",
+        "https://arxiv.org/abs/2610.22497"
+      ],
+      "vendor": "Stanford",
+      "posted_at": "2026-10-23T23:10:45Z",
+      "metrics": {
+        "likes": 157,
+        "reposts": 28,
+        "quotes": 6,
+        "replies": 8,
+        "views": 15985
+      },
+      "confirmed_by": [
+        "@chelseabfinn"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Open-source eGPU setup splits Llama 3.3 70B across an Intel Arc B60 and an NVIDIA 5060 on one MacBook Pro running Linux",
+      "url": "https://x.com/JoshuaSWarren/status/2114122761471988172",
+      "handle": "@JoshuaSWarren",
+      "group": "builders",
+      "origin": "discovery",
+      "summary": "A builder posts a working setup that runs one Llama 3.3 70B model split across two external GPUs from different vendors, an Intel B60 and an NVIDIA 5060. Both are attached to an Apple Silicon MacBook Pro running Linux (Omarchy). The repo is open source. The post gives no throughput numbers.",
+      "kind": "tool",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/joshuaswarren/omarchy-egpu"
+      ],
+      "vendor": null,
+      "posted_at": "2026-10-24T22:31:59Z",
+      "metrics": {
+        "likes": 83,
+        "reposts": 3,
+        "quotes": 0,
+        "replies": 3,
+        "views": 1604
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": null,
+        "source": "Single builder report with no performance numbers; not reproduced."
+      }
+    }
+  ],
+  "saved_rejected": [],
+  "list_posts_read": 98,
+  "list_pages": 1,
+  "security_forwarded": [],
+  "security_na": []
+}

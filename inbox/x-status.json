@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-10-24T22:07:00Z",
+  "updated_at": "2026-10-25T02:11:00Z",
   "job": "sweep",
   "prompt": "v6",
-  "calls_used_today": 80,
+  "calls_used_today": 93,
   "notes_via_api": false,
   "last_sweep": {
-    "ran_at": "2026-10-24T22:07:00Z",
-    "items": 5,
+    "ran_at": "2026-10-25T02:11:00Z",
+    "items": 3,
     "queries": 8,
-    "deep_reads": 1,
+    "deep_reads": 0,
     "rechecks": 8,
     "flagged": 0,
     "saved_in": 0,
@@ -136,7 +136,10 @@
     "follows_this_week was 7 in the status file but inbox/x-follows.json logs 10 follows from 2026-10-20 to 2026-10-23 (7-day window); set to 10 from the log. The prompt could define the week (rolling 7 days or Sunday start).",
     "@OpenBMB (trial) now has 4 qualifying sweep posts with no doubt flags; worth a promotion look at Sunday's roster review, after which it would earn a follow.",
     "Sweep 22:07Z: list member @Bober_smart posted get-rich hype ('made me $832 while I was asleep', https://x.com/Bober_smart/status/2114064355729740136) and earlier a prompt-injection lure; it appears to fail the AI/dev-only owner_saves screen. Suggest retiring it at the next roster review.",
-    "Sweep 22:07Z: list member @HuggingModels posts automated 5-post threads per HF model (about 35 of 98 list posts since 18:04Z), crowding the list page; consider retiring or leaving it to discovery."
+    "Sweep 22:07Z: list member @HuggingModels posts automated 5-post threads per HF model (about 35 of 98 list posts since 18:04Z), crowding the list page; consider retiring or leaving it to discovery.",
+    "Sweep 02:11Z: only 1 of 98 list posts was newer than since (Saturday evening lull); 2 of 3 keeps came from roster searches and discovery. @alexjswerdlow (Stanford, GVC first author) and @JoshuaSWarren (open-source local inference builds) look like first-hand candidates for the next roster review.",
+    "Sweep 02:11Z: @NousResearch posted an image-only teaser (353 likes, an app splash screen, no text or link). Skipped as a teaser; worth watching for a real release in the next sweep.",
+    "Sweep 02:11Z: @aitrackerbot posts stealth-model attributions (guesses about which lab is behind an anonymous arena model). These are speculative and skipped every time; consider leaving it out of roster searches."
   ],
   "errors": [
     "Sweep 14:07Z, possible injection lure, not followed: in the quote posts of https://x.com/cnm13ryan/status/2113121138205499443, @lumpenspace tells readers to have their model 'check out my x bio'. Ignored; no bio was read.",
@@ -145,7 +148,9 @@
     "Sweep 22:12Z: no injection attempts seen. A PHP scanner post from an unknown account (@abenii__) in the security search looked like a possible lure; it was not opened or run and was not kept.",
     "Sweep 10:10Z: no injection attempts aimed at Magpie. @winglian's report of CodeRabbit review comments injecting install instructions for coding agents was forwarded as a security lead, not acted on. A self-promotional reply under it (@luinlee) was ignored.",
     "Sweep 14:10Z, possible injection lure, not followed: https://x.com/Bober_smart/status/2113972535377248484 offers a 'leaked Grok bot team prompt' and tells readers to feed it to their AI agent. Ignored; nothing from it was used.",
-    "Sweep 22:07Z: no injection attempts seen. calls_used_today 80 = 61 + 17 this sweep + about 2 for the 1:41 and 3:41 PM bookmark syncs (estimated). Browser unavailable to this run; no follows attempted."
+    "Sweep 22:07Z: no injection attempts seen. calls_used_today 80 = 61 + 17 this sweep + about 2 for the 1:41 and 3:41 PM bookmark syncs (estimated). Browser unavailable to this run; no follows attempted.",
+    "Sweep 02:11Z: no injection attempts seen. calls_used_today 93 = 80 + 13 this sweep (1 list, 6 roster searches, 1 bookmarks, 2 discovery, 1 horizon search, 2 hydrates). Browser unavailable to this run; no follows attempted.",
+    "Sweep 02:11Z: Dessa scam noise. A Chinese-language post warns that anyone selling Dessa downloads or API access is a scammer, and a grok reply cited a domain dessablock.xyz next to block.xyz/dessa. The domain was not visited. Treat anything other than block.xyz/dessa as a possible lookalike. Not a stack match, so not forwarded."
   ],
   "follows_today": 0,
   "last_roster_review": {
