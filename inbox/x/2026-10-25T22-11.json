@@ -1,0 +1,268 @@
+{
+ "ran_at": "2026-10-25T22:11:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-10-25T18:09:00Z",
+ "queries": [
+  [
+   "labs",
+   "(from:_inception_ai OR from:AIatMeta OR from:alexalbert__ OR from:allen_ai OR from:BAAIBeijing OR from:DarioAmodei OR from:deepseek_ai OR from:gdb OR from:GoogleDeepMind OR from:koraykv OR from:markchen90 OR from:MicrosoftAI OR from:OpenAI OR from:SakanaAILabs OR from:Skywork_ai OR from:TencentHunyuan OR from:TheInclusionAI OR from:XiaomiMiMo OR from:Zai_org OR from:aidangomez OR from:Alibaba_Qwen OR from:AnthropicAI OR from:AntLingAGI OR from:GoogleAI OR from:GuillaumeLample OR from:Kimi_Moonshot OR from:liquidai OR from:MiniMax_AI OR from:miramurati OR from:MistralAI OR from:RaiaHadsell OR from:sama OR from:satyanadella OR from:thinkymachines OR from:bfl_ai OR from:claudeai OR from:cohere OR from:JensenHuang OR from:nvidia OR from:sundarpichai) -is:retweet -is:reply"
+  ],
+  [
+   "devtools",
+   "(from:antigravity OR from:augmentcode OR from:badlogicgames OR from:ClaudeDevs OR from:cline OR from:cognition OR from:cursor_ai OR from:DeepSeekHarness OR from:e2b OR from:FactoryAI OR from:kirodotdev OR from:opencode OR from:OpenHandsDev OR from:pidotdev OR from:Replit OR from:Sourcegraph OR from:Stagehanddev OR from:AmpCode OR from:bot OR from:browser_use OR from:code OR from:daytonaio OR from:droid OR from:goose_oss OR from:Lovable OR from:mntruell OR from:OpenAIDevs OR from:sqs OR from:Teknium OR from:v0 OR from:warpdotdev OR from:zachlloydtweets OR from:zeddotdev OR from:boltdotnew OR from:browserbase OR from:github OR from:mitsuhiko OR from:NousResearch OR from:reach_vb OR from:thdxr) -is:retweet -is:reply"
+  ],
+  [
+   "opensource",
+   "(from:axolotl_ai OR from:danielhanchen OR from:ggerganov OR from:ggml_org OR from:Is36E OR from:lmsysorg OR from:LysandreJik OR from:PrimeIntellect OR from:QGallouedec OR from:rapidmlx OR from:sgl_project OR from:turboderp_ OR from:UnslothAI OR from:xenovacom OR from:__tinygrad__ OR from:_philschmid OR from:awnihannun OR from:ezyang OR from:huggingface OR from:maximelabonne OR from:ngxson OR from:ollama OR from:OpenWebUI OR from:PyTorch OR from:sudoingX OR from:Tim_Dettmers OR from:tinkerapi OR from:tri_dao OR from:vllm_project OR from:winglian OR from:yagilb OR from:bartowski1182 OR from:DrJimFan OR from:julien_c OR from:lmstudio OR from:osanseviero OR from:soumithchintala) -is:retweet -is:reply"
+  ],
+  [
+   "research",
+   "(from:_akhaliq OR from:askalphaxiv OR from:cwolferesearch OR from:dair_ai OR from:hyunw_kim OR from:omarsar0 OR from:sayashk OR from:ssokota OR from:aitrackerbot OR from:gabriberton OR from:gu_yuling OR from:jaseweston OR from:KumbongHermann OR from:larsankile OR from:MSFTResearch OR from:OfirPress OR from:percyliang OR from:phillip_isola OR from:qi2peng2 OR from:sam_paech OR from:simran_s_arora OR from:StanfordAILab OR from:stanfordnlp OR from:TheTuringPost OR from:wen_kaiyue OR from:zicokolter OR from:chelseabfinn OR from:lateinteraction OR from:srush_nlp OR from:tatsu_hashimoto OR from:trending_repos) -is:retweet -is:reply"
+  ],
+  [
+   "builders",
+   "(from:_davidgonmar OR from:adarshsolanki OR from:adityakrx OR from:arena OR from:ArtificialAnlys OR from:DominiqueCAPaul OR from:karpathy OR from:minimaxir OR from:rasbt OR from:simonw OR from:ValsAI OR from:yb2698 OR from:ariG23498 OR from:casper_hansen_ OR from:eliebakouch OR from:goodside OR from:helloiamleonie OR from:kitlangton OR from:labenz OR from:levelsio OR from:lightseekorg OR from:maxencefaldor OR from:MichaelThiessen OR from:natolambert OR from:nrehiew_ OR from:scaling01 OR from:teortaxesTex OR from:witcheer OR from:akshay_pachaar OR from:CommandCodeAI OR from:emollick OR from:matthewmillerai OR from:mervenoyann OR from:MooncastOnline) -is:retweet -is:reply"
+  ],
+  [
+   "applied",
+   "(from:anyscalecompute OR from:arizeai OR from:Box OR from:braintrust OR from:CoreWeave OR from:databricks OR from:glean OR from:GroqLLC OR from:HamelHusain OR from:hwchase17 OR from:latentspacepod OR from:levie OR from:llama_index OR from:modal OR from:NotionHQ OR from:OpenRouter OR from:SemiAnalysis_ OR from:aiDotEngineer OR from:AndrewYNg OR from:cerebras OR from:clattner_llvm OR from:dylan522p OR from:FireworksAI_HQ OR from:Get_Writer OR from:LangChain OR from:LiteLLM OR from:matei_zaharia OR from:Modular OR from:mustafasuleyman OR from:perplexity_ai OR from:replicate OR from:sh_reya OR from:Snowflake OR from:swyx OR from:wandb OR from:amasad OR from:baseten OR from:jerryjliu0 OR from:NVIDIAAI) -is:retweet -is:reply"
+  ],
+  [
+   "discovery",
+   "(huggingface.co OR arxiv.org OR github.com) release/open-weight discovery (min_faves:150)"
+  ],
+  [
+   "discovery",
+   "coding agent / MCP / CLI / SDK launch discovery (min_faves:200)"
+  ],
+  [
+   "security",
+   "CVE/GHSA/supply chain x (npm, PyPI, MCP, coding agents, Docker, Claude Code, Codex, Tailscale, Ollama, vLLM, LiteLLM, Homebrew, GitHub Actions)"
+  ],
+  [
+   "horizon",
+   "block-dessa check"
+  ]
+ ],
+ "calls": 17,
+ "items": [
+  {
+   "title": "OpenCode ships experimental background compaction: context is summarized while the agent keeps working instead of pausing the session",
+   "url": "https://x.com/Neriousy/status/2114396202062242087",
+   "handle": "@Neriousy",
+   "group": "devtools",
+   "origin": "discovery",
+   "summary": "OpenCode added an experimental setting that compacts long coding-agent sessions in the background, so long runs no longer stop and wait while history is summarized. The OpenCode developer says prompt caching behaves as before.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://opencode.ai",
+    "https://github.com/sst/opencode"
+   ],
+   "vendor": "OpenCode",
+   "posted_at": "2026-10-25T16:38:32Z",
+   "metrics": {
+    "likes": 671,
+    "reposts": 20,
+    "quotes": 13,
+    "replies": 44,
+    "views": 30224
+   },
+   "confirmed_by": [
+    "@kitlangton"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No numbers or docs yet; one replier says OpenAI native compaction only works with the legacy auth method, and others ask whether early constraints survive compaction.",
+    "source": "https://x.com/toeknee___/status/2114454899169579382"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers welcome no longer freezing mid-task, ask how it works and for per-model thresholds, and note Pi had a similar feature first; @kitlangton quote-posted that it works well.",
+    "tried": true,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "omarchy-apple-dev: an agent builds, signs and installs an iPad app from Linux over Tailscale with no Mac in the path",
+   "url": "https://x.com/JoshuaSWarren/status/2114471654499729825",
+   "handle": "@JoshuaSWarren",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Open-source tooling that lets a coding agent build and sign iOS/iPadOS SwiftUI apps on Linux (x86_64 or Apple Silicon) without Xcode and push them to a device over the network. The author's orchestrator agent used it to build its own iPhone and iPad task app.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/joshuaswarren/omarchy-apple-dev"
+   ],
+   "vendor": "Joshua Warren (independent)",
+   "posted_at": "2026-10-25T21:38:22Z",
+   "metrics": {
+    "likes": 27,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 1,
+    "views": 586
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "New repo with no stars or third-party reproduction yet; only the author's demo.",
+    "source": null
+   }
+  },
+  {
+   "title": "Baseten Loops SDK adds Meta Muse Spark Open for post-training with your own data and reward functions, then one-step deploy",
+   "url": "https://x.com/baseten/status/2114421338819678463",
+   "handle": "@baseten",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Teams can now RL or fine-tune Meta's open Muse Spark model on Baseten Loops with custom reward functions while Baseten runs training and sampling, then deploy the checkpoint straight to an inference endpoint.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://docs.baseten.co/loops/quickstart"
+   ],
+   "vendor": "Baseten",
+   "posted_at": "2026-10-25T18:18:25Z",
+   "metrics": {
+    "likes": 23,
+    "reposts": 1,
+    "quotes": 2,
+    "replies": 3,
+    "views": 1225
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Google DeepMind paper: self-rewarded RL on moral argumentation makes Gemma-4 4B more decisive but not more valid",
+   "url": "https://x.com/omarsar0/status/2114446656032874516",
+   "handle": "@omarsar0",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A self-judged RL tournament on SMT-verified dilemmas halves order flips on MoralChoice (14.3% to 6.6%), but sycophancy stays flat, framing acceptance rises and MORABLES accuracy drops 3.1 points. A measured warning for anyone using consistency or self-reward as a training signal.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2610.30349"
+   ],
+   "vendor": "Google DeepMind",
+   "posted_at": "2026-10-25T19:59:01Z",
+   "metrics": {
+    "likes": 35,
+    "reposts": 2,
+    "quotes": 2,
+    "replies": 26,
+    "views": 3321
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 98,
+ "list_pages": 1,
+ "security_forwarded": [
+  {
+   "url": "https://www.wiz.io/blog/gheist-attempted-scaled-abuse-of-stolen-github-tokens-stumbles",
+   "post": "https://x.com/alexlee20122022/status/2114470246090522847",
+   "matched": "always_forward: software supply chain (GitHub Actions, stolen tokens); fleet pushes with GitHub tokens incl. MAGPIE_GITHUB_TOKEN",
+   "note": "Wiz (2026-10-25): Gheist campaign since 2026-09-15 uses stolen GitHub tokens to push ci-sync-<random> branches with .github/workflows/sync-check.yml (commit 'ci: sync config', user agent 'gheist') that base32-dump secrets and env-scoped secrets to the run log, download it via API, then delete the run; 13,500+ branches, 850+ accounts; blocked in public repos by a GitHub control but working in private and Enterprise repos; a self-hosted-runner variant sweeps hosts for 31 token formats incl. AI provider keys. Box check: no ci-sync-* heads on origin for /workspace/magpie or /workspace/aw-rebase, no sync-check.yml or .gdmp_pat* files on the box."
+  },
+  {
+   "url": "https://www.cve.org/CVERecord?id=CVE-2026-115726",
+   "post": "https://x.com/readmodelmag/status/2114466853695484169",
+   "matched": "always_forward: agent tooling (coding agent CLI)",
+   "note": "Aider through 0.86.2: a repo-committed .aider.conf.yml is auto-loaded without a trust prompt and its notifications-command/editor (and test-cmd/lint-cmd, issue #5254) run via shell=True; CVSS 4.0 8.5 (VulnCheck, 2026-10-23). No fixed stable release seen (latest tag v0.86.3.dev). Box check: aider not installed, no .aider.conf.yml on the box. Same class as GitSpawn but a distinct tool and CVE."
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://github.com/advisories/GHSA-673q-mjm6-r5xr",
+   "reason": "Next.js 16.0.0-16.4.0 use-cache RCE (and GHSA-2464-fhr4-w9xw SVG RCE), fixed 16.4.1/15.5.28 on 2026-10-14; Next.js is not in stack.json and no next package exists on the box. Old advisory resurfacing."
+  },
+  {
+   "url": "https://x.com/DailyDarkWeb/status/2114458064497868828",
+   "reason": "Tailworm follow-ups: Tailscale merged a fix for a related serve flaw, still no CVE or release; already forwarded today, not materially new."
+  },
+  {
+   "url": "https://x.com/choblin29/status/2114455243664810172",
+   "reason": "AGENTS.md-in-Downloads hijack re-posts; already forwarded today."
+  },
+  {
+   "url": "https://x.com/PatchOnChain/status/2114454510194299135",
+   "reason": "Generic MCP tool-schema poisoning explainer; no new advisory or affected package."
+  },
+  {
+   "url": "https://x.com/levelsio/status/2114429379527004590",
+   "reason": "Tailworm re-share pointing to a third-party 'check your setup' site; site not visited; already forwarded."
+  }
+ ],
+ "rechecks": [
+  {
+   "url": "https://x.com/vllm_project/status/2114135647040778667",
+   "result": "no community note; metrics up (248 likes)"
+  },
+  {
+   "url": "https://x.com/JoshuaSWarren/status/2114122761471988172",
+   "result": "no community note; metrics up (177 likes)"
+  },
+  {
+   "url": "https://x.com/KBlueleaf/status/2113758295857184922",
+   "result": "no community note; metrics up (4,938 likes)"
+  },
+  {
+   "url": "https://x.com/nanbeige/status/2114328933181333798",
+   "result": "no community note; metrics up (2,156 likes)"
+  },
+  {
+   "url": "https://x.com/rasbt/status/2114325097653669940",
+   "result": "no community note; metrics up (1,175 likes)"
+  }
+ ],
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 0,
+  "note": "Newest bookmark is the @IntCyberDigest Tailworm post already handled in the 18:09Z sweep; no new saves."
+ },
+ "follows": {
+  "mode": "browser",
+  "note": "No browser available to this run; no follows attempted or recommended this sweep."
+ },
+ "skipped": [
+  {
+   "url": "https://x.com/Kimi_Moonshot/status/2114450610724708492",
+   "why": "Rate-limit apology and quota reset; business/service noise."
+  },
+  {
+   "url": "https://x.com/HuggingModels/status/2114429568232911123",
+   "why": "'Top 10 uncensored LLM models' listicle; hype, nothing tested."
+  },
+  {
+   "url": "https://x.com/HamelHusain/status/2114434195854684330",
+   "why": "Opinion on benchmark quality, no first-hand result yet."
+  },
+  {
+   "url": "https://x.com/minimaxir/status/2114465326792671564",
+   "why": "Blog commentary on LLM price drops; analysis, not a new capability."
+  }
+ ]
+}

@@ -1,43 +1,43 @@
 {
-  "updated_at": "2026-10-25T18:09:00Z",
-  "by": "magpie-scout",
-  "rules": "Quiet watch for on-the-horizon items. Check at most 2 reads per sweep, rotating by oldest last_checked. Stay silent until a trigger fires. A demo clip, teaser, waitlist, interview or opinion is never a trigger. When one fires: add one kept item to that sweep, set status to 'triggered' with triggered_at and evidence, and flag it in the status file for the parent to tell Cameron. Never put speculative what-ifs in sweep output.",
-  "entries": [
-    {
-      "id": "block-dessa",
-      "name": "Block Dessa full-duplex speech-to-speech model",
-      "url": "https://block.xyz/dessa",
-      "lead": "Ragavan Thurairatnam (Dessa lab at Block)",
-      "added_on": "2026-10-24",
-      "why": "Audio-only, text-free full-duplex speech model said to run faster than real time on an M4 Max MacBook Pro; a local-weights release could become a voice front end for the fleet.",
-      "trigger": "A concrete release: downloadable weights, a public API or SDK, a technical paper or report (arXiv or similar), or public access beyond the safety-researcher early access.",
-      "not_trigger": [
-        "new demo clips or sizzle videos",
-        "waitlist or early-access sign-ups for safety researchers",
-        "interviews, podcasts, opinion threads",
-        "reposts of the original Oct 2026 demo page"
-      ],
-      "checks": {
-        "queries": [
-          "Dessa (weights OR huggingface.co OR arxiv OR API OR paper OR \"open source\") (Block OR @blocks) -is:retweet",
-          "\"Ragavan Thurairatnam\" -is:retweet"
-        ],
-        "handles": [
-          "@blocks"
-        ],
-        "handles_unverified": [
-          "@dessa_ai (exists, empty bio; may be the old Dessa startup account)"
-        ],
-        "pages": [
-          "https://block.xyz/dessa"
-        ],
-        "handle_notes": "@ragavan is a different person (ex-Llama at Meta), not Ragavan Thurairatnam; his X handle is not yet known."
-      },
-      "last_checked": "2026-10-25T18:09:00Z",
-      "last_result": "Still preview: demo page and safety-researcher early access only; no weights, API/SDK or paper found.",
-      "status": "watching",
-      "triggered_at": null,
-      "evidence": []
-    }
-  ]
+ "updated_at": "2026-10-25T22:11:00Z",
+ "by": "magpie-scout",
+ "rules": "Quiet watch for on-the-horizon items. Check at most 2 reads per sweep, rotating by oldest last_checked. Stay silent until a trigger fires. A demo clip, teaser, waitlist, interview or opinion is never a trigger. When one fires: add one kept item to that sweep, set status to 'triggered' with triggered_at and evidence, and flag it in the status file for the parent to tell Cameron. Never put speculative what-ifs in sweep output.",
+ "entries": [
+  {
+   "id": "block-dessa",
+   "name": "Block Dessa full-duplex speech-to-speech model",
+   "url": "https://block.xyz/dessa",
+   "lead": "Ragavan Thurairatnam (Dessa lab at Block)",
+   "added_on": "2026-10-24",
+   "why": "Audio-only, text-free full-duplex speech model said to run faster than real time on an M4 Max MacBook Pro; a local-weights release could become a voice front end for the fleet.",
+   "trigger": "A concrete release: downloadable weights, a public API or SDK, a technical paper or report (arXiv or similar), or public access beyond the safety-researcher early access.",
+   "not_trigger": [
+    "new demo clips or sizzle videos",
+    "waitlist or early-access sign-ups for safety researchers",
+    "interviews, podcasts, opinion threads",
+    "reposts of the original Oct 2026 demo page"
+   ],
+   "checks": {
+    "queries": [
+     "Dessa (weights OR huggingface.co OR arxiv OR API OR paper OR \"open source\") (Block OR @blocks) -is:retweet",
+     "\"Ragavan Thurairatnam\" -is:retweet"
+    ],
+    "handles": [
+     "@blocks"
+    ],
+    "handles_unverified": [
+     "@dessa_ai (exists, empty bio; may be the old Dessa startup account)"
+    ],
+    "pages": [
+     "https://block.xyz/dessa"
+    ],
+    "handle_notes": "@ragavan is a different person (ex-Llama at Meta), not Ragavan Thurairatnam; his X handle is not yet known."
+   },
+   "last_checked": "2026-10-25T22:11:00Z",
+   "last_result": "Still preview: block.xyz/dessa shows demo clips and safety-researcher early access only; 1 X search found no weights, API/SDK or paper.",
+   "status": "watching",
+   "triggered_at": null,
+   "evidence": []
+  }
+ ]
 }
