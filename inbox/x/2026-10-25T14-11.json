@@ -1,0 +1,192 @@
+{
+ "ran_at": "2026-10-25T14:11:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6",
+ "since": "2026-10-25T10:09:00Z",
+ "queries": [
+  [
+   "labs",
+   "(from:_inception_ai OR from:AIatMeta OR from:alexalbert__ OR from:allen_ai OR from:BAAIBeijing OR from:DarioAmodei OR from:deepseek_ai OR from:gdb OR from:GoogleDeepMind OR from:koraykv OR from:markchen90 OR from:MicrosoftAI OR from:OpenAI OR from:SakanaAILabs OR from:Skywork_ai OR from:TencentHunyuan OR from:TheInclusionAI OR from:XiaomiMiMo OR from:Zai_org OR from:aidangomez OR from:Alibaba_Qwen OR from:AnthropicAI OR from:AntLingAGI OR from:GoogleAI OR from:GuillaumeLample OR from:Kimi_Moonshot OR from:liquidai OR from:MiniMax_AI OR from:miramurati OR from:MistralAI OR from:RaiaHadsell OR from:sama OR from:satyanadella OR from:thinkymachines OR from:bfl_ai OR from:claudeai OR from:cohere OR from:JensenHuang OR from:nvidia OR from:sundarpichai) -is:retweet -is:reply"
+  ],
+  [
+   "devtools",
+   "(from:antigravity OR from:augmentcode OR from:badlogicgames OR from:ClaudeDevs OR from:cline OR from:cognition OR from:cursor_ai OR from:DeepSeekHarness OR from:e2b OR from:FactoryAI OR from:kirodotdev OR from:opencode OR from:OpenHandsDev OR from:pidotdev OR from:Replit OR from:Sourcegraph OR from:Stagehanddev OR from:AmpCode OR from:bot OR from:browser_use OR from:code OR from:daytonaio OR from:droid OR from:goose_oss OR from:Lovable OR from:mntruell OR from:OpenAIDevs OR from:sqs OR from:Teknium OR from:v0 OR from:warpdotdev OR from:zachlloydtweets OR from:zeddotdev OR from:boltdotnew OR from:browserbase OR from:github OR from:mitsuhiko OR from:NousResearch OR from:reach_vb OR from:thdxr) -is:retweet -is:reply"
+  ],
+  [
+   "opensource",
+   "(from:axolotl_ai OR from:danielhanchen OR from:ggerganov OR from:ggml_org OR from:Is36E OR from:lmsysorg OR from:LysandreJik OR from:PrimeIntellect OR from:QGallouedec OR from:rapidmlx OR from:sgl_project OR from:turboderp_ OR from:UnslothAI OR from:xenovacom OR from:__tinygrad__ OR from:_philschmid OR from:awnihannun OR from:ezyang OR from:huggingface OR from:maximelabonne OR from:ngxson OR from:ollama OR from:OpenWebUI OR from:PyTorch OR from:sudoingX OR from:Tim_Dettmers OR from:tinkerapi OR from:tri_dao OR from:vllm_project OR from:winglian OR from:yagilb OR from:bartowski1182 OR from:DrJimFan OR from:julien_c OR from:lmstudio OR from:osanseviero OR from:soumithchintala) -is:retweet -is:reply"
+  ],
+  [
+   "research",
+   "(from:_akhaliq OR from:askalphaxiv OR from:cwolferesearch OR from:dair_ai OR from:hyunw_kim OR from:omarsar0 OR from:sayashk OR from:ssokota OR from:aitrackerbot OR from:gabriberton OR from:gu_yuling OR from:jaseweston OR from:KumbongHermann OR from:larsankile OR from:MSFTResearch OR from:OfirPress OR from:percyliang OR from:phillip_isola OR from:qi2peng2 OR from:sam_paech OR from:simran_s_arora OR from:StanfordAILab OR from:stanfordnlp OR from:TheTuringPost OR from:wen_kaiyue OR from:zicokolter OR from:chelseabfinn OR from:lateinteraction OR from:srush_nlp OR from:tatsu_hashimoto OR from:trending_repos) -is:retweet -is:reply"
+  ],
+  [
+   "builders",
+   "(from:_davidgonmar OR from:adarshsolanki OR from:adityakrx OR from:arena OR from:ArtificialAnlys OR from:DominiqueCAPaul OR from:karpathy OR from:minimaxir OR from:rasbt OR from:simonw OR from:ValsAI OR from:yb2698 OR from:ariG23498 OR from:casper_hansen_ OR from:eliebakouch OR from:goodside OR from:helloiamleonie OR from:kitlangton OR from:labenz OR from:levelsio OR from:lightseekorg OR from:maxencefaldor OR from:MichaelThiessen OR from:natolambert OR from:nrehiew_ OR from:scaling01 OR from:teortaxesTex OR from:witcheer OR from:akshay_pachaar OR from:CommandCodeAI OR from:emollick OR from:matthewmillerai OR from:mervenoyann OR from:MooncastOnline) -is:retweet -is:reply"
+  ],
+  [
+   "applied",
+   "(from:anyscalecompute OR from:arizeai OR from:Box OR from:braintrust OR from:CoreWeave OR from:databricks OR from:glean OR from:GroqLLC OR from:HamelHusain OR from:hwchase17 OR from:latentspacepod OR from:levie OR from:llama_index OR from:modal OR from:NotionHQ OR from:OpenRouter OR from:SemiAnalysis_ OR from:aiDotEngineer OR from:AndrewYNg OR from:cerebras OR from:clattner_llvm OR from:dylan522p OR from:FireworksAI_HQ OR from:Get_Writer OR from:LangChain OR from:LiteLLM OR from:matei_zaharia OR from:Modular OR from:mustafasuleyman OR from:perplexity_ai OR from:replicate OR from:sh_reya OR from:Snowflake OR from:swyx OR from:wandb OR from:amasad OR from:baseten OR from:jerryjliu0 OR from:NVIDIAAI) -is:retweet -is:reply"
+  ],
+  [
+   "discovery",
+   "hydration of quoted and linked posts from roster results (2 calls)"
+  ],
+  [
+   "horizon:block-dessa",
+   "Dessa (weights OR huggingface.co OR arxiv OR API OR paper OR \"open source\") (Block OR @blocks) -is:retweet"
+  ],
+  [
+   "security",
+   "agent tooling, supply chain and CVE search since 10:09Z (1 call, 25 posts)"
+  ],
+  [
+   "deep_read",
+   "quotes and replies for @nanbeige 2114328933181333798; replies for @rasbt 2114325097653669940"
+  ]
+ ],
+ "calls": 19,
+ "list_posts_read": 100,
+ "list_pages": 1,
+ "items": [
+  {
+   "title": "Nanbeige4.3-33B: open-weight 33B dense agentic coding model (512K context) posts Terminal-Bench 2.1 80.9 vs Qwen3.8-27B 73.0",
+   "url": "https://x.com/nanbeige/status/2114328933181333798",
+   "handle": "@nanbeige",
+   "group": "labs",
+   "origin": "discovery",
+   "summary": "Nanbeige (Kanzhun's lab) released Nanbeige4.3-33B and a Base checkpoint on Hugging Face: a 33B dense BF16 model with 512K context aimed at coding and cowork agents. The model card reports Terminal-Bench 2.1 80.9 vs 73.0 for Qwen3.8-27B, DeepSWE 65.5 vs 42.5, and SWE-Bench Pro 60.3 vs 61.7 (slightly behind), with serving examples for Transformers, SGLang and vLLM. The lab says the model is the teacher for an upcoming Nanbeige4.3-3B. Benchmarks are self-reported.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [
+    "https://huggingface.co/Nanbeige/Nanbeige4.3-33B",
+    "https://huggingface.co/Nanbeige/Nanbeige4.3-33B-Base"
+   ],
+   "vendor": "Nanbeige",
+   "posted_at": "2026-10-25T12:11:14Z",
+   "metrics": {
+    "likes": 602,
+    "reposts": 78,
+    "quotes": 55,
+    "replies": null
+   },
+   "confirmed_by": [
+    "@teortaxesTex"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "@teortaxesTex calls the results plausible but fragile and at risk of doom looping; several repliers ask whether it is benchmaxxed and whether eval tasks were kept out of training data.",
+    "source": "https://x.com/teortaxesTex"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Quotes and replies are mostly excitement and 'downloading now'; nobody had posted hands-on results yet. Open questions are benchmaxxing, tool-call latency, official GGUF/FP8 builds, and fitting a 33B dense model with long KV cache on 24 to 32 GB cards.",
+    "tried": false,
+    "replies_read": 50
+   }
+  },
+  {
+   "title": "llama.cpp b11870 adds DeepSeek-V4.1-Flash support",
+   "url": "https://x.com/TaylorChristof2/status/2114342889098825969",
+   "handle": "@TaylorChristof2",
+   "group": "opensource",
+   "origin": "discovery",
+   "summary": "llama.cpp pre-release b11870 (published 2026-10-25 02:15 UTC on GitHub) adds the deepseek41 architecture so DeepSeek-V4.1-Flash can run locally through GGUF; the change is co-authored by Daniel Han and includes a Metal fusion test. Verified on the GitHub release page; the X post itself has low engagement.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b11870"
+   ],
+   "vendor": null,
+   "posted_at": "2026-10-25T13:06:42Z",
+   "metrics": {
+    "likes": null,
+    "reposts": null,
+    "quotes": null,
+    "replies": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": "GitHub release b11870 on ggml-org/llama.cpp (pre-release)."
+   }
+  },
+  {
+   "title": "Sebastian Raschka posts full Build a Reasoning Model (From Scratch) video course: 8 videos, 11 hours of PyTorch code",
+   "url": "https://x.com/rasbt/status/2114325097653669940",
+   "handle": "@rasbt",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Raschka published all eight coding lectures for Build a Reasoning Model (From Scratch): starting from a pre-trained Qwen3 0.6B, the course implements KV caching, a MATH-500 verifier, self-consistency and self-refinement, a simplified GRPO for RLVR with clipping and KL terms, and distillation from DeepSeek R1 outputs, all in Python and PyTorch with per-chapter code in the companion repo.",
+   "kind": "other",
+   "evidence": "artifact",
+   "links": [
+    "https://magazine.sebastianraschka.com/p/building-reasoning-models"
+   ],
+   "vendor": null,
+   "posted_at": "2026-10-25T11:56:00Z",
+   "metrics": {
+    "likes": 469,
+    "reposts": 65,
+    "quotes": null,
+    "replies": null
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": "Course page with all eight videos and chapter code links."
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers welcome having the whole series in one place and ask which chapter to start with, whether it covers material beyond the book, and whether RL on tool calling is coming next.",
+    "tried": false,
+    "replies_read": 25
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "security_forwarded": [
+  {
+   "url": "https://www.manifold.security/blog/ai-coding-agents-git-hijack",
+   "handle": "@psoheil",
+   "post": "https://x.com/psoheil/status/2114352824968503331",
+   "posted_at": "2026-10-25T13:46:00Z",
+   "matched": "Hermes agent, Claude Code, Codex, Cursor CLI; always_forward: agent tooling",
+   "note": "GitSpawn (Manifold, disclosed 2026-09-02): a repo delivered as files with .git intact (zip, synced folder, shared drive; not a normal clone) can set core.fsmonitor so the agent's background git status runs attacker code outside the sandbox and before any prompt. Fixed: Claude Code 2.1.196 (core.fsmonitor path; a separate 'ultrareview' path was still live on 2.1.252 per CSA), Codex CLI 0.131.0 (CVE-2026-19592) and Desktop 26.519.x, Cursor, Goose 1.44.0. Hermes Agent 0.18.2 to 0.21.0 is CVE-2026-71963 (CVSS 8.6), fixed only in commit f6234d0 / 0.21.1+, so a 0.21.0 tag is still vulnerable. Verified: https://www.cve.org/CVERecord?id=CVE-2026-71963 , https://thehackernews.com/2026/09/malicious-git-configs-can-make-claude.html , https://labs.cloudsecurityalliance.org/research/csa-research-note-gitspawn-ai-coding-agent-rce-20260903-csa/ . Box: no claude, codex, hermes, cursor-agent or goose binaries; no global core.fsmonitor. Suggested check: agent versions on Mac/Mini/Air/Spark and git config --global core.fsmonitor false."
+  },
+  {
+   "url": "https://www.stepsecurity.io/blog/ovhcloud-cli-github-release-swap-glassworm",
+   "handle": "@rst_cloud",
+   "post": "https://x.com/rst_cloud/status/2114354345177157908",
+   "posted_at": "2026-10-25T13:52:00Z",
+   "matched": "always_forward: software supply chain (release hijack); payload targets Claude, Hermes, Cursor, Codex-adjacent credential stores, Docker, SSH",
+   "note": "OVHcloud CLI v0.11.0 to v0.15.0 GitHub release binaries were swapped with a credential stealer on 2026-10-19 12:47 to 14:21 UTC (about 250 downloads; GHSA-862f-55f5-vmvw); root access came from a GlassWorm malicious VS Code extension. Stealer stages in /tmp/envchecker-*. Homebrew, go install and Docker image were not exposed; clean v0.16.0. Only matters if any machine has the ovhcloud CLI. Box: no ovhcloud binary, no /tmp/envchecker-* dirs."
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/IndianCERT/status/2114336985745957298",
+   "why": "CERT-In advisory on LiteLLM 1.107.0 PyPI and Docker compromise; same incident Bouncer already closed for the reachable fleet."
+  },
+  {
+   "url": "https://x.com/kennethreitz42/status/2114317463429034460",
+   "why": "Brotli CVE-2026-111497 in PyPI Brotli <=1.2.0 and brotlicffi <=1.2.0.2 (fixed 1.2.1 / 1.2.1.0); already tracked in Bouncer's Brotli wave (Pillow bundled brotli still open). Related Brotli posts from @Voxyz_ai, @alex_prompter, @nitsan2dots are duplicates."
+  },
+  {
+   "url": "https://x.com/HugoValters/status/2114349257540936147",
+   "why": "Unnamed 'Mcp-Security' tool SSRF CVE with no package name or link; not in stack.json, unverifiable."
+  },
+  {
+   "url": "https://x.com/shinsenter/status/2114308861956182042",
+   "why": "shinsenter/php Docker images patched for PHP CVEs; no PHP images in stack.json."
+  }
+ ]
+}

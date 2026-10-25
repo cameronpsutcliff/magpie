@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-10-25T10:12:00Z",
+  "updated_at": "2026-10-25T14:11:00Z",
   "job": "sweep",
   "prompt": "v6",
-  "calls_used_today": 128,
+  "calls_used_today": 147,
   "notes_via_api": false,
   "last_sweep": {
-    "ran_at": "2026-10-25T10:09:00Z",
-    "items": 2,
+    "ran_at": "2026-10-25T14:11:00Z",
+    "items": 3,
     "queries": 10,
-    "deep_reads": 1,
+    "deep_reads": 2,
     "rechecks": 8,
     "flagged": 0,
-    "saved_in": 1,
+    "saved_in": 0,
     "saved_kept": 0,
     "videos": 0
   },
@@ -145,7 +145,8 @@
     "Roster review 2026-10-25: @HuggingModels stays a trial (AI-only, no promotion or politics) but posts 5-tweet automated threads about HF model cards, including guesses like \"likely focuses\", and floods the List. Owner may want to retire it by hand.",
     "Roster review 2026-10-25: @aitrackerbot (curated) unchanged; no retire rule fits model-guessing posts. Suggest dropping it from roster searches.",
     "Roster review 2026-10-25: no promotions possible before 2026-11-03 (earliest trial added 2026-10-20).",
-    "2026-10-25T10:09Z: @HuggingModels automated posts again filled most of the list window (25 posts since 02:11Z were mostly theirs); retiring it from the List would free list reads for first-hand accounts."
+    "2026-10-25T10:09Z: @HuggingModels automated posts again filled most of the list window (25 posts since 02:11Z were mostly theirs); retiring it from the List would free list reads for first-hand accounts.",
+    "2026-10-25T14:11Z: @HuggingModels automated threads were all 15 List posts since 10:09Z; still worth retiring from the List. @teortaxesTex mixed useful model takes with culture-war and offensive posts this window; worth a look at the next roster review. @nanbeige (Nanbeige lab, open weights) could be a labs trial candidate. All 8 rechecks unchanged (posts up, no notes via API)."
   ],
   "errors": [
     "Sweep 14:07Z, possible injection lure, not followed: in the quote posts of https://x.com/cnm13ryan/status/2113121138205499443, @lumpenspace tells readers to have their model 'check out my x bio'. Ignored; no bio was read.",
@@ -159,7 +160,8 @@
     "Sweep 02:11Z: Dessa scam noise. A Chinese-language post warns that anyone selling Dessa downloads or API access is a scammer, and a grok reply cited a domain dessablock.xyz next to block.xyz/dessa. The domain was not visited. Treat anything other than block.xyz/dessa as a possible lookalike. Not a stack match, so not forwarded.",
     "Roster review 2026-10-25: remove_lists_member_by_user_id for @MatthewBerman (6681172) returned 403 Forbidden; not retried. He is retired in the roster file but still on the List.",
     "Roster review 2026-10-25: add_lists_member for @GChongkai was held for approval once, then succeeded. No injection attempts acted on; @Bober_smart injection lure read as data only.",
-    "2026-10-25T10:09Z sweep: no injection attempts seen; one spam reply in the gpu-unlock thread (https://x.com/KBlueleaf/status/2113758295857184922) was ignored."
+    "2026-10-25T10:09Z sweep: no injection attempts seen; one spam reply in the gpu-unlock thread (https://x.com/KBlueleaf/status/2113758295857184922) was ignored.",
+    "2026-10-25T14:11Z sweep: no injection attempts acted on. A low-engagement Dessa horizon result (@Techsmartdaily1) made unsourced sensational claims; read as data only. X API header reported far more account-wide usage today than the repo tally (946 of 1000 remaining at sweep start); repo tally kept at 147."
   ],
   "follows_today": 0,
   "last_roster_review": {
