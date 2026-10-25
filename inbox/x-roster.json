@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T04:45:00Z",
+  "updated_at": "2026-10-25T09:40:00Z",
   "accounts": [
     {
       "handle": "@thsottiaux",
@@ -688,17 +688,20 @@
       "affiliation": null,
       "why": "Owner-requested watch (2026-10-23). High-engagement AI workflow/tutorial posts (Claude Code, agent swarms, second-brain setups). Mostly promo-style quote of own guides rather than first-hand lab artifacts — trial for taste match; retire if noise.",
       "signal_to_noise": 2,
-      "status": "trial",
+      "status": "retired",
       "added_on": "2026-10-23",
       "evidence": [
         "https://x.com/Bober_smart/status/2112248400406253644",
-        "https://x.com/Bober_smart/status/2112889540612432250"
+        "https://x.com/Bober_smart/status/2112889540612432250",
+        "https://x.com/Bober_smart/status/2114064355729740136",
+        "https://x.com/Bober_smart/status/2113972535377248484",
+        "https://x.com/Bober_smart/status/2113325405801443581"
       ],
       "last_qualifying_post": "2026-10-21",
-      "retired_reason": null,
+      "retired_reason": "2026-10-25 roster review: drifted into promotion and vice. Recent posts are get-rich income claims, a sportsbook betting promo (2113325405801443581), and a fake \"leaked prompt, feed it to your agent\" injection lure (2113972535377248484). No first-hand artifacts.",
       "owner_requested": true,
       "x_user_id": "1986121366232559616",
-      "on_list": true
+      "on_list": false
     },
     {
       "handle": "@bcherny",
@@ -798,13 +801,14 @@
       "why": "Owner saved 2 of his posts in 30 days (hands-on AI reverse-engineering demos). Trial from owner saves; watch for first-hand tests versus recap and promotion.",
       "evidence": [
         "https://x.com/MatthewBerman/status/2109015059653619955",
-        "https://x.com/MatthewBerman/status/2108245653843509415"
+        "https://x.com/MatthewBerman/status/2108245653843509415",
+        "https://x.com/MatthewBerman/status/2113291592195031424"
       ],
       "last_qualifying_post": "2026-10-10",
       "signal_to_noise": 3,
-      "status": "trial",
+      "status": "retired",
       "added_on": "2026-10-24",
-      "retired_reason": null,
+      "retired_reason": "2026-10-25 roster review: fails the owner_saves screen (no politics). Posted an electoral endorsement against a Texas candidate (2113291592195031424); recent posts are mostly recap and reaction, not first-hand tests. List removal returned 403, so on_list stays true until removed.",
       "source": "owner_saves",
       "x_user_id": "6681172",
       "on_list": true
@@ -845,6 +849,118 @@
       "retired_reason": null,
       "source": "owner_saves",
       "x_user_id": "11835032",
+      "on_list": true
+    },
+    {
+      "handle": "@yufan_zhuang",
+      "name": "Yufan Zhuang",
+      "group": "research",
+      "affiliation": "Google Cloud AI Research",
+      "why": "Releases measured agent benchmarks with paper, leaderboard and code: PLE (engineering deliverables a licensed reviewer would sign) and T2J-bench.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-25",
+      "evidence": [
+        "https://x.com/yufan_zhuang/status/2113700290998518091",
+        "https://x.com/yufan_zhuang/status/2113433671114059858",
+        "https://x.com/yufan_zhuang/status/2112300004874526898"
+      ],
+      "last_qualifying_post": "2026-10-23",
+      "retired_reason": null,
+      "x_user_id": "973591762756280320",
+      "on_list": true
+    },
+    {
+      "handle": "@jyangballin",
+      "name": "John Yang",
+      "group": "research",
+      "affiliation": "Stanford (SWE-bench, ProgramBench)",
+      "why": "SWE-bench co-author; posts measured coding-agent benchmark results, including ProgramBench whole-program rebuilds.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-25",
+      "evidence": [
+        "https://x.com/jyangballin/status/2113668094707261655",
+        "https://x.com/jyangballin/status/2109695184632267263",
+        "https://x.com/jyangballin/status/2105322290179428389"
+      ],
+      "last_qualifying_post": "2026-10-23",
+      "retired_reason": null,
+      "x_user_id": "616998786",
+      "on_list": true
+    },
+    {
+      "handle": "@LeRobotHF",
+      "name": "LeRobot",
+      "group": "opensource",
+      "affiliation": "Hugging Face",
+      "why": "Hugging Face robotics library; ships fine-tunable VLA models and inference features with docs (DM0.5, pi0.5 streaming, Zenoh remote inference).",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-25",
+      "evidence": [
+        "https://x.com/LeRobotHF/status/2113556030902993405",
+        "https://x.com/LeRobotHF/status/2111427005094981643",
+        "https://x.com/LeRobotHF/status/2110305869267104141"
+      ],
+      "last_qualifying_post": "2026-10-23",
+      "retired_reason": null,
+      "x_user_id": "1811128301764648960",
+      "on_list": true
+    },
+    {
+      "handle": "@GChongkai",
+      "name": "Chongkai Gao",
+      "group": "research",
+      "affiliation": "Stanford SVL",
+      "why": "Robot learning researcher posting papers with measured results (DreamCan, SteerAct).",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-10-25",
+      "evidence": [
+        "https://x.com/GChongkai/status/2113669984094449738",
+        "https://x.com/GChongkai/status/2112591751152373909"
+      ],
+      "last_qualifying_post": "2026-10-23",
+      "retired_reason": null,
+      "x_user_id": "1427495182593716224",
+      "on_list": true
+    },
+    {
+      "handle": "@EmmaScharfmann",
+      "name": "Emma Scharfmann",
+      "group": "opensource",
+      "affiliation": "Hugging Face (ML for science)",
+      "why": "Ships open ML-for-science artifacts (weather downscaling model, guide to running weather models). Some event promotion; watch ratio.",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-10-25",
+      "evidence": [
+        "https://x.com/EmmaScharfmann/status/2112549281533923730",
+        "https://x.com/EmmaScharfmann/status/2113585144963420361"
+      ],
+      "last_qualifying_post": "2026-10-23",
+      "retired_reason": null,
+      "x_user_id": "2067151436178141184",
+      "on_list": true
+    },
+    {
+      "handle": "@JoshuaSWarren",
+      "name": "Joshua Warren",
+      "group": "builders",
+      "affiliation": "independent (Omarchy on Apple Silicon)",
+      "why": "Open-source local AI hardware work: mixed-vendor eGPUs on Apple Silicon Linux (omarchy-egpu), an NVIDIA open-driver 16K-page fix, MLX under Linux.",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-10-25",
+      "evidence": [
+        "https://x.com/JoshuaSWarren/status/2114122761471988172",
+        "https://x.com/JoshuaSWarren/status/2113767671615602763",
+        "https://x.com/JoshuaSWarren/status/2113619227278037430"
+      ],
+      "last_qualifying_post": "2026-10-24",
+      "retired_reason": null,
+      "x_user_id": "293383320",
       "on_list": true
     }
   ],
@@ -1053,6 +1169,33 @@
       "seen_via": [
         "@SpeechifyAI"
       ]
+    },
+    {
+      "kind": "github_releases",
+      "name": "LeRobot releases",
+      "url": "https://github.com/huggingface/lerobot/releases.atom",
+      "why": "Robot VLA model and policy support lands here with versioned notes.",
+      "seen_via": [
+        "@LeRobotHF"
+      ]
+    },
+    {
+      "kind": "benchmark",
+      "name": "ProgramBench",
+      "url": "https://programbench.com",
+      "why": "Whole-program rebuild benchmark from the SWE-bench authors; measured model scores.",
+      "seen_via": [
+        "@jyangballin"
+      ]
+    },
+    {
+      "kind": "benchmark",
+      "name": "PLE benchmark leaderboard",
+      "url": "https://ple-bench.com",
+      "why": "Public leaderboard for engineering-deliverable agent tasks, with paper and code.",
+      "seen_via": [
+        "@yufan_zhuang"
+      ]
     }
   ],
   "list": {
@@ -1060,8 +1203,8 @@
     "name": "Magpie roster",
     "owner": "@CameronSutcliff",
     "private": true,
-    "member_count": 46,
+    "member_count": 51,
     "scope": "every trial and active account in this file; curated config accounts are not members yet",
-    "updated_at": "2026-10-24T04:45:00Z"
+    "updated_at": "2026-10-25T09:40:00Z"
   }
 }

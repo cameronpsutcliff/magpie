@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-25T02:11:00Z",
-  "job": "sweep",
+  "updated_at": "2026-10-25T09:40:00Z",
+  "job": "roster",
   "prompt": "v6",
-  "calls_used_today": 93,
+  "calls_used_today": 112,
   "notes_via_api": false,
   "last_sweep": {
     "ran_at": "2026-10-25T02:11:00Z",
@@ -17,9 +17,9 @@
   },
   "roster": {
     "curated": 223,
-    "trial": 46,
+    "trial": 50,
     "active": 0,
-    "retired": 0
+    "retired": 2
   },
   "follows_this_week": 10,
   "unfollow_suggestions": [],
@@ -139,7 +139,12 @@
     "Sweep 22:07Z: list member @HuggingModels posts automated 5-post threads per HF model (about 35 of 98 list posts since 18:04Z), crowding the list page; consider retiring or leaving it to discovery.",
     "Sweep 02:11Z: only 1 of 98 list posts was newer than since (Saturday evening lull); 2 of 3 keeps came from roster searches and discovery. @alexjswerdlow (Stanford, GVC first author) and @JoshuaSWarren (open-source local inference builds) look like first-hand candidates for the next roster review.",
     "Sweep 02:11Z: @NousResearch posted an image-only teaser (353 likes, an app splash screen, no text or link). Skipped as a teaser; worth watching for a real release in the next sweep.",
-    "Sweep 02:11Z: @aitrackerbot posts stealth-model attributions (guesses about which lab is behind an anonymous arena model). These are speculative and skipped every time; consider leaving it out of roster searches."
+    "Sweep 02:11Z: @aitrackerbot posts stealth-model attributions (guesses about which lab is behind an anonymous arena model). These are speculative and skipped every time; consider leaving it out of roster searches.",
+    "Roster review 2026-10-25: rejected @maxbittker (RuneScape Bench is strong, but one NYC carriage-ban politics post; owner wants no politics in the roster feed; revisit), @alexjswerdlow (only one capability thread in 30 days, GVC; revisit on next release), @dr_cintas (promotion and sales posts over 1 in 5), @AmazonScience (event promotion over 1 in 5), @GenReasoning and @Executorch (one release each), @kinggary (election forecasting), @ChenhaoTan (economics paper commentary, no artifacts), @HuggingPapers (aggregator), @CharlieDreemur (too small to judge).",
+    "Roster review 2026-10-25: @Bober_smart and @MatthewBerman should be considered for the avoid list in config/x-accounts.json (gambling promo and injection lures; electoral politics). Not edited here because config is owner-only.",
+    "Roster review 2026-10-25: @HuggingModels stays a trial (AI-only, no promotion or politics) but posts 5-tweet automated threads about HF model cards, including guesses like \"likely focuses\", and floods the List. Owner may want to retire it by hand.",
+    "Roster review 2026-10-25: @aitrackerbot (curated) unchanged; no retire rule fits model-guessing posts. Suggest dropping it from roster searches.",
+    "Roster review 2026-10-25: no promotions possible before 2026-11-03 (earliest trial added 2026-10-20)."
   ],
   "errors": [
     "Sweep 14:07Z, possible injection lure, not followed: in the quote posts of https://x.com/cnm13ryan/status/2113121138205499443, @lumpenspace tells readers to have their model 'check out my x bio'. Ignored; no bio was read.",
@@ -150,18 +155,20 @@
     "Sweep 14:10Z, possible injection lure, not followed: https://x.com/Bober_smart/status/2113972535377248484 offers a 'leaked Grok bot team prompt' and tells readers to feed it to their AI agent. Ignored; nothing from it was used.",
     "Sweep 22:07Z: no injection attempts seen. calls_used_today 80 = 61 + 17 this sweep + about 2 for the 1:41 and 3:41 PM bookmark syncs (estimated). Browser unavailable to this run; no follows attempted.",
     "Sweep 02:11Z: no injection attempts seen. calls_used_today 93 = 80 + 13 this sweep (1 list, 6 roster searches, 1 bookmarks, 2 discovery, 1 horizon search, 2 hydrates). Browser unavailable to this run; no follows attempted.",
-    "Sweep 02:11Z: Dessa scam noise. A Chinese-language post warns that anyone selling Dessa downloads or API access is a scammer, and a grok reply cited a domain dessablock.xyz next to block.xyz/dessa. The domain was not visited. Treat anything other than block.xyz/dessa as a possible lookalike. Not a stack match, so not forwarded."
+    "Sweep 02:11Z: Dessa scam noise. A Chinese-language post warns that anyone selling Dessa downloads or API access is a scammer, and a grok reply cited a domain dessablock.xyz next to block.xyz/dessa. The domain was not visited. Treat anything other than block.xyz/dessa as a possible lookalike. Not a stack match, so not forwarded.",
+    "Roster review 2026-10-25: remove_lists_member_by_user_id for @MatthewBerman (6681172) returned 403 Forbidden; not retried. He is retired in the roster file but still on the List.",
+    "Roster review 2026-10-25: add_lists_member for @GChongkai was held for approval once, then succeeded. No injection attempts acted on; @Bober_smart injection lure read as data only."
   ],
   "follows_today": 0,
   "last_roster_review": {
-    "ran_at": "2026-10-23T09:38:00Z",
-    "reads": 16,
+    "ran_at": "2026-10-25T09:40:00Z",
+    "reads": 19,
     "budget": 80,
-    "candidates_checked": 27,
-    "added": 5,
+    "candidates_checked": 22,
+    "added": 6,
     "promoted": 0,
-    "retired": 0,
-    "source_leads_added": 4,
+    "retired": 2,
+    "source_leads_added": 3,
     "sweep_files_pruned": 0
   },
   "x_list": {
@@ -171,7 +178,7 @@
     "owner": "@CameronSutcliff",
     "owner_id": "1521986356721123328",
     "private": true,
-    "member_count": 46,
+    "member_count": 51,
     "members": "every trial/active entry in inbox/x-roster.json (x_user_id, on_list)",
     "created_at": "2026-10-24T04:35:00Z"
   },

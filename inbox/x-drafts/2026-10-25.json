@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-25",
+  "posting_enabled": false,
+  "note": "Drafts only. Never posted.",
+  "drafts": [
+    {
+      "text": "Recursive's Flint is an open-weight 40B coding MoE (2.5B active, Apache 2.0). Independent runs: about 131 tok/s on a 36GB M5 Max at 4-bit, 216 tok/s on one RTX 5090, 152 at 32K context. In a one-hour build test, Qwen3.8 27B still finished more of the task.",
+      "evidence": [
+        "https://huggingface.co/RecursiveSI/flint",
+        "https://x.com/rapidmlx/status/2113304786758255094",
+        "https://x.com/witcheer/status/2113262827922223130",
+        "https://x.com/witcheer/status/2113571143109967971"
+      ],
+      "why": "Third-party measurements on laptop and single-GPU hardware, including a test where it lost."
+    },
+    {
+      "text": "Google's PLE benchmark asks agents for engineering deliverables a licensed reviewer would sign: 85 electrical, civil, structural and mechanical tasks. Opus 5.5 leads at 48.3%; the best agent setup averages 50.6% at 63 minutes per task. Paper, leaderboard and code are public.",
+      "evidence": [
+        "https://arxiv.org/abs/2610.30537",
+        "https://ple-bench.com",
+        "https://github.com/google-research/ple",
+        "https://x.com/yufan_zhuang/status/2113700290998518091"
+      ],
+      "why": "Measured agent results on real professional work, with open code."
+    },
+    {
+      "text": "Stanford's Generative Value Classifier turns a return-conditioned flow policy into a robot RL critic. On RoboMimic Tool Hang it reaches about 85% success in 0.5M steps, where QC and RLPD sit near 50% at 1M. The cost: each update runs 5 to 9x slower.",
+      "evidence": [
+        "https://alexanderswerdlow.github.io/gvc/",
+        "https://arxiv.org/abs/2610.22497",
+        "https://x.com/alexjswerdlow/status/2113770131436585288"
+      ],
+      "why": "Clear measured gain with its cost stated."
+    }
+  ]
+}
