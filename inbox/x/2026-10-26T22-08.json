@@ -1,0 +1,680 @@
+{
+ "ran_at": "2026-10-26T22:08:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-10-26T18:09:00Z",
+ "queries": 13,
+ "calls": 16,
+ "rechecks": [
+  {
+   "url": "https://x.com/cohere/status/2114752002370544004",
+   "result": "no community note (not available via API); metrics up sharply (8,669 likes, 977 reposts, 1,144 quotes); no Qwen team rebuttal or reproduction surfaced; doubt stays 1"
+  },
+  {
+   "url": "https://x.com/bneyshabur/status/2114743262565339148",
+   "result": "metrics up (1,482 likes, 120 reposts); still no public access, doubt stays 1"
+  },
+  {
+   "url": "https://x.com/NaceAI/status/2114731088337658286",
+   "result": "metrics up slightly (90 likes); no new pushback; doubt stays 1"
+  },
+  {
+   "url": "https://x.com/NousResearch/status/2114753914939863260",
+   "result": "deep-read item; metrics up (1,049 likes); no pushback"
+  },
+  {
+   "url": "https://x.com/thdxr/status/2114754693255602450",
+   "result": "deep-read item; metrics up (608 likes, 73 replies); no pushback"
+  },
+  {
+   "url": "https://x.com/KBlueleaf/status/2114612105609720265",
+   "result": "metrics up slightly (256 likes, 38 reposts); no new pushback; doubt stays 1"
+  },
+  {
+   "url": "https://x.com/OpenBMB/status/2114703594347725005",
+   "result": "metrics flat (39 likes); arXiv link already confirmed; nothing new"
+  }
+ ],
+ "items": [
+  {
+   "title": "OpenAI says its models proved local smoothing (and so Kakeya) in all dimensions, refuted the Exponential Time Hypothesis, and proved 4D QCD and Yang-Mills existence",
+   "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities/",
+   "handle": "@gdb",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "OpenAI announced three model-produced results: a proof of Sogge's local smoothing conjecture in every dimension (which implies the Kakeya and Stein restriction conjectures), a disproof of the Exponential Time Hypothesis for SAT, and an existence proof for interacting 4D gauge theories including QCD and pure Yang-Mills. The math and ETH results ship with natural-language writeups and Lean formalizations on OpenAI's GitHub; the physics artifacts are held back while a group led by David Gross writes it up. An ETH working group led by Impagliazzo, Paturi and Ryan Williams will verify and explain the result, and OpenAI says it seeks no academic credit.",
+   "kind": "paper",
+   "evidence": "artifact",
+   "links": [
+    "https://openai.com/index/building-scientific-understanding-with-academic-communities/",
+    "https://x.com/gdb/status/2114837059462627533"
+   ],
+   "vendor": "OpenAI",
+   "posted_at": "2026-10-26T21:50:21Z",
+   "metrics": {
+    "likes": 377,
+    "reposts": 44,
+    "quotes": 16,
+    "replies": 43,
+    "views": 12934
+   },
+   "confirmed_by": [
+    "@AndrewCurran_",
+    "@Techmeme"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No independent expert verification yet: the named working groups have only just been formed, and the physics artifacts are not public, so only the Lean-checked math and ETH results can be examined now.",
+    "source": "https://openai.com/index/building-scientific-understanding-with-academic-communities/"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Posts and replies in the first 20 minutes are mostly astonished reposts of the ETH headline and news-wire alerts; no one yet reports checking the Lean proofs or raises a concrete objection.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Cursor ships an Agent SDK: agents as code with Markdown prompts, TypeScript tools and built-in evals",
+   "url": "https://x.com/cursor_ai/status/2114793714531102901",
+   "handle": "@cursor_ai",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Cursor released an Agent SDK where an agent is defined in code, with prompts written in Markdown and tools in TypeScript, and can run on Cursor's hosted infrastructure or on your own. It includes built-in evals so each change to prompts or tools can be measured.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://x.com/cursor_ai/status/2114793714531102901"
+   ],
+   "vendor": "Cursor",
+   "posted_at": "2026-10-26T18:58:07Z",
+   "metrics": {
+    "likes": 1905,
+    "reposts": 111,
+    "quotes": 90,
+    "replies": 176,
+    "views": 122245
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Many replies are people summoning a reply bot to explain it; substantive ones praise the built-in evals and ask whether an eval run can pin the exact prompt, tool definitions and runtime version for replay.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Claude Code adds CLAUDE_CODE_EVEN_MORE_DANGEROUSLY_SKIP_PERMISSIONS to drop its last safety blocklist",
+   "url": "https://x.com/The_Whole_Daisy/status/2114796466850202103",
+   "handle": "@The_Whole_Daisy",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "A Claude Code team member notes that --dangerously-skip-permissions still blocks a few obvious commands such as rm -rf ~, and that today's release adds an environment variable, CLAUDE_CODE_EVEN_MORE_DANGEROUSLY_SKIP_PERMISSIONS=1, that turns that remaining blocklist off as well.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/The_Whole_Daisy/status/2114796466850202103"
+   ],
+   "vendor": "Anthropic",
+   "posted_at": "2026-10-26T19:09:03Z",
+   "metrics": {
+    "likes": 383,
+    "reposts": 11,
+    "quotes": 11,
+    "replies": 39,
+    "views": 21258
+   },
+   "confirmed_by": [
+    "@lydiahallie"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Replies are mostly jokes about the flag name plus some relief from people who run unattended; a few ask whether the model is told the guard is off and suggest the classifier should explain blocks instead.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "OmarchyTV: open-source Omarchy-style TV launcher with an AI terminal and an MCP server",
+   "url": "https://github.com/piermark/omarchytv",
+   "handle": "@MarcoPorro",
+   "group": "builders",
+   "origin": "saved",
+   "summary": "OmarchyTV is an MIT-licensed home screen for Android TV and Google TV (plus an experimental LG webOS build and a PC/Mac plugin) styled after the Omarchy desktop. Version 2.12.0-beta adds a terminal-style assistant on the TV that handles local commands and forwards open questions over the LAN to CLIs already signed in on a paired PC or Mac (claude, codex, gemini, hermes or local ollama), and an MCP server with a fixed TV-only tool list so desktop agents such as Claude Desktop or Cursor can switch themes, send keys or launch apps. The repo appeared on 2026-10-26 and has about 140 stars; it is labeled beta.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/piermark/omarchytv",
+    "https://x.com/MarcoPorro/status/2114645014437626143"
+   ],
+   "vendor": null,
+   "posted_at": "2026-10-26T09:07:14Z",
+   "metrics": {
+    "likes": 1010,
+    "reposts": 51,
+    "quotes": 10,
+    "replies": 50,
+    "views": 34979
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers are enthusiastic and ask about Roku, LG, Samsung and Vizio support; one reports it running on an Android 14 box paired with an M1 Air with theme switches reaching the TV in about 4 seconds, and another set Antigravity as the assistant.",
+    "tried": true,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Warp discloses an incident: a vendor dependency was exploited and some agent trace and telemetry data was accessed",
+   "url": "https://x.com/zachlloydtweets/status/2114800787716972873",
+   "handle": "@zachlloydtweets",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Warp's CEO says that on Friday the company detected an active, narrow exploitation of a vendor in its infrastructure, which it attributes to an automated agent swarm that likely entered through a hole in a vendor dependency and reached a limited amount of agent trace and telemetry data. Up to roughly 1% of users may be affected; those identified have been notified, CrowdStrike is investigating and law enforcement is involved. The vendor and the vulnerability are not named yet.",
+   "kind": "other",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/zachlloydtweets/status/2114800787716972873"
+   ],
+   "vendor": "Warp",
+   "posted_at": "2026-10-26T19:26:13Z",
+   "metrics": {
+    "likes": 38,
+    "reposts": 4,
+    "quotes": 3,
+    "replies": 1,
+    "views": 7561
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "SGLang and Cloudflare disclose cross-request KV cache exposure in disaggregated prefill/decode serving, fixed in v0.5.21",
+   "url": "https://www.lmsys.org/blog/2026-10-26-cf-security",
+   "handle": "@lmsysorg",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "In Cloudflare's GLM-5.3 deployment on Workers AI (Aug 27 to Sep 9), requests that fit the configured 1M-token context but overflowed the prefill KV pool could slip past rejection and return another user's content. SGLang's write-up also covers a related race where an aborted request's in-flight RDMA writes land in KV slots reassigned to another request. The fixes are an earlier admission reject, deferred slot release until prefill acknowledges the drain, and an opt-in transfer checksum; v0.5.21 protects Mooncake and NIXL by default and v0.5.22 covers MORI. Single-node serving is not affected.",
+   "kind": "other",
+   "evidence": "measured",
+   "links": [
+    "https://www.lmsys.org/blog/2026-10-26-cf-security",
+    "https://x.com/lmsysorg/status/2114840499983138839"
+   ],
+   "vendor": "SGLang",
+   "posted_at": "2026-10-26T22:04:01Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 70
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Kimi K3.1 Pro scores 76.8 on the Browser Use Benchmark and leads open-weight models on the Vals Science Index",
+   "url": "https://x.com/browser_use/status/2114807314310156312",
+   "handle": "@browser_use",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Browser Use measured Kimi K3.1 Pro at 76.8 on its benchmark, second only to GPT-6.1 Sol and ahead of Opus 5.5 and Sonnet 5.5, at about $2 per task; DeepSeek V4.1 Flash was the next best Chinese model at 70.6. Separately, Vals AI ranked it first among open-weight models and ninth overall on its Science Index at 44.4%, against 31.7% for the next open-weight model.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/browser_use/status/2114807314310156312",
+    "https://x.com/ValsAI/status/2114820504137986368"
+   ],
+   "vendor": "Moonshot AI",
+   "posted_at": "2026-10-26T19:52:09Z",
+   "metrics": {
+    "likes": 59,
+    "reposts": 5,
+    "quotes": 1,
+    "replies": 5,
+    "views": 3973
+   },
+   "confirmed_by": [
+    "@ValsAI"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Cursor adds DeepSeek V4.1 Flash, on the CursorBench cost frontier at every effort level",
+   "url": "https://x.com/cursor_ai/status/2114839997568405608",
+   "handle": "@cursor_ai",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "DeepSeek V4.1 Flash is now selectable in Cursor. Cursor says each of its effort levels sits on the CursorBench cost frontier, costing $0.60 to $0.98 per task, with no model scoring higher at those prices.",
+   "kind": "feature",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/cursor_ai/status/2114839997568405608"
+   ],
+   "vendor": "Cursor",
+   "posted_at": "2026-10-26T22:02:01Z",
+   "metrics": {
+    "likes": 69,
+    "reposts": 6,
+    "quotes": 3,
+    "replies": 12,
+    "views": 3558
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Which Qwen3.8-27B quant to run for multi-turn tool calling: 3-bit matches 6-bit",
+   "url": "https://x.com/witcheer/status/2114819488877096984",
+   "handle": "@witcheer",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "witcheer tested six files of Qwen3.8-27B on 100 multi-turn tool-calling tasks: 6-bit (22.9 GB) scored 81, 3-bit (11.9 GB) 80, GSQ-RCO 2-bit 76, Ternary-Bonsai 73 and Underdog-Saluki 71. On single-step tool calls all six scored 86 to 90, so the gap only shows over several turns; the advice is 3-bit on a 16 GB card, and keep thinking on for GSQ-RCO.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/witcheer/status/2114819488877096984"
+   ],
+   "vendor": null,
+   "posted_at": "2026-10-26T20:40:32Z",
+   "metrics": {
+    "likes": 40,
+    "reposts": 7,
+    "quotes": 1,
+    "replies": 11,
+    "views": 1843
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Camofox keeps Hermes Agent browser logins across restarts",
+   "url": "https://x.com/witcheer/status/2114786387413381242",
+   "handle": "@witcheer",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Camofox, a Firefox-based browser that Hermes Agent drives locally, stores each Hermes profile's logins on disk. The demo signs in once, restarts the Camofox server, and a fresh chat reaches the logged-in page without signing in again.",
+   "kind": "demo",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/witcheer/status/2114786387413381242"
+   ],
+   "vendor": null,
+   "posted_at": "2026-10-26T18:29:00Z",
+   "metrics": {
+    "likes": 42,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 6,
+    "views": 2252
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Cline Desktop v0.0.49 installs local models through Ollama or LM Studio and picks them for your hardware",
+   "url": "https://x.com/cline/status/2114812301216014706",
+   "handle": "@cline",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Cline Desktop can now install and manage local models via Ollama or LM Studio, checking the machine's hardware and recommending which local models fit (Settings, Provider, Local).",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://x.com/cline/status/2114812301216014706"
+   ],
+   "vendor": "Cline",
+   "posted_at": "2026-10-26T20:11:58Z",
+   "metrics": {
+    "likes": 30,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 6,
+    "views": 2652
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Self-Direction: agents turn each failure into a small LoRA skill and reuse it later",
+   "url": "https://self-direction.github.io/",
+   "handle": "@yuvalkansal",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Princeton and Meta FAIR researchers have an agent reflect on a failed trajectory, write up to 24 practice examples, and train a rank-16 LoRA adapter while the base model stays frozen; adapters go into a library and a similarity router reuses them on related tasks. With Qwen3.6-27B, success rose from 51.7% to 65.5% on Terminal-Bench 2.1, from 64.4% to 73.3% on Claw-Eval, and from 38.8% to 55.8% on GAIA, and repaired mistakes stayed fixed on later encounters far more often than with plain retries.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://self-direction.github.io/",
+    "https://x.com/yuvalkansal/status/2114777390257996185"
+   ],
+   "vendor": "Meta FAIR",
+   "posted_at": "2026-10-26T17:53:15Z",
+   "metrics": {
+    "likes": 24,
+    "reposts": 10,
+    "quotes": 1,
+    "replies": 2,
+    "views": 713
+   },
+   "confirmed_by": [
+    "@KLieret"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Datalab rebuilds document segmentation as an agent, best strict F1 on PoliTax-Split",
+   "url": "https://www.datalab.to/blog/segment-agent",
+   "handle": "@datalabto",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Datalab's /segment API now uses an agent that reads through a packet and checks likely boundaries before splitting it into documents, with an optional plain-language rule for what counts as a document. It reports 0.78 strict document F1 on the held-out PoliTax-Split benchmark with its own model (0.82 with Claude Opus 4.6) against 0.72 for the best published splitter, about 0.96 on its internal set including 1,000+ page packets, at $0.50 per 1,000 pages.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://www.datalab.to/blog/segment-agent"
+   ],
+   "vendor": "Datalab",
+   "posted_at": "2026-10-26T19:36:34Z",
+   "metrics": {
+    "likes": 5,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 246
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "ExecuTorch streaming speech recognition on Arm runs up to 2.12x faster on Pixel 11",
+   "url": "https://pytorch.org/blog/optimizing-streaming-speech-recognition-on-arm-edge-devices-with-executorch/",
+   "handle": "@PyTorch",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A PyTorch blog post shows how ExecuTorch with Arm SME2, FP16 and 8-bit weight quantization trades accuracy against latency for on-device streaming ASR, with up to 2.12x faster processing on a Pixel 11.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://pytorch.org/blog/optimizing-streaming-speech-recognition-on-arm-edge-devices-with-executorch/"
+   ],
+   "vendor": "PyTorch",
+   "posted_at": "2026-10-26T18:40:46Z",
+   "metrics": {
+    "likes": 33,
+    "reposts": 5,
+    "quotes": 1,
+    "replies": 9,
+    "views": 4052
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "AsyncGRPO tree packing now works on hybrid models like Qwen 3.5 GDN, LFM 2.5 and Nemotron 3.5",
+   "url": "https://x.com/winglian/status/2114786958975422473",
+   "handle": "@winglian",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "AsyncGRPO with tree packing now supports hybrid linear-attention and state-space models (Qwen 3.5 GDN, Liquid LFM 2.5, Nemotron 3.5 Mamba2) as a standalone component that plugs into Hugging Face Transformers and uses Hub kernels.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://x.com/winglian/status/2114786958975422473",
+    "https://x.com/DirhousssiAmine/status/2110642116716351663"
+   ],
+   "vendor": null,
+   "posted_at": "2026-10-26T18:31:16Z",
+   "metrics": {
+    "likes": 4,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 4,
+    "views": 620
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "fal opens FLUX 3 Klein LoRA training",
+   "url": "https://x.com/fal/status/2114810292299264055",
+   "handle": "@fal",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "fal now trains FLUX 3 Klein image LoRAs, with text-to-image and edit trainers taking up to 10 reference images per pair, up to 3 LoRAs per request on Klein and Klein Base, and bounding-box layouts that work with custom LoRAs.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://x.com/fal/status/2114810292299264055"
+   ],
+   "vendor": "fal",
+   "posted_at": "2026-10-26T20:03:59Z",
+   "metrics": {
+    "likes": 44,
+    "reposts": 3,
+    "quotes": 1,
+    "replies": 3,
+    "views": 3299
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Gradio ML Intern can pause mid-task for a human to review records before training",
+   "url": "https://x.com/Gradio/status/2114793333570908363",
+   "handle": "@Gradio",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Hugging Face's ML Intern agent can now stop partway through a job, show a batch of records in the chat, and wait for the user's review before it trains on anything.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://x.com/Gradio/status/2114793333570908363"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-10-26T18:56:36Z",
+   "metrics": {
+    "likes": 4,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 4,
+    "views": 652
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "RSIHub puts GEPA and three other self-improvement methods on one shared eval harness",
+   "url": "https://huggingface.co/papers/2610.32253",
+   "handle": "@HUNTER_z1389",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "RSIHub, an open-source ByteDance framework, runs GEPA and three other self-improving agent methods on shared infrastructure so they can be compared directly; the best pass@1 gain was 13.5 points, but gains did not always carry over to held-out tasks.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/papers/2610.32253",
+    "https://x.com/HUNTER_z1389/status/2114790224203293023"
+   ],
+   "vendor": "ByteDance",
+   "posted_at": "2026-10-26T18:44:15Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 11
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 2,
+  "kept": 1,
+  "note": "Live bookmarks read; two saves since the 18:09Z sweep were vetted: the OmarchyTV launch (kept, deep-read, repo checked) and a non-AI politics post (rejected)."
+ },
+ "saved_rejected": [
+  {
+   "url": "https://x.com/theholy_nope/status/2114718973468058009",
+   "reason": "Non-AI politics."
+  }
+ ],
+ "list_posts_read": 97,
+ "list_pages": 1,
+ "discovery": {
+  "queries": 2,
+  "kept": 1,
+  "note": "One link-based release search found RSIHub among mostly small personal repos; one search for more detail on the Warp incident found only the CEO's statement and unrelated noise."
+ },
+ "horizon": {
+  "block-dessa": "block.xyz/dessa still offers demo recordings, a waitlist and early access for safety researchers; recent posts are weekly roundups and a Japanese commentary. No weights, API or paper. No trigger."
+ },
+ "skipped": [
+  {
+   "url": "https://x.com/turbopuffer/status/2114791115543216167",
+   "reason": "turbopuffer v3 vectorized execution is described as a future design with no measured numbers yet."
+  },
+  {
+   "url": "https://x.com/zizhang_li/status/2114774656603590673",
+   "reason": "UniAction world model thread has no paper or code link in the post."
+  },
+  {
+   "url": "https://x.com/baseten/status/2114836582062842223",
+   "reason": "BDN Sealed Volumes announcement truncated with no docs link and almost no traction yet."
+  },
+  {
+   "url": "https://x.com/OpenAI",
+   "reason": "GPT-6.1 Terra follow-ups from @OpenAI, @sama, @github, @code, @OpenRouter, @LiteLLM and @arena repeat the item already kept at 18:09Z."
+  },
+  {
+   "url": "https://x.com/teortaxesTex",
+   "reason": "Opinion and commentary posts with no new artifact; same for @mirku21 engagement posts and @levelsio stock talk."
+  }
+ ],
+ "security_forwarded": [
+  {
+   "url": "https://x.com/zachlloydtweets/status/2114800787716972873",
+   "matched": "always_forward agent tooling and supply chain (agent terminal vendor breached through a vendor dependency, agent trace and telemetry data accessed)"
+  },
+  {
+   "url": "https://x.com/The_Whole_Daisy/status/2114796466850202103",
+   "matched": "Claude Code in stack.json (new env var disables the last command blocklist under --dangerously-skip-permissions; worth confirming no fleet machine sets it)"
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://www.lmsys.org/blog/2026-10-26-cf-security",
+   "reason": "SGLang prefill/decode disaggregated serving is not in stack.json and the issue does not affect single-node serving."
+  }
+ ]
+}

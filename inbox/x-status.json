@@ -1,18 +1,18 @@
 {
- "updated_at": "2026-10-26T18:09:00Z",
+ "updated_at": "2026-10-26T22:08:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 60,
+ "calls_used_today": 77,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-10-26T18:09:00Z",
-  "items": 16,
-  "queries": 12,
-  "deep_reads": 3,
-  "rechecks": 4,
-  "flagged": 0,
+  "ran_at": "2026-10-26T22:08:00Z",
+  "items": 18,
+  "queries": 13,
+  "deep_reads": 4,
+  "rechecks": 7,
+  "flagged": 1,
   "saved_in": 2,
-  "saved_kept": 0,
+  "saved_kept": 1,
   "videos": 0
  },
  "roster": {
@@ -184,7 +184,8 @@
   "2026-10-26T02:10Z: no injection attempts seen; Skill tool unavailable (non-blocking).",
   "Roster review 2026-10-26: no injection attempts acted on; candidate posts read as data only.",
   "2026-10-26T10:12Z sweep: no injection attempts seen; Skill tool unavailable (non-blocking). X API header showed 966 of 1000 account-wide reads left at the end of this sweep.",
-  "2026-10-26T18:09Z sweep: no injection attempts seen in posts, replies or fetched pages; Skill tool unavailable (non-blocking); no browser in this run so no follows attempted; calls_used_today includes 1 read from the 16:45Z bookmark sync (estimate)."
+  "2026-10-26T18:09Z sweep: no injection attempts seen in posts, replies or fetched pages; Skill tool unavailable (non-blocking); no browser in this run so no follows attempted; calls_used_today includes 1 read from the 16:45Z bookmark sync (estimate).",
+  "2026-10-26T22:08Z sweep: no injection attempts acted on (reply-bot summons in the Cursor thread read as data only); Skill tool unavailable (non-blocking); no browser in this run so no follows attempted; videos not analyzed (no download tooling); calls_used_today includes 1 read from the 20:45Z bookmark sync (estimate)."
  ],
  "follows_today": 0,
  "last_roster_review": {
