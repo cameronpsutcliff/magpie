@@ -1,0 +1,227 @@
+{
+ "ran_at": "2026-10-26T02:10:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-10-25T22:11:00Z",
+ "queries": 9,
+ "calls": 12,
+ "items": [
+  {
+   "title": "MiniMax indexes 11 community additions to its open H3 video and audio model",
+   "url": "https://x.com/MiniMax_AI/status/2114504329499660419",
+   "handle": "@MiniMax_AI",
+   "group": "labs",
+   "origin": "list",
+   "summary": "MiniMax added 11 community projects to its H3 ecosystem index, including 8-step reference-conditioned video plus audio generation, a 4-step distillation, sparse attention, reference-token compression, and serving paths for GPUs, TPUs and Apple Silicon.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/MiniMax-AI/awesome-minimax-h3-integration"
+   ],
+   "vendor": true,
+   "posted_at": "2026-10-25T23:48:00Z",
+   "metrics": {
+    "likes": 185,
+    "reposts": 17,
+    "replies": 8,
+    "quotes": 23
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": false,
+    "pushback": "",
+    "source": "Roundup curated by the vendor; each linked project is community work that was not tested here."
+   }
+  },
+  {
+   "title": "tinygrad reports about 1000 tok/s aggregate decode for GLM-5.3-Flash on tinybox red flash",
+   "url": "https://x.com/__tinygrad__/status/2114527981020545313",
+   "handle": "@__tinygrad__",
+   "group": "opensource",
+   "origin": "list",
+   "summary": "tinygrad says its tinybox red flash now serves GLM-5.3-Flash at IQ4_XS with a full 262k context for a single user and about 1000 tok/s aggregate decode across many users, up from the 220 tok/s single-user figure it posted Oct 22. It says Terminal-Bench and DeepSWE runs are in progress.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/__tinygrad__/status/2114527981020545313"
+   ],
+   "vendor": true,
+   "posted_at": "2026-10-26T01:22:00Z",
+   "metrics": {
+    "likes": 44,
+    "reposts": 2,
+    "replies": 0,
+    "quotes": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": false,
+    "pushback": "",
+    "source": "Vendor's own numbers on its own hardware; concurrency level and benchmark method not stated."
+   }
+  },
+  {
+   "title": "Independent test runs Nanbeige4.3-33B as a coding agent on one A6000",
+   "url": "https://x.com/Alex_tra_memory/status/2114506729203331119",
+   "handle": "@Alex_tra_memory",
+   "group": "builders",
+   "origin": "list",
+   "summary": "A tester ran Nanbeige4.3-33B (kept 2026-10-25) under vLLM 0.32 with FP8 weights and an NVFP4 KV cache on an Ampere A6000, getting a 113K-token cache pool at about 19 tok/s. In a coding-agent demo it fixed 5 of 5 planted bugs in a Dijkstra implementation and passed 8 of 8 hidden tests.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/nanbeige/status/2114328933181333798"
+   ],
+   "vendor": false,
+   "posted_at": "2026-10-25T23:57:00Z",
+   "metrics": {
+    "likes": 2,
+    "reposts": 0,
+    "replies": 0,
+    "quotes": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": false,
+    "pushback": "",
+    "source": "Single demo on a task the tester built; one run."
+   },
+   "video": {
+    "has_video": true,
+    "watched": false
+   }
+  },
+  {
+   "title": "Hydro project releases Infinity, a Rust agent runtime that hibernates agents between tool calls",
+   "url": "https://x.com/enesakar/status/2114480500916281424",
+   "handle": "@enesakar",
+   "group": "devtools",
+   "origin": "discovery",
+   "summary": "Infinity is an Apache-2.0 Rust framework where an agent between turns is only its conversation history, so waiting agents cost no process and wake on the next event; the README claims 75k agents fit in a Raspberry Pi's memory. It includes a Reactive Agent Protocol that runs existing MCP servers through a compatibility layer, AWS Lambda deploy constructs, and a coding agent; sandbox crates v0.2.0 shipped Oct 22.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/hydro-project/infinity",
+    "https://infinity.hydro.run"
+   ],
+   "vendor": false,
+   "posted_at": "2026-10-25T21:59:00Z",
+   "metrics": {
+    "likes": 3,
+    "reposts": 0,
+    "replies": 0,
+    "quotes": 0
+   },
+   "confirmed_by": [
+    "@AIChaserAn"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": false,
+    "pushback": "",
+    "source": "The 75k-agent figure is the project's own README claim; repo is young (27 stars)."
+   }
+  }
+ ],
+ "rechecks": [
+  {
+   "url": "https://x.com/vllm_project/status/2114135647040778667",
+   "result": "no community note; metrics up (257 likes)"
+  },
+  {
+   "url": "https://x.com/JoshuaSWarren/status/2114122761471988172",
+   "result": "no community note; metrics up (179 likes)"
+  },
+  {
+   "url": "https://x.com/KBlueleaf/status/2113758295857184922",
+   "result": "no community note; metrics up (5063 likes)"
+  },
+  {
+   "url": "https://x.com/nanbeige/status/2114328933181333798",
+   "result": "no community note; metrics up (2502 likes)"
+  },
+  {
+   "url": "https://x.com/rasbt/status/2114325097653669940",
+   "result": "no community note; metrics up (1290 likes)"
+  },
+  {
+   "url": "https://x.com/Neriousy/status/2114396202062242087",
+   "result": "no community note; metrics up (875 likes)"
+  },
+  {
+   "url": "https://x.com/JoshuaSWarren/status/2114471654499729825",
+   "result": "no community note; metrics up (119 likes)"
+  }
+ ],
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 0,
+  "note": "Archive /workspace/x-ai-bookmarks and live bookmarks read; no ids beyond seen_ids."
+ },
+ "saved_rejected": [],
+ "follows": {
+  "mode": "browser",
+  "note": "No browser available to this run; no follows attempted. Candidate for the owner: @MiniMax_AI (curated lab, 4 qualifying first-hand posts in 30 days, none doubt 2+)."
+ },
+ "list_posts_read": 98,
+ "list_pages": 1,
+ "security_forwarded": [
+  {
+   "url": "https://www.pillar.security/blog/open-and-shut-remote-code-execution-in-opencode-via-mcp-oauth",
+   "post": "https://x.com/david_x_ai/status/2114500354662453750",
+   "matched": "always_forward: agent tooling/MCP",
+   "note": "Pillar Security (disclosed 2026-10-19, THN https://thehackernews.com/2026/10/opencode-flaw-lets-malicious-mcp.html): opencode 1.0.137 to 1.18.32 passes a remote MCP server's OAuth authorization_endpoint to open@10, allowing PowerShell $(...) command injection on Windows/WSL when the user connects a malicious MCP server; fixed 1.18.33 (2026-09-28); no CVE, proposed CVSS 9.8; macOS/Linux not affected. Distinct from the OpenCode Console key breach. Related MCP Inspector GHSA-q978-78c7-phqw fixed in 2.12.0 (same fix line as the already-forwarded Inspector advisories). Box check: no opencode binary or global npm install; box is Linux."
+  },
+  {
+   "url": "https://www.elastic.co/security-labs/threat-command/apex-accelerator-malicious-npm-packages",
+   "post": "https://x.com/0x_Agency/status/2114507634757734806",
+   "matched": "Node.js (npm); always_forward: supply chain npm, agent tooling/MCP",
+   "note": "Elastic (REF8801, THN https://thehackernews.com/2026/10/fake-web3-accelerator-uses-npm-packages.html): fake Web3 accelerator lure ships npm packages @apexacc/cli and @apexacc/audit (an MCP server) that drop an infostealer/backdoor on Windows and macOS (CloudSyncD persistence), rewrite OPENROUTER_BASE_URL to arena.apexaccs.org to proxy LLM traffic, and register a rogue MCP server in ~/.apex/agent/mcp.json. Box check: no @apexacc packages, no ~/.apex, no apexaccs strings in ~/.config, ~/.cursor or ~/.claude, OPENROUTER_BASE_URL unset."
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/data_magician_",
+   "reason": "LiteLLM 1.107.0 already forwarded 2026-10-22"
+  },
+  {
+   "url": "https://x.com/tbs142857",
+   "reason": "AGENTS.md-in-Downloads hijack already forwarded today"
+  },
+  {
+   "url": "https://x.com/SOCMinute",
+   "reason": "AGENTS.md-in-Downloads hijack already forwarded today"
+  },
+  {
+   "url": "https://x.com/lunkertw",
+   "reason": "NSA PHP2Shell digest; PHP not in stack, logged earlier"
+  },
+  {
+   "url": "https://x.com/nickpio",
+   "reason": "Generic monthly incident roundup, no new item"
+  },
+  {
+   "url": "https://x.com/ueo0j",
+   "reason": "CISA KEV Nextcloud Collabora; not in stack"
+  }
+ ],
+ "skipped": [
+  "@gdb quote of Sept OpenAI Navier-Stokes result (old)",
+  "@MatthewBerman personal/opinion posts",
+  "@teortaxesTex commentary",
+  "@levelsio Brazil election (non-AI politics)",
+  "@sayashk election forecasting commentary",
+  "@SemiAnalysis_ AMD Kimi K3 profit (business)",
+  "@aitrackerbot unlinked lab classifier",
+  "@HuggingModels automated squad-0.8b thread",
+  "discovery crypto launchpad and hype listicles",
+  "mlx-serve and Carbon-X reposts (already kept Oct 21 and Oct 22)"
+ ]
+}

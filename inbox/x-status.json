@@ -1,16 +1,16 @@
 {
- "updated_at": "2026-10-25T22:11:00Z",
+ "updated_at": "2026-10-26T02:20:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 180,
+ "calls_used_today": 192,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-10-25T22:11:00Z",
+  "ran_at": "2026-10-26T02:10:00Z",
   "items": 4,
-  "queries": 10,
-  "deep_reads": 1,
-  "rechecks": 5,
-  "flagged": 2,
+  "queries": 9,
+  "deep_reads": 0,
+  "rechecks": 7,
+  "flagged": 0,
   "saved_in": 0,
   "saved_kept": 0,
   "videos": 0
@@ -151,7 +151,10 @@
   "2026-10-25 18:09Z: @HuggingModels automated 5-post threads are still most of the List timeline (about 40 of 43 posts this window); recommend retiring from the roster and removing from the List.",
   "2026-10-25 18:09Z: stack.json has no Tailscale component though the fleet runs a tailnet; Tailworm was forwarded on that basis. Suggest the owner add Tailscale (and headscale if used) to stack.json.",
   "2026-10-25 18:09Z: quiet Sunday window; LFM2.5-24B-A2B and Monarch Latent Math 7B surfaced via small accounts but skipped (Liquid post dates to Oct 13; Monarch has no traction).",
-  "2026-10-25T22:11Z: @HuggingModels (owner_saves trial, not owner_requested) again flooded the List with automated model threads and a 'top 10 uncensored LLMs' listicle; recommend retiring at the next roster review. @teortaxesTex review still pending."
+  "2026-10-25T22:11Z: @HuggingModels (owner_saves trial, not owner_requested) again flooded the List with automated model threads and a 'top 10 uncensored LLMs' listicle; recommend retiring at the next roster review. @teortaxesTex review still pending.",
+  "2026-10-26T02:10Z: Skill tool / x-api-mcp-guide skill not available on the box; used tool schemas directly.",
+  "2026-10-26T02:10Z: block.xyz/dessa links x.com/RagavanThurair; consider adding that handle to the Dessa horizon checks (I cannot edit checks).",
+  "2026-10-26T02:10Z: @HuggingModels posted another automated squad-0.8b thread; retire recommendation stands. @teortaxesTex had about 8 commentary posts and no capability posts this window; review still pending. @aitrackerbot again posted an unlinked lab-classifier claim."
  ],
  "errors": [
   "Sweep 14:07Z, possible injection lure, not followed: in the quote posts of https://x.com/cnm13ryan/status/2113121138205499443, @lumpenspace tells readers to have their model 'check out my x bio'. Ignored; no bio was read.",
@@ -167,7 +170,8 @@
   "Roster review 2026-10-25: add_lists_member for @GChongkai was held for approval once, then succeeded. No injection attempts acted on; @Bober_smart injection lure read as data only.",
   "2026-10-25T10:09Z sweep: no injection attempts seen; one spam reply in the gpu-unlock thread (https://x.com/KBlueleaf/status/2113758295857184922) was ignored.",
   "2026-10-25T14:11Z sweep: no injection attempts acted on. A low-engagement Dessa horizon result (@Techsmartdaily1) made unsourced sensational claims; read as data only. X API header reported far more account-wide usage today than the repo tally (946 of 1000 remaining at sweep start); repo tally kept at 147.",
-  "2026-10-25T22:11Z sweep: no injection attempts seen. calls_used_today 180 = 161 + 17 this sweep + about 2 for the 1:41 and 3:41 PM bookmark syncs (estimated). X API header showed 913 of 1000 account-wide reads left. Browser unavailable to this run; no follows attempted. OpenCode clip was 33 s, under video_min_seconds, so not analyzed."
+  "2026-10-25T22:11Z sweep: no injection attempts seen. calls_used_today 180 = 161 + 17 this sweep + about 2 for the 1:41 and 3:41 PM bookmark syncs (estimated). X API header showed 913 of 1000 account-wide reads left. Browser unavailable to this run; no follows attempted. OpenCode clip was 33 s, under video_min_seconds, so not analyzed.",
+  "2026-10-26T02:10Z: no injection attempts seen; Skill tool unavailable (non-blocking)."
  ],
  "follows_today": 0,
  "last_roster_review": {
