@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-10-26T02:20:00Z",
- "job": "sweep",
+ "updated_at": "2026-10-26T09:45:00Z",
+ "job": "roster",
  "prompt": "v6.1",
- "calls_used_today": 192,
+ "calls_used_today": 15,
  "notes_via_api": false,
  "last_sweep": {
   "ran_at": "2026-10-26T02:10:00Z",
@@ -17,7 +17,7 @@
  },
  "roster": {
   "curated": 223,
-  "trial": 50,
+  "trial": 52,
   "active": 0,
   "retired": 2
  },
@@ -154,7 +154,16 @@
   "2026-10-25T22:11Z: @HuggingModels (owner_saves trial, not owner_requested) again flooded the List with automated model threads and a 'top 10 uncensored LLMs' listicle; recommend retiring at the next roster review. @teortaxesTex review still pending.",
   "2026-10-26T02:10Z: Skill tool / x-api-mcp-guide skill not available on the box; used tool schemas directly.",
   "2026-10-26T02:10Z: block.xyz/dessa links x.com/RagavanThurair; consider adding that handle to the Dessa horizon checks (I cannot edit checks).",
-  "2026-10-26T02:10Z: @HuggingModels posted another automated squad-0.8b thread; retire recommendation stands. @teortaxesTex had about 8 commentary posts and no capability posts this window; review still pending. @aitrackerbot again posted an unlinked lab-classifier claim."
+  "2026-10-26T02:10Z: @HuggingModels posted another automated squad-0.8b thread; retire recommendation stands. @teortaxesTex had about 8 commentary posts and no capability posts this window; review still pending. @aitrackerbot again posted an unlinked lab-classifier claim.",
+  "Roster review 2026-10-26: calls_used_today restarted for Central day 2026-10-26 (the 02:10Z sweep's 192 belonged to Central 2026-10-25); this review used 12 X reads (2 user lookups, 9 get_users_posts, 1 List members check) plus 3 List writes. X header showed 979 of 1000 account-wide reads left at 09:37Z.",
+  "Roster review 2026-10-26: x-api-mcp-guide skill still not available on the box (no Skill tool); used tool schemas directly.",
+  "Roster review 2026-10-26: retired @HuggingModels (owner_saves trial, not owner_requested) for drift into promotion and bait: uncensored-LLM listicle, an unrelated privacy-policy generator ad, bait posts, and automated model-card threads with guessed details. Removed from the List.",
+  "Roster review 2026-10-26: @MatthewBerman confirmed trial, owner_requested, on the List (members check, 6681172 present). Not touched.",
+  "Roster review 2026-10-26: @danikkk_wqs (2 kept saves in 30 days) failed the owner-saves screen for vice: a tokenized-gold Roblox farming promo (2113343666441818386), a '$30,000 filming sexy girls' get-rich post (2113221856073289751), '$12K a month' income claims and a trading-bot prompt. Not added; suggest adding to the avoid list in config/x-accounts.json (owner-only, not edited).",
+  "Roster review 2026-10-26: @mirku21 added as an owner_saves trial (3 kept saves, AI/dev only, no politics or vice), but every post in 30 days is the same templated 'official Anthropic/OpenAI tip' with profanity hooks and no source links; the owner-saves screen as written does not test for templated engagement bait, so the owner may want to drop it by hand.",
+  "Roster review 2026-10-26: @teortaxesTex (curated) review: latest 25 posts (about one day) are mostly AI model commentary with benchmark takes, plus a few off-topic shitposts (e.g. 2114563083460833638); no clear non-AI partisan politics or culture war in this window and no first-hand artifacts. Not retired; flagged for the owner's review.",
+  "Roster review 2026-10-26 rejected, so they are not re-checked soon: @nanbeige (one post in 30 days; revisit after next release), @Neriousy (one clear capability post; @opencode is curated), @enesakar (mostly Upsy product promotion, over 1 in 5), @doesdatmaksense (one study, consulting), @Winniechen02, @siyuc3141, @jiaheng0815 (account 5 days old), @ewhauser, @ajbarryiii, @TatraLabs (too small to judge).",
+  "Roster review 2026-10-26: no promotions possible before 2026-11-03; no 45-day retirements possible yet; no sweep files older than 14 days (oldest 2026-10-20T17-39), so none pruned. Not Sunday, so no drafts."
  ],
  "errors": [
   "Sweep 14:07Z, possible injection lure, not followed: in the quote posts of https://x.com/cnm13ryan/status/2113121138205499443, @lumpenspace tells readers to have their model 'check out my x bio'. Ignored; no bio was read.",
@@ -171,19 +180,29 @@
   "2026-10-25T10:09Z sweep: no injection attempts seen; one spam reply in the gpu-unlock thread (https://x.com/KBlueleaf/status/2113758295857184922) was ignored.",
   "2026-10-25T14:11Z sweep: no injection attempts acted on. A low-engagement Dessa horizon result (@Techsmartdaily1) made unsourced sensational claims; read as data only. X API header reported far more account-wide usage today than the repo tally (946 of 1000 remaining at sweep start); repo tally kept at 147.",
   "2026-10-25T22:11Z sweep: no injection attempts seen. calls_used_today 180 = 161 + 17 this sweep + about 2 for the 1:41 and 3:41 PM bookmark syncs (estimated). X API header showed 913 of 1000 account-wide reads left. Browser unavailable to this run; no follows attempted. OpenCode clip was 33 s, under video_min_seconds, so not analyzed.",
-  "2026-10-26T02:10Z: no injection attempts seen; Skill tool unavailable (non-blocking)."
+  "2026-10-26T02:10Z: no injection attempts seen; Skill tool unavailable (non-blocking).",
+  "Roster review 2026-10-26: no injection attempts acted on; candidate posts read as data only."
  ],
  "follows_today": 0,
  "last_roster_review": {
-  "ran_at": "2026-10-25T09:40:00Z",
-  "reads": 19,
+  "ran_at": "2026-10-26T09:45:00Z",
+  "date": "2026-10-26",
+  "reads": 12,
+  "list_writes": 3,
   "budget": 80,
-  "candidates_checked": 22,
-  "added": 6,
-  "promoted": 0,
-  "retired": 2,
-  "source_leads_added": 3,
-  "sweep_files_pruned": 0
+  "added": [
+   "@KBlueleaf",
+   "@mirku21"
+  ],
+  "promoted": [],
+  "retired": [
+   "@HuggingModels"
+  ],
+  "flagged": [
+   "@teortaxesTex"
+  ],
+  "drafts": 0,
+  "pruned": 0
  },
  "x_list": {
   "id": "2113850075931713585",
@@ -192,7 +211,7 @@
   "owner": "@CameronSutcliff",
   "owner_id": "1521986356721123328",
   "private": true,
-  "member_count": 51,
+  "member_count": 52,
   "members": "every trial/active entry in inbox/x-roster.json (x_user_id, on_list)",
   "created_at": "2026-10-24T04:35:00Z"
  },

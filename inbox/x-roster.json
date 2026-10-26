@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T14:52:34Z",
+  "updated_at": "2026-10-26T09:45:00Z",
   "accounts": [
     {
       "handle": "@thsottiaux",
@@ -826,12 +826,12 @@
       ],
       "last_qualifying_post": "2026-10-09",
       "signal_to_noise": 3,
-      "status": "trial",
+      "status": "retired",
       "added_on": "2026-10-24",
-      "retired_reason": null,
+      "retired_reason": "2026-10-26 roster review: drifted into promotion and engagement bait. Latest 25 posts are automated 5-post Hugging Face model-card threads with guessed details (DeepSeek-V4.1-Flash-1017 described as image-text-to-text), a 'TOP 10 UNCENSORED LLM MODELS' listicle (2114429568232911123), an unrelated privacy-policy generator ad (2114618568168075687) and bait posts (2114469666399965497, 2114597741011865623). Aggregator, not first-hand; not owner_requested. Removed from the List.",
       "source": "owner_saves",
       "x_user_id": "1996878964896550917",
-      "on_list": true
+      "on_list": false
     },
     {
       "handle": "@jankeesvw",
@@ -962,6 +962,46 @@
       "last_qualifying_post": "2026-10-24",
       "retired_reason": null,
       "x_user_id": "293383320",
+      "on_list": true
+    },
+    {
+      "handle": "@KBlueleaf",
+      "name": "KohakuBlueleaf",
+      "group": "opensource",
+      "affiliation": "KohakuLab / ComfyOrg",
+      "why": "First-hand local-GPU builder: measured consumer-GPU tensor-core unlocks (3090 75T to 135T in PyTorch, 2080 Ti, 4090) with repos, plus KohakuMossTrainer low-VRAM training and the KohakuTPU FPGA accelerator.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-26",
+      "evidence": [
+        "https://x.com/KBlueleaf/status/2113758295857184922",
+        "https://x.com/KBlueleaf/status/2114166857758605623",
+        "https://x.com/KBlueleaf/status/2111815926534516928",
+        "https://x.com/KBlueleaf/status/2112150191692562649"
+      ],
+      "last_qualifying_post": "2026-10-26",
+      "retired_reason": null,
+      "x_user_id": "1393765529127514115",
+      "on_list": true
+    },
+    {
+      "handle": "@mirku21",
+      "name": "mirku",
+      "group": "devtools",
+      "affiliation": "Independent",
+      "why": "Owner saved 3 of his posts in 30 days (Claude Code multi-model and subagent workflow tips). Trial from owner saves; AI/dev only, no politics or vice, but posts are a daily templated 'official Anthropic tip' format with no source links, so judge first-hand value at promotion.",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-10-26",
+      "source": "owner_saves",
+      "evidence": [
+        "https://x.com/mirku21/status/2107939129736700335",
+        "https://x.com/mirku21/status/2098836008468992471",
+        "https://x.com/mirku21/status/2114462105512644974"
+      ],
+      "last_qualifying_post": "2026-10-25",
+      "retired_reason": null,
+      "x_user_id": "1049965945131814912",
       "on_list": true
     }
   ],
@@ -1197,6 +1237,24 @@
       "seen_via": [
         "@yufan_zhuang"
       ]
+    },
+    {
+      "kind": "blog",
+      "name": "LlamaIndex blog",
+      "url": "https://www.llamaindex.ai/blog",
+      "why": "Primary write-ups and technical reports for LlamaIndex parsing and OCR models (OCRia-1 report and evals) that Magpie only sees via X.",
+      "seen_via": [
+        "@jerryjliu0"
+      ]
+    },
+    {
+      "kind": "changelog",
+      "name": "Baseten changelog",
+      "url": "https://www.baseten.co/changelog/",
+      "why": "Ships post-training and inference features (Loops SDK with Muse Spark Open) that reach Magpie only through X posts.",
+      "seen_via": [
+        "@baseten"
+      ]
     }
   ],
   "list": {
@@ -1204,8 +1262,8 @@
     "name": "Magpie roster",
     "owner": "@CameronSutcliff",
     "private": true,
-    "member_count": 51,
+    "member_count": 52,
     "scope": "every trial and active account in this file; curated config accounts are not members yet",
-    "updated_at": "2026-10-25T14:52:34Z"
+    "updated_at": "2026-10-26T09:45:00Z"
   }
 }
