@@ -13,6 +13,27 @@
  ],
  "items": [
   {
+   "id": "2026-10-26",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-10-26",
+   "title": "Code agentically with Nanbeige, cache Mac prompts, run Cline in cloud, and more",
+   "summary": "An open 33B agentic coder, much faster repeat prompts on Macs and cloud sandboxes for Cline lead a day weighted toward coding agents. Google's Gemini 4 Argon appears only through a podcast interview, and the rest is quants, demos, serving updates and how-to talks.",
+   "content_html": "<p>An open 33B agentic coder, much faster repeat prompts on Macs and cloud sandboxes for Cline lead a day weighted toward coding agents. Google&#x27;s Gemini 4 Argon appears only through a podcast interview, and the rest is quants, demos, serving updates and how-to talks.</p><p><strong>An open coding model small enough to host yourself now claims a clear lead on terminal agent tasks.</strong> Nanbeige&#x27;s dense 33B model reads 512K tokens of context. Its makers say it scores 80.9 on Terminal-Bench 2.1, against 73.0 for Qwen3.8-27B, so teams could run agent coding work on their own machines instead of a paid API. The scores are the maker&#x27;s own. The savings case is also narrower now that OpenAI and Anthropic prices have fallen by up to 80%.</p><p><strong>Coding agents can now run fast on a laptop, or move off it entirely.</strong> On Apple Silicon, Rapid-MLX reuses prompt state, so a repeated prompt of about 32K tokens starts in 0.39 s rather than 18.6 s. That matters because agents resend long contexts constantly. Cline goes the other way: a task can move to a cloud sandbox that clones the repo and runs on its own model. Rapid-MLX&#x27;s figures are self-reported, and Cline has not said what cloud runs cost or how they are limited.</p><p><strong>JetBrains is trying an editor designed for an agent from the start, not an agent added to an old IDE.</strong> Thinkrail pairs the pi agent with a light editor that adapts to how you work. The repo does not yet show how that adaptation works.</p><ol><li><a href=\"https://huggingface.co/Nanbeige/Nanbeige4.3-33B\">Nanbeige4.3-33B open weights target agentic coding</a>: You can download an open-weight 33B dense agentic coding model with 512K context that its makers say scores 80.9 on Terminal-Bench 2.1, against 73.0 for Qwen3.8-27B.</li><li><a href=\"https://minimaxir.com/2026/10/cheap-llms/\">Why OpenAI and Anthropic cut LLM prices up to 80%</a>: Workloads that did not pay off a few months ago may now fit a budget, since OpenAI and Anthropic cut LLM prices by up to 80% in that time.</li><li><a href=\"https://github.com/JetBrains/thinkrail\">JetBrains Thinkrail, a lightweight IDE built around pi</a>: You can vibe code with pi inside a lightweight JetBrains IDE that customises itself around the way you work.</li><li><a href=\"https://x.com/rapidmlx/status/2114379438515519588\">Rapid-MLX 0.16.9 cuts repeat long-prompt start to 0.39 s</a>: On Apple Silicon you can reuse prompt state so a repeated ~32K-token prompt starts in 0.39 s instead of 18.6 s, and run Flint 40B at 131 tok/s on a 36 GB Mac with tool calls.</li><li><a href=\"https://github.com/cline/cline/releases/tag/v4.1.26\">Cline 4.1.26 adds cloud tasks in sandboxes</a>: With cloud sessions on, you can switch Cline between local and cloud, pick a separate model for cloud tasks, and watch a sandbox clone your repo and start the agent.</li></ol><p><strong>New possibility:</strong> Due diligence code audits can run live with the target&#x27;s engineers present</p><p><strong>Worth watching:</strong> <a href=\"https://www.youtube.com/watch?v=_XXX5K-EMoc\">Kimi K3.1 Pro and Opus 5.5 Made the Same 13 Apps (Raw Results)</a>; <a href=\"https://www.youtube.com/watch?v=dZgA6btnb_s\">Do Not Let Models Invent Numbers - Vinoo Ganesh, Kepler</a>; <a href=\"https://www.youtube.com/watch?v=aVbRSIQO2dE\">Why Frontier Models Fail as Buy-Side Analysts - Janie Gu, Google DeepMind &amp; Suyeol Yun, LinqAlpha</a></p><p><strong>Still open:</strong> <a href=\"https://www.federalregister.gov/documents/2026/10/20/2026-21447/notice-of-order-regarding-exclusion-and-removal-of-deepseek-products-from-federal-civilian-executive\">DHS order bars DeepSeek products from federal civilian agencies</a> (2026-10-20); <a href=\"https://digital-strategy.ec.europa.eu/en/library/first-harmonised-standard-supporting-ai-act-published-official-journal\">EU publishes first AI Act harmonised standard for high-risk providers</a> (2026-10-20)</p><p><strong>Threats still open:</strong> <a href=\"https://emudhra.we-have-a-problem.com/\">eMudhra intermediate CA private keys compromised</a> (high (editor&#x27;s estimate), patched; 3 package advisories); <a href=\"https://osv.dev/vulnerability/GHSA-46jr-4wx8-v453\">MCP TypeScript SDK server memory exhaustion</a> (high, patched); <a href=\"https://osv.dev/vulnerability/GHSA-gx7p-2j49-hfq4\">vLLM multimodal processor kwargs allow out-of-memory denial of service</a> (high, patched)</p>",
+   "content_text": "An open 33B agentic coder, much faster repeat prompts on Macs and cloud sandboxes for Cline lead a day weighted toward coding agents. Google's Gemini 4 Argon appears only through a podcast interview, and the rest is quants, demos, serving updates and how-to talks. Nanbeige4.3-33B open weights target agentic coding Why OpenAI and Anthropic cut LLM prices up to 80% JetBrains Thinkrail, a lightweight IDE built around pi Rapid-MLX 0.16.9 cuts repeat long-prompt start to 0.39 s Cline 4.1.26 adds cloud tasks in sandboxes",
+   "date_published": "2026-10-26T10:51:46Z",
+   "tags": [
+    "agents",
+    "coding",
+    "infra",
+    "local",
+    "models"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-26.json",
+    "backfilled": false,
+    "capabilities": 207
+   }
+  },
+  {
    "id": "2026-10-24",
    "url": "https://www.cameronsutcliff.com/magpie/2026-10-24",
    "title": "Run Apple's model from the shell, fit a robot assistant in 4GB, grade billable engineering, and more",
@@ -684,30 +705,6 @@
    ],
    "_magpie": {
     "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-09-26.json",
-    "backfilled": true,
-    "capabilities": 117
-   }
-  },
-  {
-   "id": "2026-09-25",
-   "url": "https://www.cameronsutcliff.com/magpie/2026-09-25",
-   "title": "Exposes benchmark memorization, compresses models, benchmarks world-model serving, and more",
-   "summary": "A quiet day with a few useful building blocks. The strongest items are a test that checks whether coding agents memorized SWE-bench, a model compression library, and serving benchmarks for video world models.",
-   "content_html": "<p>A quiet day with a few useful building blocks. The strongest items are a test that checks whether coding agents memorized SWE-bench, a model compression library, and serving benchmarks for video world models.</p><ol><li><a href=\"https://huggingface.co/papers/2609.27891\">SchrodingerRepo tests if agents memorized SWE-bench</a>: You can evaluate coding agents on repositories whose structure is dynamically altered, reducing reliance on memorized cues.</li><li><a href=\"https://huggingface.co/papers/2609.26780\">SpeakerMem-R1 tracks who said what</a>: Agents can keep separate, speaker-labeled memory in multi-party conversations and reason about relations between speakers.</li><li><a href=\"https://github.com/NVIDIA/Model-Optimizer\">NVIDIA Model-Optimizer unifies model compression techniques</a>: You can apply quantization, distillation, pruning, architecture search and speculative decoding from one library, targeting TensorRT-LLM, TensorRT or vLLM.</li><li><a href=\"https://www.youtube.com/watch?v=NER_yS3YZsw\">Benchmarks for serving NVIDIA Cosmos 3 Super</a>: You can compare four serving topologies for a video world model on HGX B200 and H200 using vLLM-Omni, with reproducible benchmarks.</li><li><a href=\"https://github.com/vectorize-io/hindsight\">Hindsight: agent memory that learns</a>: Agents can use an open-source memory layer that is meant to learn over time.</li></ol>",
-   "content_text": "A quiet day with a few useful building blocks. The strongest items are a test that checks whether coding agents memorized SWE-bench, a model compression library, and serving benchmarks for video world models. SchrodingerRepo tests if agents memorized SWE-bench SpeakerMem-R1 tracks who said what NVIDIA Model-Optimizer unifies model compression techniques Benchmarks for serving NVIDIA Cosmos 3 Super Hindsight: agent memory that learns",
-   "date_published": "2026-10-20T15:48:45Z",
-   "tags": [
-    "agents",
-    "coding",
-    "evals",
-    "infra",
-    "memory",
-    "models",
-    "research",
-    "robotics"
-   ],
-   "_magpie": {
-    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-09-25.json",
     "backfilled": true,
     "capabilities": 117
    }

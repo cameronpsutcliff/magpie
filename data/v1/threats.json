@@ -1,6 +1,6 @@
 {
  "schema": "magpie.threats/1",
- "updated": "2026-10-24",
+ "updated": "2026-10-26",
  "threats": [
   {
    "id": "thr-2026-10-23-vllm-multimodal-processor-kwargs-allow-out-of",
@@ -73,7 +73,7 @@
     "GHSA-gx7p-2j49-hfq4",
     "url:osv.dev/vulnerability/GHSA-gx7p-2j49-hfq4"
    ],
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-26",
    "reach": 2,
    "wide": false
   },
@@ -432,8 +432,8 @@
    "kind": "threat",
    "category": "trust-infrastructure",
    "title": "eMudhra intermediate CA private keys compromised",
-   "headline": "Eight eMudhra intermediate CA keys were recoverable, exposing TLS clients that ship their own CA bundles",
-   "summary": "The private keys of eight eMudhra intermediate CA certificates were compromised because the CA generated them incorrectly, so anyone can recover them from the certificates. An attacker with any of these keys could impersonate any website or service, and two of the eight certificates are for code signing and trusted by Microsoft. Firefox, Chrome, Microsoft and Apple block the certificates, but clients that ship their own CA bundle or do not consume revocation information stay exposed until they are updated.",
+   "headline": "Eight eMudhra intermediate CA keys were recoverable, letting attackers impersonate sites to non-browser TLS clients",
+   "summary": "The private keys of eight eMudhra intermediate CA certificates were compromised because the CA generated them incorrectly, so anyone can recover them from the certificates. Six are TLS intermediates trusted by the Chrome, Mozilla, Microsoft and Apple root programs, and two are codesigning intermediates trusted by Microsoft. An attacker with any of the keys could impersonate any website or service to clients that still trust the intermediates, especially clients that ship their own CA bundle or do not enforce Certificate Transparency.",
    "severity": "high",
    "severity_basis": "editor",
    "exploited": null,
@@ -443,42 +443,42 @@
    "affects": [
     {
      "name": "EM EV TLS CA - G3B (eMudhra BV)",
-     "ecosystem": "PKI",
+     "ecosystem": "CA",
      "versions": ""
     },
     {
      "name": "EM OV TLS CA - G3B (eMudhra BV)",
-     "ecosystem": "PKI",
+     "ecosystem": "CA",
      "versions": ""
     },
     {
      "name": "EM DV TLS CA - G3B (eMudhra BV)",
-     "ecosystem": "PKI",
+     "ecosystem": "CA",
      "versions": ""
     },
     {
      "name": "EM EV TLS CA - G3C (eMudhra Inc)",
-     "ecosystem": "PKI",
+     "ecosystem": "CA",
      "versions": ""
     },
     {
      "name": "EM OV TLS CA - G3C (eMudhra Inc)",
-     "ecosystem": "PKI",
+     "ecosystem": "CA",
      "versions": ""
     },
     {
      "name": "EM DV TLS CA - G3C (eMudhra Inc)",
-     "ecosystem": "PKI",
+     "ecosystem": "CA",
      "versions": ""
     },
     {
      "name": "EM OV CS CA - G3B (eMudhra BV)",
-     "ecosystem": "PKI",
+     "ecosystem": "CA",
      "versions": ""
     },
     {
      "name": "EM OV CS CA - G3C (eMudhra Inc)",
-     "ecosystem": "PKI",
+     "ecosystem": "CA",
      "versions": ""
     }
    ],
@@ -500,12 +500,12 @@
      "version": "26.9.4"
     },
     {
-     "name": "Node.js",
-     "version": "26.12.1, 24.22.1, 22.23.4"
-    },
-    {
      "name": "Python",
      "version": "3.15.1, 3.14.9, 3.13.17"
+    },
+    {
+     "name": "Node.js",
+     "version": "26.12.1, 24.22.1, 22.23.4"
     },
     {
      "name": "Go",
@@ -516,20 +516,20 @@
      "version": "44.9.1, 43.8.1, 42.11.16"
     },
     {
+     "name": "NSS",
+     "version": "3.131.1"
+    },
+    {
      "name": "Claude Code",
      "version": "2.1.303"
     },
     {
+     "name": "litellm",
+     "version": "1.103.8, 1.104.6, 1.105.4, 1.106.3"
+    },
+    {
      "name": "Visual Studio Code",
      "version": "1.143.1"
-    },
-    {
-     "name": "Docker Engine",
-     "version": "29.9.2"
-    },
-    {
-     "name": "curl CA bundle",
-     "version": "2026-10-20"
     }
    ],
    "actions": [
@@ -537,30 +537,30 @@
     "Update pip to 26.2.2 or later",
     "Update uv to 0.13.5 or later",
     "Update Conda to 26.9.4 or later",
-    "Update Node.js to 26.12.1, 24.22.1, 22.23.4 or later",
     "Update Python to 3.15.1, 3.14.9, 3.13.17 or later",
+    "Update Node.js to 26.12.1, 24.22.1, 22.23.4 or later",
     "Update Go to 1.27.3, 1.26.10 or later",
     "Update Electron to 44.9.1, 43.8.1, 42.11.16 or later",
+    "Update NSS to 3.131.1 or later",
     "Update Claude Code to 2.1.303 or later",
+    "Update litellm to 1.103.8, 1.104.6, 1.105.4, 1.106.3 or later",
     "Update Visual Studio Code to 1.143.1 or later",
-    "Update Docker Engine to 29.9.2 or later",
-    "Update curl CA bundle to 2026-10-20 or later",
-    "Do not rely on operating system or browser updates alone for clients that ship their own CA bundle."
+    "Update browsers and operating systems promptly."
    ],
    "action_quotes": [
     {
-     "action": "Do not rely on operating system or browser updates alone for clients that ship their own CA bundle.",
-     "quote": "Updating the operating system or browser may not be enough for these clients."
+     "action": "Update browsers and operating systems promptly.",
+     "quote": "Users should update their browsers and operating systems to the latest versions as soon as possible."
     }
    ],
    "who": [
-    "non-browser TLS clients that do not check revocation",
+    "non-browser TLS clients that do not enforce Certificate Transparency",
     "applications and libraries that ship their own CA bundle",
     "apps built on Electron"
    ],
    "published": "2026-10-20",
    "first_seen": "2026-10-21",
-   "updated": "2026-10-24",
+   "updated": "2026-10-26",
    "cves": [],
    "kev": false,
    "doc": "https://emudhra.we-have-a-problem.com/",
@@ -597,7 +597,7 @@
     "url:emudhra.we-have-a-problem.com",
     "url:groups.google.com/a/mozilla.org/g/dev-security-policy/c/0R3XLJL6FuE"
    ],
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-26",
    "reach": 37,
    "wide": true
   },

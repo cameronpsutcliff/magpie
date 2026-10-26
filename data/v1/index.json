@@ -2,6 +2,81 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-10-26",
+   "headline": "Code agentically with Nanbeige, cache Mac prompts, run Cline in cloud, and more",
+   "events": 207,
+   "sources": 525,
+   "enriched": true,
+   "top": [
+    {
+     "id": "4f9ef4009ca9",
+     "title": "Nanbeige4.3-33B open weights target agentic coding",
+     "impact": 4,
+     "vendor": "Nanbeige"
+    },
+    {
+     "id": "1bebf11e0288",
+     "title": "Why OpenAI and Anthropic cut LLM prices up to 80%",
+     "impact": 4,
+     "vendor": "OpenAI and Anthropic"
+    },
+    {
+     "id": "97a07ca79486",
+     "title": "JetBrains Thinkrail, a lightweight IDE built around pi",
+     "impact": 3,
+     "vendor": "JetBrains"
+    },
+    {
+     "id": "14ee88fdec52",
+     "title": "Rapid-MLX 0.16.9 cuts repeat long-prompt start to 0.39 s",
+     "impact": 4,
+     "vendor": "Rapid-MLX"
+    },
+    {
+     "id": "18dfd732230b",
+     "title": "Cline 4.1.26 adds cloud tasks in sandboxes",
+     "impact": 4,
+     "vendor": "Cline"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Anthropic",
+    "Google",
+    "NVIDIA",
+    "Black Forest Labs",
+    "Qwen"
+   ],
+   "topics": {
+    "models": 55,
+    "agents": 52,
+    "coding": 46,
+    "multimodal": 42,
+    "infra": 23,
+    "local": 22,
+    "memory": 15,
+    "mcp": 11,
+    "research": 10,
+    "evals": 6,
+    "reverse": 6,
+    "security": 4,
+    "robotics": 3
+   },
+   "kinds": {
+    "video": 50,
+    "repo": 37,
+    "social": 31,
+    "model": 30,
+    "space": 20,
+    "community": 16,
+    "newsletter": 14,
+    "changelog": 7,
+    "blog": 2
+   },
+   "constraints": [],
+   "threats": []
+  },
+  {
    "date": "2026-10-24",
    "headline": "Run Apple's model from the shell, fit a robot assistant in 4GB, grade billable engineering, and more",
    "events": 337,
@@ -2556,5 +2631,5 @@
    }
   }
  ],
- "latest": "2026-10-24"
+ "latest": "2026-10-26"
 }
