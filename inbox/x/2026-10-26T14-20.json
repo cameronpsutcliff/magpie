@@ -1,0 +1,198 @@
+{
+  "ran_at": "2026-10-26T14:20:00Z",
+  "bot": "magpie-scout",
+  "prompt": "v6.1",
+  "since": "2026-10-26T10:12:00Z",
+  "queries": 8,
+  "calls": 12,
+  "rechecks": [
+    {
+      "url": "https://x.com/KBlueleaf/status/2114612105609720265",
+      "result": "no community note; metrics up (210 likes); replies are questions, one asks why FP16 accumulate fell from 707 to 643 after the unlock; doubt stays 1"
+    },
+    {
+      "url": "https://x.com/Alex_tra_memory/status/2114574901697015872",
+      "result": "no community note; metrics flat (10 likes); no pushback; doubt stays 1"
+    },
+    {
+      "url": "https://x.com/ViC305/status/2112366415575720189",
+      "result": "no community note; metrics up (377 likes); replies ask about long-context recall, no refutation; doubt stays 1"
+    }
+  ],
+  "saves": {
+    "read": 25,
+    "new_since_last_sweep": 0,
+    "note": "Live bookmarks read; every save was already vetted in the 10:12Z sweep, nothing new."
+  },
+  "saved_rejected": [],
+  "items": [
+    {
+      "title": "Meta FAIR's HackBench tests whether models can catch reward hacking by research agents",
+      "url": "https://x.com/jaseweston/status/2114709989826953719",
+      "handle": "@jaseweston",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "Jason Weston's team at Meta FAIR released HackBench, a benchmark for spotting and pinpointing reward hacking in the logs of autonomous research agents, plus a recipe for collecting both natural and synthetic hacks. They report that current frontier models do poorly at it. The dataset is on Hugging Face as facebook/hackbench and the write-up is on the RAM blog.",
+      "kind": "dataset",
+      "evidence": "artifact",
+      "links": [
+        "https://facebookresearch.github.io/RAM/blogs/hackbench",
+        "https://huggingface.co/datasets/facebook/hackbench"
+      ],
+      "vendor": true,
+      "posted_at": "2026-10-26T13:25:25Z",
+      "metrics": {
+        "likes": 52,
+        "reposts": 6,
+        "quotes": 1,
+        "replies": 1,
+        "views": 1541
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": false,
+        "pushback": "",
+        "source": "Dataset verified on Hugging Face (facebook/hackbench); the claim that frontier models fail is the authors' own result."
+      }
+    },
+    {
+      "title": "OpenBMB studies 1,338 PostTrainBench runs and finds agents rarely change their training plan",
+      "url": "https://x.com/OpenBMB/status/2114703594347725005",
+      "handle": "@OpenBMB",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "OpenBMB analyzed 1,338 complete post-training runs from PostTrainBench, where Claude Code, Codex CLI and OpenCode each get 10 hours on one H100 to post-train 4 base models across 7 benchmarks. Their headline finding is that agents almost never revisit the strategy they pick at the start, and they break the capability down into separate parts.",
+      "kind": "paper",
+      "evidence": "measured",
+      "links": [],
+      "vendor": true,
+      "posted_at": "2026-10-26T13:00:00Z",
+      "metrics": {
+        "likes": 21,
+        "reposts": 3,
+        "quotes": 0,
+        "replies": 9,
+        "views": 759
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": false,
+        "pushback": "",
+        "source": "OpenBMB's own analysis; the post links only an image and no paper or data link was found."
+      }
+    },
+    {
+      "title": "inclusionAI publishes LBS-27B, a vision model that learns where to zoom from GUI grounding",
+      "url": "https://x.com/aitrackerbot/status/2114678751535493186",
+      "handle": "@aitrackerbot",
+      "group": "discovery",
+      "origin": "discovery",
+      "summary": "Ant Group's inclusionAI posted LBS-27B, an Apache 2.0 vision-language model built on Qwen3.8-27B that learns to crop and zoom into image regions from synthetic GUI grounding data alone (about 10K SFT examples and 80 GRPO steps), then applies the same habit to general visual QA. The model card reports 81.15% on ScreenSpot-Pro and 89.13% on HR-Bench 4K, and notes its comparison charts were not run under controlled settings.",
+      "kind": "model",
+      "evidence": "artifact",
+      "links": [
+        "https://huggingface.co/inclusionAI/LBS-27B",
+        "https://github.com/inclusionAI/UI-Venus/tree/LBS"
+      ],
+      "vendor": false,
+      "posted_at": "2026-10-26T11:21:17Z",
+      "metrics": {
+        "likes": 8,
+        "reposts": 2,
+        "quotes": 1,
+        "replies": 1,
+        "views": 568
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": false,
+        "pushback": "",
+        "source": "Weights verified on Hugging Face (uploaded 2026-10-26T05:36Z); the post itself links only a screenshot, and the scores are inclusionAI's own."
+      }
+    },
+    {
+      "title": "VoiceStudio, an open-source local alternative to ElevenLabs, gains 2,292 stars in a day",
+      "url": "https://x.com/trending_repos/status/2114705857015427183",
+      "handle": "@trending_repos",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "VoiceStudio is an AGPL-3.0 desktop app that does voice cloning, voice design, video dubbing, dictation, transcription and audiobook creation fully on local hardware, claiming support for 646 languages. It picked up about 2,300 GitHub stars in the last 24 hours and sits near 88K total.",
+      "kind": "tool",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/debpalash/VoiceStudio"
+      ],
+      "vendor": false,
+      "posted_at": "2026-10-26T13:09:00Z",
+      "metrics": {
+        "likes": 25,
+        "reposts": 0,
+        "quotes": 1,
+        "replies": 1,
+        "views": 1490
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": false,
+        "pushback": "",
+        "source": "Repo verified on GitHub (88,169 stars, AGPL-3.0); feature list is the project's own."
+      }
+    },
+    {
+      "title": "Cloudflare's security-audit-skill gives coding agents a multi-phase security review",
+      "url": "https://x.com/trending_repos/status/2114690792111632444",
+      "handle": "@trending_repos",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "Cloudflare's MIT-licensed security-audit-skill is a skill for coding agents that runs a security audit in phases and outputs findings that are each checked independently and written in a machine-readable format. It was the top trending repo of the week with about 15K new stars, about 48K total.",
+      "kind": "tool",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/cloudflare/security-audit-skill"
+      ],
+      "vendor": true,
+      "posted_at": "2026-10-26T12:09:08Z",
+      "metrics": {
+        "likes": 16,
+        "reposts": 1,
+        "quotes": 1,
+        "replies": 0,
+        "views": 1654
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": false,
+        "pushback": "",
+        "source": "Repo verified on GitHub (47,967 stars, MIT, created 2026-06-18)."
+      }
+    }
+  ],
+  "list_posts_read": 96,
+  "list_pages": 1,
+  "discovery": {
+    "queries": 1,
+    "kept": 1,
+    "note": "One release-link search returned only low-engagement self-promotion; LBS-27B came from the applied-group search and counts as discovery."
+  },
+  "horizon": {
+    "block-dessa": "Still a research preview with a waitlist; coverage today repeats that no weights or API are public. No trigger."
+  },
+  "skipped_duplicates": [
+    {
+      "url": "https://x.com/TencentHunyuan/status/2114701815807947159",
+      "reason": "Official open-source post for Hy-SimulMT, already kept in the 10:12Z sweep via another account."
+    }
+  ],
+  "security_forwarded": [],
+  "security_na": []
+}
