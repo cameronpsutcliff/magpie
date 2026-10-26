@@ -1,0 +1,285 @@
+{
+ "ran_at": "2026-10-26T10:12:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-10-26T02:10:00Z",
+ "queries": 12,
+ "calls": 15,
+ "items": [
+  {
+   "title": "KohakUnlock: RTX 4090 FP16/BF16 tensor-throughput unlock reproduced on Windows through a UEFI path",
+   "url": "https://x.com/KBlueleaf/status/2114612105609720265",
+   "handle": "@KBlueleaf",
+   "group": "opensource",
+   "origin": "list",
+   "summary": "Follow-on to the Linux gpu-unlock module: a new repo documents a Windows unlock of an RTX 4090 via a signed USB EFI step that runs before the stock NVIDIA driver loads, plus a 2080 Ti initramfs port. Same-card randomized mmapeak FP16 and BF16 to FP32 rises about 85% (179 to 331 TFLOPS) and the MAMF best median is about 244 TFLOPS. The repo warns it can hang or brick hardware and was tried on one board with Secure Boot off.",
+   "kind": "repo",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/KohakuBlueleaf/KohakUnlock",
+    "https://github.com/KohakuBlueleaf/KohakUnlock/blob/main/docs/ADA-WINDOWS.md"
+   ],
+   "vendor": false,
+   "posted_at": "2026-10-26T06:56:28Z",
+   "metrics": {
+    "likes": 145,
+    "reposts": 33,
+    "quotes": 3,
+    "replies": 6,
+    "views": 8004
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": false,
+    "pushback": "",
+    "source": "Author-measured on a single card and board; experimental privileged firmware execution with explicit damage risk."
+   }
+  },
+  {
+   "title": "Nanbeige4.3-33B mixed 3/4/6-bit MLX build fits in 15.7 GiB and runs as a terminal agent on a 24 GB M5 Pro",
+   "url": "https://x.com/Alex_tra_memory/status/2114574901697015872",
+   "handle": "@Alex_tra_memory",
+   "group": "builders",
+   "origin": "list",
+   "summary": "A community MLX quant of the new Nanbeige4.3-33B coding model mixes 3, 4 and 6 bit layers to land at 15.7 GiB, so it loads on a 24 GB Apple Silicon laptop. The author shows it fixing a buggy repo end to end as a terminal agent at about 25 tok/s.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/alexwengg/Nanbeige4.3-33B-MLX-mixed-3-4-6bit"
+   ],
+   "vendor": false,
+   "posted_at": "2026-10-26T04:28:38Z",
+   "metrics": {
+    "likes": 7,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 1,
+    "views": 778
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": false,
+    "pushback": "",
+    "source": "Single-user speed figure and demo; no quality comparison against the full-precision model."
+   }
+  },
+  {
+   "title": "DeepSeek V4.1 Flash 1017 at 1.62 bpw experts (SAGE-EXL3) runs on one 128 GB DGX Spark",
+   "url": "https://x.com/ViC305/status/2112366415575720189",
+   "handle": "@ViC305",
+   "group": "builders",
+   "origin": "saved",
+   "summary": "An independent quantizer published an EXL3 checkpoint of DeepSeek V4.1 Flash 1017 with routed experts at 1.62 bits per weight, plus a one-Spark vLLM serving recipe. He reports 35.5 tok/s decode, up to 1,189 tok/s prefill and 229K context on a single GB10, and teacher-forced agreement with the native release of 99.61% on HumanEval answer tokens and 94.52% top-1 overall. Task-level evals are still pending.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/vcruz305/DSV4.1-Flash-1017-SAGE-EXL3-1.62bpw",
+    "https://github.com/vcruz305/DSV4.1-Flash-1017-EXL3-Spark-recipe"
+   ],
+   "vendor": false,
+   "posted_at": "2026-10-20T02:12:54Z",
+   "metrics": {
+    "likes": 377,
+    "reposts": 55,
+    "quotes": 31,
+    "replies": 74,
+    "views": 46870
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "reception": "Replies are mostly enthusiastic. Early testers hit a broken base image in the build script, which the author fixed the next day by publishing his own image. Independent users report lower decode than claimed (about 11 to 17 tok/s under Hermes; 23 to 45 tok/s in a bench but 4 to 12 accepted tok/s in chat) and one saw reasoning loops; long-context quality is an open question.",
+   "doubt": {
+    "level": 1,
+    "community_note": false,
+    "pushback": "Independent testers report decode below the claimed 35.5 tok/s and one reports reasoning loops.",
+    "source": "Self-measured fidelity, not task scores; the work is sponsored by @AWERXAI."
+   }
+  },
+  {
+   "title": "Tencent releases Hy-SimulMT 30B-A3B, open-weight simultaneous Chinese/English speech translation",
+   "url": "https://x.com/plotarmordev/status/2114644076029227206",
+   "handle": "@plotarmordev",
+   "group": "discovery",
+   "origin": "discovery",
+   "summary": "Tencent Hunyuan published Hy-SimulMT, a 30B MoE (3B active) model under Apache 2.0 that translates Chinese and English speech in both directions while the speaker is still talking, with voice cloning when paired with a TTS service. FP8, GGUF and interleaved variants are on Hugging Face, and the GitHub repo ships an inference service and training tools. Tencent reports about 3 s StreamLAAL latency on its RealSI long-form test.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/tencent/Hy-SimulMT-30B-A3B",
+    "https://github.com/Tencent-Hunyuan/Hy-SimulMT"
+   ],
+   "vendor": false,
+   "posted_at": "2026-10-26T09:03:30Z",
+   "metrics": {
+    "likes": 5,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 353
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": false,
+    "pushback": "",
+    "source": "Weights and code verified on Hugging Face and GitHub (uploaded 2026-10-22); latency and quality figures are Tencent's own."
+   }
+  },
+  {
+   "title": "Qwen releases BabelArena, a fully localized multilingual benchmark for LLM agents",
+   "url": "https://x.com/HuggingPapers/status/2114564348785954930",
+   "handle": "@HuggingPapers",
+   "group": "discovery",
+   "origin": "discovery",
+   "summary": "Qwen put BabelArena on Hugging Face: about 16k agent task instances across 23 languages, where prompts, tools and environments are all localized rather than only the instructions, so agent skill can be compared across languages. The accompanying paper is on Hugging Face Papers (2609.23490).",
+   "kind": "dataset",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/datasets/Qwen/BabelArena",
+    "https://huggingface.co/papers/2609.23490"
+   ],
+   "vendor": false,
+   "posted_at": "2026-10-26T03:46:42Z",
+   "metrics": {
+    "likes": 17,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 4,
+    "views": 1460
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": false,
+    "pushback": "",
+    "source": "Dataset verified on Hugging Face (uploaded 2026-10-22)."
+   }
+  }
+ ],
+ "rechecks": [
+  {
+   "url": "https://x.com/nanbeige/status/2114328933181333798",
+   "result": "no community note; metrics up (2894 likes)"
+  },
+  {
+   "url": "https://x.com/rasbt/status/2114325097653669940",
+   "result": "no community note; metrics up (1548 likes)"
+  },
+  {
+   "url": "https://x.com/Neriousy/status/2114396202062242087",
+   "result": "no community note; metrics up (1025 likes)"
+  },
+  {
+   "url": "https://x.com/JoshuaSWarren/status/2114471654499729825",
+   "result": "no community note; metrics up (270 likes)"
+  },
+  {
+   "url": "https://x.com/MiniMax_AI/status/2114504329499660419",
+   "result": "no community note; metrics up (375 likes)"
+  },
+  {
+   "url": "https://x.com/__tinygrad__/status/2114527981020545313",
+   "result": "no community note; metrics up (151 likes)"
+  },
+  {
+   "url": "https://x.com/Alex_tra_memory/status/2114506729203331119",
+   "result": "no community note; metrics up (23 likes)"
+  },
+  {
+   "url": "https://x.com/enesakar/status/2114480500916281424",
+   "result": "no community note; metrics up (0 likes)"
+  }
+ ],
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 7,
+  "note": "Live bookmarks read plus the 7 records kept by the 04:42Z archive sync; 1 kept, 13 rejected."
+ },
+ "saved_rejected": [
+  {
+   "url": "https://x.com/NousResearch/status/2114530795868373035",
+   "reason": "Promotes the Hermes unbroker data-broker removal skill, which shipped in July 2026; nothing new."
+  },
+  {
+   "url": "https://x.com/danikkk_wqs/status/2114344135415021632",
+   "reason": "Listicle of other people's Obsidian repos; nothing tested."
+  },
+  {
+   "url": "https://x.com/danikkk_wqs/status/2113001913662734619",
+   "reason": "Article version of the same listicle."
+  },
+  {
+   "url": "https://x.com/techNmak/status/2114313618611220950",
+   "reason": "Graphify is already tracked by Magpie since September; no new release."
+  },
+  {
+   "url": "https://x.com/mirku21/status/2114462105512644974",
+   "reason": "Repackages Claude Code cross-session messaging, which shipped months ago (v2.1.224); attribution and speed figures are unsourced."
+  },
+  {
+   "url": "https://x.com/mirku21/status/2098836008468992471",
+   "reason": "September article; old."
+  },
+  {
+   "url": "https://x.com/hqmank/status/2114543584292536320",
+   "reason": "Explainer of an existing Tailscale feature."
+  },
+  {
+   "url": "https://x.com/henrikklee/status/2114437048333713509",
+   "reason": "Non-AI incremental update."
+  },
+  {
+   "url": "https://x.com/dravenip/status/2114399052259287226",
+   "reason": "Repost of an existing prompting workshop video."
+  },
+  {
+   "url": "https://x.com/Tristan0x/status/2114311011561812476",
+   "reason": "Non-AI."
+  },
+  {
+   "url": "https://x.com/dfi/status/2112980487140766042",
+   "reason": "Anecdote about the Hermes Cua Spaces plugin already delivered Oct 22."
+  },
+  {
+   "url": "https://x.com/dfi/status/2073146060831076489",
+   "reason": "July anecdote reply."
+  },
+  {
+   "url": "https://x.com/mardehaym/status/2113990724282724742",
+   "reason": "Opinion thread."
+  }
+ ],
+ "follows": {
+  "mode": "browser",
+  "note": "No browser available to this run; no follows attempted. Candidates for the owner: @MiniMax_AI (curated lab, repeated qualifying first-hand posts) and @ViC305 (local quantization releases; promotional tone)."
+ },
+ "list_posts_read": 96,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://x.com/rst_cloud/status/2114574096352625132",
+   "reason": "OVHcloud CLI incident already forwarded (GHSA-862f-55f5-vmvw)"
+  },
+  {
+   "url": "https://x.com/growxlabsoffici",
+   "reason": "Commentary on recent vulnerability volume; no specific new lead"
+  }
+ ],
+ "skipped": [
+  "@aitrackerbot Granite 5 seen in an SGLang PR (unreleased)",
+  "@teortaxesTex Kimi/DeepSeek commentary",
+  "@labenz quote of Oct 21 FAR.AI leaderboard (old)",
+  "@Thom_Wolf microduck quote of an Oct 23 post, no deep-dive link",
+  "@rapidmlx launch codex (Rapid-MLX 0.16.9 already kept Oct 25)",
+  "@akshay_pachaar RAW-RAG aggregator thread without paper link",
+  "@MatthewBerman opinion posts",
+  "discovery listicles, crypto launchpads and unverified aggregator claims (TokenGate, Agensh)"
+ ]
+}

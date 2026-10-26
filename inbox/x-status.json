@@ -1,18 +1,18 @@
 {
- "updated_at": "2026-10-26T09:45:00Z",
- "job": "roster",
+ "updated_at": "2026-10-26T10:12:00Z",
+ "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 15,
+ "calls_used_today": 30,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-10-26T02:10:00Z",
-  "items": 4,
-  "queries": 9,
-  "deep_reads": 0,
-  "rechecks": 7,
+  "ran_at": "2026-10-26T10:12:00Z",
+  "items": 5,
+  "queries": 12,
+  "deep_reads": 1,
+  "rechecks": 8,
   "flagged": 0,
-  "saved_in": 0,
-  "saved_kept": 0,
+  "saved_in": 14,
+  "saved_kept": 1,
   "videos": 0
  },
  "roster": {
@@ -163,7 +163,8 @@
   "Roster review 2026-10-26: @mirku21 added as an owner_saves trial (3 kept saves, AI/dev only, no politics or vice), but every post in 30 days is the same templated 'official Anthropic/OpenAI tip' with profanity hooks and no source links; the owner-saves screen as written does not test for templated engagement bait, so the owner may want to drop it by hand.",
   "Roster review 2026-10-26: @teortaxesTex (curated) review: latest 25 posts (about one day) are mostly AI model commentary with benchmark takes, plus a few off-topic shitposts (e.g. 2114563083460833638); no clear non-AI partisan politics or culture war in this window and no first-hand artifacts. Not retired; flagged for the owner's review.",
   "Roster review 2026-10-26 rejected, so they are not re-checked soon: @nanbeige (one post in 30 days; revisit after next release), @Neriousy (one clear capability post; @opencode is curated), @enesakar (mostly Upsy product promotion, over 1 in 5), @doesdatmaksense (one study, consulting), @Winniechen02, @siyuc3141, @jiaheng0815 (account 5 days old), @ewhauser, @ajbarryiii, @TatraLabs (too small to judge).",
-  "Roster review 2026-10-26: no promotions possible before 2026-11-03; no 45-day retirements possible yet; no sweep files older than 14 days (oldest 2026-10-20T17-39), so none pruned. Not Sunday, so no drafts."
+  "Roster review 2026-10-26: no promotions possible before 2026-11-03; no 45-day retirements possible yet; no sweep files older than 14 days (oldest 2026-10-20T17-39), so none pruned. Not Sunday, so no drafts.",
+  "The parent task asks to load the x-api-mcp-guide skill with a Skill tool, but no Skill tool is exposed to sweep runs; this run followed the prompt and earlier status notes instead."
  ],
  "errors": [
   "Sweep 14:07Z, possible injection lure, not followed: in the quote posts of https://x.com/cnm13ryan/status/2113121138205499443, @lumpenspace tells readers to have their model 'check out my x bio'. Ignored; no bio was read.",
@@ -181,7 +182,8 @@
   "2026-10-25T14:11Z sweep: no injection attempts acted on. A low-engagement Dessa horizon result (@Techsmartdaily1) made unsourced sensational claims; read as data only. X API header reported far more account-wide usage today than the repo tally (946 of 1000 remaining at sweep start); repo tally kept at 147.",
   "2026-10-25T22:11Z sweep: no injection attempts seen. calls_used_today 180 = 161 + 17 this sweep + about 2 for the 1:41 and 3:41 PM bookmark syncs (estimated). X API header showed 913 of 1000 account-wide reads left. Browser unavailable to this run; no follows attempted. OpenCode clip was 33 s, under video_min_seconds, so not analyzed.",
   "2026-10-26T02:10Z: no injection attempts seen; Skill tool unavailable (non-blocking).",
-  "Roster review 2026-10-26: no injection attempts acted on; candidate posts read as data only."
+  "Roster review 2026-10-26: no injection attempts acted on; candidate posts read as data only.",
+  "2026-10-26T10:12Z sweep: no injection attempts seen; Skill tool unavailable (non-blocking). X API header showed 966 of 1000 account-wide reads left at the end of this sweep."
  ],
  "follows_today": 0,
  "last_roster_review": {
