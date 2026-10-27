@@ -1,0 +1,526 @@
+{
+ "ran_at": "2026-10-27T22:07:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-10-27T18:12:00Z",
+ "queries": 9,
+ "calls": 17,
+ "rechecks": [
+  {
+   "url": "https://x.com/GoogleDeepMind/status/2115114028338962672",
+   "result": "Genie 4: 12,595 likes, 1,002 quotes (up from 5,910). No new pushback beyond gated access. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/axiommathai/status/2115089794867040584",
+   "result": "Axiom CFSG formalization: 4,466 likes, 3,349 reposts. No new pushback. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/__alpoge__/status/2114930095009968506",
+   "result": "2,412 likes, 113 quotes; no new pushback. Doubt unchanged."
+  },
+  {
+   "url": "https://x.com/d3/status/2114915380926017591",
+   "result": "d3-ultra: 116 likes, 16 replies; no independent results yet. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/NousResearch/status/2114919004632764585",
+   "result": "Hermes webapp serving on main channel: 412 likes; no new problems reported. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/cohere/status/2114849246155260108",
+   "result": "Qwen3.8 traces release: 1,264 likes, 106 quotes. No new replications in this window beyond those already with Bouncer. Doubt stays 2."
+  },
+  {
+   "url": "https://x.com/aitrackerbot/status/2114873309774876708",
+   "result": "Baidu Unlimited-OCR-2: 26 likes; no pushback. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/liquidai/status/2115128329003303107",
+   "result": "LFM3: 3,270 likes, 999 reposts; no pushback. Doubt stays 0."
+  }
+ ],
+ "items": [
+  {
+   "title": "Anthropic shares early results from Claude in drug development and starts its own discovery work",
+   "url": "https://x.com/AnthropicAI/status/2115178675050307942",
+   "handle": "@AnthropicAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Anthropic describes months of research partnerships with six organizations (BigHat Biosciences, Bristol Myers Squibb, Divergence Labs, Enveda, Generate Biomedicines, The Column Group) and says it has begun drug discovery of its own, including a muscular dystrophy program. Reported examples: about 35,000 antibody designs generated in roughly a month for Divergence; Enveda document review of 1,061 pages catching all 11 human-found issues plus 7 more, with review time down 89%; a CAR-T construct about 70% shorter. All results are preclinical.",
+   "kind": "research",
+   "evidence": "claim",
+   "links": [
+    "https://www.anthropic.com/research/early-progress-drug-development"
+   ],
+   "vendor": "Anthropic",
+   "posted_at": "2026-10-27T20:27:48Z",
+   "metrics": {
+    "likes": 3172,
+    "reposts": 285,
+    "quotes": 179,
+    "replies": 258
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Every result is preclinical and partner-reported; replies note no patients have been dosed and that trials, not discovery, are the slow step.",
+    "source": "https://x.com/Adan_leemark/status/2115203907471503405"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Strong interest and many recaps. Skeptical replies stress the preclinical scope and question the strength of the in-vivo mouse result; the Enveda document-review numbers drew the most concrete praise.",
+    "tried": false,
+    "replies_read": 40
+   }
+  },
+  {
+   "title": "Cursor design mode adds Annotate: visual prompts drawn on the page",
+   "url": "https://x.com/cursor_ai/status/2115159585548021814",
+   "handle": "@cursor_ai",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Cursor design mode now has Annotate. In Cursor's browser you can select elements, draw arrows and boxes on the page, and add notes, which are sent to the agent with a screenshot and element details. It also lets you review a design at different screen sizes.",
+   "kind": "tool",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Cursor",
+   "posted_at": "2026-10-27T19:11:57Z",
+   "metrics": {
+    "likes": 1880,
+    "reposts": 114,
+    "quotes": 83,
+    "replies": 163
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": "One user says it is a step back from the old inline component references in prompts (Style {button A} like {button C}).",
+    "source": "https://x.com/DeoAM/status/2115192873142677927"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Replies mostly welcome pointing instead of describing UI changes. Open questions: whether annotations carry across breakpoints and whether it works with cloud agents.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Gemini app adds SynthID detection for images, video and audio",
+   "url": "https://x.com/GeminiApp/status/2115171788812669225",
+   "handle": "@GeminiApp",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Users can ask Gemini \"Is this AI generated?\" about an image, video or audio file and get a SynthID watermark check. It detects content made with Google AI (and, per a reply, SynthID partners); a negative result does not mean the file is real.",
+   "kind": "product",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Google",
+   "posted_at": "2026-10-27T20:00:27Z",
+   "metrics": {
+    "likes": 378,
+    "reposts": 26,
+    "quotes": 21,
+    "replies": 37
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": "Only detects SynthID-watermarked output, so a 'no' means not made with Google's AI, not authentic; replies question robustness to re-encoding and screenshots.",
+    "source": "https://x.com/TheMortz/status/2115191657541017979"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Welcomed as easy to use; most substantive replies point out the watermark-only scope and robustness limits.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Notion Agent can now use a computer to create and edit Office files and PDFs",
+   "url": "https://x.com/NotionHQ/status/2115146056598163708",
+   "handle": "@NotionHQ",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Notion Agent can now operate a computer to produce and edit Excel spreadsheets, Word documents, PowerPoint decks and PDFs from a conversation, without leaving Notion.",
+   "kind": "product",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Notion",
+   "posted_at": "2026-10-27T18:18:12Z",
+   "metrics": {
+    "likes": 186,
+    "reposts": 11,
+    "quotes": 7,
+    "replies": 16
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "v0 now makes artifacts: reports, charts, diagrams and interactive HTML",
+   "url": "https://x.com/v0/status/2115154412788461862",
+   "handle": "@v0",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "v0 can create artifacts (reports, charts, diagrams and interactive HTML pages) that are edited in chat and can be published to share.",
+   "kind": "product",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Vercel",
+   "posted_at": "2026-10-27T18:51:24Z",
+   "metrics": {
+    "likes": 74,
+    "reposts": 1,
+    "quotes": 3,
+    "replies": 15
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Amp coding agent ships on Android",
+   "url": "https://x.com/sqs/status/2115200469891195217",
+   "handle": "@sqs",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Amp, Sourcegraph's coding agent, is now available on Android, per the Amp news post.",
+   "kind": "product",
+   "evidence": "claim",
+   "links": [
+    "https://ampcode.com/news/amp-on-android"
+   ],
+   "vendor": "Amp",
+   "posted_at": "2026-10-27T21:54:25Z",
+   "metrics": {
+    "likes": 15,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 2
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "EmbeddingGemma 2 Core ML conversion runs the text encoder fully on the Apple Neural Engine",
+   "url": "https://x.com/googlegemma/status/2115150306032193954",
+   "handle": "@googlegemma",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Fluid Inference published a Core ML conversion of EmbeddingGemma 2 for macOS and iOS. With fixed-shape functions the text encoder runs entirely on the ANE with no CPU fallback; the audio and vision encoders run on the GPU. Matryoshka truncation from 768 to 128 dimensions is supported. Relevant to local embeddings on the Mac fleet.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/FluidInference/embeddinggemma-2-coreml",
+    "https://x.com/Alex_tra_memory/status/2108391275560931355"
+   ],
+   "vendor": "Fluid Inference",
+   "posted_at": "2026-10-27T18:35:05Z",
+   "metrics": {
+    "likes": 19,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 2
+   },
+   "confirmed_by": [
+    "@googlegemma"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "miniTE: NVFP4 low-precision RL training framework, 1.33 to 1.37x BF16 learner speed",
+   "url": "https://x.com/lmsysorg/status/2115149852720152642",
+   "handle": "@lmsysorg",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "InfiX.ai's miniTE targets training-sampling mismatch in low-precision RL. It diagnoses mismatch from quantization through token probabilities, gates risky updates with TRIAGE, and cuts overhead with grouped GEMM, contiguous buffers and fusion. Reported learner updates run 1.33 to 1.37x faster than BF16 on 8xB300.",
+   "kind": "infra",
+   "evidence": "measured",
+   "links": [
+    "http://lmsys.org/blog/2026-10-25-minite"
+   ],
+   "vendor": "InfiX.ai",
+   "posted_at": "2026-10-27T18:33:17Z",
+   "metrics": {
+    "likes": 4,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Lean Verified Tokenizers: a Lean-verified Rust pipeline for building agent messages",
+   "url": "https://x.com/srush_nlp/status/2115197402525434242",
+   "handle": "@srush_nlp",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Sasha Rush prototypes a Lean-verified Rust pipeline for rendering agent messages into tokens, aimed at the training-inference mismatch that comes from building chat messages with Jinja templates.",
+   "kind": "research",
+   "evidence": "artifact",
+   "links": [
+    "https://srush.github.io/verified-tokenizer/"
+   ],
+   "vendor": null,
+   "posted_at": "2026-10-27T21:42:13Z",
+   "metrics": {
+    "likes": 29,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 3
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "MANDATE: a taxonomy of 23 failure types in delegated agent work (MSR and Georgia Tech)",
+   "url": "https://x.com/dair_ai/status/2115156635954090345",
+   "handle": "@dair_ai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "From 163,487 Reddit posts about AI agents and a survey of 73 experienced users, the authors define 23 failure categories in seven groups where an agent completes a task in a way the user did not expect. Users rated the most severe failures as the hardest to notice, and agents that keep running and spending compute without progress are among the most reported yet least studied.",
+   "kind": "research",
+   "evidence": "artifact",
+   "links": [
+    "https://arxiv.org/abs/2610.34748"
+   ],
+   "vendor": "Microsoft Research",
+   "posted_at": "2026-10-27T19:00:14Z",
+   "metrics": {
+    "likes": 43,
+    "reposts": 5,
+    "quotes": 0,
+    "replies": 13
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Ornith 1.5 on one RTX 5090: 35B Q4 at 303 tok/s nearly matches the 3-bit 122B",
+   "url": "https://x.com/witcheer/status/2115186775782281386",
+   "handle": "@witcheer",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Local benchmark on one 32 GB RTX 5090: the 122B 3-bit file (46.1 GiB) runs at 47.6 tok/s with some experts offloaded to system RAM; the 35B Q4_K_M (20.2 GiB) fits on the card at 303 tok/s. First token on a 16k prompt is about 28 s vs 2 s. GPQA Diamond (thinking on) 83.3 vs 81.8, a tie on 198 questions; MMLU 85.8 vs 82.2 is the one clear 122B win. Full report includes the offload sweep.",
+   "kind": "benchmark",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/notwitcheer/llm-bench-rig/blob/main/reports/ornith-1-5-122b-ud-iq3-xxs.md",
+    "https://huggingface.co/ornith-ai/Ornith-1.5-122B"
+   ],
+   "vendor": "Ornith",
+   "posted_at": "2026-10-27T21:00:00Z",
+   "metrics": {
+    "likes": 13,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 5
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Per-page OCR comparison of DeepSeek-OCR, PaddleOCR-VL and Surya on the open OmniParse Bench",
+   "url": "https://x.com/akshay_pachaar/status/2115163583764169031",
+   "handle": "@akshay_pachaar",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Ran DeepSeek-OCR, PaddleOCR-VL and Datalab Surya on the same 150 pages using pass/fail tests from the open OmniParse Bench. No parser won every page type: DeepSeek-OCR led on tables at 87.2, handwritten notes split 5/6 vs 0 and 0, and PaddleOCR-VL returned only the title of a filled 1040 form.",
+   "kind": "benchmark",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/datalab-to/omni_parse_bench"
+   ],
+   "vendor": null,
+   "posted_at": "2026-10-27T19:27:50Z",
+   "metrics": {
+    "likes": 46,
+    "reposts": 6,
+    "quotes": 0,
+    "replies": 12
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Vals AI writes up how ten Claude agents proved the N=7 Thomson configuration in Lean",
+   "url": "https://x.com/ValsAI/status/2115168898794598517",
+   "handle": "@ValsAI",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Vals AI published the method behind a Lean proof, produced by ten Claude agents, that seven electrons on a sphere settle into a pentagonal bipyramid, and suggests further values of N to attempt. The write-up link was not in the post text.",
+   "kind": "research",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Vals AI",
+   "posted_at": "2026-10-27T19:48:58Z",
+   "metrics": {
+    "likes": 68,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 2
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 0,
+  "kept": 0,
+  "note": "Live bookmarks read for id 1521986356721123328; all 20 newest saves were already in the archive's seen ids."
+ },
+ "saved_rejected": [],
+ "list_posts_read": 86,
+ "list_pages": 1,
+ "discovery": {
+  "queries": 2,
+  "kept": 0,
+  "note": "One security search and one open-source release search. The release search returned only a course promo; the security search produced two forwarded leads and re-coverage."
+ },
+ "horizon": {
+  "block-dessa": "block.xyz/dessa unchanged (demo recordings, waitlist, early access for safety researchers). One X read found one reply saying there are no public weights or GitHub and it is a research preview. No weights, API or paper. No trigger."
+ },
+ "proposed_follows": [],
+ "proposed_follows_note": "follow_mode is browser and this run had no browser, so nothing was followed. No new follow proposals this sweep.",
+ "skipped": [
+  {
+   "url": "https://x.com/datalabto/status/2115201904410054985",
+   "reason": "Datalab lite pricing post ($0.50 per 1k pages, 78.2 on OmniParseBench vs Azure 80.8): self-reported vendor comparison with no engagement; OmniParse Bench itself is kept via the per-page comparison."
+  },
+  {
+   "url": "https://x.com/sgl_project/status/2115187263315591550",
+   "reason": "Explainer video on SGLang matching DeepInfer; the result was already covered in the 10-25 sweep."
+  },
+  {
+   "url": "https://x.com/winglian/status/2115171721913196832",
+   "reason": "LoRA-for-RL unmerged deployment tip; claim with an image, no measurement."
+  },
+  {
+   "url": "https://x.com/trq212/status/2115135857669881939",
+   "reason": "Personal macOS dock experiment, not released."
+  },
+  {
+   "url": "https://x.com/mirku21",
+   "reason": "'Fable 5.5' claim is unverified; account already flagged for Cameron's review."
+  },
+  {
+   "url": "various",
+   "reason": "Already kept: LFM3 confirmations (Ollama, ngxson), MiniCPM-OCR, Ling 3.1 Flash on the AA index, SoMark OXR, the reranker paper."
+  },
+  {
+   "url": "various",
+   "reason": "Business, events and promo posts (Shared Bots, Modal Series D, Baseten hiring, Gradio hackathon tease, Box/fx demo, AXA Earth-2, Snowflake, Databricks, Arize, OpenRouter, Ollama cloud with Crusoe, LangSmith cache tracking) and opinion threads are out of scope."
+  }
+ ],
+ "security_forwarded": [
+  {
+   "url": "https://www.cve.org/CVERecord?id=CVE-2026-85297",
+   "post": "https://x.com/ShipSecurelyDev/status/2115197749360734237",
+   "matched": "always_forward: agent tooling (MCP servers)",
+   "note": "Google Cloud Run MCP (@google-cloud/cloud-run-mcp) before 1.11.0: bucket squatting via predictable bucket names (CWE-340) lets an attacker intercept deployed source code, execute code and exfiltrate data; CVSS 4.0 7.7 High, published by GoogleCloud CNA 2026-10-26, reporter lambdasawa. Fix: 1.11.0 (npm, 2026-09-28; release https://github.com/GoogleCloudPlatform/cloud-run-mcp/releases/tag/v1.11.0). Typical setup is npx in Claude Desktop, Cursor or Gemini CLI MCP config, so unpinned npx users pick up 1.11.0, but pinned or cached older versions stay exposed. Box check: no cloud-run-mcp in Cursor, Claude, Codex, Gemini or npx cache configs."
+  },
+  {
+   "url": "https://securityscorecard.com/blog/teampcps-arrests-did-not-end-the-threat-what-strike-found-in-the-worm-and-the-alliance-behind-it/",
+   "post": "https://x.com/security_score/status/2115154827579650218",
+   "matched": "always_forward: software supply chain (npm, PyPI); TeamPCP was behind the LiteLLM PyPI compromise Bouncer handled",
+   "note": "SecurityScorecard STRIKE (2026-10-27) static analysis of the Mini Shai-Hulud worm: no new compromised packages named. New response guidance: blocking network access can make the worm's npm check fail and trigger its wipe, so stop the malware before cutting network, not only before revoking tokens; bugs mean a missing artifact does not prove a stage did not run. Worm code is public and resurfaced 2026-09-07; harvested credentials stay valid until rotated."
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/cyber_rekk/status/2115156034159337821",
+   "reason": "Wiz Gheist GitHub Actions token campaign: already forwarded 2026-10-25; recap adds only totals (850+ accounts, 13,500 branches)."
+  },
+  {
+   "url": "https://x.com/Novlyx/status/2115147046994805126",
+   "reason": "Forever Security AGENTS.md-in-Downloads hijack: re-coverage (several posts), already forwarded 2026-10-25."
+  },
+  {
+   "url": "https://x.com/readmodelmag/status/2115189694912950277",
+   "reason": "Qwen3.8 file-proxy upload replay and a Qwen3.6-35B side test (@Ronin_WorkshopJ): re-coverage of the thread already with Bouncer; no new destinations or versions."
+  },
+  {
+   "url": "https://x.com/nikolayxyz/status/2115148995253154036",
+   "reason": "NVIDIA SkillSpector recap; already in the edition."
+  },
+  {
+   "url": "https://x.com/HugoValters/status/2115180736089120846",
+   "reason": "OpenPanel CVE-2026-93982 (MCP auth tokens logged, CVSS 3.3): OpenPanel not in the stack, low severity."
+  },
+  {
+   "url": "https://x.com/TheExploitHQ/status/2115193387410440200",
+   "reason": "PHP KEV CVEs: PHP checked not present by Bouncer."
+  },
+  {
+   "url": "https://x.com/HugoValters/status/2115157080269299865",
+   "reason": "Exim CVE-2026-94054: not in the stack."
+  }
+ ]
+}
