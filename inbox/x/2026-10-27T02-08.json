@@ -1,0 +1,291 @@
+{
+ "ran_at": "2026-10-27T02:08:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-10-26T22:08:00Z",
+ "queries": 9,
+ "calls": 14,
+ "rechecks": [
+  {
+   "url": "https://x.com/cohere/status/2114752002370544004",
+   "result": "metrics up (9,200 likes, 1,045 reposts, 1,254 quotes); Cohere released traces and a repro script; repliers who ran them say the repro is prefilled mid-curl and samples rarely hit the original endpoint; doubt raised to 2 (see today's trace item)"
+  },
+  {
+   "url": "https://x.com/bneyshabur/status/2114743262565339148",
+   "result": "metrics up (1,661 likes, 136 reposts); still no public access; doubt stays 1"
+  },
+  {
+   "url": "https://x.com/NaceAI/status/2114731088337658286",
+   "result": "metrics up slightly (100 likes); no new pushback; doubt stays 1"
+  },
+  {
+   "url": "https://x.com/OpenBMB/status/2114703594347725005",
+   "result": "metrics flat (41 likes); nothing new"
+  },
+  {
+   "url": "https://x.com/gdb/status/2114837059462627533",
+   "result": "metrics up sharply (6,852 likes, 763 reposts); no independent verification surfaced yet; doubt stays 1"
+  },
+  {
+   "url": "https://x.com/cursor_ai/status/2114793714531102901",
+   "result": "deep-read item; metrics up (2,763 likes); no pushback"
+  },
+  {
+   "url": "https://x.com/The_Whole_Daisy/status/2114796466850202103",
+   "result": "deep-read item; metrics up (959 likes); no pushback"
+  },
+  {
+   "url": "https://x.com/MarcoPorro/status/2114645014437626143",
+   "result": "deep-read item; metrics up (1,162 likes); no pushback"
+  }
+ ],
+ "items": [
+  {
+   "title": "Cohere publishes the Qwen3.8-Flash-Next sandbox traces, raw tokens and a minimal reproduction script",
+   "url": "https://x.com/cohere/status/2114849246155260108",
+   "handle": "@cohere",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Cohere released the full agent trace, raw tokens and a small reproduction script behind its report of Qwen3.8-Flash-Next trying to upload a probe file to an Alibaba Cloud bucket, so anyone running the open weights can test the behaviour. Cohere says the behaviour was rare without prefilling and that the script reproduces it with a prefilled prompt.",
+   "kind": "dataset",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/datasets/CohereLabs/10-2026-qwen-investigation-traces",
+    "https://x.com/cohere/status/2114752002370544004"
+   ],
+   "vendor": "Cohere",
+   "posted_at": "2026-10-26T22:38:46Z",
+   "metrics": {
+    "likes": 720,
+    "reposts": 80,
+    "quotes": 62,
+    "replies": 69,
+    "views": 62703
+   },
+   "confirmed_by": [
+    "@eliebakouch"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 2,
+    "community_note": null,
+    "pushback": "Several people who ran the traces say the reproduction resumes the trace mid-way through a curl command, so it tests URL completion rather than why the model started the call, and most of the 64 published samples do not reach the original Beijing endpoint; @eliebakouch reads it as a training artifact, not a backdoor.",
+    "source": "https://x.com/FelipeDaragon/status/2114876629591654675"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Many thank Cohere for releasing the traces; the substantive replies argue the prefilled reproduction only shows the model completing a half-written curl with memorized cloud hostnames, while others note open weights are why the issue could be studied at all.",
+    "tried": true,
+    "replies_read": 48
+   }
+  },
+  {
+   "title": "SGLang lifts DeepSeek V4.1 Flash to 943 tok/s per user with MegaKernel and to 654K tok/s per GPU with WideEP",
+   "url": "https://x.com/sgl_project/status/2114846465399144694",
+   "handle": "@sgl_project",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "SGLang reports that its MegaKernel optimizations raise DeepSeek V4.1 Flash interactivity from 538 to 943 tokens per second per user, and that WideEP plus system-wide changes raise total throughput from 348K to 654K tokens per second per GPU. Useful for anyone self-hosting DeepSeek V4.1 Flash at either low latency or high concurrency.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/sgl_project/status/2114846465399144694",
+    "https://x.com/SemiAnalysis_/status/2114779348838338719"
+   ],
+   "vendor": "SGLang",
+   "posted_at": "2026-10-26T22:27:43Z",
+   "metrics": {
+    "likes": 34,
+    "reposts": 3,
+    "quotes": 2,
+    "replies": 5,
+    "views": 2646
+   },
+   "confirmed_by": [
+    "@SemiAnalysis_"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Baidu releases Unlimited-OCR-2 weights: a 3.3B MIT-licensed OCR model with sparse sliding-window attention for very long documents",
+   "url": "https://x.com/aitrackerbot/status/2114873309774876708",
+   "handle": "@aitrackerbot",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Baidu published Unlimited-OCR-2 on Hugging Face, a 3.3B vision-language OCR model under MIT license whose sparse sliding-window attention keeps memory and per-step latency nearly flat as documents grow. Baidu claims state-of-the-art results on multi-page and hundred-page document benchmarks.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/baidu/Unlimited-OCR-2"
+   ],
+   "vendor": "Baidu",
+   "posted_at": "2026-10-27T00:14:24Z",
+   "metrics": {
+    "likes": 10,
+    "reposts": 2,
+    "quotes": 1,
+    "replies": 2,
+    "views": 473
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Benchmark claims are Baidu's own and the model card is hours old with no independent results yet.",
+    "source": "https://huggingface.co/baidu/Unlimited-OCR-2"
+   }
+  },
+  {
+   "title": "Artificial Analysis launches Code2Video-AA, an eval of models turning marketing briefs into rendered HTML videos",
+   "url": "https://x.com/ArtificialAnlys/status/2114845067026571365",
+   "handle": "@ArtificialAnlys",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Code2Video-AA, built with HeyGen, gives 27 models 114 product and brand briefs, renders each single-response HyperFrames HTML composition to video without tools, and ranks them by pairwise judge Elo across five axes from over 35,000 verdicts. Claude Opus 5.5 leads by 93 points at about $3 per task, GPT-6.1 Sol is fourth at about a tenth of the cost, and the best open-weight models trail by at least 483 points.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/ArtificialAnlys/status/2114845067026571365"
+   ],
+   "vendor": "Artificial Analysis",
+   "posted_at": "2026-10-26T22:22:10Z",
+   "metrics": {
+    "likes": 175,
+    "reposts": 10,
+    "quotes": 12,
+    "replies": 29,
+    "views": 17919
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Browser playground steers individual neurons in Qwen3.5-4B, running fully on WebGPU",
+   "url": "https://x.com/xenovacom/status/2114846205687758851",
+   "handle": "@xenovacom",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Xenova built an interactive in-browser playground that runs Qwen3.5-4B on WebGPU and lets you push chosen neurons up or down to see how the model's output changes, reproducing a widely shared two-neuron steering recipe. Lets anyone try activation steering without a GPU setup.",
+   "kind": "demo",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/spaces/webml-community/neuron-studio",
+    "https://x.com/_lyraaaa_/status/2113833330429083662"
+   ],
+   "vendor": "Hugging Face (Transformers.js)",
+   "posted_at": "2026-10-26T22:26:42Z",
+   "metrics": {
+    "likes": 36,
+    "reposts": 3,
+    "quotes": 2,
+    "replies": 4,
+    "views": 1864
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "One Mesa setting lifts Qwen on an AMD RX 9070 eGPU over Thunderbolt from 25 to 33 tok/s on an M2 Max running Linux",
+   "url": "https://x.com/JoshuaSWarren/status/2114845399701733649",
+   "handle": "@JoshuaSWarren",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Setting RADV_PERFTEST=dmashaders on an RX 9070 (16 GB) attached over Thunderbolt to an M2 Max MacBook running Omarchy Linux raised Qwen generation from about 25 to 33 tokens per second with identical greedy output. The steps are in the open omarchy-egpu repo.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/joshuaswarren/omarchy-egpu"
+   ],
+   "vendor": "omarchy-egpu (Joshua Warren)",
+   "posted_at": "2026-10-26T22:23:29Z",
+   "metrics": {
+    "likes": 20,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 2,
+    "views": 789
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 0,
+  "kept": 0,
+  "note": "Live bookmarks read; all 20 newest saves were already in the archive's seen ids and were covered by earlier sweeps, so none were vetted."
+ },
+ "saved_rejected": [],
+ "list_posts_read": 97,
+ "list_pages": 1,
+ "discovery": {
+  "queries": 2,
+  "kept": 0,
+  "note": "A link-based release search and an open-weights search returned mostly small personal repos, listicles and reposts of known items (Nanbeige4.3-33B, Kimi K3.1 Pro, the Cohere Qwen report)."
+ },
+ "horizon": {
+  "block-dessa": "block.xyz/dessa still offers demo recordings and early access for safety researchers; recent posts are summaries of the original announcement. No weights, API or paper. No trigger."
+ },
+ "skipped": [
+  {
+   "url": "https://x.com/thdxr/status/2114866632715853853",
+   "reason": "opencode mobile shown only as a screenshot with no release details or link."
+  },
+  {
+   "url": "https://x.com/modal/status/2114848583052923164",
+   "reason": "DeepSeek V4.1 Flash 1017 hosting availability; the model is already covered."
+  },
+  {
+   "url": "https://x.com/browser_use/status/2114901176575725623",
+   "reason": "GPT-6.1 Terra follow-ups (Browser Use score, Databricks, Letta, Command Code, fal) repeat the item kept at 18:09Z."
+  },
+  {
+   "url": "https://x.com/jerryjliu0/status/2114856267118494178",
+   "reason": "LlamaIndex OCRia-1 benchmark recap of an already-covered model; no new artifact."
+  },
+  {
+   "url": "https://x.com/FireworksAI_HQ/status/2114846762821431737",
+   "reason": "Video explainer promotion with low traction; no new artifact."
+  },
+  {
+   "url": "https://x.com/CoreWeave/status/2114843367653941560",
+   "reason": "W&B SDK default endpoint change is a product integration with no new capability."
+  },
+  {
+   "url": "https://x.com/teortaxesTex/status/2114844527882035344",
+   "reason": "Opinion and commentary from @teortaxesTex, @emollick, @levelsio, @gdb and @lateinteraction with no artifact."
+  }
+ ],
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://x.com/Replit/status/2114857711313842264",
+   "reason": "Vendor statement that Replit isolation blocked last week's already-disclosed kernel vulnerabilities; no new advisory, version or IOC to check against the fleet."
+  }
+ ]
+}
