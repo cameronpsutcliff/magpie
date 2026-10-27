@@ -1,0 +1,706 @@
+{
+ "ran_at": "2026-10-27T18:12:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-10-27T14:12:00Z",
+ "queries": 9,
+ "calls": 20,
+ "rechecks": [
+  {
+   "url": "https://x.com/cohere/status/2114752002370544004",
+   "result": "10,637 likes, 1,448 quotes; growth has flattened. No new pushback in this window beyond what the 14:12Z sweep logged. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/cohere/status/2114849246155260108",
+   "result": "1,237 likes, 105 quotes. No new replications in this window. Doubt stays 2."
+  },
+  {
+   "url": "https://x.com/aitrackerbot/status/2114873309774876708",
+   "result": "Baidu Unlimited-OCR-2: 25 likes, unchanged; no pushback. Doubt stays 1 pending independent long-document results."
+  },
+  {
+   "url": "https://x.com/__alpoge__/status/2114930095009968506",
+   "result": "2,335 likes, 108 quotes. No new pushback; doubt stays 1."
+  },
+  {
+   "url": "https://x.com/XunzhuoLiu/status/2114915380926017591",
+   "result": "d3-ultra: 104 likes, flat; no pushback. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/Teknium/status/2114919004632764585",
+   "result": "Hermes Desktop web serving: 374 likes; still on the main channel only. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/ValsAI/status/2114999431787643366",
+   "result": "186 likes, 7 quotes (up from 135); no new pushback."
+  },
+  {
+   "url": "https://x.com/AntLingAGI/status/2115062200687878157",
+   "result": "Ling-3.1-flash-1019: 399 likes, 50 quotes (up from 214); no pushback."
+  }
+ ],
+ "items": [
+  {
+   "title": "Google DeepMind unveils Genie 4, a real-time steerable world model with native audio and talking characters",
+   "url": "https://x.com/GoogleDeepMind/status/2115114028338962672",
+   "handle": "@GoogleDeepMind",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Genie 4 generates explorable worlds that can be changed mid-session with text: weather, camera, new objects and events. New in this version are matched ambient audio and characters that hold live spoken conversations. Gemini plans the multi-step events and tracks the scene state. Access today is a research preview for trusted testers only. Google says it will come to AI Ultra subscribers in Project Genie and to early-access partners through the Gemini API and AI Studio, which would be the first time Genie is on the API.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/sundarpichai/status/2115115252690145519",
+    "https://x.com/OfficialLoganK/status/2115129174826647863",
+    "https://x.com/GoogleAI/status/2115114625985368299"
+   ],
+   "vendor": "Google DeepMind",
+   "posted_at": "2026-10-27T16:10:55Z",
+   "metrics": {
+    "likes": 5910,
+    "reposts": 665,
+    "quotes": 529,
+    "replies": 347
+   },
+   "confirmed_by": [
+    "@sundarpichai",
+    "@GoogleAI",
+    "@OfficialLoganK",
+    "@RaiaHadsell",
+    "@_philschmid"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Only trusted testers have it; no price or date for the API. Quote posts note sessions hold for only a couple of minutes and that objects drift the longer you stay.",
+    "source": "https://x.com/babayagatwt/status/2115143516326412305"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Very strong reaction, mostly amazement at the audio and talking characters. The recurring technical question is how long a scene stays consistent; testers' notes put coherence around two minutes. Several replies flag the gated access.",
+    "tried": false,
+    "replies_read": 40
+   }
+  },
+  {
+   "title": "Axiom releases a complete Lean formalization of the Classification of Finite Simple Groups",
+   "url": "https://x.com/axiommathai/status/2115089794867040584",
+   "handle": "@axiommathai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Axiom says its agent swarm auto-formalized the whole classification of finite simple groups in Lean. That proof is about 15,000 pages spread over roughly 500 papers by more than 100 mathematicians. The code is public in the AxiomMath/CFSG GitHub repo, created this morning, and there is a write-up on Axiom's blog, 'Formalizing the Enormous Theorem'. Quote posts say the work also produced verified computational group theory tools and caught a broken step in the original literature.",
+   "kind": "research",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/AxiomMath/CFSG",
+    "https://axiommath.ai/blog"
+   ],
+   "vendor": "Axiom Math",
+   "posted_at": "2026-10-27T14:34:38Z",
+   "metrics": {
+    "likes": 3083,
+    "reposts": 2580,
+    "quotes": 345,
+    "replies": 243
+   },
+   "confirmed_by": [
+    "@TheTuringPost",
+    "@omarsar0",
+    "@hyhieu226",
+    "@KenOno691"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Nobody has independently audited the formal statement yet. One reply asks whether every definition edge case was checked or only the headline theorems.",
+    "source": "https://x.com/VjxftTwxiffgfs/status/2115143446075986021"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Large and enthusiastic reaction, including from mathematicians. The repost volume is unusually high (2,580). The open question is how faithful the top-level Lean statements are to the informal theorem.",
+    "tried": false,
+    "replies_read": 30
+   }
+  },
+  {
+   "title": "Liquid AI releases LFM3, six open-weight edge models across text, vision, audio, omni and decision tasks",
+   "url": "https://x.com/liquidai/status/2115128329003303107",
+   "handle": "@liquidai",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "The family is LFM3-1.7B (text, 256k context), LFM3-VL-2B (vision with video input), LFM3-Audio-2B (voice chat and tool calls in 18 languages), LFM3-Omni-2B, and two decision models, d1-2B and d1-Omni-2B, which return typed outputs with calibrated probabilities. They use a new tri-hybrid architecture that Liquid tuned against 14 device and backend targets, including phones, a Raspberry Pi 5, laptops and the Hexagon NPU. Weights are on Hugging Face as GGUF, MLX, ONNX, FP8 and NVFP4. LM Studio, SGLang (day 0), Transformers.js WebGPU and Arm had support on day one. Liquid reports 43.4 on SWE-bench Verified for the 1.7B model, and the 4-bit weights are about 1 GB.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/LiquidAI/LFM3-1.7B",
+    "https://huggingface.co/LiquidAI/LFM3-VL-2B",
+    "https://www.liquid.ai/blog",
+    "https://lmstudio.ai/models/lfm3"
+   ],
+   "vendor": "Liquid AI",
+   "posted_at": "2026-10-27T17:07:45Z",
+   "metrics": {
+    "likes": 1185,
+    "reposts": 223,
+    "quotes": 128,
+    "replies": 132
+   },
+   "confirmed_by": [
+    "@xenovacom",
+    "@lmstudio",
+    "@sgl_project",
+    "@maximelabonne",
+    "@Arm"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Upbeat replies, with on-device builders interested in the 1.7B text model for agent work. Liquid staff explain the architecture search was run against real devices. Some quote posts are promotional reposts in several languages.",
+    "tried": false,
+    "replies_read": 30
+   }
+  },
+  {
+   "title": "Cognition launches FrontierCode 2.0, a mergeability benchmark with deliberately underspecified prompts",
+   "url": "https://x.com/cognition/status/2115132488775524793",
+   "handle": "@cognition",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "FrontierCode 2.0 has more repos and larger tasks than 1.0. Open-source maintainers grade each PR on whether it should be merged, not only whether it works. Prompts are intentionally ambiguous to test engineering judgment. The top model scores 45%, so the benchmark is far from saturated.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://cognition.ai/blog"
+   ],
+   "vendor": "Cognition",
+   "posted_at": "2026-10-27T17:24:17Z",
+   "metrics": {
+    "likes": 499,
+    "reposts": 45,
+    "quotes": 27,
+    "replies": 46
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Replies like the underspecified-prompt design and ask for newer models such as DeepSeek V4.1 Flash and GPT-6.1 Terra to be added.",
+    "tried": false,
+    "replies_read": 12
+   }
+  },
+  {
+   "title": "MAI-Image-2.7-Preview ranks #2 on AA-Image-Editing and #3 in the Image Edit Arena; MAI-Image-2.6 is now GA in Foundry",
+   "url": "https://x.com/ArtificialAnlys/status/2115097540320506069",
+   "handle": "@ArtificialAnlys",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Artificial Analysis puts Microsoft's new image-editing model just behind GPT Image 2.5 Sunburst. It beats MAI-Image-2.6 on all 7 edit actions and is #1 on four of them: scene and style, text and symbol, reasoning-based edits, and restoration. Arena scores it at 1470 for #3 overall, 45 points above 2.6. It is in MAI Playground for editing only; text-to-image is coming later. Separately, MAI-Image-2.6 and 2.6-Flash are now generally available in Microsoft Foundry.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/arena/status/2115101113666134276",
+    "https://x.com/MicrosoftAI/status/2115106982730342888"
+   ],
+   "vendor": "Microsoft AI",
+   "posted_at": "2026-10-27T15:05:24Z",
+   "metrics": {
+    "likes": 301,
+    "reposts": 20,
+    "quotes": 15,
+    "replies": 39
+   },
+   "confirmed_by": [
+    "@arena",
+    "@MicrosoftAI"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "neutral",
+    "summary": "Few substantive replies; mostly comparisons with GPT Image 2.5 and questions about when text-to-image arrives.",
+    "tried": false,
+    "replies_read": 8
+   }
+  },
+  {
+   "title": "NVIDIA's first Rubin NVL72 submission serves Kimi K3 (2.8T) at over 850 tok/s per user on vLLM",
+   "url": "https://x.com/SemiAnalysis_/status/2115126872455475476",
+   "handle": "@SemiAnalysis_",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "SemiAnalysis reports that NVIDIA's first Rubin NVL72 benchmark run serves the 2.8T-parameter Kimi K3 at over 850 tokens per second per user, with more than 3x higher throughput, on vLLM. Rubin Software 1.0 GA is said to be coming.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "NVIDIA / vLLM",
+   "posted_at": "2026-10-27T17:01:58Z",
+   "metrics": {
+    "likes": 279,
+    "reposts": 16,
+    "quotes": 11,
+    "replies": 25
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "neutral",
+    "summary": "Replies dig into cost. One reads the TCO numbers as cheap prefill but expensive decode, which they see as support for disaggregated serving.",
+    "tried": false,
+    "replies_read": 6
+   }
+  },
+  {
+   "title": "OpenBMB open-sources MiniCPM-OCR 1.0 (1B) and MiniCPM-OCR Jev, a 2B checker that grades OCR output",
+   "url": "https://x.com/OpenBMB/status/2115124474882469955",
+   "handle": "@OpenBMB",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "MiniCPM-OCR 1.0 is a 1B parser that scores 93.68 on Real5-OmniDocBench and 54.7 on OCRBench v2. Jev is a model-agnostic 2B decision model that checks text, formulas and tables from any OCR parser for errors: 93.6 on JevOCRBench, close to Qwen3.5-397B-A17B. With DSpark it parses up to 128 pages a minute. Weights are on Hugging Face, including GGUF, AWQ and GPTQ.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/openbmb/MiniCPM-OCR-1.0",
+    "https://huggingface.co/openbmb/MiniCPM-OCR-Jev"
+   ],
+   "vendor": "OpenBMB",
+   "posted_at": "2026-10-27T16:52:26Z",
+   "metrics": {
+    "likes": 76,
+    "reposts": 8,
+    "quotes": 10,
+    "replies": 13
+   },
+   "confirmed_by": [
+    "@aitrackerbot"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Fish Audio previews Realtime STT built for voice agents, #1 of 20 on Cekura's STT benchmark",
+   "url": "https://x.com/FishAudio/status/2115126383668027643",
+   "handle": "@FishAudio",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "A streaming speech-to-text preview that also predicts turn-taking: when to answer, keep listening or stop. It reports 2.21% overall WER, ranked first of 20 on Cekura's third-party STT benchmark. Available to try now as a preview.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Fish Audio",
+   "posted_at": "2026-10-27T17:00:01Z",
+   "metrics": {
+    "likes": 149,
+    "reposts": 10,
+    "quotes": 4,
+    "replies": 7
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "NVIDIA publishes Nemotron-Labs-Unified-ASR-0.6b, one model for offline and streaming ASR",
+   "url": "https://x.com/aitrackerbot/status/2115106347511423216",
+   "handle": "@aitrackerbot",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A 600M speech recognition model that does both batch and live transcription in 25 European languages, with streaming latency as low as 160 ms. NVIDIA says it beats parakeet-tdt-0.6b-v3 offline. OpenMDW-1.1 license, commercial use allowed.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/nvidia/nemotron-labs-unified-asr-0.6b"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-10-27T15:40:24Z",
+   "metrics": {
+    "likes": 24,
+    "reposts": 2,
+    "quotes": 2,
+    "replies": 1
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Delta makes Claude Code multiplayer with /delta share",
+   "url": "https://x.com/zeddotdev/status/2115135016233509239",
+   "handle": "@zeddotdev",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "A Claude Code plugin plus the Delta CLI. Running /delta share gives a link; a teammate runs /delta join and gets the same thread with full context and your uncommitted worktree, synced through DeltaDB, while each person uses their own Claude session. In beta.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://delta.dev/blog/claude-code-multiplayer"
+   ],
+   "vendor": "Zed (Delta)",
+   "posted_at": "2026-10-27T17:34:19Z",
+   "metrics": {
+    "likes": 55,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 5
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Replit Cloud Agents can run any existing repo and open tested pull requests",
+   "url": "https://x.com/amasad/status/2115129060267262190",
+   "handle": "@amasad",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Replit agents are no longer limited to Replit-native projects: they can run any codebase and turn a natural-language request into a tested PR for engineers to approve. Replit says its own design team shipped over 250k reviewed lines this way in six months.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/Replit/status/2115109663993966737"
+   ],
+   "vendor": "Replit",
+   "posted_at": "2026-10-27T17:10:39Z",
+   "metrics": {
+    "likes": 118,
+    "reposts": 11,
+    "quotes": 2,
+    "replies": 38
+   },
+   "confirmed_by": [
+    "@Replit"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Browserbase adds Authenticated Fetch for pulling data from logged-in sites in one request",
+   "url": "https://x.com/browserbase/status/2115132046515511613",
+   "handle": "@browserbase",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "A single API call fetches content behind a login without a full browser session. Browserbase says it is 3x faster than a session, and it is available on all plans now.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Browserbase",
+   "posted_at": "2026-10-27T17:22:31Z",
+   "metrics": {
+    "likes": 28,
+    "reposts": 3,
+    "quotes": 3,
+    "replies": 3
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Cua benchmarks Spaces on a Mac Studio: 235 ms to first command, 448 idle Linux sandboxes at once",
+   "url": "https://x.com/trycua/status/2115132828035989526",
+   "handle": "@trycua",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Cua ran its Spaces sandboxes locally on a Mac Studio instead of in the cloud. A new Linux Space ran its first command 235 ms after creation, and the machine held 448 idle Spaces before it filled up.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Cua",
+   "posted_at": "2026-10-27T17:25:38Z",
+   "metrics": {
+    "likes": 42,
+    "reposts": 7,
+    "quotes": 2,
+    "replies": 3
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Paper: an independent reviewer agent is the most cost-efficient verification design for coding agents",
+   "url": "https://x.com/dair_ai/status/2115101219119325606",
+   "handle": "@dair_ai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Alibaba and Cornell compared 17 verification designs across seven frontier coding models on Terminal-Bench and SWE-bench Verified. A separate critic at the end added 5.9 to 9.5 points on Terminal-Bench at 1.13 to 1.25x the cost, and 3.9 to 6.6 on SWE-bench Verified at almost no extra cost. Instructions and mid-run reminders gave small, model-dependent gains. Completion gates helped more but could be costly.",
+   "kind": "research",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Alibaba / Cornell",
+   "posted_at": "2026-10-27T15:20:01Z",
+   "metrics": {
+    "likes": 70,
+    "reposts": 14,
+    "quotes": 2,
+    "replies": 18
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Paper: plain RAG over raw history beats many dedicated agent memory systems",
+   "url": "https://x.com/omarsar0/status/2115098954799169970",
+   "handle": "@omarsar0",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "On LongMemEval, PersonaMem and MINT-Eval, many memory systems score below naive retrieval over the raw history while costing more. The authors measure a 'memory tax': answers RAG gets right but memory gets wrong because extraction dropped or distorted facts. Retrieving from raw history alongside memory and reranking both together shrank that tax.",
+   "kind": "research",
+   "evidence": "measured",
+   "links": [],
+   "vendor": null,
+   "posted_at": "2026-10-27T15:11:02Z",
+   "metrics": {
+    "likes": 99,
+    "reposts": 13,
+    "quotes": 8,
+    "replies": 60
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Ai2 eval shows LLM novelty judges flip verdicts on similar research ideas depending on the prompt",
+   "url": "https://x.com/allen_ai/status/2115120549680521403",
+   "handle": "@allen_ai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Allen AI built an eval for LLMs used to judge whether AI-generated research ideas are novel. Even frontier models reach different conclusions about similar ideas depending on how the question is framed.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Allen AI",
+   "posted_at": "2026-10-27T16:36:50Z",
+   "metrics": {
+    "likes": 50,
+    "reposts": 7,
+    "quotes": 4,
+    "replies": 4
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "CopilotKit open-sources OpenDuet, a self-hostable proactive agent that works with any harness",
+   "url": "https://x.com/CopilotKit/status/2115101172134719991",
+   "handle": "@CopilotKit",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "OpenDuet is an open-source agent that acts proactively instead of waiting for prompts. It is self-hostable and harness-agnostic, and the repo is meant as a base to build on.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/CopilotKit/OpenDuet"
+   ],
+   "vendor": "CopilotKit",
+   "posted_at": "2026-10-27T15:19:50Z",
+   "metrics": {
+    "likes": 67,
+    "reposts": 6,
+    "quotes": 0,
+    "replies": 3
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "LangChain open-sources Content Studio, a Slack design agent, with a write-up of its harness",
+   "url": "https://x.com/LangChain/status/2115124503093121121",
+   "handle": "@LangChain",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "LangChain published how it built Content Studio, an agent in Slack that makes on-brand videos, graphics and decks. The agent and the harness behind it are open source.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "LangChain",
+   "posted_at": "2026-10-27T16:52:33Z",
+   "metrics": {
+    "likes": 32,
+    "reposts": 6,
+    "quotes": 7,
+    "replies": 8
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 0,
+  "kept": 0,
+  "note": "Live bookmarks read for id 1521986356721123328; all 20 newest saves were already in the archive's seen ids."
+ },
+ "saved_rejected": [],
+ "list_posts_read": 88,
+ "list_pages": 1,
+ "discovery": {
+  "queries": 2,
+  "kept": 1,
+  "note": "One security search and one open-source release search. The release search surfaced OpenDuet (kept); the rest were low-signal personal projects. The security search found only re-coverage."
+ },
+ "horizon": {
+  "block-dessa": "block.xyz/dessa unchanged (demo recordings, waitlist, early access for safety researchers only). One X read found 3 posts: a reply confirming it is still a research preview, plus two recaps. No weights, API or paper. No trigger."
+ },
+ "proposed_follows": [],
+ "proposed_follows_note": "follow_mode is browser and this run had no browser, so nothing was followed. No new follow proposals this sweep.",
+ "skipped": [
+  {
+   "url": "https://x.com/SparkLLM/status/2115100695775056057",
+   "reason": "Spark-X2.6-1.7B is already in the edition and the 10-22 sweep."
+  },
+  {
+   "url": "https://x.com/lvwerra/status/2115115572145111194",
+   "reason": "Carbon-X is already in the edition (HF model and space)."
+  },
+  {
+   "url": "https://x.com/KLieret/status/2115096322894147910",
+   "reason": "ProgramBench progress note with no new numbers in the text; minor."
+  },
+  {
+   "url": "https://x.com/mustafasuleyman/status/2115129110930628859",
+   "reason": "MAI Cyber 1.1 Flash: adoption claims, no artifact or eval."
+  },
+  {
+   "url": "https://x.com/NousResearch/status/2115120531611787323",
+   "reason": "Hermes plan packaging (cloud agent included); subscription news."
+  },
+  {
+   "url": "https://x.com/aitrackerbot",
+   "reason": "'Preparing' leaks (Nemotron 3.5 Transcribe, larger Granite Docling) are not shipped."
+  },
+  {
+   "url": "https://x.com/ViC305/status/2115102239593468040",
+   "reason": "Promo for abliterated cyber quants on a paid host."
+  },
+  {
+   "url": "https://x.com/plotarmordev/status/2115101287218020592",
+   "reason": "TensorFold tease without a release."
+  },
+  {
+   "url": "various",
+   "reason": "Business, events and pricing posts (Daytona COMPUTE, Fireworks events, Snowflake/Oracle, Cerebras OCI, CoreWeave, AMD-Meta, Anthropic S-1 readers) and opinion threads are out of scope."
+  },
+  {
+   "url": "https://x.com/OpenAI",
+   "reason": "GPT-6.1 Terra arena results were already kept in the 10-26 18:09Z sweep."
+  }
+ ],
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://x.com/stretchcloud/status/2115132669440778706",
+   "reason": "Forever Security AGENTS.md/CLAUDE.md-in-Downloads hijack: re-coverage of the lead forwarded on 2026-10-25 (Codex over 90%, Claude Code base-URL redirect leaking the OAuth token about half the time). No new facts."
+  },
+  {
+   "url": "https://x.com/theagenticdaily/status/2115105546202406994",
+   "reason": "NVIDIA SkillSpector (defensive scanner for agent skills; 26.1% of 31,132 public skills had a vulnerability, 5.2% likely malicious) is already in the edition. Defensive tool, no new risk."
+  },
+  {
+   "url": "https://x.com/Gurucul/status/2115096321291858284",
+   "reason": "LiteLLM 1.107.0 supply-chain recaps; already handled by Bouncer."
+  },
+  {
+   "url": "https://x.com/CyberWorldOps/status/2115133584973480232",
+   "reason": "Warp vendor breach; Bouncer already dispositioned Warp as N/A."
+  },
+  {
+   "url": "https://x.com/horia_nita/status/2115109863780999339",
+   "reason": "CVE-2026-111497 (Node2Shell/HTTP2Shell, Brotli) client checker; the CVE is already tracked from the 10-24/10-25 sweeps."
+  },
+  {
+   "url": "https://x.com/arizeai/status/2115111580665041120",
+   "reason": "Indirect prompt-injection lab (agent pulled another customer's data in 28 of 100 runs); generic research, not tied to a stack component."
+  }
+ ]
+}

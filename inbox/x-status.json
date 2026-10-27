@@ -1,16 +1,16 @@
 {
- "updated_at": "2026-10-27T14:12:00Z",
+ "updated_at": "2026-10-27T18:12:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 45,
+ "calls_used_today": 67,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-10-27T14:12:00Z",
-  "items": 3,
+  "ran_at": "2026-10-27T18:12:00Z",
+  "items": 18,
   "queries": 9,
-  "deep_reads": 1,
+  "deep_reads": 6,
   "rechecks": 8,
-  "flagged": 1,
+  "flagged": 0,
   "saved_in": 0,
   "saved_kept": 0,
   "videos": 0
@@ -172,7 +172,8 @@
   "Roster review 2026-10-27 rejected, so they are not re-checked soon: @yuvalkansal (one capability thread in 30 days, Self-Direction; revisit on next release), @shayan_ (Mirendil Fern is a research preview with no public access, the pretraining post is a writeup; revisit when Fern is public), @The_Whole_Daisy (culture-war and gender-in-tech posts over 1 in 5; the Claude Code permissions post stays covered via sweeps), @MarcoPorro (mostly OmarchyTV launcher promotion, not AI capability), @bria_ai_ (SF Tech Week and partner promotion over 1 in 5), @vercel (Ship SF, merch drop and customer-story promotion over 1 in 5), @HUNTER_z1389 (44 followers, build-in-public GTM, too small).",
   "Roster review 2026-10-27: no promotions possible before 2026-11-03 (earliest trial added 2026-10-20); no retirements (no account has two level-2 flags in 30 days; the 45-day rule cannot bite before about 2026-11-07); no sweep files older than 14 days (oldest 2026-10-20T17-39), so none pruned; Tuesday, so no drafts.",
   "Roster review 2026-10-27: no security leads surfaced in the candidate reads; nothing to forward.",
-  "Sweep 10:15Z: List metrics use repost_count while search and lookup use retweet_count; the prompt could tell parsers to accept either key."
+  "Sweep 10:15Z: List metrics use repost_count while search and lookup use retweet_count; the prompt could tell parsers to accept either key.",
+  "Sweep 18:12Z: a single conversation_id OR search (max_results 100) covered replies for six deep reads in one read; the prompt could suggest batching deep-read reply searches."
  ],
  "errors": [
   "Sweep 14:07Z, possible injection lure, not followed: in the quote posts of https://x.com/cnm13ryan/status/2113121138205499443, @lumpenspace tells readers to have their model 'check out my x bio'. Ignored; no bio was read.",
@@ -197,7 +198,8 @@
   "Sweep 02:08Z: no injection attempts seen. calls_used_today is an estimate (77 at 22:08Z, about 2 for bookmark syncs, 14 this sweep); the X tools did not show a remaining count.",
   "Roster review 2026-10-27: no injection attempts seen; no errors.",
   "Sweep 10:15Z: no injection attempts seen. The Skill tool was unavailable, so skill files were read directly. There was no browser, so no follows were attempted. The ai.stanford.edu HalluWorld blog returned 500 and then an empty page. The X tool's account-wide counter showed 962 of 1000 left at 10:09Z; calls_used_today counts 13 roster plus 16 this sweep.",
-  "Sweep 14:12Z: no injection attempts seen; Stanford HalluWorld blog still 500 (primary sources found instead)."
+  "Sweep 14:12Z: no injection attempts seen; Stanford HalluWorld blog still 500 (primary sources found instead).",
+  "Sweep 18:12Z: Skill tool unavailable, so skills were read from SKILL.md directly (non-blocking); no browser, so no follows; no injection attempts seen."
  ],
  "follows_today": 0,
  "last_roster_review": {
