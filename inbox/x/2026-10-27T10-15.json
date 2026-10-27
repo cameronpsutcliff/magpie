@@ -1,0 +1,343 @@
+{
+ "ran_at": "2026-10-27T10:15:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-10-27T02:08:00Z",
+ "queries": 11,
+ "calls": 16,
+ "rechecks": [
+  {
+   "url": "https://x.com/cohere/status/2114752002370544004",
+   "result": "metrics up (10,017 likes, 1,144 reposts, 1,358 quotes); Vals AI independently reports Qwen3.8 calling a different Alibaba Cloud host on routine tasks with no exfiltration; the unprompted-network-call part is now corroborated, while the exfiltration reading stays disputed"
+  },
+  {
+   "url": "https://x.com/cohere/status/2114849246155260108",
+   "result": "metrics up (1,050 likes, 117 reposts, 89 quotes); no change to the prefilled-repro pushback; doubt stays 2"
+  },
+  {
+   "url": "https://x.com/bneyshabur/status/2114743262565339148",
+   "result": "metrics up (1,981 likes, 168 reposts); still no public access; doubt stays 1"
+  },
+  {
+   "url": "https://x.com/cursor_ai/status/2114793714531102901",
+   "result": "metrics up (3,354 likes, 235 reposts, 197 quotes); no new pushback"
+  },
+  {
+   "url": "https://x.com/The_Whole_Daisy/status/2114796466850202103",
+   "result": "metrics up (1,726 likes, 60 reposts); no new pushback"
+  },
+  {
+   "url": "https://x.com/aitrackerbot/status/2114873309774876708",
+   "result": "metrics flat (19 likes); @sgl_project now lists SGLang as the recommended serving path; benchmark claims still self-reported, doubt stays 1"
+  },
+  {
+   "url": "https://x.com/NousResearch/status/2114753914939863260",
+   "result": "metrics up (1,510 likes, 110 reposts); no new pushback"
+  },
+  {
+   "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities/",
+   "result": "Anthropic posted an independent Lean-checked ETH refutation dated to the same day (Oct 16); OpenAI's proof is with Impagliazzo and Paturi for review; still no independent verdict, doubt stays 1"
+  }
+ ],
+ "items": [
+  {
+   "title": "Anthropic publishes a Claude-found refutation of the Exponential Time Hypothesis with a Lean 4 proof",
+   "url": "https://x.com/__alpoge__/status/2114930095009968506",
+   "handle": "@__alpoge__",
+   "group": "labs",
+   "origin": "discovery",
+   "summary": "Anthropic posted a paper and an AI-written Lean 4 formalization claiming a deterministic 2^o(n) algorithm for 3-SAT (and #3-SAT counting), which would refute ETH. An Anthropic researcher says an internal Claude research model found the core algorithm on Oct 16 using 14M output tokens with no human input. The repo says the result is purely asymptotic with no practical speedup. It also gives build steps (about 8 minutes on 24 vCPUs) and a second-kernel check in CI. This is a different route from OpenAI's ETH result kept at 22:08Z, and it is dated to the same day.",
+   "kind": "paper",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/anthropics/formal-math/tree/16a5ce41304fcdaea4e0be7c132e1c361dc26da5/eth"
+   ],
+   "vendor": "Anthropic",
+   "posted_at": "2026-10-27T04:00:00Z",
+   "metrics": {
+    "likes": 1710,
+    "reposts": 87,
+    "quotes": 83,
+    "replies": 78,
+    "views": 319006
+   },
+   "confirmed_by": [
+    "@scaling01",
+    "@MTSlive"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Lean checks the proofs, but whether MainResults.lean states what the paper claims still needs a human reader (the README says so itself), and no independent complexity theorists have reviewed it yet; repliers also question what 'no human input' means for how the run was started.",
+    "source": "https://x.com/AI_N0W/status/2115013314006946171"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Most replies are amazed at two labs landing the same result on the same date and want the Anthropic and OpenAI routes compared; others ask how a run with no human input was started, and a few dismiss it or worry about what it means for science.",
+    "tried": false,
+    "replies_read": 48
+   }
+  },
+  {
+   "title": "Vals AI finds Qwen3.8-Max and Qwen3.8-27B calling an Alibaba Cloud file proxy on routine eval tasks",
+   "url": "https://x.com/ValsAI/status/2114999431787643366",
+   "handle": "@ValsAI",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Vals AI searched its eval traces for aliyuncs.com. It found Qwen3.8-Max-0902, Qwen3.8-Max and Qwen3.8-27B sending web fetches to routify-file-proxy-sg.oss-ap-southeast-1.aliyuncs.com during ordinary law and finance tasks. Qwen3.7 models did not do this. The server returned 403 every time. The models also sometimes reasoned about proxy calls they never made. Vals thinks an RL web-fetch proxy leaked into the released weights, and it saw no sign of data exfiltration. This is a separate host from the Beijing bucket in Cohere's report.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://www.vals.ai/blogs/qwen-alibaba-requests",
+    "https://news.ycombinator.com/item?id=49379079",
+    "https://x.com/cohere/status/2114752002370544004"
+   ],
+   "vendor": "Vals AI",
+   "posted_at": "2026-10-27T08:35:00Z",
+   "metrics": {
+    "likes": 38,
+    "reposts": 6,
+    "quotes": 5,
+    "replies": 8,
+    "views": 2938
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers treat it as a reason to run agent sandboxes with default-deny egress and logged DNS; one asks what share of traces showed the calls and whether it persists with egress blocked.",
+    "tried": false,
+    "replies_read": 9
+   }
+  },
+  {
+   "title": "vLLM Semantic Router releases d3-ultra, an open 27B multimodal decision model",
+   "url": "https://x.com/XunzhuoLiu/status/2114915380926017591",
+   "handle": "@XunzhuoLiu",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "d3-ultra is a 26B-parameter open-weights model under Apache-2.0. It outputs structured decisions (choice, yes/no, score, bounding box, and tracking across video frames) and has a 131K context. On one AMD MI325X, the team reports 304 ms for a single question and 2.16 s for a batch of 255. Its benchmark scores (SR-Text 87.2, SR-Box 58.2%, and #2 of 230 on the Jev Decision Index text board) come from the team's own tests.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/vllm-sr/d3-ultra"
+   ],
+   "vendor": "vLLM Semantic Router",
+   "posted_at": "2026-10-27T03:01:00Z",
+   "metrics": {
+    "likes": 65,
+    "reposts": 7,
+    "quotes": 3,
+    "replies": 9,
+    "views": 5488
+   },
+   "confirmed_by": [
+    "@vllm_project",
+    "@Alex_tra_memory"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The accuracy numbers are self-reported on the team's own sets; no outside eval yet.",
+    "source": "https://huggingface.co/vllm-sr/d3-ultra"
+   }
+  },
+  {
+   "title": "Lafa converts pretrained autoregressive LLMs into flow LMs that decode 2.5x faster",
+   "url": "https://x.com/askalphaxiv/status/2114922787441721582",
+   "handle": "@askalphaxiv",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "This Berkeley, Amazon, KAIST and CMU paper turns existing autoregressive models (Qwen2.5 7B, Qwen3 8B) into blockwise flow language models. The converted models check their own drafts, and the conversion takes under 30B training tokens. With block size 16, Lafa 7B decodes at 100.2 tok/s against 39.5 tok/s for the AR baseline at batch 1 on one H100, with similar accuracy (74.5% vs 73.9%).",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://www.alphaxiv.org/abs/2610.28559"
+   ],
+   "vendor": "UC Berkeley",
+   "posted_at": "2026-10-27T03:30:00Z",
+   "metrics": {
+    "likes": 103,
+    "reposts": 13,
+    "quotes": 1,
+    "replies": 8,
+    "views": 5058
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Paper: RL narrows the reasoning strategies of LLMs but raises Pass@1024",
+   "url": "https://x.com/askalphaxiv/status/2114907436725232060",
+   "handle": "@askalphaxiv",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "The paper studies how reinforcement learning changes reasoning in Qwen3-14B. RL cut the diversity of solution strategies by about 18%, yet BoxNet Pass@1024 rose from 34% to 51%. The result goes against the common view that RL only sharpens what the base model could already do.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://www.alphaxiv.org/abs/2610.04158"
+   ],
+   "vendor": "alphaXiv",
+   "posted_at": "2026-10-27T02:30:00Z",
+   "metrics": {
+    "likes": 86,
+    "reposts": 16,
+    "quotes": 0,
+    "replies": 8,
+    "views": 6090
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Hermes Agent's Desktop app can now be served to any browser from your own host",
+   "url": "https://x.com/Teknium/status/2114919004632764585",
+   "handle": "@Teknium",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A merged 'hermes webapp' change serves Hermes Desktop (chat, files, git, a persistent terminal and remote sign-in) to any browser from a machine you host. Teknium says it is available now on the main release channel. Because the web UI includes a terminal, anyone who exposes it beyond localhost should put it behind authentication.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/tonysimons/status/2114598038568116579"
+   ],
+   "vendor": "Nous Research",
+   "posted_at": "2026-10-27T03:22:00Z",
+   "metrics": {
+    "likes": 258,
+    "reposts": 15,
+    "quotes": null,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [
+    "@tonysimons"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Only a demo video and an enthusiastic third-party post; no PR link or docs found yet.",
+    "source": null
+   }
+  }
+ ],
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 0,
+  "kept": 0,
+  "note": "Live bookmarks read; all 20 newest saves were already in the archive's seen ids (latest kept save, OmarchyTV, was folded into an earlier sweep), so none were vetted."
+ },
+ "saved_rejected": [],
+ "list_posts_read": 95,
+ "list_pages": 1,
+ "discovery": {
+  "queries": 2,
+  "kept": 1,
+  "note": "An ETH and formal-math search turned up the Anthropic repo through the __alpoge__ post and many recaps. A link-based release search returned d3-ultra (already found by the sweep) plus small personal repos and listicles."
+ },
+ "horizon": {
+  "block-dessa": "block.xyz/dessa unchanged: demo recordings and early access for safety researchers only; two new posts restate it is a research preview with no public weights or API. No trigger."
+ },
+ "skipped": [
+  {
+   "url": "https://x.com/StanfordAILab/status/2114929249094435237",
+   "reason": "HalluWorld benchmark announcement; the linked blog returned 500 and then an empty page, so nothing could be checked. Revisit next sweep."
+  },
+  {
+   "url": "https://x.com/ArtificialAnlys/status/2114905910879604817",
+   "reason": "AA-3D Explorer is a browser viewer for an existing eval's scenes; no new results."
+  },
+  {
+   "url": "https://x.com/ariG23498/status/2114985182688403781",
+   "reason": "Hugging Face TorchTPU blog from Oct 20; already covered in earlier sweeps."
+  },
+  {
+   "url": "https://x.com/sgl_project",
+   "reason": "Hy-SimulMT and Unlimited-OCR-2 serving support on SGLang; both models already covered."
+  },
+  {
+   "url": "https://x.com/Teknium",
+   "reason": "GPT-6.1 Terra in Hermes; Terra already covered."
+  },
+  {
+   "url": "https://x.com/ValsAI",
+   "reason": "GPT-6.1 Terra placing #10 on the Vals Index; Terra follow-up."
+  },
+  {
+   "url": "https://x.com/aitrackerbot",
+   "reason": "Anonymous Arena tokenizer tests for unreleased models; speculation."
+  },
+  {
+   "url": "https://x.com/Alex_tra_memory",
+   "reason": "Small Dynamo bugfix PR (ai-dynamo/dynamo#17249)."
+  },
+  {
+   "url": "https://x.com/thdxr",
+   "reason": "Opinion and business posts (supply-chain release musing, GitHub alternatives, GB300 racks)."
+  },
+  {
+   "url": "https://x.com/badlogicgames",
+   "reason": "Reading list and opinion."
+  },
+  {
+   "url": "https://x.com/LiteLLM",
+   "reason": "Promotion for abliterated model routing; no release or advisory."
+  },
+  {
+   "url": "https://x.com/MooncastOnline",
+   "reason": "Terra benchmark follow-up."
+  },
+  {
+   "url": "https://x.com/somarkai",
+   "reason": "OXR already covered at 18:09Z."
+  },
+  {
+   "url": "https://x.com/ViC305",
+   "reason": "Plan to test, no results yet."
+  },
+  {
+   "url": "https://x.com/OpenBMB",
+   "reason": "Quote demos of an already covered model."
+  },
+  {
+   "url": "https://x.com/FishAudio",
+   "reason": "Promotional demo with no release."
+  }
+ ],
+ "security_forwarded": [
+  {
+   "url": "https://x.com/ValsAI/status/2114999431787643366",
+   "matched": "always_forward: agent tooling (model making unrequested outbound calls inside agent harnesses); fleet runs Qwen3.8-27B on Spark",
+   "reason": "Vals AI found Qwen3.8-Max and Qwen3.8-27B issuing unrequested web fetches to routify-file-proxy-sg.oss-ap-southeast-1.aliyuncs.com on routine tasks (403 so far, no exfiltration seen); this is a second host beyond Cohere's sanmaohe.oss-cn-beijing.aliyuncs.com. Spark runs an Uncensored Qwen3.8-27B tool launcher with no egress filtering, so the fleet could check DNS and egress logs for both hosts and consider default-deny egress for Qwen agents.",
+   "source": "https://www.vals.ai/blogs/qwen-alibaba-requests"
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/Teknium/status/2114919004632764585",
+   "reason": "Hermes webapp is a new feature, not a vulnerability; it only matters if someone exposes the browser terminal beyond localhost without authentication."
+  }
+ ]
+}
