@@ -1,6 +1,6 @@
 {
  "schema": "magpie.threats/1",
- "updated": "2026-10-26",
+ "updated": "2026-10-27",
  "threats": [
   {
    "id": "thr-2026-10-23-vllm-multimodal-processor-kwargs-allow-out-of",
@@ -73,7 +73,7 @@
     "GHSA-gx7p-2j49-hfq4",
     "url:osv.dev/vulnerability/GHSA-gx7p-2j49-hfq4"
    ],
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "reach": 2,
    "wide": false
   },
@@ -140,9 +140,9 @@
    "id": "thr-2026-10-20-certifi-bundle-includes-root-with-compromised-intermediates",
    "kind": "threat",
    "category": "trust-infrastructure",
-   "title": "certifi bundles emSign root with compromised intermediates",
-   "headline": "certifi CA bundle trusts emSign root tied to compromised intermediate keys, exposing requests, urllib3 and pip",
-   "summary": "An attacker with a key can issue valid-looking certificates for any hostname.",
+   "title": "Python certifi bundles root behind compromised eMudhra intermediates",
+   "headline": "certifi trusted an emSign root whose intermediates had compromised keys, exposing requests, urllib3 and pip users",
+   "summary": "Eight eMudhra intermediate CA certificates that chain to this root have compromised private keys.",
    "severity": "critical",
    "severity_basis": "advisory rating",
    "exploited": null,
@@ -153,17 +153,17 @@
     {
      "name": "certifi",
      "ecosystem": "PyPI",
-     "versions": ">= 2019.03.09, < 2026.10.19"
+     "versions": ">= 2019.03.09, < 2026.10.18"
     }
    ],
    "fixed_in": [
     {
      "name": "certifi",
-     "version": "2026.10.19"
+     "version": "2026.10.18"
     }
    ],
    "actions": [
-    "Update certifi to 2026.10.19 or later",
+    "Update certifi to 2026.10.18 or later",
     "Rebuild container images that vendor certifi."
    ],
    "action_quotes": [
@@ -173,13 +173,13 @@
     }
    ],
    "who": [
-    "Python apps using requests, urllib3 or pip",
-    "Python.org macOS installer users",
-    "container images that vendor certifi"
+    "Python clients using requests, urllib3 or pip",
+    "container images that vendor certifi",
+    "Python.org macOS installer users"
    ],
    "published": "2026-10-20",
    "first_seen": "2026-10-21",
-   "updated": "2026-10-22",
+   "updated": "2026-10-27",
    "cves": [],
    "kev": false,
    "doc": "https://osv.dev/vulnerability/GHSA-6q48-6c7w-9gw2",
@@ -190,7 +190,7 @@
      "primary": true
     }
    ],
-   "quote": "If the attacker is also on-path, they can intercept or modify TLS traffic from clients that trust the certifi bundle.",
+   "quote": "An attacker with one of the compromised keys can issue valid-looking certificates for any hostname.",
    "evidence": "official",
    "incident": "thr-2026-10-20-eight-emudhra-intermediate-ca-private-keys-compromised",
    "children": [],
@@ -201,7 +201,7 @@
     "PYSEC-2026-4320",
     "url:osv.dev/vulnerability/GHSA-6q48-6c7w-9gw2"
    ],
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-27",
    "reach": 12,
    "wide": true
   },
@@ -431,9 +431,9 @@
    "id": "thr-2026-10-20-eight-emudhra-intermediate-ca-private-keys-compromised",
    "kind": "threat",
    "category": "trust-infrastructure",
-   "title": "eMudhra intermediate CA private keys compromised",
-   "headline": "Eight eMudhra intermediate CA keys were recoverable, letting attackers impersonate sites to non-browser TLS clients",
-   "summary": "The private keys of eight eMudhra intermediate CA certificates were compromised because the CA generated them incorrectly, so anyone can recover them from the certificates. Six are TLS intermediates trusted by the Chrome, Mozilla, Microsoft and Apple root programs, and two are codesigning intermediates trusted by Microsoft. An attacker with any of the keys could impersonate any website or service to clients that still trust the intermediates, especially clients that ship their own CA bundle or do not enforce Certificate Transparency.",
+   "title": "Eight eMudhra intermediate CA private keys compromised",
+   "headline": "Flawed key generation exposed eight eMudhra intermediate CA keys, letting attackers impersonate any website or service",
+   "summary": "The private keys of eight eMudhra intermediate CA certificates were compromised because the CA generated them incorrectly, so anyone can recover them from the certificates. Six are for TLS and chain to roots trusted by the Mozilla, Microsoft, Apple and Chrome root programs. Two are for code signing and trusted by Microsoft. An attacker with any of the keys could impersonate any website or service, and clients that ship their own CA bundle or do not enforce Certificate Transparency are at greater risk.",
    "severity": "high",
    "severity_basis": "editor",
    "exploited": null,
@@ -500,12 +500,20 @@
      "version": "26.9.4"
     },
     {
-     "name": "Python",
-     "version": "3.15.1, 3.14.9, 3.13.17"
+     "name": "litellm",
+     "version": "1.103.8, 1.104.6, 1.105.4, 1.106.3"
+    },
+    {
+     "name": "Claude Code",
+     "version": "2.1.303"
     },
     {
      "name": "Node.js",
      "version": "26.12.1, 24.22.1, 22.23.4"
+    },
+    {
+     "name": "Python",
+     "version": "3.15.2, 3.14.10, 3.13.18, 3.12.16, 3.11.18"
     },
     {
      "name": "Go",
@@ -516,16 +524,8 @@
      "version": "44.9.1, 43.8.1, 42.11.16"
     },
     {
-     "name": "NSS",
-     "version": "3.131.1"
-    },
-    {
-     "name": "Claude Code",
-     "version": "2.1.303"
-    },
-    {
-     "name": "litellm",
-     "version": "1.103.8, 1.104.6, 1.105.4, 1.106.3"
+     "name": "curl CA bundle",
+     "version": "2026-10-20"
     },
     {
      "name": "Visual Studio Code",
@@ -537,30 +537,30 @@
     "Update pip to 26.2.2 or later",
     "Update uv to 0.13.5 or later",
     "Update Conda to 26.9.4 or later",
-    "Update Python to 3.15.1, 3.14.9, 3.13.17 or later",
+    "Update litellm to 1.103.8, 1.104.6, 1.105.4, 1.106.3 or later",
+    "Update Claude Code to 2.1.303 or later",
     "Update Node.js to 26.12.1, 24.22.1, 22.23.4 or later",
+    "Update Python to 3.15.2, 3.14.10, 3.13.18, 3.12.16, 3.11.18 or later",
     "Update Go to 1.27.3, 1.26.10 or later",
     "Update Electron to 44.9.1, 43.8.1, 42.11.16 or later",
-    "Update NSS to 3.131.1 or later",
-    "Update Claude Code to 2.1.303 or later",
-    "Update litellm to 1.103.8, 1.104.6, 1.105.4, 1.106.3 or later",
+    "Update curl CA bundle to 2026-10-20 or later",
     "Update Visual Studio Code to 1.143.1 or later",
-    "Update browsers and operating systems promptly."
+    "Update applications and libraries that ship their own CA bundle, not just the operating system or browser."
    ],
    "action_quotes": [
     {
-     "action": "Update browsers and operating systems promptly.",
-     "quote": "Users should update their browsers and operating systems to the latest versions as soon as possible."
+     "action": "Update applications and libraries that ship their own CA bundle, not just the operating system or browser.",
+     "quote": "Updating the operating system or browser may not be enough for these clients."
     }
    ],
    "who": [
-    "non-browser TLS clients that do not enforce Certificate Transparency",
-    "applications and libraries that ship their own CA bundle",
-    "apps built on Electron"
+    "clients that ship their own CA bundle",
+    "Electron apps such as Slack and Discord",
+    "non-browser clients that do not enforce Certificate Transparency"
    ],
    "published": "2026-10-20",
    "first_seen": "2026-10-21",
-   "updated": "2026-10-26",
+   "updated": "2026-10-27",
    "cves": [],
    "kev": false,
    "doc": "https://emudhra.we-have-a-problem.com/",
@@ -585,8 +585,8 @@
    "evidence": "official",
    "incident": null,
    "children": [
-    "thr-2026-10-20-uv-bundled-ca-store-trusts-compromised-emsign",
     "thr-2026-10-20-certifi-bundle-includes-root-with-compromised-intermediates",
+    "thr-2026-10-20-uv-bundled-ca-store-trusts-compromised-emsign",
     "thr-2026-10-20-rustls-webpki-may-accept-distrusted-emsign-intermediates"
    ],
    "merged_ids": [],
@@ -597,7 +597,7 @@
     "url:emudhra.we-have-a-problem.com",
     "url:groups.google.com/a/mozilla.org/g/dev-security-policy/c/0R3XLJL6FuE"
    ],
-   "last_seen": "2026-10-26",
+   "last_seen": "2026-10-27",
    "reach": 37,
    "wide": true
   },

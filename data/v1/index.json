@@ -2,6 +2,82 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-10-27",
+   "headline": "Use computers with Terra, hand agents Gemini media, run MiniMax locally, and more",
+   "events": 443,
+   "sources": 528,
+   "enriched": true,
+   "top": [
+    {
+     "id": "ae2a0d79ab9f",
+     "title": "OpenAI introduces GPT-6.1 Terra for computer use",
+     "impact": 5,
+     "vendor": "OpenAI"
+    },
+    {
+     "id": "c8cd8da91396",
+     "title": "Qwen3.8 model tried sending a file to Beijing storage",
+     "impact": 4,
+     "vendor": "Cohere"
+    },
+    {
+     "id": "9ffc857e26af",
+     "title": "AsyncGRPO tree packing now trains hybrid attention models",
+     "impact": 4,
+     "vendor": "Axolotl"
+    },
+    {
+     "id": "c4c59fda62a5",
+     "title": "Gemini API CLI gives existing agents media and research calls",
+     "impact": 4,
+     "vendor": "Google"
+    },
+    {
+     "id": "e94abc87f24a",
+     "title": "Unsloth MiniMax-M3.1-Flash GGUFs run in about 150 GB RAM",
+     "impact": 4,
+     "vendor": "Unsloth"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Anthropic",
+    "OpenAI",
+    "Google",
+    "NVIDIA",
+    "Vercel"
+   ],
+   "topics": {
+    "models": 151,
+    "agents": 122,
+    "coding": 121,
+    "multimodal": 73,
+    "infra": 66,
+    "evals": 59,
+    "local": 48,
+    "memory": 33,
+    "security": 32,
+    "research": 30,
+    "mcp": 28,
+    "reverse": 14,
+    "robotics": 5
+   },
+   "kinds": {
+    "social": 98,
+    "video": 90,
+    "community": 68,
+    "repo": 41,
+    "newsletter": 33,
+    "blog": 32,
+    "model": 30,
+    "changelog": 21,
+    "space": 20,
+    "news": 10
+   },
+   "constraints": [],
+   "threats": []
+  },
+  {
    "date": "2026-10-26",
    "headline": "Code agentically with Nanbeige, cache Mac prompts, run Cline in cloud, and more",
    "events": 207,
@@ -2631,5 +2707,5 @@
    }
   }
  ],
- "latest": "2026-10-26"
+ "latest": "2026-10-27"
 }
