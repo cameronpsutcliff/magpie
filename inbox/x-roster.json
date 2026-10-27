@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T09:45:00Z",
+  "updated_at": "2026-10-27T09:50:00Z",
   "accounts": [
     {
       "handle": "@thsottiaux",
@@ -1003,6 +1003,64 @@
       "retired_reason": null,
       "x_user_id": "1049965945131814912",
       "on_list": true
+    },
+    {
+      "handle": "@ViC305",
+      "name": "Cruz",
+      "group": "builders",
+      "affiliation": "Independent",
+      "why": "Day-zero EXL3 and GGUF quants of new open models with measured tok/s and accuracy on one DGX Spark or one RTX 4090 (DeepSeek V4.1 Flash 1.62 bpw, MiniMax M3.1 Flash, Nanbeige4.3-33B).",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-10-27",
+      "evidence": [
+        "https://x.com/ViC305/status/2112603778327380088",
+        "https://x.com/ViC305/status/2113761570304188533",
+        "https://x.com/ViC305/status/2111523015234384166"
+      ],
+      "last_qualifying_post": "2026-10-26",
+      "retired_reason": null,
+      "x_user_id": "45953078",
+      "on_list": true
+    },
+    {
+      "handle": "@DirhousssiAmine",
+      "name": "Dirhousssi Amine",
+      "group": "opensource",
+      "affiliation": "Hugging Face (TRL post-training)",
+      "why": "First-hand TRL AsyncGRPO features with measured results: tree packing (26x less trainer compute), score centering defaults, FP8 rollout stability reproductions.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-10-27",
+      "evidence": [
+        "https://x.com/DirhousssiAmine/status/2110642116716351663",
+        "https://x.com/DirhousssiAmine/status/2114749427659472900",
+        "https://x.com/DirhousssiAmine/status/2110823475061350621"
+      ],
+      "last_qualifying_post": "2026-10-26",
+      "retired_reason": null,
+      "x_user_id": "1296838831",
+      "on_list": true
+    },
+    {
+      "handle": "@plotarmordev",
+      "name": "netrunner",
+      "group": "builders",
+      "affiliation": "Independent (TensorFold contributor)",
+      "why": "Local AI on DGX Spark with repos and measurements: Nemotron 3.5 Super VL single-Spark recipe, TensorFold voice latency PRs, Undertone speech delivery repo, serving comparisons.",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-10-27",
+      "evidence": [
+        "https://x.com/plotarmordev/status/2114341657772712033",
+        "https://x.com/plotarmordev/status/2114463006738239596",
+        "https://x.com/plotarmordev/status/2114874525435507169",
+        "https://x.com/plotarmordev/status/2114644076029227206"
+      ],
+      "last_qualifying_post": "2026-10-27",
+      "retired_reason": null,
+      "x_user_id": "1513438573747486721",
+      "on_list": true
     }
   ],
   "source_leads": [
@@ -1254,6 +1312,25 @@
       "why": "Ships post-training and inference features (Loops SDK with Muse Spark Open) that reach Magpie only through X posts.",
       "seen_via": [
         "@baseten"
+      ]
+    },
+    {
+      "kind": "changelog",
+      "name": "TensorFold releases",
+      "url": "https://github.com/ashhart/TensorFold/releases",
+      "why": "Local inference engine used for DGX Spark serving and voice; release notes carry latency changes Magpie does not watch.",
+      "seen_via": [
+        "@plotarmordev"
+      ]
+    },
+    {
+      "kind": "blog",
+      "name": "Mirendil news",
+      "url": "https://mirendil.com/news/",
+      "why": "New lab posting Fern (10M-token context) and small-team pretraining writeups; no feed in config/sources.json.",
+      "seen_via": [
+        "@shayan_",
+        "@bneyshabur"
       ]
     }
   ],

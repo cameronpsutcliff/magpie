@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-10-27T02:08:00Z",
- "job": "sweep",
+ "updated_at": "2026-10-27T09:50:00Z",
+ "job": "roster",
  "prompt": "v6.1",
- "calls_used_today": 93,
+ "calls_used_today": 13,
  "notes_via_api": false,
  "last_sweep": {
   "ran_at": "2026-10-27T02:08:00Z",
@@ -17,7 +17,7 @@
  },
  "roster": {
   "curated": 223,
-  "trial": 52,
+  "trial": 55,
   "active": 0,
   "retired": 2
  },
@@ -164,7 +164,14 @@
   "Roster review 2026-10-26: @teortaxesTex (curated) review: latest 25 posts (about one day) are mostly AI model commentary with benchmark takes, plus a few off-topic shitposts (e.g. 2114563083460833638); no clear non-AI partisan politics or culture war in this window and no first-hand artifacts. Not retired; flagged for the owner's review.",
   "Roster review 2026-10-26 rejected, so they are not re-checked soon: @nanbeige (one post in 30 days; revisit after next release), @Neriousy (one clear capability post; @opencode is curated), @enesakar (mostly Upsy product promotion, over 1 in 5), @doesdatmaksense (one study, consulting), @Winniechen02, @siyuc3141, @jiaheng0815 (account 5 days old), @ewhauser, @ajbarryiii, @TatraLabs (too small to judge).",
   "Roster review 2026-10-26: no promotions possible before 2026-11-03; no 45-day retirements possible yet; no sweep files older than 14 days (oldest 2026-10-20T17-39), so none pruned. Not Sunday, so no drafts.",
-  "The parent task asks to load the x-api-mcp-guide skill with a Skill tool, but no Skill tool is exposed to sweep runs; this run followed the prompt and earlier status notes instead."
+  "The parent task asks to load the x-api-mcp-guide skill with a Skill tool, but no Skill tool is exposed to sweep runs; this run followed the prompt and earlier status notes instead.",
+  "Roster review 2026-10-27: calls_used_today restarted for Central day 2026-10-27 (the 02:08Z sweep's 93 belonged to Central 2026-10-26); this review used 13 X reads (1 batched user lookup, 12 get_users_posts) plus 3 List writes. X header showed 987 of 1000 account-wide reads left at about 09:40Z.",
+  "Roster review 2026-10-27: owner-saves step found no new authors with 2 or more kept saves (@mirku21, @MatthewBerman, @jankeesvw, @trq212 already on the roster; @HuggingModels retired; @danikkk_wqs failed the vice screen on 2026-10-26 and is still not added).",
+  "Roster review 2026-10-27: owner-saves screen re-applied: @jankeesvw passes (Omarchy plugins, agent-root, a few off-topic bread posts, no politics or vice). @MatthewBerman (owner_requested) passes: mostly local-model and agent posts, some off-topic lifestyle posts, no partisan politics or vice; not touched. @mirku21 still passes as written but all 25 latest posts are the same templated 'official Anthropic/OpenAI tip' with profanity hooks and no source links; flagged again for the owner's review, not retired.",
+  "Roster review 2026-10-27: added 3 trials: @ViC305 (owner save kept 2026-10-26; day-zero EXL3/GGUF quants with measured tok/s on DGX Spark and RTX 4090; hype-styled all-caps posts, and some posts feature abliterated cyber fine-tunes), @DirhousssiAmine (HF TRL post-training, measured AsyncGRPO results), @plotarmordev (local AI on DGX Spark with repos and measurements). All added to the List.",
+  "Roster review 2026-10-27 rejected, so they are not re-checked soon: @yuvalkansal (one capability thread in 30 days, Self-Direction; revisit on next release), @shayan_ (Mirendil Fern is a research preview with no public access, the pretraining post is a writeup; revisit when Fern is public), @The_Whole_Daisy (culture-war and gender-in-tech posts over 1 in 5; the Claude Code permissions post stays covered via sweeps), @MarcoPorro (mostly OmarchyTV launcher promotion, not AI capability), @bria_ai_ (SF Tech Week and partner promotion over 1 in 5), @vercel (Ship SF, merch drop and customer-story promotion over 1 in 5), @HUNTER_z1389 (44 followers, build-in-public GTM, too small).",
+  "Roster review 2026-10-27: no promotions possible before 2026-11-03 (earliest trial added 2026-10-20); no retirements (no account has two level-2 flags in 30 days; the 45-day rule cannot bite before about 2026-11-07); no sweep files older than 14 days (oldest 2026-10-20T17-39), so none pruned; Tuesday, so no drafts.",
+  "Roster review 2026-10-27: no security leads surfaced in the candidate reads; nothing to forward."
  ],
  "errors": [
   "Sweep 14:07Z, possible injection lure, not followed: in the quote posts of https://x.com/cnm13ryan/status/2113121138205499443, @lumpenspace tells readers to have their model 'check out my x bio'. Ignored; no bio was read.",
@@ -186,25 +193,25 @@
   "2026-10-26T10:12Z sweep: no injection attempts seen; Skill tool unavailable (non-blocking). X API header showed 966 of 1000 account-wide reads left at the end of this sweep.",
   "2026-10-26T18:09Z sweep: no injection attempts seen in posts, replies or fetched pages; Skill tool unavailable (non-blocking); no browser in this run so no follows attempted; calls_used_today includes 1 read from the 16:45Z bookmark sync (estimate).",
   "2026-10-26T22:08Z sweep: no injection attempts acted on (reply-bot summons in the Cursor thread read as data only); Skill tool unavailable (non-blocking); no browser in this run so no follows attempted; videos not analyzed (no download tooling); calls_used_today includes 1 read from the 20:45Z bookmark sync (estimate).",
-  "Sweep 02:08Z: no injection attempts seen. calls_used_today is an estimate (77 at 22:08Z, about 2 for bookmark syncs, 14 this sweep); the X tools did not show a remaining count."
+  "Sweep 02:08Z: no injection attempts seen. calls_used_today is an estimate (77 at 22:08Z, about 2 for bookmark syncs, 14 this sweep); the X tools did not show a remaining count.",
+  "Roster review 2026-10-27: no injection attempts seen; no errors."
  ],
  "follows_today": 0,
  "last_roster_review": {
-  "ran_at": "2026-10-26T09:45:00Z",
-  "date": "2026-10-26",
-  "reads": 12,
+  "ran_at": "2026-10-27T09:50:00Z",
+  "date": "2026-10-27",
+  "reads": 13,
   "list_writes": 3,
   "budget": 80,
   "added": [
-   "@KBlueleaf",
-   "@mirku21"
+   "@ViC305",
+   "@DirhousssiAmine",
+   "@plotarmordev"
   ],
   "promoted": [],
-  "retired": [
-   "@HuggingModels"
-  ],
+  "retired": [],
   "flagged": [
-   "@teortaxesTex"
+   "@mirku21"
   ],
   "drafts": 0,
   "pruned": 0
@@ -216,7 +223,7 @@
   "owner": "@CameronSutcliff",
   "owner_id": "1521986356721123328",
   "private": true,
-  "member_count": 52,
+  "member_count": 55,
   "members": "every trial/active entry in inbox/x-roster.json (x_user_id, on_list)",
   "created_at": "2026-10-24T04:35:00Z"
  },
