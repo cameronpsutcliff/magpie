@@ -1,14 +1,14 @@
 {
- "updated_at": "2026-10-27T10:15:00Z",
+ "updated_at": "2026-10-27T14:12:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 29,
+ "calls_used_today": 45,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-10-27T10:15:00Z",
-  "items": 6,
-  "queries": 11,
-  "deep_reads": 2,
+  "ran_at": "2026-10-27T14:12:00Z",
+  "items": 3,
+  "queries": 9,
+  "deep_reads": 1,
   "rechecks": 8,
   "flagged": 1,
   "saved_in": 0,
@@ -196,7 +196,8 @@
   "2026-10-26T22:08Z sweep: no injection attempts acted on (reply-bot summons in the Cursor thread read as data only); Skill tool unavailable (non-blocking); no browser in this run so no follows attempted; videos not analyzed (no download tooling); calls_used_today includes 1 read from the 20:45Z bookmark sync (estimate).",
   "Sweep 02:08Z: no injection attempts seen. calls_used_today is an estimate (77 at 22:08Z, about 2 for bookmark syncs, 14 this sweep); the X tools did not show a remaining count.",
   "Roster review 2026-10-27: no injection attempts seen; no errors.",
-  "Sweep 10:15Z: no injection attempts seen. The Skill tool was unavailable, so skill files were read directly. There was no browser, so no follows were attempted. The ai.stanford.edu HalluWorld blog returned 500 and then an empty page. The X tool's account-wide counter showed 962 of 1000 left at 10:09Z; calls_used_today counts 13 roster plus 16 this sweep."
+  "Sweep 10:15Z: no injection attempts seen. The Skill tool was unavailable, so skill files were read directly. There was no browser, so no follows were attempted. The ai.stanford.edu HalluWorld blog returned 500 and then an empty page. The X tool's account-wide counter showed 962 of 1000 left at 10:09Z; calls_used_today counts 13 roster plus 16 this sweep.",
+  "Sweep 14:12Z: no injection attempts seen; Stanford HalluWorld blog still 500 (primary sources found instead)."
  ],
  "follows_today": 0,
  "last_roster_review": {
