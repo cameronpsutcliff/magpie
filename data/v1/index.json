@@ -3,21 +3,21 @@
  "days": [
   {
    "date": "2026-10-28",
-   "headline": "Run LFM3 on the edge, download Ling-3.1-flash, grade OCR output, and more",
-   "events": 399,
-   "sources": 531,
+   "headline": "LFM3-1.7B, graphify, ECC, and more",
+   "events": 260,
+   "sources": 503,
    "enriched": false,
    "top": [
     {
-     "id": "d512d5187519",
+     "id": "04012c1787eb",
      "title": "LiquidAI/LFM3-1.7B",
      "impact": 4,
-     "vendor": "Open source"
+     "vendor": "Liquid AI"
     },
     {
-     "id": "fed4e14dc325",
-     "title": "Nutlope/hallmark",
-     "impact": 4,
+     "id": "40993ef93264",
+     "title": "Graphify-Labs/graphify",
+     "impact": 5,
      "vendor": "Open source"
     },
     {
@@ -27,103 +27,53 @@
      "vendor": "Open source"
     },
     {
-     "id": "49db6280227e",
-     "title": "baidu/Unlimited-OCR-2",
+     "id": "fed4e14dc325",
+     "title": "Nutlope/hallmark",
      "impact": 4,
-     "vendor": "Baidu"
+     "vendor": "Open source"
     },
     {
-     "id": "6813b8a55e39",
-     "title": "anomalyco/opencode",
+     "id": "e487fe51b82b",
+     "title": "cloudflare/security-audit-skill",
      "impact": 4,
-     "vendor": "opencode"
+     "vendor": "Cloudflare"
     }
    ],
    "vendors": [
     "Open source",
     "Anthropic",
     "OpenAI",
-    "NVIDIA",
     "Google",
+    "NVIDIA",
     "Vercel"
    ],
    "topics": {
-    "agents": 117,
-    "models": 108,
-    "coding": 101,
-    "multimodal": 66,
-    "infra": 42,
-    "evals": 41,
-    "local": 38,
-    "memory": 38,
-    "mcp": 33,
-    "reverse": 21,
-    "research": 18,
-    "security": 14,
-    "robotics": 10
+    "models": 78,
+    "agents": 77,
+    "coding": 76,
+    "multimodal": 56,
+    "memory": 34,
+    "infra": 30,
+    "evals": 29,
+    "local": 28,
+    "mcp": 28,
+    "reverse": 16,
+    "research": 13,
+    "security": 11,
+    "robotics": 6
    },
    "kinds": {
-    "video": 90,
-    "social": 89,
+    "social": 55,
     "blog": 41,
-    "repo": 40,
-    "newsletter": 38,
+    "repo": 36,
+    "newsletter": 31,
     "model": 30,
-    "changelog": 22,
-    "community": 20,
+    "changelog": 21,
     "space": 20,
+    "community": 17,
     "news": 9
    },
-   "threats": [
-    {
-     "id": "thr-2026-10-27-mcp-typescript-sdk-http-transports-lack-request",
-     "title": "MCP TypeScript SDK HTTP transports lack request limits",
-     "severity": "high",
-     "exploited": null
-    },
-    {
-     "id": "thr-2026-10-27-vllm-request-controlled-processor-code-revision-allows",
-     "title": "vLLM request-controlled processor code revision allows code execution",
-     "severity": "high",
-     "exploited": null
-    },
-    {
-     "id": "thr-2026-10-27-litellm-proxy-arbitrary-local-file-read-via",
-     "title": "LiteLLM proxy arbitrary local file read via credentials alias",
-     "severity": "high",
-     "exploited": null
-    },
-    {
-     "id": "thr-2026-10-27-litellm-proxy-salt-key-reuse-allows-admin",
-     "title": "LiteLLM proxy salt key reuse allows admin escalation",
-     "severity": "high",
-     "exploited": null
-    },
-    {
-     "id": "thr-2026-10-27-mcp-python-sdk-accepts-bearer-tokens-for",
-     "title": "MCP Python SDK accepts bearer tokens for other services",
-     "severity": "medium",
-     "exploited": null
-    },
-    {
-     "id": "thr-2026-10-27-mcp-python-sdk-clients-leak-headers-on",
-     "title": "MCP Python SDK clients leak headers on cross-origin redirects",
-     "severity": "medium",
-     "exploited": null
-    },
-    {
-     "id": "thr-2026-10-27-mcp-python-sdk-client-fetches-server-chosen",
-     "title": "MCP Python SDK client fetches server-chosen schema references",
-     "severity": "medium",
-     "exploited": null
-    },
-    {
-     "id": "thr-2026-10-27-litellm-proxy-reflected-xss-in-sso-debug",
-     "title": "LiteLLM proxy reflected XSS in SSO debug callback",
-     "severity": "medium",
-     "exploited": null
-    }
-   ]
+   "threats": []
   },
   {
    "date": "2026-10-27",

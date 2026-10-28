@@ -15,26 +15,24 @@
   {
    "id": "2026-10-28",
    "url": "https://www.cameronsutcliff.com/magpie/2026-10-28",
-   "title": "Run LFM3 on the edge, download Ling-3.1-flash, grade OCR output, and more",
-   "summary": "Open weights led the day: Liquid AI's LFM3 edge family, Ant Ling's 560B Ling-3.1-flash under MIT, and two OCR releases from Baidu and OpenBMB. New hard benchmarks for web agents and mergeable code show top models still well short of reliable.",
-   "content_html": "<p>Open weights led the day: Liquid AI&#x27;s LFM3 edge family, Ant Ling&#x27;s 560B Ling-3.1-flash under MIT, and two OCR releases from Baidu and OpenBMB. New hard benchmarks for web agents and mergeable code show top models still well short of reliable.</p><ol><li><a href=\"https://huggingface.co/LiquidAI/LFM3-1.7B\">LiquidAI/LFM3-1.7B</a></li><li><a href=\"https://github.com/Nutlope/hallmark\">Nutlope/hallmark</a></li><li><a href=\"https://github.com/affaan-m/ECC\">affaan-m/ECC</a></li><li><a href=\"https://huggingface.co/baidu/Unlimited-OCR-2\">baidu/Unlimited-OCR-2</a></li><li><a href=\"https://github.com/anomalyco/opencode\">anomalyco/opencode</a></li></ol><p><strong>Possibilities:</strong> No new possibility today. Latest: IT teams must audit local agent tool calls now that installs take one click (2026-10-27)</p><p><strong>Worth watching:</strong> No new video pick today. Latest: Hugging Face Journal Club: Score Centering Stabilizes Off-policy Reinforcement Learning (2026-10-27)</p><p><strong>Constraints:</strong> No new constraint today. Latest: DHS order bars DeepSeek products from federal civilian agencies (2026-10-20)</p><p><strong>Threats:</strong> <a href=\"https://osv.dev/vulnerability/GHSA-f897-62hf-6gxq\">MCP TypeScript SDK HTTP transports lack request limits</a> (high, patched); <a href=\"https://osv.dev/vulnerability/GHSA-h3rc-6mm3-gc2m\">vLLM request-controlled processor code revision allows code execution</a> (high, patched); <a href=\"https://osv.dev/vulnerability/GHSA-g5ff-637f-6q2m\">LiteLLM proxy arbitrary local file read via credentials alias</a> (high, patched)</p>",
-   "content_text": "Open weights led the day: Liquid AI's LFM3 edge family, Ant Ling's 560B Ling-3.1-flash under MIT, and two OCR releases from Baidu and OpenBMB. New hard benchmarks for web agents and mergeable code show top models still well short of reliable. LiquidAI/LFM3-1.7B Nutlope/hallmark affaan-m/ECC baidu/Unlimited-OCR-2 anomalyco/opencode MCP TypeScript SDK servers over HTTP accepted unlimited bodies and batches, enabling unauthenticated denial of service Untrusted vLLM multimodal requests can swap processor code revision, running arbitrary code on remote-code deployments Low-privilege LiteLLM proxy users could read local files, exposing master and provider API keys",
-   "date_published": "2026-10-28T10:51:08Z",
+   "title": "LFM3-1.7B, graphify, ECC, and more",
+   "summary": "260 capability events from 126 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words.",
+   "content_html": "<p>260 capability events from 126 sources. Ranked by code; the editor did not run this edition, so copy is the sources&#x27; own words.</p><ol><li><a href=\"https://huggingface.co/LiquidAI/LFM3-1.7B\">LiquidAI/LFM3-1.7B</a></li><li><a href=\"https://github.com/Graphify-Labs/graphify\">Graphify-Labs/graphify</a></li><li><a href=\"https://github.com/affaan-m/ECC\">affaan-m/ECC</a></li><li><a href=\"https://github.com/Nutlope/hallmark\">Nutlope/hallmark</a></li><li><a href=\"https://github.com/cloudflare/security-audit-skill\">cloudflare/security-audit-skill</a></li></ol><p><strong>Possibilities:</strong> No new possibility today. Latest: IT teams must audit local agent tool calls now that installs take one click (2026-10-27)</p><p><strong>Worth watching:</strong> No new video pick today. Latest: Hugging Face Journal Club: Score Centering Stabilizes Off-policy Reinforcement Learning (2026-10-27)</p><p><strong>Constraints:</strong> No new constraint today. Latest: DHS order bars DeepSeek products from federal civilian agencies (2026-10-20)</p><p><strong>Threats still open:</strong> <a href=\"https://osv.dev/vulnerability/GHSA-hq85-5cpj-mr62\">uv bundled CA store trusts compromised emSign root</a> (critical, patched); <a href=\"https://osv.dev/vulnerability/RUSTSEC-2026-0382\">rustls-webpki may accept compromised emSign intermediates</a> (high (editor&#x27;s estimate), patched); <a href=\"https://osv.dev/vulnerability/GHSA-46jr-4wx8-v453\">MCP TypeScript SDK server memory exhaustion</a> (high, patched)</p>",
+   "content_text": "260 capability events from 126 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words. LiquidAI/LFM3-1.7B Graphify-Labs/graphify affaan-m/ECC Nutlope/hallmark cloudflare/security-audit-skill",
+   "date_published": "2026-10-28T11:35:08Z",
    "tags": [
     "agents",
     "coding",
-    "evals",
-    "infra",
     "local",
-    "mcp",
     "memory",
     "models",
-    "multimodal"
+    "multimodal",
+    "security"
    ],
    "_magpie": {
     "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-28.json",
     "backfilled": false,
-    "capabilities": 399
+    "capabilities": 260
    }
   },
   {
