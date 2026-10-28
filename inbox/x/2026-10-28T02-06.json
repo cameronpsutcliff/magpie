@@ -1,0 +1,498 @@
+{
+ "ran_at": "2026-10-28T02:06:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-10-27T22:07:00Z",
+ "queries": 9,
+ "calls": 16,
+ "items": [
+  {
+   "title": "Anthropic study: analysts went with their AI agent's randomly assigned lean 86% of the time",
+   "url": "https://x.com/AlexTamkin/status/2115190541688398184",
+   "handle": "@AlexTamkin",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "In a randomized trial, 50 professional causal-inference analysts worked a fictional farm-policy analysis with Claude Code. A coin flip set which of two defensible options each analyst's agent leaned toward on four analytical decisions. Analysts matched the lean 86% of the time against 50% by chance (92%, 82%, 81%, 90% per decision), and switched away from their own stated preference 60% of the time when the agent disagreed versus 6% when it agreed. Afterward 77% reused the agent's arguments but only 15% credited it. The authors note the lean was deliberately strengthened for the study.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://www.anthropic.com/research/agents-judgment-calls",
+    "https://www-cdn.anthropic.com/519c17a5d23a794e8b6d50a854048d0b61e0d73a.pdf"
+   ],
+   "vendor": "Anthropic",
+   "posted_at": "2026-10-27T21:14:58Z",
+   "metrics": {
+    "likes": 1125,
+    "reposts": 122,
+    "quotes": 104,
+    "replies": 93
+   },
+   "confirmed_by": [
+    "https://x.com/emollick/status/2115209786157412397",
+    "https://x.com/omarsar0/status/2115233666481766571"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Replies focus on the 77% versus 15% attribution gap and suggest writing down your own call before the agent weighs in, or asking the agent for the strongest counter-argument. No one disputed the design; one reply asked whether pre-commitment would change the 60% switch rate.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "GPT-6.1 Terra beats Astra on Roboflow vision benchmarks at about 92% lower cost",
+   "url": "https://x.com/skalskip92/status/2115163487177674991",
+   "handle": "@skalskip92",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Roboflow's Piotr Skalski reports GPT-6.1 Terra outscoring GPT-6.1 Astra on all three of their vision benchmark tracks (text, object detection, counting) while running about 47% faster and costing about 92% less. He says he re-ran the results to double-check.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "OpenAI",
+   "posted_at": "2026-10-27T19:27:27Z",
+   "metrics": {
+    "likes": 624,
+    "reposts": 34,
+    "quotes": 19,
+    "replies": 50
+   },
+   "confirmed_by": [
+    "https://x.com/reach_vb/status/2115204745677672511"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "A reply points out one example scores 46 of 46 objects counted but only 60.8 mAP@50, so counts can look right while boxes or classes are wrong; another asks whether the scores were tracked over time.",
+    "source": "https://x.com/ziziran2/status/2115233939673727190"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Builders say the price gap changes what they would ship, and one plans to swap Gemini Argon for Terra on a large classification job. Skeptical replies question count-versus-box accuracy and possible drift; one dismisses the result as a newer small model winning select tasks.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "ParseBench adds GPT-6.1 Terra: 5th overall, strong on tables, weak on layout and charts",
+   "url": "https://x.com/jerryjliu0/status/2115246437764350161",
+   "handle": "@jerryjliu0",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "LlamaIndex ran GPT-6.1 Terra through its ParseBench document-parsing benchmark. It ranks 5th overall at about 1 cent per page, scores well on tables and poorly on layout and chart extraction.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://www.parsebench.ai/"
+   ],
+   "vendor": "LlamaIndex",
+   "posted_at": "2026-10-28T00:57:04Z",
+   "metrics": {
+    "likes": 28,
+    "reposts": 1,
+    "quotes": 2,
+    "replies": 17
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Vendor-run benchmark from a company that sells a competing parser.",
+    "source": null
+   },
+   "reception": null
+  },
+  {
+   "title": "Letta FrontierMemory leaderboard: Kimi K3.1 Pro ties for first, DeepSeek V4.1 Flash beats pricier models",
+   "url": "https://x.com/Letta_AI/status/2115237654539407700",
+   "handle": "@Letta_AI",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Letta added GPT-6.1 Terra, Kimi K3.1 Pro and DeepSeek V4.1 Flash to its FrontierMemory agent-memory leaderboard. Kimi K3.1 Pro ties Opus 5.5 and GLM-5.3 for first, and V4.1 Flash scores above GPT-6.1 Sol and Gemini 4 Argon at a fraction of their cost.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://frontiermemory.com"
+   ],
+   "vendor": "Letta",
+   "posted_at": "2026-10-28T00:22:10Z",
+   "metrics": {
+    "likes": 11,
+    "reposts": 0,
+    "quotes": 1,
+    "replies": 7
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": null
+  },
+  {
+   "title": "Cartesia Managed Agents scores 1115 Elo on Artificial Analysis Speech Agent Arena, up 98 over Cartesia Line",
+   "url": "https://x.com/ArtificialAnlys/status/2115204127013929072",
+   "handle": "@ArtificialAnlys",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Artificial Analysis rates Cartesia's new Managed Agents at Elo 1115 (95% CI 1086 to 1144, 685 samples) in its Speech Agent Arena, 98 points above Cartesia Line at 1017. Task success rose from 77.5% to 91.7%. The configuration tested used GPT-5.5 as the reasoning model.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://artificialanalysis.ai"
+   ],
+   "vendor": "Cartesia",
+   "posted_at": "2026-10-27T22:08:57Z",
+   "metrics": {
+    "likes": 141,
+    "reposts": 15,
+    "quotes": 9,
+    "replies": 27
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": null
+  },
+  {
+   "title": "Hermes Agent adds an ElevenLabs sound-effects plugin",
+   "url": "https://x.com/Teknium/status/2115219694622040322",
+   "handle": "@Teknium",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Nous Research shipped an ElevenLabs sound-effects plugin for Hermes Agent so the agent can generate SFX on request. Install with: hermes plugins install elevenlabs-sound-effects.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://hermes-agent.nousresearch.com/docs/plugins/elevenlabs-sound-effects"
+   ],
+   "vendor": "Nous Research",
+   "posted_at": "2026-10-27T23:10:48Z",
+   "metrics": {
+    "likes": 106,
+    "reposts": 11,
+    "quotes": 3,
+    "replies": 20
+   },
+   "confirmed_by": [
+    "https://x.com/NousResearch/status/2115220372228612579",
+    "https://x.com/witcheer/status/2115223501300744623"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": null
+  },
+  {
+   "title": "TensorFold runs on Apple M1 GPUs under Linux via a Vulkan backend, 41% faster per token",
+   "url": "https://x.com/JoshuaSWarren/status/2115223252247208191",
+   "handle": "@JoshuaSWarren",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A contributor got TensorFold inference running on an M1 Max GPU under Linux through a Vulkan backend, cutting per-token latency from 160 ms to 94 ms with byte-identical output. The work is an in-progress PR, not yet merged.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/ashhart/TensorFold/issues/1420#issuecomment-6452943880"
+   ],
+   "vendor": null,
+   "posted_at": "2026-10-27T23:24:56Z",
+   "metrics": {
+    "likes": 50,
+    "reposts": 5,
+    "quotes": 1,
+    "replies": 7
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single contributor result in an unmerged PR.",
+    "source": null
+   },
+   "reception": null
+  },
+  {
+   "title": "Notion AI Meeting Notes labels each speaker in Google Meet via the Chrome extension",
+   "url": "https://x.com/NotionHQ/status/2115225539825008816",
+   "handle": "@NotionHQ",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Notion's AI Meeting Notes Chrome extension now attributes transcript lines to individual speakers in Google Meet calls.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Notion",
+   "posted_at": "2026-10-27T23:34:02Z",
+   "metrics": {
+    "likes": 229,
+    "reposts": 14,
+    "quotes": 9,
+    "replies": 13
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Users welcome attribution but ask about Zoom support, overlapping speakers and cloud transcription after leaving a call; one reports the extension not showing the feature on the latest version.",
+    "tried": true,
+    "replies_read": 14
+   }
+  },
+  {
+   "title": "NVIDIA posts Metatron-v1, an ONNX humanoid walking and recovery policy for the Unitree G1",
+   "url": "https://x.com/aitrackerbot/status/2115215384798273673",
+   "handle": "@aitrackerbot",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "NVIDIA quietly published nvidia/Metatron-v1 on Hugging Face under the NVIDIA Open Model License: a learned walking and fall-recovery controller for the Unitree G1, exported as a single-robot demo ONNX and a six-robot batched ONNX. It is a robotics policy, not a language model. The card reports only export parity checks; there is no training checkpoint, dataset, paper or task-success benchmark.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/nvidia/Metatron-v1"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-10-27T22:53:41Z",
+   "metrics": {
+    "likes": 18,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 1
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No announcement or benchmarks; the card says its numbers are export checks, not task-success or real-robot results.",
+    "source": "https://www.orcarouter.ai/blog/what-is-nvidia-metatron-v1"
+   },
+   "reception": null
+  },
+  {
+   "title": "TaskNet: AI interviews build occupational task lists that cover more real work than O*NET",
+   "url": "https://x.com/Diyi_Yang/status/2115234229491794396",
+   "handle": "@Diyi_Yang",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Stanford, Mercor, the O*NET Center and NBER researchers used an AI interviewer with 132 workers across six occupations to produce 202 validated task statements, including 79 with no O*NET counterpart. TaskNet covers 89% of tasks reported by held-out workers versus 79% for O*NET, and it shifts AI exposure estimates, raising them for software developers and lawyers.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7670419",
+    "https://digitaleconomy.stanford.edu/project/tasknet/"
+   ],
+   "vendor": "Stanford",
+   "posted_at": "2026-10-28T00:08:34Z",
+   "metrics": {
+    "likes": 56,
+    "reposts": 11,
+    "quotes": 1,
+    "replies": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": null
+  }
+ ],
+ "rechecks": [
+  {
+   "url": "https://x.com/AnthropicAI/status/2115178675050307942",
+   "result": "Claude drug development: 5,877 likes, 333 quotes (up from 3,172). No new pushback beyond preclinical scope. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/cursor_ai/status/2115159585548021814",
+   "result": "Cursor Annotate: 2,652 likes, 141 quotes. No problems reported. Doubt stays 0."
+  },
+  {
+   "url": "https://x.com/GeminiApp/status/2115171788812669225",
+   "result": "Gemini SynthID checks: 673 likes. No new pushback. Doubt stays 0."
+  },
+  {
+   "url": "https://x.com/ValsAI/status/2115168898794598517",
+   "result": "Vals Thomson N=7 write-up: 102 likes, 3 replies. No independent check yet. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/cognition/status/2115132488775524793",
+   "result": "FrontierCode 2.0: 2,040 likes, 128 quotes. No new pushback. Doubt stays 0."
+  },
+  {
+   "url": "https://x.com/ArtificialAnlys/status/2115097540320506069",
+   "result": "MAI-Image-2.7-Preview: 403 likes. No new pushback. Doubt stays 0."
+  },
+  {
+   "url": "https://x.com/SemiAnalysis_/status/2115126872455475476",
+   "result": "Rubin NVL72 Kimi K3: 751 likes. No new pushback. Doubt stays 0."
+  },
+  {
+   "url": "https://x.com/ValsAI/status/2114999431787643366",
+   "result": "Vals Qwen3.8 file-proxy finding: 213 likes. Opinion posts call it sloppy post-training rather than intent; no new replications. Doubt stays 0; already with Bouncer."
+  }
+ ],
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 0,
+  "kept": 0,
+  "note": "Live bookmarks read for id 1521986356721123328; all 20 newest saves were already in the archive's seen ids."
+ },
+ "saved_rejected": [],
+ "list_posts_read": 86,
+ "list_pages": 1,
+ "discovery": {
+  "queries": 2,
+  "kept": 0,
+  "note": "One security search and one open-source release search. Security produced two forwarded leads; release results were low-signal or already covered."
+ },
+ "horizon": {
+  "block-dessa": "block.xyz/dessa unchanged (demo recordings, early access for safety researchers, more recordings promised on X). One X read found only a speculative reply. No weights, API or paper. No trigger."
+ },
+ "proposed_follows": [],
+ "proposed_follows_note": "follow_mode is browser and this run had no browser, so nothing was followed. No new follow proposals this sweep.",
+ "skipped": [
+  {
+   "url": "https://x.com/sheilfer/status/2115251468597100716",
+   "reason": "Speculation about Block's next model; Dessa horizon has no trigger."
+  },
+  {
+   "url": "https://x.com/sotappp9/status/2115259229410046458",
+   "reason": "AGENTS.md in Downloads re-coverage; already forwarded."
+  },
+  {
+   "url": "https://x.com/Best_Ethan_/status/2115254799344017461",
+   "reason": "AGENTS.md in Downloads opinion; already forwarded."
+  },
+  {
+   "url": "https://x.com/stretchcloud/status/2115232829789315198",
+   "reason": "AGENTS.md in Downloads re-coverage."
+  },
+  {
+   "url": "https://x.com/zaibatsu/status/2115232950845370451",
+   "reason": "Recap of Axiom CFSG and Anthropic ETH, both already kept."
+  },
+  {
+   "url": "https://x.com/finpostmd/status/2115247356509823262",
+   "reason": "Media essay recap, not AI/dev."
+  },
+  {
+   "url": "https://x.com/alexyoung4747/status/2115209550286717024",
+   "reason": "Geopolitical opinion on Qwen; no new evidence."
+  },
+  {
+   "url": "https://x.com/rajabi2001/status/2115249464948539845",
+   "reason": "AReA code for Ideogram already covered 2026-10-24."
+  },
+  {
+   "url": "https://x.com/aiproduck/status/2115254397131518009",
+   "reason": "Cindy desktop agent already in the edition."
+  },
+  {
+   "url": "https://x.com/GHCopilotLog/status/2115243418586591281",
+   "reason": "Minor Copilot CLI patch release bot."
+  },
+  {
+   "url": "https://x.com/taytaycodes/status/2115254975484088631",
+   "reason": "Codex auto-review how-to; feature shipped Oct 6, not new."
+  },
+  {
+   "url": "https://x.com/coreyhainesco/status/2115209683674030538",
+   "reason": "Personal promo of a skills repo, no specifics."
+  },
+  {
+   "url": "https://x.com/aiwire_x/status/2115231083470213197",
+   "reason": "WeVisOne-VL weights: low-signal aggregator, no primary link; may revisit."
+  },
+  {
+   "url": "https://x.com/thdxr",
+   "reason": "OpenCode teaser and DB explorer quotes: teaser or unclear claim."
+  },
+  {
+   "url": "https://x.com/AnthropicAI",
+   "reason": "OneGov GSA discount: procurement, not AI/dev."
+  },
+  {
+   "url": "https://x.com/opencode",
+   "reason": "OpenCode 1M DAU: business metric."
+  },
+  {
+   "url": "https://x.com/fal",
+   "reason": "Contest giveaway."
+  },
+  {
+   "url": "https://x.com/TheTuringPost",
+   "reason": "Oracle Agent Memory promo and explainer: vendor promo, low engagement."
+  }
+ ],
+ "security_forwarded": [
+  {
+   "url": "https://research.jfrog.com/post/beyond-testmetest-42-hijacked-github-repos/",
+   "post": "https://x.com/thedatabunny/status/2115239265659408503",
+   "matched": "always_forward: software supply chain (npm, GitHub Actions); agent tooling (Claude Code, Cursor, Gemini CLI hooks); stack: Node.js, Bun, Claude Code, Cursor CLI, Antigravity",
+   "note": "JFrog (2026-10-26, also Corgea, The Register) found the testmetest / @iobandamwer npm worm armed 42 real GitHub repos across 11 hijacked owners with a 12.9 to 13.7 MB .github/init.js plus startup hooks: .claude/settings.json SessionStart runs 'node .github/init.js || bun .github/init.js', and .gemini/settings.json, .cursor/mcp.json, .cursor/rules/setup.mdc, .vscode/tasks.json do the same, so opening or starting an agent session in a cloned repo runs it. GitHub code search and the contents API miss the oversized blobs. The payload steals GitHub/npm/cloud/SSH and Claude/Codex/Gemini/Copilot tokens, abuses npm OIDC trusted publishing, installs pkg-runtime (~/.local/share/runtimes/sync.py) and net-health-checker (~/.local/bin/net-health-checker.sh), and the latter runs rm -rf ~/ if the stolen GitHub token starts returning 401/403. Fix: remove the persistence services BEFORE revoking tokens, then rotate all credentials; audit repos via the Git trees API for those hook files; delete chore/ci-* and deps/upd-* branches; block 43.228.157.68 and aiarmor.website; be wary of packages running native .node addons from postinstall (.napi_cache). Box check: no testmetest packages, no init.js hooks, no net-health-checker or sync.py persistence."
+  },
+  {
+   "url": "https://github.com/modelcontextprotocol/python-sdk/security/advisories/GHSA-w4fh-qvv9-3v23",
+   "post": "https://x.com/dailycve/status/2115248442838778056",
+   "matched": "always_forward: agent tooling (MCP servers); stack: Python",
+   "note": "CVE-2026-116684 (GHSA-w4fh-qvv9-3v23, CVSS 6.8 Medium, CWE-863): the MCP Python SDK (pip 'mcp') 1.10.0 to 1.29.1 and 2.0.0 to 2.1.1 server-side bearer auth did not check token audience, so an HTTP MCP server using AuthSettings with a token_verifier accepts tokens issued for another service by the same authorization server. Fix: upgrade to mcp 1.30.0 or 2.2.0, AND set validate_token_resource=True with resource_server_url, and return the audience as AccessToken.resource from verify_token (upgrading alone changes nothing). Workaround: reject tokens whose aud lacks your server in verify_token. Only matters for self-hosted HTTP MCP servers using SDK bearer auth. Box check: no mcp Python package installed."
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/ernesttheaiguy/status/2115204404043207146",
+   "reason": "LiteLLM malicious release recap; already handled."
+  },
+  {
+   "url": "https://x.com/bvsbharat/status/2115235546549358637",
+   "reason": "NVIDIA SkillSpector scanner; tool, not a vulnerability, already logged."
+  },
+  {
+   "url": "https://x.com/BoraBaysal/status/2115237517058531402",
+   "reason": "Open-source skill scanner promo; not a vulnerability."
+  },
+  {
+   "url": "https://x.com/_BlueSwarm/status/2115220976237498872",
+   "reason": "Generic weekly KEV and malicious-package counts; nothing specific."
+  },
+  {
+   "url": "https://x.com/KitchExtremeX/status/2115206294298857565",
+   "reason": "AGENTS.md in Downloads; already forwarded."
+  },
+  {
+   "url": "https://x.com/deltaxevaluate/status/2115217714423980039",
+   "reason": "AGENTS.md in Downloads; already forwarded."
+  }
+ ]
+}
