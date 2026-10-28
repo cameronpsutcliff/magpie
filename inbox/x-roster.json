@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T09:55:00Z",
+  "updated_at": "2026-10-28T23:55:00Z",
   "accounts": [
     {
       "handle": "@thsottiaux",
@@ -1117,6 +1117,24 @@
       "retired_reason": null,
       "x_user_id": "2353861069",
       "on_list": true
+    },
+    {
+      "handle": "@NVIDIAAI",
+      "name": "NVIDIA AI",
+      "group": "applied",
+      "affiliation": "NVIDIA",
+      "why": "Owner-requested watch (2026-10-28). NVIDIA's official AI account: model, inference and GPU platform releases. Also curated in config (signal_to_noise 3); added here as an owner pick so it is a List member. Many event/keynote promo posts, so filter promotion in sweeps.",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-10-28",
+      "evidence": [
+        "https://x.com/NVIDIAAI/status/2113657112408785153"
+      ],
+      "last_qualifying_post": null,
+      "retired_reason": null,
+      "owner_requested": true,
+      "x_user_id": "740238495952736256",
+      "on_list": true
     }
   ],
   "source_leads": [
@@ -1423,8 +1441,8 @@
     "name": "Magpie roster",
     "owner": "@CameronSutcliff",
     "private": true,
-    "member_count": 52,
+    "member_count": 59,
     "scope": "every trial and active account in this file; curated config accounts are not members yet",
-    "updated_at": "2026-10-26T09:45:00Z"
+    "updated_at": "2026-10-28T23:55:00Z"
   }
 }
