@@ -1,18 +1,18 @@
 {
- "updated_at": "2026-10-28T10:06:00Z",
+ "updated_at": "2026-10-28T14:15:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 30,
+ "calls_used_today": 44,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-10-28T10:06:00Z",
-  "items": 6,
+  "ran_at": "2026-10-28T14:15:00Z",
+  "items": 17,
   "queries": 10,
   "deep_reads": 2,
   "rechecks": 8,
   "flagged": 0,
-  "saved_in": 0,
-  "saved_kept": 0,
+  "saved_in": 5,
+  "saved_kept": 2,
   "videos": 0
  },
  "roster": {
@@ -179,7 +179,8 @@
   "Roster review 2026-10-28: owner-saves screen re-applied: @jankeesvw passes (Omarchy plugins and agent tooling, some bread and pin-merch posts, no politics or vice). @MatthewBerman (owner_requested) passes and is untouched: local-model and DeepSeek/Kimi takes, an AI-focused US vs China AI share, plus off-topic lifestyle posts and one sponsor-channel video mention; no partisan politics or vice. @mirku21 flagged again: all 25 latest posts are the same templated 'official tip' with profanity hooks, attributed to named lab leads with no source links (attributions look unsupported); the screen as written does not retire it, so the owner may want to drop it by hand.",
   "Roster review 2026-10-28: added 3 trials (@XunzhuoLiu, @googlegemma, @skalskip92), all added to the List. @skalskip92's add_lists_member was held by auto-review once, then approved and succeeded.",
   "Roster review 2026-10-28 rejected, so they are not re-checked soon: one capability post or thread in 30 days: @axiommathai (revisit on next release), @AlexTamkin, @Diyi_Yang; mostly quotes and commentary, not first-hand: @__alpoge__; product marketing and event plugs about 1 in 5: @CopilotKit (near-miss: OpenDuet, OpenMuse, CLiF are real open releases), @cartesia (SF Tech Week events, happy hours, partnerships); mostly personal posts, product covered by @opencode and @thdxr: @LukeParkerDev.",
-  "Roster review 2026-10-28: no promotions possible before 2026-11-03; no retirements (no account has two level-2 flags in 30 days; @cohere picked up one on 2026-10-27, joining @ValsAI, @SemiAnalysis_, @omarsar0 and off-roster @Exocija with one each; the 45-day rule cannot bite before about 2026-11-07); no sweep files older than 14 days (oldest 2026-10-20T17-39), so none pruned; Wednesday, so no drafts."
+  "Roster review 2026-10-28: no promotions possible before 2026-11-03; no retirements (no account has two level-2 flags in 30 days; @cohere picked up one on 2026-10-27, joining @ValsAI, @SemiAnalysis_, @omarsar0 and off-roster @Exocija with one each; the 45-day rule cannot bite before about 2026-11-07); no sweep files older than 14 days (oldest 2026-10-20T17-39), so none pruned; Wednesday, so no drafts.",
+  "Sweep 14:15Z: builders roster query hit 25 results, so one extra page covered 10:06 to 11:02Z (5 posts, none kept). List trial members (OpenBMB, XunzhuoLiu, PrismaXai) supplied 4 of 17 items. Both owner saves were deep-read; the akarixbt GrokBot org clip is kept at doubt 2 for its unbacked framing. No new security leads; all security hits were re-coverage of already forwarded items."
  ],
  "errors": [
   "Sweep 14:07Z, possible injection lure, not followed: in the quote posts of https://x.com/cnm13ryan/status/2113121138205499443, @lumpenspace tells readers to have their model 'check out my x bio'. Ignored; no bio was read.",
@@ -209,7 +210,8 @@
   "Sweep 22:07Z: Skill tool unavailable, so skills were read from SKILL.md directly (non-blocking); no browser, so no follows; no injection attempts seen.",
   "Sweep 02:06Z: Skill tool unavailable, so skills were read from SKILL.md directly (non-blocking); no browser, so no follows; no injection attempts seen. calls_used_today counts the America/Chicago day (Oct 27).",
   "Roster review 2026-10-28: no injection attempts seen; candidate posts read as data only. Skill tool unavailable, so the x-api-mcp-guide SKILL.md was read directly (non-blocking).",
-  "Sweep 10:06Z: Skill tool unavailable, so x-api-mcp-guide SKILL.md was read directly (non-blocking); no browser, so no follows; no injection attempts seen. calls_used_today counts the America/Chicago day (Oct 28): 14 roster + 16 sweep."
+  "Sweep 10:06Z: Skill tool unavailable, so x-api-mcp-guide SKILL.md was read directly (non-blocking); no browser, so no follows; no injection attempts seen. calls_used_today counts the America/Chicago day (Oct 28): 14 roster + 16 sweep.",
+  "Sweep 14:15Z: Skill tool unavailable, so x-api-mcp-guide SKILL.md was read directly (non-blocking); no browser, so no follows and no video analysis; one reply under a saved post asked an @bot to send a draft, treated as data and ignored. calls_used_today counts the America/Chicago day (Oct 28): 14 roster + 16 (10:06Z sweep) + 14 (this sweep)."
  ],
  "follows_today": 0,
  "last_roster_review": {

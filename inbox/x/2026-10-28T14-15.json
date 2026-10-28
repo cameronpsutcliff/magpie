@@ -1,0 +1,642 @@
+{
+ "ran_at": "2026-10-28T14:15:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-10-28T10:06:00Z",
+ "queries": 10,
+ "calls": 14,
+ "items": [
+  {
+   "title": "Mistral opens a Responses API in public preview for building agents",
+   "url": "https://x.com/MistralAI/status/2115443720371814478",
+   "handle": "@MistralAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "A new endpoint built for agents that returns the final answer, the reasoning and each tool call as separate items rather than one chat message, which Mistral says is easier to handle step by step than Chat Completions. It works with every chat model Mistral hosts, including Large 4. Public preview, so the shape may still change.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Mistral AI",
+   "posted_at": "2026-10-28T14:01:00.000Z",
+   "metrics": {
+    "likes": 62,
+    "reposts": 11,
+    "quotes": 6,
+    "replies": 13
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Vela 3.0: six open routing models (0.3B to 27B) return a decision plus named spans in one call",
+   "url": "https://x.com/XunzhuoLiu/status/2115426759013491002",
+   "handle": "@XunzhuoLiu",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "The vLLM Semantic Router team released six open models on Hugging Face that answer a routing or classification question and also extract the text spans you ask for, in a single call. The smallest is a 380M UltraBERT encoder that the team says tops its Decision Index at 500M parameters or less, beats GPT-5-mini at zero-shot classification, and takes about 18 ms per span question. Benchmarks are the team's own.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/collections/vllm-sr/vela-30"
+   ],
+   "vendor": "vLLM Semantic Router",
+   "posted_at": "2026-10-28T12:53:36.000Z",
+   "metrics": {
+    "likes": 35,
+    "reposts": 5,
+    "quotes": 3,
+    "replies": 8
+   },
+   "confirmed_by": [
+    "https://x.com/vllm_project/status/2115431304896696391"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": "Decision Index and the GPT-5-mini comparison are self-reported."
+   }
+  },
+  {
+   "title": "OpenBMB runs MiniCPM-V 4.7 35B-A3B MoE at 20.5 tok/s on an iPhone with lookahead expert scheduling",
+   "url": "https://x.com/OpenBMB/status/2115443643800825938",
+   "handle": "@OpenBMB",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Lookahead Expert Scheduling predicts and prefetches the next layer's experts while the current layer runs, stores experts contiguously with mixed-precision quantization, and adds speculative decoding. On an iPhone 18 Pro Max the full stack reaches 20.51 tok/s, 6.07x faster than loading experts on demand. The real router still picks experts, and the quantization shrinks the weights 26.7% for a 0.16-point drop across five benchmarks. Write-up and code are in OpenBMB's llama.cpp-omni fork.",
+   "kind": "technique",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/openbmb/llama.cpp-omni/blob/main/docs/les/lookahead-expert-scheduling.md",
+    "https://github.com/OpenBMB/MiniCPM-V"
+   ],
+   "vendor": "OpenBMB",
+   "posted_at": "2026-10-28T14:00:42.000Z",
+   "metrics": {
+    "likes": 4,
+    "reposts": 0,
+    "quotes": 1,
+    "replies": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": "Speed figures are vendor-measured on one device."
+   }
+  },
+  {
+   "title": "Magnitude, an open-source engine that tunes kernels on your machine, decodes 2.7x faster than Ollama on a base M5 MacBook Pro",
+   "url": "https://x.com/akshay_pachaar/status/2115428485485506783",
+   "handle": "@akshay_pachaar",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Magnitude compiles each model's kernels locally when you download it, tries configurations and keeps the fastest for your chip, and pairs each model with a speculative-decoding drafter. In one side-by-side test with Qwen3.5 4B at 4-bit and a 9.2k-token prompt, prefill went 464 to 755 tok/s and decode 22.6 to 60.0 tok/s versus Ollama's MTP build, finishing in about half the time. Repo says it supports Apple Silicon, NVIDIA, AMD and Intel.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/magnitudedev/magnitude"
+   ],
+   "vendor": "Magnitude",
+   "posted_at": "2026-10-28T13:00:28.000Z",
+   "metrics": {
+    "likes": 61,
+    "reposts": 3,
+    "quotes": 2,
+    "replies": 39
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": "A single tester on one machine and model; the post reads partly promotional."
+   }
+  },
+  {
+   "title": "ggml v0.28.0 adds a fused top-k sparse-attention mask op and broad backend speedups",
+   "url": "https://x.com/ggml_org/status/2115407817808945355",
+   "handle": "@ggml_org",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "New GGML_OP_TOP_K_MASK op (CPU, CUDA, Metal) for sparse attention, accessors for a node's configured precision, and a -1 index in MUL_MAT_ID/ADD_ID that now means skip the slot. Backends got MoE top-k and gate/up+GLU fusions on CUDA, graph record/replay on SYCL, new quant and indexer kernels on OpenCL and Vulkan, a reworked Hexagon backend, flash attention on ZDNN and Q2_0 on WebGPU. These flow into llama.cpp.",
+   "kind": "release",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/ggml-org/ggml/releases/tag/v0.28.0"
+   ],
+   "vendor": "ggml",
+   "posted_at": "2026-10-28T11:38:20.000Z",
+   "metrics": {
+    "likes": 26,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Meta paper: loop scaling laws let a 1.3B looped MoE match a 2.9B non-looped MoE",
+   "url": "https://x.com/askalphaxiv/status/2115406473656451216",
+   "handle": "@askalphaxiv",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Looping a transformer's layers stops paying off after a few passes, but the authors find MoE sparsity pushes that plateau out. They fit scaling laws that predict the best number of loops and experts for a given compute and memory budget. At trillion-token scale a 1.3B looped MoE matches a 2.9B standard MoE on reasoning at similar training compute, about 2x parameter efficiency.",
+   "kind": "paper",
+   "evidence": "artifact",
+   "links": [
+    "https://www.alphaxiv.org/abs/2609.40316"
+   ],
+   "vendor": "Meta",
+   "posted_at": "2026-10-28T11:33:00.000Z",
+   "metrics": {
+    "likes": 123,
+    "reposts": 12,
+    "quotes": 5,
+    "replies": 4
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "EMMA (Amazon and others): multi-agent system that edits its own routing, prompts and skills after failures",
+   "url": "https://x.com/omarsar0/status/2115438189901181296",
+   "handle": "@omarsar0",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "One LLM plays controller, sub-agents and skill library. After a failed task a reflector decides whether routing memory, an agent prompt or a skill owns the fix and makes one bounded edit there. Reported gains over ACE, GEPA, EvoMAS and ADAS on KramaBench, AppWorld and BBEH of up to 32.5% over the best baseline, with 17 to 38% fewer training runs.",
+   "kind": "paper",
+   "evidence": "artifact",
+   "links": [
+    "https://arxiv.org/abs/2610.35966"
+   ],
+   "vendor": "Amazon",
+   "posted_at": "2026-10-28T13:39:02.000Z",
+   "metrics": {
+    "likes": 39,
+    "reposts": 2,
+    "quotes": 4,
+    "replies": 20
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Tsinghua and CUHK propose cache engineering for agents: drop and reposition KV entries instead of rewriting context",
+   "url": "https://x.com/TheTuringPost/status/2115426701769642018",
+   "handle": "@TheTuringPost",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Rather than trimming or summarizing old messages, which forces KV recomputation, the method keeps the text and adds two cache ops: drop (hide entries from attention) and repos (shift positions of what remains). Their AKV serving engine tracks cache state in an extended radix tree and rebuilds missing states in one prefill. A simple policy that drops old tool outputs cut average cost 27.7%, added 1.7 benchmark points and raised throughput 1.18x.",
+   "kind": "paper",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Tsinghua University / CUHK",
+   "posted_at": "2026-10-28T12:53:23.000Z",
+   "metrics": {
+    "likes": 14,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 6
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": "Explainer thread with no paper link; numbers not checked against the paper."
+   }
+  },
+  {
+   "title": "PrismaX halves π0.5 rollout VRAM from about 22 GB to 11.2 GB so it runs on 16 GB cards",
+   "url": "https://x.com/PrismaXai/status/2115440533359276319",
+   "handle": "@PrismaXai",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Two fixes to their π0.5 robot-policy rollout stack bring memory from about 22 GB to 11.2 GB, so it now fits 16 GB laptop GPUs. Details are in an X article by @castorhat.",
+   "kind": "technique",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/i/article/2115439724970070017"
+   ],
+   "vendor": "PrismaX",
+   "posted_at": "2026-10-28T13:48:20.000Z",
+   "metrics": {
+    "likes": 26,
+    "reposts": 2,
+    "quotes": 3,
+    "replies": 2
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Datalab lite OCR: 50 cents per 1,000 pages, said to be 10 to 30x cheaper than cloud OCR",
+   "url": "https://x.com/VikParuchuri/status/2115412617137435081",
+   "handle": "@VikParuchuri",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Datalab's new low-cost tier is priced so it can run on every page. Datalab claims it is 10 to 30x cheaper than Azure, Google and AWS, 2x faster than Azure on long documents, with similar accuracy.",
+   "kind": "product",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Datalab",
+   "posted_at": "2026-10-28T11:57:25.000Z",
+   "metrics": {
+    "likes": 25,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 5
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": "Vendor comparison only; no published eval set."
+   }
+  },
+  {
+   "title": "Vals AI releases Immigration Bench for frontier-model answers on visas and work permits",
+   "url": "https://x.com/ValsAI/status/2115399427540316263",
+   "handle": "@ValsAI",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A new eval, built with the Talent Mobility Fund, that checks whether frontier models answer immigration questions (visas, work permits, status) correctly. Vals notes about half of US adults now use AI chatbots and these answers carry high stakes.",
+   "kind": "eval",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Vals AI",
+   "posted_at": "2026-10-28T11:05:00.000Z",
+   "metrics": {
+    "likes": 66,
+    "reposts": 5,
+    "quotes": 0,
+    "replies": 5
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Simon Willison: Claude Opus 5.5 can now vibe-code games that are actually fun",
+   "url": "https://x.com/simonw/status/2115444742595260551",
+   "handle": "@simonw",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Willison built four games in recent weeks without reading the code and says Opus 5.5 improved at 3D modeling, music generation and game design, so prompts like \"make it a lot more fun\" work. He judges GPT-6 Astra can build games but with a weaker sense of fun. The post links the playable games.",
+   "kind": "writeup",
+   "evidence": "artifact",
+   "links": [
+    "https://simonwillison.net/2026/Oct/28/vibe-game-development/"
+   ],
+   "vendor": "Anthropic",
+   "posted_at": "2026-10-28T14:05:04.000Z",
+   "metrics": {
+    "likes": 27,
+    "reposts": 0,
+    "quotes": 1,
+    "replies": 27
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": "First-hand impression, no structured comparison."
+   }
+  },
+  {
+   "title": "Warp says its agent \"factory\" cut cost per PR from $80 to $20 with more throughput",
+   "url": "https://x.com/zachlloydtweets/status/2115443494374539635",
+   "handle": "@zachlloydtweets",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Warp's CEO says tuning the model mix and factory workflow brought cost per PR down from $80 to $20 in a month, with a lower revert rate and 40% more PRs. Next experiments are fewer subagents and model routers.",
+   "kind": "practice",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Warp",
+   "posted_at": "2026-10-28T14:00:06.000Z",
+   "metrics": {
+    "likes": 6,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": "Internal numbers without method; also promotes Warp."
+   }
+  },
+  {
+   "title": "Arize adds Eval Health, a managed agent that audits your evals",
+   "url": "https://x.com/arizeai/status/2115443515329327350",
+   "handle": "@arizeai",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "In Arize AX, the agent reviews a project's evals and proposes fixes: fill coverage gaps, repair broken checks, drop ones that tell you nothing, and flag LLM judges that plain code could replace.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [
+    "https://arize.com/docs/ax/agents/eval-health-agent"
+   ],
+   "vendor": "Arize AI",
+   "posted_at": "2026-10-28T14:00:11.000Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "MiniCPM5-2B-Jev: community fine-tune that returns option probabilities instead of text",
+   "url": "https://x.com/OpenBMB/status/2115428701982908585",
+   "handle": "@OpenBMB",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "A developer adapted MiniCPM5-2B into a decision model: give it a document and questions and it returns calibrated probabilities over fixed options. The project reports 78.79% on JevBench, 86.41% on a 10-source decision set and 0.0307 ECE. Code, LoRA adapters and calibration head are Apache 2.0.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/yuting-ai/minicpm5-2b-jev",
+    "https://huggingface.co/openbmb/MiniCPM5-2B"
+   ],
+   "vendor": "community (yuting-ai)",
+   "posted_at": "2026-10-28T13:01:19.000Z",
+   "metrics": {
+    "likes": 25,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 2
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": "Project-reported results."
+   }
+  },
+  {
+   "title": "Workshop clip: a SpaceXAI engineer runs 50+ GrokBot agents as an org (chief of staff, PMs, workers)",
+   "url": "https://x.com/akarixbt/status/2114389035388989873",
+   "handle": "@akarixbt",
+   "group": "discovery",
+   "origin": "saved",
+   "summary": "The saved post frames a talk clip in which an engineer describes a hierarchy of agents: a chief-of-staff agent runs the day, three PM agents hand out work, and 40+ worker agents ship overnight for review in the morning. It quotes an August harness-engineering article. The headline claims (team equals 20 engineers, 97% adoption, salary offers) come from the reposting account and are not backed.",
+   "kind": "talk",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/i/article/2093441687989186560"
+   ],
+   "vendor": "SpaceXAI",
+   "posted_at": "2026-10-25T16:10:04.000Z",
+   "metrics": {
+    "likes": 4326,
+    "reposts": 298,
+    "quotes": 68,
+    "replies": 111
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 2,
+    "community_note": null,
+    "pushback": "Replies say the framing pairs an unrelated viral video with an unrelated article, and question token cost and what the agent org has shipped.",
+    "source": "https://x.com/DeniCodes/status/2115437891161895172"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "High reach (4.3k likes) but many replies call the framing bait and note employees get free tokens; one reply asks for any fair comparison of multi-agent versus single-agent output.",
+    "tried": false
+   }
+  },
+  {
+   "title": "Teams start skipping PRs for trunk-based dev with agents (Amp ships 100+ releases a day)",
+   "url": "https://x.com/housecor/status/2115058158297063721",
+   "handle": "@housecor",
+   "group": "discovery",
+   "origin": "saved",
+   "summary": "Cory House reports more teams dropping pull requests: the agent writes the code, the prompter is the first reviewer, and one or more AIs review second. He cites Amp, whose team of 21 has no PRs or mandatory review and ships over 100 releases a day.",
+   "kind": "practice",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/AmpCode/status/2112551261749047333"
+   ],
+   "vendor": "Amp",
+   "posted_at": "2026-10-27T12:28:55.000Z",
+   "metrics": {
+    "likes": 503,
+    "reposts": 15,
+    "quotes": 19,
+    "replies": 110
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Replies say it suits low-risk products and that PRs still help manage multi-agent changes.",
+    "source": "https://x.com/SaintOfCirc/status/2115403662621372762"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Some agree; others say review just moves after ship, and PRs remain useful structure for agents.",
+    "tried": false
+   }
+  }
+ ],
+ "rechecks": [
+  {
+   "url": "https://x.com/ArtificialAnlys/status/2115265133467635877",
+   "result": "4,515 likes, 602 quotes (up from 3,704). Same weighting pushback; natolambert defends the index while noting benchmarking is opinionated. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/DiffuSpace_Labs/status/2115288124691820738",
+   "result": "680 likes, 81 reposts (up from 394). No new pushback. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/SparkLLM/status/2115100695775056057",
+   "result": "271 likes (up from 264). Still no independent run. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/skalskip92/status/2115163487177674991",
+   "result": "904 likes (up from 624). No notes via API. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/GoogleDeepMind/status/2115114028338962672",
+   "result": "21,208 likes, 1,755 quotes (up from 5,910). Still trusted testers only. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/axiommathai/status/2115089794867040584",
+   "result": "6,541 likes (up from 3,083); reposts now read 1,532 versus 2,580 recorded earlier, likely a prior misread. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/AnthropicAI/status/2115178675050307942",
+   "result": "8,852 likes (up from 8,149). Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/ValsAI/status/2115168898794598517",
+   "result": "130 likes (up from 68). Doubt stays 1."
+  }
+ ],
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 5,
+  "kept": 2,
+  "note": "Live bookmarks read for id 1521986356721123328; the 20 newest were already in seen ids because the 7:47 AM CT bookmark sync captured 5 new saves (2 kept, folded in here; 3 rejected)."
+ },
+ "saved_rejected": [
+  {
+   "url": "https://x.com/i/status/2115258584787190163",
+   "reason": "Duplicate ThePrimeagen quote with only a \"should I try this\" comment."
+  },
+  {
+   "url": "https://x.com/i/status/2115133562932367430",
+   "reason": "Mario 64 mixed-reality showcase, not AI or dev."
+  },
+  {
+   "url": "https://x.com/i/status/2115161198454866070",
+   "reason": "Political promo (Zero Breach Toolkit), not AI-focused."
+  }
+ ],
+ "list_posts_read": 91,
+ "list_pages": 1,
+ "discovery": {
+  "queries": 2,
+  "kept": 0,
+  "note": "One release search (huggingface/arxiv/github links) was low signal; one security search turned up only re-coverage."
+ },
+ "horizon": {
+  "block-dessa": "block.xyz/dessa unchanged (demo recordings with downloadable clips, waitlist). One X read found only a reply and a voice-model roundup calling it a research preview. No weights, API or paper. No trigger."
+ },
+ "proposed_follows": [],
+ "proposed_follows_note": "follow_mode is browser and this run had no browser, so nothing was followed. No account is active on the roster yet, so none meet the follow rule.",
+ "skipped": [
+  {
+   "url": "https://x.com/dair_ai/status/2115439702572716129",
+   "reason": "EmbeddingGemma 2 recap; already kept 2026-10-27."
+  },
+  {
+   "url": "https://x.com/natolambert/status/2115428494515777629",
+   "reason": "Opinion on the AA v5 index; used as recheck context."
+  },
+  {
+   "url": "https://x.com/AmpCode/status/2115428375766482969",
+   "reason": "Re-shares its own Oct 20 no-PR post; covered via the housecor save."
+  },
+  {
+   "url": "https://x.com/thdxr",
+   "reason": "AUR supply-chain opinion, no new incident."
+  },
+  {
+   "url": "https://x.com/sudoingX",
+   "reason": "Fake 96GB 5090 debunk, hardware rumor."
+  },
+  {
+   "url": "https://x.com/emollick",
+   "reason": "Commentary on a persona-neurons demo, no new result."
+  }
+ ],
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://x.com/ChadLM_/status/2115436270901973030",
+   "reason": "Gheist GitHub token campaign re-coverage (with a crypto token pitch); already forwarded 2026-10-25."
+  },
+  {
+   "url": "https://x.com/lnxsec/status/2115417581540540646",
+   "reason": "Gheist hardening advice; already forwarded 2026-10-25."
+  },
+  {
+   "url": "https://x.com/DFIR_Radar/status/2115414068102050287",
+   "reason": "Aokigahara Windows infostealer targeting AI-tool auth files; already covered 2026-10-24."
+  },
+  {
+   "url": "https://x.com/nullptr_sh/status/2115420822235926549",
+   "reason": "opencode Windows/WSL MCP OAuth RCE (fixed 1.18.33); already logged 2026-10-26."
+  },
+  {
+   "url": "https://x.com/Dekrov_Dev/status/2115411551708401757",
+   "reason": "JFrog 42 repos with AI-tool autorun hooks (testmetest); already forwarded."
+  },
+  {
+   "url": "https://x.com/FLINTKYA/status/2115413288725230025",
+   "reason": "AGENTS.md in Downloads re-coverage; already forwarded 2026-10-25."
+  },
+  {
+   "url": "https://x.com/DFIR_Radar/status/2115444209977360717",
+   "reason": "LiteLLM 1.107.0 root-cause recap; already handled."
+  },
+  {
+   "url": "https://x.com/TuringCyberObs/status/2115385424126603386",
+   "reason": "Cloud Run MCP CVE-2026-85297; already forwarded."
+  },
+  {
+   "url": "https://x.com/rst_cloud/status/2115422623291040197",
+   "reason": "Malicious VS Code extension luanblanco.language-pack-sol impersonating a Solidity extension; not in the fleet stack."
+  },
+  {
+   "url": "https://x.com/lunkertw/status/2115426811006128249",
+   "reason": "Cathedral agents reaching Anthropic internal systems via third-party software; not a fleet component."
+  }
+ ]
+}
