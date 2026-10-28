@@ -1,0 +1,765 @@
+{
+ "ran_at": "2026-10-28T18:00:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-10-28T14:15:00Z",
+ "queries": 10,
+ "calls": 22,
+ "items": [
+  {
+   "title": "Google DeepMind ships Gemini 4 Carbon, two weeks after Argon, first to cyber defenders and trusted partners",
+   "url": "https://x.com/OfficialLoganK/status/2115489284404940898",
+   "handle": "@OfficialLoganK",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Google says Carbon is its strongest model, state of the art on cyber and long-horizon tasks, with better coding usability and alignment than Argon. Independent boards placed it first right away: #1 on the Artificial Analysis Intelligence Index v5 at 59 (second to Opus 5.5 on the AA Coding Agent Index), #1 in Arena Text, #2 in Agent Arena, #2 on the Vals Index v2.2. Access starts with cyber defenders and trusted partners, so most developers cannot call it yet.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [
+    "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+    "https://x.com/ArtificialAnlys/status/2115494553780367384",
+    "https://x.com/arena/status/2115495002998751262",
+    "https://x.com/ValsAI/status/2115489570574008615"
+   ],
+   "vendor": "Google DeepMind",
+   "posted_at": "2026-10-28T17:02:03.000Z",
+   "metrics": {
+    "likes": 7413,
+    "reposts": 588,
+    "quotes": 518,
+    "replies": 649
+   },
+   "confirmed_by": [
+    "@GoogleDeepMind",
+    "@sundarpichai",
+    "@ArtificialAnlys",
+    "@arena",
+    "@ValsAI"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Not publicly available yet; replies and quotes ask how independent defenders get access, and some ask whether it is benchmark-tuned.",
+    "source": "https://x.com/natolambert/status/2115495656295219703"
+   },
+   "reception": {
+    "quotes_read": 19,
+    "replies_read": 20,
+    "tone": "Mostly excited about the scores; the main complaint is the limited rollout. One reply notes some figures apply only at high reasoning."
+   }
+  },
+  {
+   "title": "NVIDIA releases Nemotron 3.5 Transcribe: open-weight 30B MoE (about 4B active) speech-to-text with speaker labels in 40 languages",
+   "url": "https://x.com/NVIDIAAI/status/2115462300241141882",
+   "handle": "@NVIDIAAI",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "One checkpoint covers transcription in 40 languages, translation, speaker attribution, prompting with context and audio Q&A, on recordings up to an hour (recorded audio, not live streams). Weights are on Hugging Face in BF16, FP8 and NVFP4. Artificial Analysis has it tied for #1 among open-weight speech-to-text models at 2.8% WER, and it tops open models on the HF Open ASR Leaderboard for English. vLLM and SGLang-Omni served it on day 0, and a community Core ML port turned a 49.5-minute meeting into a speaker-labeled transcript in 6 seconds on an M5 Pro.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
+    "https://x.com/ArtificialAnlys/status/2115459886045942161",
+    "https://x.com/vllm_project/status/2115465359298077164",
+    "https://x.com/sgl_project/status/2115496897586876622",
+    "https://x.com/Alex_tra_memory/status/2115468824392704337"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-10-28T15:14:50.000Z",
+   "metrics": {
+    "likes": 2338,
+    "reposts": 187,
+    "quotes": 117,
+    "replies": 119
+   },
+   "confirmed_by": [
+    "@ArtificialAnlys",
+    "@vllm_project",
+    "@sgl_project",
+    "@EricBezzam"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "quotes_read": 20,
+    "tone": "Positive; early-access testers praise speaker identification. One leaderboard ranks it 11 of 22 overall, and one tester reports commercial songs being rejected."
+   }
+  },
+  {
+   "title": "GitHub Copilot Fusion goes GA: picks and chains Claude and GPT models per task; AA scores it 2 points under Claude Code with Opus 5.5 at about half the cost",
+   "url": "https://x.com/github/status/2115480207469560109",
+   "handle": "@github",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Announced at GitHub Universe. You choose an effort level (Standard, High, Max) instead of a model, and Fusion routes, escalates or cross-reviews across Anthropic and OpenAI models. On the Artificial Analysis Coding Agent Index, Fusion Max scored 60 vs 62 for Claude Code with Opus 5.5 Max, at $5.59 vs $11.42 per task with about half the tokens. The weak spot is FrontierCode (51 vs 56). Billing follows whichever model handles each step; 30% off through Nov 30. Microsoft also put the Copilot harness in Foundry.",
+   "kind": "product",
+   "evidence": "measured",
+   "links": [
+    "https://docs.github.com/en/copilot/concepts/models/copilot-fusion",
+    "https://x.com/ArtificialAnlys/status/2115477376981508419",
+    "https://x.com/satyanadella/status/2115490856685990244"
+   ],
+   "vendor": "GitHub",
+   "posted_at": "2026-10-28T16:25:59.000Z",
+   "metrics": {
+    "likes": 114,
+    "reposts": 14,
+    "quotes": null,
+    "replies": null
+   },
+   "confirmed_by": [
+    "@ArtificialAnlys",
+    "@satyanadella",
+    "@kdaigle"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "quotes_read": 20,
+    "tone": "Interested in the cost result; several suggest logging which model handled each task because billing follows the routed model."
+   }
+  },
+  {
+   "title": "Unsloth adds browser use for any local model; Qwen3.8-27B completes browser tasks with no human input",
+   "url": "https://x.com/UnslothAI/status/2115453111208919472",
+   "handle": "@UnslothAI",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "The Unsloth desktop app can now let a local model drive its own browser tab (not your Chrome): it clicks, reads pages and takes screenshots. Actions like submitting forms, logging in, sending, buying or deleting ask for approval by default. The demo shows Qwen3.8-27B playing chess and painting. GitHub repo and a guide are linked.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Unsloth",
+   "posted_at": "2026-10-28T14:38:19.000Z",
+   "metrics": {
+    "likes": 570,
+    "reposts": 52,
+    "quotes": null,
+    "replies": null
+   },
+   "confirmed_by": [
+    "@danielhanchen"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "quotes_read": 14,
+    "tone": "Positive; quotes highlight that model, browser and logins stay local and that risky actions need approval."
+   }
+  },
+  {
+   "title": "Claude for Legal adds a gallery of ready-made artifacts (contract review, regulatory scans, cite checks)",
+   "url": "https://x.com/claudeai/status/2115467192276025500",
+   "handle": "@claudeai",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Users start from a built-in example, add their own documents and connectors, and share the artifact across the business. The templates cover contract review, regulatory horizon scans and citation checks.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Anthropic",
+   "posted_at": "2026-10-28T15:34:16.000Z",
+   "metrics": {
+    "likes": 10265,
+    "reposts": 527,
+    "quotes": null,
+    "replies": null
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "quotes_read": 20,
+    "tone": "Mostly hype about legal jobs and legaltech startups; no technical pushback."
+   }
+  },
+  {
+   "title": "PyTorch 2.15 released: rewritten NCCL backend now default, NIXL one-sided transports, Apple Silicon updates",
+   "url": "https://x.com/PyTorch/status/2115501310233456900",
+   "handle": "@PyTorch",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "3,117 commits from 583 contributors. The rewritten NCCL backend becomes the default, one-sided transports arrive with a NIXL backend, and there are updates to FSDP2, NVGEMM, Apple Silicon and accelerator support.",
+   "kind": "release",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "PyTorch",
+   "posted_at": "2026-10-28T17:49:51.000Z",
+   "metrics": {
+    "likes": 6,
+    "reposts": 0,
+    "quotes": null,
+    "replies": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "llama.cpp v0.8.0 tagged",
+   "url": "https://x.com/ggml_org/status/2115460885040833019",
+   "handle": "@ggml_org",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "ggml-org tagged llama.cpp v0.8.0, the next numbered release after ggml v0.28.0 earlier today. The post links the release notes and has no other details.",
+   "kind": "release",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "ggml",
+   "posted_at": "2026-10-28T15:09:13.000Z",
+   "metrics": {
+    "likes": 106,
+    "reposts": 13,
+    "quotes": null,
+    "replies": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Exa indexes 3M+ podcasts for agent search, with its own benchmark against 7 APIs",
+   "url": "https://x.com/ExaAILabs/status/2115491116485402773",
+   "handle": "@ExaAILabs",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Agents can search transcripts of millions of hours, updated daily. In Exa's own test across 250 active shows, the newest episode was in the top 5 results 98.4% of the time vs 93.6% for the next best API, and it answered 85.0% of 667 episode questions vs 80.7%.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/ExaAILabs/status/2115491138530591051"
+   ],
+   "vendor": "Exa",
+   "posted_at": "2026-10-28T17:09:20.000Z",
+   "metrics": {
+    "likes": 92,
+    "reposts": 19,
+    "quotes": null,
+    "replies": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Benchmark is vendor-run.",
+    "source": null
+   }
+  },
+  {
+   "title": "Cua Keyvault: agents in Cua Spaces use your logins without seeing passwords",
+   "url": "https://x.com/trycua/status/2115482869909037103",
+   "handle": "@trycua",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Credentials stay in a vault and are filled in for the agent, with Touch ID approval, so the password is never shown to the model.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Cua",
+   "posted_at": "2026-10-28T16:36:34.000Z",
+   "metrics": {
+    "likes": 56,
+    "reposts": 3,
+    "quotes": null,
+    "replies": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Nace.AI Drex Max 1.1 decision model: multimodal, 262k context, $0.03 per 1M input tokens",
+   "url": "https://x.com/NaceAI/status/2115458409407611154",
+   "handle": "@NaceAI",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Nace says the new version generalizes better out of distribution. API only; the price is a 50% launch discount.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [
+    "https://console.nace.ai"
+   ],
+   "vendor": "Nace.AI",
+   "posted_at": "2026-10-28T14:59:22.000Z",
+   "metrics": {
+    "likes": 70,
+    "reposts": 4,
+    "quotes": null,
+    "replies": null
+   },
+   "confirmed_by": [
+    "@omarsar0"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "SOTA claim with no third-party numbers.",
+    "source": null
+   }
+  },
+  {
+   "title": "Artificial Analysis launches AA-Video-I2V v2.1 image-to-video benchmark",
+   "url": "https://x.com/ArtificialAnlys/status/2115483562921304316",
+   "handle": "@ArtificialAnlys",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "New image and text prompts judged at up to 1080p, with rankings across 10 use cases and 10 capabilities, plus a silent variant.",
+   "kind": "benchmark",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Artificial Analysis",
+   "posted_at": "2026-10-28T16:39:19.000Z",
+   "metrics": {
+    "likes": 49,
+    "reposts": 3,
+    "quotes": 1,
+    "replies": 8
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "AssemblyAI ships its first text-to-speech model, AssemblyAI-TTS-1",
+   "url": "https://x.com/ArtificialAnlys/status/2115487498248036359",
+   "handle": "@ArtificialAnlys",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Artificial Analysis places it in the top 12 of its Provider Voice Arena and the top 10 in Controlled Voice.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "AssemblyAI",
+   "posted_at": "2026-10-28T16:54:58.000Z",
+   "metrics": {
+    "likes": 41,
+    "reposts": 5,
+    "quotes": 6,
+    "replies": 7
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "VEED Dubbing live on fal: voice-cloned, lip-synced translation in 94 languages",
+   "url": "https://x.com/fal/status/2115448482735522026",
+   "handle": "@fal",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "The Pro tier covers 94 languages and 14 regional accents, keeps background audio, handles multiple speakers and exposes accent and cloning-strength controls.",
+   "kind": "product",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "fal",
+   "posted_at": "2026-10-28T14:19:56.000Z",
+   "metrics": {
+    "likes": 90,
+    "reposts": 9,
+    "quotes": 5,
+    "replies": 15
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "YC open-sources its internal Slack agent harness (qm); E2B adds a sandbox backend for it",
+   "url": "https://x.com/e2b/status/2115495381928997257",
+   "handle": "@e2b",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "The harness gives each person and channel its own agent in Slack. Setting sandbox.backend to e2b runs each agent in an E2B sandbox.",
+   "kind": "integration",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "E2B",
+   "posted_at": "2026-10-28T17:26:17.000Z",
+   "metrics": {
+    "likes": 9,
+    "reposts": 6,
+    "quotes": 0,
+    "replies": 4
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Fireworks adds 31 partners to its Specialized Intelligence Index of practitioner evals",
+   "url": "https://x.com/FireworksAI_HQ/status/2115474253055455296",
+   "handle": "@FireworksAI_HQ",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "The index compares open, closed and specialized models on real work and weighs quality against cost. New partners include Letta FrontierMemory and Zapier AutomationBench.",
+   "kind": "benchmark",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Fireworks AI",
+   "posted_at": "2026-10-28T16:02:20.000Z",
+   "metrics": {
+    "likes": 150,
+    "reposts": 34,
+    "quotes": 29,
+    "replies": 13
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Samaya trains Nemotron 3.5 Lightning on Tinker to beat Fable 5.1 on its finance research benchmark at 9% of the cost",
+   "url": "https://x.com/tinkerapi/status/2115497211119456599",
+   "handle": "@tinkerapi",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "The model was trained together with its harness: first imitating 8 teacher models, then RL on its own mistakes.",
+   "kind": "case-study",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Thinking Machines (Tinker)",
+   "posted_at": "2026-10-28T17:33:33.000Z",
+   "metrics": {
+    "likes": 17,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Benchmark is Samaya's own.",
+    "source": null
+   }
+  },
+  {
+   "title": "SemiAnalysis: DRAM KV-cache offload raises cacheable tokens 20 to 40% at 12 to 16 concurrent agent sessions",
+   "url": "https://x.com/SemiAnalysis_/status/2115459422696636806",
+   "handle": "@SemiAnalysis_",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "On a B200, roughly 100 GB of HBM per chip is left for KV cache after weights; offloading to DRAM extends that for agentic workloads.",
+   "kind": "analysis",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "SemiAnalysis",
+   "posted_at": "2026-10-28T15:03:24.000Z",
+   "metrics": {
+    "likes": 108,
+    "reposts": 7,
+    "quotes": 4,
+    "replies": 34
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Arena studies 20,869 Agent Arena traces to see where users criticize top coding agents",
+   "url": "https://x.com/arena/status/2115465844230938846",
+   "handle": "@arena",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Compares complaints about the five top Anthropic and OpenAI models on Agent Arena: Code with complaints about other agents, grouped into 3 areas.",
+   "kind": "analysis",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Arena",
+   "posted_at": "2026-10-28T15:28:55.000Z",
+   "metrics": {
+    "likes": 104,
+    "reposts": 11,
+    "quotes": 1,
+    "replies": 29
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "alphaXiv launches NotebookLM-style audio explainers for arXiv papers",
+   "url": "https://x.com/askalphaxiv/status/2115454036690510133",
+   "handle": "@askalphaxiv",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Generates listenable conversations about a paper, using context from thousands of related papers to place it against the state of the art.",
+   "kind": "product",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "alphaXiv",
+   "posted_at": "2026-10-28T14:42:00.000Z",
+   "metrics": {
+    "likes": 173,
+    "reposts": 31,
+    "quotes": 8,
+    "replies": 9
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Paper: a red-heart image in context makes Claude Opus 4.7 and GPT-5.4 write recursive code 100% of the time",
+   "url": "https://x.com/dair_ai/status/2115474180078789094",
+   "handle": "@dair_ai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Google DeepMind and Stanford found the effect on inorder binary tree traversal, a task where iterative and recursive answers are equally valid, showing that unrelated context can steer coding style.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Google DeepMind / Stanford",
+   "posted_at": "2026-10-28T16:02:02.000Z",
+   "metrics": {
+    "likes": 46,
+    "reposts": 7,
+    "quotes": 1,
+    "replies": 8
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Study: about 24% of crawlable web pages contained AI-written or AI-edited text by August 2026",
+   "url": "https://x.com/omarsar0/status/2115497580746719303",
+   "handle": "@omarsar0",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Measured across more than 5 million pages from 2019 to 2026.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [],
+   "vendor": null,
+   "posted_at": "2026-10-28T17:35:01.000Z",
+   "metrics": {
+    "likes": 14,
+    "reposts": 2,
+    "quotes": 1,
+    "replies": 12
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "rechecks": [
+  {
+   "url": "https://x.com/akarixbt/status/2114389035388989873",
+   "result": "4,571 likes (up from 4,326), 12.1k bookmarks. No new pushback in metrics. Doubt stays 2."
+  },
+  {
+   "url": "https://x.com/housecor/status/2115058158297063721",
+   "result": "508 likes (up from 503), 111 replies. Flat. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/akshay_pachaar/status/2115428485485506783",
+   "result": "224 likes (up from 61), 67 replies. Growing; no new evidence for the speed claim. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/VikParuchuri/status/2115412617137435081",
+   "result": "41 likes (up from 25). Still no third-party numbers. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/zachlloydtweets/status/2115443494374539635",
+   "result": "28 likes (up from 6), 14 replies. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/OpenBMB/status/2115443643800825938",
+   "result": "98 likes (up from 4). Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/XunzhuoLiu/status/2115426759013491002",
+   "result": "129 likes (up from 35), 145 bookmarks. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/OpenBMB/status/2115428701982908585",
+   "result": "42 likes (up from 25). Doubt stays 1."
+  }
+ ],
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 0,
+  "kept": 0,
+  "note": "Live bookmarks read for id 1521986356721123328; the 20 newest were all already in seen ids."
+ },
+ "saved_rejected": [],
+ "list_posts_read": 92,
+ "list_pages": 1,
+ "discovery": {
+  "queries": 2,
+  "kept": 0,
+  "note": "One release search (huggingface/arxiv/github links) only surfaced more Nemotron 3.5 Transcribe coverage, used to confirm the HF weights link. One security search produced the two forwards below plus re-coverage."
+ },
+ "horizon": {
+  "block-dessa": "block.xyz/dessa unchanged (demo recordings, early access for safety researchers only). One X read found reposts and commentary saying it is not public yet. No weights, API or paper. No trigger."
+ },
+ "proposed_follows": [],
+ "proposed_follows_note": "follow_mode is browser and this run had no browser, so nothing was followed. No roster account is active yet, so none meet the follow rule.",
+ "skipped": [
+  {
+   "url": "https://x.com/OpenBMB/status/2115474966674358444",
+   "reason": "MiniCPM-OCR on Apple Silicon speed post; MiniCPM-OCR 1.0 already kept 2026-10-27."
+  },
+  {
+   "url": "https://x.com/natolambert/status/2115495656295219703",
+   "reason": "Opinion on Carbon access; used as pushback."
+  },
+  {
+   "url": "https://x.com/Replit/status/2115475853899653484",
+   "reason": "Security marketing post, no new incident."
+  },
+  {
+   "url": "https://x.com/satyanadella/status/2115490856685990244",
+   "reason": "Folded into the Copilot Fusion item."
+  }
+ ],
+ "security_forwarded": [
+  {
+   "title": "Langflow MCP stdio command injection, CVE-2026-105740 (CVSS 9.9): authenticated, or unauthenticated with default AUTO_LOGIN, RCE; fixed fully in 1.10.3",
+   "url": "https://x.com/zoomeyebot/status/2115454964009185772",
+   "source": "https://github.com/langflow-ai/langflow/security/advisories/GHSA-w794-rj3p-xv45",
+   "matched": "always_forward: agent tooling (MCP). Langflow is not in stack.json and not installed on the box.",
+   "summary": "Any user who can add an MCP server or MCP Tools config could run OS commands on the Langflow host via bash -c; 1.9.0 fixed only the REST path, 1.10.3 fixes the execution sink. The Hacker News reports 1,423 honeypot exploit attempts. Action: confirm no Langflow (langflow, langflow-base, lfx) runs anywhere in the fleet; if it does, upgrade to 1.10.3+ and disable LANGFLOW_AUTO_LOGIN."
+  },
+  {
+   "title": "SneakPeek (Noma Labs, CVSS 8.7): Claude Code Desktop preview pane let HTML over 256KB read and exfiltrate local secrets; fixed in Claude Desktop 1.30096.1",
+   "url": "https://x.com/spektion/status/2115449351753646341",
+   "source": "https://noma.security/noma-labs/sneakpeek-how-the-preview-pane-in-claude-code-desktop-can-exfiltrate-your-data",
+   "matched": "Claude Code (stack.json)",
+   "summary": "A poisoned HTML file in a cloned repo, rendered by the preview pane, could read ~/.ssh, ~/.aws and Claude OAuth tokens. Fixed Aug 17 by auto-update, disclosed Oct 14, CVE still pending. Action: confirm Claude Desktop is 1.30096.1 or later on the Macs; low urgency since auto-update covers it."
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/Ricdanyalgil/status/2115503871820718477",
+   "reason": "Erica Windisch's 11 Tailscale flaws; already covered 2026-10-25 and in the Tailscale 1.104.4 forward."
+  },
+  {
+   "url": "https://x.com/daniiie7/status/2115463600366133372",
+   "reason": "macOS git trusting compromised eMudhra certs; already in threats.json."
+  },
+  {
+   "url": "https://x.com/stretchcloud/status/2115450262207041641",
+   "reason": "Forever Security AGENTS.md planted-instruction test; already covered 2026-10-25 and 2026-10-27."
+  },
+  {
+   "url": "https://x.com/Replit/status/2115475853899653484",
+   "reason": "Refers to last week's disclosed kernel vulnerabilities; already covered in earlier sweeps."
+  },
+  {
+   "url": "https://x.com/isofunds/status/2115477425962340771",
+   "reason": "Retelling of the 2025 postmark-mcp backdoor; old."
+  },
+  {
+   "url": "https://x.com/MCPScores/status/2115458972438184332",
+   "reason": "CVE-2026-112393 in a niche single-author MCP server (autoclip-mcp) not used in the fleet; fix available."
+  },
+  {
+   "url": "https://x.com/aviatrixtrc/status/2115480614677663782",
+   "reason": "PHP2Shell CVE-2026-109618/109619; PHP is not in the stack."
+  },
+  {
+   "url": "https://x.com/HugoValters/status/2115464607250727105",
+   "reason": "Argo Workflows authz bypass; not in the stack."
+  },
+  {
+   "url": "https://x.com/russano/status/2115483882866815100",
+   "reason": "General package cool-down advice; no incident."
+  }
+ ],
+ "errors": [
+  "Devtools search page 2 stopped at about 14:30Z with a next_token still present, so 14:15 to 14:30Z devtools posts may be incomplete.",
+  "One builders query was sent with the applied group's pagination token by mistake; reran builders and applied with explicit time windows, so coverage is complete."
+ ]
+}

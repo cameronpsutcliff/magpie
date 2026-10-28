@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-28T14:15:00Z",
+ "updated_at": "2026-10-28T18:00:00Z",
  "by": "magpie-scout",
  "rules": "Quiet watch for on-the-horizon items. Check at most 2 reads per sweep, rotating by oldest last_checked. Stay silent until a trigger fires. A demo clip, teaser, waitlist, interview or opinion is never a trigger. When one fires: add one kept item to that sweep, set status to 'triggered' with triggered_at and evidence, and flag it in the status file for the parent to tell Cameron. Never put speculative what-ifs in sweep output.",
  "entries": [
@@ -33,8 +33,8 @@
     ],
     "handle_notes": "@ragavan is a different person (ex-Llama at Meta), not Ragavan Thurairatnam; his X handle is not yet known."
    },
-   "last_checked": "2026-10-28T14:15:00Z",
-   "last_result": "Page unchanged (demo clips, waitlist); one X read found only a reply and a roundup calling it a research preview. No weights, API or paper.",
+   "last_checked": "2026-10-28T18:00:00Z",
+   "last_result": "block.xyz/dessa unchanged (demo recordings, early access for safety researchers only). One X read found reposts and commentary saying it is not public yet. No weights, API or paper. No trigger.",
    "status": "watching",
    "triggered_at": null,
    "evidence": []
