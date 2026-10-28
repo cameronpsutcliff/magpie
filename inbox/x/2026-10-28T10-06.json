@@ -1,0 +1,365 @@
+{
+ "ran_at": "2026-10-28T10:06:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-10-28T02:06:00Z",
+ "queries": 10,
+ "calls": 16,
+ "items": [
+  {
+   "title": "Artificial Analysis Intelligence Index v5 moves 60% of its weight to private or held-out tests",
+   "url": "https://x.com/ArtificialAnlys/status/2115265133467635877",
+   "handle": "@ArtificialAnlys",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Version 5 of the composite index combines nine evals, and 60% of the weight now sits on private test sets or held-out answers. New entries are Cognition's FrontierCode 2.0 (graded on whether a maintainer would merge the change) and Terminal-Bench-Science (70 agentic science tasks in a terminal). HLE-Diamond, AA-Omniscience v1.1 and a private CritPt v2 hard subset are upgrades. GDPval-AA, SciCode and AA-LCR are dropped. Claude Opus 5.5 (max) leads at 58, then GPT-6 Astra at 57 and GPT-6.1 Sol at 55. The gap to the best released open-weights models (DeepSeek V4.1 Flash and GLM-5.3 at 32) widens from 3 to 12 points if you count unreleased Kimi K3.1 Pro (46), and to 26 if you only count released weights. A separate Progress Index v1 uses item response theory to put models from Nov 2022 onward on one scale.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5",
+    "https://artificialanalysis.ai/methodology/progress-index"
+   ],
+   "vendor": "Artificial Analysis",
+   "posted_at": "2026-10-28T02:11:22Z",
+   "metrics": {
+    "likes": 3704,
+    "reposts": 311,
+    "quotes": 481,
+    "replies": 393
+   },
+   "confirmed_by": [
+    "https://x.com/emollick/status/2115277286123704654",
+    "https://x.com/scaling01/status/2115270481750151680"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Many quote posts question the weighting and say it favors US closed models over Chinese open models. Nobody offered counter-evidence. Several builders welcomed the move to private sets.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Builders like the private sets and the maintainer-merge grading on FrontierCode 2.0, where the top score is 46%. A vocal minority says the reshuffle hurts Chinese open models and trusts the index less. Others point to the more than 13x cost-per-task spread among the top 10.",
+    "tried": false
+   }
+  },
+  {
+   "title": "Clover-35B-A3B-Preview: open-weight block-diffusion MoE LLM with strong agent coding scores",
+   "url": "https://x.com/DiffuSpace_Labs/status/2115288124691820738",
+   "handle": "@DiffuSpace_Labs",
+   "group": "opensource",
+   "origin": "discovery",
+   "summary": "DiffuSpace, the team behind HKU's Dream 7B, released an Apache-2.0 diffusion language model: 35B total parameters, about 3B active, 128K context. It is initialized from Qwen3.6-35B-A3B and generates in 32-token blocks that are denoised in parallel. Self-reported scores: SWE-bench Verified 73.6, Terminal-Bench 2.1 51.7 and GPQA Diamond 83.8, all ahead of the same-size Qwen AR models and of LLaDA2.2 flash and Mercury 2.5. Throughput is 680 tok/s at batch 1 on one GB300, and 515 vs 365 tok/s against Qwen with DFlash2 on an H200, both measured on internal agent data. Weights are on Hugging Face and ModelScope. SGLang and llama.cpp backends are listed but the code is still to come. BF16 needs about 69 GB.",
+   "kind": "model",
+   "evidence": "self_reported",
+   "links": [
+    "https://huggingface.co/Diffuspace/Clover-35B-A3B-Preview",
+    "https://github.com/DiffuSpace/Clover-35B-A3B-Preview",
+    "https://diffuspace.ai/blog/clover-35b/"
+   ],
+   "vendor": "DiffuSpace",
+   "posted_at": "2026-10-28T03:42:43Z",
+   "metrics": {
+    "likes": 394,
+    "reposts": 48,
+    "quotes": 42,
+    "replies": 37
+   },
+   "confirmed_by": [
+    "https://x.com/plotarmordev/status/2115361863798317155"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Speed was measured at batch 1 on internal agent data. Replies ask whether the 73.6 SWE-bench score used the same decoding settings as the 680 tok/s figure, and how it holds up at higher concurrency.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Wide interest in the block-diffusion approach and in local speed on consumer GPUs. Skeptics want multi-session SGLang numbers and note it is a conversion of Qwen3.6, not trained from scratch.",
+    "tried": false
+   }
+  },
+  {
+   "title": "Odysseys2: live-web agent benchmark where the best agent perfectly completes only 47 of 100 tasks",
+   "url": "https://x.com/browser_use/status/2115303253495996586",
+   "handle": "@browser_use",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "CMU and Browser Use released 100 long-horizon web tasks built from real Browser Use request patterns, with 982 rubric checks, run on the live web. The judge (GPT-5.6 Luna at xhigh) sees delivered files as well as screenshots and action logs, and zeroes attempts it flags for fabrication. GPT-6 Astra leads with a mean of 84.6 but only 47 perfect runs. On the same attempts, mean scores drop from 88.9 under the old Odysseys judge to 45.3 under the new one. Harness choice matters: Luna at max effort scores 71.9 in Pi vs 63.0 in BrowserCode. Over eight runs no task was perfect every time. Tasks, rubrics and scores are downloadable.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://odysseysbench.com/v2/"
+   ],
+   "vendor": "Browser Use / CMU",
+   "posted_at": "2026-10-28T04:42:50Z",
+   "metrics": {
+    "likes": 66,
+    "reposts": 6,
+    "quotes": 7,
+    "replies": 9
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "video": {
+    "seconds": 18,
+    "worth_watching": false
+   }
+  },
+  {
+   "title": "Pi coding agent runs LFM3-1.7B fully in the browser over WebGPU",
+   "url": "https://x.com/xenovacom/status/2115277783022862613",
+   "handle": "@xenovacom",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Xenova published a Hugging Face Space that runs the Pi agent harness with Liquid's LFM3-1.7B locally in the browser. It uses custom WebGPU kernels and a 4-bit GGUF, and reports over 300 tok/s on an M4 Max. Nothing leaves the machine. Liquid's own card says the 1.7B model is not recommended for complex agentic coding, so treat this as a local-agent runtime demo, not a coding-quality claim.",
+   "kind": "tool",
+   "evidence": "demo",
+   "links": [
+    "https://huggingface.co/spaces/webml-community/LFM3-1.7B-WebGPU-Pi",
+    "https://huggingface.co/LiquidAI/LFM3-1.7B"
+   ],
+   "vendor": "Hugging Face (Xenova) / Liquid AI",
+   "posted_at": "2026-10-28T03:01:38Z",
+   "metrics": {
+    "likes": 89,
+    "reposts": 8,
+    "replies": 11
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "video": {
+    "seconds": 29,
+    "worth_watching": false
+   }
+  },
+  {
+   "title": "After42: experts rated a third of AI-proposed research questions genuinely interesting",
+   "url": "https://x.com/FanNie1208/status/2115113813620211818",
+   "handle": "@FanNie1208",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "After42 develops research questions by trying to solve them. Expert reviewers in math, statistics, theoretical CS and physics judged 45 of its 135 final questions genuinely interesting, with wide variation across subfields. Model judges' top picks matched expert consensus but not individual experts' preferences. The expert-rated questions are released as an open resource. Found via @percyliang's quote post.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "http://after42.org"
+   ],
+   "vendor": null,
+   "posted_at": "2026-10-27T16:10:04Z",
+   "metrics": {
+    "likes": 242,
+    "reposts": 70,
+    "quotes": 21,
+    "replies": 21
+   },
+   "confirmed_by": [
+    "https://x.com/percyliang/status/2115266400587841639"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "video": {
+    "seconds": 183,
+    "worth_watching": null,
+    "note": "Not watched: no video budget used this run."
+   }
+  },
+  {
+   "title": "iFlytek Spark-X2.6-1.7B claims SWE-bench Verified 59.8, with day-0 SGLang support",
+   "url": "https://x.com/SparkLLM/status/2115100695775056057",
+   "handle": "@SparkLLM",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "iFlytek released a 1.7B on-device sibling of its Spark-X2.6-4B. It reports SWE-bench Verified 59.8 (4B: 62.8) and tau2-bench 85.3 (4B: 86.9), both at high thinking, with a controllable thinking budget. Weights are on Hugging Face. SGLang shipped day-0 serving support.",
+   "kind": "model",
+   "evidence": "self_reported",
+   "links": [
+    "https://huggingface.co/XHToken/Spark-X2.6-1.7B",
+    "https://x.com/sgl_project/status/2115334343870787975"
+   ],
+   "vendor": "iFlytek",
+   "posted_at": "2026-10-27T15:17:57Z",
+   "metrics": {
+    "likes": 264,
+    "reposts": 30,
+    "quotes": 16,
+    "replies": 11
+   },
+   "confirmed_by": [
+    "https://x.com/sgl_project/status/2115334343870787975"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": "Benchmarks are self-reported only; no independent run yet."
+   }
+  }
+ ],
+ "rechecks": [
+  {
+   "url": "https://x.com/AlexTamkin/status/2115190541688398184",
+   "result": "2,277 likes, 286 reposts, 198 quotes (up from 1,125). No new pushback. Doubt stays 0."
+  },
+  {
+   "url": "https://x.com/AnthropicAI/status/2115178675050307942",
+   "result": "8,149 likes, 830 reposts (up from 5,877 likes). No new pushback beyond the preclinical scope. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/skalskip92",
+   "result": "GPT-6.1 Terra vision benchmarks: 855 likes. No notes via API. Doubt unchanged."
+  },
+  {
+   "url": "https://x.com/jerryjliu0",
+   "result": "ParseBench: 82 likes, 36 replies. Doubt unchanged."
+  },
+  {
+   "url": "https://x.com/JoshuaSWarren",
+   "result": "TensorFold: 69 likes. Doubt unchanged."
+  },
+  {
+   "url": "https://x.com/NotionHQ",
+   "result": "398 likes. Doubt unchanged."
+  },
+  {
+   "url": "https://x.com/aitrackerbot",
+   "result": "Metatron: 23 likes. Doubt unchanged."
+  },
+  {
+   "url": "https://x.com/ValsAI",
+   "result": "Lean electrons: 126 likes. Doubt unchanged."
+  }
+ ],
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 0,
+  "kept": 0,
+  "note": "Live bookmarks read for id 1521986356721123328; all 20 newest saves were already in the archive's seen ids."
+ },
+ "saved_rejected": [],
+ "list_posts_read": 92,
+ "list_pages": 1,
+ "discovery": {
+  "queries": 2,
+  "kept": 0,
+  "note": "One open-source release search (low signal) and one security search (one forwarded follow-up). Clover came in through a list member's quote, so it counts as off-roster discovery."
+ },
+ "horizon": {
+  "block-dessa": "block.xyz/dessa unchanged (demo recordings, early access for safety researchers, more recordings promised on X). One X read found only an unrelated voice roundup. No weights, API or paper. No trigger."
+ },
+ "proposed_follows": [],
+ "proposed_follows_note": "follow_mode is browser and this run had no browser, so nothing was followed. No account is 'active' on the roster yet (all trial or curated), so none meet the follow rule this sweep.",
+ "skipped": [
+  {
+   "url": "https://x.com/thsottiaux/status/2115297093879472332",
+   "reason": "poteto.com is a novelty potato game page that links to ChatGPT; no capability. A separate 'good news tomorrow' post is a teaser."
+  },
+  {
+   "url": "https://x.com/askalphaxiv/status/2115361048652058962",
+   "reason": "Explainer for OpenAI's ETH refutation, already kept 2026-10-26."
+  },
+  {
+   "url": "https://x.com/MistralAI/status/2115380768394379474",
+   "reason": "Leaderboard placement for Voxtral Mini Transcribe 3 (quotes an older post); minor."
+  },
+  {
+   "url": "https://x.com/LiteLLM",
+   "reason": "Roadmap claim (Rust migration latency target by Dec 1); not shipped."
+  },
+  {
+   "url": "https://x.com/aitrackerbot",
+   "reason": "NemotronTTS v2 unmerged PR and DeepSeek V5 fixture debunk; speculative."
+  },
+  {
+   "url": "https://x.com/addyosmani/status/2115326629488824753",
+   "reason": "X article opinion; no new capability."
+  },
+  {
+   "url": "https://x.com/emollick/status/2115277286123704654",
+   "reason": "Commentary on AA v5; used as confirmation."
+  },
+  {
+   "url": "https://x.com/PratikPatel_227/status/2115285524827279593",
+   "reason": "Baidu Unlimited OCR 2 recap; already covered 2026-10-27."
+  },
+  {
+   "url": "https://x.com/SakanaAILabs",
+   "reason": "Promo and events (Sakana Gartner, Replit Tokyo, Ollama Seoul, MiniMax livestream, CommandCode plan, alphaXiv paper club)."
+  },
+  {
+   "url": "https://x.com/thdxr",
+   "reason": "Opinion posts (also @teortaxesTex, @levie, @swyx commentary)."
+  },
+  {
+   "url": "https://x.com/jankeesvw",
+   "reason": "Omarchy pins and plugins; not AI capability."
+  },
+  {
+   "url": "https://x.com/m_aliabbas1",
+   "reason": "Voice-model roundup; mentions nothing new for Dessa."
+  }
+ ],
+ "security_forwarded": [
+  {
+   "url": "https://tailscale.com/security-bulletins",
+   "handle": "@hhftechnology",
+   "post": "https://x.com/hhftechnology/status/2115279472505336294",
+   "posted_at": "2026-10-28T03:08:20Z",
+   "matched": "fleet tailnet (no Tailscale entry in stack.json); follow-up to the Tailworm lead forwarded 2026-10-25",
+   "note": "Fix now available for the Tailworm findings. Tailscale published TS-2026-014 to -017, all fixed in 1.104.4. TS-2026-014: Tailscale SSH unix-socket forwarding ran as root, so authorized peers could reach root-only sockets such as Docker or the tailscaled local API (mitigation: TS_SSH_DISABLE_FORWARDING=1). TS-2026-015: SSH session memory-exhaustion DoS. TS-2026-016: serve Unix backends could reach privileged sockets including the local API (node takeover). TS-2026-017: HTTP/2 serve capability-header bleed across mounts. Upgrade all fleet nodes to 1.104.4 or newer.",
+   "fix": "1.104.4",
+   "verified": "primary source (tailscale.com/security-bulletins)"
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/Arindam_1729/status/2115311567592141095",
+   "reason": "AGENTS.md in Downloads re-coverage; already forwarded 2026-10-25."
+  },
+  {
+   "url": "https://x.com/qiweiiiy/status/2115285929267175643",
+   "reason": "testmetest worm re-coverage; already forwarded."
+  },
+  {
+   "url": "https://x.com/Secureintent_ai/status/2115301220609069445",
+   "reason": "LiteLLM attack recap; already handled."
+  },
+  {
+   "url": "https://x.com/WuRichard_/status/2115326549649969426",
+   "reason": "NVIDIA agent-skill scan stats (SkillSpector); logged before."
+  },
+  {
+   "url": "https://x.com/gojem18/status/2115313803978211559",
+   "reason": "Ghostty 1.4 terminal-output fixes; Ghostty not in stack.json and not an always_forward category."
+  },
+  {
+   "url": "https://x.com/ndati_gilbert/status/2115369792789987413",
+   "reason": "PHP2Shell plus kernel chain on PHP servers; old topic, no PHP web stack on fleet."
+  },
+  {
+   "url": "https://x.com/tienho_nyx/status/2115315968637542660",
+   "reason": "Crypto MCP promo; not a vulnerability."
+  }
+ ]
+}

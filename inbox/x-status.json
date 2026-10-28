@@ -1,14 +1,14 @@
 {
- "updated_at": "2026-10-28T09:55:00Z",
- "job": "roster",
+ "updated_at": "2026-10-28T10:06:00Z",
+ "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 14,
+ "calls_used_today": 30,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-10-28T02:06:00Z",
-  "items": 10,
-  "queries": 9,
-  "deep_reads": 3,
+  "ran_at": "2026-10-28T10:06:00Z",
+  "items": 6,
+  "queries": 10,
+  "deep_reads": 2,
   "rechecks": 8,
   "flagged": 0,
   "saved_in": 0,
@@ -208,7 +208,8 @@
   "Sweep 18:12Z: Skill tool unavailable, so skills were read from SKILL.md directly (non-blocking); no browser, so no follows; no injection attempts seen.",
   "Sweep 22:07Z: Skill tool unavailable, so skills were read from SKILL.md directly (non-blocking); no browser, so no follows; no injection attempts seen.",
   "Sweep 02:06Z: Skill tool unavailable, so skills were read from SKILL.md directly (non-blocking); no browser, so no follows; no injection attempts seen. calls_used_today counts the America/Chicago day (Oct 27).",
-  "Roster review 2026-10-28: no injection attempts seen; candidate posts read as data only. Skill tool unavailable, so the x-api-mcp-guide SKILL.md was read directly (non-blocking)."
+  "Roster review 2026-10-28: no injection attempts seen; candidate posts read as data only. Skill tool unavailable, so the x-api-mcp-guide SKILL.md was read directly (non-blocking).",
+  "Sweep 10:06Z: Skill tool unavailable, so x-api-mcp-guide SKILL.md was read directly (non-blocking); no browser, so no follows; no injection attempts seen. calls_used_today counts the America/Chicago day (Oct 28): 14 roster + 16 sweep."
  ],
  "follows_today": 0,
  "last_roster_review": {
