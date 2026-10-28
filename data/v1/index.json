@@ -4,14 +4,14 @@
   {
    "date": "2026-10-28",
    "headline": "LFM3-1.7B, graphify, ECC, and more",
-   "events": 260,
+   "events": 306,
    "sources": 503,
    "enriched": false,
    "top": [
     {
      "id": "04012c1787eb",
      "title": "LiquidAI/LFM3-1.7B",
-     "impact": 4,
+     "impact": 5,
      "vendor": "Liquid AI"
     },
     {
@@ -27,50 +27,50 @@
      "vendor": "Open source"
     },
     {
-     "id": "fed4e14dc325",
-     "title": "Nutlope/hallmark",
+     "id": "1ec0b1042f97",
+     "title": "obra/superpowers",
      "impact": 4,
      "vendor": "Open source"
     },
     {
-     "id": "e487fe51b82b",
-     "title": "cloudflare/security-audit-skill",
+     "id": "6813b8a55e39",
+     "title": "anomalyco/opencode",
      "impact": 4,
-     "vendor": "Cloudflare"
+     "vendor": "opencode"
     }
    ],
    "vendors": [
     "Open source",
     "Anthropic",
-    "OpenAI",
     "Google",
+    "OpenAI",
     "NVIDIA",
-    "Vercel"
+    "AWS"
    ],
    "topics": {
-    "models": 78,
-    "agents": 77,
-    "coding": 76,
-    "multimodal": 56,
-    "memory": 34,
-    "infra": 30,
-    "evals": 29,
-    "local": 28,
-    "mcp": 28,
-    "reverse": 16,
-    "research": 13,
-    "security": 11,
-    "robotics": 6
+    "models": 106,
+    "coding": 85,
+    "agents": 84,
+    "multimodal": 67,
+    "evals": 42,
+    "memory": 41,
+    "infra": 40,
+    "local": 35,
+    "mcp": 27,
+    "research": 25,
+    "reverse": 19,
+    "security": 15,
+    "robotics": 11
    },
    "kinds": {
+    "community": 65,
     "social": 55,
-    "blog": 41,
+    "newsletter": 39,
     "repo": 36,
-    "newsletter": 31,
+    "blog": 32,
     "model": 30,
-    "changelog": 21,
     "space": 20,
-    "community": 17,
+    "changelog": 20,
     "news": 9
    },
    "threats": []
