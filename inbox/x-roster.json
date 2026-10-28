@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T09:50:00Z",
+  "updated_at": "2026-10-28T09:55:00Z",
   "accounts": [
     {
       "handle": "@thsottiaux",
@@ -1061,6 +1061,62 @@
       "retired_reason": null,
       "x_user_id": "1513438573747486721",
       "on_list": true
+    },
+    {
+      "handle": "@XunzhuoLiu",
+      "name": "Xunzhuo",
+      "group": "opensource",
+      "affiliation": "vLLM Semantic Router",
+      "why": "First-hand on vLLM Semantic Router open decision and routing models (d3, d3-turbo, d3-ultra) with Jev Decision Index scores and latency numbers.",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-10-28",
+      "evidence": [
+        "https://x.com/XunzhuoLiu/status/2114915380926017591",
+        "https://x.com/XunzhuoLiu/status/2112343603209261092",
+        "https://x.com/XunzhuoLiu/status/2108864432394903806"
+      ],
+      "last_qualifying_post": "2026-10-27",
+      "retired_reason": null,
+      "x_user_id": "2008097400272084993",
+      "on_list": true
+    },
+    {
+      "handle": "@googlegemma",
+      "name": "Google Gemma",
+      "group": "labs",
+      "affiliation": "Google DeepMind",
+      "why": "Official Gemma account: open model releases, EmbeddingGemma 2 on-device ports and measured inference speedups.",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-10-28",
+      "evidence": [
+        "https://x.com/googlegemma/status/2115150306032193954",
+        "https://x.com/googlegemma/status/2114757896563253305",
+        "https://x.com/googlegemma/status/2112657975789949376"
+      ],
+      "last_qualifying_post": "2026-10-27",
+      "retired_reason": null,
+      "x_user_id": "1908326331609468928",
+      "on_list": true
+    },
+    {
+      "handle": "@skalskip92",
+      "name": "SkalskiP",
+      "group": "builders",
+      "affiliation": "Roboflow",
+      "why": "Roboflow open-source lead; hands-on vision-model benchmarks with measured accuracy, speed and cost (GPT-6.1 Terra vs Astra, pose estimation).",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-10-28",
+      "evidence": [
+        "https://x.com/skalskip92/status/2115163487177674991",
+        "https://x.com/skalskip92/status/2112614331519291445"
+      ],
+      "last_qualifying_post": "2026-10-27",
+      "retired_reason": null,
+      "x_user_id": "2353861069",
+      "on_list": true
     }
   ],
   "source_leads": [
@@ -1331,6 +1387,34 @@
       "seen_via": [
         "@shayan_",
         "@bneyshabur"
+      ]
+    },
+    {
+      "kind": "blog",
+      "name": "Cognition blog",
+      "url": "https://cognition.ai/blog",
+      "why": "Devin and FrontierCode benchmark write-ups with method details; not in sources.json.",
+      "seen_via": [
+        "@cognition"
+      ]
+    },
+    {
+      "kind": "blog",
+      "name": "Axiom blog",
+      "url": "https://axiommath.ai/blog",
+      "why": "Lean formalization releases (CFSG) and AI theorem-proving results; not in sources.json.",
+      "seen_via": [
+        "@TheTuringPost",
+        "@omarsar0"
+      ]
+    },
+    {
+      "kind": "feed",
+      "name": "ParseBench leaderboard",
+      "url": "https://www.parsebench.ai/",
+      "why": "Document-parsing benchmark that adds new models quickly (GPT-6.1 Terra); not watched.",
+      "seen_via": [
+        "@jerryjliu0"
       ]
     }
   ],
