@@ -1,0 +1,649 @@
+{
+ "ran_at": "2026-10-28T22:07:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-10-28T18:00:00Z",
+ "queries": 11,
+ "calls": 19,
+ "items": [
+  {
+   "title": "Cartesia's new H-Net learns its own tokenization from raw bytes; claims 3-5x efficiency and a match for an 11T-token model at about 10x less data and compute",
+   "url": "https://x.com/_albertgu/status/2115502110578290900",
+   "handle": "@_albertgu",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Albert Gu and the Cartesia team present a second version of hierarchical networks, which skip a fixed tokenizer and learn how to chunk raw bytes as they train. In controlled scaling-law runs they report 3-5x efficiency gains, and at larger scale a match for an open model (SmolLM3) trained on 11T tokens while using roughly a tenth of the data and compute. Tri Dao points out it learns to split variable names in code into separate units on its own.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Cartesia",
+   "posted_at": "2026-10-28T17:53:01.000Z",
+   "metrics": {
+    "likes": 2256,
+    "reposts": 236,
+    "quotes": 108,
+    "replies": 88
+   },
+   "confirmed_by": [
+    "@tri_dao",
+    "@cartesia",
+    "@sukjun_hwang",
+    "@simran_s_arora",
+    "@eliebakouch",
+    "@scaling01"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Replies ask how well the gains hold outside controlled scaling setups; no weights or independent replication yet.",
+    "source": "https://x.com/yuncuntu/status/2115563620780404767"
+   },
+   "reception": {
+    "quotes_read": 18,
+    "replies_read": 12,
+    "tone": "Strongly positive from researchers; skeptics question whether learned chunking just moves hand-design elsewhere."
+   }
+  },
+  {
+   "title": "NanoGPT Speedrun record falls from 39.9 s to 6.7 s by having idle CPUs build retrieval n-gram hints during training",
+   "url": "https://x.com/hermanbrunborg/status/2115502130350227798",
+   "handle": "@hermanbrunborg",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Herman Brunborg cut the speedrun by 83%, more than every record since 2025 combined. While 8 H100s train, the CPUs build an n-gram hint index from the training set that the model retrieves from, so it does not have to memorize rare repeated web text. The index is 352 GiB, which is the main objection.",
+   "kind": "research",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/hermanbrunborg/status/2115502132338348320"
+   ],
+   "vendor": null,
+   "posted_at": "2026-10-28T17:53:06.000Z",
+   "metrics": {
+    "likes": 1212,
+    "reposts": 99,
+    "quotes": 28,
+    "replies": 42
+   },
+   "confirmed_by": [
+    "@tatsu_hashimoto",
+    "@StanfordAILab"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Several replies say the retrieval trick belongs on a separate leaderboard and note the PR is not yet reviewed.",
+    "source": "https://x.com/martincsweiss1/status/2115560606422163940"
+   },
+   "reception": {
+    "quotes_read": 20,
+    "replies_read": 13,
+    "tone": "Amazed at the size of the jump, split on whether it fits the spirit of the benchmark."
+   }
+  },
+  {
+   "title": "Claude Code dynamic workflows: a JavaScript file that fixes which subagents run and in what order",
+   "url": "https://x.com/lydiahallie/status/2115533617984401464",
+   "handle": "@lydiahallie",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Lydia Hallie shows that a workflow can be as small as about 10 subagents, written as an editable JS file, which she finds more repeatable than a skill for tasks you rerun the same way.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Anthropic",
+   "posted_at": "2026-10-28T19:58:13.000Z",
+   "metrics": {
+    "likes": 563,
+    "reposts": 23,
+    "quotes": 3,
+    "replies": 59
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "replies_read": 14,
+    "tone": "Liked for predictability; complaints are token burn (everything ran at max effort) and usage quotas."
+   }
+  },
+  {
+   "title": "ProgramLab: 1,261 real programs for training agents to use and rebuild software",
+   "url": "https://x.com/tyao923/status/2115503372677926939",
+   "handle": "@tyao923",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "An environment suite where agents learn by using real-world programs and then rebuilding them, for one agent or a team.",
+   "kind": "dataset",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": null,
+   "posted_at": "2026-10-28T17:58:02.000Z",
+   "metrics": {
+    "likes": 92,
+    "reposts": 22,
+    "quotes": 7,
+    "replies": 8
+   },
+   "confirmed_by": [
+    "@jyangballin",
+    "@OfirPress"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Replit ViBench 2.0: agents build a whole product feature by feature; best models pass every check in only 49-65% of builds",
+   "url": "https://x.com/Replit/status/2115553116942975013",
+   "handle": "@Replit",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Agents start from an empty project and get features one at a time without seeing what comes next. GPT-6.1 Sol, GPT-6 Astra and Opus 5.5 lead, and the benchmark joins the Fireworks Specialized Intelligence Index with Fireworks-run results.",
+   "kind": "benchmark",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/FireworksAI_HQ/status/2115474253055455296"
+   ],
+   "vendor": "Replit",
+   "posted_at": "2026-10-28T21:15:42.000Z",
+   "metrics": {
+    "likes": 23,
+    "reposts": 2,
+    "quotes": 7,
+    "replies": 5
+   },
+   "confirmed_by": [
+    "@amasad"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "LMSYS Miles runs agentic RL on AMD MI355X: SWE-bench Verified from 7.3% to 27.5% with RL steps 3x faster",
+   "url": "https://x.com/lmsysorg/status/2115549444724961628",
+   "handle": "@lmsysorg",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "The Miles RL framework trained a coding agent across 384 sandboxes on AMD MI355X GPUs, lifting SWE-bench Verified from 7.3% to 27.5% with RL steps about 3x faster.",
+   "kind": "research",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "LMSYS",
+   "posted_at": "2026-10-28T21:01:07.000Z",
+   "metrics": {
+    "likes": 10,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "ElevenLabs Cue forced-alignment model: an hour of audio aligned in about half a second; beat every open aligner tested in 29 languages",
+   "url": "https://x.com/ElevenLabs/status/2115527286065914248",
+   "handle": "@ElevenLabs",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Cue places each character on the audio timeline in one pass over recordings of any length. It already powers ElevenLabs Speech to Text and is offered on its own through the Forced Alignment API. The comparison is ElevenLabs' own.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "ElevenLabs",
+   "posted_at": "2026-10-28T19:33:04.000Z",
+   "metrics": {
+    "likes": 94,
+    "reposts": 10,
+    "quotes": 8,
+    "replies": 18
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Benchmark is vendor-run.",
+    "source": null
+   },
+   "reception": {
+    "replies_read": 4,
+    "tone": "Positive; staff say it works across 90+ languages via Scribe."
+   }
+  },
+  {
+   "title": "LlamaIndex publishes a Document Parsing Protocol draft: shared rules for how parsers handle tables, forms, charts and more",
+   "url": "https://x.com/jerryjliu0/status/2115516581925315034",
+   "handle": "@jerryjliu0",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "The working draft spells out judgment calls such as two-row table headers, with example pages and expected outputs for text, tables, forms, charts, diagrams, chemical structures and music notation. A Claude skill and a ChatGPT reference file are offered for testing.",
+   "kind": "spec",
+   "evidence": "artifact",
+   "links": [
+    "https://x.com/llama_index/status/2115466450534097158"
+   ],
+   "vendor": "LlamaIndex",
+   "posted_at": "2026-10-28T18:50:32.000Z",
+   "metrics": {
+    "likes": 234,
+    "reposts": 19,
+    "quotes": 2,
+    "replies": 34
+   },
+   "confirmed_by": [
+    "@llama_index"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "replies_read": 0,
+    "tone": "No substantive replies surfaced."
+   }
+  },
+  {
+   "title": "Gemini app adds immersive explorations: topics unfold into interactive layers with guided explanations",
+   "url": "https://x.com/GeminiApp/status/2115507092660289631",
+   "handle": "@GeminiApp",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Examples include Silk Road trade routes, the inside of a jet engine and the physics of lightning, each with drill-down explanations.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Google",
+   "posted_at": "2026-10-28T18:12:49.000Z",
+   "metrics": {
+    "likes": 566,
+    "reposts": 44,
+    "quotes": 13,
+    "replies": 42
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "replies_read": 4,
+    "tone": "Interest from educators; one asks whether deeper layers stay grounded in checkable sources."
+   }
+  },
+  {
+   "title": "Baseten tunes Qwen3-ASR 1.7B to 3,128x real time: an hour of audio in under 5 seconds for about $0.0013",
+   "url": "https://x.com/baseten/status/2115550777515168076",
+   "handle": "@baseten",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Gains came from native audio decoding, KV cache quantization and fewer CPU-GPU syncs, for about 7x stock vLLM throughput on one GPU. Numbers are Baseten's.",
+   "kind": "infra",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/hasanwkhan04/status/2115549853862297750"
+   ],
+   "vendor": "Baseten",
+   "posted_at": "2026-10-28T21:06:25.000Z",
+   "metrics": {
+    "likes": 16,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 2
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Hermes Agent with a local Qwen3.8-27B on one RTX 5090: q8_0 cache and thinking off cost almost no accuracy over 100 tool-call tasks",
+   "url": "https://x.com/witcheer/status/2115549174930538844",
+   "handle": "@witcheer",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "One setting changed per run on the same 100 multi-turn tasks: q8_0 KV cache scored 78 vs 81, thinking off 80 vs 81 with 61% fewer tokens, and 128k context fits in 29.4 of 31.8 GiB. A repeat run reproduced every task, so the gaps come from the settings.",
+   "kind": "analysis",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/witcheer/status/2115520608939475295"
+   ],
+   "vendor": null,
+   "posted_at": "2026-10-28T21:00:02.000Z",
+   "metrics": {
+    "likes": 7,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 3
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "GPT 6.1 Terra scores 28.1% on WeirdML, close to Fable 5.1 at much lower cost",
+   "url": "https://x.com/htihle/status/2115548284601479433",
+   "handle": "@htihle",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Terra uses fewer tokens while Fable 5.1 keeps a slightly higher final score.",
+   "kind": "benchmark",
+   "evidence": "measured",
+   "links": [],
+   "vendor": null,
+   "posted_at": "2026-10-28T20:56:30.000Z",
+   "metrics": {
+    "likes": 31,
+    "reposts": 2,
+    "quotes": 1,
+    "replies": 3
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "LFM3-1.7B on MLX reads a 100k-token novel in about 28 s on an M5 Pro, then answers 100 questions in 27 s",
+   "url": "https://x.com/Alex_tra_memory/status/2115513890075296029",
+   "handle": "@Alex_tra_memory",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A 5-bit MLX conversion handled the whole of Pride and Prejudice, including finding a planted password.",
+   "kind": "demo",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/alexwengg/LFM3-1.7B-Base-MLX-5bit"
+   ],
+   "vendor": null,
+   "posted_at": "2026-10-28T18:39:50.000Z",
+   "metrics": {
+    "likes": 93,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 1
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Agent Baseline: open standard for running agents safely in production, with Snyk, Docker, Keycard and Browserbase",
+   "url": "https://x.com/browserbase/status/2115546394685784110",
+   "handle": "@browserbase",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Launch partners are formalizing a shared protocol for production agent safety; docs are linked from the post.",
+   "kind": "spec",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Browserbase",
+   "posted_at": "2026-10-28T20:49:00.000Z",
+   "metrics": {
+    "likes": 14,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 1
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Ultramarine 1 Flash on Fireworks: tops Fable 5 on its maker's knowledge-work benchmark at about 98% lower cost per task",
+   "url": "https://x.com/FireworksAI_HQ/status/2115541438457164235",
+   "handle": "@FireworksAI_HQ",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Paper Instruments reports 59.3 vs 57.8 on its internal benchmark; available on the Fireworks serverless API.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Fireworks",
+   "posted_at": "2026-10-28T20:29:18.000Z",
+   "metrics": {
+    "likes": 23,
+    "reposts": 7,
+    "quotes": 0,
+    "replies": 2
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Internal benchmark only.",
+    "source": null
+   }
+  },
+  {
+   "title": "Particle-1 coding model on OpenRouter: post-trained on DeepSeek V4.1 Flash to use 28-52% fewer output tokens",
+   "url": "https://x.com/OpenRouter/status/2115564621717512295",
+   "handle": "@OpenRouter",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Particle says accuracy stays close to the base model; $0.25 per 1M input and $1 per 1M output tokens with 1.05M context.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/ModelsOnOR/status/2115561456733397266"
+   ],
+   "vendor": "Particle",
+   "posted_at": "2026-10-28T22:01:25.000Z",
+   "metrics": {
+    "likes": 2,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 2
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Token savings are Particle's own numbers.",
+    "source": null
+   }
+  },
+  {
+   "title": "Databricks Apps on-behalf-of authorization is GA",
+   "url": "https://x.com/databricks/status/2115533029581943167",
+   "handle": "@databricks",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Apps can act with the signed-in user's Unity Catalog permissions, with API scopes limiting what they may do.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Databricks",
+   "posted_at": "2026-10-28T19:55:53.000Z",
+   "metrics": {
+    "likes": 23,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "rechecks": [
+  {
+   "url": "https://x.com/OfficialLoganK/status/2115489284404940898",
+   "result": "12,865 likes (up from 7,413), 1,030 replies. Arena and alphaXiv add Agent Arena #2 and a Terminal-Bench-Science lead; GA still about 2 weeks out. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/NVIDIAAI/status/2115462300241141882",
+   "result": "4,485 likes (up from 2,338), 3.3k bookmarks. No new pushback. Doubt stays 0."
+  },
+  {
+   "url": "https://x.com/github/status/2115480207469560109",
+   "result": "290 likes (up from 114). No new pushback. Doubt stays 0."
+  },
+  {
+   "url": "https://x.com/UnslothAI/status/2115453111208919472",
+   "result": "818 likes (up from 570). Doubt stays 0."
+  },
+  {
+   "url": "https://x.com/claudeai/status/2115467192276025500",
+   "result": "18,099 likes (up from 10,265), 2.96M views. No technical pushback. Doubt stays 0."
+  },
+  {
+   "url": "https://x.com/ExaAILabs/status/2115491116485402773",
+   "result": "329 likes (up from 92). Still a vendor-run benchmark. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/NaceAI/status/2115458409407611154",
+   "result": "116 likes (up from 70). No third-party numbers. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/tinkerapi/status/2115497211119456599",
+   "result": "69 likes (up from 17). Still Samaya's own benchmark. Doubt stays 1."
+  }
+ ],
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 0,
+  "kept": 0,
+  "note": "Live bookmarks read for id 1521986356721123328; the 20 newest were all already in seen ids."
+ },
+ "saved_rejected": [],
+ "list_posts_read": 94,
+ "list_pages": 1,
+ "discovery": {
+  "queries": 2,
+  "kept": 0,
+  "note": "Release search (huggingface/arxiv/github links) surfaced only small personal projects and spam; security search surfaced only repeats of tracked CVEs."
+ },
+ "horizon": {
+  "block-dessa": "block.xyz/dessa still shows the demo, a waitlist and 'launch links are coming soon'. One X read returned 0 posts since 18:00Z. No weights, API or paper. No trigger."
+ },
+ "proposed_follows": [],
+ "proposed_follows_note": "follow_mode is browser and this run had no browser, so nothing was followed. No roster account is active yet, so none meet the follow rule.",
+ "skipped": [
+  {
+   "url": "https://x.com/arena/status/2115551386608017411",
+   "reason": "Carbon Agent Arena #2; folded into the Carbon recheck."
+  },
+  {
+   "url": "https://x.com/arena/status/2115533649395503204",
+   "reason": "Carbon first-impressions video; folded into the Carbon recheck."
+  },
+  {
+   "url": "https://x.com/askalphaxiv/status/2115519681918599483",
+   "reason": "Carbon Terminal-Bench-Science claim; folded into the Carbon recheck."
+  },
+  {
+   "url": "https://x.com/ShadajL/status/2115466098174996715",
+   "reason": "Hydro Infinity agent runtime; already kept 2026-10-26."
+  },
+  {
+   "url": "https://x.com/_akhaliq/status/2115563792180588875",
+   "reason": "Tencent Hy-Nomas paper page; model already kept 2026-10-23."
+  },
+  {
+   "url": "https://x.com/ArtificialAnlys/status/2115558752648933831",
+   "reason": "AA-PersonalityBench trait update; benchmark already kept 2026-10-21."
+  },
+  {
+   "url": "https://x.com/mainplaneai/status/2115559446105698791",
+   "reason": "Low-signal open-source launch, no evidence."
+  },
+  {
+   "url": "https://x.com/digisoulhub/status/2115518384989516255",
+   "reason": "Secondhand post about JetBrains ThinkRail, not an original source."
+  },
+  {
+   "url": "https://x.com/francoisfleuret/status/2115530528736633046",
+   "reason": "Reaction only; folded into the speedrun item."
+  }
+ ],
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://x.com/depuschm/status/2115506237726917072",
+   "reason": "CVE-2026-111497 (Node2Shell, Brotli) scanner; CVE already tracked since 2026-10-24/25."
+  },
+  {
+   "url": "https://x.com/In4mationOverld/status/2115519998298878033",
+   "reason": "Node2Shell CISA KEV coverage; already tracked."
+  },
+  {
+   "url": "https://x.com/DFIR_Radar/status/2115550199238324401",
+   "reason": "PHP2Shell chain on a government AD; PHP not in the stack, already covered."
+  },
+  {
+   "url": "https://x.com/YamaTraders22/status/2115536171350593626",
+   "reason": "Roundup repeating the PHP KEV patch deadline; already covered."
+  },
+  {
+   "url": "https://x.com/OpenSILEX/status/2115521297895846269",
+   "reason": "Paper summary on persistent memory injection; research, no incident or patch."
+  },
+  {
+   "url": "https://x.com/HugoValters/status/2115511918500749771",
+   "reason": "WordPress plugin CVEs; not in the stack."
+  },
+  {
+   "url": "https://x.com/Smlay_ero/status/2115547905188827526",
+   "reason": "Recap of October incidents incl. LiteLLM; all previously handled."
+  }
+ ],
+ "errors": []
+}
