@@ -13,6 +13,31 @@
  ],
  "items": [
   {
+   "id": "2026-10-28",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-10-28",
+   "title": "Run LFM3 on the edge, download Ling-3.1-flash, grade OCR output, and more",
+   "summary": "Open weights led the day: Liquid AI's LFM3 edge family, Ant Ling's 560B Ling-3.1-flash under MIT, and two OCR releases from Baidu and OpenBMB. New hard benchmarks for web agents and mergeable code show top models still well short of reliable.",
+   "content_html": "<p>Open weights led the day: Liquid AI&#x27;s LFM3 edge family, Ant Ling&#x27;s 560B Ling-3.1-flash under MIT, and two OCR releases from Baidu and OpenBMB. New hard benchmarks for web agents and mergeable code show top models still well short of reliable.</p><ol><li><a href=\"https://huggingface.co/LiquidAI/LFM3-1.7B\">LiquidAI/LFM3-1.7B</a></li><li><a href=\"https://github.com/Nutlope/hallmark\">Nutlope/hallmark</a></li><li><a href=\"https://github.com/affaan-m/ECC\">affaan-m/ECC</a></li><li><a href=\"https://huggingface.co/baidu/Unlimited-OCR-2\">baidu/Unlimited-OCR-2</a></li><li><a href=\"https://github.com/anomalyco/opencode\">anomalyco/opencode</a></li></ol><p><strong>Possibilities:</strong> No new possibility today. Latest: IT teams must audit local agent tool calls now that installs take one click (2026-10-27)</p><p><strong>Worth watching:</strong> No new video pick today. Latest: Hugging Face Journal Club: Score Centering Stabilizes Off-policy Reinforcement Learning (2026-10-27)</p><p><strong>Constraints:</strong> No new constraint today. Latest: DHS order bars DeepSeek products from federal civilian agencies (2026-10-20)</p><p><strong>Threats:</strong> <a href=\"https://osv.dev/vulnerability/GHSA-f897-62hf-6gxq\">MCP TypeScript SDK HTTP transports lack request limits</a> (high, patched); <a href=\"https://osv.dev/vulnerability/GHSA-h3rc-6mm3-gc2m\">vLLM request-controlled processor code revision allows code execution</a> (high, patched); <a href=\"https://osv.dev/vulnerability/GHSA-g5ff-637f-6q2m\">LiteLLM proxy arbitrary local file read via credentials alias</a> (high, patched)</p>",
+   "content_text": "Open weights led the day: Liquid AI's LFM3 edge family, Ant Ling's 560B Ling-3.1-flash under MIT, and two OCR releases from Baidu and OpenBMB. New hard benchmarks for web agents and mergeable code show top models still well short of reliable. LiquidAI/LFM3-1.7B Nutlope/hallmark affaan-m/ECC baidu/Unlimited-OCR-2 anomalyco/opencode MCP TypeScript SDK servers over HTTP accepted unlimited bodies and batches, enabling unauthenticated denial of service Untrusted vLLM multimodal requests can swap processor code revision, running arbitrary code on remote-code deployments Low-privilege LiteLLM proxy users could read local files, exposing master and provider API keys",
+   "date_published": "2026-10-28T10:51:08Z",
+   "tags": [
+    "agents",
+    "coding",
+    "evals",
+    "infra",
+    "local",
+    "mcp",
+    "memory",
+    "models",
+    "multimodal"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-28.json",
+    "backfilled": false,
+    "capabilities": 399
+   }
+  },
+  {
    "id": "2026-10-27",
    "url": "https://www.cameronsutcliff.com/magpie/2026-10-27",
    "title": "Use computers with Terra, hand agents Gemini media, run MiniMax locally, and more",
@@ -686,28 +711,6 @@
     "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-09-28.json",
     "backfilled": true,
     "capabilities": 51
-   }
-  },
-  {
-   "id": "2026-09-27",
-   "url": "https://www.cameronsutcliff.com/magpie/2026-09-27",
-   "title": "Fine-tune on a small GPU, let agents run research loops, and more",
-   "summary": "Today's strongest items are about doing more with less hardware and handing research loops to agents. Most other items are tooling and plugins around coding agents, with several talks and papers that offer claims but little to run.",
-   "content_html": "<p>Today&#x27;s strongest items are about doing more with less hardware and handing research loops to agents. Most other items are tooling and plugins around coding agents, with several talks and papers that offer claims but little to run.</p><ol><li><a href=\"https://github.com/wshobson/agents\">One plugin marketplace for seven coding agent tools</a>: You can reuse the same agent plugins across Claude Code, Codex, Cursor, OpenCode, GitHub Copilot, Google Antigravity and Pi.</li><li><a href=\"https://www.youtube.com/watch?v=oVsEddfhdxc\">Claude Code and Codex race human researchers</a>: You can see how frontier coding agents perform against human researchers on automated AI research tasks, shared openly.</li><li><a href=\"https://tangled.org/yanndegat.tngl.sh/drawgent\">Drawgent runs a coding agent on Excalidraw</a>: You can steer a coding agent from a live Excalidraw canvas instead of only a text prompt.</li><li><a href=\"https://github.com/gastownhall/beads\">Beads adds memory to your coding agent</a>: You can give a coding agent a persistent memory layer instead of starting each session cold.</li><li><a href=\"https://arxiv.org/abs/2609.22978\">DeepSeek describes Elastic Compute (DSec) in a paper</a>: You can read how DeepSeek frames elastic compute in a new paper.</li></ol>",
-   "content_text": "Today's strongest items are about doing more with less hardware and handing research loops to agents. Most other items are tooling and plugins around coding agents, with several talks and papers that offer claims but little to run. One plugin marketplace for seven coding agent tools Claude Code and Codex race human researchers Drawgent runs a coding agent on Excalidraw Beads adds memory to your coding agent DeepSeek describes Elastic Compute (DSec) in a paper",
-   "date_published": "2026-10-20T15:44:58Z",
-   "tags": [
-    "agents",
-    "coding",
-    "infra",
-    "mcp",
-    "memory",
-    "research"
-   ],
-   "_magpie": {
-    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-09-27.json",
-    "backfilled": true,
-    "capabilities": 80
    }
   }
  ]

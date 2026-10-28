@@ -2,6 +2,130 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-10-28",
+   "headline": "Run LFM3 on the edge, download Ling-3.1-flash, grade OCR output, and more",
+   "events": 399,
+   "sources": 531,
+   "enriched": false,
+   "top": [
+    {
+     "id": "d512d5187519",
+     "title": "LiquidAI/LFM3-1.7B",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "fed4e14dc325",
+     "title": "Nutlope/hallmark",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "ab5596443556",
+     "title": "affaan-m/ECC",
+     "impact": 5,
+     "vendor": "Open source"
+    },
+    {
+     "id": "49db6280227e",
+     "title": "baidu/Unlimited-OCR-2",
+     "impact": 4,
+     "vendor": "Baidu"
+    },
+    {
+     "id": "6813b8a55e39",
+     "title": "anomalyco/opencode",
+     "impact": 4,
+     "vendor": "opencode"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Anthropic",
+    "OpenAI",
+    "NVIDIA",
+    "Google",
+    "Vercel"
+   ],
+   "topics": {
+    "agents": 117,
+    "models": 108,
+    "coding": 101,
+    "multimodal": 66,
+    "infra": 42,
+    "evals": 41,
+    "local": 38,
+    "memory": 38,
+    "mcp": 33,
+    "reverse": 21,
+    "research": 18,
+    "security": 14,
+    "robotics": 10
+   },
+   "kinds": {
+    "video": 90,
+    "social": 89,
+    "blog": 41,
+    "repo": 40,
+    "newsletter": 38,
+    "model": 30,
+    "changelog": 22,
+    "community": 20,
+    "space": 20,
+    "news": 9
+   },
+   "threats": [
+    {
+     "id": "thr-2026-10-27-mcp-typescript-sdk-http-transports-lack-request",
+     "title": "MCP TypeScript SDK HTTP transports lack request limits",
+     "severity": "high",
+     "exploited": null
+    },
+    {
+     "id": "thr-2026-10-27-vllm-request-controlled-processor-code-revision-allows",
+     "title": "vLLM request-controlled processor code revision allows code execution",
+     "severity": "high",
+     "exploited": null
+    },
+    {
+     "id": "thr-2026-10-27-litellm-proxy-arbitrary-local-file-read-via",
+     "title": "LiteLLM proxy arbitrary local file read via credentials alias",
+     "severity": "high",
+     "exploited": null
+    },
+    {
+     "id": "thr-2026-10-27-litellm-proxy-salt-key-reuse-allows-admin",
+     "title": "LiteLLM proxy salt key reuse allows admin escalation",
+     "severity": "high",
+     "exploited": null
+    },
+    {
+     "id": "thr-2026-10-27-mcp-python-sdk-accepts-bearer-tokens-for",
+     "title": "MCP Python SDK accepts bearer tokens for other services",
+     "severity": "medium",
+     "exploited": null
+    },
+    {
+     "id": "thr-2026-10-27-mcp-python-sdk-clients-leak-headers-on",
+     "title": "MCP Python SDK clients leak headers on cross-origin redirects",
+     "severity": "medium",
+     "exploited": null
+    },
+    {
+     "id": "thr-2026-10-27-mcp-python-sdk-client-fetches-server-chosen",
+     "title": "MCP Python SDK client fetches server-chosen schema references",
+     "severity": "medium",
+     "exploited": null
+    },
+    {
+     "id": "thr-2026-10-27-litellm-proxy-reflected-xss-in-sso-debug",
+     "title": "LiteLLM proxy reflected XSS in SSO debug callback",
+     "severity": "medium",
+     "exploited": null
+    }
+   ]
+  },
+  {
    "date": "2026-10-27",
    "headline": "Use computers with Terra, hand agents Gemini media, run MiniMax locally, and more",
    "events": 443,
@@ -2707,5 +2831,5 @@
    }
   }
  ],
- "latest": "2026-10-27"
+ "latest": "2026-10-28"
 }

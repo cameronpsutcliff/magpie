@@ -1,7 +1,586 @@
 {
  "schema": "magpie.threats/1",
- "updated": "2026-10-27",
+ "updated": "2026-10-28",
  "threats": [
+  {
+   "id": "thr-2026-10-27-mcp-typescript-sdk-http-transports-lack-request",
+   "kind": "threat",
+   "category": "ai-framework-vuln",
+   "title": "MCP TypeScript SDK HTTP transports lack request limits",
+   "headline": "MCP TypeScript SDK servers over HTTP accepted unlimited bodies and batches, enabling unauthenticated denial of service",
+   "summary": "MCP servers built with the TypeScript SDK and reachable over HTTP put no limit on POST body size or on the number of messages in a JSON-RPC batch. Large requests could exhaust server memory, and one long batch could block the server from serving anyone else. No credentials were needed unless the application authenticates requests before they reach the SDK.",
+   "severity": "high",
+   "severity_basis": "advisory rating",
+   "exploited": null,
+   "exploited_quote": null,
+   "status": "patched",
+   "act_now": true,
+   "affects": [
+    {
+     "name": "@modelcontextprotocol/sdk",
+     "ecosystem": "npm",
+     "versions": ">= 1.10.0, < 1.30.1"
+    },
+    {
+     "name": "@modelcontextprotocol/server",
+     "ecosystem": "npm",
+     "versions": ">= 2.0.0, < 2.1.0"
+    },
+    {
+     "name": "@modelcontextprotocol/node",
+     "ecosystem": "npm",
+     "versions": ">= 2.0.0, < 2.1.0"
+    },
+    {
+     "name": "@modelcontextprotocol/hono",
+     "ecosystem": "npm",
+     "versions": ">= 2.0.0, < 2.0.1"
+    }
+   ],
+   "fixed_in": [
+    {
+     "name": "@modelcontextprotocol/sdk",
+     "version": "1.30.1"
+    },
+    {
+     "name": "@modelcontextprotocol/server",
+     "version": "2.1.0"
+    },
+    {
+     "name": "@modelcontextprotocol/node",
+     "version": "2.1.0"
+    },
+    {
+     "name": "@modelcontextprotocol/hono",
+     "version": "2.0.1"
+    }
+   ],
+   "actions": [
+    "Update @modelcontextprotocol/sdk to 1.30.1 or later",
+    "Update @modelcontextprotocol/server to 2.1.0 or later",
+    "Update @modelcontextprotocol/node to 2.1.0 or later",
+    "Update @modelcontextprotocol/hono to 2.0.1 or later",
+    "Cap request body size in a reverse proxy until the SDK is upgraded."
+   ],
+   "action_quotes": [
+    {
+     "action": "Cap request body size in a reverse proxy until the SDK is upgraded.",
+     "quote": "If you cannot upgrade yet, cap request body size in a reverse proxy."
+    }
+   ],
+   "who": [
+    "MCP servers built on the TypeScript SDK",
+    "servers reachable over Streamable HTTP by untrusted clients"
+   ],
+   "published": "2026-10-27",
+   "first_seen": "2026-10-28",
+   "updated": "2026-10-28",
+   "cves": [],
+   "kev": false,
+   "doc": "https://osv.dev/vulnerability/GHSA-f897-62hf-6gxq",
+   "sources": [
+    {
+     "name": "OSV.dev",
+     "url": "https://osv.dev/vulnerability/GHSA-f897-62hf-6gxq",
+     "primary": true
+    }
+   ],
+   "quote": "Large requests could exhaust the server's memory, and one long batch could block it from serving anyone else.",
+   "evidence": "official",
+   "incident": null,
+   "children": [],
+   "merged_ids": [],
+   "key": "threat:GHSA-f897-62hf-6gxq",
+   "idents": [
+    "GHSA-f897-62hf-6gxq",
+    "url:osv.dev/vulnerability/GHSA-f897-62hf-6gxq"
+   ],
+   "last_seen": "2026-10-28",
+   "reach": 5,
+   "wide": false
+  },
+  {
+   "id": "thr-2026-10-27-vllm-request-controlled-processor-code-revision-allows",
+   "kind": "threat",
+   "category": "ai-framework-vuln",
+   "title": "vLLM request-controlled processor code revision allows code execution",
+   "headline": "Untrusted vLLM multimodal requests can swap processor code revision, running arbitrary code on remote-code deployments",
+   "summary": "Importing a Python module is arbitrary code execution in the vLLM API/renderer process.",
+   "severity": "high",
+   "severity_basis": "advisory rating",
+   "exploited": null,
+   "exploited_quote": null,
+   "status": "patched",
+   "act_now": true,
+   "affects": [
+    {
+     "name": "vllm",
+     "ecosystem": "PyPI",
+     "versions": ">= 0.7.3, < 0.31.0"
+    }
+   ],
+   "fixed_in": [
+    {
+     "name": "vllm",
+     "version": "0.31.0"
+    }
+   ],
+   "actions": [
+    "Update vllm to 0.31.0 or later",
+    "Keep trust_remote_code disabled where it is not required.",
+    "Put the tokenize endpoint behind authentication."
+   ],
+   "action_quotes": [
+    {
+     "action": "Keep trust_remote_code disabled where it is not required.",
+     "quote": "The default trust_remote_code=False configuration is not affected."
+    },
+    {
+     "action": "Put the tokenize endpoint behind authentication.",
+     "quote": "Protect /tokenize with the configured authentication policy as defense in depth."
+    }
+   ],
+   "who": [
+    "vLLM operators with trust_remote_code enabled",
+    "deployments serving multimodal models with dynamic processor code"
+   ],
+   "published": "2026-10-27",
+   "first_seen": "2026-10-28",
+   "updated": "2026-10-28",
+   "cves": [
+    "CVE-2026-114053"
+   ],
+   "kev": false,
+   "doc": "https://osv.dev/vulnerability/GHSA-h3rc-6mm3-gc2m",
+   "sources": [
+    {
+     "name": "OSV.dev",
+     "url": "https://osv.dev/vulnerability/GHSA-h3rc-6mm3-gc2m",
+     "primary": true
+    }
+   ],
+   "quote": "Importing a Python module is arbitrary code execution in the vLLM API/renderer process.",
+   "evidence": "official",
+   "incident": null,
+   "children": [],
+   "merged_ids": [],
+   "key": "threat:GHSA-h3rc-6mm3-gc2m",
+   "idents": [
+    "CVE-2026-114053",
+    "GHSA-h3rc-6mm3-gc2m",
+    "url:osv.dev/vulnerability/GHSA-h3rc-6mm3-gc2m"
+   ],
+   "last_seen": "2026-10-28",
+   "reach": 2,
+   "wide": false
+  },
+  {
+   "id": "thr-2026-10-27-litellm-proxy-arbitrary-local-file-read-via",
+   "kind": "threat",
+   "category": "ai-framework-vuln",
+   "title": "LiteLLM proxy arbitrary local file read via credentials alias",
+   "headline": "Low-privilege LiteLLM proxy users could read local files, exposing master and provider API keys",
+   "summary": "Reading environment files can disclose the master key and provider API keys, escalating to full proxy-admin control.",
+   "severity": "high",
+   "severity_basis": "advisory rating",
+   "exploited": null,
+   "exploited_quote": null,
+   "status": "patched",
+   "act_now": true,
+   "affects": [
+    {
+     "name": "litellm",
+     "ecosystem": "PyPI",
+     "versions": "< 1.95.0"
+    }
+   ],
+   "fixed_in": [
+    {
+     "name": "litellm",
+     "version": "1.95.0"
+    }
+   ],
+   "actions": [
+    "Update litellm to 1.95.0 or later"
+   ],
+   "action_quotes": [],
+   "who": [
+    "LiteLLM proxy operators",
+    "deployments granting internal_user_viewer through SSO"
+   ],
+   "published": "2026-10-27",
+   "first_seen": "2026-10-28",
+   "updated": "2026-10-28",
+   "cves": [],
+   "kev": false,
+   "doc": "https://osv.dev/vulnerability/GHSA-g5ff-637f-6q2m",
+   "sources": [
+    {
+     "name": "OSV.dev",
+     "url": "https://osv.dev/vulnerability/GHSA-g5ff-637f-6q2m",
+     "primary": true
+    }
+   ],
+   "quote": "Reading files such as /proc/self/environ can disclose LITELLM_MASTER_KEY and provider API keys, so the impact can escalate to full proxy-admin control.",
+   "evidence": "official",
+   "incident": null,
+   "children": [],
+   "merged_ids": [],
+   "key": "threat:GHSA-g5ff-637f-6q2m",
+   "idents": [
+    "GHSA-g5ff-637f-6q2m",
+    "url:osv.dev/vulnerability/GHSA-g5ff-637f-6q2m"
+   ],
+   "last_seen": "2026-10-28",
+   "reach": 2,
+   "wide": false
+  },
+  {
+   "id": "thr-2026-10-27-litellm-proxy-salt-key-reuse-allows-admin",
+   "kind": "threat",
+   "category": "ai-framework-vuln",
+   "title": "LiteLLM proxy salt key reuse allows admin escalation",
+   "headline": "LiteLLM internal users could forge admin tokens and run arbitrary commands on the proxy host",
+   "summary": "An internal user could request an API key with a forged admin credential in its metadata, then present the encrypted result as a bearer token to gain full administrative access. That access includes executing arbitrary commands through the MCP stdio endpoint.",
+   "severity": "high",
+   "severity_basis": "advisory rating",
+   "exploited": null,
+   "exploited_quote": null,
+   "status": "patched",
+   "act_now": true,
+   "affects": [
+    {
+     "name": "litellm",
+     "ecosystem": "PyPI",
+     "versions": ">= 1.91.0, < 1.100.4"
+    }
+   ],
+   "fixed_in": [
+    {
+     "name": "litellm",
+     "version": "1.100.4"
+    }
+   ],
+   "actions": [
+    "Update litellm to 1.100.4 or later",
+    "Turn off experimental UI login until patched, accepting that CLI SSO and gateway login break."
+   ],
+   "action_quotes": [
+    {
+     "action": "Turn off experimental UI login until patched, accepting that CLI SSO and gateway login break.",
+     "quote": "If you cannot upgrade immediately, set EXPERIMENTAL_UI_LOGIN=false ."
+    }
+   ],
+   "who": [
+    "LiteLLM proxy operators",
+    "deployments with internal_user accounts"
+   ],
+   "published": "2026-10-27",
+   "first_seen": "2026-10-28",
+   "updated": "2026-10-28",
+   "cves": [
+    "CVE-2026-114612"
+   ],
+   "kev": false,
+   "doc": "https://osv.dev/vulnerability/GHSA-7hp6-4w63-5g45",
+   "sources": [
+    {
+     "name": "OSV.dev",
+     "url": "https://osv.dev/vulnerability/GHSA-7hp6-4w63-5g45",
+     "primary": true
+    }
+   ],
+   "quote": "An internal user can escalate to proxy admin and execute arbitrary commands on the host.",
+   "evidence": "official",
+   "incident": null,
+   "children": [],
+   "merged_ids": [],
+   "key": "threat:GHSA-7hp6-4w63-5g45",
+   "idents": [
+    "CVE-2026-114612",
+    "GHSA-7hp6-4w63-5g45",
+    "url:osv.dev/vulnerability/GHSA-7hp6-4w63-5g45"
+   ],
+   "last_seen": "2026-10-28",
+   "reach": 2,
+   "wide": false
+  },
+  {
+   "id": "thr-2026-10-27-mcp-python-sdk-accepts-bearer-tokens-for",
+   "kind": "threat",
+   "category": "ai-framework-vuln",
+   "title": "MCP Python SDK accepts bearer tokens for other services",
+   "headline": "MCP Python SDK servers accepted tokens issued for other services sharing the same authorization server",
+   "summary": "The MCP Python SDK's server-side bearer authentication had no way to check a token's audience. Where one authorization server issues tokens for several services, a valid token for another service was also accepted by the MCP server. Patched versions add an opt-in check that stays off unless configured.",
+   "severity": "medium",
+   "severity_basis": "advisory rating",
+   "exploited": null,
+   "exploited_quote": null,
+   "status": "patched",
+   "act_now": false,
+   "affects": [
+    {
+     "name": "mcp",
+     "ecosystem": "PyPI",
+     "versions": ">= 2.0.0, < 2.2.0"
+    }
+   ],
+   "fixed_in": [
+    {
+     "name": "mcp",
+     "version": "2.2.0"
+    }
+   ],
+   "actions": [
+    "Update mcp to 2.2.0 or later",
+    "Turn on token resource validation after upgrading, since it is off by default.",
+    "Reject tokens whose audience does not include your server in the token verifier."
+   ],
+   "action_quotes": [
+    {
+     "action": "Turn on token resource validation after upgrading, since it is off by default.",
+     "quote": "The patched versions add a validate_token_resource setting that is off unless you set it."
+    },
+    {
+     "action": "Reject tokens whose audience does not include your server in the token verifier.",
+     "quote": "If you cannot upgrade yet, reject any token whose aud does not include your server inside verify_token() ."
+    }
+   ],
+   "who": [
+    "MCP servers using the Python SDK bearer authentication",
+    "servers sharing an authorization server with other services"
+   ],
+   "published": "2026-10-27",
+   "first_seen": "2026-10-28",
+   "updated": "2026-10-28",
+   "cves": [
+    "CVE-2026-116684"
+   ],
+   "kev": false,
+   "doc": "https://osv.dev/vulnerability/GHSA-w4fh-qvv9-3v23",
+   "sources": [
+    {
+     "name": "OSV.dev",
+     "url": "https://osv.dev/vulnerability/GHSA-w4fh-qvv9-3v23",
+     "primary": true
+    }
+   ],
+   "quote": "Where one authorization server issues tokens for several services, a valid token for another service was also accepted by your MCP server.",
+   "evidence": "official",
+   "incident": null,
+   "children": [],
+   "merged_ids": [],
+   "key": "threat:GHSA-w4fh-qvv9-3v23",
+   "idents": [
+    "CVE-2026-116684",
+    "GHSA-w4fh-qvv9-3v23",
+    "url:osv.dev/vulnerability/GHSA-w4fh-qvv9-3v23"
+   ],
+   "last_seen": "2026-10-28",
+   "reach": 2,
+   "wide": false
+  },
+  {
+   "id": "thr-2026-10-27-mcp-python-sdk-clients-leak-headers-on",
+   "kind": "threat",
+   "category": "ai-framework-vuln",
+   "title": "MCP Python SDK clients leak headers on cross-origin redirects",
+   "headline": "MCP Python SDK HTTP clients sent custom credential headers and bodies to any redirect target",
+   "summary": "Anyone able to make a trusted endpoint redirect elsewhere could capture that material.",
+   "severity": "medium",
+   "severity_basis": "advisory rating",
+   "exploited": null,
+   "exploited_quote": null,
+   "status": "patched",
+   "act_now": false,
+   "affects": [
+    {
+     "name": "mcp",
+     "ecosystem": "PyPI",
+     "versions": ">= 2.0.0, < 2.2.0"
+    }
+   ],
+   "fixed_in": [
+    {
+     "name": "mcp",
+     "version": "2.2.0"
+    }
+   ],
+   "actions": [
+    "Update mcp to 2.2.0 or later",
+    "Rotate credentials that a client may have sent through a redirect to an untrusted host."
+   ],
+   "action_quotes": [
+    {
+     "action": "Rotate credentials that a client may have sent through a redirect to an untrusted host.",
+     "quote": "If a client may already have followed a redirect to a host you do not control, rotate the credentials it carried."
+    }
+   ],
+   "who": [
+    "applications using the MCP Python SDK as an HTTP client",
+    "clients sending custom credential headers"
+   ],
+   "published": "2026-10-27",
+   "first_seen": "2026-10-28",
+   "updated": "2026-10-28",
+   "cves": [
+    "CVE-2026-116685"
+   ],
+   "kev": false,
+   "doc": "https://osv.dev/vulnerability/GHSA-5h93-6whr-6q8j",
+   "sources": [
+    {
+     "name": "OSV.dev",
+     "url": "https://osv.dev/vulnerability/GHSA-5h93-6whr-6q8j",
+     "primary": true
+    }
+   ],
+   "quote": "Anyone able to make an endpoint you trust redirect elsewhere (a stale redirect to a lapsed domain, a misrouted proxy rule, redirect logic an attacker can influence) could capture that material.",
+   "evidence": "official",
+   "incident": null,
+   "children": [],
+   "merged_ids": [],
+   "key": "threat:GHSA-5h93-6whr-6q8j",
+   "idents": [
+    "CVE-2026-116685",
+    "GHSA-5h93-6whr-6q8j",
+    "url:osv.dev/vulnerability/GHSA-5h93-6whr-6q8j"
+   ],
+   "last_seen": "2026-10-28",
+   "reach": 2,
+   "wide": false
+  },
+  {
+   "id": "thr-2026-10-27-mcp-python-sdk-client-fetches-server-chosen",
+   "kind": "threat",
+   "category": "ai-framework-vuln",
+   "title": "MCP Python SDK client fetches server-chosen schema references",
+   "headline": "Malicious MCP servers could make Python SDK clients fetch URLs, read local files, or freeze",
+   "summary": "A server could make the client request a URL or read a local file from the client's own network position on every tool call. A target that held the connection open could freeze every session in the client process.",
+   "severity": "medium",
+   "severity_basis": "advisory rating",
+   "exploited": null,
+   "exploited_quote": null,
+   "status": "patched",
+   "act_now": false,
+   "affects": [
+    {
+     "name": "mcp",
+     "ecosystem": "PyPI",
+     "versions": ">= 2.0.0, < 2.2.0"
+    }
+   ],
+   "fixed_in": [
+    {
+     "name": "mcp",
+     "version": "2.2.0"
+    }
+   ],
+   "actions": [
+    "Update mcp to 2.2.0 or later",
+    "Call tools only on trusted servers until upgraded."
+   ],
+   "action_quotes": [
+    {
+     "action": "Call tools only on trusted servers until upgraded.",
+     "quote": "Until you can upgrade, call tools only on servers you trust."
+    }
+   ],
+   "who": [
+    "applications using the MCP Python SDK as a client",
+    "clients calling tools on servers they do not control"
+   ],
+   "published": "2026-10-27",
+   "first_seen": "2026-10-28",
+   "updated": "2026-10-28",
+   "cves": [
+    "CVE-2026-116686"
+   ],
+   "kev": false,
+   "doc": "https://osv.dev/vulnerability/GHSA-rwrf-2pqf-9j8j",
+   "sources": [
+    {
+     "name": "OSV.dev",
+     "url": "https://osv.dev/vulnerability/GHSA-rwrf-2pqf-9j8j",
+     "primary": true
+    }
+   ],
+   "quote": "the fetch ran synchronously on the event loop with no timeout, so a target that accepted the connection and then went quiet froze every session in the process for as long as it held the connection.",
+   "evidence": "official",
+   "incident": null,
+   "children": [],
+   "merged_ids": [],
+   "key": "threat:GHSA-rwrf-2pqf-9j8j",
+   "idents": [
+    "CVE-2026-116686",
+    "GHSA-rwrf-2pqf-9j8j",
+    "url:osv.dev/vulnerability/GHSA-rwrf-2pqf-9j8j"
+   ],
+   "last_seen": "2026-10-28",
+   "reach": 2,
+   "wide": false
+  },
+  {
+   "id": "thr-2026-10-27-litellm-proxy-reflected-xss-in-sso-debug",
+   "kind": "threat",
+   "category": "ai-framework-vuln",
+   "title": "LiteLLM proxy reflected XSS in SSO debug callback",
+   "headline": "Unauthenticated LiteLLM SSO debug route allowed script injection leading to proxy admin account takeover",
+   "summary": "An attacker with an account on the configured identity provider could craft a callback URL and deliver it to a logged-in proxy admin. Scripts running in the proxy origin can read the dashboard session cookie and act with the victim's privileges.",
+   "severity": "medium",
+   "severity_basis": "advisory rating",
+   "exploited": null,
+   "exploited_quote": null,
+   "status": "patched",
+   "act_now": false,
+   "affects": [
+    {
+     "name": "litellm",
+     "ecosystem": "PyPI",
+     "versions": ">= 1.65.5, < 1.85.0"
+    }
+   ],
+   "fixed_in": [
+    {
+     "name": "litellm",
+     "version": "1.85.0"
+    }
+   ],
+   "actions": [
+    "Update litellm to 1.85.0 or later"
+   ],
+   "action_quotes": [],
+   "who": [
+    "LiteLLM proxy admins",
+    "deployments using SSO"
+   ],
+   "published": "2026-10-27",
+   "first_seen": "2026-10-28",
+   "updated": "2026-10-28",
+   "cves": [],
+   "kev": false,
+   "doc": "https://osv.dev/vulnerability/GHSA-hhww-mrg2-969h",
+   "sources": [
+    {
+     "name": "OSV.dev",
+     "url": "https://osv.dev/vulnerability/GHSA-hhww-mrg2-969h",
+     "primary": true
+    }
+   ],
+   "quote": "Scripts executing in the proxy origin can read the dashboard session cookie and act with the victim's privileges, up to full admin account takeover.",
+   "evidence": "official",
+   "incident": null,
+   "children": [],
+   "merged_ids": [],
+   "key": "threat:GHSA-hhww-mrg2-969h",
+   "idents": [
+    "GHSA-hhww-mrg2-969h",
+    "url:osv.dev/vulnerability/GHSA-hhww-mrg2-969h"
+   ],
+   "last_seen": "2026-10-28",
+   "reach": 2,
+   "wide": false
+  },
   {
    "id": "thr-2026-10-23-vllm-multimodal-processor-kwargs-allow-out-of",
    "kind": "threat",
@@ -201,7 +780,7 @@
     "PYSEC-2026-4320",
     "url:osv.dev/vulnerability/GHSA-6q48-6c7w-9gw2"
    ],
-   "last_seen": "2026-10-27",
+   "last_seen": "2026-10-28",
    "reach": 12,
    "wide": true
   },
@@ -432,8 +1011,8 @@
    "kind": "threat",
    "category": "trust-infrastructure",
    "title": "Eight eMudhra intermediate CA private keys compromised",
-   "headline": "Flawed key generation exposed eight eMudhra intermediate CA keys, letting attackers impersonate any website or service",
-   "summary": "The private keys of eight eMudhra intermediate CA certificates were compromised because the CA generated them incorrectly, so anyone can recover them from the certificates. Six are for TLS and chain to roots trusted by the Mozilla, Microsoft, Apple and Chrome root programs. Two are for code signing and trusted by Microsoft. An attacker with any of the keys could impersonate any website or service, and clients that ship their own CA bundle or do not enforce Certificate Transparency are at greater risk.",
+   "headline": "Flawed key generation exposed eMudhra intermediate CA keys, letting attackers impersonate any website or service",
+   "summary": "The private keys of eight eMudhra intermediate CA certificates were incorrectly generated by the CA, so anyone can recover them from the certificates. Six are TLS intermediates trusted by the Chrome, Mozilla, Microsoft and Apple root programs, and two are code signing intermediates trusted by Microsoft. An attacker with any of the keys could impersonate any website or service, and clients that ship their own CA bundle or do not enforce Certificate Transparency are most exposed.",
    "severity": "high",
    "severity_basis": "editor",
    "exploited": null,
@@ -520,12 +1099,12 @@
      "version": "1.27.3, 1.26.10"
     },
     {
-     "name": "Electron",
-     "version": "44.9.1, 43.8.1, 42.11.16"
-    },
-    {
      "name": "curl CA bundle",
      "version": "2026-10-20"
+    },
+    {
+     "name": "Electron",
+     "version": "44.9.1, 43.8.1, 42.11.16"
     },
     {
      "name": "Visual Studio Code",
@@ -542,25 +1121,25 @@
     "Update Node.js to 26.12.1, 24.22.1, 22.23.4 or later",
     "Update Python to 3.15.2, 3.14.10, 3.13.18, 3.12.16, 3.11.18 or later",
     "Update Go to 1.27.3, 1.26.10 or later",
-    "Update Electron to 44.9.1, 43.8.1, 42.11.16 or later",
     "Update curl CA bundle to 2026-10-20 or later",
+    "Update Electron to 44.9.1, 43.8.1, 42.11.16 or later",
     "Update Visual Studio Code to 1.143.1 or later",
-    "Update applications and libraries that ship their own CA bundle, not just the operating system or browser."
+    "Check that tools and apps shipping their own CA bundle no longer trust the compromised intermediates."
    ],
    "action_quotes": [
     {
-     "action": "Update applications and libraries that ship their own CA bundle, not just the operating system or browser.",
+     "action": "Check that tools and apps shipping their own CA bundle no longer trust the compromised intermediates.",
      "quote": "Updating the operating system or browser may not be enough for these clients."
     }
    ],
    "who": [
     "clients that ship their own CA bundle",
     "Electron apps such as Slack and Discord",
-    "non-browser clients that do not enforce Certificate Transparency"
+    "non-browser clients that do not enforce CT, such as curl"
    ],
    "published": "2026-10-20",
    "first_seen": "2026-10-21",
-   "updated": "2026-10-27",
+   "updated": "2026-10-28",
    "cves": [],
    "kev": false,
    "doc": "https://emudhra.we-have-a-problem.com/",
@@ -586,8 +1165,7 @@
    "incident": null,
    "children": [
     "thr-2026-10-20-certifi-bundle-includes-root-with-compromised-intermediates",
-    "thr-2026-10-20-uv-bundled-ca-store-trusts-compromised-emsign",
-    "thr-2026-10-20-rustls-webpki-may-accept-distrusted-emsign-intermediates"
+    "thr-2026-10-20-uv-bundled-ca-store-trusts-compromised-emsign"
    ],
    "merged_ids": [],
    "key": "threat:url:emudhra.we-have-a-problem.com",
@@ -597,8 +1175,8 @@
     "url:emudhra.we-have-a-problem.com",
     "url:groups.google.com/a/mozilla.org/g/dev-security-policy/c/0R3XLJL6FuE"
    ],
-   "last_seen": "2026-10-27",
-   "reach": 37,
+   "last_seen": "2026-10-28",
+   "reach": 34,
    "wide": true
   },
   {
