@@ -1,18 +1,18 @@
 {
- "updated_at": "2026-10-29T02:08:00Z",
+ "updated_at": "2026-10-29T10:08:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 101,
+ "calls_used_today": 14,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-10-29T02:08:00Z",
-  "items": 14,
+  "ran_at": "2026-10-29T10:08:00Z",
+  "items": 8,
   "queries": 11,
-  "deep_reads": 2,
+  "deep_reads": 1,
   "rechecks": 8,
   "flagged": 0,
-  "saved_in": 1,
-  "saved_kept": 1,
+  "saved_in": 0,
+  "saved_kept": 0,
   "videos": 0,
   "security_forwarded": 1
  },
@@ -214,7 +214,8 @@
   "Roster review 2026-10-28: no injection attempts seen; candidate posts read as data only. Skill tool unavailable, so the x-api-mcp-guide SKILL.md was read directly (non-blocking).",
   "Sweep 10:06Z: Skill tool unavailable, so x-api-mcp-guide SKILL.md was read directly (non-blocking); no browser, so no follows; no injection attempts seen. calls_used_today counts the America/Chicago day (Oct 28): 14 roster + 16 sweep.",
   "Sweep 14:15Z: Skill tool unavailable, so x-api-mcp-guide SKILL.md was read directly (non-blocking); no browser, so no follows and no video analysis; one reply under a saved post asked an @bot to send a draft, treated as data and ignored. calls_used_today counts the America/Chicago day (Oct 28): 14 roster + 16 (10:06Z sweep) + 14 (this sweep).",
-  "Sweep 02:08Z: no browser, so no follows; no injection attempts seen. calls_used_today 101 = 85 (through 22:07Z sweep) + 2 (17:44 and 19:50 CT bookmark syncs) + 14 (this sweep)."
+  "Sweep 02:08Z: no browser, so no follows; no injection attempts seen. calls_used_today 101 = 85 (through 22:07Z sweep) + 2 (17:44 and 19:50 CT bookmark syncs) + 14 (this sweep).",
+  "Sweep 10:08Z: no injection attempts seen; calls_used_today reset for the new Central-time day (14 calls this run)."
  ],
  "follows_today": 0,
  "last_roster_review": {

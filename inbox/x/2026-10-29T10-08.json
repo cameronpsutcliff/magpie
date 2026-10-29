@@ -1,0 +1,407 @@
+{
+ "ran_at": "2026-10-29T10:08:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-10-29T02:08:00Z",
+ "queries": 11,
+ "calls": 14,
+ "items": [
+  {
+   "title": "UBTree: parallel tree drafting gives about 3.4x faster decoding for Ling-3.0, with drafters released on Hugging Face",
+   "url": "https://x.com/TheInclusionAI/status/2115717790271508660",
+   "handle": "@TheInclusionAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "A unigram proposer suggests candidate tokens and a bigram selector links them into a draft tree built fully in parallel. On Ling-3.0-flash (124B) with 4 GPUs it reports about 1,010 output tokens per second at concurrency 1, a 3.43x average end-to-end speedup over plain decoding across six benchmarks. Drafters for Ling-3.0-tiny-8B and Ling-3.0-flash-124B are out now, with more promised.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/inclusionAI/Ling-3.0-flash-UBTree",
+    "https://huggingface.co/inclusionAI/Ling-3.0-tiny-UBTree",
+    "https://www.inclusion-ai.org/ubtree/UBTree.pdf"
+   ],
+   "vendor": "inclusionAI",
+   "posted_at": "2026-10-29T08:10:03.000Z",
+   "metrics": {
+    "likes": 10,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Ling-3.0-flash on a single DGX Spark: decode up 42.5% (37.8 to 53.9 tok/s) after NVIDIA-assisted tuning",
+   "url": "https://x.com/AntLingAGI/status/2115680331399664105",
+   "handle": "@AntLingAGI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Ant Ling and NVIDIA applied three inference optimizations to the open-weight Ling-3.0-flash on one DGX Spark. Over 1,319 GSM8K questions, decode throughput rose 42.5% and mean latency fell 24.5% (15.2 s to 11.5 s) with no measurable accuracy change. Useful as a reference for running a large open MoE on the Spark.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Ant Ling",
+   "posted_at": "2026-10-29T05:41:13.000Z",
+   "metrics": {
+    "likes": 76,
+    "reposts": 2,
+    "quotes": 3,
+    "replies": 6
+   },
+   "confirmed_by": [
+    "@NVIDIAAI"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "tinygrad tinybox red kimi: Kimi K3 at home at 40 tok/s interactive for $30k",
+   "url": "https://x.com/__tinygrad__/status/2115629981296726455",
+   "handle": "@__tinygrad__",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A new tinybox build aimed at running the Kimi K3 frontier model locally. A follow-up diagram shows tinygrad driving the NVMe drives directly from the AMD GPUs, so weights that do not fit in GPU memory stream from disk.",
+   "kind": "tool",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/__tinygrad__/status/2115642402417614959"
+   ],
+   "vendor": "tiny corp",
+   "posted_at": "2026-10-29T02:21:08.000Z",
+   "metrics": {
+    "likes": 333,
+    "reposts": 6,
+    "quotes": 7,
+    "replies": 30
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Replies ask for a benchmark, the quantization used, and whether 40 tok/s is single-session or aggregate; none answered. One reply could not find it on the site yet.",
+    "source": "https://x.com/marksaroufim/status/2115663496994304364"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Interest from people weighing it against Mac Studios and DGX boxes, but no published bench, quant or availability date.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "DCOCO: a light corrector fixes inconsistent parallel drafts in speculative decoding, up to 6.6x faster",
+   "url": "https://x.com/askalphaxiv/status/2115698713867989259",
+   "handle": "@askalphaxiv",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Parallel drafting proposes several tokens at once but they do not know which earlier tokens were accepted. DCOCO scores token combinations in parallel with a small corrector, reporting up to 6.6x faster decoding than standard generation on four LLMs and 8-19% more throughput than other speculative methods.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://alphaxiv.org/abs/2610.12570"
+   ],
+   "vendor": null,
+   "posted_at": "2026-10-29T06:54:15.000Z",
+   "metrics": {
+    "likes": 32,
+    "reposts": 5,
+    "quotes": 3,
+    "replies": 4
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Looped Prediction Transformer: sharing one KV cache across loops cuts context memory up to 79% and improves perplexity",
+   "url": "https://x.com/askalphaxiv/status/2115698419578847350",
+   "handle": "@askalphaxiv",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Instead of a separate KV cache per loop, the first loop builds a shared cache and later loops keep only a small window of their own. Across 150M to 1B models it improves perplexity and accuracy; at 1B the hybrid has 10% lower perplexity than a standard Transformer, though at much higher inference compute.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://www.alphaxiv.org/abs/2610.02383"
+   ],
+   "vendor": null,
+   "posted_at": "2026-10-29T06:53:05.000Z",
+   "metrics": {
+    "likes": 60,
+    "reposts": 5,
+    "quotes": 1,
+    "replies": 9
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Amp adds macOS Satellites: agents spawn Macs on demand to build, test and run iOS and macOS apps",
+   "url": "https://x.com/hameonline/status/2115687637378081177",
+   "handle": "@hameonline",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Amp agents can now start a Mac to build and test Apple-platform apps. Amp's Quinn Slack says they measured that even macOS-heavy work needs a Mac only about 35% of the time, so the Mac is attached only when needed, which makes it faster and cheaper.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://ampcode.com/news/macos-satellites"
+   ],
+   "vendor": "Amp",
+   "posted_at": "2026-10-29T06:10:05.000Z",
+   "metrics": {
+    "likes": 134,
+    "reposts": 10,
+    "quotes": 16,
+    "replies": 20
+   },
+   "confirmed_by": [
+    "@sqs"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "tracekit for Hermes Agent: tool calls are allowed, blocked or held for approval before they run, with a tamper-evident run log",
+   "url": "https://x.com/witcheer/status/2115639775789223991",
+   "handle": "@witcheer",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "A community plugin by Cygnux Labs. In a scripted test, ls was allowed, a download piped into a shell was blocked, and a remote branch delete waited for approval. Editing the run file afterward to mark the blocked call as allowed made the log check fail at that record.",
+   "kind": "tool",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Cygnux Labs",
+   "posted_at": "2026-10-29T03:00:03.000Z",
+   "metrics": {
+    "likes": 19,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 4
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "OpenBMB ForgeKernel tops the FIB track of NVIDIA's SOL Bench and Huawei's CANNBench, now live-optimizing a DeepSeek MLA kernel",
+   "url": "https://x.com/OpenBMB/status/2115631957564608554",
+   "handle": "@OpenBMB",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "OpenBMB's self-improving kernel agent writes GPU kernels from math and hardware limits alone, without reference code. It is streaming an attempt to beat expert implementations of DeepSeek V4.1's MLA kernel, with a public results page.",
+   "kind": "tool",
+   "evidence": "claim",
+   "links": [
+    "https://openbmb.cn/forgekernel/",
+    "https://x.com/i/broadcasts/2LPbqbgpZXaogj"
+   ],
+   "vendor": "OpenBMB",
+   "posted_at": "2026-10-29T02:28:59.000Z",
+   "metrics": {
+    "likes": 11,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 3
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": "Benchmark rankings are self-reported; no paper or code linked yet."
+   }
+  }
+ ],
+ "rechecks": [
+  {
+   "url": "https://x.com/OpenAIDevs/status/2115583698074755078",
+   "result": "7,147 likes (up from 4,161), 616 reposts. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/dmwlff/status/2115614417689944066",
+   "result": "1,219 likes (up from 337). Doubt stays 0."
+  },
+  {
+   "url": "https://x.com/xiangxiang103/status/2115449381646393655",
+   "result": "59 likes (up from 44). Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/FireworksAI_HQ/status/2115541438457164235",
+   "result": "42 likes (up from 23). Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/OpenRouter/status/2115564621717512295",
+   "result": "107 likes (up from 2). Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/ExaAILabs/status/2115491116485402773",
+   "result": "639 likes (up from 92). Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/NaceAI/status/2115458409407611154",
+   "result": "180 likes (up from 70). Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/tinkerapi/status/2115497211119456599",
+   "result": "138 likes (up from 17). Doubt stays 1."
+  }
+ ],
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 0,
+  "kept": 0,
+  "note": "Live bookmarks read for id 1521986356721123328; all 20 already in seen ids (the 23:50 CT sync captured the last new save, kept in the 02:08Z sweep)."
+ },
+ "saved_rejected": [],
+ "list_posts_read": 97,
+ "list_pages": 1,
+ "discovery": {
+  "queries": 2,
+  "kept": 0,
+  "note": "Release search (huggingface/arxiv/github links) returned mostly reshares of Nemotron 3.5 Transcribe and small papers. Security search surfaced the new Langflow 1.12.3 bulletin and the mcp-remote SSRF, plus repeats."
+ },
+ "horizon": {
+  "block-dessa": "block.xyz/dessa unchanged (demo recordings and waitlist only). One X read found no posts since the last check. No weights, API or paper. No trigger."
+ },
+ "proposed_follows": [],
+ "proposed_follows_note": "follow_mode is browser and this run had no browser, so nothing was followed. No roster account is active yet, so none meet the follow rule.",
+ "skipped": [
+  {
+   "url": "https://x.com/SakanaAILabs/status/2115720393369473344",
+   "reason": "Election analysis case study (Japanese); not a dev capability."
+  },
+  {
+   "url": "https://x.com/SakanaAILabs/status/2115700588457660571",
+   "reason": "Policy breakfast with the German chancellor; no capability."
+  },
+  {
+   "url": "https://x.com/RaiaHadsell/status/2115640070686613975",
+   "reason": "Points to the softmax and cross-entropy fix already kept 2026-10-24."
+  },
+  {
+   "url": "https://x.com/addyosmani/status/2115688494865465370",
+   "reason": "Article of Claude Code prompting tips for Opus 5.5; guidance recap, no new capability."
+  },
+  {
+   "url": "https://x.com/akshay_pachaar/status/2115710763721769265",
+   "reason": "Sponsored Deepgram Flux TTS post (author says he worked with Deepgram on it)."
+  },
+  {
+   "url": "https://x.com/aitrackerbot/status/2115667559630373301",
+   "reason": "Unreleased GPT Image 2.6 spotted in API docs; leak, not a release."
+  },
+  {
+   "url": "https://x.com/plotarmordev/status/2115720119599218855",
+   "reason": "Qwen4 1M-context default spotted in a Qwen Code PR; leak, placeholder spec."
+  },
+  {
+   "url": "https://x.com/mitsuhiko/status/2115720960309432630",
+   "reason": "Opinion joke about terminal coding agents."
+  },
+  {
+   "url": "https://x.com/sqs/status/2115745449676268016",
+   "reason": "Feature-priority poll."
+  },
+  {
+   "url": "https://x.com/Lovable/status/2115716542713434518",
+   "reason": "Office opening and hiring."
+  },
+  {
+   "url": "https://x.com/sudoingX/status/2115640012557660266",
+   "reason": "Opinion on DeepSeek V4.1 Flash, no measurement."
+  },
+  {
+   "url": "https://x.com/vllm_project/status/2115717884089602423",
+   "reason": "Meetup announcement."
+  },
+  {
+   "url": "https://x.com/trq212/status/2115641110710419752",
+   "reason": "Opinion on AI in creative work."
+  },
+  {
+   "url": "https://x.com/teortaxesTex/status/2115703319733702665",
+   "reason": "Model commentary, no new data."
+  },
+  {
+   "url": "https://x.com/HUNTER_z1389/status/2115680276634563048",
+   "reason": "Nanbeige4.3-33B already kept earlier this week."
+  },
+  {
+   "url": "https://x.com/KovaAIlabs/status/2115631951507775850",
+   "reason": "DAMS 27B: vendor numbers, mixed vs base, no engagement; recheck if it gets traction."
+  },
+  {
+   "url": "https://x.com/Mhmadhassnz/status/2115634164296987088",
+   "reason": "AI-detector evasion model; not a dev capability."
+  },
+  {
+   "url": "https://x.com/ng_hoaiphu/status/2115627324221927768",
+   "reason": "Nemotron 3.5 Transcribe reshare; already kept."
+  }
+ ],
+ "security_forwarded": [
+  {
+   "url": "https://x.com/atikbytes/status/2115710110639026660",
+   "matched": "always_forward: agent tooling. (1) IBM bulletin for Langflow 1.0.0 to 1.12.2: two unauthenticated 9.8 RCEs, CVE-2026-104334 (GHSA-74xw-7rg4-6p4c, code injection) and CVE-2026-93674 (GHSA-xhw9-mf2x-qh4j, OS command injection), plus sandbox escape, path traversal and credential exposure; fix is 1.12.3, which supersedes the 1.10.3 advice from 2026-10-28. (2) mcp-remote 0.1.32 to 0.1.38 SSRF during OAuth (CVE-2026-51994, GHSA-8rrr-xx35-4q6h, critical): a malicious MCP server can make it fetch localhost, LAN or cloud metadata URLs; used to connect Claude Desktop, Cursor or Windsurf to remote MCP servers. Both verified in the GitHub advisory database. Neither Langflow nor mcp-remote is installed on the box; neither is in stack.json, so fleet use is unknown."
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/Joshua_WD/status/2115698536570323222",
+   "reason": "eMudhra compromised certs still trusted by macOS git/curl/python3; already in threats.json and covered 2026-10-28."
+  },
+  {
+   "url": "https://x.com/yogsec/status/2115712770713010387",
+   "reason": "CVE roundup: Brotli/Node CVE-2026-111497 already tracked (box Node 24.22.1 and Mini/Air 26.12.1 and 22.23.4 are fixed versions; Spark libbrotli triage already open); Magento, GitLab and PHP2Shell not in the stack."
+  },
+  {
+   "url": "https://x.com/aiseceng/status/2115715425640050959",
+   "reason": "LiteLLM 1.107.0 credential theft recap; already handled 2026-10-22."
+  },
+  {
+   "url": "https://x.com/vibgrate/status/2115721613559714023",
+   "reason": "LiteLLM hardening write-up; same incident, already handled."
+  },
+  {
+   "url": "https://x.com/f1tym1/status/2115747843898048781",
+   "reason": "LiteLLM supply chain recap; already handled."
+  }
+ ],
+ "errors": []
+}
