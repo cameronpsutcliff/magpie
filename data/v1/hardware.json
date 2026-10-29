@@ -1,6 +1,6 @@
 {
  "schema": "magpie.hardware/1",
- "updated": "2026-10-28",
+ "updated": "2026-10-29",
  "devices": [
   {
    "id": "rtx-5090",

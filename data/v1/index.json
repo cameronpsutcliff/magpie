@@ -2,6 +2,124 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-10-29",
+   "headline": "Google ships Gemini 4 Carbon, NVIDIA opens speech recognition, Copilot routes models, and more",
+   "events": 425,
+   "sources": 531,
+   "enriched": true,
+   "top": [
+    {
+     "id": "7b4d011d4e58",
+     "title": "NVIDIA Nemotron 3.5 Transcribe: open 30B MoE speech model",
+     "impact": 4,
+     "vendor": "NVIDIA"
+    },
+    {
+     "id": "799dc88c4fa1",
+     "title": "PyTorch 2.15 defaults to rewritten NCCL backend",
+     "impact": 4,
+     "vendor": "PyTorch"
+    },
+    {
+     "id": "83b61bd096f8",
+     "title": "ggml v0.28.0 adds fused sparse-attention mask op",
+     "impact": 4,
+     "vendor": "ggml"
+    },
+    {
+     "id": "474d47274f6a",
+     "title": "GitHub Copilot Fusion routes models for you, now GA",
+     "impact": 4,
+     "vendor": "GitHub"
+    },
+    {
+     "id": "21de2059ba8b",
+     "title": "Google announces Gemini 4 Carbon frontier model",
+     "impact": 5,
+     "vendor": "Google"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Anthropic",
+    "Google",
+    "GitHub",
+    "OpenAI",
+    "Vercel"
+   ],
+   "topics": {
+    "models": 141,
+    "agents": 131,
+    "coding": 118,
+    "multimodal": 76,
+    "infra": 49,
+    "local": 42,
+    "memory": 39,
+    "evals": 37,
+    "mcp": 35,
+    "security": 29,
+    "research": 15,
+    "reverse": 14,
+    "robotics": 8
+   },
+   "kinds": {
+    "social": 118,
+    "video": 90,
+    "blog": 46,
+    "repo": 35,
+    "newsletter": 34,
+    "model": 30,
+    "changelog": 28,
+    "space": 20,
+    "community": 17,
+    "news": 7
+   },
+   "threats": [
+    {
+     "id": "thr-2026-10-29-twca-registration-authority-server-accessed-without-authoriz",
+     "title": "TWCA Registration Authority server accessed without authorization",
+     "severity": "medium",
+     "exploited": null
+    },
+    {
+     "id": "thr-2026-10-28-vllm-image-loader-passes-eps-input-to",
+     "title": "vLLM image loader passes EPS input to Ghostscript",
+     "severity": "high",
+     "exploited": null
+    },
+    {
+     "id": "thr-2026-10-28-vllm-shared-memory-multimodal-cache-allows-forged",
+     "title": "vLLM shared-memory multimodal cache allows forged pickle loading",
+     "severity": "high",
+     "exploited": null
+    },
+    {
+     "id": "thr-2026-10-28-vllm-phi-4-multimodal-audio-encoder-memory",
+     "title": "vLLM Phi-4 multimodal audio encoder memory exhaustion",
+     "severity": "medium",
+     "exploited": null
+    },
+    {
+     "id": "thr-2026-10-28-vllm-deepseek-ocr-image-validation-crashes-the",
+     "title": "vLLM DeepSeek-OCR image validation crashes the engine",
+     "severity": "medium",
+     "exploited": null
+    },
+    {
+     "id": "thr-2026-10-28-vllm-out-of-vocabulary-token-id-crashes",
+     "title": "vLLM out-of-vocabulary token id crashes the engine",
+     "severity": "medium",
+     "exploited": null
+    },
+    {
+     "id": "thr-2026-10-28-vllm-chat-template-rendering-lacks-limits-enabling",
+     "title": "vLLM chat template rendering lacks limits, enabling denial of service",
+     "severity": "medium",
+     "exploited": null
+    }
+   ]
+  },
+  {
    "date": "2026-10-28",
    "headline": "LFM3-1.7B, graphify, ECC, and more",
    "events": 306,
@@ -2781,5 +2899,5 @@
    }
   }
  ],
- "latest": "2026-10-28"
+ "latest": "2026-10-29"
 }

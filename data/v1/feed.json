@@ -13,6 +13,29 @@
  ],
  "items": [
   {
+   "id": "2026-10-29",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-10-29",
+   "title": "Google ships Gemini 4 Carbon, NVIDIA opens speech recognition, Copilot routes models, and more",
+   "summary": "Open weights lead the day: NVIDIA's speech model, two small Liquid AI models, and new speed and infrastructure work in UBTree, ggml and PyTorch 2.15. GitHub moves Copilot toward model routing and team context, while Google announces Gemini 4 Carbon on its own claims.",
+   "content_html": "<p>Open weights lead the day: NVIDIA&#x27;s speech model, two small Liquid AI models, and new speed and infrastructure work in UBTree, ggml and PyTorch 2.15. GitHub moves Copilot toward model routing and team context, while Google announces Gemini 4 Carbon on its own claims.</p><p><strong>Teams can now run a large open-weight transcription model from NVIDIA on their own hardware under a permissive license.</strong> The 30B mixture-of-experts model is under Apache-2.0, so builders can transcribe client audio without sending it to a hosted API. That matters most for buyers with strict data-handling rules. NVIDIA gives no accuracy or speed numbers, so test it on your own audio before switching.</p><p><strong>The plumbing under local inference and multi-GPU training both changed, and builders will inherit it on their next upgrade.</strong> ggml now fuses a top-k sparse-attention mask on CPU, CUDA and Metal, and its changes flow into the local inference tools many builders use. PyTorch 2.15 makes a rewritten NCCL backend the default, which touches every multi-GPU training job. Neither project gives speed numbers, so rerun your own benchmarks after upgrading.</p><p><strong>Choosing which model handles a task is moving from the team to the vendor.</strong> Copilot Fusion lets GitHub pick and orchestrate models per task, so teams stop managing that choice themselves. Google&#x27;s Gemini 4 Carbon is pitched as strong on long tasks and cybersecurity, the kind of work such routing would send to it. There is no data yet on Fusion&#x27;s routing quality or cost, and the Gemini claims rest only on Google&#x27;s own post.</p><ol><li><a href=\"https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B\">NVIDIA Nemotron 3.5 Transcribe: open 30B MoE speech model</a>: You can download an open-weight 30B mixture-of-experts speech-to-text model from NVIDIA under Apache-2.0.</li><li><a href=\"https://x.com/PyTorch/status/2115501310233456900\">PyTorch 2.15 defaults to rewritten NCCL backend</a>: You get a rewritten NCCL backend by default, one-sided transports through a NIXL backend, and updates to FSDP2, NVGEMM and Apple Silicon support.</li><li><a href=\"https://x.com/ggml_org/status/2115407817808945355\">ggml v0.28.0 adds fused sparse-attention mask op</a>: You get a fused top-k sparse-attention mask op on CPU, CUDA and Metal, plus MoE fusions and new kernels across many backends.</li><li><a href=\"https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion\">GitHub Copilot Fusion routes models for you, now GA</a>: You can pick Copilot Fusion and let Copilot choose and orchestrate which models handle each task.</li><li><a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/\">Google announces Gemini 4 Carbon frontier model</a>: Builders can now evaluate a Google model that Google calls its strongest, with state-of-the-art cybersecurity and long horizon capabilities.</li></ol><p><strong>New possibility:</strong> Security consultancies can sell long unattended code audits with self-verified findings</p><p><strong>Worth watching:</strong> <a href=\"https://www.youtube.com/watch?v=LYh3jnRnC5A\">Flint: A Local Coding Model With an AI-Picked Architecture</a>; <a href=\"https://www.youtube.com/watch?v=NBCM_ZoWZo8\">How To Give Claude Unlimited Usage</a>; <a href=\"https://www.youtube.com/watch?v=YIhvrvHtonk\">We Kept Rebuilding Our AI Agent. Here&#x27;s What Survived - Fuad Ali, Arize AI</a></p><p><strong>Constraints:</strong> No new constraint today. Latest: DHS order bars DeepSeek products from federal civilian agencies (2026-10-20)</p><p><strong>Threats:</strong> <a href=\"https://bugzilla.mozilla.org/show_bug.cgi?id=2086949\">TWCA Registration Authority server accessed without authorization</a> (medium (editor&#x27;s estimate), active); <a href=\"https://osv.dev/vulnerability/GHSA-h3rc-j82p-2c3h\">vLLM image loader passes EPS input to Ghostscript</a> (high, patched); <a href=\"https://osv.dev/vulnerability/GHSA-6757-hggm-hp2w\">vLLM shared-memory multimodal cache allows forged pickle loading</a> (high, patched)</p>",
+   "content_text": "Open weights lead the day: NVIDIA's speech model, two small Liquid AI models, and new speed and infrastructure work in UBTree, ggml and PyTorch 2.15. GitHub moves Copilot toward model routing and team context, while Google announces Gemini 4 Carbon on its own claims. NVIDIA Nemotron 3.5 Transcribe: open 30B MoE speech model PyTorch 2.15 defaults to rewritten NCCL backend ggml v0.28.0 adds fused sparse-attention mask op GitHub Copilot Fusion routes models for you, now GA Google announces Gemini 4 Carbon frontier model TWCA reports unauthorized access to its Registration Authority server; investigation is ongoing vLLM image requests can reach host Ghostscript, enabling command execution on vulnerable hosts Authenticated vLLM callers can run arbitrary Python in workers when SHM multimodal caching is enabled",
+   "date_published": "2026-10-29T10:50:35Z",
+   "tags": [
+    "agents",
+    "coding",
+    "infra",
+    "local",
+    "models",
+    "multimodal",
+    "security"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-29.json",
+    "backfilled": false,
+    "capabilities": 425
+   }
+  },
+  {
    "id": "2026-10-28",
    "url": "https://www.cameronsutcliff.com/magpie/2026-10-28",
    "title": "LFM3-1.7B, graphify, ECC, and more",
@@ -687,29 +710,6 @@
     "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-09-29.json",
     "backfilled": true,
     "capabilities": 85
-   }
-  },
-  {
-   "id": "2026-09-28",
-   "url": "https://www.cameronsutcliff.com/magpie/2026-09-28",
-   "title": "Run any model locally, clone voices offline, and manage coding agents from one terminal, and more",
-   "summary": "Most of today's strongest items are open-source tools that bundle existing capabilities into easier packages. The rest is commentary, legal news and opinion, so genuinely new capability is thin.",
-   "content_html": "<p>Most of today&#x27;s strongest items are open-source tools that bundle existing capabilities into easier packages. The rest is commentary, legal news and opinion, so genuinely new capability is thin.</p><ol><li><a href=\"https://github.com/NVIDIA/Model-Optimizer\">NVIDIA Model-Optimizer bundles compression techniques for faster inference</a>: You can apply quantization, distillation, pruning and speculative decoding from one library, then deploy to TensorRT-LLM or vLLM.</li><li><a href=\"https://github.com/mudler/LocalAI\">LocalAI runs LLMs, vision, voice and video locally</a>: You can serve many model types behind one open-source engine on your own hardware, with no GPU required.</li><li><a href=\"https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5\">Official prompting guide for Claude Opus 5.5</a>: You can follow vendor guidance to tune prompts for Claude Opus 5.5.</li><li><a href=\"https://github.com/YoanWai/agent-manager\">Agent-manager tracks coding agents from one tmux TUI</a>: You can see live status, send quick prompts, use worktrees and review diffs for several coding agents in one terminal view.</li><li><a href=\"https://github.com/microsoft/data-formulator\">Data Formulator explores and visualizes data with AI</a>: You can connect data, explore it and build visualizations through an interactive AI-driven system.</li></ol>",
-   "content_text": "Most of today's strongest items are open-source tools that bundle existing capabilities into easier packages. The rest is commentary, legal news and opinion, so genuinely new capability is thin. NVIDIA Model-Optimizer bundles compression techniques for faster inference LocalAI runs LLMs, vision, voice and video locally Official prompting guide for Claude Opus 5.5 Agent-manager tracks coding agents from one tmux TUI Data Formulator explores and visualizes data with AI",
-   "date_published": "2026-10-20T15:43:59Z",
-   "tags": [
-    "agents",
-    "coding",
-    "infra",
-    "local",
-    "models",
-    "multimodal",
-    "research"
-   ],
-   "_magpie": {
-    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-09-28.json",
-    "backfilled": true,
-    "capabilities": 51
    }
   }
  ]
