@@ -1,0 +1,413 @@
+{
+ "ran_at": "2026-10-29T14:09:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-10-29T10:08:00Z",
+ "queries": 9,
+ "calls": 14,
+ "items": [
+  {
+   "title": "Kimi connects to Gmail, Google Drive and Google Calendar",
+   "url": "https://x.com/Kimi_Moonshot/status/2115777746639196376",
+   "handle": "@Kimi_Moonshot",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Moonshot's Kimi assistant now has plugins for Gmail, Google Drive and Google Calendar, connected with user-granted OAuth, so it can summarize mail threads, find Drive files and plan a day from the calendar.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://kimi.ai/plugins"
+   ],
+   "vendor": "Moonshot AI",
+   "posted_at": "2026-10-29T12:08:18Z",
+   "metrics": {
+    "likes": 358,
+    "reposts": 21,
+    "quotes": 28,
+    "replies": 66
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Several repliers ask whether the Gmail scope is read and draft only or can send, move or delete mail without an explicit approval step; the post does not say.",
+    "source": "https://x.com/jimmy_longbow_/status/2115806771751334057"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Most replies welcome the Gmail, Drive and Calendar trio and plan to compare it with Claude's connectors; the main question is write permissions and approval before sending, plus a report of failing requests and complaints that plan quotas run out fast.",
+    "tried": true,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "inclusionAI ZwZ2: 4B, 9B and 27B vision models gain on all 25 benchmarks from 20.4K RLVR examples",
+   "url": "https://x.com/TheInclusionAI/status/2115805865852715491",
+   "handle": "@TheInclusionAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Zooming without Zooming v2 adds EvidenceConnect data and RLVR on 20.4K examples to vision-language models. The 4B, 9B and 27B models improve on all 25 benchmarks (4B 49.41 to 54.79, 9B 51.63 to 56.59, 27B 55.52 to 60.51 average). Paper, code and weights are out.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://arxiv.org/abs/2610.37037",
+    "https://github.com/inclusionAI/Zooming-without-Zooming-v2",
+    "https://huggingface.co/collections/inclusionAI/zooming-without-Zooming-v2"
+   ],
+   "vendor": "inclusionAI (Ant Group)",
+   "posted_at": "2026-10-29T14:00:02Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Reachy Mini Level Up: $149 wheeled base, phone apps and NFC personality hats",
+   "url": "https://x.com/Thom_Wolf/status/2115764335498965468",
+   "handle": "@Thom_Wolf",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Hugging Face and Pollen Robotics launched accessories for the open-source Reachy Mini robot: a $149 hoverboard wheel base, new iOS and Android apps that remove the need for a computer, and $35 hats with an NFC tag that switch its personality and behaviors. Thom Wolf says more than 10,000 Reachy Minis have shipped.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://pollen-robotics.com/reachy-mini/#level-up"
+   ],
+   "vendor": "Pollen Robotics / Hugging Face",
+   "posted_at": "2026-10-29T11:15:01Z",
+   "metrics": {
+    "likes": 170,
+    "reposts": 24,
+    "quotes": 5,
+    "replies": 21
+   },
+   "confirmed_by": [
+    "https://x.com/LeRobotHF/status/2115770092185403573"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "PrismaX fits pi0.5 robot policy rollout into a 16 GB GPU, peak 11.2 GB",
+   "url": "https://x.com/PrismaXai/status/2115791056772190356",
+   "handle": "@PrismaXai",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "PrismaX explains how it cut pi0.5 rollout from a 22 GB loading peak to 11.2 GB: skip building a random fp32 backbone before the real weights load, and free the PyTorch models left in VRAM after TensorRT compilation. That puts the 7 GB policy on 16 GB cards such as RTX 5080 laptops and desktop 5070 Ti and 5080. Code is in the prism-pi repo.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://blog.prismax.ai/article.html?slug=pi05-inference-in-16gb",
+    "https://github.com/PrismaXAI/prism-pi"
+   ],
+   "vendor": "PrismaX",
+   "posted_at": "2026-10-29T13:01:12Z",
+   "metrics": {
+    "likes": 29,
+    "reposts": 5,
+    "quotes": 2,
+    "replies": 2
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "BAAI CURE: test-time re-masking cuts diffusion LLM jailbreak success from 47.2% to 1.4%",
+   "url": "https://x.com/BAAIBeijing/status/2115797299133554886",
+   "handle": "@BAAIBeijing",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "CURE, a NeurIPS 2026 oral from BAAI, re-masks counterfactual unsafe tokens during decoding to align diffusion language models (LLaDA-8B, LLaDA-1.5, Dream-7B) at test time without changing weights, lowering average jailbreak attack success from 47.20% to 1.36% for about 0.7% extra compute.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "BAAI",
+   "posted_at": "2026-10-29T13:26:00Z",
+   "metrics": {
+    "likes": 3,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 1
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The post links no paper or code, so the numbers cannot be checked yet.",
+    "source": null
+   }
+  },
+  {
+   "title": "Lovable can import existing projects and websites",
+   "url": "https://x.com/Lovable/status/2115793099565801690",
+   "handle": "@Lovable",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Lovable now imports existing projects and websites, so work started elsewhere can be continued inside Lovable.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Lovable",
+   "posted_at": "2026-10-29T13:09:19Z",
+   "metrics": {
+    "likes": 64,
+    "reposts": 6,
+    "quotes": 6,
+    "replies": 14
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Grim Prompter: MIT-licensed threat modeling prompts for coding agents",
+   "url": "https://x.com/vibestackweekly/status/2115798464353194142",
+   "handle": "@vibestackweekly",
+   "group": "devtools",
+   "origin": "discovery",
+   "summary": "Jim Manico's Grim Prompter points Claude Code, Codex or another coding agent at a repo and produces a threat model with file-and-line citations.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/jmanico/grim-prompter"
+   ],
+   "vendor": "Jim Manico",
+   "posted_at": "2026-10-29T13:30:38Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Surfaced by an aggregator with no engagement; output quality is untested.",
+    "source": null
+   }
+  },
+  {
+   "title": "Primo, an LLM-built SMT solver, is now open source",
+   "url": "https://x.com/JanotaMikolas/status/2115799776771907902",
+   "handle": "@JanotaMikolas",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "Researcher Mikolas Janota open-sourced Primo, an SMT solver built with LLMs.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/primo-solver/primo"
+   ],
+   "vendor": null,
+   "posted_at": "2026-10-29T13:35:51Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 2
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No engagement yet; the repo is the only evidence.",
+    "source": null
+   }
+  }
+ ],
+ "rechecks": [
+  {
+   "url": "https://x.com/akarixbt/status/2114389035388989873",
+   "result": "5,096 likes (up from 4,571). Doubt stays 2."
+  },
+  {
+   "url": "https://x.com/housecor/status/2115058158297063721",
+   "result": "509 likes (up from 508). Flat. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/OfficialLoganK/status/2115489284404940898",
+   "result": "15,340 likes (up from 12,865). Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/_albertgu/status/2115502110578290900",
+   "result": "5,982 likes (up from 3,524). Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/hermanbrunborg/status/2115502130350227798",
+   "result": "2,360 likes (up from 1,690). Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/ElevenLabs/status/2115527286065914248",
+   "result": "340 likes (up from 130). Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/__tinygrad__/status/2115629981296726455",
+   "result": "413 likes (up from 333). Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/OpenBMB/status/2115631957564608554",
+   "result": "16 likes (up from 11). Doubt stays 1."
+  }
+ ],
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 0,
+  "kept": 0,
+  "note": "Live bookmarks read for id 1521986356721123328; all 20 already in seen ids."
+ },
+ "saved_rejected": [],
+ "list_posts_read": 97,
+ "list_pages": 1,
+ "discovery": {
+  "queries": 2,
+  "kept": 2,
+  "note": "Release search returned mostly low-engagement self-built repos; kept Grim Prompter and Primo. Security search surfaced the Symantec relay report plus repeats of the worm, Gheist, AGENTS.md and LiteLLM leads."
+ },
+ "horizon": {
+  "block-dessa": "block.xyz/dessa unchanged (demo recordings, safety-researcher early access only). One X read found no posts since the last check. No weights, API or paper. No trigger."
+ },
+ "proposed_follows": [],
+ "proposed_follows_note": "follow_mode is browser and this run had no browser, so nothing was followed. No roster account is active yet, so none meet the follow rule.",
+ "skipped": [
+  {
+   "url": "https://x.com/OpenBMB/status/2115798339321286841",
+   "reason": "Ambassador hobby build (ESP32 cockpit with MiniCPM5-2B and VoxCPM2); low engagement demo, no new capability."
+  },
+  {
+   "url": "https://x.com/badlogicgames/status/2115779947608555784",
+   "reason": "Commentary on Claude Code calling Haiku for status words; no new capability."
+  },
+  {
+   "url": "https://x.com/badlogicgames/status/2115777603034566673",
+   "reason": "Opinion."
+  },
+  {
+   "url": "https://x.com/badlogicgames/status/2115766526754099330",
+   "reason": "Banter."
+  },
+  {
+   "url": "https://x.com/NousResearch/status/2115798012840579154",
+   "reason": "Event teaser."
+  },
+  {
+   "url": "https://x.com/__tinygrad__/status/2115751796698386890",
+   "reason": "Course announcement."
+  },
+  {
+   "url": "https://x.com/trending_repos/status/2115777715898810613",
+   "reason": "impeccable repo already covered in Magpie this week."
+  },
+  {
+   "url": "https://x.com/witcheer/status/2115775153116250242",
+   "reason": "Qwen4 next week per stage remark; announcement of a future release, not a release."
+  },
+  {
+   "url": "https://x.com/yb2698/status/2115749234360320376",
+   "reason": "safeagents already in today's Magpie edition."
+  },
+  {
+   "url": "https://x.com/teortaxesTex/status/2115748822500700393",
+   "reason": "Personal long-run anecdote with DeepSeek V4.1 Flash; no method."
+  },
+  {
+   "url": "https://x.com/levelsio/status/2115796587351810138",
+   "reason": "Own site promotion (Hotelist MCP connector)."
+  },
+  {
+   "url": "https://x.com/levelsio/status/2115795975553913329",
+   "reason": "Opinion on government; not a capability."
+  },
+  {
+   "url": "https://x.com/levelsio/status/2115805396753383750",
+   "reason": "Opinion on AI replies."
+  },
+  {
+   "url": "https://x.com/jankeesvw/status/2115775704533200922",
+   "reason": "Merch."
+  },
+  {
+   "url": "https://x.com/adidevv0/status/2115787187333829103",
+   "reason": "Mantis browser tool: self-reported numbers, no engagement."
+  },
+  {
+   "url": "https://x.com/MikoReports/status/2115763743015542866",
+   "reason": "Ollama v0.40.13 LFM3 support already in today's Magpie edition."
+  },
+  {
+   "url": "https://x.com/GetChorusAI/status/2115772198732623884",
+   "reason": "MiniCPM-OCR already covered; promotional repost."
+  },
+  {
+   "url": "https://x.com/thehorizonlens/status/2115790766618653045",
+   "reason": "Reflection Beam memory note; Beam already covered."
+  },
+  {
+   "url": "https://x.com/honestlykhaleel/status/2115779164792115245",
+   "reason": "Uncensored model hype post."
+  }
+ ],
+ "security_forwarded": [
+  {
+   "url": "https://www.security.com/threat-intelligence/openai-claude-unauthorized-relays",
+   "matched": "stack.json: Codex, Claude Code (always_forward: agent tooling). Symantec Threat Hunter report (2026-10-29, also Dark Reading): a grey-market relay active since early 2026 has users install the genuine Codex or Claude Code CLI via npm, then run a one-line fileless PowerShell or bash script from a lookalike domain that rewrites ~/.codex/config.toml or ~/.claude/settings.json: base_url / ANTHROPIC_BASE_URL to relay domains (at least 8, impersonating OpenAI or Anthropic), relay-issued API keys set as persistent user env vars, sandbox_mode danger-full-access, write-sandbox network access on, telemetry and error reporting off; one host was logged out of Anthropic. About a dozen orgs, mostly mainland China; no CVE, no malicious use seen. Not an exploit of the CLIs; fleet check is whether any base_url or sandbox override exists. Box: no ~/.codex/config.toml or ~/.claude/settings.json overrides and no *_BASE_URL env vars."
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/theomlondhe/status/2115805869891862778",
+   "reason": "testmetest npm worm in 42 GitHub repos with Claude Code/Cursor/VS Code hooks; already forwarded 2026-10-27."
+  },
+  {
+   "url": "https://x.com/endurasecurity/status/2115774984941437318",
+   "reason": "Wiz Gheist GitHub Actions campaign; already forwarded 2026-10-25."
+  },
+  {
+   "url": "https://x.com/agentpatchwkly/status/2115806582395080764",
+   "reason": "Forever Security AGENTS.md-in-Downloads hijack; already forwarded 2026-10-25, no new facts."
+  },
+  {
+   "url": "https://x.com/f1tym1/status/2115747843898048781",
+   "reason": "LiteLLM 1.107.0 recap; already handled 2026-10-22."
+  },
+  {
+   "url": "https://x.com/itsMikeKipruto/status/2115759651534803378",
+   "reason": "GitHub npm Package Firewall public preview for Enterprise Cloud; a defensive feature, not a threat."
+  },
+  {
+   "url": "https://x.com/ByteCheck101/status/2115771821723144437",
+   "reason": "PHP2Shell plus kernel LPE chain on 25 servers; PHP stack not in the fleet, already tracked."
+  }
+ ],
+ "errors": []
+}
