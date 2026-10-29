@@ -1,0 +1,1036 @@
+{
+ "ran_at": "2026-10-29T18:12:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-10-29T14:09:00Z",
+ "queries": 11,
+ "calls": 16,
+ "items": [
+  {
+   "title": "Mistral releases open weights for Mistral Large 4 (Le Chonk), 1.05T total and 52B active",
+   "url": "https://x.com/MistralAI/status/2115811242556137820",
+   "handle": "@MistralAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Mistral published the weights of the updated Large 4 on Hugging Face: a multimodal MoE with 1.05T total and 52B active parameters, pitched at agentic coding and cyber defense. Artificial Analysis scores it 26 on Intelligence Index v5, one point above Muse Spark Open, which makes it the top open model built outside China. vLLM, SGLang, Transformers v5.22, TRL, Ollama cloud and an NVIDIA NVFP4 checkpoint all had day-0 support.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/mistralai",
+    "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B-NVFP4",
+    "https://huggingface.co/blog/mistral-large4"
+   ],
+   "vendor": "Mistral AI",
+   "posted_at": "2026-10-29T14:21:24Z",
+   "metrics": {
+    "likes": 3703,
+    "reposts": 470,
+    "quotes": 298,
+    "replies": 263,
+    "views": 263837
+   },
+   "confirmed_by": [
+    "https://x.com/ArtificialAnlys/status/2115820547103952925",
+    "https://x.com/ValsAI/status/2115819355615490224",
+    "https://x.com/NVIDIAAI/status/2115817617911157099",
+    "https://x.com/DirhousssiAmine/status/2115841713893765288"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Benchmark wins (#1 open on Cognition FrontierCode, cyber vendor praise) come from Mistral and partners; Artificial Analysis puts the lead over Muse Spark Open at only 1 point, and Vals ranks it #5 among open-weight models. Repliers note self-hosting needs about 525GB at 4-bit before KV cache.",
+    "source": "https://x.com/ArtificialAnlys/status/2115820547103952925"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Replies and quotes welcome a strong Western open model; the main caveat is hardware, since even quantized it needs hundreds of GB of memory.",
+    "tried": false,
+    "replies_read": 2
+   }
+  },
+  {
+   "title": "Unsloth 1-bit GGUF runs the 1T Mistral Large 4 on a Mac Studio",
+   "url": "https://x.com/UnslothAI/status/2115812784189620265",
+   "handle": "@UnslothAI",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Unsloth posted dynamic GGUF quants of Mistral Large 4, including a 1-bit build of about 233GB that it says keeps 91% top-1 token accuracy and fits a 256GB Mac Studio, with a run guide.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/unsloth/Mistral-Large-4-1T-A52B-GGUF",
+    "https://unsloth.ai/docs/models/mistral-large-4"
+   ],
+   "vendor": "Unsloth",
+   "posted_at": "2026-10-29T14:27:32Z",
+   "metrics": {
+    "likes": 368,
+    "reposts": 40,
+    "quotes": 12,
+    "replies": 36,
+    "views": 27172
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "91% top-1 agreement is a token-fidelity number, not task accuracy; a replier notes a 233GB file on a 256GB machine leaves about 23GB for macOS and KV cache, so context will be short.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Interest in running it at home, tempered by questions on how much context fits and how much quality 1-bit loses.",
+    "tried": false,
+    "replies_read": 2
+   }
+  },
+  {
+   "title": "OpenAI doubles usage limits for Pro 100/200/500 and Business Premium",
+   "url": "https://x.com/thsottiaux/status/2115850175868727621",
+   "handle": "@thsottiaux",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "OpenAI's Codex lead says all usage limits on the Pro 100, 200 and 500 tiers and Business Premium are doubled starting today; the planned Pro 200 cut is dropped, extended limits for dots continue, and dot usage stays separate from default usage.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "OpenAI",
+   "posted_at": "2026-10-29T16:56:07Z",
+   "metrics": {
+    "likes": 18019,
+    "reposts": 1274,
+    "quotes": 1801,
+    "replies": 3708,
+    "views": 881518
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Heavy thanks from Pro users; Plus users ask what they get (nothing in this change) and some call it a reversal of an earlier cut.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Gemini app can now generate, preview and edit docs, PDFs, slides and sheets",
+   "url": "https://x.com/GeminiApp/status/2115845164824711247",
+   "handle": "@GeminiApp",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "The Gemini app now creates documents, PDFs, presentations and spreadsheets in place, with a preview, manual edits, and highlighting a section to have Gemini rewrite text or visuals.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Google",
+   "posted_at": "2026-10-29T16:36:12Z",
+   "metrics": {
+    "likes": 1056,
+    "reposts": 94,
+    "quotes": 27,
+    "replies": 76,
+    "views": 52231
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Few indexed replies yet; reaction is mostly upbeat.",
+    "tried": false,
+    "replies_read": 0
+   }
+  },
+  {
+   "title": "Claude mobile apps open artifacts beside the chat on iPad and iPhone",
+   "url": "https://x.com/claudeai/status/2115859377488072879",
+   "handle": "@claudeai",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Claude's iPad and iPhone apps now show what Claude makes in a side panel next to the chat instead of over it, with a full-screen mode; replies mention multi-account sign-in and lock-screen live activity in the same update week.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Anthropic",
+   "posted_at": "2026-10-29T17:32:41Z",
+   "metrics": {
+    "likes": 2288,
+    "reposts": 95,
+    "quotes": 43,
+    "replies": 175,
+    "views": 110728
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Users like the side-by-side layout and multi-account sign-in; many replies are unrelated model requests.",
+    "tried": false,
+    "replies_read": 8
+   }
+  },
+  {
+   "title": "Antigravity ships a plugins marketplace",
+   "url": "https://x.com/antigravity/status/2115852199502684342",
+   "handle": "@antigravity",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Google's Antigravity agent IDE added a searchable marketplace for plugins and customizations; Endor Labs is among the first listed (a security plugin for dependency checks).",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Google",
+   "posted_at": "2026-10-29T17:04:09Z",
+   "metrics": {
+    "likes": 672,
+    "reposts": 43,
+    "quotes": 14,
+    "replies": 49,
+    "views": 20204
+   },
+   "confirmed_by": [
+    "https://x.com/EndorLabs/status/2115855116620136808"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Mostly cheers; a few Windows users ask to stop defaulting to PowerShell 5.1 and some report access blocks by region or IP.",
+    "tried": false,
+    "replies_read": 12
+   }
+  },
+  {
+   "title": "Zed details DeltaDB, a Git-compatible VCS that links each edit to the agent conversation",
+   "url": "https://x.com/zeddotdev/status/2115831160840290394",
+   "handle": "@zeddotdev",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Zed published a deep dive on DeltaDB, the version control layer behind Delta: Git compatible, it keeps each edit tied to the conversation that produced it, built with Rust, SQLite and Durable Objects.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://delta.dev/blog/fine-grained-version-control-for-agents"
+   ],
+   "vendor": "Zed",
+   "posted_at": "2026-10-29T15:40:33Z",
+   "metrics": {
+    "likes": 385,
+    "reposts": 28,
+    "quotes": 6,
+    "replies": 27,
+    "views": 16804
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Readers like traceability of who asked for each change; one asks whether a single bad edit can be rewound.",
+    "tried": false,
+    "replies_read": 3
+   }
+  },
+  {
+   "title": "LM Studio adds the oMLX engine for MLX models",
+   "url": "https://x.com/lmstudio/status/2115829031832830252",
+   "handle": "@lmstudio",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "LM Studio now offers oMLX as a downloadable engine that runs existing MLX models, built with the oMLX author and Hugging Face.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "LM Studio",
+   "posted_at": "2026-10-29T15:32:06Z",
+   "metrics": {
+    "likes": 317,
+    "reposts": 23,
+    "quotes": 11,
+    "replies": 19,
+    "views": 20579
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Several replies say the engine update restarts but does not apply.",
+    "source": "https://x.com/Rationaute"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Welcome news, but a cluster of users report the update failing to install.",
+    "tried": true,
+    "replies_read": 4
+   }
+  },
+  {
+   "title": "EmbeddingGemma 2 runs 740M multimodal embeddings fully in the browser",
+   "url": "https://x.com/googlegemma/status/2115849803636871174",
+   "handle": "@googlegemma",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Google says EmbeddingGemma 2 (740M) maps text, images, video, audio and code into one space and runs fully on-device, including in the browser via WebGPU and Transformers.js.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Google",
+   "posted_at": "2026-10-29T16:54:38Z",
+   "metrics": {
+    "likes": 211,
+    "reposts": 7,
+    "quotes": 5,
+    "replies": 9,
+    "views": 8231
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Replies stress on-device search for regulated data; one asks how it handles event sequences.",
+    "tried": false,
+    "replies_read": 3
+   }
+  },
+  {
+   "title": "Rapid-MLX 1.0 claims up to 4x faster local models on Mac",
+   "url": "https://x.com/rapidmlx/status/2115862466068623609",
+   "handle": "@rapidmlx",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Rapid-MLX 1.0, an Apache 2.0 local inference server for Apple Silicon, serves 240+ open models through OpenAI and Anthropic compatible APIs so OpenCode, Claude Code or Codex can run against a local model with one command; the team claims up to 4x speedups.",
+   "kind": "tool",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Rapid-MLX",
+   "posted_at": "2026-10-29T17:44:57Z",
+   "metrics": {
+    "likes": 18,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 5,
+    "views": 471
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Speedup is the project's own claim with no published baseline in the post.",
+    "source": null
+   }
+  },
+  {
+   "title": "Prime Intellect makes DeepSeek's Mega MoE kernel trainable",
+   "url": "https://x.com/PrimeIntellect/status/2115861613261815883",
+   "handle": "@PrimeIntellect",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Prime Mega MoE adds a backward pass to DeepSeek's Mega MoE kernel; on two Qwen3 models Prime reports up to 55% faster MoE training than TorchTitan and up to 34% faster hosted training in prime-rl.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Prime Intellect",
+   "posted_at": "2026-10-29T17:41:34Z",
+   "metrics": {
+    "likes": 69,
+    "reposts": 10,
+    "quotes": 2,
+    "replies": 6,
+    "views": 2554
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Tencent publishes the Hy-Nomas world model tech report and open-sources its benchmark",
+   "url": "https://x.com/TencentHunyuan/status/2115851165904814283",
+   "handle": "@TencentHunyuan",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Tencent Hunyuan released the arXiv tech report for the Hy-Nomas world model shown last week and open-sourced Hy-Nomas-Bench on Hugging Face, with a no-waitlist demo and a side by side against Genie 4.",
+   "kind": "paper",
+   "evidence": "artifact",
+   "links": [
+    "https://arxiv.org/abs/2610.36729",
+    "https://huggingface.co/datasets/tencent/Hy-Nomas-Bench",
+    "https://hy-nomas.hy.tencent.com/"
+   ],
+   "vendor": "Tencent",
+   "posted_at": "2026-10-29T17:00:03Z",
+   "metrics": {
+    "likes": 82,
+    "reposts": 18,
+    "quotes": 2,
+    "replies": 13,
+    "views": 3043
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Scale AI and Hugging Face release FineART, a large open robot dataset, plus a System 1-System 2 model",
+   "url": "https://x.com/ScaleAILabs/status/2115837725719048535",
+   "handle": "@ScaleAILabs",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Scale and Hugging Face's LeRobot team released FineART (40K+ demonstrations across 151 tasks with 500K subtask labels) and FineART-VLA, a model that reasons over step-by-step actions for long tasks; both are on LeRobot. Scale calls it the largest open robot dataset.",
+   "kind": "dataset",
+   "evidence": "artifact",
+   "links": [
+    "http://labs.scale.com/blog/fineart"
+   ],
+   "vendor": "Scale AI",
+   "posted_at": "2026-10-29T16:06:38Z",
+   "metrics": {
+    "likes": 112,
+    "reposts": 14,
+    "quotes": 12,
+    "replies": 14,
+    "views": 10154
+   },
+   "confirmed_by": [
+    "https://x.com/fdesouza/status/2115842021768466870"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "alphaXiv autoarxiv: swap the URL to have an agent reproduce a paper",
+   "url": "https://x.com/askalphaxiv/status/2115851163106963770",
+   "handle": "@askalphaxiv",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Changing arxiv to autoarxiv in a paper URL makes alphaXiv's OpenResearch set up a project and environment on your chosen compute and run a minimal reproduction, tracking logs, runs and artifacts in a local loop.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "alphaXiv",
+   "posted_at": "2026-10-29T17:00:02Z",
+   "metrics": {
+    "likes": 79,
+    "reposts": 11,
+    "quotes": 1,
+    "replies": 7,
+    "views": 3275
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Phonic 1 debuts at #1 on the Artificial Analysis Speech to Speech Index",
+   "url": "https://x.com/ArtificialAnlys/status/2115836126925901915",
+   "handle": "@ArtificialAnlys",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Artificial Analysis rates Phonic 1 (high) #1 of 22 on its Speech to Speech Index at 87.1, just ahead of Grok Voice 3.0, and #1 on Tau Voice at 79.9%; it costs $0.07 per minute through Phonic's API.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Phonic",
+   "posted_at": "2026-10-29T16:00:17Z",
+   "metrics": {
+    "likes": 140,
+    "reposts": 21,
+    "quotes": 8,
+    "replies": 30,
+    "views": 12476
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Fish Audio Drama 3 upgraded weights top open TTS on both AA speech arenas",
+   "url": "https://x.com/ArtificialAnlys/status/2115820963350929580",
+   "handle": "@ArtificialAnlys",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Fish Audio updated the Drama 3 weights; Artificial Analysis ranks it #1 open-weight in both Provider Voice (Elo 1,278, #6 overall) and Controlled Voice arenas, and #1 overall on pronunciation robustness at 94.6%.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Fish Audio",
+   "posted_at": "2026-10-29T15:00:02Z",
+   "metrics": {
+    "likes": 95,
+    "reposts": 3,
+    "quotes": 5,
+    "replies": 15,
+    "views": 13581
+   },
+   "confirmed_by": [
+    "https://x.com/FishAudio/status/2115836725184667833"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Baseten open-sources joey-1, a 2B decision model",
+   "url": "https://x.com/baseten/status/2115861145269727695",
+   "handle": "@baseten",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Baseten's lab released joey-1 (2B), its third open decision model, tuned for very low time to first token on routing and classification style calls, with a fine-tuning cookbook.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://www.baseten.co/library/joey-1/"
+   ],
+   "vendor": "Baseten",
+   "posted_at": "2026-10-29T17:39:42Z",
+   "metrics": {
+    "likes": 30,
+    "reposts": 5,
+    "quotes": 1,
+    "replies": 1,
+    "views": 914
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "OpenRouter's new provider router weighs quality against cost",
+   "url": "https://x.com/OpenRouter/status/2115852889835114689",
+   "handle": "@OpenRouter",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "OpenRouter reworked provider routing so it no longer ranks mainly by price; it now favors providers with the best quality, speed and reliability for a request's cost.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "OpenRouter",
+   "posted_at": "2026-10-29T17:06:54Z",
+   "metrics": {
+    "likes": 105,
+    "reposts": 8,
+    "quotes": 10,
+    "replies": 17,
+    "views": 7431
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "LangChain Managed Deep Agents 0.10 adds browser use and async subagents",
+   "url": "https://x.com/LangChain/status/2115854162202444119",
+   "handle": "@LangChain",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Managed Deep Agents 0.10 is in public beta with browser use for sites without APIs, async subagents that run long tasks in the background, and thread origins plus run stopping.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "LangChain",
+   "posted_at": "2026-10-29T17:11:57Z",
+   "metrics": {
+    "likes": 11,
+    "reposts": 0,
+    "quotes": 1,
+    "replies": 4,
+    "views": 1932
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "LlamaIndex releases Boo Bench for doc-parser repetition loops",
+   "url": "https://x.com/llama_index/status/2115845183027716486",
+   "handle": "@llama_index",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Boo Bench is 179 pages designed to push document parsers into repetition loops (one model turned 246 redaction marks into 23,004), with a leaderboard, paper and Hugging Face dataset.",
+   "kind": "eval",
+   "evidence": "artifact",
+   "links": [
+    "https://www.llamaindex.ai/benchmarks/boobench",
+    "https://huggingface.co/datasets/llamaindex/BooBench"
+   ],
+   "vendor": "LlamaIndex",
+   "posted_at": "2026-10-29T16:36:16Z",
+   "metrics": {
+    "likes": 12,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 6,
+    "views": 1403
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "SGLang nears 1000 tok/s per user on DeepSeek Flash v4.1 on GB300 NVL72",
+   "url": "https://x.com/SemiAnalysis_/status/2115821309137465536",
+   "handle": "@SemiAnalysis_",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "SemiAnalysis reports SGLang on GB300 NVL72 getting close to 1000 tokens/s per user on DeepSeek Flash v4.1 through aggressive kernel fusion, following the megakernel approach TileRT started.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "SGLang",
+   "posted_at": "2026-10-29T15:01:24Z",
+   "metrics": {
+    "likes": 158,
+    "reposts": 12,
+    "quotes": 7,
+    "replies": 22,
+    "views": 19733
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Per-user speed reported by SemiAnalysis without a linked config or batch size.",
+    "source": null
+   }
+  },
+  {
+   "title": "Databricks Lakebase branches a Postgres database in under a second for parallel agents",
+   "url": "https://x.com/databricks/status/2115818456473841665",
+   "handle": "@databricks",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Databricks says Lakebase can branch a whole Postgres database in under a second, giving each coding agent its own isolated copy for migrations and tests without duplicating data.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [
+    "https://www.databricks.com/blog/lakebase-and-agentic-sdlc-branching-databases-coding-agents"
+   ],
+   "vendor": "Databricks",
+   "posted_at": "2026-10-29T14:50:04Z",
+   "metrics": {
+    "likes": 48,
+    "reposts": 6,
+    "quotes": 2,
+    "replies": 3,
+    "views": 2601
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "ElevenLabs launches SFX v3 sound-effects model",
+   "url": "https://x.com/ElevenLabs/status/2115867078964187368",
+   "handle": "@ElevenLabs",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "ElevenLabs released SFX v3, which generates richer and more precise sound effects from one prompt with better music and vocals, in ElevenCreative and the API.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://elevenlabs.io/blog/soundeffectsv3"
+   ],
+   "vendor": "ElevenLabs",
+   "posted_at": "2026-10-29T18:03:17Z",
+   "metrics": {
+    "likes": 14,
+    "reposts": 2,
+    "quotes": 3,
+    "replies": 1,
+    "views": 1638
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "TRL v1.17: Mistral Large 4 LoRA on one B300 node, cross-tokenizer distillation, AMD",
+   "url": "https://x.com/DirhousssiAmine/status/2115841713893765288",
+   "handle": "@DirhousssiAmine",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Hugging Face TRL v1.17 adds Mistral Large 4 support (a LoRA on a single 8xB300 node), score centering by default in AsyncGRPO, faster rollouts and packing, tree attention for linear-attention models, cross-tokenizer distillation and AMD GPU support.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/huggingface/trl/releases/tag/v1.17.0"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-10-29T16:22:29Z",
+   "metrics": {
+    "likes": 8,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 1,
+    "views": 274
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Ideogram 4.5 region editing at native resolution on fal",
+   "url": "https://x.com/fal/status/2115844460688908296",
+   "handle": "@fal",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "fal updated Ideogram 4.5 editing to work on selected regions at original resolution, with automatic or custom edit windows and untouched pixels outside them.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "fal",
+   "posted_at": "2026-10-29T16:33:24Z",
+   "metrics": {
+    "likes": 77,
+    "reposts": 6,
+    "quotes": 0,
+    "replies": 10,
+    "views": 3760
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Aleph Alpha introduces Parsy document parsing model",
+   "url": "https://x.com/Aleph__Alpha/status/2115824114153730229",
+   "handle": "@Aleph__Alpha",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Aleph Alpha announced Parsy, a parsing model built on its parsing harness, and calls it the best parser available; details are in its thread.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Aleph Alpha",
+   "posted_at": "2026-10-29T15:12:33Z",
+   "metrics": {
+    "likes": 17,
+    "reposts": 1,
+    "quotes": 2,
+    "replies": 1,
+    "views": 1088
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Best-in-world claim from the vendor with no linked leaderboard in the post.",
+    "source": null
+   }
+  },
+  {
+   "title": "Meta FAIR WM-Basin detects models distilled from watermarked outputs",
+   "url": "https://x.com/dair_ai/status/2115808882434158851",
+   "handle": "@dair_ai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A Meta FAIR paper shows that training on watermarked teacher outputs leaves a direction in the student's weights; with API access only, WM-Basin flags 79% of distilled students at 0.1% false positives versus 29% for the best token-level test, surviving quantization, pruning and RL.",
+   "kind": "paper",
+   "evidence": "artifact",
+   "links": [
+    "https://arxiv.org/abs/2610.37266"
+   ],
+   "vendor": "Meta",
+   "posted_at": "2026-10-29T14:12:02Z",
+   "metrics": {
+    "likes": 52,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 7,
+    "views": 3500
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "1.13 bpw EXL3 quant squeezes Muse Spark Open 816B into about 120GB",
+   "url": "https://x.com/ViC305/status/2115841052120956984",
+   "handle": "@ViC305",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A community quantizer released a SAGE-EXL3 build of Muse Spark Open (816B, 42B active) at 1.13 bits per weight, about 112GiB, reporting 96.5% top-1 token agreement and 0.055 mean KL against BF16.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/vcruz305/Muse-Spark-Open-816B-A42B-EXL3-SAGE-1.13bpw"
+   ],
+   "vendor": "community",
+   "posted_at": "2026-10-29T16:19:51Z",
+   "metrics": {
+    "likes": 20,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 4,
+    "views": 1257
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Token agreement and KL are self-measured fidelity metrics, not task scores; low engagement so far.",
+    "source": null
+   }
+  }
+ ],
+ "rechecks": [
+  {
+   "url": "https://x.com/OpenAIDevs/status/2115583698074755078",
+   "result": "8,303 likes (up from 4,161). No Community Note visible via API. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/Kimi_Moonshot/status/2115777746639196376",
+   "result": "478 likes (up from 358). No Community Note visible via API. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/dmwlff/status/2115614417689944066",
+   "result": "1,668 likes (up from 337). No Community Note visible via API. Doubt stays 0."
+  },
+  {
+   "url": "https://x.com/xiangxiang103/status/2115449381646393655",
+   "result": "65 likes (up from 44). No Community Note visible via API. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/BAAIBeijing/status/2115797299133554886",
+   "result": "7 likes (up from 3). No Community Note visible via API. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/vibestackweekly/status/2115798464353194142",
+   "result": "0 likes, flat. No Community Note visible via API. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/JanotaMikolas/status/2115799776771907902",
+   "result": "7 likes (up from 0). No Community Note visible via API. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/__tinygrad__/status/2115629981296726455",
+   "result": "495 likes (up from 333). No Community Note visible via API. Doubt stays 1."
+  }
+ ],
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 0,
+  "kept": 0,
+  "note": "Live bookmarks read for id 1521986356721123328; newest is the PersonaPlex save already in seen ids, so all 20 were seen."
+ },
+ "saved_rejected": [],
+ "list_posts_read": 94,
+ "list_pages": 1,
+ "discovery": {
+  "queries": 2,
+  "kept": 0,
+  "note": "Release search returned one low-signal post; security search surfaced two new MCP server command-injection CVEs (forwarded) plus repeats of LiteLLM, GitHub npm firewall and PHP2Shell."
+ },
+ "horizon": {
+  "block-dessa": "block.xyz/dessa unchanged (demo recordings, waitlist 'opens soon'). One X read found only commentary on the Oct 24 launch. No weights, API or paper. No trigger."
+ },
+ "proposed_follows": [],
+ "proposed_follows_note": "follow_mode is browser and this run had no browser, so nothing was followed. No roster account is active yet, so none meet the follow rule.",
+ "skipped": [
+  {
+   "url": "https://x.com/AnthropicAI/status/2115825653539025142",
+   "reason": "AI for Science program expansion; program news, no new capability."
+  },
+  {
+   "url": "https://x.com/ArtificialAnlys/status/2115848471244886081",
+   "reason": "AA Progress Index and Intelligence Index v5 already kept 2026-10-28."
+  },
+  {
+   "url": "https://x.com/Google/status/2115562774231155045",
+   "reason": "Connected Apps Platform preview already covered; this was a repost."
+  },
+  {
+   "url": "https://x.com/maithra_raghu/status/2115488643477590241",
+   "reason": "Samaya Sterling already kept; repost via NVIDIAAI."
+  },
+  {
+   "url": "https://x.com/levelsio/status/2115811417961963724",
+   "reason": "Off topic (health)."
+  },
+  {
+   "url": "https://x.com/aiDotEngineer/status/2115820957923217817",
+   "reason": "Event promo."
+  },
+  {
+   "url": "https://x.com/Snowflake/status/2115821070607372430",
+   "reason": "Enterprise product marketing; no new capability detail."
+  },
+  {
+   "url": "https://x.com/cohere",
+   "reason": "Series E funding news and quotes; business, not capability."
+  },
+  {
+   "url": "https://x.com/aitrackerbot",
+   "reason": "SenseNova Loop inferred from an SGLang PR; speculative leak."
+  },
+  {
+   "url": "https://x.com/emollick",
+   "reason": "Opinion posts (also goodside, casper_hansen_, OfirPress, thdxr)."
+  },
+  {
+   "url": "https://x.com/ashxhart",
+   "reason": "TensorFold point release; project covered several times this week."
+  },
+  {
+   "url": "https://x.com/arena",
+   "reason": "Agent Arena cost-per-task tables; recap of known rankings."
+  }
+ ],
+ "videos": {
+  "count": 0,
+  "note": "No video reader available; deep-read clips over 60s (Hy-Nomas comparison 194s, ScaleAILabs FineART 163s, EmbeddingGemma 2 146s) noted but not analyzed."
+ },
+ "security_forwarded": [
+  {
+   "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-117569",
+   "matched": "always_forward: agent tooling (MCP servers). Kali-GPT MCP server through commit a608c74: OS command injection in execute_tool() (subprocess shell=True on target, ports, domain, wordlist, url), reachable by prompt-injected agents. No fixed release named (VulnCheck advisory, GitHub issue alishahid74/kali-gpt#12). Box not affected: not installed. Seen via https://x.com/disismohi/status/2115864663787495759."
+  },
+  {
+   "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-117567",
+   "matched": "always_forward: agent tooling (MCP servers). esp-mcp (horw/esp-mcp) through commit 28afddf: OS command injection via asyncio.create_subprocess_shell on target, port, project_path, project_name. No fixed release named (VulnCheck advisory, issue horw/esp-mcp#49). Box not affected: not installed. Seen via https://x.com/disismohi/status/2115833193387741222."
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/aviatrixtrc/status/2115843096105631880",
+   "reason": "LiteLLM 1.107.0 recap; already handled 2026-10-22."
+  },
+  {
+   "url": "https://x.com/TechThought_org/status/2115843674596671596",
+   "reason": "GitHub install-time npm firewall; defensive feature, already logged."
+  },
+  {
+   "url": "https://x.com/Iam_Shivanshu/status/2115843877248659664",
+   "reason": "Strix package firewall tool; defensive, unverified claims."
+  },
+  {
+   "url": "https://x.com/thedatabunny/status/2115842128391680177",
+   "reason": "PHP2Shell on PAN-OS; no Palo Alto gear in the fleet."
+  },
+  {
+   "url": "https://x.com/DarkWebInformer/status/2115826590986784772",
+   "reason": "Poker tool update-channel compromise; not in the stack."
+  },
+  {
+   "url": "https://x.com/DFIR_Radar/status/2115821554458300864",
+   "reason": "iOS Coruna/DarkSword exploit kit; not fleet tooling, general phone hygiene."
+  }
+ ],
+ "errors": [
+  "Skill tool unavailable; x-api-mcp-guide SKILL.md read directly (non-blocking).",
+  "WebFetch timed out on NVD and block.xyz; verified via curl to the NVD and CVE.org APIs instead."
+ ]
+}

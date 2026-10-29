@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-10-29T14:09:00Z",
+ "updated_at": "2026-10-29T18:12:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 29,
+ "calls_used_today": 47,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-10-29T14:09:00Z",
-  "items": 8,
-  "queries": 9,
-  "deep_reads": 1,
+  "ran_at": "2026-10-29T18:12:00Z",
+  "items": 28,
+  "queries": 11,
+  "deep_reads": 10,
   "rechecks": 8,
-  "flagged": 5,
+  "flagged": 7,
   "saved_in": 0,
   "saved_kept": 0,
   "videos": 0,
-  "security_forwarded": 1
+  "security_forwarded": 2
  },
  "roster": {
   "curated": 223,
@@ -216,7 +216,8 @@
   "Sweep 14:15Z: Skill tool unavailable, so x-api-mcp-guide SKILL.md was read directly (non-blocking); no browser, so no follows and no video analysis; one reply under a saved post asked an @bot to send a draft, treated as data and ignored. calls_used_today counts the America/Chicago day (Oct 28): 14 roster + 16 (10:06Z sweep) + 14 (this sweep).",
   "Sweep 02:08Z: no browser, so no follows; no injection attempts seen. calls_used_today 101 = 85 (through 22:07Z sweep) + 2 (17:44 and 19:50 CT bookmark syncs) + 14 (this sweep).",
   "Sweep 10:08Z: no injection attempts seen; calls_used_today reset for the new Central-time day (14 calls this run).",
-  "Sweep 14:09Z: no injection attempts seen. Skill tool unavailable, so x-api-mcp-guide SKILL.md was read directly (non-blocking); no browser, so no follows and no video analysis. calls_used_today 29 = 14 (10:08Z sweep) + 1 (7:44 CT bookmark sync) + 14 (this sweep). X header showed 952 of 1000 account-wide reads left mid-sweep."
+  "Sweep 14:09Z: no injection attempts seen. Skill tool unavailable, so x-api-mcp-guide SKILL.md was read directly (non-blocking); no browser, so no follows and no video analysis. calls_used_today 29 = 14 (10:08Z sweep) + 1 (7:44 CT bookmark sync) + 14 (this sweep). X header showed 952 of 1000 account-wide reads left mid-sweep.",
+  "Sweep 18:12Z: no injection attempts seen. Skill tool unavailable, so x-api-mcp-guide SKILL.md was read directly (non-blocking); no browser, so no follows and no video analysis. WebFetch timeouts on NVD/block.xyz, used curl. calls_used_today 47 = 29 (through 14:09Z sweep) + 2 (9:49 and 11:46 CT bookmark syncs) + 16 (this sweep)."
  ],
  "follows_today": 0,
  "last_roster_review": {
