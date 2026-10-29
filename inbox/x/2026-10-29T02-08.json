@@ -1,0 +1,583 @@
+{
+ "ran_at": "2026-10-29T02:08:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-10-28T22:07:00Z",
+ "queries": 11,
+ "calls": 14,
+ "items": [
+  {
+   "title": "OpenAI gives eligible ChatGPT Pro and Business subscribers up to $500 a month in API credits",
+   "url": "https://x.com/OpenAIDevs/status/2115583698074755078",
+   "handle": "@OpenAIDevs",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Subscribers on eligible ChatGPT plans can now claim monthly API credits (up to $500, depending on plan) to build apps and agents, usable on the API's models such as GPT Live, Image 2.5 and the Decisions API. It ties the chat subscription to developer usage for the first time.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "OpenAI",
+   "posted_at": "2026-10-28T23:17:13.000Z",
+   "metrics": {
+    "likes": 4161,
+    "reposts": 339,
+    "quotes": 400,
+    "replies": 278
+   },
+   "confirmed_by": [
+    "@reach_vb"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Replies say the amount varies by plan and the first grant is prorated to the billing cycle, so many see far less than $500 at first.",
+    "source": "https://x.com/compoodment/status/2115625620008747153"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Welcomed as a way to turn a subscription into experiment budget; confusion over prorated first grants and per-plan amounts.",
+    "tried": true,
+    "replies_read": 15
+   }
+  },
+  {
+   "title": "Claude Code CLI brings back 'ultrathink': one turn at xhigh effort, including subagents spawned in that turn",
+   "url": "https://x.com/dmwlff/status/2115614417689944066",
+   "handle": "@dmwlff",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Typing ultrathink in Claude Code raises reasoning effort to xhigh for a single turn, so you can keep Opus 5.5 on medium and spend extra thinking only where needed. Any subagents started during that turn also run at xhigh.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Anthropic",
+   "posted_at": "2026-10-29T01:19:18.000Z",
+   "metrics": {
+    "likes": 337,
+    "reposts": 10,
+    "quotes": 12,
+    "replies": 43
+   },
+   "confirmed_by": [
+    "@lydiahallie"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Users glad it is back; one asks whether it busts the prompt cache like other effort switches, another whether max effort actually helps.",
+    "tried": false,
+    "replies_read": 12
+   }
+  },
+  {
+   "title": "Qwenputer: Qwen3.5-4B with a RISC-V CPU built into its weights runs C and MicroPython inside its forward pass",
+   "url": "https://x.com/divagr1925/status/2115394340357116169",
+   "handle": "@divagr1925",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "The model uses its own Gated DeltaNet layers as RAM to emulate a CPU, so it executes code with no external runtime. On DeepMind math it reports 97.5-100% versus 55-90% for the base model and 95-100% with a Python tool. Witcheer reproduced it on one RTX 5090: asked for 2**200, the base model ran out of 4,096 tokens while Qwenputer printed all 61 digits.",
+   "kind": "research",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/witcheer/status/2115621337460867375"
+   ],
+   "vendor": null,
+   "posted_at": "2026-10-28T10:44:47.000Z",
+   "metrics": {
+    "likes": 2553,
+    "reposts": 310,
+    "quotes": 124,
+    "replies": 123
+   },
+   "confirmed_by": [
+    "@witcheer"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Harbor v0.25.0 adds features to mitigate reward hacking in agent evals and RL environments",
+   "url": "https://x.com/harborframework/status/2115557894301331730",
+   "handle": "@harborframework",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "The Harbor agent evaluation framework ships new safeguards against reward hacking, developed after outside researchers reported exploits in its tasks.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://docs.harborframework.com/news/reward-hacking"
+   ],
+   "vendor": "Harbor",
+   "posted_at": "2026-10-28T21:34:41.000Z",
+   "metrics": {
+    "likes": 63,
+    "reposts": 9,
+    "quotes": 5,
+    "replies": 2
+   },
+   "confirmed_by": [
+    "@chem_safety"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "LiteLLM Autorouter SDK: pick a model per prompt in plain Python, no proxy needed",
+   "url": "https://x.com/Mokhalil01/status/2115583124168200440",
+   "handle": "@Mokhalil01",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Classify prompts with heuristics, an LLM or custom code, map tiers to any models, mix providers, pin sessions and escalate when a model stalls, all inside the LiteLLM Python SDK.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "LiteLLM",
+   "posted_at": "2026-10-28T23:14:57.000Z",
+   "metrics": {
+    "likes": 9,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 2
+   },
+   "confirmed_by": [
+    "@LiteLLM"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Sakana AI opens its API Platform to enterprise customers in early access",
+   "url": "https://x.com/SakanaAILabs/status/2115611510051598623",
+   "handle": "@SakanaAILabs",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Sakana's models are now available by API with organization management features; early access for enterprises starts today (announcement in Japanese).",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [
+    "https://sakana.ai/api-platform-earlyaccess/"
+   ],
+   "vendor": "Sakana AI",
+   "posted_at": "2026-10-29T01:07:44.000Z",
+   "metrics": {
+    "likes": 54,
+    "reposts": 9,
+    "quotes": 2,
+    "replies": 4
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "AA-Robotics v0.1: Opus 5.5 and GPT-6 Astra drive the same arm very differently (3,270 moves in 34 min vs 514 in 13 min)",
+   "url": "https://x.com/ArtificialAnlys/status/2115567357506748492",
+   "handle": "@ArtificialAnlys",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Artificial Analysis' new robotics eval shows frontier models controlling a real arm. Writing 'hello world', Claude dotted it out point by point while GPT-6 Astra drew continuous strokes, finishing in well under half the time.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Artificial Analysis",
+   "posted_at": "2026-10-28T22:12:18.000Z",
+   "metrics": {
+    "likes": 266,
+    "reposts": 5,
+    "quotes": 9,
+    "replies": 46
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "fal Motion to Code: describe an animation or upload an image or video and get editable GSAP or GLSL code",
+   "url": "https://x.com/fal/status/2115599892471021865",
+   "handle": "@fal",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Outputs a GSAP web page or a looping GLSL shader instead of a video file: a few KB, sharp at any resolution and editable.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://fal.ai/models/fal-ai/motion-to-code/gsap",
+    "https://fal.ai/models/fal-ai/motion-to-code/glsl"
+   ],
+   "vendor": "fal",
+   "posted_at": "2026-10-29T00:21:34.000Z",
+   "metrics": {
+    "likes": 149,
+    "reposts": 8,
+    "quotes": 5,
+    "replies": 5
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Vela 3.0 router (vela3-fast, 0.4B) ported to Core ML: about 10 ms per decision on an M5 Pro, matching the base model",
+   "url": "https://x.com/Alex_tra_memory/status/2115593079503638974",
+   "handle": "@Alex_tra_memory",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A community Core ML port with Swift code runs Vela 3.0's routing and PII span model on the Mac GPU. It matched the base on 1,200 of 1,200 decisions and caught 2,956 of 2,971 planted personal details in a 20,000-word file, fully on device. Follows the Vela 3.0 release kept this morning.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/XunzhuoLiu/status/2115426759013491002"
+   ],
+   "vendor": null,
+   "posted_at": "2026-10-28T23:54:30.000Z",
+   "metrics": {
+    "likes": 26,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 1
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "FACT: a fast 'cerebellum' robot policy trained on 2,000 hours of human video with tactile forces",
+   "url": "https://x.com/ZhiCao01756604/status/2115563680788086947",
+   "handle": "@ZhiCao01756604",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A slow planner predicts video and actions while a fast force-action refiner uses touch feedback. Pretrained on the new EgoForce dataset (40,000 episodes, 1,000 tasks) and fine-tuned on 10 robot plus 90 human demos per task, it beats pi0.5 and T-Rex on 10 real tasks; force labels lift test-tube cap opening from 0% to 80%.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [],
+   "vendor": null,
+   "posted_at": "2026-10-28T21:57:41.000Z",
+   "metrics": {
+    "likes": 22,
+    "reposts": 5,
+    "quotes": 0,
+    "replies": 1
+   },
+   "confirmed_by": [
+    "@GChongkai"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "EmbeddingGemma 2 tech report published",
+   "url": "https://x.com/sahildua2305/status/2115520272228888708",
+   "handle": "@sahildua2305",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Google's technical report for EmbeddingGemma 2 is now on arXiv, covering how the embedding model was built and evaluated.",
+   "kind": "paper",
+   "evidence": "artifact",
+   "links": [
+    "https://arxiv.org/pdf/2610.37364"
+   ],
+   "vendor": "Google",
+   "posted_at": "2026-10-28T19:05:12.000Z",
+   "metrics": {
+    "likes": 6,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 0
+   },
+   "confirmed_by": [
+    "@gabriberton"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "DeepSeek Harness (DSH) 0.2.2-alpha.2 can dispatch Codex and Claude Code as subagents",
+   "url": "https://x.com/xiangxiang103/status/2115449381646393655",
+   "handle": "@xiangxiang103",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "A new subagent_oar tool merges the separate Codex and Claude Code plugins, so a DeepSeek model can plan and hand tasks to either agent; the release also adds worktree-isolated sessions and per-step context and cache stats. CLI only for now; setup needs two packages and a config edit, and Codex gets full file access by default.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "DeepSeek Harness",
+   "posted_at": "2026-10-28T14:23:30.000Z",
+   "metrics": {
+    "likes": 44,
+    "reposts": 3,
+    "quotes": 2,
+    "replies": 9
+   },
+   "confirmed_by": [
+    "@teortaxesTex"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single tester run; alpha release.",
+    "source": null
+   }
+  },
+  {
+   "title": "Decagon runs an AutoResearch loop on SGLang: agents diagnose inference bottlenecks and test fixes on replayed production traffic",
+   "url": "https://x.com/DecagonAI/status/2115511110120120437",
+   "handle": "@DecagonAI",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Decagon describes agents that find serving bottlenecks, try changes against replays of real traffic and keep only verified gains, built on its SGLang stack.",
+   "kind": "technique",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/i/article/2115502716361560064"
+   ],
+   "vendor": "Decagon",
+   "posted_at": "2026-10-28T18:28:47.000Z",
+   "metrics": {
+    "likes": 72,
+    "reposts": 6,
+    "quotes": 11,
+    "replies": 12
+   },
+   "confirmed_by": [
+    "@sgl_project"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Owner save (repeat): NVIDIA Nemotron 3.5 Transcribe, open-weight 30B MoE speech-to-text",
+   "url": "https://x.com/NVIDIAAI/status/2115462300241141882",
+   "handle": "@NVIDIAAI",
+   "group": "applied",
+   "origin": "saved",
+   "summary": "Saved by the owner after the 13:00 CT sweep had already kept it: a promptable 30B MoE (about 4B active) covering transcription in 40 languages, speaker attribution, translation and audio understanding in one checkpoint. Repeat of the 18:00Z item; now 5,757 likes.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-10-28T15:14:00.000Z",
+   "metrics": {
+    "likes": 5757,
+    "reposts": 437,
+    "quotes": 219,
+    "replies": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "rechecks": [
+  {
+   "url": "https://x.com/_albertgu/status/2115502110578290900",
+   "result": "3,524 likes (up from 2,256), 371 reposts. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/hermanbrunborg/status/2115502130350227798",
+   "result": "1,690 likes (up from 1,212). Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/lydiahallie/status/2115533617984401464",
+   "result": "848 likes (up from 563). Doubt stays 0."
+  },
+  {
+   "url": "https://x.com/ElevenLabs/status/2115527286065914248",
+   "result": "130 likes (up from 94). Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/jerryjliu0/status/2115516581925315034",
+   "result": "407 likes (up from 234). Doubt stays 0."
+  },
+  {
+   "url": "https://x.com/GeminiApp/status/2115507092660289631",
+   "result": "785 likes (up from 566). Doubt stays 0."
+  },
+  {
+   "url": "https://x.com/Replit/status/2115553116942975013",
+   "result": "43 likes (up from 23). Doubt stays 0."
+  },
+  {
+   "url": "https://x.com/lmsysorg/status/2115549444724961628",
+   "result": "21 likes (up from 10). Doubt stays 0."
+  }
+ ],
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 1,
+  "kept": 1,
+  "note": "Live bookmarks read for id 1521986356721123328; all 20 already in seen ids because the 19:50 CT bookmark sync captured the one new save (NVIDIA Nemotron 3.5 Transcribe). Kept as a save and marked as a repeat of the 18:00Z sweep item."
+ },
+ "saved_rejected": [],
+ "list_posts_read": 96,
+ "list_pages": 1,
+ "discovery": {
+  "queries": 2,
+  "kept": 1,
+  "note": "Release search (huggingface/arxiv/github links, min 100 likes) returned only small projects. Security search surfaced one new agent-tooling incident (Command Code) and re-coverage. Qwenputer came in through a roster quote, so it counts as off-roster discovery."
+ },
+ "horizon": {
+  "block-dessa": "block.xyz/dessa unchanged (demo recordings, early access for safety researchers, recordings promised on X). One X read found only reposts of the original announcement. No weights, API or paper. No trigger."
+ },
+ "proposed_follows": [],
+ "proposed_follows_note": "follow_mode is browser and this run had no browser, so nothing was followed. No roster account is active yet, so none meet the follow rule.",
+ "skipped": [
+  {
+   "url": "https://x.com/thsottiaux/status/2115622002581188681",
+   "reason": "ChatGPT device texting tip; no new capability."
+  },
+  {
+   "url": "https://x.com/thsottiaux/status/2115588390414581916",
+   "reason": "Roadmap comment that a Chat/Work merge is not rolling out yet."
+  },
+  {
+   "url": "https://x.com/satyanadella/status/2115577764300693644",
+   "reason": "Earnings results; business news."
+  },
+  {
+   "url": "https://x.com/swyx/status/2115624308567658713",
+   "reason": "Reaction to Gemini 4 Carbon, already kept 18:00Z."
+  },
+  {
+   "url": "https://x.com/teortaxesTex/status/2115582251941368102",
+   "reason": "Build-A-Chip-Bench quote of an older post; original not re-read."
+  },
+  {
+   "url": "https://x.com/plotarmordev/status/2115591153852850390",
+   "reason": "Secondhand note on llama.cpp v0.8.0 realtime endpoint (release kept 18:00Z) plus speculation."
+  },
+  {
+   "url": "https://x.com/karsten_kreis/status/2115619136458166673",
+   "reason": "FastGan / Align Your Flow code mention via a low-engagement quote; original not read."
+  },
+  {
+   "url": "https://x.com/OpenRouter/status/2115600179789500615",
+   "reason": "Live event promo."
+  },
+  {
+   "url": "https://x.com/FireworksAI_HQ/status/2115601119418204628",
+   "reason": "Event promo."
+  },
+  {
+   "url": "https://x.com/sgl_project/status/2115609283702477108",
+   "reason": "Dev meeting announcement."
+  },
+  {
+   "url": "https://x.com/tungoldshou/status/2115623332133613841",
+   "reason": "Small personal project, low signal."
+  }
+ ],
+ "security_forwarded": [
+  {
+   "url": "https://x.com/CommandCodeAI/status/2115583532055826770",
+   "matched": "always_forward: agent tooling (coding agent CLI). Command Code reports a security incident tied to a large-scale distillation attack on Anthropic and OpenAI models and revoked all API keys; no user impact found so far. Command Code is not in stack.json, so impact is limited to any fleet use of Command Code keys."
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/Voxyz_ai/status/2115579368109978068",
+   "reason": "Planted .vscode/tasks.json repos stealing Claude Code/AWS/npm creds: same agent-hook repo campaign already forwarded 2026-10-24; new count (17,667 repos) only."
+  },
+  {
+   "url": "https://x.com/pvs_studio/status/2115571848809259147",
+   "reason": "ChainDrop / Shai-Hulud npm recap (keyv, tensorlake); campaign already tracked."
+  },
+  {
+   "url": "https://x.com/Getmetechnology/status/2115579365744689662",
+   "reason": "LiteLLM 1.107.0 malicious release recap; already handled 2026-10-22."
+  },
+  {
+   "url": "https://x.com/MoBuiltIt/status/2115607052311486568",
+   "reason": "Wiz Gheist GitHub Actions secret-leak campaign; already forwarded 2026-10-25."
+  },
+  {
+   "url": "https://x.com/DailyDarkWeb/status/2115592144996175978",
+   "reason": "Tailscale Tailworm fixes in 1.104.4; already forwarded."
+  },
+  {
+   "url": "https://x.com/caveeroo/status/2115585855611957294",
+   "reason": "HTTP2Shell CVE-2026-111497 PoC against a WordPress Docker image; CVE already tracked."
+  },
+  {
+   "url": "https://x.com/mynodebtc/status/2115575088481198420",
+   "reason": "MyNode patch for the tracked Node CVE-2026-111497; not in the stack."
+  },
+  {
+   "url": "https://x.com/aviatrixtrc/status/2115595218875547949",
+   "reason": "APT using AI tooling with PHP2Shell; PHP chain already covered, not in the stack."
+  },
+  {
+   "url": "https://x.com/botnewsnetwork/status/2115617884533907835",
+   "reason": "Summary of Anthropic exploit research; research, no new patch for fleet components."
+  },
+  {
+   "url": "https://x.com/theinsiderzclub/status/2115622353015091342",
+   "reason": "Unsourced Android privacy claim; not fleet."
+  }
+ ],
+ "errors": []
+}
