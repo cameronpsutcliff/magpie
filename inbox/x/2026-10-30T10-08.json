@@ -1,0 +1,351 @@
+{
+ "ran_at": "2026-10-30T10:08:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-10-30T02:13:00Z",
+ "queries": 11,
+ "calls": 16,
+ "items": [
+  {
+   "title": "Cursor pulls a trojanized Claude Code 2.1.313 extension from its marketplace; up to 5,000 users hit",
+   "url": "https://x.com/cursor_ai/status/2116074289053175808",
+   "handle": "@cursor_ai",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "A modified Anthropic.claude-code 2.1.313 (not built by Anthropic) sat in Cursor's IDE extension marketplace from about 2:27 AM to 1:35 PM PT on Oct 29, for Apple Silicon macOS and Windows x64. On load it collects host details, adds an attacker SSH key labelled svc-telemetry to authorized_keys, sets up a LaunchAgent or scheduled task for a reverse SSH tunnel and beacons to a server now taken down. Cursor took the marketplace down, rebuilt it and published a check command, IOCs and remediation scripts. Update to 2.1.314; uninstalling alone may not remove the persistence.",
+   "kind": "other",
+   "evidence": "artifact",
+   "links": [
+    "https://cursor.com/blog/claude-code-extension-security-notice",
+    "https://socket.dev/blog/claude-code-extension-compromise"
+   ],
+   "vendor": "Cursor",
+   "posted_at": "2026-10-30T07:46:39Z",
+   "metrics": {
+    "likes": 2406,
+    "reposts": 405,
+    "quotes": 255,
+    "replies": 217,
+    "views": 219888
+   },
+   "confirmed_by": [
+    "@TheHackersNews",
+    "@SocketSecurity",
+    "@cyb3rops"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Early reports (The Hacker News, Phorion) called it the official extension or an Open VSX build; Cursor says it was a modified copy in its own marketplace and Socket found no 2.1.313 on Open VSX or npm.",
+    "source": null
+   }
+  },
+  {
+   "title": "Kimi adds 3D Make: Kimi drives Blender and CAD tools to build models, scenes and games",
+   "url": "https://x.com/Kimi_Moonshot/status/2116005725814280570",
+   "handle": "@Kimi_Moonshot",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Kimi now connects to Blender and CAD tools to create 3D models, assemble scenes and build games, available on kimi.ai and in Kimi Work. Replies are mostly curious; a few say it did not work for them or was not available to try yet.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [
+    "https://kimi.ai"
+   ],
+   "vendor": "Moonshot AI",
+   "posted_at": "2026-10-30T03:14:13Z",
+   "metrics": {
+    "likes": 1983,
+    "reposts": 142,
+    "quotes": 81,
+    "replies": 98,
+    "views": 87976
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "A few repliers report it failing or not yet available on their accounts.",
+    "source": null
+   }
+  },
+  {
+   "title": "OpenBMB open-sources ForgeKernel after its agent beat FlashMLA prefill by 9.8% on B200",
+   "url": "https://x.com/OpenBMB/status/2116007834064400693",
+   "handle": "@OpenBMB",
+   "group": "research",
+   "origin": "list",
+   "summary": "The 22-hour live run ended with version 31 at 472 vs 518 microseconds on DeepSeek V4.1 FlashMLA prefill, without the agent seeing FlashMLA's source. OpenBMB is releasing the optimized fused prefill kernel, the kernels from its ForgeKernel paper (matching or beating 18 of 22 expert-library kernels) and the optimization harness.",
+   "kind": "repo",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/OpenBMB/ForgeKernel",
+    "http://openbmb.cn/forgekernel/"
+   ],
+   "vendor": "OpenBMB",
+   "posted_at": "2026-10-30T03:22:35Z",
+   "metrics": {
+    "likes": 18,
+    "reposts": 7,
+    "quotes": 0,
+    "replies": 0,
+    "views": 1070
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "OpenTTD-Bench: frontier agents run rival transport companies in real time; none beat the scripted AI yet",
+   "url": "https://x.com/thesophiaxu/status/2115851937061183681",
+   "handle": "@thesophiaxu",
+   "group": "research",
+   "origin": "list",
+   "summary": "Four agents share one seeded OpenTTD 15.3 game for ten game years (about 3 real hours) and are scored on operating profit through a Python client. GPT-6.1 Sol and GPT-6 Astra lead but still trail the AAAHogEx rules-based baseline; the writeup covers failure modes and how agents use subagents under time pressure. Code is open, built on Prime Intellect verifiers.",
+   "kind": "benchmark",
+   "evidence": "measured",
+   "links": [
+    "https://openttd-bench.pages.dev/",
+    "https://github.com/thesophiaxu/openttd-bench"
+   ],
+   "vendor": "Sophia Xu",
+   "posted_at": "2026-10-29T17:03:07Z",
+   "metrics": {
+    "likes": 349,
+    "reposts": 35,
+    "quotes": 10,
+    "replies": 45,
+    "views": 25747
+   },
+   "confirmed_by": [
+    "@PrimeIntellect",
+    "@htihle"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Letta FrontierMemory v1.1: bigger 750-trajectory corpus; Opus 5.5 still leads, open models close behind",
+   "url": "https://x.com/Letta_AI/status/2116045001570533743",
+   "handle": "@Letta_AI",
+   "group": "research",
+   "origin": "list",
+   "summary": "The memory benchmark update uses a larger, more balanced corpus meant to cut reward hacking. Claude Opus 5.5 remains top, with DeepSeek V4.1 Flash, Kimi K3 and GLM-5.3 close behind.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://frontiermemory.com"
+   ],
+   "vendor": "Letta",
+   "posted_at": "2026-10-30T05:50:17Z",
+   "metrics": {
+    "likes": 11,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 3,
+    "views": 732
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Pika releases H3 Flex open weights: six-step video with synced audio on MiniMax-H3",
+   "url": "https://x.com/linoy_tsaban/status/2116067946665832881",
+   "handle": "@linoy_tsaban",
+   "group": "opensource",
+   "origin": "discovery",
+   "summary": "Pika H3 Flex ships as two LoRA adapters (text/frame and multi-reference) on the MiniMax-H3 base, generating 5 to 15 s of 480p or 768p video with stereo audio in six steps. Day-0 Diffusers and ComfyUI support; tested locally on an H100 80GB, with 1080p to 4K through Pika's paid API.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/Pika-Labs/Pika-H3-Flex",
+    "https://github.com/Pika-Labs/Pika-H3-Flex"
+   ],
+   "vendor": "Pika",
+   "posted_at": "2026-10-30T07:21:27Z",
+   "metrics": {
+    "likes": 22,
+    "reposts": 2,
+    "quotes": 1,
+    "replies": 3,
+    "views": 1947
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "bricky 0.1: a LEGO model compiler for coding agents, with CLI, MCP server and skill",
+   "url": "https://x.com/maxencefaldor/status/2116097281242050851",
+   "handle": "@maxencefaldor",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "An agent writes a Python build script that places parts by BrickLink id; bricky checks the geometry, reports each mistake with the script line behind it and renders four views. Apache-2.0 on PyPI, with an MCP server (bricky-mcp) and a benchmark in the repo.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/maxencefaldor/bricky",
+    "https://pypi.org/project/bricky/"
+   ],
+   "vendor": "Maxence Faldor",
+   "posted_at": "2026-10-30T09:18:01Z",
+   "metrics": {
+    "likes": 13,
+    "reposts": 3,
+    "quotes": 1,
+    "replies": 3,
+    "views": 480
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/zoomergirls__/status/2091895808274899057",
+   "reason": "Non-AI culture-war video."
+  },
+  {
+   "url": "https://x.com/zoomergirls__/status/2091264646422618591",
+   "reason": "Non-AI lifestyle content."
+  },
+  {
+   "url": "https://x.com/ChristianHeiens/status/2115894941125648701",
+   "reason": "Non-AI partisan politics."
+  }
+ ],
+ "list_posts_read": 95,
+ "list_pages": 1,
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 3,
+  "kept": 0,
+  "note": "Live bookmarks read for id 1521986356721123328; three saves not yet in the archive, all off-topic and rejected."
+ },
+ "discovery": {
+  "queries": 2,
+  "kept": 1,
+  "note": "Release search: Pika H3 Flex kept; the rest were small self-promoted agent repos, roundups and Mistral Large 4 repeats. Security search was dominated by the Cursor Claude Code extension incident (forwarded) and surfaced the Linux kernel CVE-2026-98432 MPTCP exploit (forwarded)."
+ },
+ "horizon": {
+  "block-dessa": "One X read since 02:13Z: a low-engagement recap of the Oct 23 research preview. block.xyz/dessa unchanged (demo clips, waitlist). No weights, API or paper. No trigger."
+ },
+ "rechecks": [
+  {
+   "url": "https://x.com/rahulchhabra07/status/2115918744308658325",
+   "result": "1,497 likes (up from 251). No Community Note via API. Doubt stays 2."
+  },
+  {
+   "url": "https://x.com/FactoryAI/status/2115934579446182213",
+   "result": "985 likes (up from 387). No Community Note via API. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/NVIDIAAI/status/2115962853463396395",
+   "result": "179 likes (up from 64). No Community Note via API. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/witcheer/status/2115927909903069695",
+   "result": "48 likes (up from 32). No Community Note via API. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/VikParuchuri/status/2115904821136114003",
+   "result": "389 likes (up from 233). No Community Note via API. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/shobhitbanga/status/2115862853852995907",
+   "result": "530 likes (up from 492). No Community Note via API. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/xenovacom/status/2115923280079286543",
+   "result": "500 likes (up from 243). No Community Note via API. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/rapidmlx/status/2115862466068623609",
+   "result": "163 likes (up from 18). No Community Note via API. Doubt stays 1."
+  }
+ ],
+ "videos": {
+  "count": 0,
+  "note": "No video reader available; Kimi 3D Make (74 s) and OpenTTD-Bench clips noted but not analyzed."
+ },
+ "skipped": [
+  {
+   "url": "https://x.com/badlogicgames/status/2116078693827428383",
+   "reason": "pi-durable performance pass; no figures in the post text."
+  },
+  {
+   "url": "https://x.com/winglian/status/2116081403221705096",
+   "reason": "Axolotl day-0 Mistral Large 4 LoRA; same ground as the TRL and SkyRL items already kept."
+  },
+  {
+   "url": "https://x.com/askalphaxiv/status/2116078149612052645",
+   "reason": "ExpDis paper summary; low engagement, held."
+  },
+  {
+   "url": "https://x.com/SocketSecurity/status/2116110083448770807",
+   "reason": "Folded into the Cursor item as a correction source."
+  }
+ ],
+ "security_forwarded": [
+  {
+   "url": "https://cursor.com/blog/claude-code-extension-security-notice",
+   "severity": "high",
+   "matched": "Cursor (IDE) and Claude Code in stack; always_forward agent tooling and software supply chain.",
+   "why": "Trojanized Anthropic.claude-code 2.1.313 (darwin-arm64, win32-x64) in Cursor's IDE marketplace Oct 29 2:27 AM to 1:35 PM PT. Plants svc-telemetry SSH key, LaunchAgent com.apple.sysmond (macOS) or SysMon task (Windows), ~/.config/.smt and .smtk, reverse tunnel to 134[.]209[.]82[.]225. Fixed by 2.1.314 plus the remediation script; uninstall alone is not enough. Rotate credentials reachable from any hit host. Box (Linux) not exposed: no Cursor IDE extensions, no claude-code extension, no svc-telemetry key, no .smt files, no tunnel processes. Bouncer: check Mini, Air and Pro (Apple Silicon Macs) for the extension version, the key, the LaunchAgent and .smt files; check csdesktop if it is Windows with Cursor. IOCs saved at /workspace/security/refs/IOC-cursor-claude-code-ext-2026-10-30.md. Seen via https://x.com/cursor_ai/status/2116074289053175808."
+  },
+  {
+   "url": "https://nvd.nist.gov/vuln/detail/cve-2026-98432",
+   "severity": "medium",
+   "matched": "Linux kernel in stack (box 6.12.94+, Spark).",
+   "why": "CVE-2026-98432 IPv4 TCP SYN-handling use-after-free; Anthropic demonstrated remote root against an exposed MPTCP listener, though the bug sits in the plain TCP path. Fixed in 6.12.113, 6.18.56, 7.2.10 and other stable lines; many distro builds still pending. Go 1.24+ programs open MPTCP listeners by default (GODEBUG=multipathtcp=0 is a fragile stopgap). Box kernel 6.12.94+ is below the fix and net.mptcp.enabled=1, but no MPTCP sockets are open; box kernel is managed by the host, so it can't be patched from here. Bouncer: check Spark and any Linux host for kernel version, internet-facing listeners and Go services with MPTCP. Seen via https://x.com/infrastack_ai/status/2116010536580341805; confirmed by oss-security 2026-10-30 and the Debian tracker."
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/0x0SojalSec/status/2116014051121922174",
+   "reason": "Crypto exchange heist and general breach roundup; not AI or dev tooling."
+  },
+  {
+   "url": "https://x.com/Joshua_WD/status/2116089772577886516",
+   "reason": "GitHub Actions workflow lockfiles went GA on Oct 28 (hardening feature, not a vuln); third-party explainer, not the announcement."
+  },
+  {
+   "url": "https://x.com/earlyweights/status/2116009356710052000",
+   "reason": "NVIDIA SkillSpector skill scanner; already covered in earlier sweeps."
+  }
+ ],
+ "errors": [
+  "Skill tool unavailable; read magpie-x-sweep-2 and x-api-mcp-guide SKILL.md files directly.",
+  "No injection attempts aimed at the scout. Grok-addressed and spam replies in deep reads treated as data."
+ ],
+ "proposed_follows_note": "follow_mode is browser and this run had no browser, so nothing was followed. No roster account is active yet, so none meet the follow rule."
+}
