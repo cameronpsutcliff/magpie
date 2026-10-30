@@ -1,0 +1,256 @@
+{
+ "ran_at": "2026-10-30T14:11:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-10-30T10:08:00Z",
+ "queries": 9,
+ "calls": 17,
+ "items": [
+  {
+   "title": "Microsoft releases Mage-VL-Cowork: a 4B computer-use model that mixes GUI clicks and terminal commands, 66.0% on OSWorld-Verified",
+   "url": "https://x.com/aitrackerbot/status/2116143353213428048",
+   "handle": "@aitrackerbot",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Open weights (Apache 2.0) for a 4B vision-language policy trained to choose between clicking through a GUI and running code or shell commands, built on Mage-VL. The release includes the full training recipe, code and a technical report; Microsoft reports 66.0% on OSWorld-Verified, which makes a capable local computer-use agent small enough for a laptop GPU.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/microsoft/Mage-VL-Cowork",
+    "https://github.com/microsoft/Mage/tree/main/mage_vl_cowork",
+    "https://github.com/microsoft/Mage/blob/main/assets/mage_vl_cowork_tech_report.pdf",
+    "https://microsoft.github.io/Mage/cowork/"
+   ],
+   "vendor": "Microsoft",
+   "posted_at": "2026-10-30T12:21:06.000Z",
+   "metrics": {
+    "likes": 5,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 0,
+    "views": 432
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Score is self-reported in the model card and report; no third-party reproduction yet.",
+    "source": null
+   }
+  },
+  {
+   "title": "Unsloth Dynamic v3.1 GGUFs for DeepSeek-V4.1-Flash-1017, with a full quant benchmark and a reproducibility dispute with GSQ-RCO",
+   "url": "https://x.com/UnslothAI/status/2116156587404562491",
+   "handle": "@UnslothAI",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "New dynamic 1 to 4 bit GGUF quants of DeepSeek-V4.1-Flash-1017, benchmarked across AIME25 (16 runs per question), HMMT 2026, GPQA Diamond, MMLU-Pro, LiveCodeBench v6, Aider Polyglot and IFEval, with reasoning length tracked per quant. Unsloth says it cannot reproduce a rival GSQ-RCO quant's figures (1-bit AIME25 measured at 91.88%, not 100%) and publishes its full method and data.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/unsloth/DeepSeek-V4.1-Flash-1017-GGUF",
+    "https://unsloth.ai/docs/models/deepseek-v4.1-flash"
+   ],
+   "vendor": "Unsloth",
+   "posted_at": "2026-10-30T13:13:41.000Z",
+   "metrics": {
+    "likes": 396,
+    "reposts": 42,
+    "quotes": 14,
+    "replies": 32,
+    "views": 18578
+   },
+   "confirmed_by": [
+    "@danielhanchen"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 2,
+    "community_note": null,
+    "pushback": "Repliers point out that Unsloth's own table lists 128 to 145 GB for the 1-bit quant even with Engram offloaded to SSD and 233 GB on disk for the smallest file, so the headline '64GB+ RAM' needs heavy offload and likely costs speed or context; others note 2-bit to 1-bit costs about 18% on Aider and that runs used a low effort setting.",
+    "source": "https://x.com/AiAdventurerx/status/2116170019101110417"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Builders welcome the published method and per-benchmark data and plan to run it, but several question the 64 GB RAM headline against the size table, ask for per-quant variance, and note the bigger coding drop at 1-bit; a few say KLD alone is a poor proxy, in line with Unsloth's argument.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Nace.AI open-sources Drex-Max v1, a 27B decision model that scores options in one forward pass and runs locally on Apple Silicon",
+   "url": "https://x.com/NaceAI/status/2116163656480428220",
+   "handle": "@NaceAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Weights for Drex Max, a dense 27B model with a 255-way readout head: given a context (text, JSON or images) and named questions, it returns a probability for every option in a single forward pass instead of generating text, useful as a fast classifier or router inside agents. Ships with a Q8_0 GGUF (48 GB), an affine Q4 for Apple Silicon Macs with 24 GB or more, and llama.cpp and Ollama forks; Nace reports 64 on the Artificial Analysis Decision Index.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/nace-ai/drex-max-v1",
+    "https://github.com/nace-ai/drex-decision-models/",
+    "https://huggingface.co/nace-ai/drex-max-v1-Q8_0",
+    "https://github.com/nace-ai/llama.cpp/tree/drex-max-v1",
+    "https://github.com/nace-ai/ollama/tree/drex-max-v1"
+   ],
+   "vendor": "Nace.AI",
+   "posted_at": "2026-10-30T13:41:46.000Z",
+   "metrics": {
+    "likes": 20,
+    "reposts": 2,
+    "quotes": 5,
+    "replies": 7,
+    "views": 601
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "LeRobot adds interactive prompting: send a new instruction to a running robot policy and it changes course without a reset",
+   "url": "https://x.com/LeRobotHF/status/2116151120108134403",
+   "handle": "@LeRobotHF",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "lerobot-rollout gains an --interactive mode that lets you type a new task instruction while a language-conditioned policy is mid-motion, and the robot switches behavior without stopping the episode; it also works with steerable multi-task policies. Explained in a new Hugging Face blog post, Prompting Robots with LeRobot.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/huggingface/lerobot",
+    "https://huggingface.co/docs/lerobot/main/en/inference"
+   ],
+   "vendor": "Hugging Face LeRobot",
+   "posted_at": "2026-10-30T12:51:57.000Z",
+   "metrics": {
+    "likes": 25,
+    "reposts": 3,
+    "quotes": 2,
+    "replies": 2,
+    "views": 1139
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 94,
+ "list_pages": 1,
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 0,
+  "kept": 0,
+  "note": "Live bookmarks read for id 1521986356721123328; newest 20 all already seen (the three newest were vetted and rejected in the 10:08Z sweep)."
+ },
+ "discovery": {
+  "queries": 2,
+  "kept": 0,
+  "note": "Release search returned one off-topic post. Security search was dominated by recaps of the already-forwarded Cursor Claude Code extension incident and a recirculation of the Forever Security AGENTS.md Downloads-folder research (already forwarded 2026-10-25)."
+ },
+ "horizon": {
+  "block-dessa": "One X read: a Chinese-language recap of the Oct 23 preview and a bot reply saying no public access, API or weights yet. block.xyz/dessa unchanged (demo clips, waitlist, safety-researcher early access). No trigger."
+ },
+ "rechecks": [
+  {
+   "url": "https://x.com/rahulchhabra07/status/2115918744308658325",
+   "result": "1,581 likes (up from 1,497). No Community Note via API. Doubt stays 2."
+  },
+  {
+   "url": "https://x.com/cursor_ai/status/2116074289053175808",
+   "result": "4,762 likes (up from 2,406). Anthropic's Felix Rieseberg confirmed it was a tampered copy published through Cursor's marketplace, not an Anthropic compromise (https://x.com/felixrieseberg/status/2116170451466543578). Some recaps (e.g. DFIR_Radar) wrongly claim VS Code Marketplace installs were hit; Cursor and others say VS Code Marketplace, Open VSX and npm copies are clean. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/Kimi_Moonshot/status/2116005725814280570",
+   "result": "2,579 likes (up from 1,983). No Community Note via API. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/MistralAI/status/2115811242556137820",
+   "result": "5,851 likes (up from 3,703). No Community Note via API. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/UnslothAI/status/2115812784189620265",
+   "result": "707 likes (up from 368). No Community Note via API. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/lmstudio/status/2115829031832830252",
+   "result": "565 likes (up from 317). No Community Note via API. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/FactoryAI/status/2115934579446182213",
+   "result": "1,261 likes (up from 985). No Community Note via API. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/thesophiaxu/status/2115851937061183681",
+   "result": "369 likes (up from 349). No Community Note via API. Doubt stays 0."
+  }
+ ],
+ "videos": {
+  "count": 0,
+  "note": "No video reader available; no qualifying clip over 60 s among deep-read items."
+ },
+ "skipped": [
+  {
+   "url": "https://x.com/yb2698/status/2116114294383464836",
+   "reason": "LFM2.5-24B harness LoRA adapters (-39% tool calls in pi) already in today's edition; QGallouedec quote folded."
+  },
+  {
+   "url": "https://x.com/LysandreJik/status/2116159721975771573",
+   "reason": "safeagents proxy already covered (2026-10-29 sweep and today's edition)."
+  },
+  {
+   "url": "https://x.com/databricks/status/2116170816899498060",
+   "reason": "Agent Bricks Memory already covered 2026-10-21; new internal benchmark claim has no method."
+  },
+  {
+   "url": "https://x.com/LiteLLM/status/2116139805608210546",
+   "reason": "Routine daily changelog (token accounting fixes)."
+  },
+  {
+   "url": "https://x.com/OpenBMB/status/2116160740633776417",
+   "reason": "Community MiniCPM4-0.5B PII recognizer for Presidio; small, no numbers."
+  },
+  {
+   "url": "https://x.com/plotarmordev/status/2116129235672666211",
+   "reason": "DGX Spark CPU-temperature tip (fan tuned to GPU load); practical but not a new capability."
+  },
+  {
+   "url": "https://x.com/trending_repos/status/2116140198505640205",
+   "reason": "impeccable repo already covered 2026-10-29."
+  },
+  {
+   "url": "https://x.com/QGallouedec/status/2116120080794939669",
+   "reason": "TRL Mistral Large 4 SFT example; same ground as earlier Mistral Large 4 fine-tuning items."
+  }
+ ],
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://forever.security/blog/hijacking-ai-agents-via-downloads-folder/",
+   "reason": "AGENTS.md/CLAUDE.md planted in ~/Downloads hijacking Codex and Claude Code; recirculating on X (tQuietEngineer), already forwarded to Bouncer in the 2026-10-25 sweep, nothing new."
+  },
+  {
+   "url": "https://x.com/felixrieseberg/status/2116170451466543578",
+   "reason": "Anthropic statement on the Cursor marketplace Claude Code 2.1.313 incident (not an Anthropic compromise); update to a lead already forwarded at 10:08Z, no new action."
+  },
+  {
+   "url": "https://x.com/DFIR_Radar/status/2116123894302265693",
+   "reason": "Claims the malicious 2.1.313 reached 40M VS Code installs; contradicted by Cursor and other sources (VS Code Marketplace, Open VSX, npm clean). Not a new lead."
+  }
+ ],
+ "errors": [
+  "Skill tool unavailable; read magpie-x-sweep-2 and x-api-mcp-guide SKILL.md files directly.",
+  "No injection attempts aimed at the scout."
+ ],
+ "proposed_follows_note": "follow_mode is browser and this run had no browser, so nothing was followed. No roster account is active yet, so none meet the follow rule."
+}
