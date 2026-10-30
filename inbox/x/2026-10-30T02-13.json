@@ -1,0 +1,576 @@
+{
+ "ran_at": "2026-10-30T02:13:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-10-29T22:05:00Z",
+ "queries": 9,
+ "calls": 14,
+ "items": [
+  {
+   "title": "Cognition FrontierCode 2.0 scores Gemini 4 Carbon at 40% ($4.04 per task) and Gemini 4 Argon at 26.3%",
+   "url": "https://x.com/cognition/status/2115983299432820864",
+   "handle": "@cognition",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Cognition ran both new Gemini 4 models on its coding benchmark that rewards going beyond the spec. Carbon lands near the top, behind Claude Opus 5.5, GPT-6 Astra and Claude Sonnet 5.5; Argon trails Claude Haiku 5.5 and Grok 4.7 at a higher cost per task.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://cognition.com/frontiercode"
+   ],
+   "vendor": "Cognition",
+   "posted_at": "2026-10-30T01:45:06Z",
+   "metrics": {
+    "likes": 145,
+    "reposts": 7,
+    "quotes": 9,
+    "replies": 20,
+    "views": 9858
+   },
+   "confirmed_by": [
+    "@scaling01"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Epoch AI: GLM 5.3 autonomously builds Firefox exploits from published but not yet shipped security fixes",
+   "url": "https://x.com/EpochAIResearch/status/2115921730682404869",
+   "handle": "@EpochAIResearch",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "In a deliberately basic setup meant to mimic a low-resource attacker, the open GLM 5.3 model read security fixes that were public but not yet in released builds and reliably produced working exploits for six recent Firefox versions. It is a measured look at how open models shrink the patch gap.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Epoch AI",
+   "posted_at": "2026-10-29T21:40:27Z",
+   "metrics": {
+    "likes": 250,
+    "reposts": 33,
+    "quotes": 21,
+    "replies": 18,
+    "views": 31521
+   },
+   "confirmed_by": [
+    "@scaling01"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Artificial Analysis launches an HLE-Diamond leaderboard; Gemini 4 Carbon (high) leads at 69%",
+   "url": "https://x.com/ArtificialAnlys/status/2115989388689813945",
+   "handle": "@ArtificialAnlys",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Independent pass@1 runs on the cleaned 1,000-question Humanity's Last Exam set from CAIS and Scale, with no tools and the official judge prompt. Only 17 model variants clear 50%; Gemini 4 Carbon (high) leads at 69% ahead of Claude Opus 5.5 (max) at 68%, and most models do better on reasoning than knowledge.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Artificial Analysis",
+   "posted_at": "2026-10-30T02:09:18Z",
+   "metrics": {
+    "likes": 1,
+    "reposts": 0,
+    "quotes": 1,
+    "replies": 1,
+    "views": 1095
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Artificial Analysis Search Index compares search APIs for agents over 1,700 tasks; Exa and Perplexity lead",
+   "url": "https://x.com/ArtificialAnlys/status/2115970517778002283",
+   "handle": "@ArtificialAnlys",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "The index scores search APIs on quality, cost and latency using one base model and harness across BrowseComp, DeepSearchQA and AA-Omniscience. Exa (auto) and Perplexity (medium) top it, which helps teams pick a search tool for their agents.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Artificial Analysis",
+   "posted_at": "2026-10-30T00:54:18Z",
+   "metrics": {
+    "likes": 53,
+    "reposts": 5,
+    "quotes": 0,
+    "replies": 16,
+    "views": 6345
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Factory ships Droid 1.0, a new engine behind its coding agent",
+   "url": "https://x.com/FactoryAI/status/2115934579446182213",
+   "handle": "@FactoryAI",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Factory says the rebuilt engine is more accurate, more efficient and faster on complex projects; a reply highlights scripted tool use that cut one run from 312 requests to 2. The comparison chart is Factory's own.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Factory",
+   "posted_at": "2026-10-29T22:31:30Z",
+   "metrics": {
+    "likes": 387,
+    "reposts": 38,
+    "quotes": 35,
+    "replies": 24,
+    "views": 45482
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "A replier notes the chart's y-axis starts at 44% and 56%, so the lead is about 3 points on a roughly 66-task benchmark, about two tasks.",
+    "source": "https://x.com/srijanshukla18/status/2115983479200792791"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Mostly congratulations and integration requests; the one substantive reply questions how big the benchmark lead really is.",
+    "tried": false,
+    "replies_read": 9
+   }
+  },
+  {
+   "title": "Kino: an app for making videos end to end with Claude Code and Codex",
+   "url": "https://x.com/lukeigel/status/2115876931749200320",
+   "handle": "@lukeigel",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Drop in footage and agents pull highlights, assemble edits and share review links, with a shared space for a team and its agents. A 95-second demo video comes with the launch.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Kino",
+   "posted_at": "2026-10-29T18:42:26Z",
+   "metrics": {
+    "likes": 1686,
+    "reposts": null,
+    "quotes": 72,
+    "replies": 263,
+    "views": 742433
+   },
+   "confirmed_by": [
+    "@amasad"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Warm reception and people downloading it; one replier asks how timestamped review notes map back to edits an agent can redo.",
+    "tried": false,
+    "replies_read": 16
+   }
+  },
+  {
+   "title": "SkyRL and vLLM run day-0 LoRA RL on Mistral Large 4: AIME 2024 from about 64% to 75% in 75 steps",
+   "url": "https://x.com/vllm_project/status/2115985388649242699",
+   "handle": "@vllm_project",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "On 8 GB200 nodes, rank-32 LoRA RL on the NVFP4 checkpoint lifts AIME 2024 avg@8 by about 11 points, with vLLM generating rollouts and FSDP2 or Megatron training. The recipe adds NVFP4 quantization-aware training, FP8 KV-cache simulation and routing replay, and keeps the trainer to vLLM logprob gap near 0.02. Anyscale offers it as a managed run.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "NovaSky / vLLM",
+   "posted_at": "2026-10-30T01:53:24Z",
+   "metrics": {
+    "likes": 8,
+    "reposts": 4,
+    "quotes": 1,
+    "replies": 2,
+    "views": 742
+   },
+   "confirmed_by": [
+    "@anyscalecompute"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "E2E-SWE benchmark from Meta FAIR: coding agents must build a working repo from a spec, offline, against hidden tests",
+   "url": "https://x.com/HantianDing/status/2115839169532465580",
+   "handle": "@HantianDing",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Agents start in an empty workspace with only a specification and succeed only if the project installs and passes every hidden functional test. John Yang contrasts it with ProgramBench, which hands agents an executable instead, and notes the two lead agents to iterate quite differently.",
+   "kind": "eval",
+   "evidence": "artifact",
+   "links": [
+    "https://arxiv.org/abs/2609.38335",
+    "https://github.com/facebookresearch/E2E-SWE"
+   ],
+   "vendor": "Meta FAIR",
+   "posted_at": "2026-10-29T16:12:23Z",
+   "metrics": {
+    "likes": 10,
+    "reposts": null,
+    "quotes": 2,
+    "replies": 1,
+    "views": 1181
+   },
+   "confirmed_by": [
+    "@jyangballin"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "none",
+    "summary": "Thread replies only; no outside reaction yet.",
+    "tried": false,
+    "replies_read": 0
+   }
+  },
+  {
+   "title": "RuHarness evolves the grading rubric along with the agent harness, beating harness-evolution baselines by about 5 points",
+   "url": "https://x.com/dair_ai/status/2115987068761628740",
+   "handle": "@dair_ai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Self-improving harness methods stall because the criteria guiding each edit stay fixed. RuHarness mines behavioral criteria from trajectories each round and aims edits at the weakest unresolved one, gaining 4.5 points with Qwen3.5-35B-A3B and 5.3 with GLM-4.7-Flash on held-out tasks.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2610.36826"
+   ],
+   "vendor": null,
+   "posted_at": "2026-10-30T02:00:04Z",
+   "metrics": {
+    "likes": 4,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 933
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "ConnectX-5, hot-plug eGPUs and a TensorFold Vulkan base on Linux on Apple Silicon",
+   "url": "https://x.com/JoshuaSWarren/status/2115967481932312899",
+   "handle": "@JoshuaSWarren",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Joshua Warren got a ConnectX-5 card working over Thunderbolt on an M2 Max running Linux (a fast link to a DGX Spark), ran Gemma 4 12B on an RTX 5060 Ti eGPU at about 50 tok/s, and hot-plugged two AMD eGPUs with no reboot (kernel changes in review). His merged TensorFold Vulkan work brings Linux within 5% of macOS MLX per token.",
+   "kind": "repo",
+   "evidence": "measured",
+   "links": [
+    "https://joshuawarren.com/blog/what-i-open-sourced-today-egpus-connectx-tensorfold/"
+   ],
+   "vendor": null,
+   "posted_at": "2026-10-30T00:42:15Z",
+   "metrics": {
+    "likes": 20,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 3,
+    "views": 715
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "NVIDIA shows Nemotron Retriever answering agent questions with fewer searches and tokens than another open stack",
+   "url": "https://x.com/NVIDIAAI/status/2115962853463396395",
+   "handle": "@NVIDIAAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "A side-by-side video compares evidence retrieved, accuracy and token use against another open-source retrieval stack; the open models and recipes are on Hugging Face. The comparison is NVIDIA's own.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/blog/nvidia/nemotron-retriever-world-class-agentic-retrieval"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-10-30T00:23:51Z",
+   "metrics": {
+    "likes": 64,
+    "reposts": 5,
+    "quotes": 5,
+    "replies": 11,
+    "views": 4940
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Vendor-run comparison.",
+    "source": null
+   }
+  },
+  {
+   "title": "SwarmChat: an open-source, API-based Slack for coding-agent teams, tested on ProgramBench",
+   "url": "https://x.com/rsalakhu/status/2115949015959220621",
+   "handle": "@rsalakhu",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "Agents get channels, threads, boards and files through an agent-native CLI, and the system was tried with teams of coding agents rebuilding real programs from scratch on ProgramBench.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/Pranjal2041/swarmchat",
+    "https://swarmchat.io"
+   ],
+   "vendor": null,
+   "posted_at": "2026-10-29T23:28:52Z",
+   "metrics": {
+    "likes": 20,
+    "reposts": 5,
+    "quotes": 0,
+    "replies": 2,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Nous-Girl: a community build that turns an M5Stack StackChan into a Hermes Agent robot body via MCP tools",
+   "url": "https://x.com/witcheer/status/2115927909903069695",
+   "handle": "@witcheer",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Hermes Agent drives the little robot's head, face and lights through MCP tools and remembers the user between chats; code and a build guide are posted in the thread.",
+   "kind": "demo",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Nous Research community",
+   "posted_at": "2026-10-29T22:05:00Z",
+   "metrics": {
+    "likes": 32,
+    "reposts": 3,
+    "quotes": 1,
+    "replies": 4,
+    "views": 1852
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Code link sits in a reply that was not opened.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/RoundtableSpace/status/2115937975553134630",
+   "reason": "Listicle of five long-established crypto and smart-contract security repos (Slither, Echidna, Foundry, Mythril, Semgrep) with nothing new or tested; crypto framing."
+  }
+ ],
+ "list_posts_read": 91,
+ "list_pages": 1,
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 1,
+  "kept": 0,
+  "note": "Live bookmarks read for id 1521986356721123328; one new save (RoundtableSpace, captured by the 7:42 PM CT sync), rejected."
+ },
+ "discovery": {
+  "queries": 2,
+  "kept": 1,
+  "note": "Release search: SwarmChat kept; the rest were trending-repo roundups, low-signal self-promos and crypto agent tokens. Security search surfaced the Pluto Security Hugging Face malware campaign and hagent MCP CVE (forwarded) plus several N/A or already-handled leads."
+ },
+ "horizon": {
+  "block-dessa": "block.xyz/dessa unchanged (demo recordings, waitlist). One X read since 22:05Z returned nothing. No weights, API or paper. No trigger."
+ },
+ "rechecks": [
+  {
+   "url": "https://x.com/OpenAI/status/2115896329645723836",
+   "result": "2,855 likes (up from 1,941). No Community Note via API. Doubt stays 0."
+  },
+  {
+   "url": "https://x.com/AnthropicAI/status/2115871889549865429",
+   "result": "2,567 likes (up from 1,939). No note. Doubt stays 0."
+  },
+  {
+   "url": "https://x.com/ClaudeDevs/status/2115923971279614171",
+   "result": "3,600 likes (up from 599). No note. Doubt stays 0."
+  },
+  {
+   "url": "https://x.com/xenovacom/status/2115923280079286543",
+   "result": "243 likes (up from 22). No note. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/VikParuchuri/status/2115904821136114003",
+   "result": "233 likes (up from 115). No note. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/GeminiApp/status/2115885244805251519",
+   "result": "497 likes (up from 352). No note. Doubt stays 0."
+  },
+  {
+   "url": "https://x.com/shobhitbanga/status/2115862853852995907",
+   "result": "492 likes (up from 456). No note. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/rahulchhabra07/status/2115918744308658325",
+   "result": "523 likes (up from 251). No note. Doubt stays 2."
+  }
+ ],
+ "videos": {
+  "count": 0,
+  "note": "No video reader available; Kino (95 s) and Factory Droid 1.0 clips noted but not analyzed."
+ },
+ "skipped": [
+  {
+   "url": "https://x.com/MatthewBerman/status/2115972661767745903",
+   "reason": "Folio is a Windows PDF reader (MIT repo Forward-Future/folio); AI is a side feature, not a new capability."
+  },
+  {
+   "url": "https://x.com/eliebakouch/status/2115929950104732027",
+   "reason": "Mistral Large 4 architecture notes; release already kept 18:12Z."
+  },
+  {
+   "url": "https://x.com/FireworksAI_HQ/status/2115943233281044786",
+   "reason": "Rune 26B-A4B on Fireworks serverless; already in the edition from the Oct 27 changelog."
+  },
+  {
+   "url": "https://x.com/bfl_ai/status/2115933628224164141",
+   "reason": "FLUX 3 Klein LoRA guide; documentation for an already-known model."
+  },
+  {
+   "url": "https://x.com/demishassabis/status/2115933173175689570",
+   "reason": "'No.1' image with no detail; Gemini 4 Carbon already covered."
+  },
+  {
+   "url": "https://x.com/trq212/status/2115937378674372783",
+   "reason": "Opinion on coding-agent mania."
+  },
+  {
+   "url": "https://x.com/emollick/status/2115981377652822479",
+   "reason": "Fun Opus-built JIRA horror game; demo of known capability."
+  },
+  {
+   "url": "https://x.com/olivercameron/status/2115934488228515867",
+   "reason": "Speculative world-model what-if."
+  },
+  {
+   "url": "https://x.com/browser_use/status/2115956723324440830",
+   "reason": "Plug for browser-harness with no new numbers."
+  },
+  {
+   "url": "https://x.com/daveycodez/status/2115961321070215387",
+   "reason": "Offline LFM3 agent in iOS Safari; zero engagement, no roster pickup."
+  },
+  {
+   "url": "https://x.com/sgl_project/status/2115978614701424829",
+   "reason": "Event tickets."
+  },
+  {
+   "url": "https://x.com/scaling01/status/2115951479882424758",
+   "reason": "Job news."
+  }
+ ],
+ "security_forwarded": [
+  {
+   "url": "https://pluto.security/blog/hugging-face-malware-campaign-load-mine/",
+   "matched": "always_forward: software supply chain (model hub) and agent/local-inference tooling; touches python/pypi and local model serving on the Spark. Pluto Security 'Load/Mine': 31 malicious Hugging Face repos across 7 accounts (MENXIANGYU, wjsbg, soumikmahato, r1r13 and others), posing as tiny Qwen2 test checkpoints; config auto_map plus trust_remote_code=True runs repo Python before weights load (no malicious weights needed). Payload: fileless miner, watchdog /tmp/.cch/svc.py, hooks in ~/.bashrc, /root/.bashrc, /root/.profile, cron/SSH-key persistence, and in some builds a reverse shell to 212.32.253.3:443/9443. Over 32,000 downloads; second wave still live 8 days after report. No patch (documented feature): never set trust_remote_code on unreviewed repos, pin reviewed revisions; related fixed bugs: vLLM CVE-2026-22807 fixed in 0.14.0, Unsloth Studio fixed in 2026.6.9. Box clean: no transformers/vllm/xinference/gpustack installed, no HF module cache, no /tmp/.cch, no shell hooks, no connection to 212.32.253.3. Confirmed by BleepingComputer and The Next Web. Seen via https://x.com/DFIR_Radar/status/2115957704342519879."
+  },
+  {
+   "url": "https://www.vulncheck.com/advisories/hagent-through-commit-761eec6-os-command-injection-via-arduino-and-esp32-mcp-tools",
+   "matched": "always_forward: MCP servers. CVE-2026-117573 (CVSS 8.5 v4): hagent (masc-ucsc) hagent_arduino and hagent_esp32 MCP tools pass args into subprocess.run(shell=True); a prompt-injected agent can run shell commands as the server user. Affects all commits through 761eec6; no fix yet (track issue #98). Same class as CVE-2026-117567/117569 sent earlier today. Box not exposed (hagent not present). Seen via https://x.com/founderarcstone/status/2115944052445024727."
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/EpochAIResearch/status/2115921730682404869",
+   "reason": "GLM 5.3 Firefox patch-gap exploit research; capability eval (kept as item), Firefox not in the stack."
+  },
+  {
+   "url": "https://x.com/cvedotnow/status/2115934119880262118",
+   "reason": "CVE-2026-118762 is a fork-PR workflow flaw in the monkeytype repo's own GitHub Actions; not a shared action the fleet uses."
+  },
+  {
+   "url": "https://x.com/trevin/status/2115965142685167857",
+   "reason": "WIRED report of a contractor giving Claude Code admin creds on a DoD network; operational misuse, no component vulnerability."
+  },
+  {
+   "url": "https://x.com/foryangxin/status/2115963187283493182",
+   "reason": "Explainer on MCP OAuth-discovery code execution (mcp-remote class); Bouncer already confirmed mcp-remote is not exposed."
+  },
+  {
+   "url": "https://x.com/SlowShieldProxy/status/2115960292672725016",
+   "reason": "LiteLLM 1.107.0 recap; already handled Oct 22."
+  },
+  {
+   "url": "https://x.com/botnewsnetwork/status/2115981246786588953",
+   "reason": "Recap of Forever Security EMBRACE research; already forwarded 22:05Z."
+  },
+  {
+   "url": "https://x.com/founderarcstone/status/2115944052445024727",
+   "reason": "Also names AWS API MCP CVE-2026-115413 (already logged 10-28) and LangAlpha CVE-2026-109440 (unverified, not in the stack)."
+  },
+  {
+   "url": "https://x.com/m3_long/status/2115961391278346548",
+   "reason": "DebugBear / Polymarket and Binance wallet movements; crypto, not in the stack."
+  }
+ ],
+ "errors": [
+  "Skill tool unavailable; read magpie-x-sweep-2 and x-api-mcp-guide SKILL.md files directly.",
+  "No injection attempts aimed at the scout. One security-search post (founderarcstone) was a request addressed to @grok to evaluate a trace; treated as data, not followed.",
+  "block.xyz/dessa WebFetch timed out; read via curl instead."
+ ],
+ "proposed_follows_note": "follow_mode is browser and this run had no browser, so nothing was followed. No roster account is active yet, so none meet the follow rule."
+}
