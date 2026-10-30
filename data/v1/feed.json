@@ -13,6 +13,29 @@
  ],
  "items": [
   {
+   "id": "2026-10-30",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-10-30",
+   "title": "Open Mistral Large 4, squeeze it to 1 bit, agent-tune kernels, and more",
+   "summary": "Mistral's 1T-parameter open-weight model leads the day, with vLLM serving, Axolotl fine-tuning and an Unsloth 1-bit local quant landing around it. An agent that wrote a faster attention kernel, a large open robot dataset, agent-aware version control and new speech and audio models fill out the rest.",
+   "content_html": "<p>Mistral&#x27;s 1T-parameter open-weight model leads the day, with vLLM serving, Axolotl fine-tuning and an Unsloth 1-bit local quant landing around it. An agent that wrote a faster attention kernel, a large open robot dataset, agent-aware version control and new speech and audio models fill out the rest.</p><p><strong>Mistral&#x27;s 1T-parameter image-and-text model can be self-hosted, served and fine-tuned from the first day, and it even fits on one workstation.</strong> Teams can serve it in vLLM, LoRA fine-tune it in Axolotl, or test it privately on a Mac Studio with Unsloth&#x27;s 223GB 1-bit quant. That puts frontier-scale work on infrastructure a client controls. Quality has not been independently benchmarked, and the 91% top-1 retention figure is Unsloth&#x27;s own check.</p><p><strong>An agent tuned GPU kernels well enough to rival expert libraries.</strong> OpenBMB&#x27;s open harness lets an agent optimize kernels. Its fused prefill kernel ran in 472 microseconds against FlashMLA&#x27;s 518, and it matched or beat 18 of 22 expert-library kernels. That could cut inference cost without hand-written CUDA, but it was one live run on one GPU type, so broad gains are unproven.</p><p><strong>Large-scale speech recognition can now run offline from open weights.</strong> NVIDIA&#x27;s 30B-A4B transcription model is on Hugging Face, which gives a local alternative to hosted transcription APIs. That matters to buyers with privacy or connectivity limits. No word error rates are given, so accuracy against hosted services is unknown.</p><ol><li><a href=\"https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B\">Mistral Large 4 open weights, 1T-A52B multimodal</a>: You can download and self-host Mistral Large 4, a 1T-parameter image-and-text model, and serve it in vLLM or LoRA fine-tune it in Axolotl.</li><li><a href=\"https://github.com/OpenBMB/ForgeKernel\">ForgeKernel agent writes faster attention prefill kernel</a>: You can use OpenBMB&#x27;s open harness to have an agent optimize GPU kernels, and use its fused prefill kernel that ran 472 vs 518 microseconds against FlashMLA.</li><li><a href=\"https://x.com/UnslothAI/status/2115812784189620265\">Unsloth 1-bit GGUF runs Mistral Large 4 locally</a>: You can run the 1T-parameter Mistral Large 4 on a Mac Studio using a 223GB 1-bit quant that keeps 91% of top-1 accuracy.</li><li><a href=\"https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B\">NVIDIA Nemotron 3.5 Transcribe 30B-A4B speech model</a>: You can run NVIDIA&#x27;s 30B-A4B speech recognition model from open weights on Hugging Face, including offline.</li><li><a href=\"https://x.com/zeddotdev/status/2115831160840290394\">Zed DeltaDB links each code edit to its agent conversation</a>: You can keep a Git-compatible history where every edit is tied to the agent conversation that produced it.</li></ol><p><strong>New possibility:</strong> Aggressive local quants need repetition-loop tests before they touch document pipelines</p><p><strong>Worth watching:</strong> <a href=\"https://www.youtube.com/watch?v=hOitZIkMT2Y\">I Trained Qwen 4B with Distillation to Catch Qwen 27B</a>; <a href=\"https://www.youtube.com/watch?v=YU1uD_YkpjU\">Your Agent Just Paid for Nothing: 6 Attacks on x402 Payments - Ishween Kaur, SoFi</a>; <a href=\"https://www.youtube.com/watch?v=FczbSauVvjw\">Science Behind the Open Cyber Frontier with Mistral Large 4</a></p><p><strong>Constraints:</strong> No new constraint today. Latest: DHS order bars DeepSeek products from federal civilian agencies (2026-10-20)</p><p><strong>Threats still open:</strong> <a href=\"https://emudhra.we-have-a-problem.com/\">eMudhra intermediate CA private keys compromised</a> (high (editor&#x27;s estimate), patched; 2 package advisories); <a href=\"https://bugzilla.mozilla.org/show_bug.cgi?id=2086949\">TWCA Registration Authority server accessed without authorization</a> (medium (editor&#x27;s estimate), active); <a href=\"https://osv.dev/vulnerability/GHSA-f897-62hf-6gxq\">MCP TypeScript SDK HTTP transports lack request limits</a> (high, patched)</p>",
+   "content_text": "Mistral's 1T-parameter open-weight model leads the day, with vLLM serving, Axolotl fine-tuning and an Unsloth 1-bit local quant landing around it. An agent that wrote a faster attention kernel, a large open robot dataset, agent-aware version control and new speech and audio models fill out the rest. Mistral Large 4 open weights, 1T-A52B multimodal ForgeKernel agent writes faster attention prefill kernel Unsloth 1-bit GGUF runs Mistral Large 4 locally NVIDIA Nemotron 3.5 Transcribe 30B-A4B speech model Zed DeltaDB links each code edit to its agent conversation",
+   "date_published": "2026-10-30T10:53:16Z",
+   "tags": [
+    "agents",
+    "coding",
+    "infra",
+    "local",
+    "models",
+    "multimodal",
+    "research"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-30.json",
+    "backfilled": false,
+    "capabilities": 422
+   }
+  },
+  {
    "id": "2026-10-29",
    "url": "https://www.cameronsutcliff.com/magpie/2026-10-29",
    "title": "Google ships Gemini 4 Carbon, NVIDIA opens speech recognition, Copilot routes models, and more",
@@ -687,29 +710,6 @@
     "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-09-30.json",
     "backfilled": true,
     "capabilities": 158
-   }
-  },
-  {
-   "id": "2026-09-29",
-   "url": "https://www.cameronsutcliff.com/magpie/2026-09-29",
-   "title": "Refine agent skills, run security tools, retain memories, and more",
-   "summary": "Agent tools connect reusable skills, security testing, and persistent memory. Research proposes improvements to inference, training, and robotic decisions, with practical gains still to verify.",
-   "content_html": "<p>Agent tools connect reusable skills, security testing, and persistent memory. Research proposes improvements to inference, training, and robotic decisions, with practical gains still to verify.</p><ol><li><a href=\"https://huggingface.co/papers/2609.26333\">Disaggregated quantization separates prefill and decode formats</a>: Researchers report using separate formats and storage for prefill and decode to improve speed and accuracy at very low bit widths.</li><li><a href=\"https://huggingface.co/papers/2609.18703\">RayOrch preserves lineage in distributed data preparation</a>: RayOrch reports preserving parent-child relationships during distributed data processing while enabling efficient GPU batching.</li><li><a href=\"https://github.com/0x4m4/hexstrike-ai\">HexStrike connects agents to cybersecurity tools</a>: HexStrike provides an MCP server that lets AI agents run more than 150 cybersecurity tools for security testing and research.</li><li><a href=\"https://github.com/ashhart/TensorFold\">TensorFold serves local decoding on Apple Silicon</a>: TensorFold offers LLM decoding on Apple Silicon through MLX and an OpenAI-compatible endpoint, claiming fast and exact decoding.</li><li><a href=\"https://github.com/microsoft/SkillOpt\">SkillOpt optimizes reusable skills for frozen agents</a>: SkillOpt edits natural-language skills using agent trajectories, validates updates, and exports a deployable best_skill.md artifact without changing the underlying model.</li></ol>",
-   "content_text": "Agent tools connect reusable skills, security testing, and persistent memory. Research proposes improvements to inference, training, and robotic decisions, with practical gains still to verify. Disaggregated quantization separates prefill and decode formats RayOrch preserves lineage in distributed data preparation HexStrike connects agents to cybersecurity tools TensorFold serves local decoding on Apple Silicon SkillOpt optimizes reusable skills for frozen agents",
-   "date_published": "2026-10-20T15:43:15Z",
-   "tags": [
-    "agents",
-    "evals",
-    "infra",
-    "local",
-    "mcp",
-    "models",
-    "security"
-   ],
-   "_magpie": {
-    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-09-29.json",
-    "backfilled": true,
-    "capabilities": 85
    }
   }
  ]

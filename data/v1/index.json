@@ -2,6 +2,81 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-10-30",
+   "headline": "Open Mistral Large 4, squeeze it to 1 bit, agent-tune kernels, and more",
+   "events": 422,
+   "sources": 531,
+   "enriched": true,
+   "top": [
+    {
+     "id": "7c101cc8f3c0",
+     "title": "Mistral Large 4 open weights, 1T-A52B multimodal",
+     "impact": 5,
+     "vendor": "Mistral"
+    },
+    {
+     "id": "7c82caeeb9f4",
+     "title": "ForgeKernel agent writes faster attention prefill kernel",
+     "impact": 4,
+     "vendor": "OpenBMB"
+    },
+    {
+     "id": "db8cae120c50",
+     "title": "Unsloth 1-bit GGUF runs Mistral Large 4 locally",
+     "impact": 4,
+     "vendor": "Unsloth"
+    },
+    {
+     "id": "0267ddef94cb",
+     "title": "NVIDIA Nemotron 3.5 Transcribe 30B-A4B speech model",
+     "impact": 3,
+     "vendor": "NVIDIA"
+    },
+    {
+     "id": "426524d23e54",
+     "title": "Zed DeltaDB links each code edit to its agent conversation",
+     "impact": 4,
+     "vendor": "Zed"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Anthropic",
+    "Google",
+    "OpenAI",
+    "Vercel",
+    "NVIDIA"
+   ],
+   "topics": {
+    "models": 130,
+    "agents": 129,
+    "coding": 104,
+    "multimodal": 79,
+    "infra": 53,
+    "local": 39,
+    "mcp": 39,
+    "research": 35,
+    "evals": 32,
+    "memory": 25,
+    "security": 17,
+    "reverse": 15,
+    "robotics": 13
+   },
+   "kinds": {
+    "social": 120,
+    "video": 87,
+    "newsletter": 44,
+    "blog": 43,
+    "repo": 31,
+    "model": 30,
+    "changelog": 26,
+    "community": 19,
+    "space": 18,
+    "news": 4
+   },
+   "threats": []
+  },
+  {
    "date": "2026-10-29",
    "headline": "Google ships Gemini 4 Carbon, NVIDIA opens speech recognition, Copilot routes models, and more",
    "events": 425,
@@ -2899,5 +2974,5 @@
    }
   }
  ],
- "latest": "2026-10-29"
+ "latest": "2026-10-30"
 }

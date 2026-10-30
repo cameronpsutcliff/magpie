@@ -1,14 +1,14 @@
 {
  "schema": "magpie.threats/1",
- "updated": "2026-10-29",
+ "updated": "2026-10-30",
  "threats": [
   {
    "id": "thr-2026-10-28-vllm-image-loader-passes-eps-input-to",
    "kind": "threat",
    "category": "ai-framework-vuln",
-   "title": "vLLM image loader passes EPS input to Ghostscript",
-   "headline": "vLLM image requests can reach host Ghostscript, enabling command execution on vulnerable hosts",
-   "summary": "The same path also exposes a Pillow denial-of-service issue that can exhaust media-loading workers.",
+   "title": "vLLM image loader reaches Ghostscript on untrusted EPS input",
+   "headline": "vLLM passes untrusted image bytes to Pillow, enabling Ghostscript command execution on vulnerable hosts.",
+   "summary": "The same path also exposes a separate Pillow denial-of-service condition that can exhaust media-loading workers.",
    "severity": "high",
    "severity_basis": "advisory rating",
    "exploited": null,
@@ -30,21 +30,21 @@
    ],
    "actions": [
     "Update vllm to 0.32.0 or later",
-    "Check whether hosts running vLLM have a vulnerable Ghostscript build installed."
+    "Restrict who can reach image-capable vLLM endpoints."
    ],
    "action_quotes": [
     {
-     "action": "Check whether hosts running vLLM have a vulnerable Ghostscript build installed.",
-     "quote": "Deployments without Ghostscript or with a build fixed for CVE-2024-29510 are not affected by this execution chain."
+     "action": "Restrict who can reach image-capable vLLM endpoints.",
+     "quote": "API-key authentication and network access controls determine who can reach the request path."
     }
    ],
    "who": [
-    "vLLM deployments accepting image input",
-    "hosts with vulnerable Ghostscript installed"
+    "vLLM servers accepting image input",
+    "hosts with a vulnerable Ghostscript build"
    ],
    "published": "2026-10-28",
    "first_seen": "2026-10-29",
-   "updated": "2026-10-29",
+   "updated": "2026-10-30",
    "cves": [
     "CVE-2026-115915"
    ],
@@ -66,9 +66,10 @@
    "idents": [
     "CVE-2026-115915",
     "GHSA-h3rc-j82p-2c3h",
+    "PYSEC-2026-4346",
     "url:osv.dev/vulnerability/GHSA-h3rc-j82p-2c3h"
    ],
-   "last_seen": "2026-10-29",
+   "last_seen": "2026-10-30",
    "reach": 2,
    "wide": false
   },
@@ -76,9 +77,9 @@
    "id": "thr-2026-10-28-vllm-shared-memory-multimodal-cache-allows-forged",
    "kind": "threat",
    "category": "ai-framework-vuln",
-   "title": "vLLM shared-memory multimodal cache allows forged pickle loading",
-   "headline": "Authenticated vLLM callers can run arbitrary Python in workers when SHM multimodal caching is enabled",
-   "summary": "When vLLM's SHM multimodal cache is enabled, the worker trusts an address and monotonic_id pair supplied in a request to read shared memory. An authenticated caller can forge this pair to point at bytes they staged in the ring buffer, which the worker then passes to pickle.loads(). This works through ordinary public HTTP routes even with insecure serialization disabled, and the proof also made the engine health endpoint fail.",
+   "title": "vLLM SHM multimodal cache allows forged handles to reach pickle",
+   "headline": "Authenticated vLLM callers can forge SHM cache handles to run arbitrary Python in worker processes.",
+   "summary": "When the SHM multimodal processor cache is enabled, vLLM treats an address and monotonic_id pair as authority to read shared memory in the worker. A caller can forge this pair through public HTTP routes so the worker unpickles attacker-staged bytes. This lets an ordinary authenticated inference caller execute arbitrary Python in the worker process, even with insecure serialization disabled.",
    "severity": "high",
    "severity_basis": "advisory rating",
    "exploited": null,
@@ -100,21 +101,21 @@
    ],
    "actions": [
     "Update vllm to 0.32.0 or later",
-    "Check whether the SHM multimodal processor cache is enabled."
+    "Check whether your deployments enable the SHM multimodal processor cache."
    ],
    "action_quotes": [
     {
-     "action": "Check whether the SHM multimodal processor cache is enabled.",
+     "action": "Check whether your deployments enable the SHM multimodal processor cache.",
      "quote": "When --mm-processor-cache-type shm is enabled, vLLM's multimodal SHM cache represents a cached item with an address and monotonic_id pair and treats that pair as authority to dereference shared memory in the worker."
     }
    ],
    "who": [
     "vLLM deployments using SHM multimodal caching",
-    "multi-tenant vLLM inference services"
+    "multi-tenant inference providers"
    ],
    "published": "2026-10-28",
    "first_seen": "2026-10-29",
-   "updated": "2026-10-29",
+   "updated": "2026-10-30",
    "cves": [
     "CVE-2026-115912"
    ],
@@ -136,9 +137,10 @@
    "idents": [
     "CVE-2026-115912",
     "GHSA-6757-hggm-hp2w",
+    "PYSEC-2026-4345",
     "url:osv.dev/vulnerability/GHSA-6757-hggm-hp2w"
    ],
-   "last_seen": "2026-10-29",
+   "last_seen": "2026-10-30",
    "reach": 2,
    "wide": false
   },
@@ -189,7 +191,7 @@
     "bz:2086949",
     "url:bugzilla.mozilla.org/show_bug.cgi?id=2086949"
    ],
-   "last_seen": "2026-10-29",
+   "last_seen": "2026-10-30",
    "reach": 12,
    "wide": true
   },
@@ -253,7 +255,7 @@
     "GHSA-8397-8qf6-f2gm",
     "url:osv.dev/vulnerability/GHSA-8397-8qf6-f2gm"
    ],
-   "last_seen": "2026-10-29",
+   "last_seen": "2026-10-30",
    "reach": 2,
    "wide": false
   },
@@ -314,7 +316,7 @@
     "GHSA-gq5q-89c7-vhvx",
     "url:osv.dev/vulnerability/GHSA-gq5q-89c7-vhvx"
    ],
-   "last_seen": "2026-10-29",
+   "last_seen": "2026-10-30",
    "reach": 2,
    "wide": false
   },
@@ -322,9 +324,9 @@
    "id": "thr-2026-10-28-vllm-out-of-vocabulary-token-id-crashes",
    "kind": "threat",
    "category": "ai-framework-vuln",
-   "title": "vLLM out-of-vocabulary token id crashes the engine",
-   "headline": "Pre-tokenized prompts with one out-of-range token id can crash vLLM engines serving Llama-2-family models",
-   "summary": "vLLM's input validation accepts a token id equal to the vocabulary size for models such as the Llama-2 family, which is one past the last embedding row. At tensor-parallel size 1 the lookup is not masked, so the id triggers a CUDA device-side assert that takes the engine down. Any client able to send pre-tokenized input can trigger it.",
+   "title": "vLLM out-of-vocabulary token id crashes engine",
+   "headline": "A single pre-tokenized request with an out-of-range token id can crash vLLM engines serving Llama-2 models.",
+   "summary": "vLLM's input validation accepts a token id equal to the vocabulary size for models whose vocabulary is an exact multiple of 64, such as the Llama-2 family. At tensor-parallel size 1 the id reaches the embedding lookup out of range and raises a CUDA device-side assert that takes the engine down. Any client that can send pre-tokenized input can trigger it.",
    "severity": "medium",
    "severity_basis": "advisory rating",
    "exploited": null,
@@ -349,12 +351,12 @@
    ],
    "action_quotes": [],
    "who": [
-    "single-GPU vLLM deployments of Llama-2-family models",
-    "services accepting pre-tokenized prompts"
+    "single-GPU vLLM deployments",
+    "servers hosting Llama-2 family models"
    ],
    "published": "2026-10-28",
    "first_seen": "2026-10-29",
-   "updated": "2026-10-29",
+   "updated": "2026-10-30",
    "cves": [
     "CVE-2026-115916"
    ],
@@ -376,9 +378,10 @@
    "idents": [
     "CVE-2026-115916",
     "GHSA-q97c-p368-75c4",
+    "PYSEC-2026-4347",
     "url:osv.dev/vulnerability/GHSA-q97c-p368-75c4"
    ],
-   "last_seen": "2026-10-29",
+   "last_seen": "2026-10-30",
    "reach": 2,
    "wide": false
   },
@@ -386,9 +389,9 @@
    "id": "thr-2026-10-28-vllm-chat-template-rendering-lacks-limits-enabling",
    "kind": "threat",
    "category": "ai-framework-vuln",
-   "title": "vLLM chat template rendering lacks limits, enabling denial of service",
-   "headline": "One short chat template request can block all chat endpoints for every tenant on a vLLM replica",
-   "summary": "One authenticated request under 100 bytes can wedge all chat-style endpoints until restart, and a string-multiplication variant kills the API-server process through memory exhaustion. A malicious model repo whose tokenizer config carries a hostile template can do the same to every replica that loads it.",
+   "title": "vLLM chat template rendering lets one request wedge endpoints",
+   "headline": "Unbounded Jinja2 chat template rendering in vLLM lets one request or model repo block all chat endpoints.",
+   "summary": "One short authenticated request can permanently block all chat-style endpoints for every tenant until restart, and a variant can exhaust memory and kill the API server. A malicious model repo carrying a hostile template in its tokenizer config has the same effect on every replica that loads it.",
    "severity": "medium",
    "severity_basis": "advisory rating",
    "exploited": null,
@@ -413,12 +416,12 @@
    ],
    "action_quotes": [],
    "who": [
-    "multi-tenant vLLM deployments",
-    "vLLM servers loading untrusted model repos"
+    "multi-tenant vLLM API servers",
+    "deployments loading untrusted model repos"
    ],
    "published": "2026-10-28",
    "first_seen": "2026-10-29",
-   "updated": "2026-10-29",
+   "updated": "2026-10-30",
    "cves": [
     "CVE-2026-115911"
    ],
@@ -440,9 +443,10 @@
    "idents": [
     "CVE-2026-115911",
     "GHSA-542m-9234-8gvf",
+    "PYSEC-2026-4344",
     "url:osv.dev/vulnerability/GHSA-542m-9234-8gvf"
    ],
-   "last_seen": "2026-10-29",
+   "last_seen": "2026-10-30",
    "reach": 2,
    "wide": false
   },
@@ -539,7 +543,7 @@
     "GHSA-f897-62hf-6gxq",
     "url:osv.dev/vulnerability/GHSA-f897-62hf-6gxq"
    ],
-   "last_seen": "2026-10-29",
+   "last_seen": "2026-10-30",
    "reach": 5,
    "wide": false
   },
@@ -614,7 +618,7 @@
     "GHSA-h3rc-6mm3-gc2m",
     "url:osv.dev/vulnerability/GHSA-h3rc-6mm3-gc2m"
    ],
-   "last_seen": "2026-10-29",
+   "last_seen": "2026-10-30",
    "reach": 2,
    "wide": false
   },
@@ -675,7 +679,7 @@
     "GHSA-g5ff-637f-6q2m",
     "url:osv.dev/vulnerability/GHSA-g5ff-637f-6q2m"
    ],
-   "last_seen": "2026-10-29",
+   "last_seen": "2026-10-30",
    "reach": 2,
    "wide": false
   },
@@ -745,7 +749,7 @@
     "GHSA-7hp6-4w63-5g45",
     "url:osv.dev/vulnerability/GHSA-7hp6-4w63-5g45"
    ],
-   "last_seen": "2026-10-29",
+   "last_seen": "2026-10-30",
    "reach": 2,
    "wide": false
   },
@@ -820,7 +824,7 @@
     "GHSA-w4fh-qvv9-3v23",
     "url:osv.dev/vulnerability/GHSA-w4fh-qvv9-3v23"
    ],
-   "last_seen": "2026-10-29",
+   "last_seen": "2026-10-30",
    "reach": 2,
    "wide": false
   },
@@ -890,7 +894,7 @@
     "GHSA-5h93-6whr-6q8j",
     "url:osv.dev/vulnerability/GHSA-5h93-6whr-6q8j"
    ],
-   "last_seen": "2026-10-29",
+   "last_seen": "2026-10-30",
    "reach": 2,
    "wide": false
   },
@@ -960,7 +964,7 @@
     "GHSA-rwrf-2pqf-9j8j",
     "url:osv.dev/vulnerability/GHSA-rwrf-2pqf-9j8j"
    ],
-   "last_seen": "2026-10-29",
+   "last_seen": "2026-10-30",
    "reach": 2,
    "wide": false
   },
@@ -1021,7 +1025,7 @@
     "GHSA-hhww-mrg2-969h",
     "url:osv.dev/vulnerability/GHSA-hhww-mrg2-969h"
    ],
-   "last_seen": "2026-10-29",
+   "last_seen": "2026-10-30",
    "reach": 2,
    "wide": false
   },
@@ -1224,7 +1228,7 @@
     "PYSEC-2026-4320",
     "url:osv.dev/vulnerability/GHSA-6q48-6c7w-9gw2"
    ],
-   "last_seen": "2026-10-29",
+   "last_seen": "2026-10-30",
    "reach": 12,
    "wide": true
   },
@@ -1232,9 +1236,9 @@
    "id": "thr-2026-10-20-rustls-webpki-may-accept-distrusted-emsign-intermediates",
    "kind": "threat",
    "category": "trust-infrastructure",
-   "title": "rustls-webpki may accept compromised emSign intermediates",
-   "headline": "rustls-webpki could accept certificate paths through emSign intermediates whose private keys are now well known",
-   "summary": "The private keys for these intermediates are now well known. Fixed versions reject paths containing these public keys.",
+   "title": "rustls-webpki may accept distrusted emSign intermediates",
+   "headline": "rustls-webpki could accept certificate chains through emSign intermediates whose private keys are now well known.",
+   "summary": "The private keys corresponding to these intermediates are now well known.",
    "severity": "high",
    "severity_basis": "editor",
    "exploited": null,
@@ -1261,7 +1265,7 @@
    "who": [],
    "published": "2026-10-20",
    "first_seen": "2026-10-21",
-   "updated": "2026-10-22",
+   "updated": "2026-10-30",
    "cves": [
     "CVE-2026-111943"
    ],
@@ -1281,6 +1285,7 @@
    "merged_ids": [],
    "key": "threat:RUSTSEC-2026-0382",
    "idents": [
+    "BIT-GOLANG-2026-111943",
     "CVE-2026-111943",
     "GO-2026-6809",
     "RUSTSEC-2026-0381",
@@ -1288,7 +1293,7 @@
     "RUSTSEC-2026-0383",
     "url:osv.dev/vulnerability/RUSTSEC-2026-0382"
    ],
-   "last_seen": "2026-10-24",
+   "last_seen": "2026-10-30",
    "reach": 12,
    "wide": true
   },
@@ -1454,9 +1459,9 @@
    "id": "thr-2026-10-20-eight-emudhra-intermediate-ca-private-keys-compromised",
    "kind": "threat",
    "category": "trust-infrastructure",
-   "title": "Eight eMudhra intermediate CA private keys compromised",
-   "headline": "Flawed key generation let anyone recover eMudhra intermediate CA keys, exposing TLS clients outside browsers",
-   "summary": "The private keys of eight eMudhra intermediate CA certificates were incorrectly generated by the CA, so anyone could recover them from the certificates. Six are for TLS and chain to roots trusted by the Mozilla, Microsoft, Apple and Chrome root programs, and two are for codesigning and trusted by Microsoft. An attacker with any of these keys could impersonate any website or service, and clients that ship their own CA bundle or do not enforce Certificate Transparency are at greater risk.",
+   "title": "eMudhra intermediate CA private keys compromised",
+   "headline": "Private keys of eight eMudhra intermediate CAs are recoverable, exposing TLS clients outside browsers to impersonation.",
+   "summary": "The private keys of eight eMudhra intermediate CA certificates were incorrectly generated by the CA, so anyone can recover them from the certificates. Six of the certificates are for TLS and chain to roots trusted by the Mozilla, Microsoft, Apple and Chrome root programs, and two are for code signing and trusted by Microsoft. An attacker with any of these keys could impersonate any website or service to clients that still trust the intermediates, including applications and libraries that ship their own CA bundle and clients that do not enforce Certificate Transparency.",
    "severity": "high",
    "severity_basis": "editor",
    "exploited": null,
@@ -1468,11 +1473,6 @@
      "name": "eMudhra intermediate CA certificates",
      "ecosystem": "PKI",
      "versions": ""
-    },
-    {
-     "name": "macOS developer tools (git, curl, python3)",
-     "ecosystem": "OS",
-     "versions": ""
     }
    ],
    "fixed_in": [
@@ -1481,84 +1481,79 @@
      "version": "2026.10.19"
     },
     {
-     "name": "pip",
-     "version": "26.2.2"
+     "name": "Node.js",
+     "version": "26.12.1, 24.22.1, 22.23.4"
     },
     {
      "name": "Python",
      "version": "3.15.2, 3.14.10, 3.13.18, 3.12.16, 3.11.18"
     },
     {
-     "name": "Node.js",
-     "version": "26.12.1, 24.22.1, 22.23.4"
-    },
-    {
      "name": "Go",
      "version": "1.27.3, 1.26.10"
-    },
-    {
-     "name": "Electron",
-     "version": "44.9.1, 43.8.1, 42.11.16"
-    },
-    {
-     "name": "Claude Code",
-     "version": "2.1.303"
-    },
-    {
-     "name": "litellm",
-     "version": "1.103.8, 1.104.6, 1.105.4, 1.106.3"
-    },
-    {
-     "name": "Conda",
-     "version": "26.9.4"
     },
     {
      "name": "curl CA bundle",
      "version": "2026-10-20"
     },
     {
-     "name": "Docker Engine",
-     "version": "29.9.2"
+     "name": "Homebrew ca-certificates",
+     "version": "2026-09-25_1"
     },
     {
      "name": "NSS",
      "version": "3.131.1"
+    },
+    {
+     "name": "Bun",
+     "version": "1.4.4"
+    },
+    {
+     "name": "Deno",
+     "version": "2.9.8"
+    },
+    {
+     "name": "Electron",
+     "version": "44.9.1, 43.8.1, 42.11.16"
+    },
+    {
+     "name": "Rust rustls-webpki",
+     "version": "0.103.16"
+    },
+    {
+     "name": "Ubuntu ca-certificates",
+     "version": "20260816ubuntu0.22.04.1, 20260816ubuntu0.24.04.1, 20260816ubuntu0.26.04.1, 20260816ubuntu0.26.10.1"
     }
    ],
    "actions": [
     "Update Python certifi to 2026.10.19 or later",
-    "Update pip to 26.2.2 or later",
-    "Update Python to 3.15.2, 3.14.10, 3.13.18, 3.12.16, 3.11.18 or later",
     "Update Node.js to 26.12.1, 24.22.1, 22.23.4 or later",
+    "Update Python to 3.15.2, 3.14.10, 3.13.18, 3.12.16, 3.11.18 or later",
     "Update Go to 1.27.3, 1.26.10 or later",
-    "Update Electron to 44.9.1, 43.8.1, 42.11.16 or later",
-    "Update Claude Code to 2.1.303 or later",
-    "Update litellm to 1.103.8, 1.104.6, 1.105.4, 1.106.3 or later",
-    "Update Conda to 26.9.4 or later",
     "Update curl CA bundle to 2026-10-20 or later",
-    "Update Docker Engine to 29.9.2 or later",
+    "Update Homebrew ca-certificates to 2026-09-25_1 or later",
     "Update NSS to 3.131.1 or later",
-    "Update applications and libraries that ship their own CA bundle.",
-    "Update browsers and operating systems."
+    "Update Bun to 1.4.4 or later",
+    "Update Deno to 2.9.8 or later",
+    "Update Electron to 44.9.1, 43.8.1, 42.11.16 or later",
+    "Update Rust rustls-webpki to 0.103.16 or later",
+    "Update Ubuntu ca-certificates to 20260816ubuntu0.22.04.1, 20260816ubuntu0.24.04.1, 20260816ubuntu0.26.04.1, 20260816ubuntu0.26.10.1 or later",
+    "Rebuild Electron-based apps on a patched Electron release."
    ],
    "action_quotes": [
     {
-     "action": "Update applications and libraries that ship their own CA bundle.",
-     "quote": "However, many other clients do not consume revocation information and require software updates to ensure they no longer trust the compromised intermediates."
-    },
-    {
-     "action": "Update browsers and operating systems.",
-     "quote": "Users should update their browsers and operating systems to the latest versions as soon as possible."
+     "action": "Rebuild Electron-based apps on a patched Electron release.",
+     "quote": "Electron apps only pick up Electron's fix once they are updated to a version built on a patched Electron release ."
     }
    ],
    "who": [
-    "TLS clients that ship their own CA bundle",
-    "command-line tools that do not enforce Certificate Transparency",
-    "apps built on Electron"
+    "non-browser TLS clients with bundled CA lists",
+    "Electron apps",
+    "macOS developer tools such as git, curl and python3"
    ],
    "published": "2026-10-20",
    "first_seen": "2026-10-21",
-   "updated": "2026-10-29",
+   "updated": "2026-10-30",
    "cves": [],
    "kev": false,
    "doc": "https://emudhra.we-have-a-problem.com/",
@@ -1583,7 +1578,8 @@
    "evidence": "official",
    "incident": null,
    "children": [
-    "thr-2026-10-20-certifi-bundle-includes-root-with-compromised-intermediates"
+    "thr-2026-10-20-certifi-bundle-includes-root-with-compromised-intermediates",
+    "thr-2026-10-20-rustls-webpki-may-accept-distrusted-emsign-intermediates"
    ],
    "merged_ids": [],
    "key": "threat:url:emudhra.we-have-a-problem.com",
@@ -1593,7 +1589,7 @@
     "url:emudhra.we-have-a-problem.com",
     "url:groups.google.com/a/mozilla.org/g/dev-security-policy/c/0R3XLJL6FuE"
    ],
-   "last_seen": "2026-10-29",
+   "last_seen": "2026-10-30",
    "reach": 28,
    "wide": true
   },
