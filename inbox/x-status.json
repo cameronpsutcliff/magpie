@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-10-30T18:12:00Z",
+ "updated_at": "2026-10-30T22:15:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 55,
+ "calls_used_today": 73,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-10-30T18:03:00Z",
-  "items": 12,
-  "queries": 11,
-  "deep_reads": 4,
+  "ran_at": "2026-10-30T22:10:00Z",
+  "items": 14,
+  "queries": 10,
+  "deep_reads": 3,
   "rechecks": 8,
-  "flagged": 5,
-  "saved_in": 0,
+  "flagged": 6,
+  "saved_in": 1,
   "saved_kept": 0,
   "videos": 0,
-  "security_forwarded": 0
+  "security_forwarded": 1
  },
  "roster": {
   "curated": 223,
@@ -183,7 +183,8 @@
   "Roster review 2026-10-28: no promotions possible before 2026-11-03; no retirements (no account has two level-2 flags in 30 days; @cohere picked up one on 2026-10-27, joining @ValsAI, @SemiAnalysis_, @omarsar0 and off-roster @Exocija with one each; the 45-day rule cannot bite before about 2026-11-07); no sweep files older than 14 days (oldest 2026-10-20T17-39), so none pruned; Wednesday, so no drafts.",
   "Sweep 14:15Z: builders roster query hit 25 results, so one extra page covered 10:06 to 11:02Z (5 posts, none kept). List trial members (OpenBMB, XunzhuoLiu, PrismaXai) supplied 4 of 17 items. Both owner saves were deep-read; the akarixbt GrokBot org clip is kept at doubt 2 for its unbacked framing. No new security leads; all security hits were re-coverage of already forwarded items.",
   "2026-10-28 owner requested add @NVIDIAAI (typed @nvididaai, which does not exist) to the watch list; added as owner_requested trial (also curated in config, s/n 3) and to the Magpie roster List (now 59 members). Never auto-retire; flag concerns in prompt_feedback.",
-  "Sweep 18:03Z: paged all six fallback groups once more despite result_count under 25; only builders returned more (14 posts), so following next_token is still worth it for builders when the first page is full."
+  "Sweep 18:03Z: paged all six fallback groups once more despite result_count under 25; only builders returned more (14 posts), so following next_token is still worth it for builders when the first page is full.",
+  "Sweep 22:10Z: a batched conversation_id OR deep-read search caps at 25 results, so the busiest thread crowds out the rest; split deep reads into two batches when more than 4 threads are queued."
  ],
  "errors": [
   "Sweep 14:07Z, possible injection lure, not followed: in the quote posts of https://x.com/cnm13ryan/status/2113121138205499443, @lumpenspace tells readers to have their model 'check out my x bio'. Ignored; no bio was read.",
@@ -221,7 +222,8 @@
   "Sweep 18:12Z: no injection attempts seen. Skill tool unavailable, so x-api-mcp-guide SKILL.md was read directly (non-blocking); no browser, so no follows and no video analysis. WebFetch timeouts on NVD/block.xyz, used curl. calls_used_today 47 = 29 (through 14:09Z sweep) + 2 (9:49 and 11:46 CT bookmark syncs) + 16 (this sweep).",
   "Sweep 22:05Z: no injection attempts seen. Skill tool unavailable, so the magpie-x-sweep-2 and x-api-mcp-guide SKILL.md files were read directly (non-blocking); no browser, so no follows and no video analysis. block.xyz/dessa checked with curl. calls_used_today 66 = 47 (through 18:12Z sweep) + 2 (1:46 and 3:46 PM CT bookmark syncs) + 17 (this sweep).",
   "Sweep 10:08Z: no injection attempts seen. Skill tool unavailable, so the magpie-x-sweep-2 and x-api-mcp-guide SKILL.md files were read directly (non-blocking); no browser, so no follows and no video analysis. block.xyz/dessa checked with curl. calls_used_today 16 = this sweep (first sweep of the Oct 30 Chicago day); a 4:32 AM CT roster-review prep left local files but pushed nothing and its reads, if any, are not counted here. X rate header mid-sweep showed 953 of 1000 account-wide reads left for the UTC day.",
-  "Sweep 14:11Z: no injection attempts seen. Skill tool unavailable, so the magpie-x-sweep-2 and x-api-mcp-guide SKILL.md files were read directly (non-blocking); no browser, so no follows and no video analysis. block.xyz/dessa checked with curl. calls_used_today 35 = 16 (10:08Z sweep) + 2 (7:47 AM CT bookmark sync, 2 pages) + 17 (this sweep). X header showed 950 of 1000 account-wide reads left early in the sweep."
+  "Sweep 14:11Z: no injection attempts seen. Skill tool unavailable, so the magpie-x-sweep-2 and x-api-mcp-guide SKILL.md files were read directly (non-blocking); no browser, so no follows and no video analysis. block.xyz/dessa checked with curl. calls_used_today 35 = 16 (10:08Z sweep) + 2 (7:47 AM CT bookmark sync, 2 pages) + 17 (this sweep). X header showed 950 of 1000 account-wide reads left early in the sweep.",
+  "Sweep 22:10Z: no injection attempts seen. Skill tool unavailable, so the x-api-mcp-guide SKILL.md was read directly (non-blocking); no browser, so no follows and no video analysis. block.xyz/dessa checked with curl. calls_used_today 73 = 55 (through 18:03Z sweep) + 3 (1:41 PM and 3:42 PM CT bookmark syncs, the latter 2 pages) + 15 (this sweep). X header showed 909 of 1000 account-wide reads left mid-sweep."
  ],
  "follows_today": 0,
  "last_roster_review": {
