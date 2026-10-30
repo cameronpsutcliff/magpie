@@ -7,7 +7,7 @@
  "last_sweep": {
   "ran_at": "2026-10-30T18:03:00Z",
   "items": 12,
-  "queries": 13,
+  "queries": 11,
   "deep_reads": 4,
   "rechecks": 8,
   "flagged": 5,
