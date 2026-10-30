@@ -1,0 +1,517 @@
+{
+ "ran_at": "2026-10-30T18:03:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-10-30T14:11:00Z",
+ "queries": 13,
+ "calls": 20,
+ "items": [
+  {
+   "title": "OpenCode can use Claude subscriptions again",
+   "url": "https://x.com/opencode/status/2116198602523513081",
+   "handle": "@opencode",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "OpenCode now lets users sign in with a Claude subscription (Max or Ultra) instead of an API key. Repliers and an OpenCode team member say it routes through the official Claude Code binary, which is why it is allowed under Anthropic's current terms.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://x.com/DanielSmolsky/status/2116193957675769917"
+   ],
+   "vendor": "OpenCode",
+   "posted_at": "2026-10-30T16:00:38.000Z",
+   "metrics": {
+    "likes": 3861,
+    "reposts": 181,
+    "quotes": 136,
+    "replies": 207,
+    "views": 182305
+   },
+   "confirmed_by": [
+    "@kitlangton"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Some repliers worry about account bans and ask whether it covers Enterprise plans; one notes iOS in-app Claude plans cost about 25% more than web.",
+    "source": "https://x.com/aviahq"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Mostly celebration that subscriptions work outside Claude Code again, with questions about ban risk, Enterprise plans and usage stats in the status line; nobody reports a failure.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "OpenCode 2.2.3 adds a built-in image generation tool for coding agents",
+   "url": "https://x.com/opencode/status/2116203934033354866",
+   "handle": "@opencode",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "OpenCode 2.2.3 ships an image generation tool that works with OpenAI, Gemini, Grok and other image models, aimed at concept UI and reference art the agent can then build against. A replier notes the model is set with experimental.image_generate.model in the OpenCode config.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "OpenCode",
+   "posted_at": "2026-10-30T16:21:49.000Z",
+   "metrics": {
+    "likes": 1250,
+    "reposts": 46,
+    "quotes": 18,
+    "replies": 81,
+    "views": 42779
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers like generating a UI mock first and having the agent build to it; one says image editing with current models is still frustrating, and others ask whether the agent can compare its render against the image.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Cua Durable Spaces keep a coding agent's task alive through crashes and dead machines",
+   "url": "https://x.com/trycua/status/2116193344355225853",
+   "handle": "@trycua",
+   "group": "devtools",
+   "origin": "list",
+   "summary": "A --durable flag for Claude Code, Codex, Hermes and OpenCode agents in Cua Spaces restarts the agent after a crash or two minutes of silence and fails over to another of your machines, up to five tries, treating all your computers as one pool.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://cua.ai/docs/spaces/guides/keep-an-agent-running",
+    "https://cua.ai/download"
+   ],
+   "vendor": "Cua",
+   "posted_at": "2026-10-30T15:39:44.000Z",
+   "metrics": {
+    "likes": 103,
+    "reposts": 4,
+    "quotes": 2,
+    "replies": 9,
+    "views": 4203
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "DFlash plus Weaver speculative decoding runs Qwen3.5 9B about 4x faster on an M5 MacBook Pro",
+   "url": "https://x.com/akshay_pachaar/status/2116173540894601574",
+   "handle": "@akshay_pachaar",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Same prompt on Qwen3.5 9B: 42 s with no speculative decoding, 30 s with regular speculative decoding, 11 s with DFlash plus Weaver. Weaver is a one-layer adapter on top of the DFlash parallel drafter that picks among its top candidates left to right so later guesses depend on earlier ones, cutting rejected drafts.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/i/article/2108246386538094592"
+   ],
+   "vendor": "Weaver",
+   "posted_at": "2026-10-30T14:21:03.000Z",
+   "metrics": {
+    "likes": 118,
+    "reposts": 12,
+    "quotes": 3,
+    "replies": 41,
+    "views": 9192
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single prompt on one machine, timed by the poster.",
+    "source": null
+   }
+  },
+  {
+   "title": "Arena: prompt caching cuts the cost of a typical agent task by about 72% across 26K Agent Arena sessions",
+   "url": "https://x.com/arena/status/2116186548588929328",
+   "handle": "@arena",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Analysis of more than 26,000 Agent Arena sessions from Sep 12 to Oct 23, 2026, across 30 agents and 13 labs: billing every cached token at the full input price would make a typical task cost 260% more, so caching is a major part of agent economics.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/i/article/2116183418220511232"
+   ],
+   "vendor": "Arena",
+   "posted_at": "2026-10-30T15:12:44.000Z",
+   "metrics": {
+    "likes": 92,
+    "reposts": 7,
+    "quotes": 8,
+    "replies": 20,
+    "views": 11986
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Anthropic and others: poisoning 0.1% of pretraining data plants a remote-code-execution backdoor in a CLI agent",
+   "url": "https://x.com/omarsar0/status/2116183621157736540",
+   "handle": "@omarsar0",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Qwen3 models pretrained from scratch at 0.6B, 1.7B and 4B with 0.1% poisoned data, then post-trained cleanly into CLI agents. The backdoor survived SFT, DPO and tool-use RL and fired on about 92% of triggered prompts at 4B; the trigger can be an ordinary file path in the user's request. At 0.0005% poison (about 2,500 documents in 100B tokens) it still fired on 1.4% of prompts in one seed.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2610.37741"
+   ],
+   "vendor": "Anthropic",
+   "posted_at": "2026-10-30T15:01:06.000Z",
+   "metrics": {
+    "likes": 49,
+    "reposts": 3,
+    "quotes": 4,
+    "replies": 43,
+    "views": 4367
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Do research agents have taste? Of 415 agent-proposed experiments, 73 were sound, new and non-obvious",
+   "url": "https://x.com/omarsar0/status/2116204488562528713",
+   "handle": "@omarsar0",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Six frontier models proposed experiments for seven recent NLP papers and every one was run, including those ranked last. 194 of 415 were judged sound, valuable and new, 73 also beyond the seed paper. The models' own rankings and forecasts added little over simple baselines, and agent teams cost more with no clear gain.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2610.40488"
+   ],
+   "vendor": null,
+   "posted_at": "2026-10-30T16:24:01.000Z",
+   "metrics": {
+    "likes": 35,
+    "reposts": 4,
+    "quotes": 1,
+    "replies": 21,
+    "views": 3350
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "NVIDIA Nemotron 3.5 Super and Lightning technical report: 51.78% SWE-bench Pro with 12B active",
+   "url": "https://x.com/dair_ai/status/2116178819271032975",
+   "handle": "@dair_ai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Nemotron 3.5 Super (120B total, 12B active, text, image and video) reaches 51.78% on SWE-bench Pro, ahead of Nemotron 3 Ultra with about 4.6x fewer active parameters; Lightning is a 30B text model with 3B active. The report covers agentic SWE mid-training, SFT, RL and multi-teacher on-policy distillation, up to 4,856 output tok/s/GPU on GB200 at 50 tok/s/user, and NVFP4 recovering 99.62% median accuracy vs BF16.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2610.38095"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-10-30T14:42:01.000Z",
+   "metrics": {
+    "likes": 43,
+    "reposts": 4,
+    "quotes": 2,
+    "replies": 13,
+    "views": 3803
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Modular makes MAX source available, free for commercial use",
+   "url": "https://x.com/Modular/status/2116220085086114302",
+   "handle": "@Modular",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "The MAX graph compiler, runtime and hardware backends are now source available under a new MAX License that allows using, modifying and shipping commercial products with no fees or royalties. Chris Lattner and Tim Davis take license questions live on Nov 10.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://luma.com/max-license"
+   ],
+   "vendor": "Modular",
+   "posted_at": "2026-10-30T17:26:00.000Z",
+   "metrics": {
+    "likes": 14,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 0,
+    "views": 480
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "License terms not yet read; 'source available' is not the same as open source.",
+    "source": null
+   }
+  },
+  {
+   "title": "Daytona sandboxes built into Scale AI's open-source AgentEnv for RL environments",
+   "url": "https://x.com/daytonaio/status/2116173864866549998",
+   "handle": "@daytonaio",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Each AgentEnv environment and agent gets its own Daytona sandbox with Docker inside, so compose stacks, agent containers and image builds run unchanged.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Daytona",
+   "posted_at": "2026-10-30T14:22:20.000Z",
+   "metrics": {
+    "likes": 19,
+    "reposts": 4,
+    "quotes": 2,
+    "replies": 1,
+    "views": 1090
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Reachy on Wheels: a battery-powered Reachy Mini running fully on-device Gemma to talk, listen and navigate",
+   "url": "https://x.com/googlegemma/status/2116207831703839026",
+   "handle": "@googlegemma",
+   "group": "labs",
+   "origin": "list",
+   "summary": "Shown at PyTorchConf by Ian Ballantyne and Xavier Plantaz: a wheeled Reachy Mini that uses on-device Gemma models for voice and autonomous navigation, with no cloud connection.",
+   "kind": "demo",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/googlegemma/status/2116207831703839026/video/1"
+   ],
+   "vendor": "Google",
+   "posted_at": "2026-10-30T16:37:18.000Z",
+   "metrics": {
+    "likes": 68,
+    "reposts": 4,
+    "quotes": 1,
+    "replies": 10,
+    "views": 4372
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Demo video only, no code or numbers; repliers ask about battery life and whether driving can stop if speech stalls.",
+    "source": "https://x.com/jatingargiitk"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers praise running locally with no Wi-Fi dependence and ask about battery life and fail-safes; one points out the board needs external power input per its datasheet. No one reports building it.",
+    "tried": false,
+    "replies_read": 9
+   }
+  },
+  {
+   "title": "Rewritten inference frontend gets nearly 3x vLLM throughput on small models on an RTX 5090",
+   "url": "https://x.com/KBlueleaf/status/2116202706671153245",
+   "handle": "@KBlueleaf",
+   "group": "opensource",
+   "origin": "list",
+   "summary": "KBlueleaf reuses vLLM's model code unchanged and rewrites only the frontend (scheduler and KV cache manager), so the CPU stops being the bottleneck; chart shows the gain on small models at batch sizes 8 to 512, with some advantage claimed even at 27B.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/KBlueleaf/status/2116202706671153245/photo/1"
+   ],
+   "vendor": null,
+   "posted_at": "2026-10-30T16:16:57.000Z",
+   "metrics": {
+    "likes": 27,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 4,
+    "views": 1486
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No code released yet; a replier asked whether the comparison used vLLM's newer Rust frontend, and the author says that only covers the HTTP server.",
+    "source": "https://x.com/gaunernst"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Technical questions about batch size and vLLM's Rust frontend; the author answers that the gap comes from scheduling and KV cache management. No independent runs yet.",
+    "tried": false,
+    "replies_read": 9
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 94,
+ "list_pages": 1,
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 0,
+  "kept": 0,
+  "note": "Live bookmarks read for id 1521986356721123328; newest 20 all already seen in the archive."
+ },
+ "discovery": {
+  "queries": 0,
+  "kept": 0,
+  "note": "Skipped this sweep; roster coverage was wide and reads went to second pages and deep reads."
+ },
+ "horizon": {
+  "block-dessa": "Two X reads since 14:11Z, both empty. No weights, API or paper. No trigger."
+ },
+ "rechecks": [
+  {
+   "url": "https://x.com/rahulchhabra07/status/2115918744308658325",
+   "result": "1,661 likes (up from 1,581). Doubt stays 2."
+  },
+  {
+   "url": "https://x.com/cursor_ai/status/2116074289053175808",
+   "result": "5,945 likes (up from 4,762). No new facts in this read. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/FactoryAI/status/2115934579446182213",
+   "result": "1,485 likes. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/thesophiaxu/status/2115851937061183681",
+   "result": "401 likes. No change."
+  },
+  {
+   "url": "https://x.com/UnslothAI/status/2116156587404562491",
+   "result": "1,030 likes (up from 396). Doubt stays 2."
+  },
+  {
+   "url": "https://x.com/aitrackerbot/status/2116143353213428048",
+   "result": "7 likes. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/Kimi_Moonshot/status/2116005725814280570",
+   "result": "2,981 likes. No change."
+  },
+  {
+   "url": "https://x.com/MistralAI/status/2115811242556137820",
+   "result": "6,000 likes. No change."
+  }
+ ],
+ "videos": {
+  "count": 0,
+  "note": "No video reader available in this run."
+ },
+ "skipped": [
+  {
+   "url": "https://x.com/claudeai/status/2116220869479428500",
+   "reason": "Max plans renamed (Max 20x now Ultra) and 5-hour limit dropped for verified Ultra; pricing and packaging. Also @bcherny and @alexalbert__ posts."
+  },
+  {
+   "url": "https://x.com/opencode/status/2116209960673800474",
+   "reason": "DeepSeek V4.1 Flash usage credit promo; pricing."
+  },
+  {
+   "url": "https://x.com/FactoryAI/status/2116214422779953574",
+   "reason": "Factory acquires Typedef; business news."
+  },
+  {
+   "url": "https://x.com/sundarpichai/status/2116214866444943853",
+   "reason": "Project Suncatcher TPU satellite haiku; milestone with no usable capability."
+  },
+  {
+   "url": "https://x.com/reflection_ai/status/2116201908167737737",
+   "reason": "App showcase built with Mirror; no new capability shown."
+  },
+  {
+   "url": "https://x.com/askalphaxiv/status/2116199951835582507",
+   "reason": "4B decision model teaser with no link, weights or numbers."
+  },
+  {
+   "url": "https://x.com/cohere/status/2116186531366949192",
+   "reason": "Investment and jobs announcement."
+  },
+  {
+   "url": "https://x.com/OpenAI/status/2116186509384815084",
+   "reason": "Enterprise privacy marketing with no technical detail."
+  },
+  {
+   "url": "https://x.com/labenz",
+   "reason": "AI:AM livestream promo posts (Mistral Large 4 already covered 2026-10-29)."
+  },
+  {
+   "url": "https://x.com/thdxr/status/2116204573333274666",
+   "reason": "Folded into the OpenCode image tool item."
+  },
+  {
+   "url": "https://x.com/liquidai/status/2116215143281648029",
+   "reason": "LFM2.5-24B harness tuning already in the 14:11Z sweep."
+  },
+  {
+   "url": "https://x.com/natolambert/status/2116224502283772307",
+   "reason": "Opinion essay on open models and cyber risk."
+  },
+  {
+   "url": "https://x.com/amasad/status/2116179892991922433",
+   "reason": "Opinion on coding agents as a security risk."
+  }
+ ],
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://arxiv.org/abs/2610.37741",
+   "reason": "Pretraining-poisoning backdoor research; no shipped component in the stack to patch."
+  },
+  {
+   "url": "https://x.com/labenz/status/2116209963274031609",
+   "reason": "Podcast remarks on agentic attacks; no specific vulnerability."
+  }
+ ],
+ "errors": [
+  "No injection attempts aimed at the scout."
+ ],
+ "proposed_follows_note": "follow_mode is browser and this run had no browser, so nothing was followed."
+}

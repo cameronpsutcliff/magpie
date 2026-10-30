@@ -1,16 +1,16 @@
 {
- "updated_at": "2026-10-30T14:16:00Z",
+ "updated_at": "2026-10-30T18:12:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 35,
+ "calls_used_today": 55,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-10-30T14:11:00Z",
-  "items": 4,
-  "queries": 9,
-  "deep_reads": 1,
+  "ran_at": "2026-10-30T18:03:00Z",
+  "items": 12,
+  "queries": 13,
+  "deep_reads": 4,
   "rechecks": 8,
-  "flagged": 1,
+  "flagged": 5,
   "saved_in": 0,
   "saved_kept": 0,
   "videos": 0,
@@ -182,7 +182,8 @@
   "Roster review 2026-10-28 rejected, so they are not re-checked soon: one capability post or thread in 30 days: @axiommathai (revisit on next release), @AlexTamkin, @Diyi_Yang; mostly quotes and commentary, not first-hand: @__alpoge__; product marketing and event plugs about 1 in 5: @CopilotKit (near-miss: OpenDuet, OpenMuse, CLiF are real open releases), @cartesia (SF Tech Week events, happy hours, partnerships); mostly personal posts, product covered by @opencode and @thdxr: @LukeParkerDev.",
   "Roster review 2026-10-28: no promotions possible before 2026-11-03; no retirements (no account has two level-2 flags in 30 days; @cohere picked up one on 2026-10-27, joining @ValsAI, @SemiAnalysis_, @omarsar0 and off-roster @Exocija with one each; the 45-day rule cannot bite before about 2026-11-07); no sweep files older than 14 days (oldest 2026-10-20T17-39), so none pruned; Wednesday, so no drafts.",
   "Sweep 14:15Z: builders roster query hit 25 results, so one extra page covered 10:06 to 11:02Z (5 posts, none kept). List trial members (OpenBMB, XunzhuoLiu, PrismaXai) supplied 4 of 17 items. Both owner saves were deep-read; the akarixbt GrokBot org clip is kept at doubt 2 for its unbacked framing. No new security leads; all security hits were re-coverage of already forwarded items.",
-  "2026-10-28 owner requested add @NVIDIAAI (typed @nvididaai, which does not exist) to the watch list; added as owner_requested trial (also curated in config, s/n 3) and to the Magpie roster List (now 59 members). Never auto-retire; flag concerns in prompt_feedback."
+  "2026-10-28 owner requested add @NVIDIAAI (typed @nvididaai, which does not exist) to the watch list; added as owner_requested trial (also curated in config, s/n 3) and to the Magpie roster List (now 59 members). Never auto-retire; flag concerns in prompt_feedback.",
+  "Sweep 18:03Z: paged all six fallback groups once more despite result_count under 25; only builders returned more (14 posts), so following next_token is still worth it for builders when the first page is full."
  ],
  "errors": [
   "Sweep 14:07Z, possible injection lure, not followed: in the quote posts of https://x.com/cnm13ryan/status/2113121138205499443, @lumpenspace tells readers to have their model 'check out my x bio'. Ignored; no bio was read.",
