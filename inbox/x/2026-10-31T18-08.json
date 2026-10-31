@@ -1,0 +1,372 @@
+{
+  "ran_at": "2026-10-31T18:08:00Z",
+  "bot": "magpie-scout",
+  "prompt": "v6.1",
+  "since": "2026-10-31T14:12:00Z",
+  "queries": 12,
+  "calls": 16,
+  "saved_rejected": [
+    {
+      "url": "https://x.com/OrcaRouter/status/2116444573778190534",
+      "reason": "Team launch announcement with no model, API or numbers."
+    }
+  ],
+  "list_posts_read": 89,
+  "list_pages": 1,
+  "saves": {
+    "read": 20,
+    "new_since_last_sweep": 2,
+    "kept": 1,
+    "note": "Live bookmarks read for id 1521986356721123328; the two saves captured by the 16:45Z sync were vetted here: the CI article was kept and deep-read, OrcaRouter rejected."
+  },
+  "discovery": {
+    "queries": 2,
+    "kept": 0,
+    "note": "Release search found only an echo of the DeepSeek superagent prototype (already kept) and low-reach self-promos. Security search surfaced the Northflank breach and the Wiz Black October report (filed as an observation) plus more Claude Code extension echoes."
+  },
+  "horizon": {
+    "block-dessa": "One X read since 14:12Z: no posts. block.xyz/dessa still shows demo clips, safety-researcher early access and no weights, API or paper. No trigger."
+  },
+  "rechecks": [],
+  "videos": {
+    "count": 0,
+    "note": "No clip analysis in this run."
+  },
+  "items": [
+    {
+      "title": "OpenCode team ships Hex stable, local voice dictation for any coding agent on Mac, Windows and Linux",
+      "url": "https://x.com/opencode/status/2116555630236577819",
+      "handle": "@opencode",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "Hex is an open-source push-to-talk dictation app from the OpenCode team that transcribes on the device and types into whatever agent or app has focus. The stable release covers macOS, Windows and Linux, so voice prompting no longer needs a cloud dictation service.",
+      "kind": "tool",
+      "evidence": "artifact",
+      "links": [
+        "https://anoma.ly/hex"
+      ],
+      "vendor": "Anomaly (OpenCode)",
+      "posted_at": "2026-10-31T15:39:20Z",
+      "metrics": {
+        "likes": 3201,
+        "reposts": 145,
+        "quotes": 93,
+        "replies": 156,
+        "views": 155936
+      },
+      "confirmed_by": [
+        "@thdxr"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Replies say the README still marks Linux as beta and one user reports it failing on Ubuntu 24.04; the cross-platform claim is softer on Linux.",
+        "source": "https://x.com/Greg_GL_87/status/2116587636743913613"
+      },
+      "reception": "Big, mostly positive reception; several people say they are dropping paid cloud dictation for it because it runs locally and is open source. Pushback is about Linux maturity and noisy-office use."
+    },
+    {
+      "title": "QwenPU: an NPU compiled bit-exact into Qwen 3.5-4B weights runs Karpathy's stories260K inside the model",
+      "url": "https://x.com/divagr1925/status/2116544960023687432",
+      "handle": "@divagr1925",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "Follow-up to the author's CPU-in-weights experiment: a small neural processor is compiled directly into Qwen 3.5-4B's weights, and that processor runs a second tiny language model (stories260K). Code and weights are public; the full write-up is still pending.",
+      "kind": "research",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/divagr18/QwenPU",
+        "https://huggingface.co/divagr1925/QwenPU",
+        "https://modelscope.ai/models/Spartan1925/QwenPU"
+      ],
+      "vendor": null,
+      "posted_at": "2026-10-31T14:56:56Z",
+      "metrics": {
+        "likes": 818,
+        "reposts": 75,
+        "quotes": 41,
+        "replies": 62,
+        "views": 33866
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      },
+      "reception": "Replies are amazed and playful; no one disputes that it works, and one notes it is likely very slow. No technical write-up yet to check the bit-exact claim against."
+    },
+    {
+      "title": "How a team took CI from 40 minutes to 2 for agent-written PRs",
+      "url": "https://x.com/owengretzinger/status/2116291924219060319",
+      "handle": "@owengretzinger",
+      "group": "devtools",
+      "origin": "saved",
+      "summary": "An X article from Boardy's engineer on rebuilding CI for coding agents that push constantly: third-party runners cut queue waits from up to 11 minutes to seconds, Oxlint replaced ESLint, type checks moved to TypeScript 7 via bun, test files share workers, the cache is seeded from main, and only affected projects run. The bill rose from about $230 to $4,300 a month, which the author calls worth it.",
+      "kind": "technique",
+      "evidence": "measured",
+      "links": [
+        "https://x.com/i/article/2116240180571172864"
+      ],
+      "vendor": null,
+      "posted_at": "2026-10-30T22:11:28Z",
+      "metrics": {
+        "likes": 1635,
+        "reposts": 95,
+        "quotes": 26,
+        "replies": 81,
+        "views": 359182
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      },
+      "reception": "Widely saved (5.7K bookmarks). Replies mostly ask about the cost jump and add tips like local runners and quarantining flaky tests; no one disputes the timings."
+    },
+    {
+      "title": "TensorFold engine 1.2.0: faster Qwen3.8-27B decoding on Apple Silicon and new CUDA and Intel Arc model support",
+      "url": "https://x.com/ashxhart/status/2116535665248669850",
+      "handle": "@ashxhart",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "The local inference engine's 1.2.0 release reports Qwen3.8-27B (MLX 4-bit with DFlash2) decoding 14.4% faster on M3 Ultra and 5.8% faster on M5 Ultra for one stream, with bigger gains at 16 streams, and says outputs still match. It adds MiniMax-M3.1-Flash on Metal, NVFP4 and EXL3 Qwen models on CUDA, and Gemma 4 E4B on Intel Arc.",
+      "kind": "release",
+      "evidence": "measured",
+      "links": [
+        "http://tensorfold.dev"
+      ],
+      "vendor": "TensorFold",
+      "posted_at": "2026-10-31T14:20:00Z",
+      "metrics": {
+        "likes": 113,
+        "reposts": 13,
+        "quotes": 5,
+        "replies": 20,
+        "views": 6891
+      },
+      "confirmed_by": [
+        "@JoshuaSWarren",
+        "@plotarmordev"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": null,
+        "source": "Speedups are the maintainer's own benchmarks; not independently reproduced yet."
+      }
+    },
+    {
+      "title": "FAIR paper: routing agent memory into clusters beats one global history on mixed task streams",
+      "url": "https://x.com/dair_ai/status/2116548002617917603",
+      "handle": "@dair_ai",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "Meta FAIR's Routed Continual Learning groups past agent runs into clusters, each with its own memory system, and an LLM router picks or creates a cluster before each task. On a mixed stream of CL-Bench and tau3-Bench banking tasks it recovered 15 to 30% more of the attainable reward than one shared history and cut estimated API cost by about two thirds. Runs were sequential only.",
+      "kind": "paper",
+      "evidence": "measured",
+      "links": [
+        "https://arxiv.org/abs/2610.38796"
+      ],
+      "vendor": "Meta FAIR",
+      "posted_at": "2026-10-31T15:09:02Z",
+      "metrics": {
+        "likes": 79,
+        "reposts": 9,
+        "quotes": 2,
+        "replies": 19,
+        "views": 4696
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "IBM JevAct: a policy gate between an agent and its tools roughly doubles tau2-bench Telecom success",
+      "url": "https://x.com/omarsar0/status/2116547247018229999",
+      "handle": "@omarsar0",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "IBM's JevAct turns a domain policy into code checks and yes or no questions, then vets each tool call before it runs and sends failures back to the agent to revise. With models and tools unchanged, one agent's three-run success on tau2-bench Telecom went from 39.5% to 80.7%, all eight Telecom agents gained about 17 points, and Airline gains were small and mixed.",
+      "kind": "paper",
+      "evidence": "measured",
+      "links": [
+        "https://arxiv.org/abs/2610.38620"
+      ],
+      "vendor": "IBM",
+      "posted_at": "2026-10-31T15:06:01Z",
+      "metrics": {
+        "likes": 92,
+        "reposts": 16,
+        "quotes": 7,
+        "replies": 67,
+        "views": 6485
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "LlamaIndex releases boobench, a benchmark of documents with repeated characters that derail OCR and LLM parsers",
+      "url": "https://x.com/jerryjliu0/status/2116589292562853989",
+      "handle": "@jerryjliu0",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "A small benchmark and dataset of real-world style pages full of repeated characters, the kind that make OCR tools and vision LLMs loop or drop content. Useful as a regression set for document-parsing pipelines.",
+      "kind": "benchmark",
+      "evidence": "artifact",
+      "links": [
+        "https://www.llamaindex.ai/benchmarks/boobench"
+      ],
+      "vendor": "LlamaIndex",
+      "posted_at": "2026-10-31T17:53:06Z",
+      "metrics": null,
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Tomacco.dev lets coding agents build, run and test iOS and Android apps from Linux",
+      "url": "https://x.com/0xMarsel/status/2116513242793246908",
+      "handle": "@0xMarsel",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "A tool that gives coding agents a loop for building, launching and testing mobile apps for both platforms on a Linux desktop, with extra integration for the Omarchy setup. Low reach so far; worth a look for agent-driven mobile work off a Mac.",
+      "kind": "tool",
+      "evidence": "artifact",
+      "links": [
+        "https://Tomacco.dev"
+      ],
+      "vendor": null,
+      "posted_at": "2026-10-31T12:50:54Z",
+      "metrics": {
+        "likes": 7,
+        "reposts": 1,
+        "quotes": 0,
+        "replies": 0,
+        "views": 437
+      },
+      "confirmed_by": [
+        "@JoshuaSWarren"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": null,
+        "source": "Single launch post with a demo clip; no independent use reports yet."
+      }
+    },
+    {
+      "title": "Braintrust eval: five low-cost vision models on 2,000 labeled aerial images",
+      "url": "https://x.com/braintrust/status/2116563873880838443",
+      "handle": "@braintrust",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "Braintrust ran five cheap image-capable models over 2,000 labeled aerial photos. Liquid AI's D1 Ultra came close to Jev on accuracy at much lower cost, but Jev was better calibrated about its own answers; all five struggled with churches, meadows, commercial areas and squares.",
+      "kind": "eval",
+      "evidence": "measured",
+      "links": [
+        "https://braintrustdata.link/aerial-image-classification"
+      ],
+      "vendor": "Braintrust",
+      "posted_at": "2026-10-31T16:12:06Z",
+      "metrics": {
+        "likes": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "replies": 1,
+        "views": 231
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "url": "https://x.com/thdxr/status/2116581467715195278",
+      "reason": "Internal OpenCode Go DeepSeek config benchmarking; ops note, no published numbers."
+    },
+    {
+      "url": "https://x.com/yufan_zhuang/status/2116573924360417661",
+      "reason": "PLE bench link in a reply with no new results."
+    },
+    {
+      "url": "https://x.com/MatthewBerman/status/2116570347373986297",
+      "reason": "Folio PDF reader promo; security changes not described."
+    },
+    {
+      "url": "https://x.com/NVIDIAAI",
+      "reason": "SETI story; applied use, not a new capability."
+    },
+    {
+      "url": "https://x.com/databricks",
+      "reason": "Genie demo; marketing."
+    },
+    {
+      "url": "https://x.com/levelsio",
+      "reason": "Non-AI posts."
+    },
+    {
+      "url": "https://x.com/teortaxesTex",
+      "reason": "Opinion threads; nothing new released."
+    },
+    {
+      "url": "https://x.com/hwchase17",
+      "reason": "Agent-engineering opinion and event promo."
+    },
+    {
+      "url": "https://x.com/FireworksAI_HQ",
+      "reason": "Event and meetup promos."
+    },
+    {
+      "url": "https://x.com/nvidia",
+      "reason": "Halloween posts (also github, code, pidotdev)."
+    }
+  ],
+  "security_forwarded": [],
+  "security_na": [
+    {
+      "url": "https://status.northflank.com/cmvv0rn5a092f14rutwccodpp",
+      "reason": "Northflank platform breach (Oct 30): customers told to assume env vars were decrypted and rotate all secrets; part of Wiz's Black October wave (Fireworks, Railway, Warp, OpenCode, CommandCode and others). Northflank is not in stack.json; filed as a Master inbox observation."
+    },
+    {
+      "url": "https://x.com/evansims/status/2116544981209162218",
+      "reason": "Bitwarden CLI 2026.4.0 npm hijack that targeted Claude Code, Cursor and Codex configs; April 2026 incident, not new."
+    },
+    {
+      "url": "https://x.com/DFIR_Radar/status/2116546390411112795",
+      "reason": "Cursor-marketplace Claude Code extension backdoor echoes; C2 IP already in the IOC file, no new versions."
+    }
+  ],
+  "errors": [],
+  "proposed_follows_note": "No browser in this run. Candidates worth a look: @ashxhart (TensorFold maintainer) and @divagr1925 (QwenPU), both posting artifacts."
+}
