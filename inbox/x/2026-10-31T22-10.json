@@ -1,0 +1,366 @@
+{
+  "ran_at": "2026-10-31T22:10:00Z",
+  "bot": "magpie-scout",
+  "prompt": "v6.1",
+  "since": "2026-10-31T18:08:00Z",
+  "queries": 9,
+  "calls": 16,
+  "items": [
+    {
+      "title": "AMD MI355X reaches up to 2x B200 performance per dollar on Kimi K3 agentic inference after kernel tuning",
+      "url": "https://x.com/SemiAnalysis_/status/2116606900271788210",
+      "handle": "@SemiAnalysis_",
+      "group": "applied",
+      "origin": "sweep",
+      "summary": "SemiAnalysis reports AMD's software team got up to twice the tokens per dollar of a B200 server on Kimi K3 agentic serving, from tuned AITER kernels and MonoKernel decode in vLLM. The 2,304 GB of HBM per MI355X server keeps the model in one box, so decode avoids the cross-server network a B200 deployment needs.",
+      "kind": "technique",
+      "evidence": "measured",
+      "links": [
+        "https://x.com/SemiAnalysis_/status/2116606900271788210/photo/1"
+      ],
+      "vendor": "AMD (measured by SemiAnalysis)",
+      "posted_at": "2026-10-31T19:03:04Z",
+      "metrics": {
+        "likes": 237,
+        "reposts": 16,
+        "quotes": 12,
+        "replies": 39,
+        "views": 20015
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Repliers note the result is one model hand-tuned by AMD, quoted as 'up to' (2.45x only at the fast end of the curve, about 1.7x at 20 tok/s per user), and ask for a GB200 NVL72 comparison where the whole model also fits in one domain.",
+        "source": "https://x.com/SemiAnalysis_/status/2116606900271788210"
+      },
+      "reception": {
+        "sentiment": "positive",
+        "summary": "Most replies credit software and the larger per-server HBM rather than the chip; a few read the chart (about 13% cheaper per chip-hour, so most of the gain is tokens per chip) and question whether the gap survives other models, longer contexts or NVL72.",
+        "tried": false,
+        "replies_read": 25
+      }
+    },
+    {
+      "title": "Local-model agent benchmark by VRAM tier: a 12 GB card clears 27 of 30 Hermes Agent tasks, 32 GB clears all 30",
+      "url": "https://x.com/witcheer/status/2116621479735693809",
+      "handle": "@witcheer",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "A 30-task offline agent suite in Hermes Agent (multi-file renames, merge conflicts, git bisect, fixing bugs behind a 40-test suite) picks the best quantized model for each GPU memory size at 64K context. Spark-X2.6-4B gets 25/30 on 8 GB, Ornith 1.5 9B 27/30 on 12 GB, and Qwen3.8-27B reaches 29/30 at Q4_K_M and 30/30 at Q6_K, with tool-call counts and wall times reported.",
+      "kind": "eval",
+      "evidence": "measured",
+      "links": [
+        "https://github.com/notwitcheer/llm-bench-rig/blob/main/reports/agenttest-v2-vram-tiers.md"
+      ],
+      "vendor": "llm-bench-rig (independent)",
+      "posted_at": "2026-10-31T20:01:00Z",
+      "metrics": {
+        "likes": 33,
+        "reposts": 3,
+        "quotes": 0,
+        "replies": 8,
+        "views": 1552
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "CMU paper: pretraining, midtraining, SFT and RL run as one likelihood-based 'unified training' algorithm",
+      "url": "https://x.com/omarsar0/status/2116629539623473617",
+      "handle": "@omarsar0",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "The paper treats suitable RL objectives as maximum-likelihood fitting to model-generated targets, so RL rollouts and static data share one loss and one trainer and staged training becomes a special case. In small experiments (124M from scratch, 0.76B on math RL) unified runs beat staged training on unseen larger puzzles and on retaining coding skill after math training; the authors found no single best data mix.",
+      "kind": "paper",
+      "evidence": "measured",
+      "links": [
+        "https://arxiv.org/abs/2610.40564"
+      ],
+      "vendor": "Carnegie Mellon University and coauthors",
+      "posted_at": "2026-10-31T20:33:01Z",
+      "metrics": {
+        "likes": 58,
+        "reposts": 10,
+        "quotes": 1,
+        "replies": 17,
+        "views": 4271
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Browser Use ships Ultrafast, a low-latency web agent preset, to all US cloud plans",
+      "url": "https://x.com/browser_use/status/2116618331734344103",
+      "handle": "@browser_use",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "Browser Use Cloud now offers an 'ultrafast' model preset without a waitlist; the team's real-time demo shows simple tasks finishing in under 3 seconds, a 14.4 s median and about $0.13 for 25 tasks. Speed and cost figures are the vendor's own, from the demo set.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://browser-use.com/changelog",
+        "https://docs.browser-use.com"
+      ],
+      "vendor": "Browser Use",
+      "posted_at": "2026-10-31T19:48:29Z",
+      "metrics": {
+        "likes": 44,
+        "reposts": 2,
+        "quotes": 2,
+        "replies": 4,
+        "views": 9459
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Latency and cost numbers come only from the vendor's own 25-task demo video.",
+        "source": null
+      }
+    },
+    {
+      "title": "Mixdog: open-source coding agent matches Codex CLI on Terminal-Bench 2.1 with 63% fewer tokens",
+      "url": "https://x.com/mixdog_ai/status/2116612335204982929",
+      "handle": "@mixdog_ai",
+      "group": "devtools",
+      "origin": "discovery",
+      "summary": "Mixdog is an Apache-2.0 desktop coding agent where a lead model plans and cheaper models handle search, edits and review. Its authors report 86.5% on Terminal-Bench 2.1 over 445 trials with 157M tokens against Codex CLI's 86.1% with 421M tokens on the same model.",
+      "kind": "repo",
+      "evidence": "measured",
+      "links": [
+        "https://github.com/tribgames/mixdog"
+      ],
+      "vendor": "tribgames (Mixdog)",
+      "posted_at": "2026-10-31T19:24:40Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "quotes": 0,
+        "replies": 0,
+        "views": 1
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Self-reported benchmark from a no-reach post; not independently reproduced.",
+        "source": null
+      }
+    },
+    {
+      "title": "Galvanize 3: open-weight 140M multilingual prompt-injection classifier that runs on CPU",
+      "url": "https://x.com/use_zn/status/2116600802227687885",
+      "handle": "@use_zn",
+      "group": "opensource",
+      "origin": "discovery",
+      "summary": "zn released the weights of the classifier behind its API under Apache 2.0: about 140M parameters, multilingual and CPU-friendly, so agent builders can screen inputs for prompt injection locally. The team reports 89.6% of attacks caught at 0.6% false positives on its own 3,309-example test set.",
+      "kind": "model",
+      "evidence": "artifact",
+      "links": [
+        "https://huggingface.co/usezn/Galvanize-3",
+        "https://usezn.com/blog/galvanize-3-weights-are-now-open/"
+      ],
+      "vendor": "zn",
+      "posted_at": "2026-10-31T18:38:50Z",
+      "metrics": {
+        "likes": 2,
+        "reposts": 0,
+        "quotes": 2,
+        "replies": 0,
+        "views": 104
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Detection numbers are on the vendor's own test set.",
+        "source": null
+      }
+    }
+  ],
+  "saved_rejected": [
+    {
+      "url": "https://x.com/RohOnChain/status/2109650293365305427",
+      "reason": "Trading-bot build tutorial (X article from Oct 12); trading and crypto-adjacent, no new capability."
+    }
+  ],
+  "list_posts_read": 92,
+  "list_pages": 1,
+  "saves": {
+    "read": 20,
+    "new_since_last_sweep": 1,
+    "kept": 0,
+    "note": "Live bookmarks read for id 1521986356721123328; the only save added since 18:08Z (captured by the 20:47Z sync) was rejected."
+  },
+  "discovery": {
+    "queries": 2,
+    "kept": 2,
+    "note": "Release search kept Mixdog and Galvanize 3; a claimed Google 'elephant-goldfish' repo returned 404 on GitHub and was skipped. Security search was dominated by Claude Code extension backdoor echoes; it also surfaced the Claude Code userEmail disclosure reports, forwarded."
+  },
+  "horizon": {
+    "block-dessa": "One X read since 18:08Z: no posts. block.xyz/dessa unchanged (demo clips, waitlist, safety-researcher early access; the page's 'Download' is a clip-save button, not weights). No trigger."
+  },
+  "rechecks": [
+    {
+      "url": "https://x.com/opencode/status/2116555630236577819",
+      "doubt_before": 1,
+      "doubt_after": 1,
+      "note": "Now 4,666 likes; new replies positive (one reports about 10% of a rival app's CPU use); Linux maturity concern stands."
+    },
+    {
+      "url": "https://x.com/ashxhart/status/2116535665248669850",
+      "doubt_before": 1,
+      "doubt_after": 1,
+      "note": "One user reports it works on AGX Orin at vLLM-like speed; maintainer says the gains are decode throughput and has no matched long-context run."
+    },
+    {
+      "url": "https://x.com/sgl_project/status/2116353629057962217",
+      "doubt_before": 1,
+      "doubt_after": 1,
+      "note": "309 likes; only a cost-per-token question in new replies."
+    },
+    {
+      "url": "https://x.com/0xMarsel/status/2116513242793246908",
+      "doubt_before": 1,
+      "doubt_after": 1,
+      "note": "No new replies."
+    },
+    {
+      "url": "https://x.com/SparkLLM/status/2116424542348513620",
+      "doubt_before": 1,
+      "doubt_after": 1,
+      "note": "Metrics only (52 likes); no change."
+    },
+    {
+      "url": "https://x.com/askalphaxiv/status/2116438250730737844",
+      "doubt_before": 1,
+      "doubt_after": 1,
+      "note": "216 likes; @gabriberton summarizes the result (8 loops when parameter-bound, none when FLOP-bound) without disputing it."
+    },
+    {
+      "url": "https://x.com/SSHCodes/status/2116294576231100867",
+      "doubt_before": 1,
+      "doubt_after": 1,
+      "note": "Metrics only; no change."
+    },
+    {
+      "url": "https://x.com/GeminiApp/status/2116304609383710988",
+      "doubt_before": 0,
+      "doubt_after": 0,
+      "note": "Metrics only (1,333 likes); no change."
+    }
+  ],
+  "videos": {
+    "count": 0,
+    "note": "Only clip in kept items is the 42 s Browser Use demo, under video_min_seconds."
+  },
+  "skipped": [
+    {
+      "url": "https://x.com/badlogicgames/status/2116653884362097081",
+      "reason": "pi-schema JSON schema library built with an agent; not an AI capability."
+    },
+    {
+      "url": "https://x.com/divagr1925/status/2116595597688131733",
+      "reason": "Interactive attention-mechanism explainers; educational, nothing new shipped."
+    },
+    {
+      "url": "https://x.com/JoshuaSWarren/status/2116625402898841824",
+      "reason": "iMessage relay tool; not AI."
+    },
+    {
+      "url": "https://x.com/scaling01/status/2116652326677029048",
+      "reason": "Opinion on Gemini 4 Carbon reception (quoting @theo); model already covered."
+    },
+    {
+      "url": "https://x.com/scaling01/status/2116611322377036192",
+      "reason": "Data center size speculation; business noise."
+    },
+    {
+      "url": "https://x.com/swyx/status/2116642586387730593",
+      "reason": "Opinion on effort settings."
+    },
+    {
+      "url": "https://x.com/thdxr/status/2116602645972672576",
+      "reason": "Echo of Hex, already kept."
+    },
+    {
+      "url": "https://x.com/levelsio/status/2116604593282965549",
+      "reason": "Non-AI politics (tax policy)."
+    },
+    {
+      "url": "https://x.com/FishAudio/status/2116606130889568270",
+      "reason": "Halloween promo and sale."
+    },
+    {
+      "url": "https://x.com/Shadowfetch/status/2116642939594256462",
+      "reason": "Echo of SenseNova-Loop-9B-Preview, already kept."
+    },
+    {
+      "url": "https://x.com/DirhousssiAmine/status/2116643967253283125",
+      "reason": "Repost of DeepSeek dsh-superagent, already kept."
+    },
+    {
+      "url": "https://x.com/Shoumya23/status/2116593370189734099",
+      "reason": "Claimed google/elephant-goldfish repo returns 404."
+    },
+    {
+      "url": "https://x.com/LangChain/status/2116636383829754302",
+      "reason": "Community spotlight; no new capability."
+    },
+    {
+      "url": "https://x.com/FireworksAI_HQ/status/2116627530123772047",
+      "reason": "Event promo."
+    },
+    {
+      "url": "https://x.com/NotionHQ/status/2116593645084381561",
+      "reason": "Weekly product recap, nothing new for AI builders."
+    },
+    {
+      "url": "https://x.com/github/status/2116636372073087124",
+      "reason": "Halloween theme."
+    },
+    {
+      "url": "https://x.com/gabriberton/status/2116598432236544219",
+      "reason": "Commentary on the looped-models paper, already kept."
+    }
+  ],
+  "security_forwarded": [
+    {
+      "url": "https://github.com/anthropics/claude-code/issues/81138",
+      "matched": "stack.json: Claude Code (always_forward: agent tooling). Claude Code injects the signed-in account email (from ~/.claude.json oauthAccount) into every session's context with no opt-out, and open reports (issues 81138, 104774, 78431; nope.net incident write-up) show subagents putting that email into outbound curl User-Agent headers to third-party sites. Still present in 2.1.289 per a 2026-10-22 comment; no vendor fix. Surfaced via https://x.com/ninja_prompt/status/2116611324872446335."
+    }
+  ],
+  "security_na": [
+    {
+      "url": "https://x.com/TheHackersNews/status/2116602735219163640",
+      "reason": "Cursor-marketplace Claude Code extension backdoor update (2.1.312 and 2.1.313); both versions already in the IOC file, no new indicators."
+    },
+    {
+      "url": "https://x.com/PatchOnChain/status/2116625152721227845",
+      "reason": "Generic slopsquatting explainer; no specific package or campaign."
+    },
+    {
+      "url": "https://x.com/foryangxin/status/2116636785262379378",
+      "reason": "2025 red-team paper (arXiv 2509.05755) on coding agents; research, no new vulnerability."
+    }
+  ],
+  "errors": [],
+  "proposed_follows_note": "No browser in this run. No new account cleared the follow bar this sweep."
+}

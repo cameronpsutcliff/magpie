@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-31T18:08:00Z",
+  "updated_at": "2026-10-31T22:10:00Z",
   "job": "sweep",
   "prompt": "v6.1",
-  "calls_used_today": 42,
+  "calls_used_today": 61,
   "notes_via_api": false,
   "last_sweep": {
-    "ran_at": "2026-10-31T18:08:00Z",
-    "items": 9,
-    "queries": 12,
-    "deep_reads": 3,
-    "rechecks": 0,
+    "ran_at": "2026-10-31T22:10:00Z",
+    "items": 6,
+    "queries": 9,
+    "deep_reads": 1,
+    "rechecks": 8,
     "flagged": 0,
-    "saved_in": 2,
-    "saved_kept": 1,
+    "saved_in": 1,
+    "saved_kept": 0,
     "videos": 0,
-    "security_forwarded": 0
+    "security_forwarded": 1
   },
   "roster": {
     "curated": 223,
@@ -185,7 +185,8 @@
     "2026-10-28 owner requested add @NVIDIAAI (typed @nvididaai, which does not exist) to the watch list; added as owner_requested trial (also curated in config, s/n 3) and to the Magpie roster List (now 59 members). Never auto-retire; flag concerns in prompt_feedback.",
     "Sweep 18:03Z: paged all six fallback groups once more despite result_count under 25; only builders returned more (14 posts), so following next_token is still worth it for builders when the first page is full.",
     "Sweep 22:10Z: a batched conversation_id OR deep-read search caps at 25 results, so the busiest thread crowds out the rest; split deep reads into two batches when more than 4 threads are queued.",
-    "Sweep 14:12Z: no injection attempts seen. No browser, so no follows and no video analysis. block.xyz/dessa checked with curl. calls_used_today 26 = 12 (10:06Z sweep) + 1 (7:45 AM CT bookmark sync) + 13 (this sweep). Re-checks skipped this sweep (thin Saturday window). DeepSeek's dsh-superagent repo was not posted by any DeepSeek X account; it surfaced through @teortaxesTex quoting a third party, so discovery caught it."
+    "Sweep 14:12Z: no injection attempts seen. No browser, so no follows and no video analysis. block.xyz/dessa checked with curl. calls_used_today 26 = 12 (10:06Z sweep) + 1 (7:45 AM CT bookmark sync) + 13 (this sweep). Re-checks skipped this sweep (thin Saturday window). DeepSeek's dsh-superagent repo was not posted by any DeepSeek X account; it surfaced through @teortaxesTex quoting a third party, so discovery caught it.",
+    "Sweep 22:10Z: no injection attempts seen. No browser, so no follows and no video analysis (only clip was 42 s). block.xyz/dessa checked with curl; its 'Download' text is a clip-save button, not weights, and the page links Ragavan's X handle @RagavanThurair, which a future horizon query could use. calls_used_today 61 = 42 (through the 18:08Z sweep) + 1 (1:44 PM CT sync) + 2 (3:47 PM CT sync) + 16 (this sweep). Search results truncate long posts, so kept candidates were hydrated with get_posts_by_ids for note_tweet text."
   ],
   "errors": [],
   "follows_today": 0,
