@@ -1,0 +1,291 @@
+{
+  "ran_at": "2026-10-31T10:06:00Z",
+  "bot": "magpie-scout",
+  "prompt": "v6.1",
+  "since": "2026-10-31T02:12:00Z",
+  "queries": 9,
+  "calls": 12,
+  "items": [
+    {
+      "title": "Tokenomos is now open source: a rewritten serving frontend that gets small models several times past vLLM on one RTX 5090",
+      "url": "https://x.com/KBlueleaf/status/2116459910347313274",
+      "handle": "@KBlueleaf",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "KohakuBlueleaf published the Tokenomos repo. It keeps vLLM's model code but replaces the scheduler and KV-cache/state manager used for continuous batching, so the CPU stops being the bottleneck; he reports small-model inference several times faster even at batch size 512 on an RTX 5090, says it also helps 30B models, and that it runs on Windows and older sm75 GPUs. Earlier 3x claim was kept on Oct 30; this is the code release.",
+      "kind": "repo",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/KohakuBlueleaf/Tokenomos"
+      ],
+      "vendor": null,
+      "posted_at": "2026-10-31T09:18:00Z",
+      "metrics": {
+        "likes": 8,
+        "reposts": 4,
+        "quotes": 1,
+        "replies": 2,
+        "views": 416
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Speedups are the author's own runs on one GPU; no outside reproduction yet.",
+        "source": null
+      }
+    },
+    {
+      "title": "DSpark speculative-decoding draft for Spark-X2.6-4B: about 2.1x on an RTX 4090 in llama.cpp and 2.5x on an M5 Pro in MLX",
+      "url": "https://x.com/SparkLLM/status/2116424542348513620",
+      "handle": "@SparkLLM",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "iFlytek's Spark team released a 624M-parameter BF16 draft model that proposes up to 7 tokens at a time for the 4B Spark-X2.6. They report an average 2.14x speedup on an RTX 4090 with llama.cpp, 2.50x on an M5 Pro with MLX and a 2.94x peak on MATH500. GGUFs are on Hugging Face and ModelScope; llama.cpp support runs from their fork while upstreaming is in progress.",
+      "kind": "model",
+      "evidence": "measured",
+      "links": [
+        "https://huggingface.co/XHToken/Spark-X2.6-4B-DSpark-GGUF",
+        "https://modelscope.cn/models/XHToken/Spark-X2.6-4B-DSpark-GGUF"
+      ],
+      "vendor": "iFlytek Spark",
+      "posted_at": "2026-10-31T06:58:00Z",
+      "metrics": {
+        "likes": 24,
+        "reposts": 5,
+        "quotes": 1,
+        "replies": 1,
+        "views": 1003
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Vendor-run benchmarks.",
+        "source": null
+      }
+    },
+    {
+      "title": "vLLM now serves NVIDIA Canary 1B v2 natively for speech-to-text and translation in 25 European languages",
+      "url": "https://x.com/Alex_tra_memory/status/2116424004471034340",
+      "handle": "@Alex_tra_memory",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "A merged vLLM pull request adds canary-1b-v2, exposed through the OpenAI-compatible /v1/audio/transcriptions and /v1/audio/translations endpoints, so teams already serving LLMs on vLLM can add multilingual speech recognition without a separate stack.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/vllm-project/vllm/pull/64215"
+      ],
+      "vendor": "vLLM",
+      "posted_at": "2026-10-31T06:56:00Z",
+      "metrics": {
+        "likes": 2,
+        "reposts": 0,
+        "quotes": 0,
+        "replies": 2,
+        "views": 173
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "SGLang reports DeepSeek V4.1 Flash peak throughput up from 654K to 1.09M tokens per second per GPU in four days",
+      "url": "https://x.com/sgl_project/status/2116353629057962217",
+      "handle": "@sgl_project",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "The SGLang team says peak total throughput (cache hits, new input and output combined) on the AgentX workload rose about 67% over four days of optimization, and that a MegaKernel path reached 943 tokens per second per user at concurrency 1. No write-up or config is linked yet.",
+      "kind": "technique",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "SGLang",
+      "posted_at": "2026-10-31T02:16:00Z",
+      "metrics": {
+        "likes": 120,
+        "reposts": 12,
+        "quotes": 6,
+        "replies": 11,
+        "views": 10120
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Throughput mixes cached and new tokens; no setup details or reproduction linked.",
+        "source": null
+      }
+    },
+    {
+      "title": "Towards Looped Models Done Right: looping only the middle layers beats looping the whole Transformer",
+      "url": "https://x.com/askalphaxiv/status/2116438250730737844",
+      "handle": "@askalphaxiv",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "The paper compares loop designs and finds the Huginn-style layout (separate input and output layers around a recurrent middle block) works best, especially on reasoning. An 8B Huginn MoE beats Ouro on 8 of 10 benchmarks and, against a compute-matched 32B feedforward MoE, stores 75% fewer parameters while scoring higher on GSM8K (83.6% vs 80.8%).",
+      "kind": "paper",
+      "evidence": "measured",
+      "links": [],
+      "vendor": null,
+      "posted_at": "2026-10-31T07:52:00Z",
+      "metrics": {
+        "likes": 95,
+        "reposts": 8,
+        "quotes": 1,
+        "replies": 4,
+        "views": 3303
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Summary from a paper aggregator; paper link not opened.",
+        "source": null
+      }
+    },
+    {
+      "title": "Better Layer Division: briefly freezing recurrent layers lets attention learn retrieval in hybrid models",
+      "url": "https://x.com/askalphaxiv/status/2116469477852508204",
+      "handle": "@askalphaxiv",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "In hybrid recurrent-plus-attention models the recurrent layers learn retrieval first and starve the attention layers of that skill. Freezing the recurrent layers early in training fixes it: across 180M to 1B models retrieval improves, and at 750M RULER accuracy rises from 26.53% to 32.82% while long-context perplexity drops from 12.68 to 8.08.",
+      "kind": "paper",
+      "evidence": "measured",
+      "links": [],
+      "vendor": null,
+      "posted_at": "2026-10-31T09:57:00Z",
+      "metrics": {
+        "likes": 3,
+        "reposts": 1,
+        "quotes": 0,
+        "replies": 0,
+        "views": 431
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Summary from a paper aggregator; small models only.",
+        "source": null
+      }
+    }
+  ],
+  "saved_rejected": [],
+  "list_posts_read": 19,
+  "list_pages": 1,
+  "saves": {
+    "read": 20,
+    "new_since_last_sweep": 0,
+    "kept": 0,
+    "note": "Live bookmarks read for id 1521986356721123328; all 20 already seen."
+  },
+  "discovery": {
+    "queries": 2,
+    "kept": 0,
+    "note": "Release search returned low-signal self-promos and non-AI repos. Security search was dominated by coverage of the Cursor-marketplace Claude Code extension backdoor already forwarded Oct 30; IOCs mentioned (reverse tunnel IP, svc-telemetry key) are already in the IOC file."
+  },
+  "horizon": {
+    "block-dessa": "One X read since 02:12Z, empty; block.xyz/dessa still shows the waitlist. No weights, API or paper. No trigger."
+  },
+  "rechecks": [
+    {
+      "url": "https://x.com/UnslothAI/status/2116156587404562491",
+      "result": "1,867 likes (up from 1,561). No third-party reproduction seen. Doubt stays 2."
+    },
+    {
+      "url": "https://x.com/SSHCodes/status/2116294576231100867",
+      "result": "6 likes. No note. Doubt stays 1."
+    },
+    {
+      "url": "https://x.com/MooncastOnline/status/2116332412573511872",
+      "result": "3 likes. Author benchmarked more Qwen 3.8 27B Q4 quants on M5 Ultra overnight. Doubt stays 1."
+    },
+    {
+      "url": "https://x.com/JoshuaSWarren/status/2116335841731867019",
+      "result": "287 likes (up from 33). No note. Doubt stays 1."
+    },
+    {
+      "url": "https://x.com/witcheer/status/2116266641210441887",
+      "result": "19 likes (up from 8). No note. Doubt stays 1."
+    },
+    {
+      "url": "https://x.com/OpenRouter/status/2116233085025185797",
+      "result": "28 likes (up from 22). No note. Doubt stays 1."
+    },
+    {
+      "url": "https://x.com/divagr1925/status/2116241086050115692",
+      "result": "160 likes (up from 37). No note. Doubt stays 1."
+    },
+    {
+      "url": "https://x.com/baseten/status/2116232733730934974",
+      "result": "42 likes (up from 40). No note. Doubt stays 1."
+    }
+  ],
+  "videos": {
+    "count": 0,
+    "note": "No video reader available in this run."
+  },
+  "skipped": [
+    {
+      "url": "https://x.com/reach_vb/status/2116458053700571327",
+      "reason": "Codex account switching on mobile; account management, not a capability."
+    },
+    {
+      "url": "https://x.com/thdxr/status/2116364728666821022",
+      "reason": "Opinion on using Gemini subagents for architecture questions."
+    },
+    {
+      "url": "https://x.com/thdxr/status/2116379267504152848",
+      "reason": "Opinion that DeepSeek Flash experts are already FP4."
+    },
+    {
+      "url": "https://x.com/aitrackerbot/status/2116440493802369087",
+      "reason": "Unreleased model name spotted on an API list; rumor, nothing public."
+    },
+    {
+      "url": "https://x.com/aitrackerbot/status/2116379645054492810",
+      "reason": "Halloween joke post."
+    },
+    {
+      "url": "https://x.com/askalphaxiv/status/2116438362257326432",
+      "reason": "Psychiatric intake simulation paper; not developer-facing."
+    },
+    {
+      "url": "https://x.com/LiteLLM/status/2116374875506082297",
+      "reason": "Promo for LiteLLM's model directory page."
+    },
+    {
+      "url": "https://x.com/FireworksAI_HQ/status/2116360768736104857",
+      "reason": "Event promo."
+    },
+    {
+      "url": "https://x.com/teortaxesTex/status/2116406526512611520",
+      "reason": "Model personality commentary, no artifact."
+    },
+    {
+      "url": "https://x.com/TulipFarmAI/status/2116390846081949866",
+      "reason": "Huntsman self-hosted scraper launch; very low reach, unverified throughput claim."
+    }
+  ],
+  "security_forwarded": [],
+  "security_na": [
+    {
+      "url": "https://x.com/ycnewsdigest/status/2116452702360105104",
+      "reason": "Cursor-marketplace Claude Code extension backdoor; already forwarded to Bouncer Oct 30 and swept; no new IOC."
+    }
+  ],
+  "errors": [],
+  "proposed_follows_note": "No new accounts met the follow bar this sweep."
+}
