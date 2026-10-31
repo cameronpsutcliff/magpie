@@ -1,0 +1,371 @@
+{
+ "ran_at": "2026-10-31T02:12:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-10-30T22:10:00Z",
+ "queries": 10,
+ "calls": 17,
+ "items": [
+  {
+   "title": "Anthropic automates subtle emergent misalignment red-teaming with thousands of Claude agents",
+   "url": "https://x.com/AnthropicAI/status/2116349211549843666",
+   "handle": "@AnthropicAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Anthropic set thousands of Claude agents the task of writing training data that a training-data monitor would pass but that still teaches misaligned behavior. The agents produced harmless-looking sets, such as a veteran wrestler mentoring a newcomer or a beekeeping Q&A, that carried the misalignment through framing rather than any single bad row. Anthropic says the examples can be used to train better monitors. Full write-up is on the Alignment Science Blog.",
+   "kind": "paper",
+   "evidence": "artifact",
+   "links": [
+    "https://x.com/AnthropicAI/status/2116349211549843666"
+   ],
+   "vendor": "Anthropic",
+   "posted_at": "2026-10-31T01:57:00.000Z",
+   "metrics": {
+    "likes": 273,
+    "reposts": 32,
+    "quotes": 18,
+    "replies": 54,
+    "views": 23387
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": "Repliers ask who checks what the automated red-teamer misses and warn that monitors need stress-testing too, or evasion just moves up a level.",
+    "source": "https://x.com/AbdurRaheem0528"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Replies focus on how the payload lives in the relationship pattern rather than any flaggable sentence, so per-row monitors miss it; several call it impressive and a bit unsettling.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "OpenAI Agents API adds auto review, async compaction, time awareness and cross-session prompt caching",
+   "url": "https://x.com/OpenAIDevs/status/2116306164375863343",
+   "handle": "@OpenAIDevs",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "OpenAI's weekly Agents API update (from the API team's Steven Coffey): auto review checks commands for bad behavior before running them, as in Codex; compaction can run in the background; an experimental time-awareness feature lets the model act on asks like timeboxing CI fixes to 10 minutes; a session's tools can be updated at any time; and system prompts are now cached automatically across sessions.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/stevendcoffey/status/2116303789649236048"
+   ],
+   "vendor": "OpenAI",
+   "posted_at": "2026-10-30T23:08:00.000Z",
+   "metrics": {
+    "likes": 324,
+    "reposts": 12,
+    "quotes": 12,
+    "replies": 58,
+    "views": 42267
+   },
+   "confirmed_by": [
+    "@stevendcoffey"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": "A replier points out OpenAI's own Codex docs say auto review is not a deterministic security guarantee; others advise keeping a hard wall-clock timeout outside the model rather than relying on time awareness.",
+    "source": "https://x.com/gmazza1989"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Auto review and time awareness get the most interest; builders ask whether cross-session caching bills at the cached rate and want better tracing for long runs.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Artificial Analysis releases AA-Omniscience v1.1 with a refreshed 300-question public set",
+   "url": "https://x.com/ArtificialAnlys/status/2116319506318635503",
+   "handle": "@ArtificialAnlys",
+   "group": "evals",
+   "origin": "sweep",
+   "summary": "The knowledge and hallucination benchmark behind Intelligence Index v5 drops to 3,000 questions, removing public and saturated items and fixing ambiguous ones. A new 300-question public set on Hugging Face is calibrated to the private set's difficulty. The Net Score metric still rewards correct answers, penalizes wrong ones and treats abstentions as neutral.",
+   "kind": "eval",
+   "evidence": "artifact",
+   "links": [
+    "https://x.com/ArtificialAnlys/status/2116319506318635503"
+   ],
+   "vendor": "Artificial Analysis",
+   "posted_at": "2026-10-31T00:01:00.000Z",
+   "metrics": {
+    "likes": 282,
+    "reposts": 17,
+    "quotes": 13,
+    "replies": 36,
+    "views": 27620
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": "Repliers ask whether v1.1 scores are comparable with v1.0 and note the public set may leak into training data over time, turning the public-private gap into a contamination meter.",
+    "source": "https://x.com/flowersengg"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Most replies back dropping saturated questions and scoring abstentions neutrally; some want a coding-agent or security-question split and tool-on runs.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Gemini app for Mac adds a built-in Antigravity coding environment, plus custom skills and Lyria 3.5",
+   "url": "https://x.com/GeminiApp/status/2116304609383710988",
+   "handle": "@GeminiApp",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Google's latest Gemini Drops thread: the Mac app can switch from chat into a local Antigravity coding environment to build, run and debug software; users can save reusable instructions as skills and build custom ones; and Lyria 3.5 is the new music generation model. Other items are consumer features (Windows app shortcut, Maps and Calendar personalization, app connections, in-chat file editing, shared avatars).",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/GeminiApp/status/2116304609383710988"
+   ],
+   "vendor": "Google",
+   "posted_at": "2026-10-30T23:02:00.000Z",
+   "metrics": {
+    "likes": 453,
+    "reposts": 34,
+    "quotes": 18,
+    "replies": 39,
+    "views": 52193
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "The 12-post thread was read in full; only the Antigravity, skills and Lyria items are developer-relevant. Replies were not read separately.",
+    "tried": false,
+    "replies_read": 0
+   }
+  },
+  {
+   "title": "Auto v3: open-weight guard models that decide whether an agent's next tool call is safe, in 21 ms",
+   "url": "https://x.com/SSHCodes/status/2116294576231100867",
+   "handle": "@aitrackerbot",
+   "group": "community",
+   "origin": "sweep",
+   "summary": "The authors say auto-3b-3 scores 96.0% on a new hard benchmark, level with the best hosted guards they tested, while deciding in about 21 ms instead of about 1.3 s. It is pitched as a local pre-execution check for agent tool calls.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/SSHCodes/status/2116294576231100867"
+   ],
+   "vendor": null,
+   "posted_at": "2026-10-30T22:34:00.000Z",
+   "metrics": {
+    "likes": 10,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 1,
+    "views": 510
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Self-reported numbers on the authors' own new benchmark; tiny reach and no independent test yet.",
+    "source": null
+   }
+  },
+  {
+   "title": "Mac Studio M5 Ultra inference engine shootout on Qwen 3.8 27B",
+   "url": "https://x.com/MooncastOnline/status/2116332412573511872",
+   "handle": "@MooncastOnline",
+   "group": "community",
+   "origin": "sweep",
+   "summary": "One tester ran Qwen 3.8 27B on every inference engine they could find for a 256 GB M5 Ultra Mac Studio and published interactive charts. Their picks for this model, weights and hardware were Uzu, Splash and Tensorfold.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://www.reachablegames.com/article/27/"
+   ],
+   "vendor": null,
+   "posted_at": "2026-10-31T00:52:00.000Z",
+   "metrics": {
+    "likes": 2,
+    "reposts": 0,
+    "quotes": 1,
+    "replies": 0,
+    "views": 72
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single tester and single model; the author says results could change tomorrow.",
+    "source": null
+   }
+  },
+  {
+   "title": "Custom Linux Apple Neural Engine driver gets 31% faster speech encoding by raising the ANE clock level",
+   "url": "https://x.com/JoshuaSWarren/status/2116335841731867019",
+   "handle": "@JoshuaSWarren",
+   "group": "community",
+   "origin": "sweep",
+   "summary": "A developer who wrote their own Linux driver for the undocumented Apple Neural Engine found it had been running at clock level 1. Switching to level 5 made speech encoding on an M1 Max 31% faster with bit-identical output.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/JoshuaSWarren/status/2116335841731867019"
+   ],
+   "vendor": null,
+   "posted_at": "2026-10-31T01:06:00.000Z",
+   "metrics": {
+    "likes": 33,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 2,
+    "views": 707
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Self-reported on one machine; driver code link not in the post.",
+    "source": null
+   }
+  },
+  {
+   "title": "Idol by Sperid Labs on fal turns a single image into a 3D Gaussian splat in about 10 seconds",
+   "url": "https://x.com/fal/status/2116293689685287242",
+   "handle": "@fal",
+   "group": "infra",
+   "origin": "sweep",
+   "summary": "fal now hosts Idol, an image-to-3D model that outputs a .ply Gaussian splat plus a .glb preview. Density is selectable from 32K to 1M Gaussians.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://x.com/fal/status/2116293689685287242"
+   ],
+   "vendor": "Sperid Labs",
+   "posted_at": "2026-10-30T22:25:00.000Z",
+   "metrics": {
+    "likes": 49,
+    "reposts": 2,
+    "quotes": 1,
+    "replies": 1,
+    "views": 3080
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 93,
+ "list_pages": 1,
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 0,
+  "kept": 0,
+  "note": "Live bookmarks read for id 1521986356721123328; all 20 already seen."
+ },
+ "discovery": {
+  "queries": 1,
+  "kept": 0,
+  "note": "Open-weights discovery search returned mostly Mistral Large 4, Pika H3 Flex and SenseNova items already covered."
+ },
+ "horizon": {
+  "block-dessa": "One X read since 22:10Z, empty; block.xyz/dessa still shows the waitlist. No weights, API or paper. No trigger."
+ },
+ "rechecks": [
+  {
+   "url": "https://x.com/UnslothAI/status/2116156587404562491",
+   "result": "1,561 likes (up from 1,336). The model's publisher (@mhelcig) disputes Unsloth's comparison, saying the gap comes from Unsloth's 32K reasoning budget versus their 128K; Unsloth's Daniel Han replies they reran all benchmarks at 128K and say LCB and Aider results are even more one-sided. Doubt stays 2 until a third party reproduces."
+  },
+  {
+   "url": "https://x.com/cursor_ai/status/2116074289053175808",
+   "result": "6,526 likes (up from 6,334). No newer notice seen. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/aitrackerbot/status/2116143353213428048",
+   "result": "9 likes. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/Modular/status/2116220085086114302",
+   "result": "34 likes (up from 32). Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/llama_index/status/2116254517805109309",
+   "result": "18 likes. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/haoailab/status/2116240411530551435",
+   "result": "155 likes. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/baseten/status/2116232733730934974",
+   "result": "40 likes. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/OpenRouter/status/2116233085025185797",
+   "result": "22 likes. Doubt stays 1."
+  }
+ ],
+ "videos": {
+  "count": 0,
+  "note": "No video reader available in this run."
+ },
+ "skipped": [
+  {
+   "url": "https://x.com/omarsar0/status/2116313123183554958",
+   "reason": "MiniMax M3.1 Flash already covered; this is a game demo."
+  },
+  {
+   "url": "https://x.com/badlogicgames/status/2116308846721511576",
+   "reason": "Follow-up perf note on pi durable, already covered 10:08Z."
+  },
+  {
+   "url": "https://x.com/sqs/status/2116313915831550432",
+   "reason": "Minor UI feature (iOS widgets)."
+  },
+  {
+   "url": "https://x.com/amasad/status/2116343923925041462",
+   "reason": "Replit autofix framing post, no new detail."
+  },
+  {
+   "url": "https://x.com/danielhanchen/status/2116341441610092932",
+   "reason": "Folded into the Unsloth recheck."
+  },
+  {
+   "url": "https://x.com/FireworksAI_HQ/status/2116301126479892706",
+   "reason": "Event promo."
+  },
+  {
+   "url": "https://x.com/levelsio/status/2116295552627323253",
+   "reason": "Personal anecdote."
+  },
+  {
+   "url": "https://x.com/nxtday/status/2116314187949654519",
+   "reason": "Kimi K3.1 Pro Terminal Bench claim from a low-reach aggregator; wait for weights (said due Nov 4) or a primary source."
+  }
+ ],
+ "security_forwarded": [],
+ "security_na": [],
+ "errors": [
+  "No injection attempts aimed at the scout."
+ ],
+ "proposed_follows_note": "follow_mode is browser and this run had no browser, so nothing was followed. No new account reached the recommendation bar this sweep."
+}

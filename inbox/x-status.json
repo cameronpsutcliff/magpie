@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-10-30T22:15:00Z",
+ "updated_at": "2026-10-31T02:12:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 73,
+ "calls_used_today": 92,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-10-30T22:10:00Z",
-  "items": 14,
+  "ran_at": "2026-10-31T02:12:00Z",
+  "items": 8,
   "queries": 10,
-  "deep_reads": 3,
+  "deep_reads": 4,
   "rechecks": 8,
-  "flagged": 6,
-  "saved_in": 1,
+  "flagged": 3,
+  "saved_in": 0,
   "saved_kept": 0,
   "videos": 0,
-  "security_forwarded": 1
+  "security_forwarded": 0
  },
  "roster": {
   "curated": 223,
@@ -223,7 +223,8 @@
   "Sweep 22:05Z: no injection attempts seen. Skill tool unavailable, so the magpie-x-sweep-2 and x-api-mcp-guide SKILL.md files were read directly (non-blocking); no browser, so no follows and no video analysis. block.xyz/dessa checked with curl. calls_used_today 66 = 47 (through 18:12Z sweep) + 2 (1:46 and 3:46 PM CT bookmark syncs) + 17 (this sweep).",
   "Sweep 10:08Z: no injection attempts seen. Skill tool unavailable, so the magpie-x-sweep-2 and x-api-mcp-guide SKILL.md files were read directly (non-blocking); no browser, so no follows and no video analysis. block.xyz/dessa checked with curl. calls_used_today 16 = this sweep (first sweep of the Oct 30 Chicago day); a 4:32 AM CT roster-review prep left local files but pushed nothing and its reads, if any, are not counted here. X rate header mid-sweep showed 953 of 1000 account-wide reads left for the UTC day.",
   "Sweep 14:11Z: no injection attempts seen. Skill tool unavailable, so the magpie-x-sweep-2 and x-api-mcp-guide SKILL.md files were read directly (non-blocking); no browser, so no follows and no video analysis. block.xyz/dessa checked with curl. calls_used_today 35 = 16 (10:08Z sweep) + 2 (7:47 AM CT bookmark sync, 2 pages) + 17 (this sweep). X header showed 950 of 1000 account-wide reads left early in the sweep.",
-  "Sweep 22:10Z: no injection attempts seen. Skill tool unavailable, so the x-api-mcp-guide SKILL.md was read directly (non-blocking); no browser, so no follows and no video analysis. block.xyz/dessa checked with curl. calls_used_today 73 = 55 (through 18:03Z sweep) + 3 (1:41 PM and 3:42 PM CT bookmark syncs, the latter 2 pages) + 15 (this sweep). X header showed 909 of 1000 account-wide reads left mid-sweep."
+  "Sweep 22:10Z: no injection attempts seen. Skill tool unavailable, so the x-api-mcp-guide SKILL.md was read directly (non-blocking); no browser, so no follows and no video analysis. block.xyz/dessa checked with curl. calls_used_today 73 = 55 (through 18:03Z sweep) + 3 (1:41 PM and 3:42 PM CT bookmark syncs, the latter 2 pages) + 15 (this sweep). X header showed 909 of 1000 account-wide reads left mid-sweep.",
+  "Sweep 02:12Z: no injection attempts seen. No browser, so no follows and no video analysis. block.xyz/dessa checked with curl. calls_used_today 92 = 73 (through 22:10Z sweep) + 2 (5:46 PM and 7:48 PM CT bookmark syncs) + 17 (this sweep). X header showed 987 of 1000 account-wide reads left late in the sweep (new UTC day)."
  ],
  "follows_today": 0,
  "last_roster_review": {
