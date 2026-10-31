@@ -2,6 +2,80 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-10-31",
+   "headline": "Check a backdoored extension, pick Android Studio agents, run diffusion MoE locally, and more",
+   "events": 351,
+   "sources": 531,
+   "enriched": true,
+   "top": [
+    {
+     "id": "e0445f93bfaa",
+     "title": "Backdoor found in Claude Code extension on Cursor Marketplace",
+     "impact": 4,
+     "vendor": "Cursor"
+    },
+    {
+     "id": "fa51435a04f8",
+     "title": "Android Studio stable lets you pick Antigravity as agent",
+     "impact": 4,
+     "vendor": "Google"
+    },
+    {
+     "id": "480974840491",
+     "title": "SGLang hits 1.09M tokens per second per GPU",
+     "impact": 4,
+     "vendor": "SGLang"
+    },
+    {
+     "id": "d86adac75993",
+     "title": "Clover 35B A3B diffusion MoE tested locally",
+     "impact": 4,
+     "vendor": "Meta"
+    },
+    {
+     "id": "a6130ee3e391",
+     "title": "Phonon-2 speech recognition fits in 164MB on CPU",
+     "impact": 4,
+     "vendor": "Fermion Research"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Anthropic",
+    "Google",
+    "NVIDIA",
+    "OpenAI",
+    "Vercel"
+   ],
+   "topics": {
+    "models": 99,
+    "agents": 95,
+    "coding": 91,
+    "multimodal": 72,
+    "infra": 40,
+    "local": 35,
+    "evals": 32,
+    "mcp": 30,
+    "memory": 27,
+    "research": 21,
+    "security": 15,
+    "reverse": 10,
+    "robotics": 6
+   },
+   "kinds": {
+    "social": 94,
+    "video": 74,
+    "repo": 35,
+    "blog": 31,
+    "model": 30,
+    "newsletter": 28,
+    "changelog": 21,
+    "community": 20,
+    "space": 18
+   },
+   "threats": []
+  },
+  {
    "date": "2026-10-30",
    "headline": "Open Mistral Large 4, squeeze it to 1 bit, agent-tune kernels, and more",
    "events": 422,
@@ -2974,5 +3048,5 @@
    }
   }
  ],
- "latest": "2026-10-30"
+ "latest": "2026-10-31"
 }

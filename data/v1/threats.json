@@ -1,6 +1,6 @@
 {
  "schema": "magpie.threats/1",
- "updated": "2026-10-30",
+ "updated": "2026-10-31",
  "threats": [
   {
    "id": "thr-2026-10-28-vllm-image-loader-passes-eps-input-to",
@@ -69,7 +69,7 @@
     "PYSEC-2026-4346",
     "url:osv.dev/vulnerability/GHSA-h3rc-j82p-2c3h"
    ],
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "reach": 2,
    "wide": false
   },
@@ -140,7 +140,7 @@
     "PYSEC-2026-4345",
     "url:osv.dev/vulnerability/GHSA-6757-hggm-hp2w"
    ],
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "reach": 2,
    "wide": false
   },
@@ -191,7 +191,7 @@
     "bz:2086949",
     "url:bugzilla.mozilla.org/show_bug.cgi?id=2086949"
    ],
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "reach": 12,
    "wide": true
   },
@@ -255,7 +255,7 @@
     "GHSA-8397-8qf6-f2gm",
     "url:osv.dev/vulnerability/GHSA-8397-8qf6-f2gm"
    ],
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "reach": 2,
    "wide": false
   },
@@ -316,7 +316,7 @@
     "GHSA-gq5q-89c7-vhvx",
     "url:osv.dev/vulnerability/GHSA-gq5q-89c7-vhvx"
    ],
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "reach": 2,
    "wide": false
   },
@@ -381,7 +381,7 @@
     "PYSEC-2026-4347",
     "url:osv.dev/vulnerability/GHSA-q97c-p368-75c4"
    ],
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "reach": 2,
    "wide": false
   },
@@ -446,7 +446,7 @@
     "PYSEC-2026-4344",
     "url:osv.dev/vulnerability/GHSA-542m-9234-8gvf"
    ],
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "reach": 2,
    "wide": false
   },
@@ -543,7 +543,7 @@
     "GHSA-f897-62hf-6gxq",
     "url:osv.dev/vulnerability/GHSA-f897-62hf-6gxq"
    ],
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "reach": 5,
    "wide": false
   },
@@ -618,7 +618,7 @@
     "GHSA-h3rc-6mm3-gc2m",
     "url:osv.dev/vulnerability/GHSA-h3rc-6mm3-gc2m"
    ],
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "reach": 2,
    "wide": false
   },
@@ -679,7 +679,7 @@
     "GHSA-g5ff-637f-6q2m",
     "url:osv.dev/vulnerability/GHSA-g5ff-637f-6q2m"
    ],
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "reach": 2,
    "wide": false
   },
@@ -749,7 +749,7 @@
     "GHSA-7hp6-4w63-5g45",
     "url:osv.dev/vulnerability/GHSA-7hp6-4w63-5g45"
    ],
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "reach": 2,
    "wide": false
   },
@@ -824,7 +824,7 @@
     "GHSA-w4fh-qvv9-3v23",
     "url:osv.dev/vulnerability/GHSA-w4fh-qvv9-3v23"
    ],
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "reach": 2,
    "wide": false
   },
@@ -894,7 +894,7 @@
     "GHSA-5h93-6whr-6q8j",
     "url:osv.dev/vulnerability/GHSA-5h93-6whr-6q8j"
    ],
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "reach": 2,
    "wide": false
   },
@@ -964,7 +964,7 @@
     "GHSA-rwrf-2pqf-9j8j",
     "url:osv.dev/vulnerability/GHSA-rwrf-2pqf-9j8j"
    ],
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "reach": 2,
    "wide": false
   },
@@ -1025,7 +1025,7 @@
     "GHSA-hhww-mrg2-969h",
     "url:osv.dev/vulnerability/GHSA-hhww-mrg2-969h"
    ],
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "reach": 2,
    "wide": false
   },
@@ -1206,7 +1206,7 @@
    ],
    "published": "2026-10-20",
    "first_seen": "2026-10-21",
-   "updated": "2026-10-27",
+   "updated": "2026-10-31",
    "cves": [],
    "kev": false,
    "doc": "https://osv.dev/vulnerability/GHSA-6q48-6c7w-9gw2",
@@ -1214,6 +1214,11 @@
     {
      "name": "OSV.dev",
      "url": "https://osv.dev/vulnerability/GHSA-6q48-6c7w-9gw2",
+     "primary": true
+    },
+    {
+     "name": "OSV.dev",
+     "url": "https://osv.dev/vulnerability/PYSEC-2026-4320",
      "primary": true
     }
    ],
@@ -1226,74 +1231,10 @@
    "idents": [
     "GHSA-6q48-6c7w-9gw2",
     "PYSEC-2026-4320",
-    "url:osv.dev/vulnerability/GHSA-6q48-6c7w-9gw2"
+    "url:osv.dev/vulnerability/GHSA-6q48-6c7w-9gw2",
+    "url:osv.dev/vulnerability/PYSEC-2026-4320"
    ],
-   "last_seen": "2026-10-30",
-   "reach": 12,
-   "wide": true
-  },
-  {
-   "id": "thr-2026-10-20-rustls-webpki-may-accept-distrusted-emsign-intermediates",
-   "kind": "threat",
-   "category": "trust-infrastructure",
-   "title": "rustls-webpki may accept distrusted emSign intermediates",
-   "headline": "rustls-webpki could accept certificate chains through emSign intermediates whose private keys are now well known.",
-   "summary": "The private keys corresponding to these intermediates are now well known.",
-   "severity": "high",
-   "severity_basis": "editor",
-   "exploited": null,
-   "exploited_quote": null,
-   "status": "patched",
-   "act_now": true,
-   "affects": [
-    {
-     "name": "rustls-webpki",
-     "ecosystem": "crates.io",
-     "versions": ">= 0.0.0-0, < 0.103.16; >= 0.104.0-alpha.1, < 0.104.0-alpha.8"
-    }
-   ],
-   "fixed_in": [
-    {
-     "name": "rustls-webpki",
-     "version": "0.103.16, 0.104.0-alpha.8"
-    }
-   ],
-   "actions": [
-    "Update rustls-webpki to 0.103.16, 0.104.0-alpha.8 or later"
-   ],
-   "action_quotes": [],
-   "who": [],
-   "published": "2026-10-20",
-   "first_seen": "2026-10-21",
-   "updated": "2026-10-30",
-   "cves": [
-    "CVE-2026-111943"
-   ],
-   "kev": false,
-   "doc": "https://osv.dev/vulnerability/RUSTSEC-2026-0382",
-   "sources": [
-    {
-     "name": "OSV.dev",
-     "url": "https://osv.dev/vulnerability/RUSTSEC-2026-0382",
-     "primary": true
-    }
-   ],
-   "quote": "The private keys corresponding to these intermediates are now well known.",
-   "evidence": "official",
-   "incident": "thr-2026-10-20-eight-emudhra-intermediate-ca-private-keys-compromised",
-   "children": [],
-   "merged_ids": [],
-   "key": "threat:RUSTSEC-2026-0382",
-   "idents": [
-    "BIT-GOLANG-2026-111943",
-    "CVE-2026-111943",
-    "GO-2026-6809",
-    "RUSTSEC-2026-0381",
-    "RUSTSEC-2026-0382",
-    "RUSTSEC-2026-0383",
-    "url:osv.dev/vulnerability/RUSTSEC-2026-0382"
-   ],
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "reach": 12,
    "wide": true
   },
@@ -1459,9 +1400,9 @@
    "id": "thr-2026-10-20-eight-emudhra-intermediate-ca-private-keys-compromised",
    "kind": "threat",
    "category": "trust-infrastructure",
-   "title": "eMudhra intermediate CA private keys compromised",
-   "headline": "Private keys of eight eMudhra intermediate CAs are recoverable, exposing TLS clients outside browsers to impersonation.",
-   "summary": "The private keys of eight eMudhra intermediate CA certificates were incorrectly generated by the CA, so anyone can recover them from the certificates. Six of the certificates are for TLS and chain to roots trusted by the Mozilla, Microsoft, Apple and Chrome root programs, and two are for code signing and trusted by Microsoft. An attacker with any of these keys could impersonate any website or service to clients that still trust the intermediates, including applications and libraries that ship their own CA bundle and clients that do not enforce Certificate Transparency.",
+   "title": "Eight eMudhra intermediate CA private keys compromised",
+   "headline": "Flawed key generation exposed eMudhra intermediate CA keys, letting attackers impersonate sites to non-browser TLS clients",
+   "summary": "The private keys of eight eMudhra intermediate CA certificates were incorrectly generated by the CA, so anyone can recover them from the certificates. Six are TLS intermediates trusted by the Chrome, Mozilla, Microsoft and Apple root programs, and two are codesigning intermediates trusted by Microsoft. An attacker with any of the keys could impersonate any website or service, and clients that ship their own CA bundle or do not enforce Certificate Transparency, such as curl, are most exposed.",
    "severity": "high",
    "severity_basis": "editor",
    "exploited": null,
@@ -1471,7 +1412,7 @@
    "affects": [
     {
      "name": "eMudhra intermediate CA certificates",
-     "ecosystem": "PKI",
+     "ecosystem": "CA",
      "versions": ""
     }
    ],
@@ -1483,10 +1424,6 @@
     {
      "name": "Node.js",
      "version": "26.12.1, 24.22.1, 22.23.4"
-    },
-    {
-     "name": "Python",
-     "version": "3.15.2, 3.14.10, 3.13.18, 3.12.16, 3.11.18"
     },
     {
      "name": "Go",
@@ -1505,55 +1442,64 @@
      "version": "3.131.1"
     },
     {
-     "name": "Bun",
-     "version": "1.4.4"
+     "name": "Electron",
+     "version": "44.9.1, 43.8.1, 42.11.16"
     },
     {
      "name": "Deno",
      "version": "2.9.8"
     },
     {
-     "name": "Electron",
-     "version": "44.9.1, 43.8.1, 42.11.16"
+     "name": "Bun",
+     "version": "1.4.4"
     },
     {
      "name": "Rust rustls-webpki",
      "version": "0.103.16"
     },
     {
-     "name": "Ubuntu ca-certificates",
-     "version": "20260816ubuntu0.22.04.1, 20260816ubuntu0.24.04.1, 20260816ubuntu0.26.04.1, 20260816ubuntu0.26.10.1"
+     "name": "Rust webpki-roots / webpki-root-certs",
+     "version": "1.0.10"
+    },
+    {
+     "name": "Debian ca-certificates",
+     "version": "20250419~deb12u2, 20250419+deb13u1, 20260816+nmu1"
     }
    ],
    "actions": [
     "Update Python certifi to 2026.10.19 or later",
     "Update Node.js to 26.12.1, 24.22.1, 22.23.4 or later",
-    "Update Python to 3.15.2, 3.14.10, 3.13.18, 3.12.16, 3.11.18 or later",
     "Update Go to 1.27.3, 1.26.10 or later",
     "Update curl CA bundle to 2026-10-20 or later",
     "Update Homebrew ca-certificates to 2026-09-25_1 or later",
     "Update NSS to 3.131.1 or later",
-    "Update Bun to 1.4.4 or later",
-    "Update Deno to 2.9.8 or later",
     "Update Electron to 44.9.1, 43.8.1, 42.11.16 or later",
+    "Update Deno to 2.9.8 or later",
+    "Update Bun to 1.4.4 or later",
     "Update Rust rustls-webpki to 0.103.16 or later",
-    "Update Ubuntu ca-certificates to 20260816ubuntu0.22.04.1, 20260816ubuntu0.24.04.1, 20260816ubuntu0.26.04.1, 20260816ubuntu0.26.10.1 or later",
-    "Rebuild Electron-based apps on a patched Electron release."
+    "Update Rust webpki-roots / webpki-root-certs to 1.0.10 or later",
+    "Update Debian ca-certificates to 20250419~deb12u2, 20250419+deb13u1, 20260816+nmu1 or later",
+    "Update browsers and operating systems.",
+    "Update applications and libraries that ship their own CA bundle, including Electron apps."
    ],
    "action_quotes": [
     {
-     "action": "Rebuild Electron-based apps on a patched Electron release.",
-     "quote": "Electron apps only pick up Electron's fix once they are updated to a version built on a patched Electron release ."
+     "action": "Update browsers and operating systems.",
+     "quote": "Users should update their browsers and operating systems to the latest versions as soon as possible."
+    },
+    {
+     "action": "Update applications and libraries that ship their own CA bundle, including Electron apps.",
+     "quote": "These include applications and libraries that ship their own CA bundle, and apps built on Electron, such as Slack and Discord."
     }
    ],
    "who": [
-    "non-browser TLS clients with bundled CA lists",
-    "Electron apps",
-    "macOS developer tools such as git, curl and python3"
+    "clients that ship their own CA bundle",
+    "command-line tools that do not enforce CT",
+    "Electron apps"
    ],
    "published": "2026-10-20",
    "first_seen": "2026-10-21",
-   "updated": "2026-10-30",
+   "updated": "2026-10-31",
    "cves": [],
    "kev": false,
    "doc": "https://emudhra.we-have-a-problem.com/",
@@ -1589,8 +1535,75 @@
     "url:emudhra.we-have-a-problem.com",
     "url:groups.google.com/a/mozilla.org/g/dev-security-policy/c/0R3XLJL6FuE"
    ],
-   "last_seen": "2026-10-30",
+   "last_seen": "2026-10-31",
    "reach": 28,
+   "wide": true
+  },
+  {
+   "id": "thr-2026-10-20-rustls-webpki-may-accept-distrusted-emsign-intermediates",
+   "kind": "threat",
+   "category": "trust-infrastructure",
+   "title": "rustls-webpki accepts distrusted emSign intermediate certificates",
+   "headline": "rustls-webpki may accept certificate paths through emSign intermediates whose private keys are now well known",
+   "summary": "The private keys for these intermediates are now well known, so certificates chaining through them may be accepted.",
+   "severity": "medium",
+   "severity_basis": "CVSS 6.8 (ADP)",
+   "exploited": null,
+   "exploited_quote": null,
+   "status": "patched",
+   "act_now": false,
+   "affects": [
+    {
+     "name": "rustls-webpki",
+     "ecosystem": "crates.io",
+     "versions": ">= 0.0.0-0, < 0.103.16; >= 0.104.0-alpha.1, < 0.104.0-alpha.8"
+    }
+   ],
+   "fixed_in": [
+    {
+     "name": "rustls-webpki",
+     "version": "0.103.16, 0.104.0-alpha.8"
+    }
+   ],
+   "actions": [
+    "Update rustls-webpki to 0.103.16, 0.104.0-alpha.8 or later"
+   ],
+   "action_quotes": [],
+   "who": [
+    "Rust applications using rustls-webpki"
+   ],
+   "published": "2026-10-20",
+   "first_seen": "2026-10-21",
+   "updated": "2026-10-31",
+   "cves": [
+    "CVE-2026-111943"
+   ],
+   "kev": false,
+   "doc": "https://osv.dev/vulnerability/RUSTSEC-2026-0382",
+   "sources": [
+    {
+     "name": "OSV.dev",
+     "url": "https://osv.dev/vulnerability/RUSTSEC-2026-0382",
+     "primary": true
+    }
+   ],
+   "quote": "The private keys corresponding to these intermediates are now well known.",
+   "evidence": "official",
+   "incident": "thr-2026-10-20-eight-emudhra-intermediate-ca-private-keys-compromised",
+   "children": [],
+   "merged_ids": [],
+   "key": "threat:RUSTSEC-2026-0382",
+   "idents": [
+    "BIT-GOLANG-2026-111943",
+    "CVE-2026-111943",
+    "GO-2026-6809",
+    "RUSTSEC-2026-0381",
+    "RUSTSEC-2026-0382",
+    "RUSTSEC-2026-0383",
+    "url:osv.dev/vulnerability/RUSTSEC-2026-0382"
+   ],
+   "last_seen": "2026-10-31",
+   "reach": 12,
    "wide": true
   },
   {
