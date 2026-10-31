@@ -1,0 +1,139 @@
+{
+ "ran_at": "2026-10-31T14:12:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-10-31T10:06:00Z",
+ "queries": 11,
+ "calls": 13,
+ "items": [
+  {
+   "title": "DeepSeek open-sources dsh-superagent-prototype, a proactive coding agent that works one GitHub repo through issues and PRs",
+   "url": "https://x.com/leonliuzx/status/2116523015018279363",
+   "handle": "@leonliuzx",
+   "group": "devtools",
+   "origin": "discovery",
+   "summary": "DeepSeek published an MIT-licensed research prototype that runs on DeepSeek Harness, listens to GitHub (and optionally Feishu), opens a work item when an allowed user asks, works in its own session and answers with a pull request, with a web panel for things that need a person. It ships with an agent-guided SETUP.md and a design note on always-on router plus worker agents.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/deepseek-ai/dsh-superagent-prototype",
+    "https://mp.weixin.qq.com/s/zoS7GlReWPhfCjENGxXCdg"
+   ],
+   "vendor": "DeepSeek",
+   "posted_at": "2026-10-31T13:29:00Z",
+   "metrics": {
+    "likes": 3,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@teortaxesTex"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "SenseTime releases SenseNova-Loop-9B-Preview, a looped multimodal model that runs 24 of 32 layers twice with shared weights",
+   "url": "https://x.com/ElnurIb01717668/status/2116491976623435797",
+   "handle": "@ElnurIb01717668",
+   "group": "opensource",
+   "origin": "discovery",
+   "summary": "Apache-2.0 open weights for a 9B text and image model that reuses a 24-layer block twice per forward pass (56 layer executions, about 14.6B inference parameters) with two-stream hyper-connections and hybrid linear/full attention, trained up to 256K context for agentic and long-document work. Benchmarks are vendor-run and the tech report is still listed as TBD.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview",
+    "https://github.com/OpenSenseNova/SenseNova-Loop"
+   ],
+   "vendor": "SenseTime (SenseNova)",
+   "posted_at": "2026-10-31T11:26:00Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Benchmark chart is vendor-run and the technical report is not out yet; no independent numbers.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 93,
+ "list_pages": 1,
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 0,
+  "kept": 0,
+  "note": "Live bookmarks read for id 1521986356721123328; all 20 already in the archive seen_ids."
+ },
+ "discovery": {
+  "queries": 3,
+  "kept": 2,
+  "note": "Release search surfaced SenseNova-Loop-9B (HF repo created Oct 28, weights out Oct 30) and many low-reach self-promos; vercel-labs/agent-desktop skipped as an older repo (Feb 2026). One search traced the DeepSeek superagent repo to its sources; DeepSeek and DeepSeekHarness posted nothing on X since 06:00Z. Security search was again only Cursor-marketplace Claude Code extension coverage."
+ },
+ "horizon": {
+  "block-dessa": "One X read since 10:06Z: one unrelated-looking X article link with low reach, no release. block.xyz/dessa still shows the waitlist and safety-researcher early access. No trigger."
+ },
+ "rechecks": [],
+ "videos": {
+  "count": 0,
+  "note": "No deep-read item with a clip; no video reader in this run."
+ },
+ "skipped": [
+  {
+   "url": "https://x.com/plotarmordev/status/2116493592684585067",
+   "reason": "GLM 5.5 size leak; rumor, nothing released."
+  },
+  {
+   "url": "https://x.com/GoogleDeepMind/status/2116524000977285321",
+   "reason": "PlanAssist rollout to more UK councils; a deployment, not a new capability for builders."
+  },
+  {
+   "url": "https://x.com/trending_repos/status/2116502538186784825",
+   "reason": "claude-mem trending; existing repo, nothing new shipped."
+  },
+  {
+   "url": "https://x.com/CommandCodeAI/status/2116507729670086950",
+   "reason": "Free-access promo for Ling 3.1 Flash 1019, already covered."
+  },
+  {
+   "url": "https://x.com/levelsio/status/2116505887091130499",
+   "reason": "Commentary on a proposed German AI tax; no document, not a constraint."
+  },
+  {
+   "url": "https://x.com/thdxr/status/2116527005801873662",
+   "reason": "Opinion on token costs."
+  },
+  {
+   "url": "https://x.com/emollick/status/2116526543346483419",
+   "reason": "Opinion on legacy migration market."
+  },
+  {
+   "url": "https://x.com/Shadowfetch/status/2116491743583682800",
+   "reason": "Shadowfetch post about vercel-labs/agent-desktop; repo dates from Feb 2026, no new release found."
+  }
+ ],
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://x.com/The_Cyber_News/status/2116481887883731166",
+   "reason": "Cursor-marketplace Claude Code extension backdoor (2.1.312/2.1.313); already forwarded Oct 30, no new IOC or version info beyond the IOC file."
+  }
+ ],
+ "errors": [],
+ "proposed_follows_note": "No new accounts met the follow bar this sweep."
+}
