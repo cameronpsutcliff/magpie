@@ -1,0 +1,176 @@
+{
+ "ran_at": "2026-11-01T02:05:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-10-31T22:10:00Z",
+ "queries": 8,
+ "calls": 11,
+ "items": [
+  {
+   "title": "Agent swarm writes 10,000 lines of fused Hopper kernels for up to 38% faster decode",
+   "url": "https://x.com/SemiAnalysis_/status/2116666571728863431",
+   "handle": "@SemiAnalysis_",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "SemiAnalysis says @mgoin_ used an agent swarm to write about 10,000 lines of ultra-fused decode kernels for Hopper GPUs, improving decode speed by up to 38%. The point is that older Hopper and Blackwell parts got little of NVIDIA's decode-specialized software, and agent-written kernels are filling that gap.",
+   "kind": "technique",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/SemiAnalysis_/status/2116666571728863431/photo/1"
+   ],
+   "vendor": "@mgoin_ (reported by SemiAnalysis)",
+   "posted_at": "2026-10-31T23:00:11.000Z",
+   "metrics": {
+    "likes": 174,
+    "reposts": 6,
+    "quotes": 6,
+    "replies": 25,
+    "views": 23090
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Only an 'up to' figure with no linked benchmark, model or repo in the post; not yet independently reproduced.",
+    "source": "https://x.com/SemiAnalysis_/status/2116666571728863431"
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 93,
+ "list_pages": 1,
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 0,
+  "kept": 0,
+  "note": "Live bookmarks read for id 1521986356721123328; the newest 20 saves were all already archived."
+ },
+ "discovery": {
+  "queries": 2,
+  "kept": 0,
+  "note": "Release search surfaced Vercel agent-desktop again (repo from Feb 2026, skipped before) and low-reach launches. Security search was mostly Claude Code extension backdoor echoes plus already-handled MCP Inspector and AWS API MCP advisories."
+ },
+ "horizon": {
+  "block-dessa": "One X read since 22:10Z: no posts. No trigger."
+ },
+ "rechecks": [
+  {
+   "url": "https://x.com/SemiAnalysis_/status/2116606900271788210",
+   "doubt_before": 1,
+   "doubt_after": 1,
+   "note": "Now 293 likes; no new pushback beyond the single-model, 'up to' caveats."
+  },
+  {
+   "url": "https://x.com/browser_use/status/2116618331734344103",
+   "doubt_before": 1,
+   "doubt_after": 1,
+   "note": "Now 91 likes; no independent speed reports yet."
+  },
+  {
+   "url": "https://x.com/mixdog_ai/status/2116612335204982929",
+   "doubt_before": 1,
+   "doubt_after": 1,
+   "note": "Still 0 engagement; Terminal-Bench numbers remain self-reported."
+  },
+  {
+   "url": "https://x.com/use_zn/status/2116600802227687885",
+   "doubt_before": 1,
+   "doubt_after": 1,
+   "note": "Still 2 likes; test set is the vendor's own."
+  },
+  {
+   "url": "https://x.com/opencode/status/2116555630236577819",
+   "doubt_before": 1,
+   "doubt_after": 1,
+   "note": "Now 5,535 likes; Linux maturity concern unchanged."
+  },
+  {
+   "url": "https://x.com/ashxhart/status/2116535665248669850",
+   "doubt_before": 1,
+   "doubt_after": 1,
+   "note": "Now 141 likes; still no matched long-context run."
+  },
+  {
+   "url": "https://x.com/sgl_project/status/2116353629057962217",
+   "doubt_before": 1,
+   "doubt_after": 1,
+   "note": "Now 326 likes; throughput claim still unreproduced by others."
+  }
+ ],
+ "videos": {
+  "count": 0,
+  "note": "No kept item has a video over video_min_seconds."
+ },
+ "skipped": [
+  {
+   "url": "https://x.com/thsottiaux/status/2116692529970311254",
+   "reason": "No content beyond 'Banked 1/2'."
+  },
+  {
+   "url": "https://x.com/addyosmani/status/2116711827069649308",
+   "reason": "Halloween three.js demo; nothing new shipped."
+  },
+  {
+   "url": "https://x.com/plotarmordev/status/2116706727227969748",
+   "reason": "NVFP4 quant tip with no artifact."
+  },
+  {
+   "url": "https://x.com/badlogicgames/status/2116674489324888516",
+   "reason": "Repeat of the agent-built JSON schema library already skipped."
+  },
+  {
+   "url": "https://x.com/emollick/status/2116681050747248955",
+   "reason": "Opinion on GPT-6 Pro; no new capability."
+  },
+  {
+   "url": "https://x.com/teortaxesTex/status/2116692277179584520",
+   "reason": "Market rumors, not dev content."
+  },
+  {
+   "url": "https://x.com/CommandCodeAI/status/2116706621527409114",
+   "reason": "Vendor free-model promo."
+  },
+  {
+   "url": "https://x.com/warrior_naruto/status/2116696065923834133",
+   "reason": "Vercel agent-desktop; repo dates from Feb 2026, skipped in an earlier sweep."
+  },
+  {
+   "url": "https://x.com/warrior_naruto/status/2116698801771511839",
+   "reason": "Aura Autopilot launch with no engagement or independent signal."
+  }
+ ],
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://x.com/ManiarViral/status/2116658484788027868",
+   "reason": "CVE-2026-22708 (Cursor allowlist bypass via shell built-ins) is a Jan 2026 advisory fixed in Cursor 2.3 (GHSA-82wg-qcm4-fp2w); fleet Cursor is far past that, so nothing new to act on."
+  },
+  {
+   "url": "https://x.com/Innora_sg/status/2116675879049003475",
+   "reason": "Cursor-marketplace Claude Code extension backdoor (2.1.312 and 2.1.313); already in the IOC file, no new indicators."
+  },
+  {
+   "url": "https://x.com/Innora_sg/status/2116675989812191719",
+   "reason": "MCP Inspector GHSA-q978-78c7-phqw and AWS API MCP CVE-2026-115413; both handled in earlier sweeps."
+  },
+  {
+   "url": "https://x.com/0x0SojalSec/status/2116655312967278829",
+   "reason": "Black October recap; items already covered (Railway, OpenCode, Northflank observation filed 2026-10-31)."
+  },
+  {
+   "url": "https://x.com/NeuralAlphaAI/status/2116663466023137661",
+   "reason": "Secondhand CloudSEK claim of MCP tool abuse by a ransomware affiliate; no component, CVE or source link to verify."
+  },
+  {
+   "url": "https://x.com/ADKCyber/status/2116662861674201415",
+   "reason": "TAKO AI Agent for Okta CVEs; not in our stack."
+  },
+  {
+   "url": "https://x.com/HugoValters/status/2116712076638892232",
+   "reason": "REDCap RCE; not in our stack."
+  }
+ ],
+ "errors": [],
+ "proposed_follows_note": "No browser in this run. No new account cleared the follow bar this sweep."
+}
