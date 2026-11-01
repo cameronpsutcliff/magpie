@@ -13,6 +13,29 @@
  ],
  "items": [
   {
+   "id": "2026-11-01",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-11-01",
+   "title": "AiSOC, Claude-Code-Game-Studios, claude-mem, and more",
+   "summary": "178 capability events from 128 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words.",
+   "content_html": "<p>178 capability events from 128 sources. Ranked by code; the editor did not run this edition, so copy is the sources&#x27; own words.</p><ol><li><a href=\"https://github.com/beenuar/AiSOC\">beenuar/AiSOC</a></li><li><a href=\"https://github.com/Donchitos/Claude-Code-Game-Studios\">Donchitos/Claude-Code-Game-Studios</a></li><li><a href=\"https://github.com/thedotmack/claude-mem\">thedotmack/claude-mem</a></li><li><a href=\"https://github.com/cloudflare/security-audit-skill\">cloudflare/security-audit-skill</a></li><li><a href=\"https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B\">nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B</a></li></ol><p><strong>Possibilities:</strong> No new possibility today. Latest: Platform teams can gate every agent skill install behind a scan this quarter (2026-10-31)</p><p><strong>Worth watching:</strong> No new video pick today. Latest: When Running Your Own AI Models Beats Paying for APIs - Steven Latré, imec (2026-10-31)</p><p><strong>Constraints:</strong> No new constraint today. Latest: DHS order bars DeepSeek products from federal civilian agencies (2026-10-20)</p><p><strong>Threats still open:</strong> <a href=\"https://osv.dev/vulnerability/GHSA-6q48-6c7w-9gw2\">Python certifi bundles root behind compromised eMudhra intermediates</a> (critical, patched); <a href=\"https://osv.dev/vulnerability/GHSA-f897-62hf-6gxq\">MCP TypeScript SDK HTTP transports lack request limits</a> (high, patched); <a href=\"https://osv.dev/vulnerability/GHSA-h3rc-6mm3-gc2m\">vLLM request-controlled processor code revision allows code execution</a> (high, patched)</p>",
+   "content_text": "178 capability events from 128 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words. beenuar/AiSOC Donchitos/Claude-Code-Game-Studios thedotmack/claude-mem cloudflare/security-audit-skill nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
+   "date_published": "2026-11-01T11:12:01Z",
+   "tags": [
+    "agents",
+    "coding",
+    "local",
+    "mcp",
+    "models",
+    "multimodal",
+    "security"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-11-01.json",
+    "backfilled": false,
+    "capabilities": 178
+   }
+  },
+  {
    "id": "2026-10-31",
    "url": "https://www.cameronsutcliff.com/magpie/2026-10-31",
    "title": "Check a backdoored extension, pick Android Studio agents, run diffusion MoE locally, and more",
@@ -690,28 +713,6 @@
     "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-02.json",
     "backfilled": true,
     "capabilities": 134
-   }
-  },
-  {
-   "id": "2026-10-01",
-   "url": "https://www.cameronsutcliff.com/magpie/2026-10-01",
-   "title": "Google ships Gemini 4 Argon, agent guardrails move outside, Ollama gains decision models, and more",
-   "summary": "Google's Gemini 4 Argon post led the day on Hacker News, though the input has few details on it. Most other items were papers, small tools and trackers, with security separation and local decision models the clearest practical steps.",
-   "content_html": "<p>Google&#x27;s Gemini 4 Argon post led the day on Hacker News, though the input has few details on it. Most other items were papers, small tools and trackers, with security separation and local decision models the clearest practical steps.</p><ol><li><a href=\"https://huggingface.co/papers/2609.31847\">Omni-IO Skills lets agents handle mixed media</a>: A general agent can coordinate workflows across many kinds of artifacts using hierarchical skills and a persistent asset registry.</li><li><a href=\"https://huggingface.co/papers/2609.34309\">MaLiang-Harness makes image and video generation programmable</a>: Visual creation can run through persistent executable generation with traceable edits and revision-aware verification.</li><li><a href=\"https://www.youtube.com/watch?v=4rg6gjt59fM\">Agent controls move outside the agent</a>: Claude can do work without seeing passwords while OpenShell limits reachable files and network connections.</li><li><a href=\"https://www.youtube.com/watch?v=jE1A6I1twrU\">Ollama adds local decision models</a>: Ollama 0.35 can run decision models locally, returning a pick and probability per option for named questions.</li><li><a href=\"https://github.com/aws/agent-toolkit-for-aws\">AWS ships official MCP servers for agents</a>: AI agents can build on AWS using official, AWS-supported MCP servers, skills and plugins.</li></ol>",
-   "content_text": "Google's Gemini 4 Argon post led the day on Hacker News, though the input has few details on it. Most other items were papers, small tools and trackers, with security separation and local decision models the clearest practical steps. Omni-IO Skills lets agents handle mixed media MaLiang-Harness makes image and video generation programmable Agent controls move outside the agent Ollama adds local decision models AWS ships official MCP servers for agents",
-   "date_published": "2026-10-20T15:39:35Z",
-   "tags": [
-    "agents",
-    "local",
-    "mcp",
-    "models",
-    "multimodal",
-    "security"
-   ],
-   "_magpie": {
-    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-01.json",
-    "backfilled": true,
-    "capabilities": 144
    }
   }
  ]
