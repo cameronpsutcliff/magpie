@@ -1413,6 +1413,135 @@
      "url": "https://newsletter.semianalysis.com/p/amazons-trainium-takes-a-strike-at"
     }
    ]
+  },
+  {
+   "org": "anomalyco",
+   "why": "Discovered 2026-10-31: cited by GitHub, Latent Space, opencode releases within a week.",
+   "origin": "discovery",
+   "since": "2026-10-31",
+   "discovered_as": "github:anomalyco",
+   "evidence": [
+    {
+     "date": "2026-10-25",
+     "source": "GitHub",
+     "title": "anomalyco/opencode",
+     "url": "https://github.com/anomalyco/opencode"
+    },
+    {
+     "date": "2026-10-25",
+     "source": "opencode releases",
+     "title": "github-v1.2.28: chore(github): pin actions/cache to commit SHA in GitHub Action (#58769)",
+     "url": "https://github.com/anomalyco/opencode/releases/tag/github-v1.2.28"
+    },
+    {
+     "date": "2026-10-25",
+     "source": "opencode releases",
+     "title": "v2.1.4",
+     "url": "https://github.com/anomalyco/opencode/releases/tag/v2.1.4"
+    }
+   ]
+  },
+  {
+   "org": "microsoft",
+   "why": "Discovered 2026-10-31: cited by Hacker News, Microsoft Research blog, X: @aitrackerbot within a week.",
+   "origin": "discovery",
+   "since": "2026-10-31",
+   "discovered_as": "github:microsoft",
+   "evidence": [
+    {
+     "date": "2026-10-27",
+     "source": "Hacker News",
+     "title": "Type Server Protocol",
+     "url": "https://github.com/microsoft/pylance-release/blob/main/docs/tsp/type-server-protocol.md"
+    },
+    {
+     "date": "2026-10-30",
+     "source": "Microsoft Research blog",
+     "title": "Microsoft Research Focus – Edition #97",
+     "url": "https://www.microsoft.com/en-us/research/podcast/microsoft-research-focus-edition-97/"
+    },
+    {
+     "date": "2026-10-31",
+     "source": "X: @aitrackerbot",
+     "title": "Microsoft releases Mage-VL-Cowork: a 4B computer-use model that mixes GUI clicks and terminal commands, 66.0% on OSWorld-Verified",
+     "url": "https://x.com/aitrackerbot/status/2116143353213428048"
+    }
+   ]
+  },
+  {
+   "org": "inclusionai",
+   "why": "Discovered 2026-10-31: cited by X: @AntLingAGI, X: @TheInclusionAI, X: @aitrackerbot within a week.",
+   "origin": "discovery",
+   "since": "2026-10-31",
+   "discovered_as": "github:inclusionai",
+   "evidence": [
+    {
+     "date": "2026-10-27",
+     "source": "X: @aitrackerbot",
+     "title": "inclusionAI publishes LBS-27B, a vision model that learns where to zoom from GUI grounding",
+     "url": "https://x.com/aitrackerbot/status/2114678751535493186"
+    },
+    {
+     "date": "2026-10-29",
+     "source": "X: @AntLingAGI",
+     "title": "Ling-3.0-flash inference stack measured on DGX Spark",
+     "url": "https://x.com/AntLingAGI/status/2115680331399664105"
+    },
+    {
+     "date": "2026-10-30",
+     "source": "X: @TheInclusionAI",
+     "title": "inclusionAI ZwZ2: 4B, 9B and 27B vision models gain on all 25 benchmarks from 20.4K RLVR examples",
+     "url": "https://x.com/TheInclusionAI/status/2115805865852715491"
+    }
+   ]
+  },
+  {
+   "org": "zagitta",
+   "why": "Discovered 2026-10-31: cited by Hacker News, Latent Space within a week.",
+   "origin": "discovery",
+   "since": "2026-10-31",
+   "discovered_as": "github:zagitta",
+   "evidence": [
+    {
+     "date": "2026-10-25",
+     "source": "Latent Space",
+     "title": "[AINews] Kimi 3.1 Pro 104BA-2.8T: Fable-5.1-Class Open Weights narrows Closed-AI lead to 1 month... and Pro Highspeed API with 2-3× speed",
+     "url": "https://latent.space/p/ainews-kimi-31/"
+    },
+    {
+     "date": "2026-10-25",
+     "source": "Hacker News",
+     "title": "GPU-unlock: FP/BF16 instruction issue rate on Nvidia 3000's cards",
+     "url": "https://github.com/Zagitta/gpu-unlock"
+    },
+    {
+     "date": "2026-10-28",
+     "source": "Latent Space",
+     "title": "[AINews] Anthropic ends Coding Interviews: \"Hunger beats tenure\"",
+     "url": "https://latent.space/p/ainews-anthropic-ends-coding-interviews-hunger-beats-tenure/"
+    }
+   ]
+  },
+  {
+   "org": "nousresearch",
+   "why": "Discovered 2026-10-31: cited by Interconnects, X: @Teknium within a week.",
+   "origin": "discovery",
+   "since": "2026-10-31",
+   "discovered_as": "github:nousresearch",
+   "evidence": [
+    {
+     "date": "2026-10-25",
+     "source": "X: @Teknium",
+     "title": "Hermes Agent restores web search after Blank Slate setup",
+     "url": "https://x.com/Teknium/status/2114175172874047764"
+    },
+    {
+     "date": "2026-10-26",
+     "source": "Interconnects",
+     "title": "Podcast: Kimi K3.1 Pro, the new cyber reality, and Muse musings",
+     "url": "https://www.interconnects.ai/p/podcast-kimi-k31-pro-the-new-cyber"
+    }
+   ]
   }
  ],
  "policy_feeds": [
