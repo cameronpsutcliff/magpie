@@ -1,0 +1,246 @@
+{
+ "ran_at": "2026-11-01T19:07:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-01T15:08:00Z",
+ "queries": 11,
+ "calls": 15,
+ "items": [
+  {
+   "title": "Ava: a real-time talking avatar that runs fully in the browser on WebGPU",
+   "url": "https://x.com/victormustar/status/2116948755760968077",
+   "handle": "@victormustar",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Hugging Face's Victor Mustar shows Ava, a voice-chat avatar where speech understanding, the reply and the animated head all run on the user's device in the browser. It chains Liquid's LFM3-Omni with Hugging Face's WebGPU kernels and the TalkingHead and HeadAudio libraries, and a live Space is public. The author calls it a tech demo; the model download is about 1.6 GB.",
+   "kind": "demo",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/spaces/townbox/ava",
+    "https://huggingface.co/kernels?platform=webgpu"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-01T17:41:29Z",
+   "metrics": {
+    "likes": 86,
+    "reposts": 14,
+    "quotes": 14,
+    "replies": 25
+   },
+   "confirmed_by": [
+    "@linoy_tsaban"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Author labels it a tech demo. Replies raise WebGPU support on older laptops and the 1.6 GB first load, and one user found the voice quality rough.",
+    "source": "https://x.com/victormustar/status/2116948755760968077"
+   },
+   "reception": "Mostly impressed by the fully local setup; the practical concerns are hardware support and download size."
+  },
+  {
+   "title": "Meituan releases LongCat-2.5, a 1.6T-parameter multimodal agent model, API only",
+   "url": "https://x.com/aitrackerbot/status/2116967358602301733",
+   "handle": "@aitrackerbot",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Meituan's LongCat-2.5 is a natively multimodal mixture-of-experts model with about 1.6T total and roughly 48B active parameters, aimed at agent work. Meituan's blog reports Terminal Bench v2.1 88.4, BrowseComp 91.9 and MCP Atlas 83.1, and says W4A4 inference gives about 43% faster prefill and 42.8% faster decode than W8A8. It is available through an API at a limited-time price of $0.30 in and $1.20 out per million tokens; no weights were released.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [
+    "https://longcat.ai/blog/longcat-2.5"
+   ],
+   "vendor": "Meituan",
+   "posted_at": "2026-11-01T18:55:24Z",
+   "metrics": {
+    "likes": 8,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "All benchmark numbers are Meituan's own; API only, no weights, so nothing is independently checked yet.",
+    "source": "https://longcat.ai/blog/longcat-2.5"
+   }
+  },
+  {
+   "title": "DeepMind researchers use Antigravity with UI sidecars to screen proteins and draft a wet-lab plan",
+   "url": "https://x.com/antigravity/status/2116952756342677919",
+   "handle": "@antigravity",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Google shows DeepMind researchers working in Antigravity to search millions of uncharacterized proteins, validate a new antimicrobial peptide and produce a wet-lab experiment plan. The workflow leans on Antigravity UI sidecars, custom viewers the agent builds next to the chat so researchers can inspect protein structures directly. DeepMind's blog post has the full write-up.",
+   "kind": "demo",
+   "evidence": "claim",
+   "links": [
+    "https://deepmind.google/blog/accelerating-antimicrobial-discovery/"
+   ],
+   "vendor": "Google",
+   "posted_at": "2026-11-01T17:57:22Z",
+   "metrics": {
+    "likes": 315,
+    "reposts": 25,
+    "quotes": 1,
+    "replies": 11
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Vendor showcase. Replies note the plan still has to survive real lab work and that instrument and reagent queues dominate the timeline.",
+    "source": "https://x.com/MrClicker_1/status/2116965432515330299"
+   },
+   "reception": "Replies single out the sidecar viewer as the useful part; skepticism is about the lab step, not the tool."
+  },
+  {
+   "title": "levelsio: Claude Code edited a full 10-minute vlog from raw clips on a MacBook",
+   "url": "https://x.com/levelsio/status/2116959423117857026",
+   "handle": "@levelsio",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Pieter Levels asked Claude Code (Opus 5.5) to cut his DJI clips into a 10-minute vlog. Unprompted, it transcribed audio locally with mlx-whisper (Whisper large-v3-turbo on Apple MLX), built frame contact sheets so it could see each clip, used SpeechBrain ECAPA to tell his voice from others, made thumbnails with OpenCV and YuNet face detection, wrote the edit as a JSON cut list, and burned in captions with Pillow. He made only small fixes.",
+   "kind": "technique",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Anthropic",
+   "posted_at": "2026-11-01T18:23:52Z",
+   "metrics": {
+    "likes": 260,
+    "reposts": 6,
+    "quotes": 7,
+    "replies": 34
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single first-hand report; no code or prompt shared.",
+    "source": "https://x.com/levelsio/status/2116959423117857026"
+   }
+  },
+  {
+   "title": "SemiAnalysis: NVIDIA AgentX submission reports over 1,000 tokens/s per user on 700B+ models",
+   "url": "https://x.com/SemiAnalysis_/status/2116950855718998288",
+   "handle": "@SemiAnalysis_",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "SemiAnalysis reports a new NVIDIA entry in its AgentX inference benchmark where agent-swarm-written kernels push HBM GPUs past 1,000 tokens per second per user on 700B+ parameter models. It also cites 20.9 times better performance per total cost of ownership on Rubin NVL72 than GB300 NVL72 at 325 tokens per second per user.",
+   "kind": "benchmark",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-11-01T17:49:49Z",
+   "metrics": {
+    "likes": 178,
+    "reposts": 11,
+    "quotes": 4,
+    "replies": 21
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Vendor submission relayed by SemiAnalysis; the post links no submission details, and the Rubin figure is a projection on unreleased hardware.",
+    "source": "https://x.com/SemiAnalysis_/status/2116950855718998288"
+   }
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/alive_/status/2116902936185889188",
+   "reason": "Security news about the Linux MPTCP/TCP remote takeover (CVE-2026-98432, atlasum.net write-up quoted from @tobi); already forwarded on 2026-10-30 and not an AI capability."
+  }
+ ],
+ "list_posts_read": 89,
+ "list_pages": 1,
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 1,
+  "kept": 0,
+  "note": "Live bookmarks read for id 1521986356721123328; one new save (@alive_ on CVE-2026-98432), rejected as already-handled security news."
+ },
+ "discovery": {
+  "queries": 2,
+  "kept": 0,
+  "note": "Release search: Mixture of Models explainer, Playground Robot Intelligence Index post and a Linux kernel AI-tagged patch study, all low signal, skipped. Security search: nearly all posts recirculate the Cursor marketplace Claude Code extension backdoor (2.1.312/2.1.313, already handled) or the AGENTS.md-in-Downloads hijack (forwarded 2026-10-25); nothing new."
+ },
+ "horizon": {
+  "block-dessa": "One X read since 15:08Z returned no posts. No trigger."
+ },
+ "rechecks": [],
+ "videos": {
+  "count": 0,
+  "note": "Antigravity protein demo (370 s) qualifies but was not analyzed: no video-capable reader in this run. Ava clip is 50 s."
+ },
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://x.com/alive_/status/2116902936185889188",
+   "reason": "CVE-2026-98432 Linux MPTCP/TCP UAF: forwarded 2026-10-30, stopgap work already done; no new facts."
+  },
+  {
+   "url": "https://x.com/levelsio/status/2116949634111115348",
+   "reason": "Same CVE-2026-98432 discussion; already handled."
+  },
+  {
+   "url": "https://x.com/AlexNguyen65/status/2116963688729186515",
+   "reason": "Cursor marketplace Claude Code extension 2.1.312/2.1.313 SSH backdoor (Phorion, Microsoft Threat Intelligence, WIRED re-coverage); already handled in the 2026-10-30 sweeps."
+  },
+  {
+   "url": "https://x.com/drensonai/status/2116946925500899371",
+   "reason": "AGENTS.md dropped into Downloads hijacking Claude Code or Codex; Forever Security finding already forwarded 2026-10-25."
+  },
+  {
+   "url": "https://x.com/0xKetone/status/2116951069091635661",
+   "reason": "Weekly recap (extension backdoor, Northflank key rotation, inbound-doc injection); all previously covered."
+  },
+  {
+   "url": "https://x.com/Techorbitt/status/2116931453217013869",
+   "reason": "October security recap; OpenCode key exposure and others already covered in earlier sweeps."
+  },
+  {
+   "url": "https://x.com/QGallouedec/status/2116962385517068771",
+   "reason": "Debunk of a fake leaked Anthropic checkpoint upload; hoax, no malware or stack exposure reported."
+  }
+ ],
+ "skipped": [
+  {
+   "url": "https://x.com/scaling01/status/2116922058332659849",
+   "reason": "Mythos 5.5 page-source rumor; not released, live page still shows 5.1."
+  },
+  {
+   "url": "https://x.com/gabriberton/status/2116957948497039474",
+   "reason": "VisMatch v1.4.0 shipped 2026-10-15 (GitHub release); late announcement, not new."
+  },
+  {
+   "url": "https://x.com/teortaxesTex",
+   "reason": "DeepSeek V4.1F Epoch ECI score relayed secondhand, plus opinion posts."
+  },
+  {
+   "url": "https://x.com/llama_index",
+   "reason": "Extract Max Effort promo with no numbers."
+  },
+  {
+   "url": "https://x.com/karpathy",
+   "reason": "HackerTube already kept in the 11:10Z sweep."
+  },
+  {
+   "url": "https://x.com/witcheer",
+   "reason": "Hermes tips and MicroDuck policy post, minor."
+  },
+  {
+   "url": "https://x.com/dair_ai",
+   "reason": "Weekly paper recap."
+  }
+ ],
+ "errors": [],
+ "proposed_follows_note": "No browser in this run. No account cleared the follow bar."
+}
