@@ -1,0 +1,175 @@
+{
+ "ran_at": "2026-11-01T23:08:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-01T19:07:00Z",
+ "queries": 9,
+ "calls": 11,
+ "items": [
+  {
+   "title": "MiniMax rounds up community quants that run M3.1 Flash locally, including a single DGX Spark recipe",
+   "url": "https://x.com/MiniMax_AI/status/2116996123164569606",
+   "handle": "@MiniMax_AI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "MiniMax lists the community quantizations and recipes for its 428B M3.1 Flash: Unsloth 2-bit dynamic GGUFs at 143.9 GB, a SAGE-EXL3 quant with token-level fidelity measurements sized for one DGX Spark, EXL3-EAQ quants, oQ quants with DSpark decoding through oMLX on Apple Silicon, AMD Quark MXFP4 for Instinct GPUs, and a 4x RTX 3090 setup that mixes quantized weights, expert caching and system RAM. The Unsloth GGUFs were covered on Oct 26; the Spark, MLX and AMD paths are new.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "MiniMax",
+   "posted_at": "2026-11-01T20:49:42Z",
+   "metrics": {
+    "likes": 269,
+    "reposts": 26,
+    "quotes": 20,
+    "replies": 28
+   },
+   "confirmed_by": [
+    "@ViC305"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "A roundup post with no links of its own; @ViC305 confirms the single-Spark SAGE-EXL3 quant but his Hugging Face link did not resolve outside X.",
+    "source": "https://x.com/ViC305/status/2116999525508534691"
+   },
+   "reception": "Builders thank MiniMax for crediting community work; replies ask for speed numbers on each setup."
+  },
+  {
+   "title": "opencode's GitHub triage runs in one long-lived session where specialized subagents emerge on their own",
+   "url": "https://x.com/thdxr/status/2116979661188321541",
+   "handle": "@thdxr",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Dax Raad says opencode's GitHub issue triage runs from a single long-running opencode session. Because the session hands new work to subagents that handled similar issues before, specialized subagents form without being designed, and his screenshot shows one that has become the Linux-specific helper.",
+   "kind": "technique",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "opencode",
+   "posted_at": "2026-11-01T19:44:17Z",
+   "metrics": {
+    "likes": 152,
+    "reposts": 4,
+    "quotes": 1,
+    "replies": 32
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single screenshot from the builder; no write-up or config shared.",
+    "source": "https://x.com/thdxr/status/2116979661188321541"
+   },
+   "reception": "Replies ask how context growth is kept in check over a session that runs for days."
+  },
+  {
+   "title": "Qwen Image 2.1 Realtime Space moves to a v1.5 two-step distill LoRA with better quality at the same speed",
+   "url": "https://x.com/linoy_tsaban/status/2117003739840295306",
+   "handle": "@linoy_tsaban",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Hugging Face's Linoy Tsaban updated her realtime Qwen Image 2.1 demo to v1.5 of her two-step distillation LoRA, which she says improves image quality at the same speed. It runs in real time on Hugging Face ZeroGPU, and the Space is public.",
+   "kind": "demo",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/spaces/linoyts/qwen-image-2-1-realtime"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-01T21:19:58Z",
+   "metrics": {
+    "likes": 60,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 4
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": "Small but positive; few replies so far."
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 89,
+ "list_pages": 1,
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 0,
+  "kept": 0,
+  "note": "Live bookmarks read for id 1521986356721123328; newest save is still @alive_ 2116902936185889188, rejected last sweep."
+ },
+ "discovery": {
+  "queries": 2,
+  "kept": 0,
+  "note": "Release search returned low-reach personal launches (min_likes still ignored) plus the DeepSeek super-agent prototype already covered. Security search surfaced Plugin4Shell (Air Security, Sept 18 disclosure) recirculating; filed as an observation since fleet Claude Code and Codex are far past the fixed versions. The rest recirculates the Cursor marketplace Claude Code extension backdoor, the Numbat leak hoax and a GitLab CVE."
+ },
+ "horizon": {
+  "block-dessa": "One X read since 19:07Z returned no posts. No trigger."
+ },
+ "rechecks": [],
+ "videos": {
+  "count": 0,
+  "note": "No deep-read item had a clip over 60 s."
+ },
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://x.com/foryangxin/status/2117019071547838741",
+   "reason": "Plugin4Shell plugin SHA-pin bypass (Air Security, disclosed 2026-09-18): fixed in Claude Code 2.1.179 and Codex 0.146.0, and the fleet runs far newer builds; Gemini CLI stays unpatched but is deprecated in favor of agy. Filed as a non-stack observation to the Mini Master inbox."
+  },
+  {
+   "url": "https://x.com/ViC305/status/2116975076541337660",
+   "reason": "Anthropic Numbat weight leak on Hugging Face (burner22/numbat) is a debunked hoax, same as the earlier fake checkpoint story."
+  },
+  {
+   "url": "https://x.com/xixixi9994/status/2116977789840871429",
+   "reason": "Cursor marketplace Claude Code extension backdoor 2.1.312/2.1.313; already handled."
+  },
+  {
+   "url": "https://x.com/toushikaka/status/2117010647405715595",
+   "reason": "GitLab CE/EE CVE-2026-97229 and Cisco ASA/FTD KEV entries; not in the stack."
+  },
+  {
+   "url": "https://x.com/LeeLeepenkman/status/2116994929541165454",
+   "reason": "Unverified personal report of a compromised GitHub Actions runner; no details or source."
+  }
+ ],
+ "skipped": [
+  {
+   "url": "https://x.com/Teknium/status/2117014324149666232",
+   "reason": "Hermes desktop app PR teaser; no details until the release later this week."
+  },
+  {
+   "url": "https://x.com/JoshuaSWarren/status/2116980297958822203",
+   "reason": "ConnectX-5 on Apple Silicon Linux covered on Oct 30; this is a progress update."
+  },
+  {
+   "url": "https://x.com/trycua/status/2117001696052457608",
+   "reason": "Repost of a one-person computer-use agent comparison from before the window; agent-desktop skipped earlier."
+  },
+  {
+   "url": "https://x.com/amasad/status/2116998155925360965",
+   "reason": "Replit feedback-widget toggle mentioned in reply to an opinion thread; not a new capability."
+  },
+  {
+   "url": "https://x.com/addyosmani/status/2116986087390486816",
+   "reason": "Claude Code ultrathink tip quoting an Oct 29 post; not new."
+  },
+  {
+   "url": "https://x.com/mitsuhiko",
+   "reason": "Opinion posts only."
+  },
+  {
+   "url": "https://x.com/badlogicgames",
+   "reason": "Stream and opinion posts only."
+  }
+ ],
+ "errors": [],
+ "proposed_follows_note": "No browser in this run. No account cleared the follow bar."
+}

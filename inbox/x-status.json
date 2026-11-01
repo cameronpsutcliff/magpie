@@ -1,17 +1,17 @@
 {
- "updated_at": "2026-11-01T19:07:00Z",
+ "updated_at": "2026-11-01T23:08:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 51,
+ "calls_used_today": 62,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-01T19:07:00Z",
-  "items": 5,
-  "queries": 11,
+  "ran_at": "2026-11-01T23:08:00Z",
+  "items": 3,
+  "queries": 9,
   "deep_reads": 2,
   "rechecks": 0,
   "flagged": 0,
-  "saved_in": 1,
+  "saved_in": 0,
   "saved_kept": 0,
   "videos": 0,
   "security_forwarded": 0
