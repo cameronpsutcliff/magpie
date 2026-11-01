@@ -1,0 +1,231 @@
+{
+  "ran_at": "2026-11-01T11:10:00Z",
+  "bot": "magpie-scout",
+  "prompt": "v6.1",
+  "since": "2026-11-01T02:05:00Z",
+  "queries": 10,
+  "calls": 12,
+  "items": [
+    {
+      "title": "Balestriero and LeCun prove a Platonic Representation Theorem for JEPAs",
+      "url": "https://x.com/askalphaxiv/status/2116779287390896418",
+      "handle": "@askalphaxiv",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "New arXiv paper (2610.39302, submitted Oct 29) proves that JEPAs trained separately on different modalities learn the same representation up to one rotation when trained on two views of one scene, and argues next-token prediction is a JEPA with poor views. They report 42x fewer training samples than next-token prediction to reach the same image-text alignment, and a 109M text JEPA aligning with DINOv2 and CLIP image encoders better than every LLM they tested up to 72B.",
+      "kind": "paper",
+      "evidence": "measured",
+      "links": [
+        "https://arxiv.org/abs/2610.39302",
+        "https://www.alphaxiv.org/abs/2610.39302"
+      ],
+      "vendor": "Randall Balestriero, Yann LeCun",
+      "posted_at": "2026-11-01T06:28:00Z",
+      "metrics": {
+        "likes": 419,
+        "reposts": 52,
+        "quotes": 8,
+        "replies": 8
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Authors' own experiments; aggregator post (alphaXiv), primary arXiv abstract read and matches. Not yet reproduced by others.",
+        "source": "https://arxiv.org/abs/2610.39302"
+      }
+    },
+    {
+      "title": "Hugging Face releases FineDNA, a 300B-token DNA plus text training set",
+      "url": "https://x.com/LoubnaBenAllal1/status/2116785229159673914",
+      "handle": "@LoubnaBenAllal1",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "HuggingFaceBio published FineDNA: over 300B tokens of genomic sequences, papers and web pages mixing DNA and text, plus 200k SFT and 98k RL samples. They say midtraining Qwen3-14B on it gives the strongest open DNA model. The dataset is live on the Hub (created Oct 30).",
+      "kind": "dataset",
+      "evidence": "artifact",
+      "links": [
+        "https://huggingface.co/datasets/HuggingFaceBio/FineDNA"
+      ],
+      "vendor": "Hugging Face (HuggingFaceBio)",
+      "posted_at": "2026-11-01T06:51:00Z",
+      "metrics": {
+        "likes": 80,
+        "reposts": 12,
+        "quotes": 2,
+        "replies": 8
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Dataset exists; the 'strongest open model' claim is self-reported.",
+        "source": "https://huggingface.co/datasets/HuggingFaceBio/FineDNA"
+      }
+    },
+    {
+      "title": "Karpathy builds HackerTube with Claude Opus 5.5 in about two hours",
+      "url": "https://karpathy.bearblog.dev/hacker-tube/",
+      "handle": "@karpathy",
+      "group": "applied",
+      "origin": "sweep",
+      "summary": "Karpathy built hackertube.org, a YouTube-style site of 6,454 videos recommended in about 40K Hacker News comments since 2007 across 150 topics, in roughly two hours with Opus 5.5 on medium effort. By his count over 90% of tokens went to Sonnet labeling comments, and the app plus deploy took about 1M Opus tokens. Launched Oct 31 and missed by earlier sweeps; caught via recaps (no repo linked).",
+      "kind": "technique",
+      "evidence": "claim",
+      "links": [
+        "https://karpathy.bearblog.dev/hacker-tube/",
+        "https://hackertube.org/"
+      ],
+      "vendor": "Andrej Karpathy",
+      "posted_at": "2026-10-31T19:00:00Z",
+      "metrics": {
+        "likes": null,
+        "reposts": null,
+        "quotes": null,
+        "replies": null
+      },
+      "confirmed_by": [
+        "https://x.com/EmergentMind/status/2116648106120941613",
+        "https://x.com/swyx/status/2116773135668404286"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Build time and token split are his own estimates; the blog URL returned Not found to a plain fetch this run, site link circulates widely.",
+        "source": "https://x.com/EmergentMind/status/2116648106120941613"
+      }
+    },
+    {
+      "title": "FloodDiffusion 2: open streaming 3D motion generation at 2.3 ms per step",
+      "url": "https://x.com/mgdw0/status/2116822429234577465",
+      "handle": "@mgdw0",
+      "group": "research",
+      "origin": "discovery",
+      "summary": "AlayaLab released FloodDiffusion 2, path-controllable streaming 3D human motion generation they clock at 2.3 ms per step on an RTX 4090, with paper, MIT-licensed code, models and a live HF demo.",
+      "kind": "model",
+      "evidence": "artifact",
+      "links": [
+        "https://arxiv.org/abs/2609.33167",
+        "https://github.com/AlayaLab/FloodDiffusion2",
+        "https://huggingface.co/spaces/AlayaLab/FloodDiffusion2-Live",
+        "https://alayalab.github.io/FloodDiffusion2/"
+      ],
+      "vendor": "AlayaLab",
+      "posted_at": "2026-11-01T09:19:00Z",
+      "metrics": {
+        "likes": 4,
+        "reposts": 0,
+        "quotes": 0,
+        "replies": 0
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Speed figure is self-reported; very low reach so far.",
+        "source": "https://github.com/AlayaLab/FloodDiffusion2"
+      }
+    }
+  ],
+  "saved_rejected": [],
+  "list_posts_read": 90,
+  "list_pages": 1,
+  "saves": {
+    "read": 20,
+    "new_since_last_sweep": 0,
+    "kept": 0,
+    "note": "Live bookmarks read for id 1521986356721123328; the newest 20 saves were all already archived."
+  },
+  "discovery": {
+    "queries": 2,
+    "kept": 1,
+    "note": "Release search: FloodDiffusion 2 kept; SenseNova-Loop-9B-Preview via an aggregator only (skipped, unverified); Ling-3.1-flash and DeepSeek superagent already covered. Security search: Compaction Laundering (forwarded via Mini filing), Yoba (observation), rest known."
+  },
+  "horizon": {
+    "block-dessa": "One X read since 02:05Z returned an unrelated post; block.xyz/dessa still waitlist only. No trigger."
+  },
+  "rechecks": [],
+  "videos": {
+    "count": 0,
+    "note": "No kept item has a video over video_min_seconds."
+  },
+  "security_forwarded": [
+    {
+      "url": "https://arxiv.org/abs/2610.29869",
+      "handle": "@eapyk",
+      "post": "https://x.com/eapyk/status/2116814212605575264",
+      "matched": "Hermes agent (stack); always_forward: agent tooling",
+      "note": "Pixee 'Compaction Laundering': coding agents that flatten history into '[User]:' text before compaction let attacker text forge a user approval (87-100% in pi, opencode, Cline, Aider, OpenHands; 0% in role-typed Codex, Gemini CLI, Qwen Code, Continue). Hermes agent upstream compressor uses unescaped '[USER]:' labels; fix tracked in NousResearch/hermes-agent issue 146750 and PR 144880, both open. Box has no affected agent installed. Not forwarded by me: urgent finding filed to Mini Master inbox 2026-11-01-0507-magpie-scout-hermes-compaction-laundering.md for routing to Bouncer."
+    }
+  ],
+  "security_na": [
+    {
+      "url": "https://x.com/darkmatrx/status/2116845346366083100",
+      "reason": "Check Point Yoba campaign (fake GPT/Claude desktop apps on GitHub sideloading winmm.dll, XMRig): Windows-only lure, fleet installs from vendors; filed as observation 2026-11-01-0507-magpie-scout-yoba-fake-ai-desktop-apps.md."
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/10/30/inside-malicious-claude-code-branded-cursor-extension-persistent-ssh-backdoor/",
+      "reason": "Microsoft write-up of the Claude Code-branded Cursor extension SSH backdoor; already in the IOC file and swept fleet-wide 2026-10-30 (authorized_keys checked)."
+    },
+    {
+      "url": "https://x.com/Dekrov_Dev/status/2116808099285626978",
+      "reason": "Forever Security EMBRACE recap; already forwarded 2026-10-29."
+    },
+    {
+      "url": "https://x.com/CobaltHere",
+      "reason": "LLM-assisted infostealer news; not stack."
+    },
+    {
+      "url": "https://x.com/search?q=Project%20Loupe%20bitcoin",
+      "reason": "Bitcoin Core TCP urgent-data crash found by an LLM scan; not stack."
+    },
+    {
+      "url": "https://x.com/search?q=SkillSpector",
+      "reason": "NVIDIA SkillSpector skill scanner; covered 2026-10-28."
+    },
+    {
+      "url": "https://x.com/search?q=litellm",
+      "reason": "LiteLLM compromise recap; already handled."
+    }
+  ],
+  "skipped": [
+    {
+      "url": "https://x.com/Trendcanvasai/status/2116731375504200005",
+      "reason": "SenseNova-Loop-9B-Preview via aggregator; no primary link checked."
+    },
+    {
+      "url": "https://x.com/teortaxesTex",
+      "reason": "Several politics/culture-war posts; not dev content."
+    },
+    {
+      "url": "https://x.com/sundarpichai",
+      "reason": "Sports post."
+    },
+    {
+      "url": "https://x.com/emollick",
+      "reason": "Opinions only."
+    },
+    {
+      "url": "https://x.com/aitrackerbot",
+      "reason": "xAI cyber-tier speculation."
+    },
+    {
+      "url": "https://x.com/tinygrad",
+      "reason": "Promo."
+    },
+    {
+      "url": "https://x.com/SemiAnalysis_",
+      "reason": "IPO/business post, no tech content."
+    },
+    {
+      "url": "https://x.com/MooncastOnline",
+      "reason": "Benchmark blog with no engagement or independent signal."
+    }
+  ],
+  "errors": [],
+  "proposed_follows_note": "No browser in this run. No account cleared the follow bar; @mgdw0/AlayaLab is a weak candidate only."
+}

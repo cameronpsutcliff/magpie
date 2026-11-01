@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-01T10:35:00Z",
-  "job": "roster",
+  "updated_at": "2026-11-01T11:10:00Z",
+  "job": "sweep",
   "prompt": "v6.1",
-  "calls_used_today": 12,
+  "calls_used_today": 24,
   "notes_via_api": false,
   "last_sweep": {
-    "ran_at": "2026-11-01T02:05:00Z",
-    "items": 1,
-    "queries": 8,
-    "deep_reads": 0,
-    "rechecks": 7,
+    "ran_at": "2026-11-01T11:10:00Z",
+    "items": 4,
+    "queries": 10,
+    "deep_reads": 1,
+    "rechecks": 0,
     "flagged": 0,
     "saved_in": 0,
     "saved_kept": 0,
     "videos": 0,
-    "security_forwarded": 0
+    "security_forwarded": 1
   },
   "roster": {
     "curated": 223,
@@ -193,7 +193,9 @@
     "Roster review 2026-11-01: added 3 trials (@_albertgu, @divagr1925, @EpochAIResearch), all added to the List (now 62 members). Candidate sources: off-roster originals quoted by two or more roster accounts and repeat off-roster posters in sweep files since 2026-10-28.",
     "Roster review 2026-11-01 rejected, so they are not re-checked soon: one capability release in 30 days: @tyao923 (ProgramLab), @thesophiaxu (OpenTTD-Bench; revisit on next release); too small to judge: @hermanbrunborg (10 posts ever), @HantianDing (9), @wensi_ai (47); overlaps a trial account: @VikParuchuri (same Surya and Chandra launches as trial @datalabto); promotion over 1 in 5: @ashxhart (near-miss: TensorFold 1.2.0 and Living Weights are real, but download-stat, challenge and collab plugs crowd the feed; TensorFold releases is already a source lead), @ScaleAILabs (near-miss: FineART, HSS, DistressBench and AgentEnv are strong, but tech-week workshop and partner-congrats posts make about 3 of 11 top-level posts).",
     "Roster review 2026-11-01: no promotions possible before 2026-11-03 (earliest trials added 2026-10-20); no retirements (no account has two level-2 flags in 30 days: @ValsAI, @SemiAnalysis_, @omarsar0, @cohere and @UnslothAI have one each; off-roster @Exocija, @akarixbt and @rahulchhabra07 one each; the 45-day rule cannot bite before about 2026-11-07); no sweep files older than 14 days (oldest 2026-10-20T17-39), so none pruned; first prune due 2026-11-03. Sunday, so 3 drafts written to inbox/x-drafts/2026-11-01.json (never posted; posting_enabled is false).",
-    "Roster review 2026-11-01: no injection attempts seen in the candidate reads; no security leads surfaced, nothing to forward."
+    "Roster review 2026-11-01: no injection attempts seen in the candidate reads; no security leads surfaced, nothing to forward.",
+    "Sweep 2026-11-01T11:10Z: CopyFromBox does not expand '~' on the Mini; it created a literal ~/~ folder (also from the 10-31 13:08 observation filing). Moved all three Magpie notes into the real Master inbox and removed the empty stray folder. Use /Users/cameronsutcliff/Cameron Brain/... absolute paths for future filings.",
+    "Sweep 2026-11-01T11:10Z: thin Sunday window; 1 deep read (alphaXiv post traced to arXiv 2610.39302); no re-checks run to save reads."
   ],
   "errors": [],
   "follows_today": 0,
