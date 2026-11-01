@@ -1,0 +1,182 @@
+{
+ "ran_at": "2026-11-01T15:08:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-01T11:10:00Z",
+ "queries": 9,
+ "calls": 12,
+ "items": [
+  {
+   "title": "DeepSeek publishes its Super-agent design: one always-on agent that runs many tasks across chat and GitHub",
+   "url": "https://x.com/DeepSeekHarness/status/2116857257245987236",
+   "handle": "@DeepSeekHarness",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "X article (machine-translated from Chinese) laying out the architecture behind DeepSeek Harness's internal Super-agent: a two-level design where a front session keeps continuous context and delegates to worker sessions, event-driven triggers so it acts without being mentioned, full-duplex multi-channel chat, separated compute, state and environments, and a watchdog for recovery. Its table reports task completion p50/p95 of 12.4/15.7 min for the Super-agent versus 20.4/29.5 min for a single session with a subagent tool and a neutral prompt, at 23.2M versus 6.1M cache-read tokens per run. DeepSeek says it is architecture discussion, not a feature list.",
+   "kind": "writeup",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/i/article/2116829218935857152"
+   ],
+   "vendor": "DeepSeek",
+   "posted_at": "2026-11-01T11:37:00Z",
+   "metrics": {
+    "likes": 4207,
+    "reposts": 463,
+    "quotes": 184,
+    "replies": 158
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Vendor's own internal measurements, no public benchmark harness. The dsh-superagent repo itself was covered in an earlier sweep; this is the new design write-up.",
+    "source": "https://x.com/i/article/2116829218935857152"
+   }
+  },
+  {
+   "title": "Nace AI technical report: Drex for Search cuts agent search work 53 to 58% versus grep",
+   "url": "https://x.com/NaceAI/status/2116908131766907095",
+   "handle": "@NaceAI",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Nace AI's report on Drex for Search merges writing a search query and judging the results into one decision step. Tested inside Claude Code, Codex, OpenCode, Hermes and pi, it reports 53 to 58% less agent work than grep with higher accuracy, and fewer calls than hybrid RAG in every setup.",
+   "kind": "report",
+   "evidence": "claimed",
+   "links": [
+    "https://www.nace.ai/research/drex-searches-agents-reason"
+   ],
+   "vendor": "Nace AI",
+   "posted_at": "2026-11-01T15:00:00Z",
+   "metrics": {
+    "likes": 6,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 1
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 2,
+    "community_note": null,
+    "pushback": "Vendor report on its own product, posted minutes before this sweep; report page not read and no independent results yet.",
+    "source": "https://www.nace.ai/research/drex-searches-agents-reason"
+   }
+  },
+  {
+   "title": "Study of 1.53M agent skills finds about 1 in 17 tells the agent to skip oversight",
+   "url": "https://x.com/pipeline_mag/status/2116865170454540428",
+   "handle": "@pipeline_mag",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "arXiv 2610.37734 analyzes 1.53 million English SKILL.md skills and finds about 88,000 contain directives that loosen oversight, such as proceeding without approval or bypassing checks with --no-verify. 70.1% of those apply unconditionally rather than only in contexts like CI, and the post says open-source skill scanners caught at most 46%. Relevant to any fleet that loads shared or third-party skills.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2610.37734"
+   ],
+   "vendor": "academic authors",
+   "posted_at": "2026-11-01T12:09:00Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Abstract read and matches the post; the 46% scanner figure is from the post and was not in the part of the abstract read.",
+    "source": "https://arxiv.org/abs/2610.37734"
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 90,
+ "list_pages": 1,
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 0,
+  "kept": 0,
+  "note": "Live bookmarks read for id 1521986356721123328; the newest 20 saves were all already archived."
+ },
+ "discovery": {
+  "queries": 2,
+  "kept": 1,
+  "note": "Release search: oversight-directives paper kept; OpenDuet, OpenMausBot, Jecode, $OFFR and other low-signal or token-promo launches skipped; google/elephant-goldfish-model already covered. Security search: GhostAction stage 2 (forwarded via Mini filing); Cursor-marketplace Claude Code extension backdoor recaps and others already known."
+ },
+ "horizon": {
+  "block-dessa": "One X read since 11:10Z returned no posts. No trigger."
+ },
+ "rechecks": [],
+ "videos": {
+  "count": 0,
+  "note": "No kept item has a video; plotarmordev's Nemotron 3.5 Bolt clip (20 s) was not kept."
+ },
+ "security_forwarded": [
+  {
+   "url": "https://opensourcemalware.com/blog/ghostaction-copycats-polinrider-by-hiding-a-stealer-in-a-fake-font-file",
+   "handle": "@read__the__diff",
+   "post": "https://x.com/read__the__diff/status/2116885851820998784",
+   "matched": "Claude Code, Antigravity/Gemini, npm, Python/PyPI (stack); always_forward: supply chain",
+   "note": "GhostAction stage 2: compromised repos carry .vscode/tasks.json (runOn folderOpen, label eslint-check) that runs public/fonts/fa-solid-400.woff2 as Node, stealing ~/.claude/.credentials.json, ~/.gemini/oauth_creds.json, .npmrc, .pypirc, .git-credentials, SSH keys and AI env vars, plus a */5 cron (#ghc2) to 193.32.204.199:8080 and a fallback GitHub Actions workflow. 1,279 repos / 411 accounts as of Oct 26 (THN). Box checked: no cron entry, no folderOpen tasks, no fake font. Fleet check needed on Mini, Air, Pro, Spark, csdesktop."
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/likasanma/status/2116886747581731306",
+   "reason": "Cursor marketplace Claude Code extension 2.1.312/2.1.313 SSH backdoor: already handled in earlier sweeps."
+  },
+  {
+   "url": "https://x.com/FixMyVibe/status/2116869773719974182",
+   "reason": "VulnCheck: 9 MCP servers pass tool args to a shell (Oct 27); no named server in our stack."
+  },
+  {
+   "url": "https://x.com/wirelesslyhere/status/2116909483989627126",
+   "reason": "GitLab CVSS 10 and Ivanti chain exploited; neither is in our stack."
+  },
+  {
+   "url": "https://x.com/faffyswap/status/2116864558723903747",
+   "reason": "Research on pretraining-data backdoors in CLI agents; no actionable fix."
+  },
+  {
+   "url": "https://x.com/sunglasses_dev/status/2116893861800972456",
+   "reason": "LiteLLM PyPI compromise recap; already handled."
+  }
+ ],
+ "skipped": [
+  {
+   "url": "https://x.com/SparkLLM/status/2116887949426016480",
+   "reason": "Spark-X2.6-1.7B DSpark GGUF speed post; incremental to the 1.7B and DSpark items already covered."
+  },
+  {
+   "url": "https://x.com/plotarmordev/status/2116881744586854881",
+   "reason": "Nemotron 3.5 Bolt Windows laptop port; PR links only in a reply, not read."
+  },
+  {
+   "url": "https://x.com/badlogicgames",
+   "reason": "pi dropped typebox dependency; minor."
+  },
+  {
+   "url": "https://x.com/trending_repos",
+   "reason": "Repo aggregator posts (t3code, VoiceStudio)."
+  },
+  {
+   "url": "https://x.com/teortaxesTex",
+   "reason": "Politics/culture posts."
+  },
+  {
+   "url": "https://x.com/mitsuhiko",
+   "reason": "Opinions only."
+  },
+  {
+   "url": "https://x.com/KBlueleaf",
+   "reason": "Low-signal project post."
+  }
+ ],
+ "errors": [],
+ "proposed_follows_note": "No browser in this run. No account cleared the follow bar."
+}
