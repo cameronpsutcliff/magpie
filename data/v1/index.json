@@ -3,40 +3,40 @@
  "days": [
   {
    "date": "2026-11-01",
-   "headline": "AiSOC, Claude-Code-Game-Studios, claude-mem, and more",
-   "events": 178,
-   "sources": 506,
-   "enriched": false,
+   "headline": "DeepSeek agent works repos, Qwen teams beat Fable 5, agents write kernels, and more",
+   "events": 250,
+   "sources": 535,
+   "enriched": true,
    "top": [
     {
-     "id": "e21c1d3f9417",
-     "title": "beenuar/AiSOC",
+     "id": "2dc3a5916b20",
+     "title": "Five Qwen3.8-27B models beat Fable 5 on coding",
      "impact": 4,
      "vendor": "Open source"
     },
     {
-     "id": "ac8c1ba725e3",
-     "title": "Donchitos/Claude-Code-Game-Studios",
+     "id": "db7852801a82",
+     "title": "DeepSeek open-sources proactive repo coding agent prototype",
      "impact": 4,
-     "vendor": "Open source"
+     "vendor": "DeepSeek"
     },
     {
-     "id": "fefe8e8e95b5",
-     "title": "thedotmack/claude-mem",
+     "id": "e1a6e7dd3e27",
+     "title": "Hugging Face releases FineDNA set and Carbon-X DNA model",
      "impact": 4,
-     "vendor": "Open source"
+     "vendor": "Hugging Face"
     },
     {
-     "id": "e487fe51b82b",
-     "title": "cloudflare/security-audit-skill",
+     "id": "7d3566eb8f1d",
+     "title": "Agent swarm writes Hopper kernels for faster decode",
      "impact": 4,
-     "vendor": "Cloudflare"
+     "vendor": "vLLM"
     },
     {
-     "id": "0267ddef94cb",
-     "title": "nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
-     "impact": 3,
-     "vendor": "NVIDIA"
+     "id": "abb29d43d5ab",
+     "title": "AMD MI355X reaches 2x B200 cost efficiency on Kimi K3",
+     "impact": 4,
+     "vendor": "AMD"
     }
    ],
    "vendors": [
@@ -45,30 +45,31 @@
     "OpenAI",
     "Liquid AI",
     "NVIDIA",
-    "DeepSeek"
+    "Qwen"
    ],
    "topics": {
-    "coding": 56,
-    "models": 55,
-    "agents": 50,
-    "multimodal": 48,
-    "local": 26,
-    "infra": 22,
+    "agents": 67,
+    "models": 63,
+    "coding": 62,
+    "multimodal": 52,
+    "local": 35,
+    "infra": 26,
     "mcp": 22,
-    "security": 12,
-    "memory": 12,
-    "research": 8,
+    "security": 15,
+    "memory": 13,
+    "evals": 13,
+    "research": 9,
     "reverse": 8,
-    "evals": 7,
-    "robotics": 2
+    "robotics": 4
    },
    "kinds": {
-    "repo": 41,
+    "video": 56,
+    "social": 44,
+    "repo": 40,
     "model": 30,
-    "social": 26,
-    "community": 22,
-    "space": 20,
-    "newsletter": 19,
+    "community": 21,
+    "newsletter": 20,
+    "space": 19,
     "changelog": 14,
     "blog": 6
    },

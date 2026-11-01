@@ -69,7 +69,7 @@
     "PYSEC-2026-4346",
     "url:osv.dev/vulnerability/GHSA-h3rc-j82p-2c3h"
    ],
-   "last_seen": "2026-10-31",
+   "last_seen": "2026-11-01",
    "reach": 2,
    "wide": false
   },
@@ -140,7 +140,7 @@
     "PYSEC-2026-4345",
     "url:osv.dev/vulnerability/GHSA-6757-hggm-hp2w"
    ],
-   "last_seen": "2026-10-31",
+   "last_seen": "2026-11-01",
    "reach": 2,
    "wide": false
   },
@@ -191,7 +191,7 @@
     "bz:2086949",
     "url:bugzilla.mozilla.org/show_bug.cgi?id=2086949"
    ],
-   "last_seen": "2026-10-31",
+   "last_seen": "2026-11-01",
    "reach": 12,
    "wide": true
   },
@@ -255,7 +255,7 @@
     "GHSA-8397-8qf6-f2gm",
     "url:osv.dev/vulnerability/GHSA-8397-8qf6-f2gm"
    ],
-   "last_seen": "2026-10-31",
+   "last_seen": "2026-11-01",
    "reach": 2,
    "wide": false
   },
@@ -316,7 +316,7 @@
     "GHSA-gq5q-89c7-vhvx",
     "url:osv.dev/vulnerability/GHSA-gq5q-89c7-vhvx"
    ],
-   "last_seen": "2026-10-31",
+   "last_seen": "2026-11-01",
    "reach": 2,
    "wide": false
   },
@@ -381,7 +381,7 @@
     "PYSEC-2026-4347",
     "url:osv.dev/vulnerability/GHSA-q97c-p368-75c4"
    ],
-   "last_seen": "2026-10-31",
+   "last_seen": "2026-11-01",
    "reach": 2,
    "wide": false
   },
@@ -446,7 +446,7 @@
     "PYSEC-2026-4344",
     "url:osv.dev/vulnerability/GHSA-542m-9234-8gvf"
    ],
-   "last_seen": "2026-10-31",
+   "last_seen": "2026-11-01",
    "reach": 2,
    "wide": false
   },
@@ -1535,7 +1535,7 @@
     "url:emudhra.we-have-a-problem.com",
     "url:groups.google.com/a/mozilla.org/g/dev-security-policy/c/0R3XLJL6FuE"
    ],
-   "last_seen": "2026-10-31",
+   "last_seen": "2026-11-01",
    "reach": 28,
    "wide": true
   },
@@ -1602,7 +1602,7 @@
     "RUSTSEC-2026-0383",
     "url:osv.dev/vulnerability/RUSTSEC-2026-0382"
    ],
-   "last_seen": "2026-10-31",
+   "last_seen": "2026-11-01",
    "reach": 12,
    "wide": true
   },
