@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-11-01T02:05:00Z",
-  "job": "sweep",
+  "updated_at": "2026-11-01T10:35:00Z",
+  "job": "roster",
   "prompt": "v6.1",
-  "calls_used_today": 11,
+  "calls_used_today": 12,
   "notes_via_api": false,
   "last_sweep": {
     "ran_at": "2026-11-01T02:05:00Z",
@@ -18,7 +18,7 @@
   },
   "roster": {
     "curated": 223,
-    "trial": 59,
+    "trial": 62,
     "active": 0,
     "retired": 2
   },
@@ -186,29 +186,37 @@
     "Sweep 18:03Z: paged all six fallback groups once more despite result_count under 25; only builders returned more (14 posts), so following next_token is still worth it for builders when the first page is full.",
     "Sweep 22:10Z: a batched conversation_id OR deep-read search caps at 25 results, so the busiest thread crowds out the rest; split deep reads into two batches when more than 4 threads are queued.",
     "Sweep 14:12Z: no injection attempts seen. No browser, so no follows and no video analysis. block.xyz/dessa checked with curl. calls_used_today 26 = 12 (10:06Z sweep) + 1 (7:45 AM CT bookmark sync) + 13 (this sweep). Re-checks skipped this sweep (thin Saturday window). DeepSeek's dsh-superagent repo was not posted by any DeepSeek X account; it surfaced through @teortaxesTex quoting a third party, so discovery caught it.",
-    "Sweep 22:10Z: no injection attempts seen. No browser, so no follows and no video analysis (only clip was 42 s). block.xyz/dessa checked with curl; its 'Download' text is a clip-save button, not weights, and the page links Ragavan's X handle @RagavanThurair, which a future horizon query could use. calls_used_today 61 = 42 (through the 18:08Z sweep) + 1 (1:44 PM CT sync) + 2 (3:47 PM CT sync) + 16 (this sweep). Search results truncate long posts, so kept candidates were hydrated with get_posts_by_ids for note_tweet text."
+    "Sweep 22:10Z: no injection attempts seen. No browser, so no follows and no video analysis (only clip was 42 s). block.xyz/dessa checked with curl; its 'Download' text is a clip-save button, not weights, and the page links Ragavan's X handle @RagavanThurair, which a future horizon query could use. calls_used_today 61 = 42 (through the 18:08Z sweep) + 1 (1:44 PM CT sync) + 2 (3:47 PM CT sync) + 16 (this sweep). Search results truncate long posts, so kept candidates were hydrated with get_posts_by_ids for note_tweet text.",
+    "Roster review 2026-11-01: calls_used_today restarted for Central day 2026-11-01 (the 02:05Z sweep's 11 belonged to Central 2026-10-31); this review used 12 X reads (1 batched user lookup, 11 get_users_posts) plus 3 List writes. X header showed 990 of 1000 account-wide reads left after the first call. No roster review ran 2026-10-29 to 2026-10-31, so this one covers sweep files since 2026-10-28.",
+    "Roster review 2026-11-01: owner-saves step found no new authors to add. @mirku21, @MatthewBerman, @jankeesvw, @trq212 and @NVIDIAAI are already on the roster; @HuggingModels retired; @danikkk_wqs still excluded for vice; @RoundtableSpace has 2 kept saves (2026-10-30) but is on the config avoid list, so it was skipped.",
+    "Roster review 2026-11-01: owner-saves screen re-applied. @MatthewBerman (owner_requested) passes and is untouched: local-model takes (DeepSeek V4.1 Flash), his own free Folio and Device Monitor tools, an AI-focused US vs China share, some off-topic personal and one sponsor-video post; no partisan politics or vice. @jankeesvw passes: Herdr agent plugins and Omarchy dev work, though about 5 of 23 posts are about a paid Omarchy pin run. @mirku21 flagged again for the owner: all 25 latest posts are the same templated 'Anthropic just documented' tip with profanity hooks and no source links; the screen as written does not retire it.",
+    "Roster review 2026-11-01: added 3 trials (@_albertgu, @divagr1925, @EpochAIResearch), all added to the List (now 62 members). Candidate sources: off-roster originals quoted by two or more roster accounts and repeat off-roster posters in sweep files since 2026-10-28.",
+    "Roster review 2026-11-01 rejected, so they are not re-checked soon: one capability release in 30 days: @tyao923 (ProgramLab), @thesophiaxu (OpenTTD-Bench; revisit on next release); too small to judge: @hermanbrunborg (10 posts ever), @HantianDing (9), @wensi_ai (47); overlaps a trial account: @VikParuchuri (same Surya and Chandra launches as trial @datalabto); promotion over 1 in 5: @ashxhart (near-miss: TensorFold 1.2.0 and Living Weights are real, but download-stat, challenge and collab plugs crowd the feed; TensorFold releases is already a source lead), @ScaleAILabs (near-miss: FineART, HSS, DistressBench and AgentEnv are strong, but tech-week workshop and partner-congrats posts make about 3 of 11 top-level posts).",
+    "Roster review 2026-11-01: no promotions possible before 2026-11-03 (earliest trials added 2026-10-20); no retirements (no account has two level-2 flags in 30 days: @ValsAI, @SemiAnalysis_, @omarsar0, @cohere and @UnslothAI have one each; off-roster @Exocija, @akarixbt and @rahulchhabra07 one each; the 45-day rule cannot bite before about 2026-11-07); no sweep files older than 14 days (oldest 2026-10-20T17-39), so none pruned; first prune due 2026-11-03. Sunday, so 3 drafts written to inbox/x-drafts/2026-11-01.json (never posted; posting_enabled is false).",
+    "Roster review 2026-11-01: no injection attempts seen in the candidate reads; no security leads surfaced, nothing to forward."
   ],
   "errors": [],
   "follows_today": 0,
   "last_roster_review": {
-    "ran_at": "2026-10-28T09:55:00Z",
-    "date": "2026-10-28",
-    "reads": 14,
+    "ran_at": "2026-11-01T10:35:00Z",
+    "date": "2026-11-01",
+    "reads": 12,
     "list_writes": 3,
     "budget": 80,
     "added": [
-      "@XunzhuoLiu",
-      "@googlegemma",
-      "@skalskip92"
+      "@_albertgu",
+      "@divagr1925",
+      "@EpochAIResearch"
     ],
     "promoted": [],
     "retired": [],
     "flagged": [
       "@mirku21"
     ],
-    "drafts": 0,
+    "drafts": 3,
+    "drafts_file": "inbox/x-drafts/2026-11-01.json",
     "pruned": 0,
-    "source_leads_added": 3
+    "source_leads_added": 2
   },
   "x_list": {
     "id": "2113850075931713585",
@@ -217,7 +225,7 @@
     "owner": "@CameronSutcliff",
     "owner_id": "1521986356721123328",
     "private": true,
-    "member_count": 59,
+    "member_count": 62,
     "members": "every trial/active entry in inbox/x-roster.json (x_user_id, on_list)",
     "created_at": "2026-10-24T04:35:00Z"
   },

@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-01",
+  "posting_enabled": false,
+  "note": "Drafts only. Never posted.",
+  "drafts": [
+    {
+      "text": "Qwenputer builds a RISC-V CPU into Qwen3.5-4B's weights, using its Gated DeltaNet layers as RAM, so it runs C and MicroPython inside the forward pass. Reported DeepMind math: 97.5-100% vs 55-90% for the base model. One reproduction on an RTX 5090 printed all 61 digits of 2**200.",
+      "evidence": [
+        "https://x.com/divagr1925/status/2115394340357116169",
+        "https://x.com/witcheer/status/2115621337460867375"
+      ],
+      "why": "A new capability with released weights, a benchmark comparison and an independent reproduction."
+    },
+    {
+      "text": "OpenTTD-Bench puts four frontier agents in one shared OpenTTD game for ten game years (about 3 real hours), scored on operating profit. GPT-6.1 Sol and GPT-6 Astra lead the models, but none beats the scripted rules-based AI yet. Code is open.",
+      "evidence": [
+        "https://x.com/thesophiaxu/status/2115851937061183681",
+        "https://openttd-bench.pages.dev/",
+        "https://github.com/thesophiaxu/openttd-bench"
+      ],
+      "why": "A long-horizon, real-time agent eval with open code and a clear non-AI baseline the models still lose to."
+    },
+    {
+      "text": "Scale AI and Hugging Face released FineART: 40K+ robot demonstrations across 151 real-world tasks with 500K subtask labels, plus FineART-VLA, a model that reasons over step-by-step actions. Both are open on LeRobot.",
+      "evidence": [
+        "https://x.com/ScaleAILabs/status/2115837725719048535",
+        "http://labs.scale.com/blog/fineart"
+      ],
+      "why": "A large open robotics dataset and checkpoint anyone can train or benchmark on today."
+    }
+  ]
+}

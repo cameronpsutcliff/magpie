@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T23:55:00Z",
+  "updated_at": "2026-11-01T10:35:00Z",
   "accounts": [
     {
       "handle": "@thsottiaux",
@@ -1135,6 +1135,65 @@
       "owner_requested": true,
       "x_user_id": "740238495952736256",
       "on_list": true
+    },
+    {
+      "handle": "@_albertgu",
+      "name": "Albert Gu",
+      "group": "research",
+      "affiliation": "CMU / Cartesia",
+      "why": "First-hand on byte-level and state-space architectures: H-Net v2 learned tokenization from raw bytes with scaling-law results, plus measured tokenizer analysis ahead of Cartesia releases.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-11-01",
+      "evidence": [
+        "https://x.com/_albertgu/status/2115502110578290900",
+        "https://x.com/_albertgu/status/2113687798826111283",
+        "https://x.com/_albertgu/status/2116254436150657290"
+      ],
+      "last_qualifying_post": "2026-10-30",
+      "retired_reason": null,
+      "x_user_id": "1076265378118959104",
+      "on_list": true
+    },
+    {
+      "handle": "@divagr1925",
+      "name": "div (fp32)",
+      "group": "research",
+      "affiliation": "Independent",
+      "why": "First-hand experiments compiling programs into model weights (Qwenputer RISC-V CPU, QwenPU, a tamper-proof lie detector in Qwen3.5 state) and a GPU fingerprinting writeup, each with code, weights or measurements.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-11-01",
+      "evidence": [
+        "https://x.com/divagr1925/status/2115394340357116169",
+        "https://x.com/divagr1925/status/2116544960023687432",
+        "https://x.com/divagr1925/status/2116241086050115692",
+        "https://x.com/divagr1925/status/2115537067149316236"
+      ],
+      "last_qualifying_post": "2026-10-31",
+      "retired_reason": null,
+      "x_user_id": "1930581594705924096",
+      "on_list": true
+    },
+    {
+      "handle": "@EpochAIResearch",
+      "name": "Epoch AI",
+      "group": "research",
+      "affiliation": "Epoch AI",
+      "why": "Independent measurement of frontier models (Epoch Capabilities Index, Cyber ECI, SpireClimb), benchmark quality reviews and compute-share data with methodology.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-11-01",
+      "evidence": [
+        "https://x.com/EpochAIResearch/status/2110693857742717372",
+        "https://x.com/EpochAIResearch/status/2111165029470949867",
+        "https://x.com/EpochAIResearch/status/2113703991767105607",
+        "https://x.com/EpochAIResearch/status/2115186242459767006"
+      ],
+      "last_qualifying_post": "2026-10-29",
+      "retired_reason": null,
+      "x_user_id": "1529761561170124800",
+      "on_list": true
     }
   ],
   "source_leads": [
@@ -1433,6 +1492,27 @@
       "why": "Document-parsing benchmark that adds new models quickly (GPT-6.1 Terra); not watched.",
       "seen_via": [
         "@jerryjliu0"
+      ]
+    },
+    {
+      "kind": "blog",
+      "name": "Cartesia blog",
+      "url": "https://cartesia.ai/blog",
+      "why": "H-Net and state-space model research posts and Sonic speech releases; not in sources.json.",
+      "seen_via": [
+        "@_albertgu",
+        "@tri_dao"
+      ]
+    },
+    {
+      "kind": "blog",
+      "name": "Datalab blog",
+      "url": "https://www.datalab.to/blog",
+      "why": "Open OCR releases (Surya, Chandra) and the OmniParseBench results; not in sources.json.",
+      "seen_via": [
+        "@VikParuchuri",
+        "@datalabto",
+        "@akshay_pachaar"
       ]
     }
   ],
