@@ -1,0 +1,304 @@
+{
+  "ran_at": "2026-11-02T23:05:00Z",
+  "bot": "magpie-scout",
+  "prompt": "v6.1",
+  "since": "2026-11-02T19:05:00Z",
+  "queries": 7,
+  "calls": 12,
+  "items": [
+    {
+      "title": "Anthropic puts message threads into public beta on the Messages API",
+      "url": "https://x.com/ClaudeDevs/status/2117332449382510884",
+      "handle": "@ClaudeDevs",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "A new thread parameter lets a Messages API request create a server-side thread with the full conversation, system prompt and tools, then continue it by sending only new messages plus the previous response id. Threads are best-effort, expire 5 minutes after the last request and are deleted within an hour, so clients keep their own copy and replay on a 404; the SDK helper does the replay. It needs the message-threads-2026-08-12 beta header, lowers time to first token on long agent loops, and does not change token usage.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://platform.claude.com/docs/en/build-with-claude/message-threads",
+        "https://claude.com/resources/articles/message-threads"
+      ],
+      "vendor": "Anthropic",
+      "posted_at": "2026-11-02T19:06:08Z",
+      "metrics": {
+        "likes": 4532,
+        "reposts": 151,
+        "quotes": 106,
+        "replies": 176
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Zyphra Hierarchical Attention: a tree-structured indexer for subquadratic attention",
+      "url": "https://x.com/ZyphraAI/status/2117377426242367669",
+      "handle": "@ZyphraAI",
+      "group": "research",
+      "origin": "discovery",
+      "summary": "ZHA builds a tree of recursively compressed key summaries over the KV cache and routes each query top-down with top-p selection, so routing plus attention cost grows sublinearly per query. Only small reference-query components are trained, via a few-billion-token KL distillation with backbone weights frozen; Zyphra converted models up to 35B and reports results matching dense attention on reasoning, math, agentic coding and retrieval evals between 64K and 256K tokens.",
+      "kind": "paper",
+      "evidence": "artifact",
+      "links": [
+        "https://arxiv.org/abs/2610.42112"
+      ],
+      "vendor": "Zyphra",
+      "posted_at": "2026-11-02T22:04:52Z",
+      "metrics": {
+        "likes": 218,
+        "reposts": 28,
+        "quotes": 14,
+        "replies": 6
+      },
+      "confirmed_by": [
+        "@teortaxesTex"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "The headline 35x to 400x speedups at 10M to 1B tokens come from a roofline performance model; the paper says those lengths are not empirically validated and no optimized kernels are released.",
+        "source": "https://arxiv.org/abs/2610.42112"
+      }
+    },
+    {
+      "title": "NVIDIA releases Cosmos simulation recipes for AV, robotics and surgical data",
+      "url": "https://x.com/NVIDIAAI/status/2117332456768717244",
+      "handle": "@NVIDIAAI",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "New Cosmos recipes transform recorded scenes (for example a daytime drive into a rainy night) while keeping road layout and trajectories, to generate training data and test policies for autonomous vehicles, robots and surgical applications. Code and a technical report are linked, with a NIM deployment tutorial.",
+      "kind": "tool",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/NVIDIA/cosmos-framework",
+        "https://research.nvidia.com/labs/cosmos-lab/cosmos-simulation/technical-report.pdf"
+      ],
+      "vendor": "NVIDIA",
+      "posted_at": "2026-11-02T19:06:10Z",
+      "metrics": {
+        "likes": 91,
+        "reposts": 21,
+        "quotes": 6,
+        "replies": 14
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "ARC Prize verifies DeepSeek V4.1 Flash 1017 as top open-weight model on ARC-AGI",
+      "url": "https://x.com/arcprize/status/2117360588959461708",
+      "handle": "@arcprize",
+      "group": "research",
+      "origin": "discovery",
+      "summary": "ARC Prize's verified run puts DeepSeek V4.1 Flash 1017 at 5.8% on ARC-AGI-3 with the provider adapter harness (about $1.2K) but 0.2% with the standard harness, 78.1% on ARC-AGI-2 and 94.5% on ARC-AGI-1, leading open-weight models on the first two.",
+      "kind": "eval",
+      "evidence": "measured",
+      "links": [],
+      "vendor": "ARC Prize",
+      "posted_at": "2026-11-02T20:57:57Z",
+      "metrics": {
+        "likes": 61,
+        "reposts": 5,
+        "quotes": 1,
+        "replies": 7
+      },
+      "confirmed_by": [
+        "@teortaxesTex"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Retest of 50 published LLM findings finds most expired or weakened within 15 months",
+      "url": "https://x.com/oq_35/status/2117306610318283050",
+      "handle": "@oq_35",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "Researchers reran 50 widely cited LLM findings across 20 models released July 2024 to September 2026 and fitted trends by release date: 22 expired (fitted effect at or below one fifth of the original), 17 weakened, 8 persisted and 3 strengthened, including self-preference by LLM judges and nonuniform random-number generation.",
+      "kind": "paper",
+      "evidence": "measured",
+      "links": [],
+      "vendor": null,
+      "posted_at": "2026-11-02T17:23:28Z",
+      "metrics": {
+        "likes": 76,
+        "reposts": 24,
+        "quotes": 6,
+        "replies": 16
+      },
+      "confirmed_by": [
+        "@FanNie1208"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Text.js renders React apps in console.log, with OpenCode Lite running in DevTools",
+      "url": "https://x.com/adamdotdev/status/2117348728046846376",
+      "handle": "@adamdotdev",
+      "group": "devtools",
+      "origin": "discovery",
+      "summary": "Text.js is a console framework: React 19 with an App Router renders to %c spans in one console.log call per changed frame, also to ANSI via text run, and exposes frames to coding agents over MCP (text mcp). OpenCode Lite is the OpenCode TUI rebuilt on it; bunx @textjs/opencode@latest proxy connects the browser console to a local OpenCode server and its models and sessions.",
+      "kind": "tool",
+      "evidence": "artifact",
+      "links": [
+        "https://textjs.org/"
+      ],
+      "vendor": null,
+      "posted_at": "2026-11-02T20:10:49Z",
+      "metrics": {
+        "likes": 326,
+        "reposts": 18,
+        "quotes": 4,
+        "replies": 33
+      },
+      "confirmed_by": [
+        "@thdxr"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "SGLang explains HiCache prefix reuse across parallelism and distributed serving",
+      "url": "https://x.com/lmsysorg/status/2117347410716561767",
+      "handle": "@lmsysorg",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "A new LMSYS blog covers how SGLang HiCache keeps long shared prefixes reusable for agentic workloads under context parallelism, pipeline parallelism and speculative decoding.",
+      "kind": "technique",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "LMSYS",
+      "posted_at": "2026-11-02T20:05:00Z",
+      "metrics": {
+        "likes": 28,
+        "reposts": 2,
+        "quotes": 2,
+        "replies": 0
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    }
+  ],
+  "saved_rejected": [],
+  "list_posts_read": 98,
+  "list_pages": 1,
+  "saves": {
+    "read": 20,
+    "new_since_last_sweep": 0,
+    "kept": 0,
+    "note": "Live bookmarks read for id 1521986356721123328; newest 20 all already seen."
+  },
+  "discovery": {
+    "queries": 1,
+    "kept": 3,
+    "note": "Followed roster quotes to originals: Zyphra ZHA and ARC Prize DeepSeek run (via @teortaxesTex), Text.js and OpenCode Lite (via @thdxr). One security search; it surfaced two new MCP server advisories (forwarded) plus echoes of already-handled items. No release search this sweep."
+  },
+  "horizon": {
+    "block-dessa": "One X read (Dessa release terms) since 19:05Z returned 0 posts. block.xyz/dessa not re-fetched. No trigger."
+  },
+  "rechecks": [
+    {
+      "url": "https://x.com/rikiyatakehi/status/2117313742891327994",
+      "item": "Weight-Space Programming (kept 2026-11-02T19:05)",
+      "update": "@AlexKrentsel says he reproduced the MIT results (624 likes); @csinva reports similar experiments where Claude writes small functional nets from scratch (https://csinva.io/weight-space-programming-autoresearch/analyze/toy_examples/report.html); @adam_karvonen counters that Astra did not read Qwen's weights natively but used code for standard interpretability, found a looping direction and ablated it. Doubt stays at 1 pending a written replication.",
+      "sources": [
+        "https://x.com/AlexKrentsel/status/2117376683724660898",
+        "https://x.com/csinva/status/2117338122694381595",
+        "https://x.com/adam_karvonen/status/2117337487458938949"
+      ]
+    }
+  ],
+  "videos": {
+    "count": 0,
+    "note": "Anthropic and NVIDIA clips not watched; no video reader in this run."
+  },
+  "security_forwarded": [
+    {
+      "url": "https://x.com/cubillas888/status/2117388785142907253",
+      "matched": "always_forward: agent tooling (MCP server). MCPHub CVE-2026-120323 / GHSA-c48q-fjwh-j7gg: passthroughHeaders can forward other callers' Authorization and cookie headers, admins' included, to an attacker URL; affects up to 1.0.45 and 1.1.7, fixed in 1.1.8 (https://github.com/advisories/GHSA-c48q-fjwh-j7gg). MCPHub not in stack.json."
+    },
+    {
+      "url": "https://x.com/XavierRiveraX/status/2117375989516775830",
+      "matched": "always_forward: agent tooling (MCP server). AWS Serverless MCP Server CVE-2026-116635 (CVSS 6.9): path traversal via project name lets an actor steering the agent read, or with write enabled create or overwrite, JSON files outside the deployment status dir; fixed in awslabs.aws-serverless-mcp-server 0.2.1 (https://app.opencve.io/cve/CVE-2026-116635). Not in stack.json."
+    }
+  ],
+  "security_na": [
+    {
+      "url": "https://x.com/von_herren/status/2117372174587900303",
+      "reason": "Cursor marketplace malicious Claude Code extension, already handled in an earlier sweep."
+    },
+    {
+      "url": "https://x.com/AGTPinsights/status/2117390395680199101",
+      "reason": "Playwright 1.64.1 bundled Chromium PSA, already logged 2026-11-02T19:05."
+    },
+    {
+      "url": "https://x.com/Sprawl__Network/status/2117376329624739860",
+      "reason": "CVE-2026-98432 commentary; already forwarded to Bouncer 2026-11-02 05:14 CT, nothing new."
+    },
+    {
+      "url": "https://x.com/HugoValters/status/2117375950677794881",
+      "reason": "SysReptor session fixation; SysReptor is not in the fleet."
+    },
+    {
+      "url": "https://x.com/Junior_Baines/status/2117371016309604443",
+      "reason": "Jenkins and MediaWiki exploit labs; neither runs in the fleet."
+    },
+    {
+      "url": "https://x.com/akaclandestine/status/2117380134592209382",
+      "reason": "ARTEX agentic pentest framework misuse report; threat intel, nothing in the fleet affected."
+    },
+    {
+      "url": "https://x.com/mikejt4/status/2117391824176472179",
+      "reason": "European retail freezer attacks; not software the fleet runs."
+    }
+  ],
+  "skipped": [
+    "Anthropic Residency applications (program, not a release)",
+    "Data-constrained scaling claim by @industriaalist (paper link not confirmed)",
+    "Baseten SubQ Snap 1.1 hosting promo",
+    "Kimi K3.1 Pro personality benchmark",
+    "@bot Team Bot data bot showcase",
+    "Hermes subscription and team posts",
+    "Nextcloud Olmo 3 adoption",
+    "Open-weight license tightening thread (no official notice)",
+    "levelsio Battlefield 1942 port showcase",
+    "Event, hiring and conference posts"
+  ],
+  "errors": [],
+  "proposed_follows_note": "No browser in this run, so no follows were made. Possible trial candidates for a browser run: @ZyphraAI, @adamdotdev."
+}
