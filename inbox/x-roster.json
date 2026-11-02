@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T10:35:00Z",
+  "updated_at": "2026-11-02T10:40:00Z",
   "accounts": [
     {
       "handle": "@thsottiaux",
@@ -1194,6 +1194,121 @@
       "retired_reason": null,
       "x_user_id": "1529761561170124800",
       "on_list": true
+    },
+    {
+      "handle": "@victormustar",
+      "name": "Victor M",
+      "group": "opensource",
+      "affiliation": "Hugging Face",
+      "why": "Hugging Face head of product; ships runnable in-browser and on-device demos of new open models (Ava WebGPU talking avatar on LFM3-Omni, MotionBricks browser demo, UniForge3D prompt-to-3D agent pipeline) with Spaces and weights linked.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-11-02",
+      "evidence": [
+        "https://x.com/victormustar/status/2116948755760968077",
+        "https://x.com/victormustar/status/2115531118292131887",
+        "https://x.com/victormustar/status/2114432158647685127"
+      ],
+      "last_qualifying_post": "2026-11-01",
+      "retired_reason": null,
+      "x_user_id": "784830007",
+      "on_list": true
+    },
+    {
+      "handle": "@linoy_tsaban",
+      "name": "Linoy Tsaban",
+      "group": "opensource",
+      "affiliation": "Hugging Face",
+      "why": "HF ML engineer on diffusion: releases her own distilled LoRAs (Qwen Image 2.1 2-step DMD2 v1 and v1.5, realtime Space) and day-0 demos of new open image and video weights (Pika H3 Flex, Flux 3 Klein, Fibo-2).",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-11-02",
+      "evidence": [
+        "https://x.com/linoy_tsaban/status/2117003739840295306",
+        "https://x.com/linoy_tsaban/status/2116267951150301682",
+        "https://x.com/linoy_tsaban/status/2113701124612198556"
+      ],
+      "last_qualifying_post": "2026-11-01",
+      "retired_reason": null,
+      "x_user_id": "3253741800",
+      "on_list": true
+    },
+    {
+      "handle": "@coldniko",
+      "name": "Niko Veit",
+      "group": "builders",
+      "affiliation": "Strata (independent)",
+      "why": "Solo maintainer of Strata, a local inference runtime: DeepSeek V4.1 Flash on 64 GB RAM, official DGX Spark support, Intel B-series SYCL with measured tok/s, Unsloth 1-bit DeepSeek. Hype-styled posts and buy-me-a-coffee replies; judge at promotion.",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-11-02",
+      "evidence": [
+        "https://x.com/coldniko/status/2113835370869583983",
+        "https://x.com/coldniko/status/2115375074798886937",
+        "https://x.com/coldniko/status/2115407569049272430",
+        "https://x.com/coldniko/status/2116442821368713606"
+      ],
+      "last_qualifying_post": "2026-10-31",
+      "retired_reason": null,
+      "x_user_id": "200932008",
+      "on_list": true
+    },
+    {
+      "handle": "@robocurve",
+      "name": "Robocurve PBC",
+      "group": "research",
+      "affiliation": "Robocurve",
+      "why": "Independent evals of frontier models on physical robots with the open Inspect Robots harness; publishes all runs with transcripts and video (DataCenterBench Tier 1, 270 runs; Stack Bowls, 40 runs; isolated-model secret exchange study).",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-11-02",
+      "evidence": [
+        "https://x.com/robocurve/status/2115540503408300328",
+        "https://x.com/robocurve/status/2115932869935993236",
+        "https://x.com/robocurve/status/2116704239003349503"
+      ],
+      "last_qualifying_post": "2026-11-01",
+      "retired_reason": null,
+      "x_user_id": "2072443693165166592",
+      "on_list": true
+    },
+    {
+      "handle": "@0xMarsel",
+      "name": "marsel",
+      "group": "devtools",
+      "affiliation": "Tomacco (independent)",
+      "why": "Builds Tomacco, open-source tooling that gives coding agents an iOS and Android device on Linux; four releases in a week with measured speedups (frame render 7.1 to 3.9 ms, 8.6 s Quick Boot resume). Small account; first-hand.",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-11-02",
+      "evidence": [
+        "https://x.com/0xMarsel/status/2116509423824982234",
+        "https://x.com/0xMarsel/status/2116875004361003396",
+        "https://x.com/0xMarsel/status/2117042571717361929"
+      ],
+      "last_qualifying_post": "2026-11-01",
+      "retired_reason": null,
+      "x_user_id": "1142166991874265090",
+      "on_list": true
+    },
+    {
+      "handle": "@voicearena_ai",
+      "name": "Voice Arena",
+      "group": "research",
+      "affiliation": "Voice Arena",
+      "why": "Independent blind-pair voice AI evals: TTS, latency and diarization plus ASR leaderboards with Elo, cpWER and time-to-first-audio numbers; released the Joy 100k-hour dual-channel conversation dataset and the Turing TTS eval (via co-founder @shobhitbanga).",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-11-02",
+      "evidence": [
+        "https://x.com/voicearena_ai/status/2115467484560240640",
+        "https://x.com/voicearena_ai/status/2113663083940020388",
+        "https://x.com/voicearena_ai/status/2113306889035690011"
+      ],
+      "last_qualifying_post": "2026-10-30",
+      "retired_reason": null,
+      "x_user_id": "2051457164250640384",
+      "on_list": true
     }
   ],
   "source_leads": [
@@ -1513,6 +1628,34 @@
         "@VikParuchuri",
         "@datalabto",
         "@akshay_pachaar"
+      ]
+    },
+    {
+      "kind": "changelog",
+      "name": "Strata releases",
+      "url": "https://github.com/Niko1221/Strata/releases",
+      "why": "Local inference runtime releases (DeepSeek V4.1 Flash on 64 GB RAM, DGX Spark, Intel B-series, Strix Halo, Mac) with tok/s notes; not in sources.json.",
+      "seen_via": [
+        "@coldniko"
+      ]
+    },
+    {
+      "kind": "blog",
+      "name": "Robocurve research",
+      "url": "https://robocurve.org/",
+      "why": "Physical-world frontier model evals (DataCenterBench, Stack Bowls) with full run releases via Inspect Robots; not in sources.json.",
+      "seen_via": [
+        "@robocurve"
+      ]
+    },
+    {
+      "kind": "feed",
+      "name": "Voice Arena leaderboards",
+      "url": "https://voicearena.com/tts-leaderboard",
+      "why": "Blind-pair TTS, latency and diarization plus ASR leaderboards across languages; new model placements Magpie does not see elsewhere; not in sources.json.",
+      "seen_via": [
+        "@voicearena_ai",
+        "@shobhitbanga"
       ]
     }
   ],

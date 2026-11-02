@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-11-02T03:03:00Z",
- "job": "sweep",
+ "updated_at": "2026-11-02T10:40:00Z",
+ "job": "roster",
  "prompt": "v6.1",
- "calls_used_today": 80,
+ "calls_used_today": 17,
  "notes_via_api": false,
  "last_sweep": {
   "ran_at": "2026-11-02T03:03:00Z",
@@ -18,7 +18,7 @@
  },
  "roster": {
   "curated": 223,
-  "trial": 62,
+  "trial": 68,
   "active": 0,
   "retired": 2
  },
@@ -196,30 +196,40 @@
   "Roster review 2026-11-01: no injection attempts seen in the candidate reads; no security leads surfaced, nothing to forward.",
   "Sweep 2026-11-01T11:10Z: CopyFromBox does not expand '~' on the Mini; it created a literal ~/~ folder (also from the 10-31 13:08 observation filing). Moved all three Magpie notes into the real Master inbox and removed the empty stray folder. Use /Users/cameronsutcliff/Cameron Brain/... absolute paths for future filings.",
   "Sweep 2026-11-01T11:10Z: thin Sunday window; 1 deep read (alphaXiv post traced to arXiv 2610.39302); no re-checks run to save reads.",
-  "Sweep 2026-11-02T03:03Z: 16 X reads (1 List page, 1 bookmarks, 5 roster OR searches, 2 discovery, 1 horizon, 1 hydrate, 3 deep-read calls on GDPx, 1 re-check hydrate for 8 items). calls_used_today 80 on the Central day = 62 (through 5:08 PM sweep) + 2 (5:44 and 7:48 PM bookmark syncs, assumed 1 each) + 16. No browser, so no follows or video analysis; no injection attempts seen."
+  "Sweep 2026-11-02T03:03Z: 16 X reads (1 List page, 1 bookmarks, 5 roster OR searches, 2 discovery, 1 horizon, 1 hydrate, 3 deep-read calls on GDPx, 1 re-check hydrate for 8 items). calls_used_today 80 on the Central day = 62 (through 5:08 PM sweep) + 2 (5:44 and 7:48 PM bookmark syncs, assumed 1 each) + 16. No browser, so no follows or video analysis; no injection attempts seen.",
+  "Roster review 2026-11-02: calls_used_today restarted for Central day 2026-11-02 (the 03:03Z sweep's 80 belonged to Central 2026-11-01); this review used 17 X reads (1 get_users_me, 2 user lookups, 14 get_users_posts) plus 6 List writes. X header showed 972 of 1000 account-wide reads left late in the run. Covers sweep files since 2026-11-01T10:35Z.",
+  "Roster review 2026-11-02: owner-saves step found no new authors to add (same set as 2026-11-01: @mirku21, @MatthewBerman, @jankeesvw, @trq212, @NVIDIAAI on the roster; @HuggingModels retired; @danikkk_wqs excluded for vice; @RoundtableSpace on the avoid list).",
+  "Roster review 2026-11-02: owner-saves screen re-applied. @MatthewBerman (owner_requested) passes and is untouched: DeepSeek V4.1 Flash takes, his free Folio and Device Monitor tools, custom-software posts; some personal and one sponsor-video post; no partisan politics or vice. @jankeesvw passes: Herdr agent panels and plugins on Omarchy, though about 6 of 24 posts are the paid Omarchy pin run. @mirku21 flagged again for the owner: all 25 latest posts are the same templated 'Anthropic just documented' tip with profanity hooks and no source links; the screen as written does not retire it.",
+  "Roster review 2026-11-02: added 6 trials (@victormustar, @linoy_tsaban, @coldniko, @robocurve, @0xMarsel, @voicearena_ai), all added to the List (now 68 members). The @voicearena_ai List add first hit an Auto-review block and went through on the approval retry. @coldniko is hype-styled with buy-me-a-coffee replies; judge carefully at promotion. Candidate sources: repeat off-roster posters in sweep files and editions since 2026-11-01.",
+  "Roster review 2026-11-02 rejected, so they are not re-checked soon: too small or too new to judge: @mgdw0 (account created 2026-11-01), @mixdog_ai (17 posts), @use_zn (product account, 4 followers), @pipeline_mag (AI-generated aggregator), @GaoYipeng (85 posts ever); one capability release in 30 days: @thecekbote (looped transformers thread), @DiffuSpace_Labs (Clover-35B-A3B-Preview only, plus partner plugs; revisit on next release); not first-hand: @leonliuzx (mostly quotes and community recaps); low signal: @0xSero (near-miss: Mac Mini plus 3090 prefill numbers are real, but personal and opinion posts dominate); promotion over 1 in 5: @shobhitbanga (near-miss: Joy dataset and Turing eval are strong, but event and meetup posts are about 3 of 10 top-level posts; added the official @voicearena_ai instead).",
+  "Roster review 2026-11-02: no promotions possible before 2026-11-03 (earliest trials added 2026-10-20); no retirements (no account has two level-2 flags in 30 days: @ValsAI, @SemiAnalysis_, @omarsar0, @cohere and @UnslothAI have one each; @NaceAI (on-roster) got its first on 2026-11-01; off-roster @Exocija, @akarixbt and @rahulchhabra07 one each; the 45-day rule cannot bite before about 2026-11-07); no sweep files older than 14 days (oldest 2026-10-20T17-39), so none pruned; first prune due 2026-11-03. Monday, so no drafts.",
+  "Roster review 2026-11-02: 3 source leads added (Strata releases, Robocurve research, Voice Arena leaderboards). No injection attempts seen in the candidate reads; no security leads surfaced, nothing to forward."
  ],
  "errors": [],
  "follows_today": 0,
  "last_roster_review": {
-  "ran_at": "2026-11-01T10:35:00Z",
-  "date": "2026-11-01",
-  "reads": 12,
-  "list_writes": 3,
+  "ran_at": "2026-11-02T10:40:00Z",
+  "date": "2026-11-02",
+  "reads": 17,
+  "list_writes": 6,
   "budget": 80,
   "added": [
-   "@_albertgu",
-   "@divagr1925",
-   "@EpochAIResearch"
+   "@victormustar",
+   "@linoy_tsaban",
+   "@coldniko",
+   "@robocurve",
+   "@0xMarsel",
+   "@voicearena_ai"
   ],
   "promoted": [],
   "retired": [],
   "flagged": [
    "@mirku21"
   ],
-  "drafts": 3,
-  "drafts_file": "inbox/x-drafts/2026-11-01.json",
+  "drafts": 0,
+  "drafts_file": null,
   "pruned": 0,
-  "source_leads_added": 2
+  "source_leads_added": 3
  },
  "x_list": {
   "id": "2113850075931713585",
@@ -228,7 +238,7 @@
   "owner": "@CameronSutcliff",
   "owner_id": "1521986356721123328",
   "private": true,
-  "member_count": 62,
+  "member_count": 68,
   "members": "every trial/active entry in inbox/x-roster.json (x_user_id, on_list)",
   "created_at": "2026-10-24T04:35:00Z"
  },
