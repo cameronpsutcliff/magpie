@@ -3,74 +3,75 @@
  "days": [
   {
    "date": "2026-11-02",
-   "headline": "impeccable, rea, Qwen3.5-4B-3D-Coder, and more",
-   "events": 145,
-   "sources": 512,
-   "enriched": false,
+   "headline": "Drive desktop apps via accessibility trees, run MiniMax locally, benchmark agents, and more",
+   "events": 187,
+   "sources": 541,
+   "enriched": true,
    "top": [
     {
-     "id": "d6e0bc07985c",
-     "title": "pbakaus/impeccable",
+     "id": "32288877506c",
+     "title": "Vercel's Agent Desktop drives apps through accessibility trees",
+     "impact": 4,
+     "vendor": "Vercel"
+    },
+    {
+     "id": "163057fb1ee5",
+     "title": "Colibri runs MoE models in pure C from disk",
      "impact": 4,
      "vendor": "Open source"
     },
     {
      "id": "177fb172f416",
-     "title": "morluto/rea",
+     "title": "Rea agent reverse engineering repo keeps trending",
      "impact": 4,
      "vendor": "Open source"
     },
     {
-     "id": "bebcf2b23194",
-     "title": "ccore/Qwen3.5-4B-3D-Coder",
+     "id": "84dd4f86c866",
+     "title": "Community quants run MiniMax M3.1 Flash on local hardware",
      "impact": 4,
-     "vendor": "Open source"
-    },
-    {
-     "id": "e487fe51b82b",
-     "title": "cloudflare/security-audit-skill",
-     "impact": 4,
-     "vendor": "Cloudflare"
+     "vendor": "MiniMax"
     },
     {
      "id": "0267ddef94cb",
-     "title": "nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
+     "title": "Nemotron 3.5 Transcribe 30B-A4B keeps trending",
      "impact": 3,
      "vendor": "NVIDIA"
     }
    ],
    "vendors": [
     "Open source",
-    "OpenAI",
-    "Liquid AI",
     "Anthropic",
-    "NVIDIA",
-    "DeepSeek"
+    "Liquid AI",
+    "OpenAI",
+    "Qwen",
+    "NVIDIA"
    ],
    "topics": {
-    "coding": 40,
-    "multimodal": 40,
-    "agents": 36,
-    "models": 34,
-    "infra": 20,
-    "local": 17,
+    "agents": 54,
+    "models": 48,
+    "multimodal": 47,
+    "coding": 44,
+    "local": 24,
+    "infra": 19,
     "memory": 16,
     "mcp": 15,
-    "research": 11,
-    "security": 7,
-    "reverse": 5,
-    "evals": 5,
+    "research": 12,
+    "security": 11,
+    "evals": 10,
+    "reverse": 8,
     "robotics": 2
    },
    "kinds": {
+    "social": 41,
     "repo": 37,
-    "model": 30,
-    "space": 20,
-    "social": 19,
-    "newsletter": 17,
-    "community": 12,
-    "changelog": 7,
-    "blog": 3
+    "model": 29,
+    "video": 26,
+    "space": 19,
+    "newsletter": 18,
+    "community": 10,
+    "changelog": 6,
+    "blog": 1
    },
    "threats": []
   },
