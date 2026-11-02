@@ -1,0 +1,384 @@
+{
+ "ran_at": "2026-11-02T15:10:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-02T11:13:00Z",
+ "queries": 14,
+ "calls": 18,
+ "items": [
+  {
+   "title": "DeepSeek Harness adds Creator Mode for building your own harness plugins",
+   "url": "https://x.com/DeepSeekHarness/status/2117256196227019194",
+   "handle": "@DeepSeekHarness",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "DeepSeek Harness now has Creator Mode, a design workspace that turns an idea into a plugin you can run inside the harness. Official examples include a design workspace, a sandbox game and a 3D LLM visualizer, and the account's follow-ups list seven sample uses. The launch post carries a 99 second demo video that was not analyzed.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "DeepSeek",
+   "posted_at": "2026-11-02T14:03:08Z",
+   "metrics": {
+    "likes": 3149,
+    "reposts": 277,
+    "quotes": 140,
+    "replies": 130
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The repo's own security notes (quoted by @willzero) say the plugin sandbox does not guarantee isolation and untrusted plugins could damage the host. DeepSeek Harness says some demos took several rounds of tuning. One replier reports plugins break when they need the same env vars as the harness.",
+    "source": "https://x.com/willzero/status/2117271866431975860"
+   },
+   "reception": {
+    "tone": "positive",
+    "summary": "Replies are mostly enthusiasm plus requests for a Linux build. Specific notes: env var clash between plugins and the harness (@petrusenko_max), sandbox not a security boundary per the repo (@willzero), and some demos needed multiple debugging rounds (@star_flow_ai)."
+   }
+  },
+  {
+   "title": "ISTA-DASLab ships DeepSeek-V4.1-Flash-1017 GSQ-RCO Coder, a 763B model pruned and quantized for coding",
+   "url": "https://x.com/mhelcig/status/2117257900863156518",
+   "handle": "@mhelcig",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "GGUF release from ISTA-DASLab combining GSQ quantization and RCO expert pruning on DeepSeek-V4.1-Flash-1017, tuned for coding and agent work, runnable with Strata. The model card puts files at about 182.7 GB (72.1 GB transformer plus 110.6 GB Engram tables that can stay on disk), retained weights averaging 2.06 bits, and SWE-bench Verified at 77.0 versus 81.2 for the base.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-Coder-GGUF",
+    "https://arxiv.org/abs/2605.00649",
+    "https://arxiv.org/abs/2604.18556"
+   ],
+   "vendor": "ISTA-DASLab",
+   "posted_at": "2026-11-02T14:09:54Z",
+   "metrics": {
+    "likes": 117,
+    "reposts": 11,
+    "quotes": 1,
+    "replies": 12
+   },
+   "confirmed_by": [
+    "https://huggingface.co/ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-Coder-GGUF",
+    "@coldniko"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 2,
+    "community_note": null,
+    "pushback": "The '1 bit per weight' headline counts 192 of 384 pruned experts per layer as zero bits; the card itself shows kept weights average 2.06 bits, total files near 183 GB and a 4.2 point SWE-bench Verified drop.",
+    "source": "https://huggingface.co/ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-Coder-GGUF"
+   }
+  },
+  {
+   "title": "Mistral Large 4 writes and validates a quantum chemistry SCF solver with a 3D bond-breaking view",
+   "url": "https://x.com/MistralAI/status/2117229259425038344",
+   "handle": "@MistralAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Mistral demo in which Large 4, from a short prompt, wrote a self-consistent-field solver from scratch, checked it, and built an interactive 3D view where stretching a bond shows orbitals and energy change. A Mistral staffer (@philipVinc) says the model picked the STO-3G basis on its own and validated energies against PySCF across geometries to 1e-13. The 27 second clip was not analyzed.",
+   "kind": "demo",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Mistral",
+   "posted_at": "2026-11-02T12:16:06Z",
+   "metrics": {
+    "likes": 730,
+    "reposts": 71,
+    "quotes": 34,
+    "replies": 75
+   },
+   "confirmed_by": [
+    "https://x.com/philipVinc/status/2117266702882709733"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Prompt and code were not published, and several repliers asked what the validation was against before the staffer answered. One replier notes launch benchmarks are Mistral-reported, the technical report is still 'coming soon', and the open weights (~1T params) carry a MaaS license condition.",
+    "source": "https://x.com/srjkmrnyk/status/2117262542355472404"
+   },
+   "reception": {
+    "tone": "positive",
+    "summary": "Replies and quotes mostly praise the self-validation step; the main question was what it validated against, answered by a Mistral staffer (PySCF, 1e-13). One quote estimates ~16 GB VRAM at 4-bit with ~592 GB system RAM for local runs."
+   }
+  },
+  {
+   "title": "DeepPrinciple releases Hydrogen 1.0, GLM 5.3 post-trained for science",
+   "url": "https://x.com/plotarmordev/status/2117260339863785574",
+   "handle": "@plotarmordev",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "DeepPrinciple's Hydrogen 1.0 is GLM 5.3 post-trained for scientific research, MIT licensed on Hugging Face with 4-bit builds for NVIDIA and AMD. The weights repo is gated (access request). The maker reports it beats GPT 6 Astra on science research, on its own evals.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/deep-principle/Hydrogen-1.0"
+   ],
+   "vendor": "DeepPrinciple",
+   "posted_at": "2026-11-02T14:19:36Z",
+   "metrics": {
+    "likes": 7,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0
+   },
+   "confirmed_by": [
+    "https://huggingface.co/deep-principle/Hydrogen-1.0"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Comparison to GPT 6 Astra rests only on the maker's own evals; no independent results yet.",
+    "source": null
+   }
+  },
+  {
+   "title": "Lightx2v ships Qwen Image 2.1 Lightning v2 RL, a 4-step distilled image model",
+   "url": "https://x.com/linoy_tsaban/status/2117261817907138995",
+   "handle": "@linoy_tsaban",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "LightX2V's RL-refined Lightning v2, distilled from Qwen-Image-2.1, does text-to-image, single-reference editing and multi-reference generation in 4 denoising steps at CFG 1.0. Released on Hugging Face for diffusers under the Qwen research license.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/lightx2v/Qwen-Image-2.1-Lightning-v2-RL",
+    "https://github.com/ModelTC/LightX2V"
+   ],
+   "vendor": "LightX2V",
+   "posted_at": "2026-11-02T14:25:28Z",
+   "metrics": {
+    "likes": 10,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0
+   },
+   "confirmed_by": [
+    "https://huggingface.co/lightx2v/Qwen-Image-2.1-Lightning-v2-RL"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "LeRobot adds built-in Trackio experiment tracking with one flag",
+   "url": "https://x.com/LeRobotHF/status/2117249339802222880",
+   "handle": "@LeRobotHF",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Hugging Face LeRobot now ships Trackio for experiment tracking, turned on with --trackio.enable=true. Runs log live loss curves, GPU metrics and the exact command, open source and compatible with the HF Hub.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/huggingface/lerobot",
+    "https://github.com/gradio-app/trackio",
+    "https://huggingface.co/docs/lerobot/main/en/installation#experiment-tracking"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-02T13:35:53Z",
+   "metrics": {
+    "likes": 46,
+    "reposts": 10,
+    "quotes": 2,
+    "replies": 3
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Artificial Analysis adds throughput per dollar to AA-AgentPerf using Silicon Data GPU rental prices",
+   "url": "https://x.com/ArtificialAnlys/status/2117255658613735918",
+   "handle": "@ArtificialAnlys",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "AA-AgentPerf, Artificial Analysis's datacenter benchmark for agent workloads, now reports throughput per dollar per hour using Silicon Data's market GPU rental indices. In the first cut B300 systems generally lead; the MI355X rate is an assumption since no index exists for it yet.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Artificial Analysis",
+   "posted_at": "2026-11-02T14:01:00Z",
+   "metrics": {
+    "likes": 50,
+    "reposts": 3,
+    "quotes": 9,
+    "replies": 23
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "LFM2.5-24B harness adapter for Hermes Agent",
+   "url": "https://x.com/yb2698/status/2117266739893567990",
+   "handle": "@yb2698",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Harness Hub released an RL-trained LoRA adapter that fits Liquid AI's LFM2.5-24B to Nous Research's Hermes Agent harness, reporting no accuracy drop on held-out tasks and a 20% efficiency gain. Part of a Hugging Face collection of per-harness adapters.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/collections/harness-hub/lfm25-24b-harness-adapters"
+   ],
+   "vendor": "Harness Hub",
+   "posted_at": "2026-11-02T14:45:02Z",
+   "metrics": {
+    "likes": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1
+   },
+   "confirmed_by": [
+    "https://huggingface.co/collections/harness-hub/lfm25-24b-harness-adapters"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Accuracy and efficiency figures are self-reported with very low reach.",
+    "source": null
+   }
+  },
+  {
+   "title": "Delta-tau-Bench tests whether agents keep up as tool ecosystems change",
+   "url": "https://x.com/zxlzr/status/2117258520307585041",
+   "handle": "@zxlzr",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "ZJU NLP benchmark of executable multi-turn tasks where APIs change, tools disappear and better alternatives appear, scoring whether agents still find the efficient path rather than only finishing. Paper, code and dataset are public.",
+   "kind": "eval",
+   "evidence": "artifact",
+   "links": [
+    "https://arxiv.org/abs/2610.34238",
+    "https://github.com/zjunlp/delta-tau-bench",
+    "https://huggingface.co/datasets/zjunlp/delta-tau-bench"
+   ],
+   "vendor": "ZJU NLP",
+   "posted_at": "2026-11-02T14:12:22Z",
+   "metrics": {
+    "likes": 13,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 1
+   },
+   "confirmed_by": [
+    "https://huggingface.co/datasets/zjunlp/delta-tau-bench"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "lodestones releases chroma-h3, a stills fine-tune of MiniMax H3",
+   "url": "https://x.com/SlipperyGem/status/2117214639645970433",
+   "handle": "@SlipperyGem",
+   "group": "opensource",
+   "origin": "discovery",
+   "summary": "The Chroma creator's image fine-tune of the MiniMax H3 video DiT run as single frames, shipped as a merged diffusers pipeline plus a rank 256 LoRA and 4 to 8 step DMD distilled LoRAs. MiniMax H3 community license.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/lodestones/chroma-h3"
+   ],
+   "vendor": "lodestones",
+   "posted_at": "2026-11-02T11:18:00Z",
+   "metrics": {
+    "likes": 13,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0
+   },
+   "confirmed_by": [
+    "https://huggingface.co/lodestones/chroma-h3"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 97,
+ "list_pages": 1,
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 0,
+  "kept": 0,
+  "note": "Live bookmarks read for id 1521986356721123328; newest 20 all already seen."
+ },
+ "discovery": {
+  "queries": 2,
+  "kept": 2,
+  "note": "Release search kept Delta-tau-Bench and chroma-h3. Rejected: a MAI-1-preview 'MIT weights on Hugging Face' claim from a low-reach account (the HF repo does not resolve publicly), FineDNA (kept 11-01), a self-reported ECC agents pack, an uninstall-your-AI-apps novelty app, and low-reach paper links (SkillCompiler, Latent Sparse Attention, ACCT) with no other signal. Security search was dominated by the Cursor marketplace Claude Code extension backdoor (handled) and a weekly roundup naming Tailscale SSH flaws (already patched fleet-wide 2026-10-28)."
+ },
+ "horizon": {
+  "block-dessa": "One X read (Dessa release terms and the lead's name) since 11:13Z returned 0 posts. block.xyz/dessa still shows waitlist and safety-researcher early-access wording only, no weights, paper or API links. No trigger."
+ },
+ "rechecks": [],
+ "videos": {
+  "count": 0,
+  "note": "DeepSeek Harness Creator Mode (99 s) qualified but no video reader is available; Mistral clip is 27 s, below the 60 s floor."
+ },
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://x.com/levelsio/status/2117272451545514001",
+   "reason": "Ubuntu MPTCP/TCP hole, CVE-2026-98432; already forwarded 2026-11-02 05:14 CT, no new information."
+  },
+  {
+   "url": "https://x.com/SecurityWeek/status/2117217829225427426",
+   "reason": "Cursor marketplace Claude Code extension backdoor 2.1.312/2.1.313; already handled (fleet sweep 2026-10-30), coverage repeats known IoCs."
+  },
+  {
+   "url": "https://x.com/libracoder/status/2117243614745313505",
+   "reason": "Weekly roundup listing Tailscale SSH flaws; fleet already on 1.104.4 since 2026-10-28."
+  },
+  {
+   "url": "https://x.com/harmanify/status/2117268240045092868",
+   "reason": "Report of a contractor running a personal Claude Code agent on a Pentagon network; policy news, not a vulnerability in our stack."
+  },
+  {
+   "url": "https://x.com/GoPlusSecurity/status/2117218609995128991",
+   "reason": "Web3 theft totals for October; not our stack."
+  }
+ ],
+ "skipped": [
+  "Unsloth DSV4.1 GGUF benchmark follow-up (covered 10-30)",
+  "coldniko and RoboColosseum teasers",
+  "levelsio game decompile demo with no artifact",
+  "hyunw_kim paper teaser quoting a drama post",
+  "FishAudio leaderboard repost from Oct 30",
+  "trending_repos aggregator posts",
+  "opinion, workshop and event posts (witcheer, omarsar0, LangChain, aiDotEngineer, thdxr)",
+  "VS Code agents-window tip",
+  "Spark-X2.6 demo clips",
+  "Strata download tip",
+  "MAI-1-preview weights claim (unverified, HF repo not public)"
+ ],
+ "errors": [],
+ "proposed_follows_note": "No browser in this run and follow_mode is browser, so no follows were performed. No roster account newly reached the active threshold this sweep (roster active count is 0); nothing to propose."
+}
