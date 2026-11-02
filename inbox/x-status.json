@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-11-02T10:40:00Z",
- "job": "roster",
+ "updated_at": "2026-11-02T11:13:00Z",
+ "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 17,
+ "calls_used_today": 31,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-02T03:03:00Z",
-  "items": 3,
-  "queries": 9,
-  "deep_reads": 1,
-  "rechecks": 8,
+  "ran_at": "2026-11-02T11:13:00Z",
+  "items": 2,
+  "queries": 11,
+  "deep_reads": 0,
+  "rechecks": 0,
   "flagged": 0,
   "saved_in": 0,
   "saved_kept": 0,
   "videos": 0,
-  "security_forwarded": 0
+  "security_forwarded": 1
  },
  "roster": {
   "curated": 223,
@@ -203,7 +203,8 @@
   "Roster review 2026-11-02: added 6 trials (@victormustar, @linoy_tsaban, @coldniko, @robocurve, @0xMarsel, @voicearena_ai), all added to the List (now 68 members). The @voicearena_ai List add first hit an Auto-review block and went through on the approval retry. @coldniko is hype-styled with buy-me-a-coffee replies; judge carefully at promotion. Candidate sources: repeat off-roster posters in sweep files and editions since 2026-11-01.",
   "Roster review 2026-11-02 rejected, so they are not re-checked soon: too small or too new to judge: @mgdw0 (account created 2026-11-01), @mixdog_ai (17 posts), @use_zn (product account, 4 followers), @pipeline_mag (AI-generated aggregator), @GaoYipeng (85 posts ever); one capability release in 30 days: @thecekbote (looped transformers thread), @DiffuSpace_Labs (Clover-35B-A3B-Preview only, plus partner plugs; revisit on next release); not first-hand: @leonliuzx (mostly quotes and community recaps); low signal: @0xSero (near-miss: Mac Mini plus 3090 prefill numbers are real, but personal and opinion posts dominate); promotion over 1 in 5: @shobhitbanga (near-miss: Joy dataset and Turing eval are strong, but event and meetup posts are about 3 of 10 top-level posts; added the official @voicearena_ai instead).",
   "Roster review 2026-11-02: no promotions possible before 2026-11-03 (earliest trials added 2026-10-20); no retirements (no account has two level-2 flags in 30 days: @ValsAI, @SemiAnalysis_, @omarsar0, @cohere and @UnslothAI have one each; @NaceAI (on-roster) got its first on 2026-11-01; off-roster @Exocija, @akarixbt and @rahulchhabra07 one each; the 45-day rule cannot bite before about 2026-11-07); no sweep files older than 14 days (oldest 2026-10-20T17-39), so none pruned; first prune due 2026-11-03. Monday, so no drafts.",
-  "Roster review 2026-11-02: 3 source leads added (Strata releases, Robocurve research, Voice Arena leaderboards). No injection attempts seen in the candidate reads; no security leads surfaced, nothing to forward."
+  "Roster review 2026-11-02: 3 source leads added (Strata releases, Robocurve research, Voice Arena leaderboards). No injection attempts seen in the candidate reads; no security leads surfaced, nothing to forward.",
+  "Sweep 2026-11-02T11-13: no Skill tool, so SKILL.md was read directly. Hunyuan's hy.tencent.com pages are JS-rendered and error out for curl/WebFetch, so lab perspective posts there cannot be verified. CVE-2026-98432 update came from a roster reply, verified on ubuntu.com; filed to the Mini Master inbox rather than messaged."
  ],
  "errors": [],
  "follows_today": 0,

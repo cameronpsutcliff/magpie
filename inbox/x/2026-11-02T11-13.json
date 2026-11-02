@@ -1,0 +1,146 @@
+{
+ "ran_at": "2026-11-02T11:13:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-02T03:03:00Z",
+ "queries": 11,
+ "calls": 14,
+ "items": [
+  {
+   "title": "NVIDIA Elastic Latent Recurrence: one looped checkpoint that matches a standard model at one loop and gains up to 7.25 points at four",
+   "url": "https://x.com/askalphaxiv/status/2117122036002955586",
+   "handle": "@askalphaxiv",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "NVIDIA paper (Ladhak, Ginsburg and others) on training looped language models without the usual one-loop accuracy penalty, using a gated state update with a learned step size, mixed loop counts in each optimizer step, and loop-index conditioning. On 4B dense and 30B-A3B MoE hybrids, one loop lands 0.52 points below and 1.04 above matched baselines on a ten-task average, and four loops add 7.25 and 4.75 points. Keeping only the last loop's KV cache holds attention memory at one-loop size. The post-trained Koi-4B checkpoint is estimated at 18 on the Artificial Analysis index at one loop and 29 at four.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2610.12582",
+    "https://www.alphaxiv.org/abs/2610.12582"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-11-02T05:10:02Z",
+   "metrics": {
+    "likes": 168,
+    "reposts": 21,
+    "quotes": 1
+   },
+   "confirmed_by": [
+    "https://arxiv.org/abs/2610.12582"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Rapid-MLX 1.0.1 adds five local speech models on Mac, including Granite Speech 5.0 at about 640x real time",
+   "url": "https://x.com/rapidmlx/status/2117113569867423906",
+   "handle": "@rapidmlx",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Rapid-MLX 1.0.1 (released 2026-11-02 03:25Z) adds five on-device speech models for Apple Silicon: Granite Speech 5.0 (30 s of audio transcribed in 0.05 s per the team), Nemotron 3.5 ASR across 40 locales, FireRedASR2 for Mandarin, and VoxCPM2 plus MOSS-TTS-Nano for text to speech. The release also moves to Python 3.12+, refuses catalog models that will not fit in memory before downloading, and lets Community Benchmark use the same speed settings as serve.",
+   "kind": "release",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/raullenchai/Rapid-MLX/releases/tag/v1.0.1",
+    "https://github.com/raullenchai/Rapid-MLX/releases/tag/rapid-mac-v1.0.1"
+   ],
+   "vendor": "Rapid-MLX",
+   "posted_at": "2026-11-02T04:36:23Z",
+   "metrics": {
+    "likes": 12,
+    "reposts": 1,
+    "quotes": 0
+   },
+   "confirmed_by": [
+    "https://github.com/raullenchai/Rapid-MLX/releases/tag/v1.0.1"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null,
+    "note": "Speed figures are the team's own; no independent benchmark yet."
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 93,
+ "list_pages": 1,
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 0,
+  "kept": 0,
+  "note": "Live bookmarks read for id 1521986356721123328; newest 20 all already seen (newest is still the 2116902936185889188 MPTCP save, rejected in the 2026-11-01T19-07 sweep as already forwarded)."
+ },
+ "discovery": {
+  "queries": 2,
+  "kept": 0,
+  "note": "Release search returned GitHub-trending roundups and low-reach personal launches (LLM-as-JEV replication, integer-only ternary LLM space, agent skills repos, DeepSeek super-agent repost already covered). Security search recirculated the Cursor marketplace Claude Code extension backdoor (handled), the AGENTS.md Downloads hijack (forwarded 2026-10-25) and the LiteLLM October breach backstory (handled); nothing new for the stack."
+ },
+ "horizon": {
+  "block-dessa": "One X read (Dessa release terms, Ragavan Thurairatnam name and from:RagavanThurair) since 03:03Z returned one unrelated digest post. block.xyz/dessa still shows only waitlist and early-access wording with no weights, paper or repo links. No trigger."
+ },
+ "rechecks": [],
+ "videos": {
+  "count": 0,
+  "note": "No deep reads this sweep."
+ },
+ "security_forwarded": [
+  {
+   "url": "https://ubuntu.com/security/CVE-2026-98432",
+   "handle": "@plotarmordev",
+   "post": "https://x.com/plotarmordev/status/2117131185390526810",
+   "matched": "Linux kernel, spark (stack)",
+   "note": "Update to CVE-2026-98432 (forwarded 2026-10-30 as medium). Ubuntu's tracker now rates it High priority, CVSS 9.8 critical: a use-after-free in IPv4 TCP SYN/SYNACK handling of IP options (inet_opt/ireq_opt freed without an RCU grace period), so disabling MPTCP alone does not cover it. Verified on the Ubuntu tracker (last updated 2026-10-30): linux-nvidia-6.17 on 24.04 noble is 'Ignored, end of life', so the DGX Spark's 6.17 nvidia kernel will not get a fix; linux-nvidia-7.0 and generic noble linux are still 'Vulnerable' (generic noble work in progress in 6.8.0-149). Upstream fixed in 5.10.272, 5.15.223, 6.1.190, 6.6.159, 6.12.113, 6.18.56, 7.2.10 and 7.3 per the post. Interim mitigation in the post: an nftables prerouting rule at priority -300 dropping IPv4 TCP packets that carry IP options (ip hdrlength gt 5), skipped on CIPSO networks. Box kernel is 6.12.94+ (below the 6.12.113 fix, MPTCP enabled) but it is a managed sandbox. Not messaged by me: urgent finding filed to Mini Master inbox for routing to Bouncer."
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/AIHighlight/status/2117176562978005307",
+   "reason": "Cursor marketplace Claude Code extension backdoor 2.1.312/2.1.313; already handled."
+  },
+  {
+   "url": "https://x.com/delivr_to/status/2117195208634819000",
+   "reason": "AGENTS.md Downloads drop (function-color npm); already forwarded 2026-10-25."
+  },
+  {
+   "url": "https://x.com/rtehrani/status/2117198835382468666",
+   "reason": "Backstory of the October LiteLLM supply-chain breach (leaked admin key in May); already handled."
+  },
+  {
+   "url": "https://x.com/ashxhart",
+   "reason": "Repost of a generic CVE patcher script (github.com/ashhart/CVE-patch); not a vulnerability, unvetted tool."
+  }
+ ],
+ "skipped": [
+  {
+   "url": "https://x.com/TencentHunyuan/status/2117198622022619399",
+   "reason": "Hyra 2.0 is a perspective post on Hunyuan Research Agent; linked page does not render and no release, weights or paper are linked."
+  },
+  {
+   "url": "https://x.com/browser_use/status/2117091205985313262",
+   "reason": "Vendor case study (Folk on Browser Use Pi, 70% fewer tokens, 22% faster) with no method; replies are mostly payout complaints."
+  },
+  {
+   "url": "https://x.com/yb2698/status/2117162115496841488",
+   "reason": "Harness Lens adds kamchatka Rust terminal agent; no public repo found."
+  },
+  {
+   "url": "https://x.com/__tinygrad__/status/2117140841596846441",
+   "reason": "Complaint about Claude compaction retries burning usage; anecdote, not a capability."
+  },
+  {
+   "url": "https://x.com/sundarpichai",
+   "reason": "GDPx and Gemini Carbon commentary already covered in the 03:03Z sweep."
+  }
+ ],
+ "errors": [],
+ "proposed_follows_note": "No browser in this run. No account cleared the follow bar this sweep."
+}
