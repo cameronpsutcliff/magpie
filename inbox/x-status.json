@@ -1,15 +1,15 @@
 {
- "updated_at": "2026-11-01T23:08:00Z",
+ "updated_at": "2026-11-02T03:03:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 62,
+ "calls_used_today": 80,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-01T23:08:00Z",
+  "ran_at": "2026-11-02T03:03:00Z",
   "items": 3,
   "queries": 9,
-  "deep_reads": 2,
-  "rechecks": 0,
+  "deep_reads": 1,
+  "rechecks": 8,
   "flagged": 0,
   "saved_in": 0,
   "saved_kept": 0,
@@ -195,7 +195,8 @@
   "Roster review 2026-11-01: no promotions possible before 2026-11-03 (earliest trials added 2026-10-20); no retirements (no account has two level-2 flags in 30 days: @ValsAI, @SemiAnalysis_, @omarsar0, @cohere and @UnslothAI have one each; off-roster @Exocija, @akarixbt and @rahulchhabra07 one each; the 45-day rule cannot bite before about 2026-11-07); no sweep files older than 14 days (oldest 2026-10-20T17-39), so none pruned; first prune due 2026-11-03. Sunday, so 3 drafts written to inbox/x-drafts/2026-11-01.json (never posted; posting_enabled is false).",
   "Roster review 2026-11-01: no injection attempts seen in the candidate reads; no security leads surfaced, nothing to forward.",
   "Sweep 2026-11-01T11:10Z: CopyFromBox does not expand '~' on the Mini; it created a literal ~/~ folder (also from the 10-31 13:08 observation filing). Moved all three Magpie notes into the real Master inbox and removed the empty stray folder. Use /Users/cameronsutcliff/Cameron Brain/... absolute paths for future filings.",
-  "Sweep 2026-11-01T11:10Z: thin Sunday window; 1 deep read (alphaXiv post traced to arXiv 2610.39302); no re-checks run to save reads."
+  "Sweep 2026-11-01T11:10Z: thin Sunday window; 1 deep read (alphaXiv post traced to arXiv 2610.39302); no re-checks run to save reads.",
+  "Sweep 2026-11-02T03:03Z: 16 X reads (1 List page, 1 bookmarks, 5 roster OR searches, 2 discovery, 1 horizon, 1 hydrate, 3 deep-read calls on GDPx, 1 re-check hydrate for 8 items). calls_used_today 80 on the Central day = 62 (through 5:08 PM sweep) + 2 (5:44 and 7:48 PM bookmark syncs, assumed 1 each) + 16. No browser, so no follows or video analysis; no injection attempts seen."
  ],
  "errors": [],
  "follows_today": 0,

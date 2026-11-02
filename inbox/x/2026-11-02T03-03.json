@@ -1,0 +1,209 @@
+{
+ "ran_at": "2026-11-02T03:03:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-01T23:08:00Z",
+ "queries": 9,
+ "calls": 16,
+ "items": [
+  {
+   "title": "SemiAnalysis releases GDPx, an agentic benchmark across 11 high-value domains where the best model scores 12%",
+   "url": "https://x.com/SemiAnalysis_/status/2117075900575477855",
+   "handle": "@SemiAnalysis_",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "GDPx is 206 expert-built agentic tasks across 11 domains (chip design, cyber, biology, finance, legal, quant trading, materials science, alignment, software engineering and more), made with 14 data partners, with a public leaderboard, rollouts and a cost vs score Pareto view. Claude Opus 5.5 leads at 12.0%, Gemini 4 Carbon 10.9% at about a third of the cost per task, GPT-6 Astra 9.6%; SemiAnalysis also reports a ranking with the cyber, bio and alignment domains removed because safety classifiers depress some models' scores.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://gdpx.semianalysis.com/",
+    "https://semianalysis.substack.com/p/gdpx-measuring-frontier-model-capabilities"
+   ],
+   "vendor": "SemiAnalysis",
+   "posted_at": "2026-11-02T02:06:42Z",
+   "metrics": {
+    "likes": 362,
+    "reposts": 50,
+    "quotes": 40,
+    "replies": 40,
+    "views": 34785
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers say the overall ranking is partly a refusal-rate chart because safety classifiers cut scores in cyber, bio and alignment, and one asks SemiAnalysis to disclose ties to the mostly brand-new data-partner companies.",
+    "source": "https://x.com/somi_ai/status/2117089534823592384"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Mostly positive about a hard, low-ceiling benchmark and the cost view (Carbon near Opus at a third the price); criticism centers on safety-classifier sandbagging, task counts per domain, keeping tasks private, and partner disclosure. Many quotes are from the data partners themselves.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Hermes Agent completes 9 of 10 everyday tasks fully offline with a local model over a unix socket",
+   "url": "https://x.com/witcheer/status/2117052318445121638",
+   "handle": "@witcheer",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A hands-on test ran Hermes Agent with no network and the model served on the same machine through a unix socket: file edits, fixing a failing test and log analysis worked with zero outbound packets, and the one web-fetch task failed gracefully. The write-up with the setup is in an open bench repo.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/notwitcheer/llm-bench-rig/blob/main/reports/offline-hermes.md"
+   ],
+   "vendor": "Nous Research (Hermes Agent); test by witcheer",
+   "posted_at": "2026-11-02T00:33:00Z",
+   "metrics": {
+    "likes": 26,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 8,
+    "views": 1561
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single-person test of 10 tasks; no independent replication yet.",
+    "source": null
+   }
+  },
+  {
+   "title": "LiteLLM ships a Unified Cost Accounting Engine for budgets and spend reports",
+   "url": "https://x.com/LiteLLM/status/2117072231893549561",
+   "handle": "@LiteLLM",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "The LiteLLM gateway moves cost tracking to one accounting engine with dedicated analytics workers, so budgets and reports agree and spend can be sliced by team, user, model or custom dimensions.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://docs.litellm.ai/blog/cost-infrastructure-makeover"
+   ],
+   "vendor": "LiteLLM (BerriAI)",
+   "posted_at": "2026-11-02T01:52:08Z",
+   "metrics": {
+    "likes": 5,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 275
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 89,
+ "list_pages": 1,
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 0,
+  "kept": 0,
+  "note": "Live bookmarks read for id 1521986356721123328; newest save is still @alive_ 2116902936185889188 (CVE-2026-98432 MPTCP takeover), vetted and rejected in the 2026-11-01T19-07 sweep as already forwarded on 2026-10-30."
+ },
+ "discovery": {
+  "queries": 2,
+  "kept": 0,
+  "note": "Release search returned GitHub-trending roundups and low-reach personal launches (Tabbie, nonce, agent-desktop repost, DeepSeek super-agent repost already covered). Security search recirculated the Cursor marketplace Claude Code extension backdoor (handled), the AGENTS.md Downloads hijack (forwarded 2026-10-25) and the MCP Inspector 1.0.3 advisories (forwarded 2026-10-25); nothing new for the stack."
+ },
+ "horizon": {
+  "block-dessa": "One X read (Dessa release terms, Ragavan Thurairatnam name and from:RagavanThurair) since 23:08Z returned one off-topic reply by Ragavan. No trigger."
+ },
+ "rechecks": [
+  {
+   "url": "https://x.com/DeepSeekHarness/status/2116857257245987236",
+   "note": "9386 likes, 1123 reposts; no notes via API; doubt unchanged at 1."
+  },
+  {
+   "url": "https://x.com/askalphaxiv/status/2116779287390896418",
+   "note": "2450 likes; doubt unchanged at 1."
+  },
+  {
+   "url": "https://x.com/NaceAI/status/2116908131766907095",
+   "note": "45 likes, 10 replies; stays doubt 2."
+  },
+  {
+   "url": "https://x.com/antigravity/status/2116952756342677919",
+   "note": "844 likes; unchanged."
+  },
+  {
+   "url": "https://x.com/victormustar/status/2116948755760968077",
+   "note": "344 likes; unchanged."
+  },
+  {
+   "url": "https://x.com/MiniMax_AI/status/2116996123164569606",
+   "note": "414 likes; unchanged."
+  },
+  {
+   "url": "https://x.com/thdxr/status/2116979661188321541",
+   "note": "256 likes; unchanged."
+  },
+  {
+   "url": "https://x.com/pipeline_mag/status/2116865170454540428",
+   "note": "No engagement; unchanged."
+  }
+ ],
+ "videos": {
+  "count": 0,
+  "note": "No deep-read item had a clip over 60 s (GDPx posts are images; LiteLLM clip is 13 s)."
+ },
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://x.com/pfernan95dev/status/2117072320523018572",
+   "reason": "Cursor marketplace Claude Code extension backdoor 2.1.312/2.1.313; already handled."
+  },
+  {
+   "url": "https://x.com/HarshaHegde0/status/2117089607313703370",
+   "reason": "MCP Inspector <=1.0.2 RCE advisories (fixed 1.0.3); already forwarded 2026-10-25."
+  },
+  {
+   "url": "https://x.com/Flextor97/status/2117088805518033326",
+   "reason": "Recap of the Cursor extension backdoor and the AGENTS.md Downloads hijack; both already handled."
+  },
+  {
+   "url": "https://x.com/sans_isc/status/2117074437111685423",
+   "reason": "Ivanti Connect Secure zero-days CVE-2026-111357; not in the stack."
+  }
+ ],
+ "skipped": [
+  {
+   "url": "https://x.com/omarsar0/status/2117053859516285354",
+   "reason": "Hacker Papers is a curated paper collection built from Karpathy's HackerTube prompt (kept 11:10Z); no new capability."
+  },
+  {
+   "url": "https://x.com/thsottiaux/status/2117035794678546764",
+   "reason": "Codex usage reset post; no capability."
+  },
+  {
+   "url": "https://x.com/SakanaAILabs/status/2117069983679467522",
+   "reason": "Symposium event report."
+  },
+  {
+   "url": "https://x.com/eliebakouch/status/2117049668186366331",
+   "reason": "Commentary; no new result."
+  },
+  {
+   "url": "https://x.com/teortaxesTex/status/2117070627375136917",
+   "reason": "Commentary posts only."
+  },
+  {
+   "url": "https://x.com/mitsuhiko/status/2117042122498916541",
+   "reason": "Opinion posts only."
+  }
+ ],
+ "errors": [],
+ "proposed_follows_note": "No browser in this run. No account cleared the follow bar (@SemiAnalysis_ has a level-2 flag in 30 days)."
+}
