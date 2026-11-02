@@ -2,6 +2,79 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-11-02",
+   "headline": "impeccable, rea, Qwen3.5-4B-3D-Coder, and more",
+   "events": 145,
+   "sources": 512,
+   "enriched": false,
+   "top": [
+    {
+     "id": "d6e0bc07985c",
+     "title": "pbakaus/impeccable",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "177fb172f416",
+     "title": "morluto/rea",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "bebcf2b23194",
+     "title": "ccore/Qwen3.5-4B-3D-Coder",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "e487fe51b82b",
+     "title": "cloudflare/security-audit-skill",
+     "impact": 4,
+     "vendor": "Cloudflare"
+    },
+    {
+     "id": "0267ddef94cb",
+     "title": "nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
+     "impact": 3,
+     "vendor": "NVIDIA"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "OpenAI",
+    "Liquid AI",
+    "Anthropic",
+    "NVIDIA",
+    "DeepSeek"
+   ],
+   "topics": {
+    "coding": 40,
+    "multimodal": 40,
+    "agents": 36,
+    "models": 34,
+    "infra": 20,
+    "local": 17,
+    "memory": 16,
+    "mcp": 15,
+    "research": 11,
+    "security": 7,
+    "reverse": 5,
+    "evals": 5,
+    "robotics": 2
+   },
+   "kinds": {
+    "repo": 37,
+    "model": 30,
+    "space": 20,
+    "social": 19,
+    "newsletter": 17,
+    "community": 12,
+    "changelog": 7,
+    "blog": 3
+   },
+   "threats": []
+  },
+  {
    "date": "2026-11-01",
    "headline": "DeepSeek agent works repos, Qwen teams beat Fable 5, agents write kernels, and more",
    "events": 250,
@@ -3122,5 +3195,5 @@
    }
   }
  ],
- "latest": "2026-11-01"
+ "latest": "2026-11-02"
 }

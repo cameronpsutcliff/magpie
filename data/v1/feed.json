@@ -13,6 +13,27 @@
  ],
  "items": [
   {
+   "id": "2026-11-02",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-11-02",
+   "title": "impeccable, rea, Qwen3.5-4B-3D-Coder, and more",
+   "summary": "145 capability events from 128 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words.",
+   "content_html": "<p>145 capability events from 128 sources. Ranked by code; the editor did not run this edition, so copy is the sources&#x27; own words.</p><ol><li><a href=\"https://github.com/pbakaus/impeccable\">pbakaus/impeccable</a></li><li><a href=\"https://github.com/morluto/rea\">morluto/rea</a></li><li><a href=\"https://huggingface.co/ccore/Qwen3.5-4B-3D-Coder\">ccore/Qwen3.5-4B-3D-Coder</a></li><li><a href=\"https://github.com/cloudflare/security-audit-skill\">cloudflare/security-audit-skill</a></li><li><a href=\"https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B\">nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B</a></li></ol><p><strong>Possibilities:</strong> No new possibility today. Latest: Inference buyers should rerun hardware bake-offs now, because kernels swing cost per token (2026-11-01)</p><p><strong>Worth watching:</strong> No new video pick today. Latest: Your Embeddings Are Haunted: MAGE Exorcises Similarity #science (2026-11-01)</p><p><strong>Constraints:</strong> No new constraint today. Latest: DHS order bars DeepSeek products from federal civilian agencies (2026-10-20)</p><p><strong>Threats still open:</strong> <a href=\"https://osv.dev/vulnerability/GHSA-6q48-6c7w-9gw2\">Python certifi bundles root behind compromised eMudhra intermediates</a> (critical, patched); <a href=\"https://osv.dev/vulnerability/GHSA-f897-62hf-6gxq\">MCP TypeScript SDK HTTP transports lack request limits</a> (high, patched); <a href=\"https://osv.dev/vulnerability/GHSA-h3rc-6mm3-gc2m\">vLLM request-controlled processor code revision allows code execution</a> (high, patched)</p>",
+   "content_text": "145 capability events from 128 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words. pbakaus/impeccable morluto/rea ccore/Qwen3.5-4B-3D-Coder cloudflare/security-audit-skill nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
+   "date_published": "2026-11-02T11:15:22Z",
+   "tags": [
+    "agents",
+    "coding",
+    "multimodal",
+    "reverse",
+    "security"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-11-02.json",
+    "backfilled": false,
+    "capabilities": 145
+   }
+  },
+  {
    "id": "2026-11-01",
    "url": "https://www.cameronsutcliff.com/magpie/2026-11-01",
    "title": "DeepSeek agent works repos, Qwen teams beat Fable 5, agents write kernels, and more",
@@ -688,29 +709,6 @@
     "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-03.json",
     "backfilled": true,
     "capabilities": 150
-   }
-  },
-  {
-   "id": "2026-10-02",
-   "url": "https://www.cameronsutcliff.com/magpie/2026-10-02",
-   "title": "Open decision models, faster computer use, distilling past RL teachers, and more",
-   "summary": "Cloudflare's Clef and OpenAI's agent stack lead a day heavy on agent plumbing. Most of the rest is papers on recurrent vision, self-improving agents and distillation, with little runnable code yet.",
-   "content_html": "<p>Cloudflare&#x27;s Clef and OpenAI&#x27;s agent stack lead a day heavy on agent plumbing. Most of the rest is papers on recurrent vision, self-improving agents and distillation, with little runnable code yet.</p><ol><li><a href=\"https://huggingface.co/papers/2609.36484\">RIDE extrapolates RL shifts during on-policy distillation</a>: A student model can be pushed past its RL-trained teacher by extrapolating the teacher&#x27;s representation shift directly in hidden states.</li><li><a href=\"https://huggingface.co/papers/2609.38288\">AREX-2 trains agents to improve their own work</a>: Agents trained on synthetic long-horizon improvement trajectories can refine their answers iteratively at test time.</li><li><a href=\"https://github.com/sgl-project/sglang\">SGLang serves language and multimodal models fast</a>: You can serve large language and multimodal models through one high-performance open serving framework.</li><li><a href=\"https://blog.cloudflare.com/clef-decision-models/\">Clef: open-weight decision models and RL fine-tuning</a>: Teams can use open-weight decision models and a new platform for RL fine-tuning, as announced on the Cloudflare blog.</li><li><a href=\"https://github.com/google/skills\">Google publishes Agent Skills for its products</a>: Agents can load ready-made skills for Google products and technologies from an official repo.</li></ol>",
-   "content_text": "Cloudflare's Clef and OpenAI's agent stack lead a day heavy on agent plumbing. Most of the rest is papers on recurrent vision, self-improving agents and distillation, with little runnable code yet. RIDE extrapolates RL shifts during on-policy distillation AREX-2 trains agents to improve their own work SGLang serves language and multimodal models fast Clef: open-weight decision models and RL fine-tuning Google publishes Agent Skills for its products",
-   "date_published": "2026-10-20T15:38:29Z",
-   "tags": [
-    "agents",
-    "evals",
-    "infra",
-    "mcp",
-    "models",
-    "multimodal",
-    "research"
-   ],
-   "_magpie": {
-    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-02.json",
-    "backfilled": true,
-    "capabilities": 134
    }
   }
  ]
