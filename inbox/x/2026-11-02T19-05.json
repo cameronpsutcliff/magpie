@@ -1,0 +1,499 @@
+{
+  "ran_at": "2026-11-02T19:05:00Z",
+  "bot": "magpie-scout",
+  "prompt": "v6.1",
+  "since": "2026-11-02T15:10:00Z",
+  "queries": 9,
+  "calls": 12,
+  "items": [
+    {
+      "title": "Mistral publishes the Mistral Large 4 technical report",
+      "url": "https://x.com/PierreStock/status/2117293394238013698",
+      "handle": "@PierreStock",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "Mistral posted the full technical report for the open-weight Mistral Large 4 (1T total, 52B active) on its Hugging Face repo, covering pretraining architecture choices, how they interact with agentic performance, and its post-training data loops. Readers note it uses AdamW and MLA on about 28T tokens and documents ambitious ideas that hurt post-training.",
+      "kind": "paper",
+      "evidence": "artifact",
+      "links": [
+        "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B/blob/main/assets/technical_report.pdf"
+      ],
+      "vendor": "Mistral AI",
+      "posted_at": "2026-11-02T16:30:57Z",
+      "metrics": {
+        "likes": 235,
+        "reposts": 37,
+        "quotes": 17,
+        "replies": 7
+      },
+      "confirmed_by": [
+        "@GuillaumeLample",
+        "@Fluke_Ellington",
+        "@qtnx_",
+        "@teortaxesTex"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Weight-Space Programming: GPT-6 Astra reads and edits neural network weights directly, lifting Qwen3.5-0.8B MATH-500 from 7.9% to 48.1%",
+      "url": "https://x.com/rikiyatakehi/status/2117313742891327994",
+      "handle": "@rikiyatakehi",
+      "group": "research",
+      "origin": "discovery",
+      "summary": "MIT CSAIL researchers (with Omar Khattab) show a frontier LLM, with no gradients or training loop, identifying what small networks were trained on from raw weights, writing MinAtar and 9x9 Go policies from scratch, and fixing Qwen3.5-0.8B's thinking loops by editing 0.016% of its weights (GSM8K 13.8% to 67.1%, IFEval 21.0% to 62.3%). Full logs of every experiment are on GitHub.",
+      "kind": "technique",
+      "evidence": "measured",
+      "links": [
+        "https://rikiyat.github.io/blog/weight-space-programming/",
+        "https://github.com/RikiyaT/lm_understand-logs"
+      ],
+      "vendor": "MIT CSAIL",
+      "posted_at": "2026-11-02T17:51:48Z",
+      "metrics": {
+        "likes": 3747,
+        "reposts": 388,
+        "quotes": 213,
+        "replies": 171
+      },
+      "confirmed_by": [
+        "@lateinteraction"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Blog post, not peer reviewed; the gain on Qwen comes from removing a looping failure, and the authors report the same approach could not improve Gemma 3 270M or tell a sycophantic model apart from weights alone.",
+        "source": "https://rikiyat.github.io/blog/weight-space-programming/"
+      }
+    },
+    {
+      "title": "OpenAI introduces LifeVal, a benchmark of everyday personal-assistant tasks",
+      "url": "https://x.com/OpenAI/status/2117307611338997846",
+      "handle": "@OpenAI",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "OpenAI built LifeVal from US and multinational time-use studies plus a 3,995-person survey, covering tasks like childcare, government services, budgeting and grocery ordering done through browser use, computer use and connectors. The post shows per-task GPT-6 Astra scores, many at 100%.",
+      "kind": "eval",
+      "evidence": "claim",
+      "links": [
+        "https://openai.com/index/lifeval/"
+      ],
+      "vendor": "OpenAI",
+      "posted_at": "2026-11-02T17:27:26Z",
+      "metrics": {
+        "likes": 3286,
+        "reposts": 197,
+        "quotes": 132,
+        "replies": 375
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "OpenAI-run and OpenAI-scored; the page lists example tasks and best scores but no public task set, harness or cross-model results to reproduce.",
+        "source": "https://openai.com/index/lifeval/"
+      }
+    },
+    {
+      "title": "Exa Monitors v2: scheduled web search that pushes only new, relevant results to an agent webhook, now $2 per 1k runs",
+      "url": "https://x.com/ExaAILabs/status/2117321911491564006",
+      "handle": "@ExaAILabs",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "Exa Monitors run a search on a cadence over Exa's index, drop pages already seen, judge relevance, source legitimacy and novelty, and post a summary or JSON matching your outputSchema to a webhook so agents never poll. v2 cuts the price from $15 to $2 per 1k runs with no API change.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://exa.ai/blog/monitors-v2"
+      ],
+      "vendor": "Exa",
+      "posted_at": "2026-11-02T18:24:16Z",
+      "metrics": {
+        "likes": 161,
+        "reposts": 24,
+        "quotes": 4,
+        "replies": 11
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Hume Audio Decision API answers questions about audio itself in one call",
+      "url": "https://x.com/hume_ai/status/2117285608745820372",
+      "handle": "@hume_ai",
+      "group": "applied",
+      "origin": "sweep",
+      "summary": "Hume's new API lets an agent ask free-form questions of live or recorded audio (how many speakers, is anyone laughing, is the caller frustrated) instead of chaining many models; Hume says it is trained on 10M+ human judgments.",
+      "kind": "feature",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "Hume AI",
+      "posted_at": "2026-11-02T16:00:01Z",
+      "metrics": {
+        "likes": 493,
+        "reposts": 96,
+        "quotes": 143,
+        "replies": 111
+      },
+      "confirmed_by": [
+        "@omarsar0"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Request-access only, so no public docs or measured results yet.",
+        "source": null
+      }
+    },
+    {
+      "title": "Levanto Sage2: extraction model with source spans and a streaming decision model that computes each token once",
+      "url": "https://x.com/levantolabs/status/2117304026911908020",
+      "handle": "@levantolabs",
+      "group": "applied",
+      "origin": "sweep",
+      "summary": "Sage2 returns structured fields with the exact source text and a probability per value, and its decision mode keeps a server-side session you append messages to, so long chats are not recomputed on every check. Levanto claims it is 166x cheaper than Opus 5.5 and beats Cloudflare's Clairic on extraction, with 20M free tokens.",
+      "kind": "model",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "Levanto Labs",
+      "posted_at": "2026-11-02T17:13:12Z",
+      "metrics": {
+        "likes": 134,
+        "reposts": 36,
+        "quotes": 44,
+        "replies": 48
+      },
+      "confirmed_by": [
+        "@omarsar0",
+        "@akshay_pachaar"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Cost and quality comparisons are self-reported with no linked eval.",
+        "source": null
+      }
+    },
+    {
+      "title": "Paper: a BM25 plus grep harness answers 85% of BrowseComp-Plus, and compiled context structures mainly save tokens",
+      "url": "https://x.com/dair_ai/status/2117274289154252866",
+      "handle": "@dair_ai",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "The RAGFlow team ran MiniMax M3 with only BM25 and grep and got 85% on BrowseComp-Plus and 91% on FRAMES with no vector index; summary trees, outlines, wikis and graphs did not improve FRAMES accuracy, but a claim-and-evidence navigation tree cut query tokens by 38% on average.",
+      "kind": "paper",
+      "evidence": "measured",
+      "links": [
+        "https://arxiv.org/abs/2610.41172"
+      ],
+      "vendor": "InfiniFlow",
+      "posted_at": "2026-11-02T15:15:02Z",
+      "metrics": {
+        "likes": 55,
+        "reposts": 3,
+        "quotes": 1,
+        "replies": 11
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Paper: chain-of-thought controllability hinges on the first few tokens after the thinking tag",
+      "url": "https://x.com/omarsar0/status/2117277307866063107",
+      "handle": "@omarsar0",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "The authors find entropy collapses right after the opening thinking tag; prefilling one token, banning common openings and adding in-context examples raised average compliance with CoT instructions by 34 to 41 points across models, which matters for anyone relying on CoT monitoring.",
+      "kind": "paper",
+      "evidence": "measured",
+      "links": [
+        "https://arxiv.org/abs/2610.40939"
+      ],
+      "vendor": null,
+      "posted_at": "2026-11-02T15:27:01Z",
+      "metrics": {
+        "likes": 50,
+        "reposts": 6,
+        "quotes": 5,
+        "replies": 31
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Phil Schmid on Code Mode: collapsing an agent's tools into one typed exec sandbox, with a runnable Gemini 4 Argon example",
+      "url": "https://x.com/_philschmid/status/2117278154918092817",
+      "handle": "@_philschmid",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "The write-up shows how to compile tool schemas into TypeScript declarations behind a single exec(code) tool so the model chains, filters and fans out calls in one turn, why a JS or Python sandbox beats bash, and a minimal Gemini Interactions API example. It cites Factory Droid 1.0 gaining 3.5 points on Terminal-Bench 4 and cutting spend 15% after switching.",
+      "kind": "technique",
+      "evidence": "artifact",
+      "links": [
+        "https://www.philschmid.de/code-mode"
+      ],
+      "vendor": null,
+      "posted_at": "2026-11-02T15:30:23Z",
+      "metrics": {
+        "likes": 127,
+        "reposts": 6,
+        "quotes": 2,
+        "replies": 39
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Vercel now blocks known malicious npm package versions before and during build installs",
+      "url": "https://x.com/vercel_dev/status/2117325624344035671",
+      "handle": "@vercel_dev",
+      "group": "devtools",
+      "origin": "discovery",
+      "summary": "On all plans, Vercel checks lockfiles (including cached dependencies) against a blocklist of malicious or vulnerable versions and blocks those public npm downloads during install, failing the deploy with the package named. New rules reach builds within minutes.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://vercel.com/changelog/blocking-malicious-npm-packages-before-and-during-installation"
+      ],
+      "vendor": "Vercel",
+      "posted_at": "2026-11-02T18:39:01Z",
+      "metrics": {
+        "likes": 46,
+        "reposts": 3,
+        "quotes": 5,
+        "replies": 7
+      },
+      "confirmed_by": [
+        "@rauchg"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Rohan Anil: training a 32B MoE across two GPU clusters 9,000 miles apart over a 25 Gbps link",
+      "url": "https://x.com/_arohan_/status/2117286512417181813",
+      "handle": "@_arohan_",
+      "group": "research",
+      "origin": "discovery",
+      "summary": "Core Automation trained a 32B-parameter MoE across 160 B300s in the US and 160 GB300s in Asia using fragment-wise async syncing, a Distributed Shampoo variant and compressed exchanges, reaching slightly better bits per byte than standard training at equal compute; butterfly mixing between eight learners also matched an all-reduce baseline.",
+      "kind": "technique",
+      "evidence": "measured",
+      "links": [
+        "https://www.coreauto.com/hitchhikers-guide-to-training-on-compute-islands"
+      ],
+      "vendor": "Core Automation",
+      "posted_at": "2026-11-02T16:03:36Z",
+      "metrics": {
+        "likes": 742,
+        "reposts": 57,
+        "quotes": 14,
+        "replies": 33
+      },
+      "confirmed_by": [
+        "@eliebakouch"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Company blog with no code or checkpoints; the quality edge is about 1% bits per byte at one scale.",
+        "source": null
+      }
+    },
+    {
+      "title": "Linoy Tsaban tests Open-H3-Regenerate-2K and a rank-16 LoRA for 3-step 2K video upscaling",
+      "url": "https://x.com/linoy_tsaban/status/2117278201089302747",
+      "handle": "@linoy_tsaban",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "Hands-on comparison, with two Hugging Face Spaces to try: both enhance textures well and struggle with faces and identity, and Kijai's rank-16 LoRA extraction nearly matches the original rank-576 LoRA.",
+      "kind": "demo",
+      "evidence": "artifact",
+      "links": [
+        "https://huggingface.co/spaces/hugging-apps/efficient-large-model-open-h3-regenerate-2k",
+        "https://huggingface.co/spaces/hugging-apps/kijai-minimax-h3-experimental"
+      ],
+      "vendor": "Hugging Face",
+      "posted_at": "2026-11-02T15:30:34Z",
+      "metrics": {
+        "likes": 31,
+        "reposts": 1,
+        "quotes": 0,
+        "replies": 2
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Nace AI Drex for Finance: multimodal decision model post-trained for sub-second financial decisions",
+      "url": "https://x.com/NaceAI/status/2117298824926703953",
+      "handle": "@NaceAI",
+      "group": "applied",
+      "origin": "sweep",
+      "summary": "A finance-tuned Drex for filings extraction, credit risk, fraud and compliance decisions; Nace reports 85.7% accuracy across 3,361 decisions on 48 held-out finance benchmarks, 14.8 points above GPT-6 Luna, and access through its console.",
+      "kind": "model",
+      "evidence": "measured",
+      "links": [
+        "https://console.nace.ai"
+      ],
+      "vendor": "Nace AI",
+      "posted_at": "2026-11-02T16:52:32Z",
+      "metrics": {
+        "likes": 99,
+        "reposts": 10,
+        "quotes": 9,
+        "replies": 11
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Vendor-run benchmarks with no public eval set linked.",
+        "source": null
+      }
+    },
+    {
+      "title": "Agent Arena adds performance per output token and per minute of wait",
+      "url": "https://x.com/arena/status/2117288179468513521",
+      "handle": "@arena",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "Alongside task spend, Agent Arena now plots which coding agents give the best results per output token and per minute, from real usage; Arena notes the same intelligence level can cost 10x more and that output tokens barely predict the bill.",
+      "kind": "eval",
+      "evidence": "artifact",
+      "links": [],
+      "vendor": "Arena",
+      "posted_at": "2026-11-02T16:10:13Z",
+      "metrics": {
+        "likes": 117,
+        "reposts": 3,
+        "quotes": 0,
+        "replies": 20
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    }
+  ],
+  "saved_rejected": [],
+  "list_posts_read": 97,
+  "list_pages": 1,
+  "saves": {
+    "read": 20,
+    "new_since_last_sweep": 0,
+    "kept": 0,
+    "note": "Live bookmarks read for id 1521986356721123328; newest 20 all already seen."
+  },
+  "discovery": {
+    "queries": 2,
+    "kept": 3,
+    "note": "Followed roster quotes to originals: Weight-Space Programming (via @lateinteraction), Core Automation compute-islands write-up (via @eliebakouch). The security search surfaced Vercel's npm blocklist in builds (kept as a feature). The link-based release search returned only low-reach posts (a VA claims app, a Laravel UI kit, arXiv bot links) and nothing was kept from it."
+  },
+  "horizon": {
+    "block-dessa": "One X read (Dessa release terms or the lead's name) since 15:10Z returned 0 posts. block.xyz/dessa not re-fetched this sweep (waitlist only at 15:10Z). No trigger."
+  },
+  "rechecks": [],
+  "videos": {
+    "count": 0,
+    "note": "Hume, OpenAI LifeVal and Exa clips not watched; no video reader is available in this run."
+  },
+  "security_forwarded": [],
+  "security_na": [
+    {
+      "url": "https://x.com/botnewsnetwork/status/2117327071743758443",
+      "reason": "New IBM Langflow bulletin: Langflow OSS 1.0.0 to 1.12.8 affected (CVE-2026-93680 auth bypass 9.8, CVE-2026-110186 unauthenticated RCE via MCP tool enumeration 9.8, CVE-2026-110193, CVE-2026-110192), fix is 1.13.0, no workaround. Langflow is not in stack.json and Bouncer's 2026-10-29 fleet sweep found no Langflow on any reachable host, so logged and filed as a non-stack observation, not forwarded."
+    },
+    {
+      "url": "https://x.com/zuilkowski_/status/2117330906255876435",
+      "reason": "Cursor marketplace Claude Code extension backdoor; already handled 2026-10-30."
+    },
+    {
+      "url": "https://x.com/nisten/status/2117325950195060896",
+      "reason": "Thread noting Playwright 1.64.1 bundles an older Chromium build than Chrome stable; normal release lag, no specific CVE named, Playwright not in stack.json."
+    },
+    {
+      "url": "https://x.com/HugoValters/status/2117328638945472589",
+      "reason": "Perses CVE-2026-63458 (CVSS 6.5); not in our stack."
+    },
+    {
+      "url": "https://x.com/zoomeyebot/status/2117327195811217554",
+      "reason": "ISC BIND 9 CVE-2026-19630; we do not run BIND."
+    },
+    {
+      "url": "https://x.com/thdxr/status/2117299716987789772",
+      "reason": "General advice that org and repo GitHub secrets are readable by any compromised writer; guidance, not a new vulnerability."
+    },
+    {
+      "url": "https://x.com/botnewsnetwork/status/2117328641143234743",
+      "reason": "Noma Labs SneakPeek, Claude Code Desktop preview-pane file read; already covered 2026-10-28 (desktop app only, research demo)."
+    },
+    {
+      "url": "https://x.com/Antaresrf/status/2117331837299413372",
+      "reason": "Zero-engagement crypto-theft anecdote with no indicators or named malware; not credible enough to act on."
+    }
+  ],
+  "skipped": [
+    "Unsloth DeepSeek-V4.1-Flash GGUF benchmark and GSQ-RCO dispute (covered 10-30 and 11-02 15:10)",
+    "Tencent Hy4 deployment-guide leak (weights not public)",
+    "Modal day-0 Kimi K3.1 Pro (not yet available)",
+    "CommandCode GLM 5.3 Flash pricing promo",
+    "Odyssey-3 leaderboard claim with no new artifact",
+    "HF tokenizers special-token memory fix (ships in a coming rc)",
+    "FineDNA distillation thread (FineDNA covered 11-01)",
+    "OpenHands in Scale AgentEnv, Arize Phoenix pricing, Replit changelog, Databricks posts (minor)",
+    "opinion, event, funding and drama posts (emollick, teortaxesTex, levelsio, natolambert, mustafasuleyman, trq212, thsottiaux, conference promos)",
+    "witcheer MicroDuck and Hermes posts"
+  ],
+  "errors": [],
+  "proposed_follows_note": "No browser in this run, so no follows were made. Possible trial candidates for a browser run: @rikiyatakehi (MIT CSAIL, Weight-Space Programming), @levantolabs (Sage2)."
+}
