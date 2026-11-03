@@ -1,0 +1,315 @@
+{
+  "ran_at": "2026-11-03T03:15:00Z",
+  "bot": "magpie-scout",
+  "prompt": "v6.1",
+  "since": "2026-11-02T23:05:00Z",
+  "queries": 11,
+  "calls": 16,
+  "items": [
+    {
+      "title": "OpenAI builds Pando, a Git-compatible backend for its monorepo",
+      "url": "https://x.com/OpenAIDevs/status/2117408792346509663",
+      "handle": "@OpenAIDevs",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "OpenAI replaced the server side of its monorepo with Pando. Engineers and Codex agents keep the stock Git client and protocol. Pando updates each branch on its own, so pushes to unrelated branches don't wait on each other, and it reuses cached packfiles so it can serve the same history to many fetchers. OpenAI reports that median push latency fell about 80% (nearly 5x) and that Pando now serves close to a petabyte of Git data a day. Reliability had dropped below 90% late last year as agent traffic grew. Pando is internal only. Greg Brockman says OpenAI is considering offering it to others.",
+      "kind": "tool",
+      "evidence": "measured",
+      "links": [
+        "https://openai.com/index/scaling-git-at-openai"
+      ],
+      "vendor": "OpenAI",
+      "posted_at": "2026-11-03T00:09:30Z",
+      "metrics": {
+        "likes": 3181,
+        "reposts": 228,
+        "quotes": 156,
+        "replies": 180,
+        "views": 405593
+      },
+      "confirmed_by": [
+        "@gdb"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Vendor-reported numbers with no baseline hardware or error bars; nothing outside OpenAI can run it yet.",
+        "source": "https://explainx.ai/blog/openai-pando-git-backend-codex-monorepo-5x-faster-pushes-petabyte-per-day-2026"
+      },
+      "reception": "Replies and quotes are mostly restatements and translations. The substantive questions concern consistency when agents rewrite history mid-push, packfile recovery, and whether the git conformance tests will be released. Some posters note that few teams need a custom backend and that it isn't open source. No one outside OpenAI reports using it."
+    },
+    {
+      "title": "Strata 0.2.10 runs Qwen3.8 Flash Next at 128K context on 8 GB GPUs",
+      "url": "https://x.com/coldniko/status/2117405670224105522",
+      "handle": "@coldniko",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "In the local inference app's new release, DFlash2 replaces MTP as the default drafter. Measured decode gains are about 4 to 12% on Strix Halo, RTX PRO 5000, R9700, Spark and M5 Max, and it is 2.6% slower on Arc A750. 8 GB cards now start at 128K context because work is moved off the card instead of the context being shrunk. The release also adds a multi-GPU split engine on Linux and ships the ISTA-DAS DeepSeek-V4.1-Flash Coder at about 21 to 59 tok/s depending on hardware. By the release notes' own account, most 8 GB numbers (63 to 73 tok/s) come from larger cards capped by hand on a workstation with lots of RAM. The one real 8 GB card tested, an Arc A750, ran at 12.7 to 18.4 tok/s.",
+      "kind": "tool",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/Niko1221/Strata/releases/tag/v0.2.10"
+      ],
+      "vendor": "Strata",
+      "posted_at": "2026-11-02T23:57:05Z",
+      "metrics": {
+        "likes": 1047,
+        "reposts": 154,
+        "quotes": 47,
+        "replies": 47,
+        "views": 54733
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Headline 20+ tok/s on 8 GB is mostly from capped larger cards on a high-RAM workstation; one reply doubts a 3070 reaches 20 tok/s, another asks for context length and KV spill.",
+        "source": "https://x.com/dudeman6790/status/2117405670224105522"
+      },
+      "reception": "Mostly excited quotes from Japanese and Chinese users with older 8 GB cards. A few users report 30 to 35 tok/s on earlier versions with more RAM. Skeptics want prompt-length and RAM details before trusting the 8 GB claim."
+    },
+    {
+      "title": "Stanford RoboArchitect evolves harness code around frozen robot policies",
+      "url": "https://x.com/dair_ai/status/2117410434890535310",
+      "handle": "@dair_ai",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "A coding model reads robot rollouts, diagnoses the failures and rewrites the control code around a frozen policy. That code decides when to call the policy, when to use vision tools and when to drive the arm directly. Trained on one set of episodes and tested on held-out scenes, success rose from 9.7% to 43.3% without changing any weights.",
+      "kind": "paper",
+      "evidence": "measured",
+      "links": [
+        "https://arxiv.org/abs/2610.42141"
+      ],
+      "vendor": "Stanford",
+      "posted_at": "2026-11-03T00:16:01Z",
+      "metrics": {
+        "likes": 24,
+        "reposts": 0,
+        "quotes": 0,
+        "replies": 8,
+        "views": 2717
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Writing Weights Index ranks models on writing network weights directly",
+      "url": "https://x.com/xingyudang/status/2117428789068386630",
+      "handle": "@xingyudang",
+      "group": "research",
+      "origin": "discovery",
+      "summary": "Following the Weight-Space Programming post, a researcher built an index that tests whether models can write neural network weights by hand. Open-weight models score well behind proprietary ones. Teortaxes notes that weight writing seems to track post-training while plain policy-code writing tracks pretraining. Results are a chart image only, with no repo or methodology link yet.",
+      "kind": "eval",
+      "evidence": "measured",
+      "links": [],
+      "vendor": null,
+      "posted_at": "2026-11-03T01:28:57Z",
+      "metrics": {
+        "likes": 120,
+        "reposts": 11,
+        "quotes": 9,
+        "replies": 8,
+        "views": 10277
+      },
+      "confirmed_by": [
+        "@teortaxesTex",
+        "@wen_kaiyue"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": null,
+        "source": "No methodology or code published; chart only."
+      }
+    },
+    {
+      "title": "AgentTime adds a combined time-awareness score",
+      "url": "https://x.com/maksym_andr/status/2117369736518623567",
+      "handle": "@maksym_andr",
+      "group": "research",
+      "origin": "discovery",
+      "summary": "The AgentTime benchmark now rolls duration following, runtime forecasting and retrospection into one time-awareness metric and adds many new models. GPT models lead, especially the GPT-6 family.",
+      "kind": "eval",
+      "evidence": "measured",
+      "links": [],
+      "vendor": null,
+      "posted_at": "2026-11-02T21:34:18Z",
+      "metrics": {
+        "likes": 29,
+        "reposts": 2,
+        "quotes": 0,
+        "replies": 4,
+        "views": 5154
+      },
+      "confirmed_by": [
+        "@scaling01"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "NVIDIA AI Cluster Runtime packages Dynamo for Kubernetes with validation checks",
+      "url": "https://x.com/nvidia/status/2117434626017017951",
+      "handle": "@nvidia",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "NVIDIA published a walkthrough for AI Cluster Runtime, which bundles NVIDIA Dynamo with the infrastructure it needs on Kubernetes. It pins tested component versions and includes checks to validate a GPU cluster setup before you serve on it.",
+      "kind": "tool",
+      "evidence": "artifact",
+      "links": [
+        "https://developer.nvidia.com/blog/build-a-validated-kubernetes-runtime-for-nvidia-dynamo/"
+      ],
+      "vendor": "NVIDIA",
+      "posted_at": "2026-11-03T01:52:09Z",
+      "metrics": {
+        "likes": 67,
+        "reposts": 10,
+        "quotes": 1,
+        "replies": 34,
+        "views": 13584
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Intel NEO compute driver patched to run on Apple Silicon Linux",
+      "url": "https://x.com/JoshuaSWarren/status/2117416878872113188",
+      "handle": "@JoshuaSWarren",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "With patches to Intel's compute runtime, an Arc Pro B60 attached over USB4 to an M1 Max running Linux shows up under OpenCL 3.0 and Level Zero. The patches are an open PR against intel/compute-runtime.",
+      "kind": "tool",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/intel/compute-runtime/pull/1045"
+      ],
+      "vendor": "Intel",
+      "posted_at": "2026-11-03T00:41:38Z",
+      "metrics": {
+        "likes": 9,
+        "reposts": 1,
+        "quotes": 0,
+        "replies": 2,
+        "views": 696
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    }
+  ],
+  "saved_rejected": [],
+  "list_posts_read": 96,
+  "list_pages": 1,
+  "saves": {
+    "read": 20,
+    "new_since_last_sweep": 0,
+    "kept": 0,
+    "note": "Live bookmarks read for id 1521986356721123328; newest 20 all already seen."
+  },
+  "discovery": {
+    "queries": 2,
+    "kept": 2,
+    "note": "One release search (1 low-value hit, nothing kept) and one security search. Writing Weights Index and AgentTime came from roster quotes (@teortaxesTex, @wen_kaiyue, @scaling01)."
+  },
+  "horizon": {
+    "block-dessa": "One X read (Ragavan Thurairatnam) returned 4 recap posts on the existing intro; block.xyz/dessa still shows a waitlist. No weights, API or paper. No trigger."
+  },
+  "rechecks": [
+    {
+      "url": "https://x.com/rikiyatakehi/status/2117313742891327994",
+      "item": "Weight-Space Programming (kept 2026-11-02T19:05)",
+      "update": "Now 39.3K likes. @dummerspast39 retested and argues the math gain is mostly from fixing Qwen 0.8B's thinking-mode loops: the default non-thinking mode with no edits scores 47% on MATH-500 against 48% after Astra's edit, and the game test is trivial. @teortaxesTex calls the critique fair on the merits. @maximelabonne points to Antidoom as a far cheaper way to get the same anti-loop effect. Suggest raising doubt to 2.",
+      "sources": [
+        "https://x.com/dummerspast39/status/2117416640132366570",
+        "https://x.com/teortaxesTex/status/2117427366641197199",
+        "https://x.com/maximelabonne/status/2117449123507192303"
+      ]
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2117332449382510884",
+      "item": "Messages API message threads (kept 2026-11-02T23:05)",
+      "update": "Metrics only (about 5.8K likes); no pushback.",
+      "sources": []
+    }
+  ],
+  "videos": {
+    "count": 0,
+    "note": "Pando clip is 18 s, under the 60 s minimum."
+  },
+  "security_forwarded": [
+    {
+      "url": "https://x.com/oliver_ojsec/status/2117420368663343567",
+      "matched": "always_forward: supply chain (npm). GitHub source repo nanxiaobei/antd-img-crop reportedly had a forged commit adding a prebuild malware script (Contagious Interview / OverLord RAT). The npm package is said to be clean: the latest release is still 4.30.0 from 2026-03-12, and main is back at the March commit after an Oct 31 push event. Not in stack.json and not found on the box. Low risk; watch for a poisoned npm release."
+    }
+  ],
+  "security_na": [
+    {
+      "url": "https://x.com/hackernoon/status/2117401777280590123",
+      "reason": "MCP Python/TypeScript SDK OAuth CVE-2026-115563 and CVE-2026-104850, already logged 2026-10-28/29."
+    },
+    {
+      "url": "https://x.com/theagenticdaily/status/2117414601088483519",
+      "reason": "AWS Serverless MCP CVE-2026-116635, forwarded 2026-11-02T23:05."
+    },
+    {
+      "url": "https://x.com/CyberGhostof/status/2117434321334083951",
+      "reason": "Cursor marketplace Claude Code extension backdoor, already handled."
+    },
+    {
+      "url": "https://x.com/WorldCyberNewsX/status/2117451705411313956",
+      "reason": "CVE-2026-98432 nftables stopgap commentary; already with Bouncer."
+    },
+    {
+      "url": "https://x.com/linklin63793/status/2117395120303865959",
+      "reason": "Playwright bundled Chromium PSA, already logged."
+    },
+    {
+      "url": "https://x.com/dongwukeji/status/2117445547196068022",
+      "reason": "Pretraining-poisoning RCE backdoor paper arXiv 2610.37741, already covered 2026-10-30; research, nothing to patch."
+    },
+    {
+      "url": "https://x.com/HugoValters/status/2117440375216324934",
+      "reason": "Suricata CVE-2026-57225; Suricata not in the fleet."
+    },
+    {
+      "url": "https://x.com/DFIR_Lab/status/2117415760704233659",
+      "reason": "UID Enterprise Agent CVE-2026-47367; not in the fleet."
+    }
+  ],
+  "skipped": [
+    "Pulse Alpha stealth model attribution (fingerprinting speculation)",
+    "NVIDIA Nemotron Labs Dory1.0-4B (already covered 2026-10-21/23)",
+    "Data-constrained scaling claim by @industriaalist (still no paper link)",
+    "OpenAI security sprint and bug bounty increase (program, not a release)",
+    "tinygrad exabox preorder, Prime Intellect cache pricing, SGLang social (promo)",
+    "Hydrogen, Unsloth GGUF bench, Modular talks (duplicates)",
+    "Opinion and commentary posts (thdxr, YingjunWu, SemiAnalysis margins, jerryjliu0)"
+  ],
+  "errors": [],
+  "proposed_follows_note": "No browser in this run, so no follows were made. Possible trial candidates for a browser run: @xingyudang, @maksym_andr (plus earlier @ZyphraAI, @adamdotdev)."
+}
