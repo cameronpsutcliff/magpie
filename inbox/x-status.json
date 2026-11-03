@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-11-03T03:15:00Z",
-  "job": "sweep",
+  "updated_at": "2026-11-03T10:34:27Z",
+  "job": "roster",
   "prompt": "v6.1",
-  "calls_used_today": 91,
+  "calls_used_today": 24,
   "notes_via_api": false,
   "last_sweep": {
     "ran_at": "2026-11-03T03:15:00Z",
@@ -18,8 +18,8 @@
   },
   "roster": {
     "curated": 223,
-    "trial": 68,
-    "active": 0,
+    "trial": 66,
+    "active": 8,
     "retired": 2
   },
   "follows_this_week": 10,
@@ -206,25 +206,40 @@
     "Roster review 2026-11-02: 3 source leads added (Strata releases, Robocurve research, Voice Arena leaderboards). No injection attempts seen in the candidate reads; no security leads surfaced, nothing to forward.",
     "Sweep 2026-11-02T11-13: no Skill tool, so SKILL.md was read directly. Hunyuan's hy.tencent.com pages are JS-rendered and error out for curl/WebFetch, so lab perspective posts there cannot be verified. CVE-2026-98432 update came from a roster reply, verified on ubuntu.com; filed to the Mini Master inbox rather than messaged.",
     "Sweep 2026-11-02T15-10: no Skill tool, so SKILL.md was read directly; the Read tool could not open the X MCP guide path, cat worked. Deep-read video (DeepSeek Harness, 99 s) could not be analyzed without a video reader. Hydrogen 1.0 weights are gated so the card could not be read. A low-reach MAI-1-preview weights claim did not resolve on Hugging Face and was dropped.",
-    "Sweep 2026-11-03T03-15: calls_used_today includes this sweep's 16 reads plus an assumed 1 read each for the 5:42 and 7:49 PM CT bookmark syncs, which are not logged here. The Weight-Space Programming recheck found a specific retest critique; I suggest raising its doubt to 2 (earlier files unchanged). The Pando post's only link was its video, so the OpenAI blog URL came from web search."
+    "Sweep 2026-11-03T03-15: calls_used_today includes this sweep's 16 reads plus an assumed 1 read each for the 5:42 and 7:49 PM CT bookmark syncs, which are not logged here. The Weight-Space Programming recheck found a specific retest critique; I suggest raising its doubt to 2 (earlier files unchanged). The Pando post's only link was its video, so the OpenAI blog URL came from web search.",
+    "Roster review 2026-11-03: no Skill tool in this runtime; read x-api-mcp-guide SKILL.md from the plugin cache before X calls. 18 reads + 6 List writes; calls_used_today restarted for Central 2026-11-03 (reads+writes).",
+    "Day-14 promotions for the 2026-10-20 cohort: 8 trials with 2+ own posts in sweep files promoted to active (@thsottiaux, @OpenBMB, @fal, @ExaAILabs, @trycua, @Aleph__Alpha, @GeminiApp, @ElevenLabs); 11 others with 0-1 sweep items stay trial (FishAudio, OfficialLoganK, Thom_Wolf, PrismML, odysseyml, actualinc, hume_ai, mem0ai, reflection_ai, Gradio, ElorianAI). The prompt does not say whether a day-14 trial with <2 sweep posts stays trial or retires; kept as trial until the 45-day rule.",
+    "No retirements: no account has 2+ doubt>=2 flags in 30 days (@NaceAI has 1); 45-day rule cannot bite before ~2026-11-07. Prune: oldest sweep file 2026-10-20T17-39 is under 14 days old at run time; first prune due at the 2026-11-04 review.",
+    "Rejected 2026-11-03 (do not recheck for 30 days): @PierreStock (1 capability post in 30d), @arcprize (strong verified results but event/competition promotion ~2 of 9 top-level, near-miss; leaderboard added as source lead), @adamdotdev (jokes/opinion, 1 capability post; @opencode curated), @levantolabs (promo/free-token and crypto top-up posts over 1 in 5), @mhelcig (doubt-2 on its own 1-bit headline release 2026-11-02 plus Unsloth dispute; near-miss, revisit), @_arohan_ (mostly jokes/opinion), @NielsRogge (mostly Papers with Code listing promotion), @AssemblyAI (ice-cream truck/happy-hour/customer-story promotion over 1 in 5).",
+    "Owner-saves screen 2026-11-03: no new authors with 2+ kept saves in 30 days. @MatthewBerman (owner_requested) kept. @jankeesvw passes (Herdr/Omarchy builds; pins posts under 1 in 5). @mirku21 flagged again for Cameron: still daily templated profane Claude Code tip-bait, not auto-retired.",
+    "Security: no verified leads hitting the stack surfaced in this review. No injection attempts seen in fetched content."
   ],
   "errors": [],
   "follows_today": 0,
   "last_roster_review": {
-    "ran_at": "2026-11-02T10:40:00Z",
-    "date": "2026-11-02",
-    "reads": 17,
+    "ran_at": "2026-11-03T10:34:27Z",
+    "date": "2026-11-03",
+    "reads": 18,
     "list_writes": 6,
     "budget": 80,
     "added": [
-      "@victormustar",
-      "@linoy_tsaban",
-      "@coldniko",
-      "@robocurve",
-      "@0xMarsel",
-      "@voicearena_ai"
+      "@ZyphraAI",
+      "@rikiyatakehi",
+      "@xingyudang",
+      "@maksym_andr",
+      "@zxlzr",
+      "@harborframework"
     ],
-    "promoted": [],
+    "promoted": [
+      "@thsottiaux",
+      "@OpenBMB",
+      "@fal",
+      "@ExaAILabs",
+      "@trycua",
+      "@Aleph__Alpha",
+      "@GeminiApp",
+      "@ElevenLabs"
+    ],
     "retired": [],
     "flagged": [
       "@mirku21"
@@ -232,7 +247,7 @@
     "drafts": 0,
     "drafts_file": null,
     "pruned": 0,
-    "source_leads_added": 3
+    "source_leads_added": 4
   },
   "x_list": {
     "id": "2113850075931713585",
@@ -241,7 +256,7 @@
     "owner": "@CameronSutcliff",
     "owner_id": "1521986356721123328",
     "private": true,
-    "member_count": 68,
+    "member_count": 74,
     "members": "every trial/active entry in inbox/x-roster.json (x_user_id, on_list)",
     "created_at": "2026-10-24T04:35:00Z"
   },

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T10:40:00Z",
+  "updated_at": "2026-11-03T10:34:27Z",
   "accounts": [
     {
       "handle": "@thsottiaux",
@@ -8,16 +8,17 @@
       "affiliation": "OpenAI",
       "why": "First-hand on OpenAI Codex product changes as its lead; posts concrete feature and usage-limit changes.",
       "signal_to_noise": 4,
-      "status": "trial",
+      "status": "active",
       "added_on": "2026-10-20",
       "evidence": [
         "https://x.com/thsottiaux/status/2111990254408434095",
         "https://x.com/thsottiaux/status/2111244596131111253"
       ],
-      "last_qualifying_post": "2026-10-19",
+      "last_qualifying_post": "2026-10-29",
       "retired_reason": null,
       "x_user_id": "1953337039510003712",
-      "on_list": true
+      "on_list": true,
+      "promoted_on": "2026-11-03"
     },
     {
       "handle": "@OpenBMB",
@@ -26,16 +27,17 @@
       "affiliation": "OpenBMB / ModelBest",
       "why": "Official account for MiniCPM open multimodal models, with on-device speed measurements.",
       "signal_to_noise": 4,
-      "status": "trial",
+      "status": "active",
       "added_on": "2026-10-20",
       "evidence": [
         "https://x.com/OpenBMB/status/2109694573408866351",
         "https://x.com/OpenBMB/status/2110364065822646570"
       ],
-      "last_qualifying_post": "2026-10-14",
+      "last_qualifying_post": "2026-10-30",
       "retired_reason": null,
       "x_user_id": "1496119294844825600",
-      "on_list": true
+      "on_list": true,
+      "promoted_on": "2026-11-03"
     },
     {
       "handle": "@FishAudio",
@@ -50,7 +52,7 @@
         "https://x.com/FishAudio/status/2110038429199450126",
         "https://x.com/FishAudio/status/2104617131920748857"
       ],
-      "last_qualifying_post": "2026-10-13",
+      "last_qualifying_post": "2026-10-27",
       "retired_reason": null,
       "x_user_id": "1779922590645235713",
       "on_list": true
@@ -62,16 +64,17 @@
       "affiliation": "fal",
       "why": "Generative media inference platform that also post-trains its own models (FLUX 3 Max) and posts speed numbers.",
       "signal_to_noise": 4,
-      "status": "trial",
+      "status": "active",
       "added_on": "2026-10-20",
       "evidence": [
         "https://x.com/fal/status/2112251022047412492",
         "https://x.com/fal/status/2110795863861674073"
       ],
-      "last_qualifying_post": "2026-10-19",
+      "last_qualifying_post": "2026-10-30",
       "retired_reason": null,
       "x_user_id": "39622874",
-      "on_list": true
+      "on_list": true,
+      "promoted_on": "2026-11-03"
     },
     {
       "handle": "@ExaAILabs",
@@ -80,16 +83,17 @@
       "affiliation": "Exa",
       "why": "Search API for agents; posts versioned releases and its own benchmarks (Exa 3.0, ATLAS).",
       "signal_to_noise": 4,
-      "status": "trial",
+      "status": "active",
       "added_on": "2026-10-20",
       "evidence": [
         "https://x.com/ExaAILabs/status/2112218730952601719",
         "https://x.com/ExaAILabs/status/2108245582745850303"
       ],
-      "last_qualifying_post": "2026-10-19",
+      "last_qualifying_post": "2026-11-02",
       "retired_reason": null,
       "x_user_id": "1423733191005724672",
-      "on_list": true
+      "on_list": true,
+      "promoted_on": "2026-11-03"
     },
     {
       "handle": "@OfficialLoganK",
@@ -104,7 +108,7 @@
         "https://x.com/OfficialLoganK/status/2110038940841545827",
         "https://x.com/OfficialLoganK/status/2102785495726219305"
       ],
-      "last_qualifying_post": "2026-10-13",
+      "last_qualifying_post": "2026-10-28",
       "retired_reason": null,
       "x_user_id": "284333988",
       "on_list": true
@@ -122,7 +126,7 @@
         "https://x.com/Thom_Wolf/status/2112141448019644458",
         "https://x.com/Thom_Wolf/status/2110381625200795942"
       ],
-      "last_qualifying_post": "2026-10-19",
+      "last_qualifying_post": "2026-10-29",
       "retired_reason": null,
       "x_user_id": "246939962",
       "on_list": true
@@ -134,16 +138,17 @@
       "affiliation": "Cua",
       "why": "Open computer-use agent infrastructure; ships SDK and sandbox (Cua Spaces) features.",
       "signal_to_noise": 4,
-      "status": "trial",
+      "status": "active",
       "added_on": "2026-10-20",
       "evidence": [
         "https://x.com/trycua/status/2112228154651881479",
         "https://x.com/trycua/status/2112589741879328979"
       ],
-      "last_qualifying_post": "2026-10-20",
+      "last_qualifying_post": "2026-10-30",
       "retired_reason": null,
       "x_user_id": "1883205292596359168",
-      "on_list": true
+      "on_list": true,
+      "promoted_on": "2026-11-03"
     },
     {
       "handle": "@PrismML",
@@ -170,16 +175,17 @@
       "affiliation": "Aleph Alpha",
       "why": "Posts evaluation methodology research with measurements (PriorBPB, multiple-choice spacing).",
       "signal_to_noise": 4,
-      "status": "trial",
+      "status": "active",
       "added_on": "2026-10-20",
       "evidence": [
         "https://x.com/Aleph__Alpha/status/2110008600936800588",
         "https://x.com/Aleph__Alpha/status/2112547676868817027"
       ],
-      "last_qualifying_post": "2026-10-20",
+      "last_qualifying_post": "2026-10-29",
       "retired_reason": null,
       "x_user_id": "1073704329528438785",
-      "on_list": true
+      "on_list": true,
+      "promoted_on": "2026-11-03"
     },
     {
       "handle": "@odysseyml",
@@ -224,16 +230,17 @@
       "affiliation": "Google",
       "why": "Official Gemini app account; first-hand on consumer Gemini features (Skills, Argon).",
       "signal_to_noise": 3,
-      "status": "trial",
+      "status": "active",
       "added_on": "2026-10-20",
       "evidence": [
         "https://x.com/GeminiApp/status/2110039322229649783",
         "https://x.com/GeminiApp/status/2105327839054835886"
       ],
-      "last_qualifying_post": "2026-10-13",
+      "last_qualifying_post": "2026-10-30",
       "retired_reason": null,
       "x_user_id": "1806359170830172162",
-      "on_list": true
+      "on_list": true,
+      "promoted_on": "2026-11-03"
     },
     {
       "handle": "@hume_ai",
@@ -248,7 +255,7 @@
         "https://x.com/hume_ai/status/2102804812031270923",
         "https://x.com/hume_ai/status/2108622420647248362"
       ],
-      "last_qualifying_post": "2026-10-09",
+      "last_qualifying_post": "2026-11-02",
       "retired_reason": null,
       "x_user_id": "1369199443015176193",
       "on_list": true
@@ -260,16 +267,17 @@
       "affiliation": "ElevenLabs",
       "why": "Official account for speech models (Eleven Realtime, v4) with latency and benchmark numbers.",
       "signal_to_noise": 4,
-      "status": "trial",
+      "status": "active",
       "added_on": "2026-10-20",
       "evidence": [
         "https://x.com/ElevenLabs/status/2112550782063247521",
         "https://x.com/ElevenLabs/status/2110759737583345706"
       ],
-      "last_qualifying_post": "2026-10-20",
+      "last_qualifying_post": "2026-10-29",
       "retired_reason": null,
       "x_user_id": "1478679005788311552",
-      "on_list": true
+      "on_list": true,
+      "promoted_on": "2026-11-03"
     },
     {
       "handle": "@mem0ai",
@@ -302,7 +310,7 @@
         "https://x.com/reflection_ai/status/2107186849370247235",
         "https://x.com/reflection_ai/status/2111079965529968798"
       ],
-      "last_qualifying_post": "2026-10-16",
+      "last_qualifying_post": "2026-10-21",
       "retired_reason": null,
       "x_user_id": "1800594921704898560",
       "on_list": true
@@ -320,7 +328,7 @@
         "https://x.com/Gradio/status/2105615321222823964",
         "https://x.com/Gradio/status/2104932384689082535"
       ],
-      "last_qualifying_post": "2026-10-01",
+      "last_qualifying_post": "2026-10-26",
       "retired_reason": null,
       "x_user_id": "1116114127519244290",
       "on_list": true
@@ -357,7 +365,7 @@
         "https://x.com/haoailab/status/2112305087225983427",
         "https://x.com/haoailab/status/2110904952839372895"
       ],
-      "last_qualifying_post": "2026-10-20",
+      "last_qualifying_post": "2026-10-30",
       "retired_reason": null,
       "x_user_id": "1768529398448492544",
       "on_list": true
@@ -432,7 +440,7 @@
         "https://x.com/htihle/status/2111782267345682840",
         "https://x.com/htihle/status/2110288604605882405"
       ],
-      "last_qualifying_post": "2026-10-20",
+      "last_qualifying_post": "2026-10-28",
       "retired_reason": null,
       "x_user_id": "229533071",
       "on_list": true
@@ -451,7 +459,7 @@
         "https://x.com/datalabto/status/2112664733522211160",
         "https://x.com/datalabto/status/2102852413363494978"
       ],
-      "last_qualifying_post": "2026-10-20",
+      "last_qualifying_post": "2026-10-26",
       "retired_reason": null,
       "x_user_id": "1889030825879945216",
       "on_list": true
@@ -470,7 +478,7 @@
         "https://x.com/NaceAI/status/2112642730228944958",
         "https://x.com/NaceAI/status/2112175183448461683"
       ],
-      "last_qualifying_post": "2026-10-20",
+      "last_qualifying_post": "2026-11-02",
       "retired_reason": null,
       "x_user_id": "1904210068704481280",
       "on_list": true
@@ -488,7 +496,7 @@
         "https://x.com/Letta_AI/status/2112957074644873289",
         "https://x.com/Letta_AI/status/2105015179855704164"
       ],
-      "last_qualifying_post": "2026-10-21",
+      "last_qualifying_post": "2026-10-30",
       "retired_reason": null,
       "x_user_id": "1821252546469752832",
       "on_list": true
@@ -508,7 +516,7 @@
         "https://x.com/turbopuffer/status/2112569613804580898",
         "https://x.com/turbopuffer/status/2113042657471836354"
       ],
-      "last_qualifying_post": "2026-10-21",
+      "last_qualifying_post": "2026-10-22",
       "retired_reason": null,
       "x_user_id": "1709608373275017219",
       "on_list": true
@@ -527,7 +535,7 @@
         "https://x.com/inco_ai/status/2107981893903982901",
         "https://x.com/inco_ai/status/2103228024275730863"
       ],
-      "last_qualifying_post": "2026-10-20",
+      "last_qualifying_post": "2026-10-23",
       "retired_reason": null,
       "x_user_id": "2051925010420477953",
       "on_list": true
@@ -546,7 +554,7 @@
         "https://x.com/PrismaXai/status/2112295123879079964",
         "https://x.com/PrismaXai/status/2112554927675593207"
       ],
-      "last_qualifying_post": "2026-10-21",
+      "last_qualifying_post": "2026-10-29",
       "retired_reason": null,
       "x_user_id": "1808395426628018176",
       "on_list": true
@@ -584,7 +592,7 @@
         "https://x.com/SparkLLM/status/2111045024322642365",
         "https://x.com/SparkLLM/status/2110692981665579293"
       ],
-      "last_qualifying_post": "2026-10-20",
+      "last_qualifying_post": "2026-10-31",
       "retired_reason": null,
       "x_user_id": "2090418458085433344",
       "on_list": true
@@ -621,7 +629,7 @@
         "https://x.com/LoubnaBenAllal1/status/2113212025560023513",
         "https://x.com/LoubnaBenAllal1/status/2108228619860656434"
       ],
-      "last_qualifying_post": "2026-10-22",
+      "last_qualifying_post": "2026-11-01",
       "retired_reason": null,
       "x_user_id": "1303627850025705473",
       "on_list": true
@@ -676,7 +684,7 @@
         "https://x.com/Alex_tra_memory/status/2112731253304594671",
         "https://x.com/Alex_tra_memory/status/2109868778615976113"
       ],
-      "last_qualifying_post": "2026-10-23",
+      "last_qualifying_post": "2026-10-31",
       "retired_reason": null,
       "x_user_id": "1947288873018531841",
       "on_list": true
@@ -751,7 +759,7 @@
       "evidence": [
         "https://x.com/trq212/status/2113844051938054167"
       ],
-      "last_qualifying_post": null,
+      "last_qualifying_post": "2026-10-28",
       "retired_reason": null,
       "owner_requested": true,
       "x_user_id": "879696238953865217",
@@ -904,7 +912,7 @@
         "https://x.com/LeRobotHF/status/2111427005094981643",
         "https://x.com/LeRobotHF/status/2110305869267104141"
       ],
-      "last_qualifying_post": "2026-10-23",
+      "last_qualifying_post": "2026-11-02",
       "retired_reason": null,
       "x_user_id": "1811128301764648960",
       "on_list": true
@@ -940,7 +948,7 @@
         "https://x.com/EmmaScharfmann/status/2112549281533923730",
         "https://x.com/EmmaScharfmann/status/2113585144963420361"
       ],
-      "last_qualifying_post": "2026-10-23",
+      "last_qualifying_post": "2026-10-26",
       "retired_reason": null,
       "x_user_id": "2067151436178141184",
       "on_list": true
@@ -959,7 +967,7 @@
         "https://x.com/JoshuaSWarren/status/2113767671615602763",
         "https://x.com/JoshuaSWarren/status/2113619227278037430"
       ],
-      "last_qualifying_post": "2026-10-24",
+      "last_qualifying_post": "2026-11-03",
       "retired_reason": null,
       "x_user_id": "293383320",
       "on_list": true
@@ -979,7 +987,7 @@
         "https://x.com/KBlueleaf/status/2111815926534516928",
         "https://x.com/KBlueleaf/status/2112150191692562649"
       ],
-      "last_qualifying_post": "2026-10-26",
+      "last_qualifying_post": "2026-10-31",
       "retired_reason": null,
       "x_user_id": "1393765529127514115",
       "on_list": true
@@ -1018,7 +1026,7 @@
         "https://x.com/ViC305/status/2113761570304188533",
         "https://x.com/ViC305/status/2111523015234384166"
       ],
-      "last_qualifying_post": "2026-10-26",
+      "last_qualifying_post": "2026-10-29",
       "retired_reason": null,
       "x_user_id": "45953078",
       "on_list": true
@@ -1037,7 +1045,7 @@
         "https://x.com/DirhousssiAmine/status/2114749427659472900",
         "https://x.com/DirhousssiAmine/status/2110823475061350621"
       ],
-      "last_qualifying_post": "2026-10-26",
+      "last_qualifying_post": "2026-10-29",
       "retired_reason": null,
       "x_user_id": "1296838831",
       "on_list": true
@@ -1057,7 +1065,7 @@
         "https://x.com/plotarmordev/status/2114874525435507169",
         "https://x.com/plotarmordev/status/2114644076029227206"
       ],
-      "last_qualifying_post": "2026-10-27",
+      "last_qualifying_post": "2026-11-02",
       "retired_reason": null,
       "x_user_id": "1513438573747486721",
       "on_list": true
@@ -1076,7 +1084,7 @@
         "https://x.com/XunzhuoLiu/status/2112343603209261092",
         "https://x.com/XunzhuoLiu/status/2108864432394903806"
       ],
-      "last_qualifying_post": "2026-10-27",
+      "last_qualifying_post": "2026-10-28",
       "retired_reason": null,
       "x_user_id": "2008097400272084993",
       "on_list": true
@@ -1095,7 +1103,7 @@
         "https://x.com/googlegemma/status/2114757896563253305",
         "https://x.com/googlegemma/status/2112657975789949376"
       ],
-      "last_qualifying_post": "2026-10-27",
+      "last_qualifying_post": "2026-10-30",
       "retired_reason": null,
       "x_user_id": "1908326331609468928",
       "on_list": true
@@ -1130,7 +1138,7 @@
       "evidence": [
         "https://x.com/NVIDIAAI/status/2113657112408785153"
       ],
-      "last_qualifying_post": null,
+      "last_qualifying_post": "2026-11-02",
       "retired_reason": null,
       "owner_requested": true,
       "x_user_id": "740238495952736256",
@@ -1228,7 +1236,7 @@
         "https://x.com/linoy_tsaban/status/2116267951150301682",
         "https://x.com/linoy_tsaban/status/2113701124612198556"
       ],
-      "last_qualifying_post": "2026-11-01",
+      "last_qualifying_post": "2026-11-02",
       "retired_reason": null,
       "x_user_id": "3253741800",
       "on_list": true
@@ -1248,7 +1256,7 @@
         "https://x.com/coldniko/status/2115407569049272430",
         "https://x.com/coldniko/status/2116442821368713606"
       ],
-      "last_qualifying_post": "2026-10-31",
+      "last_qualifying_post": "2026-11-02",
       "retired_reason": null,
       "x_user_id": "200932008",
       "on_list": true
@@ -1308,6 +1316,122 @@
       "last_qualifying_post": "2026-10-30",
       "retired_reason": null,
       "x_user_id": "2051457164250640384",
+      "on_list": true
+    },
+    {
+      "handle": "@ZyphraAI",
+      "name": "Zyphra",
+      "group": "labs",
+      "affiliation": "Zyphra",
+      "why": "Lab account shipping measured research and inference work: ZHA hybrid attention paper (arXiv 2610.42112) and ZOE inference wave 2 on MI355X with TTFT numbers; hiring posts only as thread tails.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-11-03",
+      "evidence": [
+        "https://x.com/ZyphraAI/status/2117377426242367669",
+        "https://x.com/ZyphraAI/status/2112596055531679810"
+      ],
+      "last_qualifying_post": "2026-11-02",
+      "retired_reason": null,
+      "source": "roster_review",
+      "x_user_id": "1377338130785828867",
+      "on_list": true
+    },
+    {
+      "handle": "@rikiyatakehi",
+      "name": "Rikiyat Takehi",
+      "group": "research",
+      "affiliation": "MIT CSAIL (PhD); ex-NVIDIA intern, ex-Mixedbread",
+      "why": "First-author researcher: Weight-Space Programming (LLM edits Qwen3.5-0.8B weights, blog plus HF model) and an arXiv study showing tool use raises refusal failures across 11 MLLMs. Note: the sweep recheck suggested doubt 2 on the Weight-Space claim; watch.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-11-03",
+      "evidence": [
+        "https://x.com/rikiyatakehi/status/2117313742891327994",
+        "https://x.com/rikiyatakehi/status/2110030300080423059"
+      ],
+      "last_qualifying_post": "2026-11-02",
+      "retired_reason": null,
+      "source": "roster_review",
+      "x_user_id": "1267907798081212416",
+      "on_list": true
+    },
+    {
+      "handle": "@xingyudang",
+      "name": "Xingyu Dang",
+      "group": "research",
+      "affiliation": "Princeton (PhD)",
+      "why": "Measured first-hand research: the Writing Weights Index and a batch-size/optimizer scaling sweep (arXiv 2610.08975, batch-size-scaling.com); no promotion.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-11-03",
+      "evidence": [
+        "https://x.com/xingyudang/status/2117428789068386630",
+        "https://x.com/xingyudang/status/2108687207561056500"
+      ],
+      "last_qualifying_post": "2026-11-03",
+      "retired_reason": null,
+      "source": "roster_review",
+      "x_user_id": "1658540640484073472",
+      "on_list": true
+    },
+    {
+      "handle": "@maksym_andr",
+      "name": "Maksym Andriushchenko",
+      "group": "research",
+      "affiliation": "Tübingen / Exponential (expsec.ai)",
+      "why": "Agent eval author: AgentTime time-awareness benchmark update, compaction-on-long-horizon-agents paper, PostTrainBench and Skill-Inject results cited in Meta system card; hiring posts ~3 of 18, under the 1-in-5 bar.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-11-03",
+      "evidence": [
+        "https://x.com/maksym_andr/status/2117369736518623567",
+        "https://x.com/maksym_andr/status/2116225757861036166",
+        "https://x.com/maksym_andr/status/2114420610520723577"
+      ],
+      "last_qualifying_post": "2026-11-02",
+      "retired_reason": null,
+      "source": "roster_review",
+      "x_user_id": "987061319378587649",
+      "on_list": true
+    },
+    {
+      "handle": "@zxlzr",
+      "name": "Ningyu Zhang",
+      "group": "research",
+      "affiliation": "ZJUNLP, Zhejiang University",
+      "why": "Lab lead posting papers with code and data: Δτ-Bench moving-frontier agent benchmark (paper, code, dataset), experiential-learning agents, LightRSI long-horizon session work.",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-11-03",
+      "evidence": [
+        "https://x.com/zxlzr/status/2117258520307585041",
+        "https://x.com/zxlzr/status/2110619174917534034",
+        "https://x.com/zxlzr/status/2108896470971871493"
+      ],
+      "last_qualifying_post": "2026-11-02",
+      "retired_reason": null,
+      "source": "roster_review",
+      "x_user_id": "20495560",
+      "on_list": true
+    },
+    {
+      "handle": "@harborframework",
+      "name": "Harbor",
+      "group": "devtools",
+      "affiliation": "Harbor (agent eval framework; laude-institute/harbor)",
+      "why": "Official agent-eval harness account (Terminal-Bench lineage): v0.25.0 reward-hacking mitigations, Docker Sandboxes backend, harbor run dataset drops; one meetup plug in 30 days.",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-11-03",
+      "evidence": [
+        "https://x.com/harborframework/status/2115557894301331730",
+        "https://x.com/harborframework/status/2110832466647011742"
+      ],
+      "last_qualifying_post": "2026-10-28",
+      "retired_reason": null,
+      "source": "roster_review",
+      "x_user_id": "2013765983048183808",
       "on_list": true
     }
   ],
@@ -1657,6 +1781,42 @@
         "@voicearena_ai",
         "@shobhitbanga"
       ]
+    },
+    {
+      "kind": "blog",
+      "name": "Zyphra research",
+      "url": "https://zyphra.com/our-work",
+      "why": "Zyphra papers and inference reports (ZHA, ZOE) with measurements; not in sources.json.",
+      "seen_via": [
+        "@ZyphraAI"
+      ]
+    },
+    {
+      "kind": "feed",
+      "name": "ARC Prize verified leaderboard",
+      "url": "https://arcprize.org/leaderboard",
+      "why": "Verified ARC-AGI-1/2/3 scores with cost per task for new frontier and open-weight models; @arcprize itself failed the promotion screen; not in sources.json.",
+      "seen_via": [
+        "@arcprize"
+      ]
+    },
+    {
+      "kind": "github_releases",
+      "name": "Harbor releases",
+      "url": "https://github.com/laude-institute/harbor/releases.atom",
+      "why": "Agent-eval harness releases (v0.25.0 reward-hacking mitigations); atom feed confirmed live; not in sources.json.",
+      "seen_via": [
+        "@harborframework"
+      ]
+    },
+    {
+      "kind": "site",
+      "name": "AgentTime bench",
+      "url": "https://agenttimebench.com/",
+      "why": "Agent time-awareness benchmark with combined score across frontier models; not in sources.json.",
+      "seen_via": [
+        "@maksym_andr"
+      ]
     }
   ],
   "list": {
@@ -1664,8 +1824,8 @@
     "name": "Magpie roster",
     "owner": "@CameronSutcliff",
     "private": true,
-    "member_count": 59,
+    "member_count": 74,
     "scope": "every trial and active account in this file; curated config accounts are not members yet",
-    "updated_at": "2026-10-28T23:55:00Z"
+    "updated_at": "2026-11-03T10:34:27Z"
   }
 }
