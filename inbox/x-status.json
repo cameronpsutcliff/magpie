@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-03T10:34:27Z",
-  "job": "roster",
+  "updated_at": "2026-11-03T11:09:00Z",
+  "job": "sweep",
   "prompt": "v6.1",
-  "calls_used_today": 24,
+  "calls_used_today": 38,
   "notes_via_api": false,
   "last_sweep": {
-    "ran_at": "2026-11-03T03:15:00Z",
-    "items": 7,
+    "ran_at": "2026-11-03T11:09:00Z",
+    "items": 6,
     "queries": 11,
     "deep_reads": 2,
     "rechecks": 2,
@@ -212,7 +212,8 @@
     "No retirements: no account has 2+ doubt>=2 flags in 30 days (@NaceAI has 1); 45-day rule cannot bite before ~2026-11-07. Prune: oldest sweep file 2026-10-20T17-39 is under 14 days old at run time; first prune due at the 2026-11-04 review.",
     "Rejected 2026-11-03 (do not recheck for 30 days): @PierreStock (1 capability post in 30d), @arcprize (strong verified results but event/competition promotion ~2 of 9 top-level, near-miss; leaderboard added as source lead), @adamdotdev (jokes/opinion, 1 capability post; @opencode curated), @levantolabs (promo/free-token and crypto top-up posts over 1 in 5), @mhelcig (doubt-2 on its own 1-bit headline release 2026-11-02 plus Unsloth dispute; near-miss, revisit), @_arohan_ (mostly jokes/opinion), @NielsRogge (mostly Papers with Code listing promotion), @AssemblyAI (ice-cream truck/happy-hour/customer-story promotion over 1 in 5).",
     "Owner-saves screen 2026-11-03: no new authors with 2+ kept saves in 30 days. @MatthewBerman (owner_requested) kept. @jankeesvw passes (Herdr/Omarchy builds; pins posts under 1 in 5). @mirku21 flagged again for Cameron: still daily templated profane Claude Code tip-bait, not auto-retired.",
-    "Security: no verified leads hitting the stack surfaced in this review. No injection attempts seen in fetched content."
+    "Security: no verified leads hitting the stack surfaced in this review. No injection attempts seen in fetched content.",
+    "Sweep 2026-11-03T11:09Z: Dessa lead's X handle is @RagavanThurair (linked from block.xyz/dessa); suggest adding it to the horizon checks. search_posts_all accepts max_results up to 25 here. stack.json lists Hermes agent but not its bundled Chromium or Playwright; suggest adding 'playwright', 'chromium', 'chrome for testing' match terms."
   ],
   "errors": [],
   "follows_today": 0,

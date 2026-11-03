@@ -1,0 +1,329 @@
+{
+  "ran_at": "2026-11-03T11:09:00Z",
+  "bot": "magpie-scout",
+  "prompt": "v6.1",
+  "since": "2026-11-03T03:15:00Z",
+  "queries": 11,
+  "calls": 14,
+  "items": [
+    {
+      "title": "Anthropic releases FlashProve, an open-source research prototype for zero-knowledge proofs of LLM inference",
+      "url": "https://x.com/sweis/status/2117485473497309299",
+      "handle": "@sweis",
+      "group": "labs",
+      "origin": "discovery",
+      "summary": "Anthropic's Frontier Red Team published FlashProve, which lets a provider commit to a set of hidden weights and prove that each reply came from that model. Anyone can check a proof on an ordinary CPU in seconds. On Llama 4 Maverick (400B MoE, 4-bit, 1,024-token context) one H100 proves about 110 tokens per second with roughly 19 MB of proof per request, about 70 to 95 times the GPU time of plain vLLM inference. The protocol's soundness statements are written in Lean 4, and Anthropic says Claude produced much of the optimization work. The repo is Apache 2.0 and marked as a research artifact that is not maintained.",
+      "kind": "tool",
+      "evidence": "measured",
+      "links": [
+        "https://www.anthropic.com/research/provable-inference",
+        "https://github.com/anthropics/FlashProve"
+      ],
+      "vendor": "Anthropic",
+      "posted_at": "2026-11-03T05:14:12Z",
+      "metrics": {
+        "likes": 396,
+        "quotes": 21,
+        "replies": 27,
+        "views": 40403
+      },
+      "confirmed_by": [
+        "@teortaxesTex"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": "Vendor numbers only; the proving overhead (70 to 95x) and 1,024-token context limit make it a research prototype, not something to run in production.",
+        "source": "https://github.com/anthropics/FlashProve"
+      },
+      "reception": "Cryptographers and engineers mostly praise the Lean-verified soundness claims and the speedup over earlier open systems; the main questions are context length and the cost per token."
+    },
+    {
+      "title": "One-bit kernel patch lifts M1 Max GPU memory bandwidth on Linux from 241 to 368 GB/s, past macOS",
+      "url": "https://x.com/JoshuaSWarren/status/2117528278663897439",
+      "handle": "@JoshuaSWarren",
+      "group": "local",
+      "origin": "sweep",
+      "summary": "A pull request to the linux-aurora Apple silicon kernel sets the GPU power-request bit in the PMP report on t600x chips, so memory leaves its idle clock when the GPU is busy. On a 16-inch M1 Max a GPU read microbenchmark goes from 241 to 368 GB/s (macOS reads 361). With the patch a 2B 4-bit model decodes 25 to 28 percent faster. The same author published a same-host benchmark where an RTX 5060 Ti in a Thunderbolt enclosure runs Qwen3.8-27B Q4_0 at 23.8 tokens per second on the Linux M1 Max, 2.6 times the laptop GPU.",
+      "kind": "tool",
+      "evidence": "measured",
+      "links": [
+        "https://github.com/omacom/linux-aurora/pull/334",
+        "https://github.com/joshuaswarren/omarchy-egpu/blob/main/benchmarks/2026-11-02-threecard-5060ti-b60-m1max.md"
+      ],
+      "vendor": null,
+      "posted_at": "2026-11-03T08:04:18Z",
+      "metrics": {
+        "likes": 297,
+        "quotes": 3,
+        "replies": 15,
+        "views": 9760
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Single author, one machine; the PR is still open and unmerged.",
+        "source": "https://github.com/omacom/linux-aurora/pull/334"
+      },
+      "reception": "Replies are enthusiastic Asahi and Omarchy users asking when it lands; no one reports a failed reproduction yet."
+    },
+    {
+      "title": "Hugging Face reproduces Weight-Space Programming with ML Intern; edited Qwen3.5-0.8B and demo now on the Hub",
+      "url": "https://x.com/NielsRogge/status/2117541532827848972",
+      "handle": "@NielsRogge",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "Hugging Face rebuilt the weight-edited Qwen3.5-0.8B from the authors' published logs using ML Intern, its open-source research harness, and re-ran MATH-500 at 51.0 percent. The authors posted the edited model on the Hub and Hugging Face published its own copy and a live demo Space.",
+      "kind": "model",
+      "evidence": "measured",
+      "links": [
+        "https://huggingface.co/RikiyaT/Qwen3.5-0.8B-weight-space-programming",
+        "https://huggingface.co/ML-Intern-lab/Qwen3.5-0.8B-weight-space-programming",
+        "https://huggingface.co/spaces/ML-Intern-lab/weight-space-programming-demo"
+      ],
+      "vendor": "Hugging Face",
+      "posted_at": "2026-11-03T08:56:58Z",
+      "metrics": {
+        "likes": 114,
+        "quotes": 1,
+        "replies": 8,
+        "views": 4956
+      },
+      "confirmed_by": [
+        "@rikiyatakehi"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 2,
+        "community_note": null,
+        "pushback": "The reproduction confirms the number, not the cause: the earlier retest argues most of the gain comes from fixing the base model's thinking-mode loops (47% unedited in non-thinking mode). @CanyuChen3 also raises safety concerns about agents editing parameters directly.",
+        "source": "https://x.com/dummerspast39/status/2117416640132366570"
+      },
+      "reception": "Strong interest in having a runnable artifact; the loop-fixing critique from the last sweep still stands."
+    },
+    {
+      "title": "Xiaomi open-sources the MiMo-V2.6 RL environments on Hugging Face",
+      "url": "https://x.com/Trendcanvasai/status/2117568038991974802",
+      "handle": "@Trendcanvasai",
+      "group": "open-models",
+      "origin": "discovery",
+      "summary": "Xiaomi published the reinforcement-learning environments used to train MiMo-V2.6 as an Apache 2.0 dataset: thousands of tasks across coding and SWE, cybersecurity and tool use, with rule-based verifiers and Docker images, usable directly for agent RL runs.",
+      "kind": "dataset",
+      "evidence": "artifact",
+      "links": [
+        "https://huggingface.co/datasets/XiaomiMiMo/MiMo-V2.6-RL-oss"
+      ],
+      "vendor": "Xiaomi",
+      "posted_at": "2026-11-03T10:42:17Z",
+      "metrics": {
+        "likes": 0,
+        "quotes": 0,
+        "replies": 0,
+        "views": 2
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      },
+      "reception": "Too new for X reaction; about 1.05K likes on the Hugging Face dataset page."
+    },
+    {
+      "title": "Google publishes a tutorial for Gemini Computer Use with Cua Driver",
+      "url": "https://x.com/osanseviero/status/2117523907703923198",
+      "handle": "@osanseviero",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "A new AI Studio guide walks through driving a desktop with the Gemini Computer Use model through Cua Driver, Cua's open-source computer-control layer.",
+      "kind": "tutorial",
+      "evidence": "artifact",
+      "links": [
+        "https://aistudio.google.com/learn/partner-cua-computer-use-gemini"
+      ],
+      "vendor": "Google",
+      "posted_at": "2026-11-03T07:46:55Z",
+      "metrics": {
+        "likes": 166,
+        "quotes": 3,
+        "replies": 10,
+        "views": 10829
+      },
+      "confirmed_by": [
+        "@trycua"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      },
+      "reception": "Reposted by Cua; replies are setup questions."
+    },
+    {
+      "title": "Hermes Agent v0.22.6 adds skill locking and a multi-machine gateway fix",
+      "url": "https://x.com/witcheer/status/2117549594955456834",
+      "handle": "@witcheer",
+      "group": "agents",
+      "origin": "sweep",
+      "summary": "v0.22.6 adds `hermes curator lock <skill>`, which blocks the agent from changing a skill by any write path, even under --yolo. Locks are per profile; `hermes curator status` lists them and `hermes curator unlock` lifts them. Teknium says the same patch release fixes an issue for multi-machine and gateway users and recommends upgrading.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.6",
+        "https://x.com/Teknium/status/2117514571623944583"
+      ],
+      "vendor": "Nous Research",
+      "posted_at": "2026-11-03T09:29:00Z",
+      "metrics": {
+        "likes": 16,
+        "quotes": 0,
+        "replies": 5,
+        "views": 900
+      },
+      "confirmed_by": [
+        "@Teknium"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      },
+      "reception": "Small but positive; Hermes users ask about locking memory files too."
+    }
+  ],
+  "saved_rejected": [],
+  "list_posts_read": 93,
+  "list_pages": 1,
+  "saves": {
+    "read": 20,
+    "new_since_last_sweep": 0,
+    "kept": 0,
+    "note": "Live bookmarks read for id 1521986356721123328; newest 20 all already seen."
+  },
+  "discovery": {
+    "queries": 2,
+    "kept": 2,
+    "note": "One release search and one security search. FlashProve came via a roster quote (@teortaxesTex); MiMo-V2.6 RL environments via the release search."
+  },
+  "horizon": {
+    "block-dessa": "Two reads. block.xyz/dessa still shows a waitlist and safety-researcher early access. @RagavanThurair (linked from the Dessa page) and @jack posted speed demos only. No weights, API or paper. No trigger."
+  },
+  "rechecks": [
+    {
+      "url": "https://x.com/rikiyatakehi/status/2117313742891327994",
+      "item": "Weight-Space Programming (kept 2026-11-02T19:05)",
+      "update": "Now about 49K likes. Hugging Face reproduced the edit (MATH-500 51.0%) and the model is on the Hub (kept as a new item). The loop-fixing critique stands; @CanyuChen3 adds safety concerns about agents editing parameters. Keep doubt at 2.",
+      "sources": [
+        "https://x.com/NielsRogge/status/2117541532827848972",
+        "https://x.com/rikiyatakehi/status/2117474915561701780"
+      ]
+    },
+    {
+      "url": "https://x.com/MistralAI/status/2117562068220195097",
+      "item": "Mistral Large 4 technical report (kept 2026-11-02T19:05)",
+      "update": "Report now on alphaXiv/arXiv. alphaXiv highlights the finding that a 16x KV-cache cut hurt long-context agentic tasks while perplexity looked unchanged. No pushback.",
+      "sources": [
+        "https://x.com/askalphaxiv/status/2117523112594198766"
+      ]
+    }
+  ],
+  "videos": [],
+  "security_forwarded": [
+    {
+      "url": "https://x.com/stretchcloud/status/2117469819683713174",
+      "matched": "stack: Hermes agent (bundled browser), plus always_forward agent tooling (Playwright and Playwright MCP).",
+      "summary": "Hermes Agent ships Chrome for Testing 145.0.7632.6 (about January 2026) as its packaged browser, and Playwright 1.64.0/1.64.1 bundle Chromium 156.0.8078.4. Both predate Chrome's Oct 27 stable update (156.0.8078.73/.74), which fixed four critical bugs: CVE-2026-118306 (FileSystem memory corruption, CVSS 9.6, code execution outside the sandbox from a crafted page), CVE-2026-118331, CVE-2026-118348 and CVE-2026-118344. Playwright's chromiumSandbox defaults to false. No exploitation reported. Fix: Hermes PR #148342 pins Chrome for Testing 156.0.8078.80 but is open and unreleased (latest release v0.22.6); for Playwright, launch with chromiumSandbox true or channel 'chrome', and isolate agent browsing from credentials.",
+      "sources": [
+        "https://github.com/NousResearch/hermes-agent/pull/148342",
+        "https://ctxsec.com/items/playwright-1-64-bundled-chromium-156-0-8078-4-predates-oct-27-chrome-fixes",
+        "https://github.com/microsoft/playwright/releases"
+      ]
+    }
+  ],
+  "security_na": [
+    {
+      "url": "https://x.com/The_Tradesman1/status/2117519517287117038",
+      "reason": "Cursor marketplace Claude Code extension backdoor 2.1.312/2.1.313, already handled. New detail: Microsoft Threat Intelligence says the builds were only on Cursor's marketplace, never the VS Marketplace or npm."
+    },
+    {
+      "url": "https://x.com/unccno/status/2117536229600395663",
+      "reason": "Same Cursor marketplace Claude Code extension backdoor; already handled."
+    },
+    {
+      "url": "https://x.com/VanceXin/status/2117509718310838450",
+      "reason": "Same Cursor extension backdoor (check version and ~/.ssh/authorized_keys); already handled."
+    },
+    {
+      "url": "https://x.com/macikerdev/status/2117542319847067752",
+      "reason": "AGENTS.md Downloads drop aimed at Codex (Forever Security); already forwarded 2026-10-25."
+    },
+    {
+      "url": "https://x.com/viehgroup/status/2117468873767489661",
+      "reason": "testmetest npm campaign; already logged 2026-10-28."
+    },
+    {
+      "url": "https://x.com/RealDogelana",
+      "reason": "Agent browsers lagging Chrome updates; folded into the forwarded Chromium lead."
+    },
+    {
+      "url": "https://x.com/theomlondhe",
+      "reason": "IBM Langflow bulletin; already filed 2026-11-02, no Langflow in the fleet."
+    },
+    {
+      "url": "https://x.com/bounce12340",
+      "reason": "LiteLLM 1.107.0 / Railway timeline recap; already handled."
+    },
+    {
+      "url": "https://x.com/FatemahAlharbi",
+      "reason": "Listicle repeating the October OpenCode key exposure; already logged 2026-10-25."
+    }
+  ],
+  "skipped": [
+    {
+      "url": "https://x.com/osanseviero/status/2117532441275498977",
+      "reason": "EmbeddingGemma 2 paper (arXiv 2610.37364) already kept 2026-10-29."
+    },
+    {
+      "url": "https://x.com/askalphaxiv/status/2117522225691873623",
+      "reason": "Soft-MTP paper post has no primary link."
+    },
+    {
+      "url": "https://x.com/rapidmlx/status/2117490654922281099",
+      "reason": "MiniMax H3 local demo clip; model already covered."
+    },
+    {
+      "url": "https://x.com/aitrackerbot/status/2117542686030708950",
+      "reason": "ByteDance genfirst weights claim with screenshot only, no link."
+    },
+    {
+      "url": "https://x.com/addyosmani/status/2117512471930167377",
+      "reason": "Opinion essay on critical thinking with agents."
+    },
+    {
+      "url": "https://x.com/Letta_AI/status/2117548210315207137",
+      "reason": "Analysis article on the FrontierMemory benchmark, already covered."
+    },
+    {
+      "url": "https://x.com/plotarmordev",
+      "reason": "TensorFold vs vLLM on DGX Spark numbers with no link or method."
+    },
+    {
+      "url": "https://x.com/amasad",
+      "reason": "Company policy news about an AI tool ban, no technical document."
+    },
+    {
+      "note": "Also skipped: opinion and jokes (KBlueleaf, teortaxesTex, levie, maksym_andr, thsottiaux, victormustar), events and promotion (daytonaio, GitHub Universe, PyTorch meetup, NVIDIA cities), DeepSeek V5 on Ascend rumor, Endeavor 1.1 (unverified), old uncensored-DeepSeek repost, PrismaX pi0.5 (already kept 2026-10-22), Hex dictation and WeVisOne-VL (already kept), vLLM Canary (already kept), $DESSA crypto token."
+    }
+  ],
+  "errors": [],
+  "proposed_follows_note": "None. No account met the 3-qualifying-posts bar this sweep; no follows made (no browser)."
+}
