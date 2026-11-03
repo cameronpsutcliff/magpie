@@ -1,0 +1,490 @@
+{
+  "ran_at": "2026-11-03T19:09:00Z",
+  "bot": "magpie-scout",
+  "prompt": "v6.1",
+  "since": "2026-11-03T15:08:00Z",
+  "queries": 11,
+  "calls": 16,
+  "items": [
+    {
+      "title": "Claude plugins can auto-connect at login through MCP servers that accept Claude as a trusted issuer",
+      "url": "https://x.com/ClaudeDevs/status/2117680635561312732",
+      "handle": "@ClaudeDevs",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "Claude can now connect a user's plugins automatically when they sign in, as long as the plugin's MCP server trusts Claude as a token issuer. Team and Enterprise admins set a plugin up once and teammates are connected on first use with no separate plugin login. Anthropic is asking plugin builders to add support for this.",
+      "kind": "feature",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "Anthropic",
+      "posted_at": "2026-11-03T18:09:42Z",
+      "metrics": {
+        "likes": 1486,
+        "quotes": 31,
+        "replies": 94,
+        "views": 86901
+      },
+      "confirmed_by": [
+        "https://x.com/bcherny/status/2117693181651542387"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": "One quote (@jatingargiitk) notes that tokens already issued do not vanish when an employee is removed, so offboarding still needs testing.",
+        "source": "https://x.com/jatingargiitk/status/2117693491308634542"
+      }
+    },
+    {
+      "title": "Simon Willison: Qwen 3.8 27B on a laptop also identifies games from raw policy-network weights",
+      "url": "https://x.com/simonw/status/2117655816581071203",
+      "handle": "@simonw",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "Simon ran the no-tools prompts from the Weight-Space Programming paper, which give a model only the floating point weights of a small game-playing network, against Qwen 3.8 27B in LM Studio. It correctly named Pac-Man, Pong and Breakout after 46 to 65 minutes of reasoning each and failed on Freeway. He separates this no-tools reading from the paper's tool-using weight edits and says the wider hype is not justified.",
+      "kind": "technique",
+      "evidence": "measured",
+      "links": [
+        "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/",
+        "https://github.com/RikiyaT/lm_understand-logs"
+      ],
+      "vendor": null,
+      "posted_at": "2026-11-03T16:31:05Z",
+      "metrics": {
+        "likes": 1814,
+        "quotes": 41,
+        "replies": 181,
+        "views": 83911
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Allen AI StateBench: frontier models drop to 13% or lower on long state-tracking problems",
+      "url": "https://x.com/allen_ai/status/2117670295339171994",
+      "handle": "@allen_ai",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "StateBench is a new eval for following state changes across long text, like an object changing hands or a variable being reassigned. Ai2 reports that GPT-6 Sol and Claude Opus 5.5 fall to 13% accuracy or lower on the hardest, longest problems. Code and data are on GitHub.",
+      "kind": "eval",
+      "evidence": "measured",
+      "links": [
+        "https://github.com/allenai/state-bench"
+      ],
+      "vendor": "Ai2",
+      "posted_at": "2026-11-03T17:28:37Z",
+      "metrics": {
+        "likes": 64,
+        "quotes": 5,
+        "replies": 8,
+        "views": 4189
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "E2B Workload Identity gives every sandbox a signed identity instead of long-lived credentials",
+      "url": "https://x.com/e2b/status/2117652208095551640",
+      "handle": "@e2b",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "Each E2B sandbox now carries a signed identity, so a backend can tell which sandbox is calling and decide what it may access without handing out and rotating long-lived secrets. Generally available on E2B Cloud and supported in bring-your-own-cloud.",
+      "kind": "feature",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "E2B",
+      "posted_at": "2026-11-03T16:16:45Z",
+      "metrics": {
+        "likes": 23,
+        "quotes": 3,
+        "replies": 2,
+        "views": 848
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Perplexity pplx-embed-v2-context: open-weight 9B and 0.6B contextual embedding models, tuned with turbopuffer",
+      "url": "https://x.com/turbopuffer/status/2117650323162759172",
+      "handle": "@turbopuffer",
+      "group": "applied",
+      "origin": "sweep",
+      "summary": "Perplexity released open-weight vision-language embedding models at 9B and 0.6B that return one int8 vector per document, or one per chunk where each chunk's vector is computed with the whole document in view. turbopuffer says it evaluated Perplexity's checkpoints against its private retrieval benchmark during training, and a joint paper is on arXiv.",
+      "kind": "model",
+      "evidence": "claim",
+      "links": [
+        "https://arxiv.org/abs/2610.38854"
+      ],
+      "vendor": "Perplexity",
+      "posted_at": "2026-11-03T16:09:15Z",
+      "metrics": {
+        "likes": 33,
+        "quotes": 1,
+        "replies": 0,
+        "views": 2255
+      },
+      "confirmed_by": [
+        "https://x.com/perplexitydevs/status/2117373903287050675"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "LeRobot adds Galaxea G0.5, a 2B vision-language-action model that plans subtasks and boxes before acting",
+      "url": "https://x.com/LeRobotHF/status/2117641904175169763",
+      "handle": "@LeRobotHF",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "G0.5 is an open 2B VLA built on Qwen3.5. Before each chunk of actions it predicts the current subtask, bounding boxes for the objects involved, and then the actions conditioned on that reasoning. LeRobot's annotation pipeline can also generate plans, memory and visual Q&A for datasets.",
+      "kind": "model",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "Galaxea",
+      "posted_at": "2026-11-03T15:35:48Z",
+      "metrics": {
+        "likes": 81,
+        "quotes": 2,
+        "replies": 5,
+        "views": 2722
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Gemini API CLI now ships as an agent skill",
+      "url": "https://x.com/_philschmid/status/2117674864907608543",
+      "handle": "@_philschmid",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "Google packaged the Gemini API CLI (kept 2026-10-26) as an installable skill so a coding agent can call Gemini for images, speech, video and files without one-off scripts. Install is npx skills add google-gemini/gemini-skills --skill gemini-api-cli.",
+      "kind": "tool",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "Google",
+      "posted_at": "2026-11-03T17:46:46Z",
+      "metrics": {
+        "likes": 60,
+        "quotes": 2,
+        "replies": 20,
+        "views": 3570
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Cua Driver works with Google Antigravity's agent across desktop apps",
+      "url": "https://x.com/trycua/status/2117693416754778583",
+      "handle": "@trycua",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "A new Google AI Studio integration guide lets the Antigravity agent drive apps on your computer, with each task in its own background Cua Driver session, on macOS, Windows and Linux. Relevant because Antigravity (agy) is in the fleet.",
+      "kind": "tool",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "Cua",
+      "posted_at": "2026-11-03T19:00:30Z",
+      "metrics": {
+        "likes": 9,
+        "quotes": 1,
+        "replies": 1,
+        "views": 365
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "LlamaIndex makes OCRia-1 generate tokens nearly 10x faster on one B200",
+      "url": "https://x.com/llama_index/status/2117660347087626402",
+      "handle": "@llama_index",
+      "group": "applied",
+      "origin": "sweep",
+      "summary": "LlamaIndex's infra team stacked seventeen small serving optimizations, each checked for speed and accuracy, to get its OCRia-1 document parsing model close to 10x faster token generation on a single B200. They wrote up the method and plan to upstream some changes to vLLM.",
+      "kind": "engineering",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "LlamaIndex",
+      "posted_at": "2026-11-03T16:49:05Z",
+      "metrics": {
+        "likes": 15,
+        "quotes": 1,
+        "replies": 7,
+        "views": 1914
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "OpenRouter Guardrails add org-wide policies with per-person budget and model exceptions",
+      "url": "https://x.com/OpenRouter/status/2117646972933046520",
+      "handle": "@OpenRouter",
+      "group": "applied",
+      "origin": "sweep",
+      "summary": "Admins can now set budget, model access and moderation rules for a whole org, then give specific people bigger budgets or more models inside those limits, and change each policy on its own.",
+      "kind": "feature",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "OpenRouter",
+      "posted_at": "2026-11-03T15:55:56Z",
+      "metrics": {
+        "likes": 64,
+        "quotes": 4,
+        "replies": 11,
+        "views": 6521
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Prime Intellect finds and fixes issues in popular public evals",
+      "url": "https://x.com/PrimeIntellect/status/2117691977487831483",
+      "handle": "@PrimeIntellect",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "Prime Intellect audited several widely used public evaluations, found problems, fixed them and published its findings. The post does not name the evals; details are in the linked write-up.",
+      "kind": "eval",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "Prime Intellect",
+      "posted_at": "2026-11-03T18:54:46Z",
+      "metrics": {
+        "likes": 35,
+        "quotes": 3,
+        "replies": 4,
+        "views": 1665
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "safeagents judge bench tests whether a judge model can spot agent tool-call misbehavior",
+      "url": "https://x.com/yb2698/status/2117693332319330513",
+      "handle": "@yb2698",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "A new Hugging Face dataset checks if a decision model can flag bad agent tool calls such as reward hacking, sandbox escape and harness introspection.",
+      "kind": "eval",
+      "evidence": "claim",
+      "links": [
+        "https://huggingface.co/datasets/harness-hub/safeagents-judge-bench"
+      ],
+      "vendor": null,
+      "posted_at": "2026-11-03T19:00:09Z",
+      "metrics": {
+        "likes": 2,
+        "quotes": 0,
+        "replies": 2,
+        "views": 42
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "colibri: pure C runtime that runs 744B MoE models in about 10GB of RAM by tiering experts",
+      "url": "https://x.com/JubayarAdnan/status/2117663101315424368",
+      "handle": "@JubayarAdnan",
+      "group": "discovery",
+      "origin": "discovery",
+      "summary": "colibri keeps hot MoE experts on the GPU, warm ones in RAM and cold ones on NVMe, so very large MoE models like GLM-5.2, Kimi K3 and DeepSeek V4 Flash can run on a normal PC behind a local OpenAI-compatible API. The numbers come from an aggregator post, not the author, and speed is not stated.",
+      "kind": "tool",
+      "evidence": "claim",
+      "links": [
+        "https://github.com/JustVugg/colibri"
+      ],
+      "vendor": null,
+      "posted_at": "2026-11-03T17:00:02Z",
+      "metrics": {
+        "likes": 2,
+        "quotes": 0,
+        "replies": 2,
+        "views": 69
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Second-hand post with no throughput figures; expect very slow generation from NVMe.",
+        "source": null
+      }
+    }
+  ],
+  "saved_rejected": [],
+  "list_posts_read": 93,
+  "list_pages": 1,
+  "saves": {
+    "read": 20,
+    "new_since_last_sweep": 1,
+    "kept": 0,
+    "note": "One new save since the last sweep: Avi Chawla's Levanto Sage2 post (https://x.com/_avichawla/status/2117311150488752445). Sage2 was already kept 2026-11-02T19:05 from @levantolabs, so it is not repeated; it is archived in the bookmark log."
+  },
+  "discovery": {
+    "queries": 2,
+    "kept": 1,
+    "note": "One release search with GitHub, Hugging Face or arXiv links (kept colibri) and one security search. The applied group search hit 25 results, so one extra page covered 15:08 to 16:00Z."
+  },
+  "horizon": {
+    "block-dessa": "One read (0 results) plus a free page fetch. block.xyz/dessa shows demos, early access for safety researchers and a contact address, and no weights, API or paper. No trigger."
+  },
+  "rechecks": [
+    {
+      "url": "https://x.com/rikiyatakehi/status/2117313742891327994",
+      "item": "Weight-Space Programming (kept 2026-11-02T19:05)",
+      "update": "About 53K likes and 5.3K quotes. Simon Willison reproduced the no-tools weight-reading result on Qwen 3.8 27B locally (kept as a new item) and reports Matthew Honnibal calling the paper misleading for mixing no-tools reading with tool-using edits, and Sean Goedecke describing the Qwen 0.8B fix as normal ML researcher steps. Keep doubt at 2 for the editing claims.",
+      "sources": [
+        "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/"
+      ]
+    },
+    {
+      "url": "https://x.com/omarsar0/status/2117613273189376072",
+      "item": "Google XLA agent-swarm paper (kept 2026-11-03T15:08)",
+      "update": "68 likes; no pushback.",
+      "sources": []
+    }
+  ],
+  "videos": [],
+  "security_forwarded": [
+    {
+      "url": "https://x.com/Trilvu/status/2117658143110930811",
+      "matched": "stack: Cursor (match term cursor ide); addendum to the stale-Chromium lead forwarded 2026-11-03 05:09.",
+      "summary": "A post recirculating OX Security's research says Cursor and Windsurf, as old VS Code forks, bundle old Electron and therefore old Chromium and V8 with 94+ known n-day CVEs; OX crashed Cursor with CVE-2025-7656 through a deeplink and Cursor called it out of scope. The original report is from October 2025 and Cursor then promised fixes by end of October 2025; the new part is a user's audit prompt that reports an EOL Electron in Cursor today, which is unverified. Low priority: when Bouncer checks stale Chromium, add the Cursor IDE's Electron and Chromium version on the Mini and Air (Help > About or the app's Electron version) to the check. No fleet impact confirmed.",
+      "sources": [
+        "https://www.ox.security/blog/94-vulnerabilities-in-cursor-and-windsurf-put-1-8m-developers-at-risk/",
+        "https://www.bleepingcomputer.com/news/security/cursor-windsurf-ides-riddled-with-94-plus-n-day-chromium-vulnerabilities/",
+        "https://forum.cursor.com/t/fix-your-know-94-vulnerabilities-you-selfish-devs/138479"
+      ],
+      "priority": "low",
+      "filed": "Mini observations/magpie-scout/2026-11-03-1309-magpie-scout-cursor-stale-electron-chromium.md"
+    }
+  ],
+  "security_na": [
+    {
+      "url": "https://x.com/NomaSecurity/status/2117642757905002512",
+      "reason": "Cursor marketplace Claude Code extension backdoor 2.1.312/2.1.313; many recaps, already handled, no new fix info."
+    },
+    {
+      "url": "https://x.com/cloudsa/status/2117640585029017645",
+      "reason": "Langflow CVE-2026-93680 and CVE-2026-110186 fixed in 1.13.0; already filed 2026-11-02, no Langflow in the fleet."
+    },
+    {
+      "url": "https://x.com/fund_mithril/status/2117689114921500792",
+      "reason": "Binance root cause (tampered Homebrew installer); already forwarded at 09:08."
+    },
+    {
+      "url": "https://x.com/tooltierai/status/2117664652226093226",
+      "reason": "Malicious agent instructions file in ~/Downloads; same AGENTS.md injection lesson already logged."
+    },
+    {
+      "url": "https://x.com/Mikadzyki_NFT/status/2117657415919325515",
+      "reason": "Story about a contractor running Claude Code on a defense network; news, not a vulnerability in our stack."
+    },
+    {
+      "url": "https://x.com/Im_Him711/status/2117643262978654457",
+      "reason": "GitHub Actions command injection campaign on 61 repos; no repo names or package to check, nothing in our stack named."
+    }
+  ],
+  "skipped": [
+    {
+      "url": "https://x.com/MistralAI/status/2117670644506861900",
+      "reason": "Mistral Large 4 already kept twice; this is availability on Open Math OS for approved teams. Deep read of quotes found nothing new."
+    },
+    {
+      "url": "https://x.com/NotionHQ/status/2117684230411178164",
+      "reason": "Notion Agents Google Drive connection; product feature, not developer-oriented."
+    },
+    {
+      "url": "https://x.com/ValsAI/status/2117685485032321165",
+      "reason": "Router leaderboard update with little detail."
+    },
+    {
+      "url": "https://x.com/yufan_zhuang/status/2117665349831377298",
+      "reason": "Physical-Engineering's Last Exam; quoted source not returned and no link, too thin."
+    },
+    {
+      "url": "https://x.com/somarkai/status/2117649610772734348",
+      "reason": "OXR doc parsing demo with no new numbers or link."
+    },
+    {
+      "url": "https://x.com/rasbt/status/2117637894315626719",
+      "reason": "Monthly recap of releases already covered."
+    },
+    {
+      "url": "https://x.com/witcheer/status/2117670391019659268",
+      "reason": "Personal showcase, no new capability."
+    },
+    {
+      "url": "https://x.com/JubayarAdnan/status/2117648748444885271",
+      "reason": "agent-desktop accessibility-tree tool already kept."
+    },
+    {
+      "url": "https://x.com/FireworksAI_HQ/status/2117645530658439189",
+      "reason": "Event promo; fundraises, events and opinion posts in the window also skipped."
+    }
+  ],
+  "errors": [],
+  "proposed_follows_note": "No browser in this run, so no follows were made. Possible trial candidates for a browser run: @simonw if not already on the List, @allen_ai."
+}
