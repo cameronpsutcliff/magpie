@@ -1,0 +1,358 @@
+{
+ "ran_at": "2026-11-03T15:08:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-03T11:09:00Z",
+ "queries": 9,
+ "calls": 16,
+ "items": [
+  {
+   "title": "Google paper: agent swarms find and fix silent XLA compiler miscompilations on TPUs, 142 bugs resolved",
+   "url": "https://x.com/omarsar0/status/2117613273189376072",
+   "handle": "@omarsar0",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A Google paper describes running swarms of coding agents against the XLA compiler for TPUs to hunt silent miscompilations (wrong numerics with no crash). The agents produced fixes for 142 bugs that were resolved, with 103 more under review.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2611.00624"
+   ],
+   "vendor": "Google",
+   "posted_at": "2026-11-03T13:42:02Z",
+   "metrics": {
+    "likes": 43,
+    "quotes": 3,
+    "replies": 48,
+    "views": 3867
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Skill++: routing-aware skill refinement lets an agent pick all required skills 76.3% of the time at 731 skills",
+   "url": "https://x.com/dair_ai/status/2117612013258228030",
+   "handle": "@dair_ai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Skill++ rewrites agent skill descriptions so a router can tell them apart. With a library of 731 skills, the router selected every required skill 76.3% of the time versus 36.4% with the original descriptions.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2611.00544"
+   ],
+   "vendor": null,
+   "posted_at": "2026-11-03T13:37:01Z",
+   "metrics": {
+    "likes": 74,
+    "quotes": 2,
+    "replies": 14,
+    "views": 4204
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Alibaba SPAR: self-evolving B2B sales agent lifts conversion 15.8% in a live A/B test across 200K+ merchants",
+   "url": "https://x.com/omarsar0/status/2117633659763339668",
+   "handle": "@omarsar0",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Alibaba's SPAR is a sales agent that rewrites its own playbook from conversation outcomes. In a live A/B test covering more than 200,000 merchants, it raised conversion by 15.8% over the production baseline.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2611.01695"
+   ],
+   "vendor": "Alibaba",
+   "posted_at": "2026-11-03T15:03:02Z",
+   "metrics": {
+    "likes": 8,
+    "quotes": 0,
+    "replies": 4,
+    "views": 976
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Vendor-run A/B test with no independent replication; the gain is measured against Alibaba's own baseline.",
+    "source": "https://arxiv.org/abs/2611.01695"
+   }
+  },
+  {
+   "title": "BAAI releases LLaCO-8B, a continuous diffusion language model, with code and weights",
+   "url": "https://x.com/BAAIBeijing/status/2117618551246721254",
+   "handle": "@BAAIBeijing",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "LLaCO is an 8B continuous (not discrete) diffusion language model adapted from a pretrained backbone using spherical noising and a new timestep schedule. The paper reports 62.12 on MATH versus 15.10 for the previous best continuous model (DSL-LLaDA-8B) and 44.26 for discrete LLaDA-1.5. Code is on GitHub and weights are on Hugging Face.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://arxiv.org/abs/2610.32604",
+    "https://github.com/WhenGIX/LLaCO",
+    "https://huggingface.co/escapist413/LLaCO-8B"
+   ],
+   "vendor": "BAAI",
+   "posted_at": "2026-11-03T14:03:00Z",
+   "metrics": {
+    "likes": 1,
+    "quotes": 0,
+    "replies": 1,
+    "views": 92
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Benchmarks are the authors' own; it still trails discrete Dream-7B on HumanEval, ARC-E and BBH.",
+    "source": "https://arxiv.org/abs/2610.32604"
+   }
+  },
+  {
+   "title": "Unsloth v0.1.914-beta adds full CPU training and faster diffusion, inference and training",
+   "url": "https://x.com/danielhanchen/status/2117632087205589117",
+   "handle": "@danielhanchen",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Unsloth's v0.1.914-beta release adds full fine-tuning on CPU only, plus speedups for diffusion models, inference and training.",
+   "kind": "release",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/unslothai/unsloth/releases/tag/v0.1.914-beta"
+   ],
+   "vendor": "Unsloth",
+   "posted_at": "2026-11-03T14:56:47Z",
+   "metrics": {
+    "likes": 17,
+    "quotes": 1,
+    "replies": 2,
+    "views": 706
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Aleph Alpha: reasoning-effort labels keep 98% of high-effort score at 76% of the tokens",
+   "url": "https://x.com/Aleph__Alpha/status/2117633164851995038",
+   "handle": "@Aleph__Alpha",
+   "group": "labs",
+   "origin": "list",
+   "summary": "Aleph Alpha trained a Kolibri model to follow low, medium and high reasoning-effort labels. After RL, low effort kept 98% of the high-effort score while using 76% of the tokens.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://aleph-alpha.com/en/blog/reasoning-effort-that-adapts-to-the-request/",
+    "https://arxiv.org/abs/2610.31945"
+   ],
+   "vendor": "Aleph Alpha",
+   "posted_at": "2026-11-03T15:01:04Z",
+   "metrics": {
+    "likes": 4,
+    "quotes": 0,
+    "replies": 1,
+    "views": 170
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "tomacco: open-source toolkit for coding agents to build and test iOS and Android apps on Linux",
+   "url": "https://x.com/0xMarsel/status/2117625685334278565",
+   "handle": "@0xMarsel",
+   "group": "builders",
+   "origin": "list",
+   "summary": "tomacco is an open-source toolkit that lets coding agents build, run and test iOS and Android apps from a Linux machine.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/marselnenaj/tomacco"
+   ],
+   "vendor": null,
+   "posted_at": "2026-11-03T14:31:21Z",
+   "metrics": {
+    "likes": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 41
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "New repo with no outside users yet; iOS builds without a Mac are claimed, not shown.",
+    "source": "https://github.com/marselnenaj/tomacco"
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 90,
+ "list_pages": 1,
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 0,
+  "kept": 0,
+  "note": "Live bookmarks read for id 1521986356721123328; newest 20 all already seen."
+ },
+ "discovery": {
+  "queries": 2,
+  "kept": 0,
+  "note": "One release search and one security search; keeps came from group searches and the List."
+ },
+ "horizon": {
+  "block-dessa": "One read (0 results) plus a free page fetch. block.xyz/dessa still shows the waitlist; the Download button reads 'Download coming soon' and the page says launch links are coming soon. No weights, API or paper. No trigger."
+ },
+ "rechecks": [
+  {
+   "url": "https://x.com/rikiyatakehi/status/2117313742891327994",
+   "item": "Weight-Space Programming (kept 2026-11-02T19:05)",
+   "update": "Now about 51.5K likes and 5.1K quotes. New pushback in quotes: @Runchu_Tian says the edit is basically activation steering (deleting one direction), which people did by hand two years ago; @NHEpisteme notes the base model hit its token limit on 93% of math attempts, so the gain is mostly finishing, not new math. Keep doubt at 2.",
+   "sources": [
+    "https://x.com/Runchu_Tian/status/2117633356464902492",
+    "https://x.com/NHEpisteme/status/2117635101198516635"
+   ]
+  },
+  {
+   "url": "https://x.com/sweis/status/2117485473497309299",
+   "item": "Anthropic FlashProve (kept 2026-11-03T11:09)",
+   "update": "549 likes; no new pushback.",
+   "sources": []
+  },
+  {
+   "url": "https://x.com/JoshuaSWarren/status/2117528278663897439",
+   "item": "M1 Max Linux GPU bandwidth patch (kept 2026-11-03T11:09)",
+   "update": "729 likes; no new pushback.",
+   "sources": []
+  },
+  {
+   "url": "https://x.com/OpenAIDevs/status/2117408792346509663",
+   "item": "OpenAI Pando Git backend (kept 2026-11-03T03:15)",
+   "update": "5.6K likes; no new pushback.",
+   "sources": []
+  },
+  {
+   "url": "https://x.com/coldniko/status/2117405670224105522",
+   "item": "Strata 0.2.10 (kept 2026-11-03T03:15)",
+   "update": "2.2K likes; no new pushback.",
+   "sources": []
+  }
+ ],
+ "videos": [],
+ "security_forwarded": [
+  {
+   "url": "https://x.com/_pksharma/status/2117582868381667356",
+   "matched": "always_forward: agent tooling and MCP (npm packages run by coding agents).",
+   "summary": "Glow Labs (MCPhantom) reports coding agents in Claude Code, Cursor, Codex CLI and Claude chat install the archived @modelcontextprotocol/server-* reference MCP servers (server-github, server-puppeteer, server-postgres, server-slack and 8 more) from model memory instead of the maintained vendor servers. The repo was archived 2025-05-29 and says no security fixes will come. Glow reported four high-severity flaws, including RCE in server-puppeteer reachable through prompt injection; maintainers closed it as out of scope, no CVE, no fixed version. The packages still pull about 620K npm downloads a week. No exploitation seen. Action: search fleet MCP configs for these package names and swap to vendor-maintained servers.",
+   "sources": [
+    "https://www.pk-sharma.com/briefing/mcphantom-ai-coding-agents-install-archived-mcp-servers-glow-labs-says-no-patch-is-coming"
+   ]
+  },
+  {
+   "url": "https://x.com/binance/status/2117626126214504729",
+   "matched": "stack: Homebrew (match term), plus always_forward supply chain and agent tooling (internal AI tool used for lateral movement).",
+   "summary": "Binance's Nov 3 preliminary report on the Oct 29 $6.3B hack (attributed to North Korea) says a wallet DevOps engineer installed a tampered Homebrew installer in June while searching for an AI coding tool (reportedly via a malicious search ad), and a second engineer ran a fake-interview coding test carrying zero-day malware. The attackers then used an internal AI tool to reach two wallet engineers, stole a deploy token and deployed a container that reached the signing service. Homebrew itself was not compromised; the lesson is lookalike installers for brew and AI tools, and agent tools as a lateral-movement path. No version or fix applies.",
+   "sources": [
+    "https://www.coindesk.com/business/2026/11/03/binance-s-usd6-3-billion-hack-began-with-a-fake-job-interview-exchange-says",
+    "https://cryptobriefing.com/binance-attacker-compromised-computer-ai-tool/"
+   ]
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/rimtoln/status/2117610043575074974",
+   "reason": "Cursor marketplace Claude Code extension backdoor 2.1.312/2.1.313; already handled, no new fix info."
+  },
+  {
+   "url": "https://x.com/theomlondhe/status/2117619141829951739",
+   "reason": "Playwright 1.64.1 still bundles Chromium 156.0.8078.4; already forwarded and filed 2026-11-03 05:09, no fixed release yet."
+  },
+  {
+   "url": "https://x.com/franzbruckhoff/status/2117585068583449039",
+   "reason": "Stale Chromium in agent browsers via macOS Accessibility; same already-filed lead, nothing new."
+  },
+  {
+   "url": "https://x.com/likasanma/status/2117592654401687730",
+   "reason": "LiteLLM 1.107.0 recap; already handled."
+  },
+  {
+   "url": "https://x.com/SarahLakzit/status/2117583230954049631",
+   "reason": "AGENTS.md in Downloads prompt injection; already forwarded 2026-10-25."
+  },
+  {
+   "url": "https://x.com/tenedev/status/2117583179238576438",
+   "reason": "'61 GitHub repositories under attack' has no source or package names."
+  },
+  {
+   "url": "https://x.com/sprunky_eth/status/2117592785196818892",
+   "reason": "Trust Wallet v2.68 crypto wallet issue; not in our stack."
+  },
+  {
+   "url": "https://x.com/wallstengine/status/2117633251305308212",
+   "reason": "CrowdStrike Fal.Con Europe announcements; business news, not a vuln."
+  }
+ ],
+ "skipped": [
+  {
+   "url": "https://x.com/akshay_pachaar/status/2117605592999313843",
+   "reason": "Unified Harness Protocol post links only an image; no primary source."
+  },
+  {
+   "url": "https://x.com/plotarmordev/status/2117577606757597235",
+   "reason": "Drama 3 speaker tags is a small PR on a model already kept."
+  },
+  {
+   "url": "https://x.com/scaling01/status/2117632356840357951",
+   "reason": "GDPx already kept; opinion only."
+  },
+  {
+   "url": "https://x.com/omarsar0/status/2117625533794332885",
+   "reason": "LongCat-2.5 already kept; single-user cost test."
+  },
+  {
+   "url": "https://x.com/OpenBMB/status/2117610288552038581",
+   "reason": "Community MiniCPM5 Catalan finetune; minor."
+  },
+  {
+   "url": "https://x.com/TencentHunyuan/status/2117591591666016487",
+   "reason": "Teaser with no content or artifact."
+  },
+  {
+   "url": "https://x.com/aiDotEngineer/status/2117617798729887960",
+   "reason": "Event promo (also skipped ElevenLabs summit, Neo4j, Snowflake, Dev Day London, VS Code image gen promos)."
+  },
+  {
+   "url": "https://x.com/plotarmordev/status/2117607224705204696",
+   "reason": "Opinion threads on Spark bandwidth and TensorFold plans with no artifact (also teortaxesTex, levelsio, KBlueleaf, zachlloyd). Kimi K3.1 TerminalBench claim and agent-desktop and Chat2Workflow reposts skipped as unverified or already kept."
+  }
+ ],
+ "errors": [],
+ "proposed_follows_note": "None. No account met the 3-qualifying-posts bar this sweep; no follows made (no browser)."
+}
