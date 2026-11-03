@@ -1,0 +1,532 @@
+{
+  "ran_at": "2026-11-03T23:05:00Z",
+  "bot": "magpie-scout",
+  "prompt": "v6.1",
+  "since": "2026-11-03T19:09:00Z",
+  "queries": 12,
+  "calls": 17,
+  "items": [
+    {
+      "title": "Pruna open-sources P-H3-Image, an image generation and editing model cut down from MiniMax-H3",
+      "url": "https://x.com/PrunaAI/status/2117663564487926043",
+      "handle": "@PrunaAI",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "Pruna post-trained MiniMax's H3 video model into a still-image generator and editor with open weights on Hugging Face. They say it needs 8 steps instead of 50, makes a 4 MP image in 2.6 s versus 12.4 s, and is about 7x smaller than H3 (143 GB down to 20 GB per a Pruna researcher). It renders 2 to 16 MP, edits with up to 8 input images, and works in Diffusers and ComfyUI; a tech report is out.",
+      "kind": "model",
+      "evidence": "artifact",
+      "links": [
+        "https://huggingface.co/spaces/PrunaAI/P-H3-Image"
+      ],
+      "vendor": "Pruna AI",
+      "posted_at": "2026-11-03T17:01:52Z",
+      "metrics": {
+        "likes": 733,
+        "quotes": 18,
+        "replies": 43,
+        "views": 40458
+      },
+      "confirmed_by": [
+        "https://x.com/multimodalart/status/2117665974686281972",
+        "https://x.com/kgonia7/status/2117740209244963132"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      },
+      "reception": "Mostly positive quotes. @multimodalart (Hugging Face) says it gives looks he cannot get from other models; a community member already posted GGUF quants (Q4_K_M, 2048 px in about 45 s on an RTX 5090 laptop); a ComfyUI user calls it the best H3 edit method because it is a LoRA plus smaller encoder that works on existing H3 checkpoints. Seen via a @victormustar repost on the List."
+    },
+    {
+      "title": "FastVideo adds Pika H3 Flex with up to 7x faster inference, NVFP4 weights and DGX Spark support",
+      "url": "https://x.com/haoailab/status/2117704073248174180",
+      "handle": "@haoailab",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "Hao AI Lab's FastVideo now runs Pika's open H3 Flex video-with-audio model. On one GB200 a 5 s clip drops from 59.7 s with the official code to 26.6 s in BF16 and 15.2 s with NVFP4 QAD weights plus FP4 attention; multi-GPU support makes 15 s clips about 7x faster on 4 GPUs. A 5 s 480p clip takes 59.5 s on one DGX Spark. Weights, recipe and the Open-H3-Regenerate-2K upscaler are supported.",
+      "kind": "tool",
+      "evidence": "artifact",
+      "links": [
+        "https://haoailab.com/blogs/pika-h3-flex/",
+        "https://huggingface.co/FastVideo/Pika-H3-Flex-NVFP4-QAD",
+        "https://haoailab.com/FastVideo/cookbook/minimax-h3/models/pika-h3-flex-t2va/",
+        "https://huggingface.co/Efficient-Large-Model/Open-H3-Regenerate-2K"
+      ],
+      "vendor": "Hao AI Lab",
+      "posted_at": "2026-11-03T19:42:50Z",
+      "metrics": {
+        "likes": 42,
+        "quotes": 2,
+        "replies": 5,
+        "views": 2408
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      },
+      "reception": "Thread read in full (6 posts); numbers above are from the thread. Low engagement so far, no pushback."
+    },
+    {
+      "title": "OpenRouter launches Crouton Alpha, a free stealth reasoning model with 1M context and audio and video input",
+      "url": "https://x.com/OpenRouter/status/2117712705901728199",
+      "handle": "@OpenRouter",
+      "group": "applied",
+      "origin": "sweep",
+      "summary": "A new unnamed model is free on OpenRouter during its stealth period, aimed at repetitive agent work. It takes text, image, audio and video input with a 1M-token context, and prompts are not used for training. It is also free in OpenCode and Nous Portal, so Hermes Agent users can try it.",
+      "kind": "model",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "OpenRouter (unnamed lab)",
+      "posted_at": "2026-11-03T20:17:08Z",
+      "metrics": {
+        "likes": 768,
+        "quotes": 38,
+        "replies": 65,
+        "views": 50899
+      },
+      "confirmed_by": [
+        "https://x.com/yeahfortommy/status/2117724015066300499"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "The maker is not disclosed. @aitrackerbot lists circumstantial signs it is a Meta Muse model (same blocked-country list, a shared tokenizer quirk, matching effort settings) but says it is not confirmed; others guess Mistral or Poolside. One user reports only 502 errors.",
+        "source": "https://x.com/aitrackerbot/status/2117715857237258558"
+      },
+      "reception": "Lots of quotes, mostly reposting the specs in several languages. Guessing about the maker dominates; one tester (@MarMarLabs) says 15 small image, audio and video probes passed. A Japanese quote notes OpenCode lists about a one-week free period and that an anonymous provider may retain inputs."
+    },
+    {
+      "title": "Hinted Scaling Laws: forecasting benchmark accuracy from small models that score zero",
+      "url": "https://x.com/suze_va/status/2117702608936985058",
+      "handle": "@suze_va",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "Stanford researchers make a benchmark easier with hints (truncating or masking part of a correct answer, or mixing in a teacher model's logits) and fit one law over compute and hint level, then read off accuracy at zero hints. They forecast GSM8K within about 3 points using 10x to 5600x less compute, beat the standard law on the largest model in 12 of 14 post-trained settings on AIME and HLE, and show one hinted rollout ranks models as well as 5 to 6 unhinted ones.",
+      "kind": "research",
+      "evidence": "artifact",
+      "links": [
+        "https://arxiv.org/abs/2611.02270",
+        "https://github.com/tatsu-lab/hinted-scaling-laws"
+      ],
+      "vendor": "Stanford (tatsu-lab)",
+      "posted_at": "2026-11-03T19:37:01Z",
+      "metrics": {
+        "likes": 116,
+        "quotes": 9,
+        "replies": 7,
+        "views": 12741
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Larger tokenizers lose more when pre-training repeats data over multiple epochs",
+      "url": "https://x.com/wenhaocha1/status/2117709895327793578",
+      "handle": "@wenhaocha1",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "A blog post finds that the large-vocabulary and n-gram tokenizers that win recent pre-training speedruns do badly when the same data is repeated for several epochs, while small vocabularies hold up. Bigger vocabularies show more multi-epoch regret, meaning extra loss from repeating data instead of training on fresh data.",
+      "kind": "research",
+      "evidence": "measured",
+      "links": [
+        "https://wenhaochai.com/blogs/vocab-multi-epoch.html"
+      ],
+      "vendor": null,
+      "posted_at": "2026-11-03T20:05:58Z",
+      "metrics": {
+        "likes": 95,
+        "quotes": 9,
+        "replies": 4,
+        "views": 8078
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Moondream's Parakeet Ultra speech recognition model goes live on OpenRouter",
+      "url": "https://x.com/ModelsOnOR/status/2117731297972150641",
+      "handle": "@ModelsOnOR",
+      "group": "applied",
+      "origin": "sweep",
+      "summary": "Moondream post-trained NVIDIA's Parakeet TDT 0.6B v3 and says it keeps the same architecture and speed with lower word error rate on every benchmark group. It covers 25 European languages with segment and word timestamps and costs $0.06 per hour of audio, served by Prime Intellect.",
+      "kind": "model",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "Moondream",
+      "posted_at": "2026-11-03T21:31:01Z",
+      "metrics": {
+        "likes": 10,
+        "quotes": 1,
+        "replies": 1,
+        "views": 2987
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Microsoft ParetoSaddler: optimize agent harnesses for quality first and apply cost only at the end",
+      "url": "https://x.com/omarsar0/status/2117738094069944347",
+      "handle": "@omarsar0",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "A harness optimizer edits a parent harness, runs both versions several times, and uses a Bayesian bootstrap to decide whether the change is real progress in quality or cost, keeping promoted candidates as future parents. Applying the cost preference only at the final pick, not every step, keeps harnesses that lead to better ones. Reported results: GAIA2 quality 56.2% to 62.9% with cost per task $0.78 to $0.45, and ClawMark 70.9% to 81.4% with cost $1.17 to $1.01.",
+      "kind": "research",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "Microsoft",
+      "posted_at": "2026-11-03T21:58:01Z",
+      "metrics": {
+        "likes": 20,
+        "quotes": 0,
+        "replies": 16,
+        "views": 2613
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Third-party summary; the post and its thread carry no paper link, so the numbers are unchecked.",
+        "source": null
+      }
+    },
+    {
+      "title": "OpenHands and Snowflake Cortex Training post-train open-weight models from existing agent configs",
+      "url": "https://x.com/OpenHandsDev/status/2117700761521967523",
+      "handle": "@OpenHandsDev",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "OpenHands now works with Snowflake Cortex Training so developers can post-train an open-weight model on their own agent setup and tasks, fitting the model to the harness instead of reworking the harness for a model.",
+      "kind": "feature",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "OpenHands / Snowflake",
+      "posted_at": "2026-11-03T19:29:41Z",
+      "metrics": {
+        "likes": 15,
+        "quotes": 1,
+        "replies": 2,
+        "views": 1809
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Hermes Cloud: hosted Hermes Agent with hermes migrate to import Claude Code, Codex CLI or Cursor setups",
+      "url": "https://x.com/witcheer/status/2117708643407634813",
+      "handle": "@witcheer",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "A walkthrough of Hermes Cloud, a hosted Hermes Agent on a dedicated instance included in new plans. The hermes migrate command detects OpenClaw, Claude Code, Codex CLI, Cursor and other agent setups on a machine and offers to import them; existing Hermes agents move by dashboard backup and restore (restore replaces, it does not merge), and Hermes Desktop lists local and cloud agents side by side.",
+      "kind": "feature",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "Nous Research",
+      "posted_at": "2026-11-03T20:01:00Z",
+      "metrics": {
+        "likes": 33,
+        "quotes": 0,
+        "replies": 13,
+        "views": 1655
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Community walkthrough, not an official Nous post.",
+        "source": null
+      }
+    },
+    {
+      "title": "Fireworks adds multi-day prompt caching and a background mode for agents",
+      "url": "https://x.com/FireworksAI_HQ/status/2117722161330983338",
+      "handle": "@FireworksAI_HQ",
+      "group": "applied",
+      "origin": "sweep",
+      "summary": "Announced at Fireworks Forge: prompt caches that last multiple days, a background mode for long agent runs, higher rate limits, and an Ultrafast preview at 1,500+ tokens per second. European capacity on NVIDIA Vera Rubin and Grace Blackwell starts in 2027.",
+      "kind": "feature",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "Fireworks AI",
+      "posted_at": "2026-11-03T20:54:43Z",
+      "metrics": {
+        "likes": 10,
+        "quotes": 0,
+        "replies": 0,
+        "views": 1571
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Rapid-MLX runs Qwen3.6-35B at 149 tok/s on an M5 Max versus 114 tok/s for mlx-lm",
+      "url": "https://x.com/rapidmlx/status/2117708894801945030",
+      "handle": "@rapidmlx",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "A side-by-side run on the same Mac, weights and prompt shows Rapid-MLX finishing a small game in 18.5 s (149 tok/s) against 25.4 s (114 tok/s) for Apple's mlx-lm. Installs with pip install rapid-mlx.",
+      "kind": "tool",
+      "evidence": "measured",
+      "links": [],
+      "vendor": "Rapid-MLX",
+      "posted_at": "2026-11-03T20:02:00Z",
+      "metrics": {
+        "likes": 26,
+        "quotes": 0,
+        "replies": 5,
+        "views": 1555
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Vendor's own benchmark on a single prompt.",
+        "source": null
+      }
+    },
+    {
+      "title": "Databricks: Lakebase vector search latency depends on cache size relative to the index, not row count",
+      "url": "https://x.com/databricks/status/2117717961628582036",
+      "handle": "@databricks",
+      "group": "applied",
+      "origin": "sweep",
+      "summary": "Databricks benchmarked Lakebase Search on 1M to 4M passages. When the cache roughly matched the vector index size, 95 to 98% of page reads skipped storage and warm p50 latency stayed at 11 to 23 ms, so cache should be sized with the index as data grows.",
+      "kind": "research",
+      "evidence": "measured",
+      "links": [],
+      "vendor": "Databricks",
+      "posted_at": "2026-11-03T20:38:02Z",
+      "metrics": {
+        "likes": 14,
+        "quotes": 0,
+        "replies": 1,
+        "views": 1218
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Vendor benchmark of its own product.",
+        "source": null
+      }
+    },
+    {
+      "title": "Artificial Analysis finalizes the CritPt v2 grading server and regrades its Intelligence Index as v5.0.1",
+      "url": "https://x.com/ArtificialAnlys/status/2117731452951384073",
+      "handle": "@ArtificialAnlys",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "Working with the CritPt physics benchmark authors, Artificial Analysis hardened the grading server and will offer it through its API from Nov 4. It regraded every model as Intelligence Index v5.0.1: most scores rose slightly and frontier rankings did not change, with moves of at most 1 point.",
+      "kind": "eval",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "Artificial Analysis",
+      "posted_at": "2026-11-03T21:31:38Z",
+      "metrics": {
+        "likes": 131,
+        "quotes": 1,
+        "replies": 19,
+        "views": 13743
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    }
+  ],
+  "saved_rejected": [],
+  "list_posts_read": 94,
+  "list_pages": 1,
+  "saves": {
+    "read": 20,
+    "new_since_last_sweep": 0,
+    "kept": 0,
+    "note": "The newest 20 saves were all already in the bookmark archive; nothing new to vet."
+  },
+  "discovery": {
+    "queries": 2,
+    "kept": 0,
+    "note": "One release search with GitHub, Hugging Face or arXiv links (3 results, nothing qualified) and one security search (25 results). The applied group search hit 25 results, so one extra page covered 19:09 to 19:16Z (1 result, an event promo)."
+  },
+  "horizon": {
+    "block-dessa": "One read (only an unrelated Portuguese post matched) plus a free page fetch. block.xyz/dessa still shows demos, a waitlist and a Download placeholder; no weights, API or paper. No trigger."
+  },
+  "rechecks": [
+    {
+      "url": "https://x.com/NielsRogge/status/2117541532827848972",
+      "item": "Hugging Face Weight-Space Programming repro (kept 2026-11-03T11:09)",
+      "update": "1,315 likes, 146 reposts; no new pushback beyond what the 19:09 sweep logged. Keep doubt at 2.",
+      "sources": []
+    },
+    {
+      "url": "https://x.com/simonw/status/2117655816581071203",
+      "item": "Simon Willison Qwen 3.8 27B weight reading (kept 2026-11-03T19:09)",
+      "update": "3,142 likes, 227 reposts; no refutation seen.",
+      "sources": []
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2117680635561312732",
+      "item": "Claude plugins trusted-issuer auto-connect (kept 2026-11-03T19:09)",
+      "update": "3,904 likes; no new pushback.",
+      "sources": []
+    },
+    {
+      "url": "https://x.com/JoshuaSWarren/status/2117528278663897439",
+      "item": "M1 Max one-bit bandwidth patch (kept 2026-11-03T11:09)",
+      "update": "1,299 likes; no pushback seen.",
+      "sources": []
+    },
+    {
+      "url": "https://x.com/omarsar0/status/2117633659763339668",
+      "item": "Alibaba SPAR (kept 2026-11-03T15:08)",
+      "update": "117 likes; no pushback.",
+      "sources": []
+    },
+    {
+      "url": "https://x.com/JubayarAdnan/status/2117663101315424368",
+      "item": "colibri (kept 2026-11-03T19:09)",
+      "update": "Still 2 likes; no independent test yet. Keep doubt at 1.",
+      "sources": []
+    }
+  ],
+  "videos": [],
+  "security_forwarded": [
+    {
+      "url": "https://x.com/morphisec/status/2117724772553429072",
+      "matched": "always_forward: supply chain and agent tooling (fake AI skills and MCP servers).",
+      "summary": "FakeGit is active again: Apiiro counts 17,610 fake GitHub repos re-pointed since Oct 4 (13,000+ in 34 hours) whose README Download buttons hand out SmartLoader and then the StealC stealer, and Island earlier found 800+ of them posing as AI skills or MCP servers, listed 600+ times on LobeHub, Glama, MCP.so and MCP Market. Island showed Claude Code and other assistants recommending these repos unprompted. The payload is a Windows ZIP, so the Macs and Linux boxes are not directly hit; csdesktop is the exposed host. Observation only.",
+      "sources": [
+        "https://www.bleepingcomputer.com/news/security/fakegit-malware-campaign-returns-with-17-610-malicious-github-repos/",
+        "https://www.island.io/blog/agentbaiting-how-800-fake-ai-skills-and-mcp-servers-delivered-malware"
+      ],
+      "priority": "normal",
+      "filed": "pending: /workspace/security/master-inbox-pending/2026-11-03-1705-magpie-scout-fakegit-agentbaiting.md"
+    }
+  ],
+  "security_na": [
+    {
+      "url": "https://x.com/JadenMo80938661/status/2117721897072722251",
+      "reason": "Cursor marketplace Claude Code extension 2.1.312/2.1.313 SSH backdoor recaps (also @ViUmaVaga, @mahmoudlabs); already handled since 2026-10-30, no new fix info."
+    },
+    {
+      "url": "https://x.com/morphisec/status/2117742390698004875",
+      "reason": "GhostAction recap (500+ accounts, 340+ repos, MCP configs and AI tokens); already filed 2026-11-01 with fuller numbers, nothing new."
+    },
+    {
+      "url": "https://x.com/itsjaw_real/status/2117697175077499171",
+      "reason": "Binance tampered Homebrew recaps (also @trigbundgaard, @ChrisSandvick, @tecfutIA); already forwarded 2026-11-03 09:08."
+    },
+    {
+      "url": "https://x.com/infrastack_ai/status/2117753725200781431",
+      "reason": "Daily list of 66 malicious npm and PyPI packages with random names; none match anything in our stack."
+    },
+    {
+      "url": "https://x.com/morphisec/status/2117738621180538884",
+      "reason": "Threat actor misusing Claude Code agents for data theft; threat intel, not a vulnerability in our setup."
+    },
+    {
+      "url": "https://x.com/feross/status/2117726514389074115",
+      "reason": "Socket customer story mentioning the October LiteLLM release; already handled."
+    },
+    {
+      "url": "https://x.com/jackhcable/status/2117731409246978489",
+      "reason": "General security hardening guide from Cognition; no specific vulnerability."
+    }
+  ],
+  "skipped": [
+    {
+      "url": "https://x.com/AnthropicAI",
+      "reason": "Anthropic's own FlashProve posts; already kept 2026-11-03T11:09."
+    },
+    {
+      "url": "https://x.com/llama_index/status/2117738797337063631",
+      "reason": "OpenDocRouter docs promo with no capability detail."
+    },
+    {
+      "url": "https://x.com/sydneyrunkle/status/2117675460884934784",
+      "reason": "LangChain browser-tools eval is an X article; body not readable through the API."
+    },
+    {
+      "url": "https://x.com/gakonst/status/2117399003524682199",
+      "reason": "mitsuhiko djs code mode runtime posted 2026-11-02 23:30Z, outside this window."
+    },
+    {
+      "url": "https://x.com/aitrackerbot/status/2117715857237258558",
+      "reason": "Speculation on Crouton Alpha's maker; folded into the Crouton item's doubt."
+    },
+    {
+      "url": "https://x.com/FireworksAI_HQ",
+      "reason": "Fireworks Forge stage promos and event posts."
+    },
+    {
+      "url": "https://x.com/LangChain",
+      "reason": "LangSmith BYOC deployment availability; enterprise packaging, not a capability."
+    },
+    {
+      "url": "https://x.com/braintrust",
+      "reason": "Trace Lake launch with little technical detail."
+    },
+    {
+      "url": "https://x.com/SemiAnalysis_",
+      "reason": "SpaceX AI cloud and memory supplier business analysis."
+    },
+    {
+      "url": "https://x.com/blackforestlabs",
+      "reason": "FLUX 3 Klein download milestone."
+    },
+    {
+      "url": "https://x.com/PrimeIntellect",
+      "reason": "Eval fixes already kept 2026-11-03T19:09; only confirmations."
+    },
+    {
+      "url": "https://x.com/emollick",
+      "reason": "Opinion and informal experiments; no artifact."
+    }
+  ],
+  "errors": [],
+  "proposed_follows_note": "No browser in this run, so no follows were made. Possible trial candidates for a browser run: @PrunaAI (open image model releases), @suze_va (Stanford scaling-law research), @moondreamai (vision and speech models)."
+}
