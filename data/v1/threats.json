@@ -1524,8 +1524,7 @@
    "evidence": "official",
    "incident": null,
    "children": [
-    "thr-2026-10-20-certifi-bundle-includes-root-with-compromised-intermediates",
-    "thr-2026-10-20-rustls-webpki-may-accept-distrusted-emsign-intermediates"
+    "thr-2026-10-20-certifi-bundle-includes-root-with-compromised-intermediates"
    ],
    "merged_ids": [],
    "key": "threat:url:emudhra.we-have-a-problem.com",
@@ -1535,8 +1534,8 @@
     "url:emudhra.we-have-a-problem.com",
     "url:groups.google.com/a/mozilla.org/g/dev-security-policy/c/0R3XLJL6FuE"
    ],
-   "last_seen": "2026-11-02",
-   "reach": 28,
+   "last_seen": "2026-11-03",
+   "reach": 26,
    "wide": true
   },
   {

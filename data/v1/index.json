@@ -3,40 +3,40 @@
  "days": [
   {
    "date": "2026-11-03",
-   "headline": "Scaling Git at OpenAI, Mistral-Large-4-1T-A52B, VoiceStudio, and more",
-   "events": 279,
-   "sources": 518,
-   "enriched": false,
+   "headline": "Prove inference, reuse KV caches, write weights, scale Git, and more",
+   "events": 331,
+   "sources": 547,
+   "enriched": true,
    "top": [
     {
-     "id": "294088734b6f",
-     "title": "Scaling Git at OpenAI",
+     "id": "7c101cc8f3c0",
+     "title": "Mistral Large 4 still trending with its technical report",
      "impact": 4,
+     "vendor": "Mistral AI"
+    },
+    {
+     "id": "294088734b6f",
+     "title": "OpenAI's Pando, a Git-compatible backend for Codex scale",
+     "impact": 3,
      "vendor": "OpenAI"
     },
     {
-     "id": "7c101cc8f3c0",
-     "title": "mistralai/Mistral-Large-4-1T-A52B",
-     "impact": 5,
-     "vendor": "Mistral"
+     "id": "fa88d9b2c455",
+     "title": "Astra: an LLM that reads and writes Qwen weights",
+     "impact": 3,
+     "vendor": "Qwen"
     },
     {
-     "id": "4439bb6ce3b7",
-     "title": "debpalash/VoiceStudio",
+     "id": "8834cd962f13",
+     "title": "Anthropic's FlashProve: zero-knowledge proofs of LLM inference",
      "impact": 4,
-     "vendor": "Open source"
+     "vendor": "Anthropic"
     },
     {
-     "id": "4f190b6ef893",
-     "title": "abenzerps/Qwen-Image-2.1-Uncensored-Quantized",
+     "id": "f446fcb20ecb",
+     "title": "SGLang HiCache reuses prefix cache across parallel serving",
      "impact": 4,
-     "vendor": "Open source"
-    },
-    {
-     "id": "32288877506c",
-     "title": "vercel-labs/agent-desktop",
-     "impact": 4,
-     "vendor": "Open source"
+     "vendor": "SGLang"
     }
    ],
    "vendors": [
@@ -48,30 +48,31 @@
     "Vercel"
    ],
    "topics": {
-    "agents": 87,
-    "coding": 78,
-    "models": 73,
-    "multimodal": 57,
-    "infra": 42,
-    "mcp": 32,
-    "memory": 30,
-    "local": 21,
-    "evals": 20,
-    "research": 19,
-    "security": 18,
-    "reverse": 13,
+    "agents": 100,
+    "models": 92,
+    "coding": 79,
+    "multimodal": 67,
+    "infra": 53,
+    "mcp": 30,
+    "evals": 29,
+    "memory": 28,
+    "local": 27,
+    "research": 24,
+    "security": 19,
+    "reverse": 15,
     "robotics": 3
    },
    "kinds": {
+    "social": 79,
     "repo": 47,
-    "social": 45,
-    "community": 39,
+    "community": 38,
     "blog": 37,
-    "newsletter": 33,
-    "model": 30,
-    "space": 20,
+    "newsletter": 34,
+    "model": 28,
+    "video": 24,
     "changelog": 19,
-    "news": 9
+    "space": 18,
+    "news": 7
    },
    "threats": []
   },
