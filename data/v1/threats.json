@@ -1,6 +1,6 @@
 {
  "schema": "magpie.threats/1",
- "updated": "2026-11-02",
+ "updated": "2026-11-03",
  "threats": [
   {
    "id": "thr-2026-10-28-vllm-image-loader-passes-eps-input-to",
@@ -1234,7 +1234,7 @@
     "url:osv.dev/vulnerability/GHSA-6q48-6c7w-9gw2",
     "url:osv.dev/vulnerability/PYSEC-2026-4320"
    ],
-   "last_seen": "2026-11-02",
+   "last_seen": "2026-11-03",
    "reach": 12,
    "wide": true
   },

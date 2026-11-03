@@ -13,6 +13,29 @@
  ],
  "items": [
   {
+   "id": "2026-11-03",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-11-03",
+   "title": "Scaling Git at OpenAI, Mistral-Large-4-1T-A52B, VoiceStudio, and more",
+   "summary": "279 capability events from 128 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words.",
+   "content_html": "<p>279 capability events from 128 sources. Ranked by code; the editor did not run this edition, so copy is the sources&#x27; own words.</p><ol><li><a href=\"https://openai.com/index/scaling-git-at-openai\">Scaling Git at OpenAI</a></li><li><a href=\"https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B\">mistralai/Mistral-Large-4-1T-A52B</a></li><li><a href=\"https://github.com/debpalash/VoiceStudio\">debpalash/VoiceStudio</a></li><li><a href=\"https://huggingface.co/abenzerps/Qwen-Image-2.1-Uncensored-Quantized\">abenzerps/Qwen-Image-2.1-Uncensored-Quantized</a></li><li><a href=\"https://github.com/vercel-labs/agent-desktop\">vercel-labs/agent-desktop</a></li></ol><p><strong>Possibilities:</strong> No new possibility today. Latest: Repo agents can file only security issues they proved in a sandbox (2026-11-02)</p><p><strong>Worth watching:</strong> No new video pick today. Latest: Steering LLMs - Why neuron L23-N8799 turns Qwen absolutely evil (and how to find it) (2026-11-02)</p><p><strong>Constraints:</strong> No new constraint today. Latest: DHS order bars DeepSeek products from federal civilian agencies (2026-10-20)</p><p><strong>Threats still open:</strong> <a href=\"https://osv.dev/vulnerability/GHSA-6q48-6c7w-9gw2\">Python certifi bundles root behind compromised eMudhra intermediates</a> (critical, patched); <a href=\"https://osv.dev/vulnerability/GHSA-f897-62hf-6gxq\">MCP TypeScript SDK HTTP transports lack request limits</a> (high, patched); <a href=\"https://osv.dev/vulnerability/GHSA-h3rc-j82p-2c3h\">vLLM image loader reaches Ghostscript on untrusted EPS input</a> (high, patched)</p>",
+   "content_text": "279 capability events from 128 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words. Scaling Git at OpenAI mistralai/Mistral-Large-4-1T-A52B debpalash/VoiceStudio abenzerps/Qwen-Image-2.1-Uncensored-Quantized vercel-labs/agent-desktop",
+   "date_published": "2026-11-03T11:15:19Z",
+   "tags": [
+    "agents",
+    "coding",
+    "infra",
+    "local",
+    "memory",
+    "multimodal",
+    "research"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-11-03.json",
+    "backfilled": false,
+    "capabilities": 279
+   }
+  },
+  {
    "id": "2026-11-02",
    "url": "https://www.cameronsutcliff.com/magpie/2026-11-02",
    "title": "Drive desktop apps via accessibility trees, run MiniMax locally, benchmark agents, and more",
@@ -688,29 +711,6 @@
     "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-04.json",
     "backfilled": true,
     "capabilities": 91
-   }
-  },
-  {
-   "id": "2026-10-03",
-   "url": "https://www.cameronsutcliff.com/magpie/2026-10-03",
-   "title": "Runs models locally, shares caches across models, remembers streaming video, and more",
-   "summary": "A sovereign open-weight model and a local LLM runner led community attention, while papers focused on agent memory, cache reuse and video. Most of the rest was incremental tooling and conference talks.",
-   "content_html": "<p>A sovereign open-weight model and a local LLM runner led community attention, while papers focused on agent memory, cache reuse and video. Most of the rest was incremental tooling and conference talks.</p><ol><li><a href=\"https://huggingface.co/papers/2609.32259\">HeteroFold reuses KV caches across different model families</a>: One language model can pass its key-value cache to a model from a different family, and the receiver skips prefill.</li><li><a href=\"https://dwarfstar.sh/\">ds4 runs LLMs locally, from the creator of Redis</a>: People can try a local LLM runner made by the creator of Redis.</li><li><a href=\"https://huggingface.co/papers/2610.01762\">OneStreamer adds reusable memory to streaming video models</a>: A model can build reusable memory from a live video stream and answer promptly, instead of only reacting to the latest frames.</li><li><a href=\"https://github.com/Panniantong/Agent-Reach\">Agent-Reach gives agents search across social sites via one CLI</a>: An agent can read and search Twitter, Reddit, YouTube, GitHub, Bilibili and XiaoHongShu through one CLI, with no API fees.</li><li><a href=\"https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/\">Kolibri: Aleph Alpha releases a sovereign open-weight model</a>: Organizations can use an open-weight model positioned as sovereign, from Aleph Alpha.</li></ol>",
-   "content_text": "A sovereign open-weight model and a local LLM runner led community attention, while papers focused on agent memory, cache reuse and video. Most of the rest was incremental tooling and conference talks. HeteroFold reuses KV caches across different model families ds4 runs LLMs locally, from the creator of Redis OneStreamer adds reusable memory to streaming video models Agent-Reach gives agents search across social sites via one CLI Kolibri: Aleph Alpha releases a sovereign open-weight model",
-   "date_published": "2026-10-20T15:37:41Z",
-   "tags": [
-    "agents",
-    "coding",
-    "evals",
-    "local",
-    "memory",
-    "models",
-    "multimodal"
-   ],
-   "_magpie": {
-    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-03.json",
-    "backfilled": true,
-    "capabilities": 150
    }
   }
  ]

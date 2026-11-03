@@ -2,6 +2,80 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-11-03",
+   "headline": "Scaling Git at OpenAI, Mistral-Large-4-1T-A52B, VoiceStudio, and more",
+   "events": 279,
+   "sources": 518,
+   "enriched": false,
+   "top": [
+    {
+     "id": "294088734b6f",
+     "title": "Scaling Git at OpenAI",
+     "impact": 4,
+     "vendor": "OpenAI"
+    },
+    {
+     "id": "7c101cc8f3c0",
+     "title": "mistralai/Mistral-Large-4-1T-A52B",
+     "impact": 5,
+     "vendor": "Mistral"
+    },
+    {
+     "id": "4439bb6ce3b7",
+     "title": "debpalash/VoiceStudio",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "4f190b6ef893",
+     "title": "abenzerps/Qwen-Image-2.1-Uncensored-Quantized",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "32288877506c",
+     "title": "vercel-labs/agent-desktop",
+     "impact": 4,
+     "vendor": "Open source"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "OpenAI",
+    "Anthropic",
+    "NVIDIA",
+    "Microsoft",
+    "Vercel"
+   ],
+   "topics": {
+    "agents": 87,
+    "coding": 78,
+    "models": 73,
+    "multimodal": 57,
+    "infra": 42,
+    "mcp": 32,
+    "memory": 30,
+    "local": 21,
+    "evals": 20,
+    "research": 19,
+    "security": 18,
+    "reverse": 13,
+    "robotics": 3
+   },
+   "kinds": {
+    "repo": 47,
+    "social": 45,
+    "community": 39,
+    "blog": 37,
+    "newsletter": 33,
+    "model": 30,
+    "space": 20,
+    "changelog": 19,
+    "news": 9
+   },
+   "threats": []
+  },
+  {
    "date": "2026-11-02",
    "headline": "Drive desktop apps via accessibility trees, run MiniMax locally, benchmark agents, and more",
    "events": 187,
@@ -3196,5 +3270,5 @@
    }
   }
  ],
- "latest": "2026-11-02"
+ "latest": "2026-11-03"
 }
