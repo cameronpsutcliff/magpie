@@ -1,0 +1,305 @@
+{
+  "ran_at": "2026-11-04T15:15:00Z",
+  "bot": "magpie-scout",
+  "prompt": "v6.1",
+  "since": "2026-11-04T11:15:00Z",
+  "queries": 8,
+  "calls": 16,
+  "items": [
+    {
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": null,
+      "reception": null,
+      "video": null,
+      "title": "Axion-1.0 35B ships with its full open training recipe: model, training data, code and paper",
+      "url": "https://x.com/victormustar/status/2117972657882722415",
+      "handle": "@victormustar",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "The Axion-1.0 team released a 35B model with the complete recipe behind it: weights on Hugging Face, the training dataset, the training code in a ByteDance GitHub repo, and a paper on Hugging Face Papers. Victor Mustar (Hugging Face) flagged it as a rare full-recipe release.",
+      "kind": "model",
+      "evidence": "artifact",
+      "links": [
+        "https://huggingface.co/Axion1-0/Axion-1.0-35B",
+        "https://huggingface.co/datasets/Axion1-0/axion-training-data",
+        "https://github.com/bytedance/axion1_0",
+        "https://huggingface.co/papers/2611.03233"
+      ],
+      "vendor": "ByteDance",
+      "posted_at": "2026-11-04T13:30:00Z",
+      "metrics": {
+        "likes": 30,
+        "reposts": 3,
+        "quotes": 0,
+        "replies": 3
+      }
+    },
+    {
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "70.2 against 70.0 is within normal run-to-run noise on SWE-bench Verified, and the paper does not report seed variance; replies also ask whether constraints set early in a task survive compaction.",
+        "source": "https://x.com/TsunagiLLM/status/2117995455703371877"
+      },
+      "reception": "Mixed to positive across 20 replies read. Builders say it matches what they see in Claude Code and Codex compaction; the main pushback is on noise and on losing early instructions. No refutation seen.",
+      "video": null,
+      "title": "NVIDIA paper: frequent context compaction keeps agent accuracy while cutting peak context about 4x",
+      "url": "https://x.com/omarsar0/status/2117956281910829083",
+      "handle": "@omarsar0",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "NVIDIA tests aggressive compaction on long-horizon and long-input tasks. With one action per context, Claude Opus 4.5 scores 70.2 on SWE-bench Verified against 70.0 with full history, while median peak context falls from about 32K to 8K tokens. A simple compaction at the end of the run lifts the score from 70.0 to 74.8, and the paper notes later tokens can cost up to 7x more than early ones.",
+      "kind": "paper",
+      "evidence": "measured",
+      "links": [
+        "https://arxiv.org/abs/2611.05306"
+      ],
+      "vendor": "NVIDIA",
+      "posted_at": "2026-11-04T12:25:00Z",
+      "metrics": {
+        "likes": 302,
+        "reposts": 41,
+        "quotes": 7,
+        "replies": 88
+      }
+    },
+    {
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": null,
+      "reception": null,
+      "video": null,
+      "title": "UCSD paper: context rot comes from look-alike statements, not from input length",
+      "url": "https://x.com/dair_ai/status/2117958798841434118",
+      "handle": "@dair_ai",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "Adding 32K tokens of unrelated text left retrieval accuracy at 97 to 100% on Qwen2.5-1.5B, but adding statements that resemble the answer dropped it to 16 to 33%. Across 126,473 trials, attention on the correct passage explains up to 58% of errors against about 8% for length alone.",
+      "kind": "paper",
+      "evidence": "measured",
+      "links": [
+        "https://arxiv.org/abs/2611.04169"
+      ],
+      "vendor": "UC San Diego",
+      "posted_at": "2026-11-04T12:35:00Z",
+      "metrics": {
+        "likes": 45,
+        "reposts": 7,
+        "quotes": 1,
+        "replies": 17
+      }
+    },
+    {
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": null,
+      "reception": null,
+      "video": null,
+      "title": "RSI-Dojo: training a model to run LLM post-training itself, with 281 tasks built from papers",
+      "url": "https://x.com/dair_ai/status/2117990256297513364",
+      "handle": "@dair_ai",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "RSI-Craft turns research papers into executable post-training environments (datasets, metrics, eval code); 281 tasks survive filtering. Training on them lifts a 9B model by 8.74 points, and RSI-Dojo-35B-A3B gains 16.87 points to reach 29.95 on PostTrainBench.",
+      "kind": "paper",
+      "evidence": "measured",
+      "links": [
+        "https://arxiv.org/abs/2611.03698"
+      ],
+      "vendor": null,
+      "posted_at": "2026-11-04T14:40:00Z",
+      "metrics": {
+        "likes": 18,
+        "reposts": 2,
+        "quotes": 0,
+        "replies": 2
+      }
+    },
+    {
+      "confirmed_by": [
+        "https://x.com/zxlzr"
+      ],
+      "deep_read": true,
+      "doubt": null,
+      "reception": "Positive but generic across 12 replies read; nobody reports trying it yet, and one reply asks how it differs from running Claude Code or Codex over papers. The 28s clip is a short demo, under the video threshold.",
+      "video": null,
+      "title": "Paperclip Datasets: describe a dataset and have it curated from millions of papers",
+      "url": "https://x.com/james_y_zou/status/2117659238873120969",
+      "handle": "@james_y_zou",
+      "group": "research",
+      "origin": "repost",
+      "summary": "James Zou's gxl.ai launches Paperclip Datasets, which builds structured datasets from the literature from a plain description. As a demo they release a 20k-measurement human drug half-life dataset covering 2,400+ drugs on Hugging Face.",
+      "kind": "dataset",
+      "evidence": "artifact",
+      "links": [
+        "https://paperclip.gxl.ai/datasets",
+        "https://gxl.ai/blog/introducing-paperclip-datasets/",
+        "https://huggingface.co/datasets/gxl-ai/paperclip-half-life"
+      ],
+      "vendor": "gxl.ai",
+      "posted_at": "2026-11-03T16:44:00Z",
+      "metrics": {
+        "likes": 543,
+        "reposts": 108,
+        "quotes": 6,
+        "replies": 12
+      }
+    },
+    {
+      "confirmed_by": [
+        "https://x.com/LeRobotHF"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "The post links no sign-up page or rollout dataset yet, so access terms are unverified.",
+        "source": null
+      },
+      "reception": null,
+      "video": null,
+      "title": "RoboColosseum: open robot eval initiative with 100+ robots and 10,000 free eval hours",
+      "url": "https://x.com/RoboColosseum/status/2117982605274710483",
+      "handle": "@RoboColosseum",
+      "group": "opensource",
+      "origin": "repost",
+      "summary": "Hugging Face, BitRobot Network, EAIC and DJiafei launch RoboColosseum, offering evaluation on 100+ physical robots (Unitree G1, LeRobot SO-101, YAM, Franka and more) across 140+ in-the-wild scenes, with open rollout data and 10,000 free eval hours. This is the launch of the teaser skipped on Nov 2.",
+      "kind": "eval",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "Hugging Face",
+      "posted_at": "2026-11-04T14:09:00Z",
+      "metrics": {
+        "likes": 100,
+        "reposts": 22,
+        "quotes": 22,
+        "replies": 14
+      }
+    },
+    {
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": null,
+      "reception": null,
+      "video": null,
+      "title": "ggml v0.29.0 adds FP8 E4M3, per-row flash attention and early multi-node tensor parallelism",
+      "url": "https://x.com/ggml_org/status/2117963881716879532",
+      "handle": "@ggml_org",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "New OCP FP8 E4M3 tensor type, ggml_flash_attn_ext_rows (each query slice attends to its own K/V rows), batched tensor copy APIs, and a multi-process communicator for multi-node tensor parallelism. Backend work includes SVE CPU kernels, fused MoE MMQ in CUDA, faster MXFP4 mat-vec in Metal and Vulkan split-K tuning.",
+      "kind": "repo",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/ggml-org/ggml/releases/tag/v0.29.0"
+      ],
+      "vendor": "ggml",
+      "posted_at": "2026-11-04T12:55:00Z",
+      "metrics": {
+        "likes": 24,
+        "reposts": 0,
+        "quotes": 0,
+        "replies": 0
+      }
+    },
+    {
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": null,
+      "reception": null,
+      "video": null,
+      "title": "Cohere Embed 5 and Rerank 5 now available on OpenRouter",
+      "url": "https://x.com/cohere/status/2117996129958949206",
+      "handle": "@cohere",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "Cohere's Embed 5 and Rerank 5 are live on OpenRouter in Pro and Fast tiers, so retrieval pipelines can use them through the same API and bill as other OpenRouter models.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [],
+      "vendor": "Cohere",
+      "posted_at": "2026-11-04T15:03:00Z",
+      "metrics": {
+        "likes": 20,
+        "reposts": 2,
+        "quotes": 0,
+        "replies": 6
+      }
+    },
+    {
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": null,
+      "reception": null,
+      "video": null,
+      "title": "Aleph Alpha Kolibri 1 now supported in vLLM 0.33",
+      "url": "https://x.com/Aleph__Alpha/status/2117995234437337391",
+      "handle": "@Aleph__Alpha",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "Kolibri 1 (kept Nov 3 for its reasoning-effort controls) now runs in vLLM 0.33, so it can be served with the same stack as other open models.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/vllm-project/vllm/releases"
+      ],
+      "vendor": "Aleph Alpha",
+      "posted_at": "2026-11-04T14:59:00Z",
+      "metrics": {
+        "likes": 10,
+        "reposts": 0,
+        "quotes": 0,
+        "replies": 0
+      }
+    }
+  ],
+  "saved_rejected": [],
+  "list_posts_read": 89,
+  "list_pages": 1,
+  "saves": {
+    "read": 20,
+    "new_since_last_sweep": 0,
+    "kept": 0,
+    "note": "Newest 20 saves all seen before; the two newest (terminal-mac, a political video) were handled in the 11:15 sweep."
+  },
+  "discovery": {
+    "queries": 2,
+    "kept": 0,
+    "note": "One security search and one release discovery search. Discovery results were low-reach self-promo or already in the edition (SenseNova Loop-9B). An unverified 0-like claim that Copilot CLI went MIT open source was skipped."
+  },
+  "horizon": {
+    "block-dessa": "One X read returned one unrelated result. No trigger."
+  },
+  "rechecks": 8,
+  "rechecks_note": "One batched read of replies and quotes since 11:15Z for 8 doubt items (Hy4, Mistral Django CVE agents, terminal-mac, Antigravity Fortran port, Fable classifier, GLM-5.3 on Sparks, Crouton Alpha, colibri). No level changes: Hy4 replies still ask when weights land; Fable replies call it a hand-written rule checker whose fair baseline is a regex; Mistral replies ask about false positives and Django's own patch.",
+  "videos": 0,
+  "security_forwarded": [],
+  "security_na": [
+    {
+      "url": "https://x.com/air__security/status/2117995331812298798",
+      "reason": "Plugin4Shell now has CVE-2026-86063 (GHSA-pq7j-f95f-qfcv, fixed in Claude Code 2.1.179; Copilot fixed in VS Code 1.136.0). Same issue already filed 2026-11-01; fleet Claude Code is far newer."
+    },
+    {
+      "url": "https://x.com/NedPeterson99/status/2117983702382792905",
+      "reason": "Glow Labs deprecated MCP reference servers; same as MCPhantom, handled 2026-11-03."
+    },
+    {
+      "url": "https://x.com/search?q=PHP2Shell%20Node2Shell",
+      "reason": "PHP2Shell and Node2Shell recaps; handled 2026-10-29."
+    },
+    {
+      "url": "https://x.com/search?q=Postman%2012.33.4",
+      "reason": "Postman Desktop 12.33.4 recap; already forwarded 11:15 sweep."
+    },
+    {
+      "url": "https://x.com/search?q=LiteLLM%201.107.0",
+      "reason": "LiteLLM 1.107.0 recap; handled 2026-10-22."
+    }
+  ],
+  "skipped": 17,
+  "errors": 0,
+  "proposed_follows_note": "No browser in this run, so no follows were made. Possible trial candidates for a browser run: @kirtandopamine, @OpenWebUI, @witcheer (carried from 11:15), plus @james_y_zou (Paperclip Datasets) and @RoboColosseum (open robot evals). @omarsar0 and @dair_ai are curated research accounts not yet followed."
+}
