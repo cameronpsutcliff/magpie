@@ -1,0 +1,429 @@
+{
+  "ran_at": "2026-11-04T11:15:00Z",
+  "bot": "magpie-scout",
+  "prompt": "v6.1",
+  "since": "2026-11-04T03:05:00Z",
+  "queries": 11,
+  "calls": 17,
+  "items": [
+    {
+      "title": "Tencent releases Hy4 with vision and computer use, API now and open weights promised later",
+      "url": "https://x.com/TencentHunyuan/status/2117870250838630539",
+      "handle": "@TencentHunyuan",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "Hy4 replaces the August Hy4 preview. It adds vision and computer use across CLI and GUI, with gains Tencent reports on GameDev (+19.1%), finance tasks and hallucination rate (15.76% down to 5.45%). It is live on Tencent Cloud and OpenRouter at $0.834/M input, $2.501/M output, $0.042/M cached. Weights are promised but not out yet; Tencent says vLLM and SGLang support plus a system card will come with the weights, and a cheaper Hy4 flash is planned. Agent Arena puts it #14 overall at about $0.55 per task.",
+      "kind": "model",
+      "evidence": "blog",
+      "links": [
+        "https://hy.tencent.ai/research/hy4?langVersion=en"
+      ],
+      "vendor": "Tencent",
+      "posted_at": "2026-11-04T06:43:00Z",
+      "metrics": {
+        "likes": 1745,
+        "reposts": 211,
+        "quotes": 186,
+        "replies": 158,
+        "views": 188171
+      },
+      "confirmed_by": [
+        "https://x.com/arena/status/2117878267504103555",
+        "https://x.com/aitrackerbot/status/2117840330175254636",
+        "https://x.com/plotarmordev/status/2117850219379597494"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Billed as a leading open model, but the weights are not released yet and most numbers come from Tencent or partner internal benchmarks.",
+        "source": null
+      },
+      "reception": "Big launch (about 1,700 likes, 211 reposts, 186 quotes). Replies mostly ask when the weights land and whether they will be Apache 2.0 like the preview, and whether it runs on four DGX Sparks. Others like the price against Opus 5.5 and ask for a reference computer-use harness. No refutation seen."
+    },
+    {
+      "title": "Mistral shows 133 Mistral Large 4 agents finding, proving and patching a real Django CVE",
+      "url": "https://x.com/MistralAI/status/2117925908572991748",
+      "handle": "@MistralAI",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "A demo video (90x speed) of a multi-agent pipeline: 133 agents map a Django codebase, hunt for flaws, test attack scenarios and confirm a recent CVE, then the model nicknamed Le Chonk writes the patch. Triage, repro and patch in one loop.",
+      "kind": "demo",
+      "evidence": "video",
+      "links": [],
+      "vendor": "Mistral",
+      "posted_at": "2026-11-04T10:24:00Z",
+      "metrics": {
+        "likes": 202,
+        "reposts": 25,
+        "quotes": 9,
+        "replies": 40,
+        "views": 6578
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Known CVE whose answer already exists; no false-positive rate, cost, or check of the patch against Django's shipped fix.",
+        "source": null
+      },
+      "reception": "Replies like the prove-before-patch order but ask about false positives, human review of the patch and cost. @BenchLeaderAI notes Le Chonk (high) is #8 on CWE-Bench at 58.3% but only 15.0% on DeepSec-Bench."
+    },
+    {
+      "title": "Open WebUI v0.13.0 gives the model a computer: real desktop, real browser, changes left in Git",
+      "url": "https://x.com/OpenWebUI/status/2117886684780224883",
+      "handle": "@OpenWebUI",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "With Open Terminal connected, the self-hosted Open WebUI can now open apps on a real desktop, test its work in a real browser and leave its changes in Git for review, and you can watch or take the mouse. The release also adds a tabbed workspace for files, multiple terminal sessions, artifacts, previews and voice calls in a chat.",
+      "kind": "release",
+      "evidence": "repo",
+      "links": [
+        "https://github.com/open-webui/open-webui/releases/tag/v0.13.0"
+      ],
+      "vendor": "Open WebUI",
+      "posted_at": "2026-11-04T07:48:00Z",
+      "metrics": {
+        "likes": 100,
+        "reposts": 9,
+        "quotes": 0,
+        "replies": 8,
+        "views": 17200
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "terminal-mac: a separate virtual Mac for computer-use agents, viewed and driven from the terminal",
+      "url": "https://x.com/kirtandopamine/status/2117678357894635771",
+      "handle": "@kirtandopamine",
+      "group": "builders",
+      "origin": "save",
+      "summary": "MIT-licensed Swift tool for Apple silicon (macOS 14+). It boots a real macOS guest with Apple Virtualization and streams its screen into Ghostty, Kitty or iTerm2. Agents get MCP tools (screenshot, click, drag, scroll, type, key, status) plus a skill, and it installs as a Claude Code plugin or into Cursor, Codex and other MCP clients. The agent never moves your own pointer or touches your clipboard. Early release candidate with self-signed releases; the demo shows Claude using it. Saved by Cameron.",
+      "kind": "tool",
+      "evidence": "repo",
+      "links": [
+        "https://github.com/govijr/terminal-mac"
+      ],
+      "vendor": null,
+      "posted_at": "2026-11-03T18:00:39Z",
+      "metrics": {
+        "likes": 324,
+        "reposts": 15,
+        "quotes": 3,
+        "replies": 7,
+        "views": 24568
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "The README says live guest acceptance on a clean Mac is still pending and releases are not notarized.",
+        "source": null
+      },
+      "reception": "About 880 GitHub stars in a day and 558 bookmarks on the post. Replies are mostly amazement, plus questions about memory use, file-access scoping through the shared volume, and how it compares with tart VMs."
+    },
+    {
+      "title": "Claude Code 2.1.317 relaxes the Opus 5.5 rule that refused game projects naming existing games",
+      "url": "https://x.com/addyosmani/status/2117848568535106001",
+      "handle": "@addyosmani",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "Last week a prompt rule meant to stop Claude recreating specific existing games also fired when users named a game only to describe mechanics. In 2.1.317 you can name a game and Claude builds an original game in that genre. If you ask for a straight copy, it offers to build something similar.",
+      "kind": "feature",
+      "evidence": "post",
+      "links": [],
+      "vendor": "Anthropic",
+      "posted_at": "2026-11-04T05:17:00Z",
+      "metrics": {
+        "likes": 837,
+        "reposts": 43,
+        "quotes": 41,
+        "replies": 245,
+        "views": 138193
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      },
+      "reception": "Mixed. Some replies thank them for the quick fix. Many are angry the rule existed at all (one says it refused to build Pong after heavy API spend), ask for an LTS release cycle, or say they will use Codex."
+    },
+    {
+      "title": "Hermes Agent v0.22.6: time-aware cron jobs, hermes cron cancel, and a pre_llm_call hook",
+      "url": "https://x.com/witcheer/status/2117912486217195596",
+      "handle": "@witcheer",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "Cron jobs now know the time they were scheduled for. hermes cron cancel stops a stuck run and keeps the schedule. A pre_llm_call hook can block a prompt before any model call. Update with hermes update; Hermes Cloud updates itself.",
+      "kind": "release",
+      "evidence": "video",
+      "links": [],
+      "vendor": "Nous Research",
+      "posted_at": "2026-11-04T09:31:00Z",
+      "metrics": {
+        "likes": 17,
+        "reposts": 0,
+        "quotes": 0,
+        "replies": 3,
+        "views": 885
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Evolving Agent Teams: a supervisor that reorganizes its coding agents writes a kernel 1.2x faster than FlashInfer",
+      "url": "https://x.com/askalphaxiv/status/2117868635377332232",
+      "handle": "@askalphaxiv",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "A supervisor keeps rebuilding its agent team around whatever is blocking progress, spawning debugging, profiling or exploration agents and keeping lessons in shared memory. With an extended token budget it produced a GPU kernel 1.2x faster than the production FlashInfer baseline (better on 36 of 47 workloads) and a 3.44x speedup over FlashKDA on B200s.",
+      "kind": "research",
+      "evidence": "paper",
+      "links": [
+        "https://alphaxiv.org/abs/2610.36848"
+      ],
+      "vendor": null,
+      "posted_at": "2026-11-04T06:36:00Z",
+      "metrics": {
+        "likes": 107,
+        "reposts": 7,
+        "quotes": 0,
+        "replies": 13,
+        "views": 4285
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Unified Training: pretraining, SFT and RL under one likelihood objective",
+      "url": "https://x.com/askalphaxiv/status/2117868752603881736",
+      "handle": "@askalphaxiv",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "Treats RL as learning from reward-weighted model generations, so one objective mixes pretraining data, demonstrations and successful RL solutions. In 124M-parameter experiments the best setups beat staged training on reasoning accuracy and harder unseen problems while forgetting less. Small scale only.",
+      "kind": "research",
+      "evidence": "paper",
+      "links": [
+        "https://alphaxiv.org/abs/2610.40564"
+      ],
+      "vendor": null,
+      "posted_at": "2026-11-04T06:37:00Z",
+      "metrics": {
+        "likes": 99,
+        "reposts": 11,
+        "quotes": 1,
+        "replies": 2,
+        "views": 7465
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "ParallelKernelBench tests how well LLMs write multi-GPU kernels (NeurIPS 2026)",
+      "url": "https://x.com/askalphaxiv/status/2117876352758292849",
+      "handle": "@askalphaxiv",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "A new NeurIPS 2026 benchmark for LLM-written multi-GPU kernels, published on alphaXiv.",
+      "kind": "research",
+      "evidence": "paper",
+      "links": [
+        "http://alphaxiv.org/abs/2606.parallel-kernel-bench"
+      ],
+      "vendor": null,
+      "posted_at": "2026-11-04T07:07:00Z",
+      "metrics": {
+        "likes": 47,
+        "reposts": 5,
+        "quotes": 0,
+        "replies": 0,
+        "views": 2325
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Marin 535B-A23B open model now training on 65K contexts",
+      "url": "https://x.com/percyliang/status/2117855995494068430",
+      "handle": "@percyliang",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "Percy Liang says the Marin 535B-A23B MoE is now on 65K-token contexts, with a screenshot. It is a training progress update with no release date or weights yet.",
+      "kind": "model",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "Marin",
+      "posted_at": "2026-11-04T05:46:00Z",
+      "metrics": {
+        "likes": 168,
+        "reposts": 10,
+        "quotes": 0,
+        "replies": 7,
+        "views": 11077
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "DISCO distills tree search into a robot policy that plans long-horizon tasks with no search at test time (CoRL 2026 best paper finalist)",
+      "url": "https://x.com/yining_hong/status/2117823331642810621",
+      "handle": "@yining_hong",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "DISCO runs Monte Carlo Tree Search over continuous actions in simulation and keeps distilling what it finds into a policy that runs directly, so deployment needs no search. Strong results on long-horizon packing and stacking, with real-world transfer. Oral at CoRL on Nov 10.",
+      "kind": "research",
+      "evidence": "paper",
+      "links": [
+        "https://distilled-search.github.io/"
+      ],
+      "vendor": null,
+      "posted_at": "2026-11-04T03:36:00Z",
+      "metrics": {
+        "likes": 103,
+        "reposts": 7,
+        "quotes": 1,
+        "replies": 4,
+        "views": 3533
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    }
+  ],
+  "saved_rejected": [
+    {
+      "url": "https://x.com/FmrRepMTG/status/2117650003862946077",
+      "reason": "Non-AI partisan politics video."
+    }
+  ],
+  "list_posts_read": 91,
+  "list_pages": 1,
+  "saves": {
+    "read": 20,
+    "new_since_last_sweep": 2,
+    "kept": 1,
+    "note": "Two saves not yet in the archive: the terminal-mac repo post (kept) and a political video (rejected)."
+  },
+  "discovery": {
+    "queries": 1,
+    "kept": 0,
+    "note": "One security search (25 results). Four new leads written up, the rest already handled or out of stack. No release discovery search this run."
+  },
+  "horizon": {
+    "block-dessa": "One X read returned no results. No trigger."
+  },
+  "rechecks": 0,
+  "rechecks_note": "No rechecks this run. Nothing new surfaced in this window about the 03:05 doubt items (Antigravity Fortran to Rust, Fable classifier weights).",
+  "videos": 0,
+  "security_forwarded": [
+    {
+      "url": "https://x.com/fireball_triada/status/2117913925387948337",
+      "matched": "stack: Claude Code; always_forward: agent tooling.",
+      "summary": "One line in a repo AGENTS.md makes Claude Code's Auto Mode classifier score on a 0 to 10 scale, so every risky call (including hard_deny rules) falls under the 25 auto-approve line. Published Nov 1 by Matan Ben-Tov, still works on v2.1.316, no fix yet. Mitigation: use permissions.deny, not autoMode.hard_deny, and review AGENTS.md in untrusted repos.",
+      "sources": [
+        "https://matanbt.github.io/post/yesmode2026/",
+        "https://sessionboxer.talayolabs.com/blog/claude-code-auto-mode-agents-md-prompt-injection/"
+      ]
+    },
+    {
+      "url": "https://x.com/stretchcloud/status/2117827426101112883",
+      "matched": "always_forward: agent tooling (writes into Claude Code and Codex configs).",
+      "summary": "Postman Desktop 12.33.4 on macOS auto-installed Postman plugins into Claude Code and Codex on upgrade and self-approved a Codex SessionStart hook. Matters only on Macs with Postman Desktop installed.",
+      "sources": [
+        "https://github.com/postmanlabs/postman-app-support/issues/14370"
+      ]
+    },
+    {
+      "url": "https://x.com/infrastack_ai/status/2117881198060212411",
+      "matched": "always_forward: MCP servers, npm supply chain.",
+      "summary": "Malicious npm MCP server @ifasn/ms-doc-mcp 2.0.9 and 2.1.1 (MAL-2026-18603). Not known in the stack.",
+      "sources": [
+        "https://osv.dev/vulnerability/MAL-2026-18603"
+      ]
+    },
+    {
+      "url": "https://x.com/DarkControlAI/status/2117935338433769632",
+      "matched": "always_forward: MCP servers.",
+      "summary": "MoLing MCP server CVE-2026-62863 (CVSS 9.6): in SSE mode any web page can hijack the local session and call tools. Fixed in 0.5.0. Not known in the stack.",
+      "sources": [
+        "https://nvd.nist.gov/vuln/detail/cve-2026-62863"
+      ]
+    }
+  ],
+  "security_na": [
+    {
+      "url": "https://x.com/DFIR_Radar/status/2117859888554524912",
+      "reason": "Cursor marketplace Claude Code extension backdoor recap; already handled since 2026-10-30."
+    },
+    {
+      "url": "https://x.com/search?q=CVE-2026-112917",
+      "reason": "Docker Desktop WSL 2 CVE-2026-112917 recaps; already forwarded 2026-11-03."
+    },
+    {
+      "url": "https://x.com/search?q=npm%20hijack%20recap",
+      "reason": "Recap of an old npm account hijack; no new action."
+    },
+    {
+      "url": "https://x.com/search?q=Dependabot%20APM",
+      "reason": "GitHub Dependabot feature news, not a vulnerability."
+    },
+    {
+      "url": "https://x.com/search?q=ZizkaDB%20MCP",
+      "reason": "MCP audit product promo, no specific vulnerability."
+    },
+    {
+      "url": "https://x.com/search?q=CERT-In%20Mythos",
+      "reason": "Policy news on model access, not a vulnerability."
+    }
+  ],
+  "skipped": 14,
+  "errors": 0,
+  "proposed_follows_note": "No browser in this run, so no follows were made. Possible trial candidates for a browser run: @kirtandopamine (terminal-mac, terminal-phone; computer-use tooling), @OpenWebUI (self-hosted agent UI releases), @witcheer (Hermes Agent release notes)."
+}
