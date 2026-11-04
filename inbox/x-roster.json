@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T10:34:27Z",
+  "updated_at": "2026-11-04T10:40:00Z",
   "accounts": [
     {
       "handle": "@thsottiaux",
@@ -358,7 +358,7 @@
       "affiliation": "UCSD Hao AI Lab",
       "why": "First-hand on FastVideo: open distilled real-time video models with training code, NVFP4 quantization-aware recipes and measured latency on Blackwell and DGX Spark.",
       "signal_to_noise": 4,
-      "status": "trial",
+      "status": "active",
       "added_on": "2026-10-21",
       "evidence": [
         "https://x.com/haoailab/status/2112625528805208257",
@@ -368,7 +368,8 @@
       "last_qualifying_post": "2026-10-30",
       "retired_reason": null,
       "x_user_id": "1768529398448492544",
-      "on_list": true
+      "on_list": true,
+      "promoted_on": "2026-11-04"
     },
     {
       "handle": "@somarkai",
@@ -471,7 +472,7 @@
       "affiliation": "Nace AI",
       "why": "Small decision models: open Drex 2.0 weights and code, plus measured Drex Max and browser-use harness results (WebArena-Verified, cost per 1,000 tasks).",
       "signal_to_noise": 3,
-      "status": "trial",
+      "status": "active",
       "added_on": "2026-10-21",
       "evidence": [
         "https://x.com/NaceAI/status/2109755218716188674",
@@ -481,7 +482,8 @@
       "last_qualifying_post": "2026-11-02",
       "retired_reason": null,
       "x_user_id": "1904210068704481280",
-      "on_list": true
+      "on_list": true,
+      "promoted_on": "2026-11-04"
     },
     {
       "handle": "@Letta_AI",
@@ -1433,6 +1435,66 @@
       "source": "roster_review",
       "x_user_id": "2013765983048183808",
       "on_list": true
+    },
+    {
+      "handle": "@FanNie1208",
+      "name": "Fan Nie",
+      "group": "research",
+      "affiliation": "OSVerify / After42 research",
+      "why": "First-hand on AI verification of math and science proofs (OSVerify) and AI-proposed research questions (After42), with measured results.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-11-04",
+      "evidence": [
+        "https://x.com/FanNie1208/status/2110062448153862505",
+        "https://x.com/FanNie1208/status/2115113813620211818",
+        "https://x.com/FanNie1208/status/2108458991567462432"
+      ],
+      "last_qualifying_post": "2026-11-02",
+      "retired_reason": null,
+      "source": "roster_review",
+      "x_user_id": "1765238885247066112",
+      "on_list": true
+    },
+    {
+      "handle": "@EricBezzam",
+      "name": "Eric Bezzam",
+      "group": "opensource",
+      "affiliation": "Hugging Face (Open ASR and Open TTS leaderboards)",
+      "why": "Maintains Hugging Face's Open ASR and Open TTS leaderboards; posts measured WER and naturalness results for new open speech models.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-11-04",
+      "evidence": [
+        "https://x.com/EricBezzam/status/2115492224071012504",
+        "https://x.com/EricBezzam/status/2116230930885120117",
+        "https://x.com/EricBezzam/status/2113571314149568964"
+      ],
+      "last_qualifying_post": "2026-11-03",
+      "retired_reason": null,
+      "source": "roster_review",
+      "x_user_id": "1016643081179934721",
+      "on_list": true
+    },
+    {
+      "handle": "@Mokhalil01",
+      "name": "Moe Khalil",
+      "group": "devtools",
+      "affiliation": "LiteLLM",
+      "why": "First-hand on LiteLLM releases (Autorouter SDK, Model Registry with RSS, Lens trace analysis); LiteLLM is in the owner's stack.",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-11-04",
+      "evidence": [
+        "https://x.com/Mokhalil01/status/2115583124168200440",
+        "https://x.com/Mokhalil01/status/2116358472459854173",
+        "https://x.com/Mokhalil01/status/2107328972967358541"
+      ],
+      "last_qualifying_post": "2026-10-31",
+      "retired_reason": null,
+      "source": "roster_review",
+      "x_user_id": "374044084",
+      "on_list": true
     }
   ],
   "source_leads": [
@@ -1816,6 +1878,15 @@
       "why": "Agent time-awareness benchmark with combined score across frontier models; not in sources.json.",
       "seen_via": [
         "@maksym_andr"
+      ]
+    },
+    {
+      "kind": "feed",
+      "name": "LiteLLM Model Registry (RSS)",
+      "url": "https://x.com/Mokhalil01/status/2116358472459854173",
+      "why": "Tracks new model releases, provider deprecations and pricing/capability changes with RSS feeds; could feed Magpie's model-change tracking.",
+      "seen_via": [
+        "@Mokhalil01"
       ]
     }
   ],
