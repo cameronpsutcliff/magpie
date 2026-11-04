@@ -33,8 +33,8 @@
         ],
         "handle_notes": "@ragavan is a different person (ex-Llama at Meta), not Ragavan Thurairatnam; his X handle is not yet known."
       },
-      "last_checked": "2026-11-04T19:15:00Z",
-      "last_result": "No trigger. One X read: Ragavan Thurairatnam announced an MTS live interview about Dessa (no weights, API or paper); block.xyz/dessa still shows a waitlist and 'Launch links are coming soon'.",
+      "last_checked": "2026-11-04T23:10:00Z",
+      "last_result": "MTS interview clip with Ragavan Thurairatnam on speech-only training; demos still waitlist only. No weights, API or paper.",
       "status": "watching",
       "triggered_at": null,
       "evidence": []
