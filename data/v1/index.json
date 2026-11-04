@@ -3,72 +3,73 @@
  "days": [
   {
    "date": "2026-11-04",
-   "headline": "Qwen 3.8 27B on my laptop can interpret model weights, too, Qwen-Image-2.1-Turbo-Quantized, heretic, and more",
-   "events": 273,
-   "sources": 521,
-   "enriched": false,
+   "headline": "Read model weights locally, decode faster with vLLM, cut reasoning spend, and more",
+   "events": 393,
+   "sources": 550,
+   "enriched": true,
    "top": [
     {
      "id": "f6f2d6ac259e",
-     "title": "Qwen 3.8 27B on my laptop can interpret model weights, too",
+     "title": "Qwen 3.8 27B reads model weights on a laptop",
      "impact": 4,
-     "vendor": "OpenAI"
-    },
-    {
-     "id": "8463eaeebefd",
-     "title": "abenzerps/Qwen-Image-2.1-Turbo-Quantized",
-     "impact": 4,
-     "vendor": "Open source"
-    },
-    {
-     "id": "bee099572b64",
-     "title": "p-e-w/heretic",
-     "impact": 4,
-     "vendor": "Open source"
+     "vendor": "Qwen"
     },
     {
      "id": "163057fb1ee5",
-     "title": "JustVugg/colibri",
+     "title": "Colibri keeps trending on tiered MoE inference claim",
      "impact": 4,
      "vendor": "Open source"
     },
     {
      "id": "e487fe51b82b",
-     "title": "cloudflare/security-audit-skill",
+     "title": "Cloudflare security-audit skill keeps climbing",
      "impact": 4,
      "vendor": "Cloudflare"
+    },
+    {
+     "id": "bee099572b64",
+     "title": "Heretic keeps trending for training-free model edits",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "679201ed0c04",
+     "title": "vLLM 0.33.0 adds models and faster GB300 decode",
+     "impact": 4,
+     "vendor": "vLLM"
     }
    ],
    "vendors": [
     "Open source",
     "Anthropic",
     "OpenAI",
-    "Microsoft",
     "Google",
-    "AWS"
+    "Microsoft",
+    "Hugging Face"
    ],
    "topics": {
-    "coding": 92,
-    "models": 85,
-    "agents": 84,
-    "multimodal": 57,
-    "infra": 39,
-    "mcp": 35,
-    "memory": 29,
-    "local": 27,
-    "evals": 26,
-    "research": 18,
-    "reverse": 14,
-    "security": 12,
-    "robotics": 4
+    "models": 120,
+    "agents": 117,
+    "coding": 113,
+    "multimodal": 67,
+    "infra": 52,
+    "evals": 36,
+    "memory": 34,
+    "local": 32,
+    "mcp": 32,
+    "research": 24,
+    "security": 15,
+    "reverse": 12,
+    "robotics": 3
    },
    "kinds": {
-    "social": 56,
-    "repo": 48,
+    "social": 99,
+    "video": 76,
+    "repo": 47,
     "blog": 36,
     "model": 30,
-    "community": 29,
-    "newsletter": 26,
+    "newsletter": 30,
+    "community": 27,
     "changelog": 23,
     "space": 20,
     "news": 5
