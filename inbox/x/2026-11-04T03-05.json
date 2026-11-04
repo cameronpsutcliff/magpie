@@ -1,0 +1,362 @@
+{
+ "ran_at": "2026-11-04T03:05:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-03T23:05:00Z",
+ "queries": 9,
+ "calls": 13,
+ "items": [
+  {
+   "title": "Antigravity details how Gemini 4 Argon ported a 174K-line Fortran ocean model's core to safe Rust in 59 minutes, and ships the workflow as a skill",
+   "url": "https://x.com/antigravity/status/2117773996695367851",
+   "handle": "@antigravity",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Google's write-up of one agent run on FVCOM (174,774 lines of Fortran and C across 264 files). From one prompt with hard rules (no unsafe code, no heap allocations in hot loops, files under 400 lines, 95% branch coverage, bit-level parity over 100 seeds), the agent captured a gfortran baseline, wrote a blueprint, rewrote the core solver as 13 Rust modules, and self-fixed one failing test. It reports 100 of 100 seeds matching to about 4e-13, six real bugs found in the old code, and runtime going from 883 ms to 469 ms (1.88x) with 54% less memory after a PGO pass. The workflow is released as an open-source /migrate-to-rust skill in Google's skills repo.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://antigravity.google/blog/modernizing-40-year-old-scientific-code-with-gemini-4-argon"
+   ],
+   "vendor": "Google",
+   "posted_at": "2026-11-04T00:20:41Z",
+   "metrics": {
+    "likes": 345,
+    "reposts": 32,
+    "quotes": 6,
+    "replies": 19,
+    "views": 17900
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Vendor's own showcase run. The port covers the core solver (13 modules), not all 174K lines, and the timings come from one benchmark harness built by the agent.",
+    "source": null
+   },
+   "reception": "Deep read of the blog post. Engagement is steady (345 likes, 32 reposts) with no pushback seen in the window."
+  },
+  {
+   "title": "vLLM v0.33.0: Reflection Beam-1.0, Step-5 Preview and MiniCPM-OCR support, PyTorch 2.14 on CUDA 13 wheels, faster GB300 decode",
+   "url": "https://x.com/vllm_project/status/2117767095090053475",
+   "handle": "@vllm_project",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A large release (927 commits, 389 contributors). New models include Reflection Beam-1.0, Step-5 Preview, Nemotron Parse 3.5 and MiniCPM-OCR 1.0. It moves to PyTorch 2.14 with CUDA 13.0-only wheels, adds speculative decoding options (XPress refiner, FLy lossy verify at 1.04 to 1.31x), reports DSpark going from 1373 to 3390 tok/s and 1.5 to 2x faster decode on GB300, and makes ROCm 10.0 the default. CUDA 13-only wheels matter for anyone pinning vLLM on older drivers, including the DGX Spark.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "vLLM",
+   "posted_at": "2026-11-03T23:53:16Z",
+   "metrics": {
+    "likes": 95,
+    "reposts": 11,
+    "quotes": 2,
+    "replies": 12,
+    "views": 6622
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "GLM-5.3 753B runs at about 70 tok/s single-stream on four DGX Sparks with a published TensorFold TP4 recipe",
+   "url": "https://x.com/ViC305/status/2117794654586650969",
+   "handle": "@ViC305",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Using the author's 3.38 bpw SAGE-EXL3 quant (all 19,200 experts in 319 GB), @cfontes's TensorFold TP4 plus DFlash2 recipe measures p50 single-request speeds of 69.2 tok/s on code, 55.7 on prose and 73.6 on structured output with a 1M context configured. Prefix caching cut a sixth agent turn (15,930 tokens) from 85.3 s cold to 19.4 s. The quant matched BF16's next token 93% of the time with 2.1% higher perplexity. Both the recipe and the weights are published.",
+   "kind": "benchmark",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Community (SAGE-EXL3, TensorFold)",
+   "posted_at": "2026-11-04T01:42:47Z",
+   "metrics": {
+    "likes": 30,
+    "reposts": 5,
+    "quotes": 3,
+    "replies": 8,
+    "views": 1650
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Numbers come from the quant's own author, and the comparison figures from other recipes used different harnesses.",
+    "source": null
+   }
+  },
+  {
+   "title": "Spark-X2.6-4B Q8 holds 288K context at about 67 tok/s on a single 12 GB RTX 3060",
+   "url": "https://x.com/DogukanUrker/status/2117176038639775763",
+   "handle": "@DogukanUrker",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A llama-server config (q8_0 KV cache, flash attention) runs the 4B model with 288K context at about 67 tok/s decode and 3,500 tok/s prefill, and finds a needle at 280K. Only 9 of its 36 layers keep a full KV cache, which is why long context is cheap. Switching the KV cache to q4_0 reaches 448K on the same card with the needle still found at 436K, though decode falls to about 12 tok/s that deep. The full command line is in the post.",
+   "kind": "benchmark",
+   "evidence": "measured",
+   "links": [],
+   "vendor": null,
+   "posted_at": "2026-11-02T08:44:37Z",
+   "metrics": {
+    "likes": 48,
+    "reposts": 0,
+    "quotes": 5,
+    "replies": 9,
+    "views": 2601
+   },
+   "confirmed_by": [
+    "https://x.com/SparkLLM/status/2117800265021845523"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": "Posted 2026-11-02 but surfaced in this window through a quote by the model's maker @SparkLLM."
+  },
+  {
+   "title": "Fable hand-writes the weights of a 100K-parameter legal citation classifier that beats a trained version",
+   "url": "https://x.com/jacsebl/status/2117606206764175543",
+   "handle": "@jacsebl",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Legora's CTO says Fable wrote every weight of a 100K-parameter network that tells real legal citations from fake ones, in one shot, and that it scores better than training the same network. It follows this week's weight-space programming results (Hugging Face's repro was kept on 2026-11-03), now applied to a small production-style task.",
+   "kind": "research",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Legora",
+   "posted_at": "2026-11-03T13:13:57Z",
+   "metrics": {
+    "likes": 4776,
+    "reposts": 197,
+    "quotes": 129,
+    "replies": 144,
+    "views": 446470
+   },
+   "confirmed_by": [
+    "https://x.com/omarsar0/status/2117809097474986382",
+    "https://x.com/carterleffen/status/2117706573632221352",
+    "https://x.com/Alex_tra_memory/status/2117786388489756866"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single screenshot with no code, dataset or eval details yet, so the better-than-training claim is unchecked.",
+    "source": null
+   },
+   "reception": "Widely shared (about 4,800 likes, 197 reposts, 129 quotes). Quotes are mostly excitement. @carterleffen quoted it with his own attempt a few hours later, @Alex_tra_memory posted a legal citation checker he says Claude wrote weight by weight, and @omarsar0 calls weight-space programming the most exciting research he has seen lately. No refutation seen."
+  },
+  {
+   "title": "OpenAI shows ChatGPT and Codex working on mechanical design, electrical engineering and simulation",
+   "url": "https://x.com/OpenAI/status/2117692475775258785",
+   "handle": "@OpenAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "OpenAI shared progress using ChatGPT and Codex for physical engineering, from speeding up its own hardware teams to testing workflows with industry partners, with a focus on mechanical design, electrical engineering and simulation. Greg Brockman framed it as letting amateurs design prototype devices.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "OpenAI",
+   "posted_at": "2026-11-03T18:56:45Z",
+   "metrics": {
+    "likes": 5224,
+    "reposts": 414,
+    "quotes": 281,
+    "replies": 437,
+    "views": 609116
+   },
+   "confirmed_by": [
+    "https://x.com/gdb/status/2117781797555851515"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": "Posted 18:56Z, before this window, and missed by the 19:09 sweep; surfaced through @gdb quotes. About 5,200 likes and 414 reposts. The attached video (about 80 s) was not watched."
+  },
+  {
+   "title": "Vals: four of seven frontier models keep 80% of their score at the lowest reasoning effort for half the cost or less",
+   "url": "https://x.com/ValsAI/status/2117767921946775844",
+   "handle": "@ValsAI",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Vals ran seven frontier models at three reasoning levels across the Vals Index. Four kept at least 80% of their performance at the lowest setting while costing half as much or less, which supports defaulting agents to lower effort and raising it only where it pays.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Vals AI",
+   "posted_at": "2026-11-03T23:56:33Z",
+   "metrics": {
+    "likes": 55,
+    "reposts": 2,
+    "quotes": 3,
+    "replies": 1,
+    "views": 4043
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Artificial Analysis Capability Indexes v2.0 weight hallucination and agentic tool use more",
+   "url": "https://x.com/ArtificialAnlys/status/2117780641618207006",
+   "handle": "@ArtificialAnlys",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "The six occupation indexes (Finance and Accounting, Strategy and Ops, Legal, Healthcare, Engineering, Economics) now align with Intelligence Index v5.0. Changes include more weight on Non-Hallucination and Agentic Tool Use, HLE upgraded to HLE-Diamond, AA-Omniscience to v1.1, GDPval-AA dropped from agentic knowledge work, and a new Science capability for Engineering from CritPt v2 and Terminal-Bench-Science, plus FrontierCode 2.0 in agentic coding.",
+   "kind": "eval",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Artificial Analysis",
+   "posted_at": "2026-11-04T00:47:06Z",
+   "metrics": {
+    "likes": 95,
+    "reposts": 7,
+    "quotes": 5,
+    "replies": 24,
+    "views": 12948
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 23,
+ "list_pages": 1,
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 0,
+  "kept": 0,
+  "note": "The newest 20 saves were all already in the bookmark archive; nothing new to vet."
+ },
+ "discovery": {
+  "queries": 2,
+  "kept": 0,
+  "note": "One release search (25 results, all low-quality noise since min_likes is ignored; nothing kept) and one security search (25 results; one Docker Desktop CVE forwarded, the rest already handled or out of stack)."
+ },
+ "horizon": {
+  "block-dessa": "One X read returned no results. No trigger."
+ },
+ "rechecks": [],
+ "rechecks_note": "No rechecks this run; the 23:05 sweep rechecked six items and nothing new about them surfaced in this window.",
+ "videos": [],
+ "security_forwarded": [
+  {
+   "url": "https://x.com/EmunaEliran/status/2117762402976481448",
+   "matched": "stack: docker (match_terms container escape, seccomp); always_forward: container runtimes and images.",
+   "summary": "CVE-2026-112917 (CVSS 4.0 9.2): on Docker Desktop for Windows with the WSL 2 backend on x86-64, an unprivileged container can use 32-bit socketcall to get around the default seccomp block on AF_VSOCK and reach host services and the user's Windows files. Fixed only with Docker Desktop 4.98.0 (released 2026-11-03) plus WSL 3.0.3 or later, then wsl --shutdown. Docker Engine on Linux (the Spark, cspie), Mac, ARM and Hyper-V backends are not affected. The only possible exposure is csdesktop if it runs Docker Desktop on WSL 2, which nobody has checked.",
+   "sources": [
+    "https://docs.docker.com/desktop/release-notes/",
+    "https://app.opencve.io/cve/CVE-2026-112917",
+    "https://www.rapid7.com/db/vulnerabilities/cve-2026-112917/"
+   ]
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/fireball_triada/status/2117762518169104565",
+   "reason": "Langflow CVE-2026-93680 and CVE-2026-110186 recap; Langflow is not in the stack and was already filed 2026-11-02 (also @morphisec 2117810340293497021 on CVE-2026-105740)."
+  },
+  {
+   "url": "https://x.com/infrastack_ai/status/2117788232461275293",
+   "reason": "Malicious react-contact-forms npm package; not in the stack."
+  },
+  {
+   "url": "https://x.com/GrahamHelton3/status/2117782531856581004",
+   "reason": "Claimed backdoor in a red-team Docker image (ARTEX); not used in the stack and unverified."
+  },
+  {
+   "url": "https://x.com/AIConsciousYet",
+   "reason": "Model eval anecdote about a PyPI package, not a live threat."
+  },
+  {
+   "url": "https://x.com/Thom_Wolf",
+   "reason": "Repost of a general GitHub Actions security guide; no specific vulnerability."
+  },
+  {
+   "url": "https://x.com/search?q=Binance%20Homebrew",
+   "reason": "Binance tampered Homebrew installer recaps from many accounts; already forwarded 2026-11-03."
+  },
+  {
+   "url": "https://x.com/search?q=Cursor%20marketplace%20Claude%20Code%20backdoor",
+   "reason": "Cursor marketplace Claude Code extension backdoor recaps (@vouchvendor, @CisoMarketplace, @SMS_Datacenter); already handled since 2026-10-30."
+  }
+ ],
+ "skipped": [
+  {
+   "url": "https://x.com/llama_index",
+   "reason": "OpenDocRouter and OCRia posts; already kept 2026-11-03T19:09."
+  },
+  {
+   "url": "https://x.com/CommandCodeAI",
+   "reason": "Crouton in Command Code; already covered 2026-11-03T23:05."
+  },
+  {
+   "url": "https://x.com/useNockAI/status/2117590866986512591",
+   "reason": "Nock adding MiniCPM-OCR for local OCR; low engagement, model support already covered by the vLLM item."
+  },
+  {
+   "url": "https://x.com/_albertgu/status/2117798862186512601",
+   "reason": "Agreement on byte-level models under multi-epoch training; supports an item already kept, no new result."
+  },
+  {
+   "url": "https://x.com/sayashk",
+   "reason": "Small informal Pangram detector test."
+  },
+  {
+   "url": "https://x.com/MLX_vlm",
+   "reason": "MLX-VLM and MLX-Audio moving to a new GitHub org; housekeeping only."
+  },
+  {
+   "url": "https://x.com/vllm_project",
+   "reason": "Madrid meetup and award posts; events only."
+  },
+  {
+   "url": "https://x.com/FireworksAI_HQ",
+   "reason": "Stage promos and the Reflection Beam fireside; no capability detail."
+  },
+  {
+   "url": "https://x.com/sama",
+   "reason": "Opinion post."
+  },
+  {
+   "url": "https://x.com/dylan522p",
+   "reason": "Space datacenter opinion."
+  },
+  {
+   "url": "https://x.com/scaling01",
+   "reason": "Spending charts and commentary."
+  },
+  {
+   "url": "https://x.com/ArtificialAnlys",
+   "reason": "PersonalityBench and robot arm anecdote posts; the Capability Indexes post was kept instead."
+  }
+ ],
+ "errors": [],
+ "proposed_follows_note": "No browser in this run, so no follows were made. Possible trial candidates for a browser run: @ViC305 (large-model quants and DGX Spark recipes), @DogukanUrker (local long-context configs), @ValsAI (model evals)."
+}
