@@ -1,0 +1,759 @@
+{
+  "ran_at": "2026-11-04T19:15:00Z",
+  "bot": "magpie-scout",
+  "prompt": "v6.1",
+  "since": "2026-11-04T15:15:00Z",
+  "queries": 10,
+  "calls": 16,
+  "items": [
+    {
+      "title": "Kimi K3.1 Pro open weights on Hugging Face: 2.8T total, 104B active, 1M context, day-0 in vLLM, SGLang and TokenSpeed",
+      "url": "https://x.com/Kimi_Moonshot/status/2118010528123773297",
+      "handle": "@Kimi_Moonshot",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "Moonshot released the weights of Kimi K3.1 Pro, the post-trained successor to Kimi K3 whose API launched earlier. Thomas Wolf's breakdown of the repo: 2.8T total and 104B active parameters, 896 experts with 16 per token, 93 layers that are mostly linear attention (KDA) with DeepSeek-style sparse attention every 4th layer, a 1M-token context, a 401M vision encoder, and native MXFP4 training (the full download is about 1.6 TB). vLLM reports 65.7% on Terminal-Bench 4.0 with the Claude Code harness and day-0 serving; SGLang reports up to 33.7K tok/s per GB300 GPU on AgentX; Ollama Cloud, Modal and Baseten host it.",
+      "kind": "model",
+      "evidence": "artifact",
+      "links": [
+        "https://huggingface.co/moonshotai/Kimi-K3.1-Pro"
+      ],
+      "vendor": "Moonshot AI",
+      "posted_at": "2026-11-04T16:00:35Z",
+      "metrics": {
+        "likes": 4486,
+        "reposts": 473,
+        "quotes": 274,
+        "replies": 240,
+        "views": 202370
+      },
+      "confirmed_by": [
+        "https://x.com/Thom_Wolf/status/2118026565879844910",
+        "https://x.com/vllm_project/status/2118026522179317874",
+        "https://x.com/sgl_project/status/2118017145548451860",
+        "https://x.com/lightseekorg/status/2118011834053849504",
+        "https://x.com/ollama/status/2118017270739878316",
+        "https://x.com/modal/status/2118041830390645042",
+        "https://x.com/baseten/status/2118031398443552860",
+        "https://x.com/scaling01/status/2118003733103600085"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "@xeophon says the license is gated for model-as-a-service and above a revenue threshold, so check it before hosting. Benchmark numbers are vendor and serving-partner figures. A compute-scaling eval quoted by @teortaxesTex found it gains less from extra test-time compute than Opus 5.0 (0.78x at 40 H100 hours versus 1.3x).",
+        "source": "https://x.com/xeophon/status/2118004435368792068"
+      },
+      "reception": "Deep read of replies and quotes: mostly excitement plus practical notes that it is cluster territory until good quants ship, and that the hosting bill should be compared with the API bill. Agent Arena separately reports K3.1 Pro spends the least time per long-horizon task among the top five lab models."
+    },
+    {
+      "title": "Ripple-65B Preview: a 65B dense US open-weight model pretrained from scratch, claimed best US open model at agentic coding",
+      "url": "https://x.com/RicursiveAI/status/2118046765857546733",
+      "handle": "@RicursiveAI",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "Ricursive AI released Ripple-65B Preview, a dense 65B model trained from scratch, and claims it beats larger US open-weight models (Muse Spark Open-816B, Beam-501B, Inkling-975B, Nemotron 3 Ultra-550B) on agentic coding. Nathan Lambert says it follows the OLMo lineage. The team cites a $32M compute budget and 16x compute efficiency.",
+      "kind": "model",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "Ricursive AI",
+      "posted_at": "2026-11-04T18:24:35Z",
+      "metrics": {
+        "likes": 269,
+        "reposts": 54,
+        "quotes": 41,
+        "replies": 62,
+        "views": 17958
+      },
+      "confirmed_by": [
+        "https://x.com/natolambert/status/2118049168967290897",
+        "https://x.com/_albertgu/status/2118051656596422779",
+        "https://x.com/KumbongHermann/status/2118050542572519917"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "@teortaxesTex questions the 16x compute efficiency claim and notes it still loses to DeepSeek V4 Flash 284B; a reply points out the coding results use Terminal-Bench 2.1 rather than 4.0. No weights link was in the post itself.",
+        "source": "https://x.com/teortaxesTex/status/2118052356495389041"
+      },
+      "reception": "Deep read: supportive quotes from researchers (Lambert, Albert Gu), skepticism from @teortaxesTex, few substantive replies.",
+      "video": {
+        "seconds": 74,
+        "watched": false
+      }
+    },
+    {
+      "title": "Together Compiler (TKCC): agents continually re-optimize inference deployments as models and traffic change, with one result validated by SemiAnalysis",
+      "url": "https://x.com/simran_s_arora/status/2118032475498983540",
+      "handle": "@simran_s_arora",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "Together AI's research team introduced continual compilation for inference: agents keep tuning kernels and deployments as new architectures arrive and usage shifts (they note 80% of OpenRouter traffic goes to models under three months old). They claim TKCC runs 252x more optimization experiments per hour than prior agent systems and beats the best InferenceX engine in every setting they tried within 24 hours on 2 nodes. SemiAnalysis says it independently validated one of the InferenceX/AgentX results.",
+      "kind": "research",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "Together AI",
+      "posted_at": "2026-11-04T17:27:47Z",
+      "metrics": {
+        "likes": 298,
+        "reposts": 59,
+        "quotes": 18,
+        "replies": 24,
+        "views": 20583
+      },
+      "confirmed_by": [
+        "https://x.com/SemiAnalysis_/status/2118049538157969917"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Throughput claims are Together's own; SemiAnalysis validated one result, not the full set.",
+        "source": null
+      },
+      "reception": "Deep read: no substantive pushback in replies; team members posted follow-ups on the megakernel work."
+    },
+    {
+      "title": "Axiom releases a 16M-line Lean formalization of the entire Stacks Project",
+      "url": "https://x.com/axiommathai/status/2118028834515874112",
+      "handle": "@axiommathai",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "Axiom formalized the whole Stacks Project, the main open reference for algebraic geometry, into about 16 million lines of Lean, keeping its cross-linked structure and with a side-by-side explorer. Axiom frames it as evidence that AI-written code at scale does not have to be low quality. Widely shared (about 2,100 likes, 700 reposts, including a Thomas Wolf repost).",
+      "kind": "research",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "Axiom Math",
+      "posted_at": "2026-11-04T17:13:19Z",
+      "metrics": {
+        "likes": 2090,
+        "reposts": 699,
+        "quotes": 146,
+        "replies": 379,
+        "views": 1815041
+      },
+      "confirmed_by": [
+        "https://x.com/omarsar0/status/2118031199255879758"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "That every proof checks is Axiom's own statement; no independent verification seen yet, and the post itself links no repository.",
+        "source": null
+      },
+      "reception": "Deep read: replies are positive and generic; quotes highlight the preserved structure rather than the line count.",
+      "video": {
+        "seconds": 259,
+        "watched": false
+      }
+    },
+    {
+      "title": "llama.cpp v0.9.0: native FP8, faster multi-sequence serving, multi-node tensor parallel over NCCL, Mistral Large 4 and Nemotron 3.5 Transcribe",
+      "url": "https://x.com/ggml_org/status/2118014407657570418",
+      "handle": "@ggml_org",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "New llama.cpp release built on ggml 0.29.0 (kept earlier today). Per Victor Mustar's summary: native FP8 (OCP E4M3), flash_attn_ext_rows for faster multi-sequence serving, multi-node tensor parallelism via NCCL, new models (Clover, Limite, Metis-1.6, Mistral Large 4), speech support for Chatterbox TTS and Nemotron 3.5 Transcribe, and faster Gemma 4 E2B and E4B prefill.",
+      "kind": "tool",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/ggml-org/llama.cpp/releases/tag/v0.9.0"
+      ],
+      "vendor": "ggml",
+      "posted_at": "2026-11-04T16:16:00Z",
+      "metrics": {
+        "likes": 68,
+        "reposts": 9,
+        "quotes": 1,
+        "replies": 0,
+        "views": 1520
+      },
+      "confirmed_by": [
+        "https://x.com/victormustar/status/2118038226589925427"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Unsloth Dynamic v3.1 GGUFs for Qwen3.8-Flash-Next, claimed 15% higher accuracy than other quants, run on 32 GB RAM",
+      "url": "https://x.com/UnslothAI/status/2118033433045991660",
+      "handle": "@UnslothAI",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "Unsloth published new Qwen3.8-Flash-Next GGUFs with its Dynamic v3.1 method and says they beat other quants by more than 15% on Terminal Bench, DeepSWE and other benchmarks at 256K context, running on 32 GB+ RAM setups. A blog post documents the setup.",
+      "kind": "model",
+      "evidence": "artifact",
+      "links": [
+        "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF",
+        "https://unsloth.ai/docs/models/qwen3.8-next"
+      ],
+      "vendor": "Unsloth",
+      "posted_at": "2026-11-04T17:31:36Z",
+      "metrics": {
+        "likes": 689,
+        "reposts": 61,
+        "quotes": 15,
+        "replies": 50,
+        "views": 25910
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "The 15% gain is Unsloth's own comparison against other quants.",
+        "source": null
+      },
+      "reception": "Deep read: replies ask about specific hardware and context settings; no refutation seen."
+    },
+    {
+      "title": "LFM3-Omni-2B runs fully offline on an iPhone at about 80 tok/s using custom WebGPU kernels in React Native",
+      "url": "https://x.com/xenovacom/status/2118024537812217962",
+      "handle": "@xenovacom",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "Xenova (Hugging Face) ported Liquid AI's LFM3-Omni-2B speech and text model to run locally on an iPhone at about 80 tok/s, following last week's in-browser omni demo. Separately, Modular added all six LFM3 models (text, audio, vision, omni) to MAX with open-source implementations.",
+      "kind": "demo",
+      "evidence": "measured",
+      "links": [
+        "https://max.modular.com/api/python/pipelines.architectures.lfm3/#module-max.pipelines.architectures.lfm3"
+      ],
+      "vendor": "Hugging Face, Liquid AI",
+      "posted_at": "2026-11-04T16:56:15Z",
+      "metrics": {
+        "likes": 116,
+        "reposts": 17,
+        "quotes": 6,
+        "replies": 27,
+        "views": 8851
+      },
+      "confirmed_by": [
+        "https://x.com/Modular/status/2118025753225019644",
+        "https://x.com/helloiamleonie/status/2118046523925938580"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "The iPhone app is not released; the speed is the author's own demo figure.",
+        "source": null
+      },
+      "video": {
+        "seconds": 102,
+        "watched": false
+      }
+    },
+    {
+      "title": "Collaborative Intelligence Benchmark: 18 models tested as teammates on 240 tasks; the best scores 82.2 and models cave when pushed back",
+      "url": "https://x.com/sean_n_wu/status/2118038063733408069",
+      "handle": "@sean_n_wu",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "New paper testing AI models as collaborators rather than solo solvers. Across 18 models and 240 tasks the top score was 82.2 of 100. Frontier models almost never cheat, but they tend to give in when a teammate pushes back, which matters for multi-agent and human-in-the-loop setups.",
+      "kind": "research",
+      "evidence": "artifact",
+      "links": [
+        "https://arxiv.org/abs/2611.02633"
+      ],
+      "vendor": null,
+      "posted_at": "2026-11-04T17:50:00Z",
+      "metrics": {
+        "likes": 28,
+        "reposts": 9,
+        "quotes": 3,
+        "replies": 6,
+        "views": 2550
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Artificial Analysis makes Time per Task its headline speed metric across about 1,000 endpoints",
+      "url": "https://x.com/ArtificialAnlys/status/2118034157909712992",
+      "handle": "@ArtificialAnlys",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "AA now ranks API performance by how long a model takes to finish a task: output tokens per Intelligence Index task divided by end-to-end output speed, measured from request send to final token (including prefill and hidden reasoning). Token counts now come from each provider's API, and agentic workloads are part of every measurement. A fast but verbose model can now rank below a slower, terser one.",
+      "kind": "eval",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "Artificial Analysis",
+      "posted_at": "2026-11-04T17:34:29Z",
+      "metrics": {
+        "likes": 104,
+        "reposts": 5,
+        "quotes": 5,
+        "replies": 41,
+        "views": 11439
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Agent Arena: on long-horizon tasks Claude Opus 5.5 takes longest (up to 1 h 51 min) and Kimi K3.1 Pro the least (56 min)",
+      "url": "https://x.com/arena/status/2118033077121524129",
+      "handle": "@arena",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "Comparing each top lab's best model on Agent Arena tasks that span hundreds of turns (porting a codebase to Rust, auditing a strategy document, writing a textbook) shows a 55-minute spread in time spent. Opus 5.5, ranked first overall, is slowest at every task length; Kimi K3.1 Pro is fastest at every length.",
+      "kind": "eval",
+      "evidence": "measured",
+      "links": [],
+      "vendor": "Arena",
+      "posted_at": "2026-11-04T17:30:11Z",
+      "metrics": {
+        "likes": 28,
+        "reposts": 1,
+        "quotes": 3,
+        "replies": 10,
+        "views": 10314
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Kiro CLI 3.0: cloud sessions that keep running with the laptop closed, spec review before coding, and auto-approval of safe prompts",
+      "url": "https://x.com/kirodotdev/status/2118025530314256844",
+      "handle": "@kirodotdev",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "AWS's Kiro CLI 3.0 adds cloud sessions, a spec review step before code is written, workflows for larger tasks, and an Approve for me mode where Kiro approves prompts it judges safe.",
+      "kind": "tool",
+      "evidence": "claim",
+      "links": [
+        "https://spr.ly/6011BHLuVX"
+      ],
+      "vendor": "AWS",
+      "posted_at": "2026-11-04T17:00:12Z",
+      "metrics": {
+        "likes": 29,
+        "reposts": 3,
+        "quotes": 0,
+        "replies": 4,
+        "views": 1698
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      },
+      "video": {
+        "seconds": 62,
+        "watched": false
+      }
+    },
+    {
+      "title": "Aether: cloud coding agents that start a running build in about 20 seconds using your existing Claude or ChatGPT plan",
+      "url": "https://x.com/pranavctl/status/2118044065229132252",
+      "handle": "@pranavctl",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "Aether runs Claude Code or Codex on its own cloud machines with your existing subscription, so you pay only for compute. It claims a task gets a running build in about 20 seconds, sessions can be watched and taken over from a phone, and an optional reviewer agent runs the changed code to catch bugs static review misses. Free to start.",
+      "kind": "tool",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "Aether",
+      "posted_at": "2026-11-04T18:13:51Z",
+      "metrics": {
+        "likes": 81,
+        "reposts": 14,
+        "quotes": 43,
+        "replies": 55,
+        "views": 44163
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Speed claim is the founder's own, and the public benchmark is theirs.",
+        "source": null
+      },
+      "video": {
+        "seconds": 104,
+        "watched": false
+      }
+    },
+    {
+      "title": "Grok Bot can now make phone calls",
+      "url": "https://x.com/bot/status/2118043939592942052",
+      "handle": "@bot",
+      "group": "applied",
+      "origin": "sweep",
+      "summary": "Grok Bot added outbound phone calls, aimed at booking, rescheduling and waiting on hold for the user. Widely shared (about 2,100 likes, 146 reposts).",
+      "kind": "feature",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "xAI",
+      "posted_at": "2026-11-04T18:13:21Z",
+      "metrics": {
+        "likes": 2135,
+        "reposts": 146,
+        "quotes": 122,
+        "replies": 661,
+        "views": 90751
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      },
+      "reception": "Deep read: replies from France and Belgium say it is not available there yet, so rollout looks region-limited; others share booking tasks they handed off.",
+      "video": {
+        "seconds": 42,
+        "watched": false
+      }
+    },
+    {
+      "title": "Atmee v2: a real-time avatar video model that animates any character from one image and 10 seconds of audio",
+      "url": "https://x.com/yuchenping/status/2118017931519078609",
+      "handle": "@yuchenping",
+      "group": "applied",
+      "origin": "sweep",
+      "summary": "Atmanity launched Atmee v2, a video foundation model tuned for characters, for live video calls, voice-only agents or video generation, with expressions, gestures and interaction with the scene. It claims up to 50x faster and 10 to 100x cheaper than general video models such as Seedance 2.5 and Wan 3.0 for character work.",
+      "kind": "model",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "Atmanity",
+      "posted_at": "2026-11-04T16:30:00Z",
+      "metrics": {
+        "likes": 535,
+        "reposts": 105,
+        "quotes": 114,
+        "replies": 109,
+        "views": 289706
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Speed and cost comparisons are the vendor's own; no public benchmark or paper linked.",
+        "source": null
+      },
+      "reception": "Deep read: quotes are demos and enthusiasm, no technical pushback.",
+      "video": {
+        "seconds": 162,
+        "watched": false
+      }
+    },
+    {
+      "title": "EmbeddingGemma 2 powers an on-the-fly local classifier (hunch) that learns new categories in real time",
+      "url": "https://x.com/googlegemma/status/2118036675540689044",
+      "handle": "@googlegemma",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "Google highlighted a community project that trains a small classifier on top of EmbeddingGemma 2 instead of running a full multimodal LLM. It learns new categories live and classifies locally in about 20 ms for text and 100 ms for images.",
+      "kind": "demo",
+      "evidence": "measured",
+      "links": [
+        "https://github.com/undrgrnd-labs/hunch"
+      ],
+      "vendor": "Google",
+      "posted_at": "2026-11-04T17:44:29Z",
+      "metrics": {
+        "likes": 298,
+        "reposts": 12,
+        "quotes": 5,
+        "replies": 15,
+        "views": 11736
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      },
+      "video": {
+        "seconds": 30,
+        "watched": false
+      }
+    },
+    {
+      "title": "TwIL-8B open-sourced: an 8.8B model claimed to reach about 90% of frontier scores on coding, instruction following and contest math",
+      "url": "https://x.com/Davidstout/status/2118035011236397350",
+      "handle": "@Davidstout",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "TwIL says its 8.8B model reaches 93% of frontier performance on coding, 92% on instruction following and 90% on contest math, small enough for local hardware, and argues cost per completed task matters more than raw capability.",
+      "kind": "model",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "TwIL",
+      "posted_at": "2026-11-04T17:37:52Z",
+      "metrics": {
+        "likes": 70,
+        "reposts": 23,
+        "quotes": 11,
+        "replies": 10,
+        "views": 6221
+      },
+      "confirmed_by": [
+        "https://x.com/omarsar0/status/2118051377704296536"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Percent-of-frontier figures without named benchmarks or a weights link in the post.",
+        "source": null
+      }
+    },
+    {
+      "title": "NVIDIA USDCraft open-sourced: one message to sim-ready articulated 3D assets, with a 10K-asset dataset",
+      "url": "https://x.com/ChuanruiZhang/status/2118000729961169086",
+      "handle": "@ChuanruiZhang",
+      "group": "research",
+      "origin": "discovery",
+      "summary": "NVIDIA Labs released USDCraft, which turns text, images or scans into articulated, simulation-ready USD assets, with code, a paper and the USDCraft-10K dataset on Hugging Face.",
+      "kind": "research",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/NVlabs/USDCraft",
+        "https://arxiv.org/abs/2610.11322",
+        "https://huggingface.co/datasets/nvidia/USDCraft-10K"
+      ],
+      "vendor": "NVIDIA",
+      "posted_at": "2026-11-04T15:21:39Z",
+      "metrics": {
+        "likes": 2,
+        "reposts": 0,
+        "quotes": 1,
+        "replies": 0,
+        "views": 77
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "IOTA Decide 4B: an Apache-2.0 open-weight model trained across globally distributed GPUs",
+      "url": "https://x.com/MacrocosmosAI/status/2118028289813971098",
+      "handle": "@MacrocosmosAI",
+      "group": "opensource",
+      "origin": "discovery",
+      "summary": "Macrocosmos released its first public model, a 4B decision model trained with its distributed training SDK across GPUs in many locations, under Apache-2.0.",
+      "kind": "model",
+      "evidence": "artifact",
+      "links": [
+        "https://huggingface.co/macrocosm-os/iota-decide-4b-v0.4"
+      ],
+      "vendor": "Macrocosmos",
+      "posted_at": "2026-11-04T17:11:10Z",
+      "metrics": {
+        "likes": 96,
+        "reposts": 27,
+        "quotes": 17,
+        "replies": 5,
+        "views": 10839
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Pareto-optimal claim comes without benchmark details in the post.",
+        "source": null
+      }
+    },
+    {
+      "title": "Paper: models react strongly to visual symbols in ways their chains of thought do not mention",
+      "url": "https://x.com/emollick/status/2118012530215854477",
+      "handle": "@emollick",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "Ethan Mollick flagged a paper showing that visual symbols in inputs sway model behavior, often without the reasoning trace acknowledging it, and that models read those symbols differently from humans. Relevant to how far chain-of-thought can be trusted as an explanation.",
+      "kind": "research",
+      "evidence": "artifact",
+      "links": [
+        "https://arxiv.org/pdf/2610.36449v1"
+      ],
+      "vendor": null,
+      "posted_at": "2026-11-04T16:08:32Z",
+      "metrics": {
+        "likes": 154,
+        "reposts": 24,
+        "quotes": 7,
+        "replies": 116,
+        "views": 11796
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Weight editing beats the original: changing 0.0002% of a game agent's weights wins 65 to 34, now a trainer in Honing",
+      "url": "https://x.com/HaozeHe_Hector/status/2118048048148623453",
+      "handle": "@HaozeHe_Hector",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "Using weight-space programming, the authors read a fire-versus-hold direction from NanoJev's activations and added it to the decision head (1,024 weights, no training). The edited agent beat the original 65 to 34 in 100 Tank War games because it stopped hesitating, not because it aimed better. Weight editing now ships as a Honing trainer gated like SFT and RL.",
+      "kind": "research",
+      "evidence": "measured",
+      "links": [
+        "https://rikiyat.github.io/blog/weight-space-programming/"
+      ],
+      "vendor": "Honing",
+      "posted_at": "2026-11-04T18:29:40Z",
+      "metrics": {
+        "likes": 12,
+        "reposts": 3,
+        "quotes": 3,
+        "replies": 0,
+        "views": 454
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Small game benchmark; a reply questioned how far the result generalizes.",
+        "source": null
+      }
+    },
+    {
+      "title": "Claude desktop adds /storage to show disk use and clear inactive tasks and unused worktrees",
+      "url": "https://x.com/lydiahallie/status/2118045439803195567",
+      "handle": "@lydiahallie",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "The Claude desktop app has a /storage command that shows how much disk Claude uses locally and lets you remove inactive tasks and unused git worktrees.",
+      "kind": "feature",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "Anthropic",
+      "posted_at": "2026-11-04T18:19:18Z",
+      "metrics": {
+        "likes": 862,
+        "reposts": 35,
+        "quotes": 10,
+        "replies": 105,
+        "views": 25145
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    }
+  ],
+  "saved_rejected": [],
+  "list_posts_read": 89,
+  "list_pages": 1,
+  "saves": {
+    "read": 20,
+    "new_since_last_sweep": 0,
+    "kept": 0,
+    "note": "Newest 20 saves all seen before; the 9:45 and 11:43 AM CT bookmark syncs already handled the two newest (Bambu Lab printer posts, discarded as non-dev)."
+  },
+  "discovery": {
+    "queries": 2,
+    "kept": 2,
+    "note": "One security search and one release discovery search. Kept NVIDIA USDCraft and IOTA Decide 4B; the rest were low-reach self-promo or Kimi K3.1 echoes. Builders group needed a second page (15:15 to 16:47Z) after the first hit 25 results."
+  },
+  "horizon": {
+    "block-dessa": "One X read: Ragavan Thurairatnam announced an MTS live interview about Dessa; no weights, API or paper. block.xyz/dessa still shows a waitlist and 'Launch links are coming soon'. No trigger."
+  },
+  "rechecks": 5,
+  "rechecks_note": "One batched read of replies and quotes since 15:15Z for 5 doubt items (Hy4, Mistral Django CVE agents, terminal-mac, NVIDIA compaction paper, RoboColosseum). No level changes: a Hy4 recap notes Tencent's own chart has Claude ahead on all 12 tests; Mistral replies want a comparison with Django's own patch; RoboColosseum got partner amplification but still no sign-up link in the posts.",
+  "videos": 0,
+  "security_forwarded": [
+    {
+      "url": "https://x.com/thecybersecguru/status/2118040657831072094",
+      "matched": "stack: APT on box (Debian 13), Spark (Ubuntu), cspie (Raspberry Pi OS).",
+      "summary": "CVE-2026-109518 (CVSS 7.7): APT TOCTOU and hard-link confusion lets an on-path attacker or bad mirror swap a verified .deb before dpkg runs, giving root. Fixed 2026-11-04 in apt 3.0.4 (trixie, DSA-6607-1), 2.6.2 (bookworm), and Ubuntu updates. The box has apt 3.0.3 with no candidate yet. Stopgap: Acquire::Retries=0.",
+      "sources": [
+        "https://security-tracker.debian.org/tracker/CVE-2026-109518",
+        "https://thecybersecguru.com/news/cve-2026-109518-apt-download-verification-bypass/"
+      ]
+    },
+    {
+      "url": "https://x.com/UpwindMDR/status/2118046705887162534",
+      "matched": "stack: Docker (Spark 29.6.2, cspie 29.9.1; Buildx plugin version unchecked).",
+      "summary": "CVE-2026-93325 (High 7.3): docker buildx bake skips filesystem entitlement consent under --progress=rawjson, so an untrusted bake file can read outside the workdir. Companion CVE-2026-103433. Fixed in Buildx 0.37.2. Low practical exposure unless rawjson bake runs on untrusted repos.",
+      "sources": [
+        "https://github.com/docker/buildx/security/advisories/GHSA-gwr2-q96m-6682",
+        "https://nvd.nist.gov/vuln/detail/cve-2026-93325"
+      ]
+    }
+  ],
+  "security_na": [
+    {
+      "url": "https://x.com/sunnysampla_/status/2118002145370784235",
+      "reason": "Cursor marketplace fake Claude Code extension (2.1.312/2.1.313 SSH backdoor); recaps of the 2026-10-30 incident already swept fleet-wide."
+    },
+    {
+      "url": "https://x.com/_josehelps/status/2118026488490697205",
+      "reason": "GhostAction second stage; GhostAction already handled 2026-11-01 with a fleet sweep."
+    },
+    {
+      "url": "https://x.com/zoomeyebot/status/2118036875479035935",
+      "reason": "Fake Web3 accelerator npm packages; THN story from October, handled 2026-10-26."
+    },
+    {
+      "url": "https://x.com/fixforwardlabs/status/2118033387503911065",
+      "reason": "Built-in browser flaws in 5 AI coding tools (Register, 2026-10-29); recap of an earlier story, VS Code and Codex fixes pending. Not new today."
+    },
+    {
+      "url": "https://x.com/rentierdigital/status/2118046403985563676",
+      "reason": "Playwright bundled Chromium 156.0.8078.4 lagging Chrome's Oct 27 fixes; already filed 2026-11-03."
+    },
+    {
+      "url": "https://x.com/NexwardAI/status/2118018862428074380",
+      "reason": "MCPhantom recap; handled 2026-11-03."
+    },
+    {
+      "url": "https://x.com/HugoValters/status/2118038315316465749",
+      "reason": "Logitech Options+ Windows LPE and Botiga Pro WordPress CVEs: not in stack."
+    }
+  ],
+  "skipped": 24,
+  "errors": 0,
+  "proposed_follows_note": "No browser in this run, so no follows were made. Possible trial candidates for a browser run: @simran_s_arora (Together Compiler), @RicursiveAI (Ripple-65B), @xenovacom (on-device omni ports), @sean_n_wu (Collaborative Intelligence Benchmark), plus carried @james_y_zou, @RoboColosseum, @kirtandopamine, @OpenWebUI, @witcheer."
+}
