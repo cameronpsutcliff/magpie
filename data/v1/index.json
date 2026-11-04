@@ -2,6 +2,80 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-11-04",
+   "headline": "Qwen 3.8 27B on my laptop can interpret model weights, too, Qwen-Image-2.1-Turbo-Quantized, heretic, and more",
+   "events": 273,
+   "sources": 521,
+   "enriched": false,
+   "top": [
+    {
+     "id": "f6f2d6ac259e",
+     "title": "Qwen 3.8 27B on my laptop can interpret model weights, too",
+     "impact": 4,
+     "vendor": "OpenAI"
+    },
+    {
+     "id": "8463eaeebefd",
+     "title": "abenzerps/Qwen-Image-2.1-Turbo-Quantized",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "bee099572b64",
+     "title": "p-e-w/heretic",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "163057fb1ee5",
+     "title": "JustVugg/colibri",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "e487fe51b82b",
+     "title": "cloudflare/security-audit-skill",
+     "impact": 4,
+     "vendor": "Cloudflare"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Anthropic",
+    "OpenAI",
+    "Microsoft",
+    "Google",
+    "AWS"
+   ],
+   "topics": {
+    "coding": 92,
+    "models": 85,
+    "agents": 84,
+    "multimodal": 57,
+    "infra": 39,
+    "mcp": 35,
+    "memory": 29,
+    "local": 27,
+    "evals": 26,
+    "research": 18,
+    "reverse": 14,
+    "security": 12,
+    "robotics": 4
+   },
+   "kinds": {
+    "social": 56,
+    "repo": 48,
+    "blog": 36,
+    "model": 30,
+    "community": 29,
+    "newsletter": 26,
+    "changelog": 23,
+    "space": 20,
+    "news": 5
+   },
+   "threats": []
+  },
+  {
    "date": "2026-11-03",
    "headline": "Prove inference, reuse KV caches, write weights, scale Git, and more",
    "events": 331,
@@ -3271,5 +3345,5 @@
    }
   }
  ],
- "latest": "2026-11-03"
+ "latest": "2026-11-04"
 }
