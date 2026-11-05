@@ -1,0 +1,584 @@
+{
+  "bot": "magpie-scout",
+  "prompt": "v6.1",
+  "ran_at": "2026-11-05T23:15:00Z",
+  "since": "2026-11-05T19:12:00Z",
+  "calls": 23,
+  "queries": 14,
+  "list_posts_read": 96,
+  "list_pages": 1,
+  "rechecks": 0,
+  "rechecks_note": "Skipped rechecks this sweep to keep budget for roster paging, discovery, and deep reads; prior sweep had flagged 0.",
+  "videos": 0,
+  "videos_note": "Several deep-read clips exceeded 60s (Hermes ~107s, MoE handbook ~162s, Voice Arena ASR ~134s, System Duo ~85s) but no video-capable reader is available in this runtime, so no video records were written.",
+  "saves": {
+    "checked_archive": true,
+    "checked_api": true,
+    "new": 0,
+    "kept": 0
+  },
+  "saved_rejected": [],
+  "discovery": [
+    {
+      "query": "(github.com OR huggingface.co OR arxiv.org) (release OR weights OR \"open source\" OR introducing OR launched) (AI OR LLM OR model OR agent) -is:retweet -is:reply lang:en",
+      "kept": 0
+    },
+    {
+      "query": "(CVE OR \"malicious package\" OR \"supply chain\" OR \"MCP server\" OR \"npm package\" OR PyPI OR \"container escape\" OR runc) (AI OR LLM OR agent OR docker OR cursor OR claude) -is:retweet lang:en",
+      "kept": 0,
+      "security_leads": 3
+    }
+  ],
+  "horizon": {
+    "checked": [
+      "block-dessa"
+    ],
+    "x_reads": 1,
+    "page_checked": true,
+    "triggered": []
+  },
+  "items": [
+    {
+      "title": "METR assessment: Anthropic AI R&D capability progress about 2x historical rate",
+      "url": "https://x.com/METR_Evals/status/2118412183860351084",
+      "handle": "@METR_Evals",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "METR published a high-access assessment of AI R&D acceleration at Anthropic. It estimates AECI capability scores have grown about 1.9x the earlier rate since Oct 2025, with a majority of current acceleration likely from AI used in R&D rather than faster training-compute growth.",
+      "kind": "eval",
+      "evidence": "measured",
+      "links": [
+        "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/",
+        "https://metr.org/blog/2026-11-05-rd-section-anthropic-risk-report-august-2026-review/"
+      ],
+      "vendor": "METR",
+      "posted_at": "2026-11-05T18:36:37Z",
+      "metrics": {
+        "likes": 2185,
+        "reposts": 255,
+        "quotes": 123,
+        "replies": 86,
+        "views": 0
+      },
+      "confirmed_by": [
+        "@Thom_Wolf",
+        "@scaling01",
+        "@xingyudang",
+        "@yufan_zhuang",
+        "@maksym_andr"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Repliers note Anthropic redacted much of the most informative evidence and that METR could only check what it knew to ask for.",
+        "source": "https://x.com/douglascamata/status/2118478986317902089"
+      },
+      "reception": {
+        "sentiment": "mixed",
+        "summary": "Many treat the 2x AECI finding as important; others focus on redactions, limited vantage, and whether Anthropic can be trusted as the data source.",
+        "tried": false,
+        "replies_read": 20
+      }
+    },
+    {
+      "title": "Hugging Face Ultimate MoE Training Handbook from 800k GPU-hour experiments",
+      "url": "https://x.com/Thom_Wolf/status/2118432475730882627",
+      "handle": "@Thom_Wolf",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "Hugging Face released The Ultimate MoE Training Handbook, an open guide built from about 800k GPU hours of experiments covering expert layout, all-to-all costs, silent slowdowns, and routing choices for teams training mixture-of-experts models.",
+      "kind": "technique",
+      "evidence": "artifact",
+      "links": [
+        "https://huggingface.co/spaces/huggingface/moe-blogpost"
+      ],
+      "vendor": "Hugging Face",
+      "posted_at": "2026-11-05T19:57:15Z",
+      "metrics": {
+        "likes": 910,
+        "reposts": 113,
+        "quotes": 17,
+        "replies": 42,
+        "views": 0
+      },
+      "confirmed_by": [
+        "@DirhousssiAmine",
+        "@LoubnaBenAllal1",
+        "@TheZachMueller"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      },
+      "reception": {
+        "sentiment": "positive",
+        "summary": "Builders call out the silent 25x slowdown chapter and diagrams; a few note dense models still matter for small labs and SLMs.",
+        "tried": false,
+        "replies_read": 25
+      }
+    },
+    {
+      "title": "Ling-3.2-flash: Ant Ling native multimodal MoE with 560B total / 25B active",
+      "url": "https://x.com/AntLingAGI/status/2118428246664761379",
+      "handle": "@AntLingAGI",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "Ant Ling launched Ling-3.2-flash, a native multimodal MoE (560B total / 25B active, 1M context) for complex visual understanding, long-horizon multimodal agents, 3D interaction, and medical tasks. It is available via Ant Ling chat and API for a two-week free window; open weights were not listed on Hugging Face at sweep time.",
+      "kind": "model",
+      "evidence": "artifact",
+      "links": [
+        "https://developer.ant-ling.com/en/docs/models/ling/",
+        "https://developer.ant-ling.com/en/docs/getting-started/changelog"
+      ],
+      "vendor": "Ant Group / InclusionAI",
+      "posted_at": "2026-11-05T19:40:27Z",
+      "metrics": {
+        "likes": 428,
+        "reposts": 45,
+        "quotes": 44,
+        "replies": 31,
+        "views": 71283
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Release evals are vendor numbers versus Opus 5 (max); public open weights not found yet.",
+        "source": null
+      },
+      "reception": {
+        "sentiment": "none",
+        "summary": "Few substantive try-it replies in the sampled thread; most engagement is on the announcement itself.",
+        "tried": false,
+        "replies_read": 8
+      }
+    },
+    {
+      "title": "Voice Arena Speech Recognition Benchmark with Monsoon conversational test set",
+      "url": "https://x.com/shobhitbanga/status/2118438023675384079",
+      "handle": "@shobhitbanga",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "Voice Arena launched a Speech Recognition Benchmark aimed at real conversational ASR across languages. Dataset 1, the Monsoon Conversational ASR Test Set, covers two-person conversations in five languages, with a public leaderboard on Voice Arena.",
+      "kind": "eval",
+      "evidence": "artifact",
+      "links": [
+        "https://voicearena.ai/"
+      ],
+      "vendor": "Voice Arena",
+      "posted_at": "2026-11-05T20:19:18Z",
+      "metrics": {
+        "likes": 206,
+        "reposts": 95,
+        "quotes": 106,
+        "replies": 191,
+        "views": 0
+      },
+      "confirmed_by": [
+        "@voicearena_ai"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      },
+      "reception": {
+        "sentiment": "positive",
+        "summary": "High quote volume from the Voice Arena orbit; sampled replies were mostly boosts rather than independent replications.",
+        "tried": false,
+        "replies_read": 10
+      }
+    },
+    {
+      "title": "Hermes Agent v0.23.0 Hearth: desktop-in-browser, one gateway, rewind, spend limits",
+      "url": "https://x.com/NousResearch/status/2118479744979079669",
+      "handle": "@NousResearch",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "Nous Research shipped Hermes Agent v0.23.0 (Hearth). Headline features include hosting the desktop UI in a browser tab, one gateway per conversation, /Rewind, group chats with automatic routing, spend limits for paid tools, and a lighter runtime.",
+      "kind": "tool",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/NousResearch/Hermes-Agent/releases/tag/v0.23.0"
+      ],
+      "vendor": "Nous Research",
+      "posted_at": "2026-11-05T23:05:05Z",
+      "metrics": {
+        "likes": 108,
+        "reposts": 7,
+        "quotes": 8,
+        "replies": 14,
+        "views": 0
+      },
+      "confirmed_by": [
+        "@Teknium"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "TensorFold 1.2.3: faster Flash Next decode on GB10 and M3 Ultra parallel serving",
+      "url": "https://x.com/ashxhart/status/2118449887226274163",
+      "handle": "@ashxhart",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "TensorFold 1.2.3 reports Flash Next speedups including about 21 to 23 percent faster NVFP4 decode on two GB10s at TP=2 with less per-rank memory, and an M3 Ultra parallel-serving case that cut a 1024-token reply beside a 64K prompt from 48s to 8s, plus PDF input and new Metal/HIP backends.",
+      "kind": "tool",
+      "evidence": "measured",
+      "links": [
+        "https://tensorfold.dev/"
+      ],
+      "vendor": "TensorFold",
+      "posted_at": "2026-11-05T21:06:26Z",
+      "metrics": {
+        "likes": 116,
+        "reposts": 12,
+        "quotes": 3,
+        "replies": 11,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Vals AI discloses critical frontier-model safety and alignment issue to labs",
+      "url": "https://x.com/ValsAI/status/2118473836710760816",
+      "handle": "@ValsAI",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "Vals AI says it found a critical safety and alignment issue in recent public and internal models from multiple frontier labs that enables high-stakes misuse and may raise catastrophic misalignment risk. It has disclosed to the labs and plans a public writeup in coming weeks; no technical details yet.",
+      "kind": "other",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "Vals AI",
+      "posted_at": "2026-11-05T22:41:36Z",
+      "metrics": {
+        "likes": 101,
+        "reposts": 13,
+        "quotes": 9,
+        "replies": 6,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Announcement only; no method, domain, or repro until the promised public findings.",
+        "source": null
+      },
+      "reception": {
+        "sentiment": "mixed",
+        "summary": "Some await the writeup; others dismiss alignment framing or joke about collapse narratives.",
+        "tried": false,
+        "replies_read": 8
+      }
+    },
+    {
+      "title": "fal adds Meshy Relief and N1 Retexture for printable 3D reliefs and retextures",
+      "url": "https://x.com/fal/status/2118471293506904117",
+      "handle": "@fal",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "fal made Meshy Relief and N1 Retexture available. N1 retextures existing 3D models to a clean 2K base color from one to four views; Relief turns a photo into printable low or high relief with a flat back.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://fal.ai/"
+      ],
+      "vendor": "fal / Meshy",
+      "posted_at": "2026-11-05T22:31:30Z",
+      "metrics": {
+        "likes": 24,
+        "reposts": 2,
+        "quotes": 0,
+        "replies": 3,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Decart Lucy 2.6 realtime live-video transform now on fal",
+      "url": "https://x.com/fal/status/2118467119608168682",
+      "handle": "@fal",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "Decart Lucy 2.6 is live on fal for realtime live-video transforms with higher fidelity, stronger reference-image character consistency, and better clothing and product placement.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://fal.ai/"
+      ],
+      "vendor": "fal / Decart",
+      "posted_at": "2026-11-05T22:14:55Z",
+      "metrics": {
+        "likes": 34,
+        "reposts": 3,
+        "quotes": 0,
+        "replies": 2,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Gemini Omni Flash 1.2 video-with-audio generation and edits now on fal",
+      "url": "https://x.com/fal/status/2118428843937497579",
+      "handle": "@fal",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "fal added Google Gemini Omni Flash 1.2: text/image/reference to video with native audio, plain-language footage edits, 3 to 10 second continuations, and upscales to 1080p or 4K for clips up to 15 seconds.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://fal.ai/"
+      ],
+      "vendor": "fal / Google",
+      "posted_at": "2026-11-05T19:42:49Z",
+      "metrics": {
+        "likes": 72,
+        "reposts": 5,
+        "quotes": 0,
+        "replies": 9,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Zyphra serves GLM-5.3-Flash on MI300X with ZOE 3.1x faster per-user generation",
+      "url": "https://x.com/ZyphraAI/status/2118430965383266421",
+      "handle": "@ZyphraAI",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "Zyphra Inference now serves Z.ai GLM-5.3-Flash on AMD Instinct MI300X using the Zyphra Optimization Engine. Versus stock SGLang it reports 3.1x faster p90 tokens per user and 10.7x lower p90 TTFT at 64 concurrent sessions.",
+      "kind": "feature",
+      "evidence": "measured",
+      "links": [
+        "https://cloud.zyphra.com/"
+      ],
+      "vendor": "Zyphra / Z.ai",
+      "posted_at": "2026-11-05T19:51:15Z",
+      "metrics": {
+        "likes": 29,
+        "reposts": 5,
+        "quotes": 0,
+        "replies": 5,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Hugging Face ML Intern available as an installable Slack bot",
+      "url": "https://x.com/huggingface/status/2118430862949945612",
+      "handle": "@huggingface",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "Hugging Face made its open-source ML Intern available as a Slack bot you can install in a workspace to evaluate models, build datasets, and fine-tune from chat, including private data and MCP connections.",
+      "kind": "tool",
+      "evidence": "artifact",
+      "links": [
+        "https://huggingface.co/"
+      ],
+      "vendor": "Hugging Face",
+      "posted_at": "2026-11-05T19:50:50Z",
+      "metrics": {
+        "likes": 88,
+        "reposts": 14,
+        "quotes": 5,
+        "replies": 28,
+        "views": 0
+      },
+      "confirmed_by": [
+        "@Gradio",
+        "@abidlabs"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "LangChain Managed Deep Agents get revamped async subagents",
+      "url": "https://x.com/LangChain/status/2118438264009114101",
+      "handle": "@LangChain",
+      "group": "applied",
+      "origin": "sweep",
+      "summary": "LangChain revamped async subagents in Managed Deep Agents so an orchestrator can stay responsive to the user while background subagents make progress on tasks.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://twitter.com/sydneyrunkle/status/2118434475973726697"
+      ],
+      "vendor": "LangChain",
+      "posted_at": "2026-11-05T20:20:15Z",
+      "metrics": {
+        "likes": 22,
+        "reposts": 2,
+        "quotes": 0,
+        "replies": 5,
+        "views": 0
+      },
+      "confirmed_by": [
+        "@hwchase17"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "System Duo: open router that sends agent work to System One or System Two",
+      "url": "https://x.com/XunzhuoLiu/status/2118445187051733452",
+      "handle": "@XunzhuoLiu",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "System Duo is an open router that sends agent turns to a fast System One path or a deeper System Two reasoner. A demo app is live at app.vllm-sr.ai.",
+      "kind": "tool",
+      "evidence": "artifact",
+      "links": [
+        "https://app.vllm-sr.ai/"
+      ],
+      "vendor": "System Duo / vLLM-SR",
+      "posted_at": "2026-11-05T20:47:46Z",
+      "metrics": {
+        "likes": 8,
+        "reposts": 1,
+        "quotes": 0,
+        "replies": 0,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Low engagement so far; little independent confirmation beyond the demo link.",
+        "source": null
+      }
+    },
+    {
+      "title": "vLLM day-0 Kimi K3.1 Pro on TPU v7x via vllm-torchtpu",
+      "url": "https://x.com/vllm_project/status/2118469996779340081",
+      "handle": "@vllm_project",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "vLLM announced day-0 support for Kimi K3.1 Pro on TPU v7x through vllm-torchtpu, extending the TorchTPU path for the new Kimi release.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/vllm-project/vllm"
+      ],
+      "vendor": "vLLM",
+      "posted_at": "2026-11-05T22:26:21Z",
+      "metrics": {
+        "likes": 10,
+        "reposts": 3,
+        "quotes": 0,
+        "replies": 1,
+        "views": 801
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    }
+  ],
+  "security_forwarded": [
+    {
+      "url": "https://x.com/Python_s_/status/2118479961506136285",
+      "matched": "always_forward container runtimes and images (kaniko image builder).",
+      "summary": "Chainguard-forks kaniko CVE-2026-105769 / GHSA-5q7h-w9jf-cx97 (CVSS 9.3): versions before 1.25.20 can expose Azure access tokens to attacker-controlled registries via a docker-credential-acr-env helper flaw (GO-2026-6225). Fixed in kaniko 1.25.20 (advisory dated 2026-11-02; this X post is low-reach). Fleet uses Docker on Spark/cspie; confirm whether any pipeline uses kaniko.",
+      "also": [
+        "https://github.com/chainguard-forks/kaniko/security/advisories/GHSA-5q7h-w9jf-cx97",
+        "https://github.com/chainguard-forks/kaniko/releases/tag/v1.25.20",
+        "https://pkg.go.dev/vuln/GO-2026-6225"
+      ]
+    }
+  ],
+  "security_na": [
+    {
+      "url": "https://x.com/EmunaEliran/status/2118481106617897309",
+      "reason": "MONAI CVE-2026-48705 medical imaging toolkit; not in stack.json and not agent tooling / npm-PyPI / container runtime."
+    },
+    {
+      "url": "https://x.com/EmunaEliran/status/2118480609404223962",
+      "reason": "Kubeflow Pipelines CVE-2026-77596; Kubeflow not in stack.json."
+    },
+    {
+      "url": "https://x.com/DFIR_Radar/status/2118478986317902089",
+      "reason": "ARTEX LLM pentest framework attribution post; threat intel only, no fleet component match."
+    }
+  ],
+  "skipped": [
+    {
+      "url": "https://x.com/0xMarsel/status/2118465927281086730",
+      "reason": "Omarchy portrait wallpaper plugin; not an AI capability."
+    },
+    {
+      "url": "https://x.com/antigravity/status/2118477081130512577",
+      "reason": "Antigravity UI refresh only."
+    },
+    {
+      "url": "https://x.com/ValsAI/status/2118443624816079226",
+      "reason": "Vals hackathon promo; not a capability release."
+    }
+  ],
+  "proposed_follows": [],
+  "proposed_follows_note": "No browser this run (follow_mode browser but executor has no computerUse). No new active roster account clearly earned a follow beyond accounts already followed or recommended.",
+  "errors": []
+}
