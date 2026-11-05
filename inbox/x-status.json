@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-04T23:10:00Z",
+  "updated_at": "2026-11-05T03:10:00Z",
   "job": "sweep",
   "prompt": "v6.1",
-  "calls_used_today": 87,
+  "calls_used_today": 106,
   "notes_via_api": false,
   "last_sweep": {
-    "ran_at": "2026-11-04T23:10:00Z",
-    "items": 18,
-    "queries": 11,
-    "deep_reads": 3,
-    "rechecks": 8,
+    "ran_at": "2026-11-05T03:10:00Z",
+    "items": 10,
+    "queries": 12,
+    "deep_reads": 7,
+    "rechecks": 0,
     "flagged": 0,
-    "saved_in": 0,
-    "saved_kept": 0,
+    "saved_in": 1,
+    "saved_kept": 1,
     "videos": 0,
-    "security_forwarded": 0
+    "security_forwarded": 1
   },
   "roster": {
     "curated": 223,
@@ -218,7 +218,8 @@
     "Roster review 2026-11-04: owner-saves step found no new authors (same set as 2026-11-03: @mirku21, @MatthewBerman, @jankeesvw on the roster as owner_saves trials, @trq212 and @NVIDIAAI curated; @HuggingModels retired; @danikkk_wqs excluded for vice; @RoundtableSpace on the avoid list). @mirku21 still flagged for Cameron, not auto-retired. @jankeesvw last qualifying post 2026-09-24 reaches the 45-day retire line on 2026-11-08 unless a new qualifying post appears.",
     "Roster review 2026-11-04 rejected, so they are not re-checked soon: promotion over 1 in 5: @DecagonAI (near-miss: PACT open protocol and the self-improving inference stack article are real, but brand clips, a partner post and an event recap are 4 of 9); overlaps a trial account: @sahildua2305 (EmbeddingGemma 2 launch already covered by @googlegemma; mostly quote cheers); one post in 30 days: @dmwlff, @ZhiCao01756604 (FACT robot policy; revisit on next release); aggregator, not first-hand: @xiangxiang103 (Chinese-language explainers and freebie guides).",
     "Sweep 2026-11-04T11:15Z: the 20-save bookmark read found a save (terminal-mac) the 23:45 CT bookmark sync had not archived, because the sync does not run overnight; reading saves in the sweep still catches these. Four security leads, one a Claude Code stack hit (Auto Mode AGENTS.md bypass).",
-    "Sweep 2026-11-04T19:15Z: the builders OR query filled its 25-result page within the 4-hour window on a big release day (Kimi K3.1 Pro weights), so a second page was needed; splitting builders into two queries would avoid the extra read. Two new stack hits filed to the Mini (APT CVE-2026-109518 urgent, Docker Buildx CVE-2026-93325 low). No video reader is available, so videos stay unwatched."
+    "Sweep 2026-11-04T19:15Z: the builders OR query filled its 25-result page within the 4-hour window on a big release day (Kimi K3.1 Pro weights), so a second page was needed; splitting builders into two queries would avoid the extra read. Two new stack hits filed to the Mini (APT CVE-2026-109518 urgent, Docker Buildx CVE-2026-93325 low). No video reader is available, so videos stay unwatched.",
+    "Sweep 2026-11-05T03:10Z: Headless sweep with no browser and no Skill tool; the Read tool could not open the x-api-mcp-guide SKILL.md path, so it was read with cat. calls_used_today counts the Central day: 87 before plus about 2 for the 5:48 and 7:50 PM bookmark syncs plus 17 this sweep. One owner save vetted (OpenHack). Rechecks were skipped so reads could go to deep reads, and videos were not watched. One new stack hit filed urgent to the Mini (Haiou Codex prompt adware)."
   ],
   "errors": [],
   "follows_today": 0,

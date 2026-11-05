@@ -1,0 +1,454 @@
+{
+  "ran_at": "2026-11-05T03:10:00Z",
+  "bot": "magpie-scout",
+  "prompt": "v6.1",
+  "since": "2026-11-04T23:10:00Z",
+  "queries": 12,
+  "calls": 17,
+  "items": [
+    {
+      "title": "OpenAI brings GPT-Image-2.6 to the API and Codex: two models, Flare and Sunburst, about 50% faster, plus GIFs and reference images in ChatGPT",
+      "url": "https://x.com/OpenAIDevs/status/2118124753340756055",
+      "handle": "@OpenAIDevs",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "OpenAI shipped ChatGPT Images 2.6 with animated GIF output and saved reference images, and put two new image models, Image-2.6 Flare and Sunburst, in the API and Codex. OpenAI says both generate about 50% faster than before, and Sunburst at medium or high quality keeps details steadier across repeated edits. On Arena, Sunburst (medium) debuted #2 in Text-to-Image at 1409 and #3 in Image Edit at 1476, with Flare #4 and #5; fal lists markup-guided edits and five reasoning effort levels.",
+      "kind": "model",
+      "evidence": "measured",
+      "links": [
+        "https://x.com/OpenAI/status/2118124944928432327"
+      ],
+      "vendor": "OpenAI",
+      "posted_at": "2026-11-04T23:34:28Z",
+      "metrics": {
+        "likes": 1995,
+        "reposts": 191,
+        "quotes": 155,
+        "replies": 129,
+        "views": 164681
+      },
+      "confirmed_by": [
+        "https://x.com/OpenAI/status/2118124944928432327",
+        "https://x.com/arena/status/2118139063345787124",
+        "https://x.com/fal/status/2118127874926407952"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      },
+      "reception": {
+        "sentiment": "mixed",
+        "summary": "Replies like saved reference images and logos that stay consistent between edits. Several users say still-image quality dropped versus 2.5 or that noise builds up over repeated edits, some hit capacity errors, and one notes Codex does not say which image model it is using.",
+        "tried": true,
+        "replies_read": 25
+      },
+      "video": {
+        "seconds": 87,
+        "watched": false
+      }
+    },
+    {
+      "title": "Microsoft releases Mage-VL-Cowork, a 4B on-device computer-use model; Niels Rogge wires it to a Hugging Face sandbox desktop demo",
+      "url": "https://x.com/NielsRogge/status/2117998047372202401",
+      "handle": "@NielsRogge",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "Microsoft released Mage-VL-Cowork, a 4B vision-language model for computer use that it bills as state of the art for its on-device class. Niels Rogge built a demo where you type a task and the model clicks, types, scrolls and uses a terminal on a real Linux desktop, with the model in a Hugging Face Space and the desktop in an HF Sandbox, so no VM to manage.",
+      "kind": "model",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "Microsoft",
+      "posted_at": "2026-11-04T15:10:59Z",
+      "metrics": {
+        "likes": 95,
+        "reposts": 14,
+        "quotes": 4,
+        "replies": 5,
+        "views": 7685
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "The SOTA claim is relayed without a benchmark in the post; one reply notes the model is built on a Qwen base rather than a Microsoft-trained one.",
+        "source": "https://x.com/pssw0rd/status/2118113649479028859"
+      },
+      "reception": {
+        "sentiment": "positive",
+        "summary": "Few replies; the only substantive one points out the Qwen base model.",
+        "tried": false,
+        "replies_read": 1
+      },
+      "video": {
+        "seconds": 14,
+        "watched": false
+      }
+    },
+    {
+      "title": "Claude Opus stopped an OCR model's repetition loops by editing 0.0085% of its weights, no training, for about $10 of HF Jobs compute",
+      "url": "https://x.com/vanstriendaniel/status/2117661605336928668",
+      "handle": "@vanstriendaniel",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "Daniel van Strien asked Claude Opus to find a small OCR model and fix its repetition doom loops, with a budget of 5 hours and $100 on Hugging Face Jobs. Opus changed 0.0085% of the weights without any training, and the model now reads an 1881 page it used to answer with 16,399 characters of dots. It took under 3 hours and about $10 of compute.",
+      "kind": "other",
+      "evidence": "claim",
+      "links": [],
+      "vendor": null,
+      "posted_at": "2026-11-03T16:54:05Z",
+      "metrics": {
+        "likes": 1009,
+        "reposts": 81,
+        "quotes": 14,
+        "replies": 46,
+        "views": 46199
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Shown on one page only, with no eval across a document set or released checkpoint in the post.",
+        "source": "https://x.com/vanstriendaniel/status/2117661605336928668"
+      },
+      "reception": {
+        "sentiment": "positive",
+        "summary": "Replies are impressed by the $10 cost and note the model still transcribes the dot leaders and then moves on; no one reports reproducing it.",
+        "tried": false,
+        "replies_read": 3
+      }
+    },
+    {
+      "title": "Anthropic Fellows paper: poisoning 1/200,000 of pretraining data can backdoor an agent to run attacker-chosen code, surviving SFT, DPO and RL",
+      "url": "https://x.com/xyVickyHu/status/2118056532818665584",
+      "handle": "@xyVickyHu",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "A new Anthropic Fellows paper pretrains a Qwen3-4B-architecture model from scratch on a corpus with a tiny fraction of poisoned documents, then post-trains it with SFT, DPO and RL. Controlling about 1/200,000 of pretraining data was enough to make the resulting agent execute attacker-chosen code when it meets an ordinary file-path trigger, and the effect grew with model size.",
+      "kind": "paper",
+      "evidence": "artifact",
+      "links": [
+        "https://arxiv.org/abs/2610.37741"
+      ],
+      "vendor": "Anthropic",
+      "posted_at": "2026-11-04T19:03:23Z",
+      "metrics": {
+        "likes": 249,
+        "reposts": 65,
+        "quotes": 14,
+        "replies": 17,
+        "views": 17874
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      },
+      "reception": {
+        "sentiment": "positive",
+        "summary": "Replies call it a clean demonstration and say data curation is a security job. The author confirms the model was trained from scratch rather than starting from released Qwen weights, and says quantization robustness is untested.",
+        "tried": false,
+        "replies_read": 8
+      },
+      "video": {
+        "seconds": 14,
+        "watched": false
+      }
+    },
+    {
+      "title": "Blog: one steering vector applied at four norms makes an LLM do four different behaviors; argues against relying on the linear representation hypothesis",
+      "url": "https://x.com/johnhewtt/status/2118042814147661953",
+      "handle": "@johnhewtt",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "John Hewitt's new post shows a single direction in activation space, applied as a steering vector at four different norms, triggering a different model behavior at each norm. He uses this to argue that interpretability and steering work should not lean on the linear representation hypothesis.",
+      "kind": "paper",
+      "evidence": "artifact",
+      "links": [],
+      "vendor": null,
+      "posted_at": "2026-11-04T18:08:52Z",
+      "metrics": {
+        "likes": 523,
+        "reposts": 47,
+        "quotes": 7,
+        "replies": 14,
+        "views": 12947
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Interpretability researcher Liv Gorton replies that the experiments do not contradict the hypothesis or show features are non-linear, and that the argument rests on assuming no meaningful decomposition; Hewitt partly agrees.",
+        "source": "https://x.com/livgorton/status/2118124220530217283"
+      },
+      "reception": {
+        "sentiment": "mixed",
+        "summary": "A substantive back-and-forth on whether the results really challenge linear features; others suggest L2-penalty and nullspace-projection follow-ups.",
+        "tried": false,
+        "replies_read": 7
+      }
+    },
+    {
+      "title": "Baseten Router picks a model per coding task; Baseten says it cuts coding cost 72% versus Opus 5.5 on its benchmarks",
+      "url": "https://x.com/baseten/status/2118124250770911432",
+      "handle": "@baseten",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "Baseten launched a model router for coding that sends easy tasks to cheaper models and saves the frontier model for hard ones. On Baseten's own benchmarks it cut cost 72% versus always using Opus 5.5 and beat random routing at every threshold, which Baseten says no other router it tested did.",
+      "kind": "tool",
+      "evidence": "measured",
+      "links": [
+        "https://x.com/baseten/status/2118123829486612525"
+      ],
+      "vendor": "Baseten",
+      "posted_at": "2026-11-04T23:32:28Z",
+      "metrics": {
+        "likes": 25,
+        "reposts": 0,
+        "quotes": 3,
+        "replies": 0,
+        "views": 2004
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Vendor-run benchmark with no independent numbers yet.",
+        "source": "https://x.com/baseten/status/2118124250770911432"
+      }
+    },
+    {
+      "title": "Speculative decoding race on an M5 Pro: EAGLE-3 gives 1.9x on code edits for Qwen3-8B 4-bit but little on summaries",
+      "url": "https://x.com/Alex_tra_memory/status/2118135388514480241",
+      "handle": "@Alex_tra_memory",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "A builder raced three speculative decoding methods against plain decoding for Qwen3-8B at 4-bit on an M5 Pro. EAGLE-3 gave 1.9x on code editing (118 vs 61 tok/s), 1.4x on math and 1.1x on explanations, while a Qwen3-0.6B draft model won on summaries at 1.6x. EAGLE-3 only drafts from the 32k most common tokens, so rare words in summaries always miss.",
+      "kind": "other",
+      "evidence": "measured",
+      "links": [],
+      "vendor": null,
+      "posted_at": "2026-11-05T00:16:44Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "quotes": 0,
+        "replies": 2,
+        "views": 107
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      },
+      "video": {
+        "seconds": 37,
+        "watched": false
+      }
+    },
+    {
+      "title": "LFM 3 1.7B runs on-device on iPhone Duo at a steady 60+ tok/s with MLX in the Locally app",
+      "url": "https://x.com/adrgrondin/status/2118077376420819443",
+      "handle": "@adrgrondin",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "The Locally app developer shows Liquid's new LFM 3 1.7B running locally on the foldable iPhone Duo, folded or unfolded, at a steady 60+ tokens per second using the latest MLX.",
+      "kind": "other",
+      "evidence": "measured",
+      "links": [],
+      "vendor": null,
+      "posted_at": "2026-11-04T20:26:13Z",
+      "metrics": {
+        "likes": 95,
+        "reposts": 6,
+        "quotes": 1,
+        "replies": 11,
+        "views": 5349
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      },
+      "video": {
+        "seconds": 16,
+        "watched": false
+      }
+    },
+    {
+      "title": "Isometric SF: a pixel-art map of 1,300 square miles of the Bay Area, all painted by the 4B Klein image-to-image model on Modal",
+      "url": "https://x.com/jus10chavez/status/2118061137736671383",
+      "handle": "@jus10chavez",
+      "group": "applied",
+      "origin": "sweep",
+      "summary": "Justin Chavez built Isometric SF, an explorable pixel-art isometric map of the whole SF Bay Area, over 1,300 square miles, with every tile painted by Klein, a 4B image-to-image model (a FLUX model per Black Forest Labs), run on Modal.",
+      "kind": "other",
+      "evidence": "artifact",
+      "links": [
+        "https://isometricsf.com"
+      ],
+      "vendor": null,
+      "posted_at": "2026-11-04T19:21:41Z",
+      "metrics": {
+        "likes": 837,
+        "reposts": 52,
+        "quotes": 21,
+        "replies": 61,
+        "views": 43789
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      },
+      "reception": {
+        "sentiment": "positive",
+        "summary": "Replies are delighted and are hunting for landmarks; a few spot rendering glitches near the Bay Bridge turnoff, and one asks whether the tuned Klein model will be released.",
+        "tried": true,
+        "replies_read": 20
+      },
+      "video": {
+        "seconds": 12,
+        "watched": false
+      }
+    },
+    {
+      "title": "OpenHack launches an always-on AI security engineer that finds, verifies, prioritizes and fixes vulns, with free Claude Mythos scanning for enterprise customers until Nov 11",
+      "url": "https://x.com/maxkolysh/status/2117755500507103278",
+      "handle": "@maxkolysh",
+      "group": "devtools",
+      "origin": "saved",
+      "summary": "Saved by the owner. Max Kolysh points to OpenHack, built by white-hat hacker Ananay Arora. OpenHack is a commercial AI security agent that maps your codebase and infrastructure, runs AI code scanning and pentests, chains and verifies findings, ranks them by business impact, and prepares fixes. It integrates with Linear, Slack, Vanta and agents over MCP. Enterprise customers get Claude Mythos scanning free until Nov 11, 2026. The launch post lists customer finds such as an account takeover and a GitHub org takeover, with one public advisory (Papermark S3 exposure).",
+      "kind": "tool",
+      "evidence": "claim",
+      "links": [
+        "https://x.com/openhack/status/2117708744326799747",
+        "https://openhack.com/blog/introducing-openhack"
+      ],
+      "vendor": "OpenHack",
+      "posted_at": "2026-11-03T23:07:11Z",
+      "metrics": {
+        "likes": 203,
+        "reposts": 13,
+        "quotes": 0,
+        "replies": 4,
+        "views": 28879
+      },
+      "confirmed_by": [
+        "https://x.com/openhack/status/2117708744326799747"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Enterprise-only and sales-led (demo booking), with no benchmark or public results beyond one advisory; repliers question the value over direct Mythos access and whether it closes the loop with PRs.",
+        "source": "https://x.com/engineering304/status/2118019574419566765"
+      },
+      "reception": {
+        "sentiment": "mixed",
+        "summary": "Mostly cheers. Skeptics frame it as reselling Cyber Verification Program access to firms without Mythos, a rival offers a head-to-head, and others ask whether it opens PRs or only files findings and whether an MCP or API exists (the blog says MCP is supported).",
+        "tried": false,
+        "replies_read": 20
+      },
+      "video": {
+        "seconds": 74,
+        "watched": false
+      }
+    }
+  ],
+  "saved_rejected": [],
+  "list_posts_read": 91,
+  "list_pages": 1,
+  "saves": {
+    "read": 20,
+    "new_since_last_sweep": 1,
+    "kept": 1,
+    "note": "One new save since the last sweep: @maxkolysh on OpenHack (captured by the 5:48 PM CT bookmark sync), kept as a deep-read tool item. The other 19 were already seen (older saves or already discarded as non-dev)."
+  },
+  "discovery": {
+    "queries": 2,
+    "kept": 0,
+    "note": "One security search and one release search. The security search surfaced the Haiou Codex prompt adware (forwarded) plus recaps of handled incidents; the release search returned only low-reach self-promotion."
+  },
+  "horizon": {
+    "block-dessa": "One X read (only unrelated Portuguese posts matching 'dessa' and 'block') plus a check of block.xyz/dessa, which is still a waitlist page. No weights, API or paper. No trigger."
+  },
+  "rechecks": 0,
+  "rechecks_note": "No rechecks this sweep; reads went to deep reads of the new items and the owner save.",
+  "videos": 0,
+  "videos_note": "No video reader in this headless run; video lengths are recorded from post metadata, but nothing was watched.",
+  "security_forwarded": [
+    {
+      "url": "https://x.com/aviatrixtrc/status/2118130592889921856",
+      "matched": "stack: Codex (Air, Project Weld), plus always_forward agent tooling.",
+      "summary": "Check Point Research (2026-11-03) found the Haiou Codex jailbreak bundle (haiou-666/haiou-codex 4.5.0), which writes a global AGENTS.md, refusal-suppressing prompt modules and seagull-* Skills into the Codex config. Greetings then trigger adverts for an LLM gateway at zz.aiapi2025.top. It needs a deliberate install and there is no CVE. Filed urgent to the Mini Master inbox."
+    }
+  ],
+  "security_na": [
+    {
+      "url": "https://x.com/techhelpcanada/status/2118177091200176371",
+      "reason": "Cursor marketplace Claude Code 2.1.312/2.1.313 SSH backdoor; already handled."
+    },
+    {
+      "url": "https://x.com/ernesttheaiguy/status/2118138744200925411",
+      "reason": "Polymarket loss and tampered Claude Code extension recap; same handled incident."
+    },
+    {
+      "url": "https://x.com/SaimulIslamdl/status/2118161376787259758",
+      "reason": "Node CVE-2026-111497 (Brotli) on CISA KEV; already tracked since 2026-10-24, fleet on fixed versions."
+    },
+    {
+      "url": "https://x.com/GlobalFeedAI/status/2118163651354132710",
+      "reason": "Glow Labs archived MCP reference servers (MCPhantom); handled 2026-11-03."
+    },
+    {
+      "url": "https://x.com/claude_news/status/2118152573500666075",
+      "reason": "Claude Code agent on a Pentagon network (WIRED); policy news, logged 2026-11-02."
+    },
+    {
+      "url": "https://x.com/so_sthbryan/status/2118176223952298050",
+      "reason": "GitHub npm package firewall preview; defensive feature, not a vulnerability."
+    },
+    {
+      "url": "https://x.com/danlovesproofs/status/2118127827732320332",
+      "reason": "General advice to pin GitHub Actions; no new incident."
+    },
+    {
+      "url": "https://x.com/xyVickyHu/status/2118056532818665584",
+      "reason": "Pretraining-poisoning backdoor research (kept as a research item); no affected component in the stack."
+    }
+  ],
+  "skipped": [
+    "OpenAI 948 Linux LPE cyber pipeline echoes from @gdb and @thsottiaux (kept last sweep)",
+    "Hy4, Ripple-65B and Together Compiler echoes (kept earlier today), including a Ripple-65B MLX port with no traction",
+    "GPT-6.2 Astra/Sol quota-page rumor (speculation)",
+    "Hiring and personnel posts (_catwu to OpenAI)",
+    "Kiro credit pooling (pricing)",
+    "LiteLLM gateway gpt-realtime-translate (minor integration)",
+    "BEHAVIOR-Spatial benchmark (Nov 3, low reach)",
+    "EngramLab neural+text memory teaser (no paper link in post)",
+    "Event promos (PyTorch, SGLang), capex and ARR news",
+    "X page load speedup (not AI)",
+    "Non-AI or partisan politics posts"
+  ],
+  "errors": [],
+  "proposed_follows_note": "No browser in this run, so no follows were made. Possible trial candidates for a browser run: @johnhewtt (steering and interpretability), @xyVickyHu (pretraining poisoning), @vanstriendaniel (HF data and OCR), @openhack (owner-saved security agent), plus carried @robocurve, @JonSaadFalcon, @Marcus_J_W, @simran_s_arora, @RicursiveAI, @xenovacom, @sean_n_wu, @james_y_zou, @RoboColosseum, @kirtandopamine, @OpenWebUI, @witcheer."
+}
