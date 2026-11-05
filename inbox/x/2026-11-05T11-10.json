@@ -1,0 +1,215 @@
+{
+  "bot": "magpie-scout",
+  "prompt": "v6.1",
+  "ran_at": "2026-11-05T11:10:00Z",
+  "since": "2026-11-05T03:10:00Z",
+  "calls": 20,
+  "queries": 9,
+  "list_posts_read": 92,
+  "list_pages": 1,
+  "rechecks": 5,
+  "rechecks_note": "Rechecked five prior-24h doubt or deep-read items (Mage-VL-Cowork, OCR weight edit, Hewitt steering post, Baseten Router, OpenHack). Metrics moved but no new Community Note or stronger pushback; doubt levels unchanged.",
+  "videos": 0,
+  "videos_note": "No video reader in this headless run; Antigravity clip length not recorded from metadata, so it was not watched.",
+  "saves": {
+    "read": 20,
+    "new_since_last_sweep": 2,
+    "kept": 0,
+    "note": "Two bookmarks not yet in the AI archive: @bot Grok Bot phone calls (already kept as a Magpie item in the 2026-11-04T19-15 sweep, so not re-added) and @s2_underground ATAK Blast-TAK 1.1 (rejected as non-AI). No Magpie-new save this window."
+  },
+  "saved_rejected": [
+    {
+      "url": "https://x.com/s2_underground/status/2118053258023277054",
+      "handle": "@s2_underground",
+      "reason": "non-AI military/ordnance ATAK plugin (UXO and nuclear blast overlays); outside Magpie AI/dev scope"
+    }
+  ],
+  "discovery": {
+    "queries": 2,
+    "kept": 1,
+    "note": "One security search and one open-weights release search. The release search independently surfaced ERNIE-5.5-Flash-Base (already kept from curated OR). Other release hits were Kimi K3.1 Pro, Ripple-65B and Hy4 echoes. Security search was mostly noise plus Hinoki Offensive One (forwarded)."
+  },
+  "horizon": {
+    "checked": [
+      "block-dessa"
+    ],
+    "triggered": [],
+    "note": "Dessa still research preview: Jack linked a Ragavan interview; Grok and others still say no public API, weights or download. No trigger."
+  },
+  "security_forwarded": [
+    {
+      "url": "https://x.com/GatitadaSophia/status/2118299443527340353",
+      "matched": "always_forward agent tooling (offensive LLM / exploit agent product).",
+      "summary": "Hinoki Offensive One claims an LLM trained on 150,000 CVE exploits, 88.4% on CyberGym with zero refusals, sold for pentesting and exploit development. Marketing post only; no CVE id and no stack component named, but it is agent-tooling adjacent so forwarded for Bouncer awareness."
+    }
+  ],
+  "security_na": [
+    {
+      "url": "https://x.com/HugoValters/status/2118298530549039148",
+      "why": "CVE-2026-9232 Easy Appointments WordPress PII leak; WordPress plugin not on stack."
+    },
+    {
+      "url": "https://x.com/waldekm/status/2118294760251134042",
+      "why": "Microsoft APM MCP/skill lockfile feature post, not a vulnerability."
+    },
+    {
+      "url": "https://x.com/AikidoSecurity/status/2118299133173723241",
+      "why": "Year-in-review recap of already-handled Binance/PHP2Shell class incidents."
+    },
+    {
+      "url": "https://x.com/KitPloit/status/2118292499110273239",
+      "why": "UpSafe research code for safety experts; not a vuln hitting the fleet."
+    }
+  ],
+  "items": [
+    {
+      "title": "Baidu releases ERNIE-5.5-Flash-Base open weights: 280B MoE with 14B active, trained on 33.5T tokens, 128K train / 1M inference context",
+      "url": "https://x.com/aitrackerbot/status/2118216117298581584",
+      "handle": "@aitrackerbot",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "Baidu put ERNIE-5.5-Flash-Base on Hugging Face as a pre-training checkpoint (before mid- or post-training): 280B total / 14B active MoE, 43 layers with hybrid HCA+MLA attention, FP8 and BF16 safetensors, and day-0 serving notes for SGLang and vLLM. Baidu's own table puts it ahead of DeepSeek-V4-Flash-Base, Hy3-preview-Base and MiMo-V2.5-Base on several knowledge, code and long-context base evals (for example MMLU 93.3 and HumanEval+ 82.3). The license Territory excludes the EU, UK and South Korea; commercial use above $50M related revenue needs written authorization; distillation into other models is barred.",
+      "kind": "model",
+      "evidence": "artifact",
+      "links": [
+        "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base",
+        "https://ernie.baidu.com/release/ernie-5-5-flash-base/",
+        "https://x.com/dummerspast39/status/2118215421245444239"
+      ],
+      "vendor": "Baidu",
+      "posted_at": "2026-11-05T05:38:00Z",
+      "metrics": {
+        "likes": 113,
+        "reposts": 7,
+        "quotes": 3,
+        "replies": 0,
+        "views": null
+      },
+      "confirmed_by": [
+        "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base",
+        "https://x.com/teortaxesTex/status/2118217612513681648"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "License bars use in the EU, UK and South Korea; commercial use over $50M related revenue needs Baidu written authorization; no instruction-tuned checkpoint yet (base only).",
+        "source": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base/raw/main/LICENSE"
+      },
+      "reception": {
+        "sentiment": "mixed",
+        "summary": "Builders noted the HF drop and compared it to DeepSeek V4 Flash; several flagged the territory and commercial license limits. About 7 quote posts and tracker amplification read, no Community Note seen.",
+        "tried": false,
+        "replies_read": 7
+      },
+      "video": null
+    },
+    {
+      "title": "OpenAI promotes GPT-Live outbound telephony to GA: voice agents dial out over any SIP trunk with HD Voice and DTMF",
+      "url": "https://x.com/juberti/status/2118101340186698028",
+      "handle": "@juberti",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "OpenAI realtime lead Justin Uberti said the GPT-Live outbound telephony API is generally available for all organizations. Developers create a Live session with transport.type sip, dial an E.164 number through a TLS SIP trunk (Twilio, Telnyx and similar), and can send and receive DTMF while the call runs. Docs cover inbound webhooks, outbound create-session, sideband attach, refer/hangup, a 3-minute ring limit and a 2-hour connected-call limit. Grok reported about $0.05 per minute for GPT-Live voice sessions, with SIP provider and backend model costs separate.",
+      "kind": "tool",
+      "evidence": "artifact",
+      "links": [
+        "https://developers.openai.com/api/docs/guides/voice-sip#place-an-outbound-call",
+        "https://x.com/gdb/status/2118204795219489172"
+      ],
+      "vendor": "OpenAI",
+      "posted_at": "2026-11-04T22:01:26Z",
+      "metrics": {
+        "likes": 361,
+        "reposts": 31,
+        "quotes": 21,
+        "replies": 36,
+        "views": 67235
+      },
+      "confirmed_by": [
+        "https://developers.openai.com/api/docs/guides/voice-sip#place-an-outbound-call",
+        "https://x.com/gdb/status/2118204795219489172"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      },
+      "reception": {
+        "sentiment": "mixed",
+        "summary": "Replies welcome SIP+DTMF for real call-center workflows; others ask about answering-machine detection, Asterisk/FreeSWITCH, Europe latency/hosting, GDPR and agent-to-agent negotiation. One builder says Grok Voice 3.0 is cheaper and more practical for cloned voices. About 20 replies and 19 quote posts read.",
+        "tried": false,
+        "replies_read": 20
+      },
+      "video": null
+    },
+    {
+      "title": "Google Antigravity adds a native Jupyter notebook viewer: .ipynb cells, Markdown, tables, images and outputs render in the file viewer",
+      "url": "https://x.com/antigravity/status/2118234632801910871",
+      "handle": "@antigravity",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "Antigravity now opens .ipynb files in its file viewer so code cells, Markdown, tables, images and cell outputs render without leaving the editor. A reply citing the v2.29.0 changelog (Nov 3) says this is a viewer only: no kernel, so cells do not run inside Antigravity yet. Users who tried it with LangChain RAG notebooks called out less context switching; several asked when agents can edit a cell, re-run it and read the new output.",
+      "kind": "tool",
+      "evidence": "artifact",
+      "links": [
+        "https://x.com/StatsWire/status/2118239784162258946"
+      ],
+      "vendor": "Google",
+      "posted_at": "2026-11-05T06:51:06Z",
+      "metrics": {
+        "likes": 518,
+        "reposts": 42,
+        "quotes": 15,
+        "replies": 28,
+        "views": 26864
+      },
+      "confirmed_by": [
+        "https://x.com/StatsWire/status/2118239784162258946",
+        "https://x.com/AiAdventurerx/status/2118245887650533579"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Changelog and replies say viewer-only with no kernel; agents cannot yet edit a cell, re-run it and read fresh output.",
+        "source": "https://x.com/AiAdventurerx/status/2118245887650533579"
+      },
+      "reception": {
+        "sentiment": "mixed",
+        "summary": "Positive for notebook-heavy Python workflows; repeated questions about run/edit support and jokes that Antigravity is celebrating opening a file. About 20 replies and 18 quote posts read; one user reported trying a LangChain RAG notebook.",
+        "tried": true,
+        "replies_read": 20
+      },
+      "video": {
+        "duration_seconds": null,
+        "what_it_shows": "Product clip of .ipynb rendering in Antigravity (not watched; no video reader in this headless run).",
+        "worth_watching": false,
+        "why": "Short product sizzle; changelog and replies already establish viewer-only scope.",
+        "viewer_learns": [],
+        "who_should_watch": null,
+        "thumbnail_url": null
+      }
+    }
+  ],
+  "skipped": [
+    "Cognition SWE-2 Flash / Inkling distillation echoes (kept 2026-11-04T23-10)",
+    "Grok Bot phone calls (kept 2026-11-04T19-15; owner re-save noted under saves)",
+    "Spark-X2.6-4B Hermes tier quote (measurement from Oct 31)",
+    "Omarchy 4.5 desktop OS release (not AI)",
+    "dots iOS product polish and gdb praise",
+    "Underdog Woof TTS invite game (weights not on HF; waitlist)",
+    "ML Intern HuggingChat agent (Nov 3 original, low reach)",
+    "tinybox hardware preorders",
+    "Hy4 Nous Portal discount (pricing)",
+    "Sanders/Casar superintelligence bill speech (September bill; no new official document this window)",
+    "teortaxesTex non-AI politics flood",
+    "Event promos (AIE Shanghai, Zed London meetup)",
+    "Replit SMFL partnership (business)",
+    "Folio PDF reader updates and Zelda meme"
+  ],
+  "proposed_follows_note": "follow_mode is browser but this executor has no browser; no account newly earned a follow this sweep. Parent may review @juberti later if OpenAI telephony posts continue.",
+  "errors": []
+}
