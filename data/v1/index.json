@@ -3,40 +3,40 @@
  "days": [
   {
    "date": "2026-11-05",
-   "headline": "Kimi-K3.1-Pro, auto-ontology, DeepSeek-V4.1-Flash-1017-GSQ-RCO-Coder-GGUF, and more",
-   "events": 275,
-   "sources": 521,
-   "enriched": false,
+   "headline": "Serve Kimi K3.1 Pro, retrain Axion from scratch, patch kernel bugs, and more",
+   "events": 373,
+   "sources": 550,
+   "enriched": true,
    "top": [
     {
      "id": "836cd722751a",
-     "title": "moonshotai/Kimi-K3.1-Pro",
+     "title": "Kimi K3.1 Pro open weights with 1M context",
      "impact": 5,
-     "vendor": "Moonshot"
+     "vendor": "Moonshot AI"
+    },
+    {
+     "id": "c90c2ed97c58",
+     "title": "Axion-1.0 35B released with full training recipe",
+     "impact": 4,
+     "vendor": "ByteDance"
+    },
+    {
+     "id": "41aca6188133",
+     "title": "OpenAI pipeline finds and patches 948 Linux kernel bugs",
+     "impact": 4,
+     "vendor": "OpenAI"
     },
     {
      "id": "b2e43e740f52",
-     "title": "NVIDIA/auto-ontology",
-     "impact": 4,
+     "title": "NVIDIA Auto Ontology adds graph reasoning layers",
+     "impact": 3,
      "vendor": "NVIDIA"
     },
     {
-     "id": "a955af9760c9",
-     "title": "ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-Coder-GGUF",
-     "impact": 4,
-     "vendor": "Open source"
-    },
-    {
-     "id": "4b8577421b3b",
-     "title": "mattpocock/skills",
-     "impact": 4,
-     "vendor": "Open source"
-    },
-    {
-     "id": "e197a9917ccd",
-     "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
-     "impact": 4,
-     "vendor": "Open source"
+     "id": "50c525e767d6",
+     "title": "Scenario skills drive image, video, audio and 3D generation",
+     "impact": 3,
+     "vendor": "Scenario"
     }
    ],
    "vendors": [
@@ -45,33 +45,34 @@
     "Anthropic",
     "Google",
     "NVIDIA",
-    "AWS"
+    "Microsoft"
    ],
    "topics": {
-    "models": 96,
-    "agents": 93,
-    "coding": 85,
-    "multimodal": 69,
-    "infra": 46,
-    "local": 35,
-    "mcp": 32,
-    "memory": 27,
-    "evals": 24,
-    "research": 20,
-    "security": 16,
-    "reverse": 9,
-    "robotics": 3
+    "models": 119,
+    "agents": 117,
+    "coding": 102,
+    "multimodal": 83,
+    "infra": 59,
+    "local": 41,
+    "mcp": 36,
+    "evals": 32,
+    "memory": 29,
+    "research": 23,
+    "security": 17,
+    "reverse": 14,
+    "robotics": 4
    },
    "kinds": {
-    "social": 68,
-    "repo": 38,
-    "newsletter": 38,
+    "social": 107,
+    "video": 65,
+    "newsletter": 39,
+    "repo": 36,
     "blog": 31,
     "model": 30,
-    "community": 23,
-    "changelog": 21,
-    "space": 20,
-    "news": 6
+    "community": 21,
+    "changelog": 20,
+    "space": 19,
+    "news": 5
    },
    "threats": []
   },
