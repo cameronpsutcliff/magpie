@@ -1,0 +1,628 @@
+{
+  "bot": "magpie-scout",
+  "prompt": "v6.1",
+  "ran_at": "2026-11-05T19:12:00Z",
+  "since": "2026-11-05T15:15:00Z",
+  "calls": 19,
+  "queries": 14,
+  "list_posts_read": 65,
+  "list_pages": 1,
+  "rechecks": 8,
+  "rechecks_note": "One metrics hydrate on eight prior-24h doubt or deep-read items (OpenAI cyber patches, SWE-2 Flash, Antigravity Jupyter, ERNIE-5.5-Flash-Base, alphaXiv OpenResearch, Baseten Router, Gradium Phonon, Claude Code background subagents). Engagement rose (Claude Code about 21K likes; SWE-2 Flash about 2.2K) but no Community Note is visible through the API and no new pushback was re-read, so doubt levels are unchanged.",
+  "videos": 0,
+  "videos_note": "Several kept clips were under 60 s (GPT-6 Cyber 7 s, Gemini Omni 21 s, VFlash 56 s, Pruna 51 s, Muse 58 s). Fish Audio Realtime STT is 81 s but was not deep-read, so it was not analyzed. No video reader in this headless run.",
+  "saves": {
+    "read": 20,
+    "new_since_last_sweep": 0,
+    "kept": 0,
+    "note": "Archive and get_users_bookmarks both show no new saves since 15:15Z. The 09:46 and 11:48 CT syncs were all_seen. Newest archive capture remains the 07:42 CT Grok Bot phone-call keep."
+  },
+  "saved_rejected": [],
+  "discovery": {
+    "queries": 2,
+    "kept": 0,
+    "note": "Security search surfaced Alpine OpenSSH *sshole and MCPhantom archived-MCP warnings (forwarded). Release search mostly echoed GPT-6 Cyber, Gemini Omni 1.2 Flash and EmbeddingGemma 2 already caught on roster; low-reach tool promos skipped."
+  },
+  "horizon": {
+    "checked": [
+      "block-dessa"
+    ],
+    "triggered": [],
+    "note": "Both Dessa queries returned 0 posts since 15:15Z; block.xyz/dessa curl returned empty (JS). Still watching."
+  },
+  "items": [
+    {
+      "title": "OpenAI launches GPT-6 Cyber for Daybreak Red: stronger cyber research model already used on Linux kernel and by Mozilla, Palo Alto, Calif and Cisco",
+      "url": "https://x.com/OpenAI/status/2118390190246879554",
+      "handle": "@OpenAI",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "OpenAI released GPT-6 Cyber, a cyber-specialized model available to select Daybreak Red customers, with Daybreak Blue alpha for GPT-6 Astra also expanding. OpenAI says it powered the prior day's Linux kernel privilege-escalation patch work and is already in use at Mozilla, Palo Alto Networks, Calif, Cisco and OpenAI's own security teams.",
+      "kind": "model",
+      "evidence": "artifact",
+      "links": [
+        "https://openai.com/index/introducing-gpt-6-cyber/",
+        "https://openai.com/business/solutions/cybersecurity/"
+      ],
+      "vendor": "OpenAI",
+      "posted_at": "2026-11-05T17:09:13Z",
+      "metrics": {
+        "likes": 8753,
+        "reposts": 736,
+        "quotes": 0,
+        "replies": 0,
+        "views": 0
+      },
+      "confirmed_by": [
+        "@thsottiaux",
+        "@gdb"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Access is limited to Daybreak Red select customers for now; some replies want a general-availability product instead of defender-only tools.",
+        "source": null
+      },
+      "reception": {
+        "sentiment": "mixed",
+        "summary": "Replies mix praise for defender tooling with complaints that the model is gated and not a consumer release; verification and Daybreak enrollment are the main practical questions.",
+        "tried": false,
+        "replies_read": 8
+      }
+    },
+    {
+      "title": "Gemini Omni 1.2 Flash: 15-second video clips, multi-turn edits, less drift, about 30% cheaper than Omni Flash 1.1",
+      "url": "https://x.com/GoogleAI/status/2118389961426874879",
+      "handle": "@GoogleAI",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "Google rolled out Gemini Omni 1.2 Flash with longer video generation and editing (up to 15 seconds), multi-turn conversational edits, stronger scene consistency and reference fidelity, and a lower price than Omni Flash 1.1. It is live in the Gemini API, AI Studio, Flow and related consumer surfaces.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/"
+      ],
+      "vendor": "Google",
+      "posted_at": "2026-11-05T17:08:19Z",
+      "metrics": {
+        "likes": 1034,
+        "reposts": 92,
+        "quotes": 0,
+        "replies": 0,
+        "views": 0
+      },
+      "confirmed_by": [
+        "@OfficialLoganK",
+        "@GeminiApp",
+        "@_philschmid",
+        "@arena"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      },
+      "reception": {
+        "sentiment": "positive",
+        "summary": "Builders treated it as a real ship; Arena already shows it leading text-to-video and image-to-video boards in early scores.",
+        "tried": false,
+        "replies_read": 5
+      }
+    },
+    {
+      "title": "EmbeddingGemma 2 tech report: 740M open multimodal embeddings for text, code, image, audio and video down to 567MB int4",
+      "url": "https://x.com/googlegemma/status/2118382075564929178",
+      "handle": "@googlegemma",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "Google published the EmbeddingGemma 2 technical report covering architecture, training and ablations for its 740M open multimodal embedding model. The report claims unified text/code/image/audio/video representations that beat larger specialists, with Matryoshka dimensions and int4 quantization down to 567MB for on-device use.",
+      "kind": "paper",
+      "evidence": "artifact",
+      "links": [
+        "https://arxiv.org/abs/2610.37364"
+      ],
+      "vendor": "Google",
+      "posted_at": "2026-11-05T16:36:59Z",
+      "metrics": {
+        "likes": 337,
+        "reposts": 24,
+        "quotes": 0,
+        "replies": 0,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      },
+      "reception": {
+        "sentiment": "positive",
+        "summary": "Replies focused on the on-device size claim (740M beating larger models while fitting in 567MB int4).",
+        "tried": false,
+        "replies_read": 3
+      }
+    },
+    {
+      "title": "VFlash: NVIDIA System One vision model that emits fixed-length geometry in one shot for faster Physical AI action decoding",
+      "url": "https://x.com/DrJimFan/status/2118380813498892301",
+      "handle": "@DrJimFan",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "NVIDIA's Jim Fan introduced VFlash, a vision model that outputs entire fixed-length geometric structures (boxes, trajectories) in parallel instead of autoregressive tokens. The post claims up to 12x faster action decoding, 5.1x overall robot inference speedup and up to 61% lower 3D trajectory error; no paper or weights link was in the post.",
+      "kind": "technique",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "NVIDIA",
+      "posted_at": "2026-11-05T16:31:58Z",
+      "metrics": {
+        "likes": 476,
+        "reposts": 37,
+        "quotes": 0,
+        "replies": 0,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Announcement video only so far; no paper, code or weights linked in the post.",
+        "source": null
+      },
+      "reception": {
+        "sentiment": "positive",
+        "summary": "Robotics builders liked the fixed-length parallel decode idea for edge latency; nobody reported an independent reimplementation yet.",
+        "tried": false,
+        "replies_read": 4
+      }
+    },
+    {
+      "title": "Nanbeige4.3-33B open weights (Apache 2.0) scores 20 on AA Intelligence Index v5, matching Qwen3.8 27B xhigh",
+      "url": "https://x.com/ArtificialAnlys/status/2118400279788101824",
+      "handle": "@ArtificialAnlys",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "Artificial Analysis reports Nanbeige4.3-33B, a dense 33B open-weights model from BOSS Zhipin's Nanbeige lab, at 20 on Intelligence Index v5 alongside Qwen3.8 27B (xhigh), with stronger terminal use and weaker knowledge. Weights are Apache 2.0 on Hugging Face with a 524K context window.",
+      "kind": "model",
+      "evidence": "measured",
+      "links": [
+        "https://huggingface.co/Nanbeige/Nanbeige4.3-33B"
+      ],
+      "vendor": "Nanbeige / Kanzhun",
+      "posted_at": "2026-11-05T17:49:19Z",
+      "metrics": {
+        "likes": 76,
+        "reposts": 1,
+        "quotes": 0,
+        "replies": 0,
+        "views": 0
+      },
+      "confirmed_by": [
+        "@teortaxesTex"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Weights have been on Hugging Face since late October; this post is the independent AA Index read, not the first weight drop.",
+        "source": null
+      }
+    },
+    {
+      "title": "PrunaAI P-Video-2-Pro-Replace: swap one or two people in an existing video while keeping motion, camera, background and audio",
+      "url": "https://x.com/PrunaAI/status/2118387913943580882",
+      "handle": "@PrunaAI",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "PrunaAI launched P-Video-2-Pro-Replace on MiniMax H3: replace up to two people in a clip from reference photos while preserving motion, framing, background and audio. API docs are live; launch pricing starts around $0.05/s at 480p with a two-week discount.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://docs.api.pruna.ai/guides/models/p-video-2-pro-replace"
+      ],
+      "vendor": "PrunaAI",
+      "posted_at": "2026-11-05T17:00:11Z",
+      "metrics": {
+        "likes": 73,
+        "reposts": 14,
+        "quotes": 0,
+        "replies": 0,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Fish Audio Realtime STT Preview: live speech-to-text API demoed on sped-up tongue twisters in nine languages",
+      "url": "https://x.com/FishAudio/status/2118403946696032323",
+      "handle": "@FishAudio",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "Fish Audio posted a preview of its Realtime Speech-to-Text API, showing raw word-by-word captions on tongue twisters in nine languages while increasing speaking speed. The companion reply says the preview endpoint is live in the API.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [],
+      "vendor": "Fish Audio",
+      "posted_at": "2026-11-05T18:03:53Z",
+      "metrics": {
+        "likes": 42,
+        "reposts": 2,
+        "quotes": 0,
+        "replies": 0,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Preview demo only; primary docs URL was not unwound in the hydrate.",
+        "source": null
+      }
+    },
+    {
+      "title": "Mistral Studio adds managed agents and apps, with stronger workflows, connections, observability and evals",
+      "url": "https://x.com/MistralAI/status/2118370229466153299",
+      "handle": "@MistralAI",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "Mistral launched managed agents and apps in Mistral Studio, plus new workflow, enterprise connection, observability and evaluation capabilities. Follow-up posts say Apps and Managed Agents are in public preview and Workflows are GA on Mistral Cloud, with private-cloud and on-prem paths coming.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [],
+      "vendor": "Mistral",
+      "posted_at": "2026-11-05T15:49:54Z",
+      "metrics": {
+        "likes": 451,
+        "reposts": 59,
+        "quotes": 0,
+        "replies": 0,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Product launch thread; primary docs URL was not present in the first post hydrate.",
+        "source": null
+      },
+      "reception": {
+        "sentiment": "none",
+        "summary": "Few independent replies in the sampled page beyond Mistral's own thread.",
+        "tried": false,
+        "replies_read": 4
+      }
+    },
+    {
+      "title": "CRUX-in-a-box: open-source infra to run and monitor weeks-long agent evaluations on VMs",
+      "url": "https://x.com/sayashk/status/2118418574456852720",
+      "handle": "@sayashk",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "Princeton CRUX researchers open-sourced CRUX-in-a-box for long-horizon agent evals: weeks-long VM runs, LLM risk flagging for human review, tool/token/spend inspection, time and cost budgets, and mid-run chat with agents. Built from six months of CRUX evaluation practice.",
+      "kind": "tool",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/sage-princeton/crux-in-a-box"
+      ],
+      "vendor": "CRUX / Princeton",
+      "posted_at": "2026-11-05T19:02:01Z",
+      "metrics": {
+        "likes": 4,
+        "reposts": 1,
+        "quotes": 0,
+        "replies": 0,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Science's Last Exam: agent benchmark of real research tasks across nine fields from 30+ institutions",
+      "url": "https://x.com/aitonomyfound/status/2118372265842610618",
+      "handle": "@aitonomyfound",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "The AItonomy Foundation launched Science's Last Exam, a benchmark of real research tasks spanning nine fields. Agents must form hypotheses, plan protocols, run scientific code and interpret experiment videos. Early leaderboard: Claude Opus 5 in Claude Code leads the composite; tasks were written and reviewed by researchers at more than 30 institutions.",
+      "kind": "eval",
+      "evidence": "measured",
+      "links": [],
+      "vendor": "AItonomy Foundation",
+      "posted_at": "2026-11-05T15:58:00Z",
+      "metrics": {
+        "likes": 291,
+        "reposts": 46,
+        "quotes": 10,
+        "replies": 33,
+        "views": 0
+      },
+      "confirmed_by": [
+        "@omarsar0"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Primary benchmark site URL was not in the hydrated quote; treat leaderboard claims as self-reported until the page is checked.",
+        "source": null
+      }
+    },
+    {
+      "title": "From Pixels to Actions: paper on native vision-language-action policies (arXiv 2611.06918)",
+      "url": "https://x.com/_akhaliq/status/2118400919637508576",
+      "handle": "@_akhaliq",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "A new paper, From Pixels to Actions: Towards Native Vision-Language-Action Policies, is up on Hugging Face Papers / arXiv 2611.06918, with a demo video of end-to-end VLA-style control.",
+      "kind": "paper",
+      "evidence": "artifact",
+      "links": [
+        "https://huggingface.co/papers/2611.06918",
+        "https://arxiv.org/abs/2611.06918"
+      ],
+      "vendor": null,
+      "posted_at": "2026-11-05T17:51:51Z",
+      "metrics": {
+        "likes": 29,
+        "reposts": 3,
+        "quotes": 0,
+        "replies": 0,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "ByteDance Axion 1.0: Qwen-based agent model trained with two SFT stages plus RL; code and data Apache 2.0",
+      "url": "https://x.com/plotarmordev/status/2118384002847605007",
+      "handle": "@plotarmordev",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "ByteDance's Axion 1.0 is described as a Qwen-base agent model trained with two SFT stages plus RL and no mid-training, DPO or on-policy distillation, using about 18k samples. Code and training data are out under Apache 2.0; a 35B checkpoint is on Hugging Face.",
+      "kind": "model",
+      "evidence": "artifact",
+      "links": [
+        "https://huggingface.co/Axion1-0/Axion-1.0-35B"
+      ],
+      "vendor": "ByteDance",
+      "posted_at": "2026-11-05T16:44:38Z",
+      "metrics": {
+        "likes": 2,
+        "reposts": 0,
+        "quotes": 0,
+        "replies": 0,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Coverage post from a trial roster account; verify the HF card and claimed GPU-hour numbers before treating as first-hand.",
+        "source": null
+      }
+    },
+    {
+      "title": "Smallest AI Lightning 3.1 Pro checkpoint ranks #3 US English and #1 Hindi on Voice Arena real-time TTS boards",
+      "url": "https://x.com/voicearena_ai/status/2118387450913739206",
+      "handle": "@voicearena_ai",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "Voice Arena reports Smallest AI's new Lightning 3.1 Pro real-time TTS checkpoint at 1046 Elo (#3 of 16) in US English and 1106 Elo (#1 of 10) in Hindi, up about 90 Elo on the prior Lightning 3.1 Pro, from blind native-speaker Bradley-Terry votes.",
+      "kind": "eval",
+      "evidence": "measured",
+      "links": [],
+      "vendor": "Smallest AI",
+      "posted_at": "2026-11-05T16:58:20Z",
+      "metrics": {
+        "likes": 6,
+        "reposts": 0,
+        "quotes": 0,
+        "replies": 0,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Under-$1000 Apple Silicon eGPU recipe runs Qwen3.8-27B at about 20 tps, including on 8GB Macs",
+      "url": "https://x.com/JoshuaSWarren/status/2118386850612081066",
+      "handle": "@JoshuaSWarren",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "Joshua Warren published a measured local-AI recipe: an under-$1000 eGPU setup under Omarchy that runs Qwen3.8-27B at about 20 tokens/s on Apple Silicon Macs, including 8GB machines, with fine-tune and train notes.",
+      "kind": "technique",
+      "evidence": "measured",
+      "links": [
+        "https://joshuawarren.com/blog/egpu-setup-under-1000-for-omarchy/"
+      ],
+      "vendor": null,
+      "posted_at": "2026-11-05T16:55:57Z",
+      "metrics": {
+        "likes": 83,
+        "reposts": 9,
+        "quotes": 0,
+        "replies": 0,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Cognition Devin Review Autofix: automatic review fixes now in Devin Cloud and Desktop",
+      "url": "https://x.com/cognition/status/2118390710416429390",
+      "handle": "@cognition",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "Cognition enabled Autofix in Devin Review, aiming at the review bottleneck for agent-written code. It is available in Devin Cloud and Desktop, with a companion post on making Devin Review faster and cheaper.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://devin.ai/cloud"
+      ],
+      "vendor": "Cognition",
+      "posted_at": "2026-11-05T17:11:17Z",
+      "metrics": {
+        "likes": 22,
+        "reposts": 0,
+        "quotes": 0,
+        "replies": 0,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Kinference: open-source Kubernetes control plane for running vLLM, featured on the vLLM blog",
+      "url": "https://x.com/vllm_project/status/2118418074349297938",
+      "handle": "@vllm_project",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "BuoyantIO's Kinference, an open-source inference control plane for Kubernetes and vLLM, is featured on the vLLM blog with a getting-started guide.",
+      "kind": "repo",
+      "evidence": "artifact",
+      "links": [],
+      "vendor": "BuoyantIO",
+      "posted_at": "2026-11-05T19:00:01Z",
+      "metrics": {
+        "likes": 3,
+        "reposts": 0,
+        "quotes": 0,
+        "replies": 0,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Primary Kinference repo URL was only in the quoted BuoyantIO post, which had no engagement yet.",
+        "source": null
+      }
+    },
+    {
+      "title": "Meta Muse Realtime Avatar rolls out in the US Muse app for expressive real-time agent avatars",
+      "url": "https://x.com/AIatMeta/status/2118412135340572850",
+      "handle": "@AIatMeta",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "Meta is rolling out Muse Realtime Avatar in the US Muse app, turning Muse Realtime Voice into expressive interactive avatars for personal agents. A research-blog link accompanies the product post.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://go.meta.me/47ZSNso"
+      ],
+      "vendor": "Meta",
+      "posted_at": "2026-11-05T18:36:25Z",
+      "metrics": {
+        "likes": 83,
+        "reposts": 15,
+        "quotes": 0,
+        "replies": 0,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    }
+  ],
+  "security_forwarded": [
+    {
+      "url": "https://x.com/ashxhart/status/2118383243086979108",
+      "matched": "always_forward container runtimes and images; Docker on stack (Spark, cspie). Alpine Linux musl OpenSSH password-auth bypass (*sshole).",
+      "summary": "Critical OpenSSH-on-musl auth bypass (dubbed *sshole): on Alpine (and other musl) sshd without PAM, with PasswordAuthentication yes, an account whose shadow password is '*' can be logged into with any 257-1024 byte password if another account has a real $5$/$6$ hash. Affects Alpine 3.16 through edge when sshd runs; Docker/containers that do not run sshd are not affected. Fixed in OpenSSH 10.6p2 and Alpine openssh package updates (restart sshd after apk upgrade). Official advisory: https://alpinelinux.org/posts/2026-11-05-openssh-password-authentication-bypass/",
+      "also": [
+        "https://x.com/IntCyberDigest/status/2118354675942428860",
+        "https://x.com/sub_rosa_labs/status/2118376682302197967",
+        "https://alpinelinux.org/posts/2026-11-05-openssh-password-authentication-bypass/",
+        "https://sshhole.com/"
+      ]
+    },
+    {
+      "url": "https://x.com/Duncopunc/status/2118378472296845678",
+      "matched": "always_forward agent tooling and software supply chain (MCP servers / npm).",
+      "summary": "Glow Labs MCPhantom writeup: coding agents can reinstall archived MCP servers from memory after npm deprecates official server-github, server-puppeteer and server-slack packages; the Puppeteer RCE path is called out as unfixed. KyttoMCP 1.0.9.2 on macOS is said to flag them. Low-reach post; verify before fleet action.",
+      "also": [
+        "https://github.com/heyitsjakub/KyttoMCP"
+      ]
+    }
+  ],
+  "security_na": [
+    {
+      "url": "https://x.com/OleksiiStrokan/status/2118388976029446645",
+      "why": "AGENTS.md treated as trusted agent instructions: already handled as Auto Mode / AGENTS.md exposure (CONFIRMED EXPOSURE late Oct); no new CVE."
+    },
+    {
+      "url": "https://x.com/pamelafox/status/2118388501381361780",
+      "why": "GitHub MCP skills discussion request: product feature ideation, not a vulnerability."
+    },
+    {
+      "url": "https://x.com/PentestAIStack/status/2118372723026248119",
+      "why": "HexStrike AI MCP marketing for pentest tool wrapping; not a new vuln on the fleet stack."
+    }
+  ],
+  "skipped": [
+    "Claude Personal Finance beta (consumer money product, not a builder capability)",
+    "QAD quantization teaser (stay tuned; quoted HF livestream)",
+    "Together Compiler via @tri_dao (original simran_s_arora post is older than since)",
+    "Beam safety writeup (follow-up to existing Beam model)",
+    "Ling 3.2 Flash (aitrackerbot claim; weights not on HF)",
+    "Liquid x Mercedes and OpenAI x JPMorgan (business partnerships)",
+    "Epoch AI worker-poll and Broadcom TPU shipment notes (macro, not capability)",
+    "Notion Calendar iOS rebuild (not AI)",
+    "opencode website vandalism thread (@thdxr)",
+    "SemiAnalysis TPU/ATE hardware notes",
+    "Grok Bot support replies flooding the first devtools page"
+  ],
+  "proposed_follows": [],
+  "proposed_follows_note": "follow_mode is browser but this executor has no computerUse, so nothing was followed. No account newly crossed the 3-qualifying-posts bar this sweep; write recommendations to inbox/x-follows.json only when earned.",
+  "errors": []
+}
