@@ -1,0 +1,276 @@
+{
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "ran_at": "2026-11-05T15:15:00Z",
+ "since": "2026-11-05T11:10:00Z",
+ "calls": 16,
+ "queries": 11,
+ "list_posts_read": 96,
+ "list_pages": 1,
+ "rechecks": 8,
+ "rechecks_note": "One metrics call on eight prior-24h doubt or deep-read items (Kimi K3.1 Pro, Ripple-65B, Unsloth UDv3.1, SWE-2 Flash, OpenAI cyber patches, GPT-Image-2.6, ERNIE-5.5-Flash-Base, Antigravity Jupyter). Engagement rose (Kimi about 7.9K likes) but no Community Note is visible through the API and no new pushback surfaced, so doubt levels are unchanged.",
+ "videos": 0,
+ "videos_note": "No kept or deep-read item had a clip over 60 s worth watching, and there is no video reader in this headless run.",
+ "saves": {
+  "read": 20,
+  "new_since_last_sweep": 0,
+  "kept": 0,
+  "note": "No new bookmarks since the 11:10Z sweep. Re-vetted the two from the 7:42 AM CT sync: @bot 'Grok Bot can now make phone calls' passes but was already kept as a Magpie item in the 2026-11-04T19-15 sweep, so it is not re-added; @s2_underground ATAK Blast-TAK plugin stays rejected as non-AI (listed in the 11:10Z saved_rejected)."
+ },
+ "saved_rejected": [],
+ "discovery": {
+  "queries": 2,
+  "kept": 1,
+  "note": "One security search and one open-release search. Security search surfaced two new leads (PyPI TeamViewer MCP malware, Docker Sandboxes sbx cp CVE), both forwarded. Release search added the NVIDIA Cosmos interactive simulation paper; other hits were Kimi K3.1 Pro echoes, Craft Anything repo hype and small agent plugins."
+ },
+ "horizon": {
+  "checked": [
+   "block-dessa"
+  ],
+  "triggered": [],
+  "note": "Both Dessa queries returned no posts since 11:10Z; the block.xyz/dessa page fetch timed out. No trigger."
+ },
+ "items": [
+  {
+   "title": "Strata 0.2.11: support for Unsloth Dynamic v3.1 Qwen3.8-Flash-Next quants and layer splitting for every configuration",
+   "url": "https://x.com/coldniko/status/2118326344975012009",
+   "handle": "@coldniko",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "The Strata local inference app shipped v0.2.11. It adds support for Unsloth's new Dynamic v3.1 Qwen3.8-Flash-Next GGUF quants (seven 1 to 4 bit variants, for example UD-IQ1_M at 68 GB), allows layer splitting in all configurations, and brings speed and app/terminal improvements. Daniel Han of Unsloth confirmed the UDv3.1 quants run in Strata, including UDv3.1 DeepSeek-V4.1-Flash GGUFs.",
+   "kind": "release",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/Niko1221/Strata/releases/tag/v0.2.11",
+    "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF"
+   ],
+   "vendor": "Strata",
+   "posted_at": "2026-11-05T12:55:31Z",
+   "metrics": {
+    "likes": 511,
+    "reposts": 65,
+    "quotes": 17,
+    "replies": 28,
+    "views": 21870
+   },
+   "confirmed_by": [
+    "https://x.com/danielhanchen/status/2118334293265076495"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Users report faster decode after upgrading (one quote reports 70 to 110 tok/s at 256K context on their setup; a reply cites 31 to 62.7 tok/s on a single 12 GB card). Open questions are about AMD Radeon support and Windows RAM use. No Community Note; a small off-topic political spat in replies.",
+    "tried": true,
+    "replies_read": 25
+   },
+   "video": null
+  },
+  {
+   "title": "ServerBench (CMU): coding agents build a full LLM serving stack; Claude Sonnet 5.5's Gemma E4B system gives 4.87x the value per GPU dollar of the vLLM reference",
+   "url": "https://x.com/omarsar0/status/2118339557154504969",
+   "handle": "@omarsar0",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A CMU benchmark asks coding agents to design a complete, specialized serving system and pick its concurrency. The score is latency-qualified token value per dollar of GPU cost, measured by replaying real coding sessions, with an independent check that the system works. Across 11 coding-agent models and three deployments, 22 of 33 runs produced a verified system and 13 beat the strongest baseline. The best run (Claude Sonnet 5.5, Gemma E4B) reached 4.87x the vLLM reference. Failed runs often shipped untested code paths.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2611.06841"
+   ],
+   "vendor": "Carnegie Mellon University",
+   "posted_at": "2026-11-05T13:48:01Z",
+   "metrics": {
+    "likes": 46,
+    "reposts": 7,
+    "quotes": 1,
+    "replies": 42,
+    "views": 3523
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "video": null
+  },
+  {
+   "title": "AutoSFT: a multi-agent framework that automates SFT data research, lifting IFEval by 6.5 points at the same budget",
+   "url": "https://x.com/OpenBMB/status/2118342839398715877",
+   "handle": "@OpenBMB",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "THUNLP, BUPT, ModelBest, UIUC and CUHK split SFT data research into roles: an executor, four analysis subagents (training data, failure cases, learning dynamics, research history), a synthesis writer with a verifier, and a meta agent that picks the next recipe. A single-agent baseline only tuned mixture ratios over 33 rounds. AutoSFT used all six data-action families, hit IFEval 63.33 by round 6 (above the baseline's best over 50 rounds) and 67.10 by round 30. Synthesis alone added IFEval +3.4, IFBench +2.9 and MBPP+ +3.7. Paper and code are public.",
+   "kind": "paper",
+   "evidence": "artifact",
+   "links": [
+    "https://arxiv.org/abs/2610.22194",
+    "https://github.com/Thinking-Space/AutoSFT"
+   ],
+   "vendor": "OpenBMB / THUNLP",
+   "posted_at": "2026-11-05T14:01:04Z",
+   "metrics": {
+    "likes": 3,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 1,
+    "views": 372
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "video": null
+  },
+  {
+   "title": "Gradium's on-device Phonon TTS takes first place on intelligibility in German and Spanish on the Open TTS Leaderboard",
+   "url": "https://x.com/LysandreJik/status/2118350953392787681",
+   "handle": "@LysandreJik",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Hugging Face's Lysandre Debut highlights Gradium's Phonon results on the Open TTS Leaderboard: first place on intelligibility (WER/CER) in German and Spanish, top three in every language it was evaluated on, and the lead in CPU streaming time-to-first-audio, against models up to 100x its size. He notes the leaderboard scores intelligibility, throughput and latency, predicted naturalness and voice-clone similarity separately, so these wins are specific rather than an overall best.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/spaces/hf-audio/open_tts_leaderboard",
+    "https://huggingface.co/blog/phonon-tts"
+   ],
+   "vendor": "Gradium",
+   "posted_at": "2026-11-05T14:33:19Z",
+   "metrics": {
+    "likes": 21,
+    "reposts": 4,
+    "quotes": 3,
+    "replies": 0,
+    "views": 1237
+   },
+   "confirmed_by": [
+    "https://x.com/GradiumAI/status/2118341762200584228"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Results are as reported by Gradium; the post itself says per-dimension wins do not make it best across use cases.",
+    "source": "https://x.com/LysandreJik/status/2118350953392787681"
+   },
+   "video": null
+  },
+  {
+   "title": "NVIDIA paper: interactive world simulation with Cosmos 3, with open code and four Cosmos3-Nano-Sim checkpoints",
+   "url": "https://x.com/arnaudmercier/status/2118334918463812059",
+   "handle": "@arnaudmercier",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "NVIDIA adapts Cosmos 3 world foundation models for real-time, action-driven world simulation: streaming observations in response to actions and scene controls, using temporal-causal attention, causal distillation and self-forcing, and streaming inference. The paper shows camera navigation, bimanual robot manipulation, controllable video transfer and multi-view autonomous-vehicle simulation with LiDAR. It releases code (Cosmos, Cosmos-Framework) and open-weight checkpoints Cosmos3-Nano-Sim-Bimanual, -Sim-Transfer, -Sim-Auto and -Transfer-Auto.",
+   "kind": "paper",
+   "evidence": "artifact",
+   "links": [
+    "https://arxiv.org/abs/2611.06627"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-11-05T13:29:35Z",
+   "metrics": {
+    "likes": 3,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 2,
+    "views": 169
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "video": null
+  }
+ ],
+ "security_forwarded": [
+  {
+   "url": "https://x.com/infrastack_ai/status/2118331211517145291",
+   "matched": "always_forward agent tooling and software supply chain (malicious MCP server packages on PyPI); Python/PyPI on stack.",
+   "summary": "OSV MAL-2026-18705 (teamviewer-mcp-server 0.0.1) and MAL-2026-18706 (mcp-teamviewer 0.0.1), both published 2026-11-05, flag malicious code in two PyPI MCP server packages; both are now removed from PyPI (404). Advice is to uninstall and rotate any credentials the environment could reach. Not present on the box; fleet unchecked.",
+   "also": [
+    "https://x.com/infrastack_ai/status/2118330449227624843",
+    "https://osv.dev/vulnerability/MAL-2026-18705",
+    "https://osv.dev/vulnerability/MAL-2026-18706"
+   ]
+  },
+  {
+   "url": "https://x.com/leomarshdev/status/2118359869845827981",
+   "matched": "always_forward agent tooling and container runtimes (Docker Sandboxes for coding agents); Docker on stack (Spark, cspie).",
+   "summary": "CVE-2026-103916 (GHSA-82h2-77xp-45m9, CVSS 8.2): Docker Sandboxes sbx cp in 0.28.0 through 0.50.x follows symlinks a sandboxed agent plants in its writable workspace, so a later user-run copy can read or overwrite host files (for example ~/.ssh, ~/.aws) with the user's permissions. The 0.48.0 fix was incomplete; fixed in 0.51.0 (2026-11-03), alongside CVE-2026-121614 (host Git config execution, fixed 0.50.0). sbx is not installed on the box; fleet unchecked.",
+   "also": [
+    "https://github.com/advisories/GHSA-82h2-77xp-45m9",
+    "https://www.endorlabs.com/learn/docker-sandboxes-vulnerability-lets-ai-agents-access-sensitive-files-outside-their-sandbox-cve-2026-103916",
+    "https://docs.docker.com/ai/sandboxes/release-notes/"
+   ]
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/rehanshakir23/status/2118358242065559553",
+   "why": "Cursor marketplace Claude Code extension SSH-key backdoor (svc-telemetry, fix 2.1.314): already handled in late October (sweep-cursor-claudeext); no new info."
+  },
+  {
+   "url": "https://x.com/ptdbugs/status/2118343187064385784",
+   "why": "EMBRACE embedded-browser RCE in AI assistants (Forever Security): already handled 2026-10-29 (embrace-guard); repost of known research."
+  },
+  {
+   "url": "https://x.com/christiannonis/status/2118342036759646412",
+   "why": "Forever Security malicious AGENTS.md lab results: already covered in earlier sweeps and the Auto Mode filing; no new info."
+  },
+  {
+   "url": "https://x.com/HarshaHegde0/status/2118325248441672092",
+   "why": "Copycat artex Docker image login backdoor: already seen in earlier sweeps; image not used on the fleet."
+  },
+  {
+   "url": "https://x.com/ThePSF/status/2118344256163037452",
+   "why": "PSF retrospective on the eMudhra CA compromise response; incident already handled in October, no new action."
+  },
+  {
+   "url": "https://x.com/lovezihuatanejo/status/2118338065890689424",
+   "why": "Bitkub trading MCP npm name reuse risk; crypto exchange tool not on the stack."
+  },
+  {
+   "url": "https://x.com/joschelboschel/status/2118360598618538280",
+   "why": "NixOS nix store secrets exposure to Claude Code; no NixOS on the fleet."
+  }
+ ],
+ "skipped": [
+  "Vercel agent-desktop trending (kept earlier)",
+  "Hermes plugin catalog (kept 2026-11-04T23-10)",
+  "Flint self-interpretability demo (Flint covered; no primary link)",
+  "LifeVal explainer (kept 2026-11-02T19-05)",
+  "Kimi K3.1 Pro open-weights echoes (kept 2026-11-04T19-15)",
+  "Drama 3 4-bit blind test (drama-tensorfold covered)",
+  "GLM 5.3 Flash NVFP4 700 tps on TensorFold (single builder claim)",
+  "BAAI CausGround (no primary link in post)",
+  "vLLM/SGLang ERNIE day-0 support (ERNIE kept at 11:10Z)",
+  "RoboHarness (1 like, small)",
+  "Craft Anything repo hype",
+  "PyTorch MoE grouped execution blog (shortened link only)",
+  "Box agent security controls (product marketing)",
+  "HF quantization livestream, Daytona and Snowflake event promos",
+  "Opinion posts (refusals, levelsio, scaling01)",
+  "Apple macOS Linux on M5 (not AI)"
+ ],
+ "proposed_follows": [],
+ "proposed_follows_note": "follow_mode is browser but this executor has no browser, so nothing was followed. No account newly earned a follow this sweep; @juberti remains a watch from 11:10Z.",
+ "errors": []
+}

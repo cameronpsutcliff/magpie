@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-05T11:10:00Z",
+  "updated_at": "2026-11-05T15:15:00Z",
   "job": "sweep",
   "prompt": "v6.1",
-  "calls_used_today": 126,
+  "calls_used_today": 142,
   "notes_via_api": false,
   "last_sweep": {
-    "ran_at": "2026-11-05T11:10:00Z",
-    "items": 3,
-    "queries": 9,
-    "deep_reads": 3,
-    "rechecks": 5,
+    "ran_at": "2026-11-05T15:15:00Z",
+    "items": 5,
+    "queries": 11,
+    "deep_reads": 1,
+    "rechecks": 8,
     "flagged": 0,
-    "saved_in": 2,
+    "saved_in": 0,
     "saved_kept": 0,
     "videos": 0,
-    "security_forwarded": 1
+    "security_forwarded": 2
   },
   "roster": {
     "curated": 223,
