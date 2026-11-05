@@ -2,6 +2,80 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-11-05",
+   "headline": "Kimi-K3.1-Pro, auto-ontology, DeepSeek-V4.1-Flash-1017-GSQ-RCO-Coder-GGUF, and more",
+   "events": 275,
+   "sources": 521,
+   "enriched": false,
+   "top": [
+    {
+     "id": "836cd722751a",
+     "title": "moonshotai/Kimi-K3.1-Pro",
+     "impact": 5,
+     "vendor": "Moonshot"
+    },
+    {
+     "id": "b2e43e740f52",
+     "title": "NVIDIA/auto-ontology",
+     "impact": 4,
+     "vendor": "NVIDIA"
+    },
+    {
+     "id": "a955af9760c9",
+     "title": "ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-Coder-GGUF",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "4b8577421b3b",
+     "title": "mattpocock/skills",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "e197a9917ccd",
+     "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
+     "impact": 4,
+     "vendor": "Open source"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "OpenAI",
+    "Anthropic",
+    "Google",
+    "NVIDIA",
+    "AWS"
+   ],
+   "topics": {
+    "models": 96,
+    "agents": 93,
+    "coding": 85,
+    "multimodal": 69,
+    "infra": 46,
+    "local": 35,
+    "mcp": 32,
+    "memory": 27,
+    "evals": 24,
+    "research": 20,
+    "security": 16,
+    "reverse": 9,
+    "robotics": 3
+   },
+   "kinds": {
+    "social": 68,
+    "repo": 38,
+    "newsletter": 38,
+    "blog": 31,
+    "model": 30,
+    "community": 23,
+    "changelog": 21,
+    "space": 20,
+    "news": 6
+   },
+   "threats": []
+  },
+  {
    "date": "2026-11-04",
    "headline": "Read model weights locally, decode faster with vLLM, cut reasoning spend, and more",
    "events": 393,
@@ -3346,5 +3420,5 @@
    }
   }
  ],
- "latest": "2026-11-04"
+ "latest": "2026-11-05"
 }

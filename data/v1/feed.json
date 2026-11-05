@@ -13,6 +13,30 @@
  ],
  "items": [
   {
+   "id": "2026-11-05",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-11-05",
+   "title": "Kimi-K3.1-Pro, auto-ontology, DeepSeek-V4.1-Flash-1017-GSQ-RCO-Coder-GGUF, and more",
+   "summary": "275 capability events from 128 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words.",
+   "content_html": "<p>275 capability events from 128 sources. Ranked by code; the editor did not run this edition, so copy is the sources&#x27; own words.</p><ol><li><a href=\"https://huggingface.co/moonshotai/Kimi-K3.1-Pro\">moonshotai/Kimi-K3.1-Pro</a></li><li><a href=\"https://github.com/NVIDIA/auto-ontology\">NVIDIA/auto-ontology</a></li><li><a href=\"https://huggingface.co/ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-Coder-GGUF\">ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-Coder-GGUF</a></li><li><a href=\"https://github.com/mattpocock/skills\">mattpocock/skills</a></li><li><a href=\"https://huggingface.co/DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF\">DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF</a></li></ol><p><strong>Possibilities:</strong> No new possibility today. Latest: Agencies can run security audit sweeps on cheap models after a pass-every-run qualifier (2026-11-04)</p><p><strong>Worth watching:</strong> No new video pick today. Latest: GPT-6 Astra Made Qwen 6x Better at Math Without Training (2026-11-04)</p><p><strong>Constraints:</strong> No new constraint today. Latest: DHS order bars DeepSeek products from federal civilian agencies (2026-10-20)</p><p><strong>Threats still open:</strong> <a href=\"https://osv.dev/vulnerability/GHSA-h3rc-j82p-2c3h\">vLLM image loader reaches Ghostscript on untrusted EPS input</a> (high, patched); <a href=\"https://osv.dev/vulnerability/GHSA-6757-hggm-hp2w\">vLLM SHM multimodal cache allows forged handles to reach pickle</a> (high, patched)</p>",
+   "content_text": "275 capability events from 128 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words. moonshotai/Kimi-K3.1-Pro NVIDIA/auto-ontology ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-Coder-GGUF mattpocock/skills DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
+   "date_published": "2026-11-05T11:14:39Z",
+   "tags": [
+    "agents",
+    "coding",
+    "infra",
+    "local",
+    "mcp",
+    "memory",
+    "models",
+    "multimodal"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-11-05.json",
+    "backfilled": false,
+    "capabilities": 275
+   }
+  },
+  {
    "id": "2026-11-04",
    "url": "https://www.cameronsutcliff.com/magpie/2026-11-04",
    "title": "Read model weights locally, decode faster with vLLM, cut reasoning spend, and more",
@@ -686,30 +710,6 @@
     "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-06.json",
     "backfilled": true,
     "capabilities": 93
-   }
-  },
-  {
-   "id": "2026-10-05",
-   "url": "https://www.cameronsutcliff.com/magpie/2026-10-05",
-   "title": "Run large models locally, search video, automate production and more",
-   "summary": "Local inference and agent tools lead the reported capabilities. Several talks describe working systems, but many candidates offer little evidence beyond a title or project summary.",
-   "content_html": "<p>Local inference and agent tools lead the reported capabilities. Several talks describe working systems, but many candidates offer little evidence beyond a title or project summary.</p><ol><li><a href=\"https://github.com/ys-ll/uniterm\">Uniterm combines remote access with shell agents</a>: Users can access SSH, RDP, SFTP, databases, and Kubernetes in a terminal whose built-in agent plans and runs multi-turn shell commands.</li><li><a href=\"https://github.com/Niko1221/Strata\">Strata reports running Qwen on RTX 4090</a>: Strata reports letting users run Qwen 3.8 Flash Next, a 125B model, on an RTX 4090 at 100 tokens per second.</li><li><a href=\"https://github.com/michael-denyer/pstack-claude\">Pstack workflows reach more coding agents</a>: Builders can use translations of Poteto&#x27;s pstack workflows across Claude Code, Codex, Pi, OpenCode, Gemini, and Prime Agent.</li><li><a href=\"https://github.com/kaifcodec/user-scanner\">User Scanner exposes footprint searches through MCP</a>: Agents can use native MCP support to access an email and username investigation suite claiming over 2720 scan vectors.</li><li><a href=\"https://www.youtube.com/watch?v=bRGyYaE0lxI\">Crusoe describes automatic recovery from GPU failures</a>: Crusoe describes infrastructure using Slurm and Kubernetes to automate remediation of hardware failures during large training workloads.</li></ol>",
-   "content_text": "Local inference and agent tools lead the reported capabilities. Several talks describe working systems, but many candidates offer little evidence beyond a title or project summary. Uniterm combines remote access with shell agents Strata reports running Qwen on RTX 4090 Pstack workflows reach more coding agents User Scanner exposes footprint searches through MCP Crusoe describes automatic recovery from GPU failures",
-   "date_published": "2026-10-20T15:35:51Z",
-   "tags": [
-    "agents",
-    "coding",
-    "infra",
-    "local",
-    "mcp",
-    "models",
-    "research",
-    "security"
-   ],
-   "_magpie": {
-    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-05.json",
-    "backfilled": true,
-    "capabilities": 57
    }
   }
  ]

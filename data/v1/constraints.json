@@ -1,6 +1,6 @@
 {
  "schema": "magpie.constraints/1",
- "updated": "2026-11-04",
+ "updated": "2026-11-05",
  "layers": {
   "training": "Training runs and compute",
   "publishing": "Publishing model weights",

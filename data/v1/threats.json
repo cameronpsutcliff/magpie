@@ -1,6 +1,6 @@
 {
  "schema": "magpie.threats/1",
- "updated": "2026-11-04",
+ "updated": "2026-11-05",
  "threats": [
   {
    "id": "thr-2026-10-28-vllm-image-loader-passes-eps-input-to",
