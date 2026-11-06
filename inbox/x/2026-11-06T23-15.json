@@ -1,0 +1,465 @@
+{
+  "bot": "magpie-scout",
+  "prompt": "v6.1",
+  "ran_at": "2026-11-06T23:15:00Z",
+  "since": "2026-11-06T19:15:00Z",
+  "calls": 18,
+  "queries": 11,
+  "list_posts_read": 91,
+  "list_pages": 1,
+  "rechecks": 0,
+  "rechecks_note": "Skipped rechecks; budget went to curated searches, hydrate, and three deep reads on new high-engagement releases.",
+  "videos": 0,
+  "videos_note": "Claude Code cloud clip 22s, Arete 27s, Lyra 35s, RoboSpoof 10s, Cooldown 37s; none exceeded video_min_seconds 60 or else not deep-read, and no video-capable reader anyway.",
+  "saves": {
+    "checked_archive": true,
+    "checked_api": true,
+    "new": 0,
+    "kept": 0
+  },
+  "saved_rejected": [],
+  "discovery": [
+    {
+      "query": "(CVE OR RCE OR \"malicious package\" OR \"supply chain\" OR \"prompt injection\" OR GHSA OR \"filter bypass\") (AI OR LLM OR agent OR MCP OR docker OR npm OR PyPI OR litellm OR cursor OR antigravity) -is:retweet lang:en",
+      "kept": 0,
+      "security_leads": 2,
+      "note": "Forwarded Cooldown Hermes plugin and FMF cyber jailbreak framework; Docker Desktop aggregator and Tracecat SAML CVE logged N/A."
+    },
+    {
+      "query": "(url:github.com OR url:huggingface.co OR url:arxiv.org OR url:anthropic.com OR url:openai.com) (release OR weights OR launched OR shipping OR announcing OR \"open source\" OR paper) (model OR agent OR LLM OR benchmark OR kernel OR compiler) -is:retweet lang:en",
+      "kept": 2,
+      "note": "Kept Cooldown and helped surface Together Compiler / Arete artifact links; most other hits were low-engagement or promo."
+    }
+  ],
+  "horizon": {
+    "checked": [
+      "block-dessa"
+    ],
+    "x_reads": 0,
+    "page_checked": true,
+    "triggered": [],
+    "last_result": "block.xyz/dessa still Conversation Model demo/early-access page with Join the waitlist language; no HF weights, public API, or arXiv paper. Still watching."
+  },
+  "items": [
+    {
+      "title": "Anthropic publishes agent memory components, including offline dreaming consolidation",
+      "url": "https://x.com/AnthropicAI/status/2118814753154064501",
+      "handle": "@AnthropicAI",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "Anthropic's engineering blog describes how Claude agent memory is organized and how an offline dreaming pass consolidates notes, corrects mistakes against transcripts, and promotes useful items for later retrieval. Builders get a concrete write-up of memory hierarchy and maintenance rather than a new public API.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://www.anthropic.com/research/components-of-agent-memory"
+      ],
+      "vendor": "Anthropic",
+      "posted_at": "2026-11-06T21:16:17Z",
+      "metrics": {
+        "likes": 3207,
+        "reposts": 232,
+        "quotes": 157,
+        "replies": 278,
+        "views": 180010
+      },
+      "confirmed_by": [
+        "@omarsar0",
+        "@maksym_andr"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Some replies call dreaming peak product marketing for an overnight batch memory compaction job.",
+        "source": null
+      },
+      "reception": {
+        "sentiment": "mixed",
+        "summary": "Many welcome memory consolidation for agents; critics say the dreaming label oversells a maintenance pass and ask who pays for the compute.",
+        "tried": false,
+        "replies_read": 25
+      }
+    },
+    {
+      "title": "Nous Research releases Arete-27B: Qwen3.8-27B post-trained against China-aligned propaganda",
+      "url": "https://x.com/NousResearch/status/2118822925445050435",
+      "handle": "@NousResearch",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "Arete-27B fine-tunes Qwen3.8-27B on about 53M tokens so an 803-prompt propaganda eval falls from 22% to 1% without a clear Hermes Bench drop. Weights, eval, training data, and blog are public for teams that want open Chinese bases with Western value behavior.",
+      "kind": "model",
+      "evidence": "artifact",
+      "links": [
+        "https://nousresearch.com/arete",
+        "https://huggingface.co/NousResearch/Arete-27B",
+        "https://huggingface.co/datasets/NousResearch/Propaganda_Eval",
+        "https://huggingface.co/datasets/NousResearch/arete-data-pairs"
+      ],
+      "vendor": "Nous Research",
+      "posted_at": "2026-11-06T21:48:45Z",
+      "metrics": {
+        "likes": 3059,
+        "reposts": 289,
+        "quotes": 167,
+        "replies": 314,
+        "views": 97631
+      },
+      "confirmed_by": [
+        "@witcheer"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Some quote posters treat western values as a political dog whistle rather than a measured eval target.",
+        "source": null
+      },
+      "reception": {
+        "sentiment": "positive",
+        "summary": "Most quotes praise open-weight value steering and security usefulness; a minority jokes about politics or questions the framing.",
+        "tried": false,
+        "replies_read": 20
+      }
+    },
+    {
+      "title": "Claude Code cloud sessions auto-detect deps and save environments on Pro, Max, Ultra",
+      "url": "https://x.com/ClaudeDevs/status/2118795192090386454",
+      "handle": "@ClaudeDevs",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "Claude Code cloud sessions on Pro, Max, and Ultra now infer dependencies, network access, and needed API keys, then persist the environment for the next run. Keys are stored so the model does not see them, cutting repeated setup for cloud agent loops.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://x.com/ClaudeDevs/status/2118795192090386454"
+      ],
+      "vendor": "Anthropic",
+      "posted_at": "2026-11-06T19:58:33Z",
+      "metrics": {
+        "likes": 3880,
+        "reposts": 136,
+        "quotes": 75,
+        "replies": 179,
+        "views": 193295
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "A few quotes say the feature copies earlier ADE/T3 Code environment work rather than inventing it.",
+        "source": null
+      },
+      "reception": {
+        "sentiment": "positive",
+        "summary": "Developers welcome less cloud setup friction; some note feature overlap with other agent IDEs and one older User-Agent email header complaint unrelated to this change.",
+        "tried": true,
+        "replies_read": 20
+      }
+    },
+    {
+      "title": "GitHub's new Git storage handles 5,000 concurrent agents at 7,200 pushes/sec in tests",
+      "url": "https://x.com/github/status/2118830274431873379",
+      "handle": "@github",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "GitHub says a new Git storage architecture supported 5,000 concurrent agents on one repo at 7,200 pushes per second in internal tests while keeping read latency low. That matters for teams running many coding agents against the same repository.",
+      "kind": "feature",
+      "evidence": "measured",
+      "links": [
+        "https://x.com/i/article/2118827340377829376"
+      ],
+      "vendor": "GitHub",
+      "posted_at": "2026-11-06T22:17:58Z",
+      "metrics": {
+        "likes": 78,
+        "reposts": 7,
+        "quotes": 7,
+        "replies": 23,
+        "views": 8354
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Numbers are internal tests only; no public method or independent reproduction yet.",
+        "source": null
+      }
+    },
+    {
+      "title": "Together Compiler: agents continually re-optimize inference kernels per model and traffic",
+      "url": "https://x.com/togethercompute/status/2118839848069140485",
+      "handle": "@togethercompute",
+      "group": "applied",
+      "origin": "discovery",
+      "summary": "Together AI launched Together Compiler, agents that keep optimizing kernels for a customer's model, hardware, and traffic. They report +12% to +20% median TPS on already hand-tuned serverless endpoints and roughly one-third to one-half lower response times in production.",
+      "kind": "tool",
+      "evidence": "measured",
+      "links": [
+        "https://www.together.ai/blog/together-compiler-continual-compilation-for-ai-inference"
+      ],
+      "vendor": "Together AI",
+      "posted_at": "2026-11-06T22:56:00Z",
+      "metrics": {
+        "likes": 4,
+        "reposts": 1,
+        "quotes": 2,
+        "replies": 2,
+        "views": 433
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Vendor-reported speedups on Together's own stack; no third-party benchmark yet.",
+        "source": null
+      }
+    },
+    {
+      "title": "NVIDIA Lyra 2.0 turns one image into an explorable generative 3D world",
+      "url": "https://x.com/NVIDIAAI/status/2118800021013643269",
+      "handle": "@NVIDIAAI",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "Lyra 2.0 combines video generation with 3D reconstruction so a single image becomes a camera-path world that stays more consistent as you revisit places. Paper, Lyra-2 code, and NVIDIA Lyra-2.0 weights/demos are linked for researchers and builders.",
+      "kind": "model",
+      "evidence": "artifact",
+      "links": [
+        "https://nv-tlabs.github.io/Project-Lyra/",
+        "https://arxiv.org/abs/2604.13036",
+        "https://github.com/nv-tlabs/lyra/tree/main/Lyra-2",
+        "https://huggingface.co/nvidia/Lyra-2.0"
+      ],
+      "vendor": "NVIDIA",
+      "posted_at": "2026-11-06T20:17:45Z",
+      "metrics": {
+        "likes": 155,
+        "reposts": 16,
+        "quotes": 9,
+        "replies": 16,
+        "views": 10127
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "RoboSpoof: video tampering pushes embodied frontier models into harmful robot actions",
+      "url": "https://x.com/robocurve/status/2118791723606593694",
+      "handle": "@robocurve",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "Robocurve shows perceptual attacks (blur or doctored camera feeds) raise harmful attempt rates across frontier embodied models, including 100% attempts on some RoboHarm-style tasks. PDF and blog are up for CoRL Late Breaking Results.",
+      "kind": "paper",
+      "evidence": "measured",
+      "links": [
+        "https://papers.robocurve.org/robospoof",
+        "https://robocurve.org/robospoof/"
+      ],
+      "vendor": "Robocurve",
+      "posted_at": "2026-11-06T19:44:46Z",
+      "metrics": {
+        "likes": 88,
+        "reposts": 5,
+        "quotes": 10,
+        "replies": 10,
+        "views": 10073
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Frontier Model Forum ships jailbreak rating framework for frontier cyber threats",
+      "url": "https://x.com/OpenAI/status/2118795218099253606",
+      "handle": "@OpenAI",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "OpenAI and Frontier Model Forum member firms published a shared framework for rating when cyber jailbreaks unlock serious harm and how readily they can be used. It is a common methodology for comparing safeguard bypass severity across frontier systems.",
+      "kind": "eval",
+      "evidence": "artifact",
+      "links": [
+        "https://www.frontiermodelforum.org/updates/introducing-the-fmf-jailbreak-rating-framework-for-frontier-cyber-threats/"
+      ],
+      "vendor": "Frontier Model Forum",
+      "posted_at": "2026-11-06T19:58:39Z",
+      "metrics": {
+        "likes": 905,
+        "reposts": 65,
+        "quotes": 38,
+        "replies": 271,
+        "views": 158365
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Policy-adjacent announcement; usefulness depends on whether labs actually share comparable ratings.",
+        "source": null
+      }
+    },
+    {
+      "title": "Cooldown plugin for Hermes Agent blocks OSV malware and asks before installing fresh packages",
+      "url": "https://x.com/Savage27z/status/2118822747677622775",
+      "handle": "@Savage27z",
+      "group": "devtools",
+      "origin": "discovery",
+      "summary": "Cooldown is a Hermes Agent plugin that checks packages before install: it blocks OSV-listed malware and prompts the user when a release is under three days old. Repo is public for fleets that let coding agents install dependencies.",
+      "kind": "tool",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/Savage27z/cooldown"
+      ],
+      "vendor": "Savage27z",
+      "posted_at": "2026-11-06T21:48:03Z",
+      "metrics": {
+        "likes": 10,
+        "reposts": 5,
+        "quotes": 0,
+        "replies": 7,
+        "views": 328
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Early hackathon plugin; small engagement and no independent audit cited.",
+        "source": null
+      }
+    },
+    {
+      "title": "DataLab API submits and result checks are about 2x faster; SDK 0.9.1 lands",
+      "url": "https://x.com/datalabto/status/2118830419739034063",
+      "handle": "@datalabto",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "DataLab cut median document submit latency from 670 ms to 314 ms and result checks from 128 ms to 62 ms, with Python SDK 0.9.1 picking up finished results sooner. Useful for document parsing pipelines that poll their API.",
+      "kind": "feature",
+      "evidence": "measured",
+      "links": [
+        "https://www.datalab.to/blog/faster-api-responses"
+      ],
+      "vendor": "DataLab",
+      "posted_at": "2026-11-06T22:18:32Z",
+      "metrics": {
+        "likes": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "replies": 1,
+        "views": 59
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Muir: linear attention with sensitivity-allocated gating and matched-filter readout",
+      "url": "https://x.com/_akhaliq/status/2118788621310611911",
+      "handle": "@_akhaliq",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "The Muir paper proposes linear attention that allocates gating by sensitivity and uses a matched-filter readout. The Hugging Face Papers card is the primary link for researchers tracking efficient attention variants.",
+      "kind": "paper",
+      "evidence": "artifact",
+      "links": [
+        "https://huggingface.co/papers/2611.08376"
+      ],
+      "vendor": null,
+      "posted_at": "2026-11-06T19:32:27Z",
+      "metrics": {
+        "likes": 15,
+        "reposts": 3,
+        "quotes": 0,
+        "replies": 10,
+        "views": 4268
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Paper card only so far; no independent reproduction called out in-thread.",
+        "source": null
+      }
+    },
+    {
+      "title": "Gemini Live API schema adds proactive video that reacts to camera frames unprompted",
+      "url": "https://x.com/aitrackerbot/status/2118802306602799173",
+      "handle": "@aitrackerbot",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "A tracker notes a Gemini Live API schema option for proactive video so the model can react to incoming camera frames without a user prompt, requiring proactive audio and warning of higher cost. Not documented on the public docs page yet.",
+      "kind": "feature",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "Google",
+      "posted_at": "2026-11-06T20:26:49Z",
+      "metrics": {
+        "likes": 7,
+        "reposts": 0,
+        "quotes": 1,
+        "replies": 1,
+        "views": 609
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Leak-tracker claim only; no official docs or Google announcement in this window.",
+        "source": null
+      }
+    }
+  ],
+  "security_forwarded": [
+    {
+      "url": "https://github.com/Savage27z/cooldown",
+      "matched": "Hermes agent + always_forward agent tooling",
+      "title": "Cooldown Hermes plugin (OSV malware block + young-release prompt)",
+      "summary": "Plugin for Nous Hermes Agent that blocks OSV-listed malware packages and asks before installing releases under 3 days old. Stack hit: Hermes agent; also agent tooling supply-chain hygiene.",
+      "x_url": "https://x.com/Savage27z/status/2118822747677622775",
+      "stack_hit": true
+    },
+    {
+      "url": "https://www.frontiermodelforum.org/updates/introducing-the-fmf-jailbreak-rating-framework-for-frontier-cyber-threats/",
+      "matched": "always_forward agent tooling / AI cyber-safeguard methodology",
+      "title": "FMF Jailbreak Rating Framework for frontier cyber threats",
+      "summary": "OpenAI + Frontier Model Forum framework for rating severity and readiness of cyber jailbreaks against AI safeguards. Relevant to how agent/coding stacks prioritize safeguard bypasses; not a CVE.",
+      "x_url": "https://x.com/OpenAI/status/2118795218099253606",
+      "stack_hit": false
+    }
+  ],
+  "security_na": [
+    {
+      "url": "https://x.com/mergenewsapp/status/2118841634007752951",
+      "reason": "Docker Desktop 4.98.0 CVE chatter from low-signal aggregator; no primary advisory linked this sweep."
+    },
+    {
+      "url": "https://x.com/marvin_gerstner/status/2118838098041999384",
+      "reason": "MCP slopsquatting discussion only; no new advisory or compromised package named."
+    },
+    {
+      "url": "https://x.com/EnclaveRadar/status/2118833465709805785",
+      "reason": "Tracecat CVE-2026-58490 SAML issue; Tracecat not in stack.json."
+    }
+  ]
+}
