@@ -1,0 +1,282 @@
+{
+  "bot": "magpie-scout",
+  "prompt": "v6.1",
+  "ran_at": "2026-11-06T11:22:00Z",
+  "since": "2026-11-06T03:15:00Z",
+  "calls": 11,
+  "queries": 5,
+  "list_posts_read": 95,
+  "list_pages": 1,
+  "rechecks": 3,
+  "rechecks_note": "Inkling 2 Small, ZYFA, and Strawberry Jev metrics rose; no Community Notes via API; no doubt level changes.",
+  "videos": 0,
+  "videos_note": "LeRobot v0.7.0 clip is 120s and deep-read, but no watchVideo tool in this executor run; video analysis skipped.",
+  "saves": {
+    "checked_archive": true,
+    "checked_api": true,
+    "new": 2,
+    "kept": 1
+  },
+  "saved_rejected": [
+    {
+      "url": "https://x.com/Motion_Viz/status/2118423907279712275",
+      "reason": "Unofficial Zelda Ocarina of Time Mac shader/emulator port; not AI or developer-stack capability."
+    }
+  ],
+  "discovery": [
+    {
+      "query": "(CVE OR malicious package OR supply chain OR MCP server OR prompt injection OR RCE) (AI OR LLM OR agent OR MCP OR docker) -is:retweet lang:en",
+      "kept": 0,
+      "security_leads": 1,
+      "note": "Mostly low-engagement MCP promo and Alpine OpenSSH *sshole rehash already forwarded earlier; Cloudflare security-audit-skill entered via owner save instead."
+    },
+    {
+      "query": "(huggingface.co OR github.com OR arxiv.org) (release OR weights OR open source OR launched OR shipping) (model OR agent OR LLM) -is:retweet lang:en",
+      "kept": 1,
+      "note": "Mostly noise; Linum P-JiT Apache weights kept via roster quote from @victormustar rather than this search."
+    },
+    {
+      "query": "curated labs/devtools OR (OpenAI Anthropic DeepMind DeepSeek Meta Mistral Cursor ClaudeDevs Cognition vLLM Unsloth HF)",
+      "kept": 0,
+      "note": "result_count 0 for the overnight window; List timeline covered trial/active members through since."
+    }
+  ],
+  "horizon": {
+    "checked": [
+      "block-dessa"
+    ],
+    "x_reads": 0,
+    "page_checked": true,
+    "triggered": [],
+    "last_result": "block.xyz/dessa still demo-only Conversation Model page. HF and arXiv searches show no Dessa weights or paper. Still watching."
+  },
+  "items": [
+    {
+      "title": "LeRobot v0.7.0: interactive robot prompting, world action models, diskless dataset streaming",
+      "url": "https://x.com/LeRobotHF/status/2118622053628551431",
+      "handle": "@LeRobotHF",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "Hugging Face LeRobot v0.7.0 is live. You can talk to a running robot policy without stopping it, train world action models and new VLAs with FSDP2/HSDP, stream Hub or LanceDB datasets without downloading them first, and run big policies on a remote GPU via lerobot-policy-server. Blog, docs, and GitHub release notes are linked.",
+      "kind": "repo",
+      "evidence": "artifact",
+      "links": [
+        "https://huggingface.co/blog/lerobot/lerobot-release-v070",
+        "https://huggingface.co/docs/lerobot/v0.7.0",
+        "https://github.com/huggingface/lerobot/releases/tag/v0.7.0"
+      ],
+      "vendor": "Hugging Face LeRobot",
+      "posted_at": "2026-11-06T08:30:34Z",
+      "metrics": {
+        "likes": 101,
+        "reposts": 17,
+        "quotes": 11,
+        "replies": 3,
+        "views": 4762
+      },
+      "confirmed_by": [
+        "@LysandreJik"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      },
+      "reception": {
+        "sentiment": "positive",
+        "summary": "Congrats and hardware pointers (SO-101 open arm); thin reply thread so far, no pushback on the release claims.",
+        "tried": true,
+        "replies_read": 4
+      }
+    },
+    {
+      "title": "Cloudflare open-sources security-audit skill for coding agents",
+      "url": "https://x.com/CloudflareDev/status/2118013149538390253",
+      "handle": "@CloudflareDev",
+      "group": "devtools",
+      "origin": "saved",
+      "summary": "Cloudflare released an open-source coding-agent skill that runs a six-phase security audit (recon, coverage-led hunting, candidate validation, structured findings, independent verification, reporting). It is the single-repo seed of Cloudflare's vulnerability discovery harness and installs via npx skills add.",
+      "kind": "tool",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/cloudflare/security-audit-skill",
+        "https://blog.cloudflare.com/build-your-own-vulnerability-harness"
+      ],
+      "vendor": "Cloudflare",
+      "posted_at": "2026-11-04T16:11:00Z",
+      "metrics": {
+        "likes": 13421,
+        "reposts": 1231,
+        "quotes": 212,
+        "replies": 187,
+        "views": 1455676
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Several users report OpenAI Codex and Anthropic models refuse or hide the skill behind Daybreak/guardrails, so it may only run freely on less restricted models.",
+        "source": "https://x.com/martinlindenn/status/2118636927582978449"
+      },
+      "reception": {
+        "sentiment": "mixed",
+        "summary": "Builders praise the structured audit loop and report real findings; many Codex users say the skill is blocked or burns quota until Daybreak access.",
+        "tried": true,
+        "replies_read": 25
+      }
+    },
+    {
+      "title": "World Labs Frameboy: real-time Atlas world-model explorer at up to 15 fps",
+      "url": "https://x.com/theworldlabs/status/2118424455873741028",
+      "handle": "@theworldlabs",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "World Labs released Frameboy, a demo that lets you explore AI-generated worlds in real time with precise camera control, streaming an optimized Atlas world model from cloud GPUs at up to 15 fps. fal notes it powers the demo with serverless inference.",
+      "kind": "demo",
+      "evidence": "artifact",
+      "links": [
+        "https://x.com/theworldlabs/status/2118424455873741028"
+      ],
+      "vendor": "World Labs",
+      "posted_at": "2026-11-05T19:25:23Z",
+      "metrics": {
+        "likes": 1086,
+        "reposts": 107,
+        "quotes": 64,
+        "replies": 48,
+        "views": 132316
+      },
+      "confirmed_by": [
+        "@fal"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "MiaAI Lab GLM-5.3-Flash recipe update for 2x DGX Sparks (TensorFold)",
+      "url": "https://x.com/MiaAI_lab/status/2118661141991690343",
+      "handle": "@MiaAI_lab",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "MiaAI Lab shipped recipe 1104 for GLM-5.3-Flash on two DGX Sparks over ConnectX-7 with TensorFold 1.1.9. It reports tool-eval hard-mode 93 with thinking on, 380k-token chats resuming in about 3 seconds instead of 4 minutes, optional WITH_VIDEO=1 image input, and a JSON ID bugfix, with measured tok/s tables in the repo.",
+      "kind": "repo",
+      "evidence": "measured",
+      "links": [
+        "https://github.com/MiaAI-Lab/GLM-5.3-Flash-DGX-Sparks-1104",
+        "https://github.com/ashhart/TensorFold"
+      ],
+      "vendor": "MiaAI Lab",
+      "posted_at": "2026-11-06T11:05:53Z",
+      "metrics": {
+        "likes": 21,
+        "reposts": 5,
+        "quotes": 2,
+        "replies": 3,
+        "views": 908
+      },
+      "confirmed_by": [
+        "@ashxhart"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Spark-X2.6-1.7B WebGPU browser demo: ~105 tok/s, 1.21 GB download",
+      "url": "https://x.com/SparkLLM/status/2118613107995976059",
+      "handle": "@SparkLLM",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "iFlytek Spark highlights a community WebGPU port of Spark-X2.6-1.7B that runs in a browser tab after a 1.21 GB download. Author tests on an RTX 3090 Ti report about 105 tok/s with thinking off, with a Hugging Face Space demo for Chrome or Edge.",
+      "kind": "demo",
+      "evidence": "measured",
+      "links": [
+        "https://huggingface.co/spaces/mohdmahmodi/Spark-X2.6-1.7B-WebGPU"
+      ],
+      "vendor": "iFlytek Spark / mohdmahmodi",
+      "posted_at": "2026-11-06T07:55:01Z",
+      "metrics": {
+        "likes": 21,
+        "reposts": 3,
+        "quotes": 1,
+        "replies": 1,
+        "views": 597
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "SparkLLM says the numbers are the community author's, not a SparkLLM rerun, and other GPUs and phones are untested.",
+        "source": "https://x.com/SparkLLM/status/2118613107995976059"
+      }
+    },
+    {
+      "title": "Linum P-JiT text-to-image model trained for $21K, Apache 2.0 weights",
+      "url": "https://x.com/victormustar/status/2118630668397690900",
+      "handle": "@victormustar",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "Linum AI published a field note and Apache 2.0 release for a 2B Pyramid-JiT text-to-image model trained on 660M samples for about $21K. Code and weights are on GitHub and Hugging Face as an experimental step toward cheaper video models.",
+      "kind": "model",
+      "evidence": "artifact",
+      "links": [
+        "https://www.linum.ai/field-notes/pjit-21k",
+        "https://huggingface.co/Linum-AI/pjit-21k",
+        "https://github.com/Linum-AI/pjit-21k"
+      ],
+      "vendor": "Linum AI",
+      "posted_at": "2026-11-06T09:04:48Z",
+      "metrics": {
+        "likes": 17,
+        "reposts": 3,
+        "quotes": 0,
+        "replies": 1,
+        "views": 973
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    }
+  ],
+  "security_forwarded": [
+    {
+      "url": "https://github.com/cloudflare/security-audit-skill",
+      "matched": "always_forward: agent tooling (coding-agent skill / security audit harness)",
+      "title": "Cloudflare open-source security-audit skill for coding agents"
+    }
+  ],
+  "security_na": [
+    {
+      "url": "https://x.com/grok/status/2118663387705917634",
+      "reason": "Alpine OpenSSH *sshole CVE-2026-123158 rehash; already forwarded in earlier Nov 5 sweeps."
+    },
+    {
+      "url": "https://x.com/DFIR_Radar/status/2118660507389603842",
+      "reason": "Kaspersky GERT ESXi/Proxmox ransomware writeup; fleet does not run those hypervisors on the stack list."
+    }
+  ],
+  "follows": [],
+  "errors": [
+    "LeRobot 120s video analysis skipped (no watchVideo in this executor run).",
+    "SparkLLM doubt.source reply id approximated from thread; primary pushback text is in the official reply under the launch post.",
+    "Curated non-list OR search returned 0 posts in this overnight window."
+  ]
+}
