@@ -1,21 +1,21 @@
 {
-  "updated_at": "2026-11-06T15:29:00Z",
+  "updated_at": "2026-11-06T19:15:00Z",
   "job": "sweep",
   "prompt": "v6.1",
-  "calls_used_today": 58,
+  "calls_used_today": 78,
   "notes_via_api": false,
   "last_sweep": {
-    "ran_at": "2026-11-06T15:29:00Z",
-    "items": 7,
-    "queries": 5,
-    "deep_reads": 1,
+    "ran_at": "2026-11-06T19:15:00Z",
+    "items": 12,
+    "queries": 11,
+    "deep_reads": 2,
     "rechecks": 0,
-    "flagged": 2,
+    "flagged": 6,
     "saved_in": 2,
     "saved_kept": 0,
     "videos": 0,
     "security_forwarded": 2,
-    "list_posts_read": 95,
+    "list_posts_read": 93,
     "list_pages": 1
   },
   "roster": {
@@ -231,13 +231,12 @@
     "Roster review 2026-11-06: calls_used_today is 38 on UTC day 2026-11-06 (prior sweep 26 + this job's 12 public reads). List writes 5 not included in that field; budget used 17/80 counting every call.",
     "Roster review 2026-11-06: pruned 10 sweep files dated before 2026-10-23.",
     "Sweep 2026-11-06T11:22Z: executor has no watchVideo; deep-read videos over 60s stay unanalyzed. search_posts_all worked this UTC morning after prior 503s.",
-    "Sweep 2026-11-06T15:29Z: curated non-list coverage limited to two high-signal OR batches after 429; remaining curated groups not searched this window. List page alone covered trial/active through since."
+    "Sweep 2026-11-06T15:29Z: curated non-list coverage limited to two high-signal OR batches after 429; remaining curated groups not searched this window. List page alone covered trial/active through since.",
+    "Sweep 19:15Z: get_users_bookmarks still returns saves already classified by the AI bookmark sync; Magpie only needs the two new discarded politics posts since 15:29Z.",
+    "Sweep 19:15Z: curated from:bot OR floods the first page of the 4h window; a nobot query is needed for usable coverage.",
+    "Sweep 19:15Z: Community Notes still unavailable via API (notes_via_api false); liking_users probe on DeepMind post returned empty."
   ],
-  "errors": [
-    "Shared X 429 blocked first curated batch; resumed after 15:27Z.",
-    "PrunaAI on List timeline without roster trial/active entry; logged under discovery.",
-    "No watchVideo; no video records."
-  ],
+  "errors": [],
   "follows_today": 0,
   "last_roster_review": {
     "ran_at": "2026-11-06T10:56:00Z",

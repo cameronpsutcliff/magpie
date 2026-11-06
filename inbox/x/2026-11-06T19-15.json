@@ -1,0 +1,462 @@
+{
+  "bot": "magpie-scout",
+  "prompt": "v6.1",
+  "ran_at": "2026-11-06T19:15:00Z",
+  "since": "2026-11-06T15:29:00Z",
+  "calls": 20,
+  "queries": 11,
+  "list_posts_read": 93,
+  "list_pages": 1,
+  "rechecks": 0,
+  "rechecks_note": "Skipped rechecks; window had clear new releases and budget went to curated searches plus three deep reads.",
+  "videos": 0,
+  "videos_note": "Antigravity voice clip is 190s and deep-read eligible, but no video-capable reader in this sweep; video field omitted.",
+  "saves": {
+    "checked_archive": true,
+    "checked_api": true,
+    "new": 2,
+    "kept": 0
+  },
+  "saved_rejected": [
+    {
+      "url": "https://x.com/lion_politics/status/2118119113159504119",
+      "reason": "Non-AI partisan politics about an Anti-Trump wave; out of Scope."
+    },
+    {
+      "url": "https://x.com/ImperiumFirst/status/2118552855120662638",
+      "reason": "Non-AI partisan politics (Tim Pool / Fuentes GOP commentary); out of Scope."
+    }
+  ],
+  "discovery": [
+    {
+      "query": "(CVE OR RCE OR \"malicious package\" OR \"supply chain\" OR \"prompt injection\" OR GHSA) (AI OR LLM OR agent OR MCP OR docker OR npm OR PyPI OR litellm) -is:retweet lang:en",
+      "kept": 0,
+      "security_leads": 2,
+      "note": "Antigravity Filter Bypass and Uber ADR forwarded; rest N/A (WordPress/QRadar/Zyxel/macro supply-chain chatter)."
+    },
+    {
+      "query": "(url:github.com OR url:huggingface.co OR url:arxiv.org) (release OR weights OR \"open source\" OR launched OR shipping OR announcing) (model OR agent OR LLM OR benchmark) -is:retweet lang:en",
+      "kept": 2,
+      "note": "Kept Cuthol and p-jit 21k weights; most other hits were low-engagement listicles or promo."
+    }
+  ],
+  "horizon": {
+    "checked": [
+      "block-dessa"
+    ],
+    "x_reads": 0,
+    "page_checked": true,
+    "triggered": [],
+    "last_result": "block.xyz/dessa still demo/early-access Conversation Model page (waitlist language, no HF weights or arXiv paper). HF models search dessa+block empty; arXiv dessa+speech+block empty. Still watching."
+  },
+  "items": [
+    {
+      "title": "Cua Driver Bench measures background desktop agents that leave you undisturbed",
+      "url": "https://x.com/trycua/status/2118754889329230241",
+      "handle": "@trycua",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "Cua and Scale AI AgentEnv launched Cua Driver Bench for desktop agents that must work in the background without stealing focus. On macOS they report Cua Driver fully passing 58% versus Codex computer use 33%, Vercel agent-desktop 20%, and browser-use 3%, with a write-up, HF space, and dataset.",
+      "kind": "eval",
+      "evidence": "measured",
+      "links": [
+        "https://github.com/trycua/cua/blob/main/blog/cua-driver-bench.md",
+        "https://huggingface.co/spaces/earakely-scale/CuaDriverBench-AgentEnv",
+        "https://huggingface.co/datasets/earakely-scale/CuaDriverBench-AgentEnv"
+      ],
+      "vendor": "Cua",
+      "posted_at": "2026-11-06T17:18:24Z",
+      "metrics": {
+        "likes": 143,
+        "reposts": 12,
+        "quotes": 8,
+        "replies": 40,
+        "views": 0
+      },
+      "confirmed_by": [
+        "@earakely"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Repliers note it is the vendor's own bench and that Claude computer use was omitted because it is locked to Claude's app.",
+        "source": null
+      },
+      "reception": {
+        "sentiment": "positive",
+        "summary": "Builders praise the undisturbed/background focus rule; a few ask about permission dialogs and Claude coverage.",
+        "tried": false,
+        "replies_read": 20
+      }
+    },
+    {
+      "title": "Meta ships Muse Wonder Active Memory and Active Focus into Muse and Meta AI",
+      "url": "https://x.com/AIatMeta/status/2118768974779634084",
+      "handle": "@AIatMeta",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "Meta is rolling specialized Muse Wonder models with Active Memory and Active Focus into Muse and Meta AI. In Muse they report a 2.4x drop in forgetting goal-critical information and a 67% improvement at getting unstuck when constraints change.",
+      "kind": "feature",
+      "evidence": "measured",
+      "links": [
+        "https://research.meta.ai/blog/specialized-models-for-muse-and-metaai"
+      ],
+      "vendor": "Meta",
+      "posted_at": "2026-11-06T18:14:23Z",
+      "metrics": {
+        "likes": 217,
+        "reposts": 21,
+        "quotes": 17,
+        "replies": 46,
+        "views": 17561
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "DeepMind human-guided agents find two weaknesses in legacy 1024-bit RSA",
+      "url": "https://x.com/GoogleDeepMind/status/2118755418675765656",
+      "handle": "@GoogleDeepMind",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "DeepMind says human-guided AI agents, with cryptanalysis experts, found two weaknesses in legacy 1024-bit RSA: cheaper signature forgery paths and a batch-factoring method they estimate about 30x cheaper per extra same-length key. They stress modern 2048-bit RSA is not affected and published two technical papers.",
+      "kind": "paper",
+      "evidence": "measured",
+      "links": [
+        "https://storage.googleapis.com/deepmind-media/papers/Faster_Affine_Root_and_a_1024bit%20Computation.pdf",
+        "https://storage.googleapis.com/deepmind-media/papers/Fan_Factories_Multiple_Number_Fields_in_Factorization_Factories_and_Batch_NFS.pdf",
+        "https://x.com/i/article/2118746079923437568"
+      ],
+      "vendor": "Google DeepMind",
+      "posted_at": "2026-11-06T17:20:31Z",
+      "metrics": {
+        "likes": 641,
+        "reposts": 72,
+        "quotes": 43,
+        "replies": 139,
+        "views": 45175
+      },
+      "confirmed_by": [
+        "@pushmeet"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Many replies stress 1024-bit RSA was already deprecated; the news is agent-accelerated cryptanalysis, not a break of modern 2048-bit keys.",
+        "source": null
+      },
+      "reception": {
+        "sentiment": "mixed",
+        "summary": "Repliers and quotes treat it as a research tempo story about guided agents, repeatedly clarifying that RSA-2048 remains safe and that 1024-bit was already obsolete.",
+        "tried": false,
+        "replies_read": 25
+      }
+    },
+    {
+      "title": "Rapid-MLX 1.0.2 adds local Pika H3 Flex video+audio and Idle Unload on Mac",
+      "url": "https://x.com/rapidmlx/status/2118768940101066953",
+      "handle": "@rapidmlx",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "Rapid-MLX 1.0.2 ships local video and audio generation via Pika H3 Flex, stop-generating for video jobs, paste-any Hugging Face link, a smaller 1.6GB first-run path, and Idle Unload that drops idle chat models from RAM while keeping the local API up.",
+      "kind": "tool",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/raullenchai/Rapid-MLX/releases/tag/v1.0.2",
+        "https://rapidmlx.com/download"
+      ],
+      "vendor": "Rapid-MLX",
+      "posted_at": "2026-11-06T18:14:15Z",
+      "metrics": {
+        "likes": 152,
+        "reposts": 1,
+        "quotes": 0,
+        "replies": 8,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Reflection publishes Beam model technical report",
+      "url": "https://x.com/reflection_ai/status/2118751723565002758",
+      "handle": "@reflection_ai",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "Reflection released the full Beam model technical report covering the methodology used to train Beam end-to-end in-house.",
+      "kind": "paper",
+      "evidence": "artifact",
+      "links": [
+        "https://reflection.ai/documents/beam-model-tech-report"
+      ],
+      "vendor": "Reflection",
+      "posted_at": "2026-11-06T17:05:50Z",
+      "metrics": {
+        "likes": 198,
+        "reposts": 26,
+        "quotes": 5,
+        "replies": 20,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Antigravity Voice mode lets you steer coding agents out loud via Gemini Live",
+      "url": "https://x.com/antigravity/status/2118765358542676424",
+      "handle": "@antigravity",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "Google Antigravity shipped Voice mode powered by Gemini Live. Users can plan, steer code changes, and approve permissions by voice across languages, interrupt mid-turn, set voice and playback speed, and end with bye or a tap.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://antigravity.google/docs/voice-mode/"
+      ],
+      "vendor": "Google Antigravity",
+      "posted_at": "2026-11-06T18:00:00Z",
+      "metrics": {
+        "likes": 356,
+        "reposts": 17,
+        "quotes": 15,
+        "replies": 44,
+        "views": 12252
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "opencode server image lets you run the agent over Docker and connect remote clients",
+      "url": "https://x.com/thdxr/status/2118763115953213831",
+      "handle": "@thdxr",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "opencode maintainer @thdxr showed running the opencode server from a published container image so TUI, desktop, and other clients can connect over a port instead of a local-only process.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/anomalyco/opencode/pkgs/container/opencode",
+        "https://ghcr.io/anomalyco/opencode"
+      ],
+      "vendor": "opencode",
+      "posted_at": "2026-11-06T17:51:06Z",
+      "metrics": {
+        "likes": 138,
+        "reposts": 6,
+        "quotes": 0,
+        "replies": 15,
+        "views": 7805
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Zyphra beta-releases MAIA, a multiplayer team agent on its fullstack",
+      "url": "https://x.com/ZyphraAI/status/2118765399890416064",
+      "handle": "@ZyphraAI",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "Zyphra opened a free beta of MAIA, described as the application layer of its fullstack: a proactive multiplayer AI agent for teams that can recover prior decisions, people, and sources.",
+      "kind": "tool",
+      "evidence": "artifact",
+      "links": [
+        "https://zyphra.com/maia"
+      ],
+      "vendor": "Zyphra",
+      "posted_at": "2026-11-06T18:00:10Z",
+      "metrics": {
+        "likes": 40,
+        "reposts": 3,
+        "quotes": 1,
+        "replies": 5,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Product beta with limited independent confirmation in this window.",
+        "source": null
+      }
+    },
+    {
+      "title": "Mistral highlights Voxtral 3 end-of-turn detection for voice agents",
+      "url": "https://x.com/MistralAI/status/2118744719870066936",
+      "handle": "@MistralAI",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "Mistral showed Voxtral 3 end-of-turn detection that flags when a speaker has finished, aimed at builders of responsive voice agents that should not wait on fixed silence timers alone.",
+      "kind": "feature",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "Mistral AI",
+      "posted_at": "2026-11-06T16:38:00Z",
+      "metrics": {
+        "likes": 231,
+        "reposts": 20,
+        "quotes": 6,
+        "replies": 47,
+        "views": 10554
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Demo post with no docs or API link in the hydrated entities.",
+        "source": null
+      }
+    },
+    {
+      "title": "turbopuffer v3 cascading binary search speeds storage lookups up to 1.9x",
+      "url": "https://x.com/turbopuffer/status/2118737429687631962",
+      "handle": "@turbopuffer",
+      "group": "applied",
+      "origin": "sweep",
+      "summary": "turbopuffer reports up to 1.9x faster storage lookups on tpuf v3 by cascading binary search across the three key columns instead of comparing all three at every step.",
+      "kind": "technique",
+      "evidence": "measured",
+      "links": [],
+      "vendor": "turbopuffer",
+      "posted_at": "2026-11-06T16:09:02Z",
+      "metrics": {
+        "likes": 31,
+        "reposts": 1,
+        "quotes": 0,
+        "replies": 2,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "p-jit 21k drops Apache-2.0 2B pixel-space text-to-image weights trained for $21k",
+      "url": "https://x.com/alizeh_ai/status/2118766963069710600",
+      "handle": "@alizeh_ai",
+      "group": "builders",
+      "origin": "discovery",
+      "summary": "A two-person team released p-jit 21k, a 2B pixel-space text-to-image model (no VAE) with Apache-2.0 weights and code, trained on about 660M samples and roughly 8415 H100-hours for a reported $21k.",
+      "kind": "model",
+      "evidence": "artifact",
+      "links": [
+        "https://huggingface.co/Linum-AI/pjit-21k"
+      ],
+      "vendor": "Linum AI",
+      "posted_at": "2026-11-06T18:06:20Z",
+      "metrics": {
+        "likes": 19,
+        "reposts": 1,
+        "quotes": 0,
+        "replies": 3,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Surfaced via an aggregator post; primary account not on roster.",
+        "source": null
+      }
+    },
+    {
+      "title": "Cuthol is an open-source local video editor for agents over CLI and MCP",
+      "url": "https://x.com/hypeaitr/status/2118768476093349935",
+      "handle": "@hypeaitr",
+      "group": "devtools",
+      "origin": "discovery",
+      "summary": "Cuthol is an open-source video editor built for AI agents that cut, caption, mix, and render locally through a CLI or MCP, checking edits via text rather than pixels.",
+      "kind": "repo",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/HypeAITR/Cuthol"
+      ],
+      "vendor": "Cuthol",
+      "posted_at": "2026-11-06T18:12:20Z",
+      "metrics": {
+        "likes": 4,
+        "reposts": 0,
+        "quotes": 0,
+        "replies": 1,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Very new discovery post with low engagement so far.",
+        "source": null
+      }
+    }
+  ],
+  "security_forwarded": [
+    {
+      "url": "https://github.com/v1ktorrr0x/antigravity-filter-bypass",
+      "matched": "stack.json component Antigravity (agy); also always_forward agent tooling",
+      "detail": "Open-source Antigravity plugin/hook that catches Stop lifecycle events and injects rephrase-and-continue directives when filter interruptions fire. Affects Antigravity agent safety controls. Source X: https://x.com/lucifer0xf_/status/2118740213933687224. Repo created 2026-11-05, ~339 stars at check time. No CVE/GHSA; treat as agent-safety bypass tooling on a fleet component."
+    },
+    {
+      "url": "https://github.com/uber/ADR",
+      "matched": "always_forward agent tooling (coding agents / MCP / agent CLIs)",
+      "detail": "Uber open-sourced ADR (Agentic AI Detection and Response) for discovering AI tools on endpoints, observing agent sessions, benchmarking, and detecting risky agent behavior. Covers Cursor, Claude Code, Codex, Copilot CLI, DeepSeek Harness, opencode and more. Prevention not in public release. Source X: https://x.com/JesseNotAi/status/2118760389622292501. Paper accepted MLSys 2026. Relevant to fleet coding-agent posture even if not installed."
+    }
+  ],
+  "security_na": [
+    {
+      "url": "https://x.com/alexlee20122022/status/2118781552171811318",
+      "reason": "WordPress CMS patch / CISA advisory; not in stack.json and not agent/supply-chain/container."
+    },
+    {
+      "url": "https://x.com/zoomeyebot/status/2118776744618705407",
+      "reason": "IBM QRadar SOAR DoS CVE; SIEM product not in fleet stack."
+    },
+    {
+      "url": "https://x.com/rst_cloud/status/2118776359719780854",
+      "reason": "Zyxel GS1900 switch zero-day; network appliance not in stack."
+    },
+    {
+      "url": "https://x.com/CloudflareDev/status/2118013149538390253",
+      "reason": "Cloudflare security-audit-skill already forwarded earlier today (WATCH/NOT REVIEWED); no new primary-source change this window."
+    }
+  ]
+}
