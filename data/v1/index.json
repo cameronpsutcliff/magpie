@@ -2,6 +2,79 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-11-06",
+   "headline": "v2.1.318, moe-blogpost, auto-ontology, and more",
+   "events": 275,
+   "sources": 524,
+   "enriched": false,
+   "top": [
+    {
+     "id": "2707ef840bf2",
+     "title": "v2.1.318",
+     "impact": 5,
+     "vendor": "Anthropic"
+    },
+    {
+     "id": "d5deba094d7e",
+     "title": "huggingface/moe-blogpost",
+     "impact": 4,
+     "vendor": "Hugging Face"
+    },
+    {
+     "id": "b2e43e740f52",
+     "title": "NVIDIA/auto-ontology",
+     "impact": 4,
+     "vendor": "NVIDIA"
+    },
+    {
+     "id": "41609ee26a0c",
+     "title": "Leonxlnx/taste-skill",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "1ec0b1042f97",
+     "title": "obra/superpowers",
+     "impact": 4,
+     "vendor": "Open source"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "OpenAI",
+    "Google",
+    "Anthropic",
+    "NVIDIA",
+    "Hugging Face"
+   ],
+   "topics": {
+    "multimodal": 77,
+    "coding": 76,
+    "agents": 75,
+    "models": 69,
+    "infra": 41,
+    "memory": 29,
+    "mcp": 27,
+    "local": 23,
+    "evals": 21,
+    "security": 17,
+    "reverse": 17,
+    "research": 14,
+    "robotics": 4
+   },
+   "kinds": {
+    "newsletter": 45,
+    "social": 43,
+    "repo": 37,
+    "blog": 33,
+    "community": 32,
+    "model": 30,
+    "changelog": 24,
+    "space": 20,
+    "news": 11
+   }
+  },
+  {
    "date": "2026-11-05",
    "headline": "Serve Kimi K3.1 Pro, retrain Axion from scratch, patch kernel bugs, and more",
    "events": 373,
@@ -3421,5 +3494,5 @@
    }
   }
  ],
- "latest": "2026-11-05"
+ "latest": "2026-11-06"
 }

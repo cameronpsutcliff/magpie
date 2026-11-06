@@ -13,6 +13,30 @@
  ],
  "items": [
   {
+   "id": "2026-11-06",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-11-06",
+   "title": "v2.1.318, moe-blogpost, auto-ontology, and more",
+   "summary": "275 capability events from 128 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words.",
+   "content_html": "<p>275 capability events from 128 sources. Ranked by code; the editor did not run this edition, so copy is the sources&#x27; own words.</p><ol><li><a href=\"https://github.com/anthropics/claude-code/releases/tag/v2.1.318\">v2.1.318</a></li><li><a href=\"https://huggingface.co/spaces/huggingface/moe-blogpost\">huggingface/moe-blogpost</a></li><li><a href=\"https://github.com/NVIDIA/auto-ontology\">NVIDIA/auto-ontology</a></li><li><a href=\"https://github.com/Leonxlnx/taste-skill\">Leonxlnx/taste-skill</a></li><li><a href=\"https://github.com/obra/superpowers\">obra/superpowers</a></li></ol><p><strong>Possibilities:</strong> No new possibility today. Latest: Banks barred from code APIs can give every developer a local coding agent (2026-11-05)</p><p><strong>Worth watching:</strong> No new video pick today. Latest: I Checked 7 Viral Anthropic IPO Claims Against the S-1 (2026-11-05)</p><p><strong>Constraints:</strong> No new constraint today. Latest: DHS order bars DeepSeek products from federal civilian agencies (2026-10-20)</p><p><strong>Threats:</strong> No new threat today. Widest reach still open: TWCA Registration Authority server accessed without authorization (medium, 2026-10-29)</p>",
+   "content_text": "275 capability events from 128 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words. v2.1.318 huggingface/moe-blogpost NVIDIA/auto-ontology Leonxlnx/taste-skill obra/superpowers",
+   "date_published": "2026-11-06T11:14:38Z",
+   "tags": [
+    "agents",
+    "coding",
+    "infra",
+    "mcp",
+    "memory",
+    "models",
+    "multimodal",
+    "research"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-11-06.json",
+    "backfilled": false,
+    "capabilities": 275
+   }
+  },
+  {
    "id": "2026-11-05",
    "url": "https://www.cameronsutcliff.com/magpie/2026-11-05",
    "title": "Serve Kimi K3.1 Pro, retrain Axion from scratch, patch kernel bugs, and more",
@@ -688,29 +712,6 @@
     "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-07.json",
     "backfilled": true,
     "capabilities": 108
-   }
-  },
-  {
-   "id": "2026-10-06",
-   "url": "https://www.cameronsutcliff.com/magpie/2026-10-06",
-   "title": "Opens a 501B model, finds magnet candidates, steers robots, and more",
-   "summary": "A large open-weight model and an agent-driven materials search lead a day that is otherwise mostly papers. Agent verification, memory and robot control show up as ideas to read, with few runnable artifacts.",
-   "content_html": "<p>A large open-weight model and an agent-driven materials search lead a day that is otherwise mostly papers. Agent verification, memory and robot control show up as ideas to read, with few runnable artifacts.</p><ol><li><a href=\"https://huggingface.co/papers/2609.38078\">MotorMind drives robots with general vision-language models</a>: A general vision-language model can do zero-shot robot manipulation by reasoning from observations and issuing mid-level actions, with no specialized training or external tools.</li><li><a href=\"https://huggingface.co/papers/2610.00972\">VeriHarness verifies long agent outputs without reference answers</a>: You can check and improve the output of a long-running agent by comparing multiple attempts and revising with evidence, with no gold answer.</li><li><a href=\"https://github.com/VictorTaelin/OptMem\">OptMem gives agents permanent memory in 426 tokens</a>: You can add persistent memory to an agent with a 426-token prompt and a script.</li><li><a href=\"https://reflection.ai/blog/introducing-beam\">Reflection releases Beam, a 501B open-weight model</a>: Teams can obtain a 501B-parameter model with open weights from Reflection.</li><li><a href=\"https://www.vals.ai/blogs/room-temperature-magnetic-semiconductors\">Opus 5.5 agents propose two magnetic semiconductor candidates</a>: Agents built on Opus 5.5 identified two candidate room-temperature magnetic semiconductors.</li></ol>",
-   "content_text": "A large open-weight model and an agent-driven materials search lead a day that is otherwise mostly papers. Agent verification, memory and robot control show up as ideas to read, with few runnable artifacts. MotorMind drives robots with general vision-language models VeriHarness verifies long agent outputs without reference answers OptMem gives agents permanent memory in 426 tokens Reflection releases Beam, a 501B open-weight model Opus 5.5 agents propose two magnetic semiconductor candidates",
-   "date_published": "2026-10-20T15:32:59Z",
-   "tags": [
-    "agents",
-    "evals",
-    "infra",
-    "memory",
-    "models",
-    "research",
-    "robotics"
-   ],
-   "_magpie": {
-    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-06.json",
-    "backfilled": true,
-    "capabilities": 93
    }
   }
  ]
