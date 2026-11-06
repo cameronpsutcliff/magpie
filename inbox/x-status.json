@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-11-06T03:15:00Z",
-  "job": "sweep",
+  "updated_at": "2026-11-06T10:56:00Z",
+  "job": "roster",
   "prompt": "v6.1",
-  "calls_used_today": 26,
+  "calls_used_today": 38,
   "notes_via_api": false,
   "last_sweep": {
     "ran_at": "2026-11-06T03:15:00Z",
@@ -20,9 +20,9 @@
   },
   "roster": {
     "curated": 223,
-    "trial": 67,
-    "active": 10,
-    "retired": 2
+    "trial": 62,
+    "active": 18,
+    "retired": 3
   },
   "follows_this_week": 10,
   "unfollow_suggestions": [],
@@ -222,36 +222,57 @@
     "Sweep 2026-11-04T11:15Z: the 20-save bookmark read found a save (terminal-mac) the 23:45 CT bookmark sync had not archived, because the sync does not run overnight; reading saves in the sweep still catches these. Four security leads, one a Claude Code stack hit (Auto Mode AGENTS.md bypass).",
     "Sweep 2026-11-04T19:15Z: the builders OR query filled its 25-result page within the 4-hour window on a big release day (Kimi K3.1 Pro weights), so a second page was needed; splitting builders into two queries would avoid the extra read. Two new stack hits filed to the Mini (APT CVE-2026-109518 urgent, Docker Buildx CVE-2026-93325 low). No video reader is available, so videos stay unwatched.",
     "Sweep 2026-11-05T03:10Z: Headless sweep with no browser and no Skill tool; the Read tool could not open the x-api-mcp-guide SKILL.md path, so it was read with cat. calls_used_today counts the Central day: 87 before plus about 2 for the 5:48 and 7:50 PM bookmark syncs plus 17 this sweep. One owner save vetted (OpenHack). Rechecks were skipped so reads could go to deep reads, and videos were not watched. One new stack hit filed urgent to the Mini (Haiou Codex prompt adware).",
-    "Sweep 2026-11-05T23:15Z: builders and devtools OR queries still fill 25-result pages with replies inside a 4-hour window (devtools oldest still ~22:09Z after 3 pages); consider exclude:replies on roster OR searches or splitting busy groups. METR Anthropic acceleration report posted 18:36Z was before since but missed by the 19:12Z sweep; kept via quote-follow from later roster posts."
+    "Sweep 2026-11-05T23:15Z: builders and devtools OR queries still fill 25-result pages with replies inside a 4-hour window (devtools oldest still ~22:09Z after 3 pages); consider exclude:replies on roster OR searches or splitting busy groups. METR Anthropic acceleration report posted 18:36Z was before since but missed by the 19:12Z sweep; kept via quote-follow from later roster posts.",
+    "Roster review 2026-11-06: Friday \u2014 skipped Sunday drafts and Job 3 hardware prices.",
+    "Roster review 2026-11-06: added 4 trials (@METR_Evals, @RicursiveAI, @ashxhart, @levantolabs). Promoted 8 trials that had \u22652 sweep-file posts after 14 days. Retired @mirku21 (owner_saves) for templated daily engagement-bait with no first-hand artifact.",
+    "Roster review 2026-11-06 rejected/skipped: @danikkk_wqs (owner_saves \u22652) \u2014 crypto trading-bot profit posts, Roblox F2E/$GLD farming, and adult side-hustle posts; vice disqualifies (cannot edit config avoid; noted here). @PrunaAI \u2014 product launches with recurring 50%-off promo over 1 in 5. @PierreStock \u2014 only 1 original capability post in 30 days. @strawberry \u2014 mostly try-for-free product promo. @axiommathai \u2014 one major Stacks release this window, under the 2-capability bar. @RoundtableSpace already avoid.",
+    "Roster review 2026-11-06: @MatthewBerman (owner_requested) kept; last_qualifying_post still 2026-10-10 and feed is demo/recap-heavy \u2014 flag only, no auto-retire. @jankeesvw owner_saves re-screen passed (Herdr/omarchy first-hand); last_qualifying_post updated to 2026-11-05.",
+    "Roster review 2026-11-06: add_lists_member for @levantolabs was Auto-review blocked once then approved; other list adds and mirku remove succeeded. member_count now matches on_list trial/active count.",
+    "Roster review 2026-11-06: calls_used_today is 38 on UTC day 2026-11-06 (prior sweep 26 + this job's 12 public reads). List writes 5 not included in that field; budget used 17/80 counting every call.",
+    "Roster review 2026-11-06: pruned 10 sweep files dated before 2026-10-23."
   ],
-  "errors": [
-    "search_posts_all and get_users_posts 503 for most of this sweep; curated OR searches and discovery incomplete.",
-    "MCP Inspector CVE-2026-119025 forwarded from public web because X security discovery search failed."
-  ],
+  "errors": [],
   "follows_today": 0,
   "last_roster_review": {
-    "ran_at": "2026-11-04T10:40:00Z",
-    "date": "2026-11-04",
-    "reads": 8,
-    "list_writes": 3,
+    "ran_at": "2026-11-06T10:56:00Z",
+    "date": "2026-11-06",
+    "reads": 12,
+    "list_writes": 5,
     "budget": 80,
     "added": [
-      "@FanNie1208",
-      "@EricBezzam",
-      "@Mokhalil01"
+      "@METR_Evals",
+      "@RicursiveAI",
+      "@ashxhart",
+      "@levantolabs"
     ],
     "promoted": [
-      "@haoailab",
-      "@NaceAI"
+      "@FishAudio",
+      "@Thom_Wolf",
+      "@Letta_AI",
+      "@turbopuffer",
+      "@PrismaXai",
+      "@SparkLLM",
+      "@LoubnaBenAllal1",
+      "@Alex_tra_memory"
     ],
-    "retired": [],
-    "flagged": [
+    "retired": [
       "@mirku21"
+    ],
+    "flagged": [
+      "@MatthewBerman"
+    ],
+    "rejected": [
+      "@danikkk_wqs",
+      "@PrunaAI",
+      "@PierreStock",
+      "@strawberry",
+      "@axiommathai",
+      "@RoundtableSpace"
     ],
     "drafts": 0,
     "drafts_file": null,
-    "pruned": 3,
-    "source_leads_added": 1
+    "pruned": 10,
+    "source_leads_added": 4
   },
   "x_list": {
     "id": "2113850075931713585",
@@ -260,10 +281,10 @@
     "owner": "@CameronSutcliff",
     "owner_id": "1521986356721123328",
     "private": true,
-    "member_count": 77,
+    "member_count": 80,
     "members": "every trial/active entry in inbox/x-roster.json (x_user_id, on_list)",
     "created_at": "2026-10-24T04:35:00Z"
   },
   "horizon_triggered": [],
-  "calls_day": "2026-11-05"
+  "calls_day": "2026-11-06"
 }

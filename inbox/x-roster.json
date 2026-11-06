@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T10:40:00Z",
+  "updated_at": "2026-11-06T10:56:00Z",
   "accounts": [
     {
       "handle": "@thsottiaux",
@@ -46,16 +46,17 @@
       "affiliation": "Fish Audio",
       "why": "Official account shipping open-weight TTS and ASR models (Drama 3).",
       "signal_to_noise": 4,
-      "status": "trial",
+      "status": "active",
       "added_on": "2026-10-20",
       "evidence": [
         "https://x.com/FishAudio/status/2110038429199450126",
         "https://x.com/FishAudio/status/2104617131920748857"
       ],
-      "last_qualifying_post": "2026-10-27",
+      "last_qualifying_post": "2026-11-05",
       "retired_reason": null,
       "x_user_id": "1779922590645235713",
-      "on_list": true
+      "on_list": true,
+      "promoted_on": "2026-11-06"
     },
     {
       "handle": "@fal",
@@ -120,16 +121,17 @@
       "affiliation": "Hugging Face",
       "why": "Hugging Face co-founder sharing runnable open demos and minimal training code.",
       "signal_to_noise": 3,
-      "status": "trial",
+      "status": "active",
       "added_on": "2026-10-20",
       "evidence": [
         "https://x.com/Thom_Wolf/status/2112141448019644458",
         "https://x.com/Thom_Wolf/status/2110381625200795942"
       ],
-      "last_qualifying_post": "2026-10-29",
+      "last_qualifying_post": "2026-11-05",
       "retired_reason": null,
       "x_user_id": "246939962",
-      "on_list": true
+      "on_list": true,
+      "promoted_on": "2026-11-06"
     },
     {
       "handle": "@trycua",
@@ -492,7 +494,7 @@
       "affiliation": "Letta",
       "why": "First-hand on agent memory: Letta Code features and the FrontierMemory benchmark (open corpus, scores memory by downstream task performance).",
       "signal_to_noise": 4,
-      "status": "trial",
+      "status": "active",
       "added_on": "2026-10-22",
       "evidence": [
         "https://x.com/Letta_AI/status/2112957074644873289",
@@ -501,7 +503,8 @@
       "last_qualifying_post": "2026-10-30",
       "retired_reason": null,
       "x_user_id": "1821252546469752832",
-      "on_list": true
+      "on_list": true,
+      "promoted_on": "2026-11-06"
     },
     {
       "handle": "@turbopuffer",
@@ -510,7 +513,7 @@
       "affiliation": "turbopuffer",
       "why": "Search engine for agents and RAG; posts measured engine changes (v3 batched full-text reads about 9x faster, filter latency cut about 95%, native reranking GA, Nemotron embeddings with recall numbers).",
       "signal_to_noise": 4,
-      "status": "trial",
+      "status": "active",
       "added_on": "2026-10-22",
       "evidence": [
         "https://x.com/turbopuffer/status/2106060390916636850",
@@ -518,10 +521,11 @@
         "https://x.com/turbopuffer/status/2112569613804580898",
         "https://x.com/turbopuffer/status/2113042657471836354"
       ],
-      "last_qualifying_post": "2026-10-22",
+      "last_qualifying_post": "2026-11-03",
       "retired_reason": null,
       "x_user_id": "1709608373275017219",
-      "on_list": true
+      "on_list": true,
+      "promoted_on": "2026-11-06"
     },
     {
       "handle": "@inco_ai",
@@ -549,7 +553,7 @@
       "affiliation": "PrismaX",
       "why": "Robotics data and policy team publishing open-source pi0.5 rollout code and a path-traced YAM simulator, with measured latency and fine-tuning ablations.",
       "signal_to_noise": 4,
-      "status": "trial",
+      "status": "active",
       "added_on": "2026-10-22",
       "evidence": [
         "https://x.com/PrismaXai/status/2113042694721491381",
@@ -559,7 +563,8 @@
       "last_qualifying_post": "2026-10-29",
       "retired_reason": null,
       "x_user_id": "1808395426628018176",
-      "on_list": true
+      "on_list": true,
+      "promoted_on": "2026-11-06"
     },
     {
       "handle": "@hotchpotch",
@@ -587,7 +592,7 @@
       "affiliation": "iFlytek",
       "why": "Official account for the Apache 2.0 Spark-X small open models (Spark-X2.6-4B with benchmark numbers) plus local llama.cpp demos.",
       "signal_to_noise": 3,
-      "status": "trial",
+      "status": "active",
       "added_on": "2026-10-22",
       "evidence": [
         "https://x.com/SparkLLM/status/2112614036227408363",
@@ -597,7 +602,8 @@
       "last_qualifying_post": "2026-10-31",
       "retired_reason": null,
       "x_user_id": "2090418458085433344",
-      "on_list": true
+      "on_list": true,
+      "promoted_on": "2026-11-06"
     },
     {
       "handle": "@SpeechifyAI",
@@ -625,7 +631,7 @@
       "affiliation": "Hugging Face",
       "why": "Hugging Face researcher first-hand on open model releases (Carbon family, Carbon-X DNA plus text model with weights).",
       "signal_to_noise": 4,
-      "status": "trial",
+      "status": "active",
       "added_on": "2026-10-23",
       "evidence": [
         "https://x.com/LoubnaBenAllal1/status/2113212025560023513",
@@ -634,7 +640,8 @@
       "last_qualifying_post": "2026-11-01",
       "retired_reason": null,
       "x_user_id": "1303627850025705473",
-      "on_list": true
+      "on_list": true,
+      "promoted_on": "2026-11-06"
     },
     {
       "handle": "@KLieret",
@@ -679,24 +686,25 @@
       "affiliation": "FluidInference (FluidAudio)",
       "why": "Hands-on on-device builder: ports TTS, ASR and OCR models to Core ML and MLX on Apple silicon with open code and measured speeds.",
       "signal_to_noise": 4,
-      "status": "trial",
+      "status": "active",
       "added_on": "2026-10-23",
       "evidence": [
         "https://x.com/Alex_tra_memory/status/2112782259916865643",
         "https://x.com/Alex_tra_memory/status/2112731253304594671",
         "https://x.com/Alex_tra_memory/status/2109868778615976113"
       ],
-      "last_qualifying_post": "2026-10-31",
+      "last_qualifying_post": "2026-11-05",
       "retired_reason": null,
       "x_user_id": "1947288873018531841",
-      "on_list": true
+      "on_list": true,
+      "promoted_on": "2026-11-06"
     },
     {
       "handle": "@Bober_smart",
       "name": "Bober_smart",
       "group": "devtools",
       "affiliation": null,
-      "why": "Owner-requested watch (2026-10-23). High-engagement AI workflow/tutorial posts (Claude Code, agent swarms, second-brain setups). Mostly promo-style quote of own guides rather than first-hand lab artifacts — trial for taste match; retire if noise.",
+      "why": "Owner-requested watch (2026-10-23). High-engagement AI workflow/tutorial posts (Claude Code, agent swarms, second-brain setups). Mostly promo-style quote of own guides rather than first-hand lab artifacts \u2014 trial for taste match; retire if noise.",
       "signal_to_noise": 2,
       "status": "retired",
       "added_on": "2026-10-23",
@@ -853,7 +861,7 @@
         "https://x.com/jankeesvw/status/2103187520821289085",
         "https://x.com/jankeesvw/status/2103235751739793688"
       ],
-      "last_qualifying_post": "2026-09-24",
+      "last_qualifying_post": "2026-11-05",
       "signal_to_noise": 3,
       "status": "trial",
       "added_on": "2026-10-24",
@@ -1001,7 +1009,7 @@
       "affiliation": "Independent",
       "why": "Owner saved 3 of his posts in 30 days (Claude Code multi-model and subagent workflow tips). Trial from owner saves; AI/dev only, no politics or vice, but posts are a daily templated 'official Anthropic tip' format with no source links, so judge first-hand value at promotion.",
       "signal_to_noise": 3,
-      "status": "trial",
+      "status": "retired",
       "added_on": "2026-10-26",
       "source": "owner_saves",
       "evidence": [
@@ -1010,9 +1018,9 @@
         "https://x.com/mirku21/status/2114462105512644974"
       ],
       "last_qualifying_post": "2026-10-25",
-      "retired_reason": null,
+      "retired_reason": "2026-11-06 roster review: drifted into promotion. Latest 25 top-level posts are a daily templated 'THIS IS A PURE F*CKING GOLDMINE / Official Anthropic tip' engagement-bait format quoting the same old article, with no first-hand artifact or measurement; not owner_requested.",
       "x_user_id": "1049965945131814912",
-      "on_list": true
+      "on_list": false
     },
     {
       "handle": "@ViC305",
@@ -1381,7 +1389,7 @@
       "handle": "@maksym_andr",
       "name": "Maksym Andriushchenko",
       "group": "research",
-      "affiliation": "Tübingen / Exponential (expsec.ai)",
+      "affiliation": "T\u00fcbingen / Exponential (expsec.ai)",
       "why": "Agent eval author: AgentTime time-awareness benchmark update, compaction-on-long-horizon-agents paper, PostTrainBench and Skill-Inject results cited in Meta system card; hiring posts ~3 of 18, under the 1-in-5 bar.",
       "signal_to_noise": 4,
       "status": "trial",
@@ -1402,7 +1410,7 @@
       "name": "Ningyu Zhang",
       "group": "research",
       "affiliation": "ZJUNLP, Zhejiang University",
-      "why": "Lab lead posting papers with code and data: Δτ-Bench moving-frontier agent benchmark (paper, code, dataset), experiential-learning agents, LightRSI long-horizon session work.",
+      "why": "Lab lead posting papers with code and data: \u0394\u03c4-Bench moving-frontier agent benchmark (paper, code, dataset), experiential-learning agents, LightRSI long-horizon session work.",
       "signal_to_noise": 3,
       "status": "trial",
       "added_on": "2026-11-03",
@@ -1494,6 +1502,82 @@
       "retired_reason": null,
       "source": "roster_review",
       "x_user_id": "374044084",
+      "on_list": true
+    },
+    {
+      "handle": "@METR_Evals",
+      "name": "METR",
+      "group": "research",
+      "affiliation": "METR (nonprofit)",
+      "why": "First-hand AI R&D acceleration and catastrophic-risk evaluations; Nov 5 public review of Anthropic automated R&D claims with measurements and methodology.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-11-06",
+      "evidence": [
+        "https://x.com/METR_Evals/status/2118417781825904708",
+        "https://x.com/METR_Evals/status/2118417774045475323",
+        "https://x.com/METR_Evals/status/2118417772774580623"
+      ],
+      "last_qualifying_post": "2026-11-05",
+      "retired_reason": null,
+      "x_user_id": "1706770561903497216",
+      "on_list": true
+    },
+    {
+      "handle": "@RicursiveAI",
+      "name": "Ricursive Intelligence",
+      "group": "labs",
+      "affiliation": "Ricursive Intelligence",
+      "why": "First-hand open-weight Ripple-65B Preview launch with TerminalBench/SWE-Bench measurements, HF weights, and training-efficiency notes.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-11-06",
+      "evidence": [
+        "https://x.com/RicursiveAI/status/2118046765857546733",
+        "https://x.com/RicursiveAI/status/2118046768034468188",
+        "https://x.com/RicursiveAI/status/2118475897284223455"
+      ],
+      "last_qualifying_post": "2026-11-05",
+      "retired_reason": null,
+      "x_user_id": "1982193144038146048",
+      "on_list": true
+    },
+    {
+      "handle": "@ashxhart",
+      "name": "Ash Hart",
+      "group": "builders",
+      "affiliation": "TensorFold (independent)",
+      "why": "First-hand TensorFold local-inference engine releases with measured decode speedups (Flash Next on GB10/M3 Ultra, Metal kernels, multi-GPU GLM Flash TPS).",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-11-06",
+      "evidence": [
+        "https://x.com/ashxhart/status/2118449887226274163",
+        "https://x.com/ashxhart/status/2118488485963485662",
+        "https://x.com/ashxhart/status/2118328617784459483"
+      ],
+      "last_qualifying_post": "2026-11-06",
+      "retired_reason": null,
+      "x_user_id": "2841951623",
+      "on_list": true
+    },
+    {
+      "handle": "@levantolabs",
+      "name": "Levanto Labs",
+      "group": "devtools",
+      "affiliation": "Levanto Labs",
+      "why": "First-hand Sage2 extraction/decision model launch with Extract Bench scores vs Clairic and measured router/cost results.",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-11-06",
+      "evidence": [
+        "https://x.com/levantolabs/status/2117304026911908020",
+        "https://x.com/levantolabs/status/2117304032255455505",
+        "https://x.com/levantolabs/status/2112179994449293465"
+      ],
+      "last_qualifying_post": "2026-11-04",
+      "retired_reason": null,
+      "x_user_id": "1983912291038064641",
       "on_list": true
     }
   ],
@@ -1888,6 +1972,43 @@
       "seen_via": [
         "@Mokhalil01"
       ]
+    },
+    {
+      "kind": "feed",
+      "name": "Epoch AI",
+      "url": "https://epoch.ai/",
+      "why": "Independent AI capability/compute tracking Magpie editions and roster keep citing; not yet in Magpie feeds.",
+      "seen_via": [
+        "@scaling01",
+        "@METR_Evals"
+      ]
+    },
+    {
+      "kind": "feed",
+      "name": "alphaXiv",
+      "url": "https://alphaxiv.org/",
+      "why": "Paper discussion layer linked repeatedly in Nov sweeps; Magpie watches arXiv but not alphaXiv threads.",
+      "seen_via": [
+        "@askalphaxiv"
+      ]
+    },
+    {
+      "kind": "blog",
+      "name": "Thinking Machines news",
+      "url": "https://thinkingmachines.ai/news/",
+      "why": "Inkling 2 Small and lab posts land here first; Magpie does not watch the blog yet.",
+      "seen_via": [
+        "@thinkymachines"
+      ]
+    },
+    {
+      "kind": "site",
+      "name": "Strawberry browser",
+      "url": "https://strawberrybrowser.com/",
+      "why": "Jev Typesafe app-event triggers and agent-browser launches; owner saved; no Magpie source yet.",
+      "seen_via": [
+        "@strawberry"
+      ]
     }
   ],
   "list": {
@@ -1895,8 +2016,8 @@
     "name": "Magpie roster",
     "owner": "@CameronSutcliff",
     "private": true,
-    "member_count": 74,
+    "member_count": 80,
     "scope": "every trial and active account in this file; curated config accounts are not members yet",
-    "updated_at": "2026-11-03T10:34:27Z"
+    "updated_at": "2026-11-06T10:56:00Z"
   }
 }
