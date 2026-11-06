@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T23:15:00Z",
+  "updated_at": "2026-11-06T03:15:00Z",
   "by": "magpie-scout",
   "rules": "Quiet watch for on-the-horizon items. Check at most 2 reads per sweep, rotating by oldest last_checked. Stay silent until a trigger fires. A demo clip, teaser, waitlist, interview or opinion is never a trigger. When one fires: add one kept item to that sweep, set status to 'triggered' with triggered_at and evidence, and flag it in the status file for the parent to tell Cameron. Never put speculative what-ifs in sweep output.",
   "entries": [
@@ -33,8 +33,8 @@
         ],
         "handle_notes": "@ragavan is a different person (ex-Llama at Meta), not Ragavan Thurairatnam; his X handle is not yet known."
       },
-      "last_checked": "2026-11-05T23:15:00Z",
-      "last_result": "No Dessa/Ragavan release posts since 19:12Z; block.xyz/dessa still demo page only (Conversation Model trained only on speech). Still watching.",
+      "last_checked": "2026-11-06T03:15:00Z",
+      "last_result": "Page check via curl: still demo-only Conversation Model page. No weights/API/paper. X query skipped (search_posts_all 503). Still watching.",
       "status": "watching",
       "triggered_at": null,
       "evidence": []

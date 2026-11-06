@@ -1,20 +1,22 @@
 {
-  "updated_at": "2026-11-05T23:15:00Z",
+  "updated_at": "2026-11-06T03:15:00Z",
   "job": "sweep",
   "prompt": "v6.1",
-  "calls_used_today": 187,
+  "calls_used_today": 26,
   "notes_via_api": false,
   "last_sweep": {
-    "ran_at": "2026-11-05T23:15:00Z",
-    "items": 15,
-    "queries": 14,
-    "deep_reads": 5,
+    "ran_at": "2026-11-06T03:15:00Z",
+    "items": 5,
+    "queries": 10,
+    "deep_reads": 3,
     "rechecks": 0,
-    "flagged": 2,
-    "saved_in": 0,
-    "saved_kept": 0,
+    "flagged": 3,
+    "saved_in": 2,
+    "saved_kept": 1,
     "videos": 0,
-    "security_forwarded": 1
+    "security_forwarded": 1,
+    "list_posts_read": 99,
+    "list_pages": 1
   },
   "roster": {
     "curated": 223,
@@ -222,7 +224,10 @@
     "Sweep 2026-11-05T03:10Z: Headless sweep with no browser and no Skill tool; the Read tool could not open the x-api-mcp-guide SKILL.md path, so it was read with cat. calls_used_today counts the Central day: 87 before plus about 2 for the 5:48 and 7:50 PM bookmark syncs plus 17 this sweep. One owner save vetted (OpenHack). Rechecks were skipped so reads could go to deep reads, and videos were not watched. One new stack hit filed urgent to the Mini (Haiou Codex prompt adware).",
     "Sweep 2026-11-05T23:15Z: builders and devtools OR queries still fill 25-result pages with replies inside a 4-hour window (devtools oldest still ~22:09Z after 3 pages); consider exclude:replies on roster OR searches or splitting busy groups. METR Anthropic acceleration report posted 18:36Z was before since but missed by the 19:12Z sweep; kept via quote-follow from later roster posts."
   ],
-  "errors": [],
+  "errors": [
+    "search_posts_all and get_users_posts 503 for most of this sweep; curated OR searches and discovery incomplete.",
+    "MCP Inspector CVE-2026-119025 forwarded from public web because X security discovery search failed."
+  ],
   "follows_today": 0,
   "last_roster_review": {
     "ran_at": "2026-11-04T10:40:00Z",

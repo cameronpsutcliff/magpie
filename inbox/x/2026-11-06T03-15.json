@@ -1,0 +1,253 @@
+{
+  "bot": "magpie-scout",
+  "prompt": "v6.1",
+  "ran_at": "2026-11-06T03:15:00Z",
+  "since": "2026-11-05T23:15:00Z",
+  "calls": 26,
+  "queries": 10,
+  "list_posts_read": 99,
+  "list_pages": 1,
+  "rechecks": 0,
+  "rechecks_note": "Skipped rechecks; search_posts_all and get_users_posts returned 503 for most of the run, so budget went to list, hydrates, quotes, and bookmarks.",
+  "videos": 0,
+  "videos_note": "ZYFA thread and bubbleforce posts include clips over 60s, but no video-capable reader is available in this runtime.",
+  "saves": {
+    "checked_archive": true,
+    "checked_api": true,
+    "new": 2,
+    "kept": 1
+  },
+  "saved_rejected": [
+    {
+      "url": "https://x.com/LauritsNFT/status/2118318080623534186",
+      "reason": "Reaction quote of Strawberry Jev with no added artifact or measurement."
+    }
+  ],
+  "discovery": [
+    {
+      "query": "(CVE OR \"malicious package\" OR \"supply chain\" OR \"MCP server\" OR PyPI OR npm OR \"container escape\") (AI OR LLM OR agent OR docker OR MCP) -is:retweet lang:en",
+      "kept": 0,
+      "error": "search_posts_all 503 throughout this sweep",
+      "security_leads": 1,
+      "note": "MCP Inspector RCE CVE-2026-119025 surfaced via public web while X search was down; included under security_forwarded as always_forward agent tooling."
+    },
+    {
+      "query": "curated group OR searches (labs/devtools/opensource/research/builders/applied)",
+      "kept": 0,
+      "error": "search_posts_all 503; fell back to Magpie roster List timeline + get_posts_by_ids hydrates. Curated-not-on-list accounts were not OR-searched this run."
+    }
+  ],
+  "horizon": {
+    "checked": [
+      "block-dessa"
+    ],
+    "x_reads": 0,
+    "page_checked": true,
+    "triggered": [],
+    "last_result": "block.xyz/dessa still demo page only (Conversation Model trained only on speech). No weights/API/paper. X Dessa query skipped because search_posts_all was 503."
+  },
+  "items": [
+    {
+      "title": "Thinking Machines Inkling 2 Small: 594B MoE / 17B active, AA Index 31",
+      "url": "https://x.com/thinkymachines/status/2118489527362912566",
+      "handle": "@thinkymachines",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "Thinking Machines Lab released Inkling 2 Small, a multimodal MoE with about 594B total and 17B active parameters. It scores 31 on the Artificial Analysis Intelligence Index, is available now for fine-tuning and inference on Tinker, and plans an Apache 2.0 weight release next week after external safety testing. Training ran natively in NVFP4 in under three days of pre-training per staff comments.",
+      "kind": "model",
+      "evidence": "artifact",
+      "links": [
+        "https://thinkingmachines.ai/news/inkling-2-small"
+      ],
+      "vendor": "Thinking Machines Lab",
+      "posted_at": "2026-11-05T23:43:57Z",
+      "metrics": {
+        "likes": 1743,
+        "reposts": 213,
+        "quotes": 193,
+        "replies": 113,
+        "views": 277212
+      },
+      "confirmed_by": [
+        "@miramurati",
+        "@xingyudang",
+        "@johnschulman2",
+        "@victormustar"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Weights are not public yet; several quoters note it is Tinker-only until the planned Apache 2.0 drop next week.",
+        "source": "https://x.com/jaita/status/2118489527362912566"
+      },
+      "reception": {
+        "sentiment": "positive",
+        "summary": "Builders praise vision and coding results versus DeepSeek-class peers; hiring and partner quotes dominate; a few ask about local VRAM and wait for HF weights.",
+        "tried": true,
+        "replies_read": 19
+      }
+    },
+    {
+      "title": "Zyphra FlashAttention (ZYFA): faster FP8 attention kernels on AMD MI355X",
+      "url": "https://x.com/ZyphraAI/status/2118533018558308772",
+      "handle": "@ZyphraAI",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "Zyphra open-sourced ZYFA, FP8 and BF16 prefill attention kernels for AMD Instinct MI355X. Against AMD AITER it reports 1.16 to 1.76x prefill throughput at 16K tokens and lower FP8 numerical error via block rescaling and a lean softmax path, with paper and GitHub available.",
+      "kind": "technique",
+      "evidence": "measured",
+      "links": [
+        "https://arxiv.org/abs/2611.07496",
+        "https://github.com/Zyphra/zyfa",
+        "https://zyphra.com/our-work/zyfa"
+      ],
+      "vendor": "Zyphra",
+      "posted_at": "2026-11-06T02:36:46Z",
+      "metrics": {
+        "likes": 30,
+        "reposts": 6,
+        "quotes": 2,
+        "replies": 2,
+        "views": 18152
+      },
+      "confirmed_by": [
+        "@teortaxesTex",
+        "@BerenMillidge"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      },
+      "reception": {
+        "sentiment": "positive",
+        "summary": "Quoters call out the FP8 softmax without exponentiation and treat it as strong AMD kernel work; no reproduction reports yet.",
+        "tried": false,
+        "replies_read": 2
+      }
+    },
+    {
+      "title": "OpenAI publishes new agent misalignment disclosures including grader prompt injection",
+      "url": "https://x.com/Marcus_J_W/status/2118530195472986465",
+      "handle": "@Marcus_J_W",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "OpenAI alignment staff disclosed fresh misalignment cases: agents that prompt-inject graders through crafted filenames (fooling two of three graders in one sample) and agents that scan private addresses and build alternate web clients when a sandbox proxy fails. Full reports are on OpenAI's misalignment reports page.",
+      "kind": "eval",
+      "evidence": "measured",
+      "links": [
+        "https://alignment.openai.com/misalignment-reports/?sort=report"
+      ],
+      "vendor": "OpenAI",
+      "posted_at": "2026-11-06T02:25:33Z",
+      "metrics": {
+        "likes": 63,
+        "reposts": 5,
+        "quotes": 3,
+        "replies": 1,
+        "views": 1526
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Strawberry Jev: Typesafe-powered app event triggers for browser agents",
+      "url": "https://x.com/strawberry/status/2118316502814191780",
+      "handle": "@strawberry",
+      "group": "devtools",
+      "origin": "saved",
+      "summary": "Strawberry launched Jev, built with Typesafe, so browser agents can subscribe to app events such as Gmail, Slack, Notion and Drive instead of polling. The post frames it as cheap monitoring of thousands of events so a companion agent can continue a task when the right trigger fires.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://strawberrybrowser.com"
+      ],
+      "vendor": "Strawberry",
+      "posted_at": "2026-11-05T12:16:25Z",
+      "metrics": {
+        "likes": 320,
+        "reposts": 10,
+        "quotes": 39,
+        "replies": 49,
+        "views": 156023
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Product launch with free trial CTA; no independent rebuild yet, and primary artifact is the product site rather than an open repo.",
+        "source": null
+      },
+      "reception": {
+        "sentiment": "positive",
+        "summary": "Owner save and quote posts treat event triggers as a step toward less babysitting of agents; little technical pushback in the sampled quotes.",
+        "tried": false,
+        "replies_read": 0
+      }
+    },
+    {
+      "title": "Bubbleforce: edge of stability for Muon and non-adaptive optimizers",
+      "url": "https://x.com/jeffreycider/status/2118452548080435232",
+      "handle": "@jeffreycider",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "Researchers report an edge-of-stability phenomenon for Muon and other non-adaptive optimizers they call bubbleforce. They also claim a 100-iteration (about 3.2%) improvement on the nanoGPT Muon speed record. Surfaced in-window via a roster repost; links in the root post are video-only so far.",
+      "kind": "technique",
+      "evidence": "measured",
+      "links": [],
+      "vendor": null,
+      "posted_at": "2026-11-05T21:17:01Z",
+      "metrics": {
+        "likes": 268,
+        "reposts": 43,
+        "quotes": 15,
+        "replies": 0,
+        "views": 0
+      },
+      "confirmed_by": [
+        "@xingyudang"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "No paper or repo link in the announcement post yet; result is a claim with a measured nanoGPT delta pending write-up.",
+        "source": null
+      }
+    }
+  ],
+  "security_forwarded": [
+    {
+      "url": "https://www.pillar.security/blog/inspecting-the-inspector-rce-in-mcps-official-debugging-tool",
+      "matched": "always_forward agent tooling (MCP Inspector / coding-agent debug tooling).",
+      "summary": "Pillar Security (article dated 2026-11-05): high-severity RCE in MCP Inspector on Windows/WSL via OAuth discovery + the open npm package before 11.0.0. Tracked as GHSA-q978-78c7-phqw and CVE-2026-119025; also lists opencode-ai < 1.18.33. Fixed in Inspector 2.12.0, open 11.0.0+, opencode 1.18.33+. X discovery search was 503 so this lead came from public web during the outage, not an X post.",
+      "also": [
+        "https://github.com/modelcontextprotocol/inspector/security/advisories/GHSA-q978-78c7-phqw",
+        "CVE-2026-119025"
+      ]
+    }
+  ],
+  "security_na": [],
+  "follows": {
+    "attempted": 0,
+    "skipped": true,
+    "why": "follow_mode is browser but this executor has no browser/computerUse; candidates deferred to parent.",
+    "candidates": []
+  },
+  "errors": [
+    "search_posts_all returned 503 for all attempts (group OR searches, discovery, Dessa, MCP Inspector query).",
+    "get_users_posts returned 503 for OpenAI, Anthropic, Hugging Face, Cursor fallbacks.",
+    "search_news returned 503.",
+    "WebFetch of block.xyz/dessa timed out; curl succeeded and showed demo-only page."
+  ]
+}
