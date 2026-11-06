@@ -3,75 +3,76 @@
  "days": [
   {
    "date": "2026-11-06",
-   "headline": "v2.1.318, moe-blogpost, auto-ontology, and more",
-   "events": 275,
-   "sources": 524,
-   "enriched": false,
+   "headline": "Hunt Vulnerabilities, Post-Train Agents Cheaply, Train MoE Models, and More",
+   "events": 409,
+   "sources": 553,
+   "enriched": true,
    "top": [
     {
-     "id": "2707ef840bf2",
-     "title": "v2.1.318",
-     "impact": 5,
-     "vendor": "Anthropic"
-    },
-    {
      "id": "d5deba094d7e",
-     "title": "huggingface/moe-blogpost",
+     "title": "Hugging Face publishes open MoE training handbook",
      "impact": 4,
      "vendor": "Hugging Face"
     },
     {
-     "id": "b2e43e740f52",
-     "title": "NVIDIA/auto-ontology",
+     "id": "836cd722751a",
+     "title": "Kimi K3.1 Pro still drawing broad attention",
      "impact": 4,
+     "vendor": "Moonshot"
+    },
+    {
+     "id": "12ccff85d570",
+     "title": "ByteDance Axion 1.0 shows a short agent post-train recipe",
+     "impact": 4,
+     "vendor": "ByteDance"
+    },
+    {
+     "id": "b2e43e740f52",
+     "title": "NVIDIA Auto Ontology keeps trending with 2,005 daily stars",
+     "impact": 3,
      "vendor": "NVIDIA"
     },
     {
-     "id": "41609ee26a0c",
-     "title": "Leonxlnx/taste-skill",
-     "impact": 4,
-     "vendor": "Open source"
-    },
-    {
-     "id": "1ec0b1042f97",
-     "title": "obra/superpowers",
-     "impact": 4,
-     "vendor": "Open source"
+     "id": "2707ef840bf2",
+     "title": "Claude Code adds cross-account AWS roles and mod effort",
+     "impact": 2,
+     "vendor": "Anthropic"
     }
    ],
    "vendors": [
     "Open source",
     "OpenAI",
-    "Google",
     "Anthropic",
+    "Google",
     "NVIDIA",
     "Hugging Face"
    ],
    "topics": {
-    "multimodal": 77,
-    "coding": 76,
-    "agents": 75,
-    "models": 69,
-    "infra": 41,
-    "memory": 29,
-    "mcp": 27,
-    "local": 23,
-    "evals": 21,
-    "security": 17,
-    "reverse": 17,
-    "research": 14,
-    "robotics": 4
+    "agents": 112,
+    "models": 110,
+    "coding": 96,
+    "multimodal": 86,
+    "infra": 57,
+    "memory": 40,
+    "evals": 33,
+    "mcp": 30,
+    "local": 29,
+    "reverse": 22,
+    "security": 21,
+    "research": 17,
+    "robotics": 7
    },
    "kinds": {
+    "social": 101,
+    "video": 87,
     "newsletter": 45,
-    "social": 43,
-    "repo": 37,
-    "blog": 33,
-    "community": 32,
+    "blog": 32,
+    "community": 31,
     "model": 30,
-    "changelog": 24,
+    "repo": 30,
+    "changelog": 23,
     "space": 20,
-    "news": 11
+    "news": 10
    }
   },
   {
