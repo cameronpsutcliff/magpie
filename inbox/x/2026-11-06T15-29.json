@@ -1,0 +1,316 @@
+{
+  "bot": "magpie-scout",
+  "prompt": "v6.1",
+  "ran_at": "2026-11-06T15:29:00Z",
+  "since": "2026-11-06T11:22:00Z",
+  "calls": 9,
+  "queries": 5,
+  "list_posts_read": 95,
+  "list_pages": 1,
+  "rechecks": 0,
+  "rechecks_note": "Skipped rechecks to keep budget for curated searches and one deep read after a shared X 429; prior-window doubt items (Cloudflare skill, SparkLLM WebGPU) unchanged by this window's posts.",
+  "videos": 0,
+  "videos_note": "No deep-read clip over 60s (Harness adapters clip 15s).",
+  "saves": {
+    "checked_archive": true,
+    "checked_api": true,
+    "new": 2,
+    "kept": 0
+  },
+  "saved_rejected": [
+    {
+      "url": "https://x.com/RefinedPopulist/status/2118026076723044801",
+      "reason": "Non-AI partisan politics role-play about GOP voters; out of Scope."
+    },
+    {
+      "url": "https://x.com/price_dominie/status/2118364186187112491",
+      "reason": "Non-AI political insurgency / constitutional build-up essay; out of Scope."
+    }
+  ],
+  "discovery": [
+    {
+      "query": "(CVE OR RCE OR malicious package OR supply chain OR prompt injection OR MCP server) (AI OR LLM OR agent OR MCP OR docker OR npm OR PyPI) -is:retweet lang:en",
+      "kept": 0,
+      "security_leads": 3,
+      "note": "LiteLLM CVE-2026-40217 and mistral-vibe CVE-2026-122135 forwarded; MCPhantom archived-MCP rehash logged N/A."
+    },
+    {
+      "query": "(url:github.com OR url:huggingface.co OR url:arxiv.org) (release OR weights OR open source OR launched OR shipping) (model OR agent OR LLM) -is:retweet lang:en",
+      "kept": 1,
+      "note": "Mostly low-engagement repos; PrunaAI Rapidata follow-up kept. REAX 1.3 anonymous mining claim skipped."
+    }
+  ],
+  "horizon": {
+    "checked": [
+      "block-dessa"
+    ],
+    "x_reads": 0,
+    "page_checked": true,
+    "triggered": [],
+    "last_result": "block.xyz/dessa still demo-only Conversation Model page. HF models search for dessa+block empty; arXiv dessa+speech query returned no Block Dessa speech release. Still watching."
+  },
+  "items": [
+    {
+      "title": "Unsloth Dynamic V3.1 GGUFs cut Qwen3.8-Flash-Next tokens ~50% with higher accuracy",
+      "url": "https://x.com/UnslothAI/status/2118707871139696911",
+      "handle": "@UnslothAI",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "Unsloth shipped Dynamic V3.1 GGUFs for Qwen3.8-Flash-Next that match about 95% of full-precision thinking and token use. Versus same-size quants they report about 50% fewer tokens and 15% higher accuracy, with weights on Hugging Face and a local-run guide.",
+      "kind": "model",
+      "evidence": "measured",
+      "links": [
+        "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF",
+        "https://unsloth.ai/docs/models/qwen3.8-next"
+      ],
+      "vendor": "Unsloth",
+      "posted_at": "2026-11-06T14:11:34Z",
+      "metrics": {
+        "likes": 393,
+        "reposts": 37,
+        "quotes": 10,
+        "replies": 27,
+        "views": 17523
+      },
+      "confirmed_by": [
+        "@coldniko"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      },
+      "reception": {
+        "sentiment": "positive",
+        "summary": "Builders report faster mid-session finishes and ask for MTP/MLX quants; Strata already includes the GGUFs. No Community Notes via API; no specific method pushback in the first 25 replies.",
+        "tried": true,
+        "replies_read": 25
+      }
+    },
+    {
+      "title": "NaceAI publishes Drex technical report on foundation decision models",
+      "url": "https://x.com/NaceAI/status/2118695842551103645",
+      "handle": "@NaceAI",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "NaceAI released a technical report on training its open Drex decision models with RLAF, including paper and product pages. Drex Max 1.1 and Drex for Finance stay closed for enterprise; open models remain on the Nace console.",
+      "kind": "paper",
+      "evidence": "artifact",
+      "links": [
+        "https://www.nace.ai/research/towards-foundation-decision-models",
+        "https://huggingface.co/papers/2611.07854"
+      ],
+      "vendor": "Nace AI",
+      "posted_at": "2026-11-06T13:23:46Z",
+      "metrics": {
+        "likes": 54,
+        "reposts": 6,
+        "quotes": 5,
+        "replies": 4,
+        "views": 4860
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Harness adapters: live RL LoRA training for Liquid LFM and Twil-9B agent tasks",
+      "url": "https://x.com/yb2698/status/2118708539610857960",
+      "handle": "@yb2698",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "Hugging Face Harness Hub opened live RL training of LoRA adapters on Liquid LFM2.5/LFM3 and Twil-9B for agent tasks, with a public Space stream and blog. The run adds OpenCode alongside Hermes and Pi harnesses plus a Safeagents plugin against reward hacking.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://huggingface.co/blog/harness-hub/harness-adapters",
+        "https://harness-hub-harness-adapters-rl.hf.space/"
+      ],
+      "vendor": "Hugging Face Harness Hub",
+      "posted_at": "2026-11-06T14:14:14Z",
+      "metrics": {
+        "likes": 34,
+        "reposts": 8,
+        "quotes": 4,
+        "replies": 4,
+        "views": 6677
+      },
+      "confirmed_by": [
+        "@victormustar",
+        "@huggingface"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "WeirdML: Kimi K3.1 Pro scores 9.9%, ahead of Kimi-K3 but behind Haiku 5.5",
+      "url": "https://x.com/htihle/status/2118688932925940201",
+      "handle": "@htihle",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "Independent WeirdML agentic benchmark run puts Kimi K3.1 Pro at 9.9% versus Kimi-K3 at 7.5%, still well behind Haiku 5.5. The run used the Kimi-code Fireworks provider.",
+      "kind": "eval",
+      "evidence": "measured",
+      "links": [
+        "https://htihle.github.io/weirdml.html"
+      ],
+      "vendor": "WeirdML / Moonshot Kimi",
+      "posted_at": "2026-11-06T12:56:19Z",
+      "metrics": {
+        "likes": 54,
+        "reposts": 2,
+        "quotes": 3,
+        "replies": 4,
+        "views": 2595
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "TensorFold challenge: Qwen 3.8 27B +180.5% on DGX Spark, +81% on Apple Silicon",
+      "url": "https://x.com/GumbiiDigital/status/2118691730362863784",
+      "handle": "@GumbiiDigital",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "Community TensorFold challenge finals for Qwen 3.8 27B report 180.5% faster on DGX Spark CUDA and 81% faster on Apple Silicon versus the challenge baseline, with anti-cheat notes for the next round.",
+      "kind": "eval",
+      "evidence": "measured",
+      "links": [
+        "https://github.com/ashhart/TensorFold"
+      ],
+      "vendor": "TensorFold / community challenge",
+      "posted_at": "2026-11-06T13:07:26Z",
+      "metrics": {
+        "likes": 19,
+        "reposts": 1,
+        "quotes": 2,
+        "replies": 3,
+        "views": 3800
+      },
+      "confirmed_by": [
+        "@ashxhart"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "LiteParse adds MiniCPM-OCR for layout-cropped document parsing",
+      "url": "https://x.com/llama_index/status/2118433203526533150",
+      "handle": "@llama_index",
+      "group": "applied",
+      "origin": "sweep",
+      "summary": "LlamaIndex LiteParse can now call OpenBMB MiniCPM-OCR after layout cropping. On ParseBench the post says MiniCPM-OCR beats Gemini 3.5 Flash Lite and PaddleOCR-VL-1.6 on content faithfulness, with the integration on GitHub.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/run-llama/liteparse/tree/main/ocr/minicpmocr"
+      ],
+      "vendor": "LlamaIndex / OpenBMB",
+      "posted_at": "2026-11-05T20:00:08Z",
+      "metrics": {
+        "likes": 9,
+        "reposts": 2,
+        "quotes": 2,
+        "replies": 5,
+        "views": 3636
+      },
+      "confirmed_by": [
+        "@OpenBMB"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "ParseBench claim is vendor-stated in the launch post; no third-party replication in this window.",
+        "source": "https://x.com/llama_index/status/2118433203526533150"
+      }
+    },
+    {
+      "title": "PrunaAI P-Video-2-Pro-Replace: Rapidata human ratings, 3.2x cheaper and 1.6x faster",
+      "url": "https://x.com/PrunaAI/status/2118721070970683768",
+      "handle": "@PrunaAI",
+      "group": "labs",
+      "origin": "discovery",
+      "summary": "Follow-up measurements for PrunaAI's person-swap video model: Rapidata human ratings place it within 3% of the top 480p model, about 3.2x cheaper ($0.05/s vs $0.16/s) and 1.6x faster than the next-fastest option, with API docs and P-Bench Space.",
+      "kind": "model",
+      "evidence": "measured",
+      "links": [
+        "https://docs.api.pruna.ai/guides/models/p-video-2-pro",
+        "https://huggingface.co/spaces/PrunaAI/P-Bench"
+      ],
+      "vendor": "Pruna AI",
+      "posted_at": "2026-11-06T15:04:01Z",
+      "metrics": {
+        "likes": 7,
+        "reposts": 3,
+        "quotes": 0,
+        "replies": 1,
+        "views": 241
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Vendor-reported Rapidata board with low engagement so far; prior product post already covered on Nov 5.",
+        "source": "https://x.com/PrunaAI/status/2118721070970683768"
+      }
+    }
+  ],
+  "security_forwarded": [
+    {
+      "url": "https://github.com/advisories/GHSA-wxxx-gvqv-xp7p",
+      "matched": "stack.json LiteLLM; also always_forward agent tooling / proxy RCE",
+      "title": "LiteLLM CVE-2026-40217 custom-code guardrail sandbox escape (RCE); fixed in 1.83.11; cited in Google LLMjacking writeup"
+    },
+    {
+      "url": "https://github.com/advisories/GHSA-qx7j-gch3-gv7c",
+      "matched": "always_forward: agent tooling (coding agent) and supply chain (PyPI mistral-vibe)",
+      "title": "mistral-vibe CVE-2026-122135 RCE via repo-configured gpg.program during git log context collection; fixed in 3.0.3"
+    }
+  ],
+  "security_na": [
+    {
+      "url": "https://x.com/SAM_JOSHUA_S/status/2118725842117570785",
+      "reason": "MCPhantom / Glow Labs archived Anthropic MCP reference servers rehash; already filed 2026-11-03."
+    },
+    {
+      "url": "https://x.com/TheEaglegon/status/2118726059554492763",
+      "reason": "Xen VM-escape CVEs found with Claude; fleet stack lists Docker/runc not Xen hypervisors."
+    },
+    {
+      "url": "https://x.com/HugoValters/status/2118724336064315613",
+      "reason": "WordPress Secure Custom Fields CVE-2026-92403; WordPress not on stack.json."
+    }
+  ],
+  "follows": [],
+  "errors": [
+    "Shared Grok Bot X access returned HTTP 429 on first curated-search batch; waited until 15:27Z then retried successfully.",
+    "Skill tool unavailable; read x-api-mcp-guide from /workspace/x-api-mcp-guide-SKILL.md and plugin cache.",
+    "Community Notes still unavailable via API (notes_via_api false); doubt from replies only.",
+    "PrunaAI appeared on Magpie roster List timeline despite not being trial/active in x-roster.json; treated as discovery."
+  ]
+}

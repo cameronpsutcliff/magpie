@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-06T11:22:00Z",
+  "updated_at": "2026-11-06T15:29:00Z",
   "job": "sweep",
   "prompt": "v6.1",
-  "calls_used_today": 49,
+  "calls_used_today": 58,
   "notes_via_api": false,
   "last_sweep": {
-    "ran_at": "2026-11-06T11:22:00Z",
-    "items": 6,
+    "ran_at": "2026-11-06T15:29:00Z",
+    "items": 7,
     "queries": 5,
-    "deep_reads": 2,
-    "rechecks": 3,
+    "deep_reads": 1,
+    "rechecks": 0,
     "flagged": 2,
     "saved_in": 2,
-    "saved_kept": 1,
+    "saved_kept": 0,
     "videos": 0,
-    "security_forwarded": 1,
+    "security_forwarded": 2,
     "list_posts_read": 95,
     "list_pages": 1
   },
@@ -223,18 +223,20 @@
     "Sweep 2026-11-04T19:15Z: the builders OR query filled its 25-result page within the 4-hour window on a big release day (Kimi K3.1 Pro weights), so a second page was needed; splitting builders into two queries would avoid the extra read. Two new stack hits filed to the Mini (APT CVE-2026-109518 urgent, Docker Buildx CVE-2026-93325 low). No video reader is available, so videos stay unwatched.",
     "Sweep 2026-11-05T03:10Z: Headless sweep with no browser and no Skill tool; the Read tool could not open the x-api-mcp-guide SKILL.md path, so it was read with cat. calls_used_today counts the Central day: 87 before plus about 2 for the 5:48 and 7:50 PM bookmark syncs plus 17 this sweep. One owner save vetted (OpenHack). Rechecks were skipped so reads could go to deep reads, and videos were not watched. One new stack hit filed urgent to the Mini (Haiou Codex prompt adware).",
     "Sweep 2026-11-05T23:15Z: builders and devtools OR queries still fill 25-result pages with replies inside a 4-hour window (devtools oldest still ~22:09Z after 3 pages); consider exclude:replies on roster OR searches or splitting busy groups. METR Anthropic acceleration report posted 18:36Z was before since but missed by the 19:12Z sweep; kept via quote-follow from later roster posts.",
-    "Roster review 2026-11-06: Friday — skipped Sunday drafts and Job 3 hardware prices.",
-    "Roster review 2026-11-06: added 4 trials (@METR_Evals, @RicursiveAI, @ashxhart, @levantolabs). Promoted 8 trials that had ≥2 sweep-file posts after 14 days. Retired @mirku21 (owner_saves) for templated daily engagement-bait with no first-hand artifact.",
-    "Roster review 2026-11-06 rejected/skipped: @danikkk_wqs (owner_saves ≥2) — crypto trading-bot profit posts, Roblox F2E/$GLD farming, and adult side-hustle posts; vice disqualifies (cannot edit config avoid; noted here). @PrunaAI — product launches with recurring 50%-off promo over 1 in 5. @PierreStock — only 1 original capability post in 30 days. @strawberry — mostly try-for-free product promo. @axiommathai — one major Stacks release this window, under the 2-capability bar. @RoundtableSpace already avoid.",
-    "Roster review 2026-11-06: @MatthewBerman (owner_requested) kept; last_qualifying_post still 2026-10-10 and feed is demo/recap-heavy — flag only, no auto-retire. @jankeesvw owner_saves re-screen passed (Herdr/omarchy first-hand); last_qualifying_post updated to 2026-11-05.",
+    "Roster review 2026-11-06: Friday \u2014 skipped Sunday drafts and Job 3 hardware prices.",
+    "Roster review 2026-11-06: added 4 trials (@METR_Evals, @RicursiveAI, @ashxhart, @levantolabs). Promoted 8 trials that had \u22652 sweep-file posts after 14 days. Retired @mirku21 (owner_saves) for templated daily engagement-bait with no first-hand artifact.",
+    "Roster review 2026-11-06 rejected/skipped: @danikkk_wqs (owner_saves \u22652) \u2014 crypto trading-bot profit posts, Roblox F2E/$GLD farming, and adult side-hustle posts; vice disqualifies (cannot edit config avoid; noted here). @PrunaAI \u2014 product launches with recurring 50%-off promo over 1 in 5. @PierreStock \u2014 only 1 original capability post in 30 days. @strawberry \u2014 mostly try-for-free product promo. @axiommathai \u2014 one major Stacks release this window, under the 2-capability bar. @RoundtableSpace already avoid.",
+    "Roster review 2026-11-06: @MatthewBerman (owner_requested) kept; last_qualifying_post still 2026-10-10 and feed is demo/recap-heavy \u2014 flag only, no auto-retire. @jankeesvw owner_saves re-screen passed (Herdr/omarchy first-hand); last_qualifying_post updated to 2026-11-05.",
     "Roster review 2026-11-06: add_lists_member for @levantolabs was Auto-review blocked once then approved; other list adds and mirku remove succeeded. member_count now matches on_list trial/active count.",
     "Roster review 2026-11-06: calls_used_today is 38 on UTC day 2026-11-06 (prior sweep 26 + this job's 12 public reads). List writes 5 not included in that field; budget used 17/80 counting every call.",
     "Roster review 2026-11-06: pruned 10 sweep files dated before 2026-10-23.",
-    "Sweep 2026-11-06T11:22Z: executor has no watchVideo; deep-read videos over 60s stay unanalyzed. search_posts_all worked this UTC morning after prior 503s."
+    "Sweep 2026-11-06T11:22Z: executor has no watchVideo; deep-read videos over 60s stay unanalyzed. search_posts_all worked this UTC morning after prior 503s.",
+    "Sweep 2026-11-06T15:29Z: curated non-list coverage limited to two high-signal OR batches after 429; remaining curated groups not searched this window. List page alone covered trial/active through since."
   ],
   "errors": [
-    "LeRobot 120s video analysis skipped (no watchVideo in this executor run).",
-    "Curated non-list OR search returned 0 posts in the overnight window."
+    "Shared X 429 blocked first curated batch; resumed after 15:27Z.",
+    "PrunaAI on List timeline without roster trial/active entry; logged under discovery.",
+    "No watchVideo; no video records."
   ],
   "follows_today": 0,
   "last_roster_review": {
