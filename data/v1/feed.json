@@ -13,6 +13,29 @@
  ],
  "items": [
   {
+   "id": "2026-11-07",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-11-07",
+   "title": "Qwen3.8-Flash-Next-GGUF, Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips, Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF, and more",
+   "summary": "238 capability events from 128 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words.",
+   "content_html": "<p>238 capability events from 128 sources. Ranked by code; the editor did not run this edition, so copy is the sources&#x27; own words.</p><ol><li><a href=\"https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF\">unsloth/Qwen3.8-Flash-Next-GGUF</a></li><li><a href=\"https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/\">Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips</a></li><li><a href=\"https://huggingface.co/DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF\">DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF</a></li><li><a href=\"https://github.com/zed-industries/zed\">zed-industries/zed</a></li><li><a href=\"https://github.com/cloudflare/security-audit-skill\">cloudflare/security-audit-skill</a></li></ol><p><strong>Possibilities:</strong> No new possibility today. Latest: Security teams buying GPT-6 Cyber need an independent second auditor on every engagement (2026-11-06)</p><p><strong>Worth watching:</strong> No new video pick today. Latest: How Netflix Evaluates AI When There&#x27;s No Right Answer - Cameron Wolfe, Netflix (2026-11-06)</p><p><strong>Constraints:</strong> No new constraint today. Latest: DHS order bars DeepSeek products from federal civilian agencies (2026-10-20)</p><p><strong>Threats:</strong> No new threat today. Widest reach still open: TWCA Registration Authority server accessed without authorization (medium, 2026-10-29)</p>",
+   "content_text": "238 capability events from 128 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words. unsloth/Qwen3.8-Flash-Next-GGUF Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF zed-industries/zed cloudflare/security-audit-skill",
+   "date_published": "2026-11-07T11:12:07Z",
+   "tags": [
+    "agents",
+    "coding",
+    "infra",
+    "local",
+    "models",
+    "multimodal",
+    "security"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-11-07.json",
+    "backfilled": false,
+    "capabilities": 238
+   }
+  },
+  {
    "id": "2026-11-06",
    "url": "https://www.cameronsutcliff.com/magpie/2026-11-06",
    "title": "Hunt Vulnerabilities, Post-Train Agents Cheaply, Train MoE Models, and More",
@@ -685,30 +708,6 @@
    ],
    "_magpie": {
     "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-08.json",
-    "backfilled": true,
-    "capabilities": 108
-   }
-  },
-  {
-   "id": "2026-10-07",
-   "url": "https://www.cameronsutcliff.com/magpie/2026-10-07",
-   "title": "Generates synced video and audio, proves new math results, runs faster on Macs, and more",
-   "summary": "Today brings a mix of open research and tooling, with a few concrete releases for builders. Several candidates are thin on detail, so many entries stay modest.",
-   "content_html": "<p>Today brings a mix of open research and tooling, with a few concrete releases for builders. Several candidates are thin on detail, so many entries stay modest.</p><ol><li><a href=\"https://openai.com/index/sharing-ai-progress-in-mathematics\">OpenAI shares new math results with Lean proofs</a>: You can inspect results on open math problems from an internal frontier model, with Lean formalizations published on GitHub.</li><li><a href=\"https://huggingface.co/papers/2610.05608\">Kandinsky 6.0 Video generates lip-synced audio and video</a>: You can generate short clips where video and audio are produced together, with lip-sync, from one diffusion model family.</li><li><a href=\"https://huggingface.co/papers/2610.04198\">ALoDLM spends more compute on harder tokens</a>: Diffusion language models can now allocate extra computation to difficult tokens, narrowing the quality gap with autoregressive models while staying parallel.</li><li><a href=\"https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/\">EmbeddingGemma 2 is an open multimodal embedder</a>: You can embed multiple kinds of content with an open, lightweight Google model.</li><li><a href=\"https://github.com/anthropics/claude-plugins-community\">Community plugin marketplace for Claude Code</a>: You can browse community plugins for Claude Code and Claude Cowork in a read-only mirror, and submit your own.</li></ol>",
-   "content_text": "Today brings a mix of open research and tooling, with a few concrete releases for builders. Several candidates are thin on detail, so many entries stay modest. OpenAI shares new math results with Lean proofs Kandinsky 6.0 Video generates lip-synced audio and video ALoDLM spends more compute on harder tokens EmbeddingGemma 2 is an open multimodal embedder Community plugin marketplace for Claude Code",
-   "date_published": "2026-10-20T15:31:57Z",
-   "tags": [
-    "coding",
-    "evals",
-    "infra",
-    "mcp",
-    "memory",
-    "models",
-    "multimodal",
-    "research"
-   ],
-   "_magpie": {
-    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-07.json",
     "backfilled": true,
     "capabilities": 108
    }

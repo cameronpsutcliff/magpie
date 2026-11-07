@@ -2,6 +2,79 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-11-07",
+   "headline": "Qwen3.8-Flash-Next-GGUF, Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips, Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF, and more",
+   "events": 238,
+   "sources": 530,
+   "enriched": false,
+   "top": [
+    {
+     "id": "42bc073f6f45",
+     "title": "unsloth/Qwen3.8-Flash-Next-GGUF",
+     "impact": 4,
+     "vendor": "Unsloth"
+    },
+    {
+     "id": "9ca6bcf83c79",
+     "title": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
+     "impact": 4,
+     "vendor": "Google"
+    },
+    {
+     "id": "e197a9917ccd",
+     "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
+     "impact": 5,
+     "vendor": "Open source"
+    },
+    {
+     "id": "888c06b8257b",
+     "title": "zed-industries/zed",
+     "impact": 4,
+     "vendor": "Open source"
+    },
+    {
+     "id": "e487fe51b82b",
+     "title": "cloudflare/security-audit-skill",
+     "impact": 4,
+     "vendor": "Cloudflare"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Anthropic",
+    "GitHub",
+    "Google",
+    "OpenAI",
+    "AWS"
+   ],
+   "topics": {
+    "agents": 74,
+    "models": 70,
+    "coding": 66,
+    "multimodal": 56,
+    "infra": 32,
+    "mcp": 32,
+    "evals": 23,
+    "local": 22,
+    "memory": 19,
+    "research": 13,
+    "reverse": 11,
+    "security": 8,
+    "robotics": 7
+   },
+   "kinds": {
+    "blog": 41,
+    "social": 38,
+    "newsletter": 31,
+    "model": 30,
+    "changelog": 29,
+    "repo": 28,
+    "space": 20,
+    "community": 17,
+    "news": 4
+   }
+  },
+  {
    "date": "2026-11-06",
    "headline": "Hunt Vulnerabilities, Post-Train Agents Cheaply, Train MoE Models, and More",
    "events": 409,
@@ -3495,5 +3568,5 @@
    }
   }
  ],
- "latest": "2026-11-06"
+ "latest": "2026-11-07"
 }
