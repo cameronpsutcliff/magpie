@@ -1,0 +1,239 @@
+{
+  "bot": "magpie-scout",
+  "prompt": "v6.1",
+  "ran_at": "2026-11-07T11:15:00Z",
+  "since": "2026-11-07T03:10:00Z",
+  "calls": 14,
+  "queries": 10,
+  "list_posts_read": 97,
+  "list_pages": 1,
+  "rechecks": 0,
+  "rechecks_note": "Skipped rechecks; thin overnight window, budget went to curated OR batches, discovery, security, and one deep read (Strata).",
+  "videos": 0,
+  "videos_note": "No deep-read clip over 60s; executor has no video-capable reader.",
+  "saves": {
+    "checked_archive": true,
+    "checked_api": true,
+    "new": 3,
+    "kept": 0
+  },
+  "saved_rejected": [
+    {
+      "url": "https://x.com/adekunleotway/status/2118162989022908564",
+      "reason": "Entertainment / film clip, not AI capability."
+    },
+    {
+      "url": "https://x.com/LNPANDY/status/2118694541717127566",
+      "reason": "NX2Apple game emulator release (Switch to Apple), not AI capability."
+    },
+    {
+      "url": "https://x.com/dalepartridge/status/2118858587309220346",
+      "reason": "Non-AI religious video, not AI capability."
+    }
+  ],
+  "discovery": [
+    {
+      "query": "(url:github.com OR url:huggingface.co OR url:arxiv.org) (release OR weights OR launched OR shipping OR announcing OR \"open source\" OR paper) (model OR agent OR LLM OR benchmark OR kernel OR compiler OR TTS OR ASR) -is:retweet lang:en",
+      "kept": 0,
+      "note": "Most hits were low-engagement or off-scope (Lean math crankery). Capability keeps came from list/curated instead (Strata, Woof, Amp, ZHA/LSA)."
+    },
+    {
+      "query": "(CVE OR RCE OR \"malicious package\" OR \"supply chain\" OR \"prompt injection\" OR GHSA OR \"filter bypass\" OR malware OR compromise) (AI OR LLM OR agent OR MCP OR docker OR npm OR PyPI OR litellm OR cursor OR antigravity OR hermes OR claude) -is:retweet lang:en",
+      "kept": 0,
+      "security_leads": 1,
+      "note": "Forwarded JetBrains Junie GitHub Action CVE-2026-123851 (prompt-injection filter bypass via HTML encoding, fixed in 1.6.4). Other hits were business/politics noise or generic advice on prior Claude/npm issues."
+    }
+  ],
+  "horizon": {
+    "checked": [
+      "block-dessa"
+    ],
+    "x_reads": 0,
+    "page_checked": true,
+    "triggered": [],
+    "last_result": "block.xyz/dessa still research-preview Conversation Model page with waitlist/demo language and safety-researcher early access; no HF weights, public API, or arXiv paper. Still watching."
+  },
+  "items": [
+    {
+      "title": "Strata 0.2.12 speeds local prompts on 12 GB GPUs, Strix Halo, and Mac",
+      "url": "https://x.com/coldniko/status/2118994582054559808",
+      "handle": "@coldniko",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "Strata 0.2.12 ships a tuned DFlash2 drafter and measured prompt speedups: about 3x on RTX 3060-class 12 GB cards (87 to 264 tok/s at 2K), up to about 2x on Strix Halo Windows and nearly 3x on Linux, plus roughly 10 to 14% on Mac M5 Max. It also fixes many Claude Desktop and Anthropic-style tool-call bugs. Known losses include JSON extraction on the 3060 (-18.9%) and some Strix Halo tool-call regressions.",
+      "kind": "tool",
+      "evidence": "measured",
+      "links": [
+        "https://github.com/Niko1221/Strata/releases/tag/v0.2.12"
+      ],
+      "vendor": "Strata / Niko Veit",
+      "posted_at": "2026-11-07T09:10:52Z",
+      "metrics": {
+        "likes": 356,
+        "reposts": 54,
+        "quotes": 14,
+        "replies": 32,
+        "views": 16315
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Release notes own the JSON and tool-call regressions; one replier could not reproduce a claimed longer-prompt SSD gain and was told their install mixed forks.",
+        "source": "https://x.com/GamerGB1988/status/2119011078315372927"
+      },
+      "reception": {
+        "sentiment": "positive",
+        "summary": "Local builders thank Niko and report updating; several ask about Strix Halo, SSD streaming, and Arc; one user flagged a link stub PR and another could not verify an SSD prompt claim until cleaning mixed forks.",
+        "tried": true,
+        "replies_read": 25
+      }
+    },
+    {
+      "title": "Underdog Woof is a 31 to 41 MB CPU TTS with measured hard-case word error",
+      "url": "https://x.com/victormustar/status/2119019129881440539",
+      "handle": "@victormustar",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "Conway Research released Underdog Woof, a tiny English text-to-speech model that runs on CPU with numpy only. The one-voice build is 31.7 MB; the two-voice Hugging Face build is 40.6 MB and reports 1.42% word error on Gradium TTS Hard Cases with about 13.8x real-time on one M5 Max CPU thread. License is non-commercial by default.",
+      "kind": "model",
+      "evidence": "measured",
+      "links": [
+        "https://huggingface.co/ConwayResearch/Underdog-Woof",
+        "https://underdog.ai/woof"
+      ],
+      "vendor": "Conway Research / Underdog",
+      "posted_at": "2026-11-07T10:48:24Z",
+      "metrics": {
+        "likes": 11,
+        "reposts": 0,
+        "quotes": 0,
+        "replies": 2,
+        "views": 500
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Vendor-run benchmark table; commercial use needs a paid license.",
+        "source": null
+      }
+    },
+    {
+      "title": "Amp ships an experimental native Windows app",
+      "url": "https://x.com/sqs/status/2119006263443124697",
+      "handle": "@sqs",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "Sourcegraph Amp opened an experimental Windows desktop app for bug reports, with the same early-access pattern used for Android. Download is at ampcode.com/app?windows; Linux remains WIP via community packages.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://ampcode.com/app?windows"
+      ],
+      "vendor": "Sourcegraph / Amp",
+      "posted_at": "2026-11-07T09:57:17Z",
+      "metrics": {
+        "likes": 33,
+        "reposts": 4,
+        "quotes": 1,
+        "replies": 3,
+        "views": 1271
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Zyphra Hierarchical Attention compresses the KV-cache into a searchable tree",
+      "url": "https://x.com/askalphaxiv/status/2119015504363106653",
+      "handle": "@askalphaxiv",
+      "group": "research",
+      "origin": "discovery",
+      "summary": "Zyphra's ZHA paper organizes the KV-cache as a tree of compressed summaries so queries only attend to a small fraction of tokens. With about 1B tokens of distillation it keeps most full-attention quality up to 35B parameters, scoring 93.3% vs 96% on RULER at 256K while attending to about 1 to 6% of the cache.",
+      "kind": "paper",
+      "evidence": "measured",
+      "links": [
+        "https://www.alphaxiv.org/abs/2610.42112"
+      ],
+      "vendor": "Zyphra",
+      "posted_at": "2026-11-07T10:34:00Z",
+      "metrics": {
+        "likes": 19,
+        "reposts": 1,
+        "quotes": 0,
+        "replies": 1,
+        "views": 1190
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Surfaced via alphaXiv aggregator; no lab X original found in-window.",
+        "source": null
+      }
+    },
+    {
+      "title": "Latent Sparse Attention claims large prefill speedups at 10M-token context",
+      "url": "https://x.com/askalphaxiv/status/2118940099362557982",
+      "handle": "@askalphaxiv",
+      "group": "research",
+      "origin": "discovery",
+      "summary": "The LSA paper clusters similar tokens into a searchable hierarchy so sparse attention can find relevant tokens without scanning the whole context. At 10M tokens it reports one attention layer 22.7x faster in prefill and 4.6x faster in decode than GLM-5.3-Flash's sparse attention, at similar accuracy.",
+      "kind": "paper",
+      "evidence": "measured",
+      "links": [
+        "https://alphaxiv.org/abs/2610.42147"
+      ],
+      "vendor": null,
+      "posted_at": "2026-11-07T05:34:22Z",
+      "metrics": {
+        "likes": 79,
+        "reposts": 15,
+        "quotes": 1,
+        "replies": 3,
+        "views": 3936
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Aggregator summary only; primary lab account not identified in-window.",
+        "source": null
+      }
+    }
+  ],
+  "security_forwarded": [
+    {
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-123851",
+      "matched": "always_forward: agent tooling / GitHub Actions supply chain",
+      "title": "JetBrains Junie GitHub Action CVE-2026-123851",
+      "why": "Before 1.6.4, Junie's prompt-injection protection could be bypassed with HTML-encoded characters (CVSS 5.4). CI agents that read issues/PRs are exposed until pinned to 1.6.4+.",
+      "stack_hit": false,
+      "x_url": "https://x.com/webtkdev/status/2119016259014852926"
+    }
+  ],
+  "security_na": [
+    {
+      "url": "https://x.com/POSTURE_CYBER/status/2119022734751768711",
+      "reason": "Generic remediation advice about ~/.claude and MCP configs; no new advisory or package."
+    },
+    {
+      "url": "https://x.com/PocoOscar/status/2119016721428132136",
+      "reason": "General npm postinstall hygiene tip; no named malicious package."
+    },
+    {
+      "url": "https://x.com/Dave_Joe_9377/status/2119024335213989923",
+      "reason": "CVE-2023-0001 Cortex XDR content; not AI stack and old CVE year spam."
+    }
+  ]
+}
