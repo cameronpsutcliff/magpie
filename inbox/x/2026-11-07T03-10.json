@@ -1,0 +1,239 @@
+{
+  "bot": "magpie-scout",
+  "prompt": "v6.1",
+  "ran_at": "2026-11-07T03:10:00Z",
+  "since": "2026-11-06T23:15:00Z",
+  "calls": 20,
+  "queries": 12,
+  "list_posts_read": 97,
+  "list_pages": 1,
+  "rechecks": 0,
+  "rechecks_note": "Skipped rechecks; budget went to curated OR batches, discovery, hydrate, and two deep reads.",
+  "videos": 0,
+  "videos_note": "Claude Code Projects clip 31.9s under video_min_seconds 60; no other deep-read video; no video-capable reader.",
+  "saves": {
+    "checked_archive": true,
+    "checked_api": true,
+    "new": 0,
+    "kept": 0
+  },
+  "saved_rejected": [],
+  "discovery": [
+    {
+      "query": "(url:github.com OR url:huggingface.co OR url:arxiv.org) (release OR weights OR launched OR shipping OR announcing OR \"open source\" OR paper) (model OR agent OR LLM OR benchmark OR kernel OR compiler) -is:retweet lang:en",
+      "kept": 1,
+      "note": "Kept OpenAI Agents SDK ScriptedResponses; most other hits were low-engagement skills packs or papers already outside Magpie bar."
+    },
+    {
+      "query": "(CVE OR RCE OR \"malicious package\" OR \"supply chain\" OR \"prompt injection\" OR GHSA OR \"filter bypass\" OR malware) (AI OR LLM OR agent OR MCP OR docker OR npm OR PyPI OR litellm OR cursor OR antigravity OR hermes) -is:retweet lang:en",
+      "kept": 0,
+      "security_leads": 2,
+      "note": "Forwarded asca agent supply-chain auditor update and Claude Dispatch browser-extension desktop-agent design issue; other hits were business/politics noise or research-only."
+    }
+  ],
+  "horizon": {
+    "checked": [
+      "block-dessa"
+    ],
+    "x_reads": 0,
+    "page_checked": true,
+    "triggered": [],
+    "last_result": "block.xyz/dessa still research-preview Conversation Model page (You learned to talk by listening. So did Dessa); waitlist/demo language, no HF weights, public API, or arXiv paper. Still watching."
+  },
+  "items": [
+    {
+      "title": "OpenCode Browse lets agents drive your real Chromium browser with logins",
+      "url": "https://x.com/opencode/status/2118895128152621153",
+      "handle": "@opencode",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "OpenCode shipped Browse, an MCP server plus Chromium extension so coding agents can use your real browser tabs, logins and extensions instead of a clean headless session. Sensitive steps such as login, 2FA and payment hand the tab back to you; it works with OpenCode and other MCP clients including Claude Code and Codex.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://opencode.ai/product/browse"
+      ],
+      "vendor": "OpenCode / Anomaly",
+      "posted_at": "2026-11-07T02:35:40Z",
+      "metrics": {
+        "likes": 521,
+        "reposts": 34,
+        "quotes": 14,
+        "replies": 30,
+        "views": 12995
+      },
+      "confirmed_by": [
+        "@thdxr"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Repliers warn that sharing a logged-in profile expands blast radius versus headless Browser MCP or Playwright, and ask how it differs from chrome MCP.",
+        "source": null
+      },
+      "reception": {
+        "sentiment": "mixed",
+        "summary": "Builders welcome native real-browser control after workarounds; several insist on a dedicated profile and ask whether agents must confirm before acting in logged-in tabs.",
+        "tried": false,
+        "replies_read": 22
+      }
+    },
+    {
+      "title": "Claude Code Projects cover much of the Conductor multi-repo workflow",
+      "url": "https://x.com/lydiahallie/status/2118863157569737109",
+      "handle": "@lydiahallie",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "Anthropic's Lydia Hallie says Claude Code Projects can pick up pushed branches after you add a repo, covering much of the Conductor workflow for Pro, Max and Ultra users. Multiplayer is still missing; access is via waitlist for those tiers.",
+      "kind": "feature",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "Anthropic",
+      "posted_at": "2026-11-06T23:28:00Z",
+      "metrics": {
+        "likes": 362,
+        "reposts": 10,
+        "quotes": 3,
+        "replies": 29,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Feature is waitlisted for Pro/Max/Ultra and explicitly lacks Conductor's multiplayer; demo clip only, no docs link in the post.",
+        "source": null
+      },
+      "reception": {
+        "sentiment": "positive",
+        "summary": "Replies cheer the update and ask about Duet access; little first-hand try-it signal yet beyond enthusiasm.",
+        "tried": false,
+        "replies_read": 5
+      }
+    },
+    {
+      "title": "Controlled Voice Arena: TTS ranks flip between US and UK English accents",
+      "url": "https://x.com/ArtificialAnlys/status/2118871344633045072",
+      "handle": "@ArtificialAnlys",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "Artificial Analysis reports that with only the accent changed, Qwen-Audio-3.1-TTS-Plus leads in US English while HeyGen Voice leads in UK English and on the overall Controlled Voice Arena board. Twelve of 49 models show statistically significant US/UK gaps.",
+      "kind": "eval",
+      "evidence": "measured",
+      "links": [],
+      "vendor": "Artificial Analysis",
+      "posted_at": "2026-11-07T00:59:00Z",
+      "metrics": {
+        "likes": 25,
+        "reposts": 1,
+        "quotes": 5,
+        "replies": 0,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "EXL3 quants of Ricursive Ripple-65B hit 99.3% top-1 vs BF16 at 45 GB",
+      "url": "https://x.com/ViC305/status/2118899350072095016",
+      "handle": "@ViC305",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "Cruz released Sage-REX L3 EXL3 packs of Ricursive Intelligence's Ripple-65B dense model: a 5.41 bpw 45.2 GB pack with 99.34% top-1 agreement versus BF16 and up to 64.8 tok/s on an RTX PRO 6000 Blackwell, plus a 22.3 GB pack at 96.49% agreement. Gives local runners two memory budgets for the same 65B checkpoint.",
+      "kind": "model",
+      "evidence": "measured",
+      "links": [],
+      "vendor": "ViC305 / Ricursive Intelligence",
+      "posted_at": "2026-11-07T02:52:26Z",
+      "metrics": {
+        "likes": 5,
+        "reposts": 1,
+        "quotes": 1,
+        "replies": 0,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Low engagement so far; hype-styled release post, measurements are author-run.",
+        "source": null
+      }
+    },
+    {
+      "title": "OpenAI Agents SDK alpha.6 adds ScriptedResponses for offline tool tests",
+      "url": "https://x.com/LRosamarina/status/2118893703045808158",
+      "handle": "@LRosamarina",
+      "group": "devtools",
+      "origin": "discovery",
+      "summary": "OpenAI Agents Python SDK v0.24.0-alpha.6 adds ScriptedResponses so builders can exercise SDK sessions and Python tools with a fixed tool-call to result to final-answer path without a live model or API key. Keeps harness tests separate from live-model evals.",
+      "kind": "tool",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/openai/openai-agents-python/releases/tag/v0.24.0-alpha.6"
+      ],
+      "vendor": "OpenAI",
+      "posted_at": "2026-11-07T02:30:00Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "quotes": 0,
+        "replies": 0,
+        "views": 0
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Surfaced via a low-reach discovery post; primary link is the GitHub release tag.",
+        "source": null
+      }
+    }
+  ],
+  "security_forwarded": [
+    {
+      "url": "https://github.com/borabaysal/Agent_Supply_Chain_Auditor",
+      "matched": "always_forward agent tooling + LiteLLM match_terms (pth startup hooks) + Claude Code/Codex",
+      "title": "asca update: IDE/MCP inventory, Codex/Claude Code config hijacks, LiteLLM-style .pth hooks",
+      "summary": "Open-source Agent Supply Chain Auditor adds checks for IDE extension and MCP inventory tamper detection, Codex/Claude Code config hijacks, LiteLLM-style .pth startup hooks, and macOS daily jobs. Stack-relevant for Claude Code, Codex, LiteLLM, and agent tooling hygiene.",
+      "x_url": "https://x.com/BoraBaysal/status/2118851344090214512",
+      "stack_hit": true
+    },
+    {
+      "url": "https://x.com/botnewsnetwork/status/2118895251024961809",
+      "matched": "stack.json Claude Code + always_forward agent tooling",
+      "title": "Claude Dispatch browser extension reported to enable desktop-agent command execution; Anthropic retiring feature",
+      "summary": "Aggregator claims a Claude browser-extension Dispatch path could turn a logged-in Claude session into command execution on the desktop agent, and that Anthropic is retiring the feature rather than redesigning access. Primary Anthropic advisory not linked in-window; needs Bouncer verification.",
+      "x_url": "https://x.com/botnewsnetwork/status/2118895251024961809",
+      "stack_hit": true
+    }
+  ],
+  "security_na": [
+    {
+      "url": "https://x.com/ai_neuralwire/status/2118898112521732219",
+      "reason": "Tencent/NTU agent-generated-code exploitability benchmark (arxiv claim); research eval, not a fleet CVE or package compromise."
+    },
+    {
+      "url": "https://x.com/LJL005/status/2118894063239975132",
+      "reason": "Replit microVM sandbox engineering blog dated Nov 4 (before since); not a new CVE against fleet Docker."
+    },
+    {
+      "url": "https://x.com/kennywu411/status/2118878432583200860",
+      "reason": "honestly Claude Code plugin is a command-blocking skill release, not a vulnerability advisory; skipped Magpie (self-promo/low reach) and not a security lead."
+    },
+    {
+      "url": "https://frontier.replit.com/sandbox-engine-microvms-part-1/",
+      "reason": "Same Replit sandbox writeup; informational, no actionable fleet vuln."
+    }
+  ]
+}

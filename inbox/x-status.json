@@ -1,21 +1,21 @@
 {
-  "updated_at": "2026-11-06T23:15:00Z",
+  "updated_at": "2026-11-07T03:10:00Z",
   "job": "sweep",
   "prompt": "v6.1",
-  "calls_used_today": 96,
+  "calls_used_today": 116,
   "notes_via_api": false,
   "last_sweep": {
-    "ran_at": "2026-11-06T23:15:00Z",
-    "items": 12,
-    "queries": 11,
-    "deep_reads": 3,
+    "ran_at": "2026-11-07T03:10:00Z",
+    "items": 5,
+    "queries": 12,
+    "deep_reads": 2,
     "rechecks": 0,
-    "flagged": 9,
+    "flagged": 4,
     "saved_in": 0,
     "saved_kept": 0,
     "videos": 0,
     "security_forwarded": 2,
-    "list_posts_read": 91,
+    "list_posts_read": 97,
     "list_pages": 1
   },
   "roster": {
@@ -236,7 +236,8 @@
     "Sweep 19:15Z: curated from:bot OR floods the first page of the 4h window; a nobot query is needed for usable coverage.",
     "Sweep 19:15Z: Community Notes still unavailable via API (notes_via_api false); liking_users probe on DeepMind post returned empty.",
     "Sweep 23:15Z: follow_mode is browser but this executor has no browser; follow candidates (if any) are reported to parent only. No account newly crossed the 3-qualifying-posts bar this window beyond already-followed names.",
-    "Sweep 23:15Z: Dessa horizon used page fetch only (0 X reads); still waitlist/demo."
+    "Sweep 23:15Z: Dessa horizon used page fetch only (0 X reads); still waitlist/demo.",
+    "Sweep 03:10Z: Friday night window; labs curated OR returned 0. List covered since in 1 page (97 posts, 23 since). No new owner saves. Dessa page-only check (0 X reads). Executor has no browser; no follows. Inkling 2 Small circulating via aggregators but no @thinkymachines post in-window (announcement before since). Cooldown/FMF not re-forwarded."
   ],
   "errors": [],
   "follows_today": 0,
