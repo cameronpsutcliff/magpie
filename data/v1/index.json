@@ -3,75 +3,76 @@
  "days": [
   {
    "date": "2026-11-07",
-   "headline": "Qwen3.8-Flash-Next-GGUF, Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips, Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF, and more",
-   "events": 238,
-   "sources": 530,
-   "enriched": false,
+   "headline": "Drive your real browser, run Claude Code remotely, split GPUs, and more",
+   "events": 352,
+   "sources": 559,
+   "enriched": true,
    "top": [
     {
-     "id": "42bc073f6f45",
-     "title": "unsloth/Qwen3.8-Flash-Next-GGUF",
+     "id": "8de3628ca09c",
+     "title": "SageMaker Inference splits GPUs with NVIDIA MIG",
      "impact": 4,
-     "vendor": "Unsloth"
+     "vendor": "AWS"
     },
     {
-     "id": "9ca6bcf83c79",
-     "title": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
+     "id": "02d0f9ac3aca",
+     "title": "Claude Code runs remotely on Bedrock AgentCore",
      "impact": 4,
-     "vendor": "Google"
+     "vendor": "AWS"
     },
     {
-     "id": "e197a9917ccd",
-     "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
-     "impact": 5,
-     "vendor": "Open source"
-    },
-    {
-     "id": "888c06b8257b",
-     "title": "zed-industries/zed",
+     "id": "fa0500f0712d",
+     "title": "Knowledge Catalog grounds agents in semantic layers",
      "impact": 4,
-     "vendor": "Open source"
+     "vendor": "Google Cloud"
     },
     {
      "id": "e487fe51b82b",
-     "title": "cloudflare/security-audit-skill",
-     "impact": 4,
+     "title": "Cloudflare security-audit skill keeps climbing on GitHub",
+     "impact": 2,
      "vendor": "Cloudflare"
+    },
+    {
+     "id": "9ca6bcf83c79",
+     "title": "Gemini Omni 1.2 Flash draws Hacker News discussion",
+     "impact": 2,
+     "vendor": "Google"
     }
    ],
    "vendors": [
     "Open source",
     "Anthropic",
-    "GitHub",
-    "Google",
     "OpenAI",
+    "Google",
+    "GitHub",
     "AWS"
    ],
    "topics": {
-    "agents": 74,
-    "models": 70,
-    "coding": 66,
-    "multimodal": 56,
-    "infra": 32,
-    "mcp": 32,
-    "evals": 23,
-    "local": 22,
-    "memory": 19,
-    "research": 13,
-    "reverse": 11,
-    "security": 8,
-    "robotics": 7
+    "agents": 103,
+    "coding": 94,
+    "models": 94,
+    "multimodal": 67,
+    "infra": 41,
+    "mcp": 35,
+    "evals": 35,
+    "local": 28,
+    "memory": 28,
+    "research": 17,
+    "reverse": 13,
+    "security": 12,
+    "robotics": 6
    },
    "kinds": {
-    "blog": 41,
-    "social": 38,
-    "newsletter": 31,
+    "video": 86,
+    "social": 72,
+    "blog": 39,
+    "newsletter": 32,
     "model": 30,
     "changelog": 29,
-    "repo": 28,
+    "repo": 26,
     "space": 20,
-    "community": 17,
-    "news": 4
+    "community": 15,
+    "news": 3
    }
   },
   {
