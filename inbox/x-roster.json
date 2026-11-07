@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06T10:56:00Z",
+  "updated_at": "2026-11-07T10:35:00Z",
   "accounts": [
     {
       "handle": "@thsottiaux",
@@ -33,7 +33,7 @@
         "https://x.com/OpenBMB/status/2109694573408866351",
         "https://x.com/OpenBMB/status/2110364065822646570"
       ],
-      "last_qualifying_post": "2026-10-30",
+      "last_qualifying_post": "2026-11-05",
       "retired_reason": null,
       "x_user_id": "1496119294844825600",
       "on_list": true,
@@ -71,7 +71,7 @@
         "https://x.com/fal/status/2112251022047412492",
         "https://x.com/fal/status/2110795863861674073"
       ],
-      "last_qualifying_post": "2026-10-30",
+      "last_qualifying_post": "2026-11-05",
       "retired_reason": null,
       "x_user_id": "39622874",
       "on_list": true,
@@ -146,7 +146,7 @@
         "https://x.com/trycua/status/2112228154651881479",
         "https://x.com/trycua/status/2112589741879328979"
       ],
-      "last_qualifying_post": "2026-10-30",
+      "last_qualifying_post": "2026-11-06",
       "retired_reason": null,
       "x_user_id": "1883205292596359168",
       "on_list": true,
@@ -183,7 +183,7 @@
         "https://x.com/Aleph__Alpha/status/2110008600936800588",
         "https://x.com/Aleph__Alpha/status/2112547676868817027"
       ],
-      "last_qualifying_post": "2026-10-29",
+      "last_qualifying_post": "2026-11-04",
       "retired_reason": null,
       "x_user_id": "1073704329528438785",
       "on_list": true,
@@ -275,7 +275,7 @@
         "https://x.com/ElevenLabs/status/2112550782063247521",
         "https://x.com/ElevenLabs/status/2110759737583345706"
       ],
-      "last_qualifying_post": "2026-10-29",
+      "last_qualifying_post": "2026-11-04",
       "retired_reason": null,
       "x_user_id": "1478679005788311552",
       "on_list": true,
@@ -312,7 +312,7 @@
         "https://x.com/reflection_ai/status/2107186849370247235",
         "https://x.com/reflection_ai/status/2111079965529968798"
       ],
-      "last_qualifying_post": "2026-10-21",
+      "last_qualifying_post": "2026-11-06",
       "retired_reason": null,
       "x_user_id": "1800594921704898560",
       "on_list": true
@@ -367,7 +367,7 @@
         "https://x.com/haoailab/status/2112305087225983427",
         "https://x.com/haoailab/status/2110904952839372895"
       ],
-      "last_qualifying_post": "2026-10-30",
+      "last_qualifying_post": "2026-11-03",
       "retired_reason": null,
       "x_user_id": "1768529398448492544",
       "on_list": true,
@@ -436,17 +436,18 @@
       "affiliation": "WeirdML",
       "why": "Runs the WeirdML benchmark and posts per-model scores with cost and token notes for new frontier and open models soon after release.",
       "signal_to_noise": 4,
-      "status": "trial",
+      "status": "active",
       "added_on": "2026-10-21",
       "evidence": [
         "https://x.com/htihle/status/2112517036261695823",
         "https://x.com/htihle/status/2111782267345682840",
         "https://x.com/htihle/status/2110288604605882405"
       ],
-      "last_qualifying_post": "2026-10-28",
+      "last_qualifying_post": "2026-11-06",
       "retired_reason": null,
       "x_user_id": "229533071",
-      "on_list": true
+      "on_list": true,
+      "promoted_on": "2026-11-07"
     },
     {
       "handle": "@datalabto",
@@ -455,17 +456,18 @@
       "affiliation": "Datalab",
       "why": "Document intelligence (Chandra OCR, Marker): API releases with speed and accuracy numbers and the open OmniExtractBench scoring tool.",
       "signal_to_noise": 3,
-      "status": "trial",
+      "status": "active",
       "added_on": "2026-10-21",
       "evidence": [
         "https://x.com/datalabto/status/2110822718341845484",
         "https://x.com/datalabto/status/2112664733522211160",
         "https://x.com/datalabto/status/2102852413363494978"
       ],
-      "last_qualifying_post": "2026-10-26",
+      "last_qualifying_post": "2026-11-06",
       "retired_reason": null,
       "x_user_id": "1889030825879945216",
-      "on_list": true
+      "on_list": true,
+      "promoted_on": "2026-11-07"
     },
     {
       "handle": "@NaceAI",
@@ -481,7 +483,7 @@
         "https://x.com/NaceAI/status/2112642730228944958",
         "https://x.com/NaceAI/status/2112175183448461683"
       ],
-      "last_qualifying_post": "2026-11-02",
+      "last_qualifying_post": "2026-11-06",
       "retired_reason": null,
       "x_user_id": "1904210068704481280",
       "on_list": true,
@@ -521,7 +523,7 @@
         "https://x.com/turbopuffer/status/2112569613804580898",
         "https://x.com/turbopuffer/status/2113042657471836354"
       ],
-      "last_qualifying_post": "2026-11-03",
+      "last_qualifying_post": "2026-11-06",
       "retired_reason": null,
       "x_user_id": "1709608373275017219",
       "on_list": true,
@@ -599,7 +601,7 @@
         "https://x.com/SparkLLM/status/2111045024322642365",
         "https://x.com/SparkLLM/status/2110692981665579293"
       ],
-      "last_qualifying_post": "2026-10-31",
+      "last_qualifying_post": "2026-11-06",
       "retired_reason": null,
       "x_user_id": "2090418458085433344",
       "on_list": true,
@@ -704,7 +706,7 @@
       "name": "Bober_smart",
       "group": "devtools",
       "affiliation": null,
-      "why": "Owner-requested watch (2026-10-23). High-engagement AI workflow/tutorial posts (Claude Code, agent swarms, second-brain setups). Mostly promo-style quote of own guides rather than first-hand lab artifacts \u2014 trial for taste match; retire if noise.",
+      "why": "Owner-requested watch (2026-10-23). High-engagement AI workflow/tutorial posts (Claude Code, agent swarms, second-brain setups). Mostly promo-style quote of own guides rather than first-hand lab artifacts — trial for taste match; retire if noise.",
       "signal_to_noise": 2,
       "status": "retired",
       "added_on": "2026-10-23",
@@ -751,7 +753,7 @@
       "evidence": [
         "https://x.com/trq212/status/2113844051938054167"
       ],
-      "last_qualifying_post": null,
+      "last_qualifying_post": "2026-11-04",
       "retired_reason": null,
       "owner_requested": true,
       "x_user_id": "35432643",
@@ -764,16 +766,17 @@
       "affiliation": "Anthropic",
       "why": "Owner-requested watch (2026-10-24), recommended in Thariq's departure post. Claude Code / ClaudeDevs at Anthropic; first-hand feature explainers.",
       "signal_to_noise": 3,
-      "status": "trial",
+      "status": "active",
       "added_on": "2026-10-24",
       "evidence": [
         "https://x.com/trq212/status/2113844051938054167"
       ],
-      "last_qualifying_post": "2026-10-28",
+      "last_qualifying_post": "2026-11-06",
       "retired_reason": null,
       "owner_requested": true,
       "x_user_id": "879696238953865217",
-      "on_list": true
+      "on_list": true,
+      "promoted_on": "2026-11-07"
     },
     {
       "handle": "@_catwu",
@@ -922,7 +925,7 @@
         "https://x.com/LeRobotHF/status/2111427005094981643",
         "https://x.com/LeRobotHF/status/2110305869267104141"
       ],
-      "last_qualifying_post": "2026-11-02",
+      "last_qualifying_post": "2026-11-06",
       "retired_reason": null,
       "x_user_id": "1811128301764648960",
       "on_list": true
@@ -977,7 +980,7 @@
         "https://x.com/JoshuaSWarren/status/2113767671615602763",
         "https://x.com/JoshuaSWarren/status/2113619227278037430"
       ],
-      "last_qualifying_post": "2026-11-03",
+      "last_qualifying_post": "2026-11-05",
       "retired_reason": null,
       "x_user_id": "293383320",
       "on_list": true
@@ -1036,7 +1039,7 @@
         "https://x.com/ViC305/status/2113761570304188533",
         "https://x.com/ViC305/status/2111523015234384166"
       ],
-      "last_qualifying_post": "2026-10-29",
+      "last_qualifying_post": "2026-11-07",
       "retired_reason": null,
       "x_user_id": "45953078",
       "on_list": true
@@ -1075,7 +1078,7 @@
         "https://x.com/plotarmordev/status/2114874525435507169",
         "https://x.com/plotarmordev/status/2114644076029227206"
       ],
-      "last_qualifying_post": "2026-11-02",
+      "last_qualifying_post": "2026-11-05",
       "retired_reason": null,
       "x_user_id": "1513438573747486721",
       "on_list": true
@@ -1094,7 +1097,7 @@
         "https://x.com/XunzhuoLiu/status/2112343603209261092",
         "https://x.com/XunzhuoLiu/status/2108864432394903806"
       ],
-      "last_qualifying_post": "2026-10-28",
+      "last_qualifying_post": "2026-11-05",
       "retired_reason": null,
       "x_user_id": "2008097400272084993",
       "on_list": true
@@ -1113,7 +1116,7 @@
         "https://x.com/googlegemma/status/2114757896563253305",
         "https://x.com/googlegemma/status/2112657975789949376"
       ],
-      "last_qualifying_post": "2026-10-30",
+      "last_qualifying_post": "2026-11-05",
       "retired_reason": null,
       "x_user_id": "1908326331609468928",
       "on_list": true
@@ -1148,7 +1151,7 @@
       "evidence": [
         "https://x.com/NVIDIAAI/status/2113657112408785153"
       ],
-      "last_qualifying_post": "2026-11-02",
+      "last_qualifying_post": "2026-11-06",
       "retired_reason": null,
       "owner_requested": true,
       "x_user_id": "740238495952736256",
@@ -1208,7 +1211,7 @@
         "https://x.com/EpochAIResearch/status/2113703991767105607",
         "https://x.com/EpochAIResearch/status/2115186242459767006"
       ],
-      "last_qualifying_post": "2026-10-29",
+      "last_qualifying_post": "2026-11-04",
       "retired_reason": null,
       "x_user_id": "1529761561170124800",
       "on_list": true
@@ -1227,7 +1230,7 @@
         "https://x.com/victormustar/status/2115531118292131887",
         "https://x.com/victormustar/status/2114432158647685127"
       ],
-      "last_qualifying_post": "2026-11-01",
+      "last_qualifying_post": "2026-11-06",
       "retired_reason": null,
       "x_user_id": "784830007",
       "on_list": true
@@ -1266,7 +1269,7 @@
         "https://x.com/coldniko/status/2115407569049272430",
         "https://x.com/coldniko/status/2116442821368713606"
       ],
-      "last_qualifying_post": "2026-11-02",
+      "last_qualifying_post": "2026-11-05",
       "retired_reason": null,
       "x_user_id": "200932008",
       "on_list": true
@@ -1285,7 +1288,7 @@
         "https://x.com/robocurve/status/2115932869935993236",
         "https://x.com/robocurve/status/2116704239003349503"
       ],
-      "last_qualifying_post": "2026-11-01",
+      "last_qualifying_post": "2026-11-06",
       "retired_reason": null,
       "x_user_id": "2072443693165166592",
       "on_list": true
@@ -1304,7 +1307,7 @@
         "https://x.com/0xMarsel/status/2116875004361003396",
         "https://x.com/0xMarsel/status/2117042571717361929"
       ],
-      "last_qualifying_post": "2026-11-01",
+      "last_qualifying_post": "2026-11-03",
       "retired_reason": null,
       "x_user_id": "1142166991874265090",
       "on_list": true
@@ -1323,7 +1326,7 @@
         "https://x.com/voicearena_ai/status/2113663083940020388",
         "https://x.com/voicearena_ai/status/2113306889035690011"
       ],
-      "last_qualifying_post": "2026-10-30",
+      "last_qualifying_post": "2026-11-05",
       "retired_reason": null,
       "x_user_id": "2051457164250640384",
       "on_list": true
@@ -1341,7 +1344,7 @@
         "https://x.com/ZyphraAI/status/2117377426242367669",
         "https://x.com/ZyphraAI/status/2112596055531679810"
       ],
-      "last_qualifying_post": "2026-11-02",
+      "last_qualifying_post": "2026-11-06",
       "retired_reason": null,
       "source": "roster_review",
       "x_user_id": "1377338130785828867",
@@ -1389,7 +1392,7 @@
       "handle": "@maksym_andr",
       "name": "Maksym Andriushchenko",
       "group": "research",
-      "affiliation": "T\u00fcbingen / Exponential (expsec.ai)",
+      "affiliation": "Tübingen / Exponential (expsec.ai)",
       "why": "Agent eval author: AgentTime time-awareness benchmark update, compaction-on-long-horizon-agents paper, PostTrainBench and Skill-Inject results cited in Meta system card; hiring posts ~3 of 18, under the 1-in-5 bar.",
       "signal_to_noise": 4,
       "status": "trial",
@@ -1410,7 +1413,7 @@
       "name": "Ningyu Zhang",
       "group": "research",
       "affiliation": "ZJUNLP, Zhejiang University",
-      "why": "Lab lead posting papers with code and data: \u0394\u03c4-Bench moving-frontier agent benchmark (paper, code, dataset), experiential-learning agents, LightRSI long-horizon session work.",
+      "why": "Lab lead posting papers with code and data: Δτ-Bench moving-frontier agent benchmark (paper, code, dataset), experiential-learning agents, LightRSI long-horizon session work.",
       "signal_to_noise": 3,
       "status": "trial",
       "added_on": "2026-11-03",
@@ -1578,6 +1581,120 @@
       "last_qualifying_post": "2026-11-04",
       "retired_reason": null,
       "x_user_id": "1983912291038064641",
+      "on_list": true
+    },
+    {
+      "handle": "@Marcus_J_W",
+      "name": "Marcus Williams",
+      "group": "research",
+      "affiliation": "OpenAI",
+      "why": "OpenAI monitoring researcher posting first-hand misalignment disclosures with methods, numbers and alignment.openai.com report links (Astra covert underperformance, grader prompt-injection, monitoring disable cases).",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-11-07",
+      "evidence": [
+        "https://x.com/Marcus_J_W/status/2118093146483810386",
+        "https://x.com/Marcus_J_W/status/2118530195472986465",
+        "https://x.com/Marcus_J_W/status/2112695138199966084"
+      ],
+      "last_qualifying_post": "2026-11-06",
+      "retired_reason": null,
+      "x_user_id": "1853742243682582528",
+      "on_list": true
+    },
+    {
+      "handle": "@juberti",
+      "name": "Justin Uberti",
+      "group": "devtools",
+      "affiliation": "OpenAI",
+      "why": "Head of Realtime AI at OpenAI; first-hand GPT-Live telephony GA, Decisions API, GPT-Live-1.1 and IETF WARP/WebRTC drafts with product and protocol artifacts.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-11-07",
+      "evidence": [
+        "https://x.com/juberti/status/2118101340186698028",
+        "https://x.com/juberti/status/2110905525588336989",
+        "https://x.com/juberti/status/2110811122672795951",
+        "https://x.com/juberti/status/2118113420964999322"
+      ],
+      "last_qualifying_post": "2026-11-04",
+      "retired_reason": null,
+      "x_user_id": "774512",
+      "on_list": true
+    },
+    {
+      "handle": "@james_y_zou",
+      "name": "James Zou",
+      "group": "research",
+      "affiliation": "Stanford",
+      "why": "Stanford professor shipping AI-for-science and agent research with code: Paperclip Datasets, CORAL (Nature Genet + code), HybridAgent, OSVerify, After42, Collaborative Intelligence Benchmark.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-11-07",
+      "evidence": [
+        "https://x.com/james_y_zou/status/2117659238873120969",
+        "https://x.com/james_y_zou/status/2118749033762279716",
+        "https://x.com/james_y_zou/status/2110428682439598486",
+        "https://x.com/james_y_zou/status/2117310373661700604"
+      ],
+      "last_qualifying_post": "2026-11-06",
+      "retired_reason": null,
+      "x_user_id": "762359343656361984",
+      "on_list": true
+    },
+    {
+      "handle": "@RoboColosseum",
+      "name": "RoboColosseum",
+      "group": "applied",
+      "affiliation": "Hugging Face / BitRobot / NUS MAGIC / EAIC",
+      "why": "Official open real-world robot eval initiative: measured in-the-wild results across VLAs and frontier agents, open rollouts on Hugging Face, paper and leaderboard.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-11-07",
+      "evidence": [
+        "https://x.com/RoboColosseum/status/2117982605274710483",
+        "https://x.com/RoboColosseum/status/2118705234340110467"
+      ],
+      "last_qualifying_post": "2026-11-06",
+      "retired_reason": null,
+      "x_user_id": "2108009743390527488",
+      "on_list": true
+    },
+    {
+      "handle": "@sean_n_wu",
+      "name": "Sean Wu",
+      "group": "research",
+      "affiliation": "Stanford",
+      "why": "First-hand Collaborative Intelligence Benchmark author: 18 models scored as teammates on 240 tasks with public paper, code and measured pass rates.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-11-07",
+      "evidence": [
+        "https://x.com/sean_n_wu/status/2118038063733408069",
+        "https://x.com/sean_n_wu/status/2112212177100612066"
+      ],
+      "last_qualifying_post": "2026-11-04",
+      "retired_reason": null,
+      "x_user_id": "1923219002668847104",
+      "on_list": true
+    },
+    {
+      "handle": "@yining_hong",
+      "name": "Yining Hong",
+      "group": "research",
+      "affiliation": "Stanford",
+      "why": "Robotics researcher with measured papers and artifacts: DISCO (CoRL best-paper finalist), FACT force foundation model, T2-z test-time latent optimization with project/code/arxiv.",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-11-07",
+      "evidence": [
+        "https://x.com/yining_hong/status/2117823331642810621",
+        "https://x.com/yining_hong/status/2115579591347847464",
+        "https://x.com/yining_hong/status/2111244176021164472"
+      ],
+      "last_qualifying_post": "2026-11-04",
+      "retired_reason": null,
+      "x_user_id": "1195085349485023232",
       "on_list": true
     }
   ],
@@ -2008,6 +2125,43 @@
       "why": "Jev Typesafe app-event triggers and agent-browser launches; owner saved; no Magpie source yet.",
       "seen_via": [
         "@strawberry"
+      ]
+    },
+    {
+      "kind": "feed",
+      "name": "OpenAI Alignment misalignment reports",
+      "url": "https://alignment.openai.com/misalignment-reports/",
+      "why": "Official OpenAI misalignment disclosures with methods and incident dates; Magpie only sees them via X threads today.",
+      "seen_via": [
+        "@Marcus_J_W"
+      ]
+    },
+    {
+      "kind": "site",
+      "name": "RoboColosseum",
+      "url": "https://robocolosseum.ai/",
+      "why": "Open in-the-wild robot eval leaderboard, blog and Hugging Face rollouts; not in sources.json.",
+      "seen_via": [
+        "@RoboColosseum"
+      ]
+    },
+    {
+      "kind": "site",
+      "name": "Collaborative Intelligence Benchmark",
+      "url": "https://zou-group.github.io/collaborative-intelligence/",
+      "why": "Public teamwork eval for AI agents with paper and code; not in sources.json.",
+      "seen_via": [
+        "@sean_n_wu",
+        "@james_y_zou"
+      ]
+    },
+    {
+      "kind": "site",
+      "name": "DISCO distilled search",
+      "url": "https://distilled-search.github.io/",
+      "why": "CoRL 2026 best-paper finalist robot planning project with measurements; not in sources.json.",
+      "seen_via": [
+        "@yining_hong"
       ]
     }
   ],

@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-11-07T03:10:00Z",
-  "job": "sweep",
+  "updated_at": "2026-11-07T10:40:00Z",
+  "job": "roster",
   "prompt": "v6.1",
-  "calls_used_today": 116,
+  "calls_used_today": 131,
   "notes_via_api": false,
   "last_sweep": {
     "ran_at": "2026-11-07T03:10:00Z",
@@ -20,8 +20,8 @@
   },
   "roster": {
     "curated": 223,
-    "trial": 62,
-    "active": 18,
+    "trial": 65,
+    "active": 21,
     "retired": 3
   },
   "follows_this_week": 10,
@@ -237,49 +237,49 @@
     "Sweep 19:15Z: Community Notes still unavailable via API (notes_via_api false); liking_users probe on DeepMind post returned empty.",
     "Sweep 23:15Z: follow_mode is browser but this executor has no browser; follow candidates (if any) are reported to parent only. No account newly crossed the 3-qualifying-posts bar this window beyond already-followed names.",
     "Sweep 23:15Z: Dessa horizon used page fetch only (0 X reads); still waitlist/demo.",
-    "Sweep 03:10Z: Friday night window; labs curated OR returned 0. List covered since in 1 page (97 posts, 23 since). No new owner saves. Dessa page-only check (0 X reads). Executor has no browser; no follows. Inkling 2 Small circulating via aggregators but no @thinkymachines post in-window (announcement before since). Cooldown/FMF not re-forwarded."
+    "Sweep 03:10Z: Friday night window; labs curated OR returned 0. List covered since in 1 page (97 posts, 23 since). No new owner saves. Dessa page-only check (0 X reads). Executor has no browser; no follows. Inkling 2 Small circulating via aggregators but no @thinkymachines post in-window (announcement before since). Cooldown/FMF not re-forwarded.",
+    "Roster review 2026-11-07: owner-saves step found no new authors with ≥2 kept saves (archive 92 kept; @MatthewBerman/@jankeesvw/@trq212/@NVIDIAAI already on roster; @mirku21/@HuggingModels retired; @danikkk_wqs still excluded for vice — suggest config avoid; @RoundtableSpace already on avoid).",
+    "Roster review 2026-11-07: kept @MatthewBerman (owner_requested); last_qualifying_post still 2026-10-10 and feed remains demo/recap-heavy — flag only, no auto-retire.",
+    "Roster review 2026-11-07: owner_requested trials @bcherny, @_catwu, @trq212 still have no qualifying Magpie sweep posts since add (2026-10-24); flag only, leave status unchanged.",
+    "Roster review 2026-11-07 rejected/skipped: @_arohan_ (1 measured write-up on compute-island training, rest commentary/quotes — fails ≥2 capability posts); @MacrocosmosAI (IOTA Decide 4B artifact strong but feed is majority liquid-compute/product marketing and subnet promo >1/5); @PrunaAI/@PierreStock/@danikkk_wqs not rechecked (prior 30d reject).",
+    "Roster review 2026-11-07: Saturday — Sunday draft posts skipped."
   ],
   "errors": [],
   "follows_today": 0,
   "last_roster_review": {
-    "ran_at": "2026-11-06T10:56:00Z",
-    "date": "2026-11-06",
-    "reads": 12,
-    "list_writes": 5,
+    "ran_at": "2026-11-07T10:40:00Z",
+    "date": "2026-11-07",
+    "reads": 15,
+    "list_writes": 6,
     "budget": 80,
     "added": [
-      "@METR_Evals",
-      "@RicursiveAI",
-      "@ashxhart",
-      "@levantolabs"
+      "@Marcus_J_W",
+      "@juberti",
+      "@james_y_zou",
+      "@RoboColosseum",
+      "@sean_n_wu",
+      "@yining_hong"
     ],
     "promoted": [
-      "@FishAudio",
-      "@Thom_Wolf",
-      "@Letta_AI",
-      "@turbopuffer",
-      "@PrismaXai",
-      "@SparkLLM",
-      "@LoubnaBenAllal1",
-      "@Alex_tra_memory"
+      "@datalabto",
+      "@htihle",
+      "@lydiahallie"
     ],
-    "retired": [
-      "@mirku21"
-    ],
+    "retired": [],
     "flagged": [
-      "@MatthewBerman"
+      "@MatthewBerman",
+      "@bcherny",
+      "@_catwu",
+      "@trq212"
     ],
     "rejected": [
-      "@danikkk_wqs",
-      "@PrunaAI",
-      "@PierreStock",
-      "@strawberry",
-      "@axiommathai",
-      "@RoundtableSpace"
+      "@_arohan_",
+      "@MacrocosmosAI",
+      "@danikkk_wqs"
     ],
     "drafts": 0,
     "drafts_file": null,
-    "pruned": 10,
+    "pruned": 4,
     "source_leads_added": 4
   },
   "x_list": {
@@ -289,7 +289,7 @@
     "owner": "@CameronSutcliff",
     "owner_id": "1521986356721123328",
     "private": true,
-    "member_count": 80,
+    "member_count": 86,
     "members": "every trial/active entry in inbox/x-roster.json (x_user_id, on_list)",
     "created_at": "2026-10-24T04:35:00Z"
   },
