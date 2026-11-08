@@ -114,16 +114,21 @@ class Published(unittest.TestCase):
     def test_every_published_file_passes_its_schema(self):
         try:
             from jsonschema import Draft202012Validator, FormatChecker
+            from referencing import Registry, Resource
         except ImportError:
             self.skipTest("jsonschema is not installed")
-        schema = lambda n: Draft202012Validator(json.loads((DATA / "schema" / n).read_text()), format_checker=FormatChecker())  # noqa: E731
+        # The local schemas, registered under their published ids, so a $ref such as element.schema.json's to
+        # day.schema.json resolves to this checkout's copy and nothing is fetched over the network.
+        schemas = {p.name: json.loads(p.read_text()) for p in (DATA / "schema").glob("*.json")}
+        reg = Registry().with_resources([(s["$id"], Resource.from_contents(s)) for s in schemas.values() if "$id" in s])
+        schema = lambda n: Draft202012Validator(schemas[n], registry=reg, format_checker=FormatChecker())  # noqa: E731
         day, index, rollup, element, ideas = (schema(n) for n in ("day.schema.json", "index.schema.json", "rollup.schema.json",
                                                                    "element.schema.json", "ideas.schema.json"))
         checks = [(day, p) for p in sorted((DATA / "days").glob("*.json"))] + [(day, DATA / "latest.json"), (index, DATA / "index.json"),
                                                                                 (ideas, DATA / "ideas/index.json")]
         checks += [(rollup, p) for p in sorted((DATA / "rollups").glob("*.json"))]
-        # Element pages are slow to validate (about 0.3 s each): a fixed spread of them, every one is checked for page_url above.
-        checks += [(element, p) for p in [p for p in sorted((DATA / "elements").glob("*.json")) if p.name != "index.json"][::40]]
+        checks += [(element, p) for p in sorted((DATA / "elements").glob("*.json")) if p.name != "index.json"]
+        checks += [(schema("elements.schema.json"), DATA / "elements/index.json")]
         for v, path in checks:
             with self.subTest(path.name):
                 self.assertEqual([f"{'/'.join(map(str, e.absolute_path))}: {e.message[:80]}" for e in v.iter_errors(json.loads(path.read_text()))], [])
