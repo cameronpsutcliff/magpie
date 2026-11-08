@@ -122,17 +122,24 @@ def _ecma_pattern(p: str) -> str:
             if p[j:j + 1] in ("]", ""):
                 raise SchemaError("an empty or unterminated character class is not supported")
             k = j
+            atoms: list[str] = []  # each class atom in order: one character, an escape, or "-"
             while k < n and p[k] != "]":
                 if p[k] == "\\":
                     if p[k + 1:k + 2] not in tuple(simple) + tuple("\\]^-[/"):
                         raise SchemaError(f"pattern escape \\{p[k + 1:k + 2]} in a class is not supported")
+                    atoms.append(p[k:k + 2])
                     k += 2
                 elif p[k] == "[":
                     raise SchemaError("a [ inside a character class is not supported")
                 else:
+                    atoms.append(p[k])
                     k += 1
             if k >= n:
                 raise SchemaError("an unterminated character class")
+            # In Unicode mode a range cannot end at \d, \D, \w or \W ([\d-a] is an error there; Python reads - literally).
+            for x, dash, y in zip(atoms, atoms[1:], atoms[2:]):
+                if dash == "-" and ({x, y} & {"\\d", "\\D", "\\w", "\\W"}):
+                    raise SchemaError("a range from or to \\d, \\D, \\w or \\W is not supported")
             out.append(p[i:k + 1])
             i = k + 1
         elif c == ".":
@@ -156,8 +163,8 @@ def _ecma_pattern(p: str) -> str:
             out.append(m.group(0))
             quantified = True
             i += m.end()
-        elif c == "}":
-            raise SchemaError("a } that closes no quantifier is not supported")
+        elif c in "}]":
+            raise SchemaError(f"a {c} that closes nothing is not supported")
         else:
             out.append(c)
             i += 1

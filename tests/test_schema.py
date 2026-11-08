@@ -215,6 +215,8 @@ class Checker(unittest.TestCase):
         # Unicode mode, as JSON Schema asks: a class matches a code point, astral ones included; \- is fine inside a class.
         self.assertEqual(S.problems("\U0001F600", {"pattern": "^[^a]$"}), [])
         self.assertEqual(S.problems("a-b", {"pattern": "^a[\\-]b$"}), [])
+        self.assertEqual(S.problems("-", {"pattern": "^[\\d-]$"}), [])  # a - at the end of a class is a literal in both
+        self.assertEqual(S.problems("]", {"pattern": "^[\\]]$"}), [])
         # Lazy quantifiers read the same in both.
         self.assertEqual(S.problems("aa", {"pattern": "^a+?a$"}), [])
         self.assertEqual(S.problems("aa", {"pattern": "^a{1,2}?a?$"}), [])
@@ -222,7 +224,7 @@ class Checker(unittest.TestCase):
         self.assertTrue(S.problems("a\n", {"pattern": "^a$"}))
         # Syntax the two engines read differently is refused, never read one way or the other.
         for pat in ["^\\s$", "^.$", "(?<=a)b", "\\bword", "(?P<n>x)", "\\p{L}", "a{", "[]", "[a", "a*+", "a++", "a?+", "a{1,2}+", "a*?+", "a**",
-                    "a\\-b"]:
+                    "a\\-b", "]", "a]", "[\\d-a]", "[a-\\w]"]:
             with self.assertRaises(S.SchemaError, msg=pat):
                 S.problems("x", {"pattern": pat})
         idea = json.loads(IDEAS.read_text())["ideas"][0]
