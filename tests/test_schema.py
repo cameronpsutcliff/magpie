@@ -145,7 +145,9 @@ class Checker(unittest.TestCase):
         # A keyword value of the wrong shape is an error in the schema, not a crash later.
         for bad in [{"properties": []}, {"$ref": 5}, {"required": "id"}, {"pattern": "("}, {"minItems": True}, {"minItems": -1},
                     {"maxLength": -2}, {"allOf": []}, {"anyOf": []}, {"type": []}, {"type": ["string", "string"]}, {"required": ["a", "a"]},
-                    {"$ref": "#/%FF"}, {"type": [{}]}, {"minLength": 1.5}, {"$ref": "#$defs"}]:
+                    {"$ref": "#/%FF"}, {"type": [{}]}, {"minLength": 1.5}, {"$ref": "#$defs"},
+                    {"default": {"%ZZ": True}, "$ref": "#/default/%ZZ"}, {"default": {"a~2": True}, "$ref": "#/default/a~2"},
+                    {"$defs": {"a b": True}, "$ref": "#/$defs/a b"}]:
             with self.assertRaises(S.SchemaError, msg=bad):
                 S.problems({}, bad)
 
@@ -199,6 +201,14 @@ class Checker(unittest.TestCase):
             for x in json.loads(path.read_text())["ideas"]:
                 for i in x.get("ingredients", []):
                     self.assertEqual(S.problems(i["url"], {"format": "iri"}), [], i["url"])
+
+    def test_a_pattern_reads_digits_as_json_schema_does(self):
+        # ECMA-262: \d is 0 to 9 only, so an id with another script's digits fails, as pages.py refuses to stamp it.
+        self.assertTrue(S.problems("\u0661", {"pattern": "^\\d$"}))
+        self.assertEqual(S.problems("1", {"pattern": "^\\d$"}), [])
+        idea = json.loads(IDEAS.read_text())["ideas"][0]
+        x = {"schema": "magpie.ideas/1", "updated": None, "ideas": [{**idea, "id": "\u0662\u0660\u0662\u0666" + idea["id"][4:]}]}
+        self.assertTrue(S.problems(x, "ideas.schema.json"))
 
     def test_json_equality(self):
         self.assertEqual(S.problems(1.0, {"const": 1}), [])

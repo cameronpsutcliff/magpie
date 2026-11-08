@@ -5,8 +5,9 @@
 schema readers download is the one the pipeline enforces.
 
 It implements the JSON Schema 2020-12 keywords Magpie's schemas use: type, const, enum, required, properties,
-additionalProperties, items, minItems, maxItems, pattern, minLength, maxLength, format, minimum, maximum, $ref within the
-same file (a JSON Pointer), allOf, anyOf, oneOf, not and if/then/else. Formats: date and date-time as RFC 3339 defines
+additionalProperties, items, minItems, maxItems, pattern (with ASCII \d and \w, as ECMA-262 reads them), minLength,
+maxLength, format, minimum, maximum, $ref within the same file (a URI fragment holding a JSON Pointer, RFC 6901), allOf,
+anyOf, oneOf, not and if/then/else. Formats: date and date-time as RFC 3339 defines
 them (a leap second only at 23:59:60 UTC); uri as RFC 3986, parsed into its parts, each from its own characters, with
 brackets only around an IPv6 or IPvFuture host and a host required for http and https; iri as RFC 3987, which adds
 ucschar everywhere and iprivate in the query. Annotations (title, description, $id and the like) are skipped. Before
@@ -112,7 +113,7 @@ def _audit(s, root: dict, seen: set[int]) -> None:
         raise SchemaError(f"unknown format {s['format']!r}")
     if "pattern" in s:
         try:
-            re.compile(s["pattern"])
+            re.compile(s["pattern"], re.ASCII)
         except re.error as ex:
             raise SchemaError(f"pattern does not compile: {ex}") from None
     subs = [*s.get("properties", {}).values(), *s.get("$defs", {}).values(), *s.get("allOf", []), *s.get("anyOf", []),
@@ -265,6 +266,8 @@ def _resolve(root: dict, ref: str) -> dict | bool:
         raise SchemaError(f"$ref must be a string, not {type(ref).__name__}")
     if not ref.startswith("#"):
         raise SchemaError(f"only references within the same file are supported, not {ref!r}")
+    if not _PARTS[False]["fragment"].fullmatch(ref[1:]):  # a URI fragment: its own characters, valid percent-escapes only
+        raise SchemaError(f"{ref!r} is not a valid URI fragment")
     try:
         pointer = urllib.parse.unquote(ref[1:], errors="strict")  # a URI fragment: percent-decoded first (RFC 6901, 6)
     except UnicodeDecodeError:
@@ -275,6 +278,8 @@ def _resolve(root: dict, ref: str) -> dict | bool:
         raise SchemaError(f"{ref!r} is not a JSON Pointer")
     node = root
     for part in pointer[1:].split("/"):
+        if re.search(r"~(?![01])", part):
+            raise SchemaError(f"{ref!r} has an escape other than ~0 and ~1")
         part = part.replace("~1", "/").replace("~0", "~")
         if isinstance(node, dict) and part in node:
             node = node[part]
@@ -312,7 +317,8 @@ def _check(v, s, root: dict, path: str, out: list[str]) -> None:
             out.append(f"{path}: shorter than {s['minLength']} characters")
         if "maxLength" in s and len(v) > s["maxLength"]:
             out.append(f"{path}: longer than {s['maxLength']} characters")
-        if "pattern" in s and not re.search(s["pattern"], v):
+        # ECMA-262 semantics, as JSON Schema asks: \d and \w are ASCII, so a date pattern refuses other scripts' digits.
+        if "pattern" in s and not re.search(s["pattern"], v, re.ASCII):
             out.append(f"{path}: {json.dumps(v[:80])} does not match {s['pattern']}")
         if "format" in s:
             if s["format"] not in FORMATS:
