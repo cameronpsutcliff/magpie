@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import datetime as dt
 
+from .pages import idea_url
 from .util import load_json
 
 LIMIT = 5
@@ -102,6 +103,9 @@ def possibilities(prior: list[dict]) -> list[dict]:
             row = {"date": d["date"], "title": p["title"], "why": p.get("connection") or ""}
             if p.get("id"):
                 row["id"] = p["id"]
+                url = idea_url(p["id"], d["date"])
+                if url:
+                    row["page_url"] = url
             rows.append((i, d["date"], row))
     return _spread(rows)
 

@@ -18,8 +18,11 @@ def cap(i, key, headline, impact, signal=50.0, sources=None, **kw):
 
 
 def idea(title, rank, refs=(), **kw):
+    # An ingredient's id is its capability's event id, 12 hex characters like the real ones ("a" -> "00000000000a"),
+    # so the index these build passes its schema.
     return {"title": title, "connection": f"{title} because.", "rank": rank, "effort": "a week",
-            "ingredient_refs": [{"id": r, "title": f"Thing {r}", "date": "2099-01-01", "url": f"https://example.com/{r}"} for r in refs], **kw}
+            "ingredient_refs": [{"id": r.rjust(12, "0"), "title": f"Thing {r}", "date": "2099-01-01", "url": f"https://example.com/{r}"}
+                                for r in refs], **kw}
 
 
 def edition(date, events, top=(), ideas=(), threats=(), constraints=(), n=100):

@@ -595,8 +595,10 @@ def run_for(date: str | None = None) -> None:
     day["top"] = rank_and_select(day["events"])  # an action that cuts access today may lead the page
     day["constraints"] = section
     day["trackers"] = trackers.build(day["date"], DATA, STATE)
+    from .pages import stamp
     from .recent import attach
     attach(day, DATA)  # an empty section carries its latest items instead of a blank
+    stamp(day)  # the constraint events it added link their pages
     scrub(day)
     write_json(DATA / "days" / f"{day['date']}.json", day, compact=True)
     index = load_json(DATA / "index.json", {"schema": "magpie.index/1", "days": []})

@@ -22,6 +22,7 @@ import json
 import re
 import sys
 import unicodedata
+import urllib.parse
 from pathlib import Path
 
 from .util import load_json, write_json
@@ -38,6 +39,25 @@ SITE = "https://www.cameronsutcliff.com/magpie"
 
 def _clip(v, n: int = CLIP) -> str:
     return re.sub(r"\s+", " ", v).strip()[:n] if isinstance(v, str) else ""
+
+
+def _link(url) -> str | None:
+    """An ingredient's link in the form ideas.schema.json requires (an IRI, RFC 3987). It is copied from the source as
+    published, so a raw link can hold a character an IRI cannot: such characters are percent-escaped (the same resource
+    under RFC 3986) and a bare % becomes %25. A link that still is not one (no scheme, no host) is left out as null, so one
+    malformed source link never stops the index from publishing."""
+    from .schema import is_iri
+
+    if not isinstance(url, str) or not url.strip():
+        return None
+    u = url.strip()
+    if is_iri(u):
+        return u
+    try:
+        u = urllib.parse.quote(re.sub(r"%(?![0-9A-Fa-f]{2})", "%25", u), safe=":/?#@!$&'()*+,;=-._~%")
+    except (UnicodeEncodeError, ValueError):  # a lone surrogate cannot be escaped: the link is left out
+        return None
+    return u if is_iri(u) else None
 
 
 def idea_id(date: str, title: str, taken: set[str] | frozenset = frozenset()) -> str:
@@ -132,7 +152,8 @@ def _idea(day: dict, p: dict, i: str, pos: int, ids_by_date: dict) -> dict:
     out = {"id": i, "date": day["date"], "position": pos, "title": _clip(p["title"], 200), "connection": _clip(p.get("connection")),
            "score": p.get("rank") if isinstance(p.get("rank"), (int, float)) else None,
            "effort": p.get("effort") if isinstance(p.get("effort"), str) else None,
-           "ingredients": [{"id": r.get("id"), "title": _clip(r.get("title"), 200), "date": r.get("date"), "url": r.get("url")} for r in refs]}
+           "ingredients": [{"id": r.get("id"), "title": _clip(r.get("title"), 200), "date": r.get("date"), "url": _link(r.get("url"))}
+                           for r in refs]}
     if built and isinstance(built.get("date"), str):
         # An idea built on another is stored with that idea's pool id ("idea-<date>-<position>"); the index names its page.
         target = built.get("id")
@@ -266,16 +287,22 @@ def rollup(date: str, days: list[dict], index: dict, slugs: dict[str, str]) -> d
 
 
 def refresh(data_dir: Path, dates: list[str] | None = None) -> dict:
-    """Write the ideas index and the rollups for `dates` (default: the latest edition). A side file: never raises."""
+    """Write the ideas index and the rollups for `dates` (default: the latest edition). A side file: never raises.
+
+    The ideas index is published only when it conforms to data/v1/schema/ideas.schema.json: one that fails is reported
+    and not written, so the last good index stays live (its `updated` says how old it is)."""
     try:
         from .publish import scrub
+        from .schema import publishable
 
         days = _days(data_dir)
         if not days:
             return {"ideas": 0, "rollups": 0}
         index = ideas_index(days, load_json(Path(data_dir) / "ideas" / "index.json", None))
         scrub(index)
-        write_json(Path(data_dir) / "ideas" / "index.json", index, compact=True)
+        valid = publishable(index, "ideas.schema.json", "ideas/index.json")
+        if valid:
+            write_json(Path(data_dir) / "ideas" / "index.json", index, compact=True)
         slugs = {e["key"]: e["slug"] for e in (load_json(Path(data_dir) / "elements" / "index.json", {}) or {}).get("elements", [])
                  if isinstance(e, dict) and isinstance(e.get("key"), str) and isinstance(e.get("slug"), str)}
         written = 0
@@ -284,26 +311,28 @@ def refresh(data_dir: Path, dates: list[str] | None = None) -> dict:
             scrub(r)
             write_json(Path(data_dir) / "rollups" / f"{date}.json", r, compact=True)
             written += 1
-        return {"ideas": len(index["ideas"]), "rollups": written}
+        return {"ideas": len(index["ideas"]) if valid else "not published: failed its schema", "rollups": written}
     except (Exception, SystemExit) as ex:  # the redaction gate raises SystemExit; here it must not end the run
         print(f"views not updated: {type(ex).__name__}: {str(ex)[:160]}", file=sys.stderr)
         return {"error": type(ex).__name__}
 
 
 def run(all_dates: bool = False, date: str | None = None) -> None:
-    """Give every published possibility its id (rewriting the editions that lacked them, and latest.json), then write the
-    ideas index and the rollups: for every edition with --all, else for `date` or the latest."""
+    """Give every published possibility its id and every item its page_url (rewriting the editions that lacked them, and
+    latest.json), then write the ideas index and the rollups: for every edition with --all, else for `date` or the
+    latest."""
+    from .pages import stamp
     from .publish import DATA, scrub
 
     given = 0
     index = load_json(DATA / "index.json", {})
     for path in sorted((DATA / "days").glob("*.json")):
         day = load_json(path, None)
-        if isinstance(day, dict) and assign_ids(day):
+        if isinstance(day, dict) and assign_ids(day) + stamp(day):
             scrub(day)
             write_json(path, day, compact=True)
             given += 1
             if index.get("latest") == day.get("date"):
                 write_json(DATA / "latest.json", day, compact=True)
     dates = [d["date"] for d in _days(DATA)] if all_dates else ([date] if date else None)
-    print(f"views: ids given in {given} editions; {refresh(DATA, dates)}", file=sys.stderr)
+    print(f"views: ids and page links given in {given} editions; {refresh(DATA, dates)}", file=sys.stderr)

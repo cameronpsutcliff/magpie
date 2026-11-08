@@ -29,18 +29,27 @@ list, and a roster of 72 vetted X accounts read through Grok's live search.
 | File | What it holds |
 |---|---|
 | `data/v1/latest.json` | Today's edition |
-| `data/v1/days/YYYY-MM-DD.json` | Every past edition |
+| `data/v1/days/YYYY-MM-DD.json` | Every past edition; each capability and possibility carries its `page_url` |
 | `data/v1/index.json` | The archive: date, headline, lead stories, counts |
 | `data/v1/constraints.json` | Every official action Magpie has recorded that makes AI harder to train, publish, host, reach or buy |
 | `data/v1/threats.json` | Every security threat Magpie has recorded that changes what is safe to run, trust or depend on |
 | `data/v1/elements/<slug>.json` | One element across every edition: what it is, where to find it, what it works with, its history |
 | `data/v1/elements/index.json` | Every element page, with its canonical key, first and last sighting and counts |
-| `data/v1/ideas/index.json` | Every new possibility with its id (its page is `/magpie/i/<id>`), ingredients, what it builds on and what built on it |
+| `data/v1/ideas/index.json` | Every new possibility with its id (its page is `/magpie/i/<id>`), ingredients, what it builds on and what built on it; schema `magpie.ideas/1` |
 | `data/v1/rollups/YYYY-MM-DD.json` | The week and the month ending on that edition: highest-impact capabilities with their sources, strongest possibilities, new threats and constraints; built by code |
 
-Schemas `magpie.day/1`, `magpie.element/1`, `magpie.elements/1`, `magpie.constraints/1` and `magpie.threats/1` live in
-`data/v1/schema/`. Anything downstream
-can pull these files; nothing needs this code.
+Schemas `magpie.day/1`, `magpie.element/1`, `magpie.elements/1`, `magpie.ideas/1`, `magpie.constraints/1` and
+`magpie.threats/1` live in `data/v1/schema/`. Anything downstream can pull these files; nothing needs this code.
+
+**Every item links its page.** Each capability in a day file (the five leads among them) carries `page_url`, its own page
+on that edition: `/magpie/c/<date>-<id>`, where `id` is a hash of the capability's canonical key. The same capability has
+the same id on every day it appears and a page for each of those days, and no later edition moves a link. Each new
+possibility carries `page_url` too (`/magpie/i/<id>`). Code stamps both from stored fields (`magpie/pages.py`).
+
+**Checked before it publishes.** The ideas index is checked against `ideas.schema.json` before it is written, with the
+standard library (`magpie/schema.py` reads the published schema, so readers and the pipeline use the same one). An index
+that fails is reported in the run log, and as a warning on GitHub Actions, and is not written: the last good file stays
+live, and its `updated` says how old it is.
 
 An **element** is one thing Magpie keeps meeting: a repo, model, paper, tool or official action, keyed the way the
 editions cluster it (`gh:owner/repo`, `hf:org/model`, `arxiv:id`, `url:...`, `policy:...`). It gets a page when it
