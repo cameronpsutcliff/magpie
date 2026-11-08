@@ -83,8 +83,23 @@ def _ecma_pattern(p: str) -> str:
     does not match before a final newline. Anything outside the subset raises SchemaError."""
     out, i, n = [], 0, len(p)
     simple = "dDwW"
+    quantified = lazy = False  # the last token was a quantifier (and a lazy ? after it)
     while i < n:
         c = p[i]
+        if c in "*+?{" and quantified and (lazy or c != "?"):
+            # ECMA-262 has no possessive (a*+, a{1,2}+) or stacked quantifiers; Python reads some of them.
+            raise SchemaError("a quantifier right after a quantifier is not supported")
+        if c == "?" and quantified:
+            out.append(c)
+            lazy = True
+            i += 1
+            continue
+        quantified = lazy = False
+        if c in "*+?":
+            out.append(c)
+            quantified = True
+            i += 1
+            continue
         if c == "\\":
             e = p[i + 1] if i + 1 < n else ""
             if not e or (e not in simple and e not in "\\^$.|?*+()[]{}/-"):
@@ -128,6 +143,7 @@ def _ecma_pattern(p: str) -> str:
             if not m:
                 raise SchemaError("a { that is not a quantifier is not supported")
             out.append(m.group(0))
+            quantified = True
             i += m.end()
         elif c == "}":
             raise SchemaError("a } that closes no quantifier is not supported")

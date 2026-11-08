@@ -206,10 +206,13 @@ class Checker(unittest.TestCase):
         # ECMA-262: \d is 0 to 9 only, so an id with another script's digits fails, as pages.py refuses to stamp it.
         self.assertTrue(S.problems("\u0661", {"pattern": "^\\d$"}))
         self.assertEqual(S.problems("1", {"pattern": "^\\d$"}), [])
+        # Lazy quantifiers read the same in both.
+        self.assertEqual(S.problems("aa", {"pattern": "^a+?a$"}), [])
+        self.assertEqual(S.problems("aa", {"pattern": "^a{1,2}?a?$"}), [])
         # $ is the end of the string, as in ECMA-262 (Python's $ would also match before a final newline).
         self.assertTrue(S.problems("a\n", {"pattern": "^a$"}))
         # Syntax the two engines read differently is refused, never read one way or the other.
-        for pat in ["^\\s$", "^.$", "(?<=a)b", "\\bword", "(?P<n>x)", "\\p{L}", "a{", "[]", "[a"]:
+        for pat in ["^\\s$", "^.$", "(?<=a)b", "\\bword", "(?P<n>x)", "\\p{L}", "a{", "[]", "[a", "a*+", "a++", "a?+", "a{1,2}+", "a*?+", "a**"]:
             with self.assertRaises(S.SchemaError, msg=pat):
                 S.problems("x", {"pattern": pat})
         idea = json.loads(IDEAS.read_text())["ideas"][0]
