@@ -13,6 +13,7 @@ stale page_url is removed.
 """
 from __future__ import annotations
 
+import datetime as dt
 import re
 
 SITE = "https://www.cameronsutcliff.com/magpie"
@@ -21,9 +22,20 @@ DATE = re.compile(r"\d{4}-\d{2}-\d{2}")
 IDEA_ID = re.compile(r"\d{4}-\d{2}-\d{2}-[a-z0-9][a-z0-9-]{0,99}")  # views.ID_SHAPE
 
 
+def _real_date(date) -> bool:
+    """A real calendar date in YYYY-MM-DD: the shape alone lets 2026-02-30 through."""
+    if not isinstance(date, str) or not DATE.fullmatch(date):
+        return False
+    try:
+        dt.date.fromisoformat(date)
+    except ValueError:
+        return False
+    return True
+
+
 def item_id(date, event_id) -> str | None:
     """A capability's page id on one edition: the edition's date, a hyphen and its event id."""
-    if isinstance(date, str) and DATE.fullmatch(date) and isinstance(event_id, str) and EVENT_ID.fullmatch(event_id):
+    if _real_date(date) and isinstance(event_id, str) and EVENT_ID.fullmatch(event_id):
         return f"{date}-{event_id}"
     return None
 
@@ -35,7 +47,7 @@ def item_url(date, event_id) -> str | None:
 
 def idea_url(idea_id, date=None) -> str | None:
     """An idea's page, when its id is a safe page id (and starts with its edition's date, when that is given)."""
-    if not isinstance(idea_id, str) or not IDEA_ID.fullmatch(idea_id):
+    if not isinstance(idea_id, str) or not IDEA_ID.fullmatch(idea_id) or not _real_date(idea_id[:10]):
         return None
     if date is not None and not idea_id.startswith(f"{date}-"):
         return None

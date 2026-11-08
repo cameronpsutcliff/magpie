@@ -24,7 +24,7 @@ class PageIds(unittest.TestCase):
     def test_a_capability_page_is_the_date_and_its_event_id(self):
         self.assertEqual(P.item_id("2099-01-05", "02d0f9ac3aca"), "2099-01-05-02d0f9ac3aca")
         self.assertEqual(P.item_url("2099-01-05", "02d0f9ac3aca"), f"{SITE}/c/2099-01-05-02d0f9ac3aca")
-        for date, i in [("2099-1-5", "02d0f9ac3aca"), ("2099-01-05", "02D0F9AC3ACA"), ("2099-01-05", "../x"), (None, "02d0f9ac3aca"),
+        for date, i in [("2099-1-5", "02d0f9ac3aca"), ("2099-02-30", "02d0f9ac3aca"), ("2099-01-05", "02D0F9AC3ACA"), ("2099-01-05", "../x"), (None, "02d0f9ac3aca"),
                         ("2099-01-05", None), ("2099-01-05", "02d0f9ac3ac")]:
             self.assertIsNone(P.item_url(date, i), (date, i))
 
@@ -41,6 +41,7 @@ class PageIds(unittest.TestCase):
         self.assertIsNone(P.idea_url("2099-01-04-desks", "2099-01-05"))
         self.assertIsNone(P.idea_url("idea-2099-01-05-1"))
         self.assertIsNone(P.idea_url("2099-01-05-Desks"))
+        self.assertIsNone(P.idea_url("2099-02-30-desks"))
 
 
 class Stamp(unittest.TestCase):
