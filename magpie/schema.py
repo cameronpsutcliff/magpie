@@ -37,6 +37,7 @@ import datetime as dt
 import functools
 import ipaddress
 import json
+import math
 import os
 import re
 import sys
@@ -246,8 +247,8 @@ def _is(v, t: str) -> bool:
         return isinstance(v, bool)
     if t == "integer":
         return not isinstance(v, bool) and (isinstance(v, int) or (isinstance(v, float) and v.is_integer()))
-    if t == "number":
-        return not isinstance(v, bool) and isinstance(v, (int, float))
+    if t == "number":  # JSON has no NaN or Infinity, so neither is a number (json.loads reads 1e400 as inf)
+        return not isinstance(v, bool) and (isinstance(v, int) or (isinstance(v, float) and math.isfinite(v)))
     if t == "string":
         return isinstance(v, str)
     if t == "array":

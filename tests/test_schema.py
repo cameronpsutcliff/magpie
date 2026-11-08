@@ -233,6 +233,14 @@ class Checker(unittest.TestCase):
         x = {"schema": "magpie.ideas/1", "updated": None, "ideas": [{**idea, "id": "\u0662\u0660\u0662\u0666" + idea["id"][4:]}]}
         self.assertTrue(S.problems(x, "ideas.schema.json"))
 
+    def test_nan_and_infinity_are_not_numbers(self):
+        for v in [float("nan"), float("inf"), json.loads("1e400")]:
+            self.assertTrue(S.problems(v, {"type": ["number", "null"]}), v)
+            self.assertTrue(S.problems(v, {"type": "integer"}), v)
+        x = json.loads(IDEAS.read_text())
+        x["ideas"][0]["score"] = float("nan")
+        self.assertTrue(S.problems(x, "ideas.schema.json"))
+
     def test_json_equality(self):
         self.assertEqual(S.problems(1.0, {"const": 1}), [])
         self.assertTrue(S.problems(True, {"const": 1}))
