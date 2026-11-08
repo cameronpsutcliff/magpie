@@ -336,6 +336,10 @@ class Gate(unittest.TestCase):
         urls = [i["url"] for i in self.published()["ideas"][0]["ingredients"]]
         self.assertEqual(urls, ["https://example.com/d", "https://ex.com/a%7Cb?x=%7B1%7D&p=50%25", None])
         self.assertEqual(V._link("https://www.wsj.com/x-ca965d8b\u2019"), "https://www.wsj.com/x-ca965d8b\u2019")  # already an IRI: kept
+        self.assertIsNone(V._link("https://example.com/\ud800"))  # a lone surrogate cannot be escaped: left out, never raised
+        x = json.loads(IDEAS.read_text())
+        x["ideas"][0]["title"] = "Broken \ud800 title"
+        self.assertTrue(any("not strict JSON" in p for p in S.problems(x, "ideas.schema.json")))
 
     def test_a_malformed_schema_fails_the_check_and_never_raises(self):
         err = io.StringIO()

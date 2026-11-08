@@ -514,10 +514,10 @@ def _problems(obj, schema: dict | str) -> list[str]:
         raise SchemaError(f"the schema is not strict JSON: {ex}") from None
     _audit(root, root, set())
     out: list[str] = []
-    try:  # the file must serialise as strict JSON too, or the gate would approve what readers cannot parse
-        json.dumps(obj, allow_nan=False)
-    except (ValueError, TypeError) as ex:
-        out.append(f"$: not strict JSON: {ex}")
+    try:  # the file must serialise as strict JSON in UTF-8 too, or the gate would approve what cannot be written or parsed
+        json.dumps(obj, allow_nan=False, ensure_ascii=False).encode("utf-8")
+    except (ValueError, TypeError) as ex:  # UnicodeEncodeError (a lone surrogate) is a ValueError
+        out.append(f"$: not strict JSON: {str(ex)[:160]}")
     _check(obj, root, root, "$", out)
     return out[:MAX_PROBLEMS]
 

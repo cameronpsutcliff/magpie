@@ -53,7 +53,10 @@ def _link(url) -> str | None:
     u = url.strip()
     if is_iri(u):
         return u
-    u = urllib.parse.quote(re.sub(r"%(?![0-9A-Fa-f]{2})", "%25", u), safe=":/?#@!$&'()*+,;=-._~%")
+    try:
+        u = urllib.parse.quote(re.sub(r"%(?![0-9A-Fa-f]{2})", "%25", u), safe=":/?#@!$&'()*+,;=-._~%")
+    except (UnicodeEncodeError, ValueError):  # a lone surrogate cannot be escaped: the link is left out
+        return None
     return u if is_iri(u) else None
 
 
