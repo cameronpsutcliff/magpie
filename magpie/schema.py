@@ -88,16 +88,17 @@ def _audit(s, root: dict, seen: set[int]) -> None:
     if unknown:
         raise SchemaError(f"unsupported keywords {sorted(unknown)}")
     shapes = {"properties": dict, "$defs": dict, "allOf": list, "anyOf": list, "oneOf": list, "required": list, "enum": list,
-              "$ref": str, "pattern": str, "format": str, "minItems": int, "maxItems": int, "minLength": int, "maxLength": int,
-              "minimum": (int, float), "maximum": (int, float)}
+              "$ref": str, "pattern": str, "format": str, "minimum": (int, float), "maximum": (int, float)}
     for k, want in shapes.items():
         if k in s and (not isinstance(s[k], want) or isinstance(s[k], bool)):
             raise SchemaError(f"{k} has the wrong shape: {type(s[k]).__name__}")
+    for k in ("minItems", "maxItems", "minLength", "maxLength"):  # a non-negative integer; 1.0 is an integer in JSON
+        if k in s and not (_is(s[k], "integer") and s[k] >= 0):
+            raise SchemaError(f"{k} must be a non-negative integer")
+    if isinstance(s.get("type"), list) and any(not isinstance(x, str) for x in s["type"]):
+        raise SchemaError("a type list must hold names")
     if any(not isinstance(k, str) for k in s.get("required", [])) or len(set(s.get("required", []))) != len(s.get("required", [])):
         raise SchemaError("required must list distinct names")
-    for k in ("minItems", "maxItems", "minLength", "maxLength"):
-        if k in s and s[k] < 0:
-            raise SchemaError(f"{k} must not be negative")
     for k in ("allOf", "anyOf", "oneOf"):
         if k in s and not s[k]:
             raise SchemaError(f"{k} must not be empty")
@@ -262,16 +263,18 @@ def _resolve(root: dict, ref: str) -> dict | bool:
     """A JSON Pointer within the same file (RFC 6901): object members by name, array items by index."""
     if not isinstance(ref, str):
         raise SchemaError(f"$ref must be a string, not {type(ref).__name__}")
-    if ref == "#":
-        return root
-    if not ref.startswith("#/"):
+    if not ref.startswith("#"):
         raise SchemaError(f"only references within the same file are supported, not {ref!r}")
     try:
-        pointer = urllib.parse.unquote(ref[2:], errors="strict")  # a URI fragment: percent-decoded first (RFC 6901, 6)
+        pointer = urllib.parse.unquote(ref[1:], errors="strict")  # a URI fragment: percent-decoded first (RFC 6901, 6)
     except UnicodeDecodeError:
         raise SchemaError(f"{ref!r} is not a valid fragment") from None
+    if pointer == "":
+        return root
+    if not pointer.startswith("/"):
+        raise SchemaError(f"{ref!r} is not a JSON Pointer")
     node = root
-    for part in pointer.split("/"):
+    for part in pointer[1:].split("/"):
         part = part.replace("~1", "/").replace("~0", "~")
         if isinstance(node, dict) and part in node:
             node = node[part]

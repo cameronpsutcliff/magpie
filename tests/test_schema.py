@@ -145,7 +145,7 @@ class Checker(unittest.TestCase):
         # A keyword value of the wrong shape is an error in the schema, not a crash later.
         for bad in [{"properties": []}, {"$ref": 5}, {"required": "id"}, {"pattern": "("}, {"minItems": True}, {"minItems": -1},
                     {"maxLength": -2}, {"allOf": []}, {"anyOf": []}, {"type": []}, {"type": ["string", "string"]}, {"required": ["a", "a"]},
-                    {"$ref": "#/%FF"}]:
+                    {"$ref": "#/%FF"}, {"type": [{}]}, {"minLength": 1.5}, {"$ref": "#$defs"}]:
             with self.assertRaises(S.SchemaError, msg=bad):
                 S.problems({}, bad)
 
@@ -157,6 +157,9 @@ class Checker(unittest.TestCase):
             S.problems("x", {"allOf": [True], "anyOf": [{"$ref": "#/allOf/1"}]})
         # A pointer in a URI fragment is percent-decoded, then ~1 and ~0 (RFC 6901).
         self.assertEqual(S.problems("x", {"$defs": {"a b": {"type": "string"}, "c/d": True}, "allOf": [{"$ref": "#/$defs/a%20b"}, {"$ref": "#/$defs/c~1d"}]}), [])
+        self.assertEqual(S.problems("x", {"$defs": {"s": {"type": "string"}}, "$ref": "#%2F$defs%2Fs"}), [])  # the same pointer, escaped
+        # An integer bound may be written 1.0: JSON has no separate integer type.
+        self.assertEqual(S.problems([], {"minItems": 1.0}), ["$: fewer than 1.0 items"])
         with self.assertRaises(S.SchemaError):
             S.problems("x", {"type": "string", "format": "email"})
         with self.assertRaises(S.SchemaError):
