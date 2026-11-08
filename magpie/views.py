@@ -266,16 +266,22 @@ def rollup(date: str, days: list[dict], index: dict, slugs: dict[str, str]) -> d
 
 
 def refresh(data_dir: Path, dates: list[str] | None = None) -> dict:
-    """Write the ideas index and the rollups for `dates` (default: the latest edition). A side file: never raises."""
+    """Write the ideas index and the rollups for `dates` (default: the latest edition). A side file: never raises.
+
+    The ideas index is published only when it conforms to data/v1/schema/ideas.schema.json: one that fails is reported
+    and not written, so the last good index stays live (its `updated` says how old it is)."""
     try:
         from .publish import scrub
+        from .schema import publishable
 
         days = _days(data_dir)
         if not days:
             return {"ideas": 0, "rollups": 0}
         index = ideas_index(days, load_json(Path(data_dir) / "ideas" / "index.json", None))
         scrub(index)
-        write_json(Path(data_dir) / "ideas" / "index.json", index, compact=True)
+        valid = publishable(index, "ideas.schema.json", "ideas/index.json")
+        if valid:
+            write_json(Path(data_dir) / "ideas" / "index.json", index, compact=True)
         slugs = {e["key"]: e["slug"] for e in (load_json(Path(data_dir) / "elements" / "index.json", {}) or {}).get("elements", [])
                  if isinstance(e, dict) and isinstance(e.get("key"), str) and isinstance(e.get("slug"), str)}
         written = 0
@@ -284,26 +290,28 @@ def refresh(data_dir: Path, dates: list[str] | None = None) -> dict:
             scrub(r)
             write_json(Path(data_dir) / "rollups" / f"{date}.json", r, compact=True)
             written += 1
-        return {"ideas": len(index["ideas"]), "rollups": written}
+        return {"ideas": len(index["ideas"]) if valid else "not published: failed its schema", "rollups": written}
     except (Exception, SystemExit) as ex:  # the redaction gate raises SystemExit; here it must not end the run
         print(f"views not updated: {type(ex).__name__}: {str(ex)[:160]}", file=sys.stderr)
         return {"error": type(ex).__name__}
 
 
 def run(all_dates: bool = False, date: str | None = None) -> None:
-    """Give every published possibility its id (rewriting the editions that lacked them, and latest.json), then write the
-    ideas index and the rollups: for every edition with --all, else for `date` or the latest."""
+    """Give every published possibility its id and every item its page_url (rewriting the editions that lacked them, and
+    latest.json), then write the ideas index and the rollups: for every edition with --all, else for `date` or the
+    latest."""
+    from .pages import stamp
     from .publish import DATA, scrub
 
     given = 0
     index = load_json(DATA / "index.json", {})
     for path in sorted((DATA / "days").glob("*.json")):
         day = load_json(path, None)
-        if isinstance(day, dict) and assign_ids(day):
+        if isinstance(day, dict) and assign_ids(day) + stamp(day):
             scrub(day)
             write_json(path, day, compact=True)
             given += 1
             if index.get("latest") == day.get("date"):
                 write_json(DATA / "latest.json", day, compact=True)
     dates = [d["date"] for d in _days(DATA)] if all_dates else ([date] if date else None)
-    print(f"views: ids given in {given} editions; {refresh(DATA, dates)}", file=sys.stderr)
+    print(f"views: ids and page links given in {given} editions; {refresh(DATA, dates)}", file=sys.stderr)

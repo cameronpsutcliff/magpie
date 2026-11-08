@@ -299,8 +299,10 @@ def run_for(date: str | None = None) -> None:
         raise SystemExit(f"no edition at {path}")
     result = generate(day, DATA)
     day["possibilities"] = result
+    from .pages import stamp
     from .recent import attach
     attach(day, DATA)  # the section may have filled or emptied: refresh its fallback
+    stamp(day)  # the new possibilities link their pages
     scrub(day)
     write_json(DATA / "days" / f"{day['date']}.json", day, compact=True)
     index = load_json(DATA / "index.json", {})

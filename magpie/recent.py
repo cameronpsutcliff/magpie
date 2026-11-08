@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import datetime as dt
 
+from .pages import idea_url, item_url
 from .util import load_json
 
 LIMIT = 5
@@ -102,6 +103,9 @@ def possibilities(prior: list[dict]) -> list[dict]:
             row = {"date": d["date"], "title": p["title"], "why": p.get("connection") or ""}
             if p.get("id"):
                 row["id"] = p["id"]
+                url = idea_url(p["id"], d["date"])
+                if url:
+                    row["page_url"] = url
             rows.append((i, d["date"], row))
     return _spread(rows)
 
@@ -117,8 +121,11 @@ def ripples(prior: list[dict]) -> list[dict]:
         links.sort(key=lambda l: -(nodes[l["source"]].get("impact") or 0))
         for i, l in enumerate(links):
             t = l["target"].split(":", 1)[1]
-            rows.append((i, d["date"], {"date": d["date"], "from": nodes[l["source"]].get("label") or "",
-                                        "to": topics.get(t, t), "why": l["effect"]}))
+            row = {"date": d["date"], "from": nodes[l["source"]].get("label") or "", "to": topics.get(t, t), "why": l["effect"]}
+            url = item_url(d["date"], l["source"])  # the capability it ripples from
+            if url:
+                row["page_url"] = url
+            rows.append((i, d["date"], row))
     return _spread(rows)
 
 

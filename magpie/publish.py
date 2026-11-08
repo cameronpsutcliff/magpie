@@ -111,10 +111,12 @@ def compose_day(date: str, items: list[dict], rising: dict, health: list[dict], 
 
 def publish_day(day: dict, events: list[dict], top_events: list[dict], *, force: bool = False) -> bool:
     """Write the day; move `latest` only forward; record first sightings. Returns False if it kept a richer edition."""
+    from .pages import stamp
     from .recent import attach
     from .views import assign_ids
     attach(day, DATA)  # no blank sections: an empty one carries its latest items from the registers and past editions
     assign_ids(day)  # every possibility has its page id, a cached one included
+    stamp(day)  # every capability and possibility carries its page_url
     scrub(day)
     date = day["date"]
     day_path = DATA / "days" / f"{date}.json"
