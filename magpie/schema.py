@@ -178,8 +178,8 @@ def _ecma_pattern(p: str) -> str:
     translated = "".join(out)
     try:
         re.compile(translated, re.ASCII)
-    except re.error as ex:
-        raise SchemaError(f"pattern does not compile: {ex}") from None
+    except (re.error, OverflowError, RecursionError, ValueError) as ex:  # a{4294967296} overflows rather than errs
+        raise SchemaError(f"pattern does not compile: {type(ex).__name__}: {ex}") from None
     return translated
 
 
@@ -495,6 +495,13 @@ def _sub(v, s, root: dict, path: str) -> list[str]:
 
 def problems(obj, schema: dict | str) -> list[str]:
     """What is wrong with obj under the schema (a dict, or a file name in data/v1/schema), at most MAX_PROBLEMS lines."""
+    try:
+        return _problems(obj, schema)
+    except RecursionError:
+        raise SchemaError("the schema or the file is nested too deeply to check") from None
+
+
+def _problems(obj, schema: dict | str) -> list[str]:
     root = load(schema) if isinstance(schema, str) else schema
     try:  # Python's json reads NaN, Infinity and 1e400; none is JSON, and a bound of inf would disable its check
         json.dumps(root, allow_nan=False)

@@ -155,6 +155,15 @@ class Checker(unittest.TestCase):
             with self.assertRaises(S.SchemaError, msg=bad):
                 S.problems({}, bad)
 
+    def test_only_schema_errors_escape(self):
+        deep: dict = {}
+        node = deep
+        for _ in range(5000):
+            node["not"] = {}
+            node = node["not"]
+        with self.assertRaises(S.SchemaError):
+            S.problems(1, deep)
+
     def test_a_reference_can_point_into_a_list(self):
         schema = {"allOf": [{"type": "string"}], "anyOf": [{"$ref": "#/allOf/0"}]}
         self.assertEqual(S.problems("x", schema), [])
@@ -226,7 +235,7 @@ class Checker(unittest.TestCase):
         self.assertTrue(S.problems("a\n", {"pattern": "^a$"}))
         # Syntax the two engines read differently is refused, never read one way or the other.
         for pat in ["^\\s$", "^.$", "(?<=a)b", "\\bword", "(?P<n>x)", "\\p{L}", "a{", "[]", "[a", "a*+", "a++", "a?+", "a{1,2}+", "a*?+", "a**",
-                    "a\\-b", "]", "a]", "[\\d-a]", "[a-\\w]"]:
+                    "a\\-b", "]", "a]", "[\\d-a]", "[a-\\w]", "a{4294967296}", "a{2,1}"]:
             with self.assertRaises(S.SchemaError, msg=pat):
                 S.problems("x", {"pattern": pat})
         idea = json.loads(IDEAS.read_text())["ideas"][0]
