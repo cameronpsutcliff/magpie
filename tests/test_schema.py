@@ -240,6 +240,13 @@ class Checker(unittest.TestCase):
         x = json.loads(IDEAS.read_text())
         x["ideas"][0]["score"] = float("nan")
         self.assertTrue(S.problems(x, "ideas.schema.json"))
+        x["ideas"][0]["score"] = 1.0
+        x["ideas"][0]["extra"] = float("inf")  # anywhere in the file, typed or not
+        self.assertIn("$: not strict JSON: Out of range float values are not JSON compliant: inf", S.problems(x, "ideas.schema.json"))
+        # A schema holding one is not strict JSON either: a bound of 1e400 would be inf and check nothing.
+        for bad in ['{"maximum": 1e400}', '{"minimum": -1e400}', '{"const": NaN}', '{"enum": [Infinity]}']:
+            with self.assertRaises(S.SchemaError, msg=bad):
+                S.problems(1, json.loads(bad))
 
     def test_json_equality(self):
         self.assertEqual(S.problems(1.0, {"const": 1}), [])

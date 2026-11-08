@@ -496,8 +496,16 @@ def _sub(v, s, root: dict, path: str) -> list[str]:
 def problems(obj, schema: dict | str) -> list[str]:
     """What is wrong with obj under the schema (a dict, or a file name in data/v1/schema), at most MAX_PROBLEMS lines."""
     root = load(schema) if isinstance(schema, str) else schema
+    try:  # Python's json reads NaN, Infinity and 1e400; none is JSON, and a bound of inf would disable its check
+        json.dumps(root, allow_nan=False)
+    except (ValueError, TypeError) as ex:
+        raise SchemaError(f"the schema is not strict JSON: {ex}") from None
     _audit(root, root, set())
     out: list[str] = []
+    try:  # the file must serialise as strict JSON too, or the gate would approve what readers cannot parse
+        json.dumps(obj, allow_nan=False)
+    except (ValueError, TypeError) as ex:
+        out.append(f"$: not strict JSON: {ex}")
     _check(obj, root, root, "$", out)
     return out[:MAX_PROBLEMS]
 
