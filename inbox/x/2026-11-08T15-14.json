@@ -1,0 +1,238 @@
+{
+ "ran_at": "2026-11-08T15:14:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-08T11:12:00Z",
+ "queries": 14,
+ "calls": 17,
+ "items": [
+  {
+   "title": "Drama 3 NVFP4 prune keeps 5900 of 10240 experts: 18 GB on disk and under 17 GB of GPU memory",
+   "url": "https://x.com/plotarmordev/status/2119416023845925076",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A community TensorFold quant of Fish Audio's Drama 3 speech model drops about 2.4 GB by keeping 5900 of 10240 experts and storing them as NVFP4. The author reports 18 GB on disk, a peak under 17 GB of GPU memory, and no measured quality drop versus the prior unofficial quant, and published both the weights and the recipe.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/plotarmordev/drama-3-NVFP4-Pruned-5900",
+    "https://github.com/plotarmordev/drama-tensorfold"
+   ],
+   "vendor": "Drama 3 community quant (plotarmordev) on Fish Audio",
+   "posted_at": "2026-11-08T13:05:31Z",
+   "metrics": {
+    "likes": 7,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 3,
+    "views": 585
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Author-reported quality comparison on an unofficial community quant; the optimized recipe is not the default yet.",
+    "source": null
+   }
+  },
+  {
+   "title": "vLLM and SGLang recipes run DeepSeek V4.1 Flash across four DGX Sparks",
+   "url": "https://x.com/ivanfioravanti/status/2119387715967861237",
+   "handle": "@ivanfioravanti",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A builder compared two community recipes for serving DeepSeek V4.1 Flash with tensor parallelism across four DGX Sparks: vLLM using christopherowen's 1107 branch, which placed first in the write-up, and SGLang using majewskizby's 2.7 recipe. Both recipe repos are public; the vLLM branch is noted as not yet a finished release.",
+   "kind": "technique",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/christopherowen/spark-ds41f/tree/spark-ds41f-1107",
+    "https://github.com/knapcio/DeepSeek-V4.1-Flash-4x-DGX-Spark-TP4"
+   ],
+   "vendor": "vLLM and SGLang community recipes",
+   "posted_at": "2026-11-08T11:13:02Z",
+   "metrics": {
+    "likes": 36,
+    "reposts": 2,
+    "quotes": 2,
+    "replies": 11,
+    "views": 3514
+   },
+   "confirmed_by": [
+    "@ashxhart"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Ranking comes from photos and the author's write-up; token-per-second figures are not in the post text, and the winning vLLM branch is not a finished release.",
+    "source": null
+   }
+  },
+  {
+   "title": "Imagination Studio: local image and video suite on TensorFold for DGX Spark and Mac",
+   "url": "https://x.com/MiaAI_lab/status/2119138536460783664",
+   "handle": "@MiaAI_lab",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "An open TensorFold app by u1tra_instinct and SamJWasserman plans shots and renders stills with Qwen Image 2.1 and Flux3K plus video with sound via MiniMax H3, aimed at a single DGX Spark and also running on Mac. Repliers report it running on one Spark and on an M3 Ultra; MiniMax H3 weights are gated and the H3 license is reported to exclude the US, EU, UK and Korea.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/drowzeys/Imagination-Studio-by-keys-Wasserman"
+   ],
+   "vendor": "Imagination Studio (keys and Wasserman) on TensorFold",
+   "posted_at": "2026-11-07T18:42:53Z",
+   "metrics": {
+    "likes": 542,
+    "reposts": 40,
+    "quotes": 6,
+    "replies": 27,
+    "views": 26047
+   },
+   "confirmed_by": [
+    "@plotarmordev"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "MiniMax H3 is Hugging Face gated, and a replier says its license leaves out the US, EU, UK and Korea, which would block the video path in those regions; image models are separate.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Several people say it runs well on one Spark or an M3 Ultra. Others ask about render time, whether image and video models fit together, and the MiniMax H3 license limits.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "NVIDIA Auto Ontology drafts a certified business schema so text-to-SQL agents hit the right columns",
+   "url": "https://x.com/akshay_pachaar/status/2119415218514370583",
+   "handle": "@akshay_pachaar",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "NVIDIA released an Apache 2.0 framework that builds an ontology from database metadata, mapping business terms, reusable SQL measures and joins so an agent can write text-to-SQL against certified concepts instead of guessing column meanings. Agents reach it through MCP, CLI or REST, and it supports engines including Postgres, Snowflake, Databricks and DuckDB.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/NVIDIA/auto-ontology"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-11-08T13:02:19Z",
+   "metrics": {
+    "likes": 159,
+    "reposts": 22,
+    "quotes": 0,
+    "replies": 42,
+    "views": 11582
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The detailed write-up is from a roster explainer, not an NVIDIA account post in this window, and the post leans on NVIDIA's own demo rather than an independent accuracy study.",
+    "source": null
+   }
+  },
+  {
+   "title": "Quickthinker weights: a no-training edit that shortens Qwen3.8-27B thinking",
+   "url": "https://x.com/MoulinMon/status/2119438959361011887",
+   "handle": "@MoulinMon",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "Authors say a research harness called miniml, run with Opus 5.5, found a weight-space edit that makes Qwen3.8-27B think about 43% less at the same accuracy, with no extra training, and published the resulting weights. An independent builder later measured median thinking tokens falling from 26254 to 16930 (about 36%) on a 32-plus-32 pelican prompt test of a 20 KB one-matrix edit after quantization.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/scar-ai/Qwen3.8-27B-Quickthinker"
+   ],
+   "vendor": "scar-ai / miniml",
+   "posted_at": "2026-11-08T14:36:39Z",
+   "metrics": {
+    "likes": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@witcheer"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Author-reported 43% figure has no linked eval write-up in the post; the independent check used one prompt on one GPU.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/ClaudioDekker/status/2119388046366015802",
+   "reason": "Non-AI gaming discussion: native Switch-to-PC port tooling, not an AI capability."
+  },
+  {
+   "url": "https://x.com/Mprtech2/status/2119109386664579182",
+   "reason": "Non-AI firearms parts file share, not developer or AI content."
+  }
+ ],
+ "saves": {
+  "checked_archive": true,
+  "checked_api": true,
+  "new": 2,
+  "kept": 0,
+  "note": "Archive and 07:43 CT sync had no new kept saves. API page showed two unseen ids, both rejected at Scope."
+ },
+ "list_posts_read": 98,
+ "list_pages": 1,
+ "deep_reads": 2,
+ "rechecks": 5,
+ "videos": 0,
+ "videos_note": "No deep-read or saved clip qualified for analysis. The Drama 3 quant clip was not deep-read.",
+ "horizon": {
+  "checked": [
+   "block-dessa"
+  ],
+  "x_reads": 0,
+  "page_checked": true,
+  "triggered": [],
+  "last_result": "block.xyz/dessa unchanged: research-preview page with demo clips and safety-researcher early access; Download is a clip-save control or coming soon, not weights; no API or paper."
+ },
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://x.com/TraffAlex/status/2119439387867922742",
+   "reason": "Windows Paint RCE CVE-2026-83844; Paint is not in stack.json and is not agent, supply-chain or container tooling."
+  },
+  {
+   "url": "https://x.com/JonSnyderHQ/status/2119444827976724763",
+   "reason": "Maintainer dispute over a GHSA malware flag on factiii/runner (GHSA-9j83-qj34-g5vc); unknown CLI, not in the stack."
+  },
+  {
+   "url": "https://x.com/rst_cloud/status/2119427891792363938",
+   "reason": "Node-RED exploitation write-up aimed at ICS products; Node-RED is not in stack.json."
+  },
+  {
+   "url": "https://x.com/nagasawatsubasa/status/2119444257832575086",
+   "reason": "Recap of APT CVE-2026-109518, already filed to the Mini on 2026-11-04; no new information."
+  },
+  {
+   "url": "https://x.com/checkleaked/status/2119429899463070022",
+   "reason": "Recap of the Claude Code Don't Ask Again GitHub secret leak already in today's Magpie edition; no new advisory."
+  }
+ ],
+ "skipped_notes": [
+  "DeepSeekHarness X article (https://x.com/DeepSeekHarness/status/2119431663642153128, about 1477 likes) is a progress recap: replies cite about 1.54M official-API DAU, 92 trillion tokens a day through 2026-11-04, and about 35,000 third-party plugins, plus a marketplace still being prepared. Not a new capability. Article body was not readable via the API or a public fetch.",
+  "Qwen 4 27B 'drops November 8, 11pm' remains an unsourced rumor (@sudoingX via @ashxhart); no official @Alibaba_Qwen release in this window.",
+  "MiaAI_lab harness open-source note is a teaser ('this week'), not a release.",
+  "Amp for Windows experimental desktop app is already in today's Magpie edition (https://x.com/sqs/status/2119006263443124697); in-window posts were follow-up 'it shipped' replies.",
+  "witcheer 20 KB Qwen3.8-27B thinking-token measurement is already an edition event; the later scar-ai Quickthinker weights post is kept so Magpie can match the Hugging Face repo.",
+  "Hugging Face MoE handbook quote pointed at a 2026-11-05 @Thom_Wolf thread already in wide circulation.",
+  "Asahi Linux generative-AI contribution policy is a project rule, not an official constraint on who can train, publish, host or buy AI."
+ ]
+}

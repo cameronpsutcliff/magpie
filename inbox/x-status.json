@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-11-08T11:12:00Z",
+ "updated_at": "2026-11-08T15:14:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 25,
+ "calls_used_today": 43,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-08T11:12:00Z",
-  "items": 13,
-  "queries": 12,
+  "ran_at": "2026-11-08T15:14:00Z",
+  "items": 5,
+  "queries": 14,
   "deep_reads": 2,
-  "rechecks": 0,
+  "rechecks": 5,
   "flagged": 5,
-  "saved_in": 0,
+  "saved_in": 2,
   "saved_kept": 0,
   "videos": 0,
-  "security_forwarded": 1,
+  "security_forwarded": 0,
   "list_posts_read": 98,
   "list_pages": 1
  },
@@ -254,10 +254,15 @@
   "Roster review 2026-11-08: promotion counts now include sweep files pruned from inbox/x (read from git history); @reflection_ai and @EmmaScharfmann reached 2 only that way. Suggest the prompt say whether pruned files count.",
   "Roster review 2026-11-08 rejected: @togethercompute (real Together Compiler numbers but >1/5 customer stories, press and event promo); @CloudflareDev (mostly non-AI platform features and event RSVPs); @owengretzinger (comment-for-intro bait and event promo).",
   "Roster review 2026-11-08: only one sweep file (2026-11-07T11-15) exists since the last review; the 17:00/21:00 Nov 7 and 05:00 Nov 8 sweeps left no files.",
-  "stack.json has no OpenSSH entry; if any machine or container runs sshd (especially Alpine/musl), consider adding it so OpenSSH advisories route to Bouncer."
+  "stack.json has no OpenSSH entry; if any machine or container runs sshd (especially Alpine/musl), consider adding it so OpenSSH advisories route to Bouncer.",
+  "Sweep 2026-11-08T15:14Z: curated labs and opensource OR searches returned 0 results again for a 4-hour window (same index gap as the 11:12Z sweep). List timeline covered trial and active members through since in one page.",
+  "Sweep 2026-11-08T15:14Z: DeepSeekHarness posted an X article (2118260976965517312) whose body is still unreadable via get_posts_by_ids and public fetch; replies described a progress recap (about 1.54M DAU and 35k plugins) rather than a new capability.",
+  "Sweep 2026-11-08T15:14Z: no browser, so no follows attempted; no new account newly crossed the 3-qualifying-posts follow bar this window.",
+  "Sweep 2026-11-08T15:14Z: first discovery call was rejected because an end_time null was sent; the retry without end_time worked."
  ],
  "errors": [
-  "Curated labs OR searches (one 40-handle query and two 20-handle splits) returned 0 to 1 results for a 24h window, which looks like a search-index gap rather than silence; covered by list timeline only."
+  "Curated labs OR searches (one 40-handle query and two 20-handle splits) returned 0 to 1 results for a 24h window, which looks like a search-index gap rather than silence; covered by list timeline only.",
+  "Curated labs and opensource OR searches returned 0 results for the 4-hour window (known index gap); non-list members in those groups were not covered by search."
  ],
  "follows_today": 0,
  "last_roster_review": {
