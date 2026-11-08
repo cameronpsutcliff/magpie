@@ -1,13 +1,15 @@
-"""Check a file Magpie publishes against its JSON Schema in data/v1/schema, with the standard library only.
+r"""Check a file Magpie publishes against its JSON Schema in data/v1/schema, with the standard library only.
 
 `problems(obj, "ideas.schema.json")` returns what is wrong, one line per problem with its place in the file
 ("$.ideas[3].ingredients[0].url: ..."), and nothing when the file conforms. It reads the published schema file, so the
 schema readers download is the one the pipeline enforces.
 
 It implements the JSON Schema 2020-12 keywords Magpie's schemas use: type, const, enum, required, properties,
-additionalProperties, items, minItems, maxItems, pattern (with ASCII \d and \w, as ECMA-262 reads them), minLength,
-maxLength, format, minimum, maximum, $ref within the same file (a URI fragment holding a JSON Pointer, RFC 6901), allOf,
-anyOf, oneOf, not and if/then/else. Formats: date and date-time as RFC 3339 defines
+additionalProperties, items, minItems, maxItems, pattern, minLength, maxLength, format, minimum, maximum, $ref within the same file (a URI fragment holding a JSON Pointer, RFC 6901), allOf,
+anyOf, oneOf, not and if/then/else. A pattern is an ECMA-262 regex in JSON Schema; this checker takes only the part of
+that syntax Python reads the same way (literals, \d \D \w \W read as ASCII, character classes, ^ and $ with $ the end of
+the string, groups, alternation and quantifiers) and refuses the rest (., \s, \b, lookarounds, backreferences, named
+groups, property escapes) with SchemaError rather than read it differently. Formats: date and date-time as RFC 3339 defines
 them (a leap second only at 23:59:60 UTC); uri as RFC 3986, parsed into its parts, each from its own characters, with
 brackets only around an IPv6 or IPvFuture host and a host required for http and https; iri as RFC 3987, which adds
 ucschar everywhere and iprivate in the query. Annotations (title, description, $id and the like) are skipped. Before
@@ -22,6 +24,7 @@ file in place.
 from __future__ import annotations
 
 import datetime as dt
+import functools
 import ipaddress
 import json
 import os
@@ -74,6 +77,71 @@ def load(name: str) -> dict:
     return json.loads((SCHEMA_DIR / name).read_text())
 
 
+@functools.lru_cache(maxsize=256)
+def _ecma_pattern(p: str) -> str:
+    """The Python regex for an ECMA-262 pattern within the subset both engines read alike; $ becomes \\Z, since ECMA-262's $
+    does not match before a final newline. Anything outside the subset raises SchemaError."""
+    out, i, n = [], 0, len(p)
+    simple = "dDwW"
+    while i < n:
+        c = p[i]
+        if c == "\\":
+            e = p[i + 1] if i + 1 < n else ""
+            if not e or (e not in simple and e not in "\\^$.|?*+()[]{}/-"):
+                raise SchemaError(f"pattern escape \\{e} is not supported")
+            out.append(c + e)
+            i += 2
+        elif c == "[":
+            j = i + 1 + (p[i + 1:i + 2] == "^")
+            if p[j:j + 1] in ("]", ""):
+                raise SchemaError("an empty or unterminated character class is not supported")
+            k = j
+            while k < n and p[k] != "]":
+                if p[k] == "\\":
+                    if p[k + 1:k + 2] not in tuple(simple) + tuple("\\]^-[/"):
+                        raise SchemaError(f"pattern escape \\{p[k + 1:k + 2]} in a class is not supported")
+                    k += 2
+                elif p[k] == "[":
+                    raise SchemaError("a [ inside a character class is not supported")
+                else:
+                    k += 1
+            if k >= n:
+                raise SchemaError("an unterminated character class")
+            out.append(p[i:k + 1])
+            i = k + 1
+        elif c == ".":
+            raise SchemaError("'.' reads differently in ECMA-262 and Python; use a character class")
+        elif c == "$":
+            out.append(r"\Z")
+            i += 1
+        elif c == "(":
+            if p.startswith("(?:", i):
+                out.append("(?:")
+                i += 3
+            elif p[i + 1:i + 2] == "?":
+                raise SchemaError("lookarounds, named groups and inline flags are not supported")
+            else:
+                out.append(c)
+                i += 1
+        elif c == "{":
+            m = re.match(r"\{[0-9]+(?:,[0-9]*)?\}", p[i:])
+            if not m:
+                raise SchemaError("a { that is not a quantifier is not supported")
+            out.append(m.group(0))
+            i += m.end()
+        elif c == "}":
+            raise SchemaError("a } that closes no quantifier is not supported")
+        else:
+            out.append(c)
+            i += 1
+    translated = "".join(out)
+    try:
+        re.compile(translated, re.ASCII)
+    except re.error as ex:
+        raise SchemaError(f"pattern does not compile: {ex}") from None
+    return translated
+
+
 def _audit(s, root: dict, seen: set[int]) -> None:
     """Read the whole schema once, every branch and definition and the target of every reference, and raise SchemaError
     on anything this checker cannot check or a keyword whose value has the wrong shape, whether or not a given file would
@@ -112,10 +180,7 @@ def _audit(s, root: dict, seen: set[int]) -> None:
     if "format" in s and s["format"] not in FORMATS:
         raise SchemaError(f"unknown format {s['format']!r}")
     if "pattern" in s:
-        try:
-            re.compile(s["pattern"], re.ASCII)
-        except re.error as ex:
-            raise SchemaError(f"pattern does not compile: {ex}") from None
+        _ecma_pattern(s["pattern"])
     subs = [*s.get("properties", {}).values(), *s.get("$defs", {}).values(), *s.get("allOf", []), *s.get("anyOf", []),
             *s.get("oneOf", [])]
     subs += [s[k] for k in ("additionalProperties", "items", "not", "if", "then", "else") if k in s]
@@ -317,8 +382,8 @@ def _check(v, s, root: dict, path: str, out: list[str]) -> None:
             out.append(f"{path}: shorter than {s['minLength']} characters")
         if "maxLength" in s and len(v) > s["maxLength"]:
             out.append(f"{path}: longer than {s['maxLength']} characters")
-        # ECMA-262 semantics, as JSON Schema asks: \d and \w are ASCII, so a date pattern refuses other scripts' digits.
-        if "pattern" in s and not re.search(s["pattern"], v, re.ASCII):
+        # Read as ECMA-262 reads it (the audit admitted only the subset where Python agrees): \d is 0 to 9, $ is the end.
+        if "pattern" in s and not re.search(_ecma_pattern(s["pattern"]), v, re.ASCII):
             out.append(f"{path}: {json.dumps(v[:80])} does not match {s['pattern']}")
         if "format" in s:
             if s["format"] not in FORMATS:
