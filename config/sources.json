@@ -1542,6 +1542,96 @@
      "url": "https://www.interconnects.ai/p/podcast-kimi-k31-pro-the-new-cyber"
     }
    ]
+  },
+  {
+   "org": "google",
+   "why": "Discovered 2026-11-07: cited by GitHub, SemiAnalysis, X: @antigravity within a week.",
+   "origin": "discovery",
+   "since": "2026-11-07",
+   "discovered_as": "github:google",
+   "evidence": [
+    {
+     "date": "2026-11-04",
+     "source": "X: @antigravity",
+     "title": "Antigravity migrates a 174k-line Fortran model to safe Rust in 59 minutes",
+     "url": "https://x.com/antigravity/status/2117773996695367851"
+    },
+    {
+     "date": "2026-11-05",
+     "source": "GitHub",
+     "title": "google/skills",
+     "url": "https://github.com/google/skills"
+    },
+    {
+     "date": "2026-11-06",
+     "source": "SemiAnalysis",
+     "title": "The Iron(wood) Throne: Google's TPU Stakes Its Claim on Inference",
+     "url": "https://newsletter.semianalysis.com/p/tpu-strikes-the-king"
+    }
+   ]
+  },
+  {
+   "org": "rikiyat",
+   "why": "Discovered 2026-11-07: cited by Simon Willison, X: @simonw within a week.",
+   "origin": "discovery",
+   "since": "2026-11-07",
+   "discovered_as": "github:rikiyat",
+   "evidence": [
+    {
+     "date": "2026-11-04",
+     "source": "X: @simonw",
+     "title": "Simon Willison: Qwen 3.8 27B on a laptop also identifies games from raw policy-network weights",
+     "url": "https://x.com/simonw/status/2117655816581071203"
+    },
+    {
+     "date": "2026-11-04",
+     "source": "Simon Willison",
+     "title": "Qwen 3.8 27B on my laptop can interpret model weights, too",
+     "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/"
+    }
+   ]
+  },
+  {
+   "org": "dsx-ai-factory",
+   "why": "Discovered 2026-11-07: cited by GitHub, Hacker News within a week.",
+   "origin": "discovery",
+   "since": "2026-11-07",
+   "discovered_as": "github:dsx-ai-factory",
+   "evidence": [
+    {
+     "date": "2026-11-06",
+     "source": "Hacker News",
+     "title": "Nvidia Kubernetes Engine (NVKE)",
+     "url": "https://github.com/dsx-ai-factory/nvke"
+    },
+    {
+     "date": "2026-11-07",
+     "source": "GitHub",
+     "title": "dsx-ai-factory/nvke",
+     "url": "https://github.com/dsx-ai-factory/nvke"
+    }
+   ]
+  },
+  {
+   "org": "p-e-w",
+   "why": "Discovered 2026-11-07: cited by GitHub, Latent Space within a week.",
+   "origin": "discovery",
+   "since": "2026-11-07",
+   "discovered_as": "github:p-e-w",
+   "evidence": [
+    {
+     "date": "2026-11-02",
+     "source": "GitHub",
+     "title": "p-e-w/heretic",
+     "url": "https://github.com/p-e-w/heretic"
+    },
+    {
+     "date": "2026-11-03",
+     "source": "Latent Space",
+     "title": "[AINews] LLMs can read & write neural network weights: \"Weight Space Programming\" cuts Autoresearch out of the RSI loop",
+     "url": "https://latent.space/p/ainews-llms-can-read-write-neural-network-weights-weight-space-programming-cuts-autoresearch-out-of/"
+    }
+   ]
   }
  ],
  "policy_feeds": [
