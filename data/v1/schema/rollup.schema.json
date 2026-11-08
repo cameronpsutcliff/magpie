@@ -139,6 +139,12 @@
           "type": "string",
           "format": "date",
           "description": "Present when that appearance was a follow-up of an earlier edition."
+         },
+         "page_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://www\\.cameronsutcliff\\.com/magpie/c/\\d{4}-\\d{2}-\\d{2}-[0-9a-f]{12}$",
+          "description": "The page of the appearance chosen here (date and event_id): /magpie/c/<date>-<event_id>."
          }
         }
        },
@@ -149,7 +155,7 @@
        "items": {
         "type": "object"
        },
-       "description": "The strongest possibilities by rank score, with id, date, title, connection, score, effort, builds_on, built_on_by."
+       "description": "The strongest possibilities by rank score, with id, date, title, connection, score, effort, builds_on, built_on_by, page_url (its page, /magpie/i/<id>)."
       },
       "threats": {
        "type": "array",
@@ -305,6 +311,12 @@
           "type": "string",
           "format": "date",
           "description": "Present when that appearance was a follow-up of an earlier edition."
+         },
+         "page_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://www\\.cameronsutcliff\\.com/magpie/c/\\d{4}-\\d{2}-\\d{2}-[0-9a-f]{12}$",
+          "description": "The page of the appearance chosen here (date and event_id): /magpie/c/<date>-<event_id>."
          }
         }
        },
@@ -315,7 +327,7 @@
        "items": {
         "type": "object"
        },
-       "description": "The strongest possibilities by rank score, with id, date, title, connection, score, effort, builds_on, built_on_by."
+       "description": "The strongest possibilities by rank score, with id, date, title, connection, score, effort, builds_on, built_on_by, page_url (its page, /magpie/i/<id>)."
       },
       "threats": {
        "type": "array",

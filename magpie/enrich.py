@@ -13,6 +13,7 @@ import os
 import re
 import shutil
 import subprocess
+import sys
 import tempfile
 from pathlib import Path
 
@@ -162,6 +163,49 @@ def works_with(raw, e: dict) -> list[dict]:
     return out[:5]
 
 
+def vendor_name(v, event_id: str = "") -> str | None:
+    """The editor's vendor when it is a text name, cleaned; anything else (true, a number, an object, an empty string) is
+    None and logged, so it never becomes an event's maker or one of its vendors."""
+    if isinstance(v, str) and clean(v).strip():
+        return clean(v).strip()
+    if v is not None:
+        print(f"enrich: vendor {json.dumps(v)[:60]} for {event_id or 'an event'} is not a name; set to null", file=sys.stderr)
+    return None
+
+
+def clean_makers(day: dict) -> int:
+    """Repair a published edition in place: an event's maker or vendors that is not a text name (an earlier editor run
+    could store true) is dropped, the maker becoming null rather than a guess, the brief's vendor likewise, and the day's
+    vendor facets lose any row whose name is not text (a row is a list as read from JSON, or a tuple as Counter.most_common
+    builds it on a fresh edition; both are kept when named). Returns how many repairs it made, events changed plus facet
+    rows dropped, so a caller can tell a facet-only repair needs writing. Idempotent."""
+    if not isinstance(day, dict):
+        return 0
+    name = lambda v: isinstance(v, str) and bool(v.strip())  # noqa: E731
+    changed = 0
+    for e in day.get("events") or []:
+        if not isinstance(e, dict):
+            continue
+        before = (e.get("maker"), list(e.get("vendors") or []), (e.get("brief") or {}).get("vendor"))
+        if "maker" in e and e["maker"] is not None and not name(e["maker"]):
+            e["maker"] = None
+        if isinstance(e.get("vendors"), list):
+            e["vendors"] = [v for v in e["vendors"] if name(v)]
+        b = e.get("brief")
+        if isinstance(b, dict) and b.get("vendor") is not None and not name(b["vendor"]):
+            b["vendor"] = None
+        if before != (e.get("maker"), list(e.get("vendors") or []), (b or {}).get("vendor") if isinstance(b, dict) else None):
+            changed += 1
+    facets = day.get("facets")
+    if isinstance(facets, dict):
+        for k in ("vendors", "ecosystem"):
+            if isinstance(facets.get(k), list):
+                kept = [row for row in facets[k] if isinstance(row, (list, tuple)) and row and name(row[0])]
+                changed += len(facets[k]) - len(kept)
+                facets[k] = kept
+    return changed
+
+
 def keep_works_with(brief: dict, e: dict) -> None:
     """Leave on the brief only the names that pass `works_with` against this event, or none. Run on a fresh answer and on
     a cached brief reused for a rebuilt event, whose text may have changed. Never raises: names are never worth an edition."""
@@ -286,9 +330,12 @@ def enrich(events: list[dict], date: str, limit: int = 26, timeout: int = 1200) 
                 brief["impact"] = None
             if b.get("topics"):
                 e["topics"] = [t for t in b["topics"] if t in topics][:3] or e["topics"]
-            if b.get("vendor") and b["vendor"] not in ("Open source", e.get("maker")):
-                e["maker"] = b["vendor"]
-                e["vendors"] = [b["vendor"]] + [v for v in e["vendors"] if v != b["vendor"]][:2]
+            vendor = vendor_name(b.get("vendor"), e["id"]) if "vendor" in b else None
+            if "vendor" in b:
+                brief["vendor"] = vendor  # only a text name is kept; anything else is null
+            if vendor and vendor not in ("Open source", e.get("maker")):
+                e["maker"] = vendor
+                e["vendors"] = [vendor] + [v for v in e["vendors"] if v != vendor][:2]
             keep_works_with(brief, e)  # after the maker is settled, so the maker never counts as an integration
             e["brief"] = brief
             n += 1

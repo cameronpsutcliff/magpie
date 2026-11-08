@@ -111,12 +111,14 @@ def compose_day(date: str, items: list[dict], rising: dict, health: list[dict], 
 
 def publish_day(day: dict, events: list[dict], top_events: list[dict], *, force: bool = False) -> bool:
     """Write the day; move `latest` only forward; record first sightings. Returns False if it kept a richer edition."""
+    from .enrich import clean_makers
     from .pages import stamp
     from .recent import attach
     from .views import assign_ids
     attach(day, DATA)  # no blank sections: an empty one carries its latest items from the registers and past editions
     assign_ids(day)  # every possibility has its page id, a cached one included
     stamp(day)  # every capability and possibility carries its page_url
+    clean_makers(day)  # a maker or vendor is a text name or nothing
     scrub(day)
     date = day["date"]
     day_path = DATA / "days" / f"{date}.json"
@@ -190,6 +192,8 @@ def refresh_elements(date: str | None = None) -> None:
 
 
 def index_entry(day: dict) -> dict:
+    from .pages import item_url
+
     by_id = {e["id"]: e for e in day["events"]}
     top_events = [by_id[i] for i in day["top"] if i in by_id]
     edition = day["edition"]
@@ -199,7 +203,8 @@ def index_entry(day: dict) -> dict:
         "enriched": bool(day["run"]["enriched"]),
         **({"backfilled": True} if edition.get("backfilled") else {}),
         "top": [{"id": e["id"], "title": (e.get("brief") or {}).get("headline") or e["title"], "impact": e["impact"],
-                 "vendor": e.get("maker")} for e in top_events],
+                 "vendor": e.get("maker"), **({"page_url": u} if (u := item_url(day["date"], e["id"])) else {})}
+                for e in top_events],
         "vendors": [v for v, _ in day["facets"]["vendors"][:6]],
         # Per-topic and per-source counts give every later day a "typical day" to compare against.
         "topics": dict(day["facets"].get("topics", [])),
@@ -227,16 +232,22 @@ def write_feed(limit: int = 30) -> None:
     """JSON Feed 1.1 of the latest editions: one item per day, with its leads and best new possibility."""
     from html import escape
 
+    from .pages import item_url
+
     days = sorted((load_json(p, None) for p in (DATA / "days").glob("*.json")), key=lambda d: d["date"], reverse=True)
     items = []
     for d in [d for d in days if d][:limit]:
         by = {e["id"]: e for e in d.get("events", [])}
         top = [by[i] for i in d.get("top", []) if i in by]
         ed = d.get("edition", {})
-        leads = "".join(
-            f'<li><a href="{escape(e["url"])}">{escape((e.get("brief") or {}).get("headline") or e["title"])}</a>'
-            f'{": " + escape((e.get("brief") or {}).get("newly_possible", "")) if (e.get("brief") or {}).get("newly_possible") else ""}</li>'
-            for e in top)
+        def lead(e):
+            # The source stays the lead's link; its page on Magpie follows it.
+            page = item_url(d["date"], e["id"])
+            return (f'<li><a href="{escape(e["url"])}">{escape((e.get("brief") or {}).get("headline") or e["title"])}</a>'
+                    + (f' (<a href="{escape(page)}">on Magpie</a>)' if page else "")
+                    + (f': {escape((e.get("brief") or {}).get("newly_possible", ""))}' if (e.get("brief") or {}).get("newly_possible") else "")
+                    + "</li>")
+        leads = "".join(lead(e) for e in top)
         poss = (d.get("possibilities") or {}).get("items") or []
         best = f"<p><strong>New possibility:</strong> {escape(poss[0]['title'])}</p>" if poss else ""
         watch = (d.get("viewing") or {}).get("items") or []

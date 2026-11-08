@@ -12,31 +12,36 @@
      "id": "8de3628ca09c",
      "title": "SageMaker Inference splits GPUs with NVIDIA MIG",
      "impact": 4,
-     "vendor": "AWS"
+     "vendor": "AWS",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-07-8de3628ca09c"
     },
     {
      "id": "02d0f9ac3aca",
      "title": "Claude Code runs remotely on Bedrock AgentCore",
      "impact": 4,
-     "vendor": "AWS"
+     "vendor": "AWS",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-07-02d0f9ac3aca"
     },
     {
      "id": "fa0500f0712d",
      "title": "Knowledge Catalog grounds agents in semantic layers",
      "impact": 4,
-     "vendor": "Google Cloud"
+     "vendor": "Google Cloud",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-07-fa0500f0712d"
     },
     {
      "id": "e487fe51b82b",
      "title": "Cloudflare security-audit skill keeps climbing on GitHub",
      "impact": 2,
-     "vendor": "Cloudflare"
+     "vendor": "Cloudflare",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-07-e487fe51b82b"
     },
     {
      "id": "9ca6bcf83c79",
      "title": "Gemini Omni 1.2 Flash draws Hacker News discussion",
      "impact": 2,
-     "vendor": "Google"
+     "vendor": "Google",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-07-9ca6bcf83c79"
     }
    ],
    "vendors": [
@@ -86,31 +91,36 @@
      "id": "d5deba094d7e",
      "title": "Hugging Face publishes open MoE training handbook",
      "impact": 4,
-     "vendor": "Hugging Face"
+     "vendor": "Hugging Face",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-06-d5deba094d7e"
     },
     {
      "id": "836cd722751a",
      "title": "Kimi K3.1 Pro still drawing broad attention",
      "impact": 4,
-     "vendor": "Moonshot"
+     "vendor": "Moonshot",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-06-836cd722751a"
     },
     {
      "id": "12ccff85d570",
      "title": "ByteDance Axion 1.0 shows a short agent post-train recipe",
      "impact": 4,
-     "vendor": "ByteDance"
+     "vendor": "ByteDance",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-06-12ccff85d570"
     },
     {
      "id": "b2e43e740f52",
      "title": "NVIDIA Auto Ontology keeps trending with 2,005 daily stars",
      "impact": 3,
-     "vendor": "NVIDIA"
+     "vendor": "NVIDIA",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-06-b2e43e740f52"
     },
     {
      "id": "2707ef840bf2",
      "title": "Claude Code adds cross-account AWS roles and mod effort",
      "impact": 2,
-     "vendor": "Anthropic"
+     "vendor": "Anthropic",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-06-2707ef840bf2"
     }
    ],
    "vendors": [
@@ -160,31 +170,36 @@
      "id": "836cd722751a",
      "title": "Kimi K3.1 Pro open weights with 1M context",
      "impact": 5,
-     "vendor": "Moonshot AI"
+     "vendor": "Moonshot AI",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-05-836cd722751a"
     },
     {
      "id": "c90c2ed97c58",
      "title": "Axion-1.0 35B released with full training recipe",
      "impact": 4,
-     "vendor": "ByteDance"
+     "vendor": "ByteDance",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-05-c90c2ed97c58"
     },
     {
      "id": "41aca6188133",
      "title": "OpenAI pipeline finds and patches 948 Linux kernel bugs",
      "impact": 4,
-     "vendor": "OpenAI"
+     "vendor": "OpenAI",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-05-41aca6188133"
     },
     {
      "id": "b2e43e740f52",
      "title": "NVIDIA Auto Ontology adds graph reasoning layers",
      "impact": 3,
-     "vendor": "NVIDIA"
+     "vendor": "NVIDIA",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-05-b2e43e740f52"
     },
     {
      "id": "50c525e767d6",
      "title": "Scenario skills drive image, video, audio and 3D generation",
      "impact": 3,
-     "vendor": "Scenario"
+     "vendor": "Scenario",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-05-50c525e767d6"
     }
    ],
    "vendors": [
@@ -235,31 +250,36 @@
      "id": "f6f2d6ac259e",
      "title": "Qwen 3.8 27B reads model weights on a laptop",
      "impact": 4,
-     "vendor": "Qwen"
+     "vendor": "Qwen",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-04-f6f2d6ac259e"
     },
     {
      "id": "163057fb1ee5",
      "title": "Colibri keeps trending on tiered MoE inference claim",
      "impact": 4,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-04-163057fb1ee5"
     },
     {
      "id": "e487fe51b82b",
      "title": "Cloudflare security-audit skill keeps climbing",
      "impact": 4,
-     "vendor": "Cloudflare"
+     "vendor": "Cloudflare",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-04-e487fe51b82b"
     },
     {
      "id": "bee099572b64",
      "title": "Heretic keeps trending for training-free model edits",
      "impact": 4,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-04-bee099572b64"
     },
     {
      "id": "679201ed0c04",
      "title": "vLLM 0.33.0 adds models and faster GB300 decode",
      "impact": 4,
-     "vendor": "vLLM"
+     "vendor": "vLLM",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-04-679201ed0c04"
     }
    ],
    "vendors": [
@@ -310,31 +330,36 @@
      "id": "7c101cc8f3c0",
      "title": "Mistral Large 4 still trending with its technical report",
      "impact": 4,
-     "vendor": "Mistral AI"
+     "vendor": "Mistral AI",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-03-7c101cc8f3c0"
     },
     {
      "id": "294088734b6f",
      "title": "OpenAI's Pando, a Git-compatible backend for Codex scale",
      "impact": 3,
-     "vendor": "OpenAI"
+     "vendor": "OpenAI",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-03-294088734b6f"
     },
     {
      "id": "fa88d9b2c455",
      "title": "Astra: an LLM that reads and writes Qwen weights",
      "impact": 3,
-     "vendor": "Qwen"
+     "vendor": "Qwen",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-03-fa88d9b2c455"
     },
     {
      "id": "8834cd962f13",
      "title": "Anthropic's FlashProve: zero-knowledge proofs of LLM inference",
      "impact": 4,
-     "vendor": "Anthropic"
+     "vendor": "Anthropic",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-03-8834cd962f13"
     },
     {
      "id": "f446fcb20ecb",
      "title": "SGLang HiCache reuses prefix cache across parallel serving",
      "impact": 4,
-     "vendor": "SGLang"
+     "vendor": "SGLang",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-03-f446fcb20ecb"
     }
    ],
    "vendors": [
@@ -385,31 +410,36 @@
      "id": "32288877506c",
      "title": "Vercel's Agent Desktop drives apps through accessibility trees",
      "impact": 4,
-     "vendor": "Vercel"
+     "vendor": "Vercel",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-02-32288877506c"
     },
     {
      "id": "163057fb1ee5",
      "title": "Colibri runs MoE models in pure C from disk",
      "impact": 4,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-02-163057fb1ee5"
     },
     {
      "id": "177fb172f416",
      "title": "Rea agent reverse engineering repo keeps trending",
      "impact": 4,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-02-177fb172f416"
     },
     {
      "id": "84dd4f86c866",
      "title": "Community quants run MiniMax M3.1 Flash on local hardware",
      "impact": 4,
-     "vendor": "MiniMax"
+     "vendor": "MiniMax",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-02-84dd4f86c866"
     },
     {
      "id": "0267ddef94cb",
      "title": "Nemotron 3.5 Transcribe 30B-A4B keeps trending",
      "impact": 3,
-     "vendor": "NVIDIA"
+     "vendor": "NVIDIA",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-02-0267ddef94cb"
     }
    ],
    "vendors": [
@@ -459,31 +489,36 @@
      "id": "2dc3a5916b20",
      "title": "Five Qwen3.8-27B models beat Fable 5 on coding",
      "impact": 4,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-01-2dc3a5916b20"
     },
     {
      "id": "db7852801a82",
      "title": "DeepSeek open-sources proactive repo coding agent prototype",
      "impact": 4,
-     "vendor": "DeepSeek"
+     "vendor": "DeepSeek",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-01-db7852801a82"
     },
     {
      "id": "e1a6e7dd3e27",
      "title": "Hugging Face releases FineDNA set and Carbon-X DNA model",
      "impact": 4,
-     "vendor": "Hugging Face"
+     "vendor": "Hugging Face",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-01-e1a6e7dd3e27"
     },
     {
      "id": "7d3566eb8f1d",
      "title": "Agent swarm writes Hopper kernels for faster decode",
      "impact": 4,
-     "vendor": "vLLM"
+     "vendor": "vLLM",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-01-7d3566eb8f1d"
     },
     {
      "id": "abb29d43d5ab",
      "title": "AMD MI355X reaches 2x B200 cost efficiency on Kimi K3",
      "impact": 4,
-     "vendor": "AMD"
+     "vendor": "AMD",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-01-abb29d43d5ab"
     }
    ],
    "vendors": [
@@ -533,31 +568,36 @@
      "id": "e0445f93bfaa",
      "title": "Backdoor found in Claude Code extension on Cursor Marketplace",
      "impact": 4,
-     "vendor": "Cursor"
+     "vendor": "Cursor",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-31-e0445f93bfaa"
     },
     {
      "id": "fa51435a04f8",
      "title": "Android Studio stable lets you pick Antigravity as agent",
      "impact": 4,
-     "vendor": "Google"
+     "vendor": "Google",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-31-fa51435a04f8"
     },
     {
      "id": "480974840491",
      "title": "SGLang hits 1.09M tokens per second per GPU",
      "impact": 4,
-     "vendor": "SGLang"
+     "vendor": "SGLang",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-31-480974840491"
     },
     {
      "id": "d86adac75993",
      "title": "Clover 35B A3B diffusion MoE tested locally",
      "impact": 4,
-     "vendor": "Meta"
+     "vendor": "Meta",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-31-d86adac75993"
     },
     {
      "id": "a6130ee3e391",
      "title": "Phonon-2 speech recognition fits in 164MB on CPU",
      "impact": 4,
-     "vendor": "Fermion Research"
+     "vendor": "Fermion Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-31-a6130ee3e391"
     }
    ],
    "vendors": [
@@ -607,31 +647,36 @@
      "id": "7c101cc8f3c0",
      "title": "Mistral Large 4 open weights, 1T-A52B multimodal",
      "impact": 5,
-     "vendor": "Mistral"
+     "vendor": "Mistral",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-30-7c101cc8f3c0"
     },
     {
      "id": "7c82caeeb9f4",
      "title": "ForgeKernel agent writes faster attention prefill kernel",
      "impact": 4,
-     "vendor": "OpenBMB"
+     "vendor": "OpenBMB",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-30-7c82caeeb9f4"
     },
     {
      "id": "db8cae120c50",
      "title": "Unsloth 1-bit GGUF runs Mistral Large 4 locally",
      "impact": 4,
-     "vendor": "Unsloth"
+     "vendor": "Unsloth",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-30-db8cae120c50"
     },
     {
      "id": "0267ddef94cb",
      "title": "NVIDIA Nemotron 3.5 Transcribe 30B-A4B speech model",
      "impact": 3,
-     "vendor": "NVIDIA"
+     "vendor": "NVIDIA",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-30-0267ddef94cb"
     },
     {
      "id": "426524d23e54",
      "title": "Zed DeltaDB links each code edit to its agent conversation",
      "impact": 4,
-     "vendor": "Zed"
+     "vendor": "Zed",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-30-426524d23e54"
     }
    ],
    "vendors": [
@@ -682,31 +727,36 @@
      "id": "7b4d011d4e58",
      "title": "NVIDIA Nemotron 3.5 Transcribe: open 30B MoE speech model",
      "impact": 4,
-     "vendor": "NVIDIA"
+     "vendor": "NVIDIA",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-29-7b4d011d4e58"
     },
     {
      "id": "799dc88c4fa1",
      "title": "PyTorch 2.15 defaults to rewritten NCCL backend",
      "impact": 4,
-     "vendor": "PyTorch"
+     "vendor": "PyTorch",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-29-799dc88c4fa1"
     },
     {
      "id": "83b61bd096f8",
      "title": "ggml v0.28.0 adds fused sparse-attention mask op",
      "impact": 4,
-     "vendor": "ggml"
+     "vendor": "ggml",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-29-83b61bd096f8"
     },
     {
      "id": "474d47274f6a",
      "title": "GitHub Copilot Fusion routes models for you, now GA",
      "impact": 4,
-     "vendor": "GitHub"
+     "vendor": "GitHub",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-29-474d47274f6a"
     },
     {
      "id": "21de2059ba8b",
      "title": "Google announces Gemini 4 Carbon frontier model",
      "impact": 5,
-     "vendor": "Google"
+     "vendor": "Google",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-29-21de2059ba8b"
     }
    ],
    "vendors": [
@@ -800,31 +850,36 @@
      "id": "04012c1787eb",
      "title": "LiquidAI/LFM3-1.7B",
      "impact": 5,
-     "vendor": "Liquid AI"
+     "vendor": "Liquid AI",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-28-04012c1787eb"
     },
     {
      "id": "40993ef93264",
      "title": "Graphify-Labs/graphify",
      "impact": 5,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-28-40993ef93264"
     },
     {
      "id": "ab5596443556",
      "title": "affaan-m/ECC",
      "impact": 5,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-28-ab5596443556"
     },
     {
      "id": "1ec0b1042f97",
      "title": "obra/superpowers",
      "impact": 4,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-28-1ec0b1042f97"
     },
     {
      "id": "6813b8a55e39",
      "title": "anomalyco/opencode",
      "impact": 4,
-     "vendor": "opencode"
+     "vendor": "opencode",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-28-6813b8a55e39"
     }
    ],
    "vendors": [
@@ -874,31 +929,36 @@
      "id": "ae2a0d79ab9f",
      "title": "OpenAI introduces GPT-6.1 Terra for computer use",
      "impact": 5,
-     "vendor": "OpenAI"
+     "vendor": "OpenAI",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-27-ae2a0d79ab9f"
     },
     {
      "id": "c8cd8da91396",
      "title": "Qwen3.8 model tried sending a file to Beijing storage",
      "impact": 4,
-     "vendor": "Cohere"
+     "vendor": "Cohere",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-27-c8cd8da91396"
     },
     {
      "id": "9ffc857e26af",
      "title": "AsyncGRPO tree packing now trains hybrid attention models",
      "impact": 4,
-     "vendor": "Axolotl"
+     "vendor": "Axolotl",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-27-9ffc857e26af"
     },
     {
      "id": "c4c59fda62a5",
      "title": "Gemini API CLI gives existing agents media and research calls",
      "impact": 4,
-     "vendor": "Google"
+     "vendor": "Google",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-27-c4c59fda62a5"
     },
     {
      "id": "e94abc87f24a",
      "title": "Unsloth MiniMax-M3.1-Flash GGUFs run in about 150 GB RAM",
      "impact": 4,
-     "vendor": "Unsloth"
+     "vendor": "Unsloth",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-27-e94abc87f24a"
     }
    ],
    "vendors": [
@@ -950,31 +1010,36 @@
      "id": "4f9ef4009ca9",
      "title": "Nanbeige4.3-33B open weights target agentic coding",
      "impact": 4,
-     "vendor": "Nanbeige"
+     "vendor": "Nanbeige",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-26-4f9ef4009ca9"
     },
     {
      "id": "1bebf11e0288",
      "title": "Why OpenAI and Anthropic cut LLM prices up to 80%",
      "impact": 4,
-     "vendor": "OpenAI and Anthropic"
+     "vendor": "OpenAI and Anthropic",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-26-1bebf11e0288"
     },
     {
      "id": "97a07ca79486",
      "title": "JetBrains Thinkrail, a lightweight IDE built around pi",
      "impact": 3,
-     "vendor": "JetBrains"
+     "vendor": "JetBrains",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-26-97a07ca79486"
     },
     {
      "id": "14ee88fdec52",
      "title": "Rapid-MLX 0.16.9 cuts repeat long-prompt start to 0.39 s",
      "impact": 4,
-     "vendor": "Rapid-MLX"
+     "vendor": "Rapid-MLX",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-26-14ee88fdec52"
     },
     {
      "id": "18dfd732230b",
      "title": "Cline 4.1.26 adds cloud tasks in sandboxes",
      "impact": 4,
-     "vendor": "Cline"
+     "vendor": "Cline",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-26-18dfd732230b"
     }
    ],
    "vendors": [
@@ -1025,31 +1090,36 @@
      "id": "fefe8e8e95b5",
      "title": "claude-mem adds persistent memory to agents",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-24-fefe8e8e95b5"
     },
     {
      "id": "3332f27c7421",
      "title": "Claude-Red offensive security skills library",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-24-3332f27c7421"
     },
     {
      "id": "d7c2bcf4a7e5",
      "title": "Claude Haiku 5.5 in Kiro IDE",
      "impact": 3,
-     "vendor": "Anthropic"
+     "vendor": "Anthropic",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-24-d7c2bcf4a7e5"
     },
     {
      "id": "ab6e33f413d3",
      "title": "Paperclip agent management app keeps climbing",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-24-ab6e33f413d3"
     },
     {
      "id": "c658010bd373",
      "title": "ComfyUI diffusion GUI gains stars fast",
      "impact": 3,
-     "vendor": "ComfyUI"
+     "vendor": "ComfyUI",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-24-c658010bd373"
     }
    ],
    "vendors": [
@@ -1108,31 +1178,36 @@
      "id": "54483c9a7cf1",
      "title": "Claude proves security properties across 100+ open-source libraries",
      "impact": 4,
-     "vendor": "Anthropic"
+     "vendor": "Anthropic",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-23-54483c9a7cf1"
     },
     {
      "id": "1542ac0d2f70",
      "title": "MiniMax M3.1 Flash open weights with day-one SGLang serving",
      "impact": 4,
-     "vendor": "MiniMax"
+     "vendor": "MiniMax",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-23-1542ac0d2f70"
     },
     {
      "id": "90dd623e653c",
      "title": "Flint measured at 216 tokens per second on RTX 5090",
      "impact": 4,
-     "vendor": "Recursive"
+     "vendor": "Recursive",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-23-90dd623e653c"
     },
     {
      "id": "34ffaea16beb",
      "title": "NVIDIA OpenShell runtime for fleets of autonomous agents",
      "impact": 4,
-     "vendor": "NVIDIA"
+     "vendor": "NVIDIA",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-23-34ffaea16beb"
     },
     {
      "id": "913e54bc9d1a",
      "title": "Anthropic donates Agent Skills standard to Agentic AI Foundation",
      "impact": 5,
-     "vendor": "Anthropic"
+     "vendor": "Anthropic",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-23-913e54bc9d1a"
     }
    ],
    "vendors": [
@@ -1184,31 +1259,36 @@
      "id": "90dd623e653c",
      "title": "Recursive releases Flint, an open 40B MoE coding model",
      "impact": 4,
-     "vendor": "Recursive"
+     "vendor": "Recursive",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-22-90dd623e653c"
     },
     {
      "id": "0169ce1a354b",
      "title": "OpenAI models and Codex come to Google Cloud",
      "impact": 4,
-     "vendor": "OpenAI"
+     "vendor": "OpenAI",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-22-0169ce1a354b"
     },
     {
      "id": "8615bdd7d491",
      "title": "Meta posts Muse-Spark-Open-816B-A42B multimodal model",
      "impact": 4,
-     "vendor": "Meta"
+     "vendor": "Meta",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-22-8615bdd7d491"
     },
     {
      "id": "48da793fd3c1",
      "title": "Shanghai AI Lab opens Sage-A1.5 agentic MoE model",
      "impact": 3,
-     "vendor": "Shanghai AI Lab (InternScience)"
+     "vendor": "Shanghai AI Lab (InternScience)",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-22-48da793fd3c1"
     },
     {
      "id": "12722205bbbc",
      "title": "Spark-X2.6-4B brings 1M context to a 4B open model",
      "impact": 3,
-     "vendor": "iFlytek Spark"
+     "vendor": "iFlytek Spark",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-22-12722205bbbc"
     }
    ],
    "vendors": [
@@ -1260,31 +1340,36 @@
      "id": "8c43d4598688",
      "title": "TorchTPU brings native PyTorch to Google TPUs",
      "impact": 5,
-     "vendor": "Google / Meta PyTorch"
+     "vendor": "Google / Meta PyTorch",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-21-8c43d4598688"
     },
     {
      "id": "c710b6d73fe4",
      "title": "DeepSeek open-sources DeepInfer, its production inference framework",
      "impact": 4,
-     "vendor": "DeepSeek"
+     "vendor": "DeepSeek",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-21-c710b6d73fe4"
     },
     {
      "id": "8615bdd7d491",
      "title": "Meta releases Muse Spark Open, an 816B multimodal model",
      "impact": 4,
-     "vendor": "Meta"
+     "vendor": "Meta",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-21-8615bdd7d491"
     },
     {
      "id": "7f346be9d572",
      "title": "Reflection releases open-weight Beam 1.0, a 501B MoE",
      "impact": 3,
-     "vendor": "Reflection AI"
+     "vendor": "Reflection AI",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-21-7f346be9d572"
     },
     {
      "id": "3d94fde7a49b",
      "title": "1.66 bpw quant runs Qwen3.8-Flash-Next on one RTX 5090",
      "impact": 4,
-     "vendor": "ExLlamaV3 (turboderp)"
+     "vendor": "ExLlamaV3 (turboderp)",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-21-3d94fde7a49b"
     }
    ],
    "vendors": [
@@ -1366,31 +1451,36 @@
      "id": "c710b6d73fe4",
      "title": "DeepSeek opens its DeepInfer inference framework",
      "impact": 4,
-     "vendor": "DeepSeek"
+     "vendor": "DeepSeek",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-20-c710b6d73fe4"
     },
     {
      "id": "35a108147b66",
      "title": "Hyperframes turns agent-written HTML into video",
      "impact": 4,
-     "vendor": "hyperframes"
+     "vendor": "hyperframes",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-20-35a108147b66"
     },
     {
      "id": "724f4e3eb743",
      "title": "Bedrock adds structured outputs across Claude models",
      "impact": 4,
-     "vendor": "AWS"
+     "vendor": "AWS",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-20-724f4e3eb743"
     },
     {
      "id": "829ccb656836",
      "title": "Google lists EmbeddingGemma 2 feature extractor",
      "impact": 3,
-     "vendor": "Google"
+     "vendor": "Google",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-20-829ccb656836"
     },
     {
      "id": "6813b8a55e39",
      "title": "OpenCode offers an open coding agent",
      "impact": 2,
-     "vendor": "opencode"
+     "vendor": "opencode",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-20-6813b8a55e39"
     }
    ],
    "vendors": [
@@ -1454,31 +1544,36 @@
      "id": "8615bdd7d491",
      "title": "Meta posts open Muse Spark 816B multimodal model",
      "impact": 5,
-     "vendor": "Meta"
+     "vendor": "Meta",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-19-8615bdd7d491"
     },
     {
      "id": "f7c1160bd9e2",
      "title": "DeepSeek V4.1 Flash 1017 trends on Hugging Face",
      "impact": 4,
-     "vendor": "DeepSeek"
+     "vendor": "DeepSeek",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-19-f7c1160bd9e2"
     },
     {
      "id": "a625503275f6",
      "title": "Mistral launches Timestral time-series foundation models",
      "impact": 4,
-     "vendor": "Mistral"
+     "vendor": "Mistral",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-19-a625503275f6"
     },
     {
      "id": "4439bb6ce3b7",
      "title": "VoiceStudio offers local voice suite in 646 languages",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-19-4439bb6ce3b7"
     },
     {
      "id": "6e9ca4b2faae",
      "title": "OpenVLHarness adds memory to visual tool-using agents",
      "impact": 3,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-19-6e9ca4b2faae"
     }
    ],
    "vendors": [
@@ -1530,31 +1625,36 @@
      "id": "f7c1160bd9e2",
      "title": "DeepSeek releases V4.1 Flash 1017 weights",
      "impact": 4,
-     "vendor": "DeepSeek"
+     "vendor": "DeepSeek",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-18-f7c1160bd9e2"
     },
     {
      "id": "0abf7d9f7f3a",
      "title": "Sphinx quizzes you on agent-written code",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-18-0abf7d9f7f3a"
     },
     {
      "id": "b5aed835eaa8",
      "title": "DeepSeek API adds search and fetch",
      "impact": 3,
-     "vendor": "DeepSeek"
+     "vendor": "DeepSeek",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-18-b5aed835eaa8"
     },
     {
      "id": "5739a81a8468",
      "title": "RuneScape Bench tests agents in an MMO",
      "impact": 2,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-18-5739a81a8468"
     },
     {
      "id": "a2938911ac4d",
      "title": "Echo Dot becomes a local Home Assistant satellite",
      "impact": 2,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-18-a2938911ac4d"
     }
    ],
    "vendors": [
@@ -1599,31 +1699,36 @@
      "id": "062441ae52a8",
      "title": "OpenGCUA offers an open stack for computer-use agents",
      "impact": 4,
-     "vendor": "Qwen"
+     "vendor": "Qwen",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-17-062441ae52a8"
     },
     {
      "id": "f8cfd2cfd90b",
      "title": "MAI-Gym unifies GUI agent evaluation and RL training",
      "impact": 4,
-     "vendor": "Qwen"
+     "vendor": "Qwen",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-17-f8cfd2cfd90b"
     },
     {
      "id": "39aecec30ea6",
      "title": "ARTEMIS turns plain instructions into Android automation",
      "impact": 3,
-     "vendor": "Google"
+     "vendor": "Google",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-17-39aecec30ea6"
     },
     {
      "id": "a18fa7f842c3",
      "title": "Mercor maps where AI benchmarks miss US work",
      "impact": 2,
-     "vendor": "Mercor"
+     "vendor": "Mercor",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-17-a18fa7f842c3"
     },
     {
      "id": "52a54799f7eb",
      "title": "opencode2api proxies OpenCode Zen with OpenAI and Anthropic APIs",
      "impact": 2,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-17-52a54799f7eb"
     }
    ],
    "vendors": [
@@ -1668,31 +1773,36 @@
      "id": "2a74f7132e75",
      "title": "Agentic video generation with world-state memory",
      "impact": 3,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-16-2a74f7132e75"
     },
     {
      "id": "968bba4a84b7",
      "title": "Player-1 learns game control from synthetic experience",
      "impact": 3,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-16-968bba4a84b7"
     },
     {
      "id": "9c41e5d12c25",
      "title": "Trail of Bits publishes Claude Code security skills",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-16-9c41e5d12c25"
     },
     {
      "id": "624469577400",
      "title": "Using AI to reverse engineer hardware",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-16-624469577400"
     },
     {
      "id": "054dc089fc63",
      "title": "MiniCPM-V apps run multimodal chat offline on phones",
      "impact": 3,
-     "vendor": "OpenBMB"
+     "vendor": "OpenBMB",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-16-054dc089fc63"
     }
    ],
    "vendors": [
@@ -1737,31 +1847,36 @@
      "id": "d9d1c633d3a4",
      "title": "Jeva: a decision-native architecture for structured choices",
      "impact": 3,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-15-d9d1c633d3a4"
     },
     {
      "id": "d7c76d8462da",
      "title": "Harness^2 refines agent harnesses without ground-truth verifiers",
      "impact": 3,
-     "vendor": "Google"
+     "vendor": "Google",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-15-d7c76d8462da"
     },
     {
      "id": "2fa95920a2b2",
      "title": "Measured: HTML costs far more tokens than markdown",
      "impact": 4,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-15-2fa95920a2b2"
     },
     {
      "id": "4f57092d051a",
      "title": "Jarvis: private offline desktop assistant with memory and MCP",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-15-4f57092d051a"
     },
     {
      "id": "316fd7c40b4d",
      "title": "Slashdocs lets agents publish reviewable HTML documents",
      "impact": 3,
-     "vendor": "Razorpay"
+     "vendor": "Razorpay",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-15-316fd7c40b4d"
     }
    ],
    "vendors": [
@@ -1806,31 +1921,36 @@
      "id": "f65c36eedb36",
      "title": "GroundingPI: 4B model for precise object localization",
      "impact": 3,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-14-f65c36eedb36"
     },
     {
      "id": "222c7ba038da",
      "title": "Thinking Inertia: models keep reasoning when told not to",
      "impact": 3,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-14-222c7ba038da"
     },
     {
      "id": "ab792688f615",
      "title": "Self-hosted AI call center with realtime voice bots",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-14-ab792688f615"
     },
     {
      "id": "c1bc21113fe9",
      "title": "SGLang-Omni serves audio and multimodal models",
      "impact": 3,
-     "vendor": "vLLM"
+     "vendor": "vLLM",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-14-c1bc21113fe9"
     },
     {
      "id": "090721c8eaa3",
      "title": "last30days skill researches topics across social sources",
      "impact": 2,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-14-090721c8eaa3"
     }
    ],
    "vendors": [
@@ -1875,31 +1995,36 @@
      "id": "d8cd449ebf6e",
      "title": "DiffusionART stabilizes reinforcement fine-tuning of diffusion models",
      "impact": 3,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-13-d8cd449ebf6e"
     },
     {
      "id": "fb2aace24285",
      "title": "VisionWeave cuts visual token use by 43%",
      "impact": 3,
-     "vendor": "Qwen"
+     "vendor": "Qwen",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-13-fb2aace24285"
     },
     {
      "id": "3201d6827eb0",
      "title": "VoxCPM2 offers tokenizer-free multilingual speech and voice cloning",
      "impact": 4,
-     "vendor": "OpenBMB"
+     "vendor": "OpenBMB",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-13-3201d6827eb0"
     },
     {
      "id": "663b118a946f",
      "title": "Transformers ships releases v5.18.0 and v5.19.0",
      "impact": 4,
-     "vendor": "Hugging Face"
+     "vendor": "Hugging Face",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-13-663b118a946f"
     },
     {
      "id": "4b91360fbdb6",
      "title": "Managed Agents resources defined in YAML for CI/CD",
      "impact": 4,
-     "vendor": "Anthropic"
+     "vendor": "Anthropic",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-13-4b91360fbdb6"
     }
    ],
    "vendors": [
@@ -1944,31 +2069,36 @@
      "id": "663b118a946f",
      "title": "Transformers ships releases 5.18.0 and 5.19.0",
      "impact": 4,
-     "vendor": "Hugging Face"
+     "vendor": "Hugging Face",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-12-663b118a946f"
     },
     {
      "id": "c6e24c84890b",
      "title": "Fine-tuning Gemini embedding 2 on your data",
      "impact": 4,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-12-c6e24c84890b"
     },
     {
      "id": "562dbe2d5492",
      "title": "Goodfire on how agents choose critical tokens",
      "impact": 2,
-     "vendor": "Goodfire"
+     "vendor": "Goodfire",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-12-562dbe2d5492"
     },
     {
      "id": "6107951b2993",
      "title": "CubeSandbox: instant sandbox for AI agents",
      "impact": 4,
-     "vendor": "Tencent Cloud"
+     "vendor": "Tencent Cloud",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-12-6107951b2993"
     },
     {
      "id": "81d9947366f6",
      "title": "Repowise serves codebase health data over MCP",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-12-81d9947366f6"
     }
    ],
    "vendors": [
@@ -2012,31 +2142,36 @@
      "id": "6448a080e87c",
      "title": "AI agents decompile a first-person shooter",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-11-6448a080e87c"
     },
     {
      "id": "18620704ad4b",
      "title": "Casdoor adds identity and gateway for agents and MCP",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-11-18620704ad4b"
     },
     {
      "id": "b48bbb494698",
      "title": "Microsoft TRELLIS.2 for compact 3D generation",
      "impact": 3,
-     "vendor": "Microsoft"
+     "vendor": "Microsoft",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-11-b48bbb494698"
     },
     {
      "id": "663b118a946f",
      "title": "Transformers ships v5.18 and v5.19 releases",
      "impact": 3,
-     "vendor": "Hugging Face"
+     "vendor": "Hugging Face",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-11-663b118a946f"
     },
     {
      "id": "39718df61fac",
      "title": "LingBot-Map streams 3D reconstruction from video",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-11-39718df61fac"
     }
    ],
    "vendors": [
@@ -2077,31 +2212,36 @@
      "id": "ed5ecb5a1abe",
      "title": "AgentGarten builds interactive code worlds for agents",
      "impact": 3,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-10-ed5ecb5a1abe"
     },
     {
      "id": "383eeec0c0f0",
      "title": "REMORY adds learned soft tokens to agent memory summaries",
      "impact": 3,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-10-383eeec0c0f0"
     },
     {
      "id": "6e5a59669df2",
      "title": "LiteLLM gateway calls 100+ LLM APIs in one format",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-10-6e5a59669df2"
     },
     {
      "id": "39718df61fac",
      "title": "LingBot-Map reconstructs 3D scenes from streaming input",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-10-39718df61fac"
     },
     {
      "id": "f02d3b4c00b5",
      "title": "Talorys runs a personal AI agent on Cloudflare free tier",
      "impact": 2,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-10-f02d3b4c00b5"
     }
    ],
    "vendors": [
@@ -2145,31 +2285,36 @@
      "id": "1ffc5a4eee9f",
      "title": "Whistle fits speech to text in 16.9 MB",
      "impact": 4,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-09-1ffc5a4eee9f"
     },
     {
      "id": "cf5b4a3a7696",
      "title": "Atlassian ships official remote MCP server",
      "impact": 4,
-     "vendor": "Atlassian"
+     "vendor": "Atlassian",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-09-cf5b4a3a7696"
     },
     {
      "id": "f8824ad6f5a6",
      "title": "STEPQuant shrinks recurrent state memory in linear attention",
      "impact": 3,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-09-f8824ad6f5a6"
     },
     {
      "id": "f3dbf64096db",
      "title": "Long-WAM gives robot world models longer visual history",
      "impact": 3,
-     "vendor": "NVIDIA"
+     "vendor": "NVIDIA",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-09-f3dbf64096db"
     },
     {
      "id": "13d9f1a2c3fa",
      "title": "Windows-MCP lets agents use Windows computers",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-09-13d9f1a2c3fa"
     }
    ],
    "vendors": [
@@ -2213,31 +2358,36 @@
      "id": "e076dc562cad",
      "title": "Anthropic releases Claude Haiku 5.5",
      "impact": 4,
-     "vendor": "Anthropic"
+     "vendor": "Anthropic",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-08-e076dc562cad"
     },
     {
      "id": "62b7409cd673",
      "title": "Kinematic MeanFlow generates robot actions in one step",
      "impact": 3,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-08-62b7409cd673"
     },
     {
      "id": "00f41ca7f7f3",
      "title": "HuatuoGPT-3 adapts base models to medicine with RL only",
      "impact": 3,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-08-00f41ca7f7f3"
     },
     {
      "id": "3d261e862a30",
      "title": "olmocr turns PDFs into text for LLM data",
      "impact": 3,
-     "vendor": "Ai2"
+     "vendor": "Ai2",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-08-3d261e862a30"
     },
     {
      "id": "862fc518df3f",
      "title": "Uber open-sources ADR to secure AI agents",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-08-862fc518df3f"
     }
    ],
    "vendors": [
@@ -2282,31 +2432,36 @@
      "id": "db49536c5f05",
      "title": "OpenAI shares new math results with Lean proofs",
      "impact": 4,
-     "vendor": "OpenAI"
+     "vendor": "OpenAI",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-07-db49536c5f05"
     },
     {
      "id": "e1c4efc2664c",
      "title": "Kandinsky 6.0 Video generates lip-synced audio and video",
      "impact": 3,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-07-e1c4efc2664c"
     },
     {
      "id": "b5e119a7b03b",
      "title": "ALoDLM spends more compute on harder tokens",
      "impact": 3,
-     "vendor": "Amazon"
+     "vendor": "Amazon",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-07-b5e119a7b03b"
     },
     {
      "id": "255943bb67b8",
      "title": "EmbeddingGemma 2 is an open multimodal embedder",
      "impact": 3,
-     "vendor": "Google"
+     "vendor": "Google",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-07-255943bb67b8"
     },
     {
      "id": "3f33cecd41b7",
      "title": "Community plugin marketplace for Claude Code",
      "impact": 2,
-     "vendor": "Anthropic"
+     "vendor": "Anthropic",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-07-3f33cecd41b7"
     }
    ],
    "vendors": [
@@ -2351,31 +2506,36 @@
      "id": "4f4138766732",
      "title": "MotorMind drives robots with general vision-language models",
      "impact": 4,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-06-4f4138766732"
     },
     {
      "id": "f75949cd2bd9",
      "title": "VeriHarness verifies long agent outputs without reference answers",
      "impact": 3,
-     "vendor": "Google"
+     "vendor": "Google",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-06-f75949cd2bd9"
     },
     {
      "id": "b11085bff798",
      "title": "OptMem gives agents permanent memory in 426 tokens",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-06-b11085bff798"
     },
     {
      "id": "5b8c7e01236e",
      "title": "Reflection releases Beam, a 501B open-weight model",
      "impact": 4,
-     "vendor": "Reflection"
+     "vendor": "Reflection",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-06-5b8c7e01236e"
     },
     {
      "id": "1f0cb24e8382",
      "title": "Opus 5.5 agents propose two magnetic semiconductor candidates",
      "impact": 4,
-     "vendor": "Anthropic"
+     "vendor": "Anthropic",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-06-1f0cb24e8382"
     }
    ],
    "vendors": [
@@ -2419,31 +2579,36 @@
      "id": "44bcd5469d56",
      "title": "Uniterm combines remote access with shell agents",
      "impact": 4,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-05-44bcd5469d56"
     },
     {
      "id": "f5f75fe2fd05",
      "title": "Strata reports running Qwen on RTX 4090",
      "impact": 5,
-     "vendor": "Strata"
+     "vendor": "Strata",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-05-f5f75fe2fd05"
     },
     {
      "id": "13637d1f91cf",
      "title": "Pstack workflows reach more coding agents",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-05-13637d1f91cf"
     },
     {
      "id": "c1896988f122",
      "title": "User Scanner exposes footprint searches through MCP",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-05-c1896988f122"
     },
     {
      "id": "639835f8c060",
      "title": "Crusoe describes automatic recovery from GPU failures",
      "impact": 3,
-     "vendor": "Crusoe"
+     "vendor": "Crusoe",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-05-639835f8c060"
     }
    ],
    "vendors": [
@@ -2486,31 +2651,36 @@
      "id": "5376a1a4591b",
      "title": "Docker SBX: microVM sandboxes for any agent",
      "impact": 4,
-     "vendor": "Docker"
+     "vendor": "Docker",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-04-5376a1a4591b"
     },
     {
      "id": "a9fa3c0f3703",
      "title": "Official Python SDK for MCP servers and clients",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-04-a9fa3c0f3703"
     },
     {
      "id": "0ae792926f95",
      "title": "Chandra OCR handles tables, forms and handwriting",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-04-0ae792926f95"
     },
     {
      "id": "706742b0f54c",
      "title": "Argument: agents need documentation, not memory",
      "impact": 2,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-04-706742b0f54c"
     },
     {
      "id": "710e64117a71",
      "title": "Guide to getting the most from Opus 5.5",
      "impact": 2,
-     "vendor": "Anthropic"
+     "vendor": "Anthropic",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-04-710e64117a71"
     }
    ],
    "vendors": [
@@ -2553,31 +2723,36 @@
      "id": "a739b515f379",
      "title": "HeteroFold reuses KV caches across different model families",
      "impact": 4,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-03-a739b515f379"
     },
     {
      "id": "1766e397098b",
      "title": "ds4 runs LLMs locally, from the creator of Redis",
      "impact": 4,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-03-1766e397098b"
     },
     {
      "id": "1a803981b2d9",
      "title": "OneStreamer adds reusable memory to streaming video models",
      "impact": 3,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-03-1a803981b2d9"
     },
     {
      "id": "ebbdf5955b14",
      "title": "Agent-Reach gives agents search across social sites via one CLI",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-03-ebbdf5955b14"
     },
     {
      "id": "24ee976ab5ea",
      "title": "Kolibri: Aleph Alpha releases a sovereign open-weight model",
      "impact": 4,
-     "vendor": "Aleph Alpha"
+     "vendor": "Aleph Alpha",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-03-24ee976ab5ea"
     }
    ],
    "vendors": [
@@ -2622,31 +2797,36 @@
      "id": "655cb1d5e04a",
      "title": "RIDE extrapolates RL shifts during on-policy distillation",
      "impact": 3,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-02-655cb1d5e04a"
     },
     {
      "id": "4a6f78877638",
      "title": "AREX-2 trains agents to improve their own work",
      "impact": 3,
-     "vendor": "Qwen"
+     "vendor": "Qwen",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-02-4a6f78877638"
     },
     {
      "id": "03312a2d348b",
      "title": "SGLang serves language and multimodal models fast",
      "impact": 3,
-     "vendor": "SGLang"
+     "vendor": "SGLang",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-02-03312a2d348b"
     },
     {
      "id": "c7307bfa16c0",
      "title": "Clef: open-weight decision models and RL fine-tuning",
      "impact": 4,
-     "vendor": "Cloudflare"
+     "vendor": "Cloudflare",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-02-c7307bfa16c0"
     },
     {
      "id": "1763692ef589",
      "title": "Google publishes Agent Skills for its products",
      "impact": 2,
-     "vendor": "Google"
+     "vendor": "Google",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-02-1763692ef589"
     }
    ],
    "vendors": [
@@ -2691,31 +2871,36 @@
      "id": "bd6b89e1da2b",
      "title": "Omni-IO Skills lets agents handle mixed media",
      "impact": 3,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-01-bd6b89e1da2b"
     },
     {
      "id": "5e256b27ce8f",
      "title": "MaLiang-Harness makes image and video generation programmable",
      "impact": 3,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-01-5e256b27ce8f"
     },
     {
      "id": "1dd46533cee2",
      "title": "Agent controls move outside the agent",
      "impact": 4,
-     "vendor": "Anthropic"
+     "vendor": "Anthropic",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-01-1dd46533cee2"
     },
     {
      "id": "6649e9947ea6",
      "title": "Ollama adds local decision models",
      "impact": 4,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-01-6649e9947ea6"
     },
     {
      "id": "53c20bf00e96",
      "title": "AWS ships official MCP servers for agents",
      "impact": 3,
-     "vendor": "Amazon"
+     "vendor": "Amazon",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-10-01-53c20bf00e96"
     }
    ],
    "vendors": [
@@ -2760,31 +2945,36 @@
      "id": "65ecb40fc077",
      "title": "VisionHOPE: Vision Backbone That Modifies Itself",
      "impact": 3,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-30-65ecb40fc077"
     },
     {
      "id": "d9bad10ffddb",
      "title": "YuE2 Unifies Score and Audio Music Generation",
      "impact": 3,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-30-d9bad10ffddb"
     },
     {
      "id": "add2cec0c452",
      "title": "Kubernetes agent-sandbox: Isolated Stateful Workloads for Agents",
      "impact": 4,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-30-add2cec0c452"
     },
     {
      "id": "a9d1ed18ff49",
      "title": "GPT-6.1 Sol: Near-Astra Quality at One-Fifth Price",
      "impact": 5,
-     "vendor": "OpenAI"
+     "vendor": "OpenAI",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-30-a9d1ed18ff49"
     },
     {
      "id": "d97cde3fad4a",
      "title": "DeerFlow: ByteDance Long-Horizon Agent Harness",
      "impact": 3,
-     "vendor": "ByteDance"
+     "vendor": "ByteDance",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-30-d97cde3fad4a"
     }
    ],
    "vendors": [
@@ -2830,31 +3020,36 @@
      "id": "b96906590e86",
      "title": "Disaggregated quantization separates prefill and decode formats",
      "impact": 3,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-29-b96906590e86"
     },
     {
      "id": "a3e76ae53148",
      "title": "RayOrch preserves lineage in distributed data preparation",
      "impact": 3,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-29-a3e76ae53148"
     },
     {
      "id": "215a261f674f",
      "title": "HexStrike connects agents to cybersecurity tools",
      "impact": 4,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-29-215a261f674f"
     },
     {
      "id": "1531d3b5d163",
      "title": "TensorFold serves local decoding on Apple Silicon",
      "impact": 4,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-29-1531d3b5d163"
     },
     {
      "id": "75c01080133f",
      "title": "SkillOpt optimizes reusable skills for frozen agents",
      "impact": 4,
-     "vendor": "Microsoft"
+     "vendor": "Microsoft",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-29-75c01080133f"
     }
    ],
    "vendors": [
@@ -2898,31 +3093,36 @@
      "id": "1b08933e4a72",
      "title": "NVIDIA Model-Optimizer bundles compression techniques for faster inference",
      "impact": 4,
-     "vendor": "NVIDIA"
+     "vendor": "NVIDIA",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-28-1b08933e4a72"
     },
     {
      "id": "97256ad2958a",
      "title": "LocalAI runs LLMs, vision, voice and video locally",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-28-97256ad2958a"
     },
     {
      "id": "61635776e356",
      "title": "Official prompting guide for Claude Opus 5.5",
      "impact": 2,
-     "vendor": "Anthropic"
+     "vendor": "Anthropic",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-28-61635776e356"
     },
     {
      "id": "de2aa30e16a4",
      "title": "Agent-manager tracks coding agents from one tmux TUI",
      "impact": 2,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-28-de2aa30e16a4"
     },
     {
      "id": "68684bf50c21",
      "title": "Data Formulator explores and visualizes data with AI",
      "impact": 2,
-     "vendor": "Microsoft"
+     "vendor": "Microsoft",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-28-68684bf50c21"
     }
    ],
    "vendors": [
@@ -2965,31 +3165,36 @@
      "id": "8e77d2068967",
      "title": "One plugin marketplace for seven coding agent tools",
      "impact": 4,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-27-8e77d2068967"
     },
     {
      "id": "70aaebabbe0e",
      "title": "Claude Code and Codex race human researchers",
      "impact": 4,
-     "vendor": "Prime Intellect"
+     "vendor": "Prime Intellect",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-27-70aaebabbe0e"
     },
     {
      "id": "d541f1ebf904",
      "title": "Drawgent runs a coding agent on Excalidraw",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-27-d541f1ebf904"
     },
     {
      "id": "86ac90a0ff48",
      "title": "Beads adds memory to your coding agent",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-27-86ac90a0ff48"
     },
     {
      "id": "7bc4dbef2d9a",
      "title": "DeepSeek describes Elastic Compute (DSec) in a paper",
      "impact": 2,
-     "vendor": "DeepSeek"
+     "vendor": "DeepSeek",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-27-7bc4dbef2d9a"
     }
    ],
    "vendors": [
@@ -3031,31 +3236,36 @@
      "id": "198f29a4bc9f",
      "title": "Benchmark object permanence in video world models",
      "impact": 3,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-26-198f29a4bc9f"
     },
     {
      "id": "6ef91636f4fe",
      "title": "AEWM revises agent reasoning before decisions",
      "impact": 3,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-26-6ef91636f4fe"
     },
     {
      "id": "ddb95245964e",
      "title": "Engram provides persistent coding agent memory",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-26-ddb95245964e"
     },
     {
      "id": "f4c2d6fb3a45",
      "title": "Free Claude Code adds browser harness sessions",
      "impact": 4,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-26-f4c2d6fb3a45"
     },
     {
      "id": "85cb7fa66183",
      "title": "YouTube agent links creation and publishing",
      "impact": 4,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-26-85cb7fa66183"
     }
    ],
    "vendors": [
@@ -3100,31 +3310,36 @@
      "id": "3981a327e4e4",
      "title": "SchrodingerRepo tests if agents memorized SWE-bench",
      "impact": 4,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-25-3981a327e4e4"
     },
     {
      "id": "5894cfc1db7f",
      "title": "SpeakerMem-R1 tracks who said what",
      "impact": 3,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-25-5894cfc1db7f"
     },
     {
      "id": "1b08933e4a72",
      "title": "NVIDIA Model-Optimizer unifies model compression techniques",
      "impact": 4,
-     "vendor": "NVIDIA"
+     "vendor": "NVIDIA",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-25-1b08933e4a72"
     },
     {
      "id": "657386351d4c",
      "title": "Benchmarks for serving NVIDIA Cosmos 3 Super",
      "impact": 4,
-     "vendor": "NVIDIA"
+     "vendor": "NVIDIA",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-25-657386351d4c"
     },
     {
      "id": "94ba3bb50ccd",
      "title": "Hindsight: agent memory that learns",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-25-94ba3bb50ccd"
     }
    ],
    "vendors": [
@@ -3169,31 +3384,36 @@
      "id": "f0ae490dc209",
      "title": "Taste-Bench scores agent judgment at trajectory forks",
      "impact": 3,
-     "vendor": "Microsoft"
+     "vendor": "Microsoft",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-24-f0ae490dc209"
     },
     {
      "id": "785f782851f1",
      "title": "Ovis-Embedding unifies text, image, video and audio retrieval",
      "impact": 3,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-24-785f782851f1"
     },
     {
      "id": "ebcd7e58787a",
      "title": "817 cybersecurity skills packaged for coding agents",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-24-ebcd7e58787a"
     },
     {
      "id": "686e173dd33b",
      "title": "llama-swap swaps local models behind one compatible endpoint",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-24-686e173dd33b"
     },
     {
      "id": "98f503c22dc1",
      "title": "Claude reportedly discovers a novel CRISPR-like enzyme system",
      "impact": 4,
-     "vendor": "Anthropic"
+     "vendor": "Anthropic",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-24-98f503c22dc1"
     }
    ],
    "vendors": [
@@ -3239,31 +3459,36 @@
      "id": "754d138004db",
      "title": "Anthropic releases Claude Opus 5.5",
      "impact": 5,
-     "vendor": "Anthropic"
+     "vendor": "Anthropic",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-23-754d138004db"
     },
     {
      "id": "45ace70a3cda",
      "title": "Regularized self-improvement for agent harnesses",
      "impact": 3,
-     "vendor": "Google"
+     "vendor": "Google",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-23-45ace70a3cda"
     },
     {
      "id": "032ae39a7b47",
      "title": "Realtime-Venus: full-duplex voice with background delegation",
      "impact": 3,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-23-032ae39a7b47"
     },
     {
      "id": "5e3c87aedddf",
      "title": "OpenAI launches GPT-6 Sol and Luna",
      "impact": 5,
-     "vendor": "OpenAI"
+     "vendor": "OpenAI",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-23-5e3c87aedddf"
     },
     {
      "id": "99041173111a",
      "title": "Radar: Kubernetes UI with built-in MCP server",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-23-99041173111a"
     }
    ],
    "vendors": [
@@ -3309,31 +3534,36 @@
      "id": "92ab72e380f2",
      "title": "EvoOntology lets data agents query mixed sources",
      "impact": 3,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-22-92ab72e380f2"
     },
     {
      "id": "8410ac528b7f",
      "title": "Code2Skill extracts agent skills from source code",
      "impact": 3,
-     "vendor": "Research"
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-22-8410ac528b7f"
     },
     {
      "id": "05e08f8e54fd",
      "title": "new-api gateway converts between LLM API formats",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-22-05e08f8e54fd"
     },
     {
      "id": "5deafb2b257b",
      "title": "Official Lark CLI ships with 20+ agent skills",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-22-5deafb2b257b"
     },
     {
      "id": "6cd725d2a989",
      "title": "xAI announces Grok 4.7",
      "impact": 4,
-     "vendor": "xAI"
+     "vendor": "xAI",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-22-6cd725d2a989"
     }
    ],
    "vendors": [
@@ -3378,31 +3608,36 @@
      "id": "e5e780f6bdbf",
      "title": "deja-vu shares one memory across coding agents",
      "impact": 4,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-21-e5e780f6bdbf"
     },
     {
      "id": "3224d60223aa",
      "title": "Kev: tiny decision models on Qwen3.5",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-21-3224d60223aa"
     },
     {
      "id": "44e436be5582",
      "title": "Transformers.js 4.3 adds structured output in browser",
      "impact": 4,
-     "vendor": "Hugging Face"
+     "vendor": "Hugging Face",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-21-44e436be5582"
     },
     {
      "id": "ed64ecc6f82a",
      "title": "Google releases AX, an open agent orchestrator",
      "impact": 4,
-     "vendor": "Google"
+     "vendor": "Google",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-21-ed64ecc6f82a"
     },
     {
      "id": "51d28bcbf81e",
      "title": "Heretic removes restrictions from language models",
      "impact": 2,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-21-51d28bcbf81e"
     }
    ],
    "vendors": [
@@ -3444,31 +3679,36 @@
      "id": "9a8f0b15f2b6",
      "title": "Tool-calling model small enough for microcontrollers",
      "impact": 4,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-20-9a8f0b15f2b6"
     },
     {
      "id": "87fd07121fe9",
      "title": "Secure tunnel connects private MCP servers to OpenAI",
      "impact": 4,
-     "vendor": "OpenAI"
+     "vendor": "OpenAI",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-20-87fd07121fe9"
     },
     {
      "id": "dd45ef060c4a",
      "title": "Vectorless, reasoning-based RAG document index",
      "impact": 4,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-20-dd45ef060c4a"
     },
     {
      "id": "d051bdcc2769",
      "title": "Apple publishes recipes for on-device model export",
      "impact": 3,
-     "vendor": "Apple"
+     "vendor": "Apple",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-20-d051bdcc2769"
     },
     {
      "id": "e403b5db0550",
      "title": "Open-source gateway for 100+ LLMs with failover",
      "impact": 3,
-     "vendor": "Open source"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-20-e403b5db0550"
     }
    ],
    "vendors": [
@@ -3512,31 +3752,36 @@
      "id": "0b0e1a2f613e",
      "title": "DeepSeek-V4.1-Flash compresses KV cache hard",
      "impact": 4,
-     "vendor": "DeepSeek"
+     "vendor": "DeepSeek",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-19-0b0e1a2f613e"
     },
     {
      "id": "dd8b8355709b",
      "title": "Claude Code falls back to AGENTS.md",
      "impact": 4,
-     "vendor": "Anthropic"
+     "vendor": "Anthropic",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-19-dd8b8355709b"
     },
     {
      "id": "8970b58c32ef",
      "title": "SoL-Pi cuts coding agent token costs by a third",
      "impact": 3,
-     "vendor": "NVIDIA"
+     "vendor": "NVIDIA",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-19-8970b58c32ef"
     },
     {
      "id": "bfd4eccdf4cc",
      "title": "SkillSpector scans agent skills before install",
      "impact": 3,
-     "vendor": "NVIDIA"
+     "vendor": "NVIDIA",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-19-bfd4eccdf4cc"
     },
     {
      "id": "6b6041427b81",
      "title": "Unsloth runs and trains models in a local UI",
      "impact": 3,
-     "vendor": "Unsloth"
+     "vendor": "Unsloth",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-09-19-6b6041427b81"
     }
    ],
    "vendors": [

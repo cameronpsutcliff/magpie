@@ -1,3 +1,4 @@
+from collections import Counter
 import json
 import os
 import unittest
@@ -93,6 +94,55 @@ class EditorTests(unittest.TestCase):
                                                "works_with": [{"name": "Ollama", "how": "serves models"}, {"name": "LlamaIndex"}]}])
         self.assertEqual(receipt["enriched"], 1)
         self.assertEqual(events[0]["brief"]["works_with"], [{"name": "Ollama", "how": "serves models"}])
+
+    def test_only_a_text_vendor_becomes_the_maker(self):
+        import contextlib
+        import io
+
+        for bad in [True, 5, "", "   ", {"name": "Acme"}, ["Acme"]]:
+            with self.subTest(bad=bad):
+                events = [ev(maker="Acme", vendors=["Acme", "Ollama"])]
+                err = io.StringIO()
+                with contextlib.redirect_stderr(err):
+                    _, receipt = self.run_editor(events, [{"id": "e1", "headline": "Kit runs agents locally", "vendor": bad}])
+                self.assertEqual(receipt["enriched"], 1)  # the brief is kept
+                self.assertEqual((events[0]["maker"], events[0]["vendors"]), ("Acme", ["Acme", "Ollama"]))
+                self.assertIsNone(events[0]["brief"]["vendor"])
+                self.assertIn("is not a name; set to null", err.getvalue())
+        events = [ev(maker="Acme", vendors=["Acme"])]
+        self.run_editor(events, [{"id": "e1", "headline": "Kit", "vendor": " Initech "}])
+        self.assertEqual((events[0]["maker"], events[0]["vendors"][0], events[0]["brief"]["vendor"]), ("Initech", "Initech", "Initech"))
+
+    def test_clean_makers_repairs_a_published_edition(self):
+        # The shapes an earlier editor run left in the 2026-10-26 and 2026-10-27 editions.
+        day = {"events": [ev(id="a", maker="MiniMax", vendors=["MiniMax", True, "Apple"]),
+                          ev(id="b", maker=True, vendors=[True, "Meta", "Hugging Face"], brief={"headline": "H", "vendor": True}),
+                          ev(id="c", maker="Acme", vendors=["Acme"])],
+               "facets": {"vendors": [["Acme", 3], [True, 2]], "ecosystem": [["Apple", 1], [True, 1]]}}
+        self.assertEqual(N.clean_makers(day), 4)  # two events and two facet rows
+        a, b, c = day["events"]
+        self.assertEqual(a["vendors"], ["MiniMax", "Apple"])
+        self.assertEqual((b["maker"], b["vendors"], b["brief"]["vendor"]), (None, ["Meta", "Hugging Face"], None))  # null, never a guess
+        self.assertEqual(c["vendors"], ["Acme"])
+        self.assertEqual(day["facets"], {"vendors": [["Acme", 3]], "ecosystem": [["Apple", 1]]})
+        self.assertEqual(N.clean_makers(day), 0)  # idempotent
+
+    def test_clean_makers_keeps_a_fresh_editions_facets(self):
+        # publish_day runs it on a day compose_day just built, whose facet rows are Counter.most_common tuples.
+        events = [ev(id="a", maker="Acme", vendors=["Acme", "Apple"]), ev(id="b", maker="Open source", vendors=["Meta"])]
+        facets = {"vendors": Counter(e["maker"] for e in events).most_common(),
+                  "ecosystem": Counter(v for e in events for v in e["vendors"][1:]).most_common()}
+        day = {"events": events, "facets": {k: list(v) for k, v in facets.items()}}
+        self.assertEqual(N.clean_makers(day), 0)
+        self.assertEqual(day["facets"], facets)
+        bad = {"events": events, "facets": {"vendors": [("Acme", 1), (True, 2)], "ecosystem": []}}
+        self.assertEqual(N.clean_makers(bad), 1)
+        self.assertEqual(bad["facets"]["vendors"], [("Acme", 1)])
+
+    def test_a_facet_only_repair_is_counted_so_views_writes_it(self):
+        day = {"events": [ev(id="a", maker="Acme", vendors=["Acme"])], "facets": {"vendors": [["Acme", 1]], "ecosystem": [[True, 2]]}}
+        self.assertEqual(N.clean_makers(day), 1)
+        self.assertEqual(day["facets"]["ecosystem"], [])
 
     def test_a_bad_works_with_never_costs_the_brief(self):
         events = [ev(), ev(id="e2", key="gh:acme/two", title="acme/two")]

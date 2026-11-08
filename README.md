@@ -20,8 +20,8 @@ list, and a roster of 72 vetted X accounts read through Grok's live search.
 4. **Edit.** A model writes the words for the strongest candidates (what became possible, why it
    matters, what to try, what is not proven) and rates **impact** from 1 to 5: how far a capability
    ripples into other technology. It also names the tools, models or platforms a capability works with; code keeps
-   a name only if the event's own titles, summaries or sources spell it and every number in it is theirs. It cannot
-   change a score or add a fact.
+   a name only if the event's own titles, summaries or sources spell it and every number in it is theirs. The maker it
+   names is kept only when it is a text name; anything else is null and logged. It cannot change a score or add a fact.
 5. **Publish.** A redaction gate checks the output, then the edition lands in `data/v1/`.
 
 ## The feed
@@ -44,7 +44,10 @@ Schemas `magpie.day/1`, `magpie.element/1`, `magpie.elements/1`, `magpie.ideas/1
 **Every item links its page.** Each capability in a day file (the five leads among them) carries `page_url`, its own page
 on that edition: `/magpie/c/<date>-<id>`, where `id` is a hash of the capability's canonical key. The same capability has
 the same id on every day it appears and a page for each of those days, and no later edition moves a link. Each new
-possibility carries `page_url` too (`/magpie/i/<id>`). Code stamps both from stored fields (`magpie/pages.py`).
+possibility carries `page_url` too (`/magpie/i/<id>`). Code stamps both from stored fields (`magpie/pages.py`). Every
+other file that points at an item carries the same link: the leads in `index.json`, each idea in the ideas index with its
+ingredients and what it builds on, the capabilities and ideas in the rollups, and an element page's appearances, timeline
+and possibilities. In `feed.json` each lead still links its source first, followed by its page "on Magpie".
 
 **Checked before it publishes.** The ideas index is checked against `ideas.schema.json` before it is written, with the
 standard library (`magpie/schema.py` reads the published schema, so readers and the pipeline use the same one). An index
