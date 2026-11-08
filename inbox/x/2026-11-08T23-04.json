@@ -1,0 +1,46 @@
+{
+ "ran_at": "2026-11-08T23:04:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-08T19:08:00Z",
+ "queries": 3,
+ "calls": 4,
+ "items": [
+  {
+   "title": "TensorFold recipes for Qwen3.8-27B, Flash Next and Nemotron 3.5 Bolt land in Omarchy's local AI catalogue",
+   "url": "https://x.com/ashxhart/status/2119515327138508940",
+   "handle": "@ashxhart",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "TensorFold recipes for Qwen3.8-27B, Flash Next and Nemotron 3.5 Bolt are now in the omarchy-local-ai catalogue, so Omarchy Linux users can pick an optimized local runtime recipe for those models. DHH quoted the post and said TensorFold will anchor the project's local AI recipes for out-of-the-box agents on NVIDIA.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/omacom/omarchy-local-ai",
+    "https://tensorfold.dev"
+   ],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-08T19:40:07Z",
+   "metrics": {
+    "likes": 164,
+    "reposts": 14,
+    "quotes": 5,
+    "replies": 17,
+    "views": 14636
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 96,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
