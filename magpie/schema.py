@@ -10,15 +10,22 @@ SchemaError rather than read it loosely. The subset: one schema resource ($id on
 pattern, minLength, maxLength, format, minimum, maximum, $ref, allOf, anyOf, oneOf, not and if/then/else; $ref only as a
 URI fragment holding a JSON Pointer into the same document (RFC 6901); the annotations title, description, $comment,
 examples, default, deprecated and $defs, each of its own type. format is asserted, as the format-assertion vocabulary
-asks, not only annotated. A pattern is an ECMA-262 regex in JSON Schema; this checker takes only the part of
-that syntax Python reads the same way (literals, \d \D \w \W read as ASCII, character classes, ^ and $ with $ the end of
-the string, groups, alternation and quantifiers) and refuses the rest (., \s, \b, lookarounds, backreferences, named
-groups, property escapes) with SchemaError rather than read it differently. Formats: date and date-time as RFC 3339 defines
-them (a leap second only at 23:59:60 UTC); uri as RFC 3986, parsed into its parts, each from its own characters, with
-brackets only around an IPv6 or IPvFuture host and a host required for http and https; iri as RFC 3987, which adds
-ucschar everywhere and iprivate in the query. Annotations are not checked against the file. Before anything is checked, the whole schema is read once, every branch, definition and reference target included: any other
-keyword, format, type, reference or a keyword value of the wrong shape raises SchemaError, so a schema can never ask
-for a check that is silently not made.
+asks, not only annotated.
+
+A pattern is an ECMA-262 regex read in Unicode mode (the u flag), as JSON Schema 2020-12 asks (core, section 6.4), so it
+matches code points, as Python does. The checker takes only the part of that syntax Python reads the same way (literals;
+\d \D \w \W, read as ASCII; character classes; ^, and $ as the end of the string; groups; alternation; quantifiers, lazy
+or not; escapes of syntax characters and /) and refuses the rest (., \s, \b, lookarounds, backreferences, named groups,
+property escapes, possessive or stacked quantifiers, other escapes) with SchemaError rather than read it differently.
+
+Formats: date and date-time as RFC 3339 defines them, ASCII digits only (a leap second only at 23:59:60 UTC on a day
+that had one); uri as RFC 3986, parsed into its parts, each from its own characters, with brackets only around an IPv6
+or IPvFuture host and a host required for http and https; iri as RFC 3987, which adds ucschar everywhere and iprivate in
+the query. Annotations are not checked against the file.
+
+Before anything is checked, the whole schema is read once, every branch, definition and reference target included: any
+other keyword, format, type, reference or a keyword value of the wrong shape raises SchemaError, so a schema can never
+ask for a check that is silently not made.
 
 `publishable(obj, schema, label)` is the gate a writer calls before it replaces a published file: it reports the
 problems (stderr, and a warning annotation on GitHub Actions) and returns False, and the writer then leaves the last good
@@ -106,7 +113,7 @@ def _ecma_pattern(p: str) -> str:
             continue
         if c == "\\":
             e = p[i + 1] if i + 1 < n else ""
-            if not e or (e not in simple and e not in "\\^$.|?*+()[]{}/-"):
+            if not e or (e not in simple and e not in "\\^$.|?*+()[]{}/"):  # Unicode mode: syntax characters and / only
                 raise SchemaError(f"pattern escape \\{e} is not supported")
             out.append(c + e)
             i += 2
@@ -285,9 +292,13 @@ def _format_ok(v: str, fmt: str) -> bool:
             off = (oh * 60 + om) * (1 if m.group(8) == "+" else -1)
         if s < 60:
             return True
-        # A leap second is the last second of a UTC day that had one.
-        utc = dt.datetime(y, mo, d, h, mi) - dt.timedelta(minutes=off)
-        return (utc.hour, utc.minute) == (23, 59) and utc.date().isoformat() in LEAP_SECOND_DAYS
+        # A leap second is the last second of a UTC day that had one. Shift by the offset in whole days and minutes, with
+        # ordinals, so a date at either end of the calendar cannot overflow.
+        days, minute = divmod(h * 60 + mi - off, 24 * 60)
+        ordinal = dt.date(y, mo, d).toordinal() + days
+        if minute != 23 * 60 + 59 or not 1 <= ordinal <= dt.date.max.toordinal():
+            return False
+        return dt.date.fromordinal(ordinal).isoformat() in LEAP_SECOND_DAYS
     if fmt in ("uri", "iri"):
         return _uri_ok(v, fmt == "iri")
     raise SchemaError(f"unknown format {fmt!r}")

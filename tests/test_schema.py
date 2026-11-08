@@ -197,6 +197,8 @@ class Checker(unittest.TestCase):
                   "2026-11-07T12:00:00", "2016-12-30T23:59:60Z", "2026-11-07T23:59:60Z",
                   "\u0662\u0660\u0662\u0666-\u0661\u0661-\u0660\u0667T\u0661\u0662:\u0660\u0660:\u0660\u0660Z"]:
             self.assertFalse(ok(v), v)  # a leap second only on a day that had one; ASCII digits only
+        for v in ["0001-01-01T00:00:60+23:59", "9999-12-31T23:59:60-23:59"]:  # the ends of the calendar: refused, never raised
+            self.assertFalse(ok(v), v)
         self.assertTrue(S.problems("\u0662\u0660\u0662\u0666-\u0661\u0661-\u0660\u0667", {"format": "date"}))
 
     def test_every_link_ever_published_passes(self):
@@ -210,13 +212,17 @@ class Checker(unittest.TestCase):
         # ECMA-262: \d is 0 to 9 only, so an id with another script's digits fails, as pages.py refuses to stamp it.
         self.assertTrue(S.problems("\u0661", {"pattern": "^\\d$"}))
         self.assertEqual(S.problems("1", {"pattern": "^\\d$"}), [])
+        # Unicode mode, as JSON Schema asks: a class matches a code point, astral ones included; \- is fine inside a class.
+        self.assertEqual(S.problems("\U0001F600", {"pattern": "^[^a]$"}), [])
+        self.assertEqual(S.problems("a-b", {"pattern": "^a[\\-]b$"}), [])
         # Lazy quantifiers read the same in both.
         self.assertEqual(S.problems("aa", {"pattern": "^a+?a$"}), [])
         self.assertEqual(S.problems("aa", {"pattern": "^a{1,2}?a?$"}), [])
         # $ is the end of the string, as in ECMA-262 (Python's $ would also match before a final newline).
         self.assertTrue(S.problems("a\n", {"pattern": "^a$"}))
         # Syntax the two engines read differently is refused, never read one way or the other.
-        for pat in ["^\\s$", "^.$", "(?<=a)b", "\\bword", "(?P<n>x)", "\\p{L}", "a{", "[]", "[a", "a*+", "a++", "a?+", "a{1,2}+", "a*?+", "a**"]:
+        for pat in ["^\\s$", "^.$", "(?<=a)b", "\\bword", "(?P<n>x)", "\\p{L}", "a{", "[]", "[a", "a*+", "a++", "a?+", "a{1,2}+", "a*?+", "a**",
+                    "a\\-b"]:
             with self.assertRaises(S.SchemaError, msg=pat):
                 S.problems("x", {"pattern": pat})
         idea = json.loads(IDEAS.read_text())["ideas"][0]
