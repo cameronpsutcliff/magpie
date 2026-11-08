@@ -3,43 +3,43 @@
  "days": [
   {
    "date": "2026-11-08",
-   "headline": "Qwen3.5-4B-GLB-3D-Coder, DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic, Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF, and more",
-   "events": 127,
-   "sources": 535,
-   "enriched": false,
+   "headline": "Shrink long-context KV caches, speed up Qwen3.8 decoding, test agent honesty, and more",
+   "events": 213,
+   "sources": 564,
+   "enriched": true,
    "top": [
     {
-     "id": "0a05f6c8cd0f",
-     "title": "ccore/Qwen3.5-4B-GLB-3D-Coder",
+     "id": "ed37dd26f2c9",
+     "title": "Claude Code \"Don't Ask Again\" leaks passwords to GitHub",
      "impact": 4,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-08-0a05f6c8cd0f"
-    },
-    {
-     "id": "d9e2a8762de5",
-     "title": "xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic",
-     "impact": 4,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-08-d9e2a8762de5"
-    },
-    {
-     "id": "e197a9917ccd",
-     "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
-     "impact": 5,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-08-e197a9917ccd"
+     "vendor": "Anthropic",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-08-ed37dd26f2c9"
     },
     {
      "id": "42bc073f6f45",
-     "title": "unsloth/Qwen3.8-Flash-Next-GGUF",
+     "title": "Unsloth Qwen3.8 Flash Next GGUF keeps climbing",
      "impact": 4,
      "vendor": "Unsloth",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-08-42bc073f6f45"
     },
     {
-     "id": "e487fe51b82b",
-     "title": "cloudflare/security-audit-skill",
+     "id": "007c2d0f188b",
+     "title": "Xiaomi HySparse2 cuts million-token prefill and KV cache",
      "impact": 4,
+     "vendor": "Xiaomi",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-08-007c2d0f188b"
+    },
+    {
+     "id": "43e6889e0b5b",
+     "title": "Tencent DSpine draft model speeds Qwen3.8-27B decoding",
+     "impact": 4,
+     "vendor": "Tencent",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-08-43e6889e0b5b"
+    },
+    {
+     "id": "e487fe51b82b",
+     "title": "Cloudflare security audit skill keeps gaining stars",
+     "impact": 3,
      "vendor": "Cloudflare",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-08-e487fe51b82b"
     }
@@ -47,33 +47,35 @@
    "vendors": [
     "Open source",
     "Anthropic",
-    "GitHub",
     "OpenAI",
+    "GitHub",
     "Qwen",
     "NVIDIA"
    ],
    "topics": {
-    "coding": 35,
-    "multimodal": 35,
-    "agents": 29,
-    "models": 21,
-    "mcp": 16,
-    "memory": 11,
-    "local": 11,
-    "evals": 8,
-    "infra": 7,
-    "reverse": 6,
-    "security": 4,
-    "research": 3
+    "coding": 60,
+    "agents": 59,
+    "models": 48,
+    "multimodal": 43,
+    "infra": 23,
+    "mcp": 22,
+    "local": 19,
+    "evals": 18,
+    "memory": 13,
+    "reverse": 10,
+    "security": 5,
+    "research": 5,
+    "robotics": 1
    },
    "kinds": {
+    "video": 48,
+    "social": 46,
     "model": 30,
-    "repo": 27,
+    "repo": 25,
     "space": 20,
-    "community": 15,
     "newsletter": 15,
+    "community": 14,
     "changelog": 12,
-    "social": 5,
     "blog": 3
    }
   },
