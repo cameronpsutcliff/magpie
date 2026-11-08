@@ -143,7 +143,9 @@ class Checker(unittest.TestCase):
         with self.assertRaises(S.SchemaError):
             S.problems(None, {"default": {"unsupported": True}, "anyOf": [True, {"$ref": "#/default"}]})
         # A keyword value of the wrong shape is an error in the schema, not a crash later.
-        for bad in [{"properties": []}, {"$ref": 5}, {"required": "id"}, {"pattern": "("}, {"minItems": True}]:
+        for bad in [{"properties": []}, {"$ref": 5}, {"required": "id"}, {"pattern": "("}, {"minItems": True}, {"minItems": -1},
+                    {"maxLength": -2}, {"allOf": []}, {"anyOf": []}, {"type": []}, {"type": ["string", "string"]}, {"required": ["a", "a"]},
+                    {"$ref": "#/%FF"}]:
             with self.assertRaises(S.SchemaError, msg=bad):
                 S.problems({}, bad)
 
@@ -153,6 +155,8 @@ class Checker(unittest.TestCase):
         self.assertTrue(S.problems(1, schema))
         with self.assertRaises(S.SchemaError):
             S.problems("x", {"allOf": [True], "anyOf": [{"$ref": "#/allOf/1"}]})
+        # A pointer in a URI fragment is percent-decoded, then ~1 and ~0 (RFC 6901).
+        self.assertEqual(S.problems("x", {"$defs": {"a b": {"type": "string"}, "c/d": True}, "allOf": [{"$ref": "#/$defs/a%20b"}, {"$ref": "#/$defs/c~1d"}]}), [])
         with self.assertRaises(S.SchemaError):
             S.problems("x", {"type": "string", "format": "email"})
         with self.assertRaises(S.SchemaError):
@@ -161,7 +165,7 @@ class Checker(unittest.TestCase):
     def test_uri_and_iri_follow_their_rfcs(self):
         ok = lambda v, f: not S.problems(v, {"format": f})  # noqa: E731
         for v in ["https://example.com/a%20b?q=1#top", "https://h:80/x", "mailto:a@b.c", "https://[::1]/x", "https://[::1]:8080/x",
-                  "https://[v1.fe]/x", "https://user:pw@h.com/x", "urn:isbn:0451450523", "https://ex.com:/x"]:
+                  "https://[v1.fe]/x", "https://[V1.fe]/x", "https://user:pw@h.com/x", "urn:isbn:0451450523", "https://ex.com:/x"]:
             self.assertTrue(ok(v, "uri") and ok(v, "iri"), v)
         for v in ["https://example.com/%ZZ", "http://", "https://a b.com", "not a link", "https://ex.com/#a#b", "https://ex.com/a\"b",
                   "https://[garbage]/x", "https://example.com/a[b]", "https://ex.com/a|b", "https:///x", "https://h:8a/x", "https://[::1]x/", ""]:
@@ -177,11 +181,14 @@ class Checker(unittest.TestCase):
 
     def test_date_time_follows_rfc_3339(self):
         ok = lambda v: not S.problems(v, {"format": "date-time"})  # noqa: E731
-        for v in ["2026-11-07T12:00:00Z", "2026-11-07t12:00:00.123+05:30", "2016-12-31T23:59:60Z", "2016-12-31T18:59:60-05:00"]:
+        for v in ["2026-11-07T12:00:00Z", "2026-11-07t12:00:00.123+05:30", "2016-12-31T23:59:60Z", "2016-12-31T18:59:60-05:00",
+                  "2017-01-01T00:59:60+01:00", "1972-06-30T23:59:60Z"]:
             self.assertTrue(ok(v), v)
         for v in ["2026-11-07T12:00:00+00:60", "2016-12-31T23:58:60Z", "2026-11-07 12:00:00Z", "2026-02-30T00:00:00Z", "2026-11-07T24:00:00Z",
-                  "2026-11-07T12:00:00"]:
-            self.assertFalse(ok(v), v)
+                  "2026-11-07T12:00:00", "2016-12-30T23:59:60Z", "2026-11-07T23:59:60Z",
+                  "\u0662\u0660\u0662\u0666-\u0661\u0661-\u0660\u0667T\u0661\u0662:\u0660\u0660:\u0660\u0660Z"]:
+            self.assertFalse(ok(v), v)  # a leap second only on a day that had one; ASCII digits only
+        self.assertTrue(S.problems("\u0662\u0660\u0662\u0666-\u0661\u0661-\u0660\u0667", {"format": "date"}))
 
     def test_every_link_ever_published_passes(self):
         # The ingredient url is an iri, so a link copied with a non-ASCII character never freezes the index.

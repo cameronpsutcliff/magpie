@@ -42,6 +42,7 @@ class PageIds(unittest.TestCase):
         self.assertIsNone(P.idea_url("idea-2099-01-05-1"))
         self.assertIsNone(P.idea_url("2099-01-05-Desks"))
         self.assertIsNone(P.idea_url("2099-02-30-desks"))
+        self.assertIsNone(P.item_url("\u0662\u0660\u0669\u0669-01-05", "02d0f9ac3aca"))  # ASCII digits only
 
 
 class Stamp(unittest.TestCase):

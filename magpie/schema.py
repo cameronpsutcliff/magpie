@@ -26,6 +26,7 @@ import json
 import os
 import re
 import sys
+import urllib.parse
 from pathlib import Path
 
 SCHEMA_DIR = Path(__file__).resolve().parent.parent / "data/v1/schema"
@@ -54,8 +55,13 @@ def _part(extra: str, iri: bool, private: bool = False) -> re.Pattern:
 
 _PARTS = {iri: {"userinfo": _part(":", iri), "reg_name": _part("", iri), "path": _part(":@/", iri),
                 "query": _part(":@/?", iri, private=True), "fragment": _part(":@/?", iri)} for iri in (False, True)}
-_IP_FUTURE = re.compile(f"v[0-9A-Fa-f]+\\.[{_UNRESERVED}{re.escape(_SUB_DELIMS)}:]+")
-DATE_TIME = re.compile(r"(\d{4})-(\d{2})-(\d{2})[Tt](\d{2}):(\d{2}):(\d{2})(?:\.\d+)?(?:([Zz])|([+-])(\d{2}):(\d{2}))")
+_IP_FUTURE = re.compile(f"[vV][0-9A-Fa-f]+\\.[{_UNRESERVED}{re.escape(_SUB_DELIMS)}:]+")
+DATE_TIME = re.compile(r"(\d{4})-(\d{2})-(\d{2})[Tt](\d{2}):(\d{2}):(\d{2})(?:\.\d+)?(?:([Zz])|([+-])(\d{2}):(\d{2}))", re.ASCII)
+# Every leap second so far (IERS), each at 23:59:60 UTC on these days; none has been announced since 2016.
+LEAP_SECOND_DAYS = {"1972-06-30", "1972-12-31", "1973-12-31", "1974-12-31", "1975-12-31", "1976-12-31", "1977-12-31",
+                    "1978-12-31", "1979-12-31", "1981-06-30", "1982-06-30", "1983-06-30", "1985-06-30", "1987-12-31",
+                    "1989-12-31", "1990-12-31", "1992-06-30", "1993-06-30", "1994-06-30", "1995-12-31", "1997-06-30",
+                    "1998-12-31", "2005-12-31", "2008-12-31", "2012-06-30", "2015-06-30", "2016-12-31"}
 MAX_PROBLEMS = 50
 
 
@@ -87,8 +93,16 @@ def _audit(s, root: dict, seen: set[int]) -> None:
     for k, want in shapes.items():
         if k in s and (not isinstance(s[k], want) or isinstance(s[k], bool)):
             raise SchemaError(f"{k} has the wrong shape: {type(s[k]).__name__}")
-    if any(not isinstance(k, str) for k in s.get("required", [])):
-        raise SchemaError("required lists something that is not a name")
+    if any(not isinstance(k, str) for k in s.get("required", [])) or len(set(s.get("required", []))) != len(s.get("required", [])):
+        raise SchemaError("required must list distinct names")
+    for k in ("minItems", "maxItems", "minLength", "maxLength"):
+        if k in s and s[k] < 0:
+            raise SchemaError(f"{k} must not be negative")
+    for k in ("allOf", "anyOf", "oneOf"):
+        if k in s and not s[k]:
+            raise SchemaError(f"{k} must not be empty")
+    if isinstance(s.get("type"), list) and (not s["type"] or len(set(s["type"])) != len(s["type"])):
+        raise SchemaError("a type list must be non-empty and distinct")
     types = s.get("type", [])
     for t in types if isinstance(types, list) else [types]:
         if t not in TYPES:
@@ -149,7 +163,7 @@ def _same(a, b) -> bool:
 
 def _format_ok(v: str, fmt: str) -> bool:
     if fmt == "date":
-        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", v):
+        if not re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", v):
             return False
         try:
             dt.date.fromisoformat(v)
@@ -173,8 +187,11 @@ def _format_ok(v: str, fmt: str) -> bool:
             if oh > 23 or om > 59:
                 return False
             off = (oh * 60 + om) * (1 if m.group(8) == "+" else -1)
-        # A leap second exists only as the last second of a UTC day.
-        return s < 60 or (h * 60 + mi - off) % (24 * 60) == 23 * 60 + 59
+        if s < 60:
+            return True
+        # A leap second is the last second of a UTC day that had one.
+        utc = dt.datetime(y, mo, d, h, mi) - dt.timedelta(minutes=off)
+        return (utc.hour, utc.minute) == (23, 59) and utc.date().isoformat() in LEAP_SECOND_DAYS
     if fmt in ("uri", "iri"):
         return _uri_ok(v, fmt == "iri")
     raise SchemaError(f"unknown format {fmt!r}")
@@ -249,8 +266,12 @@ def _resolve(root: dict, ref: str) -> dict | bool:
         return root
     if not ref.startswith("#/"):
         raise SchemaError(f"only references within the same file are supported, not {ref!r}")
+    try:
+        pointer = urllib.parse.unquote(ref[2:], errors="strict")  # a URI fragment: percent-decoded first (RFC 6901, 6)
+    except UnicodeDecodeError:
+        raise SchemaError(f"{ref!r} is not a valid fragment") from None
     node = root
-    for part in ref[2:].split("/"):
+    for part in pointer.split("/"):
         part = part.replace("~1", "/").replace("~0", "~")
         if isinstance(node, dict) and part in node:
             node = node[part]

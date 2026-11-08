@@ -18,8 +18,8 @@ import re
 
 SITE = "https://www.cameronsutcliff.com/magpie"
 EVENT_ID = re.compile(r"[0-9a-f]{12}")
-DATE = re.compile(r"\d{4}-\d{2}-\d{2}")
-IDEA_ID = re.compile(r"\d{4}-\d{2}-\d{2}-[a-z0-9][a-z0-9-]{0,99}")  # views.ID_SHAPE
+DATE = re.compile(r"[0-9]{4}-[0-9]{2}-[0-9]{2}")
+IDEA_ID = re.compile(r"[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9][a-z0-9-]{0,99}")  # views.ID_SHAPE, ASCII digits only
 
 
 def _real_date(date) -> bool:
