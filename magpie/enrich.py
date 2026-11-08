@@ -176,7 +176,9 @@ def vendor_name(v, event_id: str = "") -> str | None:
 def clean_makers(day: dict) -> int:
     """Repair a published edition in place: an event's maker or vendors that is not a text name (an earlier editor run
     could store true) is dropped, the maker becoming null rather than a guess, the brief's vendor likewise, and the day's
-    vendor facets lose any entry that is not a name. Returns how many events changed. Idempotent."""
+    vendor facets lose any row whose name is not text (a row is a list as read from JSON, or a tuple as Counter.most_common
+    builds it on a fresh edition; both are kept when named). Returns how many repairs it made, events changed plus facet
+    rows dropped, so a caller can tell a facet-only repair needs writing. Idempotent."""
     if not isinstance(day, dict):
         return 0
     name = lambda v: isinstance(v, str) and bool(v.strip())  # noqa: E731
@@ -198,7 +200,9 @@ def clean_makers(day: dict) -> int:
     if isinstance(facets, dict):
         for k in ("vendors", "ecosystem"):
             if isinstance(facets.get(k), list):
-                facets[k] = [row for row in facets[k] if isinstance(row, list) and row and name(row[0])]
+                kept = [row for row in facets[k] if isinstance(row, (list, tuple)) and row and name(row[0])]
+                changed += len(facets[k]) - len(kept)
+                facets[k] = kept
     return changed
 
 
