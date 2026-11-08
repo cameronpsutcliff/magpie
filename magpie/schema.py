@@ -364,7 +364,7 @@ def _resolve(root: dict, ref: str) -> dict | bool:
         part = part.replace("~1", "/").replace("~0", "~")
         if isinstance(node, dict) and part in node:
             node = node[part]
-        elif isinstance(node, list) and re.fullmatch(r"0|[1-9]\d*", part) and int(part) < len(node):
+        elif isinstance(node, list) and re.fullmatch(r"0|[1-9][0-9]*", part) and int(part) < len(node):  # ASCII digits only
             node = node[int(part)]
         else:
             raise SchemaError(f"{ref!r} points at nothing")

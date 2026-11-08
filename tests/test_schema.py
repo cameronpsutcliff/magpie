@@ -147,7 +147,8 @@ class Checker(unittest.TestCase):
                     {"maxLength": -2}, {"allOf": []}, {"anyOf": []}, {"type": []}, {"type": ["string", "string"]}, {"required": ["a", "a"]},
                     {"$ref": "#/%FF"}, {"type": [{}]}, {"minLength": 1.5}, {"$ref": "#$defs"},
                     {"default": {"%ZZ": True}, "$ref": "#/default/%ZZ"}, {"default": {"a~2": True}, "$ref": "#/default/a~2"},
-                    {"$defs": {"a b": True}, "$ref": "#/$defs/a b"}]:
+                    {"$defs": {"a b": True}, "$ref": "#/$defs/a b"}, {"default": [True] * 13, "$ref": "#/default/1%D9%A2"},
+                    {"default": [True, True], "$ref": "#/default/01"}]:
             with self.assertRaises(S.SchemaError, msg=bad):
                 S.problems({}, bad)
 
