@@ -163,6 +163,10 @@ class Checker(unittest.TestCase):
             node = node["not"]
         with self.assertRaises(S.SchemaError):
             S.problems(1, deep)
+        with self.assertRaises(S.SchemaError):
+            S.problems("x", {"default": [True], "$ref": "#/default/" + "9" * 5000})
+        with self.assertRaises(S.SchemaError):  # an unreadable schema file too
+            S.problems({}, "no-such.schema.json")
 
     def test_a_reference_can_point_into_a_list(self):
         schema = {"allOf": [{"type": "string"}], "anyOf": [{"$ref": "#/allOf/0"}]}

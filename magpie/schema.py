@@ -402,7 +402,8 @@ def _resolve(root: dict, ref: str) -> dict | bool:
         part = part.replace("~1", "/").replace("~0", "~")
         if isinstance(node, dict) and part in node:
             node = node[part]
-        elif isinstance(node, list) and re.fullmatch(r"0|[1-9][0-9]*", part) and int(part) < len(node):  # ASCII digits only
+        elif (isinstance(node, list) and re.fullmatch(r"0|[1-9][0-9]*", part)  # ASCII digits only
+              and len(part) <= len(str(len(node))) and int(part) < len(node)):  # length first: int() of 5,000 digits raises
             node = node[int(part)]
         else:
             raise SchemaError(f"{ref!r} points at nothing")
@@ -497,8 +498,12 @@ def problems(obj, schema: dict | str) -> list[str]:
     """What is wrong with obj under the schema (a dict, or a file name in data/v1/schema), at most MAX_PROBLEMS lines."""
     try:
         return _problems(obj, schema)
+    except SchemaError:
+        raise
     except RecursionError:
         raise SchemaError("the schema or the file is nested too deeply to check") from None
+    except Exception as ex:  # anything else means the check could not be made: never a pass, always a SchemaError
+        raise SchemaError(f"the check could not be made: {type(ex).__name__}: {str(ex)[:160]}") from None
 
 
 def _problems(obj, schema: dict | str) -> list[str]:
