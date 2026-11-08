@@ -137,9 +137,15 @@ def _ecma_pattern(p: str) -> str:
             if k >= n:
                 raise SchemaError("an unterminated character class")
             # In Unicode mode a range cannot end at \d, \D, \w or \W ([\d-a] is an error there; Python reads - literally).
-            for x, dash, y in zip(atoms, atoms[1:], atoms[2:]):
-                if dash == "-" and ({x, y} & {"\\d", "\\D", "\\w", "\\W"}):
-                    raise SchemaError("a range from or to \\d, \\D, \\w or \\W is not supported")
+            # Ranges are read left to right as both parsers read them: x-y takes three atoms, so [a-b-\d] is a-b, -, \d.
+            r = 0
+            while r < len(atoms):
+                if r + 2 < len(atoms) and atoms[r + 1] == "-":
+                    if {atoms[r], atoms[r + 2]} & {"\\d", "\\D", "\\w", "\\W"}:
+                        raise SchemaError("a range from or to \\d, \\D, \\w or \\W is not supported")
+                    r += 3
+                else:
+                    r += 1
             out.append(p[i:k + 1])
             i = k + 1
         elif c == ".":

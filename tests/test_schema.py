@@ -217,6 +217,8 @@ class Checker(unittest.TestCase):
         self.assertEqual(S.problems("a-b", {"pattern": "^a[\\-]b$"}), [])
         self.assertEqual(S.problems("-", {"pattern": "^[\\d-]$"}), [])  # a - at the end of a class is a literal in both
         self.assertEqual(S.problems("]", {"pattern": "^[\\]]$"}), [])
+        for ch in "-a5":  # a range, then a literal -, then \d: valid in both, read alike
+            self.assertEqual(S.problems(ch, {"pattern": "^[a-b-\\d]$"}), [], ch)
         # Lazy quantifiers read the same in both.
         self.assertEqual(S.problems("aa", {"pattern": "^a+?a$"}), [])
         self.assertEqual(S.problems("aa", {"pattern": "^a{1,2}?a?$"}), [])
