@@ -56,7 +56,8 @@ def broken(index: dict) -> dict[str, dict]:
     case("no ingredients", lambda x: x["ideas"][0].update(ingredients=[]))
     case("ingredient without a url key", lambda x: x["ideas"][0]["ingredients"][0].pop("url"))
     case("ingredient id not an event id", lambda x: x["ideas"][0]["ingredients"][0].update(id="Thing"))
-    case("ingredient url not a uri", lambda x: x["ideas"][0]["ingredients"][0].update(url="not a link"))
+    case("ingredient url not an iri", lambda x: x["ideas"][0]["ingredients"][0].update(url="not a link"))
+    case("ingredient url with a bad escape", lambda x: x["ideas"][0]["ingredients"][0].update(url="https://example.com/%ZZ"))
     case("builds_on without a date", lambda x: x["ideas"][0].update(builds_on={"id": None, "title": "Earlier"}))
     case("built_on_by names an unsafe id", lambda x: x["ideas"][0].update(built_on_by=["Not An Id"]))
     case("score as text", lambda x: x["ideas"][0].update(score="high"))
@@ -110,7 +111,7 @@ class Checker(unittest.TestCase):
     def test_a_problem_says_where_it_is(self):
         x = copy.deepcopy(self.index)
         x["ideas"][2]["ingredients"][1]["url"] = "not a link"
-        self.assertEqual(S.problems(x, "ideas.schema.json"), ['$.ideas[2].ingredients[1].url: "not a link" is not a uri'])
+        self.assertEqual(S.problems(x, "ideas.schema.json"), ['$.ideas[2].ingredients[1].url: "not a link" is not a valid iri'])
 
     def test_a_retired_id_needs_only_its_id_date_and_title(self):
         x = copy.deepcopy(self.index)
@@ -129,10 +130,44 @@ class Checker(unittest.TestCase):
     def test_a_keyword_it_cannot_check_is_an_error_not_a_pass(self):
         with self.assertRaises(S.SchemaError):
             S.problems({}, {"type": "object", "dependentRequired": {"a": ["b"]}})
+        # Anywhere in the schema, whether or not this file reaches it.
+        with self.assertRaises(S.SchemaError):
+            S.problems({}, {"properties": {"x": {"dependentRequired": {"a": ["b"]}}}})
+        with self.assertRaises(S.SchemaError):
+            S.problems(1, {"anyOf": [True, {"dependentRequired": {}}]})
+        with self.assertRaises(S.SchemaError):
+            S.problems({}, {"$defs": {"unused": {"type": "strng"}}})
+        with self.assertRaises(S.SchemaError):
+            S.problems({}, {"else": {"$ref": "#/$defs/missing"}})
         with self.assertRaises(S.SchemaError):
             S.problems("x", {"type": "string", "format": "email"})
         with self.assertRaises(S.SchemaError):
             S.problems({}, {"$ref": "https://example.com/other.json"})
+
+    def test_uri_and_iri_follow_their_rfcs(self):
+        ok = lambda v, f: not S.problems(v, {"format": f})  # noqa: E731
+        for v in ["https://example.com/a%20b?q=1#top", "https://h:80/x", "mailto:a@b.c", "https://[::1]/x"]:
+            self.assertTrue(ok(v, "uri") and ok(v, "iri"), v)
+        for v in ["https://example.com/%ZZ", "http://", "https://a b.com", "not a link", "https://ex.com/#a#b", "https://ex.com/a\"b"]:
+            self.assertFalse(ok(v, "uri") or ok(v, "iri"), v)
+        curly = "https://www.wsj.com/finance/x-ca965d8b\u2019"  # as one published event's link ends
+        self.assertTrue(ok(curly, "iri"))
+        self.assertFalse(ok(curly, "uri"))
+
+    def test_date_time_follows_rfc_3339(self):
+        ok = lambda v: not S.problems(v, {"format": "date-time"})  # noqa: E731
+        for v in ["2026-11-07T12:00:00Z", "2026-11-07t12:00:00.123+05:30", "2016-12-31T23:59:60Z", "2016-12-31T18:59:60-05:00"]:
+            self.assertTrue(ok(v), v)
+        for v in ["2026-11-07T12:00:00+00:60", "2016-12-31T23:58:60Z", "2026-11-07 12:00:00Z", "2026-02-30T00:00:00Z", "2026-11-07T24:00:00Z",
+                  "2026-11-07T12:00:00"]:
+            self.assertFalse(ok(v), v)
+
+    def test_every_link_ever_published_passes(self):
+        # The ingredient url is an iri, so a link copied with a non-ASCII character never freezes the index.
+        for path in [IDEAS, *PAST]:
+            for x in json.loads(path.read_text())["ideas"]:
+                for i in x.get("ingredients", []):
+                    self.assertEqual(S.problems(i["url"], {"format": "iri"}), [], i["url"])
 
     def test_json_equality(self):
         self.assertEqual(S.problems(1.0, {"const": 1}), [])
@@ -154,8 +189,8 @@ class Checker(unittest.TestCase):
         uri_checked = not ref.is_valid({"schema": "magpie.ideas/1", "updated": None, "ideas": [
             {**self.index["ideas"][0], "ingredients": [{**self.index["ideas"][0]["ingredients"][0], "url": "not a link"}]}]})
         for name, x in broken(self.index).items():
-            if name == "ingredient url not a uri" and not uri_checked:
-                continue  # the reference checks uri only with an optional package installed
+            if name.startswith("ingredient url") and not uri_checked:
+                continue  # the reference checks iri only with an optional package installed
             with self.subTest(name):
                 self.assertFalse(ref.is_valid(x), name)
 
@@ -197,7 +232,7 @@ class Gate(unittest.TestCase):
         self.assertEqual(got, {"ideas": "not published: failed its schema", "rollups": 1})  # the rollup still goes out
         self.assertEqual(self.published(), self.last_good)
         self.assertIn("ideas/index.json not published: it fails ideas.schema.json (1 problem)", err.getvalue())
-        self.assertIn('$.ideas[0].ingredients[0].url: "not a link" is not a uri', err.getvalue())
+        self.assertIn('$.ideas[0].ingredients[0].url: "not a link" is not a valid iri', err.getvalue())
 
     def test_on_github_actions_the_report_is_also_a_warning(self):
         out, err = io.StringIO(), io.StringIO()

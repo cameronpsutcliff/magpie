@@ -173,8 +173,8 @@
       "string",
       "null"
      ],
-     "format": "uri",
-     "description": "Where the capability lives: its repo, model, paper or post."
+     "format": "iri",
+     "description": "Where the capability lives: its repo, model, paper or post. An IRI (RFC 3987): a URI that may hold non-ASCII characters, since it is copied from the source as published."
     }
    }
   }

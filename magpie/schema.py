@@ -5,9 +5,12 @@
 schema readers download is the one the pipeline enforces.
 
 It implements the JSON Schema 2020-12 keywords Magpie's schemas use: type, const, enum, required, properties,
-additionalProperties, items, minItems, maxItems, pattern, minLength, maxLength, format (date, date-time, uri), minimum,
-maximum, $ref within the same file, allOf, anyOf, oneOf, not and if/then/else. Annotations (title, description, $id and
-the like) are skipped. Any other keyword raises SchemaError, so a schema can never ask for a check that is silently not
+additionalProperties, items, minItems, maxItems, pattern, minLength, maxLength, format, minimum, maximum, $ref within the
+same file, allOf, anyOf, oneOf, not and if/then/else. Formats: date and date-time as RFC 3339 defines them (a leap second
+only at 23:59:60 UTC), uri as RFC 3986 (ASCII, valid percent-escapes, a host for http and https) and iri as RFC 3987 (a
+uri that may also hold non-ASCII letters, as links copied from sources do). Annotations (title, description, $id and the
+like) are skipped. Before anything is checked, the whole schema is read once, every branch and definition included: any
+other keyword, format, type or reference raises SchemaError, so a schema can never ask for a check that is silently not
 made.
 
 `publishable(obj, schema, label)` is the gate a writer calls before it replaces a published file: it reports the
@@ -28,7 +31,16 @@ ANNOTATIONS = {"$schema", "$id", "$defs", "$comment", "title", "description", "e
 KEYWORDS = {"type", "const", "enum", "required", "properties", "additionalProperties", "items", "minItems", "maxItems",
             "pattern", "minLength", "maxLength", "format", "minimum", "maximum", "$ref", "allOf", "anyOf", "oneOf", "not",
             "if", "then", "else"}
-FORMATS = {"date", "date-time", "uri"}
+FORMATS = {"date", "date-time", "uri", "iri"}
+TYPES = {"null", "boolean", "integer", "number", "string", "array", "object"}
+# RFC 3986: unreserved, reserved and percent-escaped characters, with at most one fragment. An IRI (RFC 3987) may also
+# hold any non-ASCII character that is not a space or a control.
+_URI_CHARS = r"[A-Za-z0-9\-._~!$&'()*+,;=:@/?\[\]]|%[0-9A-Fa-f]{2}"
+_FRAG_CHARS = r"[A-Za-z0-9\-._~!$&'()*+,;=:@/?]|%[0-9A-Fa-f]{2}"
+_WIDE = r"|[^\x00-\x7f\s\x80-\x9f]"
+URI = re.compile(rf"[A-Za-z][A-Za-z0-9+.-]*:(?:{_URI_CHARS})*(?:#(?:{_FRAG_CHARS})*)?")
+IRI = re.compile(rf"[A-Za-z][A-Za-z0-9+.-]*:(?:{_URI_CHARS}{_WIDE})*(?:#(?:{_FRAG_CHARS}{_WIDE})*)?")
+DATE_TIME = re.compile(r"(\d{4})-(\d{2})-(\d{2})[Tt](\d{2}):(\d{2}):(\d{2})(?:\.\d+)?(?:([Zz])|([+-])(\d{2}):(\d{2}))")
 MAX_PROBLEMS = 50
 
 
@@ -38,6 +50,36 @@ class SchemaError(ValueError):
 
 def load(name: str) -> dict:
     return json.loads((SCHEMA_DIR / name).read_text())
+
+
+def _audit(s, root: dict, seen: set[int]) -> None:
+    """Read the whole schema once, every branch and definition, and raise SchemaError on anything this checker cannot
+    check, whether or not a given file would reach it."""
+    if isinstance(s, bool):
+        return
+    if not isinstance(s, dict):
+        raise SchemaError(f"a schema must be an object or a boolean, not {type(s).__name__}")
+    if id(s) in seen:
+        return
+    seen.add(id(s))
+    unknown = set(s) - KEYWORDS - ANNOTATIONS
+    if unknown:
+        raise SchemaError(f"unsupported keywords {sorted(unknown)}")
+    types = s.get("type", [])
+    for t in types if isinstance(types, list) else [types]:
+        if t not in TYPES:
+            raise SchemaError(f"unknown type {t!r}")
+    if "format" in s and s["format"] not in FORMATS:
+        raise SchemaError(f"unknown format {s['format']!r}")
+    if "pattern" in s:
+        re.compile(s["pattern"])
+    if "$ref" in s:
+        _resolve(root, s["$ref"])
+    subs = [*s.get("properties", {}).values(), *s.get("$defs", {}).values(), *s.get("allOf", []), *s.get("anyOf", []),
+            *s.get("oneOf", [])]
+    subs += [s[k] for k in ("additionalProperties", "items", "not", "if", "then", "else") if k in s]
+    for sub in subs:
+        _audit(sub, root, seen)
 
 
 def _is(v, t: str) -> bool:
@@ -88,18 +130,32 @@ def _format_ok(v: str, fmt: str) -> bool:
             return False
         return True
     if fmt == "date-time":
-        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}[Tt ]\d{2}:\d{2}:\d{2}(\.\d+)?([Zz]|[+-]\d{2}:\d{2})", v):
-            return False
-        try:
-            dt.datetime.fromisoformat(v.replace("Z", "+00:00").replace("z", "+00:00"))
-        except ValueError:
-            return False
-        return True
-    if fmt == "uri":
-        m = re.fullmatch(r"([A-Za-z][A-Za-z0-9+.-]*):(\S+)", v)
+        m = DATE_TIME.fullmatch(v)
         if not m:
             return False
-        return m.group(1).lower() not in ("http", "https") or bool(re.match(r"//[^/?#\s]+", m.group(2)))
+        y, mo, d, h, mi, s = (int(x) for x in m.group(1, 2, 3, 4, 5, 6))
+        try:
+            dt.date(y, mo, d)
+        except ValueError:
+            return False
+        if h > 23 or mi > 59 or s > 60:
+            return False
+        off = 0
+        if not m.group(7):
+            oh, om = int(m.group(9)), int(m.group(10))
+            if oh > 23 or om > 59:
+                return False
+            off = (oh * 60 + om) * (1 if m.group(8) == "+" else -1)
+        # A leap second exists only as the last second of a UTC day.
+        return s < 60 or (h * 60 + mi - off) % (24 * 60) == 23 * 60 + 59
+    if fmt in ("uri", "iri"):
+        if not (URI if fmt == "uri" else IRI).fullmatch(v):
+            return False
+        scheme, rest = v.split(":", 1)
+        if scheme.lower() in ("http", "https"):
+            host = re.match(r"//(?:[^/?#@]*@)?(\[[^\]]+\]|[^/?#:\[\]]+)(?::(\d*))?(?=[/?#]|$)", rest)
+            return bool(host)
+        return True
     raise SchemaError(f"unknown format {fmt!r}")
 
 
@@ -150,7 +206,7 @@ def _check(v, s, root: dict, path: str, out: list[str]) -> None:
             if s["format"] not in FORMATS:
                 raise SchemaError(f"unknown format {s['format']!r}")
             if not _format_ok(v, s["format"]):
-                out.append(f"{path}: {json.dumps(v[:80])} is not a {s['format']}")
+                out.append(f"{path}: {json.dumps(v[:80])} is not a valid {s['format']}")
     if _is(v, "number"):
         if "minimum" in s and v < s["minimum"]:
             out.append(f"{path}: below {s['minimum']}")
@@ -203,6 +259,7 @@ def _sub(v, s, root: dict, path: str) -> list[str]:
 def problems(obj, schema: dict | str) -> list[str]:
     """What is wrong with obj under the schema (a dict, or a file name in data/v1/schema), at most MAX_PROBLEMS lines."""
     root = load(schema) if isinstance(schema, str) else schema
+    _audit(root, root, set())
     out: list[str] = []
     _check(obj, root, root, "$", out)
     return out[:MAX_PROBLEMS]
