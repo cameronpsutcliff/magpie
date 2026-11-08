@@ -139,6 +139,20 @@ class Checker(unittest.TestCase):
             S.problems({}, {"$defs": {"unused": {"type": "strng"}}})
         with self.assertRaises(S.SchemaError):
             S.problems({}, {"else": {"$ref": "#/$defs/missing"}})
+        # Behind a reference, wherever its target sits, even after an earlier branch already matched.
+        with self.assertRaises(S.SchemaError):
+            S.problems(None, {"default": {"unsupported": True}, "anyOf": [True, {"$ref": "#/default"}]})
+        # A keyword value of the wrong shape is an error in the schema, not a crash later.
+        for bad in [{"properties": []}, {"$ref": 5}, {"required": "id"}, {"pattern": "("}, {"minItems": True}]:
+            with self.assertRaises(S.SchemaError, msg=bad):
+                S.problems({}, bad)
+
+    def test_a_reference_can_point_into_a_list(self):
+        schema = {"allOf": [{"type": "string"}], "anyOf": [{"$ref": "#/allOf/0"}]}
+        self.assertEqual(S.problems("x", schema), [])
+        self.assertTrue(S.problems(1, schema))
+        with self.assertRaises(S.SchemaError):
+            S.problems("x", {"allOf": [True], "anyOf": [{"$ref": "#/allOf/1"}]})
         with self.assertRaises(S.SchemaError):
             S.problems("x", {"type": "string", "format": "email"})
         with self.assertRaises(S.SchemaError):
@@ -146,10 +160,17 @@ class Checker(unittest.TestCase):
 
     def test_uri_and_iri_follow_their_rfcs(self):
         ok = lambda v, f: not S.problems(v, {"format": f})  # noqa: E731
-        for v in ["https://example.com/a%20b?q=1#top", "https://h:80/x", "mailto:a@b.c", "https://[::1]/x"]:
+        for v in ["https://example.com/a%20b?q=1#top", "https://h:80/x", "mailto:a@b.c", "https://[::1]/x", "https://[::1]:8080/x",
+                  "https://[v1.fe]/x", "https://user:pw@h.com/x", "urn:isbn:0451450523", "https://ex.com:/x"]:
             self.assertTrue(ok(v, "uri") and ok(v, "iri"), v)
-        for v in ["https://example.com/%ZZ", "http://", "https://a b.com", "not a link", "https://ex.com/#a#b", "https://ex.com/a\"b"]:
+        for v in ["https://example.com/%ZZ", "http://", "https://a b.com", "not a link", "https://ex.com/#a#b", "https://ex.com/a\"b",
+                  "https://[garbage]/x", "https://example.com/a[b]", "https://ex.com/a|b", "https:///x", "https://h:8a/x", "https://[::1]x/", ""]:
             self.assertFalse(ok(v, "uri") or ok(v, "iri"), v)
+        # RFC 3987: private use only in a query, and never a noncharacter.
+        self.assertFalse(ok("https://ex.com/\ue000", "iri"))
+        self.assertTrue(ok("https://ex.com/?q=\ue000", "iri"))
+        self.assertFalse(ok("https://ex.com/\U0001fffe", "iri"))
+        self.assertFalse(ok("https://ex.com/\ufdd0", "iri"))
         curly = "https://www.wsj.com/finance/x-ca965d8b\u2019"  # as one published event's link ends
         self.assertTrue(ok(curly, "iri"))
         self.assertFalse(ok(curly, "uri"))
@@ -233,6 +254,23 @@ class Gate(unittest.TestCase):
         self.assertEqual(self.published(), self.last_good)
         self.assertIn("ideas/index.json not published: it fails ideas.schema.json (1 problem)", err.getvalue())
         self.assertIn('$.ideas[0].ingredients[0].url: "not a link" is not a valid iri', err.getvalue())
+
+    def test_a_raw_source_link_is_made_a_valid_iri_so_it_never_freezes_the_index(self):
+        day = json.loads((self.data / "days" / "2099-01-05.json").read_text())
+        refs = day["possibilities"]["items"][0]["ingredient_refs"]
+        refs += [{"id": "00000000000e", "title": "Raw", "date": "2099-01-05", "url": "https://ex.com/a|b?x={1}&p=50%"},
+                 {"id": "00000000000f", "title": "No link", "date": "2099-01-05", "url": "not a link"}]
+        write_json(self.data / "days" / "2099-01-05.json", day, compact=True)
+        self.assertEqual(V.refresh(self.data), {"ideas": 1, "rollups": 1})
+        urls = [i["url"] for i in self.published()["ideas"][0]["ingredients"]]
+        self.assertEqual(urls, ["https://example.com/d", "https://ex.com/a%7Cb?x=%7B1%7D&p=50%25", None])
+        self.assertEqual(V._link("https://www.wsj.com/x-ca965d8b\u2019"), "https://www.wsj.com/x-ca965d8b\u2019")  # already an IRI: kept
+
+    def test_a_malformed_schema_fails_the_check_and_never_raises(self):
+        err = io.StringIO()
+        with mock.patch.object(S, "load", return_value={"properties": []}), contextlib.redirect_stderr(err):
+            self.assertFalse(S.publishable({}, "ideas.schema.json", "ideas/index.json"))
+        self.assertIn("the schema could not be used", err.getvalue())
 
     def test_on_github_actions_the_report_is_also_a_warning(self):
         out, err = io.StringIO(), io.StringIO()

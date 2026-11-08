@@ -6,12 +6,13 @@ schema readers download is the one the pipeline enforces.
 
 It implements the JSON Schema 2020-12 keywords Magpie's schemas use: type, const, enum, required, properties,
 additionalProperties, items, minItems, maxItems, pattern, minLength, maxLength, format, minimum, maximum, $ref within the
-same file, allOf, anyOf, oneOf, not and if/then/else. Formats: date and date-time as RFC 3339 defines them (a leap second
-only at 23:59:60 UTC), uri as RFC 3986 (ASCII, valid percent-escapes, a host for http and https) and iri as RFC 3987 (a
-uri that may also hold non-ASCII letters, as links copied from sources do). Annotations (title, description, $id and the
-like) are skipped. Before anything is checked, the whole schema is read once, every branch and definition included: any
-other keyword, format, type or reference raises SchemaError, so a schema can never ask for a check that is silently not
-made.
+same file (a JSON Pointer), allOf, anyOf, oneOf, not and if/then/else. Formats: date and date-time as RFC 3339 defines
+them (a leap second only at 23:59:60 UTC); uri as RFC 3986, parsed into its parts, each from its own characters, with
+brackets only around an IPv6 or IPvFuture host and a host required for http and https; iri as RFC 3987, which adds
+ucschar everywhere and iprivate in the query. Annotations (title, description, $id and the like) are skipped. Before
+anything is checked, the whole schema is read once, every branch, definition and reference target included: any other
+keyword, format, type, reference or a keyword value of the wrong shape raises SchemaError, so a schema can never ask
+for a check that is silently not made.
 
 `publishable(obj, schema, label)` is the gate a writer calls before it replaces a published file: it reports the
 problems (stderr, and a warning annotation on GitHub Actions) and returns False, and the writer then leaves the last good
@@ -20,6 +21,7 @@ file in place.
 from __future__ import annotations
 
 import datetime as dt
+import ipaddress
 import json
 import os
 import re
@@ -33,13 +35,26 @@ KEYWORDS = {"type", "const", "enum", "required", "properties", "additionalProper
             "if", "then", "else"}
 FORMATS = {"date", "date-time", "uri", "iri"}
 TYPES = {"null", "boolean", "integer", "number", "string", "array", "object"}
-# RFC 3986: unreserved, reserved and percent-escaped characters, with at most one fragment. An IRI (RFC 3987) may also
-# hold any non-ASCII character that is not a space or a control.
-_URI_CHARS = r"[A-Za-z0-9\-._~!$&'()*+,;=:@/?\[\]]|%[0-9A-Fa-f]{2}"
-_FRAG_CHARS = r"[A-Za-z0-9\-._~!$&'()*+,;=:@/?]|%[0-9A-Fa-f]{2}"
-_WIDE = r"|[^\x00-\x7f\s\x80-\x9f]"
-URI = re.compile(rf"[A-Za-z][A-Za-z0-9+.-]*:(?:{_URI_CHARS})*(?:#(?:{_FRAG_CHARS})*)?")
-IRI = re.compile(rf"[A-Za-z][A-Za-z0-9+.-]*:(?:{_URI_CHARS}{_WIDE})*(?:#(?:{_FRAG_CHARS}{_WIDE})*)?")
+# RFC 3986 character classes, and the ones RFC 3987 adds for an IRI: ucschar in every component, iprivate in the query
+# only. Private-use code points and noncharacters outside those ranges are refused.
+_UNRESERVED = "A-Za-z0-9\\-._~"
+_SUB_DELIMS = "!$&'()*+,;="
+_UCSCHAR = "".join(f"{chr(a)}-{chr(b)}" for a, b in [(0xA0, 0xD7FF), (0xF900, 0xFDCF), (0xFDF0, 0xFFEF),
+                                                     *[(p << 16, (p << 16) + 0xFFFD) for p in range(1, 14)], (0xE1000, 0xEFFFD)])
+_IPRIVATE = "".join(f"{chr(a)}-{chr(b)}" for a, b in [(0xE000, 0xF8FF), (0xF0000, 0xFFFFD), (0x100000, 0x10FFFD)])
+_PCT = "%[0-9A-Fa-f]{2}"
+
+
+def _part(extra: str, iri: bool, private: bool = False) -> re.Pattern:
+    """A component made of unreserved, sub-delims, the extra ASCII characters given and percent-escapes (and, for an
+    IRI, ucschar; iprivate too in a query)."""
+    wide = (_UCSCHAR if iri else "") + (_IPRIVATE if iri and private else "")
+    return re.compile(f"(?:[{_UNRESERVED}{re.escape(_SUB_DELIMS)}{re.escape(extra)}{wide}]|{_PCT})*")
+
+
+_PARTS = {iri: {"userinfo": _part(":", iri), "reg_name": _part("", iri), "path": _part(":@/", iri),
+                "query": _part(":@/?", iri, private=True), "fragment": _part(":@/?", iri)} for iri in (False, True)}
+_IP_FUTURE = re.compile(f"v[0-9A-Fa-f]+\\.[{_UNRESERVED}{re.escape(_SUB_DELIMS)}:]+")
 DATE_TIME = re.compile(r"(\d{4})-(\d{2})-(\d{2})[Tt](\d{2}):(\d{2}):(\d{2})(?:\.\d+)?(?:([Zz])|([+-])(\d{2}):(\d{2}))")
 MAX_PROBLEMS = 50
 
@@ -53,8 +68,9 @@ def load(name: str) -> dict:
 
 
 def _audit(s, root: dict, seen: set[int]) -> None:
-    """Read the whole schema once, every branch and definition, and raise SchemaError on anything this checker cannot
-    check, whether or not a given file would reach it."""
+    """Read the whole schema once, every branch and definition and the target of every reference, and raise SchemaError
+    on anything this checker cannot check or a keyword whose value has the wrong shape, whether or not a given file would
+    reach it."""
     if isinstance(s, bool):
         return
     if not isinstance(s, dict):
@@ -65,6 +81,14 @@ def _audit(s, root: dict, seen: set[int]) -> None:
     unknown = set(s) - KEYWORDS - ANNOTATIONS
     if unknown:
         raise SchemaError(f"unsupported keywords {sorted(unknown)}")
+    shapes = {"properties": dict, "$defs": dict, "allOf": list, "anyOf": list, "oneOf": list, "required": list, "enum": list,
+              "$ref": str, "pattern": str, "format": str, "minItems": int, "maxItems": int, "minLength": int, "maxLength": int,
+              "minimum": (int, float), "maximum": (int, float)}
+    for k, want in shapes.items():
+        if k in s and (not isinstance(s[k], want) or isinstance(s[k], bool)):
+            raise SchemaError(f"{k} has the wrong shape: {type(s[k]).__name__}")
+    if any(not isinstance(k, str) for k in s.get("required", [])):
+        raise SchemaError("required lists something that is not a name")
     types = s.get("type", [])
     for t in types if isinstance(types, list) else [types]:
         if t not in TYPES:
@@ -72,12 +96,15 @@ def _audit(s, root: dict, seen: set[int]) -> None:
     if "format" in s and s["format"] not in FORMATS:
         raise SchemaError(f"unknown format {s['format']!r}")
     if "pattern" in s:
-        re.compile(s["pattern"])
-    if "$ref" in s:
-        _resolve(root, s["$ref"])
+        try:
+            re.compile(s["pattern"])
+        except re.error as ex:
+            raise SchemaError(f"pattern does not compile: {ex}") from None
     subs = [*s.get("properties", {}).values(), *s.get("$defs", {}).values(), *s.get("allOf", []), *s.get("anyOf", []),
             *s.get("oneOf", [])]
     subs += [s[k] for k in ("additionalProperties", "items", "not", "if", "then", "else") if k in s]
+    if "$ref" in s:
+        subs.append(_resolve(root, s["$ref"]))  # its target is a schema too, wherever it sits
     for sub in subs:
         _audit(sub, root, seen)
 
@@ -149,17 +176,75 @@ def _format_ok(v: str, fmt: str) -> bool:
         # A leap second exists only as the last second of a UTC day.
         return s < 60 or (h * 60 + mi - off) % (24 * 60) == 23 * 60 + 59
     if fmt in ("uri", "iri"):
-        if not (URI if fmt == "uri" else IRI).fullmatch(v):
-            return False
-        scheme, rest = v.split(":", 1)
-        if scheme.lower() in ("http", "https"):
-            host = re.match(r"//(?:[^/?#@]*@)?(\[[^\]]+\]|[^/?#:\[\]]+)(?::(\d*))?(?=[/?#]|$)", rest)
-            return bool(host)
-        return True
+        return _uri_ok(v, fmt == "iri")
     raise SchemaError(f"unknown format {fmt!r}")
 
 
+def _uri_ok(v: str, iri: bool) -> bool:
+    """RFC 3986 (or, for an IRI, RFC 3987): scheme ":" hier-part ["?" query] ["#" fragment], each part from its own
+    characters, brackets only around an IP literal host, and a non-empty host for http and https."""
+    parts = _PARTS[iri]
+    m = re.match(r"([A-Za-z][A-Za-z0-9+.-]*):", v)
+    if not m:
+        return False
+    scheme, rest = m.group(1).lower(), v[m.end():]
+    rest, _, fragment = rest.partition("#") if "#" in rest else (rest, "", None)
+    rest, _, query = rest.partition("?") if "?" in rest else (rest, "", None)
+    if fragment is not None and not parts["fragment"].fullmatch(fragment):
+        return False
+    if query is not None and not parts["query"].fullmatch(query):
+        return False
+    host = None
+    if rest.startswith("//"):
+        authority, slash, path = rest[2:].partition("/")
+        path = slash + path
+        userinfo, at, hostport = authority.rpartition("@")
+        if at and not parts["userinfo"].fullmatch(userinfo):
+            return False
+        if hostport.startswith("["):
+            literal, close, after = hostport[1:].partition("]")
+            if not close or not _ip_literal(literal) or (after and not after.startswith(":")):
+                return False
+            host, port = literal, after[1:]
+        else:
+            host, _, port = hostport.partition(":")
+            if not parts["reg_name"].fullmatch(host):
+                return False
+        if not re.fullmatch(r"[0-9]*", port):
+            return False
+    else:
+        path = rest
+        if path.startswith("//"):
+            return False
+    if not parts["path"].fullmatch(path):
+        return False
+    if scheme in ("http", "https") and not host:
+        return False
+    return True
+
+
+def is_iri(v) -> bool:
+    """True for a string that is an IRI (RFC 3987), the format of an ingredient's link in the ideas index."""
+    return isinstance(v, str) and _uri_ok(v, True)
+
+
+def _ip_literal(text: str) -> bool:
+    """The inside of [ ] in a host: an IPv6 address (no zone id) or an IPvFuture."""
+    if _IP_FUTURE.fullmatch(text):
+        return True
+    if "%" in text:
+        return False
+    try:
+        ipaddress.IPv6Address(text)
+    except ValueError:
+        return False
+    return True
+
+
 def _resolve(root: dict, ref: str) -> dict | bool:
+    """A JSON Pointer within the same file (RFC 6901): object members by name, array items by index."""
+    if not isinstance(ref, str):
+        raise SchemaError(f"$ref must be a string, not {type(ref).__name__}")
     if ref == "#":
         return root
     if not ref.startswith("#/"):
@@ -167,9 +252,12 @@ def _resolve(root: dict, ref: str) -> dict | bool:
     node = root
     for part in ref[2:].split("/"):
         part = part.replace("~1", "/").replace("~0", "~")
-        if not isinstance(node, dict) or part not in node:
+        if isinstance(node, dict) and part in node:
+            node = node[part]
+        elif isinstance(node, list) and re.fullmatch(r"0|[1-9]\d*", part) and int(part) < len(node):
+            node = node[int(part)]
+        else:
             raise SchemaError(f"{ref!r} points at nothing")
-        node = node[part]
     return node
 
 
@@ -269,7 +357,7 @@ def publishable(obj, schema: str, label: str) -> bool:
     """True when obj conforms. Otherwise the problems are reported and the caller keeps the last good file."""
     try:
         bad = problems(obj, schema)
-    except (OSError, ValueError) as ex:  # an unreadable or unsupported schema is a failed check, not a pass
+    except Exception as ex:  # an unreadable, malformed or unsupported schema is a failed check: never a pass, never a crash
         bad = [f"the schema could not be used: {type(ex).__name__}: {str(ex)[:160]}"]
     if not bad:
         return True

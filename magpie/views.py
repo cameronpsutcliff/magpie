@@ -22,6 +22,7 @@ import json
 import re
 import sys
 import unicodedata
+import urllib.parse
 from pathlib import Path
 
 from .util import load_json, write_json
@@ -38,6 +39,22 @@ SITE = "https://www.cameronsutcliff.com/magpie"
 
 def _clip(v, n: int = CLIP) -> str:
     return re.sub(r"\s+", " ", v).strip()[:n] if isinstance(v, str) else ""
+
+
+def _link(url) -> str | None:
+    """An ingredient's link in the form ideas.schema.json requires (an IRI, RFC 3987). It is copied from the source as
+    published, so a raw link can hold a character an IRI cannot: such characters are percent-escaped (the same resource
+    under RFC 3986) and a bare % becomes %25. A link that still is not one (no scheme, no host) is left out as null, so one
+    malformed source link never stops the index from publishing."""
+    from .schema import is_iri
+
+    if not isinstance(url, str) or not url.strip():
+        return None
+    u = url.strip()
+    if is_iri(u):
+        return u
+    u = urllib.parse.quote(re.sub(r"%(?![0-9A-Fa-f]{2})", "%25", u), safe=":/?#@!$&'()*+,;=-._~%")
+    return u if is_iri(u) else None
 
 
 def idea_id(date: str, title: str, taken: set[str] | frozenset = frozenset()) -> str:
@@ -132,7 +149,8 @@ def _idea(day: dict, p: dict, i: str, pos: int, ids_by_date: dict) -> dict:
     out = {"id": i, "date": day["date"], "position": pos, "title": _clip(p["title"], 200), "connection": _clip(p.get("connection")),
            "score": p.get("rank") if isinstance(p.get("rank"), (int, float)) else None,
            "effort": p.get("effort") if isinstance(p.get("effort"), str) else None,
-           "ingredients": [{"id": r.get("id"), "title": _clip(r.get("title"), 200), "date": r.get("date"), "url": r.get("url")} for r in refs]}
+           "ingredients": [{"id": r.get("id"), "title": _clip(r.get("title"), 200), "date": r.get("date"), "url": _link(r.get("url"))}
+                           for r in refs]}
     if built and isinstance(built.get("date"), str):
         # An idea built on another is stored with that idea's pool id ("idea-<date>-<position>"); the index names its page.
         target = built.get("id")
