@@ -2,6 +2,82 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-11-08",
+   "headline": "Qwen3.5-4B-GLB-3D-Coder, DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic, Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF, and more",
+   "events": 127,
+   "sources": 535,
+   "enriched": false,
+   "top": [
+    {
+     "id": "0a05f6c8cd0f",
+     "title": "ccore/Qwen3.5-4B-GLB-3D-Coder",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-08-0a05f6c8cd0f"
+    },
+    {
+     "id": "d9e2a8762de5",
+     "title": "xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-08-d9e2a8762de5"
+    },
+    {
+     "id": "e197a9917ccd",
+     "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
+     "impact": 5,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-08-e197a9917ccd"
+    },
+    {
+     "id": "42bc073f6f45",
+     "title": "unsloth/Qwen3.8-Flash-Next-GGUF",
+     "impact": 4,
+     "vendor": "Unsloth",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-08-42bc073f6f45"
+    },
+    {
+     "id": "e487fe51b82b",
+     "title": "cloudflare/security-audit-skill",
+     "impact": 4,
+     "vendor": "Cloudflare",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-08-e487fe51b82b"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Anthropic",
+    "GitHub",
+    "OpenAI",
+    "Qwen",
+    "NVIDIA"
+   ],
+   "topics": {
+    "coding": 35,
+    "multimodal": 35,
+    "agents": 29,
+    "models": 21,
+    "mcp": 16,
+    "memory": 11,
+    "local": 11,
+    "evals": 8,
+    "infra": 7,
+    "reverse": 6,
+    "security": 4,
+    "research": 3
+   },
+   "kinds": {
+    "model": 30,
+    "repo": 27,
+    "space": 20,
+    "community": 15,
+    "newsletter": 15,
+    "changelog": 12,
+    "social": 5,
+    "blog": 3
+   }
+  },
+  {
    "date": "2026-11-07",
    "headline": "Drive your real browser, run Claude Code remotely, split GPUs, and more",
    "events": 352,
@@ -3814,5 +3890,5 @@
    }
   }
  ],
- "latest": "2026-11-07"
+ "latest": "2026-11-08"
 }
