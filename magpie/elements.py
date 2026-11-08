@@ -21,6 +21,7 @@ import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
+from .pages import idea_url, item_url
 from .util import ROOT, load_json, short_hash, write_json
 
 SCHEMA = "magpie.element/1"
@@ -119,6 +120,8 @@ def appearance(e: dict, day: dict, ties: list[dict], read: dict[str, str]) -> di
     b = e.get("brief") or {}
     top = day.get("top") or []
     a: dict = {"date": day["date"], "id": e["id"], "kind": e["kind"], "title": e["title"]}
+    if (u := item_url(day["date"], e["id"])):
+        a["page_url"] = u  # this appearance's own page
     if e.get("maker"):
         a["maker"] = e["maker"]
     if b.get("headline"):
@@ -205,6 +208,8 @@ def contributions(day: dict, load_day) -> dict[str, dict]:
         for key, _ in found:
             rec = {"date": day["date"], "rank": rank, "title": p.get("title") or "",
                    "with": [{"key": k, "title": t} for k, t in found if k != key]}
+            if (u := idea_url(p.get("id"), day["date"])):
+                rec["page_url"] = u
             for k in ("connection", "effort"):
                 if p.get(k):
                     rec[k] = p[k]
@@ -391,7 +396,7 @@ def element(key: str, apps: list[dict], poss: list[dict], register: list[dict], 
         "constraints": constraints,
         "appearances": apps[:KEEP],
         "timeline": [{"date": a["date"], "id": a["id"], "signal": a["signal"], "evidence": a["evidence"],
-                      **{k: a[k] for k in ("rank", "impact") if a.get(k)}} for a in apps],
+                      **{k: a[k] for k in ("rank", "impact", "page_url") if a.get(k)}} for a in apps],
     }
     if is_action:
         rec = next((c for c in register if c.get("key") == key), None)

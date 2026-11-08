@@ -157,7 +157,8 @@ class ViewTests(unittest.TestCase):
         V.refresh(self.data)
         index = json.loads((self.data / "ideas" / "index.json").read_text())
         gone = next(x for x in index["ideas"] if x["id"] == "2099-01-05-desks-backtest-overnight")
-        self.assertEqual(gone, {"id": "2099-01-05-desks-backtest-overnight", "date": "2099-01-05", "title": "Desks backtest overnight", "retired": True})
+        self.assertEqual(gone, {"id": "2099-01-05-desks-backtest-overnight", "date": "2099-01-05", "title": "Desks backtest overnight", "retired": True,
+                                "page_url": "https://www.cameronsutcliff.com/magpie/i/2099-01-05-desks-backtest-overnight"})
         week = json.loads((self.data / "rollups" / "2099-01-05.json").read_text())["views"]["week"]
         self.assertNotIn("2099-01-05-desks-backtest-overnight", [x["id"] for x in week["ideas"]])
         self.assertEqual(week["possibilities"], 3)

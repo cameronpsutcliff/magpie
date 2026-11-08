@@ -25,6 +25,7 @@ import unicodedata
 import urllib.parse
 from pathlib import Path
 
+from .pages import idea_url, item_url
 from .util import load_json, write_json
 
 ID_WORDS = 6      # title words in an idea id
@@ -152,8 +153,10 @@ def _idea(day: dict, p: dict, i: str, pos: int, ids_by_date: dict) -> dict:
     out = {"id": i, "date": day["date"], "position": pos, "title": _clip(p["title"], 200), "connection": _clip(p.get("connection")),
            "score": p.get("rank") if isinstance(p.get("rank"), (int, float)) else None,
            "effort": p.get("effort") if isinstance(p.get("effort"), str) else None,
-           "ingredients": [{"id": r.get("id"), "title": _clip(r.get("title"), 200), "date": r.get("date"), "url": _link(r.get("url"))}
-                           for r in refs]}
+           "ingredients": [{"id": r.get("id"), "title": _clip(r.get("title"), 200), "date": r.get("date"), "url": _link(r.get("url")),
+                            **({"page_url": u} if (u := item_url(r.get("date"), r.get("id"))) else {})} for r in refs]}
+    if (u := idea_url(i, day["date"])):
+        out["page_url"] = u
     if built and isinstance(built.get("date"), str):
         # An idea built on another is stored with that idea's pool id ("idea-<date>-<position>"); the index names its page.
         target = built.get("id")
@@ -162,7 +165,8 @@ def _idea(day: dict, p: dict, i: str, pos: int, ids_by_date: dict) -> dict:
             at = ids_by_date.get(m.group(1)) or []
             k = int(m.group(2)) - 1
             target = at[k] if 0 <= k < len(at) else None
-        out["builds_on"] = {"id": target, "date": built["date"], "title": _clip(built.get("title"), 200)}
+        out["builds_on"] = {"id": target, "date": built["date"], "title": _clip(built.get("title"), 200),
+                            **({"page_url": u} if (u := idea_url(target)) else {})}
     return out
 
 
@@ -179,7 +183,8 @@ def ideas_index(days: list[dict], previous: dict | None = None) -> dict:
     by_id = {x["id"]: x for x in ideas}
     for old in (previous or {}).get("ideas") or [] if isinstance(previous, dict) else []:
         if isinstance(old, dict) and isinstance(old.get("id"), str) and ID_SHAPE.fullmatch(old["id"]) and old["id"] not in by_id:
-            gone = {"id": old["id"], "date": old["id"][:10], "title": _clip(old.get("title"), 200), "retired": True}
+            gone = {"id": old["id"], "date": old["id"][:10], "title": _clip(old.get("title"), 200), "retired": True,
+                    **({"page_url": u} if (u := idea_url(old["id"])) else {})}  # its page says it was replaced
             ideas.append(gone)
             by_id[gone["id"]] = gone
     ideas.sort(key=lambda x: ("".join(chr(0x10FFFF - ord(ch)) for ch in x["date"]), x.get("retired", False), x.get("position", 0)))
@@ -223,6 +228,7 @@ def _capabilities(window: list[dict], slugs: dict[str, str]) -> list[dict]:
         b = e["brief"]
         out.append({**c, "slug": slugs.get(c["key"]), "title": _clip(b["headline"], 200), "newly_possible": _clip(b.get("newly_possible")),
                     "impact": impact or None, "signal": signal, "maker": e.get("maker"), "date": date, "event_id": e.get("id"),
+                    **({"page_url": u} if (u := item_url(date, e.get("id"))) else {}),
                     "url": e.get("url") if isinstance(e.get("url"), str) else None, "sources": _sources(e),
                     **({"reported": e["reported"]} if isinstance(e.get("reported"), str) else {})})
     out.sort(key=lambda c: (-(c["impact"] or 0), -c["top_days"], -c["days"], -c["signal"], c["key"]))
@@ -278,7 +284,8 @@ def rollup(date: str, days: list[dict], index: dict, slugs: dict[str, str]) -> d
                       "capabilities": sum(int(((d.get("coverage") or {}).get("events")) or 0) for d in prior),
                       "possibilities": sum(1 for x in index["ideas"] if before <= x["date"] < start and not x.get("retired"))},
             "top": _capabilities(window, slugs),
-            "ideas": [{k: v for k, v in x.items() if k in ("id", "date", "title", "connection", "score", "effort", "builds_on", "built_on_by")}
+            "ideas": [{k: v for k, v in x.items() if k in ("id", "date", "title", "connection", "score", "effort", "builds_on", "built_on_by",
+                                                           "page_url")}
                       for x in ideas[:TOP_IDEAS]],
             "threats": _threats(window, start),
             "constraints": _constraints(window, start),
@@ -318,9 +325,10 @@ def refresh(data_dir: Path, dates: list[str] | None = None) -> dict:
 
 
 def run(all_dates: bool = False, date: str | None = None) -> None:
-    """Give every published possibility its id and every item its page_url (rewriting the editions that lacked them, and
-    latest.json), then write the ideas index and the rollups: for every edition with --all, else for `date` or the
-    latest."""
+    """Give every published possibility its id and every item its page_url, and drop any maker or vendor that is not a
+    text name (rewriting the editions that needed it, and latest.json), then write the ideas index and the rollups: for
+    every edition with --all, else for `date` or the latest."""
+    from .enrich import clean_makers
     from .pages import stamp
     from .publish import DATA, scrub
 
@@ -328,7 +336,7 @@ def run(all_dates: bool = False, date: str | None = None) -> None:
     index = load_json(DATA / "index.json", {})
     for path in sorted((DATA / "days").glob("*.json")):
         day = load_json(path, None)
-        if isinstance(day, dict) and assign_ids(day) + stamp(day):
+        if isinstance(day, dict) and assign_ids(day) + stamp(day) + clean_makers(day):
             scrub(day)
             write_json(path, day, compact=True)
             given += 1

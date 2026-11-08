@@ -109,6 +109,12 @@
       },
       "title": {
        "type": "string"
+      },
+      "page_url": {
+       "type": "string",
+       "format": "uri",
+       "pattern": "^https://www\\.cameronsutcliff\\.com/magpie/i/\\d{4}-\\d{2}-\\d{2}-[a-z0-9][a-z0-9-]{0,99}$",
+       "description": "The earlier possibility's page, when its id is known."
       }
      },
      "description": "The earlier possibility it builds on; id is null when that one cannot be found."
@@ -122,7 +128,13 @@
     },
     "retired": {
      "const": true,
-     "description": "An id no edition carries any more: its edition's possibilities were worked out again. Only id, date and title remain, so a link to it can still say so."
+     "description": "An id no edition carries any more: its edition's possibilities were worked out again. Only id, date, title and page_url remain, so a link to it can still say so."
+    },
+    "page_url": {
+     "type": "string",
+     "format": "uri",
+     "pattern": "^https://www\\.cameronsutcliff\\.com/magpie/i/\\d{4}-\\d{2}-\\d{2}-[a-z0-9][a-z0-9-]{0,99}$",
+     "description": "Its page, /magpie/i/<id>. A retired id keeps it: the page says the idea was replaced."
     }
    },
    "if": {
@@ -175,6 +187,12 @@
      ],
      "format": "iri",
      "description": "Where the capability lives: its repo, model, paper or post. An IRI (RFC 3987): a URI that may hold non-ASCII characters, since it is copied from the source as published."
+    },
+    "page_url": {
+     "type": "string",
+     "format": "uri",
+     "pattern": "^https://www\\.cameronsutcliff\\.com/magpie/c/\\d{4}-\\d{2}-\\d{2}-[0-9a-f]{12}$",
+     "description": "The capability's own page on the edition it was drawn from: /magpie/c/<date>-<id>. Absent when id or date is null."
     }
    }
   }
