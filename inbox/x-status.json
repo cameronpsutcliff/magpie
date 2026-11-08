@@ -1,21 +1,21 @@
 {
- "updated_at": "2026-11-08T15:14:00Z",
+ "updated_at": "2026-11-08T19:08:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 43,
+ "calls_used_today": 57,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-08T15:14:00Z",
+  "ran_at": "2026-11-08T19:08:00Z",
   "items": 5,
-  "queries": 14,
-  "deep_reads": 2,
-  "rechecks": 5,
-  "flagged": 5,
-  "saved_in": 2,
+  "queries": 11,
+  "deep_reads": 0,
+  "rechecks": 6,
+  "flagged": 4,
+  "saved_in": 0,
   "saved_kept": 0,
   "videos": 0,
   "security_forwarded": 0,
-  "list_posts_read": 98,
+  "list_posts_read": 96,
   "list_pages": 1
  },
  "roster": {
@@ -258,11 +258,16 @@
   "Sweep 2026-11-08T15:14Z: curated labs and opensource OR searches returned 0 results again for a 4-hour window (same index gap as the 11:12Z sweep). List timeline covered trial and active members through since in one page.",
   "Sweep 2026-11-08T15:14Z: DeepSeekHarness posted an X article (2118260976965517312) whose body is still unreadable via get_posts_by_ids and public fetch; replies described a progress recap (about 1.54M DAU and 35k plugins) rather than a new capability.",
   "Sweep 2026-11-08T15:14Z: no browser, so no follows attempted; no new account newly crossed the 3-qualifying-posts follow bar this window.",
-  "Sweep 2026-11-08T15:14Z: first discovery call was rejected because an end_time null was sent; the retry without end_time worked."
+  "Sweep 2026-11-08T15:14Z: first discovery call was rejected because an end_time null was sent; the retry without end_time worked.",
+  "Sweep 2026-11-08T19:08Z: curated labs OR search returned 1 thank-you reply for the 4-hour window (known index gap). Opensource returned 3. List timeline covered trial and active members through since in one page (96 posts).",
+  "Sweep 2026-11-08T19:08Z: no browser, so no follows attempted; no new account newly crossed the 3-qualifying-posts follow bar this window.",
+  "Sweep 2026-11-08T19:08Z: Dessa horizon used page fetch only (0 X reads); still waitlist/demo.",
+  "Sweep 2026-11-08T19:08Z: Community Notes still unavailable via API (notes_via_api false).",
+  "Sweep 2026-11-08T19:08Z: @Yuqi_Jia7 (Axion 1.0, ByteDance open agent models with paper, code and a 35B checkpoint) is a first-hand discovery author worth a roster review look.",
+  "Sweep 2026-11-08T19:08Z: @DrJimFan posted a real-robot autonomous teaser scheduled for tomorrow; not kept."
  ],
  "errors": [
-  "Curated labs OR searches (one 40-handle query and two 20-handle splits) returned 0 to 1 results for a 24h window, which looks like a search-index gap rather than silence; covered by list timeline only.",
-  "Curated labs and opensource OR searches returned 0 results for the 4-hour window (known index gap); non-list members in those groups were not covered by search."
+  "Curated labs OR search returned 1 thank-you reply for the 4-hour window (known index gap); non-list lab accounts were not independently confirmed beyond that query. List timeline covered trial and active members through since."
  ],
  "follows_today": 0,
  "last_roster_review": {

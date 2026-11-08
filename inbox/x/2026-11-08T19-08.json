@@ -1,0 +1,182 @@
+{
+ "ran_at": "2026-11-08T19:08:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-08T15:14:00Z",
+ "queries": 11,
+ "calls": 13,
+ "items": [
+  {
+   "title": "TensorFold 1.2.5 adds a local Web app, LFM2.5-24B-A2B on CUDA, and faster Qwen3.8-27B on M5 Ultra",
+   "url": "https://x.com/ashxhart/status/2119502315350618486",
+   "handle": "@ashxhart",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "TensorFold 1.2.5 ships TensorFold Web, a local browser app for chat, models, learning and benchmarks, plus LFM2.5-24B-A2B on CUDA, Nemotron Parse and LightOnOCR-3 on HIP, and Clef's joint schema head on CUDA. A measured test of Qwen3.8-27B MLX 8-bit on an M5 Ultra found cold prompts 18% faster and decode 7.6% faster with the same tokens and prompt state, along with lower Qwen CUDA stream memory use and a macOS PDF crash fix.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://tensorfold.dev"
+   ],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-08T18:48:25Z",
+   "metrics": {
+    "likes": 14,
+    "reposts": 5,
+    "quotes": 0,
+    "replies": 2,
+    "views": 484
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The public homepage still lists App 1.0.0 and Engine 1.2.0, so the 1.2.5 notes live only in the post.",
+    "source": null
+   }
+  },
+  {
+   "title": "Hermes Agent official Security plugin reviews a repo for exploitable bugs and exports SARIF",
+   "url": "https://x.com/NousResearch/status/2119501958981857543",
+   "handle": "@NousResearch",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Hermes Agent gained an official Security plugin by mark_s that maps what an attacker could reach and which inputs the code trusts, then splits the review across parallel subagents and checks whether each finding is actually exploitable. With test confirmation on, it writes a small reproduction, runs it in a temporary copy of the repo, records evidence and ruled-out findings, and can export SARIF. It runs from chat, the CLI, or the Security page in Hermes Desktop.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Nous Research",
+   "posted_at": "2026-11-08T18:47:00Z",
+   "metrics": {
+    "likes": 175,
+    "reposts": 16,
+    "quotes": 4,
+    "replies": 20,
+    "views": 9185
+   },
+   "confirmed_by": [
+    "@Teknium"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No public plugin URL or repo is linked; availability is described as chat, the CLI, or the Security page in Hermes Desktop, and the 19 second demo clip was not watched.",
+    "source": null
+   }
+  },
+  {
+   "title": "Axion 1.0 open agent models hit 59% HLE with a two-SFT-plus-RL recipe and full training code",
+   "url": "https://x.com/Yuqi_Jia7/status/2119490920131494290",
+   "handle": "@Yuqi_Jia7",
+   "group": "labs",
+   "origin": "discovery",
+   "summary": "ByteDance's Axion 1.0 is an open agent foundation model trained with two supervised stages plus reinforcement learning, and without mid-training, DPO or on-policy distillation. The 122B MoE model scores 59.0% on Humanity's Last Exam, with a 35B sibling at 52.2%, and the authors release the paper, training code, data pipeline and a 35B checkpoint. The project page also reports results on BMB, SEAL-0, HiPhO and other science and research-agent settings.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2611.03233",
+    "https://github.com/bytedance/axion1_0",
+    "https://huggingface.co/Axion1-0/Axion-1.0-35B",
+    "https://huggingface.co/datasets/Axion1-0/axion-training-data",
+    "https://axion1-0.github.io/"
+   ],
+   "vendor": "ByteDance",
+   "posted_at": "2026-11-08T18:03:08Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 20
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The announcement had almost no circulation yet (20 views). Reported scores are the best single run, and some proprietary baselines were evaluated by the Axion team rather than taken from official reports.",
+    "source": null
+   }
+  },
+  {
+   "title": "Evolver turns agent run traces into reusable harness skills, lifting success and cutting tokens",
+   "url": "https://x.com/omarsar0/status/2119473781689421855",
+   "handle": "@omarsar0",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Evolver stores what an agent learns during a run as structured Gene assets, retrieves the relevant ones at the start of a new task, and revises them from feedback, without changing model weights. On 320 paired runs of Claude Code and Codex across Terminal-Bench 2.1, SWE-bench Multilingual, SWE-rebench and GAIA, task success rose from 83.13% to 87.50% and recorded token use fell 24.24%. On the 265 tasks solved both ways, tokens still fell 17.57%.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2611.07595"
+   ],
+   "vendor": "Evolver authors (Zhang, Sun, Zhang, Liu, Fan, Wang)",
+   "posted_at": "2026-11-08T16:55:02Z",
+   "metrics": {
+    "likes": 67,
+    "reposts": 4,
+    "quotes": 4,
+    "replies": 55,
+    "views": 4761
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Tomacco 1.5.0 lets coding agents build, run and test apps with 3.2x faster OCR",
+   "url": "https://x.com/0xMarsel/status/2119453796887622118",
+   "handle": "@0xMarsel",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Tomacco 1.5.0 aims to let a coding agent build an app, use it, and diagnose failures without handing every step back to a person. Warm MCP tests show fresh-image OCR about 3.2 times faster than 1.4.1, iPhone context reads run in parallel, multiple agents can reserve a device without colliding, and Demo Studio can turn screen recordings into perspective device videos. The GitHub release also lists ten coding-agent adapters, phone layouts, and 50 translation catalogs.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/marselnenaj/tomacco/releases/tag/v1.5.0"
+   ],
+   "vendor": "Tomacco",
+   "posted_at": "2026-11-08T15:35:37Z",
+   "metrics": {
+    "likes": 6,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 273
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "First-hand release with a public GitHub tag, but circulation is still low.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 96,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://arxiv.org/abs/2611.01700",
+   "reason": "MEMHARMBENCH is a research benchmark on whether poisoned agent memory still steers later sessions; it is not a product CVE and matches no stack component."
+  },
+  {
+   "url": "https://arxiv.org/abs/2611.03575",
+   "reason": "Paper finding that coding agents can pass a benchmark while causing side harm; research metric only, not an advisory that hits the fleet."
+  },
+  {
+   "url": "https://x.com/penthera_org/status/2119496480608137219",
+   "reason": "HuntProxy is a new agent intercepting-proxy tool announcement, not a vulnerability in software the fleet runs."
+  }
+ ]
+}
