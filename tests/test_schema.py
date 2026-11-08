@@ -148,7 +148,10 @@ class Checker(unittest.TestCase):
                     {"$ref": "#/%FF"}, {"type": [{}]}, {"minLength": 1.5}, {"$ref": "#$defs"},
                     {"default": {"%ZZ": True}, "$ref": "#/default/%ZZ"}, {"default": {"a~2": True}, "$ref": "#/default/a~2"},
                     {"$defs": {"a b": True}, "$ref": "#/$defs/a b"}, {"default": [True] * 13, "$ref": "#/default/1%D9%A2"},
-                    {"default": [True, True], "$ref": "#/default/01"}]:
+                    {"default": [True, True], "$ref": "#/default/01"}, {"type": {}},
+                    {"$defs": {"n": {"$id": "other.json", "type": "number"}}}, {"$schema": "http://json-schema.org/draft-07/schema#"},
+                    {"properties": {"x": {"$schema": "https://json-schema.org/draft/2020-12/schema"}}}, {"title": {"not": "a string"}},
+                    {"examples": "x"}]:
             with self.assertRaises(S.SchemaError, msg=bad):
                 S.problems({}, bad)
 

@@ -4,16 +4,19 @@ r"""Check a file Magpie publishes against its JSON Schema in data/v1/schema, wit
 ("$.ideas[3].ingredients[0].url: ..."), and nothing when the file conforms. It reads the published schema file, so the
 schema readers download is the one the pipeline enforces.
 
-It implements the JSON Schema 2020-12 keywords Magpie's schemas use: type, const, enum, required, properties,
-additionalProperties, items, minItems, maxItems, pattern, minLength, maxLength, format, minimum, maximum, $ref within the same file (a URI fragment holding a JSON Pointer, RFC 6901), allOf,
-anyOf, oneOf, not and if/then/else. A pattern is an ECMA-262 regex in JSON Schema; this checker takes only the part of
+It checks a stated subset of JSON Schema 2020-12, the part Magpie's schemas use, and refuses any schema outside it with
+SchemaError rather than read it loosely. The subset: one schema resource ($id only at the root, $schema absent or the
+2020-12 URI); the keywords type, const, enum, required, properties, additionalProperties, items, minItems, maxItems,
+pattern, minLength, maxLength, format, minimum, maximum, $ref, allOf, anyOf, oneOf, not and if/then/else; $ref only as a
+URI fragment holding a JSON Pointer into the same document (RFC 6901); the annotations title, description, $comment,
+examples, default, deprecated and $defs, each of its own type. format is asserted, as the format-assertion vocabulary
+asks, not only annotated. A pattern is an ECMA-262 regex in JSON Schema; this checker takes only the part of
 that syntax Python reads the same way (literals, \d \D \w \W read as ASCII, character classes, ^ and $ with $ the end of
 the string, groups, alternation and quantifiers) and refuses the rest (., \s, \b, lookarounds, backreferences, named
 groups, property escapes) with SchemaError rather than read it differently. Formats: date and date-time as RFC 3339 defines
 them (a leap second only at 23:59:60 UTC); uri as RFC 3986, parsed into its parts, each from its own characters, with
 brackets only around an IPv6 or IPvFuture host and a host required for http and https; iri as RFC 3987, which adds
-ucschar everywhere and iprivate in the query. Annotations (title, description, $id and the like) are skipped. Before
-anything is checked, the whole schema is read once, every branch, definition and reference target included: any other
+ucschar everywhere and iprivate in the query. Annotations are not checked against the file. Before anything is checked, the whole schema is read once, every branch, definition and reference target included: any other
 keyword, format, type, reference or a keyword value of the wrong shape raises SchemaError, so a schema can never ask
 for a check that is silently not made.
 
@@ -67,6 +70,7 @@ LEAP_SECOND_DAYS = {"1972-06-30", "1972-12-31", "1973-12-31", "1974-12-31", "197
                     "1989-12-31", "1990-12-31", "1992-06-30", "1993-06-30", "1994-06-30", "1995-12-31", "1997-06-30",
                     "1998-12-31", "2005-12-31", "2008-12-31", "2012-06-30", "2015-06-30", "2016-12-31"}
 MAX_PROBLEMS = 50
+DIALECT = "https://json-schema.org/draft/2020-12/schema"
 
 
 class SchemaError(ValueError):
@@ -169,6 +173,15 @@ def _audit(s, root: dict, seen: set[int]) -> None:
     if id(s) in seen:
         return
     seen.add(id(s))
+    if s is not root and "$id" in s:
+        raise SchemaError("a nested $id (a second schema resource) is not supported")
+    if "$schema" in s and (s is not root or s["$schema"] != DIALECT):
+        raise SchemaError(f"$schema must be {DIALECT}, at the root only")
+    if not isinstance(s.get("type", ""), (str, list)):
+        raise SchemaError(f"type must be a name or a list of names, not {type(s['type']).__name__}")
+    for k, want in {"title": str, "description": str, "$comment": str, "$id": str, "examples": list, "deprecated": bool}.items():
+        if k in s and not isinstance(s[k], want):
+            raise SchemaError(f"{k} must be a {want.__name__}")
     unknown = set(s) - KEYWORDS - ANNOTATIONS
     if unknown:
         raise SchemaError(f"unsupported keywords {sorted(unknown)}")
