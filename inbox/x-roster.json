@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T10:35:00Z",
+  "updated_at": "2026-11-08T10:50:00Z",
   "accounts": [
     {
       "handle": "@thsottiaux",
@@ -306,7 +306,7 @@
       "affiliation": "Reflection AI",
       "why": "Releases large open-weight models under Apache 2.0 (Beam 501B).",
       "signal_to_noise": 4,
-      "status": "trial",
+      "status": "active",
       "added_on": "2026-10-20",
       "evidence": [
         "https://x.com/reflection_ai/status/2107186849370247235",
@@ -315,7 +315,8 @@
       "last_qualifying_post": "2026-11-06",
       "retired_reason": null,
       "x_user_id": "1800594921704898560",
-      "on_list": true
+      "on_list": true,
+      "promoted_on": "2026-11-08"
     },
     {
       "handle": "@Gradio",
@@ -918,7 +919,7 @@
       "affiliation": "Hugging Face",
       "why": "Hugging Face robotics library; ships fine-tunable VLA models and inference features with docs (DM0.5, pi0.5 streaming, Zenoh remote inference).",
       "signal_to_noise": 4,
-      "status": "trial",
+      "status": "active",
       "added_on": "2026-10-25",
       "evidence": [
         "https://x.com/LeRobotHF/status/2113556030902993405",
@@ -928,7 +929,8 @@
       "last_qualifying_post": "2026-11-06",
       "retired_reason": null,
       "x_user_id": "1811128301764648960",
-      "on_list": true
+      "on_list": true,
+      "promoted_on": "2026-11-08"
     },
     {
       "handle": "@GChongkai",
@@ -955,7 +957,7 @@
       "affiliation": "Hugging Face (ML for science)",
       "why": "Ships open ML-for-science artifacts (weather downscaling model, guide to running weather models). Some event promotion; watch ratio.",
       "signal_to_noise": 3,
-      "status": "trial",
+      "status": "active",
       "added_on": "2026-10-25",
       "evidence": [
         "https://x.com/EmmaScharfmann/status/2112549281533923730",
@@ -964,7 +966,8 @@
       "last_qualifying_post": "2026-10-26",
       "retired_reason": null,
       "x_user_id": "2067151436178141184",
-      "on_list": true
+      "on_list": true,
+      "promoted_on": "2026-11-08"
     },
     {
       "handle": "@JoshuaSWarren",
@@ -973,7 +976,7 @@
       "affiliation": "independent (Omarchy on Apple Silicon)",
       "why": "Open-source local AI hardware work: mixed-vendor eGPUs on Apple Silicon Linux (omarchy-egpu), an NVIDIA open-driver 16K-page fix, MLX under Linux.",
       "signal_to_noise": 3,
-      "status": "trial",
+      "status": "active",
       "added_on": "2026-10-25",
       "evidence": [
         "https://x.com/JoshuaSWarren/status/2114122761471988172",
@@ -983,7 +986,8 @@
       "last_qualifying_post": "2026-11-05",
       "retired_reason": null,
       "x_user_id": "293383320",
-      "on_list": true
+      "on_list": true,
+      "promoted_on": "2026-11-08"
     },
     {
       "handle": "@KBlueleaf",
@@ -1696,6 +1700,101 @@
       "retired_reason": null,
       "x_user_id": "1195085349485023232",
       "on_list": true
+    },
+    {
+      "handle": "@vanstriendaniel",
+      "name": "Daniel van Strien",
+      "group": "opensource",
+      "affiliation": "Hugging Face",
+      "why": "Hands-on OCR, TTS and data-curation work with numbers: OCR model leaderboards on historical pages, HF Jobs throughput runs, small decision models for web-scale curation.",
+      "evidence": [
+        "https://x.com/vanstriendaniel/status/2117661605336928668",
+        "https://x.com/vanstriendaniel/status/2117279062565523863",
+        "https://x.com/vanstriendaniel/status/2113944664269099432"
+      ],
+      "last_qualifying_post": "2026-11-07",
+      "x_user_id": "2828117077",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-11-08",
+      "retired_reason": null,
+      "on_list": true
+    },
+    {
+      "handle": "@arcprize",
+      "name": "ARC Prize",
+      "group": "research",
+      "affiliation": "ARC Prize Foundation",
+      "why": "Official ARC-AGI verified scores with cost per task for new frontier and open-weight models.",
+      "evidence": [
+        "https://x.com/arcprize/status/2118788850742911073",
+        "https://x.com/arcprize/status/2117360588959461708",
+        "https://x.com/arcprize/status/2115512736809468084"
+      ],
+      "last_qualifying_post": "2026-11-06",
+      "x_user_id": "1773935160192647168",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-11-08",
+      "retired_reason": null,
+      "on_list": true
+    },
+    {
+      "handle": "@theworldlabs",
+      "name": "World Labs",
+      "group": "labs",
+      "affiliation": "World Labs",
+      "why": "World-model lab: Atlas camera-controlled world model and the Frameboy real-time explorer demo.",
+      "evidence": [
+        "https://x.com/theworldlabs/status/2118424455873741028",
+        "https://x.com/theworldlabs/status/2113324421406740747",
+        "https://x.com/theworldlabs/status/2110782427803341251"
+      ],
+      "last_qualifying_post": "2026-11-05",
+      "x_user_id": "1741642915871600640",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-11-08",
+      "retired_reason": null,
+      "on_list": true
+    },
+    {
+      "handle": "@adrgrondin",
+      "name": "Adrien Grondin",
+      "group": "builders",
+      "affiliation": "Locally AI",
+      "why": "On-device LLM builder (Locally AI, Bionic): measured tok/s for new small models on iPhone and Mac, MLX and oMLX engine integrations.",
+      "evidence": [
+        "https://x.com/adrgrondin/status/2118077376420819443",
+        "https://x.com/adrgrondin/status/2110852239690473712",
+        "https://x.com/adrgrondin/status/2115850490638659630"
+      ],
+      "last_qualifying_post": "2026-11-04",
+      "x_user_id": "942544337220620288",
+      "signal_to_noise": 4,
+      "status": "trial",
+      "added_on": "2026-11-08",
+      "retired_reason": null,
+      "on_list": true
+    },
+    {
+      "handle": "@NielsRogge",
+      "name": "Niels Rogge",
+      "group": "opensource",
+      "affiliation": "Hugging Face",
+      "why": "Hugging Face: reproductions and demos of new models and papers (ML Intern reproduction of Weight-Space Programming, Mage-VL-Cowork and MiniCPM-OCR Spaces). Watch the share of Papers with Code reposts.",
+      "evidence": [
+        "https://x.com/NielsRogge/status/2117541532827848972",
+        "https://x.com/NielsRogge/status/2117998047372202401",
+        "https://x.com/NielsRogge/status/2116908700132671583"
+      ],
+      "last_qualifying_post": "2026-11-04",
+      "x_user_id": "133818617",
+      "signal_to_noise": 3,
+      "status": "trial",
+      "added_on": "2026-11-08",
+      "retired_reason": null,
+      "on_list": true
     }
   ],
   "source_leads": [
@@ -2163,6 +2262,42 @@
       "seen_via": [
         "@yining_hong"
       ]
+    },
+    {
+      "kind": "blog",
+      "name": "Nace AI research",
+      "url": "https://www.nace.ai/research",
+      "why": "Research write-ups behind Nace's decision-model and search-agent releases; not in sources.json.",
+      "seen_via": [
+        "@NaceAI"
+      ]
+    },
+    {
+      "kind": "blog",
+      "name": "Hao AI Lab blog",
+      "url": "https://haoailab.com/blogs/",
+      "why": "FastVideo and video-model serving posts with recipes; not in sources.json.",
+      "seen_via": [
+        "@haoailab"
+      ]
+    },
+    {
+      "kind": "blog",
+      "name": "Google Antigravity blog",
+      "url": "https://antigravity.google/blog",
+      "why": "Feature and case-study posts for the Antigravity coding agent; not in sources.json.",
+      "seen_via": [
+        "@antigravity"
+      ]
+    },
+    {
+      "kind": "changelog",
+      "name": "Ant Ling developer changelog",
+      "url": "https://developer.ant-ling.com/en/docs/getting-started/changelog",
+      "why": "Ling model and API release notes; not in sources.json.",
+      "seen_via": [
+        "@AntLingAGI"
+      ]
     }
   ],
   "list": {
@@ -2170,8 +2305,8 @@
     "name": "Magpie roster",
     "owner": "@CameronSutcliff",
     "private": true,
-    "member_count": 80,
+    "member_count": 91,
     "scope": "every trial and active account in this file; curated config accounts are not members yet",
-    "updated_at": "2026-11-06T10:56:00Z"
+    "updated_at": "2026-11-08T10:50:00Z"
   }
 }

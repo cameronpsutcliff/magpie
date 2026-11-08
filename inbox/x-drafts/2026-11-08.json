@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-08",
+  "posting_enabled": false,
+  "note": "Drafts only. Never posted.",
+  "drafts": [
+    {
+      "text": "Simon Willison gave Qwen 3.8 27B, running locally in LM Studio, only the raw weights of small game-playing networks. With no tools it named Pac-Man, Pong and Breakout after 46 to 65 minutes of reasoning each, and missed Freeway. Logs are public.",
+      "evidence": [
+        "https://x.com/simonw/status/2117655816581071203",
+        "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/",
+        "https://github.com/RikiyaT/lm_understand-logs"
+      ],
+      "why": "An independent laptop reproduction of a weight-reading result, with public logs and a stated failure case."
+    },
+    {
+      "text": "Hugging Face published The Ultimate MoE Training Handbook, built from about 800k GPU hours of experiments: expert layout, all-to-all costs, silent slowdowns and routing choices for teams training mixture-of-experts models. Free to read.",
+      "evidence": [
+        "https://x.com/Thom_Wolf/status/2118432475730882627",
+        "https://huggingface.co/spaces/huggingface/moe-blogpost"
+      ],
+      "why": "An open, measured training guide that makes MoE training choices reproducible for smaller teams."
+    },
+    {
+      "text": "ARC Prize verified Inkling 2 Small from Thinking Machines: 81.7% on ARC-AGI-2 at $0.27 a task, and 96.5% on ARC-AGI-1 at $0.08 a task, ahead of every open-weight model it has evaluated.",
+      "evidence": [
+        "https://x.com/arcprize/status/2118788850742911073"
+      ],
+      "why": "A third-party verified score with cost per task, from the benchmark's own maintainers."
+    }
+  ]
+}
