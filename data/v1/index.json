@@ -2,6 +2,82 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-11-09",
+   "headline": "Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF, claude-mem, Claude-Code-Game-Studios, and more",
+   "events": 142,
+   "sources": 535,
+   "enriched": false,
+   "top": [
+    {
+     "id": "e197a9917ccd",
+     "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
+     "impact": 5,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-09-e197a9917ccd"
+    },
+    {
+     "id": "fefe8e8e95b5",
+     "title": "thedotmack/claude-mem",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-09-fefe8e8e95b5"
+    },
+    {
+     "id": "ac8c1ba725e3",
+     "title": "Donchitos/Claude-Code-Game-Studios",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-09-ac8c1ba725e3"
+    },
+    {
+     "id": "b2e43e740f52",
+     "title": "NVIDIA/auto-ontology",
+     "impact": 4,
+     "vendor": "NVIDIA",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-09-b2e43e740f52"
+    },
+    {
+     "id": "e487fe51b82b",
+     "title": "cloudflare/security-audit-skill",
+     "impact": 4,
+     "vendor": "Cloudflare",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-09-e487fe51b82b"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Anthropic",
+    "NVIDIA",
+    "TensorFold",
+    "OpenAI",
+    "Qwen"
+   ],
+   "topics": {
+    "agents": 41,
+    "coding": 40,
+    "multimodal": 38,
+    "models": 36,
+    "local": 17,
+    "memory": 11,
+    "infra": 10,
+    "mcp": 10,
+    "reverse": 9,
+    "evals": 9,
+    "security": 6,
+    "research": 1
+   },
+   "kinds": {
+    "model": 30,
+    "repo": 28,
+    "social": 24,
+    "space": 20,
+    "community": 16,
+    "newsletter": 14,
+    "changelog": 7,
+    "blog": 3
+   }
+  },
+  {
    "date": "2026-11-08",
    "headline": "Shrink long-context KV caches, speed up Qwen3.8 decoding, test agent honesty, and more",
    "events": 213,
@@ -3892,5 +3968,5 @@
    }
   }
  ],
- "latest": "2026-11-08"
+ "latest": "2026-11-09"
 }
