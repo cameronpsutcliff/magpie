@@ -1,21 +1,21 @@
 {
- "updated_at": "2026-11-09T11:14:00Z",
+ "updated_at": "2026-11-09T15:07:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 11,
+ "calls_used_today": 19,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-09T11:14:00Z",
-  "items": 1,
+  "ran_at": "2026-11-09T15:07:00Z",
+  "items": 4,
   "queries": 4,
-  "deep_reads": 0,
+  "deep_reads": 1,
   "rechecks": 0,
   "flagged": 0,
-  "saved_in": 1,
+  "saved_in": 0,
   "saved_kept": 0,
   "videos": 0,
-  "security_forwarded": 1,
-  "list_posts_read": 91,
+  "security_forwarded": 0,
+  "list_posts_read": 93,
   "list_pages": 1
  },
  "roster": {
@@ -270,8 +270,7 @@
   "Roster review 2026-11-09: no other candidate sources were searched (reads limited to 2 of 80); source_leads unchanged. Many trials added 2026-10-20 to 10-26 still have fewer than 2 sweep-file items at 14+ days, so they stay trial."
  ],
  "errors": [
-  "No browser available: follows skipped. Bookmarks call returned only already-known saves (TREX-ARMS, NX2navi, firearms-parts), all previously rejected as non-dev.",
-  "No browser this run: follows skipped (follow_mode browser)."
+  "Follows skipped: no browser available this run (follow_mode browser)."
  ],
  "follows_today": 0,
  "last_roster_review": {

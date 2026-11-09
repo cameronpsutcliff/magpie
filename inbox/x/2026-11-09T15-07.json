@@ -1,0 +1,145 @@
+{
+ "ran_at": "2026-11-09T15:07:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-09T11:14:00Z",
+ "queries": 4,
+ "calls": 8,
+ "items": [
+  {
+   "title": "Meituan releases LongCat-2.5 weights under MIT, 1.6T total and ~48B active, multimodal",
+   "url": "https://x.com/Meituan_LongCat/status/2119793531393040462",
+   "handle": "@Meituan_LongCat",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Meituan published the weights for its natively multimodal agentic model LongCat-2.5 (1.6T parameters, about 48B active) under an MIT license, a week after announcing it. Builders can now self-host or fine-tune a large open agentic-coding and visual-coding model.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://longcat.ai/blog/longcat-2.5/"
+   ],
+   "vendor": "Meituan LongCat",
+   "posted_at": "2026-11-09T14:05:36Z",
+   "metrics": {
+    "likes": 265,
+    "reposts": 32,
+    "quotes": 9,
+    "replies": 21,
+    "views": 6224
+   },
+   "confirmed_by": [
+    "@victormustar"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Replies were mostly praise for the MIT license; one user asked for a tested hardware and quantization table because 48B active does not mean it fits like a 48B model, and one said they enjoyed using it in Hermes. Benchmarks and self-hosting reports were not out yet.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "NaceAI says Drex Max v1.1 tops Artificial Analysis Decision Index, open weights promised",
+   "url": "https://x.com/NaceAI/status/2119792132558819447",
+   "handle": "@NaceAI",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "NaceAI reports its Drex Max v1.1 decision model ranks first on the Artificial Analysis Decision Index and is available through an API with about 1M free requests, with a technical report on arXiv. Weights are described as coming soon, not released.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [
+    "https://nace.ai/drex",
+    "https://arxiv.org/pdf/2611.07854"
+   ],
+   "vendor": "NaceAI",
+   "posted_at": "2026-11-09T14:00:02Z",
+   "metrics": {
+    "likes": 47,
+    "reposts": 3,
+    "quotes": 11,
+    "replies": 11,
+    "views": 4776
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "AutoRLBench tests whether agents can find the root cause of failed RL training runs",
+   "url": "https://x.com/OpenBMB/status/2119784600088330523",
+   "handle": "@OpenBMB",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "OpenBMB released a benchmark built from real failed RL runs (configs, logs, metrics intact, no synthetic bugs) and scored 10 frontier agents; the best reaches about 40%, and agents do worse on implicit data bugs than config bugs.",
+   "kind": "eval",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/Thinking-Space/AutoRLBench",
+    "https://thinking-space.github.io/AutoRLBench/"
+   ],
+   "vendor": "OpenBMB / Thinking-Space",
+   "posted_at": "2026-11-09T13:30:07Z",
+   "metrics": {
+    "likes": 9,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 2,
+    "views": 477
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "InferenceBench trend: frontier models' inference speed-up factor grew from 3x to 12x",
+   "url": "https://x.com/maksym_andr/status/2119781355559215119",
+   "handle": "@maksym_andr",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Maksym Andriushchenko posted the historical trend on InferenceBench (Sep 2025 to Oct 2026): the speed-up frontier models achieve on the benchmark rose from 3x to 12x, with a doubling time of about 6.3 months. Results are published at inferencebench.ai.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://inferencebench.ai/"
+   ],
+   "vendor": "InferenceBench",
+   "posted_at": "2026-11-09T13:17:13Z",
+   "metrics": {
+    "likes": 23,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 4,
+    "views": 938
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 93,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
