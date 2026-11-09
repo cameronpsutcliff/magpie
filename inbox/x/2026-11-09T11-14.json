@@ -1,0 +1,57 @@
+{
+ "ran_at": "2026-11-09T11:14:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-09T03:12:00Z",
+ "queries": 4,
+ "calls": 4,
+ "items": [
+  {
+   "title": "TensorFold native CLI reaches 220 tok/s decode on Qwen 3.8 27B on one RTX 5090 under Windows",
+   "url": "https://x.com/plotarmordev/status/2119634331941396495",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A builder reports TensorFold's native CLI running Qwen 3.8 27B on an RTX 5090 at 220 tok/s decode on prose, 12,200 tok/s prefill, and more than 500 tok/s across 4 streams, shipping in the next engine release. It shows what a single consumer GPU can serve locally on Windows.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/ashxhart/status/2119133670049239372"
+   ],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-09T03:33:00Z",
+   "metrics": {
+    "likes": 15,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 7,
+    "views": 1524
+   },
+   "confirmed_by": [
+    "@ashxhart"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/MiaAI_lab/status/2119489287117000924",
+   "reason": "Teaser reply about a local-first app supporting cloud providers; no artifact, numbers or link to check."
+  }
+ ],
+ "list_posts_read": 91,
+ "list_pages": 1,
+ "security_forwarded": [
+  {
+   "url": "https://x.com/plotarmordev/status/2119716090217402668",
+   "matched": "stack.json Hermes (Mini) and always_forward agent tooling: report that the Hermes Security plugin sends dependency package names to an external service by default even with a local model; HERMES_SECURITY_DEPENDENCY_CHECK=off disables it. Unverified third-party report; unknown whether the plugin is installed on the fleet."
+  }
+ ],
+ "security_na": []
+}
