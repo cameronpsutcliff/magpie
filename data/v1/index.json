@@ -3,78 +3,80 @@
  "days": [
   {
    "date": "2026-11-09",
-   "headline": "Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF, claude-mem, Claude-Code-Game-Studios, and more",
-   "events": 142,
-   "sources": 535,
-   "enriched": false,
+   "headline": "Run large models without GPUs, reuse agent lessons, bring speech into browsers and more",
+   "events": 229,
+   "sources": 564,
+   "enriched": true,
    "top": [
     {
-     "id": "e197a9917ccd",
-     "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
-     "impact": 5,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-09-e197a9917ccd"
-    },
-    {
-     "id": "fefe8e8e95b5",
-     "title": "thedotmack/claude-mem",
+     "id": "ab3c6af60b48",
+     "title": "Llama-modchip runs large DeepSeek without a GPU",
      "impact": 4,
      "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-09-fefe8e8e95b5"
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-09-ab3c6af60b48"
     },
     {
-     "id": "ac8c1ba725e3",
-     "title": "Donchitos/Claude-Code-Game-Studios",
+     "id": "c1c9edcf1313",
+     "title": "Omarchy adds optimized local model recipes",
      "impact": 4,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-09-ac8c1ba725e3"
+     "vendor": "TensorFold",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-09-c1c9edcf1313"
+    },
+    {
+     "id": "cd5bf71b6a5e",
+     "title": "Evolver reuses lessons from agent runs",
+     "impact": 4,
+     "vendor": "Evolver",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-09-cd5bf71b6a5e"
     },
     {
      "id": "b2e43e740f52",
-     "title": "NVIDIA/auto-ontology",
-     "impact": 4,
+     "title": "Auto Ontology keeps drawing schema-building interest",
+     "impact": 3,
      "vendor": "NVIDIA",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-09-b2e43e740f52"
     },
     {
-     "id": "e487fe51b82b",
-     "title": "cloudflare/security-audit-skill",
+     "id": "59e6959aa9d7",
+     "title": "Microsoft token economizer learns repository lessons",
      "impact": 4,
-     "vendor": "Cloudflare",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-09-e487fe51b82b"
+     "vendor": "Microsoft",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-09-59e6959aa9d7"
     }
    ],
    "vendors": [
     "Open source",
-    "Anthropic",
     "NVIDIA",
-    "TensorFold",
+    "Anthropic",
     "OpenAI",
-    "Qwen"
+    "Qwen",
+    "TensorFold"
    ],
    "topics": {
-    "agents": 41,
-    "coding": 40,
-    "multimodal": 38,
-    "models": 36,
-    "local": 17,
-    "memory": 11,
-    "infra": 10,
-    "mcp": 10,
-    "reverse": 9,
-    "evals": 9,
+    "agents": 66,
+    "coding": 61,
+    "models": 54,
+    "multimodal": 48,
+    "local": 28,
+    "infra": 26,
+    "memory": 20,
+    "mcp": 15,
+    "reverse": 13,
+    "evals": 11,
     "security": 6,
-    "research": 1
+    "research": 6,
+    "robotics": 3
    },
    "kinds": {
+    "social": 57,
+    "video": 56,
     "model": 30,
     "repo": 28,
-    "social": 24,
     "space": 20,
     "community": 16,
     "newsletter": 14,
     "changelog": 7,
-    "blog": 3
+    "blog": 1
    }
   },
   {
