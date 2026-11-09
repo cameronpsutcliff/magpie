@@ -1,0 +1,345 @@
+{
+ "ran_at": "2026-11-09T19:06:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-09T15:07:00Z",
+ "queries": 15,
+ "calls": 21,
+ "items": [
+  {
+   "title": "Anthropic releases Claude Fable 5.2 and Mythos 5.2",
+   "url": "https://x.com/claudeai/status/2119867114450268322",
+   "handle": "@claudeai",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Anthropic announced two new models with gains in coding, reasoning and vision. Fable 5.2 is live in the Claude Platform and Claude Code, up to 30% faster than Fable 5.1 and priced at $8/$40 per 1M tokens, down from $10/$50.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://x.com/ClaudeDevs/status/2119868698613956992"
+   ],
+   "vendor": "Anthropic",
+   "posted_at": "2026-11-09T18:57:00Z",
+   "metrics": {
+    "likes": 4761,
+    "reposts": 635,
+    "quotes": 504,
+    "replies": 385,
+    "views": 99134
+   },
+   "confirmed_by": [
+    "@AnthropicAI",
+    "@ClaudeDevs",
+    "@v0",
+    "@aitrackerbot",
+    "@Box"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers mostly cheered the launch and the price cut, asked when Mythos reaches regular users and whether usage limits reset; nobody reported benchmark problems yet.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Meta ships Muse Ember, a small 1M-context agent model at $0.10/$0.50 per 1M tokens",
+   "url": "https://x.com/AIatMeta/status/2119853591703998787",
+   "handle": "@AIatMeta",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Meta released its smallest model, aimed at tool-calling agent work, test runs and targeted code fixes, with 1M-token context and native text, image, audio and video input. Arena and Vals place it ahead of other small models on cost per task; it is API-only so far.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/arena/status/2119857775446757697",
+    "https://x.com/ValsAI/status/2119855420017971205"
+   ],
+   "vendor": "Meta",
+   "posted_at": "2026-11-09T18:04:00Z",
+   "metrics": {
+    "likes": 1039,
+    "reposts": 107,
+    "quotes": 83,
+    "replies": 80,
+    "views": 53337
+   },
+   "confirmed_by": [
+    "@arena",
+    "@ValsAI",
+    "@OpenRouter",
+    "@opencode",
+    "@aitrackerbot",
+    "@Box"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers and quote posts note it only ties Claude Haiku 5.5 on the Artificial Analysis index and loses to Haiku on FrontierCode; the strongest numbers are Meta's own or cost-per-task, and weights are not available for local use.",
+    "source": "https://x.com/AIatMeta/status/2119853591703998787"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Mostly positive on price and cost per task, with questions about tool-failure recovery, long-context pricing and local availability; no one reported a hands-on run in the replies read.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "AirCaps A5S Async v1 takes first place on Voice Arena diarization plus ASR board",
+   "url": "https://x.com/voicearena_ai/status/2119856970434015471",
+   "handle": "@voicearena_ai",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "On 139 held-out multi-speaker conversations, the speech-to-text model that labels who said each word scored 23.89% cpWER, ahead of 14 other systems, with a 95% interval of 19.47% to 28.58%. A commentator says the team published code, dataset recipes and raw API responses.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/tryaircaps/status/2119854303796216025"
+   ],
+   "vendor": "AirCaps",
+   "posted_at": "2026-11-09T18:17:00Z",
+   "metrics": {
+    "likes": 27,
+    "reposts": 21,
+    "quotes": 0,
+    "replies": 2,
+    "views": 8850
+   },
+   "confirmed_by": [
+    "@omarsar0"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Private OCR eval of 9 open-weight models on 338 scanned 20th-century pages",
+   "url": "https://x.com/vanstriendaniel/status/2119831615639531995",
+   "handle": "@vanstriendaniel",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Pairwise VLM-judge comparison across 10,730 judgments found small models on top: LightOn OCR-3-0.8B and Falcon-OCR 270M. Tiling added about 130 rating points to one model; the author notes the judge is not yet validated on pages like these.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-09T16:36:00Z",
+   "metrics": {
+    "likes": 28,
+    "reposts": 4,
+    "quotes": 1,
+    "replies": 11,
+    "views": 2741
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Author's own caveat: judge validated on 19th-century books, not these pages.",
+    "source": "https://x.com/vanstriendaniel/status/2119831615639531995"
+   }
+  },
+  {
+   "title": "DeepSeek V4.1 Flash reaches 438 tok/s on 4 DGX Sparks with 16 users in a community repo",
+   "url": "https://x.com/plotarmordev/status/2119819803837989027",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A repo for serving the model on four DGX Sparks reports 438 tok/s for 16 identical prompts and 380 tok/s with different prompts, over 2x upstream; the poster notes the single-user speed barely changed.",
+   "kind": "repo",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/Picom-code/pico-dgx-ds4"
+   ],
+   "vendor": "Picom-code",
+   "posted_at": "2026-11-09T15:50:00Z",
+   "metrics": {
+    "likes": 15,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 4,
+    "views": 1209
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Poster flags that the headline figure uses 16 copies of the same prompt.",
+    "source": "https://x.com/plotarmordev/status/2119819803837989027"
+   }
+  },
+  {
+   "title": "PostTrainBench v1.2 adds Gemini 4 Argon (40.4%) and Muse Wonder (24.2%)",
+   "url": "https://x.com/maksym_andr/status/2119821930622746793",
+   "handle": "@maksym_andr",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "New benchmark results for how well agents post-train models: Gemini 4 Argon scores 40.4% and Muse Wonder 24.2%.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/hrdkbhatnagar/status/2119819356389753104"
+   ],
+   "vendor": "PostTrainBench",
+   "posted_at": "2026-11-09T15:58:00Z",
+   "metrics": {
+    "likes": 23,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 3,
+    "views": 965
+   },
+   "confirmed_by": [
+    "@maksym_andr"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "World Labs Atlas ranks first in Rapidata camera-movement benchmark across 19 models",
+   "url": "https://x.com/theworldlabs/status/2119853991261806721",
+   "handle": "@theworldlabs",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "A third-party human-preference benchmark (600 prompts, 513K+ judgments) rated Atlas best at following camera instructions among 19 world and video models.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/RapidataAI"
+   ],
+   "vendor": "World Labs",
+   "posted_at": "2026-11-09T18:05:00Z",
+   "metrics": {
+    "likes": 43,
+    "reposts": 4,
+    "quotes": 1,
+    "replies": 3,
+    "views": 2848
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Result reported by the model's own maker; method is in a linked thread not read.",
+    "source": "https://x.com/theworldlabs/status/2119853991261806721"
+   }
+  },
+  {
+   "title": "Hume Audio Decision API launches with a no-account demo",
+   "url": "https://x.com/hume_ai/status/2119822417719935251",
+   "handle": "@hume_ai",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Hume released an API that answers questions about audio, such as detecting sarcasm, and offers 250,000 free tokens (about 50 minutes of audio) without an account.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://www.hume.ai/products/decision-model-api"
+   ],
+   "vendor": "Hume AI",
+   "posted_at": "2026-11-09T16:00:00Z",
+   "metrics": {
+    "likes": 14,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Hermes Cloud agents open in a browser tab with the Hermes Desktop interface",
+   "url": "https://x.com/NousResearch/status/2119851439904510217",
+   "handle": "@NousResearch",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Nous now hosts personal agents that launch from Nous Portal by choosing a name and a model, and run in the browser with the same UI as the desktop app.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://portal.nousresearch.com"
+   ],
+   "vendor": "Nous Research",
+   "posted_at": "2026-11-09T17:55:00Z",
+   "metrics": {
+    "likes": 257,
+    "reposts": 21,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Nvidia builds a Gemma 4 E4B robot assistant that runs on an 8GB Jetson",
+   "url": "https://x.com/googlegemma/status/2119866181163336042",
+   "handle": "@googlegemma",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Per the Gemma team, Nvidia fit live conversation, tool calls, animations and a vision model on one 8GB Jetson using Gemma 4 E4B; shown as a demo clip only.",
+   "kind": "demo",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Nvidia",
+   "posted_at": "2026-11-09T18:54:00Z",
+   "metrics": {
+    "likes": 32,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 3,
+    "views": 1644
+   },
+   "confirmed_by": [
+    "@NVIDIAAI"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Demo clip only in the posts read; no repo or numbers seen.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 99,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
