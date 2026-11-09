@@ -1,11 +1,11 @@
 {
- "updated_at": "2026-11-08T23:04:00Z",
+ "updated_at": "2026-11-09T03:12:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 61,
+ "calls_used_today": 5,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-08T23:04:00Z",
+  "ran_at": "2026-11-09T03:12:00Z",
   "items": 1,
   "queries": 3,
   "deep_reads": 0,
@@ -15,7 +15,7 @@
   "saved_kept": 0,
   "videos": 0,
   "security_forwarded": 0,
-  "list_posts_read": 96,
+  "list_posts_read": 97,
   "list_pages": 1
  },
  "roster": {
@@ -267,7 +267,7 @@
   "Sweep 2026-11-08T19:08Z: @DrJimFan posted a real-robot autonomous teaser scheduled for tomorrow; not kept."
  ],
  "errors": [
-  "Curated labs OR search returned 1 thank-you reply for the 4-hour window (known index gap); non-list lab accounts were not independently confirmed beyond that query. List timeline covered trial and active members through since."
+  "No browser available: follows skipped. Bookmarks call returned only already-known saves (TREX-ARMS, NX2navi, firearms-parts), all previously rejected as non-dev."
  ],
  "follows_today": 0,
  "last_roster_review": {
@@ -318,5 +318,5 @@
   "created_at": "2026-10-24T04:35:00Z"
  },
  "horizon_triggered": [],
- "calls_day": "2026-11-08"
+ "calls_day": "2026-11-09"
 }

@@ -1,0 +1,50 @@
+{
+ "ran_at": "2026-11-09T03:12:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-08T23:04:00Z",
+ "queries": 3,
+ "calls": 5,
+ "items": [
+  {
+   "title": "Third-party test: Tencent's DSpine draft model adds about 16% decoding speed over DFlash2 on Qwen3.8 27B",
+   "url": "https://x.com/plotarmordev/status/2119614198946595160",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A builder reports tokens per second for Qwen3.8 27B: 253 with plain decoding, 590 with DFlash2 speculative decoding and 686 with Tencent's DSpine draft model. It gives local-inference users a rough sense of what DSpine adds on top of an existing draft setup.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/tencent/qwen3.8-27b-dspine-b16"
+   ],
+   "vendor": "Tencent",
+   "posted_at": "2026-11-09T02:13:00Z",
+   "metrics": {
+    "likes": 9,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 590
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 97,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://github.com/ggml-org/llama.cpp/issues/30773",
+   "reason": "llama-server /v1/responses marks truncated tool calls completed (correctness bug, not a vulnerability); not in stack.json as a security matter."
+  }
+ ]
+}
