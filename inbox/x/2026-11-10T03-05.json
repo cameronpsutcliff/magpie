@@ -1,0 +1,111 @@
+{
+ "ran_at": "2026-11-10T03:05:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-09T23:09:00Z",
+ "queries": 3,
+ "calls": 5,
+ "items": [
+  {
+   "title": "llama.cpp DSpine draft-model port: per-GPU speculative-decoding numbers from DGX Spark, Radeon R9700 and RX 7800 XT",
+   "url": "https://x.com/ItsmeAjayKV/status/2119671112179310653",
+   "handle": "@ItsmeAjayKV",
+   "group": "builders",
+   "origin": "discovery",
+   "summary": "A community llama.cpp port of the DSpine drafter now has benchmark numbers on four GPU types. The best --spec-draft-n-max depends on the card, and on some cards the older dflash2 or mtp drafters are faster for chat, while DSpine stays ahead for code and tool calls.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/aj9o9/Qwen3.8-27B-DSpine-b16-GGUF"
+   ],
+   "vendor": "community (aj9o9)",
+   "posted_at": "2026-11-09T05:59:09Z",
+   "metrics": {
+    "likes": 30,
+    "reposts": 2,
+    "quotes": 2,
+    "replies": 7,
+    "views": 2786
+   },
+   "confirmed_by": [
+    "@plotarmordev"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Docling v2.149.0 adds a MiniCPM-OCR preset, opt-in native-pixel PDF figure extraction and torch-free Mac ASR",
+   "url": "https://x.com/Khaled865412521/status/2119645305301856497",
+   "handle": "@Khaled865412521",
+   "group": "opensource",
+   "origin": "discovery",
+   "summary": "The Docling release adds a minicpm_ocr preset so a 1.3B OCR model can run on one consumer GPU, an opt-in flag that pulls figures from PDFs at native resolution, and ASR on mlx-audio without torch on Macs.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/docling-project/docling/releases/tag/v2.149.0"
+   ],
+   "vendor": "Docling",
+   "posted_at": "2026-11-09T04:16:36Z",
+   "metrics": {
+    "likes": 1,
+    "reposts": 0,
+    "quotes": 1,
+    "replies": 0,
+    "views": 212
+   },
+   "confirmed_by": [
+    "@OpenBMB"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Base M4 Mac mini 24GB median 51.8 tok/s on MiniCPM-V 4.7 35B-A3B with llama.cpp and a draft model",
+   "url": "https://x.com/hailports/status/2119863299118624869",
+   "handle": "@hailports",
+   "group": "builders",
+   "origin": "discovery",
+   "summary": "A one-week follow-up reports a median of 51.8 tok/s over 802 answers on a base M4 Mac mini, up from 38.6, after switching to the official IQ3_XS quant and keeping a 237 MB draft model. It lists the full launch flags and a paired benchmark, and states the unexplained gains and failures.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/i/article/2119862971249602560"
+   ],
+   "vendor": "OpenBMB MiniCPM (community run)",
+   "posted_at": "2026-11-09T18:42:50Z",
+   "metrics": {
+    "likes": 5,
+    "reposts": 2,
+    "quotes": 1,
+    "replies": 3,
+    "views": 734
+   },
+   "confirmed_by": [
+    "@OpenBMB"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Self-reported single-machine numbers; the author notes one gain from Nov 4 is unexplained.",
+    "source": "https://x.com/hailports/status/2119863299118624869"
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 91,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
