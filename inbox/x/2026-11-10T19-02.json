@@ -1,0 +1,337 @@
+{
+ "ran_at": "2026-11-10T19:02:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-10T14:55:00Z",
+ "queries": 5,
+ "calls": 6,
+ "items": [
+  {
+   "title": "Google ships Gemini 4 Carbon to the API and Ultra subscribers",
+   "url": "https://x.com/OfficialLoganK/status/2120186016254624039",
+   "handle": "@OfficialLoganK",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Gemini 4 Carbon, Google's new top model, is available in the Gemini API and to Google AI Ultra subscribers, pitched at cyber, knowledge work and code. Google says it is expensive and not the model for wide release.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://gemini.google"
+   ],
+   "vendor": "Google",
+   "posted_at": "2026-11-10T16:05:12Z",
+   "metrics": {
+    "likes": 2806,
+    "reposts": 141,
+    "quotes": 79,
+    "replies": 463
+   },
+   "confirmed_by": [
+    "@GeminiApp"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "One replier says its benchmark numbers feel weaker than Opus 5.5 in their own coding tests; unverified.",
+    "source": "https://x.com/JeffEpsteinJew/status/2120227774183137427"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Most repliers complained that it is gated to the Ultra plan; a few congratulated, asked about migration from Argon, or reported a weak coding result. Nobody posted a reproducible test.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "ElevenLabs launches Scribe v3 and Scribe v3 Live speech-to-text",
+   "url": "https://x.com/ElevenLabs/status/2120217467100541396",
+   "handle": "@ElevenLabs",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Scribe v3 adds better diarization and noise handling; the Live variant adds diarization for the first time and the company reports 43% fewer errors than its predecessor. Both are in the API and ElevenAgents.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://elevenlabs.io"
+   ],
+   "vendor": "ElevenLabs",
+   "posted_at": "2026-11-10T18:10:10Z",
+   "metrics": {
+    "likes": 88,
+    "reposts": 17,
+    "quotes": 9,
+    "replies": 7
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Fish Audio introduces Live 3, a full-duplex voice model for agents",
+   "url": "https://x.com/FishAudio/status/2120215430807904395",
+   "handle": "@FishAudio",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Live 3 listens and speaks at once, handles back-channel cues and interruptions for real-time voice agents. The post shows no numbers or weights.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Fish Audio",
+   "posted_at": "2026-11-10T18:02:05Z",
+   "metrics": {
+    "likes": 67,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 15
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Exa for Finance gives agents search over 2B financial documents",
+   "url": "https://x.com/ExaAILabs/status/2120213433320976419",
+   "handle": "@ExaAILabs",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Exa's API now searches prices, SEC filings, earnings calls and finance news at no extra cost; the company claims state of the art on FinSearchComp without numbers in the post.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Exa",
+   "posted_at": "2026-11-10T17:54:08Z",
+   "metrics": {
+    "likes": 216,
+    "reposts": 21,
+    "quotes": 6,
+    "replies": 6
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Benchmark claim carries no numbers in the post.",
+    "source": null
+   }
+  },
+  {
+   "title": "Open TTS Leaderboard compares five tiny TTS models side by side",
+   "url": "https://x.com/EricBezzam/status/2120211806753112182",
+   "handle": "@EricBezzam",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Hugging Face's open leaderboard now lists Paradee v1.3 (0.69% WER at 8M params), PiVo (0.77% at 1.4M), phonon-31m, ZONOS3-Mini and Underdog-Woof, with open scripts and p95 CPU latency (PiVo 6ms, phonon 28ms with streaming and cloning).",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/spaces/hf-audio/open_tts_leaderboard"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-10T17:47:41Z",
+   "metrics": {
+    "likes": 28,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 5
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "TensorFold 1.2.6 cuts multi-agent follow-up latency on Apple and GB10",
+   "url": "https://x.com/ashxhart/status/2120207360983798198",
+   "handle": "@ashxhart",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Prompt cache improvements in a 16-agent Qwen3.8-27B plus DFlash2 test drop median follow-up time to first token from 546s to 15.9s on M3 Ultra and 105s to 25.8s on GB10. A community run reports GLM-5.3 on 8 DGX Sparks at about 44 tok/s versus 26 with vLLM, with differently compressed weights.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/ciprianveg/gb10-tensorfold"
+   ],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-10T17:30:01Z",
+   "metrics": {
+    "likes": 82,
+    "reposts": 10,
+    "quotes": 2,
+    "replies": 19
+   },
+   "confirmed_by": [
+    "@plotarmordev"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The GLM-5.3 comparison is not same-weights, as the poster notes; the maintainer's own test is self-reported.",
+    "source": "https://x.com/plotarmordev/status/2120180933445787656"
+   }
+  },
+  {
+   "title": "Fable 5.2 beats earlier Claude models at object detection in a hands-on test",
+   "url": "https://x.com/skalskip92/status/2120210890192781721",
+   "handle": "@skalskip92",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "A hands-on detection benchmark finds Fable 5.2 good on medical, aerial and crowded scenes and weak on subtle defects and precise boxes; it is about 20% cheaper at low effort and 29% at high, and faster at high effort.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Anthropic",
+   "posted_at": "2026-11-10T17:44:02Z",
+   "metrics": {
+    "likes": 26,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 6
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Idol: Apache 2.0 600M image-to-3D model makes 1M splats in 3 seconds",
+   "url": "https://x.com/NielsRogge/status/2120178499272982536",
+   "handle": "@NielsRogge",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Spain's Sperid Labs released Idol, trained from scratch, needing under 7.2GB VRAM and trending first on Hugging Face.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Sperid Labs",
+   "posted_at": "2026-11-10T15:35:19Z",
+   "metrics": {
+    "likes": 34,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 3
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "LightOnOCR-3 0.8B OCRs 14k pages for $1.67 on one GPU",
+   "url": "https://x.com/vanstriendaniel/status/2120217929522528513",
+   "handle": "@vanstriendaniel",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Using vLLM on Hugging Face Jobs with one RTX PRO 6000, the run reached about 7.7 pages per second, roughly $0.12 per 1,000 pages.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/lightonai"
+   ],
+   "vendor": "LightOn",
+   "posted_at": "2026-11-10T18:12:00Z",
+   "metrics": {
+    "likes": 11,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Datalab form-field detection improves on 400 held-out forms",
+   "url": "https://x.com/datalabto/status/2120206926734565514",
+   "handle": "@datalabto",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Fields found rise from 82.3% to 86.8% and correct boxes from 86.7% to 89.8% against the previous model, with no repeated fields across 546 pages; available on their API.",
+   "kind": "feature",
+   "evidence": "measured",
+   "links": [
+    "https://www.datalab.to/blog/form-field-detection-update"
+   ],
+   "vendor": "Datalab",
+   "posted_at": "2026-11-10T17:28:17Z",
+   "metrics": {
+    "likes": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "NVIDIA posts Japanese Nemotron persona and PII datasets",
+   "url": "https://x.com/NVIDIAAI/status/2120190320415744379",
+   "handle": "@NVIDIAAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Two new Hugging Face datasets: Nemotron-Personas-Finance-Japan and Nemotron-PII-Japan, for synthetic Japanese personas and personal-information detection.",
+   "kind": "dataset",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/datasets/nvidia/Nemotron-Personas-Finance-Japan",
+    "https://huggingface.co/datasets/nvidia/Nemotron-PII-Japan"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-11-10T16:22:18Z",
+   "metrics": {
+    "likes": 76,
+    "reposts": 8,
+    "quotes": 0,
+    "replies": 8
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 182,
+ "list_pages": 2,
+ "security_forwarded": [],
+ "security_na": []
+}
