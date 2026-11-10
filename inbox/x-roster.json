@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-09T10:45:00Z",
+ "updated_at": "2026-11-10T10:30:00Z",
  "accounts": [
   {
    "handle": "@thsottiaux",
@@ -251,7 +251,7 @@
    "affiliation": "Hume AI",
    "why": "Voice AI lab posting voice model evaluations (Real World VoiceEQ).",
    "signal_to_noise": 4,
-   "status": "trial",
+   "status": "active",
    "added_on": "2026-10-20",
    "evidence": [
     "https://x.com/hume_ai/status/2102804812031270923",
@@ -1037,7 +1037,7 @@
    "affiliation": "Independent",
    "why": "Day-zero EXL3 and GGUF quants of new open models with measured tok/s and accuracy on one DGX Spark or one RTX 4090 (DeepSeek V4.1 Flash 1.62 bpw, MiniMax M3.1 Flash, Nanbeige4.3-33B).",
    "signal_to_noise": 3,
-   "status": "trial",
+   "status": "active",
    "added_on": "2026-10-27",
    "evidence": [
     "https://x.com/ViC305/status/2112603778327380088",
@@ -1056,7 +1056,7 @@
    "affiliation": "Hugging Face (TRL post-training)",
    "why": "First-hand TRL AsyncGRPO features with measured results: tree packing (26x less trainer compute), score centering defaults, FP8 rollout stability reproductions.",
    "signal_to_noise": 4,
-   "status": "trial",
+   "status": "active",
    "added_on": "2026-10-27",
    "evidence": [
     "https://x.com/DirhousssiAmine/status/2110642116716351663",
@@ -1075,7 +1075,7 @@
    "affiliation": "Independent (TensorFold contributor)",
    "why": "Local AI on DGX Spark with repos and measurements: Nemotron 3.5 Super VL single-Spark recipe, TensorFold voice latency PRs, Undertone speech delivery repo, serving comparisons.",
    "signal_to_noise": 3,
-   "status": "trial",
+   "status": "active",
    "added_on": "2026-10-27",
    "evidence": [
     "https://x.com/plotarmordev/status/2114341657772712033",
