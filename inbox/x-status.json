@@ -1,21 +1,21 @@
 {
- "updated_at": "2026-11-10T11:03:00Z",
+ "updated_at": "2026-11-10T14:55:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 13,
+ "calls_used_today": 20,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-10T11:03:00Z",
-  "items": 4,
-  "queries": 5,
+  "ran_at": "2026-11-10T14:55:00Z",
+  "items": 6,
+  "queries": 7,
   "deep_reads": 1,
   "rechecks": 0,
-  "flagged": 2,
+  "flagged": 3,
   "saved_in": 0,
   "saved_kept": 0,
   "videos": 0,
-  "security_forwarded": 0,
-  "list_posts_read": 91,
+  "security_forwarded": 1,
+  "list_posts_read": 89,
   "list_pages": 1
  },
  "roster": {
@@ -268,7 +268,8 @@
   "Roster review 2026-11-09: owner_saves candidates @danikkk_wqs (templated profanity engagement bait, AI-trading get-rich claims, one quoted article reused) and @RoundtableSpace (Mario Nawfal's Roundtable account, crypto and general news, no AI focus) failed the screen and were not added; they belong on the avoid list (config/ is owner-only).",
   "Roster review 2026-11-09: promoted @KBlueleaf (5 sweep-file items, no level-2 flag). No retirements: no trial or active account met the 45-day, drift or two-doubt-flag rules; no account had two level-2+ flags. @MatthewBerman (owner picked, keep) has 0 sweep items in 16 days but is not retired.",
   "Roster review 2026-11-09: no other candidate sources were searched (reads limited to 2 of 80); source_leads unchanged. Many trials added 2026-10-20 to 10-26 still have fewer than 2 sweep-file items at 14+ days, so they stay trial.",
-  "2026-11-10 roster review: @danikkk_wqs failed the AI/dev screen (hype templates, crypto-trading claims) and @Tailscale is infra marketing; both have 2 owner saves, so consider adding @danikkk_wqs to avoid. Owner saves and curated accounts were not auto-retired."
+  "2026-11-10 roster review: @danikkk_wqs failed the AI/dev screen (hype templates, crypto-trading claims) and @Tailscale is infra marketing; both have 2 owner saves, so consider adding @danikkk_wqs to avoid. Owner saves and curated accounts were not auto-retired.",
+  "Sweep 14:55Z: official @MiniMax_AI H3-Image post (2120158341229928576) returned not found on lookup minutes after it was quoted, and replies say the Hugging Face weights link is 404, so the item is anchored on the @MiniMax_Code post. No browser, so follows skipped and Community Notes not checked."
  ],
  "errors": [],
  "follows_today": 0,
@@ -313,5 +314,5 @@
   "created_at": "2026-10-24T04:35:00Z"
  },
  "horizon_triggered": [],
- "calls_day": "2026-11-09"
+ "calls_day": "2026-11-10"
 }

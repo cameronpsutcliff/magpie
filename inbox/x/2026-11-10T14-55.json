@@ -1,0 +1,208 @@
+{
+ "ran_at": "2026-11-10T14:55:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-10T11:03:00Z",
+ "queries": 7,
+ "calls": 7,
+ "items": [
+  {
+   "title": "MiniMax H3-Image goes live in MiniMax Code, open weights claimed",
+   "url": "https://x.com/MiniMax_Code/status/2120156983601045971",
+   "handle": "@MiniMax_Code",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "MiniMax put its H3-Image generation and editing model live in MiniMax Code and its API, with up to 16 reference images and 4K output in 10 to 20 seconds, and says weights will be open. Builders can use it now through the product or API.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://x.com/MiniMax_Code/status/2120156983601045971",
+    "https://x.com/MiniMax_Code/status/2120158405390430220"
+   ],
+   "vendor": "MiniMax",
+   "posted_at": "2026-11-10T14:09:50Z",
+   "metrics": {
+    "likes": 42,
+    "reposts": 4,
+    "quotes": 4,
+    "replies": 5,
+    "views": 2738
+   },
+   "confirmed_by": [
+    "@victormustar",
+    "@plotarmordev"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Replies say the official Hugging Face weights link returns 404 and the official announcement post is no longer readable, so the open-weights claim is not yet checkable.",
+    "source": "https://x.com/mapte_fireball/status/2120166284935708673"
+   }
+  },
+  {
+   "title": "Transformers adds a shared decision-model layer (pipeline and model.decide)",
+   "url": "https://x.com/LysandreJik/status/2120160642934157609",
+   "handle": "@LysandreJik",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Hugging Face Transformers merged a common interface for decision models (DecisionConfig, pipeline(\"decision\"), model.decide) so serving, training and eval tools can handle models like Jev, KEV, CLEF and Decider without custom code.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/huggingface/transformers/pull/50054"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-10T14:24:22Z",
+   "metrics": {
+    "likes": 12,
+    "reposts": 4,
+    "quotes": 1,
+    "replies": 1,
+    "views": 1004
+   },
+   "confirmed_by": [
+    "@NielsRogge"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Carbon-X: Apache 2.0 14.8B model that reads raw DNA",
+   "url": "https://x.com/paperswithcodee/status/2120095635856560606",
+   "handle": "@paperswithcodee",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Hugging Face's Carbon-X, built on Qwen3-14B and Apache 2.0, reports 63.6% on GenomeQA and 74.9 vs 71.0 on BioReason coding variants against GPT-6.1 Sol. Usable by genomics researchers if the weights are published as stated.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-10T10:06:03Z",
+   "metrics": {
+    "likes": 5,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 2,
+    "views": 431
+   },
+   "confirmed_by": [
+    "@LoubnaBenAllal1"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The relayed post links no weights page or paper, so the figures could not be checked from the post alone.",
+    "source": "https://x.com/paperswithcodee/status/2120095635856560606"
+   }
+  },
+  {
+   "title": "Intel Arc Pro B70 goes from 6.8 to 56.5 tok/s on Qwen3.8-27B with software changes",
+   "url": "https://x.com/wei_wang/status/2119974329706263002",
+   "handle": "@wei_wang",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A step-by-step run on one 32GB Arc Pro B70 at Q6: newer Mesa, FP16 KV cache, llama.cpp SYCL backend, then Q8 KV with MTP lifted generation from 6.8 to 56.5 tok/s, about half a 5090 for a fifth of the price.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/wei_wang/status/2119974329706263002"
+   ],
+   "vendor": "Intel Arc / llama.cpp",
+   "posted_at": "2026-11-10T02:04:02Z",
+   "metrics": {
+    "likes": 19,
+    "reposts": 2,
+    "quotes": 2,
+    "replies": 9,
+    "views": 5800
+   },
+   "confirmed_by": [
+    "@plotarmordev"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "apple-nvidia-sidecar: Mac Studio plus RTX 5090 as one engine, 210 tok/s on Qwen 3.8 Flash Next",
+   "url": "https://x.com/plotarmordev/status/2120128840236433640",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A GitHub project links a Mac Studio and an RTX 5090 to serve one model as a single engine and reports 210 tok/s on Qwen 3.8 Flash Next, one session at a time.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/joesinvestments/apple-nvidia-sidecar"
+   ],
+   "vendor": "joesinvestments",
+   "posted_at": "2026-11-10T12:18:00Z",
+   "metrics": {
+    "likes": 20,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 3,
+    "views": 1244
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The modified driver the setup needs is not in the repo, and extra sessions do not raise total speed.",
+    "source": "https://x.com/plotarmordev/status/2120128840236433640"
+   }
+  },
+  {
+   "title": "Rumble-2 from Reson8 debuts #1 on Voice Arena Brazilian Portuguese ASR",
+   "url": "https://x.com/voicearena_ai/status/2120139250951942237",
+   "handle": "@voicearena_ai",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Voice Arena reports Reson8's Rumble-2 at 9.84% normalized WER on a private 3,814-clip conversational set, ahead of 37 other models for Brazilian Portuguese speech recognition.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/voicearena_ai/status/2120139250951942237"
+   ],
+   "vendor": "Reson8",
+   "posted_at": "2026-11-10T12:59:22Z",
+   "metrics": {
+    "likes": 39,
+    "reposts": 31,
+    "quotes": 0,
+    "replies": 2,
+    "views": 36648
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 89,
+ "list_pages": 1,
+ "security_forwarded": [
+  {
+   "url": "https://x.com/plotarmordev/status/2120155264590688420",
+   "matched": "always_forward: container runtimes and images (NVIDIA container toolkit); Spark runs an nvidia stack"
+  }
+ ],
+ "security_na": []
+}
