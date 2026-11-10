@@ -3,6 +3,63 @@
  "updated": "2026-11-10",
  "threats": [
   {
+   "id": "thr-2026-11-09-openssh-password-authentication-bypass-on-linux",
+   "kind": "threat",
+   "category": "exploited-vuln",
+   "title": "OpenSSH Password Authentication Bypass on Linux",
+   "headline": "OpenSSH flaw allows password authentication bypass in some Linux account configurations",
+   "summary": "OpenSSH on Linux lacks a workaround for a password authentication bypass when musl libc is used without PAM. For some account configurations, any password between 256 and 1024 characters succeeds.",
+   "severity": "high",
+   "severity_basis": "CVSS 8.1 (CNA)",
+   "exploited": true,
+   "exploited_quote": null,
+   "status": "active",
+   "act_now": true,
+   "affects": [
+    {
+     "name": "OpenBSD OpenSSH",
+     "ecosystem": "product",
+     "versions": ""
+    }
+   ],
+   "fixed_in": [],
+   "actions": [
+    "Apply the vendor's fix or mitigations for OpenBSD OpenSSH: CISA lists it as exploited"
+   ],
+   "action_quotes": [],
+   "who": [
+    "OpenSSH users on Linux with musl libc without PAM"
+   ],
+   "published": "2026-11-09",
+   "first_seen": "2026-11-10",
+   "updated": "2026-11-10",
+   "cves": [
+    "CVE-2026-123158"
+   ],
+   "kev": true,
+   "doc": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-123158",
+   "sources": [
+    {
+     "name": "CISA Known Exploited Vulnerabilities",
+     "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-123158",
+     "primary": true
+    }
+   ],
+   "quote": "For some configurations of accounts, any password between 256 and 1024 characters succeeds.",
+   "evidence": "official",
+   "incident": null,
+   "children": [],
+   "merged_ids": [],
+   "key": "threat:CVE-2026-123158",
+   "idents": [
+    "CVE-2026-123158",
+    "url:cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-123158"
+   ],
+   "last_seen": "2026-11-10",
+   "reach": 2,
+   "wide": false
+  },
+  {
    "id": "thr-2026-10-28-vllm-image-loader-passes-eps-input-to",
    "kind": "threat",
    "category": "ai-framework-vuln",

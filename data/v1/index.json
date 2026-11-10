@@ -3,81 +3,90 @@
  "days": [
   {
    "date": "2026-11-10",
-   "headline": "Introducing Claude Fable 5.2 and Claude Mythos 5.2, rea, Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF, and more",
-   "events": 242,
-   "sources": 535,
-   "enriched": false,
+   "headline": "Code with new models, clone voices on phones, automate homes and more",
+   "events": 429,
+   "sources": 564,
+   "enriched": true,
    "top": [
     {
+     "id": "2a00ef955f80",
+     "title": "Anthropic shares public Agent Skills repository",
+     "impact": 4,
+     "vendor": "Anthropic",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-10-2a00ef955f80"
+    },
+    {
+     "id": "6ab7c20420f6",
+     "title": "Ha-mcp connects assistants to Home Assistant",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-10-6ab7c20420f6"
+    },
+    {
+     "id": "c6400a85281b",
+     "title": "ZONOS3-Mini clones voices on phones",
+     "impact": 4,
+     "vendor": "Zyphra",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-10-c6400a85281b"
+    },
+    {
+     "id": "4c33beaadb75",
+     "title": "GitHub Copilot adds Claude Fable 5.2",
+     "impact": 4,
+     "vendor": "GitHub",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-10-4c33beaadb75"
+    },
+    {
      "id": "4cd2d38dc252",
-     "title": "Introducing Claude Fable 5.2 and Claude Mythos 5.2",
+     "title": "Claude Fable and Mythos target technical work",
      "impact": 4,
      "vendor": "Anthropic",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-10-4cd2d38dc252"
-    },
-    {
-     "id": "177fb172f416",
-     "title": "morluto/rea",
-     "impact": 4,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-10-177fb172f416"
-    },
-    {
-     "id": "e197a9917ccd",
-     "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
-     "impact": 5,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-10-e197a9917ccd"
-    },
-    {
-     "id": "bebcf2b23194",
-     "title": "ccore/Qwen3.5-4B-3D-Coder",
-     "impact": 4,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-10-bebcf2b23194"
-    },
-    {
-     "id": "2a00ef955f80",
-     "title": "anthropics/skills",
-     "impact": 3,
-     "vendor": "Anthropic",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-10-2a00ef955f80"
     }
    ],
    "vendors": [
     "Open source",
     "Anthropic",
+    "NVIDIA",
     "OpenAI",
     "Google",
-    "Vercel",
-    "AWS"
+    "Vercel"
    ],
    "topics": {
-    "models": 73,
-    "agents": 69,
-    "coding": 63,
-    "multimodal": 56,
-    "memory": 28,
-    "mcp": 26,
-    "evals": 26,
-    "local": 23,
-    "infra": 22,
-    "reverse": 15,
-    "security": 9,
-    "research": 9,
-    "robotics": 5
+    "agents": 119,
+    "models": 117,
+    "coding": 97,
+    "multimodal": 72,
+    "infra": 55,
+    "evals": 47,
+    "memory": 36,
+    "local": 32,
+    "mcp": 29,
+    "reverse": 19,
+    "research": 17,
+    "security": 16,
+    "robotics": 7
    },
    "kinds": {
-    "blog": 44,
+    "video": 121,
+    "social": 96,
+    "blog": 43,
     "newsletter": 40,
-    "repo": 32,
+    "repo": 31,
     "model": 30,
-    "social": 27,
     "community": 25,
-    "space": 20,
+    "space": 19,
     "changelog": 18,
     "news": 6
-   }
+   },
+   "threats": [
+    {
+     "id": "thr-2026-11-09-openssh-password-authentication-bypass-on-linux",
+     "title": "OpenSSH Password Authentication Bypass on Linux",
+     "severity": "high",
+     "exploited": true
+    }
+   ]
   },
   {
    "date": "2026-11-09",
