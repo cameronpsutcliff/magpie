@@ -1,0 +1,123 @@
+{
+ "ran_at": "2026-11-10T23:04:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-10T19:02:00Z",
+ "queries": 3,
+ "calls": 4,
+ "items": [
+  {
+   "title": "ARC Prize verifies Gemini 4 Carbon on ARC-AGI-1/2/3",
+   "url": "https://x.com/arcprize/status/2120268980778668036",
+   "handle": "@arcprize",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "ARC Prize published verified Gemini 4 Carbon scores (ARC-AGI-3 99.1% with a provider adapter, 65.1% on the standard harness; ARC-AGI-2 94.2%; ARC-AGI-1 98.5%) and per-task cost and reasoning-token comparisons against its predecessor Argon.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://arcprize.org/leaderboard",
+    "https://github.com/arcprize/arc-agi-benchmarking"
+   ],
+   "vendor": "ARC Prize",
+   "posted_at": "2026-11-10T21:34:52Z",
+   "metrics": {
+    "likes": 102,
+    "reposts": 14
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "LTX-2.5 VFX tools (AlphaGen, Reframe, Upscale, SDR to HDR) live on fal",
+   "url": "https://x.com/fal/status/2120231569684078604",
+   "handle": "@fal",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "fal added four LTX-2.5 video tools: alpha matte generation up to 4K, aspect-ratio reframing, upscaling to 4K or 8K, and SDR to HDR conversion, each with a hosted endpoint.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://fal.ai/models/lightricks/ltx-2.5/alpha-gen",
+    "https://fal.ai/models/lightricks/ltx-2.5/reframe"
+   ],
+   "vendor": "Lightricks / fal",
+   "posted_at": "2026-11-10T19:06:12Z",
+   "metrics": {
+    "likes": 59,
+    "reposts": 5
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Hermes Roam plugin syncs Hermes agent memory, skills and config across devices",
+   "url": "https://x.com/ViC305/status/2120276463241068568",
+   "handle": "@ViC305",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A hackathon entry now in the official Hermes plugin catalog that pushes and pulls an agent's soul, memories, skills and config between devices. Built by the author for Hermes Agent users.",
+   "kind": "tool",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Hermes Roam (ViC305)",
+   "posted_at": "2026-11-10T22:04:36Z",
+   "metrics": {
+    "likes": 4,
+    "reposts": 1
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No repo or catalog link in the post, only a demo video, so nothing to check from the post alone.",
+    "source": null
+   }
+  },
+  {
+   "title": "Letta FrontierMemory: Fable 5.2 ties Opus 5.5 for first, at about 2x dream cost",
+   "url": "https://x.com/Letta_AI/status/2120246525980971412",
+   "handle": "@Letta_AI",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Letta's FrontierMemory leaderboard shows Claude Fable 5.2 tying Opus 5.5 overall and beating it at lower effort levels on generated memory quality, at roughly $600 per dream versus $300.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://frontiermemory.com"
+   ],
+   "vendor": "Letta",
+   "posted_at": "2026-11-10T20:05:38Z",
+   "metrics": {
+    "likes": 7,
+    "reposts": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 88,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}

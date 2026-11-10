@@ -1,22 +1,22 @@
 {
- "updated_at": "2026-11-10T19:02:00Z",
+ "updated_at": "2026-11-10T23:04:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 26,
+ "calls_used_today": 30,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-10T19:02:00Z",
-  "items": 11,
-  "queries": 5,
-  "deep_reads": 1,
+  "ran_at": "2026-11-10T23:04:00Z",
+  "items": 4,
+  "queries": 3,
+  "deep_reads": 0,
   "rechecks": 0,
-  "flagged": 3,
+  "flagged": 1,
   "saved_in": 0,
   "saved_kept": 0,
   "videos": 0,
   "security_forwarded": 0,
-  "list_posts_read": 182,
-  "list_pages": 2
+  "list_posts_read": 88,
+  "list_pages": 1
  },
  "roster": {
   "curated": 223,
@@ -271,7 +271,10 @@
   "2026-11-10 roster review: @danikkk_wqs failed the AI/dev screen (hype templates, crypto-trading claims) and @Tailscale is infra marketing; both have 2 owner saves, so consider adding @danikkk_wqs to avoid. Owner saves and curated accounts were not auto-retired.",
   "Sweep 14:55Z: official @MiniMax_AI H3-Image post (2120158341229928576) returned not found on lookup minutes after it was quoted, and replies say the Hugging Face weights link is 404, so the item is anchored on the @MiniMax_Code post. No browser, so follows skipped and Community Notes not checked."
  ],
- "errors": [],
+ "errors": [
+  "MAGPIE_GITHUB_TOKEN unset on box: sweep committed locally, push not possible",
+  "follows skipped: no browser"
+ ],
  "follows_today": 0,
  "last_roster_review": {
   "ran_at": "2026-11-10T10:30:00Z",
