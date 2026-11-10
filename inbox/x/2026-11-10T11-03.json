@@ -1,0 +1,142 @@
+{
+ "ran_at": "2026-11-10T11:03:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-10T03:05:00Z",
+ "queries": 5,
+ "calls": 8,
+ "items": [
+  {
+   "title": "Codex Dots can now drive several of your own machines, not only its cloud computer",
+   "url": "https://x.com/OpenAIDevs/status/2119883176726409645",
+   "handle": "@thsottiaux",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "OpenAI's Dots agent can now be connected to multiple local computers, and you choose which one runs a given task, for example building and testing on a desktop while you code on a laptop. It is announced with an 18 second clip and no docs link in the post.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "OpenAI",
+   "posted_at": "2026-11-09T20:01:49Z",
+   "metrics": {
+    "likes": 6588,
+    "reposts": 447,
+    "quotes": 395,
+    "replies": 599,
+    "views": 977110
+   },
+   "confirmed_by": [
+    "@thsottiaux"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Many repliers say the feature is not what they want and ask for usage-limit resets instead; one asks for permissions, isolation and audit controls before calling it a feature.",
+    "source": "https://x.com/FrontierNotify/status/2120108149097283788"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Several repliers like running builds on a separate desktop; many others ask for usage-limit changes, and nobody reports having tried the multi-machine mode yet.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "LingBot-Touch: open-source tactile foundation model pretrained on about 5,000 hours of real tactile data",
+   "url": "https://x.com/robbyant_brain/status/2119870554056651004",
+   "handle": "@TheInclusionAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "A JEPA-based tactile model for robot manipulation is open sourced, with transfer across sensors, dexterous hands, tasks and action models, and real-robot validation on two dexterous hands. Useful for robotics teams working with touch sensing.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Robbyant / InclusionAI",
+   "posted_at": "2026-11-09T19:11:40Z",
+   "metrics": {
+    "likes": 464,
+    "reposts": 140,
+    "quotes": 100,
+    "replies": 64,
+    "views": 713927
+   },
+   "confirmed_by": [
+    "@TheInclusionAI"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "LeRobot 0.7 trains directly from the Hub with streaming and LanceDB datasets",
+   "url": "https://x.com/LeRobotHF/status/2120091761926185096",
+   "handle": "@LeRobotHF",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "LeRobot 0.7 streams only the video bytes each worker needs, reporting 0.52% of step time spent waiting for data on pi0.5 with 4 H100s and a 10.7 TB dataset. It also reads LanceDB datasets and adds multi-GPU training docs.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/huggingface/lerobot"
+   ],
+   "vendor": "Hugging Face LeRobot",
+   "posted_at": "2026-11-10T09:50:40Z",
+   "metrics": {
+    "likes": 33,
+    "reposts": 3,
+    "quotes": 1,
+    "replies": 2,
+    "views": 1086
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Independent RTX 4090 test of Flide: about 6x over vLLM on many-questions-per-text decision workloads, 1.6x to 3.6x with one question",
+   "url": "https://x.com/prompt48/status/2120102314971443364",
+   "handle": "@prompt48",
+   "group": "builders",
+   "origin": "discovery",
+   "summary": "A hands-on test of the Flide inference engine (paper claims up to 9.5x) found 3.8x from forking alone and about 6x against the tester's own vLLM setup with 8 questions per email, shrinking to 1.6x to 3.6x with one question. Install and first start were quick, the tester's RTX 4060 laptop did not work, and the 0.8B model had weak recall on the spam task.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/OmniJev/Flide",
+    "https://arxiv.org/abs/2610.42148"
+   ],
+   "vendor": "Flide (OmniJev)",
+   "posted_at": "2026-11-10T10:32:36Z",
+   "metrics": {
+    "likes": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 25
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The tester says the 9.5x headline is one table cell on an H200 and their vLLM baseline is their own untuned setup, so numbers are rough.",
+    "source": "https://x.com/prompt48/status/2120102314971443364"
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 91,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
