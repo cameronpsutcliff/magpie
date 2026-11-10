@@ -13,6 +13,29 @@
  ],
  "items": [
   {
+   "id": "2026-11-10",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-11-10",
+   "title": "Introducing Claude Fable 5.2 and Claude Mythos 5.2, rea, Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF, and more",
+   "summary": "242 capability events from 127 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words.",
+   "content_html": "<p>242 capability events from 127 sources. Ranked by code; the editor did not run this edition, so copy is the sources&#x27; own words.</p><ol><li><a href=\"https://www.anthropic.com/claude-fable-and-mythos-5-2\">Introducing Claude Fable 5.2 and Claude Mythos 5.2</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-10-4cd2d38dc252\">on Magpie</a>)</li><li><a href=\"https://github.com/morluto/rea\">morluto/rea</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-10-177fb172f416\">on Magpie</a>)</li><li><a href=\"https://huggingface.co/DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF\">DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-10-e197a9917ccd\">on Magpie</a>)</li><li><a href=\"https://huggingface.co/ccore/Qwen3.5-4B-3D-Coder\">ccore/Qwen3.5-4B-3D-Coder</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-10-bebcf2b23194\">on Magpie</a>)</li><li><a href=\"https://github.com/anthropics/skills\">anthropics/skills</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-10-2a00ef955f80\">on Magpie</a>)</li></ol><p><strong>Possibilities:</strong> No new possibility today. Latest: Maintenance agencies can price routine fixes using measured costs after repository learning (2026-11-09)</p><p><strong>Worth watching:</strong> No new video pick today. Latest: AI Writes Code Faster Than Uber Can Merge It - Preetam Dwivedi &amp; Manjari Akella, Uber (2026-11-09)</p><p><strong>Constraints:</strong> No new constraint today. Latest: DHS order bars DeepSeek products from federal civilian agencies (2026-10-20)</p><p><strong>Threats:</strong> No new threat today. Widest reach still open: TWCA Registration Authority server accessed without authorization (medium, 2026-10-29)</p>",
+   "content_text": "242 capability events from 127 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words. Introducing Claude Fable 5.2 and Claude Mythos 5.2 morluto/rea DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF ccore/Qwen3.5-4B-3D-Coder anthropics/skills",
+   "date_published": "2026-11-10T11:14:17Z",
+   "tags": [
+    "agents",
+    "coding",
+    "local",
+    "mcp",
+    "models",
+    "multimodal",
+    "reverse"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-11-10.json",
+    "backfilled": false,
+    "capabilities": 242
+   }
+  },
+  {
    "id": "2026-11-09",
    "url": "https://www.cameronsutcliff.com/magpie/2026-11-09",
    "title": "Run large models without GPUs, reuse agent lessons, bring speech into browsers and more",
@@ -683,30 +706,6 @@
     "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-11.json",
     "backfilled": true,
     "capabilities": 36
-   }
-  },
-  {
-   "id": "2026-10-10",
-   "url": "https://www.cameronsutcliff.com/magpie/2026-10-10",
-   "title": "Compacts agent memory, simulates worlds, routes tokens, steers robots, and more",
-   "summary": "Today is mostly research papers on agents, world models and robots, with few runnable releases. The practical items are repos for cutting token use, self-hosting an agent, and wiring agents to science tools.",
-   "content_html": "<p>Today is mostly research papers on agents, world models and robots, with few runnable releases. The practical items are repos for cutting token use, self-hosting an agent, and wiring agents to science tools.</p><ol><li><a href=\"https://huggingface.co/papers/2610.12374\">AgentGarten builds interactive code worlds for agents</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-10-ed5ecb5a1abe\">on Magpie</a>): Agents can learn inside real-time virtual worlds built from simulators and a shared neural renderer, passing experience on between agents.</li><li><a href=\"https://huggingface.co/papers/2610.11287\">REMORY adds learned soft tokens to agent memory summaries</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-10-383eeec0c0f0\">on Magpie</a>): Long-horizon agents can keep decision accuracy while using little context, by pairing text summaries with learnable soft tokens.</li><li><a href=\"https://github.com/BerriAI/litellm\">LiteLLM gateway calls 100+ LLM APIs in one format</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-10-6e5a59669df2\">on Magpie</a>): You can call over 100 LLM APIs in OpenAI or native format with cost tracking, guardrails and load balancing.</li><li><a href=\"https://github.com/Robbyant/lingbot-map\">LingBot-Map reconstructs 3D scenes from streaming input</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-10-39718df61fac\">on Magpie</a>): You can run streaming 3D reconstruction with a geometric context transformer, with code released.</li><li><a href=\"https://github.com/rociiu/talorys\">Talorys runs a personal AI agent on Cloudflare free tier</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-10-f02d3b4c00b5\">on Magpie</a>): You can self-host a personal AI agent on Cloudflare&#x27;s free tier.</li></ol>",
-   "content_text": "Today is mostly research papers on agents, world models and robots, with few runnable releases. The practical items are repos for cutting token use, self-hosting an agent, and wiring agents to science tools. AgentGarten builds interactive code worlds for agents REMORY adds learned soft tokens to agent memory summaries LiteLLM gateway calls 100+ LLM APIs in one format LingBot-Map reconstructs 3D scenes from streaming input Talorys runs a personal AI agent on Cloudflare free tier",
-   "date_published": "2026-10-20T15:29:00Z",
-   "tags": [
-    "agents",
-    "infra",
-    "local",
-    "mcp",
-    "memory",
-    "models",
-    "multimodal",
-    "research"
-   ],
-   "_magpie": {
-    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-10.json",
-    "backfilled": true,
-    "capabilities": 110
    }
   }
  ]

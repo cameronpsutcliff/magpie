@@ -2,6 +2,84 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-11-10",
+   "headline": "Introducing Claude Fable 5.2 and Claude Mythos 5.2, rea, Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF, and more",
+   "events": 242,
+   "sources": 535,
+   "enriched": false,
+   "top": [
+    {
+     "id": "4cd2d38dc252",
+     "title": "Introducing Claude Fable 5.2 and Claude Mythos 5.2",
+     "impact": 4,
+     "vendor": "Anthropic",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-10-4cd2d38dc252"
+    },
+    {
+     "id": "177fb172f416",
+     "title": "morluto/rea",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-10-177fb172f416"
+    },
+    {
+     "id": "e197a9917ccd",
+     "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
+     "impact": 5,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-10-e197a9917ccd"
+    },
+    {
+     "id": "bebcf2b23194",
+     "title": "ccore/Qwen3.5-4B-3D-Coder",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-10-bebcf2b23194"
+    },
+    {
+     "id": "2a00ef955f80",
+     "title": "anthropics/skills",
+     "impact": 3,
+     "vendor": "Anthropic",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-10-2a00ef955f80"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Anthropic",
+    "OpenAI",
+    "Google",
+    "Vercel",
+    "AWS"
+   ],
+   "topics": {
+    "models": 73,
+    "agents": 69,
+    "coding": 63,
+    "multimodal": 56,
+    "memory": 28,
+    "mcp": 26,
+    "evals": 26,
+    "local": 23,
+    "infra": 22,
+    "reverse": 15,
+    "security": 9,
+    "research": 9,
+    "robotics": 5
+   },
+   "kinds": {
+    "blog": 44,
+    "newsletter": 40,
+    "repo": 32,
+    "model": 30,
+    "social": 27,
+    "community": 25,
+    "space": 20,
+    "changelog": 18,
+    "news": 6
+   }
+  },
+  {
    "date": "2026-11-09",
    "headline": "Run large models without GPUs, reuse agent lessons, bring speech into browsers and more",
    "events": 229,
@@ -3970,5 +4048,5 @@
    }
   }
  ],
- "latest": "2026-11-09"
+ "latest": "2026-11-10"
 }
