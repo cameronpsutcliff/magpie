@@ -1,0 +1,264 @@
+{
+ "ran_at": "2026-11-11T02:58:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-10T23:04:00Z",
+ "queries": 6,
+ "calls": 6,
+ "items": [
+  {
+   "title": "Qwen4-Max enters preview on Alibaba Token Plan and Qwen apps",
+   "url": "https://x.com/Alibaba_Qwen/status/2120335993643684315",
+   "handle": "@Alibaba_Qwen",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Alibaba put a preview of Qwen4-Max in its Token Plan and in Qwen apps and Qoder, pitched at coding and agent work. Developers can try it now through the plan; no benchmarks and no weights yet.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "http://qwencloud.com/pricing/token-plan"
+   ],
+   "vendor": "Alibaba Qwen",
+   "posted_at": "2026-11-11T02:01:09Z",
+   "metrics": {
+    "likes": 2891,
+    "reposts": 501,
+    "quotes": 388,
+    "replies": 311,
+    "views": 120637
+   },
+   "confirmed_by": [
+    "@plotarmordev",
+    "@ViC305",
+    "@MatthewBerman"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Preview only: the post gives no benchmark numbers and weights are not released (per @plotarmordev).",
+    "source": "https://x.com/plotarmordev/status/2120343603579154482"
+   }
+  },
+  {
+   "title": "Claimed ~700 tok/s for Qwen 3.8 27B on one RTX 5090, no code shown yet",
+   "url": "https://x.com/ashxhart/status/2120292846431347076",
+   "handle": "@ashxhart",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A builder posted a 38 second clip claiming about 700 tokens per second decoding Qwen 3.8 27B on a single RTX 5090. The post has no repo, settings or method, and repliers are asking where to get the code.",
+   "kind": "technique",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Ash Hart (independent)",
+   "posted_at": "2026-11-10T23:09:42Z",
+   "metrics": {
+    "likes": 1620,
+    "reposts": 114,
+    "quotes": 50,
+    "replies": 206,
+    "views": 86540
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Nothing to check: no link, repo, batch size or context length is given, and repliers ask about prefill speed and long-context drop-off without an answer.",
+    "source": "https://x.com/dunnohten/status/2120342097501032625"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Mostly excited replies and requests for other cards (4090, 3090, 5070 Ti, Spark, Metal); questions on prefill speed and 256k context went unanswered. One reply says the author's TensorFold work is strong.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "HyperQwen: vLLM patches for Qwen 3.8 27B at 127 tok/s on one 24 GB RTX 3090",
+   "url": "https://x.com/plotarmordev/status/2120297450951057621",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "An Apache-2.0 repo with vLLM patches and a requantized model pipeline that serves Qwen 3.8 27B on a single 24 GB card, with reported 127 tok/s single user at 250 W and about 1,035 tok/s aggregate at 64 concurrent requests, 150k to 262k context.",
+   "kind": "repo",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/syv-ai/HyperQwen"
+   ],
+   "vendor": "syv-ai",
+   "posted_at": "2026-11-10T23:28:00Z",
+   "metrics": {
+    "likes": 6,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 535
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "cortiq gets an experimental CUDA backend: 111.5 vs 80.2 tok/s on an A40 at 4k tokens",
+   "url": "https://x.com/SparkLLM/status/2120348089051648278",
+   "handle": "@SparkLLM",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "A community contributor reports a new CUDA path for the cortiq runtime running the Spark-X2.6-4B file at 111.5 tok/s after 4k tokens versus 80.2 on Vulkan, and 100.7 tok/s at 64k with 8.2 GB peak VRAM. Thread notes it is tested on one A40 and has no speculative decoding.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/XHToken/Spark-X2.6-4B/discussions/34"
+   ],
+   "vendor": "cortiq / Spark-X",
+   "posted_at": "2026-11-11T02:49:00Z",
+   "metrics": {
+    "likes": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 18
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Numbers are author-reported on one A40 and the thread itself says far context beyond 8,192 tokens is approximate and perplexity trails MLX 4-bit.",
+    "source": "https://x.com/SparkLLM/status/2120348092595839229"
+   }
+  },
+  {
+   "title": "Roboflow evals put Gemini 4 Carbon first overall on vision tasks, but slow and costly",
+   "url": "https://x.com/skalskip92/status/2120302386573180942",
+   "handle": "@skalskip92",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Roboflow's vision evals rank Gemini 4 Carbon #1 overall, #1 in long text transcription (99.09%) and text localization (85.21%), #2 in object detection, #4 in JSON extraction. Cost is about $91.89 per 1,000 images at high effort and 81 s per image, the slowest of the field.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://playground.roboflow.com/evals",
+    "https://playground.roboflow.com/evals/ocr",
+    "https://playground.roboflow.com/evals/object-detection"
+   ],
+   "vendor": "Roboflow / Google DeepMind",
+   "posted_at": "2026-11-10T23:47:00Z",
+   "metrics": {
+    "likes": 158,
+    "reposts": 5,
+    "quotes": 3,
+    "replies": 10,
+    "views": 7649
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "RoboDojo-RC: Gemini 4 Carbon scores 54% on Tier 1, first to 100% on three-bowl stacking",
+   "url": "https://x.com/robocurve/status/2120299079406362647",
+   "handle": "@robocurve",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "The RoboCurve benchmark reports Gemini 4 Carbon at 54% on RoboDojo-RC Tier 1, a record among LLMs, and the first model with a 100% success rate on stacking three bowls, based on 120 published runs.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://robocurve.org/all-runs/?leaderboard=gemini-4-carbon"
+   ],
+   "vendor": "RoboCurve",
+   "posted_at": "2026-11-10T23:34:00Z",
+   "metrics": {
+    "likes": 33,
+    "reposts": 2,
+    "quotes": 1,
+    "replies": 1,
+    "views": 3856
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Voice Arena: ElevenLabs Scribe v3 Live tops streaming speech-to-text in Romanian and Indian English",
+   "url": "https://x.com/voicearena_ai/status/2120308747356758463",
+   "handle": "@voicearena_ai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Voice Arena tested Scribe v3 Live on 70+ hours of real phone calls: first on all ten metric splits in Romanian (7.31% semantic WER) and Indian English (2.85%), and a statistical tie in the top four for US English and Brazilian Portuguese.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "ElevenLabs",
+   "posted_at": "2026-11-11T00:12:00Z",
+   "metrics": {
+    "likes": 71,
+    "reposts": 66,
+    "quotes": 0,
+    "replies": 64,
+    "views": 24273
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "fal adds Meshy Rigging: auto-rig humanoid 3D models with finger rigs and multiple animations",
+   "url": "https://x.com/fal/status/2120300527074353462",
+   "handle": "@fal",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Meshy's rigging model is now on fal and turns humanoid 3D models into animation-ready characters, including fingers, with several animations per character and export for Unreal, Unity, Blender and Mixamo.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://fal.ai/models/meshy/rigging",
+    "https://fal.ai/models/meshy/rigging/multi-animation"
+   ],
+   "vendor": "Meshy / fal",
+   "posted_at": "2026-11-10T23:40:00Z",
+   "metrics": {
+    "likes": 49,
+    "reposts": 7,
+    "quotes": 0,
+    "replies": 2,
+    "views": 2821
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 94,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
