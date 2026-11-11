@@ -1,0 +1,221 @@
+{
+ "ran_at": "2026-11-11T19:00:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-11T14:59:00Z",
+ "queries": 6,
+ "calls": 8,
+ "items": [
+  {
+   "title": "Google ships Gemini Decision 1 in the Gemini API: $0.10 per 1M input tokens, 256K context, 1K questions per input, free to try",
+   "url": "https://x.com/OfficialLoganK/status/2120581433639198885",
+   "handle": "@OfficialLoganK",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Google released a multimodal decision model (image, audio, video, PDF in) that answers up to 1,000 questions over one shared input, billed on input tokens only, with a free API tier. An independent index reply puts it at 66, behind Drex Max v1.1 and GLiDE v1.2 at 73.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Google",
+   "posted_at": "2026-11-11T18:16:26Z",
+   "metrics": {
+    "likes": 1727,
+    "reposts": 102,
+    "quotes": 92,
+    "replies": 187,
+    "views": 57929
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers say the effective cost is higher than the headline (about 40 fixed tokens added per question in one user's test) and that Google's comparison table omits stronger specialist decision models.",
+    "source": "https://x.com/Chidam333/status/2120590619290824724"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Cheap-pricing praise and questions about use cases, against complaints about hidden per-question token overhead, a narrow comparison table, and a score of 66 on a third-party index versus 73 for the leaders; one reply flags prompt injection through hidden PDF text.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Praxis-1 from Runway: Apache 2.0 open-weight world action model for robots, 80.0% on SimplerEnv on an unseen robot, now in LeRobot",
+   "url": "https://x.com/LeRobotHF/status/2120534963657322584",
+   "handle": "@LeRobotHF",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "One checkpoint learned from large-scale video adapts to a new robot with light fine-tuning or LoRA; fine-tuned on the RT-1 robot it never saw in training it reports 80.0% on SimplerEnv. Weights, inference and fine-tuning code are open for commercial use and run on NVIDIA H100 to Jetson Thor.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Runway",
+   "posted_at": "2026-11-11T15:11:47Z",
+   "metrics": {
+    "likes": 66,
+    "reposts": 11,
+    "quotes": 1,
+    "replies": 9,
+    "views": 2138
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The 80.0% is Runway's own SimplerEnv result; the model, blog and docs links were in a reply that was not opened.",
+    "source": null
+   }
+  },
+  {
+   "title": "TensorFold 1.2.7: Qwen3.8-27B on Metal reuses long history, follow-up first token falls from about 85s to 0.3s in an M3 Ultra test",
+   "url": "https://x.com/ashxhart/status/2120582302581354690",
+   "handle": "@ashxhart",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A local inference engine release fixes prompt-cache reuse when a client drops earlier reasoning, with same replies in the maintainer's 34k-history test. It also adds Responses API over WebSocket, LightOnOCR-3 image chat on CUDA and cache stats in the dashboard; the same account shows about 300 tok/s decode on an RTX 5090 with Qwen 3.8 nvfp4 and 4 lanes.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-11T18:19:54Z",
+   "metrics": {
+    "likes": 39,
+    "reposts": 3,
+    "quotes": 1,
+    "replies": 4,
+    "views": 1027
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Numbers come from the maintainer's own test on one machine; no independent reproduction seen.",
+    "source": null
+   }
+  },
+  {
+   "title": "Ripple-65B Preview, a 65B dense agentic-coding model with up to 1M context, is available to run locally on Ollama",
+   "url": "https://x.com/RicursiveAI/status/2120566916767236463",
+   "handle": "@RicursiveAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Ricursive's preview model, aimed at agentic coding with up to 1M tokens of context, is now in the Ollama library for local use. No benchmark numbers were given in the posts.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://ollama.com/library/ripple-preview"
+   ],
+   "vendor": "Ricursive Intelligence",
+   "posted_at": "2026-11-11T17:18:45Z",
+   "metrics": {
+    "likes": 19,
+    "reposts": 5,
+    "quotes": 0,
+    "replies": 10,
+    "views": 960
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Preview label and no measurements shown in the posts.",
+    "source": null
+   }
+  },
+  {
+   "title": "Nace AI introduces Drex for Document Processing, claiming first place on its own parsing leaderboard and 38% faster corrections on RealDocBench",
+   "url": "https://x.com/NaceAI/status/2120575235678228632",
+   "handle": "@NaceAI",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "A document parser that checks each extracted block against the page before an agent acts on it, offered as cloud, customer AWS or Azure, or on-prem, with a console and REST API covering 30 file types. Results are the vendor's own leaderboard and benchmark.",
+   "kind": "tool",
+   "evidence": "claim",
+   "links": [
+    "http://console.nace.ai"
+   ],
+   "vendor": "Nace AI",
+   "posted_at": "2026-11-11T17:51:49Z",
+   "metrics": {
+    "likes": 19,
+    "reposts": 2,
+    "quotes": 5,
+    "replies": 5,
+    "views": 1882
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The leaderboard and benchmark are run by the vendor and no independent result was opened.",
+    "source": null
+   }
+  },
+  {
+   "title": "ElevenAgents adds Memory and Routines: agents remember details from calls and run follow-up work like callbacks and texts",
+   "url": "https://x.com/ElevenLabs/status/2120576336938885298",
+   "handle": "@ElevenLabs",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "ElevenLabs announced Memory for its voice agents and Routines that handle work before and after conversations, such as pre-screening an applicant and calling back within minutes. Posts were demo-style with no measurements.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "ElevenLabs",
+   "posted_at": "2026-11-11T17:56:11Z",
+   "metrics": {
+    "likes": 27,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 3,
+    "views": 3153
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Product announcement with a promo video and no technical detail or numbers.",
+    "source": null
+   }
+  },
+  {
+   "title": "fal ChatGPT plugin: generate and edit images and video with GPT Image 2.6, FLUX 3 Max and other models inside ChatGPT",
+   "url": "https://x.com/fal/status/2120576821301223619",
+   "handle": "@fal",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "fal released a plugin so ChatGPT users can call fal-hosted image and video models; its demo thread shows hundreds of keyframes and 26 animated shots assembled into a 60-second commercial.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "fal",
+   "posted_at": "2026-11-11T17:58:07Z",
+   "metrics": {
+    "likes": 70,
+    "reposts": 5,
+    "quotes": 4,
+    "replies": 7,
+    "views": 7042
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Vendor's own demo thread; no independent tests seen.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 86,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}

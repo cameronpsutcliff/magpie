@@ -1,21 +1,21 @@
 {
- "updated_at": "2026-11-11T14:59:00Z",
+ "updated_at": "2026-11-11T19:00:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 62,
+ "calls_used_today": 70,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-11T14:59:00Z",
-  "items": 3,
-  "queries": 7,
-  "deep_reads": 0,
+  "ran_at": "2026-11-11T19:00:00Z",
+  "items": 7,
+  "queries": 6,
+  "deep_reads": 1,
   "rechecks": 0,
-  "flagged": 2,
+  "flagged": 0,
   "saved_in": 0,
   "saved_kept": 0,
   "videos": 0,
-  "security_forwarded": 1,
-  "list_posts_read": 88,
+  "security_forwarded": 0,
+  "list_posts_read": 86,
   "list_pages": 1
  },
  "roster": {
@@ -271,7 +271,8 @@
   "2026-11-10 roster review: @danikkk_wqs failed the AI/dev screen (hype templates, crypto-trading claims) and @Tailscale is infra marketing; both have 2 owner saves, so consider adding @danikkk_wqs to avoid. Owner saves and curated accounts were not auto-retired.",
   "Sweep 14:55Z: official @MiniMax_AI H3-Image post (2120158341229928576) returned not found on lookup minutes after it was quoted, and replies say the Hugging Face weights link is 404, so the item is anchored on the @MiniMax_Code post. No browser, so follows skipped and Community Notes not checked.",
   "2026-11-11: MiniMax H3-Image license reportedly excludes US, EU, UK and Korea (via @plotarmordev); a vendor license term, not an official action, so not kept as a constraint. Owner may want a rule for licenses that region-restrict open weights.",
-  "2026-11-11 roster review: @Tailscale was rejected on 2026-11-10 as mostly marketing, but its last 30 days include Codex Cloud tailnet access, MCP/OAuth apps GA and Aperture skills over MCP, in the owner's stack area, and the owner saved it twice, so it was added as trial. @danikkk_wqs still fails; consider adding it to avoid."
+  "2026-11-11 roster review: @Tailscale was rejected on 2026-11-10 as mostly marketing, but its last 30 days include Codex Cloud tailnet access, MCP/OAuth apps GA and Aperture skills over MCP, in the owner's stack area, and the owner saved it twice, so it was added as trial. @danikkk_wqs still fails; consider adding it to avoid.",
+  "Sweep 19:00Z: all clips on candidate posts were under 60 s (20 to 31 s), so no video analysis. Follows skipped, no browser."
  ],
  "errors": [
   "follows skipped: follow_mode is browser but no browser available this run"
