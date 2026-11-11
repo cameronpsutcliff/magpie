@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-11-11T02:58:00Z",
- "job": "sweep",
+ "updated_at": "2026-11-11T10:25:00Z",
+ "job": "roster",
  "prompt": "v6.1",
  "calls_used_today": 36,
  "notes_via_api": false,
@@ -20,8 +20,8 @@
  },
  "roster": {
   "curated": 223,
-  "trial": 61,
-  "active": 30,
+  "trial": 59,
+  "active": 35,
   "retired": 3
  },
  "follows_this_week": 0,
@@ -270,39 +270,45 @@
   "Roster review 2026-11-09: no other candidate sources were searched (reads limited to 2 of 80); source_leads unchanged. Many trials added 2026-10-20 to 10-26 still have fewer than 2 sweep-file items at 14+ days, so they stay trial.",
   "2026-11-10 roster review: @danikkk_wqs failed the AI/dev screen (hype templates, crypto-trading claims) and @Tailscale is infra marketing; both have 2 owner saves, so consider adding @danikkk_wqs to avoid. Owner saves and curated accounts were not auto-retired.",
   "Sweep 14:55Z: official @MiniMax_AI H3-Image post (2120158341229928576) returned not found on lookup minutes after it was quoted, and replies say the Hugging Face weights link is 404, so the item is anchored on the @MiniMax_Code post. No browser, so follows skipped and Community Notes not checked.",
-  "2026-11-11: MiniMax H3-Image license reportedly excludes US, EU, UK and Korea (via @plotarmordev); a vendor license term, not an official action, so not kept as a constraint. Owner may want a rule for licenses that region-restrict open weights."
+  "2026-11-11: MiniMax H3-Image license reportedly excludes US, EU, UK and Korea (via @plotarmordev); a vendor license term, not an official action, so not kept as a constraint. Owner may want a rule for licenses that region-restrict open weights.",
+  "2026-11-11 roster review: @Tailscale was rejected on 2026-11-10 as mostly marketing, but its last 30 days include Codex Cloud tailnet access, MCP/OAuth apps GA and Aperture skills over MCP, in the owner's stack area, and the owner saved it twice, so it was added as trial. @danikkk_wqs still fails; consider adding it to avoid."
  ],
  "errors": [
   "follows skipped: no browser"
  ],
  "follows_today": 0,
  "last_roster_review": {
-  "ran_at": "2026-11-10T10:30:00Z",
-  "date": "2026-11-10",
-  "reads": 1,
-  "list_writes": 0,
+  "ran_at": "2026-11-11T10:25:00Z",
+  "date": "2026-11-11",
+  "reads": 43,
+  "list_writes": 2,
   "budget": 80,
-  "added": [],
+  "added": [
+   "@Tailscale (owner_saves)",
+   "@PrunaAI"
+  ],
   "promoted": [
-   "@hume_ai",
-   "@ViC305",
-   "@DirhousssiAmine",
-   "@plotarmordev"
+   "@OfficialLoganK",
+   "@XunzhuoLiu",
+   "@googlegemma",
+   "@skalskip92",
+   "@NVIDIAAI"
   ],
   "retired": [],
   "flagged": [
    "@MatthewBerman (owner_saves, kept per owner)",
    "@bcherny",
    "@_catwu",
-   "@trq212"
+   "@trq212 (trial 18 days, no sweep items and no qualifying posts; owner-picked, left unchanged for review)"
   ],
   "rejected": [
-   "@danikkk_wqs (2 owner saves; recent posts are engagement-bait templates and crypto/trading get-rich claims)",
-   "@Tailscale (2 owner saves; mostly networking marketing, not predominantly AI/dev)"
+   "@danikkk_wqs (2 owner saves; 2026-11-04 to 11-11 posts are repo-roundup templates plus crypto-trading get-rich claims)",
+   "@RoundtableSpace (already on avoid)",
+   "@MiaAI_lab (mostly opinion and hype posts, few artifacts)"
   ],
   "drafts": 0,
   "drafts_file": null,
-  "pruned": 4,
+  "pruned": 7,
   "source_leads_added": 0
  },
  "x_list": {
@@ -312,7 +318,7 @@
   "owner": "@CameronSutcliff",
   "owner_id": "1521986356721123328",
   "private": true,
-  "member_count": 91,
+  "member_count": 93,
   "members": "every trial/active entry in inbox/x-roster.json (x_user_id, on_list)",
   "created_at": "2026-10-24T04:35:00Z"
  },

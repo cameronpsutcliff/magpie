@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-11T00:00:30Z",
+ "updated_at": "2026-11-11T10:25:00Z",
  "accounts": [
   {
    "handle": "@thsottiaux",
@@ -103,7 +103,7 @@
    "affiliation": "Google",
    "why": "Gemini product lead; first-hand on Gemini API and model releases.",
    "signal_to_noise": 3,
-   "status": "trial",
+   "status": "active",
    "added_on": "2026-10-20",
    "evidence": [
     "https://x.com/OfficialLoganK/status/2110038940841545827",
@@ -1095,7 +1095,7 @@
    "affiliation": "vLLM Semantic Router",
    "why": "First-hand on vLLM Semantic Router open decision and routing models (d3, d3-turbo, d3-ultra) with Jev Decision Index scores and latency numbers.",
    "signal_to_noise": 3,
-   "status": "trial",
+   "status": "active",
    "added_on": "2026-10-28",
    "evidence": [
     "https://x.com/XunzhuoLiu/status/2114915380926017591",
@@ -1114,7 +1114,7 @@
    "affiliation": "Google DeepMind",
    "why": "Official Gemma account: open model releases, EmbeddingGemma 2 on-device ports and measured inference speedups.",
    "signal_to_noise": 3,
-   "status": "trial",
+   "status": "active",
    "added_on": "2026-10-28",
    "evidence": [
     "https://x.com/googlegemma/status/2115150306032193954",
@@ -1133,7 +1133,7 @@
    "affiliation": "Roboflow",
    "why": "Roboflow open-source lead; hands-on vision-model benchmarks with measured accuracy, speed and cost (GPT-6.1 Terra vs Astra, pose estimation).",
    "signal_to_noise": 3,
-   "status": "trial",
+   "status": "active",
    "added_on": "2026-10-28",
    "evidence": [
     "https://x.com/skalskip92/status/2115163487177674991",
@@ -1151,7 +1151,7 @@
    "affiliation": "NVIDIA",
    "why": "Owner-requested watch (2026-10-28). NVIDIA's official AI account: model, inference and GPU platform releases. Also curated in config (signal_to_noise 3); added here as an owner pick so it is a List member. Many event/keynote promo posts, so filter promotion in sweeps.",
    "signal_to_noise": 3,
-   "status": "trial",
+   "status": "active",
    "added_on": "2026-10-28",
    "evidence": [
     "https://x.com/NVIDIAAI/status/2113657112408785153"
@@ -1811,6 +1811,45 @@
    "retired_reason": null,
    "owner_requested": true,
    "x_user_id": "12819682",
+   "on_list": true
+  },
+  {
+   "handle": "@Tailscale",
+   "name": "Tailscale",
+   "group": "devtools",
+   "affiliation": "Tailscale",
+   "why": "Official account for private-network infrastructure now aimed at agents: Codex Cloud on a tailnet, private MCP servers via OAuth apps (GA), Aperture skills over MCP. Two owner saves (2026-10-07, 2026-11-09).",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-11",
+   "evidence": [
+    "https://x.com/Tailscale/status/2107836671605551217",
+    "https://x.com/Tailscale/status/2119892081581682974",
+    "https://x.com/Tailscale/status/2120173484202410393"
+   ],
+   "last_qualifying_post": "2026-11-10",
+   "retired_reason": null,
+   "source": "owner_saves",
+   "x_user_id": "1106616565573844992",
+   "on_list": true
+  },
+  {
+   "handle": "@PrunaAI",
+   "name": "Pruna AI",
+   "group": "opensource",
+   "affiliation": "Pruna AI",
+   "why": "First-hand open-source model optimization and image/video generation releases with weights, human-rating numbers and library releases (P-H3-Image, P-Video-2-Pro-Replace, Pruna v0.3.5).",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-11",
+   "evidence": [
+    "https://x.com/PrunaAI/status/2117663564487926043",
+    "https://x.com/PrunaAI/status/2118721070970683768",
+    "https://x.com/PrunaAI/status/2120170763483259046"
+   ],
+   "last_qualifying_post": "2026-11-10",
+   "retired_reason": null,
+   "x_user_id": "1647142216857419776",
    "on_list": true
   }
  ],
