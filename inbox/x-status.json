@@ -1,21 +1,21 @@
 {
- "updated_at": "2026-11-11T11:04:00Z",
+ "updated_at": "2026-11-11T14:59:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 53,
+ "calls_used_today": 62,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-11T11:04:00Z",
-  "items": 7,
-  "queries": 12,
+  "ran_at": "2026-11-11T14:59:00Z",
+  "items": 3,
+  "queries": 7,
   "deep_reads": 0,
   "rechecks": 0,
-  "flagged": 3,
+  "flagged": 2,
   "saved_in": 0,
   "saved_kept": 0,
   "videos": 0,
-  "security_forwarded": 0,
-  "list_posts_read": 89,
+  "security_forwarded": 1,
+  "list_posts_read": 88,
   "list_pages": 1
  },
  "roster": {
@@ -274,7 +274,7 @@
   "2026-11-11 roster review: @Tailscale was rejected on 2026-11-10 as mostly marketing, but its last 30 days include Codex Cloud tailnet access, MCP/OAuth apps GA and Aperture skills over MCP, in the owner's stack area, and the owner saved it twice, so it was added as trial. @danikkk_wqs still fails; consider adding it to avoid."
  ],
  "errors": [
-  "follows skipped: follow_mode is browser but no browser used this run"
+  "follows skipped: follow_mode is browser but no browser available this run"
  ],
  "follows_today": 0,
  "last_roster_review": {

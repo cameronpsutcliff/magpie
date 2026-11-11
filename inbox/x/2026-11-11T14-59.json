@@ -1,0 +1,115 @@
+{
+ "ran_at": "2026-11-11T14:59:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-11T11:04:00Z",
+ "queries": 7,
+ "calls": 9,
+ "items": [
+  {
+   "title": "Nex-N2.6: open-weight 321B MoE agentic model (built on GLM-5.3-Flash) with 83.0 OSWorld and 84.1 Terminal-Bench 2.1 in the lab's own table",
+   "url": "https://x.com/NexEcosystem/status/2120488867027636311",
+   "handle": "@NexEcosystem",
+   "group": "labs",
+   "origin": "discovery",
+   "summary": "Shanghai Innovation Institute's Nex team released weights, code and API access for a multimodal agent model that reports reasoning repetition down from 16.0% to 1.6% and 100% valid tool selection over 956 contexts. A third-party breakdown notes that on the lab's own table Terminal-Bench is flat against the base and AutomationBench drops from 48.8 to 45.7.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/nex-agi/Nex-N2.6",
+    "https://github.com/sii-nex/Nex-N2.6",
+    "https://openrouter.ai/nex-agi/nex-n2.6"
+   ],
+   "vendor": "Shanghai Innovation Institute (Nex-AGI)",
+   "posted_at": "2026-11-11T12:08:37Z",
+   "metrics": {
+    "likes": 287,
+    "reposts": 39,
+    "quotes": 8,
+    "replies": 11,
+    "views": 13310
+   },
+   "confirmed_by": [
+    "@victormustar"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "All numbers are the lab's self-reported table; a third-party read shows mixed results versus the base model (flat Terminal-Bench, lower AutomationBench).",
+    "source": "https://x.com/VeryDeepAI/status/2120526648751641035"
+   }
+  },
+  {
+   "title": "Lazarus: reprogramming fewer than 10 dormant neurons backdoors an LLM agent with no training, and a cosine-similarity weight scan against the base model flags it",
+   "url": "https://x.com/DimitrisPapail/status/2120245027804705121",
+   "handle": "@DimitrisPapail",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "A Microsoft-collaborated paper and write-up shows dormant MLP neurons in SwiGLU models can be rewired into trigger detectors that force a shell command (for example on a date) while benchmarks stay unchanged. It reports detection by diffing against the original weights and recommends provenance checks and harnesses that do not blindly execute model output.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2610.37741",
+    "https://www.microsoft.com/en-us/security/blog/2026/11/10/detecting-sleeper-agents-hiding-in-ai-model-neurons/"
+   ],
+   "vendor": "Microsoft / academic authors",
+   "posted_at": "2026-11-10T19:59:41Z",
+   "metrics": {
+    "likes": 271,
+    "reposts": 61,
+    "quotes": 44,
+    "replies": 33,
+    "views": 68493
+   },
+   "confirmed_by": [
+    "@plotarmordev"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Proxima Fusion releases a dataset of 177k optimized stellarator coilsets with a live leaderboard on the Hugging Face Hub",
+   "url": "https://x.com/EmmaScharfmann/status/2120515268291997776",
+   "handle": "@EmmaScharfmann",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "A dataset and open leaderboard where models generate stellarator coils in a single forward pass from a plasma shape and engineering constraints, giving ML researchers a benchmark in fusion design.",
+   "kind": "dataset",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Proxima Fusion",
+   "posted_at": "2026-11-11T13:53:31Z",
+   "metrics": {
+    "likes": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 146
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Primary dataset link not opened; announcement relayed by a Hugging Face staffer.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 88,
+ "list_pages": 1,
+ "security_forwarded": [
+  {
+   "url": "https://x.com/DimitrisPapail/status/2120245027804705121",
+   "matched": "always_forward: agent tooling / supply chain (weight-backdoored models driving coding-agent harnesses; no stack component named, no patch)"
+  }
+ ],
+ "security_na": []
+}
