@@ -1,0 +1,234 @@
+{
+ "ran_at": "2026-11-11T11:04:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-11T02:58:00Z",
+ "queries": 12,
+ "calls": 17,
+ "items": [
+  {
+   "title": "ExecuTorch WebGPU: export a PyTorch model once and run the same .pte file in Chrome and Safari",
+   "url": "https://x.com/PyTorch/status/2120286712970854790",
+   "handle": "@PyTorch",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "ExecuTorch gets a WebGPU backend, so a model exported with torch.export runs locally in the browser tab with no conversion to another framework. Listed models include Llama 3.2, Qwen3, Gemma 3, SAM 2, Whisper and Real-ESRGAN, with on-device LoRA fine-tuning.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://pytorch.org/blog/executorch-webgpu-pytorch-models-on-the-gpu-in-the-browser/",
+    "https://executorch.ai/playground"
+   ],
+   "vendor": "PyTorch / ExecuTorch",
+   "posted_at": "2026-11-10T22:45:20Z",
+   "metrics": {
+    "likes": 54,
+    "reposts": 9,
+    "quotes": 0,
+    "replies": 5,
+    "views": 7010
+   },
+   "confirmed_by": [
+    "@vanstriendaniel"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "vLLM upgrades encoder disaggregation (EPD): 44-47% lower P90 TTFT on a DeepSeek V4.1 Flash multimodal benchmark",
+   "url": "https://x.com/vllm_project/status/2120457435152613455",
+   "handle": "@vllm_project",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "vLLM's latest EPD work (metadata-only multimodal requests, Mooncake/NIXL embedding transfer, cross-encoder caching, router integration) reports 44-47% lower P90 time to first token and 6.6-9.5% higher token throughput per GPU, counting all encoder GPUs, at concurrency 64-128 on multi-page document inputs.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://vllm.ai/blog/2026-11-11-encoder-disaggregation-epd"
+   ],
+   "vendor": "vLLM",
+   "posted_at": "2026-11-11T10:03:43Z",
+   "metrics": {
+    "likes": 20,
+    "reposts": 5,
+    "quotes": 2,
+    "replies": 5,
+    "views": 2065
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "EgoForce dataset on Hugging Face: about 2,000 hours of egocentric video and hand motion paired with calibrated tactile force",
+   "url": "https://x.com/ZhiCao01756604/status/2120269804644835566",
+   "handle": "@ZhiCao01756604",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "First subset of EgoForce is public: 40K episodes, 1,000 tasks and 1,000 demonstrators, aimed at force-aware human-to-robot transfer and dexterous manipulation. Paper and project page are linked, with more data to be uploaded.",
+   "kind": "dataset",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/datasets/zhicao/EgoForce",
+    "https://arxiv.org/abs/2610.19155",
+    "https://fact-1-0.github.io/"
+   ],
+   "vendor": "EgoForce authors",
+   "posted_at": "2026-11-10T21:38:08Z",
+   "metrics": {
+    "likes": 25,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 1,
+    "views": 7345
+   },
+   "confirmed_by": [
+    "@yining_hong"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Vals AI adds Watershed, a realistic AWS cloud scenario, to its CyberOffense eval; Opus 5.5 leads at 77.1% average",
+   "url": "https://x.com/ValsAI/status/2120371417674117608",
+   "handle": "@ValsAI",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Watershed simulates a Kubernetes cluster, ECS hosts and real cloud identities and policies. Across Nova, Lighthouse and Watershed, Opus 5.5 averages 77.1% and GPT-6 Sol Daybreak 65.9%; on Watershed no model earned all nine stages (Opus 5.5 averaged 55.7 of 100).",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/ValsAI/status/2120371417674117608"
+   ],
+   "vendor": "Vals AI",
+   "posted_at": "2026-11-11T04:21:55Z",
+   "metrics": {
+    "likes": 103,
+    "reposts": 13,
+    "quotes": 8,
+    "replies": 8,
+    "views": 11289
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "MiniMax H3 Image: 16 reference images in, 4K output in about 10 seconds, live on fal and Runware",
+   "url": "https://x.com/MiniMax_AI/status/2120361550825541815",
+   "handle": "@MiniMax_AI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "MiniMax's image model built on H3 supports edits with up to 16 references and up to 20 MP output, with a Highspeed variant at 2x speed, available through fal and Runware APIs on day 0. Runware describes it as open-weight.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://x.com/runware/status/2120175755799732346"
+   ],
+   "vendor": "MiniMax",
+   "posted_at": "2026-11-11T03:42:00Z",
+   "metrics": {
+    "likes": 81,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@plotarmordev"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "A roster account says the Hugging Face license covers 'worldwide, excluding' the US, EU, UK and Korea, so the open-weight claim has regional limits; not verified against the license text.",
+    "source": "https://x.com/plotarmordev/status/2120318878819713371"
+   }
+  },
+  {
+   "title": "Ornith 1.5 122B at 4-bit reported going from 91 to 242 tok/s on an M5 Ultra with a DFlash2 drafter, output identical",
+   "url": "https://x.com/plotarmordev/status/2120471427602096253",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A single-user test of speculative decoding with a DFlash2 drafter on Mac, reported token-for-token identical output, with the gain dropping to about 20% at four concurrent chats. No repo link or method shown; Mac support credited to two other builders.",
+   "kind": "technique",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "DFlash2 / Ornith",
+   "posted_at": "2026-11-11T10:59:19Z",
+   "metrics": {
+    "likes": 3,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 64
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single self-run test with no code, config or settings shown; posted minutes before this sweep.",
+    "source": null
+   }
+  },
+  {
+   "title": "NVIDIA Alpamayo 2 Edge reportedly uses DFlash 2 to speed up in-car reasoning",
+   "url": "https://x.com/zhijianliu/status/2120387797022576716",
+   "handle": "@zhijianliu",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A DFlash 2 author says NVIDIA DRIVE's Alpamayo 2 Edge uses it for faster on-vehicle reasoning, and points to the FlashDrive CoRL 2026 paper for going faster still. No numbers in the post.",
+   "kind": "other",
+   "evidence": "claim",
+   "links": [
+    "https://twitter.com/768149629263163392/status/2120185515563749581"
+   ],
+   "vendor": "DFlash / NVIDIA DRIVE",
+   "posted_at": "2026-11-11T05:27:00Z",
+   "metrics": {
+    "likes": 46,
+    "reposts": 5,
+    "quotes": 1,
+    "replies": 2,
+    "views": 2977
+   },
+   "confirmed_by": [
+    "@inco_ai"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No latency or accuracy figures given; the claim comes from the DFlash side, not an NVIDIA spec.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 89,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
