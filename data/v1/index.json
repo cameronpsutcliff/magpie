@@ -3,81 +3,83 @@
  "days": [
   {
    "date": "2026-11-11",
-   "headline": "Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF, MiniMax-H3-Image, VoiceStudio, and more",
-   "events": 290,
-   "sources": 538,
-   "enriched": false,
+   "headline": "Ship Gemini 4 Carbon, Run PyTorch in Browsers, Prove Code in Lean, and More",
+   "events": 476,
+   "sources": 567,
+   "enriched": true,
    "top": [
     {
-     "id": "e197a9917ccd",
-     "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
-     "impact": 5,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-11-e197a9917ccd"
-    },
-    {
      "id": "18d37aed6773",
-     "title": "MiniMaxAI/MiniMax-H3-Image",
-     "impact": 3,
+     "title": "MiniMax H3-Image open weights on Hugging Face",
+     "impact": 4,
      "vendor": "MiniMax",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-11-18d37aed6773"
     },
     {
-     "id": "4439bb6ce3b7",
-     "title": "debpalash/VoiceStudio",
-     "impact": 4,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-11-4439bb6ce3b7"
+     "id": "bf76c9aceb7c",
+     "title": "Gemini 4 Carbon available to developers and consumers",
+     "impact": 5,
+     "vendor": "Google",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-11-bf76c9aceb7c"
     },
     {
-     "id": "22a242df1825",
-     "title": "Comfy-Org/MiniMax-H3-Image",
+     "id": "217329d826a2",
+     "title": "Claude adds Whiteboards, Sheets and Data",
+     "impact": 4,
+     "vendor": "Anthropic",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-11-217329d826a2"
+    },
+    {
+     "id": "3b42e6b1b4a9",
+     "title": "ExecuTorch WebGPU runs exported PyTorch models in browsers",
+     "impact": 4,
+     "vendor": "PyTorch / ExecuTorch",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-11-3b42e6b1b4a9"
+    },
+    {
+     "id": "da5dbbc267d0",
+     "title": "Google Chrome guidance moves coding agents onto modern web primitives",
      "impact": 3,
-     "vendor": "ComfyUI",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-11-22a242df1825"
-    },
-    {
-     "id": "df63423f0d0a",
-     "title": "addyosmani/agent-skills",
-     "impact": 4,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-11-df63423f0d0a"
+     "vendor": "Google",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-11-da5dbbc267d0"
     }
    ],
    "vendors": [
     "Open source",
     "Anthropic",
+    "NVIDIA",
     "Google",
     "OpenAI",
-    "AWS",
-    "NVIDIA"
+    "AWS"
    ],
    "topics": {
-    "models": 88,
-    "coding": 87,
-    "agents": 84,
-    "multimodal": 66,
-    "infra": 36,
-    "mcp": 35,
-    "local": 27,
-    "evals": 26,
-    "memory": 20,
-    "reverse": 17,
-    "security": 9,
-    "research": 8,
-    "robotics": 7
+    "agents": 143,
+    "models": 133,
+    "coding": 119,
+    "multimodal": 83,
+    "infra": 56,
+    "mcp": 42,
+    "evals": 40,
+    "local": 38,
+    "memory": 28,
+    "security": 22,
+    "reverse": 20,
+    "research": 15,
+    "robotics": 9
    },
    "kinds": {
+    "video": 119,
+    "social": 109,
     "blog": 47,
-    "newsletter": 41,
-    "social": 39,
-    "repo": 36,
-    "model": 30,
+    "newsletter": 43,
+    "repo": 34,
     "changelog": 30,
-    "community": 29,
+    "model": 29,
+    "community": 28,
     "space": 20,
-    "news": 18
-   }
+    "news": 17
+   },
+   "threats": []
   },
   {
    "date": "2026-11-10",
