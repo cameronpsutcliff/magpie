@@ -2,6 +2,84 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-11-11",
+   "headline": "Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF, MiniMax-H3-Image, VoiceStudio, and more",
+   "events": 290,
+   "sources": 538,
+   "enriched": false,
+   "top": [
+    {
+     "id": "e197a9917ccd",
+     "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
+     "impact": 5,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-11-e197a9917ccd"
+    },
+    {
+     "id": "18d37aed6773",
+     "title": "MiniMaxAI/MiniMax-H3-Image",
+     "impact": 3,
+     "vendor": "MiniMax",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-11-18d37aed6773"
+    },
+    {
+     "id": "4439bb6ce3b7",
+     "title": "debpalash/VoiceStudio",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-11-4439bb6ce3b7"
+    },
+    {
+     "id": "22a242df1825",
+     "title": "Comfy-Org/MiniMax-H3-Image",
+     "impact": 3,
+     "vendor": "ComfyUI",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-11-22a242df1825"
+    },
+    {
+     "id": "df63423f0d0a",
+     "title": "addyosmani/agent-skills",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-11-df63423f0d0a"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Anthropic",
+    "Google",
+    "OpenAI",
+    "AWS",
+    "NVIDIA"
+   ],
+   "topics": {
+    "models": 88,
+    "coding": 87,
+    "agents": 84,
+    "multimodal": 66,
+    "infra": 36,
+    "mcp": 35,
+    "local": 27,
+    "evals": 26,
+    "memory": 20,
+    "reverse": 17,
+    "security": 9,
+    "research": 8,
+    "robotics": 7
+   },
+   "kinds": {
+    "blog": 47,
+    "newsletter": 41,
+    "social": 39,
+    "repo": 36,
+    "model": 30,
+    "changelog": 30,
+    "community": 29,
+    "space": 20,
+    "news": 18
+   }
+  },
+  {
    "date": "2026-11-10",
    "headline": "Code with new models, clone voices on phones, automate homes and more",
    "events": 429,
@@ -4057,5 +4135,5 @@
    }
   }
  ],
- "latest": "2026-11-10"
+ "latest": "2026-11-11"
 }

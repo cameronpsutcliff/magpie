@@ -13,6 +13,27 @@
  ],
  "items": [
   {
+   "id": "2026-11-11",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-11-11",
+   "title": "Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF, MiniMax-H3-Image, VoiceStudio, and more",
+   "summary": "290 capability events from 127 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words.",
+   "content_html": "<p>290 capability events from 127 sources. Ranked by code; the editor did not run this edition, so copy is the sources&#x27; own words.</p><ol><li><a href=\"https://huggingface.co/DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF\">DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-11-e197a9917ccd\">on Magpie</a>)</li><li><a href=\"https://huggingface.co/MiniMaxAI/MiniMax-H3-Image\">MiniMaxAI/MiniMax-H3-Image</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-11-18d37aed6773\">on Magpie</a>)</li><li><a href=\"https://github.com/debpalash/VoiceStudio\">debpalash/VoiceStudio</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-11-4439bb6ce3b7\">on Magpie</a>)</li><li><a href=\"https://huggingface.co/Comfy-Org/MiniMax-H3-Image\">Comfy-Org/MiniMax-H3-Image</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-11-22a242df1825\">on Magpie</a>)</li><li><a href=\"https://github.com/addyosmani/agent-skills\">addyosmani/agent-skills</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-11-df63423f0d0a\">on Magpie</a>)</li></ol><p><strong>Possibilities:</strong> No new possibility today. Latest: Legacy software owners can commission replacement acceptance tests before rewriting undocumented applications (2026-11-10)</p><p><strong>Worth watching:</strong> No new video pick today. Latest: 60% of Our Data PRs Now Merge With No Human Review - Chetas Joshi, Robinhood (2026-11-10)</p><p><strong>Constraints:</strong> No new constraint today. Latest: DHS order bars DeepSeek products from federal civilian agencies (2026-10-20)</p><p><strong>Threats:</strong> No new threat today. Widest reach still open: TWCA Registration Authority server accessed without authorization (medium, 2026-10-29)</p>",
+   "content_text": "290 capability events from 127 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words. DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF MiniMaxAI/MiniMax-H3-Image debpalash/VoiceStudio Comfy-Org/MiniMax-H3-Image addyosmani/agent-skills",
+   "date_published": "2026-11-11T11:14:19Z",
+   "tags": [
+    "agents",
+    "coding",
+    "local",
+    "mcp",
+    "multimodal"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-11-11.json",
+    "backfilled": false,
+    "capabilities": 290
+   }
+  },
+  {
    "id": "2026-11-10",
    "url": "https://www.cameronsutcliff.com/magpie/2026-11-10",
    "title": "Code with new models, clone voices on phones, automate homes and more",
@@ -682,30 +703,6 @@
     "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-12.json",
     "backfilled": true,
     "capabilities": 139
-   }
-  },
-  {
-   "id": "2026-10-11",
-   "url": "https://www.cameronsutcliff.com/magpie/2026-10-11",
-   "title": "Decompiling games, running agents free, gating agent access, and more",
-   "summary": "Most of today's items are agent tooling and infrastructure, with one large write-up on agents decompiling a game. Several candidates are old projects or news with no new capability, so the day is thin.",
-   "content_html": "<p>Most of today&#x27;s items are agent tooling and infrastructure, with one large write-up on agents decompiling a game. Several candidates are old projects or news with no new capability, so the day is thin.</p><ol><li><a href=\"https://momo5502.com/posts/2026-10-09-game-decompilation/\">AI agents decompile a first-person shooter</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-11-6448a080e87c\">on Magpie</a>): You can point AI agents at a compiled game and have them work toward recovering its source over a very long run.</li><li><a href=\"https://github.com/casdoor/casdoor\">Casdoor adds identity and gateway for agents and MCP</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-11-18620704ad4b\">on Magpie</a>): You can put one open-source auth server in front of LLMs, MCP servers and agents, using standards such as OAuth, OIDC and SAML.</li><li><a href=\"https://github.com/microsoft/TRELLIS.2\">Microsoft TRELLIS.2 for compact 3D generation</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-11-b48bbb494698\">on Magpie</a>): You can generate 3D assets using native, compact structured latents.</li><li><a href=\"https://github.com/huggingface/transformers\">Transformers ships v5.18 and v5.19 releases</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-11-663b118a946f\">on Magpie</a>): You can load newer model definitions for text, vision, audio and multimodal work through the updated library.</li><li><a href=\"https://github.com/Robbyant/lingbot-map\">LingBot-Map streams 3D reconstruction from video</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-11-39718df61fac\">on Magpie</a>): You can reconstruct 3D geometry in a streaming fashion using a geometric context transformer.</li></ol>",
-   "content_text": "Most of today's items are agent tooling and infrastructure, with one large write-up on agents decompiling a game. Several candidates are old projects or news with no new capability, so the day is thin. AI agents decompile a first-person shooter Casdoor adds identity and gateway for agents and MCP Microsoft TRELLIS.2 for compact 3D generation Transformers ships v5.18 and v5.19 releases LingBot-Map streams 3D reconstruction from video",
-   "date_published": "2026-10-20T15:28:11Z",
-   "tags": [
-    "agents",
-    "infra",
-    "mcp",
-    "models",
-    "multimodal",
-    "research",
-    "reverse",
-    "security"
-   ],
-   "_magpie": {
-    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-11.json",
-    "backfilled": true,
-    "capabilities": 36
    }
   }
  ]
