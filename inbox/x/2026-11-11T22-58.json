@@ -1,0 +1,235 @@
+{
+ "ran_at": "2026-11-11T22:58:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-11T19:00:00Z",
+ "queries": 8,
+ "calls": 8,
+ "items": [
+  {
+   "title": "NVIDIA Deja View: a 117M-parameter looped-transformer model for multi-view 3D geometry and camera poses, matches or beats models up to 10x larger on five benchmarks",
+   "url": "https://x.com/NVIDIAAI/status/2120617173286883692",
+   "handle": "@NVIDIAAI",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "A single transformer block looped a chosen number of times turns photos from different angles into 3D geometry and camera positions; the loop count can be dialed to fit a compute budget. Paper (NeurIPS 2026 oral) and code are linked.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [
+    "http://research.nvidia.com/labs/dvl/projects/dvlt"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-11-11T20:38:27Z",
+   "metrics": {
+    "likes": 279,
+    "reposts": 30,
+    "quotes": 5,
+    "replies": 23,
+    "views": 14393
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers ask for accuracy-versus-FLOPs curves, since looping saves parameters but not compute, and for results on low-overlap views; no one reports reproducing it yet.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Mostly short praise for the size result plus technical questions on FLOPs, loop-count degradation and low-overlap scenes; no one reports running it.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Iris-Z: open 9B and 32B image model that generates images and depth together and beats task-specific depth models such as MoGe-3",
+   "url": "https://x.com/speridlabs/status/2120594326556443096",
+   "handle": "@speridlabs",
+   "group": "opensource",
+   "origin": "discovery",
+   "summary": "One backbone generates images plus depth, estimates depth and conditions generation on depth. Weights, code and a demo are released under Apache 2.0.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://t.co/eGUol6DuMP"
+   ],
+   "vendor": "Sperid Labs",
+   "posted_at": "2026-11-11T19:07:40Z",
+   "metrics": {
+    "likes": 216,
+    "reposts": 42,
+    "quotes": 17,
+    "replies": 16,
+    "views": 12738
+   },
+   "confirmed_by": [
+    "@victormustar"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "RoboDojo-RC: on real robot tasks the robot-specific Dream-1 scores 59% vs 57% for Fable 5.2, at about 40x lower cost per trial",
+   "url": "https://x.com/robocurve/status/2120620646703013996",
+   "handle": "@robocurve",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A real-robot benchmark thread across 120 Fable 5.2 runs with transcripts and videos: Dream-1 averages $0.15 and 1.4 minutes per trial against $5.93 and 4.5 minutes, while LLMs are reported gaining about 10 points a month on Tier 1.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/robocurve/status/2120620646703013996"
+   ],
+   "vendor": "Robocurve",
+   "posted_at": "2026-11-11T20:52:00Z",
+   "metrics": {
+    "likes": 35,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Evaluators note Fable 5.2's API cannot drop earlier images, so it carried every image in context; the trend extrapolation to early 2027 is a projection.",
+    "source": null
+   }
+  },
+  {
+   "title": "vstack and veriserve: a method to verify coding-agent-written LLM inference engines, which surfaced 3 classes of RDMA and KV-cache bugs and 6 proposed fixes in production engines",
+   "url": "https://x.com/haoailab/status/2120595980659917024",
+   "handle": "@haoailab",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Pins specs by hash and checks model fidelity so coding agents cannot weaken verifiers; veriserve tracks physical KV pages with versioned tickets so a failed RDMA transfer cannot mix one user's cache into another's response.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/haoailab/status/2120595980659917024"
+   ],
+   "vendor": "Hao AI Lab",
+   "posted_at": "2026-11-11T19:14:00Z",
+   "metrics": {
+    "likes": 90,
+    "reposts": 21,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Blog and code links were not opened by the sweep; counts of bugs are the lab's own.",
+    "source": null
+   }
+  },
+  {
+   "title": "RoboCap-10k: 10,000 hours of open egocentric work data with 3D head and hand tracking, released on Hugging Face via LeRobot",
+   "url": "https://x.com/LeRobotHF/status/2120603414174503032",
+   "handle": "@LeRobotHF",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Covers 21 industries across 5 continents with 619 paid real work tasks recorded on 6-camera, dual-IMU hardware, from GroundedSI.",
+   "kind": "dataset",
+   "evidence": "artifact",
+   "links": [
+    "https://twitter.com/GroundedSI/status/2120590450092363966"
+   ],
+   "vendor": "GroundedSI",
+   "posted_at": "2026-11-11T19:43:00Z",
+   "metrics": {
+    "likes": 48,
+    "reposts": 7,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Letta adds Meta Muse Ember to its FrontierMemory leaderboard: similar to Muse Wonder at a fraction of the cost for agent self-improvement through dreaming",
+   "url": "https://x.com/Letta_AI/status/2120609001880846696",
+   "handle": "@Letta_AI",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Leaderboard run of small models: Haiku 5.5 is best of the small ones and near Opus 5.5 quality at under a third of the cost per dream, GPT-6 Luna trails.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/Letta_AI/status/2120609001880846696"
+   ],
+   "vendor": "Letta",
+   "posted_at": "2026-11-11T20:05:00Z",
+   "metrics": {
+    "likes": 10,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Leaderboard is run by the vendor on its own benchmark.",
+    "source": null
+   }
+  },
+  {
+   "title": "Cupola: coding agents on a Mac (Claude Code, Codex, T3 Code, OpenCode, Cursor) show up as chats on an iPhone, with live screen view over Wi-Fi and Tailscale",
+   "url": "https://x.com/saimunshahee/status/2120588064510619873",
+   "handle": "@saimunshahee",
+   "group": "builders",
+   "origin": "discovery",
+   "summary": "Lets a user reply to agents, approve their requests and watch the Mac screen from a phone; built on trycua.",
+   "kind": "tool",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/saimunshahee/status/2120588064510619873"
+   ],
+   "vendor": "Cupola",
+   "posted_at": "2026-11-11T18:42:47Z",
+   "metrics": {
+    "likes": 3,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 4,
+    "views": 373
+   },
+   "confirmed_by": [
+    "@trycua"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No repo or download link seen in the post text; very low engagement so far.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 119,
+ "list_pages": 2,
+ "security_forwarded": [],
+ "security_na": []
+}
