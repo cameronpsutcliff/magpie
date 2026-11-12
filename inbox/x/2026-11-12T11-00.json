@@ -1,0 +1,248 @@
+{
+ "ran_at": "2026-11-12T11:00:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-12T02:57:00Z",
+ "queries": 7,
+ "calls": 7,
+ "items": [
+  {
+   "title": "WeirdML v2 legacy dataset released: iteration-level results for 162 model variants on 17 tasks, with a data explorer",
+   "url": "https://x.com/htihle/status/2120823987718738171",
+   "handle": "@htihle",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "The WeirdML author published the full 8 MB legacy v2 dataset with per-iteration data for 162 model variants (GPT-4 through Fable 5.1) on 17 tasks, plus an explorer page. Official runs move to v3.",
+   "kind": "dataset",
+   "evidence": "artifact",
+   "links": [
+    "https://htihle.github.io/weirdml_v2.html",
+    "https://htihle.github.io/weirdml.html"
+   ],
+   "vendor": "WeirdML",
+   "posted_at": "2026-11-12T10:20:16Z",
+   "metrics": {
+    "likes": 10,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 3,
+    "views": 447
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "LAION releases the CLAP2 audio dataset: over 1M hours and 365M clips from YouTube, CC and 300+ academic sets",
+   "url": "https://x.com/lhoestq/status/2120814169322586600",
+   "handle": "@lhoestq",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A Hugging Face engineer announced the LAION-Audio-XL dataset behind CLAP2, with more than a million hours of audio and 365M clips curated from web and academic collections, for training audio-language models.",
+   "kind": "dataset",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/datasets/laion/laion-audio-xl"
+   ],
+   "vendor": "LAION",
+   "posted_at": "2026-11-12T09:41:15Z",
+   "metrics": {
+    "likes": 8,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@EricBezzam"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Flash ALOHA: robot learns dynamic, precise tasks at near human speed from 50 demonstrations, said to be fully open source",
+   "url": "https://x.com/JohnHYao/status/2120719263992565828",
+   "handle": "@JohnHYao",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A Stanford team (with Chelsea Finn) reports Flash ALOHA, which learns fast manipulation tasks from only 50 demonstrations via kinesthetic teaching, and says all code is open sourced. The post carries a video and no repo link was visible.",
+   "kind": "paper",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Stanford (Finn lab)",
+   "posted_at": "2026-11-12T03:24:08Z",
+   "metrics": {
+    "likes": 302,
+    "reposts": 29,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@Thom_Wolf"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No repo or paper link in the post itself, so the open-source claim and the 50-demo result could not be checked here.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Replies are enthusiastic about 50 demos reaching near human speed; the authors answered a question on trajectory replay mismatch by pointing to a tuning guide on their GitHub. A few asked about hardware and safety around people.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Nanbeige4.3-33B open weights reported ahead of Claude Opus 5 (max) on AutomationBench, 54.2 vs 50.3",
+   "url": "https://x.com/paperswithcodee/status/2120793358738092504",
+   "handle": "@paperswithcodee",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A leaderboard account reports Nanbeige4.3-33B, Apache 2.0 open weights, scoring 54.2 on AutomationBench against 50.3 for Claude Opus 5 (max), and 52.6 vs 52.2 over Kimi K2.6 on SciCode, trailing only four open models of 428B or more.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Nanbeige",
+   "posted_at": "2026-11-12T08:18:33Z",
+   "metrics": {
+    "likes": 4,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@NielsRogge"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Numbers come from a third-party post with no linked leaderboard page or model card in the post, so they were not checked.",
+    "source": null
+   }
+  },
+  {
+   "title": "Speechify Simba 3.5 text-to-speech now on OpenRouter: 48 languages, streamed audio, $15 per 1M characters",
+   "url": "https://x.com/ModelsOnOR/status/2120638114683306261",
+   "handle": "@SpeechifyAI",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Speechify's Simba 3.5 TTS model is callable through the same OpenRouter key as LLMs, with 48 languages and streaming at $15 per 1M characters.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://openrouter.ai/speechify/simba-3.5"
+   ],
+   "vendor": "Speechify",
+   "posted_at": "2026-11-11T22:01:40Z",
+   "metrics": {
+    "likes": 19,
+    "reposts": 5,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@SpeechifyAI"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "MiniMax H3 Image on Metal only: cold 2048x2048 image falls from 229s to 61s on an M5 Ultra with byte-identical output",
+   "url": "https://x.com/plotarmordev/status/2120762252504559664",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A builder reports a native Metal port of MiniMax H3 Image with no PyTorch, where read-ahead of weights in large parallel chunks cut a cold 2048x2048 render from 229s to 61s with identical pixels.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "MiniMax H3 Image (Metal port)",
+   "posted_at": "2026-11-12T06:14:57Z",
+   "metrics": {
+    "likes": 18,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 5,
+    "views": 1554
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single self-reported run on one machine with no linked repo or script in the post.",
+    "source": null
+   }
+  },
+  {
+   "title": "Blackbox Diary: Android diary app that summarises saved material with the on-device Spark-X2.5-4B model, prerelease v1.3.2",
+   "url": "https://x.com/SparkLLM/status/2120721358279847944",
+   "handle": "@SparkLLM",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "A community app by Karl-XZ runs Spark-X2.5-4B on Android to build daily summaries from audio and screen capture, with a debug APK release and model import required.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/Karl-XZ/blackbox-diary",
+    "https://github.com/Karl-XZ/blackbox-diary/releases/tag/v1.3.2"
+   ],
+   "vendor": "Karl-XZ / SparkLLM",
+   "posted_at": "2026-11-12T03:32:27Z",
+   "metrics": {
+    "likes": 8,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 392
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Prerelease debug build; the author says only core software tests passed and accuracy, stability and battery use are unverified.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/gregisenberg/status/2120594418231398677",
+   "reason": "Setup-copying promotion thread; no new capability."
+  },
+  {
+   "url": "https://x.com/Jerry_Galaxy/status/2120731143356244202",
+   "reason": "Opinion and speculation about unreleased Qwen4 models built on a model-card screenshot; no checkable artifact."
+  },
+  {
+   "url": "https://x.com/DoomerTapes/status/2120686367802015931",
+   "reason": "Non-AI partisan politics."
+  }
+ ],
+ "list_posts_read": 83,
+ "list_pages": 2,
+ "security_forwarded": [],
+ "security_na": []
+}
