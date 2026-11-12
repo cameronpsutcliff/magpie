@@ -13,6 +13,27 @@
  ],
  "items": [
   {
+   "id": "2026-11-12",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-11-12",
+   "title": "Gemini Decisions API: Fast, calibrated multimodal decisions, free-claude-code, llama.cpp, and more",
+   "summary": "254 capability events from 126 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words.",
+   "content_html": "<p>254 capability events from 126 sources. Ranked by code; the editor did not run this edition, so copy is the sources&#x27; own words.</p><ol><li><a href=\"https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/\">Gemini Decisions API: Fast, calibrated multimodal decisions</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-12-84952c6b89a4\">on Magpie</a>)</li><li><a href=\"https://github.com/Alishahryar1/free-claude-code\">Alishahryar1/free-claude-code</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-12-f4c2d6fb3a45\">on Magpie</a>)</li><li><a href=\"https://github.com/ggml-org/llama.cpp\">ggml-org/llama.cpp</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-12-524ec9dd8257\">on Magpie</a>)</li><li><a href=\"https://huggingface.co/DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF\">DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-12-e197a9917ccd\">on Magpie</a>)</li><li><a href=\"https://huggingface.co/unsloth/Qwen3.8-27B-GGUF\">unsloth/Qwen3.8-27B-GGUF</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-12-6aa2f8180935\">on Magpie</a>)</li></ol><p><strong>Possibilities:</strong> No new possibility today. Latest: Agencies self-host image generation and keep a cheap vision model as a quality gate (2026-11-11)</p><p><strong>Worth watching:</strong> No new video pick today. Latest: The Neuron Basis: Goodfire&#x27;s Curt Tigges on Agentic Interp, Monosemanticity &amp; Reverse Engineering (2026-11-11)</p><p><strong>Constraints:</strong> No new constraint today. Latest: DHS order bars DeepSeek products from federal civilian agencies (2026-10-20)</p><p><strong>Threats:</strong> No new threat today. Widest reach still open: TWCA Registration Authority server accessed without authorization (medium, 2026-10-29)</p>",
+   "content_text": "254 capability events from 126 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words. Gemini Decisions API: Fast, calibrated multimodal decisions Alishahryar1/free-claude-code ggml-org/llama.cpp DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF unsloth/Qwen3.8-27B-GGUF",
+   "date_published": "2026-11-12T11:15:03Z",
+   "tags": [
+    "agents",
+    "coding",
+    "local",
+    "models",
+    "multimodal"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-11-12.json",
+    "backfilled": false,
+    "capabilities": 254
+   }
+  },
+  {
    "id": "2026-11-11",
    "url": "https://www.cameronsutcliff.com/magpie/2026-11-11",
    "title": "Ship Gemini 4 Carbon, Run PyTorch in Browsers, Prove Code in Lean, and More",
@@ -679,31 +700,6 @@
     "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-13.json",
     "backfilled": true,
     "capabilities": 105
-   }
-  },
-  {
-   "id": "2026-10-12",
-   "url": "https://www.cameronsutcliff.com/magpie/2026-10-12",
-   "title": "Fine-tunes embeddings, sandboxes agents, maps codebases, and more",
-   "summary": "A thin day. Most items are repos and talks with launch claims and no measured results. The most useful are a walkthrough on fine-tuning a multimodal embedding model, an agent sandbox, and a fresh Transformers release.",
-   "content_html": "<p>A thin day. Most items are repos and talks with launch claims and no measured results. The most useful are a walkthrough on fine-tuning a multimodal embedding model, an agent sandbox, and a fresh Transformers release.</p><ol><li><a href=\"https://github.com/huggingface/transformers\">Transformers ships releases 5.18.0 and 5.19.0</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-12-663b118a946f\">on Magpie</a>): Builders can use the latest model definitions for text, vision, audio and multimodal models through the standard Transformers framework.</li><li><a href=\"https://www.youtube.com/watch?v=S7tFyREI19I\">Fine-tuning Gemini embedding 2 on your data</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-12-c6e24c84890b\">on Magpie</a>): You can fine-tune an open multimodal embedding model on your own content, such as video transcripts, so search returns the exact timestamped moment.</li><li><a href=\"https://www.youtube.com/watch?v=LgX0QF2D9y0\">Goodfire on how agents choose critical tokens</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-12-562dbe2d5492\">on Magpie</a>): Researchers can study which tokens drive a model&#x27;s decisions, a gap noted when even chain of thought leaves actions hard to predict.</li><li><a href=\"https://github.com/TencentCloud/CubeSandbox\">CubeSandbox: instant sandbox for AI agents</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-12-6107951b2993\">on Magpie</a>): Agent builders can run concurrent, secure, lightweight sandboxes that start instantly.</li><li><a href=\"https://github.com/repowise-dev/repowise\">Repowise serves codebase health data over MCP</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-12-81d9947366f6\">on Magpie</a>): An AI agent can query code health scores, generated docs, git analytics, dead code findings and architectural decisions for a repo through MCP.</li></ol>",
-   "content_text": "A thin day. Most items are repos and talks with launch claims and no measured results. The most useful are a walkthrough on fine-tuning a multimodal embedding model, an agent sandbox, and a fresh Transformers release. Transformers ships releases 5.18.0 and 5.19.0 Fine-tuning Gemini embedding 2 on your data Goodfire on how agents choose critical tokens CubeSandbox: instant sandbox for AI agents Repowise serves codebase health data over MCP",
-   "date_published": "2026-10-20T15:27:26Z",
-   "tags": [
-    "agents",
-    "coding",
-    "evals",
-    "mcp",
-    "memory",
-    "models",
-    "multimodal",
-    "research",
-    "security"
-   ],
-   "_magpie": {
-    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-12.json",
-    "backfilled": true,
-    "capabilities": 139
    }
   }
  ]
