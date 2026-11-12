@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-11T10:25:00Z",
+ "updated_at": "2026-11-12T10:30:00Z",
  "accounts": [
   {
    "handle": "@thsottiaux",
@@ -900,7 +900,7 @@
    "affiliation": "Stanford (SWE-bench, ProgramBench)",
    "why": "SWE-bench co-author; posts measured coding-agent benchmark results, including ProgramBench whole-program rebuilds.",
    "signal_to_noise": 4,
-   "status": "trial",
+   "status": "active",
    "added_on": "2026-10-25",
    "evidence": [
     "https://x.com/jyangballin/status/2113668094707261655",
