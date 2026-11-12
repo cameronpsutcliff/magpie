@@ -1,0 +1,178 @@
+{
+ "ran_at": "2026-11-12T14:57:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-12T11:00:00Z",
+ "queries": 5,
+ "calls": 8,
+ "items": [
+  {
+   "title": "Claude Fable 5.2 (xhigh) leads WeirdML v3 at 43.0%, ahead of GPT 6 Astra",
+   "url": "https://x.com/htihle/status/2120878147730100698",
+   "handle": "@htihle",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "The WeirdML author reports Fable 5.2 at xhigh effort scoring 43.0% on v3, ahead of GPT 6 Astra, which is more token efficient. Only the Mystery Box task without hints shows no real progress.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://htihle.github.io/weirdml.html"
+   ],
+   "vendor": "WeirdML",
+   "posted_at": "2026-11-12T13:55:29Z",
+   "metrics": {
+    "likes": 22,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 1,
+    "views": 887
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Seedream 5.5 live on fal: multi-turn image editing, in-image text edits, layer separation",
+   "url": "https://x.com/fal/status/2120879920381325727",
+   "handle": "@fal",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "fal added Seedream 5.5 for image generation and editing, with multi-turn refinement, direct text edits inside images, and splitting an image into editable layers, via hosted text-to-image, edit and layerize endpoints.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "fal / ByteDance Seed",
+   "posted_at": "2026-11-12T14:02:31Z",
+   "metrics": {
+    "likes": 72,
+    "reposts": 7,
+    "quotes": 4,
+    "replies": 7,
+    "views": 3504
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Launch post only; no benchmark or independent test shown.",
+    "source": null
+   }
+  },
+  {
+   "title": "Deletion Tuning: zeroing under 0.05% of weights matches full fine-tuning in LLM post-training",
+   "url": "https://x.com/paperswithcodee/status/2120879696703345024",
+   "handle": "@paperswithcodee",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "An NYU and Calgary paper (NeurIPS 2026) learns a binary mask over gate projections that zeroes under 0.05% of weights and matches full fine-tuning across RLVR, SFT and on-policy distillation, with masks far smaller than a checkpoint and less forgetting than full fine-tuning or LoRA.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2611.10866",
+    "https://paperswithcode.co/paper/2611.10866"
+   ],
+   "vendor": "NYU / University of Calgary",
+   "posted_at": "2026-11-12T14:01:38Z",
+   "metrics": {
+    "likes": 3,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 2,
+    "views": 228
+   },
+   "confirmed_by": [
+    "@NielsRogge"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Summary is from an aggregator post; the claims are not independently reproduced and no code link was seen.",
+    "source": null
+   }
+  },
+  {
+   "title": "Meta FAIR e-means: k-means variant with 10-45x GPU speedups, 10B DINO embeddings into 16M clusters",
+   "url": "https://x.com/paperswithcodee/status/2120849481084162094",
+   "handle": "@paperswithcodee",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A Meta FAIR paper replaces batch k-means with mini-batch exponential moving average updates, reports 10-45x GPU speedups over leading k-means implementations, and clusters 10 billion DINO embeddings into 16 million clusters in 2.5 epochs without a hyperparameter sweep.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2611.09501",
+    "https://paperswithcode.co/paper/2611.09501"
+   ],
+   "vendor": "Meta FAIR",
+   "posted_at": "2026-11-12T12:01:34Z",
+   "metrics": {
+    "likes": 5,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 3,
+    "views": 404
+   },
+   "confirmed_by": [
+    "@NielsRogge"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Summary is from an aggregator post; no code link seen and numbers not independently reproduced.",
+    "source": null
+   }
+  },
+  {
+   "title": "Bogen: free tool that lets Claude Code and Codex design UIs without a separate design subscription",
+   "url": "https://x.com/0xMarsel/status/2120849936946286918",
+   "handle": "@0xMarsel",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "The author launched Bogen, a free design tool that coding agents (Claude Code, Codex) drive to produce consistent screens, themes and plugins, with a demo video and a site to try.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://bogen.dev"
+   ],
+   "vendor": "Bogen",
+   "posted_at": "2026-11-12T12:03:23Z",
+   "metrics": {
+    "likes": 2,
+    "reposts": 0,
+    "quotes": 1,
+    "replies": 4,
+    "views": 242
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Early launch with no independent test or sample output beyond the author's own video.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 83,
+ "list_pages": 1,
+ "security_forwarded": [
+  {
+   "url": "https://x.com/plotarmordev/status/2120842542975725602",
+   "matched": "stack.json component Linux kernel (Ubuntu 24.04 HWE/OEM 6.17 kernels, CVE-2026-98432 claimed unfixed; Spark runs Ubuntu with an nvidia kernel). Unverified claim."
+  },
+  {
+   "url": "https://x.com/plotarmordev/status/2120869514011418744",
+   "matched": "always_forward: software supply chain (Hugging Face repo with trust_remote_code crypto miner reportedly passed hub scan). Unverified claim."
+  }
+ ],
+ "security_na": []
+}
