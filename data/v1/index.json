@@ -3,81 +3,83 @@
  "days": [
   {
    "date": "2026-11-12",
-   "headline": "Gemini Decisions API: Fast, calibrated multimodal decisions, free-claude-code, llama.cpp, and more",
-   "events": 254,
-   "sources": 538,
-   "enriched": false,
+   "headline": "Run open robot models, train on work footage, fit Qwen in 12GB, and more",
+   "events": 438,
+   "sources": 567,
+   "enriched": true,
    "top": [
     {
-     "id": "84952c6b89a4",
-     "title": "Gemini Decisions API: Fast, calibrated multimodal decisions",
+     "id": "a5690f7e6bd7",
+     "title": "Amazon publishes an AWS emulator on GitHub",
      "impact": 4,
-     "vendor": "Google",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-12-84952c6b89a4"
-    },
-    {
-     "id": "f4c2d6fb3a45",
-     "title": "Alishahryar1/free-claude-code",
-     "impact": 5,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-12-f4c2d6fb3a45"
-    },
-    {
-     "id": "524ec9dd8257",
-     "title": "ggml-org/llama.cpp",
-     "impact": 4,
-     "vendor": "llama.cpp",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-12-524ec9dd8257"
-    },
-    {
-     "id": "e197a9917ccd",
-     "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
-     "impact": 5,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-12-e197a9917ccd"
+     "vendor": "Amazon",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-12-a5690f7e6bd7"
     },
     {
      "id": "6aa2f8180935",
-     "title": "unsloth/Qwen3.8-27B-GGUF",
-     "impact": 3,
+     "title": "Unsloth Dynamic v3.1 quants run Qwen3.8-27B in 12GB",
+     "impact": 4,
      "vendor": "Unsloth",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-12-6aa2f8180935"
+    },
+    {
+     "id": "94638e28a659",
+     "title": "Runway releases Praxis-1 open robot world action model",
+     "impact": 5,
+     "vendor": "Runway",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-12-94638e28a659"
+    },
+    {
+     "id": "1b723f63fa29",
+     "title": "RoboCap-10k opens 10,000 hours of egocentric work video",
+     "impact": 4,
+     "vendor": "GroundedSI",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-12-1b723f63fa29"
+    },
+    {
+     "id": "4034720df03a",
+     "title": "MiniMax H3 Image ported to Apple Metal without PyTorch",
+     "impact": 3,
+     "vendor": "MiniMax",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-12-4034720df03a"
     }
    ],
    "vendors": [
     "Open source",
     "Google",
-    "AWS",
+    "NVIDIA",
+    "Anthropic",
     "OpenAI",
-    "Databricks",
-    "ElevenLabs"
+    "AWS"
    ],
    "topics": {
-    "agents": 86,
-    "coding": 83,
-    "models": 78,
-    "multimodal": 59,
-    "infra": 32,
-    "local": 28,
-    "mcp": 25,
-    "memory": 21,
-    "evals": 20,
-    "security": 12,
-    "reverse": 10,
-    "research": 8,
-    "robotics": 5
+    "agents": 132,
+    "models": 111,
+    "coding": 105,
+    "multimodal": 78,
+    "infra": 55,
+    "local": 39,
+    "evals": 39,
+    "mcp": 38,
+    "memory": 34,
+    "reverse": 18,
+    "research": 18,
+    "security": 17,
+    "robotics": 10
    },
    "kinds": {
-    "blog": 55,
-    "social": 34,
-    "repo": 32,
+    "video": 120,
+    "social": 102,
+    "blog": 54,
+    "newsletter": 33,
     "model": 30,
-    "newsletter": 30,
-    "community": 25,
-    "space": 20,
-    "changelog": 18,
-    "news": 10
-   }
+    "repo": 30,
+    "community": 24,
+    "space": 19,
+    "changelog": 17,
+    "news": 9
+   },
+   "threats": []
   },
   {
    "date": "2026-11-11",
