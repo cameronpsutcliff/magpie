@@ -1,0 +1,138 @@
+{
+ "ran_at": "2026-11-12T02:57:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-11T22:58:00Z",
+ "queries": 5,
+ "calls": 5,
+ "items": [
+  {
+   "title": "Omarchy runs on the new M5 Max MacBook Pro: GPU, touch screen and WiFi working",
+   "url": "https://x.com/JoshuaSWarren/status/2120671988221874661",
+   "handle": "@JoshuaSWarren",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A builder got the Omarchy Linux desktop running on Apple's new M5 Max MacBook Pro with the GPU, touch screen and WiFi working, and published a write-up with the needed PRs so an agent can replicate it. The Neural Engine powers up; some polish is left.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://joshuawarren.com/blog/omarchy-on-the-m5-max-macbook-pro/"
+   ],
+   "vendor": "Joshua Warren / OmarchyMac",
+   "posted_at": "2026-11-12T00:16:16Z",
+   "metrics": {
+    "likes": 128,
+    "reposts": 7,
+    "quotes": 1,
+    "replies": 16,
+    "views": 4073
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Mac Studio 512GB versus four ASUS GX10 boxes serving DeepSeek V4.1 Flash, same benchmark",
+   "url": "https://x.com/seapy/status/2120477873123525050",
+   "handle": "@seapy",
+   "group": "applied",
+   "origin": "discovery",
+   "summary": "A side-by-side of one 512GB Mac Studio (mlx-serve) and four 128GB GX10 Spark-class machines (spark-ds41f recipe) on the original DeepSeek V4.1 Flash weights: 53/84 vs 73/122 tok/s at one user, 137/148 vs 330/847 tok/s at 16 users, and 128K prefill 3,325 vs 7,522 tok/s, at similar prices.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "DeepSeek V4.1 Flash on Mac Studio vs ASUS GX10",
+   "posted_at": "2026-11-11T11:24:56Z",
+   "metrics": {
+    "likes": 117,
+    "reposts": 14,
+    "quotes": 8,
+    "replies": 30,
+    "views": 15174
+   },
+   "confirmed_by": [
+    "@plotarmordev"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single third-party run with no repo or script linked for the benchmark, so the numbers cannot be reproduced from the post.",
+    "source": null
+   }
+  },
+  {
+   "title": "vLLM adds NVIDIA Canary speech recognition and translation, plus Parakeet TDT and Nemotron diarization plugins",
+   "url": "https://x.com/Alex_tra_memory/status/2120701534732185840",
+   "handle": "@Alex_tra_memory",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A contributor landed PRs that let vLLM serve NVIDIA Canary (speech recognition and translation to and from English in 25 European languages, token-identical to the reference), Parakeet TDT and Nemotron-3-Diarization via plugins, and GPU-side image normalization for Gemma 4.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/vllm-project/vllm/pull/64215",
+    "https://github.com/vllm-project/vllm/pull/65445",
+    "https://github.com/vllm-project/vllm/pull/65005",
+    "https://github.com/vllm-project/vllm/pull/65199"
+   ],
+   "vendor": "vLLM",
+   "posted_at": "2026-11-12T02:13:41Z",
+   "metrics": {
+    "likes": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 54
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "LiteLLM adds performance alerts for spend spikes, traffic spikes, error rates and latency",
+   "url": "https://x.com/Mokhalil01/status/2120710894665760901",
+   "handle": "@Mokhalil01",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "LiteLLM now flags spend spikes, traffic spikes, higher error rates and slower responses across teams, users, keys and models. Docs blog post is linked.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://docs.litellm.ai/blog/performance-alerts"
+   ],
+   "vendor": "LiteLLM",
+   "posted_at": "2026-11-12T02:50:52Z",
+   "metrics": {
+    "likes": 3,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 1,
+    "views": 10
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 84,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}

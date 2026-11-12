@@ -1,22 +1,22 @@
 {
- "updated_at": "2026-11-11T22:58:00Z",
+ "updated_at": "2026-11-12T02:57:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 78,
+ "calls_used_today": 5,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-11T22:58:00Z",
-  "items": 7,
-  "queries": 8,
-  "deep_reads": 1,
+  "ran_at": "2026-11-12T02:57:00Z",
+  "items": 4,
+  "queries": 5,
+  "deep_reads": 0,
   "rechecks": 0,
   "flagged": 0,
   "saved_in": 0,
   "saved_kept": 0,
   "videos": 0,
   "security_forwarded": 0,
-  "list_posts_read": 119,
-  "list_pages": 2
+  "list_posts_read": 84,
+  "list_pages": 1
  },
  "roster": {
   "curated": 223,
@@ -272,11 +272,10 @@
   "Sweep 14:55Z: official @MiniMax_AI H3-Image post (2120158341229928576) returned not found on lookup minutes after it was quoted, and replies say the Hugging Face weights link is 404, so the item is anchored on the @MiniMax_Code post. No browser, so follows skipped and Community Notes not checked.",
   "2026-11-11: MiniMax H3-Image license reportedly excludes US, EU, UK and Korea (via @plotarmordev); a vendor license term, not an official action, so not kept as a constraint. Owner may want a rule for licenses that region-restrict open weights.",
   "2026-11-11 roster review: @Tailscale was rejected on 2026-11-10 as mostly marketing, but its last 30 days include Codex Cloud tailnet access, MCP/OAuth apps GA and Aperture skills over MCP, in the owner's stack area, and the owner saved it twice, so it was added as trial. @danikkk_wqs still fails; consider adding it to avoid.",
-  "Sweep 19:00Z: all clips on candidate posts were under 60 s (20 to 31 s), so no video analysis. Follows skipped, no browser."
+  "Sweep 19:00Z: all clips on candidate posts were under 60 s (20 to 31 s), so no video analysis. Follows skipped, no browser.",
+  "Sweep 02:57Z: calls_used_today counted for UTC day 2026-11-12 (5 so far; X shows 997 of 1000 left shared). No new saves in the 20 newest bookmarks (all in the archive). Follows skipped, no browser."
  ],
- "errors": [
-  "follows skipped: follow_mode is browser but no browser available this run"
- ],
+ "errors": [],
  "follows_today": 0,
  "last_roster_review": {
   "ran_at": "2026-11-11T10:25:00Z",
