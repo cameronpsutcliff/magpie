@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-12T14:57:00Z",
+ "updated_at": "2026-11-12T18:58:00Z",
  "by": "magpie-scout",
  "rules": "Quiet watch for on-the-horizon items. Check at most 2 reads per sweep, rotating by oldest last_checked. Stay silent until a trigger fires. A demo clip, teaser, waitlist, interview or opinion is never a trigger. When one fires: add one kept item to that sweep, set status to 'triggered' with triggered_at and evidence, and flag it in the status file for the parent to tell Cameron. Never put speculative what-ifs in sweep output.",
  "entries": [
@@ -33,7 +33,7 @@
     ],
     "handle_notes": "@ragavan is a different person (ex-Llama at Meta), not Ragavan Thurairatnam; his X handle is not yet known."
    },
-   "last_checked": "2026-11-12T14:57:00Z",
+   "last_checked": "2026-11-12T18:58:00Z",
    "last_result": "No Dessa release or paper in two searches (queries and name)",
    "status": "watching",
    "triggered_at": null,

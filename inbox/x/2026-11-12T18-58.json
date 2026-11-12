@@ -1,0 +1,234 @@
+{
+ "ran_at": "2026-11-12T18:58:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-12T14:57:00Z",
+ "queries": 6,
+ "calls": 7,
+ "items": [
+  {
+   "title": "Gemini 4 Hydrogen launches across the Gemini API, AI Studio and the Gemini app",
+   "url": "https://x.com/OfficialLoganK/status/2120940951292268640",
+   "handle": "@OfficialLoganK",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Google releases Gemini 4 Hydrogen, a fast Gemini 4 model, to all tiers of AI Studio, the Gemini API, the Gemini app and Antigravity. Logan Kilpatrick says it finishes tasks 2.5x faster than 3.8 Flash with 5x fewer fabrications (vendor figures, no method given).",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Google",
+   "posted_at": "2026-11-12T18:05:02Z",
+   "metrics": {
+    "likes": 4121,
+    "reposts": 294,
+    "quotes": 180,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@GeminiApp",
+    "@KLieret"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Vendor speed and fabrication figures come with no method, and repliers question access for Pro and student users and a price they say is about twice Flash.",
+    "source": "https://x.com/gerryhamburgery/status/2120952666347950579"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Early repliers mostly cheer the launch but ask about access for paid and student tiers, cost versus Flash and 403 errors on Carbon; nobody posted a head-to-head result yet. A third party (KLieret) cites 13.5% on SWE-sweep against 9.5% for the next model.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "World Labs opens Atlas to everyone with Viewfinder and Chisel apps and public API endpoints",
+   "url": "https://x.com/theworldlabs/status/2120942033401717108",
+   "handle": "@theworldlabs",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "World Labs opens access to its Atlas world model with two web apps and the same API endpoints for developers and agents. Viewfinder builds a world from one image or up to 64 inputs; Chisel does agentic 3D geometry; both export images, video or Gaussian splats.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "World Labs",
+   "posted_at": "2026-11-12T18:09:20Z",
+   "metrics": {
+    "likes": 328,
+    "reposts": 51,
+    "quotes": 33,
+    "replies": 13,
+    "views": 20182
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers are enthusiastic; one asks about splat resolution for VR and one dislikes the email and SMS verification at sign-up. No one reports test results yet.",
+    "tried": false,
+    "replies_read": 13
+   }
+  },
+  {
+   "title": "PrunaAI open-sources object-removal LoRAs for Qwen-Image-2.1 that run in 6 steps",
+   "url": "https://x.com/PrunaAI/status/2120924648804069632",
+   "handle": "@PrunaAI",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Three LoRA adapters for Qwen-Image-2.1 remove a pointed-at object along with its shadow or reflection, and work with a 6-step distillation LoRA instead of 40 steps. Weights and a demo Space are on Hugging Face and the LoRAs load in diffusers.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/PrunaAI/P-Q-Image-2.1-Remove-Object",
+    "https://huggingface.co/spaces/PrunaAI/P-Q-Image-2.1-Remove-Object"
+   ],
+   "vendor": "Pruna AI",
+   "posted_at": "2026-11-12T17:00:15Z",
+   "metrics": {
+    "likes": 47,
+    "reposts": 12,
+    "quotes": 5,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@linoy_tsaban"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Fish Audio launches Fish Agent, a no-code builder for phone voice agents",
+   "url": "https://x.com/FishAudio/status/2120924589429522457",
+   "handle": "@FishAudio",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Fish Audio opens Fish Agent, where a voice agent that makes and takes calls is built from a text description, with a free custom agent on sign-up. The 32-second median deploy time is the vendor's own number.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Fish Audio",
+   "posted_at": "2026-11-12T17:00:01Z",
+   "metrics": {
+    "likes": 881,
+    "reposts": 380,
+    "quotes": 196,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Only vendor-stated deploy time and a free-claim sign-up offer; no independent test or technical detail. Not deep-read.",
+    "source": null
+   }
+  },
+  {
+   "title": "Murf Falcon 2.1 ranks #6 of 22 on the Voice Arena Hindi TTS leaderboard",
+   "url": "https://x.com/voicearena_ai/status/2120924588443881937",
+   "handle": "@voicearena_ai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Voice Arena reports Murf's Falcon 2.1 real-time TTS model at 1065 Elo on its Hindi leaderboard, 52 Elo above Falcon 2, and #3 of 11 among real-time models.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Murf AI",
+   "posted_at": "2026-11-12T17:00:01Z",
+   "metrics": {
+    "likes": 2,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Downscaling AI weather forecasts to fill the 6-hour gap: blog and code",
+   "url": "https://x.com/EmmaScharfmann/status/2120916962138104206",
+   "handle": "@EmmaScharfmann",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A follow-up to an earlier spatial downscaler for AI weather forecasts addresses that most AI weather models predict every 6 hours, which underestimates afternoon heatwave peaks. A Hugging Face blog post and a GitHub repo are linked; the post text is cut off so the exact method is unconfirmed.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/EmmaScharfmann/weather-forecast-model-downscaler",
+    "https://huggingface.co/blog/EmmaScharfmann/downscaling-a-weather-forecasting-model"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-12T16:29:43Z",
+   "metrics": {
+    "likes": 12,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "A Mac port of the EXL3 quantizer rounds 63x worse than NVFP4 without error carry-over",
+   "url": "https://x.com/plotarmordev/status/2120908760428532011",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A builder reports that a Mac port of the EXL3 quantizer, which rounds each weight on its own, came out 63 times worse than NVFP4 on the same MoE experts, because exllamav3 carries each rounding error into weights not yet rounded. A single-developer result shown as a chart.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "exllamav3",
+   "posted_at": "2026-11-12T15:57:07Z",
+   "metrics": {
+    "likes": 5,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single-developer test with no code or method linked in the post; not deep-read.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 94,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
