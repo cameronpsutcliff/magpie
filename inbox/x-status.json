@@ -1,21 +1,21 @@
 {
- "updated_at": "2026-11-12T18:58:00Z",
+ "updated_at": "2026-11-12T22:58:00Z",
  "job": "sweep",
  "prompt": "v6.1",
  "calls_used_today": 26,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-12T18:58:00Z",
-  "items": 7,
-  "queries": 6,
-  "deep_reads": 2,
+  "ran_at": "2026-11-12T22:58:00Z",
+  "items": 9,
+  "queries": 5,
+  "deep_reads": 1,
   "rechecks": 0,
-  "flagged": 3,
+  "flagged": 7,
   "saved_in": 0,
   "saved_kept": 0,
   "videos": 0,
   "security_forwarded": 0,
-  "list_posts_read": 94,
+  "list_posts_read": 98,
   "list_pages": 1
  },
  "roster": {
@@ -277,7 +277,7 @@
   "Roster review 2026-11-12: @danikkk_wqs (2 kept saves) failed the owner_saves screen: engagement-bait posts plus get-rich trading claims ('turned $21.40 into $9,312.85'); not added; owner may add to avoid. @RoundtableSpace is already on avoid (aggregator), so its 2 saves do not count. @DarioAmodei and @minimaxir (curated, config last_post 2026-09-23) both posted within 45 days (2026-10-21, 2026-11-01) so no retirement; config last_post is stale. No other roster candidates searched: no off-roster account was quoted by 2+ roster accounts this week."
  ],
  "errors": [
-  "Follows skipped: follow_mode is browser but no browser on this run."
+  "No browser this run: follows skipped (follow_mode browser). Community Notes unavailable via API."
  ],
  "follows_today": 0,
  "last_roster_review": {

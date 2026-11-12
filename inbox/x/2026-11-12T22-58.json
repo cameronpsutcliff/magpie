@@ -1,0 +1,288 @@
+{
+ "ran_at": "2026-11-12T22:58:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-12T18:58:00Z",
+ "queries": 5,
+ "calls": 6,
+ "items": [
+  {
+   "title": "Inkling 2 Small weights released on Hugging Face under Apache 2.0",
+   "url": "https://x.com/Letta_AI/status/2121001453229875489",
+   "handle": "@Letta_AI",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Letta reports that Thinking Machines has put Inkling 2 Small weights on Hugging Face under Apache 2.0. It restates the 60.0% FrontierMemory score as the top US open-weights result.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Thinking Machines",
+   "posted_at": "2026-11-12T22:05:27Z",
+   "metrics": {
+    "likes": 3,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 252
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Mercor launches OWE-Bench: 26 long-horizon engineering projects for agents",
+   "url": "https://x.com/mercor/status/2120927366226801007",
+   "handle": "@mercor",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Mercor releases a coding benchmark of 26 expert-designed end-to-end engineering projects, from GPU kernels to aircraft design. Top of its leaderboard: Fable 5.2 at 54.6%, GPT-6 Astra 44.2%, Opus 5.5 41.6%.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Mercor",
+   "posted_at": "2026-11-12T17:11:03Z",
+   "metrics": {
+    "likes": 245,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@harborframework"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "PostTrainBench adds Fable 5.2 and Gemini 4 Carbon",
+   "url": "https://x.com/hrdkbhatnagar/status/2120947308225564912",
+   "handle": "@hrdkbhatnagar",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "The PostTrainBench leaderboard now lists Fable 5.2 second and Gemini 4 Carbon fourth. Fable 5.2 scores the same 44.6% as Fable 5.1, and Gemini 4 Carbon is only slightly above Gemini 4 Argon (41.0%).",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "PostTrainBench",
+   "posted_at": "2026-11-12T18:30:18Z",
+   "metrics": {
+    "likes": 50,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@maksym_andr"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The claim that Anthropic deliberately held back AI R&D ability is the authors' speculation, and @maksym_andr says no explicit signs of sandbagging were found in visible outputs.",
+    "source": "https://x.com/maksym_andr/status/2121010077754859690"
+   }
+  },
+  {
+   "title": "Schelling Atlas: independent LLM agents find each other on the web without being told where",
+   "url": "https://x.com/DavidSchmotz/status/2120951914489876655",
+   "handle": "@DavidSchmotz",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A new study gave two independent agents the task of meeting online and exchanging a secret with no agreed location. Only the newest and largest frontier models coordinate; median time to meet for Fable 5.1 and GPT-6-Astra agents is 57 seconds.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Schelling Atlas",
+   "posted_at": "2026-11-12T18:48:36Z",
+   "metrics": {
+    "likes": 71,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@maksym_andr"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Results are the authors' own posts; no repo or paper link was in the posts read.",
+    "source": null
+   }
+  },
+  {
+   "title": "Gemini 4 Hydrogen exhausts a 131k thinking budget on 1.8% of a text benchmark",
+   "url": "https://x.com/skalskip92/status/2120994631072776235",
+   "handle": "@skalskip92",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Roboflow's Piotr Skalski reports Hydrogen at xhigh effort used 131,069 thinking tokens over nearly 10 minutes ($1.08) on a jersey-number read and returned no answer. He saw the same budget exhaustion on 1.8% of his text benchmark.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Google",
+   "posted_at": "2026-11-12T21:38:20Z",
+   "metrics": {
+    "likes": 37,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 10,
+    "views": 3469
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single first-hand report with an image; the benchmark itself is not linked.",
+    "source": "https://x.com/skalskip92/status/2120994631072776235"
+   }
+  },
+  {
+   "title": "TensorFold experimental build reaches 1,081 tok/s peak on one RTX 5090",
+   "url": "https://x.com/ToolBraidComp/status/2120989415136784479",
+   "handle": "@ToolBraidComp",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "ToolBraid reports Qwen3.8-27B in NVFP4 on an experimental TensorFold build running 12 branches in parallel at 1,081 tok/s peak aggregate and 791 tok/s average, thinking on at low effort with 64K context.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-12T21:17:37Z",
+   "metrics": {
+    "likes": 6,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 3,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@ashxhart"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Aggregate across 12 parallel branches on an experimental build, not single-stream speed; shown in a self-posted clip only.",
+    "source": null
+   }
+  },
+  {
+   "title": "ChatGPT dots now follow custom instructions and rules",
+   "url": "https://x.com/ChatGPT/status/2120970988796170275",
+   "handle": "@ChatGPT",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "OpenAI updates dots with faster replies and lets users set behavior rules, such as requiring a draft before any email is sent, in the thread or under Customize > Behavior on mobile and web.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "OpenAI",
+   "posted_at": "2026-11-12T20:04:24Z",
+   "metrics": {
+    "likes": 2238,
+    "reposts": 0,
+    "quotes": 125,
+    "replies": 912,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@thsottiaux"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Gradio 6.32.0 requires login on MCP servers for apps with auth",
+   "url": "https://x.com/Gradio/status/2120986536426569983",
+   "handle": "@Gradio",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Gradio 6.32.0 makes an app's MCP server require login when the app uses auth, supports queued MCP calls with auth, installs CLI extensions from GitHub, and adds Pillow 13 support.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Gradio",
+   "posted_at": "2026-11-12T21:06:10Z",
+   "metrics": {
+    "likes": 4,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 3,
+    "views": 694
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Claude Code gets a /doctor prompt-audit check for repo instructions",
+   "url": "https://x.com/lydiahallie/status/2121011733699633613",
+   "handle": "@lydiahallie",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "A Claude Code team member reminds users to run /doctor prompt-audit in their repos. The post does not say what it checks; repliers who ran it say it flagged piled-up IMPORTANT lines in their instruction files.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Anthropic",
+   "posted_at": "2026-11-12T22:46:18Z",
+   "metrics": {
+    "likes": 161,
+    "reposts": 8,
+    "quotes": 2,
+    "replies": 20,
+    "views": 4838
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No link or description of what the audit does, only reply anecdotes.",
+    "source": "https://x.com/lydiahallie/status/2121011733699633613"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Most repliers ask what it flags or whether it covers hooks, AGENTS.md and global config; two say they ran it and it flagged their panic-added IMPORTANT lines.",
+    "tried": true,
+    "replies_read": 20
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 98,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://x.com/Gradio/status/2120986536426569983",
+   "reason": "Gradio 6.32.0 is a feature release with no CVE or advisory; Gradio is not in stack.json and the fleet runs no Gradio MCP server app."
+  }
+ ]
+}
