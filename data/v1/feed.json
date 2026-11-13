@@ -13,6 +13,30 @@
  ],
  "items": [
   {
+   "id": "2026-11-13",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-11-13",
+   "title": "Introducing Gemini 4 Hydrogen, modern-web-guidance-src, codex-security, and more",
+   "summary": "288 capability events from 126 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words.",
+   "content_html": "<p>288 capability events from 126 sources. Ranked by code; the editor did not run this edition, so copy is the sources&#x27; own words.</p><ol><li><a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/\">Introducing Gemini 4 Hydrogen</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-13-6794fc0a0a40\">on Magpie</a>)</li><li><a href=\"https://github.com/GoogleChrome/modern-web-guidance-src\">GoogleChrome/modern-web-guidance-src</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-13-414e16974c03\">on Magpie</a>)</li><li><a href=\"https://github.com/openai/codex-security\">openai/codex-security</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-13-b57fcf4b3229\">on Magpie</a>)</li><li><a href=\"https://huggingface.co/DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF\">DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-13-e197a9917ccd\">on Magpie</a>)</li><li><a href=\"https://github.com/alibaba/open-code-review\">alibaba/open-code-review</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-13-6e62c7dad254\">on Magpie</a>)</li></ol><p><strong>Possibilities:</strong> No new possibility today. Latest: Cloud coding agents can test AWS changes in sandboxes that hold no AWS credentials (2026-11-12)</p><p><strong>Worth watching:</strong> No new video pick today. Latest: AlphaGenome 2: Teaching AI to read the entire human genome (2026-11-12)</p><p><strong>Constraints:</strong> No new constraint today. Latest: DHS order bars DeepSeek products from federal civilian agencies (2026-10-20)</p><p><strong>Threats:</strong> No new threat today. Widest reach still open: TWCA Registration Authority server accessed without authorization (medium, 2026-10-29)</p>",
+   "content_text": "288 capability events from 126 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words. Introducing Gemini 4 Hydrogen GoogleChrome/modern-web-guidance-src openai/codex-security DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF alibaba/open-code-review",
+   "date_published": "2026-11-13T11:14:27Z",
+   "tags": [
+    "agents",
+    "coding",
+    "local",
+    "mcp",
+    "memory",
+    "models",
+    "multimodal",
+    "security"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-11-13.json",
+    "backfilled": false,
+    "capabilities": 288
+   }
+  },
+  {
    "id": "2026-11-12",
    "url": "https://www.cameronsutcliff.com/magpie/2026-11-12",
    "title": "Run open robot models, train on work footage, fit Qwen in 12GB, and more",
@@ -678,29 +702,6 @@
     "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-14.json",
     "backfilled": true,
     "capabilities": 130
-   }
-  },
-  {
-   "id": "2026-10-13",
-   "url": "https://www.cameronsutcliff.com/magpie/2026-10-13",
-   "title": "Trim vision tokens, clone voices, ship agents from YAML, and more",
-   "summary": "Most of today is research papers with no runnable code, plus a few usable open repos. The clearest practical items are an open speech model, a transformers release, and a talk on managing agents as code.",
-   "content_html": "<p>Most of today is research papers with no runnable code, plus a few usable open repos. The clearest practical items are an open speech model, a transformers release, and a talk on managing agents as code.</p><ol><li><a href=\"https://huggingface.co/papers/2610.12572\">DiffusionART stabilizes reinforcement fine-tuning of diffusion models</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-13-d8cd449ebf6e\">on Magpie</a>): Fine-tune diffusion models with reinforcement learning without tuning EMA or needing differentiable rewards.</li><li><a href=\"https://huggingface.co/papers/2610.07987\">VisionWeave cuts visual token use by 43%</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-13-fb2aace24285\">on Magpie</a>): Serve multimodal models with adaptive visual token granularity, using 43% fewer tokens while keeping nearly all performance.</li><li><a href=\"https://github.com/OpenBMB/VoxCPM\">VoxCPM2 offers tokenizer-free multilingual speech and voice cloning</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-13-3201d6827eb0\">on Magpie</a>): Generate multilingual speech, design voices and clone them with an open tokenizer-free TTS model.</li><li><a href=\"https://github.com/huggingface/transformers\">Transformers ships releases v5.18.0 and v5.19.0</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-13-663b118a946f\">on Magpie</a>): Use the latest model definitions for text, vision, audio and multimodal inference and training by upgrading to v5.19.0.</li><li><a href=\"https://www.youtube.com/watch?v=QSeaZ6qHyXs\">Managed Agents resources defined in YAML for CI/CD</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-13-4b91360fbdb6\">on Magpie</a>): Keep long-term agent resources as YAML in your codebase and update them from CI using the Ant CLI.</li></ol>",
-   "content_text": "Most of today is research papers with no runnable code, plus a few usable open repos. The clearest practical items are an open speech model, a transformers release, and a talk on managing agents as code. DiffusionART stabilizes reinforcement fine-tuning of diffusion models VisionWeave cuts visual token use by 43% VoxCPM2 offers tokenizer-free multilingual speech and voice cloning Transformers ships releases v5.18.0 and v5.19.0 Managed Agents resources defined in YAML for CI/CD",
-   "date_published": "2026-10-20T15:26:36Z",
-   "tags": [
-    "agents",
-    "evals",
-    "infra",
-    "memory",
-    "models",
-    "multimodal",
-    "research"
-   ],
-   "_magpie": {
-    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-13.json",
-    "backfilled": true,
-    "capabilities": 105
    }
   }
  ]

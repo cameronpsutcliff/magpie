@@ -1,6 +1,6 @@
 {
  "schema": "magpie.threats/1",
- "updated": "2026-11-12",
+ "updated": "2026-11-13",
  "threats": [
   {
    "id": "thr-2026-11-09-openssh-password-authentication-bypass-on-linux",

@@ -2,6 +2,84 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-11-13",
+   "headline": "Introducing Gemini 4 Hydrogen, modern-web-guidance-src, codex-security, and more",
+   "events": 288,
+   "sources": 543,
+   "enriched": false,
+   "top": [
+    {
+     "id": "6794fc0a0a40",
+     "title": "Introducing Gemini 4 Hydrogen",
+     "impact": 4,
+     "vendor": "Google",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-13-6794fc0a0a40"
+    },
+    {
+     "id": "414e16974c03",
+     "title": "GoogleChrome/modern-web-guidance-src",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-13-414e16974c03"
+    },
+    {
+     "id": "b57fcf4b3229",
+     "title": "openai/codex-security",
+     "impact": 4,
+     "vendor": "OpenAI",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-13-b57fcf4b3229"
+    },
+    {
+     "id": "e197a9917ccd",
+     "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
+     "impact": 5,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-13-e197a9917ccd"
+    },
+    {
+     "id": "6e62c7dad254",
+     "title": "alibaba/open-code-review",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-13-6e62c7dad254"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Anthropic",
+    "AWS",
+    "Google",
+    "OpenAI",
+    "Databricks"
+   ],
+   "topics": {
+    "coding": 91,
+    "models": 85,
+    "agents": 78,
+    "multimodal": 60,
+    "infra": 37,
+    "mcp": 33,
+    "local": 28,
+    "evals": 25,
+    "memory": 22,
+    "reverse": 21,
+    "security": 17,
+    "research": 13,
+    "robotics": 1
+   },
+   "kinds": {
+    "blog": 57,
+    "newsletter": 40,
+    "social": 38,
+    "community": 34,
+    "repo": 33,
+    "model": 30,
+    "changelog": 26,
+    "space": 20,
+    "news": 10
+   }
+  },
+  {
    "date": "2026-11-12",
    "headline": "Run open robot models, train on work footage, fit Qwen in 12GB, and more",
    "events": 438,
@@ -4217,5 +4295,5 @@
    }
   }
  ],
- "latest": "2026-11-12"
+ "latest": "2026-11-13"
 }
