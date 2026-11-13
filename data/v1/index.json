@@ -3,81 +3,83 @@
  "days": [
   {
    "date": "2026-11-13",
-   "headline": "Introducing Gemini 4 Hydrogen, modern-web-guidance-src, codex-security, and more",
-   "events": 288,
-   "sources": 543,
-   "enriched": false,
+   "headline": "Google ships Gemini 4 Hydrogen, Inkling 2 Small opens, SGLang reaches Trainium, and more",
+   "events": 490,
+   "sources": 572,
+   "enriched": true,
    "top": [
     {
      "id": "6794fc0a0a40",
-     "title": "Introducing Gemini 4 Hydrogen",
+     "title": "Google introduces Gemini 4 Hydrogen for agentic workflows",
      "impact": 4,
      "vendor": "Google",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-13-6794fc0a0a40"
     },
     {
-     "id": "414e16974c03",
-     "title": "GoogleChrome/modern-web-guidance-src",
+     "id": "55cc869f025e",
+     "title": "Inkling 2 Small open weights under Apache 2.0",
      "impact": 4,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-13-414e16974c03"
+     "vendor": "Thinking Machines",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-13-55cc869f025e"
     },
     {
      "id": "b57fcf4b3229",
-     "title": "openai/codex-security",
+     "title": "Codex Security CLI keeps trending",
      "impact": 4,
      "vendor": "OpenAI",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-13-b57fcf4b3229"
     },
     {
-     "id": "e197a9917ccd",
-     "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
-     "impact": 5,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-13-e197a9917ccd"
+     "id": "414e16974c03",
+     "title": "Chrome team guidance repo for coding agents",
+     "impact": 3,
+     "vendor": "Google",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-13-414e16974c03"
     },
     {
-     "id": "6e62c7dad254",
-     "title": "alibaba/open-code-review",
+     "id": "899a60cee1cc",
+     "title": "SGLang-Neuron serves models on AWS Trainium",
      "impact": 4,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-13-6e62c7dad254"
+     "vendor": "AWS",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-13-899a60cee1cc"
     }
    ],
    "vendors": [
     "Open source",
+    "NVIDIA",
     "Anthropic",
-    "AWS",
     "Google",
     "OpenAI",
-    "Databricks"
+    "AWS"
    ],
    "topics": {
-    "coding": 91,
-    "models": 85,
-    "agents": 78,
-    "multimodal": 60,
-    "infra": 37,
-    "mcp": 33,
-    "local": 28,
-    "evals": 25,
-    "memory": 22,
-    "reverse": 21,
-    "security": 17,
-    "research": 13,
-    "robotics": 1
+    "models": 133,
+    "coding": 121,
+    "agents": 116,
+    "multimodal": 82,
+    "infra": 64,
+    "evals": 43,
+    "mcp": 40,
+    "local": 33,
+    "reverse": 30,
+    "memory": 29,
+    "research": 25,
+    "security": 22,
+    "robotics": 5
    },
    "kinds": {
-    "blog": 57,
-    "newsletter": 40,
-    "social": 38,
-    "community": 34,
+    "video": 132,
+    "social": 108,
+    "blog": 56,
+    "newsletter": 43,
     "repo": 33,
+    "community": 33,
     "model": 30,
     "changelog": 26,
     "space": 20,
-    "news": 10
-   }
+    "news": 9
+   },
+   "threats": []
   },
   {
    "date": "2026-11-12",
