@@ -1,0 +1,408 @@
+{
+ "ran_at": "2026-11-13T22:59:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-13T18:57:00Z",
+ "queries": 8,
+ "calls": 14,
+ "items": [
+  {
+   "title": "Thinking Machines details Inkling 2 Small trained with a native 4-bit forward pass from first pretraining step through RL",
+   "url": "https://x.com/thinkymachines/status/2121353292878110868",
+   "handle": "@thinkymachines",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "A write-up of how Inkling 2 Small was trained with a 4-bit (NVFP4) forward pass and MXFP8 gradients on GB300s, with the stated result of pretraining in 68 hours. Repliers cite about 8% faster pretraining and 20% faster RL than full MXFP8 at roughly 2% lower compute efficiency, which a builder training low-precision models can check against the post.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://thinkingmachines.ai/blog/end-to-end-4-bit-training/"
+   ],
+   "vendor": "Thinking Machines",
+   "posted_at": "2026-11-13T21:23:32Z",
+   "metrics": {
+    "likes": 570,
+    "reposts": 90,
+    "quotes": 38,
+    "replies": 20
+   },
+   "confirmed_by": [
+    "@miramurati",
+    "@soumithchintala"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers mostly praise it; a few restate the speed and efficiency numbers and note only the forward pass is 4-bit.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Google Antigravity adds Dynamic Workflows: the agent writes a Python script to orchestrate subagents",
+   "url": "https://x.com/antigravity/status/2121327669534933025",
+   "handle": "@antigravity",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "The /run-workflow command has the agent write a reviewable Python script that runs parallel and sequential subagents with structured handoffs, aiming for deterministic control flow instead of prompt drift. Repliers say the script can be read and re-run before it executes.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Google",
+   "posted_at": "2026-11-13T19:41:43Z",
+   "metrics": {
+    "likes": 1291,
+    "reposts": 95,
+    "quotes": 40,
+    "replies": 88
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No link or docs in the post; replies ask how failures and permissions are handled.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers like the script-as-orchestration idea and ask about failure handling and tool permissions; one cancelled over the weekly quota timer, unrelated to the feature.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Claude Code Projects coordinator now answers in project chat and reports on thread status",
+   "url": "https://x.com/ClaudeDevs/status/2121375309287301360",
+   "handle": "@ClaudeDevs",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "In a Claude Code project, the coordinator that runs tasks across parallel threads is more proactive: it answers questions in the project chat and posts updates on the status of ongoing threads.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Anthropic",
+   "posted_at": "2026-11-13T22:51:01Z",
+   "metrics": {
+    "likes": 706,
+    "reposts": 39,
+    "quotes": 11,
+    "replies": 41
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Some repliers still lack access or report repeated permission prompts and fast usage drain.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Some say it fixes tab-hopping; others report no access yet, constant approval prompts and quota burn.",
+    "tried": true,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "NVIDIA announces GR00T 2, an open robotics System One model that transfers skills across robot bodies",
+   "url": "https://x.com/nvidia/status/2121319866712076769",
+   "handle": "@nvidia",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "GR00T 2 is described as an open model that learns skills from human demonstrations and predicts how its actions change the world, with skills carrying across robot bodies. The post shows a demo video and gives no weights or paper link.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-11-13T19:10:43Z",
+   "metrics": {
+    "likes": 1651,
+    "reposts": 166,
+    "quotes": 105,
+    "replies": 550
+   },
+   "confirmed_by": [
+    "@Thom_Wolf"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Nothing to check in the post itself: no weights, paper or numbers linked.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "none",
+    "summary": "Replies are mostly off-topic comments about NVIDIA leadership; the few on topic praise the chore demo and nobody reports trying it.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Independent vision benchmark compares Gemini 4 Hydrogen with Argon and Carbon on cost and speed",
+   "url": "https://x.com/skalskip92/status/2121322414453694489",
+   "handle": "@skalskip92",
+   "group": "builders",
+   "origin": "discovery",
+   "summary": "A long thread runs Gemini 4 Hydrogen against Argon and Carbon on detection, text reading and extraction tasks. At high effort Hydrogen averages 29.3 s per image versus 51.4 for Argon and 132.3 for Carbon at about $0.0379 per image, and at low effort Argon is the pick on price.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://twitter.com/GoogleDeepMind/status/2120940338869055788"
+   ],
+   "vendor": "Google DeepMind",
+   "posted_at": "2026-11-13T19:20:50Z",
+   "metrics": {
+    "likes": 59,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 1
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Artificial Analysis Controlled Voice Arena: Speechify Simba 3.5 ranks #1, level with HeyGen Voice",
+   "url": "https://x.com/ArtificialAnlys/status/2121356612011196739",
+   "handle": "@ArtificialAnlys",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Simba 3.5 takes first place in the Controlled Voice arena, statistically level with HeyGen Voice and ahead of Qwen-Audio-3.1-TTS-Plus at 1176, and is fifth on Provider Voice, level with Cartesia Sonic.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Speechify",
+   "posted_at": "2026-11-13T21:36:43Z",
+   "metrics": {
+    "likes": 29,
+    "reposts": 4,
+    "quotes": 4,
+    "replies": 5
+   },
+   "confirmed_by": [
+    "@SpeechifyAI"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Artificial Analysis launches the Diarization Index benchmark for who-said-what in speech to text",
+   "url": "https://x.com/ArtificialAnlys/status/2121351856005984583",
+   "handle": "@ArtificialAnlys",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A new benchmark scores speech-to-text APIs on Word Diarization Error Rate, the share of words given to the wrong speaker or none, across 97 conversations of two or more speakers.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Artificial Analysis",
+   "posted_at": "2026-11-13T21:17:49Z",
+   "metrics": {
+    "likes": 154,
+    "reposts": 5,
+    "quotes": 4,
+    "replies": 13
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "MiniMax H3-Image becomes the top open-weights image model on Artificial Analysis editing and text-to-image",
+   "url": "https://x.com/ArtificialAnlys/status/2121339732026445859",
+   "handle": "@ArtificialAnlys",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "H3-Image is #1 among open-weights models on both AA-Image-Editing v2.1 and AA-Image-T2I v2.1, ranking #13 overall in editing and #25 in text to image. A faster Highspeed variant is API only.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "MiniMax",
+   "posted_at": "2026-11-13T20:29:39Z",
+   "metrics": {
+    "likes": 125,
+    "reposts": 4,
+    "quotes": 3,
+    "replies": 16
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "vstack agentic formal verification turns up rare-combination bugs in vLLM",
+   "url": "https://x.com/haoailab/status/2121320482876399825",
+   "handle": "@haoailab",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Hao AI Lab applied its vstack tool to vLLM with the project's team and lists bugs found in rare feature combinations, including zero-cache continuation, a queue-limit lockout, a shared-cache out-of-bounds write, stale LoRA weights after in-place reload and cross-image cache mix-ups, with fixes going upstream.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Hao AI Lab",
+   "posted_at": "2026-11-13T19:13:10Z",
+   "metrics": {
+    "likes": 82,
+    "reposts": 12,
+    "quotes": 5,
+    "replies": 11
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Thread lists the bug classes but links no issues or patches yet.",
+    "source": null
+   }
+  },
+  {
+   "title": "browser-use 1.0.4 raises prompt cache hit rate from 78% to 96%, cutting cost per task by a third",
+   "url": "https://x.com/browser_use/status/2121345707219288396",
+   "handle": "@browser_use",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "After a harness fix, cache hits go from 78% to 96%, cost per task falls from $0.67 to $0.45 and time from 5.0 to 4.6 minutes at the same eval score. Available as browser-use 1.0.4.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Browser Use",
+   "posted_at": "2026-11-13T20:53:23Z",
+   "metrics": {
+    "likes": 22,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 3
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "browser-use adds 1Password login so agents can sign in without seeing the password",
+   "url": "https://x.com/browser_use/status/2121329928130232750",
+   "handle": "@browser_use",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "An agent that hits a login page asks the user to approve in 1Password, which fills the credentials while the agent never sees the password and keeps going.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Browser Use",
+   "posted_at": "2026-11-13T19:50:41Z",
+   "metrics": {
+    "likes": 58,
+    "reposts": 3,
+    "quotes": 1,
+    "replies": 3
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Demo video only; nothing independent to check.",
+    "source": null
+   }
+  },
+  {
+   "title": "NVIDIA Deja View interactive demo opens on Hugging Face with no code needed",
+   "url": "https://x.com/NVIDIAAI/status/2121338187872338405",
+   "handle": "@NVIDIAAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "An interactive Space lets anyone try NVIDIA's Deja View model in the browser without writing code.",
+   "kind": "demo",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/spaces/nvidia/dvlt"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-11-13T20:23:31Z",
+   "metrics": {
+    "likes": 6,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 1
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Post does not say what the model does.",
+    "source": null
+   }
+  },
+  {
+   "title": "Baseten open-sources a Rust and CUDA inference engine for DeepSeek V4.1 Flash",
+   "url": "https://x.com/baseten/status/2121373358717862213",
+   "handle": "@baseten",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "A from-scratch engine reports about 1,740 tok/s decode on 4xB300 and 2,060 on 8xB300, with a 1M-token prefill in about 12 seconds.",
+   "kind": "repo",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Baseten",
+   "posted_at": "2026-11-13T22:43:16Z",
+   "metrics": {
+    "likes": 11,
+    "reposts": 0,
+    "quotes": 1,
+    "replies": 1
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Vendor-run numbers; the repo link was not resolvable from the post.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 95,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://x.com/haoailab/status/2121320482876399825",
+   "reason": "vLLM bugs (cache OOB write, lockout) found by formal verification; vLLM is not in stack.json and is not agent tooling, supply chain or containers."
+  }
+ ]
+}
