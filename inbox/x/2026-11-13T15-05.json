@@ -1,0 +1,221 @@
+{
+ "ran_at": "2026-11-13T15:05:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-13T11:05:00Z",
+ "queries": 6,
+ "calls": 7,
+ "items": [
+  {
+   "title": "llama.cpp and ggml reach v1.0.0 with semantic versioning for the public C API",
+   "url": "https://x.com/ggml_org/status/2121249603479535911",
+   "handle": "@ggml_org",
+   "group": "opensource",
+   "origin": "discovery",
+   "summary": "The llama.cpp and ggml projects tag v1.0.0 and commit to bumping the major version on any API or ABI break. The release notes list prebuilt artifacts for Linux, macOS, Windows, Android and iOS plus Docker, Debian, Homebrew, conda-forge, MacPorts and Winget channels, more than 150 supported architectures, and ggml 1.0.0 adds FP8 support.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/ggml-org/llama.cpp/releases/tag/v1.0.0",
+    "https://github.com/ggml-org/ggml/releases/tag/v1.0.0",
+    "https://huggingface.co/blog/ggml-org/llama-cpp-v1"
+   ],
+   "vendor": "ggml-org",
+   "posted_at": "2026-11-13T14:31:31Z",
+   "metrics": {
+    "likes": 27,
+    "reposts": 4,
+    "quotes": 2,
+    "replies": 1,
+    "views": 498
+   },
+   "confirmed_by": [
+    "@victormustar",
+    "@huggingface",
+    "@ClementDelangue"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Omarchy 4.6 lets a laptop use a home desktop's local model over the network",
+   "url": "https://x.com/OmarchyUpdates/status/2120969956364026157",
+   "handle": "@OmarchyUpdates",
+   "group": "opensource",
+   "origin": "saved",
+   "summary": "Omarchy 4.6 adds a way for a laptop to send prompts to a local model running on the user's own desktop, with no cloud or API bill, and the video walks through a three-step setup. Repliers describe running similar setups over Tailscale, and the account says per-request keys and wake-on-LAN are the open details.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Omarchy",
+   "posted_at": "2026-11-12T20:00:17Z",
+   "metrics": {
+    "likes": 334,
+    "reposts": 21,
+    "quotes": 2,
+    "replies": 18,
+    "views": 7198
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Announcement shows a video walkthrough but no changelog, repo or measured speed was linked in the post; the setup steps are cut off in the post text.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers like the idea and several already run laptop-to-desktop models over Tailscale; questions are about per-laptop key revocation, public-wifi use and waking a sleeping desktop, and nobody reports trying the new feature itself.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Letta FrontierMemory puts Gemini 4 Carbon 4th at 71.1% and Hydrogen at 64.4%",
+   "url": "https://x.com/Letta_AI/status/2121255895745351874",
+   "handle": "@Letta_AI",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Letta reports results from its FrontierMemory leaderboard for agent memory: Gemini 4 Carbon scores 71.1% at about $94 per run, against 64.4% for Gemini 4 Argon, and Hydrogen matches Argon at about $100. It says Carbon costs about a third of Opus 5.5 on this test.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://frontiermemory.com"
+   ],
+   "vendor": "Letta",
+   "posted_at": "2026-11-13T14:56:00Z",
+   "metrics": {
+    "likes": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 75
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Vendor-run leaderboard, posted minutes ago; method page and replies were not read.",
+    "source": null
+   }
+  },
+  {
+   "title": "Eight open OCR models compared on 850 pages: $0.51 down to $0.095 per 1,000 pages",
+   "url": "https://x.com/vanstriendaniel/status/2121236079445443000",
+   "handle": "@vanstriendaniel",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A Hugging Face engineer ran eight open OCR models from the last 18 months on the same 850 pages on one GPU and reports cost per 1,000 pages falling from $0.51 to $0.095. The follow-up post links a Hugging Face Space to run the cheapest model on your own pages and the vLLM batch tool used.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/spaces/uv-scripts/run-on-jobs?model=lightonai/LightOnOCR-3-0.8B",
+    "https://github.com/davanstrien/saturate"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-13T13:37:00Z",
+   "metrics": {
+    "likes": 29,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 4,
+    "views": 791
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single-author test on one 850-page set; the quality side of the comparison was not read.",
+    "source": null
+   }
+  },
+  {
+   "title": "Hyperflare update cuts DeepSeek V4.1 Flash time-to-start under load from 4s to 0.38s on three RTX PRO 6000 GPUs",
+   "url": "https://x.com/plotarmordev/status/2121246180445495446",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A builder reports that a Hyperflare update cut the wait to begin a new reply from 4 seconds to 0.38 seconds while seven other requests were generating, with steady-state generation speed about unchanged. A recipe README with the configuration is linked.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/AzallazA/RTX-PRO-6000-TP3-Inference-Recipes/blob/main/DeepSeek-V4.1-Flash%20Hyperflare-tp3-20261111/README.md"
+   ],
+   "vendor": "Hyperflare",
+   "posted_at": "2026-11-13T14:17:00Z",
+   "metrics": {
+    "likes": 3,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 270
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Self-reported single-rig measurement from a small account; the README was not opened and replies were not read.",
+    "source": null
+   }
+  },
+  {
+   "title": "LeRobot 0.7 adds remote policy inference so a GPU server drives the robot",
+   "url": "https://x.com/LeRobotHF/status/2121208528836632919",
+   "handle": "@LeRobotHF",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "LeRobot 0.7 splits the robot computer (cameras, motors, recording) from a policy server on a GPU machine that predicts action chunks while an action buffer keeps the robot moving. It replaces async_inference via pip install lerobot[remote] and covers a Unitree G1 setup where the GPU runs the policy and the robot's Jetson runs the decoder.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/docs/lerobot/remote_inference"
+   ],
+   "vendor": "Hugging Face LeRobot",
+   "posted_at": "2026-11-13T11:48:00Z",
+   "metrics": {
+    "likes": 67,
+    "reposts": 6,
+    "quotes": 0,
+    "replies": 6,
+    "views": 1924
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/ThePrimeagen/status/2120998759895072814",
+   "reason": "Article share with no AI or dev capability."
+  }
+ ],
+ "list_posts_read": 91,
+ "list_pages": 1,
+ "security_forwarded": [
+  {
+   "url": "https://x.com/can1357/status/2121235345819775469",
+   "matched": "macOS (Mini, Air in stack.json); unverified claim of an undisclosed XNU network DoS with a PoC, no CVE or advisory"
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/theomlondhe/status/2121243000953086291",
+   "reason": "GitHub policy change to Dependabot alerts on inactive repos, not a vulnerability or compromise."
+  }
+ ]
+}
