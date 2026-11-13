@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-13T06:36:00Z",
+ "updated_at": "2026-11-13T10:30:00Z",
  "accounts": [
   {
    "handle": "@thsottiaux",
@@ -1985,6 +1985,42 @@
    "retired_reason": null,
    "owner_requested": false,
    "x_user_id": "1007413134",
+   "on_list": true
+  },
+  {
+   "handle": "@lhoestq",
+   "name": "Quentin Lhoest",
+   "group": "opensource",
+   "affiliation": "Hugging Face",
+   "why": "First-hand on Hugging Face datasets and hub plumbing: hf:// DuckDB 2.0 extension, hf_dataset(), Parquet edit storage savings of 99.7%.",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-11-13",
+   "evidence": [
+    "https://x.com/lhoestq/status/2117260945558745584",
+    "https://x.com/lhoestq/status/2113299311517942196"
+   ],
+   "last_qualifying_post": "2026-11-04",
+   "retired_reason": null,
+   "x_user_id": "1846655912",
+   "on_list": true
+  },
+  {
+   "handle": "@can1357",
+   "name": "Can Bölük",
+   "group": "builders",
+   "affiliation": "Independent",
+   "why": "First-hand agent-harness and coding-tool builder: dquickts bytecode artifacts, snapshottable QuickJS heap primitive.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-13",
+   "evidence": [
+    "https://x.com/can1357/status/2117415341328597381",
+    "https://x.com/can1357/status/2113390699441701305"
+   ],
+   "last_qualifying_post": "2026-11-03",
+   "retired_reason": null,
+   "x_user_id": "602951145",
    "on_list": true
   }
  ],
