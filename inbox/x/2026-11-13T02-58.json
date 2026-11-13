@@ -1,0 +1,176 @@
+{
+ "ran_at": "2026-11-13T02:58:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-12T22:58:00Z",
+ "queries": 4,
+ "calls": 6,
+ "items": [
+  {
+   "title": "T3 training-time testing lowers validation loss in data-constrained pretraining",
+   "url": "https://x.com/xingyudang/status/2121024085165531554",
+   "handle": "@xingyudang",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Each step takes a trial step on half the batch, tests it on the other half and updates with the meta-gradient. It adds three lines to a first-order step at 6 to 9% extra step time and lowers validation loss by 0.011 to 0.015 nats per token on SlowRun and at 300M, 600M and 1.4B over 8 seeds. Ablations show testing on the same tokens hurts.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://dangxingyu.github.io/blog/t3.html"
+   ],
+   "vendor": "T3",
+   "posted_at": "2026-11-12T23:35:23Z",
+   "metrics": {
+    "likes": 111,
+    "reposts": 14,
+    "quotes": 4,
+    "replies": 3,
+    "views": 5581
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Authors' own results; no code link was in the posts read.",
+    "source": null
+   }
+  },
+  {
+   "title": "InferenceBench adds Fable 5.2, Sonnet 5.5 and Haiku 5.5",
+   "url": "https://x.com/maksym_andr/status/2121048441669255324",
+   "handle": "@maksym_andr",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "New InferenceBench results put Fable 5.2 at the same level as Fable 5.1, matching what PostTrainBench showed. The leaderboard post itself is by a collaborator and was quoted, not read in full.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/jehyeoky248/status/2121047671213580535"
+   ],
+   "vendor": "InferenceBench",
+   "posted_at": "2026-11-13T01:12:10Z",
+   "metrics": {
+    "likes": 9,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 465
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Few numbers in the post itself; the leaderboard was not opened.",
+    "source": null
+   }
+  },
+  {
+   "title": "Zyphra serves GLM-5.3-Flash on AMD MI300X and lists priced throughput",
+   "url": "https://x.com/ZyphraAI/status/2121016300587950140",
+   "handle": "@ZyphraAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Zyphra says its Optimization Engine puts it on the Artificial Analysis throughput leaderboard for GLM-5.3-Flash on MI300X, at $0.15 input, $0.03 cached and $0.25 output per million tokens, available on Zyphra Inference.",
+   "kind": "infra",
+   "evidence": "artifact",
+   "links": [
+    "https://cloud.zyphra.com"
+   ],
+   "vendor": "Zyphra",
+   "posted_at": "2026-11-12T23:04:27Z",
+   "metrics": {
+    "likes": 25,
+    "reposts": 7,
+    "quotes": 0,
+    "replies": 2,
+    "views": 893
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Vendor-reported ranking; the leaderboard figure was not opened.",
+    "source": null
+   }
+  },
+  {
+   "title": "TensorFold reports 716-729 tok/s combined across four streams for Spark-X2.6-4B on one RTX 5090",
+   "url": "https://x.com/SparkLLM/status/2121050112650576236",
+   "handle": "@SparkLLM",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A thread summarising author tests: four concurrent requests give 716 to 729 tokens/s combined on an RTX 5090 (8-bit, Linux) against 191 to 204 for one stream. At 28k input, decode holds at 197 to 200 tokens/s; a separate RTX 4090 test shows 0.24 s to first token at 2k input and 4.65 s at 29k. The thread notes no drafter or structured-output serving and that the numbers are historical author tests, not a rerun.",
+   "kind": "infra",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-13T01:18:48Z",
+   "metrics": {
+    "likes": 8,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 315
+   },
+   "confirmed_by": [
+    "@ashxhart"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Thread itself says these are the author's tests, not independently rerun, and the four-stream figure is total throughput rather than per-user speed.",
+    "source": null
+   }
+  },
+  {
+   "title": "OpenAI previews automated patching and automated red teaming security tools",
+   "url": "https://x.com/thsottiaux/status/2121036562058400200",
+   "handle": "@thsottiaux",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Codex lead Tibo says OpenAI announced cybersecurity tools it is developing, covering automated patching and automated red teaming, with a recording of the Cyber at the Frontier event. Replies and quotes describe two Daybreak products (Defense Factory and Red Team) and an unnamed cyber model with a reported 77% ExploitGym score; those figures come from third-party posts and the OpenAI page could not be opened.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [
+    "https://openai.com/cyber-at-the-frontier/"
+   ],
+   "vendor": "OpenAI",
+   "posted_at": "2026-11-13T00:24:58Z",
+   "metrics": {
+    "likes": 1896,
+    "reposts": 87,
+    "quotes": 57,
+    "replies": 550,
+    "views": 248323
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Tools are described as in development; the model score appears only in quote posts and access to the new model is reported as restricted.",
+    "source": "https://x.com/Aurora0x3f/status/2121074121530544337"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "The ten non-retweet quotes read were mostly short summaries in English, Chinese and Japanese; some are enthusiastic about auto-patching, others note the strongest model is not available to ordinary users. No one reports trying it.",
+    "tried": false,
+    "replies_read": 10
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 96,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://x.com/thsottiaux/status/2121036562058400200",
+   "reason": "OpenAI announcing security tooling, not a vulnerability or compromised component; matches nothing in stack.json."
+  }
+ ]
+}
