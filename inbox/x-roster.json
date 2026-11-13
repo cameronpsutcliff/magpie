@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-12T10:30:00Z",
+ "updated_at": "2026-11-13T06:36:00Z",
  "accounts": [
   {
    "handle": "@thsottiaux",
@@ -112,7 +112,8 @@
    "last_qualifying_post": "2026-10-28",
    "retired_reason": null,
    "x_user_id": "284333988",
-   "on_list": true
+   "on_list": true,
+   "owner_requested": true
   },
   {
    "handle": "@Thom_Wolf",
@@ -1851,6 +1852,140 @@
    "retired_reason": null,
    "x_user_id": "1647142216857419776",
    "on_list": true
+  },
+  {
+   "handle": "@thepirateface",
+   "name": "Pirate Face",
+   "group": "opensource",
+   "affiliation": "Pirate Face",
+   "why": "Owner-requested watch (2026-11-13). Official Pirate Face account (@thepirateface, pirateface.co): torrent index and CLI that keep open-weight models available peer-to-peer. Daily magnet lists and first-hand seeder counts (30,000 seeders on 2026-11-12).",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-13",
+   "evidence": [
+    "https://x.com/thepirateface/status/2121046373269450884",
+    "https://x.com/thepirateface/status/2120698114080190939"
+   ],
+   "last_qualifying_post": "2026-11-12",
+   "retired_reason": null,
+   "owner_requested": true,
+   "x_user_id": "882578436849418240",
+   "on_list": true
+  },
+  {
+   "handle": "@JensenHuang",
+   "name": "Jensen Huang",
+   "group": "labs",
+   "affiliation": "NVIDIA",
+   "why": "Owner-requested watch (2026-11-13). Official NVIDIA founder account (affiliation badge @nvidia; profile URL is NVIDIA's bio page). First-hand posts on open-weight policy, Nemotron, and the Hugging Face deal. Also curated in config; added here as an owner pick so it is a List member. Low post volume; last original post 2026-10-26.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-13",
+   "evidence": [
+    "https://x.com/JensenHuang/status/2080643682408321103",
+    "https://x.com/JensenHuang/status/2095482647355244762",
+    "https://x.com/JensenHuang/status/2087184542050496763"
+   ],
+   "last_qualifying_post": "2026-09-03",
+   "retired_reason": null,
+   "owner_requested": true,
+   "x_user_id": "2070631956824698880",
+   "on_list": true
+  },
+  {
+   "handle": "@OmarchyUpdates",
+   "name": "Omarchy Updates",
+   "group": "builders",
+   "affiliation": "independent (Omarchy community)",
+   "why": "Owner-requested watch (2026-11-13). Community-run Omarchy release and fix account (not affiliated with Omarchy). Owner saved the 2026-11-12 post on Omarchy 4.6 letting a laptop borrow a home desktop's local model over the tailnet, with no cloud or API bill.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-13",
+   "evidence": [
+    "https://x.com/OmarchyUpdates/status/2120969956364026157"
+   ],
+   "last_qualifying_post": "2026-11-12",
+   "retired_reason": null,
+   "owner_requested": true,
+   "x_user_id": "2090578233263853568",
+   "on_list": true
+  },
+  {
+   "handle": "@ClementDelangue",
+   "name": "Clem Delangue",
+   "group": "opensource",
+   "affiliation": "Hugging Face",
+   "why": "Hugging Face CEO. First-hand on the open-source hub and, after Jensen Huang's 2026-11-12 departure, posted that Hugging Face will keep fighting for open-source AI. Complements the official @huggingface account.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-13",
+   "evidence": [
+    "https://x.com/ClementDelangue/status/2120883918119592037",
+    "https://x.com/ClementDelangue/status/2120954925463248917"
+   ],
+   "last_qualifying_post": "2026-11-12",
+   "retired_reason": null,
+   "owner_requested": false,
+   "x_user_id": "186420551",
+   "on_list": true
+  },
+  {
+   "handle": "@huggingface",
+   "name": "Hugging Face",
+   "group": "opensource",
+   "affiliation": "Hugging Face",
+   "why": "Official open-model hub. Recent first-hand posts on local quantization, live training runs, and the open-source ML Intern Slack bot. Also curated in config; added here so it is a List member. Central to the open-weight ecosystem around NVIDIA's pending Hugging Face deal.",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-11-13",
+   "evidence": [
+    "https://x.com/huggingface/status/2120200194247565645",
+    "https://x.com/huggingface/status/2118715992343789911",
+    "https://x.com/huggingface/status/2118430862949945612"
+   ],
+   "last_qualifying_post": "2026-11-10",
+   "retired_reason": null,
+   "owner_requested": false,
+   "x_user_id": "778764142412984320",
+   "on_list": true
+  },
+  {
+   "handle": "@thinkymachines",
+   "name": "Thinking Machines",
+   "group": "labs",
+   "affiliation": "Thinking Machines Lab",
+   "why": "NVIDIA-backed open lab. On 2026-11-12 released Inkling 2 Small weights on Hugging Face under Apache 2.0 (after introducing the model on 2026-11-05, with a thanks to @NVIDIAAI). Also curated in config; added here so it is a List member.",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-11-13",
+   "evidence": [
+    "https://x.com/thinkymachines/status/2120982625582195011",
+    "https://x.com/thinkymachines/status/2118489527362912566"
+   ],
+   "last_qualifying_post": "2026-11-12",
+   "retired_reason": null,
+   "owner_requested": false,
+   "x_user_id": "1891523745929732096",
+   "on_list": true
+  },
+  {
+   "handle": "@DrJimFan",
+   "name": "Jim Fan",
+   "group": "research",
+   "affiliation": "NVIDIA",
+   "why": "NVIDIA Director of Robotics and Distinguished Scientist (GEAR lab). First-hand open robotics releases: GR00T 2 (2026-11-10), an onboard open System One model with published weights, agentic framework, simulation, annotation engine, hardware designs and training data. Also curated in config; added here so it is a List member.",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-11-13",
+   "evidence": [
+    "https://x.com/DrJimFan/status/2120186651741655428",
+    "https://x.com/DrJimFan/status/2120186653448810948"
+   ],
+   "last_qualifying_post": "2026-11-10",
+   "retired_reason": null,
+   "owner_requested": false,
+   "x_user_id": "1007413134",
+   "on_list": true
   }
  ],
  "source_leads": [
@@ -2361,8 +2496,8 @@
   "name": "Magpie roster",
   "owner": "@CameronSutcliff",
   "private": true,
-  "member_count": 92,
+  "member_count": 101,
   "scope": "every trial and active account in this file; curated config accounts are not members yet",
-  "updated_at": "2026-11-11T00:00:30Z"
+  "updated_at": "2026-11-13T06:36:00Z"
  }
 }
