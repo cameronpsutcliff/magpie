@@ -1,0 +1,257 @@
+{
+ "ran_at": "2026-11-13T18:57:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-13T15:05:00Z",
+ "queries": 5,
+ "calls": 5,
+ "items": [
+  {
+   "title": "oMLX 0.8.0rc1 lets a Mac offload prefill to an NVIDIA GPU or DGX Spark over a LAN cable",
+   "url": "https://x.com/jundotkim/status/2120924292796035074",
+   "handle": "@jundotkim",
+   "group": "builders",
+   "origin": "discovery",
+   "summary": "The oMLX release candidate adds a CUDA helper, started with one docker run on the NVIDIA box, that takes over prompt prefill while the Mac keeps decoding. On an M3 Ultra with a 64K prompt, DeepSeek V4.1 Flash prefill goes from 1,085 to 2,412 tok/s with a DGX Spark and to 1,914 with two RTX A6000s.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/jundot/omlx/releases/tag/v0.8.0rc1"
+   ],
+   "vendor": "oMLX",
+   "posted_at": "2026-11-12T16:58:50Z",
+   "metrics": {
+    "likes": 296,
+    "reposts": 30,
+    "quotes": 15,
+    "replies": 43
+   },
+   "confirmed_by": [
+    "@plotarmordev"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Release candidate; the author says use 0.7.3 for stable.",
+    "source": null
+   }
+  },
+  {
+   "title": "Open ASR Leaderboard: three open models pass Nemotron 3.5 Transcribe in English within two weeks",
+   "url": "https://x.com/EricBezzam/status/2121296503998206372",
+   "handle": "@EricBezzam",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Hugging Face updates the Open ASR Leaderboard: SOV-Transcribe-1 (27B MoE), fluid-speech-pro (0.6B Parakeet-TDT fine-tune, WER 7.04 to 6.06 at about 8x the throughput of Nemotron) and Musci-ASR-qwen now rank above Nemotron 3.5 Transcribe in English. Scripts and per-sample results are open.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/spaces/hf-audio/open_asr_leaderboard",
+    "https://github.com/huggingface/open_asr_leaderboard",
+    "https://huggingface.co/FluidVoice-Labs/fluid-speech-pro"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-13T17:37:52Z",
+   "metrics": {
+    "likes": 17,
+    "reposts": 1,
+    "quotes": 3,
+    "replies": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "SWE-sweep leaderboard: DeepSeek 4.1 Flash Max is the first open-weight model above 1% on a bug-finding benchmark",
+   "url": "https://x.com/KLieret/status/2121273075362906406",
+   "handle": "@KLieret",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "SWE-sweep, a joint benchmark from Meta FAIR, Stanford, Harvard and UW, tests agents on finding real bugs. Its leaderboard update shows DeepSeek 4.1 Flash Max as the first open-weight model to clear 1%. Code is MIT licensed.",
+   "kind": "eval",
+   "evidence": "artifact",
+   "links": [
+    "https://swesweep.com",
+    "https://github.com/facebookresearch/swe-sweep"
+   ],
+   "vendor": "Meta FAIR and partners",
+   "posted_at": "2026-11-13T16:04:47Z",
+   "metrics": {
+    "likes": 54,
+    "reposts": 3,
+    "quotes": 2,
+    "replies": 12
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "TRL v1.18 makes AsyncGRPOTrainer stable: generation and training run at once on separate GPUs",
+   "url": "https://x.com/DirhousssiAmine/status/2121271181445931101",
+   "handle": "@DirhousssiAmine",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "TRL 1.18 promotes AsyncGRPOTrainer to stable. A rollout worker streams completions from a plain vllm serve while the trainer pulls from a queue and pushes new weights over NCCL, with tree packing so a shared prompt is forwarded once.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/huggingface/trl/releases/tag/v1.18.0"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-13T15:57:15Z",
+   "metrics": {
+    "likes": 7,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 1
+   },
+   "confirmed_by": [
+    "@huggingface"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Matthew Berman open-sources Scarlet, a tool for speeding up AI-assisted video editing review",
+   "url": "https://x.com/MatthewBerman/status/2121297629711909166",
+   "handle": "@MatthewBerman",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Scarlet is a GitHub repo for reviewing AI edits of video, including dialogue cutting. The author calls it buggy but says it speeds up his editing review.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/Forward-Future/scarlet"
+   ],
+   "vendor": "Forward Future",
+   "posted_at": "2026-11-13T17:42:21Z",
+   "metrics": {
+    "likes": 122,
+    "reposts": 7,
+    "quotes": 1,
+    "replies": 15
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Author describes it as buggy and rough; no measurements given.",
+    "source": null
+   }
+  },
+  {
+   "title": "Hyper3D Rigging is live on fal: auto-rig humanoids, quadrupeds, birds and dragons",
+   "url": "https://x.com/fal/status/2121259235887514088",
+   "handle": "@fal",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "fal hosts Hyper3D Rigging from DeemosTech. It builds skeletons for several creature types, accepts a bone list or text prompt for custom skeletons, adds finger bones on humanoids and ships 280+ stock animations.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://fal.ai/models/hyper3d/rigging",
+    "https://fal.ai/models/hyper3d/rigging/animations"
+   ],
+   "vendor": "DeemosTech / fal",
+   "posted_at": "2026-11-13T15:09:47Z",
+   "metrics": {
+    "likes": 82,
+    "reposts": 6,
+    "quotes": 3,
+    "replies": 9
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Google DeepMind says it is releasing PARDIG and SatWeave, the datasets behind WeatherNext 3",
+   "url": "https://x.com/GoogleDeepMind/status/2121229774865527097",
+   "handle": "@GoogleDeepMind",
+   "group": "labs",
+   "origin": "discovery",
+   "summary": "DeepMind announces two observation datasets that underpin its WeatherNext 3 forecasting model, for researchers building climate applications. The lead post carries no download link and the thread was not read.",
+   "kind": "dataset",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/GoogleDeepMind/status/2121229774865527097"
+   ],
+   "vendor": "Google DeepMind",
+   "posted_at": "2026-11-13T13:12:43Z",
+   "metrics": {
+    "likes": 518,
+    "reposts": 75,
+    "quotes": 42,
+    "replies": 149
+   },
+   "confirmed_by": [
+    "@EmmaScharfmann"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No link, size or license in the lead post.",
+    "source": null
+   }
+  },
+  {
+   "title": "NeuroBench: a 2.74 TB MRI and CT benchmark for vision-language models reading brain scans",
+   "url": "https://x.com/EmmaScharfmann/status/2121279898010419508",
+   "handle": "@EmmaScharfmann",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A new Hugging Face dataset of MRI and CT studies that tests how well vision-language models read brain scans. The post gives the size but no link or scores.",
+   "kind": "dataset",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/EmmaScharfmann/status/2121279898010419508"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-13T16:31:53Z",
+   "metrics": {
+    "likes": 8,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No dataset link or baseline numbers in the post.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 95,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
