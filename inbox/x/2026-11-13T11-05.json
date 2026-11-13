@@ -1,0 +1,196 @@
+{
+ "ran_at": "2026-11-13T11:05:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-13T02:58:00Z",
+ "queries": 6,
+ "calls": 13,
+ "items": [
+  {
+   "title": "ADEMark v1 benchmarks the apps used to run coding agents on one Mac mini",
+   "url": "https://x.com/zqkrq/status/2121005921694556557",
+   "handle": "@zqkrq",
+   "group": "devtools",
+   "origin": "saved",
+   "summary": "An open benchmark that measures agent development environments test by test on the same Mac mini, tasks and model, with the bare CLI as baseline, covering launch speed, memory, tokens and orchestration. The author says most of the apps used fewer tokens than the CLI alone and one idled at 16% CPU.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://ademark.dev"
+   ],
+   "vendor": "ADEMark",
+   "posted_at": "2026-11-12T22:23:12Z",
+   "metrics": {
+    "likes": 587,
+    "reposts": 17,
+    "quotes": 10,
+    "replies": 41,
+    "views": 152015
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single-author benchmark on one machine; method pages were not opened and many repliers ask for their own tool to be added.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers praise the effort and mostly ask to add tools (OpenCode, Codex, Pi, Volt, others); nobody reports reproducing the numbers and one asks for UI quality to be measured too.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Tencent Hy4 ranks #3 on the Artificial Analysis Cyber Index and #1 on CWE-Bench-AA",
+   "url": "https://x.com/ArtificialAnlys/status/2121137661180256653",
+   "handle": "@ArtificialAnlys",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Artificial Analysis puts Hy4 at 58% on its Cyber Index and 76% on CWE-Bench-AA (finding and fixing real software vulnerabilities), 6 points ahead of DeepSeek V4.1 Flash 1017 on that test, at $0.92 per task and 64k output tokens per task. API pricing is $0.834 input and $2.501 output per million tokens.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Tencent Hunyuan",
+   "posted_at": "2026-11-13T07:06:41Z",
+   "metrics": {
+    "likes": 157,
+    "reposts": 8,
+    "quotes": 11,
+    "replies": 35,
+    "views": 24764
+   },
+   "confirmed_by": [
+    "@TencentHunyuan",
+    "@teortaxesTex"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Third-party benchmark run on Artificial Analysis' own implementation; replies were not read.",
+    "source": null
+   }
+  },
+  {
+   "title": "inclusionAI publishes duo-1.0-distill-quant weights on Hugging Face",
+   "url": "https://x.com/i/status/2121172186681532497",
+   "handle": "@aitrackerbot",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A tracker account reports public weights for duo-1.0, a full-duplex multimodal world model for real-time audio-visual interaction, in an FP8-quantized four-step distilled form.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "inclusionAI",
+   "posted_at": "2026-11-13T09:23:53Z",
+   "metrics": {
+    "likes": 6,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 0,
+    "views": 481
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Secondhand report from an aggregator; the Hugging Face page was not opened.",
+    "source": null
+   }
+  },
+  {
+   "title": "HeyGen Decision 1 decision model is live on OpenRouter",
+   "url": "https://x.com/i/status/2121133592075964428",
+   "handle": "@aitrackerbot",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "HeyGen's decision model reads text, images and video and answers up to 400 yes/no, choice or score questions per call with probabilities, at 128K context (Turbo preview 256K), priced at $0.14 per million input tokens on OpenRouter with no output charge.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "HeyGen",
+   "posted_at": "2026-11-13T06:50:31Z",
+   "metrics": {
+    "likes": 11,
+    "reposts": 0,
+    "quotes": 1,
+    "replies": 1,
+    "views": 794
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Secondhand report from an aggregator; the OpenRouter listing was not opened.",
+    "source": null
+   }
+  },
+  {
+   "title": "Transformers adds a shared decision-model interface; Hugging Face engineer runs one in a few lines",
+   "url": "https://x.com/lhoestq/status/2121195546958324050",
+   "handle": "@lhoestq",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Transformers gained decision models (DecisionConfig, pipeline decision, model.decide) so engines, trainers and evals share one interface. A Hugging Face engineer shows a decision model IMDB script run locally with uv and on HF Jobs with cheap hardware.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/huggingface/transformers/pull/50054"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-13T10:56:42Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 2,
+    "views": 52
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Author is a Hugging Face employee; the demo script and accuracy figures were not opened.",
+    "source": null
+   }
+  },
+  {
+   "title": "Re-run of MicroDuck Arena Hill Climb files finds most top entries solve only the five scored starts",
+   "url": "https://x.com/witcheer/status/2121174480617721986",
+   "handle": "@witcheer",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "After re-running all 129 public files on the Arena's own scorer (all matched board times), the author reports 25 of the top 30 ducks finish fewer than half of 20 other starts. A duck trained on Pollen's shipped recipe on one RTX 5090 climbs the 1.5 m slope in 4.93 s, upright on all 25 starts.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "MicroDuck Arena",
+   "posted_at": "2026-11-13T09:33:00Z",
+   "metrics": {
+    "likes": 7,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 3,
+    "views": 664
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single-author re-run; the files and clip were not independently checked.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 92,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}

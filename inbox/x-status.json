@@ -1,21 +1,21 @@
 {
- "updated_at": "2026-11-13T10:30:00Z",
- "job": "roster",
+ "updated_at": "2026-11-13T11:05:00Z",
+ "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 9,
+ "calls_used_today": 22,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-13T02:58:00Z",
-  "items": 5,
-  "queries": 4,
+  "ran_at": "2026-11-13T11:05:00Z",
+  "items": 6,
+  "queries": 6,
   "deep_reads": 1,
   "rechecks": 0,
-  "flagged": 5,
-  "saved_in": 0,
-  "saved_kept": 0,
+  "flagged": 6,
+  "saved_in": 1,
+  "saved_kept": 1,
   "videos": 0,
   "security_forwarded": 0,
-  "list_posts_read": 96,
+  "list_posts_read": 92,
   "list_pages": 1
  },
  "roster": {
@@ -276,7 +276,8 @@
   "Sweep 02:57Z: calls_used_today counted for UTC day 2026-11-12 (5 so far; X shows 997 of 1000 left shared). No new saves in the 20 newest bookmarks (all in the archive). Follows skipped, no browser.",
   "Roster review 2026-11-12: @danikkk_wqs (2 kept saves) failed the owner_saves screen: engagement-bait posts plus get-rich trading claims ('turned $21.40 into $9,312.85'); not added; owner may add to avoid. @RoundtableSpace is already on avoid (aggregator), so its 2 saves do not count. @DarioAmodei and @minimaxir (curated, config last_post 2026-09-23) both posted within 45 days (2026-10-21, 2026-11-01) so no retirement; config last_post is stale. No other roster candidates searched: no off-roster account was quoted by 2+ roster accounts this week.",
   "Sweep 02:59Z (Nov 13): bookmarks via get_users_bookmarks id 1521986356721123328 worked (25 posts, all already in the archive), so saved_in is 0. openai.com pages return a bot-check page to plain curl, so primary-link text could not be read.",
-  "Roster review 2026-11-13: owner_saves step found no new authors (@danikkk_wqs still vice-excluded, @RoundtableSpace on avoid, @mirku21 retired). No promotions: no trial had 2+ sweep items in the 14 days of kept sweep files. Added @lhoestq and @can1357 (2 capability posts each in 30 days). @Nouamanetazi (1 handbook), @zhijianliu (1 release), @DimitrisPapail (commentary) skipped. Flag for owner: @JensenHuang (owner_requested) has no qualifying post since 2026-09-03; @mem0ai (trial) last qualifying 2026-10-01 reaches the 45-day retire line on 2026-11-15 unless a new qualifying post appears. Retire/avoid not changed."
+  "Roster review 2026-11-13: owner_saves step found no new authors (@danikkk_wqs still vice-excluded, @RoundtableSpace on avoid, @mirku21 retired). No promotions: no trial had 2+ sweep items in the 14 days of kept sweep files. Added @lhoestq and @can1357 (2 capability posts each in 30 days). @Nouamanetazi (1 handbook), @zhijianliu (1 release), @DimitrisPapail (commentary) skipped. Flag for owner: @JensenHuang (owner_requested) has no qualifying post since 2026-09-03; @mem0ai (trial) last qualifying 2026-10-01 reaches the 45-day retire line on 2026-11-15 unless a new qualifying post appears. Retire/avoid not changed.",
+  "Sweep 11:05Z: search for from:claudeai Claude Meetings returned nothing since 02:58Z although a roster member reposted it; @claudeai is not on the list or curated roster. get_posts_by_ids note_tweet carries the full text and unwound links when requested. Saves, only 1 new (ADEMark) found by diffing bookmarks against the archive since bookmarks carry no saved-at time. Follows skipped, no browser."
  ],
  "errors": [],
  "follows_today": 0,
