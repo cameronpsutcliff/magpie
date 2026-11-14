@@ -1,0 +1,144 @@
+{
+ "ran_at": "2026-11-14T10:58:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-14T02:58:00Z",
+ "queries": 12,
+ "calls": 15,
+ "items": [
+  {
+   "title": "Infrathon: a 24-hour benchmark where agents optimize real AI infrastructure; 135 of 150 runs were still improving late",
+   "url": "https://x.com/paperswithcodee/status/2121543949651189899",
+   "handle": "@paperswithcodee",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "Allen AI, UW and Stanford release a benchmark of 25 real AI-infra tasks run on H100s with six agent configurations over 24 hours; rankings shift with the time horizon, and Claude Opus 5.5 found a KV-cache codec scoring 19.86 against 6.82 for a human-designed one.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://paperswithcode.co/paper/2611.11995",
+    "https://huggingface.co/datasets/Infrathon/Infrathon",
+    "https://infrathonx.github.io/"
+   ],
+   "vendor": "Allen Institute for AI",
+   "posted_at": "2026-11-14T10:01:08Z",
+   "metrics": {
+    "likes": 3,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 2,
+    "views": 125
+   },
+   "confirmed_by": [
+    "@NielsRogge"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "dspy-wsp: a DSPy optimizer in which a frontier model edits a small model's weights directly",
+   "url": "https://x.com/dbreunig/status/2121288792837660803",
+   "handle": "@dbreunig",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Drew Breunig and Cmpnd release a prototype weight-space optimizer that plugs into DSPy like any other optimizer; the authors say about 5 to 10 dollars of frontier-model usage improved every decision model they tested.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://cmpnd.ai/blog/weight-space-programming-dspy.html"
+   ],
+   "vendor": "Cmpnd",
+   "posted_at": "2026-11-13T17:07:14Z",
+   "metrics": {
+    "likes": 453,
+    "reposts": 51,
+    "quotes": 7,
+    "replies": 24,
+    "views": 21126
+   },
+   "confirmed_by": [
+    "@rikiyatakehi",
+    "@DSPyOSS"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "One reply argues the gains came from an abliteration-like change rather than the model directly editing weights; unverified and not deep-read.",
+    "source": "https://x.com/batcz/status/2121425385099591928"
+   }
+  },
+  {
+   "title": "UGG: one model for video generation, depth estimation and camera pose",
+   "url": "https://x.com/askalphaxiv/status/2121450297977376844",
+   "handle": "@askalphaxiv",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A paper proposes a unified generative geometry model that handles video generation, depth and camera pose together instead of as separate tasks.",
+   "kind": "paper",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "unknown",
+   "posted_at": "2026-11-14T03:49:00Z",
+   "metrics": {
+    "likes": 107,
+    "reposts": 11,
+    "quotes": 0,
+    "replies": 1,
+    "views": 4056
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No code, link or numbers visible in the post.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/LLMSherpa/status/2121243929777451415",
+   "reason": "rhetorical seeding post, no dev detail"
+  },
+  {
+   "url": "https://x.com/AlxAIProd/status/2121245489966305454",
+   "reason": "fan fiction art"
+  },
+  {
+   "url": "https://x.com/IsaacBotkin/status/2121345993186681285",
+   "reason": "non-AI map tool"
+  },
+  {
+   "url": "https://x.com/katechon_studio/status/2121245067746644071",
+   "reason": "non-dev"
+  },
+  {
+   "url": "https://x.com/Foyege24/status/2117506839390941478",
+   "reason": "fan art"
+  },
+  {
+   "url": "https://x.com/adayasmr/status/2121405232370594295",
+   "reason": "fan art, no AI capability"
+  },
+  {
+   "url": "https://x.com/SecureLegion/status/2121282823428727141",
+   "reason": "VPN product promotion"
+  }
+ ],
+ "list_posts_read": 97,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://x.com/can1357/status/2121469833795834164",
+   "reason": "Commentary on Cursor's Nov 13 incident update (cursor.com/blog/security-incident-update), already forwarded to Bouncer in sweep 2026-11-14T02:58Z; nothing new."
+  }
+ ]
+}
