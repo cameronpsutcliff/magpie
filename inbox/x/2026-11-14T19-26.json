@@ -1,0 +1,113 @@
+{
+ "ran_at": "2026-11-14T19:26:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-14T14:57:00Z",
+ "queries": 11,
+ "calls": 12,
+ "items": [
+  {
+   "title": "Zyphra serves GLM-5.3-Flash in FP4 on AMD MI300X with a custom MXFP4 MoE kernel, 9.5x faster per user than stock SGLang",
+   "url": "https://x.com/ZyphraAI/status/2121673094893085108",
+   "handle": "@ZyphraAI",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Zyphra added an FP4 build of GLM-5.3-Flash to its hosted inference, using a kernel that stores expert weights in MXFP4 and converts to FP8 in registers. On the SemiAnalysis AgentX replay at 96 sessions per 8xMI300X node it reports p90 generation of 44.6 vs 4.7 tokens/s per user and p90 time to first token of 6.24 s vs 299.32 s against stock SGLang, at 25% below its FP8 price.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://cloud.zyphra.com"
+   ],
+   "vendor": "Zyphra",
+   "posted_at": "2026-11-14T18:34:00Z",
+   "metrics": {
+    "likes": 15,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Comparison is against stock SGLang on the vendor's own replay setup; no independent run yet.",
+    "source": null
+   }
+  },
+  {
+   "title": "DeepSeek V4.1-Flash (about 475 GB of weights) runs on a single M5 Ultra Mac at 1,300 prefill and 70 decode tokens/s, later 2,200 and 90",
+   "url": "https://x.com/ashxhart/status/2121626710063853622",
+   "handle": "@ashxhart",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A builder shows the official DSV4.1-Flash-1017 weights served locally on one M5 Ultra Mac with a 131k context cap, single stream, at temperature 1.0. A follow-up post reports 2,200 prefill and 90 decode after tuning.",
+   "kind": "demo",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "DeepSeek",
+   "posted_at": "2026-11-14T15:30:00Z",
+   "metrics": {
+    "likes": 95,
+    "reposts": 7,
+    "quotes": 3,
+    "replies": 15,
+    "views": 5770
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single-stream only; repliers ask about KV headroom at 131k, multi-stream throughput and long-prompt first-token time, none answered.",
+    "source": "https://x.com/Reeexopia/status/2121660809332039697"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Mostly congratulations from local-inference users; a few asked about multi-stream decode and KV cache room, and one noted 1,300 prefill means over a minute for a 100k prompt.",
+    "tried": false,
+    "replies_read": 16
+   }
+  },
+  {
+   "title": "Two SAGE-REX3 quantized releases claim 2.48 bits per weight for 321B-class MoE models on one DGX Spark",
+   "url": "https://x.com/ViC305/status/2121674217074892947",
+   "handle": "@ViC305",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A builder says an updated SAGE quantization process fits two 321B-class MoE models on one DGX Spark at 2.48 bits per weight while keeping over 95% top-1 agreement with the original FP8 checkpoints. The post links nothing checkable, only an image.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "SAGE-REX3",
+   "posted_at": "2026-11-14T18:38:00Z",
+   "metrics": {
+    "likes": 19,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 5,
+    "views": 501
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No weights link, method or eval in the post; repliers ask about long context, tool calling and first-token time at low bit width, with no answers yet.",
+    "source": "https://x.com/TheLocalAILab/status/2121684018630467732"
+   },
+   "reception": {
+    "sentiment": "none",
+    "summary": "Replies are questions about long-context, tool-calling and first-token behavior at 2.48 bpw; nobody reports trying it.",
+    "tried": false,
+    "replies_read": 5
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 99,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
