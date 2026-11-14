@@ -2,6 +2,85 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-11-14",
+   "headline": "elephant-goldfish-model, Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF, modern-web-guidance-src, and more",
+   "events": 246,
+   "sources": 543,
+   "enriched": false,
+   "top": [
+    {
+     "id": "4445d71c4797",
+     "title": "google/elephant-goldfish-model",
+     "impact": 4,
+     "vendor": "Google",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-14-4445d71c4797"
+    },
+    {
+     "id": "e197a9917ccd",
+     "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
+     "impact": 5,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-14-e197a9917ccd"
+    },
+    {
+     "id": "414e16974c03",
+     "title": "GoogleChrome/modern-web-guidance-src",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-14-414e16974c03"
+    },
+    {
+     "id": "41609ee26a0c",
+     "title": "Leonxlnx/taste-skill",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-14-41609ee26a0c"
+    },
+    {
+     "id": "b57fcf4b3229",
+     "title": "openai/codex-security",
+     "impact": 4,
+     "vendor": "OpenAI",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-14-b57fcf4b3229"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Anthropic",
+    "Google",
+    "NVIDIA",
+    "OpenAI",
+    "Hugging Face"
+   ],
+   "topics": {
+    "coding": 74,
+    "models": 63,
+    "agents": 61,
+    "multimodal": 61,
+    "infra": 32,
+    "mcp": 28,
+    "evals": 27,
+    "local": 23,
+    "memory": 21,
+    "reverse": 13,
+    "security": 9,
+    "research": 8,
+    "robotics": 7
+   },
+   "kinds": {
+    "social": 43,
+    "blog": 41,
+    "repo": 34,
+    "model": 30,
+    "newsletter": 29,
+    "community": 25,
+    "changelog": 20,
+    "space": 20,
+    "news": 4
+   },
+   "threats": []
+  },
+  {
    "date": "2026-11-13",
    "headline": "Google ships Gemini 4 Hydrogen, Inkling 2 Small opens, SGLang reaches Trainium, and more",
    "events": 490,
@@ -4297,5 +4376,5 @@
    }
   }
  ],
- "latest": "2026-11-13"
+ "latest": "2026-11-14"
 }

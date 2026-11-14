@@ -13,6 +13,29 @@
  ],
  "items": [
   {
+   "id": "2026-11-14",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-11-14",
+   "title": "elephant-goldfish-model, Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF, modern-web-guidance-src, and more",
+   "summary": "246 capability events from 127 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words.",
+   "content_html": "<p>246 capability events from 127 sources. Ranked by code; the editor did not run this edition, so copy is the sources&#x27; own words.</p><ol><li><a href=\"https://github.com/google/elephant-goldfish-model\">google/elephant-goldfish-model</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-14-4445d71c4797\">on Magpie</a>)</li><li><a href=\"https://huggingface.co/DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF\">DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-14-e197a9917ccd\">on Magpie</a>)</li><li><a href=\"https://github.com/GoogleChrome/modern-web-guidance-src\">GoogleChrome/modern-web-guidance-src</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-14-414e16974c03\">on Magpie</a>)</li><li><a href=\"https://github.com/Leonxlnx/taste-skill\">Leonxlnx/taste-skill</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-14-41609ee26a0c\">on Magpie</a>)</li><li><a href=\"https://github.com/openai/codex-security\">openai/codex-security</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-14-b57fcf4b3229\">on Magpie</a>)</li></ol><p><strong>Possibilities:</strong> No new possibility today. Latest: Shared agent skills become dependable team standards once they survive compaction (2026-11-13)</p><p><strong>Worth watching:</strong> No new video pick today. Latest: 225,000 Lines of Tests, Written and Merged by Agents - Kush Agrawal, Duolingo (2026-11-13)</p><p><strong>Constraints:</strong> No new constraint today. Latest: DHS order bars DeepSeek products from federal civilian agencies (2026-10-20)</p><p><strong>Threats still open:</strong> <a href=\"https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-123158\">OpenSSH Password Authentication Bypass on Linux</a> (high, exploited, active)</p>",
+   "content_text": "246 capability events from 127 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words. google/elephant-goldfish-model DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF GoogleChrome/modern-web-guidance-src Leonxlnx/taste-skill openai/codex-security",
+   "date_published": "2026-11-14T11:12:09Z",
+   "tags": [
+    "agents",
+    "coding",
+    "local",
+    "mcp",
+    "models",
+    "multimodal",
+    "security"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-11-14.json",
+    "backfilled": false,
+    "capabilities": 246
+   }
+  },
+  {
    "id": "2026-11-13",
    "url": "https://www.cameronsutcliff.com/magpie/2026-11-13",
    "title": "Google ships Gemini 4 Hydrogen, Inkling 2 Small opens, SGLang reaches Trainium, and more",
@@ -679,30 +702,6 @@
     "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-15.json",
     "backfilled": true,
     "capabilities": 136
-   }
-  },
-  {
-   "id": "2026-10-14",
-   "url": "https://www.cameronsutcliff.com/magpie/2026-10-14",
-   "title": "Grounds objects faster, serves audio models, answers calls, audits coding agents, and more",
-   "summary": "Most of today's items are papers and repos with few independent results. The most usable pieces are an open call center stack, an audio serving framework, and practical Claude Code habits for cost and privacy.",
-   "content_html": "<p>Most of today&#x27;s items are papers and repos with few independent results. The most usable pieces are an open call center stack, an audio serving framework, and practical Claude Code habits for cost and privacy.</p><ol><li><a href=\"https://huggingface.co/papers/2609.39601\">GroundingPI: 4B model for precise object localization</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-14-f65c36eedb36\">on Magpie</a>): A small 4B grounding model is reported to improve object localization and downstream robotics and driving performance.</li><li><a href=\"https://huggingface.co/papers/2610.11765\">Thinking Inertia: models keep reasoning when told not to</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-14-222c7ba038da\">on Magpie</a>): You can now measure how well a model obeys a no-thinking instruction using multi-level metrics.</li><li><a href=\"https://github.com/rasonyang/ai-native-callcenter\">Self-hosted AI call center with realtime voice bots</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-14-ab792688f615\">on Magpie</a>): You can run an API-first call center where voice bots answer calls and human agents take over without dropping them.</li><li><a href=\"https://github.com/sgl-project/sglang-omni\">SGLang-Omni serves audio and multimodal models</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-14-c1bc21113fe9\">on Magpie</a>): You can serve TTS, ASR and unified multimodal models in a high-performance framework from the SGLang project.</li><li><a href=\"https://github.com/mvanhorn/last30days-skill\">last30days skill researches topics across social sources</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-14-090721c8eaa3\">on Magpie</a>): An agent skill researches a topic across Reddit, X, YouTube, HN, Polymarket and the web and writes a grounded summary.</li></ol>",
-   "content_text": "Most of today's items are papers and repos with few independent results. The most usable pieces are an open call center stack, an audio serving framework, and practical Claude Code habits for cost and privacy. GroundingPI: 4B model for precise object localization Thinking Inertia: models keep reasoning when told not to Self-hosted AI call center with realtime voice bots SGLang-Omni serves audio and multimodal models last30days skill researches topics across social sources",
-   "date_published": "2026-10-20T15:25:41Z",
-   "tags": [
-    "agents",
-    "evals",
-    "infra",
-    "local",
-    "memory",
-    "models",
-    "multimodal",
-    "robotics"
-   ],
-   "_magpie": {
-    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-14.json",
-    "backfilled": true,
-    "capabilities": 130
    }
   }
  ]
