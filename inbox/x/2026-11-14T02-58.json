@@ -1,0 +1,316 @@
+{
+ "ran_at": "2026-11-14T02:58:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-13T22:59:00Z",
+ "queries": 8,
+ "calls": 11,
+ "items": [
+  {
+   "title": "Claude Code on desktop gets custom themes with mods and animated backgrounds",
+   "url": "https://x.com/ClaudeDevs/status/2121392666244186327",
+   "handle": "@ClaudeDevs",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Claude Code desktop can now be restyled by describing a theme to Claude, with a theme-examples plugin to start from.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Anthropic",
+   "posted_at": "2026-11-13T23:59:59Z",
+   "metrics": {
+    "likes": 8057,
+    "reposts": 410,
+    "quotes": 205,
+    "replies": 0,
+    "views": 310906
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "fal Agent adds Fable 5.2 and builds playable games from one prompt",
+   "url": "https://x.com/fal/status/2121413437544710564",
+   "handle": "@fal",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "fal Agent now runs Claude Fable 5.2: describe a game and it generates assets and code and runs the game next to the chat.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://fal.ai/agent"
+   ],
+   "vendor": "fal",
+   "posted_at": "2026-11-14T01:22:32Z",
+   "metrics": {
+    "likes": 28,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "LiteLLM Customer Portal adds per-customer budgets, caps and load balancing for usage-based AI products",
+   "url": "https://x.com/Mokhalil01/status/2121407588621492286",
+   "handle": "@Mokhalil01",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "LiteLLM ships a portal for setting and capping usage budgets per customer and balancing load between them.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://docs.litellm.ai/blog/customer-portal"
+   ],
+   "vendor": "LiteLLM",
+   "posted_at": "2026-11-14T00:59:17Z",
+   "metrics": {
+    "likes": 9,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "TensorFold 1.2.8: Flint 40B on M5 Macs and 26 to 34 percent faster CUDA prefill at TP=2",
+   "url": "https://x.com/ashxhart/status/2121386402948559261",
+   "handle": "@ashxhart",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Release adds Flint 40B-A2.5B on M5 Macs, experimental DeepSeek-V4.1 on Metal and Qwen3 embeddings on CUDA, with the author's own speedups (MLX 8-bit cold prompts about 33% faster on M5 Ultra).",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://tensorfold.dev"
+   ],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-13T23:35:06Z",
+   "metrics": {
+    "likes": 106,
+    "reposts": 12,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Speedups are the maintainer's own numbers; no independent run seen.",
+    "source": null
+   }
+  },
+  {
+   "title": "Measured: on a 82 GiB Qwen3.8 Flash quant, extra GPU VRAM gives about 80% more decode speed, doubling RAM about 27%",
+   "url": "https://x.com/uctive/status/2121219563496857772",
+   "handle": "@uctive",
+   "group": "builders",
+   "origin": "discovery",
+   "summary": "On an RTX 5090 Laptop with Basalt v0.2.1 (105 to 187 tok/s going from 16 to 24 GiB VRAM; 83 to 105 tok/s from 32 to 64 GB RAM), with Basalt v0.3.3 adding 13 to 20% on cold start and long context.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Basalt",
+   "posted_at": "2026-11-13T12:32:08Z",
+   "metrics": {
+    "likes": 10,
+    "reposts": 2,
+    "quotes": 1,
+    "replies": 0,
+    "views": 889
+   },
+   "confirmed_by": [
+    "@plotarmordev"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Artificial Analysis Coding Agent Index v2.1: Claude Fable 5.2 and Opus 5.5 lead at 58",
+   "url": "https://x.com/ArtificialAnlys/status/2121393821955334328",
+   "handle": "@ArtificialAnlys",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Index upgrades to FrontierCode-AA 2.0 (132 tasks graded on maintainer merge) and Terminal-Bench 4.1, scores fall about 5 points; cost per task varies about 30x among top configurations.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Artificial Analysis",
+   "posted_at": "2026-11-14T00:04:35Z",
+   "metrics": {
+    "likes": 334,
+    "reposts": 13,
+    "quotes": 21,
+    "replies": 0,
+    "views": 52421
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "ParseBench-2 benchmarks 40 document-parsing tools on 6 dimensions and LlamaIndex releases OCRia-1.5",
+   "url": "https://x.com/jerryjliu0/status/2121384707384647893",
+   "handle": "@jerryjliu0",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Severity-weighted OCR benchmark with 4.3k+ pages; frontier models and specialist OCR tools each win different dimensions, and the author warns the composite score is a simple average.",
+   "kind": "eval",
+   "evidence": "artifact",
+   "links": [
+    "https://www.parsebench.ai/",
+    "https://huggingface.co/datasets/llamaindex/ParseBench-2",
+    "https://www.llamaindex.ai/blog/introducing-parsebench-v2"
+   ],
+   "vendor": "LlamaIndex",
+   "posted_at": "2026-11-13T23:28:22Z",
+   "metrics": {
+    "likes": 12,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Authors note some feedback on annotations and metrics and say new versions will follow.",
+    "source": null
+   }
+  },
+  {
+   "title": "Budget3D: image-to-3D generation at any token budget",
+   "url": "https://x.com/_akhaliq/status/2121393022353215679",
+   "handle": "@_akhaliq",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Image-to-3D model that trades quality against a chosen token budget; collection posted on Hugging Face.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/BudgetAny"
+   ],
+   "vendor": "BudgetAny",
+   "posted_at": "2026-11-14T00:01:24Z",
+   "metrics": {
+    "likes": 49,
+    "reposts": 3,
+    "quotes": 2,
+    "replies": 0,
+    "views": 7617
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "llama.cpp server gets --moe-cache-mib for an LRU cache of MoE experts in VRAM",
+   "url": "https://x.com/danielhanchen/status/2121429376869007854",
+   "handle": "@danielhanchen",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "MoE models too big for VRAM can keep hot experts cached on the GPU with one flag, and Unsloth's prebuilt has an auto size option.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md"
+   ],
+   "vendor": "llama.cpp",
+   "posted_at": "2026-11-14T02:25:52Z",
+   "metrics": {
+    "likes": 20,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Hermes Agent adds hermes backup and hermes import to move config, skills and sessions as one zip",
+   "url": "https://x.com/witcheer/status/2121423118669345196",
+   "handle": "@witcheer",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "One command archives an agent's config, skills, sessions and data, another restores them on the same or a new machine.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Nous Research",
+   "posted_at": "2026-11-14T02:01:00Z",
+   "metrics": {
+    "likes": 27,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 96,
+ "list_pages": 1,
+ "security_forwarded": [
+  {
+   "url": "https://cursor.com/blog/security-incident-update",
+   "matched": "Cursor (stack.json Cursor CLI) and always_forward agent tooling plus supply chain; update to the Oct 29 Claude Code extension incident (source post https://x.com/cursor_ai/status/2121411147714970092)"
+  }
+ ],
+ "security_na": []
+}
