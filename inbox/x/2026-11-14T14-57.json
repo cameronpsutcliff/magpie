@@ -1,0 +1,192 @@
+{
+ "ran_at": "2026-11-14T14:57:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-14T10:58:00Z",
+ "queries": 15,
+ "calls": 17,
+ "items": [
+  {
+   "title": "Qwen Sparse Attention fork of llama.cpp holds 185 tok/s at 255K context on one gaming GPU versus 82 for the stock dense build",
+   "url": "https://x.com/witcheer/status/2121566563954479397",
+   "handle": "@witcheer",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A community fork adds Qwen Sparse Attention to llama.cpp and ships GGUF weights for Qwen3.8-27B; the author's decode benchmark at 255K tokens of context is 185 tok/s with QSA against 82 on the stock dense build, with the harness published.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/pentaCoxian/Qwen-QSA-llama.cpp",
+    "https://huggingface.co/pentacoxian-dev/Qwen3.8-27B-QSA-GSQ-RCO-GGUF"
+   ],
+   "vendor": "pentaCoxian (community)",
+   "posted_at": "2026-11-14T11:31:00Z",
+   "metrics": {
+    "likes": 31,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 8,
+    "views": 1575
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single-author benchmark on one card; quality of the sparse-attention weights versus dense not reviewed.",
+    "source": null
+   }
+  },
+  {
+   "title": "Perplexity Decider v1.3 and Decider Flash v1.3 score 70 and 64 on the Artificial Analysis Decision Index v2.1",
+   "url": "https://x.com/ArtificialAnlys/status/2121595922090230033",
+   "handle": "@ArtificialAnlys",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Artificial Analysis benchmarks Perplexity's updated decision models: Decider v1.3 ranks #4 on AA-Paperclip and #3 on EvalSafe-O*NET-AA, and Flash gains 4 points over v1.2, at about 68 and 34 dollars per million index tasks.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://artificialanalysis.ai"
+   ],
+   "vendor": "Perplexity",
+   "posted_at": "2026-11-14T13:27:00Z",
+   "metrics": {
+    "likes": 37,
+    "reposts": 3,
+    "quotes": 6,
+    "replies": 21,
+    "views": 8867
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "llama.cpp MoE expert cache gives no gain on an Apple-silicon Mac with experts offloaded (21.2 vs 21.4 tok/s)",
+   "url": "https://x.com/plotarmordev/status/2121573106762322199",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A first-hand test of the new llama.cpp MoE expert cache on an M5 Ultra with Qwen3.8 Flash Next shows 21.2 tok/s without it and 21.4 with it; the author explains unified memory leaves the cache nothing to save and says it targets discrete GPUs.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "llama.cpp",
+   "posted_at": "2026-11-14T11:57:00Z",
+   "metrics": {
+    "likes": 10,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "RTX Spark laptop on Linux drops from 80 to 39.5 TFLOP/s under sustained load; resending the power profile restores 73",
+   "url": "https://x.com/plotarmordev/status/2121580656442704224",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A report on an HP laptop with the RTX Spark chip traces a halving of GPU throughput on Linux to a power limit falling from 80W to 45W, and says re-sending HP's power profile every minute held 73 to 75 TFLOP/s; the linked NVIDIA driver issue has since withdrawn some of its clock and percent-of-peak claims.",
+   "kind": "other",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/NVIDIA/open-gpu-kernel-modules/issues/1521"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-11-14T12:27:00Z",
+   "metrics": {
+    "likes": 5,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 2,
+    "community_note": null,
+    "pushback": "The linked issue carries an update dated 2026-11-05 withdrawing its physical-clock conversion and percent-of-peak claims; the TFLOP/s and power-limit numbers are not confirmed independently.",
+    "source": "https://github.com/NVIDIA/open-gpu-kernel-modules/issues/1521"
+   }
+  },
+  {
+   "title": "Hermes Agent can resume a background subagent after a usage limit or restart, behind an opt-in setting",
+   "url": "https://x.com/witcheer/status/2121607836287533405",
+   "handle": "@witcheer",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A Hermes Agent update lets the gateway pick an interrupted background subagent back up on its own conversation and worktree after a usage limit or restart, with one opt-in setting.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Nous Research",
+   "posted_at": "2026-11-14T14:15:00Z",
+   "metrics": {
+    "likes": 13,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 3,
+    "views": 674
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No release notes or code link in the post.",
+    "source": null
+   }
+  },
+  {
+   "title": "TensorFold provider plugin published on ClawHub for OpenClaw",
+   "url": "https://x.com/ashxhart/status/2121590315689652466",
+   "handle": "@ashxhart",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "An OpenClaw provider plugin starts a TensorFold server on demand or connects to a running one, so OpenClaw can use TensorFold-served models.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://clawhub.ai/ashhart/plugins/openclaw-tensorfold"
+   ],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-14T13:05:00Z",
+   "metrics": {
+    "likes": 12,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 97,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
