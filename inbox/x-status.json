@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-11-14T02:58:00Z",
- "job": "sweep",
+ "updated_at": "2026-11-14T10:30:00Z",
+ "job": "roster",
  "prompt": "v6.1",
- "calls_used_today": 11,
+ "calls_used_today": 13,
  "notes_via_api": false,
  "last_sweep": {
   "ran_at": "2026-11-14T02:58:00Z",
@@ -277,42 +277,32 @@
   "Roster review 2026-11-12: @danikkk_wqs (2 kept saves) failed the owner_saves screen: engagement-bait posts plus get-rich trading claims ('turned $21.40 into $9,312.85'); not added; owner may add to avoid. @RoundtableSpace is already on avoid (aggregator), so its 2 saves do not count. @DarioAmodei and @minimaxir (curated, config last_post 2026-09-23) both posted within 45 days (2026-10-21, 2026-11-01) so no retirement; config last_post is stale. No other roster candidates searched: no off-roster account was quoted by 2+ roster accounts this week.",
   "Sweep 02:59Z (Nov 13): bookmarks via get_users_bookmarks id 1521986356721123328 worked (25 posts, all already in the archive), so saved_in is 0. openai.com pages return a bot-check page to plain curl, so primary-link text could not be read.",
   "Roster review 2026-11-13: owner_saves step found no new authors (@danikkk_wqs still vice-excluded, @RoundtableSpace on avoid, @mirku21 retired). No promotions: no trial had 2+ sweep items in the 14 days of kept sweep files. Added @lhoestq and @can1357 (2 capability posts each in 30 days). @Nouamanetazi (1 handbook), @zhijianliu (1 release), @DimitrisPapail (commentary) skipped. Flag for owner: @JensenHuang (owner_requested) has no qualifying post since 2026-09-03; @mem0ai (trial) last qualifying 2026-10-01 reaches the 45-day retire line on 2026-11-15 unless a new qualifying post appears. Retire/avoid not changed.",
-  "Sweep 11:05Z: search for from:claudeai Claude Meetings returned nothing since 02:58Z although a roster member reposted it; @claudeai is not on the list or curated roster. get_posts_by_ids note_tweet carries the full text and unwound links when requested. Saves, only 1 new (ADEMark) found by diffing bookmarks against the archive since bookmarks carry no saved-at time. Follows skipped, no browser."
+  "Sweep 11:05Z: search for from:claudeai Claude Meetings returned nothing since 02:58Z although a roster member reposted it; @claudeai is not on the list or curated roster. get_posts_by_ids note_tweet carries the full text and unwound links when requested. Saves, only 1 new (ADEMark) found by diffing bookmarks against the archive since bookmarks carry no saved-at time. Follows skipped, no browser.",
+  "Roster review 2026-11-14 (Saturday, so no Sunday drafts): no new owner_saves authors (archive unchanged since Nov 13 07:55 CT). Updated last_qualifying_post for 51 accounts from the 14 days of sweep files. No promotions yet: no trial has 2+ items in kept sweep files; @divagr1925 (2), @EpochAIResearch (3) and @_albertgu cross 14 days on 2026-11-15. Scanned Magpie editions for off-roster X authors: only @paperswithcodee (aggregator) and @JohnHYao surfaced; none added. Other mentioned handles are GitHub maintainers, not X-verified."
  ],
  "errors": [],
  "follows_today": 0,
  "last_roster_review": {
-  "ran_at": "2026-11-11T10:25:00Z",
-  "date": "2026-11-11",
-  "reads": 43,
-  "list_writes": 2,
+  "ran_at": "2026-11-14T10:30:00Z",
+  "date": "2026-11-14",
+  "reads": 2,
+  "list_writes": 0,
   "budget": 80,
-  "added": [
-   "@Tailscale (owner_saves)",
-   "@PrunaAI"
-  ],
-  "promoted": [
-   "@OfficialLoganK",
-   "@XunzhuoLiu",
-   "@googlegemma",
-   "@skalskip92",
-   "@NVIDIAAI"
-  ],
+  "added": [],
+  "promoted": [],
   "retired": [],
   "flagged": [
-   "@MatthewBerman (owner_saves, kept per owner)",
-   "@bcherny",
-   "@_catwu",
-   "@trq212 (trial 18 days, no sweep items and no qualifying posts; owner-picked, left unchanged for review)"
+   "@JensenHuang (owner_requested, no qualifying post since 2026-09-03; unchanged)",
+   "@mem0ai (trial; 2026-11-03 and 2026-11-12 posts are explainer articles plus event promos, no release or measurement; reaches 45-day line 2026-11-15; decide at next review)"
   ],
   "rejected": [
-   "@danikkk_wqs (2 owner saves; 2026-11-04 to 11-11 posts are repo-roundup templates plus crypto-trading get-rich claims)",
-   "@RoundtableSpace (already on avoid)",
-   "@MiaAI_lab (mostly opinion and hype posts, few artifacts)"
+   "@danikkk_wqs (2 owner saves, still vice-excluded)",
+   "@RoundtableSpace (on avoid)",
+   "@JohnHYao (Flash ALOHA, first-hand, but only 1 capability post in 30 days; rest are daily emoji teasers; recheck)"
   ],
   "drafts": 0,
   "drafts_file": null,
-  "pruned": 7,
+  "pruned": 5,
   "source_leads_added": 0
  },
  "x_list": {
@@ -322,7 +312,7 @@
   "owner": "@CameronSutcliff",
   "owner_id": "1521986356721123328",
   "private": true,
-  "member_count": 95,
+  "member_count": 103,
   "members": "every trial/active entry in inbox/x-roster.json (x_user_id, on_list)",
   "created_at": "2026-10-24T04:35:00Z"
  },
