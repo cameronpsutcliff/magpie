@@ -1,0 +1,74 @@
+{
+ "ran_at": "2026-11-14T23:23:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-14T19:26:00Z",
+ "queries": 5,
+ "calls": 5,
+ "items": [
+  {
+   "title": "MiniMax H3-Image 2048x2048 renders in 12.7s warm on an M5 Ultra after a TensorFold weight-residency change, versus 16.6s with diffusers",
+   "url": "https://x.com/plotarmordev/status/2121740459839988002",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A TensorFold upgrade keeps all weights loaded between images instead of paging parts back in, cutting a warm 2048x2048 MiniMax H3-Image run to 12.7s against 16.6s for diffusers on the same Mac. Useful to people running image models locally on Apple silicon.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-14T23:02:00Z",
+   "metrics": {
+    "likes": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Seedream 5.0 Pro text-to-image and edit now served from US-hosted infrastructure on fal",
+   "url": "https://x.com/fal/status/2121714748492570937",
+   "handle": "@fal",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "fal added ByteDance Seedream 5.0 Pro, both text-to-image and image edit, on US-hosted inference through its API, alongside Seedance 2.5. Teams that need image generation to run inside the United States can call it now.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://fal.ai/models/bytedance/seedream/v5/pro/us/text-to-image",
+    "https://fal.ai/models/bytedance/seedream/v5/pro/us/edit"
+   ],
+   "vendor": "fal",
+   "posted_at": "2026-11-14T21:19:50Z",
+   "metrics": {
+    "likes": 32,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 98,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}

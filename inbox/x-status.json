@@ -1,21 +1,21 @@
 {
- "updated_at": "2026-11-14T19:26:00Z",
+ "updated_at": "2026-11-14T23:23:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 57,
+ "calls_used_today": 62,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-14T19:26:00Z",
-  "items": 3,
-  "queries": 11,
-  "deep_reads": 2,
+  "ran_at": "2026-11-14T23:23:00Z",
+  "items": 2,
+  "queries": 5,
+  "deep_reads": 0,
   "rechecks": 0,
   "flagged": 0,
   "saved_in": 0,
   "saved_kept": 0,
   "videos": 0,
   "security_forwarded": 0,
-  "list_posts_read": 99,
+  "list_posts_read": 98,
   "list_pages": 1
  },
  "roster": {
@@ -280,7 +280,9 @@
   "Sweep 11:05Z: search for from:claudeai Claude Meetings returned nothing since 02:58Z although a roster member reposted it; @claudeai is not on the list or curated roster. get_posts_by_ids note_tweet carries the full text and unwound links when requested. Saves, only 1 new (ADEMark) found by diffing bookmarks against the archive since bookmarks carry no saved-at time. Follows skipped, no browser.",
   "Roster review 2026-11-14 (Saturday, so no Sunday drafts): no new owner_saves authors (archive unchanged since Nov 13 07:55 CT). Updated last_qualifying_post for 51 accounts from the 14 days of sweep files. No promotions yet: no trial has 2+ items in kept sweep files; @divagr1925 (2), @EpochAIResearch (3) and @_albertgu cross 14 days on 2026-11-15. Scanned Magpie editions for off-roster X authors: only @paperswithcodee (aggregator) and @JohnHYao surfaced; none added. Other mentioned handles are GitHub maintainers, not X-verified."
  ],
- "errors": [],
+ "errors": [
+  "429 from X shared rate limit at 23:19Z on first Dessa query (no read used); retried after reset. Follows skipped: no browser."
+ ],
  "follows_today": 0,
  "last_roster_review": {
   "ran_at": "2026-11-14T10:30:00Z",
