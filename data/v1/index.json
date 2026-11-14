@@ -3,79 +3,80 @@
  "days": [
   {
    "date": "2026-11-14",
-   "headline": "elephant-goldfish-model, Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF, modern-web-guidance-src, and more",
-   "events": 246,
-   "sources": 543,
-   "enriched": false,
+   "headline": "Agents Pay With Approval, Rust Serves DeepSeek Flash, DeepSeek API Searches, and More",
+   "events": 389,
+   "sources": 572,
+   "enriched": true,
    "top": [
     {
-     "id": "4445d71c4797",
-     "title": "google/elephant-goldfish-model",
-     "impact": 4,
-     "vendor": "Google",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-14-4445d71c4797"
-    },
-    {
-     "id": "e197a9917ccd",
-     "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
-     "impact": 5,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-14-e197a9917ccd"
-    },
-    {
-     "id": "414e16974c03",
-     "title": "GoogleChrome/modern-web-guidance-src",
+     "id": "b5cc8a5018c1",
+     "title": "Chrome DevTools MCP keeps trending with coding agents",
      "impact": 4,
      "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-14-414e16974c03"
-    },
-    {
-     "id": "41609ee26a0c",
-     "title": "Leonxlnx/taste-skill",
-     "impact": 4,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-14-41609ee26a0c"
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-14-b5cc8a5018c1"
     },
     {
      "id": "b57fcf4b3229",
-     "title": "openai/codex-security",
+     "title": "OpenAI Codex Security CLI keeps climbing on GitHub",
      "impact": 4,
      "vendor": "OpenAI",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-14-b57fcf4b3229"
+    },
+    {
+     "id": "22fd065027a9",
+     "title": "DeepSeek API adds search, files and voice",
+     "impact": 4,
+     "vendor": "DeepSeek",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-14-22fd065027a9"
+    },
+    {
+     "id": "a364b5560c1a",
+     "title": "Baseten open-sources Rust and CUDA engine for DeepSeek",
+     "impact": 4,
+     "vendor": "Baseten",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-14-a364b5560c1a"
+    },
+    {
+     "id": "4445d71c4797",
+     "title": "Google open-sources plugin for agent software design reviews",
+     "impact": 3,
+     "vendor": "Google",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-14-4445d71c4797"
     }
    ],
    "vendors": [
     "Open source",
+    "NVIDIA",
     "Anthropic",
     "Google",
-    "NVIDIA",
     "OpenAI",
     "Hugging Face"
    ],
    "topics": {
-    "coding": 74,
-    "models": 63,
-    "agents": 61,
-    "multimodal": 61,
-    "infra": 32,
-    "mcp": 28,
-    "evals": 27,
-    "local": 23,
-    "memory": 21,
-    "reverse": 13,
-    "security": 9,
-    "research": 8,
+    "models": 100,
+    "coding": 89,
+    "agents": 87,
+    "multimodal": 76,
+    "infra": 43,
+    "evals": 39,
+    "local": 36,
+    "mcp": 30,
+    "memory": 30,
+    "security": 14,
+    "research": 13,
+    "reverse": 11,
     "robotics": 7
    },
    "kinds": {
-    "social": 43,
+    "video": 100,
+    "social": 88,
     "blog": 41,
-    "repo": 34,
+    "repo": 35,
     "model": 30,
-    "newsletter": 29,
-    "community": 25,
-    "changelog": 20,
+    "newsletter": 30,
+    "community": 23,
     "space": 20,
+    "changelog": 18,
     "news": 4
    },
    "threats": []
