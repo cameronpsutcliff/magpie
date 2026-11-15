@@ -3,78 +3,79 @@
  "days": [
   {
    "date": "2026-11-15",
-   "headline": "plannotator, Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF, chrome-devtools-mcp, and more",
-   "events": 163,
-   "sources": 541,
-   "enriched": false,
+   "headline": "Fit 321B MoEs on one Spark, render video with audio, speed H3-Image, and more",
+   "events": 241,
+   "sources": 561,
+   "enriched": true,
    "top": [
     {
-     "id": "5fcbc8af9785",
-     "title": "backnotprop/plannotator",
-     "impact": 4,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-15-5fcbc8af9785"
-    },
-    {
-     "id": "e197a9917ccd",
-     "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
-     "impact": 5,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-15-e197a9917ccd"
-    },
-    {
      "id": "b5cc8a5018c1",
-     "title": "ChromeDevTools/chrome-devtools-mcp",
+     "title": "Chrome DevTools MCP keeps climbing in stars",
      "impact": 4,
      "vendor": "Open source",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-15-b5cc8a5018c1"
     },
     {
-     "id": "4445d71c4797",
-     "title": "google/elephant-goldfish-model",
+     "id": "595573e298d4",
+     "title": "MiniMax H3-Image packaged as GGUF",
      "impact": 4,
-     "vendor": "Google",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-15-4445d71c4797"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-15-595573e298d4"
     },
     {
-     "id": "f36d60c784b3",
-     "title": "Tencent/LoopForge",
+     "id": "3f1f6eae94fa",
+     "title": "2.48 bpw quants fit 321B-class MoEs on one DGX Spark",
+     "impact": 4,
+     "vendor": "SAGE-REXL3",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-15-3f1f6eae94fa"
+    },
+    {
+     "id": "5fcbc8af9785",
+     "title": "Plannotator still trending on daily and weekly charts",
      "impact": 3,
-     "vendor": "Tencent",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-15-f36d60c784b3"
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-15-5fcbc8af9785"
+    },
+    {
+     "id": "4445d71c4797",
+     "title": "Google elephant-goldfish-model still trending weekly",
+     "impact": 3,
+     "vendor": "Google",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-15-4445d71c4797"
     }
    ],
    "vendors": [
     "Open source",
     "Anthropic",
-    "Qwen",
+    "NVIDIA",
     "Google",
-    "OpenAI",
-    "llama.cpp"
+    "Qwen",
+    "OpenAI"
    ],
    "topics": {
-    "coding": 46,
-    "models": 45,
-    "multimodal": 44,
-    "agents": 41,
-    "local": 31,
-    "mcp": 22,
-    "infra": 18,
-    "memory": 13,
-    "evals": 7,
-    "security": 6,
-    "reverse": 6,
-    "research": 3
+    "agents": 60,
+    "models": 60,
+    "coding": 59,
+    "multimodal": 51,
+    "local": 38,
+    "infra": 28,
+    "mcp": 17,
+    "memory": 17,
+    "evals": 11,
+    "research": 10,
+    "reverse": 9,
+    "security": 5
    },
    "kinds": {
-    "repo": 35,
+    "video": 53,
+    "social": 48,
+    "repo": 34,
     "model": 30,
-    "newsletter": 23,
-    "space": 20,
-    "community": 19,
-    "social": 16,
-    "changelog": 15,
-    "blog": 5
+    "newsletter": 22,
+    "space": 19,
+    "community": 18,
+    "changelog": 14,
+    "blog": 3
    },
    "threats": []
   },
