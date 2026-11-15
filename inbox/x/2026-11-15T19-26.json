@@ -1,0 +1,92 @@
+{
+ "ran_at": "2026-11-15T19:26:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-15T15:24:00Z",
+ "queries": 7,
+ "calls": 7,
+ "items": [
+  {
+   "title": "llama.cpp reaches version 1.0.0",
+   "url": "https://x.com/julien_c/status/2121965849472880860",
+   "handle": "@julien_c",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Hugging Face's Julien Chaumond announced the 1.0.0 tag for llama.cpp, the local inference runtime. The post links no release notes or changelog, so what changed in 1.0 is unconfirmed.",
+   "kind": "repo",
+   "evidence": "claim",
+   "links": [
+    "https://github.com/ggml-org/llama.cpp"
+   ],
+   "vendor": "llama.cpp (ggml-org)",
+   "posted_at": "2026-11-15T13:57:37Z",
+   "metrics": {
+    "likes": 230,
+    "reposts": 11,
+    "quotes": 1,
+    "replies": 23,
+    "views": 8503
+   },
+   "confirmed_by": [
+    "@ClementDelangue"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Replies are mostly hardware jokes and congratulations; one asks what is new and nobody answers with release notes.",
+    "source": "https://x.com/Impo228/status/2122028620440797285"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers cheered and listed hardware they run it on; a few described stable API and GGUF ecosystem benefits without citing release notes, and none reported a regression.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Pirate Face revamps its open-weight model directory with model trees",
+   "url": "https://x.com/thepirateface/status/2121994287848247531",
+   "handle": "@thepirateface",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Pirate Face's models page now groups open-weight models into lineage trees (base models and their finetunes) instead of a flat directory, to make finding a suitable model easier.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://pirateface.co/models"
+   ],
+   "vendor": "Pirate Face",
+   "posted_at": "2026-11-15T15:50:37Z",
+   "metrics": {
+    "likes": 292,
+    "reposts": 43,
+    "quotes": 4,
+    "replies": 22,
+    "views": 14459
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/thepirateface/status/2121826940239946214",
+   "reason": "Leaderboard meme post, no new capability."
+  },
+  {
+   "url": "https://x.com/j4mbodotcom/status/2121999613804564958",
+   "reason": "Fan fiction and art series, no AI capability."
+  }
+ ],
+ "list_posts_read": 98,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
