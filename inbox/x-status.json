@@ -1,21 +1,21 @@
 {
- "updated_at": "2026-11-15T10:40:00Z",
- "job": "roster",
+ "updated_at": "2026-11-15T11:20:00Z",
+ "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 66,
+ "calls_used_today": 70,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-15T03:25:00Z",
+  "ran_at": "2026-11-15T11:20:00Z",
   "items": 2,
   "queries": 4,
   "deep_reads": 0,
   "rechecks": 0,
-  "flagged": 0,
+  "flagged": 1,
   "saved_in": 0,
   "saved_kept": 0,
   "videos": 0,
   "security_forwarded": 0,
-  "list_posts_read": 98,
+  "list_posts_read": 96,
   "list_pages": 1
  },
  "roster": {
@@ -282,7 +282,7 @@
   "Roster review 2026-11-15 (Sunday, drafts written): 5 X reads + 2 list adds. Added trials @SergioPaniego and @jundotkim (2 artifact/measured posts each in 30 days); promoted @EpochAIResearch to active (3 sweep items); @divagr1925 has 1 sweep item and @_albertgu none, so no promotion. Retired curated @DarioAmodei, @ssokota, @zicokolter, @AndrewYNg (no qualifying post in 45 days, confirmed with one batched read; @minimaxir has psnek and a prices post, so kept). @mem0ai kept as trial: no artifact or measurement since 2026-10-07 (blog articles and event posts only), recheck next review. Owner saves: @danikkk_wqs (engagement-bait listicles, vice-excluded per prior review) and @RoundtableSpace (crypto aggregator, on avoid) each have 2 saves but fail the screen; not added. Flag for owner: @JensenHuang (owner_requested) still has no qualifying post since 2026-09-03; left active trial. Skipped for 1 qualifying post or over 1 in 5 promotion: @_ellisbrown, @aviral_kumar2, @zhijianliu, @omnigent_ai. Pruning: no inbox/x files older than 14 days."
  ],
  "errors": [
-  "follow_mode browser but no browser available on box; follows skipped"
+  "follow_mode browser but no browser used; follows skipped"
  ],
  "follows_today": 0,
  "last_roster_review": {

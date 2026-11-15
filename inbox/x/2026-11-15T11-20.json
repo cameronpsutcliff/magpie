@@ -1,0 +1,80 @@
+{
+ "ran_at": "2026-11-15T11:20:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-15T03:25:00Z",
+ "queries": 4,
+ "calls": 4,
+ "items": [
+  {
+   "title": "fal adds Seedance 2.5 Flash, a fast tier of video generation with native audio",
+   "url": "https://x.com/fal/status/2121848574845542837",
+   "handle": "@fal",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "fal now serves Seedance 2.5 Flash, a faster tier of the Seedance 2.5 video model. It does text, image and reference to video plus editing and extension, with native audio at 480p and 720p for 4 to 30 seconds.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://fal.ai"
+   ],
+   "vendor": "fal / ByteDance Seedance",
+   "posted_at": "2026-11-15T06:11:36Z",
+   "metrics": {
+    "likes": 77,
+    "reposts": 4,
+    "quotes": 5,
+    "replies": 10,
+    "views": 6497
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Claim: DeepSeek DSV4.1 Flash decode reaches 90 tok/s on an M5 Ultra with TensorFold, up from 70",
+   "url": "https://x.com/plotarmordev/status/2121911083900244016",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A builder reports the roughly 475 GB official DSV4.1 Flash weights decoding at 90 tokens per second on an M5 Ultra with the TensorFold runtime, versus 70 in an earlier post. No method, settings or run log are given in this post.",
+   "kind": "technique",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/ashxhart/status/2121626710063853622"
+   ],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-15T10:20:00Z",
+   "metrics": {
+    "likes": 20,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 6,
+    "views": 1422
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Nothing to check: no repo, settings or logs, and the prior 70 tok/s figure is from a different account's post.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 96,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://x.com/plotarmordev/status/2121810003388690652",
+   "reason": "Unverified report of Hugging Face policy chief comments on this year's hacks and tighter token and network controls; a policy statement with no CVE, package or release, so no stack component affected."
+  }
+ ]
+}
