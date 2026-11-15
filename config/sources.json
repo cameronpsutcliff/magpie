@@ -3,16 +3,6 @@
  "note": "Public sources only. trust is how much one mention counts (0..1). window_hours bounds what each run keeps.",
  "feeds": [
   {
-   "id": "ainews",
-   "name": "AINews (smol.ai)",
-   "kind": "newsletter",
-   "url": "https://news.smol.ai/rss.xml",
-   "trust": 0.75,
-   "vendor": null,
-   "product": null,
-   "window_hours": 48
-  },
-  {
    "id": "latent-space",
    "name": "Latent Space",
    "kind": "newsletter",
@@ -593,26 +583,6 @@
    "window_hours": 36
   },
   {
-   "id": "the-batch",
-   "name": "The Batch (DeepLearning.AI)",
-   "kind": "newsletter",
-   "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_the_batch.xml",
-   "trust": 0.75,
-   "vendor": null,
-   "product": null,
-   "window_hours": 96
-  },
-  {
-   "id": "gradient-flow",
-   "name": "Gradient Flow",
-   "kind": "newsletter",
-   "url": "https://gradientflow.substack.com/feed",
-   "trust": 0.75,
-   "vendor": null,
-   "product": null,
-   "window_hours": 96
-  },
-  {
    "id": "exponential-view",
    "name": "Exponential View",
    "kind": "newsletter",
@@ -623,16 +593,6 @@
    "window_hours": 72
   },
   {
-   "id": "one-useful-thing",
-   "name": "One Useful Thing (Ethan Mollick)",
-   "kind": "newsletter",
-   "url": "https://www.oneusefulthing.org/feed",
-   "trust": 0.8,
-   "vendor": null,
-   "product": null,
-   "window_hours": 96
-  },
-  {
    "id": "understanding-ai",
    "name": "Understanding AI (Timothy B. Lee)",
    "kind": "newsletter",
@@ -641,16 +601,6 @@
    "vendor": null,
    "product": null,
    "window_hours": 96
-  },
-  {
-   "id": "hamel-husain",
-   "name": "Hamel Husain",
-   "kind": "blog",
-   "url": "https://hamel.dev/index.xml",
-   "trust": 0.8,
-   "vendor": null,
-   "product": null,
-   "window_hours": 36
   },
   {
    "id": "zvi",
@@ -693,40 +643,10 @@
    "window_hours": 96
   },
   {
-   "id": "metr",
-   "name": "METR",
-   "kind": "blog",
-   "url": "https://metr.org/feed.xml",
-   "trust": 0.85,
-   "vendor": null,
-   "product": null,
-   "window_hours": 36
-  },
-  {
    "id": "thursdai",
    "name": "ThursdAI",
    "kind": "newsletter",
    "url": "https://sub.thursdai.news/feed",
-   "trust": 0.7,
-   "vendor": null,
-   "product": null,
-   "window_hours": 96
-  },
-  {
-   "id": "ai-as-normal-tech",
-   "name": "AI as Normal Technology (Narayanan and Kapoor)",
-   "kind": "newsletter",
-   "url": "https://www.normaltech.ai/feed",
-   "trust": 0.8,
-   "vendor": null,
-   "product": null,
-   "window_hours": 96
-  },
-  {
-   "id": "coding-with-intelligence",
-   "name": "Coding with Intelligence",
-   "kind": "newsletter",
-   "url": "https://codingwithintelligence.com/feed",
    "trust": 0.7,
    "vendor": null,
    "product": null,
@@ -1073,16 +993,6 @@
    "window_hours": 36
   },
   {
-   "id": "lobsters-vibecoding",
-   "name": "Lobsters: vibecoding tag",
-   "kind": "community",
-   "url": "https://lobste.rs/t/vibecoding.rss",
-   "trust": 0.55,
-   "vendor": null,
-   "product": null,
-   "window_hours": 36
-  },
-  {
    "id": "hn-best",
    "name": "Hacker News best (hnrss)",
    "kind": "community",
@@ -1298,39 +1208,6 @@
    ]
   },
   {
-   "org": "thoughtworks",
-   "why": "Owner added 2026-10-20: Thoughtworks open source.",
-   "origin": "owner",
-   "since": "2026-10-20"
-  },
-  {
-   "org": "google-pytorch",
-   "why": "Discovered 2026-10-24: cited by Hacker News, PyTorch blog, X: @PyTorch within a week.",
-   "origin": "discovery",
-   "since": "2026-10-24",
-   "discovered_as": "github:google-pytorch",
-   "evidence": [
-    {
-     "date": "2026-10-21",
-     "source": "X: @PyTorch",
-     "title": "Google and Meta open-source TorchTPU, native PyTorch on TPUs",
-     "url": "https://x.com/PyTorch/status/2112601000670322787"
-    },
-    {
-     "date": "2026-10-21",
-     "source": "Hacker News",
-     "title": "Google open-sources TorchTPU, a native PyTorch back end for TPUs",
-     "url": "https://github.com/google-pytorch/torch_tpu"
-    },
-    {
-     "date": "2026-10-21",
-     "source": "PyTorch blog",
-     "title": "Introducing TorchTPU",
-     "url": "https://pytorch.org/blog/introducing-torchtpu/"
-    }
-   ]
-  },
-  {
    "org": "openbmb",
    "why": "Discovered 2026-10-24: cited by GitHub, PyTorch blog within a week.",
    "origin": "discovery",
@@ -1390,27 +1267,6 @@
      "source": "X: @askalphaxiv",
      "title": "Google's Harness2 recursively improves agent harnesses without weight updates",
      "url": "https://x.com/askalphaxiv/status/2112863284147724678"
-    }
-   ]
-  },
-  {
-   "org": "meta-pytorch",
-   "why": "Discovered 2026-10-24: cited by PyTorch blog, SemiAnalysis within a week.",
-   "origin": "discovery",
-   "since": "2026-10-24",
-   "discovered_as": "github:meta-pytorch",
-   "evidence": [
-    {
-     "date": "2026-10-22",
-     "source": "PyTorch blog",
-     "title": "TorchTitan Update: New SOTA Models, Performance at Scale, TitanRL",
-     "url": "https://pytorch.org/blog/torchtitan-update-new-sota-models-performance-at-scale-titanrl/"
-    },
-    {
-     "date": "2026-10-24",
-     "source": "SemiAnalysis",
-     "title": "Amazon’s Trainium Takes a Strike at the Training King",
-     "url": "https://newsletter.semianalysis.com/p/amazons-trainium-takes-a-strike-at"
     }
    ]
   },
@@ -1632,6 +1488,123 @@
      "url": "https://latent.space/p/ainews-llms-can-read-write-neural-network-weights-weight-space-programming-cuts-autoresearch-out-of/"
     }
    ]
+  },
+  {
+   "org": "aws",
+   "why": "Discovered 2026-11-14: cited by AWS Machine Learning blog, Hacker News, Simon Willison within a week.",
+   "origin": "discovery",
+   "since": "2026-11-14",
+   "discovered_as": "github:aws",
+   "evidence": [
+    {
+     "date": "2026-11-11",
+     "source": "AWS Machine Learning blog",
+     "title": "Build a daily dependency watcher with LangGraph and Amazon Bedrock AgentCore web search",
+     "url": "https://aws.amazon.com/blogs/machine-learning/build-a-daily-dependency-watcher-with-langgraph-and-amazon-bedrock-agentcore-web-search/"
+    },
+    {
+     "date": "2026-11-12",
+     "source": "Simon Willison",
+     "title": "aws-emulator",
+     "url": "https://simonwillison.net/2026/Nov/11/aws-emulator/"
+    },
+    {
+     "date": "2026-11-12",
+     "source": "AWS Machine Learning blog",
+     "title": "Introducing the Web Search API on Amazon Bedrock AgentCore",
+     "url": "https://aws.amazon.com/blogs/machine-learning/introducing-the-web-search-api-on-amazon-bedrock-agentcore/"
+    }
+   ]
+  },
+  {
+   "org": "googlechrome",
+   "why": "Discovered 2026-11-14: cited by GitHub, Hacker News within a week.",
+   "origin": "discovery",
+   "since": "2026-11-14",
+   "discovered_as": "github:googlechrome",
+   "evidence": [
+    {
+     "date": "2026-11-11",
+     "source": "Hacker News",
+     "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
+     "url": "https://github.com/GoogleChrome/modern-web-guidance"
+    },
+    {
+     "date": "2026-11-11",
+     "source": "GitHub",
+     "title": "GoogleChrome/modern-web-guidance-src",
+     "url": "https://github.com/GoogleChrome/modern-web-guidance-src"
+    }
+   ]
+  },
+  {
+   "org": "facebookresearch",
+   "why": "Discovered 2026-11-14: cited by Import AI, X: @askalphaxiv within a week.",
+   "origin": "discovery",
+   "since": "2026-11-14",
+   "discovered_as": "github:facebookresearch",
+   "evidence": [
+    {
+     "date": "2026-11-10",
+     "source": "Import AI",
+     "title": "Import AI 480: Self-sustaining space economies; AI for science progress, and Meta builds perfect hands for a superintelligence",
+     "url": "https://jack-clark.net/2026/11/09/import-ai-480-self-sustaining-space-economies-ai-for-science-progress-and-meta-builds-perfect-hands-for-a-superintelligence/"
+    },
+    {
+     "date": "2026-11-12",
+     "source": "X: @askalphaxiv",
+     "title": "e-means clusters embeddings with far fewer passes than k-means",
+     "url": "https://x.com/askalphaxiv/status/2120493744961323288"
+    }
+   ]
+  },
+  {
+   "org": "robbyant",
+   "why": "Discovered 2026-11-14: cited by X: @_akhaliq, X: @omarsar0 within a week.",
+   "origin": "discovery",
+   "since": "2026-11-14",
+   "discovered_as": "github:robbyant",
+   "evidence": [
+    {
+     "date": "2026-11-10",
+     "source": "X: @_akhaliq",
+     "title": "Robbyant open-sources the LingBot-Touch tactile model",
+     "url": "https://x.com/_akhaliq/status/2120069540680011974"
+    },
+    {
+     "date": "2026-11-11",
+     "source": "X: @omarsar0",
+     "title": "LingBot-Touch transfers touch across robot sensors",
+     "url": "https://x.com/omarsar0/status/2120223370470096952"
+    }
+   ]
+  },
+  {
+   "org": "agentic-learning-ai-lab",
+   "why": "Discovered 2026-11-14: cited by Latent Space, X: @askalphaxiv within a week.",
+   "origin": "discovery",
+   "since": "2026-11-14",
+   "discovered_as": "github:agentic-learning-ai-lab",
+   "evidence": [
+    {
+     "date": "2026-11-11",
+     "source": "Latent Space",
+     "title": "[AINews] Mercor $750m Series D at $20B valuation, $3B run rate",
+     "url": "https://latent.space/p/ainews-mercor-750m-series-d-at-20b-valuation-3b-run-rate/"
+    },
+    {
+     "date": "2026-11-12",
+     "source": "Latent Space",
+     "title": "[AINews] D-Day (Decision Models Day)",
+     "url": "https://latent.space/p/ainews-d-day-decision-models-day/"
+    },
+    {
+     "date": "2026-11-13",
+     "source": "X: @askalphaxiv",
+     "title": "Deletion Tuning matches full fine-tuning by zeroing weights",
+     "url": "https://x.com/askalphaxiv/status/2121026756949979417"
+    }
+   ]
   }
  ],
  "policy_feeds": [
@@ -1701,6 +1674,200 @@
    "primary": false,
    "window_hours": 168,
    "max_entries": 30
+  }
+ ],
+ "benched": [
+  {
+   "id": "ainews",
+   "name": "AINews (smol.ai)",
+   "kind": "newsletter",
+   "url": "https://news.smol.ai/rss.xml",
+   "trust": 0.75,
+   "vendor": null,
+   "product": null,
+   "window_hours": 48,
+   "benched": {
+    "date": "2026-11-14",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "id": "the-batch",
+   "name": "The Batch (DeepLearning.AI)",
+   "kind": "newsletter",
+   "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_the_batch.xml",
+   "trust": 0.75,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96,
+   "benched": {
+    "date": "2026-11-14",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "id": "gradient-flow",
+   "name": "Gradient Flow",
+   "kind": "newsletter",
+   "url": "https://gradientflow.substack.com/feed",
+   "trust": 0.75,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96,
+   "benched": {
+    "date": "2026-11-14",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "id": "one-useful-thing",
+   "name": "One Useful Thing (Ethan Mollick)",
+   "kind": "newsletter",
+   "url": "https://www.oneusefulthing.org/feed",
+   "trust": 0.8,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96,
+   "benched": {
+    "date": "2026-11-14",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "id": "hamel-husain",
+   "name": "Hamel Husain",
+   "kind": "blog",
+   "url": "https://hamel.dev/index.xml",
+   "trust": 0.8,
+   "vendor": null,
+   "product": null,
+   "window_hours": 36,
+   "benched": {
+    "date": "2026-11-14",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "id": "metr",
+   "name": "METR",
+   "kind": "blog",
+   "url": "https://metr.org/feed.xml",
+   "trust": 0.85,
+   "vendor": null,
+   "product": null,
+   "window_hours": 36,
+   "benched": {
+    "date": "2026-11-14",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "id": "ai-as-normal-tech",
+   "name": "AI as Normal Technology (Narayanan and Kapoor)",
+   "kind": "newsletter",
+   "url": "https://www.normaltech.ai/feed",
+   "trust": 0.8,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96,
+   "benched": {
+    "date": "2026-11-14",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "id": "coding-with-intelligence",
+   "name": "Coding with Intelligence",
+   "kind": "newsletter",
+   "url": "https://codingwithintelligence.com/feed",
+   "trust": 0.7,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96,
+   "benched": {
+    "date": "2026-11-14",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "id": "lobsters-vibecoding",
+   "name": "Lobsters: vibecoding tag",
+   "kind": "community",
+   "url": "https://lobste.rs/t/vibecoding.rss",
+   "trust": 0.55,
+   "vendor": null,
+   "product": null,
+   "window_hours": 36,
+   "benched": {
+    "date": "2026-11-14",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "org": "thoughtworks",
+   "why": "Owner added 2026-10-20: Thoughtworks open source.",
+   "origin": "owner",
+   "since": "2026-10-20",
+   "benched": {
+    "date": "2026-11-14",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "org": "google-pytorch",
+   "why": "Discovered 2026-10-24: cited by Hacker News, PyTorch blog, X: @PyTorch within a week.",
+   "origin": "discovery",
+   "since": "2026-10-24",
+   "discovered_as": "github:google-pytorch",
+   "evidence": [
+    {
+     "date": "2026-10-21",
+     "source": "X: @PyTorch",
+     "title": "Google and Meta open-source TorchTPU, native PyTorch on TPUs",
+     "url": "https://x.com/PyTorch/status/2112601000670322787"
+    },
+    {
+     "date": "2026-10-21",
+     "source": "Hacker News",
+     "title": "Google open-sources TorchTPU, a native PyTorch back end for TPUs",
+     "url": "https://github.com/google-pytorch/torch_tpu"
+    },
+    {
+     "date": "2026-10-21",
+     "source": "PyTorch blog",
+     "title": "Introducing TorchTPU",
+     "url": "https://pytorch.org/blog/introducing-torchtpu/"
+    }
+   ],
+   "benched": {
+    "date": "2026-11-14",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "org": "meta-pytorch",
+   "why": "Discovered 2026-10-24: cited by PyTorch blog, SemiAnalysis within a week.",
+   "origin": "discovery",
+   "since": "2026-10-24",
+   "discovered_as": "github:meta-pytorch",
+   "evidence": [
+    {
+     "date": "2026-10-22",
+     "source": "PyTorch blog",
+     "title": "TorchTitan Update: New SOTA Models, Performance at Scale, TitanRL",
+     "url": "https://pytorch.org/blog/torchtitan-update-new-sota-models-performance-at-scale-titanrl/"
+    },
+    {
+     "date": "2026-10-24",
+     "source": "SemiAnalysis",
+     "title": "Amazon’s Trainium Takes a Strike at the Training King",
+     "url": "https://newsletter.semianalysis.com/p/amazons-trainium-takes-a-strike-at"
+    }
+   ],
+   "benched": {
+    "date": "2026-11-14",
+    "reason": "zero kept items in the last 21 live editions"
+   }
   }
  ]
 }

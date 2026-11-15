@@ -1,17 +1,17 @@
 {
  "schema": "magpie.candidates/1",
- "generated": "2026-11-07",
+ "generated": "2026-11-14",
  "window": {
-  "start": "2026-11-01",
-  "end": "2026-11-07",
+  "start": "2026-11-08",
+  "end": "2026-11-14",
   "run_days": [
-   "2026-11-01",
-   "2026-11-02",
-   "2026-11-03",
-   "2026-11-04",
-   "2026-11-05",
-   "2026-11-06",
-   "2026-11-07"
+   "2026-11-08",
+   "2026-11-09",
+   "2026-11-10",
+   "2026-11-11",
+   "2026-11-12",
+   "2026-11-13",
+   "2026-11-14"
   ]
  },
  "rules": {
@@ -23,203 +23,566 @@
  },
  "candidates": [
   {
-   "id": "github:google",
+   "id": "github:aws",
    "kind": "github",
-   "label": "google",
-   "url": "https://github.com/google",
+   "label": "aws",
+   "url": "https://github.com/aws",
    "status": "promoted",
    "trusted_citers": [
-    "GitHub",
-    "SemiAnalysis",
-    "X: @antigravity"
+    "AWS Machine Learning blog",
+    "Hacker News",
+    "Simon Willison"
    ],
    "citers": [
-    "GitHub",
-    "SemiAnalysis",
-    "X: @antigravity"
-   ],
-   "first_seen": "2026-11-04",
-   "last_seen": "2026-11-07",
-   "evidence": [
-    {
-     "date": "2026-11-04",
-     "source": "X: @antigravity",
-     "title": "Antigravity migrates a 174k-line Fortran model to safe Rust in 59 minutes",
-     "url": "https://x.com/antigravity/status/2117773996695367851"
-    },
-    {
-     "date": "2026-11-05",
-     "source": "GitHub",
-     "title": "google/skills",
-     "url": "https://github.com/google/skills"
-    },
-    {
-     "date": "2026-11-06",
-     "source": "SemiAnalysis",
-     "title": "The Iron(wood) Throne: Google's TPU Stakes Its Claim on Inference",
-     "url": "https://newsletter.semianalysis.com/p/tpu-strikes-the-king"
-    }
-   ]
-  },
-  {
-   "id": "github:rikiyat",
-   "kind": "github",
-   "label": "rikiyat",
-   "url": "https://github.com/rikiyat",
-   "status": "promoted",
-   "trusted_citers": [
-    "Simon Willison",
-    "X: @simonw"
-   ],
-   "citers": [
-    "GitHub",
-    "Simon Willison",
-    "X: @rikiyatakehi",
-    "X: @simonw"
-   ],
-   "first_seen": "2026-11-03",
-   "last_seen": "2026-11-07",
-   "evidence": [
-    {
-     "date": "2026-11-04",
-     "source": "X: @simonw",
-     "title": "Simon Willison: Qwen 3.8 27B on a laptop also identifies games from raw policy-network weights",
-     "url": "https://x.com/simonw/status/2117655816581071203"
-    },
-    {
-     "date": "2026-11-04",
-     "source": "Simon Willison",
-     "title": "Qwen 3.8 27B on my laptop can interpret model weights, too",
-     "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/"
-    },
-    {
-     "date": "2026-11-03",
-     "source": "X: @rikiyatakehi",
-     "title": "Weight-Space Programming: GPT-6 Astra reads and edits neural network weights directly, lifting Qwen3.5-0.8B MATH-500 from 7.9% to 48.1%",
-     "url": "https://x.com/rikiyatakehi/status/2117313742891327994"
-    },
-    {
-     "date": "2026-11-07",
-     "source": "GitHub",
-     "title": "RikiyaT/lm_understand-logs",
-     "url": "https://github.com/RikiyaT/lm_understand-logs"
-    }
-   ]
-  },
-  {
-   "id": "github:dsx-ai-factory",
-   "kind": "github",
-   "label": "dsx-ai-factory",
-   "url": "https://github.com/dsx-ai-factory",
-   "status": "promoted",
-   "trusted_citers": [
-    "GitHub",
-    "Hacker News"
-   ],
-   "citers": [
-    "GitHub",
-    "Hacker News"
-   ],
-   "first_seen": "2026-11-06",
-   "last_seen": "2026-11-07",
-   "evidence": [
-    {
-     "date": "2026-11-06",
-     "source": "Hacker News",
-     "title": "Nvidia Kubernetes Engine (NVKE)",
-     "url": "https://github.com/dsx-ai-factory/nvke"
-    },
-    {
-     "date": "2026-11-07",
-     "source": "GitHub",
-     "title": "dsx-ai-factory/nvke",
-     "url": "https://github.com/dsx-ai-factory/nvke"
-    }
-   ]
-  },
-  {
-   "id": "github:p-e-w",
-   "kind": "github",
-   "label": "p-e-w",
-   "url": "https://github.com/p-e-w",
-   "status": "promoted",
-   "trusted_citers": [
-    "GitHub",
-    "Latent Space"
-   ],
-   "citers": [
-    "GitHub",
-    "Latent Space"
-   ],
-   "first_seen": "2026-11-02",
-   "last_seen": "2026-11-04",
-   "evidence": [
-    {
-     "date": "2026-11-02",
-     "source": "GitHub",
-     "title": "p-e-w/heretic",
-     "url": "https://github.com/p-e-w/heretic"
-    },
-    {
-     "date": "2026-11-03",
-     "source": "Latent Space",
-     "title": "[AINews] LLMs can read & write neural network weights: \"Weight Space Programming\" cuts Autoresearch out of the RSI loop",
-     "url": "https://latent.space/p/ainews-llms-can-read-write-neural-network-weights-weight-space-programming-cuts-autoresearch-out-of/"
-    }
-   ]
-  }
- ],
- "demoted": [],
- "watching": [
-  {
-   "id": "github:postmanlabs",
-   "kind": "github",
-   "label": "postmanlabs",
-   "url": "https://github.com/postmanlabs",
-   "status": "watching",
-   "trusted_citers": [
-    "Hacker News"
-   ],
-   "citers": [
+    "AWS Machine Learning blog",
     "Hacker News",
     "Hacker News Daily (top 10 per day)",
     "Hacker News best (hnrss)",
-    "Hacker News stories matching AI, 150+ points (hnrss)"
+    "Simon Willison"
    ],
-   "first_seen": "2026-11-04",
-   "last_seen": "2026-11-05",
+   "first_seen": "2026-11-11",
+   "last_seen": "2026-11-13",
    "evidence": [
     {
-     "date": "2026-11-04",
+     "date": "2026-11-11",
+     "source": "AWS Machine Learning blog",
+     "title": "Build a daily dependency watcher with LangGraph and Amazon Bedrock AgentCore web search",
+     "url": "https://aws.amazon.com/blogs/machine-learning/build-a-daily-dependency-watcher-with-langgraph-and-amazon-bedrock-agentcore-web-search/"
+    },
+    {
+     "date": "2026-11-12",
+     "source": "Simon Willison",
+     "title": "aws-emulator",
+     "url": "https://simonwillison.net/2026/Nov/11/aws-emulator/"
+    },
+    {
+     "date": "2026-11-12",
+     "source": "AWS Machine Learning blog",
+     "title": "Introducing the Web Search API on Amazon Bedrock AgentCore",
+     "url": "https://aws.amazon.com/blogs/machine-learning/introducing-the-web-search-api-on-amazon-bedrock-agentcore/"
+    },
+    {
+     "date": "2026-11-12",
      "source": "Hacker News",
-     "title": "Postman silently auto-installs AI plugins and attempts to share all API data",
-     "url": "https://github.com/postmanlabs/postman-app-support/issues/14370"
+     "title": "AWS emulator",
+     "url": "https://github.com/aws/aws-emulator"
     },
     {
-     "date": "2026-11-04",
-     "source": "Hacker News Daily (top 10 per day)",
-     "title": "Daily Hacker News for 2026-11-03",
-     "url": "https://www.daemonology.net/hn-daily/2026-11-03.html"
+     "date": "2026-11-13",
+     "source": "AWS Machine Learning blog",
+     "title": "Migrate to Amazon Bedrock Managed Knowledge Base with your coding agent",
+     "url": "https://aws.amazon.com/blogs/machine-learning/migrate-to-amazon-bedrock-managed-knowledge-base-with-your-coding-agent/"
     },
     {
-     "date": "2026-11-04",
-     "source": "Hacker News stories matching AI, 150+ points (hnrss)",
-     "title": "Postman silently auto-installs AI plugins and attempts to share all API data",
-     "url": "https://github.com/postmanlabs/postman-app-support/issues/14370"
-    },
-    {
-     "date": "2026-11-04",
-     "source": "Hacker News best (hnrss)",
-     "title": "Postman silently auto-installs AI plugins and attempts to share all API data",
-     "url": "https://github.com/postmanlabs/postman-app-support/issues/14370"
+     "date": "2026-11-13",
+     "source": "AWS Machine Learning blog",
+     "title": "Fine-grained access control for Amazon Bedrock Managed Knowledge Base tools",
+     "url": "https://aws.amazon.com/blogs/machine-learning/fine-grained-access-control-for-amazon-bedrock-managed-knowledge-base-tools/"
     }
    ]
   },
   {
-   "id": "github:guregodevo",
+   "id": "github:googlechrome",
    "kind": "github",
-   "label": "guregodevo",
-   "url": "https://github.com/guregodevo",
+   "label": "googlechrome",
+   "url": "https://github.com/googlechrome",
+   "status": "promoted",
+   "trusted_citers": [
+    "GitHub",
+    "Hacker News"
+   ],
+   "citers": [
+    "GitHub",
+    "Hacker News",
+    "Hacker News Daily (top 10 per day)",
+    "Hacker News best (hnrss)",
+    "X: @trending_repos"
+   ],
+   "first_seen": "2026-11-11",
+   "last_seen": "2026-11-14",
+   "evidence": [
+    {
+     "date": "2026-11-11",
+     "source": "Hacker News",
+     "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
+     "url": "https://github.com/GoogleChrome/modern-web-guidance"
+    },
+    {
+     "date": "2026-11-11",
+     "source": "GitHub",
+     "title": "GoogleChrome/modern-web-guidance-src",
+     "url": "https://github.com/GoogleChrome/modern-web-guidance-src"
+    },
+    {
+     "date": "2026-11-11",
+     "source": "Hacker News best (hnrss)",
+     "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
+     "url": "https://github.com/GoogleChrome/modern-web-guidance"
+    },
+    {
+     "date": "2026-11-12",
+     "source": "Hacker News Daily (top 10 per day)",
+     "title": "Daily Hacker News for 2026-11-11",
+     "url": "https://www.daemonology.net/hn-daily/2026-11-11.html"
+    },
+    {
+     "date": "2026-11-14",
+     "source": "X: @trending_repos",
+     "title": "Chrome web-guidance repo leads GitHub for the day",
+     "url": "https://x.com/trending_repos/status/2121213604997341188"
+    }
+   ]
+  },
+  {
+   "id": "github:facebookresearch",
+   "kind": "github",
+   "label": "facebookresearch",
+   "url": "https://github.com/facebookresearch",
+   "status": "promoted",
+   "trusted_citers": [
+    "Import AI",
+    "X: @askalphaxiv"
+   ],
+   "citers": [
+    "Import AI",
+    "X: @KLieret",
+    "X: @askalphaxiv",
+    "X: @swann_bessa"
+   ],
+   "first_seen": "2026-11-10",
+   "last_seen": "2026-11-14",
+   "evidence": [
+    {
+     "date": "2026-11-10",
+     "source": "Import AI",
+     "title": "Import AI 480: Self-sustaining space economies; AI for science progress, and Meta builds perfect hands for a superintelligence",
+     "url": "https://jack-clark.net/2026/11/09/import-ai-480-self-sustaining-space-economies-ai-for-science-progress-and-meta-builds-perfect-hands-for-a-superintelligence/"
+    },
+    {
+     "date": "2026-11-12",
+     "source": "X: @askalphaxiv",
+     "title": "e-means clusters embeddings with far fewer passes than k-means",
+     "url": "https://x.com/askalphaxiv/status/2120493744961323288"
+    },
+    {
+     "date": "2026-11-11",
+     "source": "X: @swann_bessa",
+     "title": "Meta releases e-means clustering in FAISS",
+     "url": "https://x.com/swann_bessa/status/2120200714630594911"
+    },
+    {
+     "date": "2026-11-14",
+     "source": "X: @KLieret",
+     "title": "SWE-sweep leaderboard: DeepSeek 4.1 Flash Max is the first open-weight model above 1% on a bug-finding benchmark",
+     "url": "https://x.com/KLieret/status/2121273075362906406"
+    }
+   ]
+  },
+  {
+   "id": "github:robbyant",
+   "kind": "github",
+   "label": "robbyant",
+   "url": "https://github.com/robbyant",
+   "status": "promoted",
+   "trusted_citers": [
+    "X: @_akhaliq",
+    "X: @omarsar0"
+   ],
+   "citers": [
+    "X: @_akhaliq",
+    "X: @omarsar0",
+    "X: @robbyant_brain"
+   ],
+   "first_seen": "2026-11-10",
+   "last_seen": "2026-11-11",
+   "evidence": [
+    {
+     "date": "2026-11-10",
+     "source": "X: @_akhaliq",
+     "title": "Robbyant open-sources the LingBot-Touch tactile model",
+     "url": "https://x.com/_akhaliq/status/2120069540680011974"
+    },
+    {
+     "date": "2026-11-11",
+     "source": "X: @omarsar0",
+     "title": "LingBot-Touch transfers touch across robot sensors",
+     "url": "https://x.com/omarsar0/status/2120223370470096952"
+    },
+    {
+     "date": "2026-11-10",
+     "source": "X: @robbyant_brain",
+     "title": "Robbyant open-sources LingBot-Touch tactile model",
+     "url": "https://x.com/robbyant_brain/status/2119870554056651004"
+    }
+   ]
+  },
+  {
+   "id": "github:agentic-learning-ai-lab",
+   "kind": "github",
+   "label": "agentic-learning-ai-lab",
+   "url": "https://github.com/agentic-learning-ai-lab",
+   "status": "promoted",
+   "trusted_citers": [
+    "Latent Space",
+    "X: @askalphaxiv"
+   ],
+   "citers": [
+    "Latent Space",
+    "X: @askalphaxiv"
+   ],
+   "first_seen": "2026-11-11",
+   "last_seen": "2026-11-13",
+   "evidence": [
+    {
+     "date": "2026-11-11",
+     "source": "Latent Space",
+     "title": "[AINews] Mercor $750m Series D at $20B valuation, $3B run rate",
+     "url": "https://latent.space/p/ainews-mercor-750m-series-d-at-20b-valuation-3b-run-rate/"
+    },
+    {
+     "date": "2026-11-12",
+     "source": "Latent Space",
+     "title": "[AINews] D-Day (Decision Models Day)",
+     "url": "https://latent.space/p/ainews-d-day-decision-models-day/"
+    },
+    {
+     "date": "2026-11-13",
+     "source": "X: @askalphaxiv",
+     "title": "Deletion Tuning matches full fine-tuning by zeroing weights",
+     "url": "https://x.com/askalphaxiv/status/2121026756949979417"
+    }
+   ]
+  },
+  {
+   "id": "newsletter:planned-obsolescence.org",
+   "kind": "newsletter",
+   "label": "planned-obsolescence.org",
+   "url": "https://planned-obsolescence.org",
+   "status": "held",
+   "trusted_citers": [
+    "Don't Worry About the Vase (Zvi)",
+    "Dwarkesh Podcast"
+   ],
+   "citers": [
+    "Don't Worry About the Vase (Zvi)",
+    "Dwarkesh Podcast",
+    "Hacker News Daily (top 10 per day)"
+   ],
+   "first_seen": "2026-11-08",
+   "last_seen": "2026-11-14",
+   "evidence": [
+    {
+     "date": "2026-11-10",
+     "source": "Don't Worry About the Vase (Zvi)",
+     "title": "AI R&D Is Accelerating Towards Potential RSI in 2027",
+     "url": "https://thezvi.substack.com/p/ai-r-and-d-is-accelerating-towards"
+    },
+    {
+     "date": "2026-11-14",
+     "source": "Dwarkesh Podcast",
+     "title": "The avalanche that hit math is coming for AI development",
+     "url": "https://www.dwarkesh.com/p/rsi"
+    },
+    {
+     "date": "2026-11-08",
+     "source": "Hacker News Daily (top 10 per day)",
+     "title": "Daily Hacker News for 2026-11-07",
+     "url": "https://www.daemonology.net/hn-daily/2026-11-07.html"
+    }
+   ],
+   "feed_url": "https://planned-obsolescence.org/feed",
+   "reason": "feed check failed: RuntimeError: fetch failed for https://planned-obsolescence.org/feed: HTTP Error 404: Not Found"
+  },
+  {
+   "id": "github:storytold",
+   "kind": "github",
+   "label": "storytold",
+   "url": "https://github.com/storytold",
+   "status": "held",
+   "trusted_citers": [
+    "GitHub",
+    "Latent Space"
+   ],
+   "citers": [
+    "GitHub",
+    "Latent Space"
+   ],
+   "first_seen": "2026-11-08",
+   "last_seen": "2026-11-14",
+   "evidence": [
+    {
+     "date": "2026-11-08",
+     "source": "GitHub",
+     "title": "storytold/craft-anything",
+     "url": "https://github.com/storytold/craft-anything"
+    },
+    {
+     "date": "2026-11-08",
+     "source": "GitHub",
+     "title": "storytold/artcraft",
+     "url": "https://github.com/storytold/artcraft"
+    },
+    {
+     "date": "2026-11-13",
+     "source": "Latent Space",
+     "title": "AI Ambition: ArtCraft Cloned Photoshop and Now Wants to \"Rebuild Everything\"",
+     "url": "https://latent.space/p/artcraft/"
+    }
+   ],
+   "reason": "weekly cap of 5 new GitHub owners reached"
+  },
+  {
+   "id": "github:cloudflare",
+   "kind": "github",
+   "label": "cloudflare",
+   "url": "https://github.com/cloudflare",
+   "status": "held",
+   "trusted_citers": [
+    "Cloudflare blog: AI",
+    "GitHub"
+   ],
+   "citers": [
+    "Cloudflare blog: AI",
+    "GitHub"
+   ],
+   "first_seen": "2026-11-08",
+   "last_seen": "2026-11-14",
+   "evidence": [
+    {
+     "date": "2026-11-08",
+     "source": "GitHub",
+     "title": "cloudflare/security-audit-skill",
+     "url": "https://github.com/cloudflare/security-audit-skill"
+    },
+    {
+     "date": "2026-11-14",
+     "source": "Cloudflare blog: AI",
+     "title": "Kitesurf is now open source",
+     "url": "https://blog.cloudflare.com/kitesurf-open-source/"
+    }
+   ],
+   "reason": "weekly cap of 5 new GitHub owners reached"
+  },
+  {
+   "id": "github:inferact",
+   "kind": "github",
+   "label": "inferact",
+   "url": "https://github.com/inferact",
+   "status": "held",
+   "trusted_citers": [
+    "PyTorch blog",
+    "SemiAnalysis"
+   ],
+   "citers": [
+    "PyTorch blog",
+    "SemiAnalysis"
+   ],
+   "first_seen": "2026-11-08",
+   "last_seen": "2026-11-11",
+   "evidence": [
+    {
+     "date": "2026-11-08",
+     "source": "SemiAnalysis",
+     "title": "The Iron(wood) Throne: Google's TPU Stakes Its Claim on Inference",
+     "url": "https://newsletter.semianalysis.com/p/tpu-strikes-the-king"
+    },
+    {
+     "date": "2026-11-11",
+     "source": "PyTorch blog",
+     "title": "Optimizing Muse Spark Open on TPU v7 with SGLang-TorchTPU",
+     "url": "https://pytorch.org/blog/optimizing-muse-spark-open-on-tpu-v7-with-sglang-torchtpu/"
+    }
+   ],
+   "reason": "weekly cap of 5 new GitHub owners reached"
+  },
+  {
+   "id": "github:morluto",
+   "kind": "github",
+   "label": "morluto",
+   "url": "https://github.com/morluto",
+   "status": "held",
+   "trusted_citers": [
+    "GitHub",
+    "Latent Space"
+   ],
+   "citers": [
+    "GitHub",
+    "Latent Space"
+   ],
+   "first_seen": "2026-11-08",
+   "last_seen": "2026-11-14",
+   "evidence": [
+    {
+     "date": "2026-11-08",
+     "source": "GitHub",
+     "title": "morluto/rea",
+     "url": "https://github.com/morluto/rea"
+    },
+    {
+     "date": "2026-11-10",
+     "source": "Latent Space",
+     "title": "[AINews] Fable 5.2 retakes World #1 LLM spot as $ANT IPO roadshow begins",
+     "url": "https://latent.space/p/ainews-fable-5-2-retakes-world-1-llm-spot-as-ant-ipo-roadshow-begins/"
+    }
+   ],
+   "reason": "weekly cap of 5 new GitHub owners reached"
+  },
+  {
+   "id": "github:qwenlm",
+   "kind": "github",
+   "label": "qwenlm",
+   "url": "https://github.com/qwenlm",
+   "status": "held",
+   "trusted_citers": [
+    "GitHub",
+    "Latent Space"
+   ],
+   "citers": [
+    "GitHub",
+    "Latent Space"
+   ],
+   "first_seen": "2026-11-11",
+   "last_seen": "2026-11-12",
+   "evidence": [
+    {
+     "date": "2026-11-11",
+     "source": "Latent Space",
+     "title": "[AINews] Mercor $750m Series D at $20B valuation, $3B run rate",
+     "url": "https://latent.space/p/ainews-mercor-750m-series-d-at-20b-valuation-3b-run-rate/"
+    },
+    {
+     "date": "2026-11-12",
+     "source": "GitHub",
+     "title": "QwenLM/qwen-code",
+     "url": "https://github.com/QwenLM/qwen-code"
+    }
+   ],
+   "reason": "weekly cap of 5 new GitHub owners reached"
+  }
+ ],
+ "demoted": [
+  {
+   "id": "feed:ainews",
+   "label": "AINews (smol.ai)",
+   "reason": "zero kept items in the last 21 live editions"
+  },
+  {
+   "id": "feed:the-batch",
+   "label": "The Batch (DeepLearning.AI)",
+   "reason": "zero kept items in the last 21 live editions"
+  },
+  {
+   "id": "feed:gradient-flow",
+   "label": "Gradient Flow",
+   "reason": "zero kept items in the last 21 live editions"
+  },
+  {
+   "id": "feed:one-useful-thing",
+   "label": "One Useful Thing (Ethan Mollick)",
+   "reason": "zero kept items in the last 21 live editions"
+  },
+  {
+   "id": "feed:hamel-husain",
+   "label": "Hamel Husain",
+   "reason": "zero kept items in the last 21 live editions"
+  },
+  {
+   "id": "feed:metr",
+   "label": "METR",
+   "reason": "zero kept items in the last 21 live editions"
+  },
+  {
+   "id": "feed:ai-as-normal-tech",
+   "label": "AI as Normal Technology (Narayanan and Kapoor)",
+   "reason": "zero kept items in the last 21 live editions"
+  },
+  {
+   "id": "feed:coding-with-intelligence",
+   "label": "Coding with Intelligence",
+   "reason": "zero kept items in the last 21 live editions"
+  },
+  {
+   "id": "feed:lobsters-vibecoding",
+   "label": "Lobsters: vibecoding tag",
+   "reason": "zero kept items in the last 21 live editions"
+  },
+  {
+   "id": "github:thoughtworks",
+   "label": "thoughtworks",
+   "reason": "zero kept items in the last 21 live editions"
+  },
+  {
+   "id": "github:google-pytorch",
+   "label": "google-pytorch",
+   "reason": "zero kept items in the last 21 live editions"
+  },
+  {
+   "id": "github:meta-pytorch",
+   "label": "meta-pytorch",
+   "reason": "zero kept items in the last 21 live editions"
+  }
+ ],
+ "watching": [
+  {
+   "id": "github:ashhart",
+   "kind": "github",
+   "label": "ashhart",
+   "url": "https://github.com/ashhart",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub",
+    "X: @ashxhart",
+    "X: @plotarmordev"
+   ],
+   "first_seen": "2026-11-08",
+   "last_seen": "2026-11-14",
+   "evidence": [
+    {
+     "date": "2026-11-12",
+     "source": "GitHub",
+     "title": "ashhart/TensorFold",
+     "url": "https://github.com/ashhart/TensorFold"
+    },
+    {
+     "date": "2026-11-08",
+     "source": "X: @ashxhart",
+     "title": "TensorFold 1.2.4: 319K-token DeepSeek-V4.1 conversation restored from NVMe in about 1.3 s on two GB10s",
+     "url": "https://x.com/ashxhart/status/2119084137491431515"
+    },
+    {
+     "date": "2026-11-08",
+     "source": "X: @plotarmordev",
+     "title": "LingSpark recipe runs 560B Ling-3.1-flash with full 1M context on two DGX Sparks at 32 to 35 tok/s",
+     "url": "https://x.com/plotarmordev/status/2119095481305546909"
+    },
+    {
+     "date": "2026-11-08",
+     "source": "X: @ashxhart",
+     "title": "TensorFold direct-read loading cuts cold-start time",
+     "url": "https://x.com/ashxhart/status/2119127859109507526"
+    },
+    {
+     "date": "2026-11-09",
+     "source": "X: @ashxhart",
+     "title": "TensorFold Metal 8-bit path reuses producer sums",
+     "url": "https://x.com/ashxhart/status/2119543953368264979"
+    },
+    {
+     "date": "2026-11-14",
+     "source": "X: @ashxhart",
+     "title": "TensorFold 1.2.8 adds Flint, DeepSeek-V4.1 on Metal, and faster prefill",
+     "url": "https://x.com/ashxhart/status/2121386402948559261"
+    }
+   ]
+  },
+  {
+   "id": "github:hyperionaidev",
+   "kind": "github",
+   "label": "hyperionaidev",
+   "url": "https://github.com/hyperionaidev",
    "status": "watching",
    "trusted_citers": [
     "Hacker News"
@@ -229,34 +592,71 @@
     "Hacker News Daily (top 10 per day)",
     "Hacker News best (hnrss)"
    ],
-   "first_seen": "2026-11-01",
-   "last_seen": "2026-11-03",
+   "first_seen": "2026-11-13",
+   "last_seen": "2026-11-14",
    "evidence": [
     {
-     "date": "2026-11-01",
+     "date": "2026-11-13",
      "source": "Hacker News",
-     "title": "Memdoor: A team of 5 Qwen3.8-27B models beats Fable 5 on LiveCodeBench Hard",
-     "url": "https://github.com/guregodevo/memdoor/tree/main/examples/workflows/team-solve"
+     "title": "I'm making LLMs work on small and old devices",
+     "url": "https://github.com/hyperionaidev/smolmaxxing/"
     },
     {
-     "date": "2026-11-01",
+     "date": "2026-11-13",
      "source": "Hacker News best (hnrss)",
-     "title": "Memdoor: A team of 5 Qwen3.8-27B models beats Fable 5 on LiveCodeBench Hard",
-     "url": "https://github.com/guregodevo/memdoor/tree/main/examples/workflows/team-solve"
+     "title": "I'm making LLMs work on small and old devices",
+     "url": "https://github.com/hyperionaidev/smolmaxxing/"
     },
     {
-     "date": "2026-11-02",
+     "date": "2026-11-14",
      "source": "Hacker News Daily (top 10 per day)",
-     "title": "Daily Hacker News for 2026-11-01",
-     "url": "https://www.daemonology.net/hn-daily/2026-11-01.html"
+     "title": "Daily Hacker News for 2026-11-13",
+     "url": "https://www.daemonology.net/hn-daily/2026-11-13.html"
     }
    ]
   },
   {
-   "id": "github:ppmpreetham",
+   "id": "github:ifm-ai",
    "kind": "github",
-   "label": "ppmpreetham",
-   "url": "https://github.com/ppmpreetham",
+   "label": "ifm-ai",
+   "url": "https://github.com/ifm-ai",
+   "status": "watching",
+   "trusted_citers": [
+    "Latent Space"
+   ],
+   "citers": [
+    "Latent Space",
+    "X: @IFM_AI",
+    "X: @huskydogewoof"
+   ],
+   "first_seen": "2026-11-11",
+   "last_seen": "2026-11-14",
+   "evidence": [
+    {
+     "date": "2026-11-12",
+     "source": "Latent Space",
+     "title": "[AINews] D-Day (Decision Models Day)",
+     "url": "https://latent.space/p/ainews-d-day-decision-models-day/"
+    },
+    {
+     "date": "2026-11-11",
+     "source": "X: @IFM_AI",
+     "title": "PAN 2 open world model released under Apache 2.0",
+     "url": "https://x.com/IFM_AI/status/2120199814696828942"
+    },
+    {
+     "date": "2026-11-14",
+     "source": "X: @huskydogewoof",
+     "title": "Latent feedback cuts pretraining data and compute",
+     "url": "https://x.com/huskydogewoof/status/2121282554053414945"
+    }
+   ]
+  },
+  {
+   "id": "github:simpsoka",
+   "kind": "github",
+   "label": "simpsoka",
+   "url": "https://github.com/simpsoka",
    "status": "watching",
    "trusted_citers": [
     "Hacker News"
@@ -266,34 +666,34 @@
     "Hacker News Daily (top 10 per day)",
     "Hacker News best (hnrss)"
    ],
-   "first_seen": "2026-11-06",
-   "last_seen": "2026-11-07",
+   "first_seen": "2026-11-13",
+   "last_seen": "2026-11-14",
    "evidence": [
     {
-     "date": "2026-11-06",
+     "date": "2026-11-13",
      "source": "Hacker News",
-     "title": "Blender's UI and Runtime: Much Faster Than GPUI",
-     "url": "https://github.com/ppmpreetham/BUI"
+     "title": "Show HN: My $300 embroidery machine needed a subscription, so I built my own app",
+     "url": "https://github.com/simpsoka/zigzag"
     },
     {
-     "date": "2026-11-07",
-     "source": "Hacker News Daily (top 10 per day)",
-     "title": "Daily Hacker News for 2026-11-06",
-     "url": "https://www.daemonology.net/hn-daily/2026-11-06.html"
-    },
-    {
-     "date": "2026-11-07",
+     "date": "2026-11-13",
      "source": "Hacker News best (hnrss)",
-     "title": "Blender's UI and Runtime: Much Faster Than GPUI",
-     "url": "https://github.com/ppmpreetham/BUI"
+     "title": "Show HN: My $300 embroidery machine needed a subscription, so I built my own app",
+     "url": "https://github.com/simpsoka/zigzag"
+    },
+    {
+     "date": "2026-11-14",
+     "source": "Hacker News Daily (top 10 per day)",
+     "title": "Daily Hacker News for 2026-11-13",
+     "url": "https://www.daemonology.net/hn-daily/2026-11-13.html"
     }
    ]
   },
   {
-   "id": "github:privsec-dev",
+   "id": "github:synchopate",
    "kind": "github",
-   "label": "privsec-dev",
-   "url": "https://github.com/privsec-dev",
+   "label": "synchopate",
+   "url": "https://github.com/synchopate",
    "status": "watching",
    "trusted_citers": [
     "Hacker News"
@@ -303,63 +703,26 @@
     "Hacker News Daily (top 10 per day)",
     "Hacker News best (hnrss)"
    ],
-   "first_seen": "2026-11-06",
-   "last_seen": "2026-11-07",
+   "first_seen": "2026-11-09",
+   "last_seen": "2026-11-10",
    "evidence": [
     {
-     "date": "2026-11-06",
+     "date": "2026-11-09",
      "source": "Hacker News",
-     "title": "Dutch 'idealist' bank ASN blocks non-Google Android, including GrapheneOS",
-     "url": "https://github.com/PrivSec-dev/banking-apps-compat-report/issues/105"
+     "title": "Llama-modchip: 284B DeepSeek on 64GB RAM, no GPU",
+     "url": "https://github.com/synchopate/llama-modchip"
     },
     {
-     "date": "2026-11-07",
+     "date": "2026-11-09",
      "source": "Hacker News Daily (top 10 per day)",
-     "title": "Daily Hacker News for 2026-11-06",
-     "url": "https://www.daemonology.net/hn-daily/2026-11-06.html"
+     "title": "Daily Hacker News for 2026-11-08",
+     "url": "https://www.daemonology.net/hn-daily/2026-11-08.html"
     },
     {
-     "date": "2026-11-07",
+     "date": "2026-11-09",
      "source": "Hacker News best (hnrss)",
-     "title": "Dutch 'idealist' bank ASN blocks non-Google Android, including GrapheneOS",
-     "url": "https://github.com/PrivSec-dev/banking-apps-compat-report/issues/105"
-    }
-   ]
-  },
-  {
-   "id": "github:saragordic",
-   "kind": "github",
-   "label": "saragordic",
-   "url": "https://github.com/saragordic",
-   "status": "watching",
-   "trusted_citers": [
-    "Hacker News"
-   ],
-   "citers": [
-    "Hacker News",
-    "Hacker News Daily (top 10 per day)",
-    "Hacker News best (hnrss)"
-   ],
-   "first_seen": "2026-11-06",
-   "last_seen": "2026-11-07",
-   "evidence": [
-    {
-     "date": "2026-11-06",
-     "source": "Hacker News",
-     "title": "Window Sweaters",
-     "url": "https://github.com/saragordic/window-sweaters"
-    },
-    {
-     "date": "2026-11-06",
-     "source": "Hacker News best (hnrss)",
-     "title": "Window Sweaters",
-     "url": "https://github.com/saragordic/window-sweaters"
-    },
-    {
-     "date": "2026-11-07",
-     "source": "Hacker News Daily (top 10 per day)",
-     "title": "Daily Hacker News for 2026-11-06",
-     "url": "https://www.daemonology.net/hn-daily/2026-11-06.html"
+     "title": "Llama-modchip: 284B DeepSeek on 64GB RAM, no GPU",
+     "url": "https://github.com/synchopate/llama-modchip"
     }
    ]
   },
@@ -376,117 +739,177 @@
     "Ben's Bites",
     "Exponential View"
    ],
-   "first_seen": "2026-11-04",
-   "last_seen": "2026-11-07",
+   "first_seen": "2026-11-08",
+   "last_seen": "2026-11-14",
    "evidence": [
     {
-     "date": "2026-11-07",
+     "date": "2026-11-08",
      "source": "Exponential View",
      "title": "🔮 Don’t waste a good backlash",
      "url": "https://www.exponentialview.co/p/dont-waste-a-good-backlash"
     },
     {
-     "date": "2026-11-04",
+     "date": "2026-11-11",
      "source": "Ben's Bites",
-     "title": "Finding my thing",
-     "url": "https://www.bensbites.com/p/if-you-feel-behind-right-now-dont"
+     "title": "How I got seduced",
+     "url": "https://www.bensbites.com/p/how-i-got-seduced"
     },
     {
-     "date": "2026-11-06",
+     "date": "2026-11-13",
      "source": "Ben's Bites",
-     "title": "Craft and taste",
-     "url": "https://www.bensbites.com/p/craft-and-taste"
+     "title": "To the man with AI, everything looks like a task",
+     "url": "https://www.bensbites.com/p/to-the-man-with-ai-everything-looks"
     }
    ],
    "feed_url": "https://pbs.substack.com/feed"
   },
   {
-   "id": "github:bytedance",
+   "id": "github:expo",
    "kind": "github",
-   "label": "bytedance",
-   "url": "https://github.com/bytedance",
+   "label": "expo",
+   "url": "https://github.com/expo",
    "status": "watching",
    "trusted_citers": [
-    "Latent Space"
+    "Hacker News"
    ],
    "citers": [
-    "Latent Space",
-    "X: @victormustar"
+    "GitHub",
+    "Hacker News"
    ],
-   "first_seen": "2026-11-05",
-   "last_seen": "2026-11-06",
+   "first_seen": "2026-11-10",
+   "last_seen": "2026-11-11",
    "evidence": [
     {
-     "date": "2026-11-05",
-     "source": "Latent Space",
-     "title": "[AINews] It's Swapping Season",
-     "url": "https://latent.space/p/ainews-it-s-swapping-season/"
+     "date": "2026-11-10",
+     "source": "Hacker News",
+     "title": "Exact – a new cross platform UI framework",
+     "url": "https://github.com/expo/exact"
     },
     {
-     "date": "2026-11-05",
-     "source": "X: @victormustar",
-     "title": "Axion-1.0 35B ships with its full open training recipe: model, training data, code and paper",
-     "url": "https://x.com/victormustar/status/2117972657882722415"
+     "date": "2026-11-10",
+     "source": "GitHub",
+     "title": "expo/exact",
+     "url": "https://github.com/expo/exact"
     }
    ]
   },
   {
-   "id": "github:cloudflare",
+   "id": "github:frigadehq",
    "kind": "github",
-   "label": "cloudflare",
-   "url": "https://github.com/cloudflare",
+   "label": "frigadehq",
+   "url": "https://github.com/frigadehq",
+   "status": "watching",
+   "trusted_citers": [
+    "Hacker News"
+   ],
+   "citers": [
+    "GitHub",
+    "Hacker News"
+   ],
+   "first_seen": "2026-11-12",
+   "last_seen": "2026-11-14",
+   "evidence": [
+    {
+     "date": "2026-11-12",
+     "source": "Hacker News",
+     "title": "Show HN: Yogurt – Free, private, open-source alternative to Granola",
+     "url": "https://github.com/FrigadeHQ/yogurt"
+    },
+    {
+     "date": "2026-11-14",
+     "source": "GitHub",
+     "title": "FrigadeHQ/yogurt",
+     "url": "https://github.com/FrigadeHQ/yogurt"
+    }
+   ]
+  },
+  {
+   "id": "github:garrytan",
+   "kind": "github",
+   "label": "garrytan",
+   "url": "https://github.com/garrytan",
    "status": "watching",
    "trusted_citers": [
     "GitHub"
    ],
    "citers": [
     "GitHub",
-    "X: @CloudflareDev"
+    "X: @garrytan"
    ],
-   "first_seen": "2026-11-01",
-   "last_seen": "2026-11-07",
+   "first_seen": "2026-11-09",
+   "last_seen": "2026-11-09",
    "evidence": [
     {
-     "date": "2026-11-01",
+     "date": "2026-11-09",
      "source": "GitHub",
-     "title": "cloudflare/security-audit-skill",
-     "url": "https://github.com/cloudflare/security-audit-skill"
+     "title": "garrytan/gbrain",
+     "url": "https://github.com/garrytan/gbrain"
     },
     {
-     "date": "2026-11-06",
-     "source": "X: @CloudflareDev",
-     "title": "Cloudflare open-sources security-audit skill for coding agents",
-     "url": "https://x.com/CloudflareDev/status/2118013149538390253"
+     "date": "2026-11-09",
+     "source": "X: @garrytan",
+     "title": "Open harness eval shows similar pass rates and a wide cost gap",
+     "url": "https://x.com/garrytan/status/2119492448200405110"
     }
    ]
   },
   {
-   "id": "github:justvugg",
+   "id": "github:iainkay",
    "kind": "github",
-   "label": "justvugg",
-   "url": "https://github.com/justvugg",
+   "label": "iainkay",
+   "url": "https://github.com/iainkay",
    "status": "watching",
    "trusted_citers": [
-    "GitHub"
+    "Hacker News"
    ],
    "citers": [
     "GitHub",
-    "X: @JubayarAdnan"
+    "Hacker News"
    ],
-   "first_seen": "2026-11-02",
-   "last_seen": "2026-11-04",
+   "first_seen": "2026-11-09",
+   "last_seen": "2026-11-14",
    "evidence": [
     {
-     "date": "2026-11-02",
-     "source": "GitHub",
-     "title": "JustVugg/colibri",
-     "url": "https://github.com/JustVugg/colibri"
+     "date": "2026-11-10",
+     "source": "Hacker News",
+     "title": "RAM-Altman reports unused RAM on your machine, one email a day",
+     "url": "https://github.com/IainKay/ram-altman"
     },
     {
-     "date": "2026-11-04",
-     "source": "X: @JubayarAdnan",
-     "title": "colibri: pure C runtime that runs 744B MoE models in about 10GB of RAM by tiering experts",
-     "url": "https://x.com/JubayarAdnan/status/2117663101315424368"
+     "date": "2026-11-09",
+     "source": "GitHub",
+     "title": "IainKay/ram-altman",
+     "url": "https://github.com/IainKay/ram-altman"
+    }
+   ]
+  },
+  {
+   "id": "github:thisisme6598",
+   "kind": "github",
+   "label": "thisisme6598",
+   "url": "https://github.com/thisisme6598",
+   "status": "watching",
+   "trusted_citers": [
+    "Hacker News"
+   ],
+   "citers": [
+    "Hacker News",
+    "Hacker News Daily (top 10 per day)"
+   ],
+   "first_seen": "2026-11-10",
+   "last_seen": "2026-11-12",
+   "evidence": [
+    {
+     "date": "2026-11-10",
+     "source": "Hacker News",
+     "title": "Google Gemini routes personal Drive files and emails to human annotators",
+     "url": "https://github.com/thisisme6598/gemini_files/"
+    },
+    {
+     "date": "2026-11-11",
+     "source": "Hacker News Daily (top 10 per day)",
+     "title": "Daily Hacker News for 2026-11-10",
+     "url": "https://www.daemonology.net/hn-daily/2026-11-10.html"
     }
    ]
   },
@@ -502,470 +925,44 @@
    "citers": [
     "AWS Machine Learning blog"
    ],
-   "first_seen": "2026-11-03",
-   "last_seen": "2026-11-07",
+   "first_seen": "2026-11-10",
+   "last_seen": "2026-11-14",
    "evidence": [
     {
-     "date": "2026-11-03",
+     "date": "2026-11-10",
      "source": "AWS Machine Learning blog",
-     "title": "Prepare web content for Amazon Bedrock Knowledge Bases with Crawl4AI",
-     "url": "https://aws.amazon.com/blogs/machine-learning/prepare-web-content-for-amazon-bedrock-knowledge-bases-with-crawl4ai/"
+     "title": "Introducing Claude Fable 5.2 on AWS",
+     "url": "https://aws.amazon.com/blogs/machine-learning/introducing-claude-fable-5-2-on-aws/"
     },
     {
-     "date": "2026-11-03",
+     "date": "2026-11-10",
      "source": "AWS Machine Learning blog",
-     "title": "Agentic engineering intelligence with Amazon Nova Multimodal Embeddings and Amazon Bedrock AgentCore",
-     "url": "https://aws.amazon.com/blogs/machine-learning/agentic-engineering-intelligence-with-amazon-nova-multimodal-embeddings-and-amazon-bedrock-agentcore/"
+     "title": "Pluggable Agentic AI Framework: A seven-layer composable enterprise agentic AI reference architecture on Amazon Bedrock AgentCore",
+     "url": "https://aws.amazon.com/blogs/machine-learning/pluggable-agentic-ai-framework-a-seven-layer-composable-enterprise-agentic-ai-reference-architecture-on-amazon-bedrock-agentcore/"
     },
     {
-     "date": "2026-11-04",
+     "date": "2026-11-11",
      "source": "AWS Machine Learning blog",
-     "title": "Introducing India-based inference for Kimi K3 on Amazon Bedrock",
-     "url": "https://aws.amazon.com/blogs/machine-learning/introducing-india-based-inference-for-kimi-k3-on-amazon-bedrock/"
+     "title": "Amazon Bedrock tokenomics data lake",
+     "url": "https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-tokenomics-data-lake/"
     },
     {
-     "date": "2026-11-05",
+     "date": "2026-11-12",
      "source": "AWS Machine Learning blog",
-     "title": "Four layers of context engineering for production AI agents: How Deep Insight applies them in working code",
-     "url": "https://aws.amazon.com/blogs/machine-learning/four-layers-of-context-engineering-for-production-ai-agents-how-deep-insight-applies-them-in-working-code/"
+     "title": "Build autonomous AI agents with Amazon Bedrock and Spring AI",
+     "url": "https://aws.amazon.com/blogs/machine-learning/build-autonomous-ai-agents-with-amazon-bedrock-and-spring-ai/"
     },
     {
-     "date": "2026-11-06",
+     "date": "2026-11-12",
      "source": "AWS Machine Learning blog",
-     "title": "How Amazon Marketplace evaluates content quality with Amazon SageMaker AI",
-     "url": "https://aws.amazon.com/blogs/machine-learning/how-amazon-marketplace-evaluates-content-quality-with-amazon-sagemaker-ai/"
+     "title": "Accelerating generative AI delivery with reusable assets",
+     "url": "https://aws.amazon.com/blogs/machine-learning/accelerating-generative-ai-delivery-with-reusable-assets/"
     },
     {
-     "date": "2026-11-07",
+     "date": "2026-11-12",
      "source": "AWS Machine Learning blog",
-     "title": "SageMaker Inference now supports Multi-Instance GPU to maximize GPU utilization for model endpoints",
-     "url": "https://aws.amazon.com/blogs/machine-learning/sagemaker-inference-now-supports-multi-instance-gpu-to-maximize-gpu-utilization-for-model-endpoints/"
-    }
-   ]
-  },
-  {
-   "id": "newsletter:media.beehiiv.com",
-   "kind": "newsletter",
-   "label": "media.beehiiv.com",
-   "url": "https://media.beehiiv.com",
-   "status": "watching",
-   "trusted_citers": [
-    "Latent Space"
-   ],
-   "citers": [
-    "Latent Space"
-   ],
-   "first_seen": "2026-11-01",
-   "last_seen": "2026-11-07",
-   "evidence": [
-    {
-     "date": "2026-11-01",
-     "source": "Latent Space",
-     "title": "Agents Prompt People: Using Agents for Long-Horizon Financial Work",
-     "url": "https://latent.space/p/arca/"
-    },
-    {
-     "date": "2026-11-01",
-     "source": "Latent Space",
-     "title": "[AINews] Google admits AI Mode hurts Search revenue; -15% $500B drop worst since 2004 IPO. AI Bear Market coming?",
-     "url": "https://latent.space/p/ainews-google-admits-ai-mode-hurts-search-revenue-15-500b-drop-worst-since-2004-ipo-ai-bear-market-c/"
-    },
-    {
-     "date": "2026-11-03",
-     "source": "Latent Space",
-     "title": "[AINews] LLMs can read & write neural network weights: \"Weight Space Programming\" cuts Autoresearch out of the RSI loop",
-     "url": "https://latent.space/p/ainews-llms-can-read-write-neural-network-weights-weight-space-programming-cuts-autoresearch-out-of/"
-    },
-    {
-     "date": "2026-11-03",
-     "source": "Latent Space",
-     "title": "Building AI for Lawyers - Jacob Lauritzen, CTO of Legora",
-     "url": "https://latent.space/p/building-ai-for-lawyers-jacob-lauritzen-cto-of-legora/"
-    },
-    {
-     "date": "2026-11-06",
-     "source": "Latent Space",
-     "title": "[AINews] Inkling 2 Small: 17A-594B trained in 68 hours on 12T tokens, beating Muse Spark",
-     "url": "https://latent.space/p/ainews-inkling-2-small-17a-594b-trained-in-68-hours-on-12t-tokens-beating-muse-spark/"
-    },
-    {
-     "date": "2026-11-07",
-     "source": "Latent Space",
-     "title": "Controlling Biology - Fabian Theis, Helmholtz Munich",
-     "url": "https://latent.space/p/controlling-biology-fabian-theis-helmholtz-munich/"
-    }
-   ],
-   "feed_url": null
-  },
-  {
-   "id": "github:aaif-goose",
-   "kind": "github",
-   "label": "aaif-goose",
-   "url": "https://github.com/aaif-goose",
-   "status": "watching",
-   "trusted_citers": [
-    "Goose releases"
-   ],
-   "citers": [
-    "Goose releases"
-   ],
-   "first_seen": "2026-11-01",
-   "last_seen": "2026-11-07",
-   "evidence": [
-    {
-     "date": "2026-11-01",
-     "source": "Goose releases",
-     "title": "v1.57.0",
-     "url": "https://github.com/aaif-goose/goose/releases/tag/v1.57.0"
-    },
-    {
-     "date": "2026-11-01",
-     "source": "Goose releases",
-     "title": "gdk-v0.1.0-alpha.13: chore(GDK): release v0.1.0-alpha.13 (#12876)",
-     "url": "https://github.com/aaif-goose/goose/releases/tag/gdk-v0.1.0-alpha.13"
-    },
-    {
-     "date": "2026-11-01",
-     "source": "Goose releases",
-     "title": "v1.56.0",
-     "url": "https://github.com/aaif-goose/goose/releases/tag/v1.56.0"
-    }
-   ]
-  },
-  {
-   "id": "github:awslabs",
-   "kind": "github",
-   "label": "awslabs",
-   "url": "https://github.com/awslabs",
-   "status": "watching",
-   "trusted_citers": [
-    "AWS Machine Learning blog"
-   ],
-   "citers": [
-    "AWS Machine Learning blog"
-   ],
-   "first_seen": "2026-11-05",
-   "last_seen": "2026-11-07",
-   "evidence": [
-    {
-     "date": "2026-11-05",
-     "source": "AWS Machine Learning blog",
-     "title": "Use decision models with Amazon Bedrock AgentCore Evaluations",
-     "url": "https://aws.amazon.com/blogs/machine-learning/use-decision-models-with-amazon-bedrock-agentcore-evaluations/"
-    },
-    {
-     "date": "2026-11-07",
-     "source": "AWS Machine Learning blog",
-     "title": "Govern AI agent access with Okta Cross App Access and Amazon Bedrock AgentCore – Part 2",
-     "url": "https://aws.amazon.com/blogs/machine-learning/govern-ai-agent-access-with-okta-cross-app-access-and-amazon-bedrock-agentcore-part-2/"
-    },
-    {
-     "date": "2026-11-07",
-     "source": "AWS Machine Learning blog",
-     "title": "Govern AI agent access with Okta Cross App Access and Amazon Bedrock AgentCore – Part 1",
-     "url": "https://aws.amazon.com/blogs/machine-learning/govern-ai-agent-access-with-okta-cross-app-access-and-amazon-bedrock-agentcore-part-1/"
-    }
-   ]
-  },
-  {
-   "id": "github:datasette",
-   "kind": "github",
-   "label": "datasette",
-   "url": "https://github.com/datasette",
-   "status": "watching",
-   "trusted_citers": [
-    "Simon Willison"
-   ],
-   "citers": [
-    "Simon Willison"
-   ],
-   "first_seen": "2026-11-01",
-   "last_seen": "2026-11-05",
-   "evidence": [
-    {
-     "date": "2026-11-01",
-     "source": "Simon Willison",
-     "title": "datasette-llm 0.1a9",
-     "url": "https://simonwillison.net/2026/Oct/31/datasette-llm/"
-    },
-    {
-     "date": "2026-11-05",
-     "source": "Simon Willison",
-     "title": "datasette-llm 0.1a10",
-     "url": "https://simonwillison.net/2026/Nov/4/datasette-llm/"
-    },
-    {
-     "date": "2026-11-05",
-     "source": "Simon Willison",
-     "title": "datasette-apps 0.3a0",
-     "url": "https://simonwillison.net/2026/Nov/4/datasette-apps/"
-    }
-   ]
-  },
-  {
-   "id": "github:vercel-labs",
-   "kind": "github",
-   "label": "vercel-labs",
-   "url": "https://github.com/vercel-labs",
-   "status": "watching",
-   "trusted_citers": [
-    "GitHub"
-   ],
-   "citers": [
-    "GitHub"
-   ],
-   "first_seen": "2026-11-01",
-   "last_seen": "2026-11-07",
-   "evidence": [
-    {
-     "date": "2026-11-01",
-     "source": "GitHub",
-     "title": "vercel-labs/skills",
-     "url": "https://github.com/vercel-labs/skills"
-    },
-    {
-     "date": "2026-11-02",
-     "source": "GitHub",
-     "title": "vercel-labs/agent-desktop",
-     "url": "https://github.com/vercel-labs/agent-desktop"
-    },
-    {
-     "date": "2026-11-05",
-     "source": "GitHub",
-     "title": "vercel-labs/agent-browser",
-     "url": "https://github.com/vercel-labs/agent-browser"
-    }
-   ]
-  },
-  {
-   "id": "github:allenai",
-   "kind": "github",
-   "label": "allenai",
-   "url": "https://github.com/allenai",
-   "status": "watching",
-   "trusted_citers": [
-    "X: @allen_ai"
-   ],
-   "citers": [
-    "X: @allen_ai"
-   ],
-   "first_seen": "2026-11-04",
-   "last_seen": "2026-11-07",
-   "evidence": [
-    {
-     "date": "2026-11-04",
-     "source": "X: @allen_ai",
-     "title": "Allen AI StateBench: frontier models drop to 13% or lower on long state-tracking problems",
-     "url": "https://x.com/allen_ai/status/2117670295339171994"
-    },
-    {
-     "date": "2026-11-07",
-     "source": "X: @allen_ai",
-     "title": "Ai2 releases ToyBlocks robot-learning simulation and models",
-     "url": "https://x.com/allen_ai/status/2118708454378402266"
-    }
-   ]
-  },
-  {
-   "id": "github:alphaxiv",
-   "kind": "github",
-   "label": "alphaxiv",
-   "url": "https://github.com/alphaxiv",
-   "status": "watching",
-   "trusted_citers": [
-    "X: @askalphaxiv"
-   ],
-   "citers": [
-    "X: @askalphaxiv"
-   ],
-   "first_seen": "2026-11-03",
-   "last_seen": "2026-11-05",
-   "evidence": [
-    {
-     "date": "2026-11-03",
-     "source": "X: @askalphaxiv",
-     "title": "OpenResearch for science agent swarms",
-     "url": "https://x.com/askalphaxiv/status/2117341175229431856"
-    },
-    {
-     "date": "2026-11-05",
-     "source": "X: @askalphaxiv",
-     "title": "OpenResearch turns a paper library into a literature review",
-     "url": "https://x.com/askalphaxiv/status/2118086287974629465"
-    }
-   ]
-  },
-  {
-   "id": "github:autonomous-ai",
-   "kind": "github",
-   "label": "autonomous-ai",
-   "url": "https://github.com/autonomous-ai",
-   "status": "watching",
-   "trusted_citers": [
-    "Latent Space"
-   ],
-   "citers": [
-    "Latent Space"
-   ],
-   "first_seen": "2026-11-06",
-   "last_seen": "2026-11-07",
-   "evidence": [
-    {
-     "date": "2026-11-06",
-     "source": "Latent Space",
-     "title": "[AINews] Inkling 2 Small: 17A-594B trained in 68 hours on 12T tokens, beating Muse Spark",
-     "url": "https://latent.space/p/ainews-inkling-2-small-17a-594b-trained-in-68-hours-on-12t-tokens-beating-muse-spark/"
-    },
-    {
-     "date": "2026-11-07",
-     "source": "Latent Space",
-     "title": "[AINews] Anthropic IPO: Whither Now?",
-     "url": "https://latent.space/p/ainews-anthropic-ipo-whither-now/"
-    }
-   ]
-  },
-  {
-   "id": "github:aws",
-   "kind": "github",
-   "label": "aws",
-   "url": "https://github.com/aws",
-   "status": "watching",
-   "trusted_citers": [
-    "AWS Machine Learning blog"
-   ],
-   "citers": [
-    "AWS Machine Learning blog"
-   ],
-   "first_seen": "2026-11-03",
-   "last_seen": "2026-11-04",
-   "evidence": [
-    {
-     "date": "2026-11-03",
-     "source": "AWS Machine Learning blog",
-     "title": "Build efficient agents with knowledge distillation on Amazon SageMaker AI",
-     "url": "https://aws.amazon.com/blogs/machine-learning/build-efficient-agents-with-knowledge-distillation-on-amazon-sagemaker-ai/"
-    },
-    {
-     "date": "2026-11-04",
-     "source": "AWS Machine Learning blog",
-     "title": "Introducing India-based inference for Kimi K3 on Amazon Bedrock",
-     "url": "https://aws.amazon.com/blogs/machine-learning/introducing-india-based-inference-for-kimi-k3-on-amazon-bedrock/"
-    }
-   ]
-  },
-  {
-   "id": "github:crgregersen",
-   "kind": "github",
-   "label": "crgregersen",
-   "url": "https://github.com/crgregersen",
-   "status": "watching",
-   "trusted_citers": [
-    "Latent Space"
-   ],
-   "citers": [
-    "Latent Space"
-   ],
-   "first_seen": "2026-11-06",
-   "last_seen": "2026-11-07",
-   "evidence": [
-    {
-     "date": "2026-11-06",
-     "source": "Latent Space",
-     "title": "[AINews] Inkling 2 Small: 17A-594B trained in 68 hours on 12T tokens, beating Muse Spark",
-     "url": "https://latent.space/p/ainews-inkling-2-small-17a-594b-trained-in-68-hours-on-12t-tokens-beating-muse-spark/"
-    },
-    {
-     "date": "2026-11-07",
-     "source": "Latent Space",
-     "title": "[AINews] Anthropic IPO: Whither Now?",
-     "url": "https://latent.space/p/ainews-anthropic-ipo-whither-now/"
-    }
-   ]
-  },
-  {
-   "id": "github:ist-daslab",
-   "kind": "github",
-   "label": "ist-daslab",
-   "url": "https://github.com/ist-daslab",
-   "status": "watching",
-   "trusted_citers": [
-    "Latent Space"
-   ],
-   "citers": [
-    "Latent Space"
-   ],
-   "first_seen": "2026-11-03",
-   "last_seen": "2026-11-06",
-   "evidence": [
-    {
-     "date": "2026-11-03",
-     "source": "Latent Space",
-     "title": "[AINews] LLMs can read & write neural network weights: \"Weight Space Programming\" cuts Autoresearch out of the RSI loop",
-     "url": "https://latent.space/p/ainews-llms-can-read-write-neural-network-weights-weight-space-programming-cuts-autoresearch-out-of/"
-    },
-    {
-     "date": "2026-11-05",
-     "source": "Latent Space",
-     "title": "[AINews] Behind Latent Space: Kill My SaaS, Jev & AI in 2026 | AIEi Shanghai",
-     "url": "https://latent.space/p/ainews-behind-latent-space-kill-my-saas-jev-ai-in-2026-aiei-shanghai/"
-    }
-   ]
-  },
-  {
-   "id": "github:notwitcheer",
-   "kind": "github",
-   "label": "notwitcheer",
-   "url": "https://github.com/notwitcheer",
-   "status": "watching",
-   "trusted_citers": [
-    "X: @witcheer"
-   ],
-   "citers": [
-    "X: @witcheer"
-   ],
-   "first_seen": "2026-11-01",
-   "last_seen": "2026-11-02",
-   "evidence": [
-    {
-     "date": "2026-11-01",
-     "source": "X: @witcheer",
-     "title": "Local-model agent benchmark by VRAM tier: a 12 GB card clears 27 of 30 Hermes Agent tasks, 32 GB clears all 30",
-     "url": "https://x.com/witcheer/status/2116621479735693809"
-    },
-    {
-     "date": "2026-11-02",
-     "source": "X: @witcheer",
-     "title": "Hermes Agent completes 9 of 10 everyday tasks fully offline with a local model over a unix socket",
-     "url": "https://x.com/witcheer/status/2117052318445121638"
-    }
-   ]
-  },
-  {
-   "id": "github:raullenchai",
-   "kind": "github",
-   "label": "raullenchai",
-   "url": "https://github.com/raullenchai",
-   "status": "watching",
-   "trusted_citers": [
-    "X: @rapidmlx"
-   ],
-   "citers": [
-    "X: @rapidmlx"
-   ],
-   "first_seen": "2026-11-02",
-   "last_seen": "2026-11-07",
-   "evidence": [
-    {
-     "date": "2026-11-02",
-     "source": "X: @rapidmlx",
-     "title": "Rapid-MLX 1.0.1 adds five local speech models on Mac, including Granite Speech 5.0 at about 640x real time",
-     "url": "https://x.com/rapidmlx/status/2117113569867423906"
-    },
-    {
-     "date": "2026-11-07",
-     "source": "X: @rapidmlx",
-     "title": "Rapid-MLX 1.0.2 adds local Pika H3 Flex video+audio and Idle Unload on Mac",
-     "url": "https://x.com/rapidmlx/status/2118768940101066953"
+     "title": "Accelerating product development with AI-driven lifecycle management (AI-PDLC) in AWS Quick",
+     "url": "https://aws.amazon.com/blogs/machine-learning/accelerating-product-development-with-ai-driven-lifecycle-management-ai-pdlc-in-aws-quick/"
     }
    ]
   },
@@ -981,57 +978,52 @@
    "citers": [
     "Simon Willison"
    ],
-   "first_seen": "2026-11-03",
-   "last_seen": "2026-11-04",
+   "first_seen": "2026-11-08",
+   "last_seen": "2026-11-14",
    "evidence": [
     {
-     "date": "2026-11-03",
+     "date": "2026-11-08",
      "source": "Simon Willison",
-     "title": "llm 0.37",
-     "url": "https://simonwillison.net/2026/Nov/2/llm/"
+     "title": "datasette #3046: Don't serve link: rel=next HTTP headers to Firefox for HTML pages",
+     "url": "https://simonwillison.net/2026/Nov/7/link-rel-next/"
     },
     {
-     "date": "2026-11-04",
+     "date": "2026-11-09",
      "source": "Simon Willison",
-     "title": "Qwen 3.8 27B on my laptop can interpret model weights, too",
-     "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/"
+     "title": "Hide your slop PR descriptions behind",
+     "url": "https://simonwillison.net/2026/Nov/9/details-summary/"
+    },
+    {
+     "date": "2026-11-09",
+     "source": "Simon Willison",
+     "title": "parse_number() as a SQLite extension: C vs Rust",
+     "url": "https://simonwillison.net/2026/Nov/8/sqlite-parse-number-c-vs-rust/"
+    },
+    {
+     "date": "2026-11-10",
+     "source": "Simon Willison",
+     "title": "Introducing Our Smallest, Most Efficient Model: Muse Ember",
+     "url": "https://simonwillison.net/2026/Nov/10/muse-ember/"
+    },
+    {
+     "date": "2026-11-10",
+     "source": "Simon Willison",
+     "title": "llm-anthropic 0.31",
+     "url": "https://simonwillison.net/2026/Nov/9/llm-anthropic/"
+    },
+    {
+     "date": "2026-11-10",
+     "source": "Simon Willison",
+     "title": "Locating the source of a mysterious beep with Claude",
+     "url": "https://simonwillison.net/2026/Nov/9/mysterious-beeps/"
     }
    ]
   },
   {
-   "id": "github:strands-agents",
-   "kind": "github",
-   "label": "strands-agents",
-   "url": "https://github.com/strands-agents",
-   "status": "watching",
-   "trusted_citers": [
-    "AWS Machine Learning blog"
-   ],
-   "citers": [
-    "AWS Machine Learning blog"
-   ],
-   "first_seen": "2026-11-04",
-   "last_seen": "2026-11-07",
-   "evidence": [
-    {
-     "date": "2026-11-04",
-     "source": "AWS Machine Learning blog",
-     "title": "Build a semantic layer for agentic AI with EDB Postgres AI and Amazon Bedrock AgentCore",
-     "url": "https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-with-edb-postgres-ai-and-amazon-bedrock-agentcore/"
-    },
-    {
-     "date": "2026-11-07",
-     "source": "AWS Machine Learning blog",
-     "title": "Taxbit Assist: A grounded, role-aware AI agent on Amazon Bedrock AgentCore",
-     "url": "https://aws.amazon.com/blogs/machine-learning/taxbit-assist-a-grounded-role-aware-ai-agent-on-amazon-bedrock-agentcore/"
-    }
-   ]
-  },
-  {
-   "id": "github:valeriodolci",
-   "kind": "github",
-   "label": "valeriodolci",
-   "url": "https://github.com/valeriodolci",
+   "id": "newsletter:media.beehiiv.com",
+   "kind": "newsletter",
+   "label": "media.beehiiv.com",
+   "url": "https://media.beehiiv.com",
    "status": "watching",
    "trusted_citers": [
     "Latent Space"
@@ -1039,111 +1031,340 @@
    "citers": [
     "Latent Space"
    ],
-   "first_seen": "2026-11-05",
-   "last_seen": "2026-11-06",
+   "first_seen": "2026-11-08",
+   "last_seen": "2026-11-14",
    "evidence": [
     {
-     "date": "2026-11-05",
+     "date": "2026-11-08",
      "source": "Latent Space",
-     "title": "[AINews] It's Swapping Season",
-     "url": "https://latent.space/p/ainews-it-s-swapping-season/"
+     "title": "Controlling Biology - Fabian Theis, Helmholtz Munich",
+     "url": "https://latent.space/p/controlling-biology-fabian-theis-helmholtz-munich/"
     },
     {
-     "date": "2026-11-05",
+     "date": "2026-11-09",
      "source": "Latent Space",
-     "title": "[AINews] Behind Latent Space: Kill My SaaS, Jev & AI in 2026 | AIEi Shanghai",
-     "url": "https://latent.space/p/ainews-behind-latent-space-kill-my-saas-jev-ai-in-2026-aiei-shanghai/"
+     "title": "How Stanford Teaches AI-Native Engineering, Mihail Eric, Monaco",
+     "url": "https://latent.space/p/cs146s/"
+    },
+    {
+     "date": "2026-11-10",
+     "source": "Latent Space",
+     "title": "[AINews] Fable 5.2 retakes World #1 LLM spot as $ANT IPO roadshow begins",
+     "url": "https://latent.space/p/ainews-fable-5-2-retakes-world-1-llm-spot-as-ant-ipo-roadshow-begins/"
+    },
+    {
+     "date": "2026-11-11",
+     "source": "Latent Space",
+     "title": "AI Engineer Code Summit: OpenAI on New Ways of Working With Codex",
+     "url": "https://latent.space/p/codex-work/"
+    },
+    {
+     "date": "2026-11-11",
+     "source": "Latent Space",
+     "title": "Designing for Agents, Zeno Rocha, Resend",
+     "url": "https://latent.space/p/resend/"
+    },
+    {
+     "date": "2026-11-11",
+     "source": "Latent Space",
+     "title": "NaiveAI Promises 2,100 Tokens per Second. How Well Does It Code?",
+     "url": "https://latent.space/p/naiveai/"
+    }
+   ],
+   "feed_url": null
+  },
+  {
+   "id": "github:awslabs",
+   "kind": "github",
+   "label": "awslabs",
+   "url": "https://github.com/awslabs",
+   "status": "watching",
+   "trusted_citers": [
+    "AWS Machine Learning blog"
+   ],
+   "citers": [
+    "AWS Machine Learning blog"
+   ],
+   "first_seen": "2026-11-12",
+   "last_seen": "2026-11-14",
+   "evidence": [
+    {
+     "date": "2026-11-12",
+     "source": "AWS Machine Learning blog",
+     "title": "Detecting and recovering from silent data corruption on Amazon SageMaker HyperPod",
+     "url": "https://aws.amazon.com/blogs/machine-learning/detecting-and-recovering-from-silent-data-corruption-on-amazon-sagemaker-hyperpod/"
+    },
+    {
+     "date": "2026-11-12",
+     "source": "AWS Machine Learning blog",
+     "title": "Automating AWS Agent Registry updates with push-based architecture",
+     "url": "https://aws.amazon.com/blogs/machine-learning/automating-aws-agent-registry-updates-with-push-based-architecture/"
+    },
+    {
+     "date": "2026-11-12",
+     "source": "AWS Machine Learning blog",
+     "title": "Accelerating generative AI delivery with reusable assets",
+     "url": "https://aws.amazon.com/blogs/machine-learning/accelerating-generative-ai-delivery-with-reusable-assets/"
+    },
+    {
+     "date": "2026-11-12",
+     "source": "AWS Machine Learning blog",
+     "title": "UAEF: A framework-agnostic system for closed-loop evaluation of AI agents",
+     "url": "https://aws.amazon.com/blogs/machine-learning/uaef-a-framework-agnostic-system-for-closed-loop-evaluation-of-ai-agents/"
+    },
+    {
+     "date": "2026-11-13",
+     "source": "AWS Machine Learning blog",
+     "title": "How Natera designed an agentic AI system for lab ops with Amazon Bedrock AgentCore",
+     "url": "https://aws.amazon.com/blogs/machine-learning/how-natera-designed-an-agentic-ai-system-for-lab-ops-with-amazon-bedrock-agentcore/"
+    },
+    {
+     "date": "2026-11-14",
+     "source": "AWS Machine Learning blog",
+     "title": "Build a model improvement flywheel with Amazon SageMaker HyperPod Data Capture",
+     "url": "https://aws.amazon.com/blogs/machine-learning/build-a-model-improvement-flywheel-with-amazon-sagemaker-hyperpod-data-capture/"
     }
    ]
   },
   {
-   "id": "newsletter:investmentbrief.ai",
-   "kind": "newsletter",
-   "label": "investmentbrief.ai",
-   "url": "https://investmentbrief.ai",
-   "status": "watching",
-   "trusted_citers": [
-    "Exponential View"
-   ],
-   "citers": [
-    "Exponential View"
-   ],
-   "first_seen": "2026-11-01",
-   "last_seen": "2026-11-05",
-   "evidence": [
-    {
-     "date": "2026-11-01",
-     "source": "Exponential View",
-     "title": "🔮 39 charts on Anthropic, one-person biotech firm & cheap solar #608",
-     "url": "https://www.exponentialview.co/p/ev-608"
-    },
-    {
-     "date": "2026-11-03",
-     "source": "Exponential View",
-     "title": "📈 Political ads turn against data centers",
-     "url": "https://www.exponentialview.co/p/political-ads-turn-against-data-centers"
-    }
-   ],
-   "feed_url": "https://investmentbrief.ai/feed"
-  },
-  {
-   "id": "newsletter:turingpost.com",
-   "kind": "newsletter",
-   "label": "turingpost.com",
-   "url": "https://turingpost.com",
-   "status": "watching",
-   "trusted_citers": [
-    "The Turing Post"
-   ],
-   "citers": [
-    "The Turing Post"
-   ],
-   "first_seen": "2026-11-01",
-   "last_seen": "2026-11-07",
-   "evidence": [
-    {
-     "date": "2026-11-01",
-     "source": "The Turing Post",
-     "title": "Better AI Decisions Need More Than Better Models",
-     "url": "https://turingpost.substack.com/p/better-ai-decisions-need-more-than"
-    },
-    {
-     "date": "2026-11-04",
-     "source": "The Turing Post",
-     "title": "Who Decides How AI Thinks? A Weekly digest Sep, 26 - Oct, 3",
-     "url": "https://turingpost.substack.com/p/who-decides-how-ai-thinks-a-weekly"
-    }
-   ],
-   "feed_url": "https://turingpost.com/feed"
-  },
-  {
-   "id": "github:aaitor",
+   "id": "github:notwitcheer",
    "kind": "github",
-   "label": "aaitor",
-   "url": "https://github.com/aaitor",
+   "label": "notwitcheer",
+   "url": "https://github.com/notwitcheer",
    "status": "watching",
    "trusted_citers": [
-    "Hacker News"
+    "X: @witcheer"
    ],
    "citers": [
-    "Hacker News"
+    "X: @witcheer"
    ],
-   "first_seen": "2026-11-03",
-   "last_seen": "2026-11-03",
+   "first_seen": "2026-11-08",
+   "last_seen": "2026-11-14",
    "evidence": [
     {
-     "date": "2026-11-03",
-     "source": "Hacker News",
-     "title": "Skill to Create Product Videos",
-     "url": "https://github.com/aaitor/skill-video-studio"
+     "date": "2026-11-08",
+     "source": "X: @witcheer",
+     "title": "20 KB weight edit shortens Qwen3.8-27B thinking",
+     "url": "https://x.com/witcheer/status/2119392237125501252"
+    },
+    {
+     "date": "2026-11-08",
+     "source": "X: @witcheer",
+     "title": "One RTX 5090 serves four local Hermes agents at once",
+     "url": "https://x.com/witcheer/status/2119158194585157894"
+    },
+    {
+     "date": "2026-11-09",
+     "source": "X: @witcheer",
+     "title": "Microduck red-light test leaves 137 of 456 standing",
+     "url": "https://x.com/witcheer/status/2119361534128488758"
+    },
+    {
+     "date": "2026-11-12",
+     "source": "X: @witcheer",
+     "title": "llama.cpp MoE cache speeds a model that does not fit in VRAM",
+     "url": "https://x.com/witcheer/status/2120803793143210360"
+    },
+    {
+     "date": "2026-11-12",
+     "source": "X: @witcheer",
+     "title": "Local models copy milliseconds into seconds tool fields",
+     "url": "https://x.com/witcheer/status/2120607502643675421"
+    },
+    {
+     "date": "2026-11-14",
+     "source": "X: @witcheer",
+     "title": "Qwen Sparse Attention more than doubles 27B decode at 255K context",
+     "url": "https://x.com/witcheer/status/2121566563954479397"
     }
    ]
   },
   {
-   "id": "github:affaan-m",
+   "id": "github:aaif-goose",
    "kind": "github",
-   "label": "affaan-m",
-   "url": "https://github.com/affaan-m",
+   "label": "aaif-goose",
+   "url": "https://github.com/aaif-goose",
+   "status": "watching",
+   "trusted_citers": [
+    "Goose releases"
+   ],
+   "citers": [
+    "Goose releases"
+   ],
+   "first_seen": "2026-11-08",
+   "last_seen": "2026-11-14",
+   "evidence": [
+    {
+     "date": "2026-11-08",
+     "source": "Goose releases",
+     "title": "v1.57.0",
+     "url": "https://github.com/aaif-goose/goose/releases/tag/v1.57.0"
+    },
+    {
+     "date": "2026-11-10",
+     "source": "Goose releases",
+     "title": "v1.58.1",
+     "url": "https://github.com/aaif-goose/goose/releases/tag/v1.58.1"
+    },
+    {
+     "date": "2026-11-10",
+     "source": "Goose releases",
+     "title": "v1.58.0",
+     "url": "https://github.com/aaif-goose/goose/releases/tag/v1.58.0"
+    },
+    {
+     "date": "2026-11-11",
+     "source": "Goose releases",
+     "title": "v1.59.0",
+     "url": "https://github.com/aaif-goose/goose/releases/tag/v1.59.0"
+    },
+    {
+     "date": "2026-11-14",
+     "source": "Goose releases",
+     "title": "v1.59.1",
+     "url": "https://github.com/aaif-goose/goose/releases/tag/v1.59.1"
+    }
+   ]
+  },
+  {
+   "id": "github:aws-solutions-library-samples",
+   "kind": "github",
+   "label": "aws-solutions-library-samples",
+   "url": "https://github.com/aws-solutions-library-samples",
+   "status": "watching",
+   "trusted_citers": [
+    "AWS Machine Learning blog"
+   ],
+   "citers": [
+    "AWS Machine Learning blog"
+   ],
+   "first_seen": "2026-11-11",
+   "last_seen": "2026-11-14",
+   "evidence": [
+    {
+     "date": "2026-11-11",
+     "source": "AWS Machine Learning blog",
+     "title": "Amazon Bedrock tokenomics data lake",
+     "url": "https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-tokenomics-data-lake/"
+    },
+    {
+     "date": "2026-11-12",
+     "source": "AWS Machine Learning blog",
+     "title": "Accelerating generative AI delivery with reusable assets",
+     "url": "https://aws.amazon.com/blogs/machine-learning/accelerating-generative-ai-delivery-with-reusable-assets/"
+    },
+    {
+     "date": "2026-11-13",
+     "source": "AWS Machine Learning blog",
+     "title": "Building a self-service LLM gateway with Amazon Bedrock and LiteLLM",
+     "url": "https://aws.amazon.com/blogs/machine-learning/building-a-self-service-llm-gateway-with-amazon-bedrock-and-litellm/"
+    },
+    {
+     "date": "2026-11-14",
+     "source": "AWS Machine Learning blog",
+     "title": "Cost-optimizing AssemblyAI speech-to-text inference on AWS with Amazon EC2 Spot",
+     "url": "https://aws.amazon.com/blogs/machine-learning/cost-optimizing-assemblyai-speech-to-text-inference-on-aws-with-amazon-ec2-spot/"
+    }
+   ]
+  },
+  {
+   "id": "github:pytorch",
+   "kind": "github",
+   "label": "pytorch",
+   "url": "https://github.com/pytorch",
+   "status": "watching",
+   "trusted_citers": [
+    "PyTorch blog"
+   ],
+   "citers": [
+    "PyTorch blog"
+   ],
+   "first_seen": "2026-11-11",
+   "last_seen": "2026-11-13",
+   "evidence": [
+    {
+     "date": "2026-11-11",
+     "source": "PyTorch blog",
+     "title": "ExecuTorch WebGPU: PyTorch Models on the GPU, in the Browser",
+     "url": "https://pytorch.org/blog/executorch-webgpu-pytorch-models-on-the-gpu-in-the-browser/"
+    },
+    {
+     "date": "2026-11-13",
+     "source": "PyTorch blog",
+     "title": "Fast by Default: Compile-Time Heuristics for Helion Kernels",
+     "url": "https://pytorch.org/blog/fast-by-default-compile-time-heuristics-for-helion-kernels/"
+    },
+    {
+     "date": "2026-11-13",
+     "source": "PyTorch blog",
+     "title": "Training a 1T-Parameter MoE on EU public infrastructure with PyTorch and TorchTitan",
+     "url": "https://pytorch.org/blog/training-a-1t-parameter-moe-on-eu-public-infrastructure-with-pytorch-and-torchtitan/"
+    }
+   ]
+  },
+  {
+   "id": "github:bsaleh03",
+   "kind": "github",
+   "label": "bsaleh03",
+   "url": "https://github.com/bsaleh03",
+   "status": "watching",
+   "trusted_citers": [
+    "Latent Space"
+   ],
+   "citers": [
+    "Latent Space"
+   ],
+   "first_seen": "2026-11-12",
+   "last_seen": "2026-11-14",
+   "evidence": [
+    {
+     "date": "2026-11-12",
+     "source": "Latent Space",
+     "title": "[AINews] D-Day (Decision Models Day)",
+     "url": "https://latent.space/p/ainews-d-day-decision-models-day/"
+    },
+    {
+     "date": "2026-11-13",
+     "source": "Latent Space",
+     "title": "[AINews] Jensen Huang resigns after 33 years leading NVIDIA",
+     "url": "https://latent.space/p/ainews-jensen-huang-resigns-after-33-years-leading-nvidia/"
+    }
+   ]
+  },
+  {
+   "id": "github:casper-hansen",
+   "kind": "github",
+   "label": "casper-hansen",
+   "url": "https://github.com/casper-hansen",
+   "status": "watching",
+   "trusted_citers": [
+    "X: @casper_hansen_"
+   ],
+   "citers": [
+    "X: @casper_hansen_"
+   ],
+   "first_seen": "2026-11-08",
+   "last_seen": "2026-11-12",
+   "evidence": [
+    {
+     "date": "2026-11-08",
+     "source": "X: @casper_hansen_",
+     "title": "DeepSeek V4.1 Flash runs at 15 tokens/s on an RTX 3090",
+     "url": "https://x.com/casper_hansen_/status/2119109875925946518"
+    },
+    {
+     "date": "2026-11-12",
+     "source": "X: @casper_hansen_",
+     "title": "DeepSeek V4.1 Flash runs at 20 tokens/s on one 3090",
+     "url": "https://x.com/casper_hansen_/status/2120559427296075901"
+    }
+   ]
+  },
+  {
+   "id": "github:vercel-labs",
+   "kind": "github",
+   "label": "vercel-labs",
+   "url": "https://github.com/vercel-labs",
    "status": "watching",
    "trusted_citers": [
     "GitHub"
@@ -1151,37 +1372,43 @@
    "citers": [
     "GitHub"
    ],
-   "first_seen": "2026-11-01",
-   "last_seen": "2026-11-04",
+   "first_seen": "2026-11-08",
+   "last_seen": "2026-11-14",
    "evidence": [
     {
-     "date": "2026-11-01",
+     "date": "2026-11-08",
      "source": "GitHub",
-     "title": "affaan-m/ECC",
-     "url": "https://github.com/affaan-m/ECC"
+     "title": "vercel-labs/agent-browser",
+     "url": "https://github.com/vercel-labs/agent-browser"
+    },
+    {
+     "date": "2026-11-09",
+     "source": "GitHub",
+     "title": "vercel-labs/agent-desktop",
+     "url": "https://github.com/vercel-labs/agent-desktop"
     }
    ]
   },
   {
-   "id": "github:aggib",
+   "id": "github:addyosmani",
    "kind": "github",
-   "label": "aggib",
-   "url": "https://github.com/aggib",
+   "label": "addyosmani",
+   "url": "https://github.com/addyosmani",
    "status": "watching",
    "trusted_citers": [
-    "Hacker News"
+    "GitHub"
    ],
    "citers": [
-    "Hacker News"
+    "GitHub"
    ],
-   "first_seen": "2026-11-06",
-   "last_seen": "2026-11-06",
+   "first_seen": "2026-11-10",
+   "last_seen": "2026-11-14",
    "evidence": [
     {
-     "date": "2026-11-06",
-     "source": "Hacker News",
-     "title": "Show HN: Stroq – a local audit of what your coding agent did and why",
-     "url": "https://github.com/AGGIB/Stroq"
+     "date": "2026-11-10",
+     "source": "GitHub",
+     "title": "addyosmani/agent-skills",
+     "url": "https://github.com/addyosmani/agent-skills"
     }
    ]
   },
@@ -1197,11 +1424,11 @@
    "citers": [
     "GitHub"
    ],
-   "first_seen": "2026-11-01",
-   "last_seen": "2026-11-04",
+   "first_seen": "2026-11-11",
+   "last_seen": "2026-11-14",
    "evidence": [
     {
-     "date": "2026-11-01",
+     "date": "2026-11-11",
      "source": "GitHub",
      "title": "AgriciDaniel/claude-seo",
      "url": "https://github.com/AgriciDaniel/claude-seo"
@@ -1209,33 +1436,33 @@
    ]
   },
   {
-   "id": "github:android",
+   "id": "github:ai-dynamo",
    "kind": "github",
-   "label": "android",
-   "url": "https://github.com/android",
+   "label": "ai-dynamo",
+   "url": "https://github.com/ai-dynamo",
    "status": "watching",
    "trusted_citers": [
-    "GitHub"
+    "AWS Machine Learning blog"
    ],
    "citers": [
-    "GitHub"
+    "AWS Machine Learning blog"
    ],
-   "first_seen": "2026-11-01",
-   "last_seen": "2026-11-01",
+   "first_seen": "2026-11-13",
+   "last_seen": "2026-11-13",
    "evidence": [
     {
-     "date": "2026-11-01",
-     "source": "GitHub",
-     "title": "android/skills",
-     "url": "https://github.com/android/skills"
+     "date": "2026-11-13",
+     "source": "AWS Machine Learning blog",
+     "title": "Deploy frontier AI models on AWS Trainium with SGLang-Neuron",
+     "url": "https://aws.amazon.com/blogs/machine-learning/deploy-frontier-ai-models-on-aws-trainium-with-sglang-neuron/"
     }
    ]
   },
   {
-   "id": "github:beenuar",
+   "id": "github:alibaba",
    "kind": "github",
-   "label": "beenuar",
-   "url": "https://github.com/beenuar",
+   "label": "alibaba",
+   "url": "https://github.com/alibaba",
    "status": "watching",
    "trusted_citers": [
     "GitHub"
@@ -1243,14 +1470,221 @@
    "citers": [
     "GitHub"
    ],
-   "first_seen": "2026-11-01",
-   "last_seen": "2026-11-01",
+   "first_seen": "2026-11-13",
+   "last_seen": "2026-11-14",
    "evidence": [
     {
-     "date": "2026-11-01",
+     "date": "2026-11-13",
      "source": "GitHub",
-     "title": "beenuar/AiSOC",
-     "url": "https://github.com/beenuar/AiSOC"
+     "title": "alibaba/open-code-review",
+     "url": "https://github.com/alibaba/open-code-review"
+    }
+   ]
+  },
+  {
+   "id": "github:alishahryar1",
+   "kind": "github",
+   "label": "alishahryar1",
+   "url": "https://github.com/alishahryar1",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-11-12",
+   "last_seen": "2026-11-12",
+   "evidence": [
+    {
+     "date": "2026-11-12",
+     "source": "GitHub",
+     "title": "Alishahryar1/free-claude-code",
+     "url": "https://github.com/Alishahryar1/free-claude-code"
+    }
+   ]
+  },
+  {
+   "id": "github:allenai",
+   "kind": "github",
+   "label": "allenai",
+   "url": "https://github.com/allenai",
+   "status": "watching",
+   "trusted_citers": [
+    "X: @allen_ai"
+   ],
+   "citers": [
+    "X: @allen_ai"
+   ],
+   "first_seen": "2026-11-14",
+   "last_seen": "2026-11-14",
+   "evidence": [
+    {
+     "date": "2026-11-14",
+     "source": "X: @allen_ai",
+     "title": "Ai2 releases XYBench for misguided user questions",
+     "url": "https://x.com/allen_ai/status/2121294715941277777"
+    }
+   ]
+  },
+  {
+   "id": "github:anadim",
+   "kind": "github",
+   "label": "anadim",
+   "url": "https://github.com/anadim",
+   "status": "watching",
+   "trusted_citers": [
+    "Microsoft Research blog"
+   ],
+   "citers": [
+    "Microsoft Research blog"
+   ],
+   "first_seen": "2026-11-11",
+   "last_seen": "2026-11-11",
+   "evidence": [
+    {
+     "date": "2026-11-11",
+     "source": "Microsoft Research blog",
+     "title": "Lazare, veni foras: Reprogramming Dormant Neurons to Backdoor AI Agents",
+     "url": "https://www.microsoft.com/en-us/research/blog/lazare-veni-foras-reprogramming-dormant-neurons-to-backdoor-ai-agents/"
+    }
+   ]
+  },
+  {
+   "id": "github:aqlaboratory",
+   "kind": "github",
+   "label": "aqlaboratory",
+   "url": "https://github.com/aqlaboratory",
+   "status": "watching",
+   "trusted_citers": [
+    "AWS Machine Learning blog"
+   ],
+   "citers": [
+    "AWS Machine Learning blog"
+   ],
+   "first_seen": "2026-11-14",
+   "last_seen": "2026-11-14",
+   "evidence": [
+    {
+     "date": "2026-11-14",
+     "source": "AWS Machine Learning blog",
+     "title": "OpenFold3 on Amazon SageMaker JumpStart: Predict biomolecular structures",
+     "url": "https://aws.amazon.com/blogs/machine-learning/openfold3-on-amazon-sagemaker-jumpstart-predict-biomolecular-structures/"
+    }
+   ]
+  },
+  {
+   "id": "github:asg017",
+   "kind": "github",
+   "label": "asg017",
+   "url": "https://github.com/asg017",
+   "status": "watching",
+   "trusted_citers": [
+    "Simon Willison"
+   ],
+   "citers": [
+    "Simon Willison"
+   ],
+   "first_seen": "2026-11-09",
+   "last_seen": "2026-11-09",
+   "evidence": [
+    {
+     "date": "2026-11-09",
+     "source": "Simon Willison",
+     "title": "parse_number() as a SQLite extension: C vs Rust",
+     "url": "https://simonwillison.net/2026/Nov/8/sqlite-parse-number-c-vs-rust/"
+    }
+   ]
+  },
+  {
+   "id": "github:autonomous-ai",
+   "kind": "github",
+   "label": "autonomous-ai",
+   "url": "https://github.com/autonomous-ai",
+   "status": "watching",
+   "trusted_citers": [
+    "Latent Space"
+   ],
+   "citers": [
+    "Latent Space"
+   ],
+   "first_seen": "2026-11-08",
+   "last_seen": "2026-11-08",
+   "evidence": [
+    {
+     "date": "2026-11-08",
+     "source": "Latent Space",
+     "title": "[AINews] Anthropic IPO: Whither Now?",
+     "url": "https://latent.space/p/ainews-anthropic-ipo-whither-now/"
+    }
+   ]
+  },
+  {
+   "id": "github:backnotprop",
+   "kind": "github",
+   "label": "backnotprop",
+   "url": "https://github.com/backnotprop",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-11-13",
+   "last_seen": "2026-11-14",
+   "evidence": [
+    {
+     "date": "2026-11-13",
+     "source": "GitHub",
+     "title": "backnotprop/plannotator",
+     "url": "https://github.com/backnotprop/plannotator"
+    }
+   ]
+  },
+  {
+   "id": "github:berriai",
+   "kind": "github",
+   "label": "berriai",
+   "url": "https://github.com/berriai",
+   "status": "watching",
+   "trusted_citers": [
+    "AWS Machine Learning blog"
+   ],
+   "citers": [
+    "AWS Machine Learning blog"
+   ],
+   "first_seen": "2026-11-13",
+   "last_seen": "2026-11-13",
+   "evidence": [
+    {
+     "date": "2026-11-13",
+     "source": "AWS Machine Learning blog",
+     "title": "Building a self-service LLM gateway with Amazon Bedrock and LiteLLM",
+     "url": "https://aws.amazon.com/blogs/machine-learning/building-a-self-service-llm-gateway-with-amazon-bedrock-and-litellm/"
+    }
+   ]
+  },
+  {
+   "id": "github:boa-dev",
+   "kind": "github",
+   "label": "boa-dev",
+   "url": "https://github.com/boa-dev",
+   "status": "watching",
+   "trusted_citers": [
+    "Cloudflare blog: AI"
+   ],
+   "citers": [
+    "Cloudflare blog: AI"
+   ],
+   "first_seen": "2026-11-14",
+   "last_seen": "2026-11-14",
+   "evidence": [
+    {
+     "date": "2026-11-14",
+     "source": "Cloudflare blog: AI",
+     "title": "Kitesurf is now open source",
+     "url": "https://blog.cloudflare.com/kitesurf-open-source/"
     }
    ]
   },
@@ -1266,22 +1700,22 @@
    "citers": [
     "X: @browser_use"
    ],
-   "first_seen": "2026-11-02",
-   "last_seen": "2026-11-02",
+   "first_seen": "2026-11-10",
+   "last_seen": "2026-11-10",
    "evidence": [
     {
-     "date": "2026-11-02",
+     "date": "2026-11-10",
      "source": "X: @browser_use",
-     "title": "Folk's agent posts browser results on Browser Use Pi",
-     "url": "https://x.com/browser_use/status/2117091205985313262"
+     "title": "Browser Use 1.0 drives the browser through raw CDP",
+     "url": "https://x.com/browser_use/status/2119983662162952278"
     }
    ]
   },
   {
-   "id": "github:calesthio",
+   "id": "github:chromedevtools",
    "kind": "github",
-   "label": "calesthio",
-   "url": "https://github.com/calesthio",
+   "label": "chromedevtools",
+   "url": "https://github.com/chromedevtools",
    "status": "watching",
    "trusted_citers": [
     "GitHub"
@@ -1289,106 +1723,37 @@
    "citers": [
     "GitHub"
    ],
-   "first_seen": "2026-11-05",
-   "last_seen": "2026-11-07",
+   "first_seen": "2026-11-13",
+   "last_seen": "2026-11-14",
    "evidence": [
     {
-     "date": "2026-11-05",
+     "date": "2026-11-13",
      "source": "GitHub",
-     "title": "calesthio/OpenMontage",
-     "url": "https://github.com/calesthio/OpenMontage"
+     "title": "ChromeDevTools/chrome-devtools-mcp",
+     "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp"
     }
    ]
   },
   {
-   "id": "github:cjpais",
+   "id": "github:commaai",
    "kind": "github",
-   "label": "cjpais",
-   "url": "https://github.com/cjpais",
+   "label": "commaai",
+   "url": "https://github.com/commaai",
    "status": "watching",
    "trusted_citers": [
-    "GitHub"
+    "Latent Space"
    ],
    "citers": [
-    "GitHub"
+    "Latent Space"
    ],
-   "first_seen": "2026-11-01",
-   "last_seen": "2026-11-01",
+   "first_seen": "2026-11-13",
+   "last_seen": "2026-11-14",
    "evidence": [
     {
-     "date": "2026-11-01",
-     "source": "GitHub",
-     "title": "cjpais/Handy",
-     "url": "https://github.com/cjpais/Handy"
-    }
-   ]
-  },
-  {
-   "id": "github:code-security",
-   "kind": "github",
-   "label": "code-security",
-   "url": "https://github.com/code-security",
-   "status": "watching",
-   "trusted_citers": [
-    "GitHub"
-   ],
-   "citers": [
-    "GitHub"
-   ],
-   "first_seen": "2026-11-07",
-   "last_seen": "2026-11-07",
-   "evidence": [
-    {
-     "date": "2026-11-07",
-     "source": "GitHub",
-     "title": "Beyond code generation: A developer’s guide to agentic engineering",
-     "url": "https://github.blog/ai-and-ml/github-copilot/beyond-code-generation-a-developers-guide-to-agentic-engineering/"
-    }
-   ]
-  },
-  {
-   "id": "github:conardli",
-   "kind": "github",
-   "label": "conardli",
-   "url": "https://github.com/conardli",
-   "status": "watching",
-   "trusted_citers": [
-    "GitHub"
-   ],
-   "citers": [
-    "GitHub"
-   ],
-   "first_seen": "2026-11-05",
-   "last_seen": "2026-11-05",
-   "evidence": [
-    {
-     "date": "2026-11-05",
-     "source": "GitHub",
-     "title": "ConardLi/garden-skills",
-     "url": "https://github.com/ConardLi/garden-skills"
-    }
-   ]
-  },
-  {
-   "id": "github:copilot",
-   "kind": "github",
-   "label": "copilot",
-   "url": "https://github.com/copilot",
-   "status": "watching",
-   "trusted_citers": [
-    "GitHub"
-   ],
-   "citers": [
-    "GitHub"
-   ],
-   "first_seen": "2026-11-07",
-   "last_seen": "2026-11-07",
-   "evidence": [
-    {
-     "date": "2026-11-07",
-     "source": "GitHub",
-     "title": "Beyond code generation: A developer’s guide to agentic engineering",
-     "url": "https://github.blog/ai-and-ml/github-copilot/beyond-code-generation-a-developers-guide-to-agentic-engineering/"
+     "date": "2026-11-13",
+     "source": "Latent Space",
+     "title": "[AINews] Jensen Huang resigns after 33 years leading NVIDIA",
+     "url": "https://latent.space/p/ainews-jensen-huang-resigns-after-33-years-leading-nvidia/"
     }
    ]
   },
@@ -1404,11 +1769,11 @@
    "citers": [
     "GitHub"
    ],
-   "first_seen": "2026-11-01",
-   "last_seen": "2026-11-01",
+   "first_seen": "2026-11-12",
+   "last_seen": "2026-11-12",
    "evidence": [
     {
-     "date": "2026-11-01",
+     "date": "2026-11-12",
      "source": "GitHub",
      "title": "CopilotKit/OpenBot",
      "url": "https://github.com/CopilotKit/OpenBot"
@@ -1416,25 +1781,94 @@
    ]
   },
   {
-   "id": "github:cursor",
+   "id": "github:coreweave",
    "kind": "github",
-   "label": "cursor",
-   "url": "https://github.com/cursor",
+   "label": "coreweave",
+   "url": "https://github.com/coreweave",
    "status": "watching",
    "trusted_citers": [
-    "GitHub"
+    "X: @CoreWeave"
    ],
    "citers": [
-    "GitHub"
+    "X: @CoreWeave"
    ],
-   "first_seen": "2026-11-01",
-   "last_seen": "2026-11-01",
+   "first_seen": "2026-11-10",
+   "last_seen": "2026-11-10",
    "evidence": [
     {
-     "date": "2026-11-01",
-     "source": "GitHub",
-     "title": "cursor/plugins",
-     "url": "https://github.com/cursor/plugins"
+     "date": "2026-11-10",
+     "source": "X: @CoreWeave",
+     "title": "CoreWeave Skills enter public preview",
+     "url": "https://x.com/CoreWeave/status/2119897909336445151"
+    }
+   ]
+  },
+  {
+   "id": "github:corruptedang3l",
+   "kind": "github",
+   "label": "corruptedang3l",
+   "url": "https://github.com/corruptedang3l",
+   "status": "watching",
+   "trusted_citers": [
+    "Latent Space"
+   ],
+   "citers": [
+    "Latent Space"
+   ],
+   "first_seen": "2026-11-10",
+   "last_seen": "2026-11-11",
+   "evidence": [
+    {
+     "date": "2026-11-10",
+     "source": "Latent Space",
+     "title": "[AINews] Fable 5.2 retakes World #1 LLM spot as $ANT IPO roadshow begins",
+     "url": "https://latent.space/p/ainews-fable-5-2-retakes-world-1-llm-spot-as-ant-ipo-roadshow-begins/"
+    }
+   ]
+  },
+  {
+   "id": "github:crgregersen",
+   "kind": "github",
+   "label": "crgregersen",
+   "url": "https://github.com/crgregersen",
+   "status": "watching",
+   "trusted_citers": [
+    "Latent Space"
+   ],
+   "citers": [
+    "Latent Space"
+   ],
+   "first_seen": "2026-11-08",
+   "last_seen": "2026-11-08",
+   "evidence": [
+    {
+     "date": "2026-11-08",
+     "source": "Latent Space",
+     "title": "[AINews] Anthropic IPO: Whither Now?",
+     "url": "https://latent.space/p/ainews-anthropic-ipo-whither-now/"
+    }
+   ]
+  },
+  {
+   "id": "github:datasette",
+   "kind": "github",
+   "label": "datasette",
+   "url": "https://github.com/datasette",
+   "status": "watching",
+   "trusted_citers": [
+    "Simon Willison"
+   ],
+   "citers": [
+    "Simon Willison"
+   ],
+   "first_seen": "2026-11-09",
+   "last_seen": "2026-11-10",
+   "evidence": [
+    {
+     "date": "2026-11-09",
+     "source": "Simon Willison",
+     "title": "Hide your slop PR descriptions behind",
+     "url": "https://simonwillison.net/2026/Nov/9/details-summary/"
     }
    ]
   },
@@ -1450,11 +1884,11 @@
    "citers": [
     "GitHub"
    ],
-   "first_seen": "2026-11-01",
-   "last_seen": "2026-11-07",
+   "first_seen": "2026-11-08",
+   "last_seen": "2026-11-14",
    "evidence": [
     {
-     "date": "2026-11-01",
+     "date": "2026-11-08",
      "source": "GitHub",
      "title": "debpalash/VoiceStudio",
      "url": "https://github.com/debpalash/VoiceStudio"
@@ -1462,25 +1896,71 @@
    ]
   },
   {
-   "id": "github:diodeinc",
+   "id": "github:dioxuslabs",
    "kind": "github",
-   "label": "diodeinc",
-   "url": "https://github.com/diodeinc",
+   "label": "dioxuslabs",
+   "url": "https://github.com/dioxuslabs",
    "status": "watching",
    "trusted_citers": [
-    "SemiAnalysis"
+    "Cloudflare blog: AI"
    ],
    "citers": [
-    "SemiAnalysis"
+    "Cloudflare blog: AI"
    ],
-   "first_seen": "2026-11-02",
-   "last_seen": "2026-11-05",
+   "first_seen": "2026-11-14",
+   "last_seen": "2026-11-14",
    "evidence": [
     {
-     "date": "2026-11-02",
-     "source": "SemiAnalysis",
-     "title": "GDPx: Measuring Frontier Model Capabilities Across the Most Valuable Domains",
-     "url": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities"
+     "date": "2026-11-14",
+     "source": "Cloudflare blog: AI",
+     "title": "Kitesurf is now open source",
+     "url": "https://blog.cloudflare.com/kitesurf-open-source/"
+    }
+   ]
+  },
+  {
+   "id": "github:dodaios",
+   "kind": "github",
+   "label": "dodaios",
+   "url": "https://github.com/dodaios",
+   "status": "watching",
+   "trusted_citers": [
+    "Hacker News"
+   ],
+   "citers": [
+    "Hacker News"
+   ],
+   "first_seen": "2026-11-10",
+   "last_seen": "2026-11-10",
+   "evidence": [
+    {
+     "date": "2026-11-10",
+     "source": "Hacker News",
+     "title": "Show HN: STE80 Humanizer – de-AI text by writing 80% of the way to ASD-STE100",
+     "url": "https://github.com/Dodaios/ste80-humanizer"
+    }
+   ]
+  },
+  {
+   "id": "github:dogwood-policy",
+   "kind": "github",
+   "label": "dogwood-policy",
+   "url": "https://github.com/dogwood-policy",
+   "status": "watching",
+   "trusted_citers": [
+    "AWS Machine Learning blog"
+   ],
+   "citers": [
+    "AWS Machine Learning blog"
+   ],
+   "first_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
+   "evidence": [
+    {
+     "date": "2026-11-12",
+     "source": "AWS Machine Learning blog",
+     "title": "Semantic diffing of formal policies with anti-unification",
+     "url": "https://aws.amazon.com/blogs/machine-learning/semantic-diffing-of-formal-policies-with-anti-unification/"
     }
    ]
   },
@@ -1496,11 +1976,11 @@
    "citers": [
     "GitHub"
    ],
-   "first_seen": "2026-11-01",
-   "last_seen": "2026-11-07",
+   "first_seen": "2026-11-08",
+   "last_seen": "2026-11-11",
    "evidence": [
     {
-     "date": "2026-11-01",
+     "date": "2026-11-08",
      "source": "GitHub",
      "title": "Donchitos/Claude-Code-Game-Studios",
      "url": "https://github.com/Donchitos/Claude-Code-Game-Studios"
@@ -1519,37 +1999,14 @@
    "citers": [
     "Dwarkesh Podcast"
    ],
-   "first_seen": "2026-11-06",
-   "last_seen": "2026-11-07",
+   "first_seen": "2026-11-08",
+   "last_seen": "2026-11-09",
    "evidence": [
     {
-     "date": "2026-11-06",
+     "date": "2026-11-08",
      "source": "Dwarkesh Podcast",
      "title": "The benchmark where AIs have to lie to win",
      "url": "https://www.dwarkesh.com/p/clocktower"
-    }
-   ]
-  },
-  {
-   "id": "github:earthtojake",
-   "kind": "github",
-   "label": "earthtojake",
-   "url": "https://github.com/earthtojake",
-   "status": "watching",
-   "trusted_citers": [
-    "GitHub"
-   ],
-   "citers": [
-    "GitHub"
-   ],
-   "first_seen": "2026-11-01",
-   "last_seen": "2026-11-04",
-   "evidence": [
-    {
-     "date": "2026-11-01",
-     "source": "GitHub",
-     "title": "earthtojake/text-to-cad",
-     "url": "https://github.com/earthtojake/text-to-cad"
     }
    ]
   },
@@ -1565,45 +2022,114 @@
    "citers": [
     "GitHub"
    ],
-   "first_seen": "2026-11-07",
-   "last_seen": "2026-11-07",
+   "first_seen": "2026-11-13",
+   "last_seen": "2026-11-13",
    "evidence": [
     {
-     "date": "2026-11-07",
+     "date": "2026-11-13",
      "source": "GitHub",
-     "title": "Beyond code generation: A developer’s guide to agentic engineering",
-     "url": "https://github.blog/ai-and-ml/github-copilot/beyond-code-generation-a-developers-guide-to-agentic-engineering/"
+     "title": "Build once, run on any agent: A practical guide to agent skills",
+     "url": "https://github.blog/ai-and-ml/github-copilot/build-once-run-on-any-agent-a-practical-guide-to-agent-skills/"
     }
    ]
   },
   {
-   "id": "github:epoch-research",
+   "id": "github:evandrofranco",
    "kind": "github",
-   "label": "epoch-research",
-   "url": "https://github.com/epoch-research",
+   "label": "evandrofranco",
+   "url": "https://github.com/evandrofranco",
    "status": "watching",
    "trusted_citers": [
-    "METR"
+    "AWS Machine Learning blog"
    ],
    "citers": [
-    "METR"
+    "AWS Machine Learning blog"
    ],
-   "first_seen": "2026-11-06",
-   "last_seen": "2026-11-06",
+   "first_seen": "2026-11-14",
+   "last_seen": "2026-11-14",
    "evidence": [
     {
-     "date": "2026-11-06",
-     "source": "METR",
-     "title": "Independent Assessment of AI R&D Acceleration at Anthropic in October 2026",
-     "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/"
+     "date": "2026-11-14",
+     "source": "AWS Machine Learning blog",
+     "title": "Architecture patterns for fast session startup on Amazon Bedrock AgentCore runtime",
+     "url": "https://aws.amazon.com/blogs/machine-learning/architecture-patterns-for-fast-session-startup-on-amazon-bedrock-agentcore-runtime/"
     }
    ]
   },
   {
-   "id": "github:flashml-org",
+   "id": "github:fla-org",
    "kind": "github",
-   "label": "flashml-org",
-   "url": "https://github.com/flashml-org",
+   "label": "fla-org",
+   "url": "https://github.com/fla-org",
+   "status": "watching",
+   "trusted_citers": [
+    "PyTorch blog"
+   ],
+   "citers": [
+    "PyTorch blog"
+   ],
+   "first_seen": "2026-11-13",
+   "last_seen": "2026-11-13",
+   "evidence": [
+    {
+     "date": "2026-11-13",
+     "source": "PyTorch blog",
+     "title": "Fast by Default: Compile-Time Heuristics for Helion Kernels",
+     "url": "https://pytorch.org/blog/fast-by-default-compile-time-heuristics-for-helion-kernels/"
+    }
+   ]
+  },
+  {
+   "id": "github:gair-nlp",
+   "kind": "github",
+   "label": "gair-nlp",
+   "url": "https://github.com/gair-nlp",
+   "status": "watching",
+   "trusted_citers": [
+    "X: @dair_ai"
+   ],
+   "citers": [
+    "X: @dair_ai"
+   ],
+   "first_seen": "2026-11-13",
+   "last_seen": "2026-11-13",
+   "evidence": [
+    {
+     "date": "2026-11-13",
+     "source": "X: @dair_ai",
+     "title": "Open 30B MoE 801-30B-A3B from a pretraining RSI run",
+     "url": "https://x.com/dair_ai/status/2120898418801525191"
+    }
+   ]
+  },
+  {
+   "id": "github:gbeltramo",
+   "kind": "github",
+   "label": "gbeltramo",
+   "url": "https://github.com/gbeltramo",
+   "status": "watching",
+   "trusted_citers": [
+    "Latent Space"
+   ],
+   "citers": [
+    "Latent Space"
+   ],
+   "first_seen": "2026-11-11",
+   "last_seen": "2026-11-12",
+   "evidence": [
+    {
+     "date": "2026-11-11",
+     "source": "Latent Space",
+     "title": "NaiveAI Promises 2,100 Tokens per Second. How Well Does It Code?",
+     "url": "https://latent.space/p/naiveai/"
+    }
+   ]
+  },
+  {
+   "id": "github:githubevents",
+   "kind": "github",
+   "label": "githubevents",
+   "url": "https://github.com/githubevents",
    "status": "watching",
    "trusted_citers": [
     "GitHub"
@@ -1611,83 +2137,37 @@
    "citers": [
     "GitHub"
    ],
-   "first_seen": "2026-11-01",
-   "last_seen": "2026-11-02",
+   "first_seen": "2026-11-13",
+   "last_seen": "2026-11-13",
    "evidence": [
     {
-     "date": "2026-11-01",
+     "date": "2026-11-13",
      "source": "GitHub",
-     "title": "FlashML-org/FreeToken",
-     "url": "https://github.com/FlashML-org/FreeToken"
+     "title": "Build once, run on any agent: A practical guide to agent skills",
+     "url": "https://github.blog/ai-and-ml/github-copilot/build-once-run-on-any-agent-a-practical-guide-to-agent-skills/"
     }
    ]
   },
   {
-   "id": "github:garrytan",
+   "id": "github:godsboy",
    "kind": "github",
-   "label": "garrytan",
-   "url": "https://github.com/garrytan",
+   "label": "godsboy",
+   "url": "https://github.com/godsboy",
    "status": "watching",
    "trusted_citers": [
-    "GitHub"
+    "X: @witcheer"
    ],
    "citers": [
-    "GitHub"
+    "X: @witcheer"
    ],
-   "first_seen": "2026-11-05",
-   "last_seen": "2026-11-05",
+   "first_seen": "2026-11-12",
+   "last_seen": "2026-11-12",
    "evidence": [
     {
-     "date": "2026-11-05",
-     "source": "GitHub",
-     "title": "garrytan/gstack",
-     "url": "https://github.com/garrytan/gstack"
-    }
-   ]
-  },
-  {
-   "id": "github:gen-verse",
-   "kind": "github",
-   "label": "gen-verse",
-   "url": "https://github.com/gen-verse",
-   "status": "watching",
-   "trusted_citers": [
-    "X: @omarsar0"
-   ],
-   "citers": [
-    "X: @omarsar0"
-   ],
-   "first_seen": "2026-11-06",
-   "last_seen": "2026-11-06",
-   "evidence": [
-    {
-     "date": "2026-11-06",
-     "source": "X: @omarsar0",
-     "title": "Science's Last Exam tests research agents",
-     "url": "https://x.com/omarsar0/status/2118392657651057140"
-    }
-   ]
-  },
-  {
-   "id": "github:gmberton",
-   "kind": "github",
-   "label": "gmberton",
-   "url": "https://github.com/gmberton",
-   "status": "watching",
-   "trusted_citers": [
-    "X: @gabriberton"
-   ],
-   "citers": [
-    "X: @gabriberton"
-   ],
-   "first_seen": "2026-11-02",
-   "last_seen": "2026-11-02",
-   "evidence": [
-    {
-     "date": "2026-11-02",
-     "source": "X: @gabriberton",
-     "title": "VisMatch 1.4.0 adds three image matchers",
-     "url": "https://x.com/gabriberton/status/2116957948497039474"
+     "date": "2026-11-12",
+     "source": "X: @witcheer",
+     "title": "Hermes tuneup plugin checks compaction and prompt cache",
+     "url": "https://x.com/witcheer/status/2120581321613545960"
     }
    ]
   },
@@ -1703,14 +2183,37 @@
    "citers": [
     "Google Cloud AI and ML blog"
    ],
-   "first_seen": "2026-11-03",
-   "last_seen": "2026-11-03",
+   "first_seen": "2026-11-14",
+   "last_seen": "2026-11-14",
    "evidence": [
     {
-     "date": "2026-11-03",
+     "date": "2026-11-14",
      "source": "Google Cloud AI and ML blog",
-     "title": "What Google Cloud announced in AI this month",
-     "url": "https://cloud.google.com/blog/products/ai-machine-learning/what-google-cloud-announced-in-ai-this-month/"
+     "title": "New AI agent observability and governance across BigQuery and Looker",
+     "url": "https://cloud.google.com/blog/products/data-analytics/enterprise-ai-agent-observability-with-bigquery-and-looker/"
+    }
+   ]
+  },
+  {
+   "id": "github:herdrdev",
+   "kind": "github",
+   "label": "herdrdev",
+   "url": "https://github.com/herdrdev",
+   "status": "watching",
+   "trusted_citers": [
+    "GitHub"
+   ],
+   "citers": [
+    "GitHub"
+   ],
+   "first_seen": "2026-11-11",
+   "last_seen": "2026-11-11",
+   "evidence": [
+    {
+     "date": "2026-11-11",
+     "source": "GitHub",
+     "title": "herdrdev/herdr",
+     "url": "https://github.com/herdrdev/herdr"
     }
    ]
   },
@@ -1726,11 +2229,11 @@
    "citers": [
     "GitHub"
    ],
-   "first_seen": "2026-11-01",
-   "last_seen": "2026-11-07",
+   "first_seen": "2026-11-08",
+   "last_seen": "2026-11-14",
    "evidence": [
     {
-     "date": "2026-11-01",
+     "date": "2026-11-08",
      "source": "GitHub",
      "title": "heygen-com/hyperframes",
      "url": "https://github.com/heygen-com/hyperframes"
@@ -1738,79 +2241,10 @@
    ]
   },
   {
-   "id": "github:hydralauncher",
+   "id": "github:homeassistant-ai",
    "kind": "github",
-   "label": "hydralauncher",
-   "url": "https://github.com/hydralauncher",
-   "status": "watching",
-   "trusted_citers": [
-    "Latent Space"
-   ],
-   "citers": [
-    "Latent Space"
-   ],
-   "first_seen": "2026-11-07",
-   "last_seen": "2026-11-07",
-   "evidence": [
-    {
-     "date": "2026-11-07",
-     "source": "Latent Space",
-     "title": "[AINews] Anthropic IPO: Whither Now?",
-     "url": "https://latent.space/p/ainews-anthropic-ipo-whither-now/"
-    }
-   ]
-  },
-  {
-   "id": "github:incept5-ai",
-   "kind": "github",
-   "label": "incept5-ai",
-   "url": "https://github.com/incept5-ai",
-   "status": "watching",
-   "trusted_citers": [
-    "ThursdAI"
-   ],
-   "citers": [
-    "ThursdAI"
-   ],
-   "first_seen": "2026-11-06",
-   "last_seen": "2026-11-07",
-   "evidence": [
-    {
-     "date": "2026-11-06",
-     "source": "ThursdAI",
-     "title": "ThursdAI - Nov 5 - Is it completely over for AI?",
-     "url": "https://sub.thursdai.news/p/thursdai-nov-5-is-it-completely-over"
-    }
-   ]
-  },
-  {
-   "id": "github:inferact",
-   "kind": "github",
-   "label": "inferact",
-   "url": "https://github.com/inferact",
-   "status": "watching",
-   "trusted_citers": [
-    "SemiAnalysis"
-   ],
-   "citers": [
-    "SemiAnalysis"
-   ],
-   "first_seen": "2026-11-06",
-   "last_seen": "2026-11-07",
-   "evidence": [
-    {
-     "date": "2026-11-06",
-     "source": "SemiAnalysis",
-     "title": "The Iron(wood) Throne: Google's TPU Stakes Its Claim on Inference",
-     "url": "https://newsletter.semianalysis.com/p/tpu-strikes-the-king"
-    }
-   ]
-  },
-  {
-   "id": "github:jakubkrehel",
-   "kind": "github",
-   "label": "jakubkrehel",
-   "url": "https://github.com/jakubkrehel",
+   "label": "homeassistant-ai",
+   "url": "https://github.com/homeassistant-ai",
    "status": "watching",
    "trusted_citers": [
     "GitHub"
@@ -1818,37 +2252,14 @@
    "citers": [
     "GitHub"
    ],
-   "first_seen": "2026-11-01",
-   "last_seen": "2026-11-07",
+   "first_seen": "2026-11-09",
+   "last_seen": "2026-11-11",
    "evidence": [
     {
-     "date": "2026-11-01",
+     "date": "2026-11-09",
      "source": "GitHub",
-     "title": "jakubkrehel/skills",
-     "url": "https://github.com/jakubkrehel/skills"
-    }
-   ]
-  },
-  {
-   "id": "github:kerlenton",
-   "kind": "github",
-   "label": "kerlenton",
-   "url": "https://github.com/kerlenton",
-   "status": "watching",
-   "trusted_citers": [
-    "Hacker News"
-   ],
-   "citers": [
-    "Hacker News"
-   ],
-   "first_seen": "2026-11-01",
-   "last_seen": "2026-11-01",
-   "evidence": [
-    {
-     "date": "2026-11-01",
-     "source": "Hacker News",
-     "title": "Show HN: A language model that lives in a boot sector",
-     "url": "https://github.com/kerlenton/bootgpt"
+     "title": "homeassistant-ai/ha-mcp",
+     "url": "https://github.com/homeassistant-ai/ha-mcp"
     }
    ]
   }
