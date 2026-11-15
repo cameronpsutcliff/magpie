@@ -1,0 +1,105 @@
+{
+ "ran_at": "2026-11-15T15:24:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-15T11:20:00Z",
+ "queries": 3,
+ "calls": 3,
+ "items": [
+  {
+   "title": "TensorFold 1.2.9 adds an Ollama-compatible API and reports 3.2 to 3.5x combined decode on an M5 Ultra",
+   "url": "https://x.com/ashxhart/status/2121930265186422870",
+   "handle": "@ashxhart",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "TensorFold 1.2.9 adds an Ollama-compatible API, TOML serve configs, better logprobs and fixes for Nemotron image requests and GLM prompt-logprob hangs. On an M5 Ultra, Nemotron 3.5 Lightning MLX 4-bit without an MTP head is reported at 3.2 to 3.5 times combined decode over 24 streams with identical reply tokens in that test.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/ashhart/TensorFold"
+   ],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-15T11:36:13Z",
+   "metrics": {
+    "likes": 105,
+    "reposts": 10,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Throughput gain is the maintainer's own single-hardware test; no independent reproduction seen.",
+    "source": null
+   }
+  },
+  {
+   "title": "TensorFold PR fits 8 Gemma4 31B streams instead of 4 in the same KV memory on a GB10",
+   "url": "https://x.com/plotarmordev/status/2121928700354535461",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A pull request to TensorFold keeps less KV per stream on the 31B's long-range layers and rebuilds the rest when needed, doubling streams in the same memory with the same replies. Cold prompts are up to 2.6% slower and the author says to wait for the merge.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/ashhart/TensorFold/pull/3389"
+   ],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-15T11:30:00Z",
+   "metrics": {
+    "likes": 5,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 1,
+    "views": 557
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Opt-in PR not yet merged; the PR itself notes a small decode slowdown in some pairs and says not to land yet.",
+    "source": "https://github.com/ashhart/TensorFold/pull/3389"
+   }
+  },
+  {
+   "title": "Omarchy agents panel adds automatic switching between Claude, Codex and Grok accounts near a usage limit",
+   "url": "https://x.com/OmarchyUpdates/status/2121951411886051756",
+   "handle": "@OmarchyUpdates",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Omarchy's agent tooling can register a second Claude account and switch new sessions to the account with the most room left once usage reaches a set threshold (90% in the example), keeping the current session running. It works for Codex and Grok as well, and the README is in the repo.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/omacom/omarchy/blob/quattro/shell/plugins/agents/README.md"
+   ],
+   "vendor": "Omarchy",
+   "posted_at": "2026-11-15T13:00:15Z",
+   "metrics": {
+    "likes": 16,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 3,
+    "views": 560
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 95,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
