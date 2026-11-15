@@ -1,0 +1,55 @@
+{
+ "ran_at": "2026-11-15T23:17:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-15T19:26:00Z",
+ "queries": 7,
+ "calls": 7,
+ "items": [
+  {
+   "title": "GLM 5.3 Flash 4-bit reported at about 102 tok/s decode on an M5 Ultra Mac Studio with TensorFold",
+   "url": "https://x.com/ashxhart/status/2122088193763754015",
+   "handle": "@ashxhart",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A builder shows Z.ai's GLM 5.3 Flash at 4-bit running on the TensorFold runtime on an Apple M5 Ultra Studio, quoting 2,100 tok/s prefill and 102.2 tok/s prose decode in a screen recording. No settings, context length or repo are given, so the numbers are a self-reported demo.",
+   "kind": "demo",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/ashxhart/status/2122088193763754015/video/1"
+   ],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-15T22:03:46Z",
+   "metrics": {
+    "likes": 106,
+    "reposts": 2,
+    "quotes": 2,
+    "replies": 19,
+    "views": 3025
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/projectmalfoid/status/2122033651965972711",
+   "reason": "Fan fiction video project update, no AI capability."
+  }
+ ],
+ "list_posts_read": 195,
+ "list_pages": 2,
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://x.com/BkashJosi/status/2121725115524391193",
+   "reason": "Secondary summary of an NVIDIA agent-skills study (1 in 4 of 31,132 skills had a security issue); no specific vulnerable component, release or CVE, so nothing to patch or verify on the fleet."
+  }
+ ]
+}
