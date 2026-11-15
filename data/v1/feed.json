@@ -13,6 +13,28 @@
  ],
  "items": [
   {
+   "id": "2026-11-15",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-11-15",
+   "title": "plannotator, Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF, chrome-devtools-mcp, and more",
+   "summary": "163 capability events from 126 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words.",
+   "content_html": "<p>163 capability events from 126 sources. Ranked by code; the editor did not run this edition, so copy is the sources&#x27; own words.</p><ol><li><a href=\"https://github.com/backnotprop/plannotator\">backnotprop/plannotator</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-15-5fcbc8af9785\">on Magpie</a>)</li><li><a href=\"https://huggingface.co/DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF\">DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-15-e197a9917ccd\">on Magpie</a>)</li><li><a href=\"https://github.com/ChromeDevTools/chrome-devtools-mcp\">ChromeDevTools/chrome-devtools-mcp</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-15-b5cc8a5018c1\">on Magpie</a>)</li><li><a href=\"https://github.com/google/elephant-goldfish-model\">google/elephant-goldfish-model</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-15-4445d71c4797\">on Magpie</a>)</li><li><a href=\"https://github.com/Tencent/LoopForge\">Tencent/LoopForge</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-15-f36d60c784b3\">on Magpie</a>)</li></ol><p><strong>Possibilities:</strong> No new possibility today. Latest: QA teams can let Codex debug internal staging sites without exposing them (2026-11-14)</p><p><strong>Worth watching:</strong> No new video pick today. Latest: How Mozilla uses GPT-6 Cyber to find and fix Firefox vulnerabilities (2026-11-14)</p><p><strong>Constraints:</strong> No new constraint today. Latest: DHS order bars DeepSeek products from federal civilian agencies (2026-10-20)</p><p><strong>Threats still open:</strong> <a href=\"https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-123158\">OpenSSH Password Authentication Bypass on Linux</a> (high, exploited, active)</p>",
+   "content_text": "163 capability events from 126 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words. backnotprop/plannotator DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF ChromeDevTools/chrome-devtools-mcp google/elephant-goldfish-model Tencent/LoopForge",
+   "date_published": "2026-11-15T11:12:53Z",
+   "tags": [
+    "agents",
+    "coding",
+    "local",
+    "mcp",
+    "models",
+    "multimodal"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-11-15.json",
+    "backfilled": false,
+    "capabilities": 163
+   }
+  },
+  {
    "id": "2026-11-14",
    "url": "https://www.cameronsutcliff.com/magpie/2026-11-14",
    "title": "Agents Pay With Approval, Rust Serves DeepSeek Flash, DeepSeek API Searches, and More",
@@ -678,30 +700,6 @@
     "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-16.json",
     "backfilled": true,
     "capabilities": 137
-   }
-  },
-  {
-   "id": "2026-10-15",
-   "url": "https://www.cameronsutcliff.com/magpie/2026-10-15",
-   "title": "Runs on-device agents, prices HTML against markdown, reviews agent docs, and more",
-   "summary": "Today's strongest items are practical: a model built for on-device agents, a measured token cost test, and tools that give agents a place to publish work. The paper side is mostly decision models and agent harness research without runnable code.",
-   "content_html": "<p>Today&#x27;s strongest items are practical: a model built for on-device agents, a measured token cost test, and tools that give agents a place to publish work. The paper side is mostly decision models and agent harness research without runnable code.</p><ol><li><a href=\"https://huggingface.co/papers/2610.18773\">Jeva: a decision-native architecture for structured choices</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-15-d9d1c633d3a4\">on Magpie</a>): A model design can now enforce null-awareness, permutation invariance, option scalability and cross-request caching together for structured decisions.</li><li><a href=\"https://huggingface.co/papers/2610.14224\">Harness^2 refines agent harnesses without ground-truth verifiers</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-15-d7c76d8462da\">on Magpie</a>): Agent harnesses can be improved through recursive task-level refinement and continual learning, without ground-truth verifiers.</li><li><a href=\"https://www.youtube.com/watch?v=iLDkDIgqQM4\">Measured: HTML costs far more tokens than markdown</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-15-2fa95920a2b2\">on Magpie</a>): You can now see measured token costs for agent output formats, taken from Claude Code usage reports on Opus 5.5.</li><li><a href=\"https://github.com/isair/jarvis\">Jarvis: private offline desktop assistant with memory and MCP</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-15-4f57092d051a\">on Magpie</a>): A desktop assistant can run offline with Ollama or OpenAI-compatible servers, with voice, personal memory, dictation and MCP tools.</li><li><a href=\"https://github.com/razorpay/slashdocs\">Slashdocs lets agents publish reviewable HTML documents</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-15-316fd7c40b4d\">on Magpie</a>): Agents can push HTML documents to a self-hosted server through a CLI or remote MCP, and humans review them with comments and versions.</li></ol>",
-   "content_text": "Today's strongest items are practical: a model built for on-device agents, a measured token cost test, and tools that give agents a place to publish work. The paper side is mostly decision models and agent harness research without runnable code. Jeva: a decision-native architecture for structured choices Harness^2 refines agent harnesses without ground-truth verifiers Measured: HTML costs far more tokens than markdown Jarvis: private offline desktop assistant with memory and MCP Slashdocs lets agents publish reviewable HTML documents",
-   "date_published": "2026-10-20T15:24:53Z",
-   "tags": [
-    "agents",
-    "coding",
-    "evals",
-    "local",
-    "memory",
-    "models",
-    "multimodal",
-    "research"
-   ],
-   "_magpie": {
-    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-15.json",
-    "backfilled": true,
-    "capabilities": 136
    }
   }
  ]

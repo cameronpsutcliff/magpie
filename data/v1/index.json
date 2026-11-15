@@ -2,6 +2,83 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-11-15",
+   "headline": "plannotator, Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF, chrome-devtools-mcp, and more",
+   "events": 163,
+   "sources": 541,
+   "enriched": false,
+   "top": [
+    {
+     "id": "5fcbc8af9785",
+     "title": "backnotprop/plannotator",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-15-5fcbc8af9785"
+    },
+    {
+     "id": "e197a9917ccd",
+     "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
+     "impact": 5,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-15-e197a9917ccd"
+    },
+    {
+     "id": "b5cc8a5018c1",
+     "title": "ChromeDevTools/chrome-devtools-mcp",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-15-b5cc8a5018c1"
+    },
+    {
+     "id": "4445d71c4797",
+     "title": "google/elephant-goldfish-model",
+     "impact": 4,
+     "vendor": "Google",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-15-4445d71c4797"
+    },
+    {
+     "id": "f36d60c784b3",
+     "title": "Tencent/LoopForge",
+     "impact": 3,
+     "vendor": "Tencent",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-15-f36d60c784b3"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Anthropic",
+    "Qwen",
+    "Google",
+    "OpenAI",
+    "llama.cpp"
+   ],
+   "topics": {
+    "coding": 46,
+    "models": 45,
+    "multimodal": 44,
+    "agents": 41,
+    "local": 31,
+    "mcp": 22,
+    "infra": 18,
+    "memory": 13,
+    "evals": 7,
+    "security": 6,
+    "reverse": 6,
+    "research": 3
+   },
+   "kinds": {
+    "repo": 35,
+    "model": 30,
+    "newsletter": 23,
+    "space": 20,
+    "community": 19,
+    "social": 16,
+    "changelog": 15,
+    "blog": 5
+   },
+   "threats": []
+  },
+  {
    "date": "2026-11-14",
    "headline": "Agents Pay With Approval, Rust Serves DeepSeek Flash, DeepSeek API Searches, and More",
    "events": 389,
@@ -4377,5 +4454,5 @@
    }
   }
  ],
- "latest": "2026-11-14"
+ "latest": "2026-11-15"
 }
