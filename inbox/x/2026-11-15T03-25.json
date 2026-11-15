@@ -1,0 +1,83 @@
+{
+ "ran_at": "2026-11-15T03:25:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-14T23:23:00Z",
+ "queries": 4,
+ "calls": 4,
+ "items": [
+  {
+   "title": "Tether QVAC releases BotPsy-0.8B, an open-weights on-device agent model",
+   "url": "https://x.com/paperswithcodee/status/2121785542543081520",
+   "handle": "@paperswithcodee",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "An 0.8B Apache 2.0 fine-tune of Qwen3.5-0.8B aimed at on-device tool use. Reported tool-use scores roughly double the base (BFCL v4 23.4 to 44.0, tau-bench 23.2 to 51.5). Weights are on Hugging Face; scores are the vendor's own.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/qvac/BotPsy-0.8B",
+    "https://paperswithcode.co/paper/132892"
+   ],
+   "vendor": "Tether QVAC",
+   "posted_at": "2026-11-15T02:01:08Z",
+   "metrics": {
+    "likes": 5,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 2,
+    "views": 129
+   },
+   "confirmed_by": [
+    "@NielsRogge"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Omarchy adds 52 per-model hardware fixes applied automatically at install",
+   "url": "https://x.com/OmarchyUpdates/status/2121747539930312781",
+   "handle": "@OmarchyUpdates",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "The Omarchy Linux installer now detects the exact laptop model and applies a matching fix (keyboard, Wi-Fi, touchpad and similar), with 52 hardware checks; the fixes are in the open source tree.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/omacom/omarchy/tree/quattro/install/hardware"
+   ],
+   "vendor": "Omarchy",
+   "posted_at": "2026-11-14T23:30:08Z",
+   "metrics": {
+    "likes": 35,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 4,
+    "views": 1137
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 98,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://x.com/Mokhalil01/status/2121804327602061446",
+   "reason": "LiteLLM vendor reply promoting a customer portal; not a vulnerability or compromise report."
+  }
+ ]
+}
