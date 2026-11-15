@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-15",
+  "posting_enabled": false,
+  "note": "Drafts only. Never posted.",
+  "drafts": [
+    {
+      "text": "vLLM's encoder disaggregation work cuts P90 time to first token by 44 to 47% on a DeepSeek V4.1 Flash multimodal benchmark, with 6.6 to 9.5% more throughput per GPU, counting every encoder GPU. Method and config are in the post.",
+      "evidence": [
+        "https://x.com/vllm_project/status/2120457435152613455",
+        "https://vllm.ai/blog/2026-11-11-encoder-disaggregation-epd"
+      ],
+      "why": "Measured serving gain for multimodal models with the GPU accounting stated."
+    },
+    {
+      "text": "browser-use 1.0.4 raises prompt cache hits from 78% to 96% after a harness fix. Cost per task drops from $0.67 to $0.45 and time from 5.0 to 4.6 minutes, at the same eval score.",
+      "evidence": [
+        "https://x.com/browser_use/status/2121345707219288396"
+      ],
+      "why": "A cost cut for browser agents with before and after numbers and no quality loss."
+    },
+    {
+      "text": "TRL v1.18 makes AsyncGRPOTrainer stable: generation and training run at the same time on separate GPUs, with rollouts from a plain vllm serve and weights pushed over NCCL. Write-up shows how to run it.",
+      "evidence": [
+        "https://x.com/DirhousssiAmine/status/2121271181445931101",
+        "https://github.com/huggingface/trl/releases/tag/v1.18.0"
+      ],
+      "why": "Open RL training speedup that smaller teams can reproduce today."
+    }
+  ]
+}

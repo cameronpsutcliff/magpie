@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-14T10:30:00Z",
+ "updated_at": "2026-11-15T10:35:00Z",
  "accounts": [
   {
    "handle": "@thsottiaux",
@@ -295,7 +295,7 @@
     "https://x.com/mem0ai/status/2102438126941876590",
     "https://x.com/mem0ai/status/2105685414430523472"
    ],
-   "last_qualifying_post": "2026-10-01",
+   "last_qualifying_post": "2026-10-07",
    "retired_reason": null,
    "x_user_id": "1670746017828859904",
    "on_list": true
@@ -1045,7 +1045,7 @@
     "https://x.com/ViC305/status/2113761570304188533",
     "https://x.com/ViC305/status/2111523015234384166"
    ],
-   "last_qualifying_post": "2026-11-10",
+   "last_qualifying_post": "2026-11-14",
    "retired_reason": null,
    "x_user_id": "45953078",
    "on_list": true
@@ -1084,7 +1084,7 @@
     "https://x.com/plotarmordev/status/2114874525435507169",
     "https://x.com/plotarmordev/status/2114644076029227206"
    ],
-   "last_qualifying_post": "2026-11-13",
+   "last_qualifying_post": "2026-11-14",
    "retired_reason": null,
    "x_user_id": "1513438573747486721",
    "on_list": true
@@ -1209,7 +1209,7 @@
    "affiliation": "Epoch AI",
    "why": "Independent measurement of frontier models (Epoch Capabilities Index, Cyber ECI, SpireClimb), benchmark quality reviews and compute-share data with methodology.",
    "signal_to_noise": 4,
-   "status": "trial",
+   "status": "active",
    "added_on": "2026-11-01",
    "evidence": [
     "https://x.com/EpochAIResearch/status/2110693857742717372",
@@ -1350,7 +1350,7 @@
     "https://x.com/ZyphraAI/status/2117377426242367669",
     "https://x.com/ZyphraAI/status/2112596055531679810"
    ],
-   "last_qualifying_post": "2026-11-12",
+   "last_qualifying_post": "2026-11-14",
    "retired_reason": null,
    "source": "roster_review",
    "x_user_id": "1377338130785828867",
@@ -1565,7 +1565,7 @@
     "https://x.com/ashxhart/status/2118488485963485662",
     "https://x.com/ashxhart/status/2118328617784459483"
    ],
-   "last_qualifying_post": "2026-11-13",
+   "last_qualifying_post": "2026-11-14",
    "retired_reason": null,
    "x_user_id": "2841951623",
    "on_list": true
@@ -1904,7 +1904,7 @@
    "evidence": [
     "https://x.com/OmarchyUpdates/status/2120969956364026157"
    ],
-   "last_qualifying_post": "2026-11-12",
+   "last_qualifying_post": "2026-11-14",
    "retired_reason": null,
    "owner_requested": true,
    "x_user_id": "2090578233263853568",
@@ -2021,6 +2021,101 @@
    "last_qualifying_post": "2026-11-03",
    "retired_reason": null,
    "x_user_id": "602951145",
+   "on_list": true
+  },
+  {
+   "handle": "@DarioAmodei",
+   "name": "Dario Amodei",
+   "group": "labs",
+   "affiliation": "Anthropic",
+   "why": "CEO writeups of what a Claude-led discovery actually did, with limits spelled out.",
+   "signal_to_noise": 5,
+   "status": "retired",
+   "added_on": "2026-10-20",
+   "evidence": [],
+   "last_qualifying_post": "2026-09-23",
+   "retired_reason": "2026-11-15 roster review: no qualifying post in 45 days; last qualifying post 2026-09-23 (53 days); X read 2026-11-15 shows only a non-capability reply-style post on 2026-10-21. Curated, not owner_requested; not an X List member.",
+   "x_user_id": null,
+   "on_list": false
+  },
+  {
+   "handle": "@ssokota",
+   "name": "Samuel Sokota",
+   "group": "research",
+   "affiliation": "Research at OpenAI",
+   "why": "Posts the superhuman Stratego result with the GPU RL loop and the codebase.",
+   "signal_to_noise": 5,
+   "status": "retired",
+   "added_on": "2026-10-20",
+   "evidence": [],
+   "last_qualifying_post": "2026-09-30",
+   "retired_reason": "2026-11-15 roster review: no qualifying post in 45 days; last qualifying post 2026-09-30 (46 days); no posts at all since 2026-10-01 in a full-archive read. Curated, not owner_requested; not an X List member.",
+   "x_user_id": null,
+   "on_list": false
+  },
+  {
+   "handle": "@zicokolter",
+   "name": "Zico Kolter",
+   "group": "research",
+   "affiliation": "Head of machine learning, CMU",
+   "why": "Points at imperfect-information RL results, including the Stratego paper.",
+   "signal_to_noise": 4,
+   "status": "retired",
+   "added_on": "2026-10-20",
+   "evidence": [],
+   "last_qualifying_post": "2026-09-30",
+   "retired_reason": "2026-11-15 roster review: no qualifying post in 45 days; last qualifying post 2026-09-30 (46 days); no posts at all since 2026-10-01 in a full-archive read. Curated, not owner_requested; not an X List member.",
+   "x_user_id": null,
+   "on_list": false
+  },
+  {
+   "handle": "@AndrewYNg",
+   "name": "Andrew Ng",
+   "group": "applied",
+   "affiliation": "DeepLearning.AI",
+   "why": "Describes agent sandboxes with deterministic permissions, no default secrets, and logged actions on Nvidia OpenShell.",
+   "signal_to_noise": 4,
+   "status": "retired",
+   "added_on": "2026-10-20",
+   "evidence": [],
+   "last_qualifying_post": "2026-09-29",
+   "retired_reason": "2026-11-15 roster review: no qualifying post in 45 days; last qualifying post 2026-09-29 (47 days); only post since is an AI Dev conference promo (2118069849142558737). Curated, not owner_requested; not an X List member.",
+   "x_user_id": null,
+   "on_list": false
+  },
+  {
+   "handle": "@SergioPaniego",
+   "name": "Sergio Paniego",
+   "group": "opensource",
+   "affiliation": "Hugging Face",
+   "why": "First-hand TRL maintainer: ships post-training guides and releases with numbers (SFT on agent traces takes a 2B model from 5.5% to 34.4% on held-out tasks; AsyncGRPOTrainer stable in TRL v1.18).",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-11-15",
+   "evidence": [
+    "https://x.com/SergioPaniego/status/2120177440282788028",
+    "https://x.com/SergioPaniego/status/2121270590304813225"
+   ],
+   "last_qualifying_post": "2026-11-13",
+   "retired_reason": null,
+   "x_user_id": "330572456",
+   "on_list": true
+  },
+  {
+   "handle": "@jundotkim",
+   "name": "Jun Kim",
+   "group": "builders",
+   "affiliation": "Hugging Face (creator of oMLX)",
+   "why": "First-hand builder of oMLX local Mac inference runtime: ships features such as NVIDIA GPU or DGX Spark prefill acceleration for Mac decoding.",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-11-15",
+   "evidence": [
+    "https://x.com/jundotkim/status/2120924292796035074"
+   ],
+   "last_qualifying_post": "2026-11-12",
+   "retired_reason": null,
+   "x_user_id": "2027759240321110018",
    "on_list": true
   }
  ],
@@ -2524,6 +2619,24 @@
    "why": "Ling model and API release notes; not in sources.json.",
    "seen_via": [
     "@AntLingAGI"
+   ]
+  },
+  {
+   "kind": "changelog",
+   "name": "browser-use releases",
+   "url": "https://github.com/browser-use/browser-use/releases",
+   "why": "Harness releases with measured cost and cache-hit changes (1.0.4: cache hits 78% to 96%).",
+   "seen_via": [
+    "@browser_use"
+   ]
+  },
+  {
+   "kind": "changelog",
+   "name": "ExecuTorch releases",
+   "url": "https://github.com/pytorch/executorch/releases",
+   "why": "On-device export backends such as the new WebGPU backend.",
+   "seen_via": [
+    "@PyTorch"
    ]
   }
  ],
