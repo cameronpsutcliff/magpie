@@ -1,0 +1,269 @@
+{
+ "ran_at": "2026-11-16T15:17:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-16T11:20:00Z",
+ "queries": 5,
+ "calls": 5,
+ "items": [
+  {
+   "title": "tiny-voca: 4.5M-parameter text-to-speech model that runs on a CPU and in the browser",
+   "url": "https://x.com/n4ze3m/status/2121799813679419515",
+   "handle": "@n4ze3m",
+   "group": "builders",
+   "origin": "discovery",
+   "summary": "A 4.5M-parameter, roughly 18 MB TTS model trained on synthetic voices that runs on a CPU. Repliers report it works on an old Android tablet and a reply says it ranks among the smallest models in the top 10 of the Open TTS Leaderboard on English WER; the author reports about 1 in 100 words wrong, mostly names.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://x.com/calebfahlgren/status/2122337869117456792"
+   ],
+   "vendor": "tiny-voca (n4ze3m)",
+   "posted_at": "2026-11-15T02:57:51Z",
+   "metrics": {
+    "likes": 7686,
+    "reposts": 497,
+    "quotes": 106,
+    "replies": 263,
+    "views": 429732
+   },
+   "confirmed_by": [
+    "@calebfahlgren",
+    "@victormustar"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers praise it; one tested it on a 7 year old Android tablet and it worked, another cites a top-10 English WER ranking on the Open TTS Leaderboard, a few ask for language variants (an Italian version was posted).",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Open Vision Banana: open recipe and Flux 2 klein finetunes for generative visual perception",
+   "url": "https://x.com/linoy_tsaban/status/2122334438826893476",
+   "handle": "@linoy_tsaban",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Flux 2 klein 4B/9B finetunes trained for visual perception tasks with a fully open recipe, with a public demo Space.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/spaces/hugging-apps/open-vision-banana"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-16T14:22:15Z",
+   "metrics": {
+    "likes": 16,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Seedance 2.5 with 4K output available on fal for text, image and reference to video",
+   "url": "https://x.com/fal/status/2122307961787691013",
+   "handle": "@fal",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "ByteDance Seedance 2.5 4K video generation is callable through fal endpoints for text-to-video, image-to-video and reference-to-video.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://fal.ai/models/bytedance/seedance-2.5/text-to-video",
+    "https://fal.ai/models/bytedance/seedance-2.5/image-to-video"
+   ],
+   "vendor": "ByteDance / fal",
+   "posted_at": "2026-11-16T12:37:03Z",
+   "metrics": {
+    "likes": 66,
+    "reposts": 5,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "LeRobot 0.7 adds YAM, reBot B601 and Unitree G1 with SONIC support",
+   "url": "https://x.com/LeRobotHF/status/2122291446245982261",
+   "handle": "@LeRobotHF",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "LeRobot 0.7 adds support for the I2RT YAM arm (one or two arms, gravity feed-forward from the arm model), the Seeed reBot B601 and the Unitree G1 with SONIC, with docs for each.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/docs/lerobot/yam",
+    "https://huggingface.co/docs/lerobot/rebot_b601"
+   ],
+   "vendor": "Hugging Face LeRobot",
+   "posted_at": "2026-11-16T11:31:25Z",
+   "metrics": {
+    "likes": 51,
+    "reposts": 6,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Drama 3 TTS shrunk from 38.6 GB to 14.5 GB with 3-bit NVFP4 pruned quant, word errors held on 24 test lines",
+   "url": "https://x.com/plotarmordev/status/2122313744365781099",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A pruned NVFP4 quant of Fish Audio's Drama 3 is up on Hugging Face with a recipe repo; the author reports unchanged word errors on the same 24 test lines (a small test set).",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/plotarmordev/drama-3-NVFP4-Pruned-5900",
+    "https://github.com/plotarmordev/drama-tensorfold"
+   ],
+   "vendor": "plotarmordev / Fish Audio",
+   "posted_at": "2026-11-16T13:00:01Z",
+   "metrics": {
+    "likes": 13,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Only 24 test lines were used for the word-error check.",
+    "source": null
+   }
+  },
+  {
+   "title": "PyBot: a chatbot with no model weights, built as about 600k lines of Python rules by a swarm of 1,000 agents",
+   "url": "https://x.com/victormustar/status/2122341199545831573",
+   "handle": "@victormustar",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Hugging Face had 1,000 DeepSeek Flash agents write a rule-based chatbot in pure Python with no weights or training, as a test of what agent swarms can produce; chat Space and repo are public.",
+   "kind": "demo",
+   "evidence": "artifact",
+   "links": [
+    "https://hf.co/spaces/HuggingFaceSwarms/PyBot",
+    "https://github.com/huggingface/pybot"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-16T14:49:07Z",
+   "metrics": {
+    "likes": 4,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@LoubnaBenAllal1",
+    "@EmmaScharfmann"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Framed as a stunt; a demonstration of swarm output, not a capable assistant.",
+    "source": null
+   }
+  },
+  {
+   "title": "DeepSeek open-sources a chat frontend demo",
+   "url": "https://x.com/NielsRogge/status/2122327525284016325",
+   "handle": "@NielsRogge",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "DeepSeek published a chat-demo frontend repo; NielsRogge reports pointing Claude at it to improve a chat interface.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/deepseek-ai/chat-demo"
+   ],
+   "vendor": "DeepSeek",
+   "posted_at": "2026-11-16T13:54:47Z",
+   "metrics": {
+    "likes": 4,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Second-hand report; repo contents not inspected.",
+    "source": null
+   }
+  },
+  {
+   "title": "OpenBMB reports an additive power-law scaling law for long-context perplexity (LongPPL)",
+   "url": "https://x.com/OpenBMB/status/2122321310974198025",
+   "handle": "@OpenBMB",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "OpenBMB reports an empirical law on log(LongPPL) as a function of model size and short and long-context token counts that extrapolates to held-out scales; the post shows a chart and no linked paper or code.",
+   "kind": "paper",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "OpenBMB",
+   "posted_at": "2026-11-16T13:30:06Z",
+   "metrics": {
+    "likes": 22,
+    "reposts": 7,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No paper or code linked in the post.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 84,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
