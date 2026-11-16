@@ -1,0 +1,266 @@
+{
+ "ran_at": "2026-11-16T19:32:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-16T15:17:00Z",
+ "queries": 0,
+ "calls": 5,
+ "items": [
+  {
+   "title": "Hugging Face integrates OpenRouter: one token and endpoint for open models, live model stats on the Hub",
+   "url": "https://x.com/huggingface/status/2122393775314264519",
+   "handle": "@huggingface",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Hugging Face inference now routes through OpenRouter with the same token and endpoint, adds live usage stats per model on the Hub and a redesigned inference widget; the blog describes provider fallback inside one request and cache-aware routing.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/blog/openrouter"
+   ],
+   "vendor": "Hugging Face / OpenRouter",
+   "posted_at": "2026-11-16T18:18:00Z",
+   "metrics": {
+    "likes": 517,
+    "reposts": 75,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@ClementDelangue"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers like the single token and live Hub stats and ask about per-provider latency and pricing; several quote blog details (retries to the next provider, a session-id header for cache affinity). Nobody reports having run it yet.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Cua Driver on Omarchy: 97% of computer-use trials left the user's keyboard and windows alone, vs 83% macOS, 41% Windows, 40% Ubuntu",
+   "url": "https://x.com/trycua/status/2122394591139975251",
+   "handle": "@trycua",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Cua and Scale AI ran 8 models over 480 background trials of the same 7 GUI tasks per OS while a simulated user kept typing; on Omarchy with a Hyprland plugin the agent worked without stealing focus. The thread names two remaining gaps, drag and drop and input in Chromium/Electron apps.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/spaces/earakely-scale/CuaDriverBench-AgentEnv"
+   ],
+   "vendor": "Cua / Scale AI",
+   "posted_at": "2026-11-16T18:21:00Z",
+   "metrics": {
+    "likes": 41,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Bria RMBG 3.0 background-removal weights on Hugging Face: 4-step distilled, diffusers and ComfyUI support",
+   "url": "https://x.com/linoy_tsaban/status/2122385257978876334",
+   "handle": "@linoy_tsaban",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A background removal model finetuned from Fibo Edit 2 and distilled to 4 steps, with weights on Hugging Face and diffusers/ComfyUI support; also live on fal. Claims top results on hard cases like motion blur, fur and transparency.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://fal.ai/models/bria/rmbg-3"
+   ],
+   "vendor": "Bria",
+   "posted_at": "2026-11-16T17:44:00Z",
+   "metrics": {
+    "likes": 25,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@fal"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Nemotron 3.5 Transcribe takes #1 on Artificial Analysis' new Diarization Index",
+   "url": "https://x.com/NVIDIAAI/status/2122392904115327213",
+   "handle": "@NVIDIAAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "NVIDIA reports its Nemotron 3.5 Transcribe model ranks first on Artificial Analysis' new Diarization Index, which tests who-said-what with 2 to 8 speakers.",
+   "kind": "eval",
+   "evidence": "claim",
+   "links": [
+    "https://twitter.com/ArtificialAnlys/status/2121351856005984583"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-11-16T18:14:00Z",
+   "metrics": {
+    "likes": 63,
+    "reposts": 7,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Letta FrontierMemory: Qwen4 Max ties Opus 5.5 for #1 at 73.3% at under a fifth of the cost",
+   "url": "https://x.com/Letta_AI/status/2122400926334128349",
+   "handle": "@Letta_AI",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Letta's memory benchmark scores how much a model's memories help a task agent. It reports Qwen4 Max at 73.3% with GPT-6 Sol as the task model, about $54 per run, against 64.4% for Opus 5.5 in the same setup.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://frontiermemory.com/"
+   ],
+   "vendor": "Letta",
+   "posted_at": "2026-11-16T18:46:00Z",
+   "metrics": {
+    "likes": 14,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Qwen4-Max vs Qwen3.8-Max on a new vision benchmark: text and extraction up, detection still behind Google, OpenAI and Anthropic",
+   "url": "https://x.com/skalskip92/status/2122387961081729246",
+   "handle": "@skalskip92",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Roboflow's author reports Qwen4-Max gains on text localization (72.5 vs 59.0), structured extraction (89.2 vs 81.6) and speed at high effort (about 4.5x faster, 68% cheaper), but near-zero scores on several detection tasks. Results are on public Roboflow playground evals.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://playground.roboflow.com/evals/ocr",
+    "https://playground.roboflow.com/evals/object-detection"
+   ],
+   "vendor": "Roboflow",
+   "posted_at": "2026-11-16T17:54:00Z",
+   "metrics": {
+    "likes": 35,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Fine-tune TRELLIS.2 3D generation with LoRA, locally or on Hugging Face Jobs",
+   "url": "https://x.com/NielsRogge/status/2122384700111282653",
+   "handle": "@NielsRogge",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A Hugging Face blog explains LoRA fine-tuning of Microsoft's TRELLIS.2 on your own 3D assets, with scripts to run it locally or on HF Jobs.",
+   "kind": "technique",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/blog/3d-lora-finetuning"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-16T17:41:00Z",
+   "metrics": {
+    "likes": 9,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@linoy_tsaban"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "NVIDIA Research LidarVerse simulates LiDAR scans from new viewpoints for different sensors",
+   "url": "https://x.com/NVIDIAAI/status/2122384294845071648",
+   "handle": "@NVIDIAAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "NVIDIA Research says LidarVerse is the first model to simulate scans for different LiDAR sensors, recreating driving scenes from viewpoints the vehicle never captured. The post links no paper, code or numbers.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "NVIDIA Research",
+   "posted_at": "2026-11-16T17:40:00Z",
+   "metrics": {
+    "likes": 93,
+    "reposts": 8,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 191,
+ "list_pages": 2,
+ "security_forwarded": [],
+ "security_na": []
+}
