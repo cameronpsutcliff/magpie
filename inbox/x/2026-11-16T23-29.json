@@ -1,0 +1,140 @@
+{
+ "ran_at": "2026-11-16T23:29:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-16T19:32:00Z",
+ "queries": 2,
+ "calls": 6,
+ "items": [
+  {
+   "title": "LM Studio Agent Remote Control: run agents on any device over end-to-end encrypted LM Link",
+   "url": "https://x.com/lmstudio/status/2122440338753069391",
+   "handle": "@lmstudio",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "LM Studio adds Agent Remote Control so agents running on a home machine can be reached and driven from other devices, encrypted end to end over LM Link. Bionic shipped support the same day, aimed at people with a Mac mini or Mac Studio at home.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/lmstudio/status/2122440338753069391"
+   ],
+   "vendor": "LM Studio",
+   "posted_at": "2026-11-16T21:23:04Z",
+   "metrics": {
+    "likes": 189,
+    "reposts": 19,
+    "quotes": 6,
+    "replies": 12,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@adrgrondin"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Thinking Machines Inkling 2 Small on ARC-AGI (verified): 96.5% ARC-AGI-1, 81.7% ARC-AGI-2, 2.6% ARC-AGI-3",
+   "url": "https://x.com/arcprize/status/2122441913290703132",
+   "handle": "@arcprize",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "ARC Prize verified Inkling 2 Small scores: it beat DeepSeek V4.1 Flash 1017 on ARC-AGI-1 (96.5% vs 94.5%) and ARC-AGI-2 (81.7% vs 78.1%) but trailed on ARC-AGI-3 (2.6% vs 5.8%), at $704 total in the provider-adapter setup. Reproduction code and testing policy are linked.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://arcprize.org/leaderboard",
+    "https://github.com/arcprize/arc-agi-3-benchmarking"
+   ],
+   "vendor": "ARC Prize / Thinking Machines",
+   "posted_at": "2026-11-16T21:29:19Z",
+   "metrics": {
+    "likes": 40,
+    "reposts": 3,
+    "quotes": 3,
+    "replies": 2,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Scarlet AI video editor update: long video to editable shorts, motion graphics, Premiere/Final Cut/Resolve handoff, Ubuntu 24.04 preview",
+   "url": "https://x.com/MatthewBerman/status/2122449783352943048",
+   "handle": "@MatthewBerman",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Scarlet's open repo adds turning long videos into editable shorts, motion graphics and transitions, cleaner dialogue cuts, frame-by-frame scrubbing and background exports, with handoff to Premiere, Final Cut or Resolve and an Ubuntu 24.04 preview.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/Forward-Future/scarlet"
+   ],
+   "vendor": "Forward Future",
+   "posted_at": "2026-11-16T22:00:36Z",
+   "metrics": {
+    "likes": 97,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 14,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "NeurIPS paper: a small set of LLM neurons track step-level reward, with 'dopamine' neurons that encode TD errors usable as process reward",
+   "url": "https://x.com/Kevin_GuoweiXu/status/2122374209888559197",
+   "handle": "@Kevin_GuoweiXu",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "The authors report that reward signals in LLM hidden states sit in a small set of value neurons and dopamine neurons, the latter encoding step-level temporal-difference errors that can serve as a built-in process reward to improve reasoning. No code or numbers were visible in the posts read.",
+   "kind": "paper",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/Kevin_GuoweiXu/status/2122374209888559197"
+   ],
+   "vendor": "Stanford (authors Guowei Xu, Mert Yuksekgonul, James Zou)",
+   "posted_at": "2026-11-16T17:00:18Z",
+   "metrics": {
+    "likes": 57,
+    "reposts": 14,
+    "quotes": 1,
+    "replies": 5,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@james_y_zou"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 90,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
