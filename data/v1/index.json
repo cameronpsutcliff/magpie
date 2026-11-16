@@ -2,6 +2,85 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-11-16",
+   "headline": "LoopForge, univer, stitch-skills, and more",
+   "events": 142,
+   "sources": 533,
+   "enriched": false,
+   "top": [
+    {
+     "id": "f36d60c784b3",
+     "title": "Tencent/LoopForge",
+     "impact": 5,
+     "vendor": "Tencent",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-16-f36d60c784b3"
+    },
+    {
+     "id": "ecd028f7940a",
+     "title": "dream-num/univer",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-16-ecd028f7940a"
+    },
+    {
+     "id": "f454167ae3a3",
+     "title": "google-labs-code/stitch-skills",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-16-f454167ae3a3"
+    },
+    {
+     "id": "d9e2a8762de5",
+     "title": "xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-16-d9e2a8762de5"
+    },
+    {
+     "id": "e487fe51b82b",
+     "title": "cloudflare/security-audit-skill",
+     "impact": 4,
+     "vendor": "Cloudflare",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-16-e487fe51b82b"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "OpenAI",
+    "Anthropic",
+    "Qwen",
+    "TensorFold",
+    "Google"
+   ],
+   "topics": {
+    "multimodal": 45,
+    "agents": 39,
+    "models": 36,
+    "coding": 36,
+    "local": 19,
+    "mcp": 19,
+    "memory": 10,
+    "infra": 10,
+    "evals": 8,
+    "security": 4,
+    "reverse": 4,
+    "research": 4,
+    "robotics": 1
+   },
+   "kinds": {
+    "repo": 31,
+    "model": 30,
+    "space": 20,
+    "community": 17,
+    "social": 12,
+    "newsletter": 12,
+    "blog": 9,
+    "changelog": 8,
+    "news": 3
+   },
+   "threats": []
+  },
+  {
    "date": "2026-11-15",
    "headline": "Fit 321B MoEs on one Spark, render video with audio, speed H3-Image, and more",
    "events": 241,
@@ -4455,5 +4534,5 @@
    }
   }
  ],
- "latest": "2026-11-15"
+ "latest": "2026-11-16"
 }
