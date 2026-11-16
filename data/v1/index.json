@@ -3,80 +3,80 @@
  "days": [
   {
    "date": "2026-11-16",
-   "headline": "LoopForge, univer, stitch-skills, and more",
-   "events": 142,
-   "sources": 533,
-   "enriched": false,
+   "headline": "Use longer multimodal context, evaluate agent skills, build task-specific harnesses and more",
+   "events": 201,
+   "sources": 562,
+   "enriched": true,
    "top": [
     {
      "id": "f36d60c784b3",
-     "title": "Tencent/LoopForge",
-     "impact": 5,
+     "title": "LoopForge continues drawing coding workflow interest",
+     "impact": 4,
      "vendor": "Tencent",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-16-f36d60c784b3"
     },
     {
      "id": "ecd028f7940a",
-     "title": "dream-num/univer",
+     "title": "Univer keeps attracting AI office builders",
      "impact": 4,
      "vendor": "Open source",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-16-ecd028f7940a"
     },
     {
      "id": "f454167ae3a3",
-     "title": "google-labs-code/stitch-skills",
+     "title": "Stitch skills connect design tools to agents",
      "impact": 4,
-     "vendor": "Open source",
+     "vendor": "Google",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-16-f454167ae3a3"
     },
     {
-     "id": "d9e2a8762de5",
-     "title": "xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic",
+     "id": "c2f2484dfc92",
+     "title": "SkillEvaluator measures how skills change agents",
      "impact": 4,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-16-d9e2a8762de5"
+     "vendor": "NVIDIA",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-16-c2f2484dfc92"
     },
     {
      "id": "e487fe51b82b",
-     "title": "cloudflare/security-audit-skill",
-     "impact": 4,
+     "title": "Cloudflare audit skill keeps drawing attention",
+     "impact": 3,
      "vendor": "Cloudflare",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-16-e487fe51b82b"
     }
    ],
    "vendors": [
     "Open source",
-    "OpenAI",
     "Anthropic",
+    "OpenAI",
+    "NVIDIA",
     "Qwen",
-    "TensorFold",
     "Google"
    ],
    "topics": {
-    "multimodal": 45,
-    "agents": 39,
-    "models": 36,
-    "coding": 36,
-    "local": 19,
-    "mcp": 19,
-    "memory": 10,
-    "infra": 10,
-    "evals": 8,
-    "security": 4,
-    "reverse": 4,
-    "research": 4,
-    "robotics": 1
+    "models": 54,
+    "multimodal": 54,
+    "agents": 51,
+    "coding": 49,
+    "local": 23,
+    "infra": 18,
+    "evals": 15,
+    "mcp": 14,
+    "memory": 9,
+    "security": 6,
+    "reverse": 6,
+    "research": 6
    },
    "kinds": {
+    "social": 41,
+    "video": 37,
     "repo": 31,
     "model": 30,
-    "space": 20,
-    "community": 17,
-    "social": 12,
+    "space": 19,
+    "community": 15,
     "newsletter": 12,
-    "blog": 9,
     "changelog": 8,
-    "news": 3
+    "blog": 7,
+    "news": 1
    },
    "threats": []
   },
