@@ -1,0 +1,73 @@
+{
+ "ran_at": "2026-11-16T11:20:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-16T03:30:00Z",
+ "queries": 4,
+ "calls": 4,
+ "items": [
+  {
+   "title": "TensorFold update keeps a large model's weights wired in memory while idle on macOS, cutting a cached follow-up's first token from about 1 to 2.5 s to 0.016 s",
+   "url": "https://x.com/plotarmordev/status/2122268690586783807",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A TensorFold update keeps roughly 300GB of DeepSeek V4.1 wired instead of letting macOS release it after each request. On an M5 Ultra a cached follow-up reportedly dropped from about 1 to 2.5 s to 0.016 s time to first token. Numbers are from the posters and no benchmark recipe is linked.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-16T10:01:00Z",
+   "metrics": {
+    "likes": 30,
+    "reposts": 2,
+    "quotes": 1,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@ashxhart"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "MiniCPM-OCR gets native vLLM and SGLang support",
+   "url": "https://x.com/OpenBMB/status/2122218994325447163",
+   "handle": "@OpenBMB",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "OpenBMB says its MiniCPM-OCR model now runs natively in vLLM and SGLang, so developers can serve it with either framework without custom integration. No benchmark or repo link in the post.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "OpenBMB",
+   "posted_at": "2026-11-16T06:43:00Z",
+   "metrics": {
+    "likes": 15,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 92,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
