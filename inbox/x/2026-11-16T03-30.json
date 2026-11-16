@@ -1,0 +1,157 @@
+{
+ "ran_at": "2026-11-16T03:30:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-15T23:17:00Z",
+ "queries": 12,
+ "calls": 19,
+ "items": [
+  {
+   "title": "Qwen4-Max goes live as a hosted 1M-context multimodal MoE with lower API prices; open weights promised for smaller Qwen4 models",
+   "url": "https://x.com/Alibaba_Qwen/status/2122148127520289151",
+   "handle": "@Alibaba_Qwen",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Alibaba released Qwen4-Max through QwenCloud, Qwen Studio and Qoder: a mixture-of-experts model with native vision and a 1M-token window, priced at $1.5 per million input and $4.5 per million output tokens. Alibaba says it beats Qwen3.8-Max with up to about 50% fewer tokens and over 60% lower cost per task in its own evaluation. Weights are not released; smaller Qwen4 models are promised as open weights later. Independent boards place it #6 in Code Arena WebDev, #14 overall on Agent Arena and 43 on the Artificial Analysis Intelligence Index, top Chinese model, behind Kimi K3.1 Pro.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://qwen.ai/blog?id=qwen4-max",
+    "https://www.qwencloud.com/models/qwen4-max",
+    "https://www.qwencloud.com/pricing/token-plan",
+    "https://x.com/arena/status/2122153582384583156",
+    "https://x.com/ArtificialAnlys/status/2122161629592953032"
+   ],
+   "vendor": "Alibaba Qwen",
+   "posted_at": "2026-11-16T02:01:55Z",
+   "metrics": {
+    "likes": 4060,
+    "reposts": 555,
+    "quotes": 457,
+    "replies": 279,
+    "views": 224797
+   },
+   "confirmed_by": [
+    "@MatthewBerman",
+    "@arena",
+    "@ArtificialAnlys",
+    "@ValsAI",
+    "@OpenRouter",
+    "@opencode",
+    "@UnslothAI"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Headline cost and benchmark claims are Alibaba's internal evaluation, and replies note cache creation is billed separately at $1.875 per million tokens while only cache reads are $0.075.",
+    "source": "https://x.com/xxxaarr"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Repliers mostly ask for the open-weight 27B or Flash models; a few praise token savings and one preview tester liked 3D and web-design output, while others call it poor on price-performance or point out it is API-only.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "OpenAI publishes a physicist's work with GPT-6 Astra on a candidate lattice definition of the Standard Model",
+   "url": "https://x.com/OpenAI/status/2122123437141553630",
+   "handle": "@OpenAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "OpenAI's new science blog opens with physicist Nathaniel Craig describing how he worked with GPT-6 Astra to develop a candidate lattice definition of the Standard Model. Replies say three lattice field theorists reviewed the model's proof and that realistic lattice simulations are still needed. It is a vendor-published account of one collaboration, not an independent result.",
+   "kind": "paper",
+   "evidence": "claim",
+   "links": [
+    "https://openai.com/index/step-toward-defining-the-standard-model"
+   ],
+   "vendor": "OpenAI",
+   "posted_at": "2026-11-16T00:23:00Z",
+   "metrics": {
+    "likes": 1804,
+    "reposts": 173,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@gdb"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Described as a candidate construction; commenters note it still needs outside checking and realistic lattice simulations.",
+    "source": "https://x.com/OpenAI/status/2122123437141553630"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Most repliers praise the physicist-in-the-loop framing and ask which steps the model drove versus which the physicist verified; none report reproducing it.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Hermes Agent adds a /goal command that keeps working across turns with a judge model checking progress",
+   "url": "https://x.com/witcheer/status/2122147649059008794",
+   "handle": "@witcheer",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A builder describes a Hermes Agent /goal command: set a goal and a judge model checks after each turn, continuing until it is met, with a default budget of 20 turns and /goal pause to stop. No link or release notes are given, so this is a description to verify.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Hermes Agent (Nous Research)",
+   "posted_at": "2026-11-16T02:00:00Z",
+   "metrics": {
+    "likes": 13,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "llama.cpp server reported to support a /v1/realtime endpoint usable for speech-to-speech chat with LFM3-Omni",
+   "url": "https://x.com/ngxson/status/2122111707581719015",
+   "handle": "@ngxson",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A llama.cpp maintainer says the server has supported a realtime API route for a while and that it can drive speech-to-speech chat with Liquid's LFM3-Omni model. The post shows an image only and links nothing, so version and setup are not stated.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "llama.cpp",
+   "posted_at": "2026-11-15T23:37:00Z",
+   "metrics": {
+    "likes": 33,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 95,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
