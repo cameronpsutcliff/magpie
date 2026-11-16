@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-16T03:30:00Z",
+ "updated_at": "2026-11-16T10:40:00Z",
  "job": "sweep",
  "prompt": "v6.1",
  "calls_used_today": 19,
@@ -20,8 +20,8 @@
  },
  "roster": {
   "curated": 223,
-  "trial": 68,
-  "active": 37,
+  "trial": 62,
+  "active": 43,
   "retired": 7
  },
  "follows_this_week": 0,
@@ -285,26 +285,37 @@
  "errors": [],
  "follows_today": 0,
  "last_roster_review": {
-  "ran_at": "2026-11-14T10:30:00Z",
-  "date": "2026-11-14",
-  "reads": 2,
-  "list_writes": 0,
+  "ran_at": "2026-11-16T10:40:00Z",
+  "date": "2026-11-16",
+  "reads": 3,
+  "list_writes": 1,
   "budget": 80,
-  "added": [],
-  "promoted": [],
+  "added": [
+   "@Meituan_LongCat (official lab; LongCat-2.5 launch with architecture details and MIT weights release)"
+  ],
+  "promoted": [
+   "@victormustar",
+   "@linoy_tsaban",
+   "@coldniko",
+   "@robocurve",
+   "@0xMarsel",
+   "@voicearena_ai (all added 2026-11-02, 3 to 5 sweep-file items each, no level-2 doubt flags)"
+  ],
   "retired": [],
   "flagged": [
-   "@JensenHuang (owner_requested, no qualifying post since 2026-09-03; unchanged)",
-   "@mem0ai (trial; 2026-11-03 and 2026-11-12 posts are explainer articles plus event promos, no release or measurement; reaches 45-day line 2026-11-15; decide at next review)"
+   "@JensenHuang (owner_requested, no qualifying post since 2026-09-03; unchanged, not retired)",
+   "@mem0ai (trial; last qualifying post 2026-10-07 per roster, explainer and event posts since; decide at next review)",
+   "@mirku21 stays retired (owner-saved; flagged to Cameron previously)"
   ],
   "rejected": [
-   "@danikkk_wqs (2 owner saves, still vice-excluded)",
+   "@danikkk_wqs (2 owner saves, vice-excluded)",
    "@RoundtableSpace (on avoid)",
-   "@JohnHYao (Flash ALOHA, first-hand, but only 1 capability post in 30 days; rest are daily emoji teasers; recheck)"
+   "@paperswithcodee (paper aggregator, not first-hand)"
   ],
   "drafts": 0,
   "drafts_file": null,
-  "pruned": 5,
+  "drafts_note": "Monday; Sunday drafts only. Nothing posted.",
+  "pruned": 9,
   "source_leads_added": 0
  },
  "x_list": {
@@ -314,7 +325,7 @@
   "owner": "@CameronSutcliff",
   "owner_id": "1521986356721123328",
   "private": true,
-  "member_count": 105,
+  "member_count": 106,
   "members": "every trial/active entry in inbox/x-roster.json (x_user_id, on_list)",
   "created_at": "2026-10-24T04:35:00Z"
  },
