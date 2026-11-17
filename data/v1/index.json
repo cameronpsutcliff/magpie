@@ -3,80 +3,81 @@
  "days": [
   {
    "date": "2026-11-17",
-   "headline": "Claude-BugHunter, paper-orchestra, superpowers, and more",
-   "events": 266,
-   "sources": 534,
-   "enriched": false,
+   "headline": "Read scientific inputs, trim coding costs, give agents private memory and more",
+   "events": 431,
+   "sources": 565,
+   "enriched": true,
    "top": [
     {
-     "id": "4302db6cb9e8",
-     "title": "elementalsouls/Claude-BugHunter",
+     "id": "4fb45d6a21cb",
+     "title": "Sage S2.1 Flash reads scientific inputs",
+     "impact": 5,
+     "vendor": "SageAI",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-17-4fb45d6a21cb"
+    },
+    {
+     "id": "1d074b9091aa",
+     "title": "AG-UI connects agents to frontend applications",
      "impact": 4,
      "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-17-4302db6cb9e8"
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-17-1d074b9091aa"
     },
     {
-     "id": "fa7a7600d82d",
-     "title": "google-research/paper-orchestra",
+     "id": "2ec8e2e890a5",
+     "title": "TokenEconomizer cuts measured coding agent costs",
      "impact": 4,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-17-fa7a7600d82d"
+     "vendor": "Microsoft Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-17-2ec8e2e890a5"
     },
     {
-     "id": "1ec0b1042f97",
-     "title": "obra/superpowers",
+     "id": "f6b42650b313",
+     "title": "Copilot connects enterprise repositories and session triage",
      "impact": 4,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-17-1ec0b1042f97"
+     "vendor": "GitHub",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-17-f6b42650b313"
     },
     {
-     "id": "f36d60c784b3",
-     "title": "Tencent/LoopForge",
+     "id": "2df27c3f8ff5",
+     "title": "Kiro hooks rewrite calls and answer permissions",
      "impact": 4,
-     "vendor": "Tencent",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-17-f36d60c784b3"
-    },
-    {
-     "id": "e487fe51b82b",
-     "title": "cloudflare/security-audit-skill",
-     "impact": 4,
-     "vendor": "Cloudflare",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-17-e487fe51b82b"
+     "vendor": "AWS",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-17-2df27c3f8ff5"
     }
    ],
    "vendors": [
     "Open source",
-    "OpenAI",
     "NVIDIA",
-    "AWS",
+    "OpenAI",
     "Anthropic",
-    "Google"
+    "AWS",
+    "Qwen"
    ],
    "topics": {
-    "agents": 96,
-    "coding": 81,
-    "models": 77,
-    "multimodal": 58,
-    "memory": 36,
-    "local": 29,
-    "mcp": 28,
-    "infra": 27,
-    "evals": 17,
-    "reverse": 16,
-    "research": 12,
-    "security": 9,
-    "robotics": 4
+    "agents": 128,
+    "models": 116,
+    "coding": 116,
+    "multimodal": 73,
+    "infra": 55,
+    "memory": 49,
+    "local": 36,
+    "evals": 33,
+    "mcp": 30,
+    "reverse": 21,
+    "research": 18,
+    "security": 15,
+    "robotics": 3
    },
    "kinds": {
-    "blog": 54,
-    "repo": 35,
-    "newsletter": 33,
+    "video": 98,
+    "social": 97,
+    "blog": 52,
+    "newsletter": 35,
+    "repo": 34,
     "model": 30,
     "changelog": 29,
-    "community": 26,
-    "social": 24,
-    "space": 20,
-    "news": 15
+    "community": 25,
+    "space": 19,
+    "news": 12
    },
    "threats": []
   },
