@@ -2,6 +2,85 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-11-17",
+   "headline": "Claude-BugHunter, paper-orchestra, superpowers, and more",
+   "events": 266,
+   "sources": 534,
+   "enriched": false,
+   "top": [
+    {
+     "id": "4302db6cb9e8",
+     "title": "elementalsouls/Claude-BugHunter",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-17-4302db6cb9e8"
+    },
+    {
+     "id": "fa7a7600d82d",
+     "title": "google-research/paper-orchestra",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-17-fa7a7600d82d"
+    },
+    {
+     "id": "1ec0b1042f97",
+     "title": "obra/superpowers",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-17-1ec0b1042f97"
+    },
+    {
+     "id": "f36d60c784b3",
+     "title": "Tencent/LoopForge",
+     "impact": 4,
+     "vendor": "Tencent",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-17-f36d60c784b3"
+    },
+    {
+     "id": "e487fe51b82b",
+     "title": "cloudflare/security-audit-skill",
+     "impact": 4,
+     "vendor": "Cloudflare",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-17-e487fe51b82b"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "OpenAI",
+    "NVIDIA",
+    "AWS",
+    "Anthropic",
+    "Google"
+   ],
+   "topics": {
+    "agents": 96,
+    "coding": 81,
+    "models": 77,
+    "multimodal": 58,
+    "memory": 36,
+    "local": 29,
+    "mcp": 28,
+    "infra": 27,
+    "evals": 17,
+    "reverse": 16,
+    "research": 12,
+    "security": 9,
+    "robotics": 4
+   },
+   "kinds": {
+    "blog": 54,
+    "repo": 35,
+    "newsletter": 33,
+    "model": 30,
+    "changelog": 29,
+    "community": 26,
+    "social": 24,
+    "space": 20,
+    "news": 15
+   },
+   "threats": []
+  },
+  {
    "date": "2026-11-16",
    "headline": "Use longer multimodal context, evaluate agent skills, build task-specific harnesses and more",
    "events": 201,
@@ -4534,5 +4613,5 @@
    }
   }
  ],
- "latest": "2026-11-16"
+ "latest": "2026-11-17"
 }
