@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-16T10:40:00Z",
+ "updated_at": "2026-11-17T10:35:00Z",
  "accounts": [
   {
    "handle": "@thsottiaux",
@@ -33,7 +33,7 @@
     "https://x.com/OpenBMB/status/2109694573408866351",
     "https://x.com/OpenBMB/status/2110364065822646570"
    ],
-   "last_qualifying_post": "2026-11-09",
+   "last_qualifying_post": "2026-11-16",
    "retired_reason": null,
    "x_user_id": "1496119294844825600",
    "on_list": true,
@@ -71,7 +71,7 @@
     "https://x.com/fal/status/2112251022047412492",
     "https://x.com/fal/status/2110795863861674073"
    ],
-   "last_qualifying_post": "2026-11-14",
+   "last_qualifying_post": "2026-11-16",
    "retired_reason": null,
    "x_user_id": "39622874",
    "on_list": true,
@@ -147,7 +147,7 @@
     "https://x.com/trycua/status/2112228154651881479",
     "https://x.com/trycua/status/2112589741879328979"
    ],
-   "last_qualifying_post": "2026-11-06",
+   "last_qualifying_post": "2026-11-16",
    "retired_reason": null,
    "x_user_id": "1883205292596359168",
    "on_list": true,
@@ -504,7 +504,7 @@
     "https://x.com/Letta_AI/status/2112957074644873289",
     "https://x.com/Letta_AI/status/2105015179855704164"
    ],
-   "last_qualifying_post": "2026-11-13",
+   "last_qualifying_post": "2026-11-16",
    "retired_reason": null,
    "x_user_id": "1821252546469752832",
    "on_list": true,
@@ -827,15 +827,16 @@
     "https://x.com/MatthewBerman/status/2108245653843509415",
     "https://x.com/MatthewBerman/status/2113291592195031424"
    ],
-   "last_qualifying_post": "2026-11-13",
+   "last_qualifying_post": "2026-11-16",
    "signal_to_noise": 3,
-   "status": "trial",
+   "status": "active",
    "added_on": "2026-10-24",
    "source": "owner_saves",
    "x_user_id": "6681172",
    "on_list": true,
    "owner_requested": true,
-   "note": "owner reinstated 2026-10-25; keep"
+   "note": "owner reinstated 2026-10-25; keep",
+   "promoted_on": "2026-11-17"
   },
   {
    "handle": "@HuggingModels",
@@ -927,7 +928,7 @@
     "https://x.com/LeRobotHF/status/2111427005094981643",
     "https://x.com/LeRobotHF/status/2110305869267104141"
    ],
-   "last_qualifying_post": "2026-11-13",
+   "last_qualifying_post": "2026-11-16",
    "retired_reason": null,
    "x_user_id": "1811128301764648960",
    "on_list": true,
@@ -1084,7 +1085,7 @@
     "https://x.com/plotarmordev/status/2114874525435507169",
     "https://x.com/plotarmordev/status/2114644076029227206"
    ],
-   "last_qualifying_post": "2026-11-14",
+   "last_qualifying_post": "2026-11-17",
    "retired_reason": null,
    "x_user_id": "1513438573747486721",
    "on_list": true
@@ -1140,7 +1141,7 @@
     "https://x.com/skalskip92/status/2115163487177674991",
     "https://x.com/skalskip92/status/2112614331519291445"
    ],
-   "last_qualifying_post": "2026-11-13",
+   "last_qualifying_post": "2026-11-16",
    "retired_reason": null,
    "x_user_id": "2353861069",
    "on_list": true
@@ -1157,7 +1158,7 @@
    "evidence": [
     "https://x.com/NVIDIAAI/status/2113657112408785153"
    ],
-   "last_qualifying_post": "2026-11-13",
+   "last_qualifying_post": "2026-11-16",
    "retired_reason": null,
    "owner_requested": true,
    "x_user_id": "740238495952736256",
@@ -1236,7 +1237,7 @@
     "https://x.com/victormustar/status/2115531118292131887",
     "https://x.com/victormustar/status/2114432158647685127"
    ],
-   "last_qualifying_post": "2026-11-07",
+   "last_qualifying_post": "2026-11-16",
    "retired_reason": null,
    "x_user_id": "784830007",
    "on_list": true,
@@ -1256,7 +1257,7 @@
     "https://x.com/linoy_tsaban/status/2116267951150301682",
     "https://x.com/linoy_tsaban/status/2113701124612198556"
    ],
-   "last_qualifying_post": "2026-11-02",
+   "last_qualifying_post": "2026-11-16",
    "retired_reason": null,
    "x_user_id": "3253741800",
    "on_list": true,
@@ -1350,7 +1351,7 @@
    "affiliation": "Zyphra",
    "why": "Lab account shipping measured research and inference work: ZHA hybrid attention paper (arXiv 2610.42112) and ZOE inference wave 2 on MI355X with TTFT numbers; hiring posts only as thread tails.",
    "signal_to_noise": 4,
-   "status": "trial",
+   "status": "active",
    "added_on": "2026-11-03",
    "evidence": [
     "https://x.com/ZyphraAI/status/2117377426242367669",
@@ -1360,7 +1361,8 @@
    "retired_reason": null,
    "source": "roster_review",
    "x_user_id": "1377338130785828867",
-   "on_list": true
+   "on_list": true,
+   "promoted_on": "2026-11-17"
   },
   {
    "handle": "@rikiyatakehi",
@@ -1388,7 +1390,7 @@
    "affiliation": "Princeton (PhD)",
    "why": "Measured first-hand research: the Writing Weights Index and a batch-size/optimizer scaling sweep (arXiv 2610.08975, batch-size-scaling.com); no promotion.",
    "signal_to_noise": 4,
-   "status": "trial",
+   "status": "active",
    "added_on": "2026-11-03",
    "evidence": [
     "https://x.com/xingyudang/status/2117428789068386630",
@@ -1398,7 +1400,8 @@
    "retired_reason": null,
    "source": "roster_review",
    "x_user_id": "1658540640484073472",
-   "on_list": true
+   "on_list": true,
+   "promoted_on": "2026-11-17"
   },
   {
    "handle": "@maksym_andr",
@@ -1407,18 +1410,19 @@
    "affiliation": "Tübingen / Exponential (expsec.ai)",
    "why": "Agent eval author: AgentTime time-awareness benchmark update, compaction-on-long-horizon-agents paper, PostTrainBench and Skill-Inject results cited in Meta system card; hiring posts ~3 of 18, under the 1-in-5 bar.",
    "signal_to_noise": 4,
-   "status": "trial",
+   "status": "active",
    "added_on": "2026-11-03",
    "evidence": [
     "https://x.com/maksym_andr/status/2117369736518623567",
     "https://x.com/maksym_andr/status/2116225757861036166",
     "https://x.com/maksym_andr/status/2114420610520723577"
    ],
-   "last_qualifying_post": "2026-11-13",
+   "last_qualifying_post": "2026-11-16",
    "retired_reason": null,
    "source": "roster_review",
    "x_user_id": "987061319378587649",
-   "on_list": true
+   "on_list": true,
+   "promoted_on": "2026-11-17"
   },
   {
    "handle": "@zxlzr",
@@ -1571,7 +1575,7 @@
     "https://x.com/ashxhart/status/2118488485963485662",
     "https://x.com/ashxhart/status/2118328617784459483"
    ],
-   "last_qualifying_post": "2026-11-14",
+   "last_qualifying_post": "2026-11-15",
    "retired_reason": null,
    "x_user_id": "2841951623",
    "on_list": true
@@ -1739,7 +1743,7 @@
     "https://x.com/arcprize/status/2117360588959461708",
     "https://x.com/arcprize/status/2115512736809468084"
    ],
-   "last_qualifying_post": "2026-11-10",
+   "last_qualifying_post": "2026-11-16",
    "x_user_id": "1773935160192647168",
    "signal_to_noise": 4,
    "status": "trial",
@@ -1796,7 +1800,7 @@
     "https://x.com/NielsRogge/status/2117998047372202401",
     "https://x.com/NielsRogge/status/2116908700132671583"
    ],
-   "last_qualifying_post": "2026-11-10",
+   "last_qualifying_post": "2026-11-16",
    "x_user_id": "133818617",
    "signal_to_noise": 3,
    "status": "trial",
@@ -1872,7 +1876,7 @@
     "https://x.com/thepirateface/status/2121046373269450884",
     "https://x.com/thepirateface/status/2120698114080190939"
    ],
-   "last_qualifying_post": "2026-11-12",
+   "last_qualifying_post": "2026-11-15",
    "retired_reason": null,
    "owner_requested": true,
    "x_user_id": "882578436849418240",
@@ -1910,7 +1914,7 @@
    "evidence": [
     "https://x.com/OmarchyUpdates/status/2120969956364026157"
    ],
-   "last_qualifying_post": "2026-11-14",
+   "last_qualifying_post": "2026-11-15",
    "retired_reason": null,
    "owner_requested": true,
    "x_user_id": "2090578233263853568",
@@ -1949,7 +1953,7 @@
     "https://x.com/huggingface/status/2118715992343789911",
     "https://x.com/huggingface/status/2118430862949945612"
    ],
-   "last_qualifying_post": "2026-11-10",
+   "last_qualifying_post": "2026-11-16",
    "retired_reason": null,
    "owner_requested": false,
    "x_user_id": "778764142412984320",
@@ -2140,6 +2144,24 @@
    "last_qualifying_post": "2026-11-09",
    "retired_reason": null,
    "x_user_id": "1961699105434210304",
+   "on_list": true
+  },
+  {
+   "handle": "@wei_wang",
+   "name": "Wei",
+   "group": "builders",
+   "affiliation": "Home AI lab (2x DGX Spark + RTX PRO 6000)",
+   "why": "First-hand local-LLM deployer: posts measured quantization comparisons (GLM-5.3 K4 vs NVFP4 KL divergence on 4 DGX Spark), tok/s results and speed-ups with numbers.",
+   "signal_to_noise": 4,
+   "status": "trial",
+   "added_on": "2026-11-17",
+   "evidence": [
+    "https://x.com/wei_wang/status/2122529161436705118",
+    "https://x.com/wei_wang/status/2121938266798658022"
+   ],
+   "last_qualifying_post": "2026-11-17",
+   "retired_reason": null,
+   "x_user_id": "1518577705809326083",
    "on_list": true
   }
  ],
@@ -2669,7 +2691,7 @@
   "name": "Magpie roster",
   "owner": "@CameronSutcliff",
   "private": true,
-  "member_count": 101,
+  "member_count": 107,
   "scope": "every trial and active account in this file; curated config accounts are not members yet",
   "updated_at": "2026-11-13T06:36:00Z"
  }

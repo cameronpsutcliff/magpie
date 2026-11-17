@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-17T03:25:00Z",
+ "updated_at": "2026-11-17T10:35:00Z",
  "job": "sweep",
  "prompt": "v6.1",
  "calls_used_today": 46,
@@ -20,8 +20,8 @@
  },
  "roster": {
   "curated": 223,
-  "trial": 62,
-  "active": 43,
+  "trial": 60,
+  "active": 47,
   "retired": 7
  },
  "follows_this_week": 0,
@@ -285,37 +285,37 @@
  "errors": [],
  "follows_today": 0,
  "last_roster_review": {
-  "ran_at": "2026-11-16T10:40:00Z",
-  "date": "2026-11-16",
-  "reads": 3,
+  "ran_at": "2026-11-17T10:35:00Z",
+  "date": "2026-11-17",
+  "reads": 1,
   "list_writes": 1,
   "budget": 80,
   "added": [
-   "@Meituan_LongCat (official lab; LongCat-2.5 launch with architecture details and MIT weights release)"
+   "@wei_wang (first-hand home-lab local LLM benchmarker on DGX Spark; measured quantization KL comparisons and tok/s)"
   ],
   "promoted": [
-   "@victormustar",
-   "@linoy_tsaban",
-   "@coldniko",
-   "@robocurve",
-   "@0xMarsel",
-   "@voicearena_ai (all added 2026-11-02, 3 to 5 sweep-file items each, no level-2 doubt flags)"
+   "@ZyphraAI",
+   "@xingyudang",
+   "@maksym_andr",
+   "@MatthewBerman (owner-saved/requested; all 2+ sweep-file items, no level-2 flags)"
   ],
   "retired": [],
   "flagged": [
    "@JensenHuang (owner_requested, no qualifying post since 2026-09-03; unchanged, not retired)",
-   "@mem0ai (trial; last qualifying post 2026-10-07 per roster, explainer and event posts since; decide at next review)",
-   "@mirku21 stays retired (owner-saved; flagged to Cameron previously)"
+   "@mem0ai (trial; last qualifying post 2026-10-07, 41 days; will hit 45-day rule around 2026-11-21 unless it posts a capability artifact)",
+   "@mirku21 stays retired (owner-saved; flagged previously)"
   ],
   "rejected": [
    "@danikkk_wqs (2 owner saves, vice-excluded)",
    "@RoundtableSpace (on avoid)",
-   "@paperswithcodee (paper aggregator, not first-hand)"
+   "@paperswithcodee (aggregator)",
+   "@dbreunig (commentary, few artifacts)",
+   "@MiniMax_Code (product marketing)"
   ],
   "drafts": 0,
   "drafts_file": null,
-  "drafts_note": "Monday; Sunday drafts only. Nothing posted.",
-  "pruned": 9,
+  "drafts_note": "Tuesday; Sunday drafts only. Nothing posted.",
+  "pruned": 4,
   "source_leads_added": 0
  },
  "x_list": {
@@ -325,9 +325,10 @@
   "owner": "@CameronSutcliff",
   "owner_id": "1521986356721123328",
   "private": true,
-  "member_count": 106,
+  "member_count": 107,
   "members": "every trial/active entry in inbox/x-roster.json (x_user_id, on_list)",
-  "created_at": "2026-10-24T04:35:00Z"
+  "created_at": "2026-10-24T04:35:00Z",
+  "updated_at": "2026-11-17T10:35:00Z"
  },
  "horizon_triggered": [],
  "calls_day": "2026-11-16",
