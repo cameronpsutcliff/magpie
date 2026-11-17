@@ -1,0 +1,606 @@
+{
+ "ran_at": "2026-11-17T23:30:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-17T19:25:00Z",
+ "queries": 9,
+ "calls": 17,
+ "items": [
+  {
+   "title": "Microsoft AI launches seven MAI models at Ignite: Code 2, Code 2 Flash, Cyber 2 Flash, Image 2.7, Realtime 1, Decision 1.1 and Maia 200 hardware",
+   "url": "https://x.com/MicrosoftAI/status/2122778863235178806",
+   "handle": "@MicrosoftAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Microsoft says MAI Code 2 reaches 98% of GPT-6.1 Sol's coding quality at about 40% of the price, and Cyber 2 Flash matches GPT-6 Astra on CyberGymE2E at under 2% of the cost per task. Code 2 and Code 2 Flash are in GitHub Copilot, the image models are in Foundry, and a MAI Licensed Weights program lets enterprises run customized frontier MAI models in their own Azure environment.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [
+    "https://aka.ms/MAI-Ignite-2026"
+   ],
+   "vendor": "Microsoft AI",
+   "posted_at": "2026-11-17T19:48:14Z",
+   "metrics": {
+    "likes": 191,
+    "reposts": 18,
+    "quotes": 6,
+    "replies": 10,
+    "views": 10013
+   },
+   "confirmed_by": [
+    "@github",
+    "@OpenRouter",
+    "@satyanadella"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The price and quality comparisons are Microsoft's own, averaged over benchmarks it selected, and Code 2 is explicitly not tuned for hard research or very long-horizon agent work.",
+    "source": "https://aka.ms/MAI-Ignite-2026"
+   }
+  },
+  {
+   "title": "MAI Realtime 1, Microsoft's first live speech-to-speech model, priced from $0.01 per audio minute",
+   "url": "https://x.com/MicrosoftAI/status/2122815908947144883",
+   "handle": "@MicrosoftAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Microsoft reports it beats GPT-Realtime 2.1 on external and Dynamics 365 benchmarks; it can be tried in MAI Labs, with interest registration for broader access.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [
+    "https://msft.it/6018xEmwC"
+   ],
+   "vendor": "Microsoft AI",
+   "posted_at": "2026-11-17T22:15:27Z",
+   "metrics": {
+    "likes": 70,
+    "reposts": 8,
+    "quotes": 2,
+    "replies": 5,
+    "views": 2737
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Comparison is the vendor's own evals, and repliers note it is unclear whether the $0.01 covers listening, speaking or both.",
+    "source": "https://x.com/MicrosoftAI/status/2122815908947144883"
+   },
+   "reception": {
+    "sentiment": "none",
+    "summary": "The few repliers asked what the per-minute price covers and what latency it reaches; nobody reported trying it.",
+    "tried": false,
+    "replies_read": 6
+   }
+  },
+  {
+   "title": "MAI Image 2.7 takes #1 on Artificial Analysis image editing at one fifth the price of GPT Image 2.6 Sunburst (max)",
+   "url": "https://x.com/MicrosoftAI/status/2122811944675443135",
+   "handle": "@MicrosoftAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Available in Microsoft Foundry, and fal and OpenRouter list MAI Image 2.7 and the Flash version; Microsoft says Flash costs about $10 per 1,000 images.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://msft.it/6015xEl7c",
+    "https://aka.ms/MAI-Ignite-2026"
+   ],
+   "vendor": "Microsoft AI",
+   "posted_at": "2026-11-17T21:59:42Z",
+   "metrics": {
+    "likes": 41,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 4,
+    "views": 1968
+   },
+   "confirmed_by": [
+    "@fal",
+    "@OpenRouter"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Claude Code Code Mode: Claude writes scripts that chain tools together and can answer while long commands still run",
+   "url": "https://x.com/ClaudeDevs/status/2122801681939234950",
+   "handle": "@ClaudeDevs",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "An experimental opt-in via an environment variable in Claude Code; the script approach reduces tool-call round trips.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Anthropic",
+   "posted_at": "2026-11-17T21:18:55Z",
+   "metrics": {
+    "likes": 3513,
+    "reposts": 172,
+    "quotes": 66,
+    "replies": 152,
+    "views": 216025
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers welcomed it, asked for it in the agents SDK and whether permissions are asked per tool call or once per script, and noted similar ideas in Cloudflare's approach and the pi agent; some said they were already building on it.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Qwen3.8-27B-pi-adapted: a LoRA trained with reinforcement learning to drive the pi coding agent, SWE-bench Pro Hard 29.4% to 62.7%",
+   "url": "https://x.com/ClementDelangue/status/2122784279604383914",
+   "handle": "@ClementDelangue",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Hugging Face reports pass@1 gains on SWE-bench Pro (Hard 51) and Terminal-Bench 2.1 (39.5% to 55.8%) plus 55 to 62% fewer tokens; the adapter is about 640 MB, with a GGUF adapter that loads over a Qwen3.8-27B base in llama.cpp.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/harness-hub/Qwen3.8-27B-pi-adapted"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-17T20:09:46Z",
+   "metrics": {
+    "likes": 1966,
+    "reposts": 228,
+    "quotes": 41,
+    "replies": 108,
+    "views": 76641
+   },
+   "confirmed_by": [
+    "@yb2698",
+    "@mfranz_on"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Gains are reported by the authors on the pi harness only, and repliers ask whether they transfer to other harnesses.",
+    "source": "https://x.com/ClementDelangue/status/2122784279604383914"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Most repliers were enthusiastic; two users described running it locally with llama.cpp, one noting that a Q8_0 base is advised because Q4_K_M drifts further from what it learned; others asked if it works with other harnesses.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Apple releases FastFrames, open autoregressive video models that generate at interactive latency",
+   "url": "https://x.com/aitrackerbot/status/2122812449153753283",
+   "handle": "@aitrackerbot",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "FastFrames-S (1.3B) and FastFrames-L (14B) are built on Wan2.1 and use two denoising steps, producing 480p text-to-video, 81 frames at 16 fps, with weights on Hugging Face.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/apple/FastFrames-L"
+   ],
+   "vendor": "Apple",
+   "posted_at": "2026-11-17T22:01:42Z",
+   "metrics": {
+    "likes": 8,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 595
+   },
+   "confirmed_by": [
+    "@_akhaliq",
+    "@victormustar"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Zyphra scales its ZHA subquadratic attention to Qwen3.8-2.4T, Nemotron-3.5-Super, MiMo-2.6-Pro and GPT-OSS-120B",
+   "url": "https://x.com/ZyphraAI/status/2122775085308354754",
+   "handle": "@ZyphraAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Zyphra reports the converted models keep most reasoning, coding and long-context ability (Qwen loses under 2 points on RULER at 1M tokens) while modelled latency drops 9x to 60x at 10M context.",
+   "kind": "technique",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Zyphra",
+   "posted_at": "2026-11-17T19:33:14Z",
+   "metrics": {
+    "likes": 95,
+    "reposts": 9,
+    "quotes": 5,
+    "replies": 3,
+    "views": 48678
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The 10M-token speedups come from Zyphra's latency model rather than a measured run, and the thread says Nemotron and MiMo gain less.",
+    "source": "https://x.com/ZyphraAI/status/2122775091696337298"
+   }
+  },
+  {
+   "title": "Marin Mochi 535B-A23B: 57 intermediate pretraining checkpoints released, up to 262K context",
+   "url": "https://x.com/eliebakouch/status/2122802410150310235",
+   "handle": "@eliebakouch",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Open Athena publishes BF16 base-model checkpoints from step 6000 to 393491 as Hugging Face branches under OpenMDW 1.1; serving needs the Marin vLLM fork and numerical parity is not validated.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/open-athena/Marin-Mochi-535B-A23B"
+   ],
+   "vendor": "Marin / Open Athena",
+   "posted_at": "2026-11-17T21:21:48Z",
+   "metrics": {
+    "likes": 53,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 0,
+    "views": 2102
+   },
+   "confirmed_by": [
+    "@vanstriendaniel"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Perplexity Orchestrator API routes requests across open-weight and proprietary models with one key and unified billing",
+   "url": "https://x.com/perplexity_ai/status/2122785177135096053",
+   "handle": "@perplexity_ai",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "It picks a provider on availability, capacity and latency; replies note it accepts existing OpenAI and Anthropic SDK code and that automatic model selection is a separate optional preview.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://twitter.com/perplexity_ai/status/2122785177135096053/video/1"
+   ],
+   "vendor": "Perplexity",
+   "posted_at": "2026-11-17T20:13:20Z",
+   "metrics": {
+    "likes": 212,
+    "reposts": 19,
+    "quotes": 16,
+    "replies": 32,
+    "views": 25072
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers ask whether the model actually used is shown per call and whether providers can be pinned, since provider switching can change outputs.",
+    "source": "https://x.com/perplexity_ai/status/2122785177135096053"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Interest in the routing and unified billing, with specific questions about pinning providers, fallback order, and logging which model ran; nobody reported trying it.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Replit Missions can spin up a swarm of agents to replicate software of any complexity",
+   "url": "https://x.com/amasad/status/2122784726671134764",
+   "handle": "@amasad",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Replit's CEO says Missions runs many agents in parallel to rebuild an application; no benchmark or example was linked in the post.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [
+    "https://twitter.com/replit/status/2122759176288190724"
+   ],
+   "vendor": "Replit",
+   "posted_at": "2026-11-17T20:11:32Z",
+   "metrics": {
+    "likes": 280,
+    "reposts": 11,
+    "quotes": 5,
+    "replies": 46,
+    "views": 34914
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The 'any complexity' claim has no shown result, and repliers ask who supervises the swarm.",
+    "source": "https://x.com/amasad/status/2122784726671134764"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Mostly jokes and doubts about moats, babysitting the swarm and long-term differentiation against model vendors; nobody reported trying Missions.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Google AI Studio adds custom domains and builds Android apps that can be downloaded through Google Play",
+   "url": "https://x.com/OfficialLoganK/status/2122818500763009273",
+   "handle": "@OfficialLoganK",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "AI Studio can now buy a domain for an app, build an Android app and send it to a phone via Google Play (US only for now), and add AI to Android apps securely.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://ai.studio/build"
+   ],
+   "vendor": "Google",
+   "posted_at": "2026-11-17T22:25:45Z",
+   "metrics": {
+    "likes": 591,
+    "reposts": 41,
+    "quotes": 7,
+    "replies": 57,
+    "views": 27066
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Repliers welcomed custom domains and the Play Store path but raised the US-only limit and asked how signing keys and existing domains are handled.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "LiteLLM SDK adds agent evals: compare models and harnesses on your own tasks with litellm.agent_eval()",
+   "url": "https://x.com/Mokhalil01/status/2122802360183660815",
+   "handle": "@Mokhalil01",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "A new SDK function lets teams run the same task set across models and agent harnesses.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "LiteLLM",
+   "posted_at": "2026-11-17T21:21:37Z",
+   "metrics": {
+    "likes": 8,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 2,
+    "views": 338
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Epoch Automation Reports: frontier models, including GPT-6.2 Astra, do not yet match human contractors on open-ended Epoch research tasks",
+   "url": "https://x.com/EpochAIResearch/status/2122808111849488867",
+   "handle": "@EpochAIResearch",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Epoch says Fable 5.2 and Opus 5.5 reached contractor level on an AI data-center research task, while GPT-6.2 Astra was overly cautious and left out key facts.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Epoch AI",
+   "posted_at": "2026-11-17T21:44:28Z",
+   "metrics": {
+    "likes": 115,
+    "reposts": 14,
+    "quotes": 4,
+    "replies": 11,
+    "views": 7933
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "GPT-6.2 Astra and Sol take #1 and #2 on a Roboflow object-detection benchmark; OCR results and per-image cost and speed shared",
+   "url": "https://x.com/skalskip92/status/2122826476252746149",
+   "handle": "@skalskip92",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "On the text benchmark at high effort Astra costs $0.0494 and 19.7 s per image versus Sol at $0.0103 and 12.7 s, with overall scores of 88.3 and 89.0; the results are public on the Roboflow Playground.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://playground.roboflow.com/evals/ocr"
+   ],
+   "vendor": "Roboflow",
+   "posted_at": "2026-11-17T22:57:26Z",
+   "metrics": {
+    "likes": 46,
+    "reposts": 3,
+    "quotes": 1,
+    "replies": 5,
+    "views": 1530
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Amazon's CompoundingKernel: over a thousand agents write GPU kernels from scratch, with a verified kernel for all 235 problems",
+   "url": "https://x.com/dair_ai/status/2122806742048448924",
+   "handle": "@dair_ai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Reported first place on the public L1, L2 and Quantization boards of SOL-ExecBench.",
+   "kind": "paper",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Amazon",
+   "posted_at": "2026-11-17T21:39:01Z",
+   "metrics": {
+    "likes": 35,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 6,
+    "views": 2578
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Reported through a secondary summary; the paper itself was not opened.",
+    "source": null
+   }
+  },
+  {
+   "title": "ParseBench-2 public leaderboard compares over 20 open-weight models on document parsing",
+   "url": "https://x.com/jerryjliu0/status/2122820382189289946",
+   "handle": "@jerryjliu0",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "The leaderboard on Hugging Face breaks results down by tables, charts and formatting.",
+   "kind": "eval",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "LlamaIndex",
+   "posted_at": "2026-11-17T22:33:13Z",
+   "metrics": {
+    "likes": 14,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 4,
+    "views": 857
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Microsoft Research GraphRAG Zero: deployable graph-based retrieval for agents",
+   "url": "https://x.com/MSFTResearch/status/2122779387888103867",
+   "handle": "@MSFTResearch",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Microsoft Research presents it as a way to turn graph retrieval from an experiment into a deployable tool; the post gives no numbers or repo.",
+   "kind": "tool",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Microsoft Research",
+   "posted_at": "2026-11-17T19:50:20Z",
+   "metrics": {
+    "likes": 31,
+    "reposts": 7,
+    "quotes": 1,
+    "replies": 3,
+    "views": 3923
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "OpenAI GPT-6 Cyber reported to have found a major Java security flaw with Calif, under the Patch the Planet initiative",
+   "url": "https://x.com/gdb/status/2122819528858161322",
+   "handle": "@gdb",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "The source is a New York Times article linked from the post; no technical detail or CVE was seen in the post.",
+   "kind": "other",
+   "evidence": "claim",
+   "links": [
+    "https://www.nytimes.com/2026/11/17/us/politics/ai-security-bug-java.html"
+   ],
+   "vendor": "OpenAI",
+   "posted_at": "2026-11-17T22:29:50Z",
+   "metrics": {
+    "likes": 214,
+    "reposts": 20,
+    "quotes": 3,
+    "replies": 36,
+    "views": 16611
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No vulnerability details were published in the post.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 98,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://x.com/gdb/status/2122819528858161322",
+   "reason": "OpenAI Patch the Planet: a Java flaw reportedly found by GPT-6 Cyber with Calif; no component in stack.json matches and no details are public."
+  },
+  {
+   "url": "https://x.com/mustafasuleyman/status/2122825734146420904",
+   "reason": "GitHub and Microsoft write-up on AI bug reports versus fixes for open-source maintainers; no specific vulnerability, nothing in the stack named."
+  },
+  {
+   "url": "https://aka.ms/MAI-Ignite-2026",
+   "reason": "Microsoft MAI Cyber 2 Flash defensive model launch; a product announcement with no vulnerability."
+  }
+ ]
+}
