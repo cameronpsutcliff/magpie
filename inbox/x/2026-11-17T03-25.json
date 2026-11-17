@@ -1,0 +1,112 @@
+{
+ "ran_at": "2026-11-17T03:25:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-16T23:29:00Z",
+ "queries": 3,
+ "calls": 7,
+ "items": [
+  {
+   "title": "NVIDIA Nemotron for Science: open model, ~50k-question chemistry dataset and post-training recipes for research agents",
+   "url": "https://x.com/NVIDIAAI/status/2122479807858680178",
+   "handle": "@NVIDIAAI",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "NVIDIA announced Nemotron for Science at SC26: open models, datasets, tools and post-training recipes for building science agents. A companion walkthrough post-trains Nemotron 3.5 Super VL with NeMo Gym and NeMo RL; outside posts describe a LitmusBench v0.2 chemistry set of nearly 50,000 questions.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/NVIDIAAI/status/2122479807858680178",
+    "https://nvda.ws/493WJIN"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-11-16T23:59:54Z",
+   "metrics": {
+    "likes": 416,
+    "reposts": 47,
+    "quotes": 21,
+    "replies": 67,
+    "views": 31399
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Most replies were off-topic calls to bring back Jensen Huang; the few on-topic ones praised the open chemistry data and the plan-simulate-check loop. Nobody reported trying it.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "NVIDIA Nemotron-Labs-Sigma: open-weight 3B and 8B continuous diffusion language models with few-step distills",
+   "url": "https://x.com/plotarmordev/status/2122511701383733367",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "NVIDIA published 3B and 8B diffusion language models as base, instruct, few-step distilled (2, 4, 8, 16 steps) and self-speculative variants. The poster notes they need an NVIDIA GPU with custom code, no GGUF and nothing for Macs yet, and quality drops below about 16 steps, so the 2- and 4-step distills are the ones to try locally.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/collections/nvidia/nemotron-labs-sigma"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-11-17T02:06:38Z",
+   "metrics": {
+    "likes": 4,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 3,
+    "views": 472
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "InferenceBench update: Gemini 4 Carbon ranks #3 and Gemini 4 Hydrogen #8",
+   "url": "https://x.com/maksym_andr/status/2122474774580580694",
+   "handle": "@maksym_andr",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "The InferenceBench author reports new standings with Gemini 4 Carbon third and Gemini 4 Hydrogen eighth. The post shows a leaderboard image and gives no method or link in the text.",
+   "kind": "eval",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/maksym_andr/status/2122474774580580694"
+   ],
+   "vendor": "InferenceBench / Google",
+   "posted_at": "2026-11-16T23:39:54Z",
+   "metrics": {
+    "likes": 10,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 1,
+    "views": 1155
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 94,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
