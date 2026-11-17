@@ -1,0 +1,408 @@
+{
+  "ran_at": "2026-11-17T11:30:00Z",
+  "bot": "magpie-scout",
+  "prompt": "v6.1",
+  "since": "2026-11-17T03:25:00Z",
+  "queries": 10,
+  "calls": 15,
+  "items": [
+    {
+      "title": "LongCat-Video-Avatar 1.6 weights on Hugging Face: image plus audio to talking-avatar video, MIT license, with a demo Space",
+      "url": "https://x.com/victormustar/status/2122629989279412356",
+      "handle": "@victormustar",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "Meituan's LongCat-Video-Avatar 1.6 is out on Hugging Face under MIT. Hugging Face's Victor Mustar built a Space that turns one image and an audio clip into a talking-avatar video, so builders can try it without setting anything up.",
+      "kind": "model",
+      "evidence": "artifact",
+      "links": [
+        "https://huggingface.co/meituan-longcat/LongCat-Video-Avatar-1.6",
+        "https://huggingface.co/spaces/victor/LongCat-Video-Avatar-1.6"
+      ],
+      "vendor": "Meituan LongCat",
+      "posted_at": "2026-11-17T09:56:40Z",
+      "metrics": {
+        "likes": 19,
+        "reposts": 2,
+        "quotes": 0,
+        "replies": 7,
+        "views": 1277
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Sage S2.1 Flash multimodal research model: science data understanding with retrieval, coding and tool use, now supported in vLLM",
+      "url": "https://x.com/sageai_official/status/2122539305826681084",
+      "handle": "@sageai_official",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "SageAI announced S2.1 Flash, a multimodal model for research tasks that need several rounds of analysis and checking, combining scientific data understanding with search, code and tools. vLLM says it already supports the model. Replies call the benchmark charts misleading and the model too big for local use.",
+      "kind": "model",
+      "evidence": "claim",
+      "links": [
+        "https://x.com/vllm_project/status/2122591255620460863"
+      ],
+      "vendor": "SageAI",
+      "posted_at": "2026-11-17T03:56:20Z",
+      "metrics": {
+        "likes": 217,
+        "reposts": 29,
+        "quotes": 4,
+        "replies": 9,
+        "views": 12405
+      },
+      "confirmed_by": [
+        "@vllm_project"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Several repliers call the launch charts disingenuous and the model too large to run locally; no weights or paper link was visible in the post.",
+        "source": "https://x.com/Luke85953209/status/2122647886789832966"
+      },
+      "reception": {
+        "sentiment": "mixed",
+        "summary": "Replies are mostly about the charts looking cherry-picked, the model's size, and whether the API is live; nobody reports running it.",
+        "tried": false,
+        "replies_read": 11
+      }
+    },
+    {
+      "title": "Ollama on keeping coding agents fast: a changing timestamp or reasoning effort breaks the prompt cache",
+      "url": "https://x.com/ollama/status/2122531964154712541",
+      "handle": "@ollama",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "Ollama lists lessons from running Claude Code, Codex, Pi and other agents: one timestamp in the system prompt can invalidate the cache, changing reasoning effort can wipe it, and telling the agent its output was cut off makes it read what it missed. A replier measured the timestamp effect on a Mac with Gemma 3 12B on MLX: 2,513 tokens to process when appending a turn versus 10,244 with a fresh timestamp at the top.",
+      "kind": "technique",
+      "evidence": "claim",
+      "links": [
+        "https://twitter.com/togethercompute/status/2122490284768624778"
+      ],
+      "vendor": "Ollama",
+      "posted_at": "2026-11-17T03:27:09Z",
+      "metrics": {
+        "likes": 223,
+        "reposts": 12,
+        "quotes": 3,
+        "replies": 57,
+        "views": 17069
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      },
+      "reception": {
+        "sentiment": "positive",
+        "summary": "Repliers agree; one reproduced the timestamp cache miss with numbers and published a script, others add cost and context-resend notes.",
+        "tried": true,
+        "replies_read": 25
+      }
+    },
+    {
+      "title": "Claude Code team on verification loops: E2E tests, separate graders and hooks let agents check their own work, up to 10 points better task success in internal tests",
+      "url": "https://x.com/addyosmani/status/2122590683055993308",
+      "handle": "@addyosmani",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "An article shared by Addy Osmani describes how the Claude Code team (about 90% of its code written and reviewed by Claude) has agents verify work with end-to-end tests, rubric graders and review hooks. It reports a separate grader improving structured file generation success by up to 10 points over a standard prompting loop.",
+      "kind": "technique",
+      "evidence": "claim",
+      "links": [
+        "https://claude.com/blog/building-verification-loops-in-claude-code-with-skills",
+        "https://code.claude.com/docs/en/hooks"
+      ],
+      "vendor": "Anthropic",
+      "posted_at": "2026-11-17T07:20:29Z",
+      "metrics": {
+        "likes": 1243,
+        "reposts": 125,
+        "quotes": 35,
+        "replies": 89,
+        "views": 81989
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      },
+      "reception": {
+        "sentiment": "none",
+        "summary": "Replies were not read; the post is a bare article link.",
+        "tried": false,
+        "replies_read": 0
+      }
+    },
+    {
+      "title": "Omarchy next update: set up a fully offline local AI model in three clicks, no terminal",
+      "url": "https://x.com/OmarchyUpdates/status/2122555372481507719",
+      "handle": "@OmarchyUpdates",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "A coming Omarchy update turns local model setup into a three-click flow with no terminal, running models with no internet access. The change is in a public pull request with a manual page for local models.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/omacom/omarchy/pull/18907",
+        "https://github.com/omacom/omarchy/blob/quattro/manual/17-ai.md"
+      ],
+      "vendor": "Omarchy",
+      "posted_at": "2026-11-17T05:00:10Z",
+      "metrics": {
+        "likes": 21,
+        "reposts": 3,
+        "quotes": 0,
+        "replies": 3,
+        "views": 955
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "llama.cpp 1.0: llama-server refuses to start with tools or MCP on a LAN address unless an API key is set",
+      "url": "https://x.com/plotarmordev/status/2122534090880553094",
+      "handle": "@plotarmordev",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "Per this post, llama.cpp 1.0 changes llama-server so serving tools or MCP on a LAN address needs an API key, or an explicit --allow-unauthenticated-tools flag for trusted networks.",
+      "kind": "feature",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "llama.cpp",
+      "posted_at": "2026-11-17T03:35:36Z",
+      "metrics": {
+        "likes": 8,
+        "reposts": 1,
+        "quotes": 0,
+        "replies": 4,
+        "views": 675
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "SGLang and Baseten: about 2,500 tokens/sec at batch size 1 for DeepSeek v4.1 Flash on Vera Rubin, up to 1.7x GB300",
+      "url": "https://x.com/sgl_project/status/2122550292516594056",
+      "handle": "@sgl_project",
+      "group": "opensource",
+      "origin": "sweep",
+      "summary": "SGLang shares Baseten's test numbers from the SGLang Summit: roughly 2,500 tokens per second at batch size 1 for DeepSeek v4.1 Flash on Vera Rubin, up to 1.7 times faster than GB300. They say the low-latency optimizations are being brought to open source.",
+      "kind": "technique",
+      "evidence": "claim",
+      "links": [
+        "https://twitter.com/saltyph/status/2122476616593047645"
+      ],
+      "vendor": "SGLang / Baseten",
+      "posted_at": "2026-11-17T04:39:59Z",
+      "metrics": {
+        "likes": 20,
+        "reposts": 1,
+        "quotes": 0,
+        "replies": 5,
+        "views": 1494
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Liquid d1-2B reads webcam gestures in about 68 ms on an M5 Max MacBook Pro, fully local with no text output",
+      "url": "https://x.com/plotarmordev/status/2122616937633202277",
+      "handle": "@plotarmordev",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "Ivan Fioravanti ran Liquid AI's d1-2B on an M5 Max MacBook Pro as a gesture reader: about 68 ms per decision, roughly 14 decisions a second, entirely local and producing no tokens.",
+      "kind": "demo",
+      "evidence": "measured",
+      "links": [
+        "https://twitter.com/ivanfioravanti/status/2122052393768542270"
+      ],
+      "vendor": "Liquid AI",
+      "posted_at": "2026-11-17T09:04:48Z",
+      "metrics": {
+        "likes": 4,
+        "reposts": 0,
+        "quotes": 0,
+        "replies": 3,
+        "views": 504
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "d1-Omni receipt parsing test: 98% on dates, 85% on company names, 52% on full addresses over 100 receipts",
+      "url": "https://x.com/mervenoyann/status/2122645201982538007",
+      "handle": "@mervenoyann",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "Hugging Face's Merve Noyan tried d1-Omni in her vision harness on 100 receipts: 98% accuracy on dates, 85% on company names, 52% on full addresses. She still prefers small dedicated OCR models for now.",
+      "kind": "eval",
+      "evidence": "measured",
+      "links": [],
+      "vendor": "Liquid AI",
+      "posted_at": "2026-11-17T10:57:07Z",
+      "metrics": {
+        "likes": 22,
+        "reposts": 1,
+        "quotes": 0,
+        "replies": 9,
+        "views": 1206
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "GLM 5.3 on four DGX Sparks: a community K4 quant picked from 12 tested, closer to BF16 than NVIDIA's NVFP4 and smaller",
+      "url": "https://x.com/plotarmordev/status/2122631581814731014",
+      "handle": "@plotarmordev",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "After 12 quantizations tested over three days, MiaAI Lab's pick for GLM 5.3 on four Sparks is a K4 quant that sits closer to BF16 than NVIDIA's NVFP4 and leaves room for a larger KV cache. The Hugging Face link is in the original thread.",
+      "kind": "technique",
+      "evidence": "claim",
+      "links": [
+        "https://twitter.com/MiaAI_lab/status/2122328290543227267"
+      ],
+      "vendor": "MiaAI Lab",
+      "posted_at": "2026-11-17T10:03:00Z",
+      "metrics": {
+        "likes": 4,
+        "reposts": 0,
+        "quotes": 0,
+        "replies": 3,
+        "views": 395
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "CRAM: an energy-based model that learns Sudoku and maze reasoning about 1,000x faster than looped reasoning models",
+      "url": "https://x.com/askalphaxiv/status/2122640389387763781",
+      "handle": "@askalphaxiv",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "A paper introduces CRAM, an energy-based model, and argues that Sudoku and maze benchmarks used for looped reasoning models can be solved by much simpler approaches. The title claims a 1,000x speedup over looped models.",
+      "kind": "paper",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "Academic",
+      "posted_at": "2026-11-17T10:38:00Z",
+      "metrics": {
+        "likes": 17,
+        "reposts": 8,
+        "quotes": 1,
+        "replies": 0,
+        "views": 2051
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Microsoft paper on interpretable weight-space programming: building transparent transformers and brain encoding models, including LLM-written weights",
+      "url": "https://x.com/askalphaxiv/status/2122595056893002015",
+      "handle": "@askalphaxiv",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "A Microsoft paper explores constructing transformer weights by programming them in an interpretable way, and tests whether LLMs can write those weights to build working models from scratch.",
+      "kind": "paper",
+      "evidence": "claim",
+      "links": [],
+      "vendor": "Microsoft Research",
+      "posted_at": "2026-11-17T07:37:52Z",
+      "metrics": {
+        "likes": 67,
+        "reposts": 10,
+        "quotes": 0,
+        "replies": 2,
+        "views": 3283
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    }
+  ],
+  "saved_rejected": [
+    {
+      "url": "https://x.com/farbood/status/2122449011886244058",
+      "reason": "Offline survival library download counter, not an AI capability."
+    },
+    {
+      "url": "https://x.com/edu_andy24/status/2122292402245210619",
+      "reason": "Fan fiction video, not AI."
+    },
+    {
+      "url": "https://x.com/projectmalfoid/status/2122033651965972711",
+      "reason": "Fan project progress update, not AI (already in the archive)."
+    }
+  ],
+  "list_posts_read": 94,
+  "list_pages": 1,
+  "security_forwarded": [],
+  "security_na": [
+    {
+      "url": "https://x.com/plotarmordev/status/2122534090880553094",
+      "reason": "llama.cpp default hardening note for LAN tool serving; llama.cpp is not in the fleet stack and no vulnerability is reported."
+    }
+  ]
+}
