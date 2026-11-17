@@ -1,17 +1,17 @@
 {
- "updated_at": "2026-11-17T11:36:00Z",
+ "updated_at": "2026-11-17T15:38:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 20,
+ "calls_used_today": 33,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-17T11:30:00Z",
+  "ran_at": "2026-11-17T15:30:00Z",
   "items": 12,
   "queries": 10,
-  "deep_reads": 3,
+  "deep_reads": 0,
   "rechecks": 0,
-  "flagged": 3,
-  "saved_in": 2,
+  "flagged": 0,
+  "saved_in": 0,
   "saved_kept": 0,
   "videos": 0,
   "security_forwarded": 0,
@@ -281,9 +281,12 @@
   "Roster review 2026-11-14 (Saturday, so no Sunday drafts): no new owner_saves authors (archive unchanged since Nov 13 07:55 CT). Updated last_qualifying_post for 51 accounts from the 14 days of sweep files. No promotions yet: no trial has 2+ items in kept sweep files; @divagr1925 (2), @EpochAIResearch (3) and @_albertgu cross 14 days on 2026-11-15. Scanned Magpie editions for off-roster X authors: only @paperswithcodee (aggregator) and @JohnHYao surfaced; none added. Other mentioned handles are GitHub maintainers, not X-verified.",
   "Roster review 2026-11-15 (Sunday, drafts written): 5 X reads + 2 list adds. Added trials @SergioPaniego and @jundotkim (2 artifact/measured posts each in 30 days); promoted @EpochAIResearch to active (3 sweep items); @divagr1925 has 1 sweep item and @_albertgu none, so no promotion. Retired curated @DarioAmodei, @ssokota, @zicokolter, @AndrewYNg (no qualifying post in 45 days, confirmed with one batched read; @minimaxir has psnek and a prices post, so kept). @mem0ai kept as trial: no artifact or measurement since 2026-10-07 (blog articles and event posts only), recheck next review. Owner saves: @danikkk_wqs (engagement-bait listicles, vice-excluded per prior review) and @RoundtableSpace (crypto aggregator, on avoid) each have 2 saves but fail the screen; not added. Flag for owner: @JensenHuang (owner_requested) still has no qualifying post since 2026-09-03; left active trial. Skipped for 1 qualifying post or over 1 in 5 promotion: @_ellisbrown, @aviral_kumar2, @zhijianliu, @omnigent_ai. Pruning: no inbox/x files older than 14 days.",
   "Sweep 03:30Z: calls_used_today restarted at 19 for the new UTC day. List page 1 reached back to 02:14Z the day before, so list members were fully covered; 10 OR searches covered 212 curated non-list accounts. The bookmarks plugin call returned only already-seen saves, so saved_in is 0. Qwen4-Max replies include unverified third-party parameter counts (358B total, 71B active), not used.",
-  "Sweep 11:30Z: X caps search_posts_all at 25 per call, but all 6 group searches returned under 25 for the 8-hour window, so no extra pages were needed. MAGPIE_GITHUB_TOKEN was unset on the box, so the sweep was committed locally and not pushed. calls_used_today restarted for Central day 2026-11-17: 15 sweep calls plus 5 from the 10:35Z roster review."
+  "Sweep 11:30Z: X caps search_posts_all at 25 per call, but all 6 group searches returned under 25 for the 8-hour window, so no extra pages were needed. MAGPIE_GITHUB_TOKEN was unset on the box, so the sweep was committed locally and not pushed. calls_used_today restarted for Central day 2026-11-17: 15 sweep calls plus 5 from the 10:35Z roster review.",
+  "curated handles @bot, @code, @droid, @v0 are generic words; @bot is a spam reply account that floods from: searches. Consider removing @bot from x-accounts.json (owner-controlled config)."
  ],
- "errors": [],
+ "errors": [
+  "2026-11-17 15:30Z: @bot (devtools OR query) floods results with replies telling users it is sending things to their 'Grok Bot' (spam, ignored as data); removed from:bot from the query. Builders and devtools OR searches hit the 25-result cap; builders paged once, devtools rerun without @bot."
+ ],
  "follows_today": 0,
  "last_roster_review": {
   "ran_at": "2026-11-17T10:35:00Z",
@@ -334,5 +337,5 @@
  "horizon_triggered": [],
  "calls_day": "2026-11-17",
  "roster_review_calls": 5,
- "follows_note": "2026-11-17 11:30Z sweep: no browser available, follows skipped."
+ "follows_note": "2026-11-17 15:30Z sweep: no browser available, follows skipped."
 }

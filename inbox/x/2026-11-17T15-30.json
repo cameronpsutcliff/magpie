@@ -1,0 +1,367 @@
+{
+ "ran_at": "2026-11-17T15:30:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-17T11:30:00Z",
+ "queries": 10,
+ "calls": 13,
+ "items": [
+  {
+   "title": "Mercury 3 Preview on ARC-AGI (verified): 61.8% ARC-AGI-2 at $0.06 per task, first diffusion model evaluated, up to 1,743 tokens per second",
+   "url": "https://x.com/arcprize/status/2122706983602000072",
+   "handle": "@arcprize",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "ARC Prize published verified results for Inception's Mercury 3 Preview: 88.5% on ARC-AGI-1 and 61.8% on ARC-AGI-2 at a few cents per task, with throughput near 1,000 output tokens per second. Builders get a reproducible look at what a diffusion language model does on reasoning tasks.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://arcprize.org/leaderboard",
+    "https://github.com/arcprize/arc-agi-benchmarking"
+   ],
+   "vendor": "Inception",
+   "posted_at": "2026-11-17T15:02:37Z",
+   "metrics": {
+    "likes": 14,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 2,
+    "views": 922
+   },
+   "confirmed_by": [
+    "@_inception_ai"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "LoRA adapter makes Qwen3.8-27B a stronger agent behind the Pi harness: SWE-Bench Pro Hard subset 29% to 63%, 55-62% fewer tool calls",
+   "url": "https://x.com/yb2698/status/2122685012969398369",
+   "handle": "@yb2698",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A released LoRA adapter tunes Qwen3.8-27B to the Pi coding harness, reporting 29% to 63% on a 51-task SWE-Bench Pro Hard subset and 40% to 56% on Terminal-Bench 2.1, using far fewer tool calls. More harness-specific adapters are promised.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/harness-hub/Qwen3.8-27B-pi-adapted"
+   ],
+   "vendor": "Hugging Face harness-hub",
+   "posted_at": "2026-11-17T13:35:19Z",
+   "metrics": {
+    "likes": 186,
+    "reposts": 25,
+    "quotes": 11,
+    "replies": 19,
+    "views": 12620
+   },
+   "confirmed_by": [
+    "@ClementDelangue"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Gains are on a small 51-task subset and self-reported; not independently reproduced yet.",
+    "source": null
+   }
+  },
+  {
+   "title": "GLM-5.3-Flash on two DGX Sparks: switching vLLM to TensorFold lifts 4-stream throughput from 54.6 to 85.2 tok/s, split into engine, draft model and dense-layer quantization",
+   "url": "https://x.com/wei_wang/status/2122679409362575767",
+   "handle": "@wei_wang",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A home-lab test on the same two DGX Sparks and same scripts compared five configurations, with each stream given a different prompt, and attributes the speedup to three separate pieces. Full report and raw data are on GitHub.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/Tobiasris/glm-5.3-flash-dgx-spark-benchmark",
+    "https://forums.developer.nvidia.com/t/389221"
+   ],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-17T13:13:03Z",
+   "metrics": {
+    "likes": 3,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 341
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Hugging Face's 1,000-agent swarm on ELIZA-2026: agents spent most time waiting on merges and context, only 40-60 of 1,000 calling the model at once",
+   "url": "https://x.com/Thom_Wolf/status/2122673947409858730",
+   "handle": "@Thom_Wolf",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Hugging Face describes scaling a swarm of over 1,000 DeepSeek V4.1 Flash agents on a couple of B200 nodes to build PyBot, finding the bottlenecks in git merges, tests and context re-reading rather than GPUs (about 130 tokens read per token written). Swarm tooling (flock, msgboard) is promised in the coming days.",
+   "kind": "technique",
+   "evidence": "claim",
+   "links": [
+    "https://github.com/huggingface/pybot"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-17T12:51:21Z",
+   "metrics": {
+    "likes": 79,
+    "reposts": 11,
+    "quotes": 5,
+    "replies": 34,
+    "views": 5699
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Tooling and detailed results not yet released, so the numbers cannot be checked.",
+    "source": null
+   }
+  },
+  {
+   "title": "BAAI PhysCapBench: 1,500-sequence benchmark of how well video captions preserve real-world physics, with physical captions cutting world-model error",
+   "url": "https://x.com/BAAIBeijing/status/2122691229028630955",
+   "handle": "@BAAIBeijing",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "BAAI introduced a benchmark scoring video captions on seven physical dimensions across third-person and egocentric scenes, and reports that physics-grounded captions reduce reconstruction error in world models and improve robot policy success on RoboTwin 2.0. BAAI says everything is open-sourced.",
+   "kind": "eval",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "BAAI",
+   "posted_at": "2026-11-17T14:00:01Z",
+   "metrics": {
+    "likes": 4,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 2,
+    "views": 159
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Primary repo or paper link could not be confirmed from the post text.",
+    "source": null
+   }
+  },
+  {
+   "title": "Ant Group's Inclusion AI introduces Duo, a reciprocal world model for real-time audio-video interaction, ~708 ms end-to-end latency",
+   "url": "https://x.com/TheInclusionAI/status/2122707457634177125",
+   "handle": "@TheInclusionAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Inclusion AI presents Duo v1, which models an agent's intent and its audiovisual realization together. On 30 real-time duplex interactions (180 checks) it reports 100% on language, speech and identity, 96.7% emotion consistency, 73.3% content responsiveness and about 708 ms latency, with an arXiv paper.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Inclusion AI",
+   "posted_at": "2026-11-17T15:04:30Z",
+   "metrics": {
+    "likes": 6,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 141
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Small self-run evaluation; arXiv link not confirmed from post text.",
+    "source": null
+   }
+  },
+  {
+   "title": "Ling 3.0 Flash Sante on two DGX Sparks: medical QA reproduces model-card numbers on two of three benchmarks (MedQA 94.6%, MedMCQA 82.4%), MedXpertQA falls short at 45.0%",
+   "url": "https://x.com/sudoingX/status/2122701352883442152",
+   "handle": "@sudoingX",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A one-week local test ran 500 questions per benchmark at the same settings and compared to the model card: two benchmarks matched, the hardest one landed about 5 points below the card.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Ling / inclusionAI",
+   "posted_at": "2026-11-17T14:40:15Z",
+   "metrics": {
+    "likes": 3,
+    "reposts": 0,
+    "quotes": 1,
+    "replies": 3,
+    "views": 852
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "SenseTime releases sensenova-loop-9b weights on Hugging Face under Apache 2.0",
+   "url": "https://x.com/aitrackerbot/status/2122672871751168176",
+   "handle": "@aitrackerbot",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A tracker account reports SenseTime's 9B sensenova-loop model is now open-weight with an Apache 2.0 license on Hugging Face.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "SenseTime",
+   "posted_at": "2026-11-17T12:47:04Z",
+   "metrics": {
+    "likes": 49,
+    "reposts": 3,
+    "quotes": 3,
+    "replies": 2,
+    "views": 6826
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Secondhand report; Hugging Face link not confirmed in this pass.",
+    "source": null
+   }
+  },
+  {
+   "title": "Self-Improving Memory: model discovers its own memory skills and trains them into its weights",
+   "url": "https://x.com/jaseweston/status/2122691693543817397",
+   "handle": "@jaseweston",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A new method meta-optimizes memory skills from the model's own runs, then distills the gains into the weights; the post links a blog and a six-part thread.",
+   "kind": "paper",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Meta FAIR",
+   "posted_at": "2026-11-17T14:01:52Z",
+   "metrics": {
+    "likes": 143,
+    "reposts": 22,
+    "quotes": 6,
+    "replies": 1,
+    "views": 4129
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No numbers visible in the opening post.",
+    "source": null
+   }
+  },
+  {
+   "title": "Agent toolkit for training an object detector for about $6: keypoint and OCR models as agent tools plus an end-to-end detection trainer",
+   "url": "https://x.com/mervenoyann/status/2122700240922833075",
+   "handle": "@mervenoyann",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Merve packaged her favorite vision models as tools for an agent to call, plus a trainer that goes from labeling through VLM-as-judge to training and eval, and added decision-model support and newer VLMs. A talk and GitHub repo accompany it.",
+   "kind": "tool",
+   "evidence": "claim",
+   "links": [
+    "https://www.youtube.com/watch?v=dKcTBQzR7jI"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-17T14:35:49Z",
+   "metrics": {
+    "likes": 73,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 10,
+    "views": 2774
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repository link is in a follow-up post and was not checked.",
+    "source": null
+   }
+  },
+  {
+   "title": "tiny-voca text-to-speech ported to an ESP32-S3, generating audio faster than real time",
+   "url": "https://x.com/ngxson/status/2122654022930706917",
+   "handle": "@ngxson",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Xuan-Son Nguyen ran the 4.5M-parameter tiny-voca TTS fully on a microcontroller, with most delay coming from phonemization.",
+   "kind": "demo",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "tiny-voca",
+   "posted_at": "2026-11-17T11:32:10Z",
+   "metrics": {
+    "likes": 84,
+    "reposts": 9,
+    "quotes": 0,
+    "replies": 5,
+    "views": 2531
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "TensorFold on a Mac Studio M5 Ultra generates MiniMax-Image in 12.6 s versus 80.6 s on a DGX Spark, whose port is new",
+   "url": "https://x.com/plotarmordev/status/2122676127496036404",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A head-to-head comparison attributes the gap to a tuned Mac build that keeps the model loaded versus a brand-new Spark port that spends half its time on setup; a rematch is promised.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-17T13:00:00Z",
+   "metrics": {
+    "likes": 102,
+    "reposts": 8,
+    "quotes": 0,
+    "replies": 14,
+    "views": 7714
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 94,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
