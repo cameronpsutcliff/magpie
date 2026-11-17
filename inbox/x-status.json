@@ -1,22 +1,22 @@
 {
- "updated_at": "2026-11-17T15:38:00Z",
+ "updated_at": "2026-11-17T19:35:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 33,
+ "calls_used_today": 43,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-17T15:30:00Z",
-  "items": 12,
-  "queries": 10,
-  "deep_reads": 0,
+  "ran_at": "2026-11-17T19:25:00Z",
+  "items": 17,
+  "queries": 8,
+  "deep_reads": 3,
   "rechecks": 0,
   "flagged": 0,
-  "saved_in": 0,
+  "saved_in": 2,
   "saved_kept": 0,
   "videos": 0,
-  "security_forwarded": 0,
-  "list_posts_read": 94,
-  "list_pages": 1
+  "security_forwarded": 1,
+  "list_posts_read": 189,
+  "list_pages": 2
  },
  "roster": {
   "curated": 223,
@@ -285,7 +285,8 @@
   "curated handles @bot, @code, @droid, @v0 are generic words; @bot is a spam reply account that floods from: searches. Consider removing @bot from x-accounts.json (owner-controlled config)."
  ],
  "errors": [
-  "2026-11-17 15:30Z: @bot (devtools OR query) floods results with replies telling users it is sending things to their 'Grok Bot' (spam, ignored as data); removed from:bot from the query. Builders and devtools OR searches hit the 25-result cap; builders paged once, devtools rerun without @bot."
+  "No browser available: follows skipped this sweep.",
+  "Authors missing from list responses unless expansions=author_id is passed with post.fields author_id."
  ],
  "follows_today": 0,
  "last_roster_review": {

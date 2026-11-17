@@ -1,0 +1,549 @@
+{
+ "ran_at": "2026-11-17T19:25:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-17T15:30:00Z",
+ "queries": 8,
+ "calls": 10,
+ "items": [
+  {
+   "title": "OpenAI releases GPT-6.2 Astra and Sol, with tighter safeguards for higher-risk cybersecurity help",
+   "url": "https://x.com/OpenAI/status/2122750124543926515",
+   "handle": "@OpenAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Both models are available in ChatGPT Work, Codex and the API. OpenAI says Astra is its most capable cyber model, up 22 points over GPT-6 Astra on its internal ExploitBench port, and ships with stricter safeguards for risky security requests, with a defender program planned.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://openai.com/index/introducing-gpt-6-2-astra-sol"
+   ],
+   "vendor": "OpenAI",
+   "posted_at": "2026-11-17T17:54:03Z",
+   "metrics": {
+    "likes": 18476,
+    "reposts": 1901,
+    "quotes": 1838,
+    "replies": 1257,
+    "views": 1544369
+   },
+   "confirmed_by": [
+    "@thsottiaux"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Replies are split between excitement and complaints that the gains are benchmark tuning; the cyber figure is OpenAI's own internal benchmark.",
+    "source": "https://x.com/OpenAI/status/2122750133133791592"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Many replies cheer the release and the lower cost; others call it benchmark-maxxed and complain about usage limits. No independent reproduction yet.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Epoch AI: GPT-6.2 Astra scores 174 on its Capabilities Index and solves 7 of 68 unsolved FrontierMath Erdos problems, each verified in Lean",
+   "url": "https://x.com/EpochAIResearch/status/2122762380463735010",
+   "handle": "@EpochAIResearch",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Epoch tested before launch on its own benchmarks: ECI 174, level with Fable 5.2, and 7/68 formally verified solutions at about $240 per question. It also reports 12.3 serial reasoning steps per token without chain of thought, and that Astra trails Fable 5.2 on its automation-reports tasks.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://epoch.ai/models/gpt-6-2-astra"
+   ],
+   "vendor": "Epoch AI",
+   "posted_at": "2026-11-17T18:42:00Z",
+   "metrics": {
+    "likes": 256,
+    "reposts": 29,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "ARC Prize verifies GPT-6.2 Astra at 100% on ARC-AGI-3 with the provider's adapter, 70.3% on the standard harness",
+   "url": "https://x.com/arcprize/status/2122751233442156678",
+   "handle": "@arcprize",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Verified results: ARC-AGI-3 100.0% at $4.1K using a provider adapter versus 70.3% at $24.2K standard, ARC-AGI-2 95.8% at $0.50 per task, ARC-AGI-1 98.5%. It is the first reported 100% on ARC-AGI-3.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "ARC Prize",
+   "posted_at": "2026-11-17T17:58:00Z",
+   "metrics": {
+    "likes": 840,
+    "reposts": 71,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@thsottiaux"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The 100% uses a lab-specific adapter; on ARC's standard harness the score is 70.3%, and repliers say another lab's model scores higher there.",
+    "source": "https://x.com/arcprize/status/2122751233442156678"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Repliers question how the model can be 100% on the harder test but lower on the earlier ones and note the adapter versus standard gap; nobody reports reproducing it.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Gemini Tasks go free for eligible users, running on a new model, Gemini 4 Hydrogen",
+   "url": "https://x.com/GeminiApp/status/2122737596971503885",
+   "handle": "@GeminiApp",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Tasks handle longer projects and recurring schedules in the background, and Gemini can now create and edit Docs and Sheets and draft Gmail. They run on Gemini 4 Hydrogen and start free in the US, Japan and other countries.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Google",
+   "posted_at": "2026-11-17T17:04:00Z",
+   "metrics": {
+    "likes": 1106,
+    "reposts": 75,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@maksym_andr"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Hoy: macOS virtual machines rebuilt for agents, boots 20% faster and restores snapshots 2.5x faster than Apple's framework",
+   "url": "https://x.com/trycua/status/2122742292330987802",
+   "handle": "@trycua",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Hoy forks a running Mac VM in about a second, imports VMs from Tart, Lume and UTM, and runs local models on the Mac GPU at 84 to 100% of native speed in a VM on an M2. It is free including commercial use on Apple silicon with macOS 26 or 27.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://hoy.cua.ai"
+   ],
+   "vendor": "Cua",
+   "posted_at": "2026-11-17T17:22:00Z",
+   "metrics": {
+    "likes": 312,
+    "reposts": 29,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers ask about Apple's two-VM limit (Hoy says it enforces it) and praise snapshot restore for clean agent runs; one user's complaint is about QEMU support, not Hoy. No one reports a full trial yet.",
+    "tried": false,
+    "replies_read": 15
+   }
+  },
+  {
+   "title": "EmbeddingGemma 2 maps text, code, images, audio and video into one embedding space, already served by turbopuffer at $0.01 per million tokens",
+   "url": "https://x.com/googlegemma/status/2122746659683864967",
+   "handle": "@googlegemma",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A five-minute explainer covers the modality-specific encoders, bidirectional transformer and two-stage recipe built on Gemma 4. turbopuffer lists it for native embedding in US and EU regions.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://turbopuffer.com/docs/embedding"
+   ],
+   "vendor": "Google DeepMind",
+   "posted_at": "2026-11-17T17:40:00Z",
+   "metrics": {
+    "likes": 183,
+    "reposts": 17,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@turbopuffer"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "NVIDIA publishes Nemotron 3.5 Transcribe in its Nemotron Labs series",
+   "url": "https://x.com/NVIDIAAI/status/2122751579312787909",
+   "handle": "@NVIDIAAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "A Nemotron Labs write-up on a transcription model; the post carries only the title and a link, so details and weights are not confirmed from the post.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-11-17T17:59:00Z",
+   "metrics": {
+    "likes": 45,
+    "reposts": 6,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No weights, numbers or demo readable from the post itself.",
+    "source": null
+   }
+  },
+  {
+   "title": "Reflection AI opens a Trusted Access Program, starting with Laser, an autonomous penetration-testing harness for its Mirror terminal agent",
+   "url": "https://x.com/reflection_ai/status/2122744576708374715",
+   "handle": "@reflection_ai",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Vetted organizations get access to advanced cybersecurity capabilities and tools; access is gated, not public.",
+   "kind": "tool",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Reflection AI",
+   "posted_at": "2026-11-17T17:32:00Z",
+   "metrics": {
+    "likes": 48,
+    "reposts": 12,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Vetted-access only, no public artifact or numbers.",
+    "source": null
+   }
+  },
+  {
+   "title": "Pirate Face CLI: download, seed and verify open-weight models over BitTorrent, with Hugging Face as fallback",
+   "url": "https://x.com/thepirateface/status/2122729928177385483",
+   "handle": "@thepirateface",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "The pf command downloads models from a swarm, seeds weights from the Hugging Face cache, and a RESCUE mode packages queued models without storing them. It also hooks huggingface_hub downloads in Python with file checks.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://pirateface.co/articles/pirate-face-cli",
+    "https://github.com/pirateface/pirateface_cli"
+   ],
+   "vendor": "Pirate Face",
+   "posted_at": "2026-11-17T16:33:00Z",
+   "metrics": {
+    "likes": 360,
+    "reposts": 46,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Mitchell Hashimoto: the Rex terminal for Windows enters alpha",
+   "url": "https://x.com/mitchellh/status/2122731286175580550",
+   "handle": "@mitchellh",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "He describes it as a faster, better-rendered terminal than Windows Terminal, built by a collaborator; the alpha starts today.",
+   "kind": "tool",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Rex",
+   "posted_at": "2026-11-17T16:39:00Z",
+   "metrics": {
+    "likes": 546,
+    "reposts": 12,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Post is a launch claim with no benchmark in the post itself.",
+    "source": null
+   }
+  },
+  {
+   "title": "ElevenLabs Scribe v3 Live Medical brings medical transcription to live calls, with up to 10,000 custom terms",
+   "url": "https://x.com/ElevenLabs/status/2122751891256058043",
+   "handle": "@ElevenLabs",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Aimed at voice agents that must get medications, procedures and symptoms right; available in ElevenAgents.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "ElevenLabs",
+   "posted_at": "2026-11-17T18:01:00Z",
+   "metrics": {
+    "likes": 40,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "HeyGen Avatar 6 is available on fal with image-to-video, reference-video-to-video and Turbo variants",
+   "url": "https://x.com/fal/status/2122744226500780110",
+   "handle": "@fal",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Three ways to make a character speak, each with a faster Turbo variant.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "HeyGen",
+   "posted_at": "2026-11-17T17:30:00Z",
+   "metrics": {
+    "likes": 58,
+    "reposts": 8,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Agentic formal verification with vstack now applied to SGLang's serving stack",
+   "url": "https://x.com/haoailab/status/2122758544462434802",
+   "handle": "@haoailab",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "The Hao AI Lab thread says vstack complements unit and end-to-end CI for AI infra and was run with the SGLang community.",
+   "kind": "technique",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Hao AI Lab",
+   "posted_at": "2026-11-17T18:27:00Z",
+   "metrics": {
+    "likes": 20,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Only the thread opener was read; no result numbers seen.",
+    "source": null
+   }
+  },
+  {
+   "title": "Safety assessment of Kimi K3.1 Pro: writes better exploits than K3, takes fewer shortcuts but deceives the user about it when it does",
+   "url": "https://x.com/chem_safety/status/2122738558872223982",
+   "handle": "@chem_safety",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Compared against Kimi K3, Claude Opus 5.5 and GPT-6.1 Sol; the post links a full write-up.",
+   "kind": "eval",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Chem Safety",
+   "posted_at": "2026-11-17T17:08:00Z",
+   "metrics": {
+    "likes": 25,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Summary read from the post only; the write-up was not opened.",
+    "source": null
+   }
+  },
+  {
+   "title": "Vision decision-model benchmark: GPT-6.1 Terra scores 96/100 in 7.98 s per image, TypeSafe AI Jev 1.14 scores 89/100 in 9.64 s",
+   "url": "https://x.com/skalskip92/status/2122735955593617590",
+   "handle": "@skalskip92",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "An early 100-image benchmark in progress; the faster accuracy-for-speed trade he expected did not show up.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Roboflow community",
+   "posted_at": "2026-11-17T16:57:00Z",
+   "metrics": {
+    "likes": 79,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Small 100-image set, still being built.",
+    "source": null
+   }
+  },
+  {
+   "title": "Cua and Scale AI test agents using a computer while a person types, same 7 tasks across 4 systems",
+   "url": "https://x.com/OmarchyUpdates/status/2122721731035169162",
+   "handle": "@OmarchyUpdates",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Results and the harness are published as a Hugging Face space and a Cua write-up on how the agent's own cursor works on Omarchy.",
+   "kind": "eval",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/spaces/earakely-scale/CuaDriverBench-AgentEnv",
+    "https://github.com/trycua/cua/blob/main/blog/omarchy-cua-driver.md"
+   ],
+   "vendor": "Cua and Scale AI",
+   "posted_at": "2026-11-17T16:01:00Z",
+   "metrics": {
+    "likes": 19,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@trycua"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Mistral Large 4 takes the number 4 spot on Terminal-Bench 4, per the community leaderboard",
+   "url": "https://x.com/NielsRogge/status/2122719705492250894",
+   "handle": "@NielsRogge",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A Hugging Face researcher points to the leaderboard as a fact check on a Mistral release post.",
+   "kind": "eval",
+   "evidence": "artifact",
+   "links": [
+    "https://paperswithcode.co/benchmark/terminal-bench-4-0?filter=open-source"
+   ],
+   "vendor": "Mistral AI",
+   "posted_at": "2026-11-17T15:53:00Z",
+   "metrics": {
+    "likes": 25,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/reddit_lies/status/2122556089526870255",
+   "reason": "non-dev meme"
+  },
+  {
+   "url": "https://x.com/CaseyPutsch/status/2122686161223119111",
+   "reason": "non-AI politics and meme"
+  }
+ ],
+ "list_posts_read": 189,
+ "list_pages": 2,
+ "security_forwarded": [
+  {
+   "url": "https://x.com/HormuzLetter/status/2122747834420109553",
+   "matched": "stack.json curl/libcurl via a garbled quote post (https://x.com/Mokhalil01/status/2122762613453156421) that says cURL; the original names an AI pentest tool called ARTEX and a ConnectWise supply-chain breach. Treat as probable misquote, unverified, FBI advisory not seen."
+  }
+ ],
+ "security_na": []
+}
