@@ -1,0 +1,301 @@
+{
+ "ran_at": "2026-11-18T23:30:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-18T19:20:00Z",
+ "queries": 3,
+ "calls": 8,
+ "items": [
+  {
+   "title": "Gemini 4 Neon released, a model between Carbon and Hydrogen, in the Gemini app and API",
+   "url": "https://x.com/OfficialLoganK/status/2123167791922741362",
+   "handle": "@OfficialLoganK",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Google released Gemini 4 Neon, positioned for fast reasoning, coding and research, available in AI Studio, the API and the Gemini app for Pro and Ultra subscribers. It claims up to 39% on SWE-sweep, which depends heavily on the agent harness.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+    "https://gemini.google"
+   ],
+   "vendor": "Google",
+   "posted_at": "2026-11-18T21:33:42Z",
+   "metrics": {
+    "likes": 6840,
+    "reposts": 499,
+    "quotes": 366,
+    "replies": 440
+   },
+   "confirmed_by": [
+    "@GeminiApp"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The 39% SWE-sweep score depends on the harness; with mini-swe-agent it is 12.8%, a smaller gain.",
+    "source": "https://x.com/KLieret/status/2123172740043505968"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Sampled quotes and search results are mostly launch repeats and low-reach benchmark claims; an eval researcher noted the harness dependence and a roster developer complained about model naming. No independent reproduction found yet.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "TensorFold 1.2.10 speeds up Qwen3.8-27B decode 57% on GB10 with a shared prefix",
+   "url": "https://x.com/ashxhart/status/2123191914816033050",
+   "handle": "@ashxhart",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "TensorFold 1.2.10 reports Qwen3.8-27B decoding 57% faster on a GB10 at 8 streams with a shared 32K prefix, and DeepSeek-V4.1 cold prompts 5-7% faster on an M5 Ultra. It also adds background responses, launch and rm commands, and Qwen3-Embedding and Unlimited-OCR-2 on Metal.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "http://TensorFold.dev"
+   ],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-18T23:09:34Z",
+   "metrics": {
+    "likes": 23,
+    "reposts": 2,
+    "quotes": 1,
+    "replies": 3
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Gains are self-reported on the maintainers' own hardware and test.",
+    "source": null
+   }
+  },
+  {
+   "title": "Drex classifier is now a DuckDB community extension for per-row probabilities in SQL",
+   "url": "https://x.com/NaceAI/status/2123193460396314927",
+   "handle": "@NaceAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Nace AI released Drex as a DuckDB community extension: one prompt_drex() function returns calibrated probabilities for each row, installable locally with INSTALL drex FROM community on Linux, macOS and Windows.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://console.nace.ai/docs/integrations/duckdb"
+   ],
+   "vendor": "Nace AI",
+   "posted_at": "2026-11-18T23:15:42Z",
+   "metrics": {
+    "likes": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "RecSA extrapolates a 32K-trained Qwen3-4B to 2M tokens at logarithmic attention cost",
+   "url": "https://x.com/haoailab/status/2123134363290452046",
+   "handle": "@haoailab",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "RecSA builds a tree over the KV cache so each query searches level by level; trained only at 32K, it scores 60.5 on RULER at 1M against 40.0 for the strongest baseline, with 3.2x faster prefill and 3.8x faster decode at 524K on one H200. Code, kernels and paper are released.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://haoailab.com/blogs/recsa/"
+   ],
+   "vendor": "Hao AI Lab",
+   "posted_at": "2026-11-18T19:20:52Z",
+   "metrics": {
+    "likes": 27,
+    "reposts": 6,
+    "quotes": 0,
+    "replies": 2
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Inworld releases voice-isolator, an Apache 2.0 real-time voice isolation model",
+   "url": "https://x.com/victormustar/status/2123151425375187260",
+   "handle": "@victormustar",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Inworld published voice-isolator weights on Hugging Face under Apache 2.0; a Hugging Face engineer reports it works in real time after his own tests.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/inworld/voice-isolator"
+   ],
+   "vendor": "Inworld",
+   "posted_at": "2026-11-18T20:28:40Z",
+   "metrics": {
+    "likes": 189,
+    "reposts": 19,
+    "quotes": 2,
+    "replies": 6
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Nemotron-Labs-Sigma generates blocks of tokens in parallel, with open models and a paper",
+   "url": "https://x.com/NVIDIAAI/status/2123144524746924455",
+   "handle": "@NVIDIAAI",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "NVIDIA published a paper and open models for Nemotron-Labs-Sigma, which decodes blocks of tokens in parallel to speed up exploring multiple solutions on math and coding problems.",
+   "kind": "paper",
+   "evidence": "artifact",
+   "links": [
+    "https://arxiv.org/abs/2610.02665"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-11-18T20:01:15Z",
+   "metrics": {
+    "likes": 123,
+    "reposts": 8,
+    "quotes": 6,
+    "replies": 27
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "DaisyRose-27B, RadixArk's first open-weight model, lifts Terminal-Bench 4.1 from 5.6% to 12.0%",
+   "url": "https://x.com/radixark/status/2123115052127633536",
+   "handle": "@radixark",
+   "group": "labs",
+   "origin": "discovery",
+   "summary": "RadixArk released DaisyRose-27B, Qwen3.8-27B trained with RL on 1,200 long-horizon agent tasks for 18 days on 144 H200s, with agent sessions up to 1M tokens, raising Terminal-Bench 4.1 from 5.6% to 12.0%.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "RadixArk",
+   "posted_at": "2026-11-18T18:04:08Z",
+   "metrics": {
+    "likes": 318,
+    "reposts": 47,
+    "quotes": 25,
+    "replies": 23
+   },
+   "confirmed_by": [
+    "@victormustar"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Absolute score is low and no independent reproduction seen yet; no weights link visible in the post text.",
+    "source": null
+   }
+  },
+  {
+   "title": "MiniCPM-V 4.7 35B-A3B runs vision and robot planning at 179 tok/s on a Jetson AGX Orin",
+   "url": "https://x.com/ViC305/status/2123183147391328338",
+   "handle": "@ViC305",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A builder reports a 3.74bpw quant of MiniCPM-V 4.7 35B-A3B on a 64GB Jetson AGX Orin at about 1,642 tok/s prefill and 179 tok/s decode with speculative decoding, plus image analysis at 883 ms to first token; the engine is not yet released.",
+   "kind": "demo",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/ViC305/status/2123183147391328338/video/1"
+   ],
+   "vendor": "OpenBMB",
+   "posted_at": "2026-11-18T22:34:43Z",
+   "metrics": {
+    "likes": 6,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Numbers are self-reported with an unreleased engine and quant.",
+    "source": null
+   }
+  },
+  {
+   "title": "Rex adds rex.ui for Lua automations that need user interaction across attached clients",
+   "url": "https://x.com/mitchellh/status/2123167959686496690",
+   "handle": "@mitchellh",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Rex's Lua scripting gains rex.ui, a prompt API where the first attached client to answer wins and scripts get distinct busy and no-user error codes; so far used by the beta group.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Rex",
+   "posted_at": "2026-11-18T21:34:22Z",
+   "metrics": {
+    "likes": 280,
+    "reposts": 6,
+    "quotes": 1,
+    "replies": 21
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Beta group only, nothing public to run yet.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/drjoeboot/status/2123064797868458355",
+   "reason": "Not AI: devotional commentary (saved post 2123134214141092000)."
+  },
+  {
+   "url": "https://x.com/i/status/2123131217939976239",
+   "reason": "Reply with only a link and no AI capability, already discarded by the sync."
+  },
+  {
+   "url": "https://x.com/i/status/2123091284961177999",
+   "reason": "Game remaster update, no AI capability, already discarded by the sync."
+  }
+ ],
+ "list_posts_read": 93,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://x.com/Marcus_J_W/status/2123178258523132016",
+   "reason": "OpenAI alignment report about an RL agent drifting after context compaction; research write-up with no vulnerability or exploit in any fleet component."
+  }
+ ]
+}

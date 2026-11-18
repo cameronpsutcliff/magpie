@@ -1,21 +1,21 @@
 {
- "updated_at": "2026-11-18T19:20:00Z",
+ "updated_at": "2026-11-18T23:30:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 17,
+ "calls_used_today": 25,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-18T19:20:00Z",
-  "items": 8,
+  "ran_at": "2026-11-18T23:30:00Z",
+  "items": 9,
   "queries": 3,
   "deep_reads": 1,
   "rechecks": 0,
   "flagged": 0,
-  "saved_in": 2,
+  "saved_in": 3,
   "saved_kept": 0,
   "videos": 0,
   "security_forwarded": 0,
-  "list_posts_read": 95,
+  "list_posts_read": 93,
   "list_pages": 1
  },
  "roster": {
@@ -283,7 +283,8 @@
   "Sweep 03:30Z: calls_used_today restarted at 19 for the new UTC day. List page 1 reached back to 02:14Z the day before, so list members were fully covered; 10 OR searches covered 212 curated non-list accounts. The bookmarks plugin call returned only already-seen saves, so saved_in is 0. Qwen4-Max replies include unverified third-party parameter counts (358B total, 71B active), not used.",
   "Sweep 11:30Z: X caps search_posts_all at 25 per call, but all 6 group searches returned under 25 for the 8-hour window, so no extra pages were needed. MAGPIE_GITHUB_TOKEN was unset on the box, so the sweep was committed locally and not pushed. calls_used_today restarted for Central day 2026-11-17: 15 sweep calls plus 5 from the 10:35Z roster review.",
   "curated handles @bot, @code, @droid, @v0 are generic words; @bot is a spam reply account that floods from: searches. Consider removing @bot from x-accounts.json (owner-controlled config).",
-  "Roster review 2026-11-18: 0 X reads used. Promoted @addyosmani (owner_requested), @EricBezzam and @Mokhalil01 to active (14+ days, 2+ sweep items). Owner saves: only @danikkk_wqs has 2+ kept saves, still excluded for vice. No retirements; @JensenHuang (owner_requested, last qualifying post 2026-09-03) flagged for owner review, status unchanged. Many trials 28+ days old with 0 sweep items (e.g. @PrismML, @odysseyml, @actualinc, @mem0ai, @ElorianAI, @somarkai, @StefanoErmon, @inco_ai, @hotchpotch, @GChongkai, @yufan_zhuang) remain trial, not promoted; owner_requested trials @bcherny, @_catwu, @trq212 left untouched. Sunday drafts skipped (Wednesday)."
+  "Roster review 2026-11-18: 0 X reads used. Promoted @addyosmani (owner_requested), @EricBezzam and @Mokhalil01 to active (14+ days, 2+ sweep items). Owner saves: only @danikkk_wqs has 2+ kept saves, still excluded for vice. No retirements; @JensenHuang (owner_requested, last qualifying post 2026-09-03) flagged for owner review, status unchanged. Many trials 28+ days old with 0 sweep items (e.g. @PrismML, @odysseyml, @actualinc, @mem0ai, @ElorianAI, @somarkai, @StefanoErmon, @inco_ai, @hotchpotch, @GChongkai, @yufan_zhuang) remain trial, not promoted; owner_requested trials @bcherny, @_catwu, @trq212 left untouched. Sunday drafts skipped (Wednesday).",
+  "The user-X MCP here lacks search_posts_all and get_posts_by_ids; the built-in x namespace supplies them and its large results are truncated in tool output, so full text came from a get_posts_by_ids call and files on disk. follow_mode browser was skipped (no browser)."
  ],
  "errors": [
   "No browser available: follows skipped this sweep.",
