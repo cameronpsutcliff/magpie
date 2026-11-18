@@ -1,0 +1,274 @@
+{
+ "ran_at": "2026-11-18T19:20:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-18T15:30:00Z",
+ "queries": 3,
+ "calls": 5,
+ "items": [
+  {
+   "title": "Atomic Chat 2.4.6 ships Strata, a built-in desktop runtime for running models locally",
+   "url": "https://x.com/coldniko/status/2123131137027400159",
+   "handle": "@coldniko",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "The release adds Strata as the app's own local runtime, with detection of Apple Silicon, so local models run without a separate runtime install.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/AtomicBot-ai/Atomic-Chat/releases/tag/v2.4.6"
+   ],
+   "vendor": "Atomic Chat / Strata",
+   "posted_at": "2026-11-18T19:08:03Z",
+   "metrics": {
+    "likes": 24,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 2,
+    "views": 433
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "TensorFold adds a recipe catalog of deployable containers for local model serving",
+   "url": "https://x.com/ashxhart/status/2123119146888290797",
+   "handle": "@ashxhart",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "TensorFold's website now lists ready-to-deploy container recipes, so local inference setups can be started from a catalog entry.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://tensorfold.dev/recipes/"
+   ],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-18T18:20:24Z",
+   "metrics": {
+    "likes": 59,
+    "reposts": 3,
+    "quotes": 1,
+    "replies": 8,
+    "views": 1810
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "OXR vision model now runs on Macs via mlx-vlm, in the browser via WebAssembly, and on its own inference server",
+   "url": "https://x.com/somarkai/status/2123116761943830677",
+   "handle": "@somarkai",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Community ports of the open-sourced OXR model include MLX BF16 and 8-bit weights with an mlx-vlm pull request, a WebAssembly build with a Hugging Face Space demo (about 1.4 GB first load), and a standalone inference repo.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/bxespinozar/OXR-1.0-mlx-bf16",
+    "https://github.com/fusor-rs/oxr-wasm",
+    "https://github.com/NickWilde18/oxr-inference",
+    "https://github.com/Neywa-Labs/mlx-vlm/pull/2560"
+   ],
+   "vendor": "OXR community",
+   "posted_at": "2026-11-18T18:10:56Z",
+   "metrics": {
+    "likes": 7,
+    "reposts": 2,
+    "quotes": 3,
+    "replies": 2,
+    "views": 237
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Epoch AI: agentic inference capacity grew 4.6x in a year versus 2.6x for compute",
+   "url": "https://x.com/EpochAIResearch/status/2123114112054112529",
+   "handle": "@EpochAIResearch",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Epoch's Inference Performance Index puts the Q2 2025 to Q2 2026 growth of capacity usable for agentic inference at 4.6x, with Nvidia Blackwell generations accounting for 74% of added capacity. The Data Insight page gives the methodology.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://epoch.ai/data-insights/agentic-inference-capacity-growth"
+   ],
+   "vendor": "Epoch AI",
+   "posted_at": "2026-11-18T18:00:24Z",
+   "metrics": {
+    "likes": 89,
+    "reposts": 12,
+    "quotes": 0,
+    "replies": 7,
+    "views": 3521
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Exa Websets V2: faster, cheaper web dataset building with pay-as-you-go API access",
+   "url": "https://x.com/ExaAILabs/status/2123102288567058620",
+   "handle": "@ExaAILabs",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Websets V2 is live for all users, claimed 4x faster and 2x cheaper per result with 20% higher accuracy and recall on company and people list-building evals, now with usage-based pricing and API access.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://exa.ai/blog/websets-v2"
+   ],
+   "vendor": "Exa",
+   "posted_at": "2026-11-18T17:13:25Z",
+   "metrics": {
+    "likes": 192,
+    "reposts": 21,
+    "quotes": 6,
+    "replies": 6,
+    "views": 10938
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Speed, cost and accuracy figures come from Exa's own evals; no independent check seen.",
+    "source": null
+   }
+  },
+  {
+   "title": "Omarchy next update: 197 changes including Omaview media viewer, plus GPU memory change for local models on AMD Strix Halo",
+   "url": "https://x.com/OmarchyUpdates/status/2123114136251084811",
+   "handle": "@OmarchyUpdates",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "The weekly roundup lists Omaview replacing imv and mpv, a separable icon set and bundled games; a separate change lets AMD Strix Halo GPUs address more RAM for local models.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/omacom/omarchy/pulls?q=is%3Apr+is%3Amerged+merged%3A2026-11-10..2026-11-17"
+   ],
+   "vendor": "Omarchy",
+   "posted_at": "2026-11-18T18:00:30Z",
+   "metrics": {
+    "likes": 25,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 7,
+    "views": 798
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "fal launches Idol Max and Idol Max Turbo: image-to-3D with real GLB meshes, UVs, 2K textures, optional PBR and auto-rig",
+   "url": "https://x.com/fal/status/2123079365978190282",
+   "handle": "@fal",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "One image in, a game-ready textured mesh out (not a Gaussian splat), hosted on fal with a faster Turbo variant. Game and 3D pipeline builders get riggable assets from a single image.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://fal.ai/models/speridlabs/idol/max",
+    "https://fal.ai/models/speridlabs/idol/max/turbo"
+   ],
+   "vendor": "fal / Sperid Labs",
+   "posted_at": "2026-11-18T15:42:20Z",
+   "metrics": {
+    "likes": 333,
+    "reposts": 26,
+    "quotes": 12,
+    "replies": 22,
+    "views": 21829
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Two repliers who compared it with Tripo3D and Meshy said results looked worse; no side-by-side shown.",
+    "source": "https://x.com/gtechtn/status/2123127733416792294"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Most replies praise one-image-to-game-asset output; two repliers say a side test against Tripo3D or Meshy came out worse and one asks about topology and retopo quality.",
+    "tried": true,
+    "replies_read": 19
+   }
+  },
+  {
+   "title": "Home-lab test: Qwen3.8 Flash-Next with 16 streams gives 1,092 tok/s on one RTX PRO 6000 versus 453 tok/s reported for an M5 Ultra 256GB",
+   "url": "https://x.com/wei_wang/status/2123086096548462724",
+   "handle": "@wei_wang",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A measured comparison with per-stream numbers (258 tok/s single stream, about 68 per stream at 16, card capped at 350W) and a note that the two sets use different workloads. Raw results are in a linked repo.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/Lesilva/qwen38-flashnext-nvfp4-kv/blob/main/docs/results.md"
+   ],
+   "vendor": "community benchmark",
+   "posted_at": "2026-11-18T16:09:05Z",
+   "metrics": {
+    "likes": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 233
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/ClaytonMorris/status/2122907172199936176",
+   "reason": "non-AI politics"
+  },
+  {
+   "url": "https://x.com/AFpost/status/2122750572747018646",
+   "reason": "lobbying spend news, no official action or capability"
+  }
+ ],
+ "list_posts_read": 95,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
