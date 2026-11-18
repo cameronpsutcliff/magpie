@@ -1,0 +1,141 @@
+{
+ "ran_at": "2026-11-18T15:30:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-18T11:30:00Z",
+ "queries": 6,
+ "calls": 6,
+ "items": [
+  {
+   "title": "HubEgo-100K: first 10,000 hours of a planned 100,000-hour first-person work video dataset released in LeRobot format",
+   "url": "https://x.com/LeRobotHF/status/2123049212913053752",
+   "handle": "@LeRobotHF",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "The first 10,000 hours of a planned 100,000-hour egocentric dataset, covering 12,000+ people filming real jobs across 62,000+ tasks with RGB and IMU, are on the Hugging Face Hub under CC BY 4.0. Robotics and video-model builders get large-scale human manipulation footage in a ready LeRobot format.",
+   "kind": "dataset",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/datasets/HubLabs/HubEgo-100K"
+   ],
+   "vendor": "Hub Labs / LeRobot",
+   "posted_at": "2026-11-18T13:42:00Z",
+   "metrics": {
+    "likes": 43,
+    "reposts": 5,
+    "quotes": 1,
+    "replies": 0,
+    "views": 1850
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Omarchy's next update lets the GPU on AMD Strix Halo machines use all RAM but 8 GB for local models, set at install",
+   "url": "https://x.com/OmarchyUpdates/status/2123038621246886280",
+   "handle": "@OmarchyUpdates",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "On a 64 GB Strix Halo machine the GPU could previously map only half the memory, so a 38 GB model failed to load. The upcoming Omarchy update raises the GPU-addressable share to all but 8 GB, so larger local models fit. The linked pull request holds the change.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/omacom/omarchy/pull/19164"
+   ],
+   "vendor": "Omarchy",
+   "posted_at": "2026-11-18T13:00:00Z",
+   "metrics": {
+    "likes": 13,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 546
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Britannica illustrations dataset: 158,595 pictures from the 1768 and 11th (1911) editions now captioned with descriptions, built with one Hugging Face Job",
+   "url": "https://x.com/vanstriendaniel/status/2123043605409317261",
+   "handle": "@vanstriendaniel",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Every illustration in the dataset now has a description of what it shows, its printed caption and its source article. A follow-up says one Hugging Face Job sent each page to Inkling-2-Small through Inference Providers for $127 in total, under a tenth of a cent per picture, a worked example of bulk image captioning at low cost.",
+   "kind": "dataset",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/datasets/biglam/britannica-illustrated-pages/viewer/captions"
+   ],
+   "vendor": "BigLAM / Hugging Face",
+   "posted_at": "2026-11-18T13:20:00Z",
+   "metrics": {
+    "likes": 9,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 400
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Pruna AI adds Turbo mode to P-Video-Upscale: 65% cheaper than Standard from $0.0035/s, up to 60 fps, with a slight quality trade-off",
+   "url": "https://x.com/PrunaAI/status/2123054360326283444",
+   "handle": "@PrunaAI",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "A faster, cheaper video upscaling mode is available through the Pruna API and inference partners at 720p to 4K. Pruna's own benchmark chart claims up to 18x faster and 14x cheaper than Topaz Starlight, Topaz Proteus and FLUX.3 Upscaler at 1080p, with no quality comparison shown.",
+   "kind": "tool",
+   "evidence": "claim",
+   "links": [
+    "https://docs.api.pruna.ai/guides/models/p-video-upscale"
+   ],
+   "vendor": "Pruna AI",
+   "posted_at": "2026-11-18T14:02:58Z",
+   "metrics": {
+    "likes": 8,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 0,
+    "views": 331
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Speed and cost multiples come from the vendor's own benchmarks, and the original launch itself notes a quality trade-off; no one has reproduced it.",
+    "source": "https://x.com/PrunaAI/status/2122736623657865492"
+   },
+   "reception": {
+    "sentiment": "none",
+    "summary": "No replies or quote posts to read yet.",
+    "tried": false,
+    "replies_read": 0
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 94,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
