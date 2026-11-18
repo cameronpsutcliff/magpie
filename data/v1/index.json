@@ -3,80 +3,81 @@
  "days": [
   {
    "date": "2026-11-18",
-   "headline": "Qwen3.8-27B-pi-adapted, Introducing GPT-6.2 Astra and Sol, ECC, and more",
-   "events": 326,
-   "sources": 534,
-   "enriched": false,
+   "headline": "Generate video, route model requests, serve across nodes, and more",
+   "events": 531,
+   "sources": 565,
+   "enriched": true,
    "top": [
     {
-     "id": "3133a41484b0",
-     "title": "harness-hub/Qwen3.8-27B-pi-adapted",
+     "id": "d9371d454b56",
+     "title": "Qwen3.8-27B adapts to the pi coding agent",
+     "impact": 4,
+     "vendor": "Hugging Face harness-hub",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-18-d9371d454b56"
+    },
+    {
+     "id": "2dee88752fa5",
+     "title": "Hy4 flash opens long-context multimodal weights",
      "impact": 5,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-18-3133a41484b0"
+     "vendor": "Tencent Hunyuan",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-18-2dee88752fa5"
     },
     {
      "id": "b16381598e43",
-     "title": "Introducing GPT-6.2 Astra and Sol",
-     "impact": 4,
+     "title": "GPT-6.2 Astra and Sol cut costs",
+     "impact": 5,
      "vendor": "OpenAI",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-18-b16381598e43"
     },
     {
-     "id": "ab5596443556",
-     "title": "affaan-m/ECC",
-     "impact": 5,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-18-ab5596443556"
+     "id": "bbc98141c9e7",
+     "title": "FrontierHarness Eval compares model and harness pairings",
+     "impact": 3,
+     "vendor": "FrontierHarness Eval",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-18-bbc98141c9e7"
     },
     {
-     "id": "76c1728c2b20",
-     "title": "apple/FastFrames-L",
+     "id": "139c8b5a0173",
+     "title": "SageMaker HyperPod manages NVIDIA Dynamo serving",
      "impact": 4,
-     "vendor": "Apple",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-18-76c1728c2b20"
-    },
-    {
-     "id": "4302db6cb9e8",
-     "title": "elementalsouls/Claude-BugHunter",
-     "impact": 5,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-18-4302db6cb9e8"
+     "vendor": "AWS",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-18-139c8b5a0173"
     }
    ],
    "vendors": [
     "Open source",
     "OpenAI",
+    "NVIDIA",
     "Anthropic",
-    "AWS",
     "GitHub",
-    "Google"
+    "AWS"
    ],
    "topics": {
-    "agents": 109,
-    "coding": 106,
-    "models": 99,
-    "multimodal": 65,
-    "mcp": 39,
-    "infra": 36,
-    "memory": 28,
-    "evals": 27,
-    "local": 26,
+    "coding": 147,
+    "models": 146,
+    "agents": 143,
+    "multimodal": 84,
+    "infra": 61,
+    "evals": 55,
+    "mcp": 46,
+    "memory": 38,
+    "local": 35,
+    "security": 21,
+    "research": 20,
     "reverse": 20,
-    "security": 17,
-    "research": 12,
-    "robotics": 3
+    "robotics": 4
    },
    "kinds": {
-    "social": 60,
+    "social": 134,
+    "video": 132,
     "blog": 59,
-    "newsletter": 44,
+    "newsletter": 47,
     "repo": 36,
-    "community": 35,
+    "community": 34,
     "changelog": 34,
-    "model": 30,
-    "space": 20,
-    "news": 8
+    "model": 29,
+    "space": 19,
+    "news": 7
    }
   },
   {
