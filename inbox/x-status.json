@@ -1,21 +1,21 @@
 {
- "updated_at": "2026-11-18T10:30:00Z",
- "job": "roster",
+ "updated_at": "2026-11-18T11:30:00Z",
+ "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 6,
+ "calls_used_today": 8,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-18T03:25:00Z",
+  "ran_at": "2026-11-18T11:30:00Z",
   "items": 5,
   "queries": 6,
-  "deep_reads": 1,
+  "deep_reads": 2,
   "rechecks": 0,
   "flagged": 0,
-  "saved_in": 0,
-  "saved_kept": 0,
+  "saved_in": 2,
+  "saved_kept": 1,
   "videos": 0,
   "security_forwarded": 0,
-  "list_posts_read": 93,
+  "list_posts_read": 91,
   "list_pages": 1
  },
  "roster": {
@@ -287,7 +287,8 @@
  ],
  "errors": [
   "No browser available: follows skipped this sweep.",
-  "Authors missing from list responses unless expansions=author_id is passed with post.fields author_id."
+  "Authors missing from list responses unless expansions=author_id is passed with post.fields author_id.",
+  "SID-2 saved post video (153s) not analyzed: no video reader available this run."
  ],
  "follows_today": 0,
  "last_roster_review": {

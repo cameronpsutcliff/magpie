@@ -1,0 +1,188 @@
+{
+ "ran_at": "2026-11-18T11:30:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-18T03:25:00Z",
+ "queries": 6,
+ "calls": 6,
+ "items": [
+  {
+   "title": "Tencent opens Hy4 flash weights: 224B total, 12B active, 1M context, natively multimodal, with FP8 and Base variants",
+   "url": "https://x.com/TencentHunyuan/status/2122912575302119554",
+   "handle": "@TencentHunyuan",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Tencent released downloadable weights for Hy4 flash, including an FP8 build and a Base model, under the Tencent Hy License. The post links a Hugging Face repo, a GitHub repo and a research page; a roster account estimates NVFP4 at about 220 GB, so two DGX Sparks would be needed.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/tencent/Hy4-flash",
+    "https://github.com/Tencent-Hunyuan/Hy4-flash",
+    "https://hy.tencent.ai/research/hy4-flash"
+   ],
+   "vendor": "Tencent Hunyuan",
+   "posted_at": "2026-11-18T04:39:34Z",
+   "metrics": {
+    "likes": 1227,
+    "reposts": 146,
+    "quotes": 89,
+    "replies": 84,
+    "views": 80766
+   },
+   "confirmed_by": [
+    "@plotarmordev",
+    "@ViC305",
+    "@ashxhart"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The license restricts commercial model-as-a-service use, and 12B active parameters still means roughly 155.5B backbone plus a 63.5B Engram table, with official FP8 recipes needing tensor parallel 8.",
+    "source": "https://x.com/axels_ki/status/2123004035057824045"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Most repliers cheered the release; a few noted the license limits and the large total weight footprint, and one reported office tasks (email, spreadsheets) working well in a Chinese-language reply.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "SID-2 search model built on compute-scaling swarms, claimed 8x faster and 20x cheaper than frontier-model search, available on an API",
+   "url": "https://x.com/maxrumpf/status/2122758430721204407",
+   "handle": "@maxrumpf",
+   "group": "applied",
+   "origin": "saved",
+   "summary": "A new search model that runs many parallel agents per query and is available through an API today. The launch gives speed and cost multiples against two frontier models but no method or benchmark, so it is a claim until someone reproduces it.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/maxrumpf/status/2122758430721204407"
+   ],
+   "vendor": "maxrumpf (SID)",
+   "posted_at": "2026-11-17T18:27:03Z",
+   "metrics": {
+    "likes": 3621,
+    "reposts": 300,
+    "quotes": 100,
+    "replies": 217,
+    "views": 373526
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No benchmark method or query set is shown for the 8x speed and 20x cost claims, and one replier called the infinite-context framing a stretch.",
+    "source": "https://x.com/maxrumpf/status/2122758430721204407"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Replies were mostly excitement with a few asks for hard-query tests and some retrieval skepticism; nobody reported running it.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Tiny TTS roundup: Inflect v3 (0.2M to 34M), sanoTTS (2.3M), tiny-voca (4.5M), and ZONOS3-Mini at 13.7 ms to first audio on an A100",
+   "url": "https://x.com/EricBezzam/status/2122998361447976989",
+   "handle": "@EricBezzam",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A weekly roundup of very small open text-to-speech models, with Zonos3-Mini's time to first audio reported down from 80 ms to 13.7 ms on an A100 and evaluated on 22 benchmarks. Useful for anyone wanting on-device voice.",
+   "kind": "eval",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/EricBezzam/status/2120211806753112182"
+   ],
+   "vendor": "Zyphra / independent builders",
+   "posted_at": "2026-11-18T10:20:27Z",
+   "metrics": {
+    "likes": 20,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 1,
+    "views": 578
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Spark-X2.6-4B passes 13 of 16 single-bug Gleam/OTP debugging tasks locally on an M5 Max in BF16, a community result on a small suite",
+   "url": "https://x.com/SparkLLM/status/2122980753437020458",
+   "handle": "@SparkLLM",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A community member reports a 4B model fixing 13 of 16 single-bug tasks in Gleam/OTP on a Mac, with compound tasks still running. The suite is small and the harness is not yet shared.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/GrayBeamTech/status/2121398741978804437"
+   ],
+   "vendor": "Spark-X2.6 / independent builder",
+   "posted_at": "2026-11-18T09:10:29Z",
+   "metrics": {
+    "likes": 8,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 1,
+    "views": 272
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Small task suite, compound tasks unfinished, and the harness has not been published.",
+    "source": "https://x.com/SparkLLM/status/2122980753437020458"
+   }
+  },
+  {
+   "title": "Scarlet AI video editor uses about 20 to 30 million tokens to fully edit a 10-minute output video, and not much more for 20 minutes",
+   "url": "https://x.com/MatthewBerman/status/2122899069073014963",
+   "handle": "@MatthewBerman",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "The builder of the Scarlet video-editing app gives a first-hand token cost for agent-driven editing and says cost grows slowly with length.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/MatthewBerman/status/2122899069073014963"
+   ],
+   "vendor": "Scarlet (Matthew Berman)",
+   "posted_at": "2026-11-18T03:45:54Z",
+   "metrics": {
+    "likes": 61,
+    "reposts": 0,
+    "quotes": 1,
+    "replies": 15,
+    "views": 6544
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/0x_rody/status/2122769182098104525",
+   "reason": "Promotional bait for a PDF, nothing tested."
+  }
+ ],
+ "list_posts_read": 91,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
