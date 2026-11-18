@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-11-18T03:30:00Z",
- "job": "sweep",
+ "updated_at": "2026-11-18T10:30:00Z",
+ "job": "roster",
  "prompt": "v6.1",
  "calls_used_today": 6,
  "notes_via_api": false,
@@ -20,8 +20,8 @@
  },
  "roster": {
   "curated": 223,
-  "trial": 60,
-  "active": 47,
+  "trial": 57,
+  "active": 50,
   "retired": 7
  },
  "follows_this_week": 0,
@@ -282,7 +282,8 @@
   "Roster review 2026-11-15 (Sunday, drafts written): 5 X reads + 2 list adds. Added trials @SergioPaniego and @jundotkim (2 artifact/measured posts each in 30 days); promoted @EpochAIResearch to active (3 sweep items); @divagr1925 has 1 sweep item and @_albertgu none, so no promotion. Retired curated @DarioAmodei, @ssokota, @zicokolter, @AndrewYNg (no qualifying post in 45 days, confirmed with one batched read; @minimaxir has psnek and a prices post, so kept). @mem0ai kept as trial: no artifact or measurement since 2026-10-07 (blog articles and event posts only), recheck next review. Owner saves: @danikkk_wqs (engagement-bait listicles, vice-excluded per prior review) and @RoundtableSpace (crypto aggregator, on avoid) each have 2 saves but fail the screen; not added. Flag for owner: @JensenHuang (owner_requested) still has no qualifying post since 2026-09-03; left active trial. Skipped for 1 qualifying post or over 1 in 5 promotion: @_ellisbrown, @aviral_kumar2, @zhijianliu, @omnigent_ai. Pruning: no inbox/x files older than 14 days.",
   "Sweep 03:30Z: calls_used_today restarted at 19 for the new UTC day. List page 1 reached back to 02:14Z the day before, so list members were fully covered; 10 OR searches covered 212 curated non-list accounts. The bookmarks plugin call returned only already-seen saves, so saved_in is 0. Qwen4-Max replies include unverified third-party parameter counts (358B total, 71B active), not used.",
   "Sweep 11:30Z: X caps search_posts_all at 25 per call, but all 6 group searches returned under 25 for the 8-hour window, so no extra pages were needed. MAGPIE_GITHUB_TOKEN was unset on the box, so the sweep was committed locally and not pushed. calls_used_today restarted for Central day 2026-11-17: 15 sweep calls plus 5 from the 10:35Z roster review.",
-  "curated handles @bot, @code, @droid, @v0 are generic words; @bot is a spam reply account that floods from: searches. Consider removing @bot from x-accounts.json (owner-controlled config)."
+  "curated handles @bot, @code, @droid, @v0 are generic words; @bot is a spam reply account that floods from: searches. Consider removing @bot from x-accounts.json (owner-controlled config).",
+  "Roster review 2026-11-18: 0 X reads used. Promoted @addyosmani (owner_requested), @EricBezzam and @Mokhalil01 to active (14+ days, 2+ sweep items). Owner saves: only @danikkk_wqs has 2+ kept saves, still excluded for vice. No retirements; @JensenHuang (owner_requested, last qualifying post 2026-09-03) flagged for owner review, status unchanged. Many trials 28+ days old with 0 sweep items (e.g. @PrismML, @odysseyml, @actualinc, @mem0ai, @ElorianAI, @somarkai, @StefanoErmon, @inco_ai, @hotchpotch, @GChongkai, @yufan_zhuang) remain trial, not promoted; owner_requested trials @bcherny, @_catwu, @trq212 left untouched. Sunday drafts skipped (Wednesday)."
  ],
  "errors": [
   "No browser available: follows skipped this sweep.",

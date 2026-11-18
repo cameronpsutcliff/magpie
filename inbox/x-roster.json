@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-17T10:35:00Z",
+ "updated_at": "2026-11-18T10:30:00Z",
  "accounts": [
   {
    "handle": "@thsottiaux",
@@ -750,7 +750,7 @@
    "affiliation": "Anthropic",
    "why": "Owner-requested watch (2026-10-24), recommended in Thariq's departure post. Claude Code at Anthropic; long-running dev-tooling and engineering educator.",
    "signal_to_noise": 3,
-   "status": "trial",
+   "status": "active",
    "added_on": "2026-10-24",
    "evidence": [
     "https://x.com/trq212/status/2113844051938054167"
@@ -759,7 +759,8 @@
    "retired_reason": null,
    "owner_requested": true,
    "x_user_id": "35432643",
-   "on_list": true
+   "on_list": true,
+   "promoted_on": "2026-11-18"
   },
   {
    "handle": "@lydiahallie",
@@ -1490,7 +1491,7 @@
    "affiliation": "Hugging Face (Open ASR and Open TTS leaderboards)",
    "why": "Maintains Hugging Face's Open ASR and Open TTS leaderboards; posts measured WER and naturalness results for new open speech models.",
    "signal_to_noise": 4,
-   "status": "trial",
+   "status": "active",
    "added_on": "2026-11-04",
    "evidence": [
     "https://x.com/EricBezzam/status/2115492224071012504",
@@ -1501,7 +1502,8 @@
    "retired_reason": null,
    "source": "roster_review",
    "x_user_id": "1016643081179934721",
-   "on_list": true
+   "on_list": true,
+   "promoted_on": "2026-11-18"
   },
   {
    "handle": "@Mokhalil01",
@@ -1510,7 +1512,7 @@
    "affiliation": "LiteLLM",
    "why": "First-hand on LiteLLM releases (Autorouter SDK, Model Registry with RSS, Lens trace analysis); LiteLLM is in the owner's stack.",
    "signal_to_noise": 3,
-   "status": "trial",
+   "status": "active",
    "added_on": "2026-11-04",
    "evidence": [
     "https://x.com/Mokhalil01/status/2115583124168200440",
@@ -1521,7 +1523,8 @@
    "retired_reason": null,
    "source": "roster_review",
    "x_user_id": "374044084",
-   "on_list": true
+   "on_list": true,
+   "promoted_on": "2026-11-18"
   },
   {
    "handle": "@METR_Evals",
