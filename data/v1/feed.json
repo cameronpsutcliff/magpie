@@ -13,6 +13,31 @@
  ],
  "items": [
   {
+   "id": "2026-11-18",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-11-18",
+   "title": "Qwen3.8-27B-pi-adapted, Introducing GPT-6.2 Astra and Sol, ECC, and more",
+   "summary": "326 capability events from 118 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words.",
+   "content_html": "<p>326 capability events from 118 sources. Ranked by code; the editor did not run this edition, so copy is the sources&#x27; own words.</p><ol><li><a href=\"https://huggingface.co/harness-hub/Qwen3.8-27B-pi-adapted\">harness-hub/Qwen3.8-27B-pi-adapted</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-18-3133a41484b0\">on Magpie</a>)</li><li><a href=\"https://openai.com/index/introducing-gpt-6-2-astra-sol\">Introducing GPT-6.2 Astra and Sol</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-18-b16381598e43\">on Magpie</a>)</li><li><a href=\"https://github.com/affaan-m/ECC\">affaan-m/ECC</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-18-ab5596443556\">on Magpie</a>)</li><li><a href=\"https://huggingface.co/apple/FastFrames-L\">apple/FastFrames-L</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-18-76c1728c2b20\">on Magpie</a>)</li><li><a href=\"https://github.com/elementalsouls/Claude-BugHunter\">elementalsouls/Claude-BugHunter</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-18-4302db6cb9e8\">on Magpie</a>)</li></ol><p><strong>Possibilities:</strong> No new possibility today. Latest: Remote Claude Code fleets in AWS get a learning loop that lowers cost (2026-11-17)</p><p><strong>Worth watching:</strong> No new video pick today. Latest: I Trapped n8n´s New AI Agent 15 Times. Did It Fall For One? (2026-11-17)</p><p><strong>Constraints:</strong> No new constraint today. Latest: DHS order bars DeepSeek products from federal civilian agencies (2026-10-20)</p><p><strong>Threats:</strong> No new threat today. Widest reach still open: TWCA Registration Authority server accessed without authorization (medium, 2026-10-29)</p>",
+   "content_text": "326 capability events from 118 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words. harness-hub/Qwen3.8-27B-pi-adapted Introducing GPT-6.2 Astra and Sol affaan-m/ECC apple/FastFrames-L elementalsouls/Claude-BugHunter",
+   "date_published": "2026-11-18T11:14:55Z",
+   "tags": [
+    "agents",
+    "coding",
+    "infra",
+    "local",
+    "mcp",
+    "memory",
+    "models",
+    "multimodal",
+    "security"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-11-18.json",
+    "backfilled": false,
+    "capabilities": 326
+   }
+  },
+  {
    "id": "2026-11-17",
    "url": "https://www.cameronsutcliff.com/magpie/2026-11-17",
    "title": "Read scientific inputs, trim coding costs, give agents private memory and more",
@@ -677,29 +702,6 @@
     "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-19.json",
     "backfilled": false,
     "capabilities": 177
-   }
-  },
-  {
-   "id": "2026-10-18",
-   "url": "https://www.cameronsutcliff.com/magpie/2026-10-18",
-   "title": "Quizzes your AI's code, drives Android, searches the web cheaply, and more",
-   "summary": "A busy day for agent tooling, with a new DeepSeek Flash model and a cheap search API leading the news. Most other items are skills, wrappers and talks that build on existing tools.",
-   "content_html": "<p>A busy day for agent tooling, with a new DeepSeek Flash model and a cheap search API leading the news. Most other items are skills, wrappers and talks that build on existing tools.</p><ol><li><a href=\"https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017\">DeepSeek releases V4.1 Flash 1017 weights</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-18-f7c1160bd9e2\">on Magpie</a>): You can download and run a new DeepSeek V4.1 Flash checkpoint from Hugging Face.</li><li><a href=\"https://sphinx-six-theta.vercel.app/\">Sphinx quizzes you on agent-written code</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-18-0abf7d9f7f3a\">on Magpie</a>): You can make a push to prod pause on a questionnaire that checks you understand the code your agent wrote.</li><li><a href=\"https://api-docs.deepseek.com/guides/search/\">DeepSeek API adds search and fetch</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-18-b5aed835eaa8\">on Magpie</a>): You can give a DeepSeek model web search and page fetch at $0.75 per 1000 successful requests.</li><li><a href=\"https://www.youtube.com/watch?v=cNm4zyUtWj0\">RuneScape Bench tests agents in an MMO</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-18-5739a81a8468\">on Magpie</a>): You can evaluate agents on long, open-ended play in a massively multiplayer game.</li><li><a href=\"https://github.com/ygelfand/echolocal\">Echo Dot becomes a local Home Assistant satellite</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-18-a2938911ac4d\">on Magpie</a>): You can run an Echo Dot or Echo Show as a local Home Assistant voice satellite, media player and Bluetooth proxy with no Amazon cloud.</li></ol>",
-   "content_text": "A busy day for agent tooling, with a new DeepSeek Flash model and a cheap search API leading the news. Most other items are skills, wrappers and talks that build on existing tools. DeepSeek releases V4.1 Flash 1017 weights Sphinx quizzes you on agent-written code DeepSeek API adds search and fetch RuneScape Bench tests agents in an MMO Echo Dot becomes a local Home Assistant satellite",
-   "date_published": "2026-10-20T15:22:18Z",
-   "tags": [
-    "agents",
-    "coding",
-    "evals",
-    "local",
-    "memory",
-    "models",
-    "multimodal"
-   ],
-   "_magpie": {
-    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-18.json",
-    "backfilled": true,
-    "capabilities": 86
    }
   }
  ]

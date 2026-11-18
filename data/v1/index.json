@@ -2,6 +2,84 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-11-18",
+   "headline": "Qwen3.8-27B-pi-adapted, Introducing GPT-6.2 Astra and Sol, ECC, and more",
+   "events": 326,
+   "sources": 534,
+   "enriched": false,
+   "top": [
+    {
+     "id": "3133a41484b0",
+     "title": "harness-hub/Qwen3.8-27B-pi-adapted",
+     "impact": 5,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-18-3133a41484b0"
+    },
+    {
+     "id": "b16381598e43",
+     "title": "Introducing GPT-6.2 Astra and Sol",
+     "impact": 4,
+     "vendor": "OpenAI",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-18-b16381598e43"
+    },
+    {
+     "id": "ab5596443556",
+     "title": "affaan-m/ECC",
+     "impact": 5,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-18-ab5596443556"
+    },
+    {
+     "id": "76c1728c2b20",
+     "title": "apple/FastFrames-L",
+     "impact": 4,
+     "vendor": "Apple",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-18-76c1728c2b20"
+    },
+    {
+     "id": "4302db6cb9e8",
+     "title": "elementalsouls/Claude-BugHunter",
+     "impact": 5,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-18-4302db6cb9e8"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "OpenAI",
+    "Anthropic",
+    "AWS",
+    "GitHub",
+    "Google"
+   ],
+   "topics": {
+    "agents": 109,
+    "coding": 106,
+    "models": 99,
+    "multimodal": 65,
+    "mcp": 39,
+    "infra": 36,
+    "memory": 28,
+    "evals": 27,
+    "local": 26,
+    "reverse": 20,
+    "security": 17,
+    "research": 12,
+    "robotics": 3
+   },
+   "kinds": {
+    "social": 60,
+    "blog": 59,
+    "newsletter": 44,
+    "repo": 36,
+    "community": 35,
+    "changelog": 34,
+    "model": 30,
+    "space": 20,
+    "news": 8
+   }
+  },
+  {
    "date": "2026-11-17",
    "headline": "Read scientific inputs, trim coding costs, give agents private memory and more",
    "events": 431,
@@ -4614,5 +4692,5 @@
    }
   }
  ],
- "latest": "2026-11-17"
+ "latest": "2026-11-18"
 }
