@@ -1,0 +1,173 @@
+{
+ "ran_at": "2026-11-18T03:25:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-17T23:30:00Z",
+ "queries": 6,
+ "calls": 6,
+ "items": [
+  {
+   "title": "Unsloth adds computer use for local models in beta: Qwen3.8-27B builds an expense report from receipts and edits photos in GIMP, plus Blender and Unreal Engine control",
+   "url": "https://x.com/danielhanchen/status/2122365870995612059",
+   "handle": "@danielhanchen",
+   "group": "opensource",
+   "origin": "discovery",
+   "summary": "Unsloth's beta release lets any local model drive a desktop. The demo has Qwen3.8-27B turn receipts into an expense report and use GIMP to scale, caption and export photos, and the same release adds driving Unreal Engine and Blender. It was posted Nov 16 and only reached this sweep through a roster quote.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/unslothai/unsloth/releases/tag/v0.1.918-beta"
+   ],
+   "vendor": "Unsloth",
+   "posted_at": "2026-11-16T16:27:09Z",
+   "metrics": {
+    "likes": 295,
+    "reposts": 36,
+    "quotes": 9,
+    "replies": 39,
+    "views": 11318
+   },
+   "confirmed_by": [
+    "@plotarmordev"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Still beta, and a repliers' question notes that running it on a DGX Spark needs X11 configured because there is no Wayland path yet.",
+    "source": "https://x.com/Waethorn/status/2122769147201261805"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers liked the expense-report demo and asked about minimum hardware, where failures cluster and Wayland support; no one reported running it themselves.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Profile of Qwen3.8 Flash-Next decode on an RTX PRO 6000: 97% of a roughly 10 ms step is kernel time, and weight reads already run near 1.6 TB/s",
+   "url": "https://x.com/wei_wang/status/2122843992777740782",
+   "handle": "@wei_wang",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "With NVFP4 weights and KV, 524K context, 3-step MTP and a 350 W cap, a profiler breakdown shows MoE experts (29.7%) and W8A16 dense GEMV (28.6%) dominate, and that kernel fusion or a second stream cannot help because weight reads are bandwidth-bound. A hand-written fused MoE kernel gained 4.1% on single-stream and nothing at 2 or more streams.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/wei_wang/status/2122843992777740782"
+   ],
+   "vendor": "Qwen / NVIDIA RTX PRO 6000 (independent builder)",
+   "posted_at": "2026-11-18T00:07:03Z",
+   "metrics": {
+    "likes": 7,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 3,
+    "views": 1206
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Capping two DGX Sparks at 1800 MHz since August keeps about 93% single-stream decode and 97.5% of 4-stream throughput at roughly 30% less power",
+   "url": "https://x.com/wei_wang/status/2122891547733606448",
+   "handle": "@wei_wang",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A home-lab owner reports against 2200 MHz that capping the GPU clock cost little decode speed, cut average power about 30% and peak temperature 5 to 7 C, and has been stable for months. The post quotes a sparkDash tip for setting the cap persistently.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/MiaAI_lab/status/2122673627493474361"
+   ],
+   "vendor": "NVIDIA DGX Spark (independent builder)",
+   "posted_at": "2026-11-18T03:16:01Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 16
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "One user's own two-machine measurement, with no method shown in the post.",
+    "source": null
+   }
+  },
+  {
+   "title": "NVIDIA announces a DGX Spark HPC dev kit at SC26: four Sparks in a switchless ConnectX-7 ring, 512 GB memory, said to run 700B-parameter NVFP4 models",
+   "url": "https://x.com/wei_wang/status/2122873433113374872",
+   "handle": "@wei_wang",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Per a builder's summary of NVIDIA's docs, two Sparks link with one QSFP cable, three or four in a ring with two cables each, and more than four need a switch. The kit is priced on request and the HPC SDK deployment guide is not out. A forum measurement cited for the ring ran DeepSeek-V4.1-Flash at 1M context at about 88 tok/s writing and 136 tok/s coding.",
+   "kind": "other",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/wei_wang/status/2122873433113374872"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-11-18T02:04:02Z",
+   "metrics": {
+    "likes": 2,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 1,
+    "views": 415
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Secondhand summary of NVIDIA's announcement; the 700B figure is NVIDIA's claim and the throughput numbers come from a forum post, not NVIDIA.",
+    "source": null
+   }
+  },
+  {
+   "title": "Single GPT-6.2 Astra API call returns 3D pose estimation for every player on a basketball court",
+   "url": "https://x.com/skalskip92/status/2122847867782009063",
+   "handle": "@skalskip92",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "A Roboflow engineer shows a 9-second clip where one high-effort API call to GPT-6.2 Astra yields 3D poses for all players in a basketball clip. No code, prompt or accuracy numbers are in the post.",
+   "kind": "demo",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/skalskip92/status/2122783085531979799"
+   ],
+   "vendor": "OpenAI / Roboflow",
+   "posted_at": "2026-11-18T00:22:26Z",
+   "metrics": {
+    "likes": 113,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 10,
+    "views": 4498
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Short demo only, with no code, prompt or pose-accuracy measurement to check.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 93,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
