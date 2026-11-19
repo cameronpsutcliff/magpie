@@ -2,6 +2,84 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-11-19",
+   "headline": "voice-isolator, Introducing Gemini 4 Neon, paper-orchestra, and more",
+   "events": 271,
+   "sources": 534,
+   "enriched": false,
+   "top": [
+    {
+     "id": "5c541b02c3aa",
+     "title": "inworld/voice-isolator",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-19-5c541b02c3aa"
+    },
+    {
+     "id": "f59792813902",
+     "title": "Introducing Gemini 4 Neon",
+     "impact": 4,
+     "vendor": "Google",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-19-f59792813902"
+    },
+    {
+     "id": "fa7a7600d82d",
+     "title": "google-research/paper-orchestra",
+     "impact": 5,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-19-fa7a7600d82d"
+    },
+    {
+     "id": "ab5596443556",
+     "title": "affaan-m/ECC",
+     "impact": 5,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-19-ab5596443556"
+    },
+    {
+     "id": "63f88fa12336",
+     "title": "tencent/Hy4-flash",
+     "impact": 3,
+     "vendor": "Tencent",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-19-63f88fa12336"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Google",
+    "OpenAI",
+    "AWS",
+    "Anthropic",
+    "Microsoft"
+   ],
+   "topics": {
+    "models": 89,
+    "coding": 83,
+    "agents": 81,
+    "multimodal": 65,
+    "infra": 42,
+    "memory": 33,
+    "mcp": 33,
+    "evals": 24,
+    "local": 19,
+    "research": 13,
+    "reverse": 10,
+    "security": 10,
+    "robotics": 3
+   },
+   "kinds": {
+    "blog": 49,
+    "social": 36,
+    "repo": 35,
+    "newsletter": 34,
+    "model": 30,
+    "changelog": 29,
+    "community": 25,
+    "space": 20,
+    "news": 13
+   }
+  },
+  {
    "date": "2026-11-18",
    "headline": "Generate video, route model requests, serve across nodes, and more",
    "events": 531,
@@ -4693,5 +4771,5 @@
    }
   }
  ],
- "latest": "2026-11-18"
+ "latest": "2026-11-19"
 }

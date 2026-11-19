@@ -13,6 +13,29 @@
  ],
  "items": [
   {
+   "id": "2026-11-19",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-11-19",
+   "title": "voice-isolator, Introducing Gemini 4 Neon, paper-orchestra, and more",
+   "summary": "271 capability events from 119 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words.",
+   "content_html": "<p>271 capability events from 119 sources. Ranked by code; the editor did not run this edition, so copy is the sources&#x27; own words.</p><ol><li><a href=\"https://huggingface.co/inworld/voice-isolator\">inworld/voice-isolator</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-19-5c541b02c3aa\">on Magpie</a>)</li><li><a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/\">Introducing Gemini 4 Neon</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-19-f59792813902\">on Magpie</a>)</li><li><a href=\"https://github.com/google-research/paper-orchestra\">google-research/paper-orchestra</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-19-fa7a7600d82d\">on Magpie</a>)</li><li><a href=\"https://github.com/affaan-m/ECC\">affaan-m/ECC</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-19-ab5596443556\">on Magpie</a>)</li><li><a href=\"https://huggingface.co/tencent/Hy4-flash\">tencent/Hy4-flash</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-19-63f88fa12336\">on Magpie</a>)</li></ol><p><strong>Possibilities:</strong> No new possibility today. Latest: Draft models trained on base weights may lose speed on harness-tuned adapters (2026-11-18)</p><p><strong>Worth watching:</strong> No new video pick today. Latest: 2026 in LLMs, Simon Willison, Datasette (2026-11-18)</p><p><strong>Constraints:</strong> No new constraint today. Latest: DHS order bars DeepSeek products from federal civilian agencies (2026-10-20)</p><p><strong>Threats:</strong> No new threat today. Widest reach still open: TWCA Registration Authority server accessed without authorization (medium, 2026-10-29)</p>",
+   "content_text": "271 capability events from 119 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words. inworld/voice-isolator Introducing Gemini 4 Neon google-research/paper-orchestra affaan-m/ECC tencent/Hy4-flash",
+   "date_published": "2026-11-19T11:14:33Z",
+   "tags": [
+    "agents",
+    "coding",
+    "memory",
+    "models",
+    "multimodal",
+    "research",
+    "reverse"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-11-19.json",
+    "backfilled": false,
+    "capabilities": 271
+   }
+  },
+  {
    "id": "2026-11-18",
    "url": "https://www.cameronsutcliff.com/magpie/2026-11-18",
    "title": "Generate video, route model requests, serve across nodes, and more",
@@ -678,28 +701,6 @@
     "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-20.json",
     "backfilled": false,
     "capabilities": 443
-   }
-  },
-  {
-   "id": "2026-10-19",
-   "url": "https://www.cameronsutcliff.com/magpie/2026-10-19",
-   "title": "Download Meta's open Muse Spark, diffuse text fast, forecast time series, and more",
-   "summary": "Big open and cheap models lead the day: Meta's Muse Spark weights, MiniMax M3.1 Flash, Inception's diffusion LLM and Mistral's time-series models. Around them sit agent harness tooling, inference speedups and a crowd of trending repos whose claims are mostly star counts.",
-   "content_html": "<p>Big open and cheap models lead the day: Meta&#x27;s Muse Spark weights, MiniMax M3.1 Flash, Inception&#x27;s diffusion LLM and Mistral&#x27;s time-series models. Around them sit agent harness tooling, inference speedups and a crowd of trending repos whose claims are mostly star counts.</p><ol><li><a href=\"https://huggingface.co/meta-models/Muse-Spark-Open-816B-A42B\">Meta posts open Muse Spark 816B multimodal model</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-19-8615bdd7d491\">on Magpie</a>): Builders can download an 816B total, 42B active image-and-text model from Meta on Hugging Face.</li><li><a href=\"https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017\">DeepSeek V4.1 Flash 1017 trends on Hugging Face</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-19-f7c1160bd9e2\">on Magpie</a>): Builders can download a new image-and-text DeepSeek V4.1 Flash checkpoint.</li><li><a href=\"https://mistral.ai/news/timestral/\">Mistral launches Timestral time-series foundation models</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-19-a625503275f6\">on Magpie</a>): Teams can use Mistral foundation models built for time-series data.</li><li><a href=\"https://github.com/debpalash/VoiceStudio\">VoiceStudio offers local voice suite in 646 languages</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-19-4439bb6ce3b7\">on Magpie</a>): Users can do voice design, dubbing, dictation, transcription and audiobook creation fully locally.</li><li><a href=\"https://huggingface.co/papers/2610.26860\">OpenVLHarness adds memory to visual tool-using agents</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-19-6e9ca4b2faae\">on Magpie</a>): Researchers can study a visual agent harness that combines persistent memory and mixed tools across 22 benchmarks.</li></ol><p><strong>New possibility:</strong> SaaS vendors can turn agent security audits into ready compliance evidence trails</p>",
-   "content_text": "Big open and cheap models lead the day: Meta's Muse Spark weights, MiniMax M3.1 Flash, Inception's diffusion LLM and Mistral's time-series models. Around them sit agent harness tooling, inference speedups and a crowd of trending repos whose claims are mostly star counts. Meta posts open Muse Spark 816B multimodal model DeepSeek V4.1 Flash 1017 trends on Hugging Face Mistral launches Timestral time-series foundation models VoiceStudio offers local voice suite in 646 languages OpenVLHarness adds memory to visual tool-using agents",
-   "date_published": "2026-10-20T05:05:12Z",
-   "tags": [
-    "agents",
-    "infra",
-    "local",
-    "memory",
-    "models",
-    "multimodal"
-   ],
-   "_magpie": {
-    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-19.json",
-    "backfilled": false,
-    "capabilities": 177
    }
   }
  ]
