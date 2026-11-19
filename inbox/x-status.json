@@ -1,21 +1,21 @@
 {
- "updated_at": "2026-11-19T11:22:00Z",
+ "updated_at": "2026-11-19T15:31:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 47,
+ "calls_used_today": 65,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-19T11:22:00Z",
-  "items": 8,
+  "ran_at": "2026-11-19T15:31:00Z",
+  "items": 7,
   "queries": 8,
-  "deep_reads": 3,
+  "deep_reads": 0,
   "rechecks": 0,
   "flagged": 0,
-  "saved_in": 3,
-  "saved_kept": 1,
+  "saved_in": 0,
+  "saved_kept": 0,
   "videos": 0,
-  "security_forwarded": 0,
-  "list_posts_read": 90,
+  "security_forwarded": 1,
+  "list_posts_read": 93,
   "list_pages": 1
  },
  "roster": {
@@ -286,7 +286,8 @@
   "Roster review 2026-11-18: 0 X reads used. Promoted @addyosmani (owner_requested), @EricBezzam and @Mokhalil01 to active (14+ days, 2+ sweep items). Owner saves: only @danikkk_wqs has 2+ kept saves, still excluded for vice. No retirements; @JensenHuang (owner_requested, last qualifying post 2026-09-03) flagged for owner review, status unchanged. Many trials 28+ days old with 0 sweep items (e.g. @PrismML, @odysseyml, @actualinc, @mem0ai, @ElorianAI, @somarkai, @StefanoErmon, @inco_ai, @hotchpotch, @GChongkai, @yufan_zhuang) remain trial, not promoted; owner_requested trials @bcherny, @_catwu, @trq212 left untouched. Sunday drafts skipped (Wednesday).",
   "The user-X MCP here lacks search_posts_all and get_posts_by_ids; the built-in x namespace supplies them and its large results are truncated in tool output, so full text came from a get_posts_by_ids call and files on disk. follow_mode browser was skipped (no browser).",
   "Roster review 2026-11-19: 0 X reads used. Owner saves: @danikkk_wqs (vice, excluded), @mirku21 (retired), @RoundtableSpace (crypto/aggregator, curated already) have 2 saves; no adds. No trial met promotion (14+ days and 2+ sweep items) beyond those already promoted; no retirements. @JensenHuang (owner_requested) still flagged for owner review, status unchanged. Refreshed last_qualifying_post for 44 accounts from sweep files. Pruned 4 sweep files before 2026-11-05. Not Sunday, no drafts.",
-  "Sweep 11:22Z: Bookmarks API returned 3 new saves not yet in the box archive; saves still arrive ahead of the 2-hourly sync. No browser, so no follows or video analysis; deep-read items with clips (megakernel, Frostbite, Shield) got no video record."
+  "Sweep 11:22Z: Bookmarks API returned 3 new saves not yet in the box archive; saves still arrive ahead of the 2-hourly sync. No browser, so no follows or video analysis; deep-read items with clips (megakernel, Frostbite, Shield) got no video record.",
+  "The user-X plugin has no search tool in this run; search_posts_all lives in the separate x plugin and returns at most 25 posts per call, with a 30 reads per minute limit. Notes should say which plugin to use."
  ],
  "errors": [],
  "follows_today": 0,

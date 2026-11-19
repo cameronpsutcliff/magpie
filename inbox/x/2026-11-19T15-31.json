@@ -1,0 +1,233 @@
+{
+ "ran_at": "2026-11-19T15:31:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-19T11:22:00Z",
+ "queries": 8,
+ "calls": 18,
+ "items": [
+  {
+   "title": "Codex found two Ruby case-mapping memory bugs that give pre-auth remote code execution on Rails apps; fixed Ruby 3.3.14, 3.4.13 and 4.0.10 released",
+   "url": "https://x.com/stdoutput/status/2123330707372253474",
+   "handle": "@stdoutput",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "A researcher had Codex map Ruby's pre-authentication attack surface, which led to a heap out-of-bounds write and an integer overflow reachable through Rack multipart handling. OpenAI helped build exploits and disclose; Ruby published advisories GHSA-34m4-m9fh-gqp5 and GHSA-87fm-7w84-j2px with patched releases.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://durendal.sh/blog/ruby-case-mapping-bugs"
+   ],
+   "vendor": "Durendal / OpenAI",
+   "posted_at": "2026-11-19T08:21:00Z",
+   "metrics": {
+    "likes": 119,
+    "reposts": 22,
+    "quotes": 4,
+    "replies": 6,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@gdb"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Nous Hermes adapter for Qwen3.8-27B lifts SWE-Bench Pro (hard 51) pass@1 from 29.4% to 43.1% and Terminal-Bench 2.1 from 44.7% to 58.8%",
+   "url": "https://x.com/yb2698/status/2123421903784136769",
+   "handle": "@yb2698",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "An adapter that tunes Qwen3.8-27B for the Hermes agent harness is on Hugging Face. With thinking off it is said to match the base model at maximum thinking while using 3.5 to 4.4 times fewer tokens.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/harness-hub/Qwen3.8-27B-hermes-adapted"
+   ],
+   "vendor": "Nous Research / harness-hub",
+   "posted_at": "2026-11-19T14:23:00Z",
+   "metrics": {
+    "likes": 37,
+    "reposts": 4,
+    "quotes": 4,
+    "replies": 4,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Numbers are the publisher's own harness results, and the Terminal-Bench figure with maximum thinking drops slightly (58.8% to 57.6%); nobody has reported reproducing them yet.",
+    "source": "https://x.com/yb2698/status/2123421903784136769"
+   }
+  },
+  {
+   "title": "Claude Code 2.1.327 can read an MCP server config from standard input, keeping tokens out of shell history",
+   "url": "https://x.com/wei_wang/status/2123435407723331760",
+   "handle": "@wei_wang",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "claude mcp add-json now accepts a config piped from a file, so a JSON containing a token no longer has to be typed on the command line. The release also fixes project-scope add and remove deleting other tools' settings from .mcp.json.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+   ],
+   "vendor": "Anthropic",
+   "posted_at": "2026-11-19T15:17:00Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Unsloth Desktop adds AMD NPU support for local models, with AMD saying NPUs use 2 to 4 times less power than GPUs",
+   "url": "https://x.com/UnslothAI/status/2123432043094913429",
+   "handle": "@UnslothAI",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Unsloth worked with AMD so local inference runs on the NPUs in Strix, Krackan and Gorgon chips, with future AMD NPU devices to work out of the box.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://unsloth.ai/docs/get-started/install/amd/amd-npu",
+    "https://newsroom.amd.com/news/amd-unsloth-bring-npu-support-agentic-ai-applications/"
+   ],
+   "vendor": "Unsloth / AMD",
+   "posted_at": "2026-11-19T15:03:00Z",
+   "metrics": {
+    "likes": 187,
+    "reposts": 21,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@danielhanchen"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The power saving is a vendor figure with no per-model throughput numbers in the post.",
+    "source": null
+   }
+  },
+  {
+   "title": "Arena launches a Coding Index; GPT-6.2 Astra (Max) scores 1338 at #3, 50 points above its predecessor at 62% lower median cost per task",
+   "url": "https://x.com/arena/status/2123431957308871030",
+   "handle": "@arena",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A new leaderboard ranks agents on real coding work. GPT-6.2 Astra sits on the cost Pareto frontier at $4.75 median per task versus $12.55 for GPT-6 Astra.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Arena",
+   "posted_at": "2026-11-19T15:03:00Z",
+   "metrics": {
+    "likes": 96,
+    "reposts": 6,
+    "quotes": 2,
+    "replies": 14,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "GUARD keeps the base model frozen and lets an agent edit its own prompts, skills and memory only when gains outweigh breakage",
+   "url": "https://x.com/omarsar0/status/2123420538030957015",
+   "handle": "@omarsar0",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A Google paper reports 80.80% accuracy on 43 hosted SDK tasks, 8.89 points over the starting harness, and 54.5% fewer tokens than Meta-Harness, with zero memory pollution on procedural memory tasks.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2611.23476"
+   ],
+   "vendor": "Google",
+   "posted_at": "2026-11-19T14:18:00Z",
+   "metrics": {
+    "likes": 45,
+    "reposts": 8,
+    "quotes": 1,
+    "replies": 29,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Results come from a summary thread and no code link is given; not independently reproduced.",
+    "source": null
+   }
+  },
+  {
+   "title": "Linger: open repo for a fully local OpenAI Dots and Grok Bot style assistant that serves and swaps models with PolyStrata",
+   "url": "https://x.com/coldniko/status/2123416354233495700",
+   "handle": "@coldniko",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A GitHub project that runs a personal agent entirely on local models, using the Strata engine to load and swap the models it needs.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/simplexai-labs/linger"
+   ],
+   "vendor": "simplexai-labs",
+   "posted_at": "2026-11-19T14:01:00Z",
+   "metrics": {
+    "likes": 116,
+    "reposts": 13,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The post gives no speed or quality numbers for the local assistant.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 93,
+ "list_pages": 1,
+ "security_forwarded": [
+  {
+   "url": "https://x.com/stdoutput/status/2123330707372253474",
+   "matched": "stack.json component Ruby (Apple system Ruby 2.6.10 on mini) and Codex; blog https://durendal.sh/blog/ruby-case-mapping-bugs, advisories GHSA-34m4-m9fh-gqp5 and GHSA-87fm-7w84-j2px, fixed in Ruby 3.3.14, 3.4.13, 4.0.10"
+  }
+ ],
+ "security_na": []
+}
