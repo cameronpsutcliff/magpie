@@ -13,6 +13,61 @@
  },
  "items": [
   {
+   "id": "2dbcc4984048",
+   "key": "policy:fr:2026-23529",
+   "headline": "Commerce rule restricts chip exports to data centers serving D:5 firms",
+   "title": "Addressing Remote Access to Advanced Semiconductors",
+   "harder": "Overseas data centers become harder to supply with advanced US chips if they remotely provide significant compute to companies headquartered in Country Group D:5 or Macau.",
+   "quote": "These restrictions will undermine the ability of companies headquartered in countries of concern from using U.S. advanced Super Intelligence (SI) semiconductors to train advanced SI models.",
+   "who": "Overseas data centers, foreign foundries, chip exporters",
+   "why": "Cloud compute providers and their customers now face due diligence on ownership ties to D:5 countries or Macau.",
+   "limits": "interim final rule; volume threshold for significant compute not stated in summary",
+   "status": "in_force",
+   "instrument": "export_control",
+   "layers": [
+    "chips",
+    "training",
+    "hosting"
+   ],
+   "jurisdiction": "US",
+   "issuer": "Commerce Department",
+   "effective": "2026-11-19",
+   "comment_deadline": null,
+   "access_now": false,
+   "impact": 4,
+   "ripples": [
+    {
+     "topic": "infra",
+     "effect": "Data centers must vet customer ownership before supplying compute"
+    },
+    {
+     "topic": "models",
+     "effect": "Training runs by D:5-headquartered firms on US chips get harder"
+    }
+   ],
+   "hats": {
+    "architect": "Compute sourcing plans may need providers that can document customer due diligence.",
+    "security": "Expect customer ownership and control checks from data centers and chip exporters.",
+    "product": "Cloud offerings may add onboarding checks for ownership ties to D:5 countries or Macau.",
+    "scout": "Watch the full rule text for the significant compute volume definition.",
+    "combinator": "Due diligence requirements may create demand for customer screening tools."
+   },
+   "url": "https://www.federalregister.gov/documents/2026/11/19/2026-23529/addressing-remote-access-to-advanced-semiconductors",
+   "doc_url": "https://www.federalregister.gov/documents/2026/11/19/2026-23529/addressing-remote-access-to-advanced-semiconductors",
+   "primary": true,
+   "sources": [
+    {
+     "name": "Federal Register",
+     "url": "https://www.federalregister.gov/documents/2026/11/19/2026-23529/addressing-remote-access-to-advanced-semiconductors",
+     "title": "Addressing Remote Access to Advanced Semiconductors"
+    }
+   ],
+   "published_at": "2026-11-19T12:00:00+00:00",
+   "first_seen": "2026-11-19",
+   "last_seen": "2026-11-19",
+   "signal": 97.2
+  },
+  {
    "id": "7fcc5ec3286b",
    "key": "policy:fr:2026-21447",
    "headline": "DHS order bars DeepSeek products from federal civilian agencies",

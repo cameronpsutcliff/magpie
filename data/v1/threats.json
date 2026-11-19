@@ -3,6 +3,75 @@
  "updated": "2026-11-19",
  "threats": [
   {
+   "id": "thr-2026-11-18-berriai-litellm-guardrails-test-endpoint-allows-remote",
+   "kind": "threat",
+   "category": "exploited-vuln",
+   "title": "BerriAI LiteLLM guardrails test endpoint allows remote code execution",
+   "headline": "A LiteLLM flaw lets remote attackers run arbitrary code through the guardrails custom code test URI.",
+   "summary": "A remote attacker could execute arbitrary code through bytecode rewriting. The record says LiteLLM through 2026-04-08 is affected.",
+   "severity": "high",
+   "severity_basis": "CVSS 8.8 (CNA)",
+   "exploited": true,
+   "exploited_quote": null,
+   "status": "active",
+   "act_now": true,
+   "affects": [
+    {
+     "name": "BerriAI LiteLLM",
+     "ecosystem": "product",
+     "versions": ""
+    }
+   ],
+   "fixed_in": [],
+   "actions": [
+    "Apply the vendor's fix or mitigations for BerriAI LiteLLM: CISA lists it as exploited",
+    "Apply the vendor's mitigations, or stop using the product if none are available.",
+    "Check whether each LiteLLM deployment is reachable from the internet."
+   ],
+   "action_quotes": [
+    {
+     "action": "Apply the vendor's mitigations, or stop using the product if none are available.",
+     "quote": "Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable."
+    },
+    {
+     "action": "Check whether each LiteLLM deployment is reachable from the internet.",
+     "quote": "Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines."
+    }
+   ],
+   "who": [
+    "teams running LiteLLM",
+    "LiteLLM deployments reachable from the internet"
+   ],
+   "published": "2026-11-18",
+   "first_seen": "2026-11-19",
+   "updated": "2026-11-19",
+   "cves": [
+    "CVE-2026-40217"
+   ],
+   "kev": true,
+   "doc": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-40217",
+   "sources": [
+    {
+     "name": "CISA Known Exploited Vulnerabilities",
+     "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-40217",
+     "primary": true
+    }
+   ],
+   "quote": "BerriAI LiteLLM contains an unprotected alternate channel vulnerability that could allow remote attackers to execute arbitrary code via bytecode rewriting at the /guardrails/test_custom_code URI.",
+   "evidence": "official",
+   "incident": null,
+   "children": [],
+   "merged_ids": [],
+   "key": "threat:CVE-2026-40217",
+   "idents": [
+    "CVE-2026-40217",
+    "url:cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-40217"
+   ],
+   "last_seen": "2026-11-19",
+   "reach": 2,
+   "wide": false
+  },
+  {
    "id": "thr-2026-11-09-openssh-password-authentication-bypass-on-linux",
    "kind": "threat",
    "category": "exploited-vuln",

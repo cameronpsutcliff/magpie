@@ -3,81 +3,99 @@
  "days": [
   {
    "date": "2026-11-19",
-   "headline": "voice-isolator, Introducing Gemini 4 Neon, paper-orchestra, and more",
-   "events": 271,
-   "sources": 534,
-   "enriched": false,
+   "headline": "Meet Gemini 4 Neon, code locally with OpenCode LoRA, drive robots zero-shot, and more",
+   "events": 457,
+   "sources": 565,
+   "enriched": true,
    "top": [
     {
      "id": "5c541b02c3aa",
-     "title": "inworld/voice-isolator",
-     "impact": 4,
-     "vendor": "Open source",
+     "title": "Inworld voice-isolator: open real-time voice isolation model",
+     "impact": 3,
+     "vendor": "Inworld",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-19-5c541b02c3aa"
     },
     {
-     "id": "f59792813902",
-     "title": "Introducing Gemini 4 Neon",
-     "impact": 4,
-     "vendor": "Google",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-19-f59792813902"
+     "id": "113f4f54a159",
+     "title": "Reson8 Rumble-2-Flash: 0.5B open speech-to-text model",
+     "impact": 3,
+     "vendor": "Reson8",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-19-113f4f54a159"
     },
     {
-     "id": "fa7a7600d82d",
-     "title": "google-research/paper-orchestra",
-     "impact": 5,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-19-fa7a7600d82d"
-    },
-    {
-     "id": "ab5596443556",
-     "title": "affaan-m/ECC",
-     "impact": 5,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-19-ab5596443556"
+     "id": "7f0911cd2fe4",
+     "title": "RadixArk DaisyRose-27B open-weight agent model",
+     "impact": 3,
+     "vendor": "RadixArk",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-19-7f0911cd2fe4"
     },
     {
      "id": "63f88fa12336",
-     "title": "tencent/Hy4-flash",
+     "title": "Tencent Hy4-flash image-text model on Hugging Face",
      "impact": 3,
      "vendor": "Tencent",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-19-63f88fa12336"
+    },
+    {
+     "id": "f59792813902",
+     "title": "Google introduces Gemini 4 Neon",
+     "impact": 5,
+     "vendor": "Google",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-19-f59792813902"
     }
    ],
    "vendors": [
     "Open source",
+    "NVIDIA",
+    "Anthropic",
     "Google",
     "OpenAI",
-    "AWS",
-    "Anthropic",
-    "Microsoft"
+    "AWS"
    ],
    "topics": {
-    "models": 89,
-    "coding": 83,
-    "agents": 81,
-    "multimodal": 65,
-    "infra": 42,
-    "memory": 33,
-    "mcp": 33,
-    "evals": 24,
-    "local": 19,
-    "research": 13,
-    "reverse": 10,
+    "models": 134,
+    "agents": 117,
+    "coding": 109,
+    "multimodal": 84,
+    "infra": 72,
+    "evals": 48,
+    "mcp": 44,
+    "memory": 39,
+    "local": 32,
+    "research": 21,
+    "reverse": 14,
     "security": 10,
-    "robotics": 3
+    "robotics": 7
    },
    "kinds": {
+    "video": 113,
+    "social": 110,
     "blog": 49,
-    "social": 36,
     "repo": 35,
-    "newsletter": 34,
+    "newsletter": 35,
     "model": 30,
     "changelog": 29,
-    "community": 25,
+    "community": 24,
     "space": 20,
-    "news": 13
-   }
+    "news": 12,
+    "constraint": 1
+   },
+   "constraints": [
+    {
+     "id": "2dbcc4984048",
+     "headline": "Commerce rule restricts chip exports to data centers serving D:5 firms",
+     "status": "in_force",
+     "jurisdiction": "US"
+    }
+   ],
+   "threats": [
+    {
+     "id": "thr-2026-11-18-berriai-litellm-guardrails-test-endpoint-allows-remote",
+     "title": "BerriAI LiteLLM guardrails test endpoint allows remote code execution",
+     "severity": "high",
+     "exploited": true
+    }
+   ]
   },
   {
    "date": "2026-11-18",
