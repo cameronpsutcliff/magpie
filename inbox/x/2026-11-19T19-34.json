@@ -1,0 +1,353 @@
+{
+ "ran_at": "2026-11-19T19:34:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-19T15:31:00Z",
+ "queries": 8,
+ "calls": 7,
+ "items": [
+  {
+   "title": "Genie 4 world model opens to developers in the Gemini API and Google AI Studio",
+   "url": "https://x.com/OfficialLoganK/status/2123467449257623770",
+   "handle": "@OfficialLoganK",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Google's first world model for developers is now callable through the Gemini API and AI Studio, so builders can create interactive generated-world experiences. Pricing appeared only in replies and is unverified.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://ai.studio/genie"
+   ],
+   "vendor": "Google DeepMind",
+   "posted_at": "2026-11-19T17:24:26Z",
+   "metrics": {
+    "likes": 2077,
+    "reposts": 102,
+    "quotes": 50,
+    "replies": 156,
+    "views": 84578
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Mostly jokes and feature requests; a few ask about cost per minute of generated world and one reply claims about $363 an hour, unverified. Nobody reports building with it yet.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "ManiLadder: 112 simulated manipulation tasks in 4 calibrated difficulty levels, with code and checkpoints",
+   "url": "https://x.com/GChongkai/status/2123494067015459302",
+   "handle": "@GChongkai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A simulation benchmark for robot manipulation that sets difficulty from a reference policy's success rate. A flow-matching policy, pi0.5 and a coding agent all fall from roughly 70% on Level 1 to under 10% on Level 4; real-robot reruns of 8 tasks kept the same difficulty order.",
+   "kind": "eval",
+   "evidence": "artifact",
+   "links": [
+    "https://maniladder-benchmark.github.io/"
+   ],
+   "vendor": "ManiLadder authors",
+   "posted_at": "2026-11-19T19:10:12Z",
+   "metrics": {
+    "likes": 2,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 2,
+    "views": 42
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Firecrawl Local: open-source Rust scrape primitive for running Firecrawl on your own machine",
+   "url": "https://x.com/firecrawl/status/2123096169630912637",
+   "handle": "@firecrawl",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Firecrawl rebuilt its repo so agents can scrape locally, claiming a scrape primitive 37x faster and 230x lighter (11 MB idle) than the old self-hosted build, with the same MCP server and SDKs.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/firecrawl/firecrawl"
+   ],
+   "vendor": "Firecrawl",
+   "posted_at": "2026-11-18T16:49:06Z",
+   "metrics": {
+    "likes": 4585,
+    "reposts": 305,
+    "quotes": 103,
+    "replies": 202,
+    "views": 615853
+   },
+   "confirmed_by": [
+    "@plotarmordev"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Replies are short enthusiasm and 'how do I use this' questions, plus bot replies; no one reports benchmarking the speed or memory claims.",
+    "tried": false,
+    "replies_read": 24
+   }
+  },
+  {
+   "title": "Airbnb serves a tuned Gemma 4 E2B for policy classification at 35 ms median latency on one RTX Pro 6000",
+   "url": "https://x.com/googlegemma/status/2123461832656781320",
+   "handle": "@googlegemma",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Per Google's Gemma account, Airbnb's benchmark lifted max F1 from 0.563 to 0.902 with the small open model, matching frontier APIs at about 1% of the spend and 35 ms median latency versus about 900 ms.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Google / Airbnb",
+   "posted_at": "2026-11-19T17:02:07Z",
+   "metrics": {
+    "likes": 515,
+    "reposts": 32,
+    "quotes": 5,
+    "replies": 43,
+    "views": 21923
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Kling 4.0 generates native 4K video on fal, with optional 10-bit HDR",
+   "url": "https://x.com/fal/status/2123481122638045551",
+   "handle": "@fal",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "fal exposes Kling 4.0 text, image, reference and video-edit modes at native 4K, with 10-bit HDR output at 4K and 1080p.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "fal / Kuaishou",
+   "posted_at": "2026-11-19T18:18:46Z",
+   "metrics": {
+    "likes": 19,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 6,
+    "views": 1675
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Ideogram 4.6 available on fal with instruction-based edits of existing images",
+   "url": "https://x.com/fal/status/2123464429975081392",
+   "handle": "@fal",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "fal added Ideogram 4.6 for text-to-image and image editing, including targeted edits to product details, clothing colors and poster typography. Ideogram separately said open weights are planned for 4.6; none are released yet.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Ideogram / fal",
+   "posted_at": "2026-11-19T17:12:26Z",
+   "metrics": {
+    "likes": 52,
+    "reposts": 3,
+    "quotes": 2,
+    "replies": 4,
+    "views": 2538
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "PostTrainBench adds Qwen 4 Max and charts the US vs Chinese model gap at about 8 points",
+   "url": "https://x.com/maksym_andr/status/2123487393663914175",
+   "handle": "@maksym_andr",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "PostTrainBench now lists Qwen 4 Max at roughly GLM-5.3 Flash level (36.7 vs 36.8 percent), and a follow-up chart tracks the gap between US and Chinese models on research-automation capabilities.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "PostTrainBench",
+   "posted_at": "2026-11-19T18:43:41Z",
+   "metrics": {
+    "likes": 5,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 374
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "NVIDIA GR00T 2 shown driving real dexterous hands end to end, uncut at 1x",
+   "url": "https://x.com/DrJimFan/status/2123470587259732200",
+   "handle": "@DrJimFan",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "A single uninterrupted clip claims GR00T 2 controls real dexterous hands autonomously. No weights, paper or numbers in the post.",
+   "kind": "demo",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-11-19T17:36:54Z",
+   "metrics": {
+    "likes": 253,
+    "reposts": 19,
+    "quotes": 4,
+    "replies": 44,
+    "views": 11994
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers praise the uncut 1x format and ask about failure recovery and error rates; nobody reports reproducing it.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "RoboColosseum compares five robot models folding a towel zero-shot on a bimanual YAM arm",
+   "url": "https://x.com/RoboColosseum/status/2123490997967654952",
+   "handle": "@RoboColosseum",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Side-by-side clips of five models on the same zero-shot task, with the caveat that timings are not comparable. Academic labs can apply for free eval hours.",
+   "kind": "eval",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "RoboColosseum",
+   "posted_at": "2026-11-19T18:58:01Z",
+   "metrics": {
+    "likes": 7,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 2,
+    "views": 171
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Olala mini: 7B total, 1B active model mixing Mamba-3 with grouped differential attention, trained on 13T tokens",
+   "url": "https://x.com/AlexandreTL2/status/2123460032612167689",
+   "handle": "@AlexandreTL2",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "An author's thread describes a small hybrid model with architecture changes over the Transformer. No weights link was seen.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Olala authors",
+   "posted_at": "2026-11-19T16:54:58Z",
+   "metrics": {
+    "likes": 56,
+    "reposts": 8,
+    "quotes": 1,
+    "replies": 2,
+    "views": 2284
+   },
+   "confirmed_by": [
+    "@_albertgu"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Tencent Hy4-Flash quantized to 4.84 bpw EXL3 (92.9 GiB) to fit one DGX Spark, with 96.92% top-1 agreement",
+   "url": "https://x.com/ViC305/status/2123462111137521681",
+   "handle": "@ViC305",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A community quantization of the 220B-parameter, 12B-active Hy4-Flash reports 0.0288 mean KL divergence and 96.92% top-1 agreement with the original, sized for a single DGX Spark. Self-reported; no repo link in the post.",
+   "kind": "technique",
+   "evidence": "claim",
+   "links": [
+    "https://huggingface.co/tencent/Hy4-flash"
+   ],
+   "vendor": "Tencent / community quantizer",
+   "posted_at": "2026-11-19T17:03:13Z",
+   "metrics": {
+    "likes": 35,
+    "reposts": 2,
+    "quotes": 1,
+    "replies": 8,
+    "views": 1098
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 95,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
