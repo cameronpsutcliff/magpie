@@ -1,0 +1,228 @@
+{
+ "ran_at": "2026-11-19T23:30:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-19T19:34:00Z",
+ "queries": 3,
+ "calls": 8,
+ "items": [
+  {
+   "title": "Gemini app on Mac gets computer use that runs in a background window while you keep working",
+   "url": "https://x.com/GeminiApp/status/2123513203745538423",
+   "handle": "@GeminiApp",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Gemini can now click, scroll and type across folders, apps and the web in an isolated background window on Mac, shown turning a sketch into a rigged 3D model in Blender. Rolling out in the US in English to Google AI Plus, Pro and Ultra subscribers.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Google",
+   "posted_at": "2026-11-19T20:26:15Z",
+   "metrics": {
+    "likes": 915,
+    "reposts": 75,
+    "quotes": 49,
+    "replies": 95,
+    "views": 66524
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Availability is limited to US English paid tiers and replies report nothing tested yet.",
+    "source": "https://x.com/GeminiApp/status/2123513203745538423"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Replies were mostly jokes, laptop heat worries and questions whether it beats Claude or Codex computer use; nobody reports having tried it.",
+    "tried": false,
+    "replies_read": 24
+   }
+  },
+  {
+   "title": "TensorFold 1.3.0 lifts GLM-5.3-Flash from 83.8 to 104.1 tok/s on two RTX PRO 6000 Blackwells",
+   "url": "https://x.com/ashxhart/status/2123557011484975518",
+   "handle": "@ashxhart",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "The local inference server release reports about 24% faster decode on CUDA at TP=2 with NVFP4 experts and identical output bits in that test, plus about 1.5x faster prompt attention for DeepSeek-V4.1 on Metal and about 3 GiB less page cache after loading NVFP4 exports.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-19T23:20:19Z",
+   "metrics": {
+    "likes": 7,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 1,
+    "views": 203
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "FastVideo open-sources Dreamverse Harness for agent-run video production on local DGX Sparks or cloud",
+   "url": "https://x.com/haoailab/status/2123516981643190734",
+   "handle": "@haoailab",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "An open harness that lets any agent work through a whole film project from script to final cut, with its own compute management, running fully local on up to four DGX Sparks or through cloud providers.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/fastvideo-project/dreamverse-harness",
+    "https://haoailab.com/blogs/dreamverse-harness/"
+   ],
+   "vendor": "Hao AI Lab (FastVideo)",
+   "posted_at": "2026-11-19T20:41:16Z",
+   "metrics": {
+    "likes": 31,
+    "reposts": 11,
+    "quotes": 3,
+    "replies": 3,
+    "views": 2017
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Nace AI Drex Router picks the model and reasoning effort for each agent step, 87.6% vs 86.4% for a rival router",
+   "url": "https://x.com/NaceAI/status/2123502254657605658",
+   "handle": "@NaceAI",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "A small routing model chooses which LLM or SLM and how much reasoning effort to use per step; the vendor reports 87.6% accuracy against 86.4% for Jev Router and a cost test over 306 prompts. Access is through a sign-in console.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [
+    "https://console.nace.ai/"
+   ],
+   "vendor": "Nace AI",
+   "posted_at": "2026-11-19T19:42:44Z",
+   "metrics": {
+    "likes": 70,
+    "reposts": 6,
+    "quotes": 12,
+    "replies": 14,
+    "views": 13218
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Numbers are vendor-reported and the post carries a sign-up credit promotion.",
+    "source": null
+   }
+  },
+  {
+   "title": "OpenAI GPT-Live-1.1 is in the API with steadier accents across languages and a standby option for long sessions",
+   "url": "https://x.com/OpenAIDevs/status/2123506733524136446",
+   "handle": "@OpenAIDevs",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "The live voice model update speaks with more consistent accents, follows instructions better and adds an idle standby mode that lowers cost for long-running sessions.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "OpenAI",
+   "posted_at": "2026-11-19T20:00:32Z",
+   "metrics": {
+    "likes": 2617,
+    "reposts": 163,
+    "quotes": 85,
+    "replies": 117,
+    "views": 199638
+   },
+   "confirmed_by": [
+    "@juberti"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Bespoke Labs Multi Agent Coordination Bench: 12 long-horizon tasks show frontier agents coordinate poorly",
+   "url": "https://x.com/bespokelabsai/status/2123099143996616741",
+   "handle": "@bespokelabsai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A benchmark of twelve natively multi-agent tasks built on Harbor. Eight agents beat one, but the authors say the gain comes from agent count, not coordination, and only Opus showed signs of a coordination gain among three frontier models.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Bespoke Labs",
+   "posted_at": "2026-11-18T17:00:55Z",
+   "metrics": {
+    "likes": 588,
+    "reposts": 69,
+    "quotes": 40,
+    "replies": 48,
+    "views": 121269
+   },
+   "confirmed_by": [
+    "@harborframework"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Letta FrontierMemory leaderboard: GPT-6.2 Astra scores 64.4% on agent learning, up from 44.4% for GPT-6 Astra",
+   "url": "https://x.com/Letta_AI/status/2123557869174022294",
+   "handle": "@Letta_AI",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Letta's memory benchmark for continual learning in agents reports GPT-6.2 Astra well ahead of its predecessor, while GPT-6.2 Sol stays level with earlier generations. The full leaderboard is on the project site.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://frontiermemory.com/"
+   ],
+   "vendor": "Letta",
+   "posted_at": "2026-11-19T23:23:44Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 54
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Post was minutes old with no reception yet; method is only on the linked leaderboard.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 91,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
