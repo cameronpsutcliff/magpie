@@ -1,0 +1,288 @@
+{
+ "ran_at": "2026-11-19T11:22:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-19T03:24:00Z",
+ "queries": 8,
+ "calls": 9,
+ "items": [
+  {
+   "title": "Megakernel zoo: Claude-written single-kernel decode engines for 8 open models, up to 1.77x faster than vLLM and SGLang",
+   "url": "https://x.com/xingyudang/status/2123278497879634173",
+   "handle": "@xingyudang",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Agents wrote one GPU kernel per model that runs the whole decode loop, for eight open models from 8B to 594B, with a logit-match evaluator against an FP64 reference. Engines and an OpenAI-compatible server are open, and the pipeline can build one for your own checkpoint and GPU.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/dangxingyu/megakernel-zoo",
+    "https://dangxingyu.github.io/megakernel/"
+   ],
+   "vendor": "Xingyu Dang et al.",
+   "posted_at": "2026-11-19T04:53:00Z",
+   "metrics": {
+    "likes": 116,
+    "reposts": 14,
+    "quotes": 2,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Speedup is versus vLLM and SGLang on B/H-class GPUs only; each model needs its own kernel, which repliers say adds a maintenance cost.",
+    "source": "https://x.com/Rafse7en"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Repliers praised the strict evaluator (FP64 logit match, bit-identical under batch reordering) and asked about kernel reuse after fine-tunes and whether it transfers to consumer or GB10-class GPUs; nobody reports reproducing it.",
+    "tried": false,
+    "replies_read": 23
+   }
+  },
+  {
+   "title": "Clover-35B-A3B-Preview technical report and SFT code released for an agentic diffusion language model",
+   "url": "https://x.com/DiffuSpace_Labs/status/2123270249344565377",
+   "handle": "@DiffuSpace_Labs",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "DiffuSpace published the architecture, training recipe and inference experiments for Clover, a diffusion model aimed at agentic tasks, and opened its SFT code.",
+   "kind": "paper",
+   "evidence": "artifact",
+   "links": [
+    "https://arxiv.org/abs/2611.24636",
+    "https://github.com/DiffuSpace/Clover-35B-A3B-Preview/tree/main/sft"
+   ],
+   "vendor": "DiffuSpace",
+   "posted_at": "2026-11-19T04:20:00Z",
+   "metrics": {
+    "likes": 39,
+    "reposts": 7,
+    "quotes": 2,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "TRL adds Nemotron-H support to its tree-attention kernels for AsyncGRPOTrainer RL training",
+   "url": "https://x.com/DirhousssiAmine/status/2123360023069835356",
+   "handle": "@DirhousssiAmine",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A TRL contributor says Nemotron-H models can now be RL-trained with AsyncGRPOTrainer through custom tree-attention kernels. The linked pull request was still open when checked.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/huggingface/trl/pull/8457",
+    "https://github.com/huggingface/trl/issues/8233"
+   ],
+   "vendor": "Hugging Face TRL",
+   "posted_at": "2026-11-19T10:17:00Z",
+   "metrics": {
+    "likes": 4,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Pull request 8457 was still open (not merged) at check time, so 'you can now' may mean a branch.",
+    "source": "https://github.com/huggingface/trl/pull/8457"
+   }
+  },
+  {
+   "title": "Two DGX Sparks run DeepSeek V4.1 Flash at 153.5 tok/s on TensorFold, matching the published 154.0 recipe",
+   "url": "https://x.com/plotarmordev/status/2123349813945106492",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A home-lab test with 4 concurrent chats on two DGX Sparks reproduced a published recipe within 0.5 tok/s, using the recipe repo untouched on TensorFold.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-19T09:37:00Z",
+   "metrics": {
+    "likes": 13,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 4,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Spark Attic v0.1.6 reclaims about 2 GB more KV cache per DGX Spark from unused display memory",
+   "url": "https://x.com/bertholomusai/status/2123309480947626214",
+   "handle": "@bertholomusai",
+   "group": "builders",
+   "origin": "discovery",
+   "summary": "An open tool that frees display memory on a headless DGX Spark for KV cache, now also working on Ubuntu Sparks, installable by a coding agent, and self-healing after client crashes.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/bertholomus/spark-attic"
+   ],
+   "vendor": "bertholomus",
+   "posted_at": "2026-11-19T06:56:00Z",
+   "metrics": {
+    "likes": 24,
+    "reposts": 2,
+    "quotes": 3,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@ashxhart"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Reson8 Rumble-2-Flash: 0.5B Apache 2.0 speech-to-text model covering 40+ languages, card reports 6.60 WER on English",
+   "url": "https://x.com/plotarmordev/status/2123364913632489745",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A small open speech recognition model built on a Qwen3-ASR base that runs locally on a Mac; the WER is the model card's own figure and the poster has not yet tested it.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/Reson8/Rumble-2-Flash"
+   ],
+   "vendor": "Reson8",
+   "posted_at": "2026-11-19T10:37:00Z",
+   "metrics": {
+    "likes": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "WER is self-reported on the model card; the Hugging Face repo was created in mid-October, so 'new' is unclear.",
+    "source": "https://huggingface.co/Reson8/Rumble-2-Flash"
+   }
+  },
+  {
+   "title": "FrontierRSI: Abundant Labs benchmark for agents doing AI research work and multi-step post-training",
+   "url": "https://x.com/quasicoh/status/2123114502065627580",
+   "handle": "@quasicoh",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "A recursive self-improvement benchmark that scores agents on AI research and engineering tasks and on multi-step agentic post-training, and Harbor now supports running it. No primary link was visible in the post text.",
+   "kind": "eval",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Abundant Labs",
+   "posted_at": "2026-11-18T18:01:00Z",
+   "metrics": {
+    "likes": 363,
+    "reposts": 65,
+    "quotes": 38,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@harborframework"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers question the task time limits favoring faster-compute labs and one says a benchmark topped by Claude models looks off; no one reports running it.",
+    "source": "https://x.com/quasicoh/status/2123114502065627580"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Mostly congratulations from researchers, plus specific questions about time cutoffs, refusals counting in scores and optimizing for the Qwen3-4B student; no one reports trying it.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Architect Labs Frostbite: agent swarm co-designs an interaction-net CPU from ISA to final GDS",
+   "url": "https://x.com/architectlabs/status/2123187520276152487",
+   "handle": "@architectlabs",
+   "group": "research",
+   "origin": "saved",
+   "summary": "Agents designed, verified and optimized a CPU from interaction-net theory alone, down to final layout. Repliers cite 6.02x perf/W on 10 tuned workloads and 3.83x on 15 held-out ones.",
+   "kind": "demo",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Architect Labs",
+   "posted_at": "2026-11-18T22:52:00Z",
+   "metrics": {
+    "likes": 1828,
+    "reposts": 187,
+    "quotes": 87,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "A final GDS is not working silicon and there is no independent verification; the efficiency numbers appear only in repliers' quotes of the original thread.",
+    "source": "https://x.com/sebuzdugan"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Interest in the held-out split, with specific doubts about silicon, verification and dataflow limits with ordered I/O; no one reports running it.",
+    "tried": false,
+    "replies_read": 25
+   }
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/OrcaRouter/status/2123258076921053596",
+   "reason": "Vendor launch of a deception-based security product with no open artifact or measured result; replies ask if it will be open sourced."
+  },
+  {
+   "url": "https://x.com/IsaacBotkin/status/2123212200156508336",
+   "reason": "Firearms manual archive, no AI angle."
+  }
+ ],
+ "list_posts_read": 90,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://x.com/OrcaRouter/status/2123258076921053596",
+   "reason": "Vendor claims an AI pentester (ARTEX) pulled /.env from its own prod; no CVE, package or component in the fleet stack, general web-defense marketing."
+  }
+ ]
+}
