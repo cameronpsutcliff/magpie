@@ -1,17 +1,17 @@
 {
- "updated_at": "2026-11-18T23:30:00Z",
+ "updated_at": "2026-11-19T03:24:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 25,
+ "calls_used_today": 38,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-18T23:30:00Z",
-  "items": 9,
-  "queries": 3,
-  "deep_reads": 1,
+  "ran_at": "2026-11-19T03:24:00Z",
+  "items": 13,
+  "queries": 8,
+  "deep_reads": 5,
   "rechecks": 0,
   "flagged": 0,
-  "saved_in": 3,
+  "saved_in": 0,
   "saved_kept": 0,
   "videos": 0,
   "security_forwarded": 0,
@@ -286,11 +286,7 @@
   "Roster review 2026-11-18: 0 X reads used. Promoted @addyosmani (owner_requested), @EricBezzam and @Mokhalil01 to active (14+ days, 2+ sweep items). Owner saves: only @danikkk_wqs has 2+ kept saves, still excluded for vice. No retirements; @JensenHuang (owner_requested, last qualifying post 2026-09-03) flagged for owner review, status unchanged. Many trials 28+ days old with 0 sweep items (e.g. @PrismML, @odysseyml, @actualinc, @mem0ai, @ElorianAI, @somarkai, @StefanoErmon, @inco_ai, @hotchpotch, @GChongkai, @yufan_zhuang) remain trial, not promoted; owner_requested trials @bcherny, @_catwu, @trq212 left untouched. Sunday drafts skipped (Wednesday).",
   "The user-X MCP here lacks search_posts_all and get_posts_by_ids; the built-in x namespace supplies them and its large results are truncated in tool output, so full text came from a get_posts_by_ids call and files on disk. follow_mode browser was skipped (no browser)."
  ],
- "errors": [
-  "No browser available: follows skipped this sweep.",
-  "Authors missing from list responses unless expansions=author_id is passed with post.fields author_id.",
-  "SID-2 saved post video (153s) not analyzed: no video reader available this run."
- ],
+ "errors": [],
  "follows_today": 0,
  "last_roster_review": {
   "ran_at": "2026-11-17T10:35:00Z",

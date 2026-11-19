@@ -1,0 +1,424 @@
+{
+ "ran_at": "2026-11-19T03:24:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-18T23:30:00Z",
+ "queries": 8,
+ "calls": 13,
+ "items": [
+  {
+   "title": "Strata v0.2.16 moves local inference fully onto Strata's own engine, with a Mac bug fix and wider GPU support",
+   "url": "https://x.com/coldniko/status/2123202426609999937",
+   "handle": "@coldniko",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "The release makes Strata's own engine the only path for local models, with a fix for a serious Mac bug. Users report faster prefill on older AMD cards, and early tests with parallel agents rely on KV-cache reuse.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/Niko1221/Strata/releases/tag/v0.2.16"
+   ],
+   "vendor": "Strata",
+   "posted_at": "2026-11-18T23:51:00Z",
+   "metrics": {
+    "likes": 418,
+    "reposts": 48,
+    "quotes": 14,
+    "replies": 35,
+    "views": 16868
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers ask why it still trails a rival engine (Basalt) and note the quoted 30 to 33 ms prefill depends on cached tokens; one reply says no improvement yet on a 7900 XTX.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Some repliers report big prefill gains (1000+ tokens/s on an older AMD card); others ask for cold-prompt numbers and comparisons against Basalt and llama.cpp, and one saw no gain on a 7900 XTX.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "HyperFlow H3 Flash: Video Rebirth compresses MiniMax-H3 to 13.7B for joint video and audio generation in 4 to 8 steps, with GGUF",
+   "url": "https://x.com/wei_wang/status/2123253936832286729",
+   "handle": "@wei_wang",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Video Rebirth's compressed MiniMax-H3 makes video plus stereo audio in 4 to 8 steps; a Q4_K_M GGUF is 9.1 GB and fits a 24 GB card, though the text encoder needs another 15.7 GB. Official 5.2 s 1344x768 clips take 53 s on an RTX PRO 6000, 83 s on a 5090 and 152 s on a 4090.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/Video-Rebirth/hyperflow-h3-flash"
+   ],
+   "vendor": "Video Rebirth",
+   "posted_at": "2026-11-19T03:16:01Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 29
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "ORA v0.1: open harness for zero-shot robot use lifts RoboDojo success from 5.2% to 39.9% on DeepSeek V4.1-Flash",
+   "url": "https://x.com/haoailab/status/2123214025580536251",
+   "handle": "@haoailab",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Hao AI Lab releases ORA v0.1 with cuRobo motion planning and a code mode where models write their own tools. Collision-stopped moves fell from 14.1% to 7.0% on RoboDojo, and a companion dataset of 3K+ episodes from 7 models (ORA Traces) is out.",
+   "kind": "repo",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/fast-rua/ORA",
+    "https://huggingface.co/datasets/FastRUA/ora-traces",
+    "https://fastrua.ai/blog/2026-11-code-mode/"
+   ],
+   "vendor": "Hao AI Lab / FastRUA",
+   "posted_at": "2026-11-19T00:37:00Z",
+   "metrics": {
+    "likes": 32,
+    "reposts": 12,
+    "quotes": 3,
+    "replies": 2,
+    "views": 1986
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Genie 4 in Project Genie lets users type new prompts while exploring a generated world, with audio adapting in real time",
+   "url": "https://x.com/sundarpichai/status/2123241253982916795",
+   "handle": "@sundarpichai",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Google says Genie 4 accepts new prompts mid-exploration, such as adding characters or changing the scene, and the native audio follows. It is available to eligible Google AI Ultra subscribers in Project Genie.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Google",
+   "posted_at": "2026-11-19T02:25:00Z",
+   "metrics": {
+    "likes": 1213,
+    "reposts": 82,
+    "quotes": 27,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No technical report or access beyond the Ultra tier is linked, so nothing outside Google's own demo can be checked yet.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Mostly short praise; one reply says live editing mid-walk changes how the world feels, and one questions training data.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Gemini 4 Neon scores 63.7% on CursorBench 4.1 at default effort, up from 57.3% for Gemini 4 Hydrogen",
+   "url": "https://x.com/cursor_ai/status/2123198346802450926",
+   "handle": "@cursor_ai",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Cursor adds Gemini 4 Neon at $3 per million input and $15 per million output tokens and reports a new cost-performance frontier on its own CursorBench 4.1.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Cursor / Google",
+   "posted_at": "2026-11-18T23:35:00Z",
+   "metrics": {
+    "likes": 1409,
+    "reposts": 86,
+    "quotes": 54,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers note it is Cursor's own eval on its own harness and ask which effort setting 'default' means, since provider defaults differ.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Mostly questions about the effort setting, task-length breakdown and cost per finished task; nobody reports an independent rerun.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Agent Arena Index debuts as Arena's headline agent measure, with GPT-6.2 Astra at #6 (1291) and Sol at #11 (1241)",
+   "url": "https://x.com/arena/status/2123234410032214464",
+   "handle": "@arena",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Arena scores GPT-6.2 Astra and Sol on its new Agent Arena Index, an overall measure of agent performance, with Sol on the cost Pareto frontier.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/arena/status/2123112692810764496"
+   ],
+   "vendor": "Arena",
+   "posted_at": "2026-11-19T01:58:00Z",
+   "metrics": {
+    "likes": 105,
+    "reposts": 7,
+    "quotes": 3,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Kling Image 4.0 ranks #7 in text to image and #6 in image editing, with output up to 8K",
+   "url": "https://x.com/ArtificialAnlys/status/2123242530489966738",
+   "handle": "@ArtificialAnlys",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Artificial Analysis places Kling Image 4.0 just behind OpenAI and Microsoft AI image models, at under a third of the 2K price of every higher-ranked OpenAI model.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Kling",
+   "posted_at": "2026-11-19T02:30:00Z",
+   "metrics": {
+    "likes": 31,
+    "reposts": 3,
+    "quotes": 2,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Humming in SGLang adds JIT low-bit kernels for dense and MoE layers on NVIDIA GPUs from Turing to Blackwell",
+   "url": "https://x.com/lmsysorg/status/2123199188414664812",
+   "handle": "@lmsysorg",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "LMSYS describes Humming, which keeps Hopper MoE expert weights packed at 4 bits and rebuilds FP8 operands in-kernel for more efficient MoE serving.",
+   "kind": "technique",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "SGLang / LMSYS",
+   "posted_at": "2026-11-18T23:38:00Z",
+   "metrics": {
+    "likes": 25,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The post links no repo, paper or numbers in the part available, so there is nothing to check yet.",
+    "source": null
+   }
+  },
+  {
+   "title": "GitHub Copilot rolls out GitHub-verified MCP servers as one-time connectors in public preview",
+   "url": "https://x.com/github/status/2123217310752342095",
+   "handle": "@github",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Verified MCP connectors can be added once and used across the Copilot app, Copilot CLI and VS Code, with sign-in handled per service.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "GitHub",
+   "posted_at": "2026-11-19T00:50:00Z",
+   "metrics": {
+    "likes": 35,
+    "reposts": 2,
+    "quotes": 3,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Prime Intellect launches Model Factory to train, deploy and continuously improve models on one stack, with nanochat-ladder autoresearch",
+   "url": "https://x.com/PrimeIntellect/status/2123207653530972470",
+   "handle": "@PrimeIntellect",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Model Factory runs on demand, on dedicated clusters or on your own, and a new pretraining feature supports autoresearch on top of the nanochat scaling ladder with automatic recovery for jobs on thousands of GPUs.",
+   "kind": "tool",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Prime Intellect",
+   "posted_at": "2026-11-19T00:12:00Z",
+   "metrics": {
+    "likes": 515,
+    "reposts": 66,
+    "quotes": 37,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@eliebakouch"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Replies are congratulations and integration chatter; no one reports using it and no docs or numbers appear in the thread.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Congratulations and small integration comments; nobody reports a result.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Replit announces Missions, extending its Agent past 200-minute autonomous runs",
+   "url": "https://x.com/Replit/status/2123248146390327500",
+   "handle": "@Replit",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Replit says Missions pushes its Agent further than the 200-plus minutes of autonomous work it reached in September 2025; the post gives no mechanism or numbers.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Replit",
+   "posted_at": "2026-11-19T02:53:00Z",
+   "metrics": {
+    "likes": 9,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 3,
+    "views": 1697
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers ask how long a mission can run, which model grades the work and how rollbacks work; the post has no numbers to check.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "none",
+    "summary": "Three replies, all questions about run length, grading model and rollbacks.",
+    "tried": false,
+    "replies_read": 3
+   }
+  },
+  {
+   "title": "DHH has local models build themes, bar plugins, apps and games on Omarchy overnight, fixing Omarchy after each failure",
+   "url": "https://x.com/OmarchyUpdates/status/2123250014483009832",
+   "handle": "@OmarchyUpdates",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Two Omarchy pull requests make the desktop easier for local models to build on, based on an overnight run of Qwen3.8 Flash Next at about 45 tokens/s on Strix Halo driving OpenCode through four make-tasks.",
+   "kind": "technique",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/omacom/omarchy/pull/19086",
+    "https://github.com/omacom/omarchy/pull/19300"
+   ],
+   "vendor": "Omarchy",
+   "posted_at": "2026-11-19T03:00:26Z",
+   "metrics": {
+    "likes": 6,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 1,
+    "views": 127
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Amp ships a Windows version",
+   "url": "https://x.com/sqs/status/2123197781376679961",
+   "handle": "@sqs",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Sourcegraph's Amp coding agent now has a Windows app, announced with a short post and a link.",
+   "kind": "tool",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Amp / Sourcegraph",
+   "posted_at": "2026-11-18T23:32:00Z",
+   "metrics": {
+    "likes": 89,
+    "reposts": 5,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The post has no details to check beyond the link.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 93,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
