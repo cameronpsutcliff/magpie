@@ -3,81 +3,91 @@
  "days": [
   {
    "date": "2026-11-20",
-   "headline": "firecrawl, app-store-compliance, Hy4-flash, and more",
-   "events": 252,
-   "sources": 534,
-   "enriched": false,
+   "headline": "Opening Hy4 weights, pipelining robot agents, shrinking policy classifiers, and more",
+   "events": 431,
+   "sources": 565,
+   "enriched": true,
    "top": [
     {
+     "id": "f7442444e4cc",
+     "title": "Tencent Hy4-Flash quantized to fit one DGX Spark",
+     "impact": 3,
+     "vendor": "Tencent",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-20-f7442444e4cc"
+    },
+    {
+     "id": "e88611c56bb4",
+     "title": "Tencent opens Hy4 multimodal MoE weights",
+     "impact": 5,
+     "vendor": "Tencent",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-20-e88611c56bb4"
+    },
+    {
      "id": "e89455a60806",
-     "title": "firecrawl/firecrawl",
-     "impact": 4,
-     "vendor": "Open source",
+     "title": "Firecrawl Local runs scraping on your own machine",
+     "impact": 3,
+     "vendor": "Firecrawl",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-20-e89455a60806"
     },
     {
-     "id": "59a785f44ee3",
-     "title": "mjmirza/app-store-compliance",
+     "id": "a3ed123b5bab",
+     "title": "FastRUA makes robot-use agents about three times faster",
      "impact": 4,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-20-59a785f44ee3"
+     "vendor": "Hao AI Lab (UC San Diego)",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-20-a3ed123b5bab"
     },
     {
-     "id": "63f88fa12336",
-     "title": "tencent/Hy4-flash",
+     "id": "89b750be2d6b",
+     "title": "Airbnb tuned Gemma 4 E2B matches frontier classification",
      "impact": 4,
-     "vendor": "Tencent",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-20-63f88fa12336"
-    },
-    {
-     "id": "4302db6cb9e8",
-     "title": "elementalsouls/Claude-BugHunter",
-     "impact": 5,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-20-4302db6cb9e8"
-    },
-    {
-     "id": "e487fe51b82b",
-     "title": "cloudflare/security-audit-skill",
-     "impact": 4,
-     "vendor": "Cloudflare",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-20-e487fe51b82b"
+     "vendor": "Google / Airbnb",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-20-89b750be2d6b"
     }
    ],
    "vendors": [
     "Open source",
+    "Anthropic",
     "Google",
-    "AWS",
     "OpenAI",
-    "Databricks",
-    "Anthropic"
+    "AWS",
+    "NVIDIA"
    ],
    "topics": {
-    "agents": 89,
-    "coding": 73,
-    "models": 69,
-    "multimodal": 51,
-    "local": 27,
-    "infra": 26,
-    "mcp": 24,
-    "memory": 21,
-    "evals": 20,
-    "research": 14,
-    "security": 13,
-    "reverse": 11,
-    "robotics": 1
+    "models": 115,
+    "agents": 111,
+    "coding": 103,
+    "multimodal": 67,
+    "infra": 46,
+    "local": 34,
+    "mcp": 30,
+    "memory": 30,
+    "evals": 28,
+    "research": 26,
+    "security": 18,
+    "reverse": 16,
+    "robotics": 4
    },
    "kinds": {
+    "video": 118,
+    "social": 103,
     "blog": 54,
-    "repo": 38,
-    "social": 34,
-    "community": 31,
-    "model": 30,
-    "changelog": 24,
+    "repo": 37,
+    "model": 29,
+    "community": 27,
+    "changelog": 23,
     "space": 20,
-    "news": 11,
+    "news": 10,
     "newsletter": 10
-   }
+   },
+   "constraints": [],
+   "threats": [
+    {
+     "id": "thr-2026-11-19-mcp-python-sdk-oauth-client-sends-credentials",
+     "title": "MCP Python SDK OAuth client sends credentials to attacker servers",
+     "severity": "high",
+     "exploited": null
+    }
+   ]
   },
   {
    "date": "2026-11-19",

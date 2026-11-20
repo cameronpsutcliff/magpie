@@ -3,6 +3,81 @@
  "updated": "2026-11-20",
  "threats": [
   {
+   "id": "thr-2026-11-19-mcp-python-sdk-oauth-client-sends-credentials",
+   "kind": "threat",
+   "category": "ai-framework-vuln",
+   "title": "MCP Python SDK OAuth client sends credentials to attacker servers",
+   "headline": "Malicious MCP servers could redirect OAuth credentials from Python SDK clients to their own token endpoints.",
+   "summary": "The OAuth client support in the Model Context Protocol Python SDK did not validate the authorization server issuer on every discovery path. It also did not bind stored or pre-provisioned client credentials to their authorization server.",
+   "severity": "high",
+   "severity_basis": "advisory rating",
+   "exploited": null,
+   "exploited_quote": null,
+   "status": "patched",
+   "act_now": true,
+   "affects": [
+    {
+     "name": "mcp",
+     "ecosystem": "PyPI",
+     "versions": ">= 2.0.0a1, < 2.2.0"
+    }
+   ],
+   "fixed_in": [
+    {
+     "name": "mcp",
+     "version": "2.2.0"
+    }
+   ],
+   "actions": [
+    "Update mcp to 2.2.0 or later",
+    "Rotate client secrets and revoke tokens for clients that may have reached untrusted MCP servers.",
+    "Clear stored OAuth client information once so clients register again."
+   ],
+   "action_quotes": [
+    {
+     "action": "Rotate client secrets and revoke tokens for clients that may have reached untrusted MCP servers.",
+     "quote": "Past exposure: if such a client may have connected to an untrusted MCP server, rotate its client secret and revoke its tokens at the authorization server."
+    },
+    {
+     "action": "Clear stored OAuth client information once so clients register again.",
+     "quote": "Clear stored OAuth client information once so the client registers again."
+    }
+   ],
+   "who": [
+    "MCP clients built on the Python SDK using OAuth over HTTP",
+    "apps that connect to MCP servers they do not fully trust"
+   ],
+   "published": "2026-11-19",
+   "first_seen": "2026-11-20",
+   "updated": "2026-11-20",
+   "cves": [
+    "CVE-2026-115563"
+   ],
+   "kev": false,
+   "doc": "https://osv.dev/vulnerability/GHSA-qx49-fqc8-xw99",
+   "sources": [
+    {
+     "name": "OSV.dev",
+     "url": "https://osv.dev/vulnerability/GHSA-qx49-fqc8-xw99",
+     "primary": true
+    }
+   ],
+   "quote": "It would then receive the client_secret , authorization code and PKCE code_verifier meant for that real server (or, with PrivateKeyJWTOAuthProvider , a signed client assertion).",
+   "evidence": "official",
+   "incident": null,
+   "children": [],
+   "merged_ids": [],
+   "key": "threat:GHSA-qx49-fqc8-xw99",
+   "idents": [
+    "CVE-2026-115563",
+    "GHSA-qx49-fqc8-xw99",
+    "url:osv.dev/vulnerability/GHSA-qx49-fqc8-xw99"
+   ],
+   "last_seen": "2026-11-20",
+   "reach": 2,
+   "wide": false
+  },
+  {
    "id": "thr-2026-11-18-berriai-litellm-guardrails-test-endpoint-allows-remote",
    "kind": "threat",
    "category": "exploited-vuln",
@@ -67,7 +142,7 @@
     "CVE-2026-40217",
     "url:cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-40217"
    ],
-   "last_seen": "2026-11-19",
+   "last_seen": "2026-11-20",
    "reach": 2,
    "wide": false
   },

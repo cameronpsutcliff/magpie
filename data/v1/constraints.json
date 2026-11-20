@@ -17,40 +17,39 @@
    "key": "policy:fr:2026-23529",
    "headline": "Commerce rule restricts chip exports to data centers serving D:5 firms",
    "title": "Addressing Remote Access to Advanced Semiconductors",
-   "harder": "Overseas data centers become harder to supply with advanced US chips if they remotely provide significant compute to companies headquartered in Country Group D:5 or Macau.",
+   "harder": "Overseas data centers that remotely supply significant compute to companies headquartered in Country Group D:5 or Macau face new export restrictions, and chip exporters, foundries and data centers must perform due diligence on customers.",
    "quote": "These restrictions will undermine the ability of companies headquartered in countries of concern from using U.S. advanced Super Intelligence (SI) semiconductors to train advanced SI models.",
-   "who": "Overseas data centers, foreign foundries, chip exporters",
-   "why": "Cloud compute providers and their customers now face due diligence on ownership ties to D:5 countries or Macau.",
-   "limits": "interim final rule; volume threshold for significant compute not stated in summary",
+   "who": "Overseas data centers, foreign foundries, chip exporters, and D:5 or Macau headquartered firms",
+   "why": "Cloud compute providers abroad must now screen customer ownership and control before supplying large volumes of compute built on U.S. chips.",
+   "limits": "Interim final rule open for comment; thresholds for significant compute volumes not stated in the summary",
    "status": "in_force",
    "instrument": "export_control",
    "layers": [
     "chips",
-    "training",
-    "hosting"
+    "hosting",
+    "training"
    ],
    "jurisdiction": "US",
    "issuer": "Commerce Department",
    "effective": "2026-11-19",
-   "comment_deadline": null,
+   "comment_deadline": "2027-01-19",
    "access_now": false,
    "impact": 4,
    "ripples": [
     {
      "topic": "infra",
-     "effect": "Data centers must vet customer ownership before supplying compute"
+     "effect": "Overseas cloud providers add customer ownership checks before selling compute."
     },
     {
      "topic": "models",
-     "effect": "Training runs by D:5-headquartered firms on US chips get harder"
+     "effect": "Training runs by D:5 headquartered firms on offshore U.S. chips get harder."
     }
    ],
    "hats": {
-    "architect": "Compute sourcing plans may need providers that can document customer due diligence.",
-    "security": "Expect customer ownership and control checks from data centers and chip exporters.",
-    "product": "Cloud offerings may add onboarding checks for ownership ties to D:5 countries or Macau.",
-    "scout": "Watch the full rule text for the significant compute volume definition.",
-    "combinator": "Due diligence requirements may create demand for customer screening tools."
+    "architect": "Plan for compute providers requiring ownership disclosures before provisioning large training capacity overseas.",
+    "product": "Customer onboarding with overseas compute vendors may slow due to new due diligence requirements.",
+    "scout": "Watch the comment period closing 2027-01-19 for possible changes to the interim rule.",
+    "combinator": "Pairs with earlier chip export controls to extend reach to remote compute access."
    },
    "url": "https://www.federalregister.gov/documents/2026/11/19/2026-23529/addressing-remote-access-to-advanced-semiconductors",
    "doc_url": "https://www.federalregister.gov/documents/2026/11/19/2026-23529/addressing-remote-access-to-advanced-semiconductors",
@@ -64,8 +63,8 @@
    ],
    "published_at": "2026-11-19T12:00:00+00:00",
    "first_seen": "2026-11-19",
-   "last_seen": "2026-11-19",
-   "signal": 97.2
+   "last_seen": "2026-11-20",
+   "signal": 84.6
   },
   {
    "id": "7fcc5ec3286b",
