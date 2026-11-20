@@ -1,0 +1,246 @@
+{
+ "ran_at": "2026-11-20T15:35:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-20T11:20:00Z",
+ "queries": 6,
+ "calls": 6,
+ "items": [
+  {
+   "title": "Qwen3.8-27B super-adapter merges all harness LoRAs into one, with SWE-Bench Pro gains under two harnesses",
+   "url": "https://x.com/yb2698/status/2123775723794293155",
+   "handle": "@yb2698",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A single larger LoRA made by concatenating the week's per-harness adapters for Qwen3.8-27B. The author reports SWE-Bench Pro (Hard 51) rising from 45% to 61% under Hermes Agent and 47% to 67% under OpenCode, flat at 74% under pi, and 19-48% fewer tool calls with thinking on.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/blog/harness-adapters-at-scale"
+   ],
+   "vendor": "Hugging Face community",
+   "posted_at": "2026-11-20T13:49:25Z",
+   "metrics": {
+    "likes": 86,
+    "reposts": 18,
+    "quotes": 3,
+    "replies": 14,
+    "views": 7451
+   },
+   "confirmed_by": [
+    "@huggingface"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "OVH releases Olala Mini 7A1B, a small MoE that activates about 1B parameters per request and runs agentic tasks without a GPU",
+   "url": "https://x.com/olesovhcom/status/2123673046829396260",
+   "handle": "@olesovhcom",
+   "group": "opensource",
+   "origin": "discovery",
+   "summary": "OVHcloud's Olala v1.0 mini (7B total, about 1B active, 32K context) is published on Hugging Face with a hosted playground; the post cites 220-380 tokens/s on B300 GPUs. A 128K v1.1 is promised but not shipped.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/OVHaiLLM/Olala-v1.0-mini-7A1B",
+    "https://olala.ovh.com"
+   ],
+   "vendor": "OVHcloud",
+   "posted_at": "2026-11-20T07:01:24Z",
+   "metrics": {
+    "likes": 185,
+    "reposts": 41,
+    "quotes": 6,
+    "replies": 25,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@ClementDelangue"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Diffusers gains a LoRA fine-tuning example for NVIDIA's RFD4-Proteina protein-design model",
+   "url": "https://x.com/RisingSayak/status/2123796018563272956",
+   "handle": "@RisingSayak",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A Diffusers pull request adds a rank-32 LoRA training example on the denoiser of RFD4-Proteina, using flow-matching losses on backbone coordinates and local latents, so protein-design models can be adapted with the same code path as image and video models.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/huggingface/diffusers/pull/15155"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-20T15:10:03Z",
+   "metrics": {
+    "likes": 4,
+    "reposts": 4,
+    "quotes": 1,
+    "replies": 2,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@NVIDIAAI"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Paper 'LM Harnesses are Compositional Generalizers' reports a harnessed 27B model at 58.5 average vs 30.5 for the base",
+   "url": "https://x.com/a1zhang/status/2123774098241147225",
+   "handle": "@a1zhang",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "The authors argue that harness abstractions let a language model generalize over longer tasks and deeper recursion by keeping training trajectories locally in-distribution. A reply cites Table 4 (RLM-27B 58.5 average vs 30.5 base); the post's paper link points to alphaxiv with a non-standard id and no code is linked.",
+   "kind": "paper",
+   "evidence": "claim",
+   "links": [
+    "https://www.alphaxiv.org/abs/2611.harness-cg"
+   ],
+   "vendor": "Academic authors (a1zhang et al.)",
+   "posted_at": "2026-11-20T13:42:57Z",
+   "metrics": {
+    "likes": 261,
+    "reposts": 45,
+    "quotes": 7,
+    "replies": 31,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Paper link has a non-standard id and no code or weights are linked, so the numbers cannot be checked yet.",
+    "source": "https://x.com/a1zhang/status/2123774098241147225"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Replies mostly restate the framing or pitch unrelated team-process takes; one asks whether the simulated tool calls include failures, and nobody reports reproducing it.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "TensorFold 1.3.0 adds 'tensorfold models' to list chat models that fit your machine before you download",
+   "url": "https://x.com/plotarmordev/status/2123775165054296542",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "The new command lists chat models that fit the local machine, largest first, with the memory each needs, a quality score and a rough speed, so large pulls can be avoided.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/ashhart/TensorFold"
+   ],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-20T13:47:11Z",
+   "metrics": {
+    "likes": 9,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "PaperReview: open-source Apple Silicon app that transcribes handwritten English essays with MiniCPM-OCR and links edits to the original page",
+   "url": "https://x.com/OpenBMB/status/2123770889573666942",
+   "handle": "@OpenBMB",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A local macOS app that reads photographed handwritten essays with MiniCPM-OCR 1.0, uses MiniCPM-OCR Jev to check how well candidate words match the photo, and lets a teacher accept or dismiss each suggestion.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/Mnagalah/PaperReview",
+    "https://huggingface.co/openbmb/MiniCPM-OCR-1.0",
+    "https://github.com/OpenBMB/MiniCPM-OCR"
+   ],
+   "vendor": "OpenBMB",
+   "posted_at": "2026-11-20T13:30:12Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 1,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Claude Code hooks can now fail closed with onFailure: block (command and http hooks since 2.1.295, mcp_tool since 2.1.328)",
+   "url": "https://x.com/wei_wang/status/2123797803256119557",
+   "handle": "@wei_wang",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "By default a hook that errors, times out or cannot reach its MCP server lets the tool call run anyway. Adding onFailure set to block makes a failed hook block the call; the author describes a check with a missing PreToolUse script that blocks ls.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [
+    "https://code.claude.com/docs/en/hooks",
+    "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+   ],
+   "vendor": "Anthropic",
+   "posted_at": "2026-11-20T15:17:09Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 26
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 93,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://x.com/wei_wang/status/2123797803256119557",
+   "reason": "Claude Code hook hardening tip (config option), not a vulnerability or compromised release; no stack action."
+  }
+ ]
+}
