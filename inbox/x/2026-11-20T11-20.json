@@ -1,0 +1,182 @@
+{
+ "ran_at": "2026-11-20T11:20:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-20T03:25:00Z",
+ "queries": 8,
+ "calls": 14,
+ "items": [
+  {
+   "title": "Tencent opens Hy4 flagship weights: 770B total, 49B active MoE, 1M context, natively multimodal, with FP8, Base and GGUF builds",
+   "url": "https://x.com/TencentHunyuan/status/2123625549147070538",
+   "handle": "@TencentHunyuan",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Weights, GitHub repo, community GGUF quants, a custom Hy License and a safety system card are all out; it follows the smaller Hy4-Flash. It is a multi-node download rather than a single-box one, and the license requires a separate agreement for hosted APIs above 50M USD revenue or 100M monthly users.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/tencent/Hy4",
+    "https://github.com/Tencent-Hunyuan/Hy4",
+    "https://huggingface.co/AngelSlim/Hy4-GGUF",
+    "https://huggingface.co/tencent/Hy4/blob/main/LICENSE",
+    "https://hy.tencent.ai/Hy4_system_card.pdf"
+   ],
+   "vendor": "Tencent",
+   "posted_at": "2026-11-20T03:52:40Z",
+   "metrics": {
+    "likes": 1283,
+    "reposts": 155,
+    "quotes": 88,
+    "replies": 64,
+    "views": 69510
+   },
+   "confirmed_by": [
+    "@plotarmordev"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers point out the license differs from the Apache 2.0 preview, with a revenue/MAU threshold for hosting, and that the 770B count covers the language backbone only, with vision encoder and a 3.3B drafter outside it.",
+    "source": "https://x.com/TencentHunyuan/status/2123625549147070538"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Mostly thanks and quant or tool-support questions, with a few repliers flagging the license change and parameter-count scope; one claims it runs on a single Spark but gives no numbers.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Apple releases Depth Pro 2 on Hugging Face: metric monocular depth that stays consistent across video frames",
+   "url": "https://x.com/_akhaliq/status/2123586174405296481",
+   "handle": "@_akhaliq",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A new Hugging Face model card for sharp, temporally consistent metric depth from a single camera, with a short demo clip; the post gives no benchmark numbers.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/apple/DepthPro2"
+   ],
+   "vendor": "Apple",
+   "posted_at": "2026-11-20T01:16:12Z",
+   "metrics": {
+    "likes": 434,
+    "reposts": 39,
+    "quotes": 6,
+    "replies": 37,
+    "views": 26977
+   },
+   "confirmed_by": [
+    "@victormustar"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Omarchy's next update installs Fantasi, a local image, short video clip and song maker with no cloud",
+   "url": "https://x.com/OmarchyUpdates/status/2123648104008437810",
+   "handle": "@OmarchyUpdates",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Fantasi is MIT-licensed and installed by default in the next Omarchy release: text-to-image, instruction edits, image-to-clip with sound (2, 5 or 10 s, memory permitting) and lyrics-to-song, all on local models. The post shows a 33 s demo; no model names or speeds are given.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/omacom/fantasi",
+    "https://github.com/omacom/omarchy/pull/19353"
+   ],
+   "vendor": "Omarchy",
+   "posted_at": "2026-11-20T05:22:18Z",
+   "metrics": {
+    "likes": 32,
+    "reposts": 4,
+    "quotes": 2,
+    "replies": 1,
+    "views": 712
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Two DGX Sparks on one cable: listing both NCCL_IB_HCA devices lifts long-prompt processing 26-28%",
+   "url": "https://x.com/plotarmordev/status/2123683261289296125",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Each Spark port shows up as two network devices and using one gets about 112 of 200 Gb/s; naming both in NCCL_IB_HCA speeds prompt processing 26-28% with generation unchanged. The fix is merged into TensorFold's docs via the linked pull request.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/ashhart/TensorFold/pull/2969"
+   ],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-20T07:42:00Z",
+   "metrics": {
+    "likes": 23,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 2,
+    "views": 2050
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Strata v0.2.17 fixes Coder, tool-call, Arc, AMD, swap and two-GPU long-context bugs in its own inference engine",
+   "url": "https://x.com/coldniko/status/2123696784300273924",
+   "handle": "@coldniko",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A stability release: app and Terminal 0.2.17 with engines 0.1.63 on every platform, following the move to Strata's own engine in 0.2.16.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/Niko1221/Strata/releases/tag/v0.2.17"
+   ],
+   "vendor": "Strata",
+   "posted_at": "2026-11-20T08:35:44Z",
+   "metrics": {
+    "likes": 256,
+    "reposts": 39,
+    "quotes": 7,
+    "replies": 20,
+    "views": 13005
+   },
+   "confirmed_by": [
+    "@jun1228909"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 95,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
