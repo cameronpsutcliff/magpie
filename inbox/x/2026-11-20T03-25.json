@@ -1,0 +1,185 @@
+{
+ "ran_at": "2026-11-20T03:25:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-19T23:30:00Z",
+ "queries": 4,
+ "calls": 7,
+ "items": [
+  {
+   "title": "RadixArk releases DaisyRose-27B, a Qwen3.8-27B tuned with RL on 1,200 agent tasks, lifting Terminal-Bench 4.1 from 5.6% to 12.0%",
+   "url": "https://x.com/wei_wang/status/2123616327277437263",
+   "handle": "@wei_wang",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Open BF16, FP8 and NVFP4 weights (55.6, 30.9 and 21.9 GB) from the SGLang team, trained in 18 days on 144 H200s with Miles; smaller gains on Terminal-Bench 2.1, DeepSWE and GPQA Diamond. Community GGUF quants (Q4_K_M 17.3 GB) fit a 24 GB card for the weights alone.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/RadixArk/DaisyRose-27B",
+    "https://www.radixark.com/blog/daisyrose-27b",
+    "https://github.com/radixark/miles",
+    "https://huggingface.co/bartowski/RadixArk_DaisyRose-27B-GGUF"
+   ],
+   "vendor": "RadixArk",
+   "posted_at": "2026-11-20T03:16:01Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 12
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "FastRUA cuts a GPT-6 Astra + Codex robot-use agent from 11.1 to 3.4 minutes on a cup task and from about 18 to 6 minutes on towel folding",
+   "url": "https://x.com/haoailab/status/2123593596918235515",
+   "handle": "@haoailab",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "By merging tool-call round trips and running robot motion while the model plans the next actions, the real-robot agent moves 84% of the time instead of 24%. Code and a write-up are published.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://fastrua.ai/blog/2026-11-realtime-rua/",
+    "https://github.com/fast-rua/making-rua-fast"
+   ],
+   "vendor": "Hao AI Lab (UC San Diego)",
+   "posted_at": "2026-11-20T01:45:42Z",
+   "metrics": {
+    "likes": 37,
+    "reposts": 12,
+    "quotes": 4,
+    "replies": 4,
+    "views": 2163
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Four DGX Sparks run the official 475 GiB DeepSeek V4.1 Flash checkpoint at about 88 tok/s single stream with vLLM TP=4",
+   "url": "https://x.com/wei_wang/status/2123598211738673588",
+   "handle": "@wei_wang",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A home-cluster write-up of cold prefill at 8.5K tok/s on 32K input, about 2 minutes from cold start to API, and a ring-wired network matching a switch (23.8 vs 24.1 GB/s NCCL). Two Sparks only fit a 2.8 to 2.9 bpw EXL3 build, which does 153.5 tok/s aggregate at 4 streams on TensorFold.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/christopherowen/spark-ds41f",
+    "https://forums.developer.nvidia.com/t/deepseek-v4-1-flash-on-4x-dgx-spark-gb10-cx7-ring-full-setup-cold-prefill-decode-numbers-up-to-1m-context/389371"
+   ],
+   "vendor": "community (DGX Spark)",
+   "posted_at": "2026-11-20T02:04:02Z",
+   "metrics": {
+    "likes": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 3,
+    "views": 206
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Nous Research brings Hermes Agent to Microsoft Teams and Azure, with each agent's work run in an isolated Azure Container Apps sandbox",
+   "url": "https://x.com/NousResearch/status/2123535954946257096",
+   "handle": "@NousResearch",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Hermes Enterprise takes delegated tasks inside Teams, saves a good routine as a skill and lets a team share reviewed skills (Collective Wisdom); it can also run in a customer's own Azure tenant. No download or docs link is in the post.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Nous Research",
+   "posted_at": "2026-11-19T21:56:39Z",
+   "metrics": {
+    "likes": 4693,
+    "reposts": 449,
+    "quotes": 204,
+    "replies": 290,
+    "views": 251043
+   },
+   "confirmed_by": [
+    "@ViC305"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No release link, docs or hands-on results in the post; one replier notes it is not available in Teams on iOS.",
+    "source": "https://x.com/NousResearch/status/2123535954946257096"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Replies were mostly congratulations with a few worries about corporate involvement; nobody reports having tried it.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "OpenAI Responses API now ties each GPT-6.2 reasoning item to the history before it, so editing earlier messages drops the reasoning that follows",
+   "url": "https://x.com/OpenAIDevs/status/2123566018866151579",
+   "handle": "@OpenAIDevs",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "For agents on the newest frontier models, reasoning is kept and cache hits rise when history is append-only; trimming, rewriting or locally summarizing earlier turns forces the model to redo that reasoning. Builders who manage their own context need to re-check their harness.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "OpenAI",
+   "posted_at": "2026-11-19T23:56:07Z",
+   "metrics": {
+    "likes": 510,
+    "reposts": 26,
+    "quotes": 22,
+    "replies": 67,
+    "views": 43759
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "A roster account reads the change as a reasoning-protection measure rather than a pure efficiency gain, and repliers point out that local compaction or changing tools counts as an edit, so some harnesses will lose the savings.",
+    "source": "https://x.com/can1357/status/2123595948282576935"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Repliers mostly restated the append-only rule and worried about compaction and trimming; a few noted opencode needs native compaction to keep reasoning, and nobody posted measured results.",
+    "tried": false,
+    "replies_read": 20
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 93,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://x.com/wei_wang/status/2123568762863431941",
+   "reason": "GB10 unified-memory cudaMalloc is not charged to Docker --memory or cgroup limits (DGX Spark OOM freeze behavior, NVIDIA forum report): a resource-accounting limitation, not a vulnerability or compromise; noted for Spark awareness only."
+  }
+ ]
+}
