@@ -1,0 +1,492 @@
+{
+ "ran_at": "2026-11-20T23:18:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-20T19:25:00Z",
+ "queries": 8,
+ "calls": 12,
+ "items": [
+  {
+   "title": "Thinking Machines releases Inkling 2 Mini open weights, a 26B looped MoE for laptops",
+   "url": "https://x.com/thinkymachines/status/2123871643797995872",
+   "handle": "@thinkymachines",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "A 26B-parameter Apache 2.0 mixture-of-experts whose middle layers run three times per token (about 3.4B active, 5.4B effective), about 20GB in native 4-bit. The lab reports 48.2% on DeepSWE v1.1 and 46.5% on Vals Index v2.2, the top open-weights scores under 100B parameters, and also shares a variable-loop research model. Day-0 support landed in vLLM, SGLang, llama.cpp, Ollama (pre-release) and Unsloth GGUFs.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://thinkingmachines.ai/news/inkling-2-mini/",
+    "https://huggingface.co/thinkingmachines/Inkling-2-Mini"
+   ],
+   "vendor": "Thinking Machines",
+   "posted_at": "2026-11-20T20:10:34Z",
+   "metrics": {
+    "likes": 4839,
+    "reposts": 500,
+    "quotes": 322,
+    "replies": 226,
+    "views": 409270
+   },
+   "confirmed_by": [
+    "@ClementDelangue",
+    "@victormustar",
+    "@miramurati",
+    "@UnslothAI",
+    "@vllm_project",
+    "@sgl_project",
+    "@ollama",
+    "@julien_c",
+    "@soumithchintala",
+    "@danielhanchen",
+    "@arcprize",
+    "@arena"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers mostly thanked the lab and asked about running it on consumer GPUs; builders report loading it locally (one at about 75 tok/s decode on a DGX Spark) and ARC Prize verified 49.3% on ARC-AGI-2.",
+    "tried": true,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "METR research update: AI R&D-relevant capabilities improving fast, harder to measure with time horizons",
+   "url": "https://x.com/METR_Evals/status/2123864981506798012",
+   "handle": "@METR_Evals",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "METR reports on new task suites and an alternative model-ability index fit from agent scores, finding AI R&D-relevant capabilities improving rapidly while its earlier time-horizon tasks are saturating; a thread covers cost-vs-horizon and trend-change estimates.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/METR_Evals/status/2123864981506798012"
+   ],
+   "vendor": "METR",
+   "posted_at": "2026-11-20T19:44:05Z",
+   "metrics": {
+    "likes": 942,
+    "reposts": 137,
+    "quotes": 28,
+    "replies": 13,
+    "views": 70292
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Repliers discuss measurement limits and note that later and internal models were not measured; nobody reports reproducing it.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "omarchy-mlx: MLX-compatible Vulkan and ANE backends for Apple Silicon on Linux",
+   "url": "https://x.com/JoshuaSWarren/status/2123914151080947734",
+   "handle": "@JoshuaSWarren",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Open-source backends that let MLX run on Apple Silicon under Linux; the author reports two-stream decode on an M1 Max more than twice as fast with identical output.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/joshuaswarren/omarchy-mlx"
+   ],
+   "vendor": "omarchy-mlx",
+   "posted_at": "2026-11-20T22:59:28Z",
+   "metrics": {
+    "likes": 9,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 163
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "TensorFold 1.3.2 ships with 96 merged PRs since 1.3.0",
+   "url": "https://x.com/ashxhart/status/2123874490887324160",
+   "handle": "@ashxhart",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "New release of the TensorFold local-inference engine, with 96 merged PRs and 31 issues closed since 1.3.0, many from contributors who reproduced problems on their own hardware.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/ashhart/TensorFold/releases"
+   ],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-20T20:21:52Z",
+   "metrics": {
+    "likes": 92,
+    "reposts": 11,
+    "quotes": 9,
+    "replies": 10,
+    "views": 5156
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Waddle-1 scores 81% on RoboDojo-RC Tier 1 real-world robot benchmark",
+   "url": "https://x.com/robocurve/status/2123903771436863629",
+   "handle": "@robocurve",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A multi-LLM agent sharing one context across a task's trials reaches 81% on a real-world robot benchmark; other LLMs tested started each trial with fresh context.",
+   "kind": "eval",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/theWaddleLabs/status/2123886705824452927"
+   ],
+   "vendor": "Waddle Labs",
+   "posted_at": "2026-11-20T22:18:13Z",
+   "metrics": {
+    "likes": 18,
+    "reposts": 1,
+    "quotes": 2,
+    "replies": 1,
+    "views": 3049
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "NVIDIA publishes eight design guidelines for efficient sparse attention",
+   "url": "https://x.com/NVIDIAAI/status/2123875786323296459",
+   "handle": "@NVIDIAAI",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "A developer blog on co-designing sparse attention for long-context inference, from token selection to memory reuse on NVIDIA hardware.",
+   "kind": "technique",
+   "evidence": "artifact",
+   "links": [
+    "https://developer.nvidia.com/blog/co-designing-sparse-attention-for-efficient-long-context-inference/"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-11-20T20:27:01Z",
+   "metrics": {
+    "likes": 81,
+    "reposts": 6,
+    "quotes": 3,
+    "replies": 60,
+    "views": 9288
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Google research agent reaches 76.0% medal rate on full MLE-Bench",
+   "url": "https://x.com/dair_ai/status/2123918068393144639",
+   "handle": "@dair_ai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A reported autonomous research agent from Google hits a 76.0% medal rate on the complete MLE-Bench, the highest reported on the full benchmark; the post links no paper in its text.",
+   "kind": "paper",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/dair_ai/status/2123918068393144639"
+   ],
+   "vendor": "Google",
+   "posted_at": "2026-11-20T23:15:02Z",
+   "metrics": {
+    "likes": 2,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 445
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Microsoft AI launches MAI Code 2, MAI Cyber 2 Flash, MAI Realtime 1 and MAI Transcribe 2",
+   "url": "https://x.com/MicrosoftAI/status/2123868987666674069",
+   "handle": "@MicrosoftAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "A batch of Microsoft-built models announced around Ignite: coding (MAI Code 2 and Flash), cyber, image 2.7, realtime voice, transcription and Decision 1.1, collected on one page.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [
+    "https://microsoft.ai/news/microsoft-ignite-2026/"
+   ],
+   "vendor": "Microsoft AI",
+   "posted_at": "2026-11-20T20:00:00Z",
+   "metrics": {
+    "likes": 85,
+    "reposts": 11,
+    "quotes": 2,
+    "replies": 0,
+    "views": 4035
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Baseten releases bison-1 and groundhog-1 decision models on a Gemma 4 backbone",
+   "url": "https://x.com/baseten/status/2123871986862772641",
+   "handle": "@baseten",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Two multimodal decision models with 128k context built on Gemma 4, claimed to improve quality at similar speed over the prior mammoth-1 and elephant-1.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/baseten/status/2123871986862772641"
+   ],
+   "vendor": "Baseten",
+   "posted_at": "2026-11-20T20:11:55Z",
+   "metrics": {
+    "likes": 154,
+    "reposts": 8,
+    "quotes": 12,
+    "replies": 9,
+    "views": 13229
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "HeyGen Decision 1 available on OpenRouter for selfie-video vs ID-photo checks",
+   "url": "https://x.com/OpenRouter/status/2123893458318614941",
+   "handle": "@OpenRouter",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "A model that returns separate probabilities for same-person and live-capture on a selfie video compared with an ID photo, now callable through OpenRouter.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://openrouter.ai/heygen/heygen-decision-1"
+   ],
+   "vendor": "HeyGen",
+   "posted_at": "2026-11-20T21:37:15Z",
+   "metrics": {
+    "likes": 21,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 7,
+    "views": 3643
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Kiro IDE opens remote workspaces: cloud sessions, dev containers, your own machine",
+   "url": "https://x.com/kirodotdev/status/2123913744291856860",
+   "handle": "@kirodotdev",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Kiro can now attach to a Kiro cloud session, a dev container or a machine you already run, with the same editor and terminal.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://kiro.dev/blog/remote-workspaces/"
+   ],
+   "vendor": "AWS Kiro",
+   "posted_at": "2026-11-20T22:57:51Z",
+   "metrics": {
+    "likes": 3,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 1,
+    "views": 376
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Replit Desktop lets the agent work on local files and tools",
+   "url": "https://x.com/Replit/status/2123914296673304790",
+   "handle": "@Replit",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Replit's agent runs the model in the cloud while code executes on the user's computer in a sandbox powered by Microsoft.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/Replit/status/2123914296673304790"
+   ],
+   "vendor": "Replit",
+   "posted_at": "2026-11-20T23:00:03Z",
+   "metrics": {
+    "likes": 6,
+    "reposts": 2,
+    "quotes": 1,
+    "replies": 1,
+    "views": 1244
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Antigravity adds an official MongoDB Atlas managed MCP plugin",
+   "url": "https://x.com/antigravity/status/2123890186308239857",
+   "handle": "@antigravity",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "A plugin connecting Antigravity to MongoDB's hosted MCP server with seven skills: natural-language queries, slow-query tuning, schema review and Vector Search.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://x.com/antigravity/status/2123890186308239857"
+   ],
+   "vendor": "Google Antigravity",
+   "posted_at": "2026-11-20T21:24:15Z",
+   "metrics": {
+    "likes": 397,
+    "reposts": 16,
+    "quotes": 2,
+    "replies": 19,
+    "views": 16114
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Perplexity Computer now runs in Chromium browsers through an extension",
+   "url": "https://x.com/perplexity_ai/status/2123896048510996827",
+   "handle": "@perplexity_ai",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Tasks can be handed off from a side panel and Computer works across the user's tabs and tools.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/perplexity_ai/status/2123896048510996827"
+   ],
+   "vendor": "Perplexity",
+   "posted_at": "2026-11-20T21:47:32Z",
+   "metrics": {
+    "likes": 84,
+    "reposts": 7,
+    "quotes": 10,
+    "replies": 15,
+    "views": 12989
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Vals launches Misalignment Incidents, a public tracker of cheating and reward hacking",
+   "url": "https://x.com/ValsAI/status/2123897329011085381",
+   "handle": "@ValsAI",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A public page logging reward hacking and other misaligned model behavior, starting with incidents from Vals's own evals and open to outside reports.",
+   "kind": "eval",
+   "evidence": "artifact",
+   "links": [
+    "https://x.com/ValsAI/status/2123897329011085381"
+   ],
+   "vendor": "Vals AI",
+   "posted_at": "2026-11-20T21:52:37Z",
+   "metrics": {
+    "likes": 73,
+    "reposts": 9,
+    "quotes": 1,
+    "replies": 3,
+    "views": 3194
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 97,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": [],
+ "saves_checked": 25
+}
