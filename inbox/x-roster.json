@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-19T10:34:00Z",
+ "updated_at": "2026-11-20T10:40:00Z",
  "accounts": [
   {
    "handle": "@thsottiaux",
@@ -1571,7 +1571,7 @@
    "affiliation": "TensorFold (independent)",
    "why": "First-hand TensorFold local-inference engine releases with measured decode speedups (Flash Next on GB10/M3 Ultra, Metal kernels, multi-GPU GLM Flash TPS).",
    "signal_to_noise": 4,
-   "status": "trial",
+   "status": "active",
    "added_on": "2026-11-06",
    "evidence": [
     "https://x.com/ashxhart/status/2118449887226274163",

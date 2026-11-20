@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-11-20T03:25:00Z",
- "job": "sweep",
+ "updated_at": "2026-11-20T10:40:00Z",
+ "job": "roster_review",
  "prompt": "v6.1",
  "calls_used_today": 7,
  "notes_via_api": false,
@@ -20,8 +20,8 @@
  },
  "roster": {
   "curated": 223,
-  "trial": 57,
-  "active": 50,
+  "trial": 56,
+  "active": 51,
   "retired": 7
  },
  "follows_this_week": 0,
@@ -288,7 +288,9 @@
   "Roster review 2026-11-19: 0 X reads used. Owner saves: @danikkk_wqs (vice, excluded), @mirku21 (retired), @RoundtableSpace (crypto/aggregator, curated already) have 2 saves; no adds. No trial met promotion (14+ days and 2+ sweep items) beyond those already promoted; no retirements. @JensenHuang (owner_requested) still flagged for owner review, status unchanged. Refreshed last_qualifying_post for 44 accounts from sweep files. Pruned 4 sweep files before 2026-11-05. Not Sunday, no drafts.",
   "Sweep 11:22Z: Bookmarks API returned 3 new saves not yet in the box archive; saves still arrive ahead of the 2-hourly sync. No browser, so no follows or video analysis; deep-read items with clips (megakernel, Frostbite, Shield) got no video record.",
   "The user-X plugin has no search tool in this run; search_posts_all lives in the separate x plugin and returns at most 25 posts per call, with a 30 reads per minute limit. Notes should say which plugin to use.",
-  "Sweep 2026-11-20T03:25Z: calls_used_today reset at 00:00Z (this sweep is UTC day 2026-11-20; 7 calls). The list page reached the since boundary (oldest post 19:42Z), so no fallback searches were run; no browser, so follows were skipped."
+  "Sweep 2026-11-20T03:25Z: calls_used_today reset at 00:00Z (this sweep is UTC day 2026-11-20; 7 calls). The list page reached the since boundary (oldest post 19:42Z), so no fallback searches were run; no browser, so follows were skipped.",
+  "Roster review 2026-11-20: owner saves gave two authors with 2 kept saves in 30 days who are off roster, both rejected after screen: @danikkk_wqs (hype listicles with 'f*cking' hooks plus GTA 6 gaming and non-AI content in the latest 25 posts) and @OrcaRouter (AI gateway product promotion and launches). Both belong on the avoid list, but config/ is owner-controlled and bots may not edit it.",
+  "Roster review 2026-11-20: promoted @ashxhart (15 sweep-file items, no level-2 doubt). No account meets the 45-day retire rule yet (earliest 2026-12-04); no Sunday drafts (today is Friday)."
  ],
  "errors": [],
  "follows_today": 0,
@@ -314,5 +316,16 @@
  "horizon_triggered": [],
  "calls_day": "2026-11-19",
  "roster_review_calls": 0,
- "follows_note": "2026-11-19 23:30Z sweep: no browser available, follows skipped."
+ "follows_note": "2026-11-19 23:30Z sweep: no browser available, follows skipped.",
+ "roster_review": {
+  "ran_at": "2026-11-20T10:40:00Z",
+  "reads_used": 3,
+  "added": 0,
+  "promoted": [
+   "@ashxhart"
+  ],
+  "retired": [],
+  "flagged": [],
+  "sunday_drafts": false
+ }
 }
