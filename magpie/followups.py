@@ -12,10 +12,10 @@ in the day is rebuilt. What code checks is names and numbers; the rest of the wo
 from __future__ import annotations
 
 import json
-import os
 import re
 import sys
 
+from .editorial_model import Policy, configured_lanes, request_json
 from .recent import editions
 from .util import clean, load_json, ungrounded_numbers, write_json
 
@@ -126,8 +126,6 @@ def rewrite(date: str, new: list[dict], old: list[dict], *, follow_ups: bool = F
     words for every old story, each stating no number its own text does not. Code checks numbers and names only; the
     rest rests on the instructions, as in the editor. `style` is the headline being replaced: the new one takes its form
     (imperative verbs, sentence case), not its stories."""
-    from .enrich import LANES, _extract_json
-
     new_rows = [_story(e) for e in new[:NEW_LIMIT]]
     old_rows = [_told(e, (earlier or {}).get(e["key"])) for e in old]
     prompt = PROMPT.format(date=date, new=json.dumps(new_rows, ensure_ascii=False, indent=0),
@@ -136,19 +134,22 @@ def rewrite(date: str, new: list[dict], old: list[dict], *, follow_ups: bool = F
                                   f'not its stories: {json.dumps(style, ensure_ascii=False)}') if style else "",
                            follow_up_rules=FOLLOW_UP_RULES if follow_ups else "",
                            follow_up_shape=FOLLOW_UP_SHAPE if follow_ups else "")
-    order = lanes or [l.strip() for l in os.environ.get("MAGPIE_LANES", "claude,codex").split(",") if l.strip()]
-    for lane in order:
-        try:
-            data = _extract_json(LANES[lane](prompt, timeout))
-        except Exception as ex:  # try the next lane
-            print(f"follow-ups: {lane} failed: {str(ex)[:200]}", file=sys.stderr)
-            continue
+
+    def log_error(lane: str, ex: Exception, raw: str) -> str:
+        message = f"follow-ups: {lane} failed: {str(ex)[:200]}"
+        print(message, file=sys.stderr)
+        return message
+
+    result = None
+
+    def accept(data: dict) -> bool:
+        nonlocal result
         ed = data.get("edition") if isinstance(data, dict) else None
         if not isinstance(ed, dict) or not all(isinstance(ed.get(k), str) and ed[k].strip() for k in ("headline", "dek")):
-            continue
+            return False
         ed = {"headline": clean(ed["headline"]), "dek": clean(ed["dek"]), "quiet": ed.get("quiet") is True}
         if ungrounded_numbers([ed["headline"], ed["dek"]], _grounding(new_rows)) or named(ed, old):
-            continue
+            return False
         out = {}
         if follow_ups:
             rows = {r["id"]: r for r in old_rows}
@@ -162,8 +163,14 @@ def rewrite(date: str, new: list[dict], old: list[dict], *, follow_ups: bool = F
                 if not ungrounded_numbers([head, line], _grounding([rows[f["id"]]])):
                     out[f["id"]] = {"headline": head, "newly_possible": line}
             if set(out) != set(rows):
-                continue  # an old story left with its old words could still say it arrived today
-        return {"edition": ed, "follow_ups": out, "lane": lane}
+                return False  # an old story left with its old words could still say it arrived today
+        result = {"edition": ed, "follow_ups": out}
+        return True
+
+    order = tuple(lanes) if lanes else configured_lanes()
+    outcome = request_json(prompt, Policy(timeout, order, log_error), accept)
+    if result is not None:
+        return {**result, "lane": outcome.lane}
     return None
 
 

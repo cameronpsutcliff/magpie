@@ -34,7 +34,8 @@ import urllib.parse
 
 from .collectors import security as S
 from .constraints import DATE_PATTERNS, MONTH_RE, MONTHS, quoted
-from .enrich import LANES, _blocked, _extract_json
+from .editorial_model import LANES as LANES, Policy, legacy_error, request_json
+from .enrich import _blocked
 from .util import TAG, clean, fetch, load_json, short_hash, ungrounded_numbers, url_key, write_json
 
 CATEGORIES = ("trust-infrastructure", "supply-chain", "ai-framework-vuln", "model-or-agent-attack", "platform-breach",
@@ -590,13 +591,9 @@ def classify(cands: list[dict], date: str, timeout: int = 900) -> tuple[dict, li
     rows = [_row(c) for c in cands]
     by_id = {r["id"]: c for c, r in zip(cands, rows)}
     prompt = PROMPT.format(date=date, n=len(rows), rows=json.dumps(rows, ensure_ascii=False, indent=0))
-    errors = []
-    for lane in [l.strip() for l in os.environ.get("MAGPIE_LANES", "claude,codex").split(",") if l.strip()]:
-        try:
-            data = _extract_json(LANES[lane](prompt, timeout))
-        except Exception as ex:  # try the next lane
-            errors.append(f"{lane}: {str(ex)[:160]}")
-            continue
+    outcome = request_json(prompt, Policy(timeout, format_error=legacy_error), accept=lambda data: True)
+    data, lane, errors = outcome.data, outcome.lane, outcome.errors
+    if data is not None:
         verdicts, dropped = {}, []
         for v in data.get("threats", []) if isinstance(data, dict) else []:
             c = by_id.get(v.get("id")) if isinstance(v, dict) else None

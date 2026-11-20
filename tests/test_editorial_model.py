@@ -3,6 +3,8 @@ from unittest.mock import Mock
 
 import pytest
 
+from magpie import constraints, followups, threats, viewing
+
 from magpie import editorial_model as model
 
 
@@ -59,3 +61,51 @@ def test_failure_receipt_omits_raw_diagnostics(lanes):
     assert result == model.Outcome(None, None, [
         "unknown lane", "claude: invocation failed", "codex: invalid JSON",
     ])
+
+
+@pytest.mark.parametrize("caller", [constraints, threats])
+def test_classifiers_accept_empty_response_in_configured_order(caller, lanes, monkeypatch):
+    first, second = lanes
+    second.return_value = "{}"
+    monkeypatch.setenv("MAGPIE_LANES", "codex,claude")
+
+    assert caller.classify([], "2026-11-20") == (
+        {}, [], {"lane": "codex", "classified": 0, "errors": []},
+    )
+    second.assert_called_once()
+    first.assert_not_called()
+
+
+def test_viewing_keeps_fixed_order_and_failure_receipt(lanes, monkeypatch, tmp_path):
+    first, second = lanes
+    first.side_effect = RuntimeError("editor unavailable")
+    second.return_value = "{}"
+    monkeypatch.setenv("MAGPIE_LANES", "codex")
+    candidates = [{"id": "clip", "title": "Clip", "channel": "Channel", "transcript": "Transcript"}]
+
+    assert viewing.vet(candidates, tmp_path, timeout=42) == ({}, "codex", ["claude: editor unavailable"])
+    first.assert_called_once()
+    second.assert_called_once_with(first.call_args.args[0], 42)
+
+
+def test_followups_uses_requested_order_and_requires_complete_rewrite(lanes, capsys):
+    first, second = lanes
+    second.return_value = '{"edition": {"headline": "New tools", "dek": "A quiet day"}}'
+    first.return_value = (
+        '{"edition": {"headline": "New tools", "dek": "A quiet day"},'
+        ' "follow_ups": [{"id": "old", "headline": "Earlier work", "newly_possible": "Continue testing"}]}'
+    )
+
+    result = followups.rewrite(
+        "2026-11-20", [], [{"id": "old", "key": "old", "title": "Earlier work"}],
+        follow_ups=True, lanes=["codex", "claude"], timeout=42,
+    )
+
+    assert result == {
+        "edition": {"headline": "New tools", "dek": "A quiet day", "quiet": False},
+        "follow_ups": {"old": {"headline": "Earlier work", "newly_possible": "Continue testing"}},
+        "lane": "claude",
+    }
+    second.assert_called_once()
+    first.assert_called_once_with(second.call_args.args[0], 42)
+    assert capsys.readouterr().err == ""

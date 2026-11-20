@@ -29,7 +29,7 @@ from collections import Counter
 from pathlib import Path
 
 from . import library, pairing
-from .enrich import LANES, _extract_json
+from .editorial_model import LANES as LANES, Policy, request_json
 from .util import clean, load_json
 
 PROMPT = """You are the combination strategist for Magpie, a daily brief on what became newly possible in AI.
@@ -231,6 +231,10 @@ def choose(items: list[dict], n: int) -> list[dict]:
     return out
 
 
+def _model_error(lane: str, ex: Exception, raw: str) -> str:
+    return f"{lane}: {str(ex)[:160]} [{raw[:120]!r}]"
+
+
 def generate(day: dict, data_dir, n: int = 5, timeout: int = 1200, check=library.live) -> dict:
     """Up to n possibilities for one edition. The model proposes a few more than n across both mixes; code drops the
     ungrounded, ranks the rest and keeps n."""
@@ -245,15 +249,9 @@ def generate(day: dict, data_dir, n: int = 5, timeout: int = 1200, check=library
     idea_ids = [r["id"] for r in pool if r.get("kind") == "idea"]
     prompt = PROMPT.format(date=day["date"], n=n + 3, need=need, pairing=paired, ideas=IDEAS if idea_ids else "",
                            pool=json.dumps(shown, ensure_ascii=False, indent=0))
-    errors = []
-    for lane in ("claude", "codex"):
-        raw = ""
-        try:
-            raw = LANES[lane](prompt, timeout)
-            data = _extract_json(raw)
-        except Exception as ex:
-            errors.append(f"{lane}: {str(ex)[:160]} [{raw[:120]!r}]")
-            continue
+    outcome = request_json(prompt, Policy(timeout, ("claude", "codex"), _model_error), accept=lambda data: True)
+    data, lane, errors = outcome.data, outcome.lane, outcome.errors
+    if data is not None:
         by_id = {r["id"]: r for r in pool}
         out, dropped = [], []
         for p in data.get("possibilities", []):

@@ -15,7 +15,7 @@ import re
 import sys
 from pathlib import Path
 
-from .enrich import LANES, _extract_json
+from .editorial_model import Policy, legacy_error, request_json
 from .util import ROOT, clean, load_json, write_json
 
 AI_WORDS = re.compile(r"\b(ai|llm|llms|gpt|claude|gemini|grok|llama|qwen|deepseek|mistral|agent|agents|agentic|model|models|"
@@ -145,15 +145,9 @@ def vet(cands: list[dict], cache_dir: Path, timeout: int = 1200) -> tuple[dict[s
               "minutes": round(c["duration_s"] / 60) if c.get("duration_s") else None, "excerpt": _excerpt(c["transcript"])}
              for c in todo]
     prompt = PROMPT.format(n=len(shown), videos=json.dumps(shown, ensure_ascii=False))
-    errors = []
-    for lane in ("claude", "codex"):
-        raw = ""
-        try:
-            raw = LANES[lane](prompt, timeout)
-            data = _extract_json(raw)
-        except Exception as ex:
-            errors.append(f"{lane}: {str(ex)[:160]}")
-            continue
+    outcome = request_json(prompt, Policy(timeout, ("claude", "codex"), legacy_error), accept=lambda data: True)
+    data, lane, errors = outcome.data, outcome.lane, outcome.errors
+    if data is not None:
         for v in data.get("videos", []):
             if v.get("id") not in {c["id"] for c in todo} or v.get("verdict") not in VERDICTS:
                 continue

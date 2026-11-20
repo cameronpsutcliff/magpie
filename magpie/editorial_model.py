@@ -15,6 +15,8 @@ from pathlib import Path
 class Policy:
     timeout: int
     lanes: tuple[str, ...] | None = None
+    # Existing callers can opt into their original failure diagnostics.
+    format_error: Callable[[str, Exception, str], str] | None = None
 
 
 @dataclass
@@ -69,32 +71,38 @@ def _run_codex(prompt: str, timeout: int) -> str:
 LANES = {"claude": _run_claude, "codex": _run_codex}
 
 
+def legacy_error(lane: str, ex: Exception, raw: str) -> str:
+    return f"{lane}: {str(ex)[:160]}"
+
+
 def request_json(prompt: str, policy: Policy, accept: Callable[[dict], bool]) -> Outcome:
     """Try each configured lane in order. The predicate evaluates decoded objects."""
     errors = []
     for lane in configured_lanes() if policy.lanes is None else policy.lanes:
-        adapter = LANES.get(lane)
-        if adapter is None:
+        if policy.format_error is None and LANES.get(lane) is None:
             errors.append("unknown lane")
             continue
+        raw = ""
+        parsing = False
         try:
-            raw = adapter(prompt, policy.timeout)
-        except subprocess.TimeoutExpired:
-            errors.append(f"{lane}: timed out")
-            continue
-        except FileNotFoundError:
-            errors.append(f"{lane}: unavailable")
-            continue
-        except json.JSONDecodeError:
-            errors.append(f"{lane}: invalid JSON")
-            continue
-        except Exception:
-            errors.append(f"{lane}: invocation failed")
-            continue
-        try:
+            raw = LANES[lane](prompt, policy.timeout)
+            parsing = True
             data = _extract_json(raw)
-        except (AttributeError, TypeError, ValueError, RecursionError):
-            errors.append(f"{lane}: invalid JSON")
+        except Exception as ex:
+            if policy.format_error is not None:
+                errors.append(policy.format_error(lane, ex, raw))
+            elif isinstance(ex, json.JSONDecodeError) or (
+                parsing and isinstance(ex, (AttributeError, TypeError, ValueError, RecursionError))
+            ):
+                errors.append(f"{lane}: invalid JSON")
+            elif parsing:
+                raise
+            elif isinstance(ex, subprocess.TimeoutExpired):
+                errors.append(f"{lane}: timed out")
+            elif isinstance(ex, FileNotFoundError):
+                errors.append(f"{lane}: unavailable")
+            else:
+                errors.append(f"{lane}: invocation failed")
             continue
         if accept(data):
             return Outcome(data, lane, errors)

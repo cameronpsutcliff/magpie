@@ -13,7 +13,7 @@ import re
 import sys
 
 # Compatibility imports for editorial callers outside this migration.
-from .editorial_model import LANES, Policy, _extract_json, configured_lanes, request_json
+from .editorial_model import LANES as LANES, Policy, configured_lanes, request_json
 from .util import ROOT, WS, clean, load_json, ungrounded_numbers
 
 PROMPT = """You are the editor of Magpie, a daily brief on what became newly possible in AI.

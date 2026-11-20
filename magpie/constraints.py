@@ -20,7 +20,7 @@ import re
 import sys
 
 from .collectors.policy import is_ai_policy
-from .enrich import LANES, _extract_json
+from .editorial_model import LANES as LANES, Policy, legacy_error, request_json
 from .util import ROOT, clean, fetch, load_json, short_hash, strip_html, url_key, write_json
 
 LAYERS = {
@@ -333,13 +333,9 @@ def classify(cands: list[dict], date: str, recorded: list[dict] | None = None, t
     prompt = PROMPT.format(date=date, n=len(rows), topic_ids=", ".join(topics), hat_ids=", ".join(hats),
                            recorded=json.dumps(shown, ensure_ascii=False, indent=0),
                            rows=json.dumps(rows, ensure_ascii=False, indent=0))
-    errors = []
-    for lane in [l.strip() for l in os.environ.get("MAGPIE_LANES", "claude,codex").split(",") if l.strip()]:
-        try:
-            data = _extract_json(LANES[lane](prompt, timeout))
-        except Exception as ex:  # try the next lane
-            errors.append(f"{lane}: {str(ex)[:160]}")
-            continue
+    outcome = request_json(prompt, Policy(timeout, format_error=legacy_error), accept=lambda data: True)
+    data, lane, errors = outcome.data, outcome.lane, outcome.errors
+    if data is not None:
         verdicts, dropped = {}, []
         for v in data.get("constraints", []):
             hit = by_id.get(v.get("id"))
