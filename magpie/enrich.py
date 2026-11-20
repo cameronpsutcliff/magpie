@@ -9,14 +9,11 @@ publishes with deterministic copy.
 from __future__ import annotations
 
 import json
-import os
 import re
-import shutil
-import subprocess
 import sys
-import tempfile
-from pathlib import Path
 
+# Compatibility imports for editorial callers outside this migration.
+from .editorial_model import LANES, Policy, _extract_json, configured_lanes, request_json
 from .util import ROOT, WS, clean, load_json, ungrounded_numbers
 
 PROMPT = """You are the editor of Magpie, a daily brief on what became newly possible in AI.
@@ -238,46 +235,6 @@ def _pick_pool(events: list[dict], limit: int) -> list[dict]:
     return pool[: max(limit, len(pool))][:limit + 6]
 
 
-def _extract_json(text: str) -> dict:
-    start = text.find("{")
-    if start < 0:
-        raise ValueError("no JSON object in model output")
-    obj, _ = json.JSONDecoder().raw_decode(text[start:])
-    return obj
-
-
-def _run_claude(prompt: str, timeout: int) -> str:
-    exe = shutil.which("claude")
-    if not exe:
-        raise FileNotFoundError("claude")
-    argv = [exe, "--print", "--model", os.environ.get("MAGPIE_MODEL", "opus"), "--output-format", "json",
-            "--tools", "", "--strict-mcp-config", "--no-session-persistence"]
-    if os.environ.get("MAGPIE_SAFE_MODE", "1") == "1":
-        argv.insert(1, "--safe-mode")
-    with tempfile.TemporaryDirectory() as tmp:
-        r = subprocess.run(argv, input=prompt, cwd=tmp, capture_output=True, text=True, timeout=timeout)
-    if r.returncode != 0:
-        raise RuntimeError(f"claude rc {r.returncode}: {r.stderr[-400:]}")
-    return json.loads(r.stdout).get("result", "")
-
-
-def _run_codex(prompt: str, timeout: int) -> str:
-    exe = shutil.which("codex") or "/Applications/ChatGPT.app/Contents/Resources/codex-cli/bin/codex"
-    if not Path(exe).exists():
-        raise FileNotFoundError("codex")
-    with tempfile.TemporaryDirectory() as tmp:
-        out = Path(tmp) / "answer.md"
-        r = subprocess.run([exe, "exec", "--ephemeral", "--skip-git-repo-check", "--ignore-user-config",
-                            "-s", "read-only", "-o", str(out), "-"], input=prompt, cwd=tmp,
-                           capture_output=True, text=True, timeout=timeout)
-        if r.returncode != 0 or not out.exists():
-            raise RuntimeError(f"codex rc {r.returncode}")
-        return out.read_text()
-
-
-LANES = {"claude": _run_claude, "codex": _run_codex}
-
-
 def _keep_follow_ups_out(edition: dict, pool: list[dict], date: str, lane: str, timeout: int, receipt: dict) -> None:
     """When the headline or dek names a follow-up despite the instructions, write them again from the new stories only,
     with the editor's lane first. When no lane can, code builds them from the headlines of new stories whose words name
@@ -290,7 +247,7 @@ def _keep_follow_ups_out(edition: dict, pool: list[dict], date: str, lane: str, 
         return
     new = sorted((e for e in pool if not e.get("reported") and (e.get("brief") or {}).get("headline")),
                  key=lambda e: (-((e.get("brief") or {}).get("impact") or 0), -e.get("signal", 0)))
-    order = [lane] + [l.strip() for l in os.environ.get("MAGPIE_LANES", "claude,codex").split(",") if l.strip() and l.strip() != lane]
+    order = [lane] + [other for other in configured_lanes() if other != lane]
     got = F.rewrite(date, new, old, style=edition.get("headline") or "", lanes=order, timeout=timeout)
     receipt["follow_ups_named"] = hit
     receipt["edition_rewritten"] = "model" if got else "code"
@@ -304,14 +261,9 @@ def enrich(events: list[dict], date: str, limit: int = 26, timeout: int = 1200) 
     pool = _pick_pool(events, limit)
     prompt = PROMPT.format(date=date, n=len(pool), topic_ids=", ".join(topics), hat_ids=", ".join(hats),
                            events=_payload(pool))
-    order = [l.strip() for l in os.environ.get("MAGPIE_LANES", "claude,codex").split(",") if l.strip()]
-    errors = []
-    for lane in order:
-        try:
-            data = _extract_json(LANES[lane](prompt, timeout))
-        except Exception as ex:  # try the next lane
-            errors.append(f"{lane}: {str(ex)[:200]}")
-            continue
+    outcome = request_json(prompt, Policy(timeout), accept=lambda data: True)
+    data, lane, errors = outcome.data, outcome.lane, outcome.errors
+    if data is not None and lane is not None:
         by_id = {e["id"]: e for e in pool}
         n = 0
         for b in data.get("events", []):

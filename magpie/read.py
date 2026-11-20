@@ -8,10 +8,9 @@ paragraph that states one they do not; a model only writes the words.
 from __future__ import annotations
 
 import json
-import os
 import sys
 
-from .enrich import LANES, _extract_json
+from .editorial_model import LANES, Policy, request_json
 from .util import clean, load_json, ungrounded_numbers, write_json
 
 PROMPT = """You write the read for Magpie, a public daily brief on what became newly possible in AI. Today is {date}.
@@ -81,17 +80,13 @@ def generate(day: dict, timeout: int = 600) -> dict:
     ed = day.get("edition") or {}
     prompt = PROMPT.format(date=day["date"], headline=ed.get("headline", ""), dek=ed.get("dek", ""),
                            events=json.dumps(list(rows.values()), ensure_ascii=False, indent=0))
-    errors = []
-    for lane in [l.strip() for l in os.environ.get("MAGPIE_LANES", "claude,codex").split(",") if l.strip()]:
-        try:
-            data = _extract_json(LANES[lane](prompt, timeout))
-        except Exception as ex:  # try the next lane
-            errors.append(f"{lane}: {str(ex)[:160]}")
-            continue
-        offered = data.get("read") if isinstance(data, dict) and isinstance(data.get("read"), list) else []
+    outcome = request_json(prompt, Policy(timeout), accept=lambda data: True)
+    data = outcome.data
+    if data is not None:
+        offered = data.get("read") if isinstance(data.get("read"), list) else []
         items = keep(offered, rows)
-        return {"items": items, "lane": lane, "offered": len(offered), "kept": len(items)}
-    return {"items": [], "errors": errors}
+        return {"items": items, "lane": outcome.lane, "offered": len(offered), "kept": len(items)}
+    return {"items": [], "errors": outcome.errors}
 
 
 def run_for(date: str | None = None) -> None:
