@@ -1,0 +1,395 @@
+{
+ "ran_at": "2026-11-20T19:25:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-20T15:35:00Z",
+ "queries": 3,
+ "calls": 6,
+ "items": [
+  {
+   "title": "Claude-assisted Lean proof of the Riemann Hypothesis posted by an Anthropic mathematician",
+   "url": "https://x.com/NielsRogge/status/2123804090467778948",
+   "handle": "@NielsRogge",
+   "group": "researchers",
+   "origin": "sweep",
+   "summary": "An Anthropic mathematician reports a Lean-formalized proof of the Riemann Hypothesis (and its generalized form) produced with Claude, with a public archive; early posters say it compiles and the statement matches, but it is a claim awaiting peer review and the dependency on Lean kernel checks is still being examined.",
+   "kind": "paper",
+   "evidence": "artifact",
+   "links": [
+    "https://paperswithcode.co/pdf/133661"
+   ],
+   "vendor": "Anthropic",
+   "posted_at": "2026-11-20T15:42:08Z",
+   "metrics": {
+    "likes": 312,
+    "reposts": 23,
+    "quotes": 6,
+    "replies": 8,
+    "views": 37035
+   },
+   "confirmed_by": [
+    "@DrJimFan"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Not peer-reviewed; reviewers have checked the target theorem but not every deduction, per replies read.",
+    "source": "https://x.com/worstinf0/status/2123859008138494189"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Replies and search results mostly repeat the claim; a few say the proof compiles across kernels with no obvious exploit tells, others stress it is unreviewed and the Clay prize needs years of scrutiny.",
+    "tried": true,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Gemini 4 Hydrogen scores 92.5% on ARC-AGI-2 in ARC Prize verified testing",
+   "url": "https://x.com/arcprize/status/2123823019667702086",
+   "handle": "@arcprize",
+   "group": "evals",
+   "origin": "sweep",
+   "summary": "ARC Prize reports verified scores of 92.5% (ARC-AGI-2, $1.26/task) and 98.5% (ARC-AGI-1) for Google's Gemini 4 Hydrogen, with about 52% fewer reasoning tokens than Gemini 3.8 Flash at high reasoning; the thread also notes API issues (malformed function calls, recitation stops) that blocked full ARC-AGI-3 testing.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://arcprize.org/leaderboard",
+    "https://github.com/arcprize/arc-agi-benchmarking"
+   ],
+   "vendor": "Google DeepMind",
+   "posted_at": "2026-11-20T16:57:21Z",
+   "metrics": {
+    "likes": 194,
+    "reposts": 11,
+    "quotes": 1,
+    "replies": 9,
+    "views": 7603
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Gemini adds GIF creation using Gemini Omni 1.2 Flash",
+   "url": "https://x.com/GeminiApp/status/2123813017855103449",
+   "handle": "@GeminiApp",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Gemini can now generate looping GIFs from a prompt using its Omni 1.2 Flash video model, available to all Google AI subscribers and free in several countries.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Google",
+   "posted_at": "2026-11-20T16:17:36Z",
+   "metrics": {
+    "likes": 1622,
+    "reposts": 123,
+    "quotes": 118,
+    "replies": 116,
+    "views": 111774
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Zyphra releases MAIA, a team AI colleague, in free beta",
+   "url": "https://x.com/ZyphraAI/status/2123838254080577657",
+   "handle": "@ZyphraAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Zyphra's MAIA is an AI teammate that remembers team decisions, works across Slack, Drive and Confluence, and builds interactive artifacts such as charts and animations; downloadable and free during beta.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://zyphra.com/maia/download"
+   ],
+   "vendor": "Zyphra",
+   "posted_at": "2026-11-20T17:57:53Z",
+   "metrics": {
+    "likes": 11,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 1,
+    "views": 543
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "NVIDIA WorldTrace keeps interactive video world models consistent on revisits without retraining",
+   "url": "https://x.com/NVIDIAAI/status/2123817447413395732",
+   "handle": "@NVIDIAAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "NVIDIA Research's WorldTrace helps interactive video world models remember places when the viewer looks away and returns, with results reported on the LoopBench benchmark.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-11-20T16:35:12Z",
+   "metrics": {
+    "likes": 46,
+    "reposts": 8,
+    "quotes": 3,
+    "replies": 42,
+    "views": 6358
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Real-time image generation in the browser on WebGPU with Jeveration",
+   "url": "https://x.com/linoy_tsaban/status/2123814286602666263",
+   "handle": "@linoy_tsaban",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A Qwen 3.5 4B based, single-forward-pass image model with an int8 ONNX checkpoint runs in real time in the browser on WebGPU, shown on an M2 Pro.",
+   "kind": "demo",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co"
+   ],
+   "vendor": "Hugging Face community",
+   "posted_at": "2026-11-20T16:22:39Z",
+   "metrics": {
+    "likes": 18,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 0,
+    "views": 941
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "QwenFX runs a stripped-down Vercel fx agent inside Qwen3.5-4B forward passes",
+   "url": "https://x.com/divagr1925/status/2123803611281150050",
+   "handle": "@divagr1925",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "An open repo that embeds an agent loop in the model's own forward passes so a 4B Qwen can call tools, patch repos and open PRs.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/divagr18/QwenFX",
+    "https://huggingface.co/divagr1925/QwenFX"
+   ],
+   "vendor": "divagr1925",
+   "posted_at": "2026-11-20T15:40:13Z",
+   "metrics": {
+    "likes": 32,
+    "reposts": 0,
+    "quotes": 1,
+    "replies": 4,
+    "views": 2369
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Diffusers adds LoRA fine-tuning for NVIDIA RFD4-Proteina protein design",
+   "url": "https://x.com/EmmaScharfmann/status/2123802886295494801",
+   "handle": "@EmmaScharfmann",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Hugging Face Diffusers can now LoRA fine-tune NVIDIA's RFD4-Proteina, extending the library to protein design.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-20T15:37:21Z",
+   "metrics": {
+    "likes": 23,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 0,
+    "views": 561
+   },
+   "confirmed_by": [
+    "@RisingSayak"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Microsoft previews RDMA over USB4 on Windows for multi-PC local model inference",
+   "url": "https://x.com/wei_wang/status/2123810871583391898",
+   "handle": "@wei_wang",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Microsoft's developer preview links several Windows PCs over USB4 for tensor-parallel inference, with RDMA round-trip latency about a quarter of Ethernet on the same cable.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://techcommunity.microsoft.com/blog/microsoftusbblog/introducing-rdma-over-usb4%c2%ae-on-windows-run-larger-local-ai-models-across-pcs/4574602",
+    "https://www.asus.com/displays-desktops/mini-pcs/proart-gr1x-mini-pc/"
+   ],
+   "vendor": "Microsoft",
+   "posted_at": "2026-11-20T16:09:04Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 176
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Hume adds entity accuracy to its ASR leaderboard and releases a training dataset",
+   "url": "https://x.com/hume_ai/status/2123835969753563630",
+   "handle": "@hume_ai",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Across 45 ASR systems the best got 81.7% of entities (names, emails, account numbers) exactly right, and two systems with near-identical WER differed by 7 points on entities; Hume published the benchmark and a dataset of these failures.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://www.hume.ai/blog/asr-entity-accuracy-benchmark",
+    "https://www.hume.ai/blog/hume-asr-entity-dataset"
+   ],
+   "vendor": "Hume AI",
+   "posted_at": "2026-11-20T17:48:48Z",
+   "metrics": {
+    "likes": 7,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 3,
+    "views": 456
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Hugging Face reports running its own CDN at about 1 exabyte per month",
+   "url": "https://x.com/Thom_Wolf/status/2123852806213730744",
+   "handle": "@Thom_Wolf",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Hugging Face describes building its own CDN for AI downloads, citing roughly 420 GB/s and 80,000 requests/s, with a live traffic visualization.",
+   "kind": "other",
+   "evidence": "claim",
+   "links": [
+    "https://huggingface-cdn-live.static.hf.space/index.html"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-20T18:55:42Z",
+   "metrics": {
+    "likes": 19,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 6,
+    "views": 1547
+   },
+   "confirmed_by": [
+    "@ClementDelangue"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "GPT 6.2 Astra added to PostTrainBench, Anthropic models still ahead",
+   "url": "https://x.com/maksym_andr/status/2123851338941685977",
+   "handle": "@maksym_andr",
+   "group": "evals",
+   "origin": "sweep",
+   "summary": "The PostTrainBench team added OpenAI's GPT 6.2 Astra to the benchmark and reports Anthropic models still lead.",
+   "kind": "eval",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "PostTrainBench",
+   "posted_at": "2026-11-20T18:49:53Z",
+   "metrics": {
+    "likes": 4,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 225
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/sir_dyek/status/2123560441183932538",
+   "reason": "non-AI Harry Potter fan-video meme"
+  }
+ ],
+ "list_posts_read": 94,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://x.com/ClementDelangue/status/2123819979153998108",
+   "reason": "Passing mention of an 'OpenAI cyberattack' in a conference interview post; no technical detail, IOC or stack component."
+  }
+ ]
+}
