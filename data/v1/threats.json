@@ -1,6 +1,6 @@
 {
  "schema": "magpie.threats/1",
- "updated": "2026-11-19",
+ "updated": "2026-11-20",
  "threats": [
   {
    "id": "thr-2026-11-18-berriai-litellm-guardrails-test-endpoint-allows-remote",

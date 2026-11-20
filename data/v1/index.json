@@ -2,6 +2,84 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-11-20",
+   "headline": "firecrawl, app-store-compliance, Hy4-flash, and more",
+   "events": 252,
+   "sources": 534,
+   "enriched": false,
+   "top": [
+    {
+     "id": "e89455a60806",
+     "title": "firecrawl/firecrawl",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-20-e89455a60806"
+    },
+    {
+     "id": "59a785f44ee3",
+     "title": "mjmirza/app-store-compliance",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-20-59a785f44ee3"
+    },
+    {
+     "id": "63f88fa12336",
+     "title": "tencent/Hy4-flash",
+     "impact": 4,
+     "vendor": "Tencent",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-20-63f88fa12336"
+    },
+    {
+     "id": "4302db6cb9e8",
+     "title": "elementalsouls/Claude-BugHunter",
+     "impact": 5,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-20-4302db6cb9e8"
+    },
+    {
+     "id": "e487fe51b82b",
+     "title": "cloudflare/security-audit-skill",
+     "impact": 4,
+     "vendor": "Cloudflare",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-20-e487fe51b82b"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Google",
+    "AWS",
+    "OpenAI",
+    "Databricks",
+    "Anthropic"
+   ],
+   "topics": {
+    "agents": 89,
+    "coding": 73,
+    "models": 69,
+    "multimodal": 51,
+    "local": 27,
+    "infra": 26,
+    "mcp": 24,
+    "memory": 21,
+    "evals": 20,
+    "research": 14,
+    "security": 13,
+    "reverse": 11,
+    "robotics": 1
+   },
+   "kinds": {
+    "blog": 54,
+    "repo": 38,
+    "social": 34,
+    "community": 31,
+    "model": 30,
+    "changelog": 24,
+    "space": 20,
+    "news": 11,
+    "newsletter": 10
+   }
+  },
+  {
    "date": "2026-11-19",
    "headline": "Meet Gemini 4 Neon, code locally with OpenCode LoRA, drive robots zero-shot, and more",
    "events": 457,
@@ -4789,5 +4867,5 @@
    }
   }
  ],
- "latest": "2026-11-19"
+ "latest": "2026-11-20"
 }
