@@ -1,0 +1,227 @@
+{
+ "ran_at": "2026-11-21T15:28:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-21T11:21:00Z",
+ "queries": 8,
+ "calls": 12,
+ "items": [
+  {
+   "title": "Inkling 2 Mini hits 65 tok/s on an M5 Ultra Mac Studio using the 17 GB 4-bit build in oMLX with its built-in draft model",
+   "url": "https://x.com/plotarmordev/status/2124136246025031776",
+   "handle": "@plotarmordev",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A builder reports 65 tokens per second decoding Thinking Machines' Inkling 2 Mini on a Mac Studio, using the publicly downloadable 17 GB 4-bit build in oMLX with the model's built-in draft model enabled. It shows the new model runs fast on a single high-end Mac.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+    "https://thinkingmachines.ai/news/inkling-2-mini/"
+   ],
+   "vendor": "oMLX / Thinking Machines",
+   "posted_at": "2026-11-21T13:42:00Z",
+   "metrics": {
+    "likes": 19,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single self-reported run with a screenshot; not reproduced by Magpie.",
+    "source": null
+   }
+  },
+  {
+   "title": "Two linked DGX Sparks process long prompts 26-28% faster when NCCL_IB_HCA lists both network devices of the cable",
+   "url": "https://x.com/plotarmordev/status/2124155371904504088",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Each Spark port appears as two network devices and a single one reaches about 112 of 200 Gb/s. Listing both in NCCL_IB_HCA speeds long-prompt processing by 26-28% in a two-Spark setup, with generation speed unchanged.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "NVIDIA DGX Spark / TensorFold",
+   "posted_at": "2026-11-21T14:58:00Z",
+   "metrics": {
+    "likes": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Self-reported measurement with no linked recipe or logs.",
+    "source": null
+   }
+  },
+  {
+   "title": "TensorFold tuning reaches 3,400 tok/s prefill and 80 tok/s decode on DeepSeek V4.1 Flash on an M5 Ultra 512 GB Mac",
+   "url": "https://x.com/ashxhart/status/2124130433717719043",
+   "handle": "@ashxhart",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A TensorFold user reports prefill rising from 1,300 to 3,400 tokens per second and decode from 56 to 80 on DeepSeek V4.1 Flash running on a top-spec Mac, after some unspecified tuning. The post links the project page for details.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-21T13:18:00Z",
+   "metrics": {
+    "likes": 90,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Numbers come from the author's own run and the tuning is not described in the post; the linked page was not read.",
+    "source": null
+   }
+  },
+  {
+   "title": "Analysis of Inkling 2 Mini weights: the looped design saves storage but reads about 5.5 GB per token, capping one Spark stream near 49 tok/s without speculative decoding",
+   "url": "https://x.com/wei_wang/status/2124128966105534574",
+   "handle": "@wei_wang",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Working from the official blog, config and weight file headers, the author shows the 26.4B MoE stores 24 layers but computes 48, so each token reads about 70% more bytes. On a 273 GB/s DGX Spark that bounds single-stream decode near 49 tok/s, and the bundled MTP head likely explains reports of 75.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://thinkingmachines.ai/news/inkling-2-mini/",
+    "https://huggingface.co/thinkingmachines/Inkling-2-Mini"
+   ],
+   "vendor": "Thinking Machines",
+   "posted_at": "2026-11-21T13:13:00Z",
+   "metrics": {
+    "likes": 2,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Derived from tensor sizes, not a benchmark run; the MTP explanation is the author's guess.",
+    "source": null
+   }
+  },
+  {
+   "title": "Hugging Face reports early RL results training Qwen3.8-27B with thinking mode on harness adapters, with a Terminal-Bench 2.1 gain by step 70",
+   "url": "https://x.com/yb2698/status/2124141039183401138",
+   "handle": "@yb2698",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A Hugging Face post and blog describe adapting agent harnesses at scale and starting RL training of Qwen3.8-27B with thinking mode. The think harness adapter is reported much better at step 70 on 68 Terminal-Bench 2.1 tasks.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/blog/harness-adapters-at-scale"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-21T14:01:00Z",
+   "metrics": {
+    "likes": 18,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Early training signals only; the blog was not read for full numbers.",
+    "source": null
+   }
+  },
+  {
+   "title": "Claude Code 2.1.329 adds a /tasks view to stop scheduled /loop jobs, wakeups and goals in a session",
+   "url": "https://x.com/wei_wang/status/2124160182838050979",
+   "handle": "@wei_wang",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Interval loops started with /loop could not be stopped with Esc or Ctrl+C and the docs only say to ask Claude to cancel them. From 2.1.329, /tasks lists the session's scheduled tasks, next loop wakeups and current goal so they can be managed there.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+    "https://code.claude.com/docs/en/scheduled-tasks"
+   ],
+   "vendor": "Anthropic",
+   "posted_at": "2026-11-21T15:17:00Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Second-hand description in Chinese of the changelog; changelog entry not read line by line.",
+    "source": null
+   }
+  },
+  {
+   "title": "Omarchy 4.5 shows a Process crashed alert and can hand the crash details to a coding agent to diagnose",
+   "url": "https://x.com/OmarchyUpdates/status/2124155943604900006",
+   "handle": "@OmarchyUpdates",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Omarchy 4.5 watches for app crashes and pops an alert; clicking Open starts the user's coding agent with the crash details prefilled so it can work out the cause.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Omarchy",
+   "posted_at": "2026-11-21T15:00:00Z",
+   "metrics": {
+    "likes": 6,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Vendor demo video only; no changelog link read.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 94,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://x.com/michael_chomsky/status/2124008002571428224",
+   "reason": "Unverified claim that OpenRouter-routed traffic to MiniMax was seen by third parties via providers (AtlasCloud, Novita, StreamLake); OpenRouter is not in stack.json and is not an agent-tooling, supply-chain or container item, so not forwarded (swyx quote at 2124147427313861009)."
+  }
+ ]
+}
