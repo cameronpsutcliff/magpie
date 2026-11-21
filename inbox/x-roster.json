@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-20T10:40:00Z",
+ "updated_at": "2026-11-21T10:30:00Z",
  "accounts": [
   {
    "handle": "@thsottiaux",
@@ -203,7 +203,7 @@
     "https://x.com/odysseyml/status/2108238378751967385",
     "https://x.com/odysseyml/status/2105714716316438684"
    ],
-   "last_qualifying_post": "2026-10-08",
+   "last_qualifying_post": "2026-11-02",
    "retired_reason": null,
    "x_user_id": "1719792902556225536",
    "on_list": true
@@ -295,7 +295,7 @@
     "https://x.com/mem0ai/status/2102438126941876590",
     "https://x.com/mem0ai/status/2105685414430523472"
    ],
-   "last_qualifying_post": "2026-10-07",
+   "last_qualifying_post": "2026-11-17",
    "retired_reason": null,
    "x_user_id": "1670746017828859904",
    "on_list": true
@@ -1668,7 +1668,7 @@
    "affiliation": "Hugging Face / BitRobot / NUS MAGIC / EAIC",
    "why": "Official open real-world robot eval initiative: measured in-the-wild results across VLAs and frontier agents, open rollouts on Hugging Face, paper and leaderboard.",
    "signal_to_noise": 4,
-   "status": "trial",
+   "status": "active",
    "added_on": "2026-11-07",
    "evidence": [
     "https://x.com/RoboColosseum/status/2117982605274710483",
@@ -1677,7 +1677,8 @@
    "last_qualifying_post": "2026-11-06",
    "retired_reason": null,
    "x_user_id": "2108009743390527488",
-   "on_list": true
+   "on_list": true,
+   "promoted_on": "2026-11-21"
   },
   {
    "handle": "@sean_n_wu",
