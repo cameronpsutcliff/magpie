@@ -2,6 +2,84 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-11-21",
+   "headline": "Inkling-2-Mini, Inkling-2-Mini-GGUF, open-code-review, and more",
+   "events": 223,
+   "sources": 534,
+   "enriched": false,
+   "top": [
+    {
+     "id": "e50556ef1e99",
+     "title": "thinkingmachines/Inkling-2-Mini",
+     "impact": 5,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-21-e50556ef1e99"
+    },
+    {
+     "id": "ea95553e9a0b",
+     "title": "unsloth/Inkling-2-Mini-GGUF",
+     "impact": 4,
+     "vendor": "Unsloth",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-21-ea95553e9a0b"
+    },
+    {
+     "id": "6e62c7dad254",
+     "title": "alibaba/open-code-review",
+     "impact": 5,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-21-6e62c7dad254"
+    },
+    {
+     "id": "9c266ff4a7f9",
+     "title": "apple/DepthPro2",
+     "impact": 4,
+     "vendor": "Apple",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-21-9c266ff4a7f9"
+    },
+    {
+     "id": "4302db6cb9e8",
+     "title": "elementalsouls/Claude-BugHunter",
+     "impact": 5,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-21-4302db6cb9e8"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Google",
+    "Anthropic",
+    "OpenAI",
+    "AWS",
+    "Hugging Face"
+   ],
+   "topics": {
+    "coding": 75,
+    "models": 70,
+    "agents": 69,
+    "multimodal": 51,
+    "infra": 26,
+    "mcp": 25,
+    "evals": 22,
+    "local": 20,
+    "memory": 20,
+    "research": 12,
+    "reverse": 9,
+    "security": 7,
+    "robotics": 2
+   },
+   "kinds": {
+    "social": 48,
+    "repo": 35,
+    "blog": 32,
+    "model": 30,
+    "changelog": 24,
+    "community": 20,
+    "space": 20,
+    "newsletter": 9,
+    "news": 5
+   }
+  },
+  {
    "date": "2026-11-20",
    "headline": "Opening Hy4 weights, pipelining robot agents, shrinking policy classifiers, and more",
    "events": 431,
@@ -4877,5 +4955,5 @@
    }
   }
  ],
- "latest": "2026-11-20"
+ "latest": "2026-11-21"
 }
