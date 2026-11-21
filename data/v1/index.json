@@ -3,81 +3,83 @@
  "days": [
   {
    "date": "2026-11-21",
-   "headline": "Inkling-2-Mini, Inkling-2-Mini-GGUF, open-code-review, and more",
-   "events": 223,
-   "sources": 534,
-   "enriched": false,
+   "headline": "Run Inkling 2 Mini on laptops, track video depth, ground document fields, and more",
+   "events": 322,
+   "sources": 565,
+   "enriched": true,
    "top": [
     {
      "id": "e50556ef1e99",
-     "title": "thinkingmachines/Inkling-2-Mini",
+     "title": "Thinking Machines opens Inkling 2 Mini weights for laptops",
      "impact": 5,
-     "vendor": "Open source",
+     "vendor": "Thinking Machines",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-21-e50556ef1e99"
     },
     {
      "id": "ea95553e9a0b",
-     "title": "unsloth/Inkling-2-Mini-GGUF",
-     "impact": 4,
+     "title": "Unsloth posts GGUF builds of Inkling 2 Mini",
+     "impact": 3,
      "vendor": "Unsloth",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-21-ea95553e9a0b"
     },
     {
      "id": "6e62c7dad254",
-     "title": "alibaba/open-code-review",
-     "impact": 5,
-     "vendor": "Open source",
+     "title": "Alibaba open-code-review keeps gaining weekly stars",
+     "impact": 4,
+     "vendor": "Alibaba",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-21-6e62c7dad254"
     },
     {
      "id": "9c266ff4a7f9",
-     "title": "apple/DepthPro2",
-     "impact": 4,
+     "title": "Apple Depth Pro 2 gives frame-consistent metric depth",
+     "impact": 3,
      "vendor": "Apple",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-21-9c266ff4a7f9"
     },
     {
-     "id": "4302db6cb9e8",
-     "title": "elementalsouls/Claude-BugHunter",
-     "impact": 5,
+     "id": "5e60a64921c6",
+     "title": "Paper: language models that rewrite their own weights",
+     "impact": 3,
      "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-21-4302db6cb9e8"
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-21-5e60a64921c6"
     }
    ],
    "vendors": [
     "Open source",
-    "Google",
     "Anthropic",
+    "Google",
     "OpenAI",
     "AWS",
-    "Hugging Face"
+    "NVIDIA"
    ],
    "topics": {
-    "coding": 75,
-    "models": 70,
-    "agents": 69,
-    "multimodal": 51,
-    "infra": 26,
-    "mcp": 25,
+    "agents": 81,
+    "coding": 76,
+    "models": 75,
+    "multimodal": 57,
+    "infra": 29,
+    "local": 26,
+    "mcp": 24,
     "evals": 22,
-    "local": 20,
     "memory": 20,
-    "research": 12,
+    "research": 17,
+    "security": 9,
     "reverse": 9,
-    "security": 7,
-    "robotics": 2
+    "robotics": 4
    },
    "kinds": {
-    "social": 48,
+    "video": 101,
+    "social": 52,
     "repo": 35,
     "blog": 32,
-    "model": 30,
-    "changelog": 24,
-    "community": 20,
-    "space": 20,
+    "model": 29,
+    "changelog": 23,
+    "community": 19,
+    "space": 19,
     "newsletter": 9,
-    "news": 5
-   }
+    "news": 3
+   },
+   "threats": []
   },
   {
    "date": "2026-11-20",

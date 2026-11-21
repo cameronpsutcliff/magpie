@@ -6,9 +6,9 @@
    "id": "thr-2026-11-19-mcp-python-sdk-oauth-client-sends-credentials",
    "kind": "threat",
    "category": "ai-framework-vuln",
-   "title": "MCP Python SDK OAuth client sends credentials to attacker servers",
-   "headline": "Malicious MCP servers could redirect OAuth credentials from Python SDK clients to their own token endpoints.",
-   "summary": "The OAuth client support in the Model Context Protocol Python SDK did not validate the authorization server issuer on every discovery path. It also did not bind stored or pre-provisioned client credentials to their authorization server.",
+   "title": "MCP Python SDK OAuth client leaks credentials to servers",
+   "headline": "MCP Python SDK clients could send OAuth secrets and codes to an authorization server a malicious MCP server picks",
+   "summary": "It also did not bind stored client credentials to their authorization server.",
    "severity": "high",
    "severity_basis": "advisory rating",
    "exploited": null,
@@ -30,26 +30,26 @@
    ],
    "actions": [
     "Update mcp to 2.2.0 or later",
-    "Rotate client secrets and revoke tokens for clients that may have reached untrusted MCP servers.",
-    "Clear stored OAuth client information once so clients register again."
+    "Set the expected issuer on client credentials and private key JWT providers.",
+    "Rotate secrets and revoke tokens for clients that reached untrusted MCP servers."
    ],
    "action_quotes": [
     {
-     "action": "Rotate client secrets and revoke tokens for clients that may have reached untrusted MCP servers.",
-     "quote": "Past exposure: if such a client may have connected to an untrusted MCP server, rotate its client secret and revoke its tokens at the authorization server."
+     "action": "Set the expected issuer on client credentials and private key JWT providers.",
+     "quote": "Without it they still follow whichever authorization server the MCP server advertises."
     },
     {
-     "action": "Clear stored OAuth client information once so clients register again.",
-     "quote": "Clear stored OAuth client information once so the client registers again."
+     "action": "Rotate secrets and revoke tokens for clients that reached untrusted MCP servers.",
+     "quote": "Past exposure: if such a client may have connected to an untrusted MCP server, rotate its client secret and revoke its tokens at the authorization server."
     }
    ],
    "who": [
-    "MCP clients built on the Python SDK using OAuth over HTTP",
-    "apps that connect to MCP servers they do not fully trust"
+    "Python MCP clients using OAuth over HTTP",
+    "Apps connecting to untrusted MCP servers"
    ],
    "published": "2026-11-19",
    "first_seen": "2026-11-20",
-   "updated": "2026-11-20",
+   "updated": "2026-11-21",
    "cves": [
     "CVE-2026-115563"
    ],
@@ -73,7 +73,7 @@
     "GHSA-qx49-fqc8-xw99",
     "url:osv.dev/vulnerability/GHSA-qx49-fqc8-xw99"
    ],
-   "last_seen": "2026-11-20",
+   "last_seen": "2026-11-21",
    "reach": 2,
    "wide": false
   },
@@ -81,9 +81,9 @@
    "id": "thr-2026-11-18-berriai-litellm-guardrails-test-endpoint-allows-remote",
    "kind": "threat",
    "category": "exploited-vuln",
-   "title": "BerriAI LiteLLM guardrails test endpoint allows remote code execution",
-   "headline": "A LiteLLM flaw lets remote attackers run arbitrary code through the guardrails custom code test URI.",
-   "summary": "A remote attacker could execute arbitrary code through bytecode rewriting. The record says LiteLLM through 2026-04-08 is affected.",
+   "title": "LiteLLM guardrails test endpoint allows remote code execution",
+   "headline": "CISA lists a LiteLLM flaw letting remote attackers run code via the guardrails test URI",
+   "summary": "CISA added a BerriAI LiteLLM vulnerability to its catalog on 2026-11-18. Remote attackers could execute arbitrary code through bytecode rewriting.",
    "severity": "high",
    "severity_basis": "CVSS 8.8 (CNA)",
    "exploited": true,
@@ -100,12 +100,12 @@
    "fixed_in": [],
    "actions": [
     "Apply the vendor's fix or mitigations for BerriAI LiteLLM: CISA lists it as exploited",
-    "Apply the vendor's mitigations, or stop using the product if none are available.",
+    "Stop using the product if no mitigation is available.",
     "Check whether each LiteLLM deployment is reachable from the internet."
    ],
    "action_quotes": [
     {
-     "action": "Apply the vendor's mitigations, or stop using the product if none are available.",
+     "action": "Stop using the product if no mitigation is available.",
      "quote": "Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable."
     },
     {
@@ -114,12 +114,12 @@
     }
    ],
    "who": [
-    "teams running LiteLLM",
-    "LiteLLM deployments reachable from the internet"
+    "Operators of LiteLLM deployments",
+    "Teams exposing LiteLLM to the internet"
    ],
    "published": "2026-11-18",
    "first_seen": "2026-11-19",
-   "updated": "2026-11-19",
+   "updated": "2026-11-21",
    "cves": [
     "CVE-2026-40217"
    ],
@@ -142,7 +142,7 @@
     "CVE-2026-40217",
     "url:cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-40217"
    ],
-   "last_seen": "2026-11-20",
+   "last_seen": "2026-11-21",
    "reach": 2,
    "wide": false
   },
