@@ -166,7 +166,7 @@
         <li><strong>Edition and rollups.</strong> <code>data/v1/days/&lt;date&gt;.json</code> and <code>data/v1/rollups/&lt;date&gt;.json</code> use Chicago dates.</li>
         <li><strong>Projections.</strong> Latest, archive, feed, element and idea indexes, and constraint and threat registers live under <code>data/v1/</code>.</li>
         <li><strong>Stable links.</strong> Capabilities use <code>/magpie/c/&lt;date&gt;-&lt;id&gt;</code>. Possibilities use <code>/magpie/i/&lt;id&gt;</code>.</li>
-        <li><strong>Validation.</strong> <a href="../data/v1/schema/">Published schemas</a> define the versioned shapes. Invalid ideas indexes leave the last good file in place.</li>
+        <li><strong>Validation.</strong> <a href="https://github.com/cameronpsutcliff/magpie/blob/main/data/v1/schema" target="_blank" rel="noopener noreferrer">Published schemas</a> define the versioned shapes. Invalid ideas indexes leave the last good file in place.</li>
         <li><strong>Cloud auth.</strong> Actions uses its repository token for Git writes and optional Claude OAuth or Anthropic API secrets.</li>
         <li><strong>Home auth.</strong> The launcher uses an explicit GitHub account, untracked <code>.env.local</code> and authenticated CLIs.</li>
         <li><strong>Portability.</strong> The keyless cloud path has zero personal-laptop dependencies. Home enrichment requires an explicitly provisioned host and tools.</li>
@@ -189,9 +189,9 @@
     <section id="decisions">
       <h2>Key Decisions &amp; Stack Fit</h2>
       <ul>
-        <li><a href="adr/0001-edition-publication-and-precedence.md">ADR 0001</a> targets one publication seam for writes and repairs, with receipts, precedence and stable page IDs.</li>
-        <li><a href="adr/0002-runner-checkout-and-data-v1-contract.md">ADR 0002</a> names <code>magpie-runner</code> the operational checkout and requires schema tests and a PR test gate.</li>
-        <li><a href="adr/0003-edition-run-inputs-and-replay-guarantees.md">ADR 0003</a> targets a shared build seam and prior-only replay. The editorial JSON seam is implemented.</li>
+        <li><a href="https://github.com/cameronpsutcliff/magpie/blob/main/docs/adr/0001-edition-publication-and-precedence.md" target="_blank" rel="noopener noreferrer">ADR 0001</a> targets one publication seam for writes and repairs, with receipts, precedence and stable page IDs.</li>
+        <li><a href="https://github.com/cameronpsutcliff/magpie/blob/main/docs/adr/0002-runner-checkout-and-data-v1-contract.md" target="_blank" rel="noopener noreferrer">ADR 0002</a> names <code>magpie-runner</code> the operational checkout and requires schema tests and a PR test gate.</li>
+        <li><a href="https://github.com/cameronpsutcliff/magpie/blob/main/docs/adr/0003-edition-run-inputs-and-replay-guarantees.md" target="_blank" rel="noopener noreferrer">ADR 0003</a> targets a shared build seam and prior-only replay. The editorial JSON seam is implemented.</li>
         <li><strong>Stack fit.</strong> Python 3.12+ and its standard library handle batch collection, ranking and JSON. Thin launchers handle Git transport.</li>
       </ul>
     </section>
@@ -222,14 +222,14 @@
       </dl>
       <h3>Read these five files first</h3>
       <ol>
-        <li><a href="../GLOSSARY.md">GLOSSARY.md</a> for canonical domain language.</li>
-        <li><a href="../magpie/__main__.py">magpie/__main__.py</a> for the daily build sequence and replay flags.</li>
-        <li><a href="../magpie/editorial_model.py">magpie/editorial_model.py</a> for lane policy, timeouts and JSON acceptance.</li>
-        <li><a href="../.github/workflows/edition.yml">.github/workflows/edition.yml</a> for cloud cadence, credentials and publishing.</li>
-        <li><a href="../scripts/home-run.sh">scripts/home-run.sh</a> for the home runner and weekly maintenance.</li>
+        <li><a href="https://github.com/cameronpsutcliff/magpie/blob/main/GLOSSARY.md" target="_blank" rel="noopener noreferrer">GLOSSARY.md</a> for canonical domain language.</li>
+        <li><a href="https://github.com/cameronpsutcliff/magpie/blob/main/magpie/__main__.py" target="_blank" rel="noopener noreferrer">magpie/__main__.py</a> for the daily build sequence and replay flags.</li>
+        <li><a href="https://github.com/cameronpsutcliff/magpie/blob/main/magpie/editorial_model.py" target="_blank" rel="noopener noreferrer">magpie/editorial_model.py</a> for lane policy, timeouts and JSON acceptance.</li>
+        <li><a href="https://github.com/cameronpsutcliff/magpie/blob/main/.github/workflows/edition.yml" target="_blank" rel="noopener noreferrer">.github/workflows/edition.yml</a> for cloud cadence, credentials and publishing.</li>
+        <li><a href="https://github.com/cameronpsutcliff/magpie/blob/main/scripts/home-run.sh" target="_blank" rel="noopener noreferrer">scripts/home-run.sh</a> for the home runner and weekly maintenance.</li>
       </ol>
     </section>
   </main>
-  <footer class="wrap"><a href="../README.md">Magpie README</a></footer>
+  <footer class="wrap"><a href="https://github.com/cameronpsutcliff/magpie/blob/main/README.md" target="_blank" rel="noopener noreferrer">Magpie README</a></footer>
 </body>
 </html>
