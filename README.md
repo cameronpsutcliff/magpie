@@ -5,6 +5,8 @@ Every shiny new thing in AI, collected each morning and ranked by what it makes 
 Read it at **[cameronsutcliff.com/magpie](https://cameronsutcliff.com/magpie)**. This repository is the
 pipeline and the open feed behind that page.
 
+[Repository overview](docs/repo-overview.html)
+
 ## What it does
 
 Every morning Magpie reads about 35 public sources: GitHub trending for the day, week and month,
