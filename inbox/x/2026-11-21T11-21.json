@@ -1,0 +1,113 @@
+{
+ "ran_at": "2026-11-21T11:21:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-21T03:30:00Z",
+ "queries": 5,
+ "calls": 5,
+ "items": [
+  {
+   "title": "Unsloth publishes a local-run guide for Inkling 2 Mini with memory sizes from 9 GB (1-bit) to 24 GB (8-bit)",
+   "url": "https://x.com/NielsRogge/status/2124094216926015549",
+   "handle": "@NielsRogge",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Unsloth's guide shows how to run Thinking Machines' Inkling 2 Mini locally with Unsloth and llama.cpp. The quoted figures are about 9 GB of RAM at 1-bit, 17-18 GB at 4-bit and 24 GB at 8-bit, so the model fits laptops and small GPUs.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://unsloth.ai/docs/models/inkling-2-mini",
+    "https://huggingface.co/blog/inkling2mini"
+   ],
+   "vendor": "Unsloth",
+   "posted_at": "2026-11-21T10:54:00Z",
+   "metrics": {
+    "likes": 11,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Memory figures are relayed from the guide in the post; not run by Magpie.",
+    "source": null
+   }
+  },
+  {
+   "title": "TRL adds an SFT example that post-trains Inkling 2 Mini on a clock-reading task",
+   "url": "https://x.com/QGallouedec/status/2124035834454089841",
+   "handle": "@QGallouedec",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Hugging Face's TRL repo now has examples/sft_inkling_2_mini_clocks, a worked supervised fine-tuning recipe for the looped Inkling 2 Mini, with a short demo video. A roster account also notes the model is now supported in TRL.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/huggingface/trl/tree/main/examples/sft_inkling_2_mini_clocks"
+   ],
+   "vendor": "Hugging Face TRL",
+   "posted_at": "2026-11-21T07:03:00Z",
+   "metrics": {
+    "likes": 10,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 1,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@DirhousssiAmine"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Example directory exists; no training results read.",
+    "source": null
+   }
+  },
+  {
+   "title": "InferenceBench lists Gemini 4 Neon in the top 3 agents for optimizing LLM inference, slightly above GPT-6.2 Astra at Ultra reasoning",
+   "url": "https://x.com/maksym_andr/status/2124100080152035403",
+   "handle": "@maksym_andr",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "InferenceBench gives coding agents a base model, hardware and a two-hour budget to build a faster OpenAI-compatible server, scored as speedup over a PyTorch baseline. The post reports Gemini 4 Neon third overall, just ahead of GPT-6.2 Astra (Ultra reasoning); the leaderboard is rendered client-side, so the ranking was not independently read.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://inferencebench.ai/"
+   ],
+   "vendor": "InferenceBench",
+   "posted_at": "2026-11-21T11:18:17Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 16
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Ranking is the poster's reading of the leaderboard; page confirms the benchmark and method but ranks load by script.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 94,
+ "list_pages": 1,
+ "security_forwarded": [
+  {
+   "url": "https://x.com/plotarmordev/status/2123997126824960493",
+   "matched": "stack.json Linux kernel match term 'nvidia driver' (reliability bug, not a vulnerability)"
+  }
+ ],
+ "security_na": []
+}

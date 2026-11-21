@@ -1,21 +1,21 @@
 {
-  "updated_at": "2026-11-21T10:30:00Z",
-  "job": "roster",
+  "updated_at": "2026-11-21T11:21:00Z",
+  "job": "sweep",
   "prompt": "v6.1",
-  "calls_used_today": 25,
+  "calls_used_today": 30,
   "notes_via_api": false,
   "last_sweep": {
-    "ran_at": "2026-11-21T03:30:00Z",
-    "items": 14,
-    "queries": 19,
+    "ran_at": "2026-11-21T11:21:00Z",
+    "items": 3,
+    "queries": 5,
     "deep_reads": 0,
     "rechecks": 0,
     "flagged": 0,
     "saved_in": 0,
     "saved_kept": 0,
     "videos": 0,
-    "security_forwarded": 0,
-    "list_posts_read": 95,
+    "security_forwarded": 1,
+    "list_posts_read": 94,
     "list_pages": 1
   },
   "roster": {
@@ -49,7 +49,8 @@
     "Sweep 03:30Z: large search results with entities and note_post fields are truncated in the middle by the tool; request only created_at and public_metrics and hydrate shortlisted ids afterwards.",
     "Roster review 2026-11-21: Saturday, no drafts written. 6 X reads (4 users, 4 timelines counted as 8 calls at most). Owner-saves screen: @danikkk_wqs rejected (templated 'f*cking wild' repo-listicle engagement bait plus off-topic GTA post, same pattern as retired @mirku21); @OrcaRouter rejected (mostly product promo and model-hosting ads, 2 saves are launches); @mirku21 and @RoundtableSpace already retired/avoid. Both rejected accounts should be added to the avoid list by the owner (config not editable here).",
     "Roster review 2026-11-21: @RoboColosseum promoted to active (2 sweep-file posts, 14 days). @odysseyml (Odyssey-3 benchmark post 2026-11-02) and @mem0ai (technical memory articles 2026-11-12 and 11-17) re-checked and kept as trial with last_qualifying_post updated; both are borderline on promotion rate.",
-    "Roster review 2026-11-21 flag: @JensenHuang (owner_requested) has no qualifying post since 2026-09-03 (79 days); left unchanged per rule, owner to decide."
+    "Roster review 2026-11-21 flag: @JensenHuang (owner_requested) has no qualifying post since 2026-09-03 (79 days); left unchanged per rule, owner to decide.",
+    "Sweep 2026-11-21T11:21:00Z: list page reached 2026-11-20T21:34Z, well before since, so every list member was covered. Bookmarks: 25 newest all already in the archive (saved_in 0). calls_used_today is a single counter but calls_day is a UTC date that rolled at 18:00 CT; X showed 969 of 1000 left, so about 31 shared calls used so far today. InferenceBench leaderboard renders by script, so ranks cannot be read with curl."
   ],
   "errors": [],
   "follows_today": 0,
@@ -73,7 +74,7 @@
     "updated_at": "2026-11-17T10:35:00Z"
   },
   "horizon_triggered": [],
-  "calls_day": "2026-11-20",
+  "calls_day": "2026-11-21",
   "roster_review_calls": 0,
   "follows_note": "2026-11-20 11:20Z sweep: no browser available, follows skipped (follow_mode browser).",
   "roster_review": {
@@ -87,5 +88,5 @@
     "flagged": [],
     "sunday_drafts": false
   },
-  "follows_skipped": "no browser available on this run; follows skipped"
+  "follows_skipped": "Sweep 2026-11-21T11:21:00Z: executor has no browser; follows skipped."
 }
