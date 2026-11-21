@@ -1,21 +1,21 @@
 {
- "updated_at": "2026-11-20T23:18:00Z",
+ "updated_at": "2026-11-21T03:30:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 40,
+ "calls_used_today": 25,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-20T23:18:00Z",
-  "items": 15,
-  "queries": 8,
-  "deep_reads": 2,
+  "ran_at": "2026-11-21T03:30:00Z",
+  "items": 14,
+  "queries": 19,
+  "deep_reads": 0,
   "rechecks": 0,
   "flagged": 0,
   "saved_in": 0,
   "saved_kept": 0,
   "videos": 0,
   "security_forwarded": 0,
-  "list_posts_read": 97,
+  "list_posts_read": 95,
   "list_pages": 1
  },
  "roster": {
@@ -290,7 +290,9 @@
   "The user-X plugin has no search tool in this run; search_posts_all lives in the separate x plugin and returns at most 25 posts per call, with a 30 reads per minute limit. Notes should say which plugin to use.",
   "Sweep 2026-11-20T03:25Z: calls_used_today reset at 00:00Z (this sweep is UTC day 2026-11-20; 7 calls). The list page reached the since boundary (oldest post 19:42Z), so no fallback searches were run; no browser, so follows were skipped.",
   "Roster review 2026-11-20: owner saves gave two authors with 2 kept saves in 30 days who are off roster, both rejected after screen: @danikkk_wqs (hype listicles with 'f*cking' hooks plus GTA 6 gaming and non-AI content in the latest 25 posts) and @OrcaRouter (AI gateway product promotion and launches). Both belong on the avoid list, but config/ is owner-controlled and bots may not edit it.",
-  "Roster review 2026-11-20: promoted @ashxhart (15 sweep-file items, no level-2 doubt). No account meets the 45-day retire rule yet (earliest 2026-12-04); no Sunday drafts (today is Friday)."
+  "Roster review 2026-11-20: promoted @ashxhart (15 sweep-file items, no level-2 doubt). No account meets the 45-day retire rule yet (earliest 2026-12-04); no Sunday drafts (today is Friday).",
+  "Sweep 03:30Z: the curated fallback query that includes @bot (Grok Bot's own account) returns 25 of its own auto-replies and crowds out the other handles, and @teortaxesTex does the same to its group; I reran those two groups without them. Consider dropping both from the sweep roster.",
+  "Sweep 03:30Z: large search results with entities and note_post fields are truncated in the middle by the tool; request only created_at and public_metrics and hydrate shortlisted ids afterwards."
  ],
  "errors": [],
  "follows_today": 0,

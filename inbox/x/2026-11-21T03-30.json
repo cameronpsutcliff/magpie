@@ -1,0 +1,458 @@
+{
+ "ran_at": "2026-11-21T03:30:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-20T23:18:00Z",
+ "queries": 19,
+ "calls": 25,
+ "items": [
+  {
+   "title": "DeepSeek V4.1 Flash official weights now run on one DGX Spark via spark-ds41f 1120, with per-topology speeds",
+   "url": "https://x.com/wei_wang/status/2123978715268833534",
+   "handle": "@wei_wang",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "The spark-ds41f repo's 1120 release adds single-machine and two-machine direct-cable configs for the original DeepSeek V4.1 Flash weights, reading experts that do not fit in memory from disk through io_uring. Reported single-stream decode is 4.4 tok/s on one Spark and 17.8 on two, rising to 124 on eight; prefill is slow on one and two machines, so a compressed build is still the practical choice there.",
+   "kind": "repo",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/christopherowen/spark-ds41f",
+    "https://forums.developer.nvidia.com/t/deepseek-v4-1-flash-1017-exl3-2-9bpw-on-2x-dgx-spark-with-tensorfold-57-tok-s-text-92-tok-s-code-2-1-2-3x-the-vllm-kit/386125"
+   ],
+   "vendor": "spark-ds41f (christopherowen)",
+   "posted_at": "2026-11-21T03:16:01Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "NVIDIA Hyperflare Rust inference server compared with TensorFold on two DGX Sparks running GLM-5.3-Flash",
+   "url": "https://x.com/wei_wang/status/2123960598236942444",
+   "handle": "@wei_wang",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A two-machine GLM-5.3-Flash package for NVIDIA's Hyperflare, a Rust server shipped as a 26 MiB binary with direct RoCE and no Docker or NCCL, reaches 38.7 tok/s single-stream versus 62.2 for TensorFold, though the two sides use different benchmarks, quantizations and speculation settings. The package loads 83.8 GiB of weights per machine in 32 seconds and supports image input and the full 1M-token context.",
+   "kind": "repo",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/NVIDIA/hyperflare-inference",
+    "https://github.com/hiroshi-ya/GLM-5.3-Flash-HYPERFLARE-TP2",
+    "https://github.com/ashhart/TensorFold/releases/tag/v1.3.0"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-11-21T02:04:02Z",
+   "metrics": {
+    "likes": 2,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 3,
+    "views": 181
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Hy4 Flash reaches 29.8 tok/s on two DGX Sparks, reproduced by a second builder on the official vLLM image",
+   "url": "https://x.com/plotarmordev/status/2123919607870419395",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A second builder reran the patch set on the official vLLM image and measured 29.8 tok/s on code against 29.7 in the original run, on two DGX Sparks, where Tencent's own recipe calls for eight datacenter GPUs.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/niklaslenz_ai/status/2123674956789920187"
+   ],
+   "vendor": "Tencent Hy4 Flash community recipe",
+   "posted_at": "2026-11-20T23:21:09Z",
+   "metrics": {
+    "likes": 8,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 2,
+    "views": 630
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "OpenAI GPT-Live API adds idle detection that cuts cost about 60% during idle stretches",
+   "url": "https://x.com/juberti/status/2123945280353816901",
+   "handle": "@juberti",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "The GPT-Live realtime API can now detect idle stretches in a live conversation and resume quickly, which its builder says reduces cost by about 60% while idle; a demo and docs on managing idle sessions are published.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://developers.openai.com/api/docs/guides/live-conversations#managing-idle-sessions",
+    "https://hello-live.val.run"
+   ],
+   "vendor": "OpenAI",
+   "posted_at": "2026-11-21T01:03:10Z",
+   "metrics": {
+    "likes": 19,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "NDIF hosts Inkling 2 Mini and its variable-loop variant with a guide to patching and steering activations across loops",
+   "url": "https://x.com/thinkymachines/status/2123931570436518245",
+   "handle": "@thinkymachines",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "The National Deep Inference Fabric is serving Inkling 2 Mini and the variable-loop research model, with a guide for reading, patching and steering internal activations across the loops, so researchers can probe the looped transformer without local hardware.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://x.com/ndif_team/status/2123892783509639446"
+   ],
+   "vendor": "NDIF / Thinking Machines",
+   "posted_at": "2026-11-21T00:08:41Z",
+   "metrics": {
+    "likes": 59,
+    "reposts": 7,
+    "quotes": 1,
+    "replies": 1,
+    "views": 5000
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "RoboColosseum ranks GPT-6.2 Astra first on its SO-101 Open real-robot track at 1,984 Elo",
+   "url": "https://x.com/RoboColosseum/status/2123974530859405631",
+   "handle": "@RoboColosseum",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A pairwise real-robot leaderboard on the SO-101 arm puts GPT-6.2 Astra first at 1,984 Elo from 122 comparisons, with side-by-side runs against Grok 4.7 and Claude Fable 5.2, and a program offering 10,000 free evaluation hours for supported embodiments.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://robocolosseum.ai/leaderboard?robot=so101&track=open"
+   ],
+   "vendor": "RoboColosseum",
+   "posted_at": "2026-11-21T02:59:24Z",
+   "metrics": {
+    "likes": 7,
+    "reposts": 3,
+    "quotes": 2,
+    "replies": 1,
+    "views": 368
+   },
+   "confirmed_by": [
+    "@DJiafei"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "exo runs Inkling 2 Mini at 210 tok/s decode on an M5 Ultra Mac Studio and 125 tok/s on an M5 Max MacBook Pro",
+   "url": "https://x.com/exolabs/status/2123953913342935486",
+   "handle": "@exolabs",
+   "group": "builders",
+   "origin": "discovery",
+   "summary": "exo and Thinking Machines report optimized local inference for Inkling 2 Mini: 210 tok/s decode and 3,620 tok/s prefill on a 96GB M5 Ultra, 125 and 1,750 on a 48GB M5 Max, and a demo of the model building a native weather app 1.8x faster than Claude Sonnet 5.5.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/thinkymachines/status/2123871643797995872"
+   ],
+   "vendor": "exo labs",
+   "posted_at": "2026-11-21T01:37:28Z",
+   "metrics": {
+    "likes": 488,
+    "reposts": 43,
+    "quotes": 11,
+    "replies": 27,
+    "views": 21928
+   },
+   "confirmed_by": [
+    "@soumithchintala"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Inkling 2 Mini now runs in LM Studio, MLX-VLM and Unsloth Desktop",
+   "url": "https://x.com/lmstudio/status/2123958452808765580",
+   "handle": "@lmstudio",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "LM Studio added the 26B looped Apache 2.0 model (about 18GB to run), MLX-VLM added Mac support, and Unsloth says it fully works in its package and Desktop app with a 4-bit build running MCP tools and Blender, with an update that detects Dspark for roughly 2x faster decoding.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://lmstudio.ai/models/inkling-2-mini",
+    "https://github.com/Neywa-Labs/mlx-vlm"
+   ],
+   "vendor": "LM Studio",
+   "posted_at": "2026-11-21T01:55:00Z",
+   "metrics": {
+    "likes": 163,
+    "reposts": 14,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@yagilb",
+    "@UnslothAI",
+    "@danielhanchen"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Antigravity /btw now forks, explores and promotes side threads without losing the main agent's place",
+   "url": "https://x.com/antigravity/status/2123921833883840650",
+   "handle": "@antigravity",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "The /btw command in Antigravity, previously for quick side questions while the main agent was busy, now lets you fork a side thread, explore it and promote it into the main session; it is also available in the CLI.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://x.com/antigravity/status/2123921837507707367"
+   ],
+   "vendor": "Google Antigravity",
+   "posted_at": "2026-11-20T23:30:00Z",
+   "metrics": {
+    "likes": 1476,
+    "reposts": 73,
+    "quotes": 28,
+    "replies": 78,
+    "views": 76404
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Gemini 4 Neon tops LlamaIndex ParseBench-2 for table parsing and bounding boxes",
+   "url": "https://x.com/jerryjliu0/status/2123945742872293505",
+   "handle": "@jerryjliu0",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "LlamaIndex reports Gemini 4 Neon at low thinking is the best of the recent models it compared, from Opus 5.5 to GPT-6.2 Sol, on its ParseBench-2 document parsing benchmark for tables and visual layout.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/jerryjliu0/status/2123945742872293505"
+   ],
+   "vendor": "LlamaIndex",
+   "posted_at": "2026-11-21T01:05:00Z",
+   "metrics": {
+    "likes": 28,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 14,
+    "views": 1590
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "OpenAI's Dot assistant can now be called from Apple CarPlay",
+   "url": "https://x.com/romainhuet/status/2123924316110966824",
+   "handle": "@romainhuet",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "OpenAI's Dot can be started by voice from Apple CarPlay, with a 107-second demo video; there is no documentation link in the post.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/romainhuet/status/2123924316110966824"
+   ],
+   "vendor": "OpenAI",
+   "posted_at": "2026-11-20T23:39:52Z",
+   "metrics": {
+    "likes": 589,
+    "reposts": 53,
+    "quotes": 31,
+    "replies": 49,
+    "views": 64164
+   },
+   "confirmed_by": [
+    "@gdb",
+    "@reach_vb"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Replit Missions coordinates a swarm of agents toward an outcome within a set budget",
+   "url": "https://x.com/Replit/status/2123921837729919179",
+   "handle": "@Replit",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Replit introduces Missions, where you define an outcome and Replit coordinates agents that plan, build, test and iterate within budget and boundaries you set.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/Replit/status/2123921837729919179"
+   ],
+   "vendor": "Replit",
+   "posted_at": "2026-11-20T23:30:01Z",
+   "metrics": {
+    "likes": 19,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 6,
+    "views": 3014
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Hermes Agent adds /handoff to move a terminal chat to Telegram, Discord, Slack, WhatsApp, Signal or Matrix",
+   "url": "https://x.com/witcheer/status/2123959833716232393",
+   "handle": "@witcheer",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A walkthrough of Hermes Agent's /handoff command: typing it in a terminal chat moves the whole conversation to the agent's home chat on a messaging platform, where it continues.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/witcheer/status/2123959833716232393"
+   ],
+   "vendor": "Nous Research (Hermes Agent)",
+   "posted_at": "2026-11-21T02:01:00Z",
+   "metrics": {
+    "likes": 8,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 3,
+    "views": 719
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Liquid AI d1.2 decision models find a person across 279 event photos with bounding boxes",
+   "url": "https://x.com/mlech26l/status/2123889506818675031",
+   "handle": "@mlech26l",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "A Liquid AI researcher shows the new d1.2 decision models, including a 2B version, locating one person across 279 event photos with bounding boxes in a video demo; no model link is in the post.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/mlech26l/status/2123889506818675031"
+   ],
+   "vendor": "Liquid AI",
+   "posted_at": "2026-11-20T21:21:33Z",
+   "metrics": {
+    "likes": 21,
+    "reposts": 3,
+    "quotes": 1,
+    "replies": 3,
+    "views": 1421
+   },
+   "confirmed_by": [
+    "@liquidai"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 95,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://x.com/i/status/2123965369937170432",
+   "reason": "Second-hand summary that cheap AI API resellers leaked planted secrets in prompts (@hdmoore research); no primary link and no stack component or always_forward category matched, filed as a Mini observation."
+  }
+ ]
+}
