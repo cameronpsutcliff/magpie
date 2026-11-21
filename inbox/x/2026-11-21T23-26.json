@@ -1,0 +1,83 @@
+{
+ "ran_at": "2026-11-21T23:26:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-21T19:17:00Z",
+ "queries": 2,
+ "calls": 5,
+ "items": [
+  {
+   "title": "TensorFold 1.3.3 speeds GLM-5.3-Flash decode by 13.8% after a million-token prompt on four GB10s",
+   "url": "https://x.com/ashxhart/status/2124248353722474508",
+   "handle": "@ashxhart",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "TensorFold 1.3.3 reports GLM-5.3-Flash median drafted decode rising from 151.51 to 172.39 tok/s after a 1,040,384-token prompt on four GB10 machines at TP=4, with the same output tokens in that test.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-21T21:07:28Z",
+   "metrics": {
+    "likes": 96,
+    "reposts": 14,
+    "quotes": 4,
+    "replies": 12,
+    "views": 4598
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single-author benchmark on one hardware setup with no third-party reproduction seen; release notes link not resolved.",
+    "source": null
+   }
+  },
+  {
+   "title": "Omarchy adds Flowtunes, a local music generator, as a default app",
+   "url": "https://x.com/OmarchyUpdates/status/2124231411213484481",
+   "handle": "@OmarchyUpdates",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Omarchy's next update ships Flowtunes, an MIT-licensed app that generates endless music locally in one of 12 genres using Omarchy's local music model, with no cloud or ads.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/omacom/flowtunes",
+    "https://github.com/omacom/omarchy/pull/19585"
+   ],
+   "vendor": "Omarchy",
+   "posted_at": "2026-11-21T20:00:09Z",
+   "metrics": {
+    "likes": 24,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 2,
+    "views": 684
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Announcement with a demo clip; quality of the generated music and hardware needs not measured in the post.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/GoogleAIStudio/status/2123909497718706239",
+   "reason": "Weekly recap video with no first-hand detail in the post."
+  },
+  {
+   "url": "https://x.com/thecsguy/status/2124213504827646111",
+   "reason": "Personal testimonial about a tool, no new capability or result."
+  }
+ ],
+ "list_posts_read": 96,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}

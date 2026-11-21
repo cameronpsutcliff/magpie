@@ -1,21 +1,21 @@
 {
- "updated_at": "2026-11-21T19:17:00Z",
+ "updated_at": "2026-11-21T23:26:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 47,
+ "calls_used_today": 52,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-21T19:17:00Z",
-  "items": 4,
-  "queries": 4,
-  "deep_reads": 1,
+  "ran_at": "2026-11-21T23:26:00Z",
+  "items": 2,
+  "queries": 2,
+  "deep_reads": 0,
   "rechecks": 0,
   "flagged": 0,
-  "saved_in": 1,
-  "saved_kept": 1,
+  "saved_in": 2,
+  "saved_kept": 0,
   "videos": 0,
   "security_forwarded": 0,
-  "list_posts_read": 95,
+  "list_posts_read": 96,
   "list_pages": 1
  },
  "roster": {
@@ -51,7 +51,8 @@
   "Roster review 2026-11-21: @RoboColosseum promoted to active (2 sweep-file posts, 14 days). @odysseyml (Odyssey-3 benchmark post 2026-11-02) and @mem0ai (technical memory articles 2026-11-12 and 11-17) re-checked and kept as trial with last_qualifying_post updated; both are borderline on promotion rate.",
   "Roster review 2026-11-21 flag: @JensenHuang (owner_requested) has no qualifying post since 2026-09-03 (79 days); left unchanged per rule, owner to decide.",
   "Sweep 2026-11-21T11:21:00Z: list page reached 2026-11-20T21:34Z, well before since, so every list member was covered. Bookmarks: 25 newest all already in the archive (saved_in 0). calls_used_today is a single counter but calls_day is a UTC date that rolled at 18:00 CT; X showed 969 of 1000 left, so about 31 shared calls used so far today. InferenceBench leaderboard renders by script, so ranks cannot be read with curl.",
-  "Sweep 15:28Z (Nov 21, run from the box, pull-based): labs and devtools OR searches returned 0 posts for 11:21Z-15:25Z; builders hit the 25 cap and needed 1 extra page. calls_used_today is 12 added to the earlier 30 (X showed 959 of 1000 shared left afterward). Bookmarks: 25 newest all already in archive, saved_in 0. Follows skipped, no browser. OpenRouter/MiniMax provider-snooping claim logged as security_na (OpenRouter not in stack.json); owner may want it added if fleet uses OpenRouter."
+  "Sweep 15:28Z (Nov 21, run from the box, pull-based): labs and devtools OR searches returned 0 posts for 11:21Z-15:25Z; builders hit the 25 cap and needed 1 extra page. calls_used_today is 12 added to the earlier 30 (X showed 959 of 1000 shared left afterward). Bookmarks: 25 newest all already in archive, saved_in 0. Follows skipped, no browser. OpenRouter/MiniMax provider-snooping claim logged as security_na (OpenRouter not in stack.json); owner may want it added if fleet uses OpenRouter.",
+  "Sweep 2026-11-21T23:26Z (run from the box): list page reached 12:42Z, so all list members covered; no fallback searches. 2 new saves, both rejected. Follows skipped, no browser. Saves lacked author handles from get_users_bookmarks, so 1 get_posts_by_ids call hydrated them. X showed 954 of 1000 shared left."
  ],
  "errors": [],
  "follows_today": 0,
