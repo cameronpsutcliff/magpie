@@ -3,28 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <title>Magpie Runner · Repository Overview</title>
+  <title>Magpie · Repository overview</title>
   <style>
     :root {
       color-scheme: light dark;
-      --paper: #f8f6ef;
-      --ink: #202e29;
-      --muted: #4d5d54;
-      --line: #aeb8ae;
-      --accent: #245d49;
-      --wash: #e8eee4;
-      --panel: #fffcf6;
+      --paper: #faf8f2;
+      --ink: #201f1b;
+      --muted: #5e5a51;
+      --rule: #c8c1b4;
+      --panel: #f0ebe0;
+      --accent: #794616;
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --paper: #141b18;
-        --ink: #f1f2e8;
-        --muted: #bac7bd;
-        --line: #657a6e;
-        --accent: #a4d9bd;
-        --wash: #23362c;
-        --panel: #1a2520;
+        --paper: #161614;
+        --ink: #f5efe4;
+        --muted: #c6bfb2;
+        --rule: #575247;
+        --panel: #22211d;
+        --accent: #edb878;
       }
     }
     * { box-sizing: border-box; }
@@ -32,163 +29,207 @@
       margin: 0;
       background: var(--paper);
       color: var(--ink);
-      font: 1rem/1.65 system-ui, sans-serif;
+      font: 1rem/1.55 system-ui, sans-serif;
     }
-    .wrap { width: min(70rem, 100% - 2.5rem); margin-inline: auto; }
-    a { color: var(--accent); text-underline-offset: .2em; }
-    nav, footer { padding-block: 1.15rem; border-block-end: 1px solid var(--line); }
-    nav ul { display: flex; flex-wrap: wrap; gap: .35rem 1.6rem; margin: 0; padding: 0; list-style: none; }
-    nav, .eyebrow, footer { font-size: .875rem; }
-    .hero { padding-block: clamp(2.8rem, 7vw, 6rem); }
-    .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
-    h1, h2 { font-family: Georgia, serif; font-weight: 400; line-height: 1.06; margin: 0; }
-    h1 { font-size: clamp(2.65rem, 8vw, 6.4rem); letter-spacing: -.048em; max-width: 12ch; }
-    h2 { font-size: clamp(2rem, 4.5vw, 3.25rem); letter-spacing: -.035em; margin-bottom: 1.4rem; }
-    h3 { margin: 0 0 .35rem; font-size: 1.05rem; }
-    .intro { max-width: 52ch; font-size: clamp(1.1rem, 2.5vw, 1.4rem); }
-    p { margin: 0 0 1rem; }
-    .hero p:last-child, section p:last-child, li p:last-child { margin-bottom: 0; }
-    section { border-block-start: 1px solid var(--line); padding-block: clamp(2.25rem, 5vw, 4.25rem); }
-    .architecture { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 2rem 4rem; }
-    figure { margin: 0; }
-    svg { display: block; width: min(100%, 31rem); height: auto; margin-inline: auto; color: var(--accent); }
-    svg rect { fill: var(--panel); stroke: var(--line); }
-    svg .seam { fill: var(--wash); stroke: var(--accent); }
-    svg text { fill: var(--ink); font: 650 19px system-ui, sans-serif; text-anchor: middle; }
-    svg .detail { fill: var(--muted); font-size: 16px; font-weight: 400; }
-    dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 2.6rem; margin: 0; }
-    dl div { padding: .95rem 0; border-block-start: 1px solid var(--line); }
-    dt { font-weight: 700; color: var(--accent); }
-    dd { margin: .2rem 0 0; }
-    .decisions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
-    article { padding: 1.3rem; background: var(--panel); border-block-start: 2px solid var(--accent); }
-    article p { font-size: .95rem; }
-    code { font-size: .92em; overflow-wrap: anywhere; }
-    ol { padding-inline-start: 1.7rem; max-width: 65ch; }
-    ol li { padding-inline-start: .4rem; margin-bottom: .7rem; }
-    ol li::marker { color: var(--accent); font-weight: 700; }
-    footer { border-block: 1px solid var(--line); border-block-end: 0; color: var(--muted); }
-    @media (max-width: 46rem) {
-      .architecture, .decisions { grid-template-columns: 1fr; }
+    .wrap { width: min(1120px, calc(100% - 2 * clamp(1rem, 4vw, 3rem))); margin-inline: auto; }
+    header { padding-block: clamp(2rem, 7vw, 5.5rem) 1.75rem; }
+    h1, h2 { font-family: Georgia, serif; font-weight: 400; line-height: 1.05; }
+    h1 { font-size: clamp(3.5rem, 9vw, 7rem); letter-spacing: -.055em; margin: 0 0 .75rem; }
+    h2 { font-size: clamp(1.8rem, 4vw, 3rem); letter-spacing: -.035em; margin: 0 0 1.25rem; }
+    h3 { font-size: 1rem; margin: 1.5rem 0 .5rem; }
+    h1, h2, h3, li { text-wrap: balance; }
+    p { margin: .65rem 0; text-wrap: pretty; }
+    .lede { font-family: Georgia, serif; font-size: clamp(1.2rem, 2.4vw, 1.65rem); }
+    a { color: var(--accent); text-underline-offset: .18em; }
+    a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+    nav { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; margin-top: 1.5rem; }
+    nav a { font-size: .9rem; font-weight: 600; }
+    section { border-top: 1px solid var(--rule); padding-block: clamp(1.75rem, 5vw, 3rem); }
+    ul, ol { margin: .65rem 0 0; padding-inline-start: 1.35rem; }
+    li + li { margin-top: .42rem; }
+    li::marker { color: var(--accent); }
+    code { font: .9em ui-monospace, monospace; overflow-wrap: anywhere; }
+    figure {
+      margin: 1.25rem 0;
+      padding: 1rem;
+      background: var(--panel);
+      border-block: 1px solid var(--rule);
     }
-    @media (max-width: 34rem) {
-      dl { grid-template-columns: 1fr; }
+    svg { display: block; width: min(100%, 410px); height: auto; margin-inline: auto; }
+    svg rect { fill: var(--paper); stroke: var(--rule); }
+    svg text { fill: var(--ink); font: 600 14px system-ui, sans-serif; text-anchor: middle; }
+    svg .detail { fill: var(--muted); font-size: 11px; font-weight: 400; }
+    svg .route { fill: none; stroke: var(--accent); stroke-width: 1.5; }
+    dl { margin: 0; }
+    .row { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: .5rem 1.25rem; padding: .55rem 0; }
+    .row + .row { border-top: 1px solid var(--rule); }
+    dt { font-weight: 650; }
+    dd { margin: 0; text-wrap: balance; }
+    footer { border-top: 1px solid var(--rule); padding-block: 1.25rem 2.5rem; }
+    @media (max-width: 620px) {
+      .row { grid-template-columns: minmax(0, 1fr); gap: .15rem; }
     }
   </style>
 </head>
 <body>
   <header class="wrap">
+    <h1>Magpie</h1>
+    <p class="lede">A daily edition of what became possible in AI.</p>
     <nav aria-label="Overview sections">
-      <ul>
-        <li><a href="#purpose">Purpose</a></li>
-        <li><a href="#architecture">Architecture</a></li>
-        <li><a href="#glossary">Glossary</a></li>
-        <li><a href="#decisions">Decisions</a></li>
-        <li><a href="#sdlc">Engineering loop</a></li>
-      </ul>
+      <a href="#purpose">Purpose</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#operations">Operations</a>
+      <a href="#contracts">Contracts</a>
+      <a href="#sdlc">Release</a>
+      <a href="#decisions">Decisions</a>
+      <a href="#limits">Limits</a>
+      <a href="#handoff">Handoff</a>
     </nav>
-    <div class="hero" id="purpose">
-      <p class="eyebrow">Magpie Runner</p>
-      <h1>The daily AI capabilities brief</h1>
-      <p class="intro">This repo collects what’s new in AI, ranks it by what builders can do with it, and publishes one Edition per Chicago calendar day.</p>
-      <p>Collectors gather Items. Magpie groups them into ranked Events, proposes testable Possibilities, and tracks Threats and Constraints that affect what builders can safely run or access.</p>
-    </div>
   </header>
 
   <main class="wrap">
-    <section class="architecture" id="architecture" aria-labelledby="architecture-title">
-      <div>
-        <h2 id="architecture-title">From sources to Edition</h2>
-        <p>Collectors normalize public signals into Items. The build groups Items by canonical key and ranks Events using evidence such as novelty, momentum and independent pickup.</p>
-        <p><code>request_json(prompt, policy, accept)</code> tries editorial lanes in order and returns the first JSON object the caller accepts. Claude and Codex are implemented. ADR 0003 identifies local Studio or Spark endpoints as future adapters.</p>
-        <p>Edition Publication writes the dated feed and derived views. The website and Morning Brief read the published outputs.</p>
-      </div>
+    <section id="purpose">
+      <h2>Purpose &amp; Data Scope</h2>
+      <ul>
+        <li>Magpie ranks public AI developments and publishes one Edition per Chicago calendar day.</li>
+        <li>The feed serves the website, Morning Brief and YouTube pipeline.</li>
+        <li>Inputs and published JSON are public. Credentials, local run logs and editor caches are operational data.</li>
+      </ul>
+    </section>
+
+    <section id="architecture">
+      <h2>Architecture &amp; Consumers</h2>
       <figure>
-        <svg viewBox="0 0 420 484" role="img" aria-labelledby="diagram-title diagram-desc">
-          <title id="diagram-title">Magpie architecture</title>
-          <desc id="diagram-desc">Collectors feed Build and Rank, then the Editorial Model seam, which supports Claude and Codex with Local planned. Edition Publication writes data/v1 for the Website and Morning Brief.</desc>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 340" role="img" aria-labelledby="flow-title flow-desc">
+          <title id="flow-title">Magpie edition pipeline</title>
+          <desc id="flow-desc">Public sources feed collectors. Items are grouped and ranked, optionally edited, then published as versioned JSON for the website, Morning Brief and YouTube pipeline.</desc>
           <defs>
             <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-              <path d="M0 0L10 5L0 10Z" fill="currentColor"/>
+              <path d="M0 0L10 5L0 10Z" fill="var(--accent)"/>
             </marker>
           </defs>
-          <g fill="none" stroke="currentColor" stroke-width="2" marker-end="url(#arrow)">
-            <path d="M210 62V85"/>
-            <path d="M210 140V163"/>
-            <path d="M210 243V266"/>
-            <path d="M210 321V344"/>
-            <path d="M210 399V413H104V432"/>
-            <path d="M210 399V413H316V432"/>
+          <g class="route" marker-end="url(#arrow)">
+            <path d="M180 46v15"/>
+            <path d="M180 110v15"/>
+            <path d="M180 174v15"/>
+            <path d="M180 238v15"/>
+            <path d="M180 288v14H54v8"/>
+            <path d="M180 288v22"/>
+            <path d="M180 288v14h126v8"/>
           </g>
-          <rect x="38" y="8" width="344" height="54" rx="5"/>
-          <text x="210" y="42">Collectors</text>
-          <rect x="38" y="86" width="344" height="54" rx="5"/>
-          <text x="210" y="120">Build / Rank</text>
-          <rect class="seam" x="38" y="164" width="344" height="79" rx="5"/>
-          <text x="210" y="195">Editorial Model seam</text>
-          <text class="detail" x="210" y="221">Claude · Codex · Local (planned)</text>
-          <rect x="38" y="267" width="344" height="54" rx="5"/>
-          <text x="210" y="301">Edition Publication</text>
-          <rect x="38" y="345" width="344" height="54" rx="5"/>
-          <text x="210" y="379">data/v1</text>
-          <rect x="12" y="433" width="184" height="46" rx="5"/>
-          <text x="104" y="463">Website</text>
-          <rect x="224" y="433" width="184" height="46" rx="5"/>
-          <text x="316" y="463">Morning Brief</text>
+          <rect x="30" y="2" width="300" height="44" rx="4"/>
+          <text x="180" y="20">Collect public signals</text>
+          <text class="detail" x="180" y="36">Feeds, APIs and home integrations → Items</text>
+          <rect x="30" y="62" width="300" height="48" rx="4"/>
+          <text x="180" y="82">Group and rank</text>
+          <text class="detail" x="180" y="99">Canonical keys → ranked Events</text>
+          <rect x="30" y="126" width="300" height="48" rx="4"/>
+          <text x="180" y="146">Optional editorial enrichment</text>
+          <text class="detail" x="180" y="163">Cache replay or Claude / Codex JSON</text>
+          <rect x="30" y="190" width="300" height="48" rx="4"/>
+          <text x="180" y="210">Publish the Edition</text>
+          <text class="detail" x="180" y="227">Redaction, page IDs and derived views</text>
+          <rect x="30" y="254" width="300" height="34" rx="4"/>
+          <text x="180" y="276">data/v1</text>
+          <rect x="1" y="311" width="106" height="28" rx="4"/>
+          <rect x="127" y="311" width="106" height="28" rx="4"/>
+          <rect x="253" y="311" width="106" height="28" rx="4"/>
+          <text class="detail" x="54" y="329">Magpie website</text>
+          <text class="detail" x="180" y="329">Morning Brief</text>
+          <text class="detail" x="306" y="329">YouTube pipeline</text>
         </svg>
       </figure>
+      <ul>
+        <li><strong>Upstream.</strong> GitHub, HN, Hugging Face, lab feeds, changelogs and public policy and advisory feeds.</li>
+        <li><strong>Home integrations.</strong> The brief from <code>magpie youtube</code> and Grok live search over the curated X roster.</li>
+        <li><strong>Consumers.</strong> Morning Brief and the YouTube pipeline read runner outputs. The feed powers <a href="https://cameronsutcliff.com/magpie">cameronsutcliff.com/magpie</a>.</li>
+      </ul>
     </section>
 
-    <section id="glossary">
-      <h2>Core domain glossary</h2>
-      <dl>
-        <div><dt>Edition</dt><dd>The dated publication for one Chicago calendar day, built by the home tier, cloud tier, or backfill.</dd></div>
-        <div><dt>Item</dt><dd>A normalized observation from a collector, before grouping and editorial selection.</dd></div>
-        <div><dt>Event</dt><dd>A ranked editorial record built from one or more items associated with a canonical key.</dd></div>
-        <div><dt>Canonical key</dt><dd>The stable identity used to group observations and track the same subject across editions.</dd></div>
-        <div><dt>Capability</dt><dd>A tool, model, or development that changes what someone can build or do with AI.</dd></div>
-        <div><dt>Follow-up</dt><dd>An event about a capability an earlier edition already covered. Its editorial focus is what changed.</dd></div>
-        <div><dt>Library</dt><dd>Capabilities from earlier editions that can be recalled as partners for current arrivals.</dd></div>
-        <div><dt>Possibility</dt><dd>A proposed use of capabilities, with a recipe and a falsifiable test that could disprove it.</dd></div>
-        <div><dt>Ingredient</dt><dd>A capability used in a possibility. An earlier possibility can be referenced via <code>builds_on</code>.</dd></div>
-        <div><dt>Register</dt><dd>The cumulative record of constraints or threats across editions, also used to supply recent fallbacks.</dd></div>
-      </dl>
+    <section id="operations">
+      <h2>Environments, Scale &amp; Cost Controls</h2>
+      <ul>
+        <li><strong>Local / acceptance.</strong> Run <code>python3 -m magpie run --cloud --no-llm</code> in a disposable checkout to inspect output. There is no dedicated UAT environment in this repo.</li>
+        <li><strong>Production cloud.</strong> GitHub Actions runs at 11:10 and 13:10 UTC, with manual dispatch and a 40-minute job cap.</li>
+        <li><strong>Production home.</strong> An always-on runner enriches the daily Edition and reviews source quality on Sundays.</li>
+        <li><strong>Scale.</strong> About 35 public sources plus the X roster. The daily collector pool has eight workers and isolates failures.</li>
+        <li><strong>Model spend.</strong> Each lane has a timeout. Try the next only after failure or rejection, and stop at the first accepted JSON.</li>
+        <li><strong>Replay.</strong> <code>--reuse-editor</code> reuses saved editor and possibility outputs when available, avoiding repeat calls.</li>
+        <li><strong>Cloud spend.</strong> The cloud uses Claude only when configured with a credential. Otherwise it runs with <code>--no-llm</code>.</li>
+      </ul>
     </section>
 
-    <section id="decisions">
-      <h2>Key architecture decisions</h2>
-      <div class="decisions">
-        <article>
-          <h3>Publication and precedence</h3>
-          <p>Route writes and repairs through <code>publish(candidate)</code> and <code>revise(date, change)</code> with a publication receipt. For the same Chicago date, the enriched home Edition takes precedence over a plain cloud Edition unless <code>--force</code> is explicit. Changes to the <code>data/v1</code> layout or page IDs require a versioned migration.</p>
-          <p><strong>Stack Fit.</strong> Python 3.12+ and the standard library keep the editorial and JSON pipeline free of external package dependencies. Thin launchers handle Git transport.</p>
-          <p><a href="adr/0001-edition-publication-and-precedence.md">ADR 0001</a></p>
-        </article>
-        <article>
-          <h3>Runner checkout and feed contract</h3>
-          <p><code>magpie-runner</code> is the authoritative operational checkout. Readers use <code>data/v1/days/&lt;date&gt;.json</code>, <code>data/v1/rollups/&lt;date&gt;.json</code> and generated page links. Schema changes require validation in <code>schema.py</code> and <code>test_schema.py</code>. The ADR calls for pytest on every PR.</p>
-          <p><a href="adr/0002-runner-checkout-and-data-v1-contract.md">ADR 0002</a></p>
-        </article>
-        <article>
-          <h3>Edition inputs and replay</h3>
-          <p>Daily runs and backfills should share <code>build_edition(request, inputs)</code>, returning a candidate and receipt, with acquisition and publication at the edges. Replay uses sightings strictly earlier than the target date to keep novelty and follow-up flags deterministic. Editorial calls converge on <code>request_json</code>.</p>
-          <p><a href="adr/0003-edition-run-inputs-and-replay-guarantees.md">ADR 0003</a></p>
-        </article>
-      </div>
+    <section id="contracts">
+      <h2>Data Contracts, Auth &amp; Dependencies</h2>
+      <ul>
+        <li><strong>Consumer API.</strong> Versioned JSON files in Git. Readers need only the published files.</li>
+        <li><strong>Edition and rollups.</strong> <code>data/v1/days/&lt;date&gt;.json</code> and <code>data/v1/rollups/&lt;date&gt;.json</code> use Chicago dates.</li>
+        <li><strong>Projections.</strong> Latest, archive, feed, element and idea indexes, and constraint and threat registers live under <code>data/v1/</code>.</li>
+        <li><strong>Stable links.</strong> Capabilities use <code>/magpie/c/&lt;date&gt;-&lt;id&gt;</code>. Possibilities use <code>/magpie/i/&lt;id&gt;</code>.</li>
+        <li><strong>Validation.</strong> <a href="../data/v1/schema/">Published schemas</a> define the versioned shapes. Invalid ideas indexes leave the last good file in place.</li>
+        <li><strong>Cloud auth.</strong> Actions uses its repository token for Git writes and optional Claude OAuth or Anthropic API secrets.</li>
+        <li><strong>Home auth.</strong> The launcher uses an explicit GitHub account, untracked <code>.env.local</code> and authenticated CLIs.</li>
+        <li><strong>Portability.</strong> The keyless cloud path has zero personal-laptop dependencies. Home enrichment requires an explicitly provisioned host and tools.</li>
+      </ul>
     </section>
 
     <section id="sdlc">
-      <h2>The Matt Pocock engineering loop</h2>
+      <h2>SDLC Framework &amp; Release Pipeline</h2>
       <ol>
-        <li><strong>Grill with Docs.</strong> Resolve design questions against the glossary, ADRs and existing code.</li>
-        <li><strong>Spec and tickets.</strong> Define acceptance criteria and slice the work into implementation tickets that fit under 150k tokens of context.</li>
-        <li><strong>Implement and run pytest.</strong> Exercise the change and run the full suite (301-test baseline).</li>
-        <li><strong>Adversarial other-family review.</strong> Have a model from a different family challenge the implementation and its verification.</li>
-        <li><strong>Retro.</strong> Record what worked and carry lessons into the next spec.</li>
+        <li><strong>Specify and branch.</strong> Use the glossary and ADRs to scope the change. Open a feature-branch PR into <code>main</code>.</li>
+        <li><strong>Test.</strong> From the repo root, run <code>python3 -m pytest -q</code>. The editorial seam baseline is 301 tests.</li>
+        <li><strong>Review.</strong> Have a different model family challenge the diff, test evidence and consumer contract before merge.</li>
+        <li><strong>PR gate.</strong> ADR 0002 requires pytest on every PR. The current workflow runs editions on a schedule or manual dispatch.</li>
+        <li><strong>Promote.</strong> Merge reviewed code to <code>main</code>. Cloud and home commit Edition data through their respective launchers.</li>
+        <li><strong>Precedence.</strong> An edited home Edition supersedes a plain cloud Edition for the same day. <code>--force</code> overrides protection.</li>
+        <li><strong>Rollback.</strong> Use <code>git revert &lt;commit&gt;</code> on the faulty code or Edition commit. Verify the restored feed and page links.</li>
+      </ol>
+    </section>
+
+    <section id="decisions">
+      <h2>Key Decisions &amp; Stack Fit</h2>
+      <ul>
+        <li><a href="adr/0001-edition-publication-and-precedence.md">ADR 0001</a> targets one publication seam for writes and repairs, with receipts, precedence and stable page IDs.</li>
+        <li><a href="adr/0002-runner-checkout-and-data-v1-contract.md">ADR 0002</a> names <code>magpie-runner</code> the operational checkout and requires schema tests and a PR test gate.</li>
+        <li><a href="adr/0003-edition-run-inputs-and-replay-guarantees.md">ADR 0003</a> targets a shared build seam and prior-only replay. The editorial JSON seam is implemented.</li>
+        <li><strong>Stack fit.</strong> Python 3.12+ and its standard library handle batch collection, ranking and JSON. Thin launchers handle Git transport.</li>
+      </ul>
+    </section>
+
+    <section id="limits">
+      <h2>Known Limits &amp; Active Debt</h2>
+      <ul>
+        <li>Repair and generator commands still write some projections outside the proposed publication seam.</li>
+        <li>Daily and backfill orchestration remain separate. ADR 0003 calls for a shared build and receipt.</li>
+        <li>Studio and Spark model adapters are planned. The editorial seam currently supports Claude and Codex.</li>
+        <li>The second checkout can drift. ADR 0002 calls for fast-forwarding or retiring it.</li>
+      </ul>
+    </section>
+
+    <section id="handoff">
+      <h2>Domain Glossary &amp; 10-Minute KT Entry Points</h2>
+      <dl>
+        <div class="row"><dt>Edition</dt><dd>The dated publication for one Chicago day, from home, cloud or backfill.</dd></div>
+        <div class="row"><dt>Item</dt><dd>A normalized collector observation before grouping and selection.</dd></div>
+        <div class="row"><dt>Event</dt><dd>A ranked editorial record built from Items sharing a canonical key.</dd></div>
+        <div class="row"><dt>Canonical key</dt><dd>The stable identity used to group observations across editions.</dd></div>
+        <div class="row"><dt>Capability</dt><dd>A tool, model or development that changes what someone can build or do with AI.</dd></div>
+        <div class="row"><dt>Follow-up</dt><dd>An Event about what changed for a previously covered Capability.</dd></div>
+        <div class="row"><dt>Library</dt><dd>Earlier Capabilities available as partners for current arrivals.</dd></div>
+        <div class="row"><dt>Possibility</dt><dd>A proposed use of Capabilities with a recipe and a falsifiable test.</dd></div>
+        <div class="row"><dt>Ingredient</dt><dd>A Capability used in a Possibility. <code>builds_on</code> refers to an earlier Possibility.</dd></div>
+        <div class="row"><dt>Register</dt><dd>The cumulative record of constraints or threats, used for recent fallbacks.</dd></div>
+      </dl>
+      <h3>Read these five files first</h3>
+      <ol>
+        <li><a href="../GLOSSARY.md">GLOSSARY.md</a> for canonical domain language.</li>
+        <li><a href="../magpie/__main__.py">magpie/__main__.py</a> for the daily build sequence and replay flags.</li>
+        <li><a href="../magpie/editorial_model.py">magpie/editorial_model.py</a> for lane policy, timeouts and JSON acceptance.</li>
+        <li><a href="../.github/workflows/edition.yml">.github/workflows/edition.yml</a> for cloud cadence, credentials and publishing.</li>
+        <li><a href="../scripts/home-run.sh">scripts/home-run.sh</a> for the home runner and weekly maintenance.</li>
       </ol>
     </section>
   </main>
-
-  <footer class="wrap"><a href="../README.md">Repository README</a> · <a href="../GLOSSARY.md">Canonical glossary</a> · <a href="../magpie/editorial_model.py">Editorial model source</a></footer>
+  <footer class="wrap"><a href="../README.md">Magpie README</a></footer>
 </body>
 </html>
