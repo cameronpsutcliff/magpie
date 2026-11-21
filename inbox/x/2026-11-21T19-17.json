@@ -1,0 +1,145 @@
+{
+ "ran_at": "2026-11-21T19:17:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-21T15:28:00Z",
+ "queries": 4,
+ "calls": 5,
+ "items": [
+  {
+   "title": "exo runs Inkling 2 Mini at 210 tok/s decode on an M5 Ultra Mac Studio and 125 tok/s on an M5 Max MacBook Pro",
+   "url": "https://x.com/exolabs/status/2123953913342935486",
+   "handle": "@exolabs",
+   "group": "builders",
+   "origin": "saved",
+   "summary": "exo and Thinking Machines report optimized local inference for Inkling 2 Mini: 210 tok/s decode and 3,620 tok/s prefill on a 96GB M5 Ultra, 125 and 1,750 on a 48GB M5 Max, and a demo of the model building a native weather app 1.8x faster than Claude Sonnet 5.5.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/thinkymachines/status/2123871643797995872"
+   ],
+   "vendor": "exo labs",
+   "posted_at": "2026-11-21T01:37:28Z",
+   "metrics": {
+    "likes": 2583,
+    "reposts": 208,
+    "quotes": 65,
+    "replies": 115,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@soumithchintala"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers ask which quantization and harness were used and whether the weather-app speed and cost comparison against Claude is like for like; no one reports reproducing the numbers.",
+    "source": "https://x.com/exolabs/status/2123953913342935486"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Mostly enthusiasm about 125 tok/s on a laptop; a few ask for the quantization, harness, and a fair cost comparison, and others ask about smaller Macs. Nobody reports reproducing it.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "LeRobot adds NAT VLA, a 450M vision-language-action policy with streamed decoding and real-time chunking",
+   "url": "https://x.com/LeRobotHF/status/2124217015254843796",
+   "handle": "@LeRobotHF",
+   "group": "robotics",
+   "origin": "sweep",
+   "summary": "LeRobot ships NAT VLA, a 450M-parameter robot policy built on LFM2-VL that packs 32-step action chunks into 14 tokens per group of 7 action dims. It supports streamed decoding and token-prefix real-time chunking in sync, async and remote modes, with checkpoints pretrained on DROID, Bridge, RT-1, BC-Z, YAM and SO-101 data.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/docs/lerobot/main/en/nat_vla",
+    "https://twitter.com/ahadj0/status/2124196007529402386"
+   ],
+   "vendor": "Hugging Face LeRobot",
+   "posted_at": "2026-11-21T19:02:57Z",
+   "metrics": {
+    "likes": 8,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 3,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Very new post; docs page read but no benchmark numbers or third-party runs seen yet.",
+    "source": null
+   }
+  },
+  {
+   "title": "Hy4-Flash gets Strata packs of 64, 96 and 128 GiB, runnable with an 8 GiB GPU",
+   "url": "https://x.com/coldniko/status/2124191994855493905",
+   "handle": "@coldniko",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Strata, a local inference engine, adds support for Tencent's 220B Hy4-Flash with its own quantized packs sized for 64, 96 and 128 GiB of RAM plus an 8 GiB or larger graphics card. The packs are on Hugging Face, with a model card covering quality versus the original and speed.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/strata-engine/Hy4-Flash-Strata"
+   ],
+   "vendor": "Strata",
+   "posted_at": "2026-11-21T17:23:00Z",
+   "metrics": {
+    "likes": 334,
+    "reposts": 33,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Model card claims are the author's own; not reproduced by Magpie.",
+    "source": null
+   }
+  },
+  {
+   "title": "Drama 3 voice model now runs out of the box on a 16 GB NVIDIA card, about 2.6x faster than real time on an RTX 5060 Ti",
+   "url": "https://x.com/plotarmordev/status/2124164683607445728",
+   "handle": "@plotarmordev",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A fix to the drama-tensorfold repo lets the 14.5 GB build of Drama 3 run on 16 GB NVIDIA GPUs. A third-party user measured about 2.6x faster than real time on an RTX 5060 Ti costing under 500 euros, with the fix and numbers in a public pull request.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/plotarmordev/drama-tensorfold/",
+    "https://github.com/plotarmordev/drama-tensorfold/pull/70"
+   ],
+   "vendor": "drama-tensorfold",
+   "posted_at": "2026-11-21T15:35:00Z",
+   "metrics": {
+    "likes": 9,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single user measurement reported by the author; not reproduced by Magpie.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 95,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
