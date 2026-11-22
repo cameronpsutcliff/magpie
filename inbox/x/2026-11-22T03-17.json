@@ -1,0 +1,135 @@
+{
+ "ran_at": "2026-11-22T03:17:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-21T23:26:00Z",
+ "queries": 2,
+ "calls": 4,
+ "items": [
+  {
+   "title": "Hibana fast profile runs Qwen3.8-Flash-Next at 101 tok/s on one DGX Spark",
+   "url": "https://x.com/wei_wang/status/2124293551638847952",
+   "handle": "@wei_wang",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A Hibana 'fast' setting for Qwen3.8-Flash-Next on a single DGX Spark reports 101.3 tok/s plain-text decode versus 46.6 for a common NVFP4 plus MTP recipe, 133.3 on code and 252.9 aggregate over four streams (3-run median, 512 tokens, temperature 0). A compose recipe and repo are linked.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/prestonlogan/Qwen3.8-Flash-Next-Single-DGX-Spark-Ultrafast",
+    "https://forums.developer.nvidia.com/t/qwen3-8-flash-next-at-101-tok-s-on-one-dgx-spark-with-image-input-hibana-fast-docker-compose/389731"
+   ],
+   "vendor": "Hibana",
+   "posted_at": "2026-11-22T00:07:03Z",
+   "metrics": {
+    "likes": 5,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 4,
+    "views": 495
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single-author benchmark on one machine; no third-party reproduction seen.",
+    "source": null
+   }
+  },
+  {
+   "title": "Inkling 2 Mini's bundled draft model lifts SGLang decode on a DGX Spark from 37 to 83 tok/s",
+   "url": "https://x.com/plotarmordev/status/2124293280708084035",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Inkling 2 Mini ships a draft model inside its download; on a DGX Spark under SGLang decode rises from 37 to 83 tok/s, holds at a 32k prompt, and the gain falls to about 1.5x at temperature 1.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/latentone_/status/2124039171178414093"
+   ],
+   "vendor": "Thinking Machines",
+   "posted_at": "2026-11-22T00:06:20Z",
+   "metrics": {
+    "likes": 19,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 5,
+    "views": 1075
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Quote of another user's measurement; not independently reproduced.",
+    "source": null
+   }
+  },
+  {
+   "title": "Scarlet open-source AI video editor adds Gemini support, frame annotations and a B-roll planner",
+   "url": "https://x.com/MatthewBerman/status/2124305043541434835",
+   "handle": "@MatthewBerman",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Scarlet, an open-source AI video editor driven by Claude, Codex and now Gemini, adds drawing on frames to mark edits, smarter screen-demo zoom and camera placement, lip-sync fixes, zero-token reject and undo, and a B-roll planner.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/Forward-Future/scarlet"
+   ],
+   "vendor": "Forward Future",
+   "posted_at": "2026-11-22T00:52:44Z",
+   "metrics": {
+    "likes": 223,
+    "reposts": 8,
+    "quotes": 1,
+    "replies": 45,
+    "views": 9101
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Not deep-read; announcement by the project's maker, no independent test seen.",
+    "source": null
+   }
+  },
+  {
+   "title": "Inference Stack bundles vLLM, llm-d, LiteLLM and Grafana as a one-click self-hosted deploy",
+   "url": "https://x.com/Mokhalil01/status/2124322037317713944",
+   "handle": "@Mokhalil01",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A new Inference Stack product deploys vLLM, Hugging Face model discovery, llm-d routing, LiteLLM and Grafana metrics together in one click for self-hosted inference.",
+   "kind": "tool",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Inference Stack",
+   "posted_at": "2026-11-22T02:00:16Z",
+   "metrics": {
+    "likes": 11,
+    "reposts": 4,
+    "quotes": 2,
+    "replies": 2,
+    "views": 700
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Launch post only; no repo, docs or measurements checked.",
+    "source": null
+   }
+  }
+ ],
+ "saved_in": 0,
+ "saved_rejected": [],
+ "list_posts_read": 95,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
