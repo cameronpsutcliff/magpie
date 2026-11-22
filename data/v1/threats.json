@@ -73,7 +73,7 @@
     "GHSA-qx49-fqc8-xw99",
     "url:osv.dev/vulnerability/GHSA-qx49-fqc8-xw99"
    ],
-   "last_seen": "2026-11-21",
+   "last_seen": "2026-11-22",
    "reach": 2,
    "wide": false
   },
@@ -142,7 +142,7 @@
     "CVE-2026-40217",
     "url:cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-40217"
    ],
-   "last_seen": "2026-11-21",
+   "last_seen": "2026-11-22",
    "reach": 2,
    "wide": false
   },

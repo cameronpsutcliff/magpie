@@ -3,79 +3,83 @@
  "days": [
   {
    "date": "2026-11-22",
-   "headline": "Inkling-2-Mini, Inkling-2-Mini-Uncensored-GGUF, Data Processing Incidents on Inference Providers, and more",
-   "events": 150,
-   "sources": 556,
-   "enriched": false,
+   "headline": "Open few-step video, fit Inkling in 5.4 GB, port hot code, and more",
+   "events": 245,
+   "sources": 575,
+   "enriched": true,
    "top": [
     {
      "id": "e50556ef1e99",
-     "title": "thinkingmachines/Inkling-2-Mini",
-     "impact": 5,
-     "vendor": "Open source",
+     "title": "Inkling 2 Mini gets Mac and Spark speed measurements",
+     "impact": 3,
+     "vendor": "Thinking Machines",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-22-e50556ef1e99"
     },
     {
-     "id": "a789ce06f1bd",
-     "title": "AtomicChat/Inkling-2-Mini-Uncensored-GGUF",
+     "id": "4646b1894410",
+     "title": "Inkling-2-Mini quantized to run in 5.4 GB memory",
      "impact": 4,
      "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-22-a789ce06f1bd"
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-22-4646b1894410"
     },
     {
-     "id": "1858ae290016",
-     "title": "Data Processing Incidents on Inference Providers",
+     "id": "ac3112b89ecb",
+     "title": "Posterior Matching Distillation for few-step image generation",
+     "impact": 3,
+     "vendor": "NVIDIA",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-22-ac3112b89ecb"
+    },
+    {
+     "id": "bf0fb1f9d854",
+     "title": "fast-anything ports slow hot functions with a coding agent",
      "impact": 4,
-     "vendor": "OpenRouter",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-22-1858ae290016"
-    },
-    {
-     "id": "4302db6cb9e8",
-     "title": "elementalsouls/Claude-BugHunter",
-     "impact": 5,
      "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-22-4302db6cb9e8"
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-22-bf0fb1f9d854"
     },
     {
-     "id": "ea95553e9a0b",
-     "title": "unsloth/Inkling-2-Mini-GGUF",
+     "id": "417931517ffa",
+     "title": "pi-H3 opens few-step MiniMax H3 video generation",
      "impact": 4,
-     "vendor": "Unsloth",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-22-ea95553e9a0b"
+     "vendor": "Lakonik (Hansheng Chen)",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-22-417931517ffa"
     }
    ],
    "vendors": [
     "Open source",
+    "Research",
     "Anthropic",
-    "Unsloth",
-    "Hugging Face",
-    "AWS",
-    "TensorFold"
+    "Google",
+    "OpenAI",
+    "Unsloth"
    ],
    "topics": {
-    "coding": 49,
-    "agents": 45,
-    "multimodal": 36,
-    "models": 32,
-    "local": 18,
-    "infra": 17,
-    "mcp": 17,
-    "security": 11,
-    "memory": 10,
-    "reverse": 10,
-    "evals": 4,
-    "research": 2
+    "models": 73,
+    "agents": 62,
+    "coding": 60,
+    "multimodal": 56,
+    "local": 33,
+    "infra": 30,
+    "research": 19,
+    "evals": 17,
+    "mcp": 15,
+    "memory": 11,
+    "reverse": 9,
+    "security": 8,
+    "robotics": 5
    },
    "kinds": {
-    "repo": 38,
-    "model": 30,
-    "space": 20,
-    "social": 17,
+    "video": 54,
+    "paper": 40,
+    "repo": 37,
+    "model": 29,
+    "social": 25,
+    "space": 19,
     "changelog": 17,
-    "community": 15,
-    "blog": 9,
-    "newsletter": 4
-   }
+    "community": 11,
+    "blog": 8,
+    "newsletter": 5
+   },
+   "threats": []
   },
   {
    "date": "2026-11-21",
