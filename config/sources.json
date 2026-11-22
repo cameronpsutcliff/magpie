@@ -1,1993 +1,2066 @@
 {
-  "version": 1,
-  "note": "Public sources only. trust is how much one mention counts (0..1). window_hours bounds what each run keeps.",
-  "feeds": [
-    {
-      "id": "latent-space",
-      "name": "Latent Space",
-      "kind": "newsletter",
-      "url": "https://www.latent.space/feed",
-      "trust": 0.75,
-      "vendor": null,
-      "product": null,
-      "window_hours": 48
-    },
-    {
-      "id": "interconnects",
-      "name": "Interconnects",
-      "kind": "newsletter",
-      "url": "https://www.interconnects.ai/feed",
-      "trust": 0.75,
-      "vendor": null,
-      "product": null,
-      "window_hours": 72
-    },
-    {
-      "id": "import-ai",
-      "name": "Import AI",
-      "kind": "newsletter",
-      "url": "https://jack-clark.net/feed/",
-      "trust": 0.7,
-      "vendor": null,
-      "product": null,
-      "window_hours": 96
-    },
-    {
-      "id": "ahead-of-ai",
-      "name": "Ahead of AI",
-      "kind": "newsletter",
-      "url": "https://magazine.sebastianraschka.com/feed",
-      "trust": 0.75,
-      "vendor": null,
-      "product": null,
-      "window_hours": 96
-    },
-    {
-      "id": "bens-bites",
-      "name": "Ben's Bites",
-      "kind": "newsletter",
-      "url": "https://www.bensbites.com/feed",
-      "trust": 0.55,
-      "vendor": null,
-      "product": null,
-      "window_hours": 48
-    },
-    {
-      "id": "the-rundown",
-      "name": "The Rundown AI",
-      "kind": "newsletter",
-      "url": "https://www.therundown.ai/feed",
-      "trust": 0.5,
-      "vendor": null,
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "simon-willison",
-      "name": "Simon Willison",
-      "kind": "blog",
-      "url": "https://simonwillison.net/atom/everything/",
-      "trust": 0.85,
-      "vendor": null,
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "hf-blog",
-      "name": "Hugging Face blog",
-      "kind": "blog",
-      "url": "https://huggingface.co/blog/feed.xml",
-      "trust": 0.7,
-      "vendor": "Hugging Face",
-      "product": null,
-      "window_hours": 48
-    },
-    {
-      "id": "openai-news",
-      "name": "OpenAI news",
-      "kind": "news",
-      "url": "https://openai.com/news/rss.xml",
-      "trust": 0.8,
-      "vendor": "OpenAI",
-      "product": null,
-      "window_hours": 48
-    },
-    {
-      "id": "anthropic-news",
-      "name": "Anthropic news",
-      "kind": "news",
-      "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml",
-      "trust": 0.8,
-      "vendor": "Anthropic",
-      "product": null,
-      "window_hours": 72
-    },
-    {
-      "id": "deepmind-blog",
-      "name": "Google DeepMind blog",
-      "kind": "news",
-      "url": "https://deepmind.google/blog/rss.xml",
-      "trust": 0.8,
-      "vendor": "Google",
-      "product": null,
-      "window_hours": 72
-    },
-    {
-      "id": "google-ai-blog",
-      "name": "Google AI blog",
-      "kind": "news",
-      "url": "https://blog.google/technology/ai/rss/",
-      "trust": 0.7,
-      "vendor": "Google",
-      "product": null,
-      "window_hours": 48
-    },
-    {
-      "id": "google-dev-blog",
-      "name": "Google Developers blog",
-      "kind": "news",
-      "url": "https://developers.googleblog.com/rss/",
-      "trust": 0.65,
-      "vendor": "Google",
-      "product": null,
-      "window_hours": 48
-    },
-    {
-      "id": "mistral-news",
-      "name": "Mistral news",
-      "kind": "news",
-      "url": "https://mistral.ai/news/rss",
-      "trust": 0.75,
-      "vendor": "Mistral",
-      "product": null,
-      "window_hours": 72
-    },
-    {
-      "id": "claude-code-changelog",
-      "name": "Claude Code changelog",
-      "kind": "changelog",
-      "url": "https://code.claude.com/docs/en/changelog/rss.xml",
-      "trust": 0.8,
-      "vendor": "Anthropic",
-      "product": "Claude Code",
-      "window_hours": 336
-    },
-    {
-      "id": "claude-platform-notes",
-      "name": "Claude Platform release notes",
-      "kind": "changelog",
-      "url": "https://platform.claude.com/docs/en/release-notes/feed.xml",
-      "trust": 0.8,
-      "vendor": "Anthropic",
-      "product": "Claude API",
-      "window_hours": 336
-    },
-    {
-      "id": "codex-changelog",
-      "name": "Codex and ChatGPT changelog",
-      "kind": "changelog",
-      "url": "https://developers.openai.com/codex/changelog/rss.xml",
-      "trust": 0.8,
-      "vendor": "OpenAI",
-      "product": "Codex",
-      "window_hours": 336
-    },
-    {
-      "id": "cursor-changelog",
-      "name": "Cursor changelog",
-      "kind": "changelog",
-      "url": "https://cursor.com/changelog/rss.xml",
-      "trust": 0.8,
-      "vendor": "Cursor",
-      "product": "Cursor",
-      "window_hours": 336
-    },
-    {
-      "id": "copilot-changelog",
-      "name": "GitHub Copilot changelog",
-      "kind": "changelog",
-      "url": "https://github.blog/changelog/label/copilot/feed/",
-      "trust": 0.75,
-      "vendor": "GitHub",
-      "product": "Copilot",
-      "window_hours": 336
-    },
-    {
-      "id": "claude-code-releases",
-      "name": "Claude Code releases",
-      "kind": "changelog",
-      "url": "https://github.com/anthropics/claude-code/releases.atom",
-      "trust": 0.7,
-      "vendor": "Anthropic",
-      "product": "Claude Code CLI",
-      "window_hours": 336
-    },
-    {
-      "id": "codex-releases",
-      "name": "Codex CLI releases",
-      "kind": "changelog",
-      "url": "https://github.com/openai/codex/releases.atom",
-      "trust": 0.7,
-      "vendor": "OpenAI",
-      "product": "Codex CLI",
-      "window_hours": 336
-    },
-    {
-      "id": "ollama-releases",
-      "name": "Ollama releases",
-      "kind": "changelog",
-      "url": "https://github.com/ollama/ollama/releases.atom",
-      "trust": 0.7,
-      "vendor": "Ollama",
-      "product": "Ollama",
-      "window_hours": 336
-    },
-    {
-      "id": "vllm-releases",
-      "name": "vLLM releases",
-      "kind": "changelog",
-      "url": "https://github.com/vllm-project/vllm/releases.atom",
-      "trust": 0.7,
-      "vendor": "vLLM",
-      "product": "vLLM",
-      "window_hours": 336
-    },
-    {
-      "id": "transformers-releases",
-      "name": "Transformers releases",
-      "kind": "changelog",
-      "url": "https://github.com/huggingface/transformers/releases.atom",
-      "trust": 0.7,
-      "vendor": "Hugging Face",
-      "product": "Transformers",
-      "window_hours": 336
-    },
-    {
-      "id": "xai-sdk-releases",
-      "name": "xAI SDK releases",
-      "kind": "changelog",
-      "url": "https://github.com/xai-org/xai-sdk-python/releases.atom",
-      "trust": 0.65,
-      "vendor": "xAI",
-      "product": "xAI SDK",
-      "window_hours": 336
-    },
-    {
-      "id": "anthropic-engineering",
-      "name": "Anthropic engineering (mirror)",
-      "kind": "blog",
-      "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_engineering.xml",
-      "trust": 0.8,
-      "vendor": "Anthropic",
-      "product": null,
-      "window_hours": 72
-    },
-    {
-      "id": "anthropic-research",
-      "name": "Anthropic research (mirror)",
-      "kind": "blog",
-      "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_research.xml",
-      "trust": 0.8,
-      "vendor": "Anthropic",
-      "product": null,
-      "window_hours": 72
-    },
-    {
-      "id": "claude-blog",
-      "name": "Claude blog (mirror)",
-      "kind": "blog",
-      "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_claude.xml",
-      "trust": 0.75,
-      "vendor": "Anthropic",
-      "product": null,
-      "window_hours": 72
-    },
-    {
-      "id": "openai-developer-blog",
-      "name": "OpenAI developer blog",
-      "kind": "blog",
-      "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_openai_developer.xml",
-      "trust": 0.8,
-      "vendor": "OpenAI",
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "google-research",
-      "name": "Google Research blog",
-      "kind": "blog",
-      "url": "https://research.google/blog/rss/",
-      "trust": 0.8,
-      "vendor": "Google",
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "google-cloud-ai",
-      "name": "Google Cloud AI and ML blog",
-      "kind": "blog",
-      "url": "https://cloudblog.withgoogle.com/products/ai-machine-learning/rss/",
-      "trust": 0.75,
-      "vendor": "Google",
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "gemini-product-blog",
-      "name": "Google Gemini product blog",
-      "kind": "news",
-      "url": "https://blog.google/products/gemini/rss/",
-      "trust": 0.75,
-      "vendor": "Google",
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "meta-engineering-ai",
-      "name": "Meta engineering: AI research",
-      "kind": "blog",
-      "url": "https://engineering.fb.com/category/ai-research/feed/",
-      "trust": 0.75,
-      "vendor": "Meta",
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "nvidia-tech-blog",
-      "name": "NVIDIA technical blog",
-      "kind": "blog",
-      "url": "https://developer.nvidia.com/blog/feed/",
-      "trust": 0.75,
-      "vendor": "NVIDIA",
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "microsoft-research",
-      "name": "Microsoft Research blog",
-      "kind": "blog",
-      "url": "https://www.microsoft.com/en-us/research/feed/",
-      "trust": 0.8,
-      "vendor": "Microsoft",
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "aws-ml-blog",
-      "name": "AWS Machine Learning blog",
-      "kind": "blog",
-      "url": "https://aws.amazon.com/blogs/machine-learning/feed/",
-      "trust": 0.75,
-      "vendor": "AWS",
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "apple-ml-research",
-      "name": "Apple Machine Learning Research",
-      "kind": "blog",
-      "url": "https://machinelearning.apple.com/rss.xml",
-      "trust": 0.8,
-      "vendor": "Apple",
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "cohere-blog",
-      "name": "Cohere blog (mirror)",
-      "kind": "blog",
-      "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_cohere.xml",
-      "trust": 0.75,
-      "vendor": "Cohere",
-      "product": null,
-      "window_hours": 72
-    },
-    {
-      "id": "together-blog",
-      "name": "Together AI blog",
-      "kind": "blog",
-      "url": "https://www.together.ai/blog/rss.xml",
-      "trust": 0.75,
-      "vendor": "Together AI",
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "groq-blog",
-      "name": "Groq blog (mirror)",
-      "kind": "blog",
-      "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_groq.xml",
-      "trust": 0.75,
-      "vendor": "Groq",
-      "product": null,
-      "window_hours": 72
-    },
-    {
-      "id": "modal-blog",
-      "name": "Modal blog",
-      "kind": "blog",
-      "url": "https://modal.com/blog/atom.xml",
-      "trust": 0.75,
-      "vendor": "Modal",
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "langchain-blog",
-      "name": "LangChain blog",
-      "kind": "blog",
-      "url": "https://www.langchain.com/blog/rss.xml",
-      "trust": 0.75,
-      "vendor": "LangChain",
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "vercel-blog",
-      "name": "Vercel blog and changelog",
-      "kind": "blog",
-      "url": "https://vercel.com/atom",
-      "trust": 0.75,
-      "vendor": "Vercel",
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "cloudflare-ai-blog",
-      "name": "Cloudflare blog: AI",
-      "kind": "blog",
-      "url": "https://blog.cloudflare.com/tag/ai/rss/",
-      "trust": 0.75,
-      "vendor": "Cloudflare",
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "github-blog-ai",
-      "name": "GitHub blog: AI and ML",
-      "kind": "blog",
-      "url": "https://github.blog/ai-and-ml/feed/",
-      "trust": 0.75,
-      "vendor": "GitHub",
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "databricks-blog",
-      "name": "Databricks blog",
-      "kind": "blog",
-      "url": "https://www.databricks.com/feed",
-      "trust": 0.75,
-      "vendor": "Databricks",
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "ai2-blog",
-      "name": "Ai2 (Allen Institute for AI) blog",
-      "kind": "blog",
-      "url": "https://allenai.org/rss.xml",
-      "trust": 0.8,
-      "vendor": "Ai2",
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "eleutherai-papers",
-      "name": "EleutherAI papers (mirror)",
-      "kind": "blog",
-      "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_eleuther_papers.xml",
-      "trust": 0.75,
-      "vendor": "EleutherAI",
-      "product": null,
-      "window_hours": 72
-    },
-    {
-      "id": "stability-news",
-      "name": "Stability AI news",
-      "kind": "news",
-      "url": "https://stability.ai/news-updates?format=rss",
-      "trust": 0.75,
-      "vendor": "Stability AI",
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "xai-news",
-      "name": "xAI news (mirror)",
-      "kind": "news",
-      "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_xainews.xml",
-      "trust": 0.75,
-      "vendor": "xAI",
-      "product": null,
-      "window_hours": 72
-    },
-    {
-      "id": "pytorch-blog",
-      "name": "PyTorch blog",
-      "kind": "blog",
-      "url": "https://pytorch.org/feed/",
-      "trust": 0.75,
-      "vendor": "PyTorch Foundation",
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "elevenlabs-blog",
-      "name": "ElevenLabs blog",
-      "kind": "blog",
-      "url": "https://elevenlabs.io/blog/rss.xml",
-      "trust": 0.75,
-      "vendor": "ElevenLabs",
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "midjourney-updates",
-      "name": "Midjourney updates",
-      "kind": "news",
-      "url": "https://updates.midjourney.com/rss/",
-      "trust": 0.75,
-      "vendor": "Midjourney",
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "uk-aisi",
-      "name": "UK AI Security Institute (mirror)",
-      "kind": "blog",
-      "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_aisi.xml",
-      "trust": 0.75,
-      "vendor": "UK AISI",
-      "product": null,
-      "window_hours": 72
-    },
-    {
-      "id": "tldr-ai",
-      "name": "TLDR AI",
-      "kind": "newsletter",
-      "url": "https://tldr.tech/api/rss/ai",
-      "trust": 0.6,
-      "vendor": null,
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "last-week-in-ai",
-      "name": "Last Week in AI",
-      "kind": "newsletter",
-      "url": "https://lastweekin.ai/feed",
-      "trust": 0.6,
-      "vendor": null,
-      "product": null,
-      "window_hours": 96
-    },
-    {
-      "id": "turing-post",
-      "name": "The Turing Post",
-      "kind": "newsletter",
-      "url": "https://turingpost.substack.com/feed",
-      "trust": 0.7,
-      "vendor": null,
-      "product": null,
-      "window_hours": 96
-    },
-    {
-      "id": "alphasignal",
-      "name": "AlphaSignal",
-      "kind": "newsletter",
-      "url": "https://alphasignal.ai/feed.xml",
-      "trust": 0.6,
-      "vendor": null,
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "exponential-view",
-      "name": "Exponential View",
-      "kind": "newsletter",
-      "url": "https://www.exponentialview.co/feed",
-      "trust": 0.7,
-      "vendor": null,
-      "product": null,
-      "window_hours": 72
-    },
-    {
-      "id": "understanding-ai",
-      "name": "Understanding AI (Timothy B. Lee)",
-      "kind": "newsletter",
-      "url": "https://www.understandingai.org/feed",
-      "trust": 0.8,
-      "vendor": null,
-      "product": null,
-      "window_hours": 96
-    },
-    {
-      "id": "zvi",
-      "name": "Don't Worry About the Vase (Zvi)",
-      "kind": "newsletter",
-      "url": "https://thezvi.substack.com/feed",
-      "trust": 0.75,
-      "vendor": null,
-      "product": null,
-      "window_hours": 48
-    },
-    {
-      "id": "dwarkesh",
-      "name": "Dwarkesh Podcast",
-      "kind": "newsletter",
-      "url": "https://www.dwarkesh.com/feed",
-      "trust": 0.75,
-      "vendor": null,
-      "product": null,
-      "window_hours": 96
-    },
-    {
-      "id": "semianalysis",
-      "name": "SemiAnalysis",
-      "kind": "newsletter",
-      "url": "https://newsletter.semianalysis.com/feed",
-      "trust": 0.8,
-      "vendor": null,
-      "product": null,
-      "window_hours": 96
-    },
-    {
-      "id": "epoch-ai",
-      "name": "Epoch AI newsletter",
-      "kind": "newsletter",
-      "url": "https://epochai.substack.com/feed",
-      "trust": 0.85,
-      "vendor": null,
-      "product": null,
-      "window_hours": 96
-    },
-    {
-      "id": "thursdai",
-      "name": "ThursdAI",
-      "kind": "newsletter",
-      "url": "https://sub.thursdai.news/feed",
-      "trust": 0.7,
-      "vendor": null,
-      "product": null,
-      "window_hours": 96
-    },
-    {
-      "id": "vertex-ai-notes",
-      "name": "Vertex AI release notes",
-      "kind": "changelog",
-      "url": "https://docs.cloud.google.com/feeds/vertex-ai-product-group-release-notes.xml",
-      "trust": 0.8,
-      "vendor": "Google",
-      "product": "Vertex AI",
-      "window_hours": 336
-    },
-    {
-      "id": "google-genai-sdk-releases",
-      "name": "Google Gen AI Python SDK releases",
-      "kind": "changelog",
-      "url": "https://github.com/googleapis/python-genai/releases.atom",
-      "trust": 0.75,
-      "vendor": "Google",
-      "product": "Gemini API Python SDK",
-      "window_hours": 336
-    },
-    {
-      "id": "gemini-cli-releases",
-      "name": "Gemini CLI releases",
-      "kind": "changelog",
-      "url": "https://github.com/google-gemini/gemini-cli/releases.atom",
-      "trust": 0.75,
-      "vendor": "Google",
-      "product": "Gemini CLI",
-      "window_hours": 336
-    },
-    {
-      "id": "openai-python-releases",
-      "name": "OpenAI Python SDK releases",
-      "kind": "changelog",
-      "url": "https://github.com/openai/openai-python/releases.atom",
-      "trust": 0.75,
-      "vendor": "OpenAI",
-      "product": "OpenAI API Python SDK",
-      "window_hours": 336
-    },
-    {
-      "id": "openai-agents-releases",
-      "name": "OpenAI Agents SDK releases",
-      "kind": "changelog",
-      "url": "https://github.com/openai/openai-agents-python/releases.atom",
-      "trust": 0.75,
-      "vendor": "OpenAI",
-      "product": "Agents SDK",
-      "window_hours": 336
-    },
-    {
-      "id": "claude-agent-sdk-releases",
-      "name": "Claude Agent SDK (Python) releases",
-      "kind": "changelog",
-      "url": "https://github.com/anthropics/claude-agent-sdk-python/releases.atom",
-      "trust": 0.75,
-      "vendor": "Anthropic",
-      "product": "Claude Agent SDK",
-      "window_hours": 336
-    },
-    {
-      "id": "windsurf-changelog",
-      "name": "Windsurf changelog (mirror)",
-      "kind": "changelog",
-      "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_windsurf_changelog.xml",
-      "trust": 0.75,
-      "vendor": "Cognition",
-      "product": "Windsurf",
-      "window_hours": 336
-    },
-    {
-      "id": "zed-releases",
-      "name": "Zed releases",
-      "kind": "changelog",
-      "url": "https://github.com/zed-industries/zed/releases.atom",
-      "trust": 0.75,
-      "vendor": "Zed",
-      "product": "Zed",
-      "window_hours": 336
-    },
-    {
-      "id": "replit-blog",
-      "name": "Replit blog",
-      "kind": "blog",
-      "url": "https://blog.replit.com/feed.xml",
-      "trust": 0.75,
-      "vendor": "Replit",
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "bolt-changelog",
-      "name": "Bolt release notes",
-      "kind": "changelog",
-      "url": "https://support.bolt.new/release-notes/rss.xml",
-      "trust": 0.75,
-      "vendor": "StackBlitz",
-      "product": "Bolt",
-      "window_hours": 336
-    },
-    {
-      "id": "lovable-changelog",
-      "name": "Lovable changelog",
-      "kind": "changelog",
-      "url": "https://docs.lovable.dev/changelog/rss.xml",
-      "trust": 0.75,
-      "vendor": "Lovable",
-      "product": "Lovable",
-      "window_hours": 336
-    },
-    {
-      "id": "devin-release-notes",
-      "name": "Devin release notes",
-      "kind": "changelog",
-      "url": "https://docs.devin.ai/release-notes/overview/rss.xml",
-      "trust": 0.8,
-      "vendor": "Cognition",
-      "product": "Devin",
-      "window_hours": 336
-    },
-    {
-      "id": "amp-news",
-      "name": "Amp news",
-      "kind": "changelog",
-      "url": "https://ampcode.com/news.rss",
-      "trust": 0.75,
-      "vendor": "Amp",
-      "product": "Amp",
-      "window_hours": 336
-    },
-    {
-      "id": "cline-releases",
-      "name": "Cline releases",
-      "kind": "changelog",
-      "url": "https://github.com/cline/cline/releases.atom",
-      "trust": 0.75,
-      "vendor": "Cline",
-      "product": "Cline",
-      "window_hours": 336
-    },
-    {
-      "id": "openhands-releases",
-      "name": "OpenHands releases",
-      "kind": "changelog",
-      "url": "https://github.com/OpenHands/OpenHands/releases.atom",
-      "trust": 0.75,
-      "vendor": "All Hands AI",
-      "product": "OpenHands",
-      "window_hours": 336
-    },
-    {
-      "id": "goose-releases",
-      "name": "Goose releases",
-      "kind": "changelog",
-      "url": "https://github.com/block/goose/releases.atom",
-      "trust": 0.75,
-      "vendor": "Block",
-      "product": "Goose",
-      "window_hours": 336
-    },
-    {
-      "id": "kiro-changelog",
-      "name": "Kiro changelog",
-      "kind": "changelog",
-      "url": "https://kiro.dev/changelog/feed.atom",
-      "trust": 0.8,
-      "vendor": "AWS",
-      "product": "Kiro",
-      "window_hours": 336
-    },
-    {
-      "id": "langgraph-releases",
-      "name": "LangGraph releases",
-      "kind": "changelog",
-      "url": "https://github.com/langchain-ai/langgraph/releases.atom",
-      "trust": 0.75,
-      "vendor": "LangChain",
-      "product": "LangGraph",
-      "window_hours": 336
-    },
-    {
-      "id": "llama-cpp-releases",
-      "name": "llama.cpp releases",
-      "kind": "changelog",
-      "url": "https://github.com/ggml-org/llama.cpp/releases.atom",
-      "trust": 0.75,
-      "vendor": "ggml",
-      "product": "llama.cpp",
-      "window_hours": 336
-    },
-    {
-      "id": "mlx-releases",
-      "name": "MLX releases",
-      "kind": "changelog",
-      "url": "https://github.com/ml-explore/mlx/releases.atom",
-      "trust": 0.75,
-      "vendor": "Apple",
-      "product": "MLX",
-      "window_hours": 336
-    },
-    {
-      "id": "lm-studio-blog",
-      "name": "LM Studio blog",
-      "kind": "blog",
-      "url": "https://lmstudio.ai/rss.xml",
-      "trust": 0.75,
-      "vendor": "LM Studio",
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "openrouter-blog",
-      "name": "OpenRouter blog and announcements",
-      "kind": "blog",
-      "url": "https://openrouter.ai/blog/feed.xml",
-      "trust": 0.75,
-      "vendor": "OpenRouter",
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "sglang-releases",
-      "name": "SGLang releases",
-      "kind": "changelog",
-      "url": "https://github.com/sgl-project/sglang/releases.atom",
-      "trust": 0.75,
-      "vendor": "SGLang",
-      "product": "SGLang",
-      "window_hours": 336
-    },
-    {
-      "id": "unsloth-releases",
-      "name": "Unsloth releases",
-      "kind": "changelog",
-      "url": "https://github.com/unslothai/unsloth/releases.atom",
-      "trust": 0.75,
-      "vendor": "Unsloth",
-      "product": "Unsloth",
-      "window_hours": 336
-    },
-    {
-      "id": "mcp-python-sdk-releases",
-      "name": "MCP Python SDK releases",
-      "kind": "changelog",
-      "url": "https://github.com/modelcontextprotocol/python-sdk/releases.atom",
-      "trust": 0.75,
-      "vendor": "Model Context Protocol",
-      "product": "MCP Python SDK",
-      "window_hours": 336
-    },
-    {
-      "id": "mcp-ts-sdk-releases",
-      "name": "MCP TypeScript SDK releases",
-      "kind": "changelog",
-      "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases.atom",
-      "trust": 0.75,
-      "vendor": "Model Context Protocol",
-      "product": "MCP TypeScript SDK",
-      "window_hours": 336
-    },
-    {
-      "id": "mcp-blog",
-      "name": "Model Context Protocol blog",
-      "kind": "blog",
-      "url": "https://blog.modelcontextprotocol.io/index.xml",
-      "trust": 0.8,
-      "vendor": "Model Context Protocol",
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "copilot-cli-releases",
-      "name": "GitHub Copilot CLI releases",
-      "kind": "changelog",
-      "url": "https://github.com/github/copilot-cli/releases.atom",
-      "trust": 0.75,
-      "vendor": "GitHub",
-      "product": "Copilot CLI",
-      "window_hours": 336
-    },
-    {
-      "id": "opencode-releases",
-      "name": "opencode releases",
-      "kind": "changelog",
-      "url": "https://github.com/sst/opencode/releases.atom",
-      "trust": 0.75,
-      "vendor": "SST",
-      "product": "opencode",
-      "window_hours": 336
-    },
-    {
-      "id": "fireworks-changelog",
-      "name": "Fireworks changelog",
-      "kind": "changelog",
-      "url": "https://docs.fireworks.ai/updates/changelog/rss.xml",
-      "trust": 0.75,
-      "vendor": "Fireworks AI",
-      "product": "Fireworks platform",
-      "window_hours": 336
-    },
-    {
-      "id": "cerebras-changelog",
-      "name": "Cerebras inference changelog",
-      "kind": "changelog",
-      "url": "https://inference-docs.cerebras.ai/support/change-log/rss.xml",
-      "trust": 0.75,
-      "vendor": "Cerebras",
-      "product": "Cerebras Inference",
-      "window_hours": 336
-    },
-    {
-      "id": "perplexity-api-changelog",
-      "name": "Perplexity API changelog",
-      "kind": "changelog",
-      "url": "https://docs.perplexity.ai/docs/resources/changelog/rss.xml",
-      "trust": 0.75,
-      "vendor": "Perplexity",
-      "product": "Sonar API",
-      "window_hours": 336
-    },
-    {
-      "id": "factory-changelog",
-      "name": "Factory changelog",
-      "kind": "changelog",
-      "url": "https://docs.factory.ai/changelog/rss.xml",
-      "trust": 0.75,
-      "vendor": "Factory",
-      "product": "Droid",
-      "window_hours": 336
-    },
-    {
-      "id": "lobsters-ai",
-      "name": "Lobsters: ai tag",
-      "kind": "community",
-      "url": "https://lobste.rs/t/ai.rss",
-      "trust": 0.6,
-      "vendor": null,
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "hn-best",
-      "name": "Hacker News best (hnrss)",
-      "kind": "community",
-      "url": "https://hnrss.org/best",
-      "trust": 0.55,
-      "vendor": null,
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "hn-daily",
-      "name": "Hacker News Daily (top 10 per day)",
-      "kind": "community",
-      "url": "https://www.daemonology.net/hn-daily/index.rss",
-      "trust": 0.55,
-      "vendor": null,
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "hn-ai-150",
-      "name": "Hacker News stories matching AI, 150+ points (hnrss)",
-      "kind": "community",
-      "url": "https://hnrss.org/newest?q=AI&points=150",
-      "trust": 0.55,
-      "vendor": null,
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "producthunt-ai",
-      "name": "Product Hunt: AI",
-      "kind": "community",
-      "url": "https://www.producthunt.com/feed?category=artificial-intelligence",
-      "trust": 0.5,
-      "vendor": null,
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "hf-daily-papers",
-      "name": "Hugging Face Daily Papers (takara.ai mirror)",
-      "kind": "community",
-      "url": "https://papers.takara.ai/api/feed",
-      "trust": 0.55,
-      "vendor": null,
-      "product": null,
-      "window_hours": 36
-    },
-    {
-      "id": "thoughtworks-insights",
-      "name": "Thoughtworks Insights (AI posts)",
-      "kind": "blog",
-      "url": "https://www.thoughtworks.com/rss/insights.xml",
-      "trust": 0.65,
-      "vendor": null,
-      "product": null,
-      "window_hours": 72,
-      "max_entries": 40,
-      "ai_only": true,
-      "pinned": true
-    },
-    {
-      "id": "martin-fowler",
-      "name": "martinfowler.com (Thoughtworks authors on building with AI)",
-      "kind": "blog",
-      "url": "https://martinfowler.com/feed.atom",
-      "trust": 0.7,
-      "vendor": null,
-      "product": null,
-      "window_hours": 72,
-      "max_entries": 30,
-      "ai_only": true
-    },
-    {
-      "id": "hamel-husain",
-      "name": "Hamel Husain",
-      "kind": "newsletter",
-      "url": "https://hamel.dev/index.xml",
-      "trust": 0.85,
-      "vendor": null,
-      "product": null,
-      "window_hours": 168
-    },
-    {
-      "id": "eugene-yan",
-      "name": "Eugene Yan",
-      "kind": "newsletter",
-      "url": "https://eugeneyan.com/rss/",
-      "trust": 0.85,
-      "vendor": null,
-      "product": null,
-      "window_hours": 168
-    },
-    {
-      "id": "lilian-weng",
-      "name": "Lilian Weng",
-      "kind": "blog",
-      "url": "https://lilianweng.github.io/index.xml",
-      "trust": 0.9,
-      "vendor": null,
-      "product": null,
-      "window_hours": 168
-    },
-    {
-      "id": "chip-huyen",
-      "name": "Chip Huyen",
-      "kind": "newsletter",
-      "url": "https://huyenchip.com/feed.xml",
-      "trust": 0.85,
-      "vendor": null,
-      "product": null,
-      "window_hours": 168
-    },
-    {
-      "id": "armin-ronacher",
-      "name": "Armin Ronacher",
-      "kind": "newsletter",
-      "url": "https://lucumr.pocoo.org/feed.atom",
-      "trust": 0.8,
-      "vendor": null,
-      "product": null,
-      "window_hours": 168
-    },
-    {
-      "id": "mitchell-hashimoto",
-      "name": "Mitchell Hashimoto",
-      "kind": "newsletter",
-      "url": "https://mitchellh.com/feed.xml",
-      "trust": 0.8,
-      "vendor": null,
-      "product": null,
-      "window_hours": 168
-    },
-    {
-      "id": "litellm-releases",
-      "name": "LiteLLM releases",
-      "kind": "changelog",
-      "url": "https://github.com/BerriAI/litellm/releases.atom",
-      "trust": 0.9,
-      "vendor": "berriai",
-      "product": "litellm",
-      "window_hours": 72
-    },
-    {
-      "id": "uv-releases",
-      "name": "uv releases",
-      "kind": "changelog",
-      "url": "https://github.com/astral-sh/uv/releases.atom",
-      "trust": 0.85,
-      "vendor": "astral",
-      "product": "uv",
-      "window_hours": 72
-    },
-    {
-      "id": "pydantic-ai-releases",
-      "name": "PydanticAI releases",
-      "kind": "changelog",
-      "url": "https://github.com/pydantic/pydantic-ai/releases.atom",
-      "trust": 0.85,
-      "vendor": "pydantic",
-      "product": "pydantic-ai",
-      "window_hours": 72
-    },
-    {
-      "id": "raspberry-pi-news",
-      "name": "Raspberry Pi News",
-      "kind": "blog",
-      "url": "https://www.raspberrypi.com/news/feed/",
-      "trust": 0.8,
-      "vendor": "raspberrypi",
-      "product": "pi-ai",
-      "window_hours": 96
-    },
-    {
-      "id": "bair-blog",
-      "name": "Berkeley AI Research (BAIR)",
-      "kind": "blog",
-      "url": "https://bair.berkeley.edu/blog/feed.xml",
-      "trust": 0.85,
-      "vendor": null,
-      "product": null,
-      "window_hours": 168
-    },
-    {
-      "id": "qwen-blog",
-      "name": "Qwen Blog",
-      "kind": "blog",
-      "url": "https://qwenlm.github.io/blog/index.xml",
-      "trust": 0.9,
-      "vendor": "qwen",
-      "product": "qwen",
-      "window_hours": 96
+ "version": 1,
+ "note": "Public sources only. trust is how much one mention counts (0..1). window_hours bounds what each run keeps.",
+ "feeds": [
+  {
+   "id": "latent-space",
+   "name": "Latent Space",
+   "kind": "newsletter",
+   "url": "https://www.latent.space/feed",
+   "trust": 0.75,
+   "vendor": null,
+   "product": null,
+   "window_hours": 48
+  },
+  {
+   "id": "interconnects",
+   "name": "Interconnects",
+   "kind": "newsletter",
+   "url": "https://www.interconnects.ai/feed",
+   "trust": 0.75,
+   "vendor": null,
+   "product": null,
+   "window_hours": 72
+  },
+  {
+   "id": "import-ai",
+   "name": "Import AI",
+   "kind": "newsletter",
+   "url": "https://jack-clark.net/feed/",
+   "trust": 0.7,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96
+  },
+  {
+   "id": "the-rundown",
+   "name": "The Rundown AI",
+   "kind": "newsletter",
+   "url": "https://www.therundown.ai/feed",
+   "trust": 0.5,
+   "vendor": null,
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "simon-willison",
+   "name": "Simon Willison",
+   "kind": "blog",
+   "url": "https://simonwillison.net/atom/everything/",
+   "trust": 0.85,
+   "vendor": null,
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "hf-blog",
+   "name": "Hugging Face blog",
+   "kind": "blog",
+   "url": "https://huggingface.co/blog/feed.xml",
+   "trust": 0.7,
+   "vendor": "Hugging Face",
+   "product": null,
+   "window_hours": 48
+  },
+  {
+   "id": "openai-news",
+   "name": "OpenAI news",
+   "kind": "news",
+   "url": "https://openai.com/news/rss.xml",
+   "trust": 0.8,
+   "vendor": "OpenAI",
+   "product": null,
+   "window_hours": 48
+  },
+  {
+   "id": "anthropic-news",
+   "name": "Anthropic news",
+   "kind": "news",
+   "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml",
+   "trust": 0.8,
+   "vendor": "Anthropic",
+   "product": null,
+   "window_hours": 72
+  },
+  {
+   "id": "deepmind-blog",
+   "name": "Google DeepMind blog",
+   "kind": "news",
+   "url": "https://deepmind.google/blog/rss.xml",
+   "trust": 0.8,
+   "vendor": "Google",
+   "product": null,
+   "window_hours": 72
+  },
+  {
+   "id": "google-ai-blog",
+   "name": "Google AI blog",
+   "kind": "news",
+   "url": "https://blog.google/technology/ai/rss/",
+   "trust": 0.7,
+   "vendor": "Google",
+   "product": null,
+   "window_hours": 48
+  },
+  {
+   "id": "google-dev-blog",
+   "name": "Google Developers blog",
+   "kind": "news",
+   "url": "https://developers.googleblog.com/rss/",
+   "trust": 0.65,
+   "vendor": "Google",
+   "product": null,
+   "window_hours": 48
+  },
+  {
+   "id": "mistral-news",
+   "name": "Mistral news",
+   "kind": "news",
+   "url": "https://mistral.ai/news/rss",
+   "trust": 0.75,
+   "vendor": "Mistral",
+   "product": null,
+   "window_hours": 72
+  },
+  {
+   "id": "claude-code-changelog",
+   "name": "Claude Code changelog",
+   "kind": "changelog",
+   "url": "https://code.claude.com/docs/en/changelog/rss.xml",
+   "trust": 0.8,
+   "vendor": "Anthropic",
+   "product": "Claude Code",
+   "window_hours": 336
+  },
+  {
+   "id": "claude-platform-notes",
+   "name": "Claude Platform release notes",
+   "kind": "changelog",
+   "url": "https://platform.claude.com/docs/en/release-notes/feed.xml",
+   "trust": 0.8,
+   "vendor": "Anthropic",
+   "product": "Claude API",
+   "window_hours": 336
+  },
+  {
+   "id": "codex-changelog",
+   "name": "Codex and ChatGPT changelog",
+   "kind": "changelog",
+   "url": "https://developers.openai.com/codex/changelog/rss.xml",
+   "trust": 0.8,
+   "vendor": "OpenAI",
+   "product": "Codex",
+   "window_hours": 336
+  },
+  {
+   "id": "cursor-changelog",
+   "name": "Cursor changelog",
+   "kind": "changelog",
+   "url": "https://cursor.com/changelog/rss.xml",
+   "trust": 0.8,
+   "vendor": "Cursor",
+   "product": "Cursor",
+   "window_hours": 336
+  },
+  {
+   "id": "copilot-changelog",
+   "name": "GitHub Copilot changelog",
+   "kind": "changelog",
+   "url": "https://github.blog/changelog/label/copilot/feed/",
+   "trust": 0.75,
+   "vendor": "GitHub",
+   "product": "Copilot",
+   "window_hours": 336
+  },
+  {
+   "id": "claude-code-releases",
+   "name": "Claude Code releases",
+   "kind": "changelog",
+   "url": "https://github.com/anthropics/claude-code/releases.atom",
+   "trust": 0.7,
+   "vendor": "Anthropic",
+   "product": "Claude Code CLI",
+   "window_hours": 336
+  },
+  {
+   "id": "codex-releases",
+   "name": "Codex CLI releases",
+   "kind": "changelog",
+   "url": "https://github.com/openai/codex/releases.atom",
+   "trust": 0.7,
+   "vendor": "OpenAI",
+   "product": "Codex CLI",
+   "window_hours": 336
+  },
+  {
+   "id": "ollama-releases",
+   "name": "Ollama releases",
+   "kind": "changelog",
+   "url": "https://github.com/ollama/ollama/releases.atom",
+   "trust": 0.7,
+   "vendor": "Ollama",
+   "product": "Ollama",
+   "window_hours": 336
+  },
+  {
+   "id": "vllm-releases",
+   "name": "vLLM releases",
+   "kind": "changelog",
+   "url": "https://github.com/vllm-project/vllm/releases.atom",
+   "trust": 0.7,
+   "vendor": "vLLM",
+   "product": "vLLM",
+   "window_hours": 336
+  },
+  {
+   "id": "transformers-releases",
+   "name": "Transformers releases",
+   "kind": "changelog",
+   "url": "https://github.com/huggingface/transformers/releases.atom",
+   "trust": 0.7,
+   "vendor": "Hugging Face",
+   "product": "Transformers",
+   "window_hours": 336
+  },
+  {
+   "id": "xai-sdk-releases",
+   "name": "xAI SDK releases",
+   "kind": "changelog",
+   "url": "https://github.com/xai-org/xai-sdk-python/releases.atom",
+   "trust": 0.65,
+   "vendor": "xAI",
+   "product": "xAI SDK",
+   "window_hours": 336
+  },
+  {
+   "id": "anthropic-engineering",
+   "name": "Anthropic engineering (mirror)",
+   "kind": "blog",
+   "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_engineering.xml",
+   "trust": 0.8,
+   "vendor": "Anthropic",
+   "product": null,
+   "window_hours": 72
+  },
+  {
+   "id": "anthropic-research",
+   "name": "Anthropic research (mirror)",
+   "kind": "blog",
+   "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_research.xml",
+   "trust": 0.8,
+   "vendor": "Anthropic",
+   "product": null,
+   "window_hours": 72
+  },
+  {
+   "id": "claude-blog",
+   "name": "Claude blog (mirror)",
+   "kind": "blog",
+   "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_claude.xml",
+   "trust": 0.75,
+   "vendor": "Anthropic",
+   "product": null,
+   "window_hours": 72
+  },
+  {
+   "id": "openai-developer-blog",
+   "name": "OpenAI developer blog",
+   "kind": "blog",
+   "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_openai_developer.xml",
+   "trust": 0.8,
+   "vendor": "OpenAI",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "google-research",
+   "name": "Google Research blog",
+   "kind": "blog",
+   "url": "https://research.google/blog/rss/",
+   "trust": 0.8,
+   "vendor": "Google",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "google-cloud-ai",
+   "name": "Google Cloud AI and ML blog",
+   "kind": "blog",
+   "url": "https://cloudblog.withgoogle.com/products/ai-machine-learning/rss/",
+   "trust": 0.75,
+   "vendor": "Google",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "gemini-product-blog",
+   "name": "Google Gemini product blog",
+   "kind": "news",
+   "url": "https://blog.google/products/gemini/rss/",
+   "trust": 0.75,
+   "vendor": "Google",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "meta-engineering-ai",
+   "name": "Meta engineering: AI research",
+   "kind": "blog",
+   "url": "https://engineering.fb.com/category/ai-research/feed/",
+   "trust": 0.75,
+   "vendor": "Meta",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "nvidia-tech-blog",
+   "name": "NVIDIA technical blog",
+   "kind": "blog",
+   "url": "https://developer.nvidia.com/blog/feed/",
+   "trust": 0.75,
+   "vendor": "NVIDIA",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "microsoft-research",
+   "name": "Microsoft Research blog",
+   "kind": "blog",
+   "url": "https://www.microsoft.com/en-us/research/feed/",
+   "trust": 0.8,
+   "vendor": "Microsoft",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "aws-ml-blog",
+   "name": "AWS Machine Learning blog",
+   "kind": "blog",
+   "url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+   "trust": 0.75,
+   "vendor": "AWS",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "apple-ml-research",
+   "name": "Apple Machine Learning Research",
+   "kind": "blog",
+   "url": "https://machinelearning.apple.com/rss.xml",
+   "trust": 0.8,
+   "vendor": "Apple",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "cohere-blog",
+   "name": "Cohere blog (mirror)",
+   "kind": "blog",
+   "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_cohere.xml",
+   "trust": 0.75,
+   "vendor": "Cohere",
+   "product": null,
+   "window_hours": 72
+  },
+  {
+   "id": "together-blog",
+   "name": "Together AI blog",
+   "kind": "blog",
+   "url": "https://www.together.ai/blog/rss.xml",
+   "trust": 0.75,
+   "vendor": "Together AI",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "groq-blog",
+   "name": "Groq blog (mirror)",
+   "kind": "blog",
+   "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_groq.xml",
+   "trust": 0.75,
+   "vendor": "Groq",
+   "product": null,
+   "window_hours": 72
+  },
+  {
+   "id": "modal-blog",
+   "name": "Modal blog",
+   "kind": "blog",
+   "url": "https://modal.com/blog/atom.xml",
+   "trust": 0.75,
+   "vendor": "Modal",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "langchain-blog",
+   "name": "LangChain blog",
+   "kind": "blog",
+   "url": "https://www.langchain.com/blog/rss.xml",
+   "trust": 0.75,
+   "vendor": "LangChain",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "vercel-blog",
+   "name": "Vercel blog and changelog",
+   "kind": "blog",
+   "url": "https://vercel.com/atom",
+   "trust": 0.75,
+   "vendor": "Vercel",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "cloudflare-ai-blog",
+   "name": "Cloudflare blog: AI",
+   "kind": "blog",
+   "url": "https://blog.cloudflare.com/tag/ai/rss/",
+   "trust": 0.75,
+   "vendor": "Cloudflare",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "github-blog-ai",
+   "name": "GitHub blog: AI and ML",
+   "kind": "blog",
+   "url": "https://github.blog/ai-and-ml/feed/",
+   "trust": 0.75,
+   "vendor": "GitHub",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "databricks-blog",
+   "name": "Databricks blog",
+   "kind": "blog",
+   "url": "https://www.databricks.com/feed",
+   "trust": 0.75,
+   "vendor": "Databricks",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "ai2-blog",
+   "name": "Ai2 (Allen Institute for AI) blog",
+   "kind": "blog",
+   "url": "https://allenai.org/rss.xml",
+   "trust": 0.8,
+   "vendor": "Ai2",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "eleutherai-papers",
+   "name": "EleutherAI papers (mirror)",
+   "kind": "blog",
+   "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_eleuther_papers.xml",
+   "trust": 0.75,
+   "vendor": "EleutherAI",
+   "product": null,
+   "window_hours": 72
+  },
+  {
+   "id": "stability-news",
+   "name": "Stability AI news",
+   "kind": "news",
+   "url": "https://stability.ai/news-updates?format=rss",
+   "trust": 0.75,
+   "vendor": "Stability AI",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "xai-news",
+   "name": "xAI news (mirror)",
+   "kind": "news",
+   "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_xainews.xml",
+   "trust": 0.75,
+   "vendor": "xAI",
+   "product": null,
+   "window_hours": 72
+  },
+  {
+   "id": "pytorch-blog",
+   "name": "PyTorch blog",
+   "kind": "blog",
+   "url": "https://pytorch.org/feed/",
+   "trust": 0.75,
+   "vendor": "PyTorch Foundation",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "elevenlabs-blog",
+   "name": "ElevenLabs blog",
+   "kind": "blog",
+   "url": "https://elevenlabs.io/blog/rss.xml",
+   "trust": 0.75,
+   "vendor": "ElevenLabs",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "midjourney-updates",
+   "name": "Midjourney updates",
+   "kind": "news",
+   "url": "https://updates.midjourney.com/rss/",
+   "trust": 0.75,
+   "vendor": "Midjourney",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "uk-aisi",
+   "name": "UK AI Security Institute (mirror)",
+   "kind": "blog",
+   "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_aisi.xml",
+   "trust": 0.75,
+   "vendor": "UK AISI",
+   "product": null,
+   "window_hours": 72
+  },
+  {
+   "id": "tldr-ai",
+   "name": "TLDR AI",
+   "kind": "newsletter",
+   "url": "https://tldr.tech/api/rss/ai",
+   "trust": 0.6,
+   "vendor": null,
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "last-week-in-ai",
+   "name": "Last Week in AI",
+   "kind": "newsletter",
+   "url": "https://lastweekin.ai/feed",
+   "trust": 0.6,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96
+  },
+  {
+   "id": "turing-post",
+   "name": "The Turing Post",
+   "kind": "newsletter",
+   "url": "https://turingpost.substack.com/feed",
+   "trust": 0.7,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96
+  },
+  {
+   "id": "alphasignal",
+   "name": "AlphaSignal",
+   "kind": "newsletter",
+   "url": "https://alphasignal.ai/feed.xml",
+   "trust": 0.6,
+   "vendor": null,
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "exponential-view",
+   "name": "Exponential View",
+   "kind": "newsletter",
+   "url": "https://www.exponentialview.co/feed",
+   "trust": 0.7,
+   "vendor": null,
+   "product": null,
+   "window_hours": 72
+  },
+  {
+   "id": "understanding-ai",
+   "name": "Understanding AI (Timothy B. Lee)",
+   "kind": "newsletter",
+   "url": "https://www.understandingai.org/feed",
+   "trust": 0.8,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96
+  },
+  {
+   "id": "zvi",
+   "name": "Don't Worry About the Vase (Zvi)",
+   "kind": "newsletter",
+   "url": "https://thezvi.substack.com/feed",
+   "trust": 0.75,
+   "vendor": null,
+   "product": null,
+   "window_hours": 48
+  },
+  {
+   "id": "dwarkesh",
+   "name": "Dwarkesh Podcast",
+   "kind": "newsletter",
+   "url": "https://www.dwarkesh.com/feed",
+   "trust": 0.75,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96
+  },
+  {
+   "id": "semianalysis",
+   "name": "SemiAnalysis",
+   "kind": "newsletter",
+   "url": "https://newsletter.semianalysis.com/feed",
+   "trust": 0.8,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96
+  },
+  {
+   "id": "thursdai",
+   "name": "ThursdAI",
+   "kind": "newsletter",
+   "url": "https://sub.thursdai.news/feed",
+   "trust": 0.7,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96
+  },
+  {
+   "id": "vertex-ai-notes",
+   "name": "Vertex AI release notes",
+   "kind": "changelog",
+   "url": "https://docs.cloud.google.com/feeds/vertex-ai-product-group-release-notes.xml",
+   "trust": 0.8,
+   "vendor": "Google",
+   "product": "Vertex AI",
+   "window_hours": 336
+  },
+  {
+   "id": "google-genai-sdk-releases",
+   "name": "Google Gen AI Python SDK releases",
+   "kind": "changelog",
+   "url": "https://github.com/googleapis/python-genai/releases.atom",
+   "trust": 0.75,
+   "vendor": "Google",
+   "product": "Gemini API Python SDK",
+   "window_hours": 336
+  },
+  {
+   "id": "gemini-cli-releases",
+   "name": "Gemini CLI releases",
+   "kind": "changelog",
+   "url": "https://github.com/google-gemini/gemini-cli/releases.atom",
+   "trust": 0.75,
+   "vendor": "Google",
+   "product": "Gemini CLI",
+   "window_hours": 336
+  },
+  {
+   "id": "openai-python-releases",
+   "name": "OpenAI Python SDK releases",
+   "kind": "changelog",
+   "url": "https://github.com/openai/openai-python/releases.atom",
+   "trust": 0.75,
+   "vendor": "OpenAI",
+   "product": "OpenAI API Python SDK",
+   "window_hours": 336
+  },
+  {
+   "id": "openai-agents-releases",
+   "name": "OpenAI Agents SDK releases",
+   "kind": "changelog",
+   "url": "https://github.com/openai/openai-agents-python/releases.atom",
+   "trust": 0.75,
+   "vendor": "OpenAI",
+   "product": "Agents SDK",
+   "window_hours": 336
+  },
+  {
+   "id": "claude-agent-sdk-releases",
+   "name": "Claude Agent SDK (Python) releases",
+   "kind": "changelog",
+   "url": "https://github.com/anthropics/claude-agent-sdk-python/releases.atom",
+   "trust": 0.75,
+   "vendor": "Anthropic",
+   "product": "Claude Agent SDK",
+   "window_hours": 336
+  },
+  {
+   "id": "windsurf-changelog",
+   "name": "Windsurf changelog (mirror)",
+   "kind": "changelog",
+   "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_windsurf_changelog.xml",
+   "trust": 0.75,
+   "vendor": "Cognition",
+   "product": "Windsurf",
+   "window_hours": 336
+  },
+  {
+   "id": "zed-releases",
+   "name": "Zed releases",
+   "kind": "changelog",
+   "url": "https://github.com/zed-industries/zed/releases.atom",
+   "trust": 0.75,
+   "vendor": "Zed",
+   "product": "Zed",
+   "window_hours": 336
+  },
+  {
+   "id": "replit-blog",
+   "name": "Replit blog",
+   "kind": "blog",
+   "url": "https://blog.replit.com/feed.xml",
+   "trust": 0.75,
+   "vendor": "Replit",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "bolt-changelog",
+   "name": "Bolt release notes",
+   "kind": "changelog",
+   "url": "https://support.bolt.new/release-notes/rss.xml",
+   "trust": 0.75,
+   "vendor": "StackBlitz",
+   "product": "Bolt",
+   "window_hours": 336
+  },
+  {
+   "id": "lovable-changelog",
+   "name": "Lovable changelog",
+   "kind": "changelog",
+   "url": "https://docs.lovable.dev/changelog/rss.xml",
+   "trust": 0.75,
+   "vendor": "Lovable",
+   "product": "Lovable",
+   "window_hours": 336
+  },
+  {
+   "id": "devin-release-notes",
+   "name": "Devin release notes",
+   "kind": "changelog",
+   "url": "https://docs.devin.ai/release-notes/overview/rss.xml",
+   "trust": 0.8,
+   "vendor": "Cognition",
+   "product": "Devin",
+   "window_hours": 336
+  },
+  {
+   "id": "amp-news",
+   "name": "Amp news",
+   "kind": "changelog",
+   "url": "https://ampcode.com/news.rss",
+   "trust": 0.75,
+   "vendor": "Amp",
+   "product": "Amp",
+   "window_hours": 336
+  },
+  {
+   "id": "cline-releases",
+   "name": "Cline releases",
+   "kind": "changelog",
+   "url": "https://github.com/cline/cline/releases.atom",
+   "trust": 0.75,
+   "vendor": "Cline",
+   "product": "Cline",
+   "window_hours": 336
+  },
+  {
+   "id": "openhands-releases",
+   "name": "OpenHands releases",
+   "kind": "changelog",
+   "url": "https://github.com/OpenHands/OpenHands/releases.atom",
+   "trust": 0.75,
+   "vendor": "All Hands AI",
+   "product": "OpenHands",
+   "window_hours": 336
+  },
+  {
+   "id": "goose-releases",
+   "name": "Goose releases",
+   "kind": "changelog",
+   "url": "https://github.com/block/goose/releases.atom",
+   "trust": 0.75,
+   "vendor": "Block",
+   "product": "Goose",
+   "window_hours": 336
+  },
+  {
+   "id": "kiro-changelog",
+   "name": "Kiro changelog",
+   "kind": "changelog",
+   "url": "https://kiro.dev/changelog/feed.atom",
+   "trust": 0.8,
+   "vendor": "AWS",
+   "product": "Kiro",
+   "window_hours": 336
+  },
+  {
+   "id": "langgraph-releases",
+   "name": "LangGraph releases",
+   "kind": "changelog",
+   "url": "https://github.com/langchain-ai/langgraph/releases.atom",
+   "trust": 0.75,
+   "vendor": "LangChain",
+   "product": "LangGraph",
+   "window_hours": 336
+  },
+  {
+   "id": "llama-cpp-releases",
+   "name": "llama.cpp releases",
+   "kind": "changelog",
+   "url": "https://github.com/ggml-org/llama.cpp/releases.atom",
+   "trust": 0.75,
+   "vendor": "ggml",
+   "product": "llama.cpp",
+   "window_hours": 336
+  },
+  {
+   "id": "mlx-releases",
+   "name": "MLX releases",
+   "kind": "changelog",
+   "url": "https://github.com/ml-explore/mlx/releases.atom",
+   "trust": 0.75,
+   "vendor": "Apple",
+   "product": "MLX",
+   "window_hours": 336
+  },
+  {
+   "id": "lm-studio-blog",
+   "name": "LM Studio blog",
+   "kind": "blog",
+   "url": "https://lmstudio.ai/rss.xml",
+   "trust": 0.75,
+   "vendor": "LM Studio",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "openrouter-blog",
+   "name": "OpenRouter blog and announcements",
+   "kind": "blog",
+   "url": "https://openrouter.ai/blog/feed.xml",
+   "trust": 0.75,
+   "vendor": "OpenRouter",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "sglang-releases",
+   "name": "SGLang releases",
+   "kind": "changelog",
+   "url": "https://github.com/sgl-project/sglang/releases.atom",
+   "trust": 0.75,
+   "vendor": "SGLang",
+   "product": "SGLang",
+   "window_hours": 336
+  },
+  {
+   "id": "unsloth-releases",
+   "name": "Unsloth releases",
+   "kind": "changelog",
+   "url": "https://github.com/unslothai/unsloth/releases.atom",
+   "trust": 0.75,
+   "vendor": "Unsloth",
+   "product": "Unsloth",
+   "window_hours": 336
+  },
+  {
+   "id": "mcp-python-sdk-releases",
+   "name": "MCP Python SDK releases",
+   "kind": "changelog",
+   "url": "https://github.com/modelcontextprotocol/python-sdk/releases.atom",
+   "trust": 0.75,
+   "vendor": "Model Context Protocol",
+   "product": "MCP Python SDK",
+   "window_hours": 336
+  },
+  {
+   "id": "mcp-ts-sdk-releases",
+   "name": "MCP TypeScript SDK releases",
+   "kind": "changelog",
+   "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases.atom",
+   "trust": 0.75,
+   "vendor": "Model Context Protocol",
+   "product": "MCP TypeScript SDK",
+   "window_hours": 336
+  },
+  {
+   "id": "mcp-blog",
+   "name": "Model Context Protocol blog",
+   "kind": "blog",
+   "url": "https://blog.modelcontextprotocol.io/index.xml",
+   "trust": 0.8,
+   "vendor": "Model Context Protocol",
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "copilot-cli-releases",
+   "name": "GitHub Copilot CLI releases",
+   "kind": "changelog",
+   "url": "https://github.com/github/copilot-cli/releases.atom",
+   "trust": 0.75,
+   "vendor": "GitHub",
+   "product": "Copilot CLI",
+   "window_hours": 336
+  },
+  {
+   "id": "opencode-releases",
+   "name": "opencode releases",
+   "kind": "changelog",
+   "url": "https://github.com/sst/opencode/releases.atom",
+   "trust": 0.75,
+   "vendor": "SST",
+   "product": "opencode",
+   "window_hours": 336
+  },
+  {
+   "id": "fireworks-changelog",
+   "name": "Fireworks changelog",
+   "kind": "changelog",
+   "url": "https://docs.fireworks.ai/updates/changelog/rss.xml",
+   "trust": 0.75,
+   "vendor": "Fireworks AI",
+   "product": "Fireworks platform",
+   "window_hours": 336
+  },
+  {
+   "id": "cerebras-changelog",
+   "name": "Cerebras inference changelog",
+   "kind": "changelog",
+   "url": "https://inference-docs.cerebras.ai/support/change-log/rss.xml",
+   "trust": 0.75,
+   "vendor": "Cerebras",
+   "product": "Cerebras Inference",
+   "window_hours": 336
+  },
+  {
+   "id": "perplexity-api-changelog",
+   "name": "Perplexity API changelog",
+   "kind": "changelog",
+   "url": "https://docs.perplexity.ai/docs/resources/changelog/rss.xml",
+   "trust": 0.75,
+   "vendor": "Perplexity",
+   "product": "Sonar API",
+   "window_hours": 336
+  },
+  {
+   "id": "factory-changelog",
+   "name": "Factory changelog",
+   "kind": "changelog",
+   "url": "https://docs.factory.ai/changelog/rss.xml",
+   "trust": 0.75,
+   "vendor": "Factory",
+   "product": "Droid",
+   "window_hours": 336
+  },
+  {
+   "id": "lobsters-ai",
+   "name": "Lobsters: ai tag",
+   "kind": "community",
+   "url": "https://lobste.rs/t/ai.rss",
+   "trust": 0.6,
+   "vendor": null,
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "hn-daily",
+   "name": "Hacker News Daily (top 10 per day)",
+   "kind": "community",
+   "url": "https://www.daemonology.net/hn-daily/index.rss",
+   "trust": 0.55,
+   "vendor": null,
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "hn-ai-150",
+   "name": "Hacker News stories matching AI, 150+ points (hnrss)",
+   "kind": "community",
+   "url": "https://hnrss.org/newest?q=AI&points=150",
+   "trust": 0.55,
+   "vendor": null,
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "producthunt-ai",
+   "name": "Product Hunt: AI",
+   "kind": "community",
+   "url": "https://www.producthunt.com/feed?category=artificial-intelligence",
+   "trust": 0.5,
+   "vendor": null,
+   "product": null,
+   "window_hours": 36
+  },
+  {
+   "id": "thoughtworks-insights",
+   "name": "Thoughtworks Insights (AI posts)",
+   "kind": "blog",
+   "url": "https://www.thoughtworks.com/rss/insights.xml",
+   "trust": 0.65,
+   "vendor": null,
+   "product": null,
+   "window_hours": 72,
+   "max_entries": 40,
+   "ai_only": true,
+   "pinned": true
+  },
+  {
+   "id": "martin-fowler",
+   "name": "martinfowler.com (Thoughtworks authors on building with AI)",
+   "kind": "blog",
+   "url": "https://martinfowler.com/feed.atom",
+   "trust": 0.7,
+   "vendor": null,
+   "product": null,
+   "window_hours": 72,
+   "max_entries": 30,
+   "ai_only": true
+  },
+  {
+   "id": "litellm-releases",
+   "name": "LiteLLM releases",
+   "kind": "changelog",
+   "url": "https://github.com/BerriAI/litellm/releases.atom",
+   "trust": 0.9,
+   "vendor": "berriai",
+   "product": "litellm",
+   "window_hours": 72
+  },
+  {
+   "id": "uv-releases",
+   "name": "uv releases",
+   "kind": "changelog",
+   "url": "https://github.com/astral-sh/uv/releases.atom",
+   "trust": 0.85,
+   "vendor": "astral",
+   "product": "uv",
+   "window_hours": 72
+  },
+  {
+   "id": "pydantic-ai-releases",
+   "name": "PydanticAI releases",
+   "kind": "changelog",
+   "url": "https://github.com/pydantic/pydantic-ai/releases.atom",
+   "trust": 0.85,
+   "vendor": "pydantic",
+   "product": "pydantic-ai",
+   "window_hours": 72
+  },
+  {
+   "id": "raspberry-pi-news",
+   "name": "Raspberry Pi News",
+   "kind": "blog",
+   "url": "https://www.raspberrypi.com/news/feed/",
+   "trust": 0.8,
+   "vendor": "raspberrypi",
+   "product": "pi-ai",
+   "window_hours": 96
+  },
+  {
+   "id": "qwen-blog",
+   "name": "Qwen Blog",
+   "kind": "blog",
+   "url": "https://qwenlm.github.io/blog/index.xml",
+   "trust": 0.9,
+   "vendor": "qwen",
+   "product": "qwen",
+   "window_hours": 96
+  }
+ ],
+ "apis": [
+  {
+   "id": "github-trending",
+   "name": "GitHub trending (day, week, month)",
+   "kind": "repo",
+   "url": "https://github.com/trending",
+   "trust": 0.7
+  },
+  {
+   "id": "github-new-rising",
+   "name": "GitHub new and rising (search API)",
+   "kind": "repo",
+   "url": "https://api.github.com/search/repositories",
+   "trust": 0.6
+  },
+  {
+   "id": "hacker-news",
+   "name": "Hacker News (Algolia)",
+   "kind": "community",
+   "url": "https://hn.algolia.com/api/v1/search",
+   "trust": 0.65
+  },
+  {
+   "id": "github-watched-orgs",
+   "name": "GitHub watched orgs (search API, owners the discovery loop promoted)",
+   "kind": "repo",
+   "url": "https://api.github.com/search/repositories",
+   "trust": 0.7
+  },
+  {
+   "id": "hf-trending-models",
+   "name": "Hugging Face trending models",
+   "kind": "model",
+   "url": "https://huggingface.co/api/models?sort=trendingScore",
+   "trust": 0.7
+  },
+  {
+   "id": "hf-trending-spaces",
+   "name": "Hugging Face trending spaces",
+   "kind": "space",
+   "url": "https://huggingface.co/api/spaces?sort=trendingScore",
+   "trust": 0.55
+  },
+  {
+   "id": "hf-daily-papers",
+   "name": "Hugging Face daily papers",
+   "kind": "paper",
+   "url": "https://huggingface.co/api/daily_papers",
+   "trust": 0.6
+  },
+  {
+   "id": "youtube-watchlist",
+   "name": "YouTube: every transcribed video from the merged channel roster",
+   "kind": "video",
+   "url": "local",
+   "trust": 0.6,
+   "where": "always-on machine"
+  },
+  {
+   "id": "x-saved",
+   "name": "X: posts saved while scrolling, vetted by Magpie Scout",
+   "kind": "social",
+   "url": "local",
+   "trust": 0.6,
+   "where": "always-on machine"
+  },
+  {
+   "id": "x-grok-pulse",
+   "name": "X, via dedicated Grok sweeps over the developer roster",
+   "kind": "social",
+   "url": "local",
+   "trust": 0.65,
+   "where": "always-on machine"
+  },
+  {
+   "id": "x-grok-bot",
+   "name": "X, via Grok Bot routines (inbox/x)",
+   "kind": "social",
+   "url": "repo:inbox/x",
+   "trust": 0.65
+  },
+  {
+   "id": "federal-register",
+   "name": "Federal Register (US rules, orders and notices)",
+   "kind": "policy",
+   "url": "https://www.federalregister.gov/api/v1/documents.json",
+   "trust": 0.95
+  },
+  {
+   "id": "cisa-kev",
+   "name": "CISA Known Exploited Vulnerabilities (AI and developer stack)",
+   "kind": "security",
+   "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+   "trust": 0.95
+  },
+  {
+   "id": "osv",
+   "name": "OSV.dev advisories for watched AI and developer packages",
+   "kind": "security",
+   "url": "https://api.osv.dev/v1/querybatch",
+   "trust": 0.9
+  },
+  {
+   "id": "mozilla-ca-incidents",
+   "name": "Mozilla CA incident reports (Bugzilla)",
+   "kind": "security",
+   "url": "https://bugzilla.mozilla.org/rest/bug",
+   "trust": 0.9
+  },
+  {
+   "id": "threats-inbox",
+   "name": "Threats added by hand (inbox/threats.json)",
+   "kind": "security",
+   "url": "repo:inbox/threats.json",
+   "trust": 0.85
+  }
+ ],
+ "github_orgs": [
+  {
+   "org": "deepseek-ai",
+   "why": "Discovered 2026-10-20: cited by Hacker News, X: @deepseek_ai within a week.",
+   "origin": "discovery",
+   "since": "2026-10-20",
+   "discovered_as": "github:deepseek-ai",
+   "evidence": [
+    {
+     "date": "2026-10-20",
+     "source": "Hacker News",
+     "title": "DeepSeek just open-sourced its inference engine",
+     "url": "https://github.com/deepseek-ai/DeepInfer"
+    },
+    {
+     "date": "2026-10-20",
+     "source": "X: @deepseek_ai",
+     "title": "DeepSeek open-sources the DeepInfer inference stack",
+     "url": "https://x.com/deepseek_ai/status/2112476496283775135"
     }
-  ],
-  "apis": [
+   ]
+  },
+  {
+   "org": "openbmb",
+   "why": "Discovered 2026-10-24: cited by GitHub, PyTorch blog within a week.",
+   "origin": "discovery",
+   "since": "2026-10-24",
+   "discovered_as": "github:openbmb",
+   "evidence": [
     {
-      "id": "github-trending",
-      "name": "GitHub trending (day, week, month)",
-      "kind": "repo",
-      "url": "https://github.com/trending",
-      "trust": 0.7
+     "date": "2026-10-22",
+     "source": "PyTorch blog",
+     "title": "TorchTitan Update: New SOTA Models, Performance at Scale, TitanRL",
+     "url": "https://pytorch.org/blog/torchtitan-update-new-sota-models-performance-at-scale-titanrl/"
     },
     {
-      "id": "github-new-rising",
-      "name": "GitHub new and rising (search API)",
-      "kind": "repo",
-      "url": "https://api.github.com/search/repositories",
-      "trust": 0.6
-    },
-    {
-      "id": "hacker-news",
-      "name": "Hacker News (Algolia)",
-      "kind": "community",
-      "url": "https://hn.algolia.com/api/v1/search",
-      "trust": 0.65
-    },
-    {
-      "id": "github-watched-orgs",
-      "name": "GitHub watched orgs (search API, owners the discovery loop promoted)",
-      "kind": "repo",
-      "url": "https://api.github.com/search/repositories",
-      "trust": 0.7
-    },
-    {
-      "id": "hf-trending-models",
-      "name": "Hugging Face trending models",
-      "kind": "model",
-      "url": "https://huggingface.co/api/models?sort=trendingScore",
-      "trust": 0.7
-    },
-    {
-      "id": "hf-trending-spaces",
-      "name": "Hugging Face trending spaces",
-      "kind": "space",
-      "url": "https://huggingface.co/api/spaces?sort=trendingScore",
-      "trust": 0.55
-    },
-    {
-      "id": "hf-daily-papers",
-      "name": "Hugging Face daily papers",
-      "kind": "paper",
-      "url": "https://huggingface.co/api/daily_papers",
-      "trust": 0.6
-    },
-    {
-      "id": "youtube-watchlist",
-      "name": "YouTube: every transcribed video from the merged channel roster",
-      "kind": "video",
-      "url": "local",
-      "trust": 0.6,
-      "where": "always-on machine"
-    },
-    {
-      "id": "x-saved",
-      "name": "X: posts saved while scrolling, vetted by Magpie Scout",
-      "kind": "social",
-      "url": "local",
-      "trust": 0.6,
-      "where": "always-on machine"
-    },
-    {
-      "id": "x-grok-pulse",
-      "name": "X, via dedicated Grok sweeps over the developer roster",
-      "kind": "social",
-      "url": "local",
-      "trust": 0.65,
-      "where": "always-on machine"
-    },
-    {
-      "id": "x-grok-bot",
-      "name": "X, via Grok Bot routines (inbox/x)",
-      "kind": "social",
-      "url": "repo:inbox/x",
-      "trust": 0.65
-    },
-    {
-      "id": "federal-register",
-      "name": "Federal Register (US rules, orders and notices)",
-      "kind": "policy",
-      "url": "https://www.federalregister.gov/api/v1/documents.json",
-      "trust": 0.95
-    },
-    {
-      "id": "cisa-kev",
-      "name": "CISA Known Exploited Vulnerabilities (AI and developer stack)",
-      "kind": "security",
-      "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
-      "trust": 0.95
-    },
-    {
-      "id": "osv",
-      "name": "OSV.dev advisories for watched AI and developer packages",
-      "kind": "security",
-      "url": "https://api.osv.dev/v1/querybatch",
-      "trust": 0.9
-    },
-    {
-      "id": "mozilla-ca-incidents",
-      "name": "Mozilla CA incident reports (Bugzilla)",
-      "kind": "security",
-      "url": "https://bugzilla.mozilla.org/rest/bug",
-      "trust": 0.9
-    },
-    {
-      "id": "threats-inbox",
-      "name": "Threats added by hand (inbox/threats.json)",
-      "kind": "security",
-      "url": "repo:inbox/threats.json",
-      "trust": 0.85
+     "date": "2026-10-24",
+     "source": "GitHub",
+     "title": "OpenBMB/VoxCPM",
+     "url": "https://github.com/OpenBMB/VoxCPM"
     }
-  ],
-  "github_orgs": [
+   ]
+  },
+  {
+   "org": "nvidia",
+   "why": "Discovered 2026-10-24: cited by GitHub, Hacker News within a week.",
+   "origin": "discovery",
+   "since": "2026-10-24",
+   "discovered_as": "github:nvidia",
+   "evidence": [
     {
-      "org": "deepseek-ai",
-      "why": "Discovered 2026-10-20: cited by Hacker News, X: @deepseek_ai within a week.",
-      "origin": "discovery",
-      "since": "2026-10-20",
-      "discovered_as": "github:deepseek-ai",
-      "evidence": [
-        {
-          "date": "2026-10-20",
-          "source": "Hacker News",
-          "title": "DeepSeek just open-sourced its inference engine",
-          "url": "https://github.com/deepseek-ai/DeepInfer"
-        },
-        {
-          "date": "2026-10-20",
-          "source": "X: @deepseek_ai",
-          "title": "DeepSeek open-sources the DeepInfer inference stack",
-          "url": "https://x.com/deepseek_ai/status/2112476496283775135"
-        }
-      ]
+     "date": "2026-10-19",
+     "source": "GitHub",
+     "title": "NVIDIA/OpenShell",
+     "url": "https://github.com/NVIDIA/OpenShell"
     },
     {
-      "org": "openbmb",
-      "why": "Discovered 2026-10-24: cited by GitHub, PyTorch blog within a week.",
-      "origin": "discovery",
-      "since": "2026-10-24",
-      "discovered_as": "github:openbmb",
-      "evidence": [
-        {
-          "date": "2026-10-22",
-          "source": "PyTorch blog",
-          "title": "TorchTitan Update: New SOTA Models, Performance at Scale, TitanRL",
-          "url": "https://pytorch.org/blog/torchtitan-update-new-sota-models-performance-at-scale-titanrl/"
-        },
-        {
-          "date": "2026-10-24",
-          "source": "GitHub",
-          "title": "OpenBMB/VoxCPM",
-          "url": "https://github.com/OpenBMB/VoxCPM"
-        }
-      ]
-    },
-    {
-      "org": "nvidia",
-      "why": "Discovered 2026-10-24: cited by GitHub, Hacker News within a week.",
-      "origin": "discovery",
-      "since": "2026-10-24",
-      "discovered_as": "github:nvidia",
-      "evidence": [
-        {
-          "date": "2026-10-19",
-          "source": "GitHub",
-          "title": "NVIDIA/OpenShell",
-          "url": "https://github.com/NVIDIA/OpenShell"
-        },
-        {
-          "date": "2026-10-23",
-          "source": "Hacker News",
-          "title": "OpenShell \u2013 A safe, private runtime for fleets of autonomous AI agents",
-          "url": "https://github.com/NVIDIA/OpenShell"
-        }
-      ]
-    },
-    {
-      "org": "google-research",
-      "why": "Discovered 2026-10-24: cited by Hacker News, X: @askalphaxiv within a week.",
-      "origin": "discovery",
-      "since": "2026-10-24",
-      "discovered_as": "github:google-research",
-      "evidence": [
-        {
-          "date": "2026-10-19",
-          "source": "Hacker News",
-          "title": "Harness2 by Google Research \u2013 Recursive Agent Harnessing",
-          "url": "https://github.com/google-research/harness2"
-        },
-        {
-          "date": "2026-10-22",
-          "source": "X: @askalphaxiv",
-          "title": "Google's Harness2 recursively improves agent harnesses without weight updates",
-          "url": "https://x.com/askalphaxiv/status/2112863284147724678"
-        }
-      ]
-    },
-    {
-      "org": "anomalyco",
-      "why": "Discovered 2026-10-31: cited by GitHub, Latent Space, opencode releases within a week.",
-      "origin": "discovery",
-      "since": "2026-10-31",
-      "discovered_as": "github:anomalyco",
-      "evidence": [
-        {
-          "date": "2026-10-25",
-          "source": "GitHub",
-          "title": "anomalyco/opencode",
-          "url": "https://github.com/anomalyco/opencode"
-        },
-        {
-          "date": "2026-10-25",
-          "source": "opencode releases",
-          "title": "github-v1.2.28: chore(github): pin actions/cache to commit SHA in GitHub Action (#58769)",
-          "url": "https://github.com/anomalyco/opencode/releases/tag/github-v1.2.28"
-        },
-        {
-          "date": "2026-10-25",
-          "source": "opencode releases",
-          "title": "v2.1.4",
-          "url": "https://github.com/anomalyco/opencode/releases/tag/v2.1.4"
-        }
-      ]
-    },
-    {
-      "org": "microsoft",
-      "why": "Discovered 2026-10-31: cited by Hacker News, Microsoft Research blog, X: @aitrackerbot within a week.",
-      "origin": "discovery",
-      "since": "2026-10-31",
-      "discovered_as": "github:microsoft",
-      "evidence": [
-        {
-          "date": "2026-10-27",
-          "source": "Hacker News",
-          "title": "Type Server Protocol",
-          "url": "https://github.com/microsoft/pylance-release/blob/main/docs/tsp/type-server-protocol.md"
-        },
-        {
-          "date": "2026-10-30",
-          "source": "Microsoft Research blog",
-          "title": "Microsoft Research Focus \u2013 Edition #97",
-          "url": "https://www.microsoft.com/en-us/research/podcast/microsoft-research-focus-edition-97/"
-        },
-        {
-          "date": "2026-10-31",
-          "source": "X: @aitrackerbot",
-          "title": "Microsoft releases Mage-VL-Cowork: a 4B computer-use model that mixes GUI clicks and terminal commands, 66.0% on OSWorld-Verified",
-          "url": "https://x.com/aitrackerbot/status/2116143353213428048"
-        }
-      ]
-    },
-    {
-      "org": "inclusionai",
-      "why": "Discovered 2026-10-31: cited by X: @AntLingAGI, X: @TheInclusionAI, X: @aitrackerbot within a week.",
-      "origin": "discovery",
-      "since": "2026-10-31",
-      "discovered_as": "github:inclusionai",
-      "evidence": [
-        {
-          "date": "2026-10-27",
-          "source": "X: @aitrackerbot",
-          "title": "inclusionAI publishes LBS-27B, a vision model that learns where to zoom from GUI grounding",
-          "url": "https://x.com/aitrackerbot/status/2114678751535493186"
-        },
-        {
-          "date": "2026-10-29",
-          "source": "X: @AntLingAGI",
-          "title": "Ling-3.0-flash inference stack measured on DGX Spark",
-          "url": "https://x.com/AntLingAGI/status/2115680331399664105"
-        },
-        {
-          "date": "2026-10-30",
-          "source": "X: @TheInclusionAI",
-          "title": "inclusionAI ZwZ2: 4B, 9B and 27B vision models gain on all 25 benchmarks from 20.4K RLVR examples",
-          "url": "https://x.com/TheInclusionAI/status/2115805865852715491"
-        }
-      ]
-    },
-    {
-      "org": "zagitta",
-      "why": "Discovered 2026-10-31: cited by Hacker News, Latent Space within a week.",
-      "origin": "discovery",
-      "since": "2026-10-31",
-      "discovered_as": "github:zagitta",
-      "evidence": [
-        {
-          "date": "2026-10-25",
-          "source": "Latent Space",
-          "title": "[AINews] Kimi 3.1 Pro 104BA-2.8T: Fable-5.1-Class Open Weights narrows Closed-AI lead to 1 month... and Pro Highspeed API with 2-3\u00d7 speed",
-          "url": "https://latent.space/p/ainews-kimi-31/"
-        },
-        {
-          "date": "2026-10-25",
-          "source": "Hacker News",
-          "title": "GPU-unlock: FP/BF16 instruction issue rate on Nvidia 3000's cards",
-          "url": "https://github.com/Zagitta/gpu-unlock"
-        },
-        {
-          "date": "2026-10-28",
-          "source": "Latent Space",
-          "title": "[AINews] Anthropic ends Coding Interviews: \"Hunger beats tenure\"",
-          "url": "https://latent.space/p/ainews-anthropic-ends-coding-interviews-hunger-beats-tenure/"
-        }
-      ]
-    },
-    {
-      "org": "nousresearch",
-      "why": "Discovered 2026-10-31: cited by Interconnects, X: @Teknium within a week.",
-      "origin": "discovery",
-      "since": "2026-10-31",
-      "discovered_as": "github:nousresearch",
-      "evidence": [
-        {
-          "date": "2026-10-25",
-          "source": "X: @Teknium",
-          "title": "Hermes Agent restores web search after Blank Slate setup",
-          "url": "https://x.com/Teknium/status/2114175172874047764"
-        },
-        {
-          "date": "2026-10-26",
-          "source": "Interconnects",
-          "title": "Podcast: Kimi K3.1 Pro, the new cyber reality, and Muse musings",
-          "url": "https://www.interconnects.ai/p/podcast-kimi-k31-pro-the-new-cyber"
-        }
-      ]
-    },
-    {
-      "org": "google",
-      "why": "Discovered 2026-11-07: cited by GitHub, SemiAnalysis, X: @antigravity within a week.",
-      "origin": "discovery",
-      "since": "2026-11-07",
-      "discovered_as": "github:google",
-      "evidence": [
-        {
-          "date": "2026-11-04",
-          "source": "X: @antigravity",
-          "title": "Antigravity migrates a 174k-line Fortran model to safe Rust in 59 minutes",
-          "url": "https://x.com/antigravity/status/2117773996695367851"
-        },
-        {
-          "date": "2026-11-05",
-          "source": "GitHub",
-          "title": "google/skills",
-          "url": "https://github.com/google/skills"
-        },
-        {
-          "date": "2026-11-06",
-          "source": "SemiAnalysis",
-          "title": "The Iron(wood) Throne: Google's TPU Stakes Its Claim on Inference",
-          "url": "https://newsletter.semianalysis.com/p/tpu-strikes-the-king"
-        }
-      ]
-    },
-    {
-      "org": "rikiyat",
-      "why": "Discovered 2026-11-07: cited by Simon Willison, X: @simonw within a week.",
-      "origin": "discovery",
-      "since": "2026-11-07",
-      "discovered_as": "github:rikiyat",
-      "evidence": [
-        {
-          "date": "2026-11-04",
-          "source": "X: @simonw",
-          "title": "Simon Willison: Qwen 3.8 27B on a laptop also identifies games from raw policy-network weights",
-          "url": "https://x.com/simonw/status/2117655816581071203"
-        },
-        {
-          "date": "2026-11-04",
-          "source": "Simon Willison",
-          "title": "Qwen 3.8 27B on my laptop can interpret model weights, too",
-          "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/"
-        }
-      ]
-    },
-    {
-      "org": "dsx-ai-factory",
-      "why": "Discovered 2026-11-07: cited by GitHub, Hacker News within a week.",
-      "origin": "discovery",
-      "since": "2026-11-07",
-      "discovered_as": "github:dsx-ai-factory",
-      "evidence": [
-        {
-          "date": "2026-11-06",
-          "source": "Hacker News",
-          "title": "Nvidia Kubernetes Engine (NVKE)",
-          "url": "https://github.com/dsx-ai-factory/nvke"
-        },
-        {
-          "date": "2026-11-07",
-          "source": "GitHub",
-          "title": "dsx-ai-factory/nvke",
-          "url": "https://github.com/dsx-ai-factory/nvke"
-        }
-      ]
-    },
-    {
-      "org": "p-e-w",
-      "why": "Discovered 2026-11-07: cited by GitHub, Latent Space within a week.",
-      "origin": "discovery",
-      "since": "2026-11-07",
-      "discovered_as": "github:p-e-w",
-      "evidence": [
-        {
-          "date": "2026-11-02",
-          "source": "GitHub",
-          "title": "p-e-w/heretic",
-          "url": "https://github.com/p-e-w/heretic"
-        },
-        {
-          "date": "2026-11-03",
-          "source": "Latent Space",
-          "title": "[AINews] LLMs can read & write neural network weights: \"Weight Space Programming\" cuts Autoresearch out of the RSI loop",
-          "url": "https://latent.space/p/ainews-llms-can-read-write-neural-network-weights-weight-space-programming-cuts-autoresearch-out-of/"
-        }
-      ]
-    },
-    {
-      "org": "aws",
-      "why": "Discovered 2026-11-14: cited by AWS Machine Learning blog, Hacker News, Simon Willison within a week.",
-      "origin": "discovery",
-      "since": "2026-11-14",
-      "discovered_as": "github:aws",
-      "evidence": [
-        {
-          "date": "2026-11-11",
-          "source": "AWS Machine Learning blog",
-          "title": "Build a daily dependency watcher with LangGraph and Amazon Bedrock AgentCore web search",
-          "url": "https://aws.amazon.com/blogs/machine-learning/build-a-daily-dependency-watcher-with-langgraph-and-amazon-bedrock-agentcore-web-search/"
-        },
-        {
-          "date": "2026-11-12",
-          "source": "Simon Willison",
-          "title": "aws-emulator",
-          "url": "https://simonwillison.net/2026/Nov/11/aws-emulator/"
-        },
-        {
-          "date": "2026-11-12",
-          "source": "AWS Machine Learning blog",
-          "title": "Introducing the Web Search API on Amazon Bedrock AgentCore",
-          "url": "https://aws.amazon.com/blogs/machine-learning/introducing-the-web-search-api-on-amazon-bedrock-agentcore/"
-        }
-      ]
-    },
-    {
-      "org": "googlechrome",
-      "why": "Discovered 2026-11-14: cited by GitHub, Hacker News within a week.",
-      "origin": "discovery",
-      "since": "2026-11-14",
-      "discovered_as": "github:googlechrome",
-      "evidence": [
-        {
-          "date": "2026-11-11",
-          "source": "Hacker News",
-          "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
-          "url": "https://github.com/GoogleChrome/modern-web-guidance"
-        },
-        {
-          "date": "2026-11-11",
-          "source": "GitHub",
-          "title": "GoogleChrome/modern-web-guidance-src",
-          "url": "https://github.com/GoogleChrome/modern-web-guidance-src"
-        }
-      ]
-    },
-    {
-      "org": "facebookresearch",
-      "why": "Discovered 2026-11-14: cited by Import AI, X: @askalphaxiv within a week.",
-      "origin": "discovery",
-      "since": "2026-11-14",
-      "discovered_as": "github:facebookresearch",
-      "evidence": [
-        {
-          "date": "2026-11-10",
-          "source": "Import AI",
-          "title": "Import AI 480: Self-sustaining space economies; AI for science progress, and Meta builds perfect hands for a superintelligence",
-          "url": "https://jack-clark.net/2026/11/09/import-ai-480-self-sustaining-space-economies-ai-for-science-progress-and-meta-builds-perfect-hands-for-a-superintelligence/"
-        },
-        {
-          "date": "2026-11-12",
-          "source": "X: @askalphaxiv",
-          "title": "e-means clusters embeddings with far fewer passes than k-means",
-          "url": "https://x.com/askalphaxiv/status/2120493744961323288"
-        }
-      ]
-    },
-    {
-      "org": "robbyant",
-      "why": "Discovered 2026-11-14: cited by X: @_akhaliq, X: @omarsar0 within a week.",
-      "origin": "discovery",
-      "since": "2026-11-14",
-      "discovered_as": "github:robbyant",
-      "evidence": [
-        {
-          "date": "2026-11-10",
-          "source": "X: @_akhaliq",
-          "title": "Robbyant open-sources the LingBot-Touch tactile model",
-          "url": "https://x.com/_akhaliq/status/2120069540680011974"
-        },
-        {
-          "date": "2026-11-11",
-          "source": "X: @omarsar0",
-          "title": "LingBot-Touch transfers touch across robot sensors",
-          "url": "https://x.com/omarsar0/status/2120223370470096952"
-        }
-      ]
-    },
-    {
-      "org": "agentic-learning-ai-lab",
-      "why": "Discovered 2026-11-14: cited by Latent Space, X: @askalphaxiv within a week.",
-      "origin": "discovery",
-      "since": "2026-11-14",
-      "discovered_as": "github:agentic-learning-ai-lab",
-      "evidence": [
-        {
-          "date": "2026-11-11",
-          "source": "Latent Space",
-          "title": "[AINews] Mercor $750m Series D at $20B valuation, $3B run rate",
-          "url": "https://latent.space/p/ainews-mercor-750m-series-d-at-20b-valuation-3b-run-rate/"
-        },
-        {
-          "date": "2026-11-12",
-          "source": "Latent Space",
-          "title": "[AINews] D-Day (Decision Models Day)",
-          "url": "https://latent.space/p/ainews-d-day-decision-models-day/"
-        },
-        {
-          "date": "2026-11-13",
-          "source": "X: @askalphaxiv",
-          "title": "Deletion Tuning matches full fine-tuning by zeroing weights",
-          "url": "https://x.com/askalphaxiv/status/2121026756949979417"
-        }
-      ]
+     "date": "2026-10-23",
+     "source": "Hacker News",
+     "title": "OpenShell – A safe, private runtime for fleets of autonomous AI agents",
+     "url": "https://github.com/NVIDIA/OpenShell"
     }
-  ],
-  "policy_feeds": [
+   ]
+  },
+  {
+   "org": "google-research",
+   "why": "Discovered 2026-10-24: cited by Hacker News, X: @askalphaxiv within a week.",
+   "origin": "discovery",
+   "since": "2026-10-24",
+   "discovered_as": "github:google-research",
+   "evidence": [
     {
-      "id": "whitehouse-actions",
-      "name": "The White House: presidential actions",
-      "kind": "policy",
-      "url": "https://www.whitehouse.gov/presidential-actions/feed/",
-      "trust": 0.9,
-      "jurisdiction": "US",
-      "issuer": "The White House",
-      "window_hours": 96,
-      "max_entries": 40
+     "date": "2026-10-19",
+     "source": "Hacker News",
+     "title": "Harness2 by Google Research – Recursive Agent Harnessing",
+     "url": "https://github.com/google-research/harness2"
     },
     {
-      "id": "nist-news",
-      "name": "NIST news (includes CAISI)",
-      "kind": "policy",
-      "url": "https://www.nist.gov/news-events/news/rss.xml",
-      "trust": 0.85,
-      "jurisdiction": "US",
-      "issuer": "NIST",
-      "window_hours": 96,
-      "max_entries": 40
-    },
-    {
-      "id": "eu-digital-strategy",
-      "name": "European Commission: digital strategy (AI Act)",
-      "kind": "policy",
-      "url": "https://digital-strategy.ec.europa.eu/en/rss.xml",
-      "trust": 0.9,
-      "jurisdiction": "EU",
-      "issuer": "European Commission",
-      "window_hours": 96,
-      "max_entries": 40
-    },
-    {
-      "id": "uk-aisi",
-      "name": "UK AI Security Institute",
-      "kind": "policy",
-      "url": "https://www.gov.uk/search/news-and-communications.atom?organisations%5B%5D=ai-security-institute",
-      "trust": 0.85,
-      "jurisdiction": "UK",
-      "issuer": "UK AI Security Institute",
-      "window_hours": 96,
-      "max_entries": 40
-    },
-    {
-      "id": "uk-dsit",
-      "name": "UK Department for Science, Innovation and Technology",
-      "kind": "policy",
-      "url": "https://www.gov.uk/search/news-and-communications.atom?organisations%5B%5D=department-for-science-innovation-and-technology",
-      "trust": 0.85,
-      "jurisdiction": "UK",
-      "issuer": "UK Department for Science, Innovation and Technology",
-      "window_hours": 96,
-      "max_entries": 40
-    },
-    {
-      "id": "china-law-translate",
-      "name": "China Law Translate (translations of Chinese rules)",
-      "kind": "policy",
-      "url": "https://www.chinalawtranslate.com/en/feed/",
-      "trust": 0.75,
-      "jurisdiction": "China",
-      "issuer": "China Law Translate",
-      "primary": false,
-      "window_hours": 168,
-      "max_entries": 30
+     "date": "2026-10-22",
+     "source": "X: @askalphaxiv",
+     "title": "Google's Harness2 recursively improves agent harnesses without weight updates",
+     "url": "https://x.com/askalphaxiv/status/2112863284147724678"
     }
-  ],
-  "benched": [
+   ]
+  },
+  {
+   "org": "anomalyco",
+   "why": "Discovered 2026-10-31: cited by GitHub, Latent Space, opencode releases within a week.",
+   "origin": "discovery",
+   "since": "2026-10-31",
+   "discovered_as": "github:anomalyco",
+   "evidence": [
     {
-      "id": "ainews",
-      "name": "AINews (smol.ai)",
-      "kind": "newsletter",
-      "url": "https://news.smol.ai/rss.xml",
-      "trust": 0.75,
-      "vendor": null,
-      "product": null,
-      "window_hours": 48,
-      "benched": {
-        "date": "2026-11-14",
-        "reason": "zero kept items in the last 21 live editions"
-      }
+     "date": "2026-10-25",
+     "source": "GitHub",
+     "title": "anomalyco/opencode",
+     "url": "https://github.com/anomalyco/opencode"
     },
     {
-      "id": "the-batch",
-      "name": "The Batch (DeepLearning.AI)",
-      "kind": "newsletter",
-      "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_the_batch.xml",
-      "trust": 0.75,
-      "vendor": null,
-      "product": null,
-      "window_hours": 96,
-      "benched": {
-        "date": "2026-11-14",
-        "reason": "zero kept items in the last 21 live editions"
-      }
+     "date": "2026-10-25",
+     "source": "opencode releases",
+     "title": "github-v1.2.28: chore(github): pin actions/cache to commit SHA in GitHub Action (#58769)",
+     "url": "https://github.com/anomalyco/opencode/releases/tag/github-v1.2.28"
     },
     {
-      "id": "gradient-flow",
-      "name": "Gradient Flow",
-      "kind": "newsletter",
-      "url": "https://gradientflow.substack.com/feed",
-      "trust": 0.75,
-      "vendor": null,
-      "product": null,
-      "window_hours": 96,
-      "benched": {
-        "date": "2026-11-14",
-        "reason": "zero kept items in the last 21 live editions"
-      }
-    },
-    {
-      "id": "one-useful-thing",
-      "name": "One Useful Thing (Ethan Mollick)",
-      "kind": "newsletter",
-      "url": "https://www.oneusefulthing.org/feed",
-      "trust": 0.8,
-      "vendor": null,
-      "product": null,
-      "window_hours": 96,
-      "benched": {
-        "date": "2026-11-14",
-        "reason": "zero kept items in the last 21 live editions"
-      }
-    },
-    {
-      "id": "hamel-husain",
-      "name": "Hamel Husain",
-      "kind": "blog",
-      "url": "https://hamel.dev/index.xml",
-      "trust": 0.8,
-      "vendor": null,
-      "product": null,
-      "window_hours": 36,
-      "benched": {
-        "date": "2026-11-14",
-        "reason": "zero kept items in the last 21 live editions"
-      }
-    },
-    {
-      "id": "metr",
-      "name": "METR",
-      "kind": "blog",
-      "url": "https://metr.org/feed.xml",
-      "trust": 0.85,
-      "vendor": null,
-      "product": null,
-      "window_hours": 36,
-      "benched": {
-        "date": "2026-11-14",
-        "reason": "zero kept items in the last 21 live editions"
-      }
-    },
-    {
-      "id": "ai-as-normal-tech",
-      "name": "AI as Normal Technology (Narayanan and Kapoor)",
-      "kind": "newsletter",
-      "url": "https://www.normaltech.ai/feed",
-      "trust": 0.8,
-      "vendor": null,
-      "product": null,
-      "window_hours": 96,
-      "benched": {
-        "date": "2026-11-14",
-        "reason": "zero kept items in the last 21 live editions"
-      }
-    },
-    {
-      "id": "coding-with-intelligence",
-      "name": "Coding with Intelligence",
-      "kind": "newsletter",
-      "url": "https://codingwithintelligence.com/feed",
-      "trust": 0.7,
-      "vendor": null,
-      "product": null,
-      "window_hours": 96,
-      "benched": {
-        "date": "2026-11-14",
-        "reason": "zero kept items in the last 21 live editions"
-      }
-    },
-    {
-      "id": "lobsters-vibecoding",
-      "name": "Lobsters: vibecoding tag",
-      "kind": "community",
-      "url": "https://lobste.rs/t/vibecoding.rss",
-      "trust": 0.55,
-      "vendor": null,
-      "product": null,
-      "window_hours": 36,
-      "benched": {
-        "date": "2026-11-14",
-        "reason": "zero kept items in the last 21 live editions"
-      }
-    },
-    {
-      "org": "thoughtworks",
-      "why": "Owner added 2026-10-20: Thoughtworks open source.",
-      "origin": "owner",
-      "since": "2026-10-20",
-      "benched": {
-        "date": "2026-11-14",
-        "reason": "zero kept items in the last 21 live editions"
-      }
-    },
-    {
-      "org": "google-pytorch",
-      "why": "Discovered 2026-10-24: cited by Hacker News, PyTorch blog, X: @PyTorch within a week.",
-      "origin": "discovery",
-      "since": "2026-10-24",
-      "discovered_as": "github:google-pytorch",
-      "evidence": [
-        {
-          "date": "2026-10-21",
-          "source": "X: @PyTorch",
-          "title": "Google and Meta open-source TorchTPU, native PyTorch on TPUs",
-          "url": "https://x.com/PyTorch/status/2112601000670322787"
-        },
-        {
-          "date": "2026-10-21",
-          "source": "Hacker News",
-          "title": "Google open-sources TorchTPU, a native PyTorch back end for TPUs",
-          "url": "https://github.com/google-pytorch/torch_tpu"
-        },
-        {
-          "date": "2026-10-21",
-          "source": "PyTorch blog",
-          "title": "Introducing TorchTPU",
-          "url": "https://pytorch.org/blog/introducing-torchtpu/"
-        }
-      ],
-      "benched": {
-        "date": "2026-11-14",
-        "reason": "zero kept items in the last 21 live editions"
-      }
-    },
-    {
-      "org": "meta-pytorch",
-      "why": "Discovered 2026-10-24: cited by PyTorch blog, SemiAnalysis within a week.",
-      "origin": "discovery",
-      "since": "2026-10-24",
-      "discovered_as": "github:meta-pytorch",
-      "evidence": [
-        {
-          "date": "2026-10-22",
-          "source": "PyTorch blog",
-          "title": "TorchTitan Update: New SOTA Models, Performance at Scale, TitanRL",
-          "url": "https://pytorch.org/blog/torchtitan-update-new-sota-models-performance-at-scale-titanrl/"
-        },
-        {
-          "date": "2026-10-24",
-          "source": "SemiAnalysis",
-          "title": "Amazon\u2019s Trainium Takes a Strike at the Training King",
-          "url": "https://newsletter.semianalysis.com/p/amazons-trainium-takes-a-strike-at"
-        }
-      ],
-      "benched": {
-        "date": "2026-11-14",
-        "reason": "zero kept items in the last 21 live editions"
-      }
+     "date": "2026-10-25",
+     "source": "opencode releases",
+     "title": "v2.1.4",
+     "url": "https://github.com/anomalyco/opencode/releases/tag/v2.1.4"
     }
-  ]
+   ]
+  },
+  {
+   "org": "microsoft",
+   "why": "Discovered 2026-10-31: cited by Hacker News, Microsoft Research blog, X: @aitrackerbot within a week.",
+   "origin": "discovery",
+   "since": "2026-10-31",
+   "discovered_as": "github:microsoft",
+   "evidence": [
+    {
+     "date": "2026-10-27",
+     "source": "Hacker News",
+     "title": "Type Server Protocol",
+     "url": "https://github.com/microsoft/pylance-release/blob/main/docs/tsp/type-server-protocol.md"
+    },
+    {
+     "date": "2026-10-30",
+     "source": "Microsoft Research blog",
+     "title": "Microsoft Research Focus – Edition #97",
+     "url": "https://www.microsoft.com/en-us/research/podcast/microsoft-research-focus-edition-97/"
+    },
+    {
+     "date": "2026-10-31",
+     "source": "X: @aitrackerbot",
+     "title": "Microsoft releases Mage-VL-Cowork: a 4B computer-use model that mixes GUI clicks and terminal commands, 66.0% on OSWorld-Verified",
+     "url": "https://x.com/aitrackerbot/status/2116143353213428048"
+    }
+   ]
+  },
+  {
+   "org": "inclusionai",
+   "why": "Discovered 2026-10-31: cited by X: @AntLingAGI, X: @TheInclusionAI, X: @aitrackerbot within a week.",
+   "origin": "discovery",
+   "since": "2026-10-31",
+   "discovered_as": "github:inclusionai",
+   "evidence": [
+    {
+     "date": "2026-10-27",
+     "source": "X: @aitrackerbot",
+     "title": "inclusionAI publishes LBS-27B, a vision model that learns where to zoom from GUI grounding",
+     "url": "https://x.com/aitrackerbot/status/2114678751535493186"
+    },
+    {
+     "date": "2026-10-29",
+     "source": "X: @AntLingAGI",
+     "title": "Ling-3.0-flash inference stack measured on DGX Spark",
+     "url": "https://x.com/AntLingAGI/status/2115680331399664105"
+    },
+    {
+     "date": "2026-10-30",
+     "source": "X: @TheInclusionAI",
+     "title": "inclusionAI ZwZ2: 4B, 9B and 27B vision models gain on all 25 benchmarks from 20.4K RLVR examples",
+     "url": "https://x.com/TheInclusionAI/status/2115805865852715491"
+    }
+   ]
+  },
+  {
+   "org": "nousresearch",
+   "why": "Discovered 2026-10-31: cited by Interconnects, X: @Teknium within a week.",
+   "origin": "discovery",
+   "since": "2026-10-31",
+   "discovered_as": "github:nousresearch",
+   "evidence": [
+    {
+     "date": "2026-10-25",
+     "source": "X: @Teknium",
+     "title": "Hermes Agent restores web search after Blank Slate setup",
+     "url": "https://x.com/Teknium/status/2114175172874047764"
+    },
+    {
+     "date": "2026-10-26",
+     "source": "Interconnects",
+     "title": "Podcast: Kimi K3.1 Pro, the new cyber reality, and Muse musings",
+     "url": "https://www.interconnects.ai/p/podcast-kimi-k31-pro-the-new-cyber"
+    }
+   ]
+  },
+  {
+   "org": "google",
+   "why": "Discovered 2026-11-07: cited by GitHub, SemiAnalysis, X: @antigravity within a week.",
+   "origin": "discovery",
+   "since": "2026-11-07",
+   "discovered_as": "github:google",
+   "evidence": [
+    {
+     "date": "2026-11-04",
+     "source": "X: @antigravity",
+     "title": "Antigravity migrates a 174k-line Fortran model to safe Rust in 59 minutes",
+     "url": "https://x.com/antigravity/status/2117773996695367851"
+    },
+    {
+     "date": "2026-11-05",
+     "source": "GitHub",
+     "title": "google/skills",
+     "url": "https://github.com/google/skills"
+    },
+    {
+     "date": "2026-11-06",
+     "source": "SemiAnalysis",
+     "title": "The Iron(wood) Throne: Google's TPU Stakes Its Claim on Inference",
+     "url": "https://newsletter.semianalysis.com/p/tpu-strikes-the-king"
+    }
+   ]
+  },
+  {
+   "org": "rikiyat",
+   "why": "Discovered 2026-11-07: cited by Simon Willison, X: @simonw within a week.",
+   "origin": "discovery",
+   "since": "2026-11-07",
+   "discovered_as": "github:rikiyat",
+   "evidence": [
+    {
+     "date": "2026-11-04",
+     "source": "X: @simonw",
+     "title": "Simon Willison: Qwen 3.8 27B on a laptop also identifies games from raw policy-network weights",
+     "url": "https://x.com/simonw/status/2117655816581071203"
+    },
+    {
+     "date": "2026-11-04",
+     "source": "Simon Willison",
+     "title": "Qwen 3.8 27B on my laptop can interpret model weights, too",
+     "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/"
+    }
+   ]
+  },
+  {
+   "org": "dsx-ai-factory",
+   "why": "Discovered 2026-11-07: cited by GitHub, Hacker News within a week.",
+   "origin": "discovery",
+   "since": "2026-11-07",
+   "discovered_as": "github:dsx-ai-factory",
+   "evidence": [
+    {
+     "date": "2026-11-06",
+     "source": "Hacker News",
+     "title": "Nvidia Kubernetes Engine (NVKE)",
+     "url": "https://github.com/dsx-ai-factory/nvke"
+    },
+    {
+     "date": "2026-11-07",
+     "source": "GitHub",
+     "title": "dsx-ai-factory/nvke",
+     "url": "https://github.com/dsx-ai-factory/nvke"
+    }
+   ]
+  },
+  {
+   "org": "p-e-w",
+   "why": "Discovered 2026-11-07: cited by GitHub, Latent Space within a week.",
+   "origin": "discovery",
+   "since": "2026-11-07",
+   "discovered_as": "github:p-e-w",
+   "evidence": [
+    {
+     "date": "2026-11-02",
+     "source": "GitHub",
+     "title": "p-e-w/heretic",
+     "url": "https://github.com/p-e-w/heretic"
+    },
+    {
+     "date": "2026-11-03",
+     "source": "Latent Space",
+     "title": "[AINews] LLMs can read & write neural network weights: \"Weight Space Programming\" cuts Autoresearch out of the RSI loop",
+     "url": "https://latent.space/p/ainews-llms-can-read-write-neural-network-weights-weight-space-programming-cuts-autoresearch-out-of/"
+    }
+   ]
+  },
+  {
+   "org": "aws",
+   "why": "Discovered 2026-11-14: cited by AWS Machine Learning blog, Hacker News, Simon Willison within a week.",
+   "origin": "discovery",
+   "since": "2026-11-14",
+   "discovered_as": "github:aws",
+   "evidence": [
+    {
+     "date": "2026-11-11",
+     "source": "AWS Machine Learning blog",
+     "title": "Build a daily dependency watcher with LangGraph and Amazon Bedrock AgentCore web search",
+     "url": "https://aws.amazon.com/blogs/machine-learning/build-a-daily-dependency-watcher-with-langgraph-and-amazon-bedrock-agentcore-web-search/"
+    },
+    {
+     "date": "2026-11-12",
+     "source": "Simon Willison",
+     "title": "aws-emulator",
+     "url": "https://simonwillison.net/2026/Nov/11/aws-emulator/"
+    },
+    {
+     "date": "2026-11-12",
+     "source": "AWS Machine Learning blog",
+     "title": "Introducing the Web Search API on Amazon Bedrock AgentCore",
+     "url": "https://aws.amazon.com/blogs/machine-learning/introducing-the-web-search-api-on-amazon-bedrock-agentcore/"
+    }
+   ]
+  },
+  {
+   "org": "googlechrome",
+   "why": "Discovered 2026-11-14: cited by GitHub, Hacker News within a week.",
+   "origin": "discovery",
+   "since": "2026-11-14",
+   "discovered_as": "github:googlechrome",
+   "evidence": [
+    {
+     "date": "2026-11-11",
+     "source": "Hacker News",
+     "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
+     "url": "https://github.com/GoogleChrome/modern-web-guidance"
+    },
+    {
+     "date": "2026-11-11",
+     "source": "GitHub",
+     "title": "GoogleChrome/modern-web-guidance-src",
+     "url": "https://github.com/GoogleChrome/modern-web-guidance-src"
+    }
+   ]
+  },
+  {
+   "org": "facebookresearch",
+   "why": "Discovered 2026-11-14: cited by Import AI, X: @askalphaxiv within a week.",
+   "origin": "discovery",
+   "since": "2026-11-14",
+   "discovered_as": "github:facebookresearch",
+   "evidence": [
+    {
+     "date": "2026-11-10",
+     "source": "Import AI",
+     "title": "Import AI 480: Self-sustaining space economies; AI for science progress, and Meta builds perfect hands for a superintelligence",
+     "url": "https://jack-clark.net/2026/11/09/import-ai-480-self-sustaining-space-economies-ai-for-science-progress-and-meta-builds-perfect-hands-for-a-superintelligence/"
+    },
+    {
+     "date": "2026-11-12",
+     "source": "X: @askalphaxiv",
+     "title": "e-means clusters embeddings with far fewer passes than k-means",
+     "url": "https://x.com/askalphaxiv/status/2120493744961323288"
+    }
+   ]
+  },
+  {
+   "org": "robbyant",
+   "why": "Discovered 2026-11-14: cited by X: @_akhaliq, X: @omarsar0 within a week.",
+   "origin": "discovery",
+   "since": "2026-11-14",
+   "discovered_as": "github:robbyant",
+   "evidence": [
+    {
+     "date": "2026-11-10",
+     "source": "X: @_akhaliq",
+     "title": "Robbyant open-sources the LingBot-Touch tactile model",
+     "url": "https://x.com/_akhaliq/status/2120069540680011974"
+    },
+    {
+     "date": "2026-11-11",
+     "source": "X: @omarsar0",
+     "title": "LingBot-Touch transfers touch across robot sensors",
+     "url": "https://x.com/omarsar0/status/2120223370470096952"
+    }
+   ]
+  },
+  {
+   "org": "agentic-learning-ai-lab",
+   "why": "Discovered 2026-11-14: cited by Latent Space, X: @askalphaxiv within a week.",
+   "origin": "discovery",
+   "since": "2026-11-14",
+   "discovered_as": "github:agentic-learning-ai-lab",
+   "evidence": [
+    {
+     "date": "2026-11-11",
+     "source": "Latent Space",
+     "title": "[AINews] Mercor $750m Series D at $20B valuation, $3B run rate",
+     "url": "https://latent.space/p/ainews-mercor-750m-series-d-at-20b-valuation-3b-run-rate/"
+    },
+    {
+     "date": "2026-11-12",
+     "source": "Latent Space",
+     "title": "[AINews] D-Day (Decision Models Day)",
+     "url": "https://latent.space/p/ainews-d-day-decision-models-day/"
+    },
+    {
+     "date": "2026-11-13",
+     "source": "X: @askalphaxiv",
+     "title": "Deletion Tuning matches full fine-tuning by zeroing weights",
+     "url": "https://x.com/askalphaxiv/status/2121026756949979417"
+    }
+   ]
+  },
+  {
+   "org": "tencent-hunyuan",
+   "why": "Discovered 2026-11-21: cited by Latent Space, X: @TencentHunyuan within a week.",
+   "origin": "discovery",
+   "since": "2026-11-21",
+   "discovered_as": "github:tencent-hunyuan",
+   "evidence": [
+    {
+     "date": "2026-11-21",
+     "source": "X: @TencentHunyuan",
+     "title": "Tencent opens Hy4 flagship weights: 770B total, 49B active MoE, 1M context, natively multimodal, with FP8, Base and GGUF builds",
+     "url": "https://x.com/TencentHunyuan/status/2123625549147070538"
+    },
+    {
+     "date": "2026-11-21",
+     "source": "Latent Space",
+     "title": "[AINews] Riemann Hypothesis proved...twice independently",
+     "url": "https://latent.space/p/ainews-riemann-hypothesis-proved-twice-independently/"
+    }
+   ]
+  }
+ ],
+ "policy_feeds": [
+  {
+   "id": "whitehouse-actions",
+   "name": "The White House: presidential actions",
+   "kind": "policy",
+   "url": "https://www.whitehouse.gov/presidential-actions/feed/",
+   "trust": 0.9,
+   "jurisdiction": "US",
+   "issuer": "The White House",
+   "window_hours": 96,
+   "max_entries": 40
+  },
+  {
+   "id": "nist-news",
+   "name": "NIST news (includes CAISI)",
+   "kind": "policy",
+   "url": "https://www.nist.gov/news-events/news/rss.xml",
+   "trust": 0.85,
+   "jurisdiction": "US",
+   "issuer": "NIST",
+   "window_hours": 96,
+   "max_entries": 40
+  },
+  {
+   "id": "eu-digital-strategy",
+   "name": "European Commission: digital strategy (AI Act)",
+   "kind": "policy",
+   "url": "https://digital-strategy.ec.europa.eu/en/rss.xml",
+   "trust": 0.9,
+   "jurisdiction": "EU",
+   "issuer": "European Commission",
+   "window_hours": 96,
+   "max_entries": 40
+  },
+  {
+   "id": "uk-aisi",
+   "name": "UK AI Security Institute",
+   "kind": "policy",
+   "url": "https://www.gov.uk/search/news-and-communications.atom?organisations%5B%5D=ai-security-institute",
+   "trust": 0.85,
+   "jurisdiction": "UK",
+   "issuer": "UK AI Security Institute",
+   "window_hours": 96,
+   "max_entries": 40
+  },
+  {
+   "id": "uk-dsit",
+   "name": "UK Department for Science, Innovation and Technology",
+   "kind": "policy",
+   "url": "https://www.gov.uk/search/news-and-communications.atom?organisations%5B%5D=department-for-science-innovation-and-technology",
+   "trust": 0.85,
+   "jurisdiction": "UK",
+   "issuer": "UK Department for Science, Innovation and Technology",
+   "window_hours": 96,
+   "max_entries": 40
+  },
+  {
+   "id": "china-law-translate",
+   "name": "China Law Translate (translations of Chinese rules)",
+   "kind": "policy",
+   "url": "https://www.chinalawtranslate.com/en/feed/",
+   "trust": 0.75,
+   "jurisdiction": "China",
+   "issuer": "China Law Translate",
+   "primary": false,
+   "window_hours": 168,
+   "max_entries": 30
+  }
+ ],
+ "benched": [
+  {
+   "id": "ainews",
+   "name": "AINews (smol.ai)",
+   "kind": "newsletter",
+   "url": "https://news.smol.ai/rss.xml",
+   "trust": 0.75,
+   "vendor": null,
+   "product": null,
+   "window_hours": 48,
+   "benched": {
+    "date": "2026-11-14",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "id": "the-batch",
+   "name": "The Batch (DeepLearning.AI)",
+   "kind": "newsletter",
+   "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_the_batch.xml",
+   "trust": 0.75,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96,
+   "benched": {
+    "date": "2026-11-14",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "id": "gradient-flow",
+   "name": "Gradient Flow",
+   "kind": "newsletter",
+   "url": "https://gradientflow.substack.com/feed",
+   "trust": 0.75,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96,
+   "benched": {
+    "date": "2026-11-14",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "id": "one-useful-thing",
+   "name": "One Useful Thing (Ethan Mollick)",
+   "kind": "newsletter",
+   "url": "https://www.oneusefulthing.org/feed",
+   "trust": 0.8,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96,
+   "benched": {
+    "date": "2026-11-14",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "id": "hamel-husain",
+   "name": "Hamel Husain",
+   "kind": "blog",
+   "url": "https://hamel.dev/index.xml",
+   "trust": 0.8,
+   "vendor": null,
+   "product": null,
+   "window_hours": 36,
+   "benched": {
+    "date": "2026-11-14",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "id": "metr",
+   "name": "METR",
+   "kind": "blog",
+   "url": "https://metr.org/feed.xml",
+   "trust": 0.85,
+   "vendor": null,
+   "product": null,
+   "window_hours": 36,
+   "benched": {
+    "date": "2026-11-14",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "id": "ai-as-normal-tech",
+   "name": "AI as Normal Technology (Narayanan and Kapoor)",
+   "kind": "newsletter",
+   "url": "https://www.normaltech.ai/feed",
+   "trust": 0.8,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96,
+   "benched": {
+    "date": "2026-11-14",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "id": "coding-with-intelligence",
+   "name": "Coding with Intelligence",
+   "kind": "newsletter",
+   "url": "https://codingwithintelligence.com/feed",
+   "trust": 0.7,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96,
+   "benched": {
+    "date": "2026-11-14",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "id": "lobsters-vibecoding",
+   "name": "Lobsters: vibecoding tag",
+   "kind": "community",
+   "url": "https://lobste.rs/t/vibecoding.rss",
+   "trust": 0.55,
+   "vendor": null,
+   "product": null,
+   "window_hours": 36,
+   "benched": {
+    "date": "2026-11-14",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "org": "thoughtworks",
+   "why": "Owner added 2026-10-20: Thoughtworks open source.",
+   "origin": "owner",
+   "since": "2026-10-20",
+   "benched": {
+    "date": "2026-11-14",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "org": "google-pytorch",
+   "why": "Discovered 2026-10-24: cited by Hacker News, PyTorch blog, X: @PyTorch within a week.",
+   "origin": "discovery",
+   "since": "2026-10-24",
+   "discovered_as": "github:google-pytorch",
+   "evidence": [
+    {
+     "date": "2026-10-21",
+     "source": "X: @PyTorch",
+     "title": "Google and Meta open-source TorchTPU, native PyTorch on TPUs",
+     "url": "https://x.com/PyTorch/status/2112601000670322787"
+    },
+    {
+     "date": "2026-10-21",
+     "source": "Hacker News",
+     "title": "Google open-sources TorchTPU, a native PyTorch back end for TPUs",
+     "url": "https://github.com/google-pytorch/torch_tpu"
+    },
+    {
+     "date": "2026-10-21",
+     "source": "PyTorch blog",
+     "title": "Introducing TorchTPU",
+     "url": "https://pytorch.org/blog/introducing-torchtpu/"
+    }
+   ],
+   "benched": {
+    "date": "2026-11-14",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "org": "meta-pytorch",
+   "why": "Discovered 2026-10-24: cited by PyTorch blog, SemiAnalysis within a week.",
+   "origin": "discovery",
+   "since": "2026-10-24",
+   "discovered_as": "github:meta-pytorch",
+   "evidence": [
+    {
+     "date": "2026-10-22",
+     "source": "PyTorch blog",
+     "title": "TorchTitan Update: New SOTA Models, Performance at Scale, TitanRL",
+     "url": "https://pytorch.org/blog/torchtitan-update-new-sota-models-performance-at-scale-titanrl/"
+    },
+    {
+     "date": "2026-10-24",
+     "source": "SemiAnalysis",
+     "title": "Amazon’s Trainium Takes a Strike at the Training King",
+     "url": "https://newsletter.semianalysis.com/p/amazons-trainium-takes-a-strike-at"
+    }
+   ],
+   "benched": {
+    "date": "2026-11-14",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "id": "ahead-of-ai",
+   "name": "Ahead of AI",
+   "kind": "newsletter",
+   "url": "https://magazine.sebastianraschka.com/feed",
+   "trust": 0.75,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96,
+   "benched": {
+    "date": "2026-11-21",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "id": "bens-bites",
+   "name": "Ben's Bites",
+   "kind": "newsletter",
+   "url": "https://www.bensbites.com/feed",
+   "trust": 0.55,
+   "vendor": null,
+   "product": null,
+   "window_hours": 48,
+   "benched": {
+    "date": "2026-11-21",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "id": "epoch-ai",
+   "name": "Epoch AI newsletter",
+   "kind": "newsletter",
+   "url": "https://epochai.substack.com/feed",
+   "trust": 0.85,
+   "vendor": null,
+   "product": null,
+   "window_hours": 96,
+   "benched": {
+    "date": "2026-11-21",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "id": "hn-best",
+   "name": "Hacker News best (hnrss)",
+   "kind": "community",
+   "url": "https://hnrss.org/best",
+   "trust": 0.55,
+   "vendor": null,
+   "product": null,
+   "window_hours": 36,
+   "benched": {
+    "date": "2026-11-21",
+    "reason": "hype-flagged 4 times in the last 21 days"
+   }
+  },
+  {
+   "id": "hf-daily-papers",
+   "name": "Hugging Face Daily Papers (takara.ai mirror)",
+   "kind": "community",
+   "url": "https://papers.takara.ai/api/feed",
+   "trust": 0.55,
+   "vendor": null,
+   "product": null,
+   "window_hours": 36,
+   "benched": {
+    "date": "2026-11-21",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "id": "hamel-husain",
+   "name": "Hamel Husain",
+   "kind": "newsletter",
+   "url": "https://hamel.dev/index.xml",
+   "trust": 0.85,
+   "vendor": null,
+   "product": null,
+   "window_hours": 168,
+   "benched": {
+    "date": "2026-11-21",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "id": "eugene-yan",
+   "name": "Eugene Yan",
+   "kind": "newsletter",
+   "url": "https://eugeneyan.com/rss/",
+   "trust": 0.85,
+   "vendor": null,
+   "product": null,
+   "window_hours": 168,
+   "benched": {
+    "date": "2026-11-21",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "id": "lilian-weng",
+   "name": "Lilian Weng",
+   "kind": "blog",
+   "url": "https://lilianweng.github.io/index.xml",
+   "trust": 0.9,
+   "vendor": null,
+   "product": null,
+   "window_hours": 168,
+   "benched": {
+    "date": "2026-11-21",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "id": "chip-huyen",
+   "name": "Chip Huyen",
+   "kind": "newsletter",
+   "url": "https://huyenchip.com/feed.xml",
+   "trust": 0.85,
+   "vendor": null,
+   "product": null,
+   "window_hours": 168,
+   "benched": {
+    "date": "2026-11-21",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "id": "armin-ronacher",
+   "name": "Armin Ronacher",
+   "kind": "newsletter",
+   "url": "https://lucumr.pocoo.org/feed.atom",
+   "trust": 0.8,
+   "vendor": null,
+   "product": null,
+   "window_hours": 168,
+   "benched": {
+    "date": "2026-11-21",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "id": "mitchell-hashimoto",
+   "name": "Mitchell Hashimoto",
+   "kind": "newsletter",
+   "url": "https://mitchellh.com/feed.xml",
+   "trust": 0.8,
+   "vendor": null,
+   "product": null,
+   "window_hours": 168,
+   "benched": {
+    "date": "2026-11-21",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "id": "bair-blog",
+   "name": "Berkeley AI Research (BAIR)",
+   "kind": "blog",
+   "url": "https://bair.berkeley.edu/blog/feed.xml",
+   "trust": 0.85,
+   "vendor": null,
+   "product": null,
+   "window_hours": 168,
+   "benched": {
+    "date": "2026-11-21",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  },
+  {
+   "org": "zagitta",
+   "why": "Discovered 2026-10-31: cited by Hacker News, Latent Space within a week.",
+   "origin": "discovery",
+   "since": "2026-10-31",
+   "discovered_as": "github:zagitta",
+   "evidence": [
+    {
+     "date": "2026-10-25",
+     "source": "Latent Space",
+     "title": "[AINews] Kimi 3.1 Pro 104BA-2.8T: Fable-5.1-Class Open Weights narrows Closed-AI lead to 1 month... and Pro Highspeed API with 2-3× speed",
+     "url": "https://latent.space/p/ainews-kimi-31/"
+    },
+    {
+     "date": "2026-10-25",
+     "source": "Hacker News",
+     "title": "GPU-unlock: FP/BF16 instruction issue rate on Nvidia 3000's cards",
+     "url": "https://github.com/Zagitta/gpu-unlock"
+    },
+    {
+     "date": "2026-10-28",
+     "source": "Latent Space",
+     "title": "[AINews] Anthropic ends Coding Interviews: \"Hunger beats tenure\"",
+     "url": "https://latent.space/p/ainews-anthropic-ends-coding-interviews-hunger-beats-tenure/"
+    }
+   ],
+   "benched": {
+    "date": "2026-11-21",
+    "reason": "zero kept items in the last 21 live editions"
+   }
+  }
+ ]
 }
