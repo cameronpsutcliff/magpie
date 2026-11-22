@@ -1,0 +1,247 @@
+{
+ "ran_at": "2026-11-22T11:27:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-22T03:17:00Z",
+ "queries": 2,
+ "calls": 6,
+ "items": [
+  {
+   "title": "Rockchip measures Spark-X2.5 1.7B at 13.6 to 15.6 tok/s on RK3576 and RK3588 NPUs",
+   "url": "https://x.com/SparkLLM/status/2124447480368807945",
+   "handle": "@SparkLLM",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Rockchip's RKNN-LLM benchmark shows the 1.7B Spark-X2.5 model at 13.57 tok/s in 1,029 MB (W4A16, RK3576) and 15.61 tok/s in 1,830 MB (W8A8, RK3588), with 128 input and 64 output tokens. Useful for people running small LLMs on low-cost ARM boards.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/airockchip/rknn-llm/blob/f7390530443bf84f0394255a449d7cbe81e69d1c/benchmark.md"
+   ],
+   "vendor": "Spark-X / Rockchip",
+   "posted_at": "2026-11-22T10:18:00Z",
+   "metrics": {
+    "likes": 11,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 397
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "TensorFold 1.3.3 reaches 172 tok/s on GLM 5.3 Flash after a 1M-token prompt on 4 DGX Sparks",
+   "url": "https://x.com/plotarmordev/status/2124404765207503121",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A new long-context kernel in TensorFold 1.3.3 lifts decode after a 1M-token prompt from 151.5 to 172 tok/s on four DGX Sparks running GLM 5.3 Flash, with identical output tokens. Relevant to long-context local serving.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/ashxhart/status/2124248353722474508"
+   ],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-22T07:29:00Z",
+   "metrics": {
+    "likes": 19,
+    "reposts": 3,
+    "quotes": 1,
+    "replies": 0,
+    "views": 1249
+   },
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Quote of another user's measurement; not independently reproduced.",
+    "source": null
+   },
+   "confirmed_by": [],
+   "deep_read": false
+  },
+  {
+   "title": "Inkling 2 Mini 4-bit files (17 to 18 GB) spill to CPU on a 16 GB GPU: 43 tok/s on RTX 5060 Ti versus 417 on a 32 GB 5090",
+   "url": "https://x.com/plotarmordev/status/2124374062751486456",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Reported numbers for Inkling 2 Mini show 43.1 tok/s on a 16 GB RTX 5060 Ti (part of the model on CPU) versus 416.6 on a 32 GB 5090, which also used draft tokens in vLLM, so the comparison is not clean. Practical sizing guidance for local runners.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/niklaslenz_ai/status/2124099276955365842"
+   ],
+   "vendor": "Thinking Machines",
+   "posted_at": "2026-11-22T05:27:00Z",
+   "metrics": {
+    "likes": 12,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 830
+   },
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Author notes the two runs differ (vLLM draft tokens on the 5090); quote of another user's measurement.",
+    "source": null
+   },
+   "confirmed_by": [],
+   "deep_read": false
+  },
+  {
+   "title": "InPlace open-source iPhone dictation keyboard adds a language key for Apple's on-device speech model",
+   "url": "https://x.com/plotarmordev/status/2124348393837207908",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "InPlace, a reference dictation keyboard for iPhone built on Apple's on-device speech model, now has an EN/FR key to pick the language before speaking, since the model listens in one language at a time.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/plotarmordev/inplace-dictation-keyboard"
+   ],
+   "vendor": "InPlace",
+   "posted_at": "2026-11-22T03:45:00Z",
+   "metrics": {
+    "likes": 2,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 461
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "pi-H3 makes MiniMax H3 video generation open source, 2 to 4 steps with no VAE decoder",
+   "url": "https://x.com/HanshengCh/status/2124140029715087809",
+   "handle": "@HanshengCh",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "pi-H3 distills MiniMax H3 to 2 to 4 steps without a VAE decoder; the author reports 768p video faster than real time on one B200 and under 40 s on one RTX 3090 via ComfyUI. Weights, a demo Space, code and a ComfyUI node are released.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/Lakonik/pi-H3",
+    "https://huggingface.co/spaces/Lakonik/pi-H3",
+    "https://github.com/Lakonik/LakonLab",
+    "https://github.com/Lakonik/ComfyUI-piFlow"
+   ],
+   "vendor": "Lakonik (Hansheng Chen)",
+   "posted_at": "2026-11-21T13:57:02Z",
+   "metrics": {
+    "likes": 1187,
+    "reposts": 105,
+    "quotes": 16,
+    "replies": 39,
+    "views": 80347
+   },
+   "confirmed_by": [
+    "@linoy_tsaban"
+   ],
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Speed figures are the author's own; not deep-read.",
+    "source": null
+   },
+   "deep_read": false
+  },
+  {
+   "title": "tiny-voca open-source voice model gains 20 community-trained languages in a week",
+   "url": "https://x.com/n4ze3m/status/2124188606755434887",
+   "handle": "@n4ze3m",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "One week after tiny-voca was open sourced as English-only, the community trained 20 more languages for it; the author links all of them. Relevant to small on-device speech use.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "tiny-voca",
+   "posted_at": "2026-11-21T17:10:04Z",
+   "metrics": {
+    "likes": 261,
+    "reposts": 17,
+    "quotes": 5,
+    "replies": 27,
+    "views": 5918
+   },
+   "confirmed_by": [
+    "@EricBezzam"
+   ],
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Links sit in a reply that was not read; nothing checked here.",
+    "source": null
+   },
+   "deep_read": false
+  },
+  {
+   "title": "Magnitude to release SSD expert-streaming engine for sparse MoE models, claims DeepSeek V4.1 Flash at 40+ tok/s on one gaming GPU",
+   "url": "https://x.com/tomgreenwald/status/2123875212093747663",
+   "handle": "@tomgreenwald",
+   "group": "builders",
+   "origin": "saved",
+   "summary": "Magnitude previews an engine that streams MoE experts from NVMe with expert caching, speculative lookahead and streaming prefill, claiming ~40+ tok/s for DeepSeek V4.1 Flash on a single GPU. Release is said to be Monday; a GitHub repo is linked.",
+   "kind": "tool",
+   "evidence": "claim",
+   "links": [
+    "https://github.com/magnitudedev/magnitude"
+   ],
+   "vendor": "Magnitude",
+   "posted_at": "2026-11-20T20:24:44Z",
+   "metrics": {
+    "likes": 2685,
+    "reposts": 186,
+    "quotes": 41,
+    "replies": 154,
+    "views": 189945
+   },
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Speed is a vendor claim ahead of release; no benchmark or reproduction shown.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "none",
+    "summary": "The 20 most recent replies were mostly enthusiasm, a Grok explainer and short questions (NAS with big RAM, why not earlier); nobody reported trying it.",
+    "tried": false,
+    "replies_read": 20
+   },
+   "confirmed_by": []
+  }
+ ],
+ "saved_in": 3,
+ "saved_kept": 1,
+ "saved_rejected": [
+  {
+   "url": "https://x.com/OutlanderSystem/status/2124220893370916878",
+   "reason": "Joke about a radio messaging app, no capability detail."
+  },
+  {
+   "url": "https://x.com/adayasmr/status/2124272684490174924",
+   "reason": "Anime music video, no AI capability shown."
+  }
+ ],
+ "list_posts_read": 94,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
