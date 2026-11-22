@@ -1,0 +1,77 @@
+{
+ "ran_at": "2026-11-22T19:17:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-22T15:24:00Z",
+ "queries": 2,
+ "calls": 2,
+ "items": [
+  {
+   "title": "oMLX 0.8.3 speeds up Inkling 2 Mini on Apple silicon and adds optimized Hy4 and Hy4-Flash",
+   "url": "https://x.com/jundotkim/status/2124570194458935779",
+   "handle": "@jundotkim",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "The oMLX local runtime reports Inkling 2 Mini prefill up 21% (1,869 to 2,255 tok/s at 4K) and decode up 13% (86.0 to 96.8 tok/s) on an M5 Max with oQ4e and MTP on. It also ships a more optimized Hy4 and Hy4-Flash implementation, relevant to Mac users running these models locally.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/jundot/omlx/releases/tag/v0.8.3"
+   ],
+   "vendor": "oMLX",
+   "posted_at": "2026-11-22T18:26:21Z",
+   "metrics": {
+    "likes": 58,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 5,
+    "views": 1750
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Hugging Face harness adapters lift Qwen3.8-27B in Pi from 39% to 55% on Terminal-Bench 2.1 with half the tokens",
+   "url": "https://x.com/SergioPaniego/status/2124525813013893266",
+   "handle": "@SergioPaniego",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Hugging Face describes adapting a model to a specific coding-agent harness, reporting Qwen3.8-27B in the Pi harness improving from 39% to 55% on Terminal-Bench 2.1 while using about half the tokens. Useful for anyone tuning open models for agent harnesses.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/blog/harness-adapters-at-scale"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-22T15:30:00Z",
+   "metrics": {
+    "likes": 30,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 1,
+    "views": 1447
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "saved_in": 0,
+ "saved_kept": 0,
+ "list_posts_read": 95,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
