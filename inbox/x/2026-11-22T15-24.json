@@ -1,0 +1,111 @@
+{
+ "ran_at": "2026-11-22T15:24:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-22T11:27:00Z",
+ "queries": 13,
+ "calls": 17,
+ "items": [
+  {
+   "title": "Strata 0.2.19 adds Inkling 2 Mini and a 40% speedup for Qwen3.8-Flash-Next",
+   "url": "https://x.com/coldniko/status/2124468831175549262",
+   "handle": "@coldniko",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "The Strata local inference app now supports Inkling 2 Mini, with the author reporting 11,306 tok/s prefill and 4,087 tok/s output on an RTX 5090, and a claimed 40% faster Qwen3.8-Flash-Next across supported hardware. Useful for people running these models on consumer GPUs.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/Niko1221/Strata/releases/tag/v0.2.19"
+   ],
+   "vendor": "Strata",
+   "posted_at": "2026-11-22T11:43:34Z",
+   "metrics": {
+    "likes": 1471,
+    "reposts": 171,
+    "quotes": 67,
+    "replies": 120,
+    "views": 82770
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Numbers are the author's own on a single 5090 setup; one replier saw little gain on an IQ3S quant (prefill only).",
+    "source": "https://x.com/petzlux/status/2124520503327027450"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Repliers mostly asked about multi-GPU and PCIe monitoring issues; at least one tried it and saw only a small prefill gain on a 3-bit quant.",
+    "tried": true,
+    "replies_read": 10
+   }
+  },
+  {
+   "title": "TensorFold fork cuts DGX Spark image time from 80.6s to 12.7s, level with a Mac Studio M5 Ultra",
+   "url": "https://x.com/plotarmordev/status/2124487261521650148",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "On the author's TensorFold fork, the same 2048 picture now takes 12.7s on a DGX Spark, down from 80.6s, against 12.6s on a Mac Studio M5 Ultra. The changes are not merged upstream yet.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/plotarmordev/status/2122676127496036404"
+   ],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-22T12:56:00Z",
+   "metrics": {
+    "likes": 32,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 8,
+    "views": 1712
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Author's own timing on a fork that is not upstream; not independently reproduced.",
+    "source": null
+   }
+  },
+  {
+   "title": "Google DeepMind engineer compares four agent harnesses across about 350 tasks: similar scores, cost per task $2.33 vs $4.68",
+   "url": "https://x.com/aiDotEngineer/status/2124518273064501676",
+   "handle": "@aiDotEngineer",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "A conference talk summary reports that four agent harnesses scored similarly over roughly 350 tasks, while a Bash plus media tool setup cost $2.33 per task versus $4.68 for one with eight file tools. Argues eval scores should include cost.",
+   "kind": "eval",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "AI Engineer Code Summit",
+   "posted_at": "2026-11-22T15:00:00Z",
+   "metrics": {
+    "likes": 7,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 2,
+    "views": 769
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Post carries no link to the talk or data; numbers cannot be checked from the post.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "saved_in": 0,
+ "saved_kept": 0,
+ "list_posts_read": 96,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}

@@ -1,21 +1,21 @@
 {
- "updated_at": "2026-11-22T11:27:00Z",
+ "updated_at": "2026-11-22T15:24:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 11,
+ "calls_used_today": 28,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-22T11:27:00Z",
-  "items": 7,
-  "queries": 2,
+  "ran_at": "2026-11-22T15:24:00Z",
+  "items": 3,
+  "queries": 13,
   "deep_reads": 1,
   "rechecks": 0,
   "flagged": 0,
-  "saved_in": 3,
-  "saved_kept": 1,
+  "saved_in": 0,
+  "saved_kept": 0,
   "videos": 0,
   "security_forwarded": 0,
-  "list_posts_read": 94,
+  "list_posts_read": 96,
   "list_pages": 1
  },
  "roster": {
@@ -55,7 +55,8 @@
   "Sweep 2026-11-21T23:26Z (run from the box): list page reached 12:42Z, so all list members covered; no fallback searches. 2 new saves, both rejected. Follows skipped, no browser. Saves lacked author handles from get_users_bookmarks, so 1 get_posts_by_ids call hydrated them. X showed 954 of 1000 shared left.",
   "Sweep 2026-11-22T03:17Z (run from the box): list page reached 15:07Z so all members covered; no fallback searches. Bookmarks: 25 newest all already in archive (saved_in 0). No deep reads (budget fine, nothing met the bar beyond Scarlet, skipped). Follows skipped, no browser. calls_used_today reset for UTC day 2026-11-22.",
   "Roster review 2026-11-22 (Sunday): added @OrcaRouter (2 kept saves, Oct 31 and Nov 19; passed AI/dev screen, but heavy product marketing, owner may prefer avoid) as owner_saves trial and to the List (1 X read). Promoted @vanstriendaniel, @arcprize, @theworldlabs and @NielsRogge to active (14 days, 2+ sweep items). Updated last_qualifying_post for 38 accounts from sweep files. No retirements; @JensenHuang (owner_requested) still has no qualifying post since 2026-09-03, flagged only. @bcherny, @_catwu, @trq212 trials have no recorded qualifying post and no sweep items since added 2026-10-24 (reach 45 days 2026-12-08). @danikkk_wqs and @RoundtableSpace still excluded. Pruned sweep files older than 14 days. Wrote 3 Sunday drafts.",
-  "Sweep 2026-11-22T11:27Z (run from the box): list page reached 18:49Z Nov 21 so all members covered; no fallback searches. 3 new saves (1 kept, 2 rejected). Follows skipped, no browser. Horizon watch Dessa: 1 read, nothing. X showed 969 of 1000 shared left."
+  "Sweep 2026-11-22T11:27Z (run from the box): list page reached 18:49Z Nov 21 so all members covered; no fallback searches. 3 new saves (1 kept, 2 rejected). Follows skipped, no browser. Horizon watch Dessa: 1 read, nothing. X showed 969 of 1000 shared left.",
+  "Sweep 15:24Z: run from the box with MCP X tools; no TS cells or Skill tool available, so the skill files were not loaded and the prompt was followed directly. Bookmark seen_ids.json holds only 2 ids, so new saves were found by diffing against sweep files and the jsonl archive."
  ],
  "errors": [],
  "follows_today": 0,
@@ -93,6 +94,6 @@
   "flagged": [],
   "sunday_drafts": false
  },
- "follows_skipped": "Sweep 2026-11-21T19:17:00Z: executor has no browser; follows skipped.",
+ "follows_skipped": "Sweep 15:24Z: follows skipped, no browser in this run.",
  "calls_note": "calls_used_today is the Magpie share counted by this lane for UTC day 2026-11-21; X reported 956 of 1000 shared reads left at 19:19Z."
 }
