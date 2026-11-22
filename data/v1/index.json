@@ -2,6 +2,82 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-11-22",
+   "headline": "Inkling-2-Mini, Inkling-2-Mini-Uncensored-GGUF, Data Processing Incidents on Inference Providers, and more",
+   "events": 150,
+   "sources": 556,
+   "enriched": false,
+   "top": [
+    {
+     "id": "e50556ef1e99",
+     "title": "thinkingmachines/Inkling-2-Mini",
+     "impact": 5,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-22-e50556ef1e99"
+    },
+    {
+     "id": "a789ce06f1bd",
+     "title": "AtomicChat/Inkling-2-Mini-Uncensored-GGUF",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-22-a789ce06f1bd"
+    },
+    {
+     "id": "1858ae290016",
+     "title": "Data Processing Incidents on Inference Providers",
+     "impact": 4,
+     "vendor": "OpenRouter",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-22-1858ae290016"
+    },
+    {
+     "id": "4302db6cb9e8",
+     "title": "elementalsouls/Claude-BugHunter",
+     "impact": 5,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-22-4302db6cb9e8"
+    },
+    {
+     "id": "ea95553e9a0b",
+     "title": "unsloth/Inkling-2-Mini-GGUF",
+     "impact": 4,
+     "vendor": "Unsloth",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-22-ea95553e9a0b"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Anthropic",
+    "Unsloth",
+    "Hugging Face",
+    "AWS",
+    "TensorFold"
+   ],
+   "topics": {
+    "coding": 49,
+    "agents": 45,
+    "multimodal": 36,
+    "models": 32,
+    "local": 18,
+    "infra": 17,
+    "mcp": 17,
+    "security": 11,
+    "memory": 10,
+    "reverse": 10,
+    "evals": 4,
+    "research": 2
+   },
+   "kinds": {
+    "repo": 38,
+    "model": 30,
+    "space": 20,
+    "social": 17,
+    "changelog": 17,
+    "community": 15,
+    "blog": 9,
+    "newsletter": 4
+   }
+  },
+  {
    "date": "2026-11-21",
    "headline": "Run Inkling 2 Mini on laptops, track video depth, ground document fields, and more",
    "events": 322,
@@ -4957,5 +5033,5 @@
    }
   }
  ],
- "latest": "2026-11-21"
+ "latest": "2026-11-22"
 }

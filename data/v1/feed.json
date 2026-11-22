@@ -13,6 +13,30 @@
  ],
  "items": [
   {
+   "id": "2026-11-22",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-11-22",
+   "title": "Inkling-2-Mini, Inkling-2-Mini-Uncensored-GGUF, Data Processing Incidents on Inference Providers, and more",
+   "summary": "150 capability events from 130 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words.",
+   "content_html": "<p>150 capability events from 130 sources. Ranked by code; the editor did not run this edition, so copy is the sources&#x27; own words.</p><ol><li><a href=\"https://huggingface.co/thinkingmachines/Inkling-2-Mini\">thinkingmachines/Inkling-2-Mini</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-22-e50556ef1e99\">on Magpie</a>)</li><li><a href=\"https://huggingface.co/AtomicChat/Inkling-2-Mini-Uncensored-GGUF\">AtomicChat/Inkling-2-Mini-Uncensored-GGUF</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-22-a789ce06f1bd\">on Magpie</a>)</li><li><a href=\"https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/\">Data Processing Incidents on Inference Providers</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-22-1858ae290016\">on Magpie</a>)</li><li><a href=\"https://github.com/elementalsouls/Claude-BugHunter\">elementalsouls/Claude-BugHunter</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-22-4302db6cb9e8\">on Magpie</a>)</li><li><a href=\"https://huggingface.co/unsloth/Inkling-2-Mini-GGUF\">unsloth/Inkling-2-Mini-GGUF</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-22-ea95553e9a0b\">on Magpie</a>)</li></ol><p><strong>Possibilities:</strong> No new possibility today. Latest: Security teams can roll out bug-hunting agent skills with leak-safe settings enforced centrally (2026-11-21)</p><p><strong>Worth watching:</strong> No new video pick today. Latest: I Tested Claude Code&#x27;s New Code Mode 6 Times (2026-11-21)</p><p><strong>Constraints:</strong> No new constraint today. Latest: Commerce rule restricts chip exports to data centers serving D:5 firms (2026-11-19)</p><p><strong>Threats:</strong> No new threat today. Widest reach still open: TWCA Registration Authority server accessed without authorization (medium, 2026-10-29)</p>",
+   "content_text": "150 capability events from 130 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words. thinkingmachines/Inkling-2-Mini AtomicChat/Inkling-2-Mini-Uncensored-GGUF Data Processing Incidents on Inference Providers elementalsouls/Claude-BugHunter unsloth/Inkling-2-Mini-GGUF",
+   "date_published": "2026-11-22T11:13:03Z",
+   "tags": [
+    "coding",
+    "infra",
+    "local",
+    "mcp",
+    "memory",
+    "models",
+    "multimodal",
+    "security"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-11-22.json",
+    "backfilled": false,
+    "capabilities": 150
+   }
+  },
+  {
    "id": "2026-11-21",
    "url": "https://www.cameronsutcliff.com/magpie/2026-11-21",
    "title": "Run Inkling 2 Mini on laptops, track video depth, ground document fields, and more",
@@ -681,28 +705,6 @@
     "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-23.json",
     "backfilled": false,
     "capabilities": 448
-   }
-  },
-  {
-   "id": "2026-10-22",
-   "url": "https://www.cameronsutcliff.com/magpie/2026-10-22",
-   "title": "Code locally with Flint, grow live MoE deployments, open Muse Spark, and more",
-   "summary": "Open weights led the day, with Recursive, Meta, Shanghai AI Lab and iFlytek Spark putting new models on Hugging Face, several aimed at laptops and single GPUs. Serving and training tools moved too, with SGLang, Rapid-MLX and Modal shipping infrastructure, while much of the trending repo list was older projects or hype-heavy agent kits.",
-   "content_html": "<p>Open weights led the day, with Recursive, Meta, Shanghai AI Lab and iFlytek Spark putting new models on Hugging Face, several aimed at laptops and single GPUs. Serving and training tools moved too, with SGLang, Rapid-MLX and Modal shipping infrastructure, while much of the trending repo list was older projects or hype-heavy agent kits.</p><p><strong>Open coding and agent models small enough for a laptop or a cheap GPU are now downloadable from several labs at once.</strong> Recursive says its 40B MoE coding model is built for laptops, and Shanghai AI Lab&#x27;s 35B agentic model activates only 3B parameters per token. Teams can try running coding agents without paying for an API or sending code out. Neither card lists a license or benchmark results, so fitness for commercial use and real quality are still open.</p><p><strong>iFlytek&#x27;s 4B model is the one in today&#x27;s set with a permissive license and a reproduced single-GPU run.</strong> It ships under Apache 2.0 with controllable thinking, and was reported running at 64K context on one RTX 5090. That makes it a practical base for local RAG and agent setups. The 1M context figure comes from the maker and has not been shown.</p><p><strong>Buyers gained new ways to reach large models, both self-hosted and through existing cloud contracts.</strong> Meta put a very large open image-and-text model on Hugging Face, and Google Cloud customers can now get OpenAI models and Codex through their current accounts. Meta&#x27;s model lacks a stated license or benchmarks. OpenAI&#x27;s timing, regions and pricing on Google Cloud are not given.</p><ol><li><a href=\"https://huggingface.co/RecursiveSI/flint\">Recursive releases Flint, an open 40B MoE coding model</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-22-90dd623e653c\">on Magpie</a>): Developers can download an open-weight 40B MoE coding model that its maker says is built to run on laptops.</li><li><a href=\"https://openai.com/index/openai-models-google-cloud\">OpenAI models and Codex come to Google Cloud</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-22-0169ce1a354b\">on Magpie</a>): Google Cloud customers can get OpenAI frontier models and Codex workflows through Gemini&#x27;s Model Garden and Google Cloud Marketplace.</li><li><a href=\"https://huggingface.co/meta-models/Muse-Spark-Open-816B-A42B\">Meta posts Muse-Spark-Open-816B-A42B multimodal model</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-22-8615bdd7d491\">on Magpie</a>): Builders can download a very large Meta image-and-text-to-text model, named 816B-A42B, from Hugging Face.</li><li><a href=\"https://huggingface.co/InternScience/Sage-A1.5\">Shanghai AI Lab opens Sage-A1.5 agentic MoE model</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-22-48da793fd3c1\">on Magpie</a>): Builders can run an open-weight 35B MoE agentic model with only 3B parameters active per token.</li><li><a href=\"https://huggingface.co/XHToken/Spark-X2.6-4B\">Spark-X2.6-4B brings 1M context to a 4B open model</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-22-12722205bbbc\">on Magpie</a>): Developers can run an Apache 2.0 4B model with up to 1M context and controllable thinking, reported at 64K context on one RTX 5090.</li></ol><p><strong>New possibility:</strong> Defense and government contractors can run code agents on air-gapped laptops with inspectable context</p><p><strong>Worth watching:</strong> <a href=\"https://www.youtube.com/watch?v=esdRFXgXaaQ\">DeepSeek Just Open-Sourced How It Serves 155T Tokens a Day</a>; <a href=\"https://www.youtube.com/watch?v=_dTF3NpPzGo\">Why AI Writing Still Reads Like Slop, Louis-François Bouchard, Towards AI</a>; <a href=\"https://www.youtube.com/watch?v=c_SPW__jF9w\">How to Test AI Agents When No Benchmark Exists, Nathanael Weill, Air Canada</a></p><p><strong>Still open:</strong> <a href=\"https://digital-strategy.ec.europa.eu/en/library/first-harmonised-standard-supporting-ai-act-published-official-journal\">EU publishes first AI Act harmonised standard for high-risk providers</a> (2026-10-20)</p><p><strong>Threats still open:</strong> <a href=\"https://emudhra.we-have-a-problem.com/\">Eight eMudhra intermediate CA private keys compromised</a> (high (editor&#x27;s estimate), patched; 3 package advisories); <a href=\"https://osv.dev/vulnerability/GHSA-46jr-4wx8-v453\">MCP TypeScript SDK server memory exhaustion</a> (high, patched); <a href=\"https://osv.dev/vulnerability/GHSA-22jm-h49p-29qw\">MCP TypeScript SDK experimental tasks lack session binding</a> (high, patched)</p>",
-   "content_text": "Open weights led the day, with Recursive, Meta, Shanghai AI Lab and iFlytek Spark putting new models on Hugging Face, several aimed at laptops and single GPUs. Serving and training tools moved too, with SGLang, Rapid-MLX and Modal shipping infrastructure, while much of the trending repo list was older projects or hype-heavy agent kits. Recursive releases Flint, an open 40B MoE coding model OpenAI models and Codex come to Google Cloud Meta posts Muse-Spark-Open-816B-A42B multimodal model Shanghai AI Lab opens Sage-A1.5 agentic MoE model Spark-X2.6-4B brings 1M context to a 4B open model",
-   "date_published": "2026-10-22T10:34:01Z",
-   "tags": [
-    "agents",
-    "coding",
-    "infra",
-    "local",
-    "models",
-    "multimodal"
-   ],
-   "_magpie": {
-    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-22.json",
-    "backfilled": false,
-    "capabilities": 471
    }
   }
  ]
