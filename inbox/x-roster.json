@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-21T10:30:00Z",
+ "updated_at": "2026-11-22T07:32:00Z",
  "accounts": [
   {
    "handle": "@thsottiaux",
@@ -2167,6 +2167,365 @@
    "retired_reason": null,
    "x_user_id": "1518577705809326083",
    "on_list": true
+  },
+  {
+   "handle": "@antigravity",
+   "name": "Google Antigravity",
+   "group": "devtools",
+   "affiliation": "Google DeepMind",
+   "why": "Owner follow (2026-11-22). Official Google Antigravity account, an agent-first software development platform at Google DeepMind. Recent posts ship concrete product changes: custom keybindings, a /btw task-fork, a MongoDB Atlas plugin, and native SSH.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-22",
+   "evidence": [
+    "https://x.com/antigravity/status/2124201177344582136",
+    "https://x.com/antigravity/status/2123921833883840650"
+   ],
+   "last_qualifying_post": "2026-11-21",
+   "retired_reason": null,
+   "x_user_id": "1965856473084473347",
+   "on_list": true,
+   "source": "owner_follow",
+   "owner_requested": true
+  },
+  {
+   "handle": "@_mohansolo",
+   "name": "Varun Mohan",
+   "group": "labs",
+   "affiliation": "Google DeepMind",
+   "why": "Owner follow (2026-11-22). Builds Antigravity at Google DeepMind. First-hand measurements: Neon on the AGY CLI is #1 on the AA Coding agent Index, plus a 22% quota gain from cache-hit improvements.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-22",
+   "evidence": [
+    "https://x.com/_mohansolo/status/2124286882188284171",
+    "https://x.com/_mohansolo/status/2124070033534161407"
+   ],
+   "last_qualifying_post": "2026-11-21",
+   "retired_reason": null,
+   "x_user_id": "1086145626633494528",
+   "on_list": true,
+   "source": "owner_follow",
+   "owner_requested": true
+  },
+  {
+   "handle": "@thecsguy",
+   "name": "nick",
+   "group": "labs",
+   "affiliation": "Google",
+   "why": "Owner follow (2026-11-22). Google software engineer working on TPU performance for Gemini. Recent posts confirm Antigravity cache and quota changes landing, and that Antigravity works inside t3code.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-22",
+   "evidence": [
+    "https://x.com/thecsguy/status/2124191107403628623",
+    "https://x.com/thecsguy/status/2124298565451395544"
+   ],
+   "last_qualifying_post": "2026-11-22",
+   "retired_reason": null,
+   "x_user_id": "2269676263",
+   "on_list": true,
+   "source": "owner_follow",
+   "owner_requested": true
+  },
+  {
+   "handle": "@osanseviero",
+   "name": "Omar Sanseviero",
+   "group": "labs",
+   "affiliation": "Google DeepMind",
+   "why": "Owner follow (2026-11-22). MTS at Google DeepMind working on Gemini, Gemma, and AI Studio (affiliation badge: Google AI Studio). Shipped Genie 4 to the Gemini API and AI Studio at 24fps with native audio and live steering.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-22",
+   "evidence": [
+    "https://x.com/osanseviero/status/2123468725563068866",
+    "https://x.com/osanseviero/status/2123512724894462109"
+   ],
+   "last_qualifying_post": "2026-11-19",
+   "retired_reason": null,
+   "x_user_id": "207744565",
+   "on_list": true,
+   "source": "owner_follow",
+   "owner_requested": true
+  },
+  {
+   "handle": "@GoogleDeepMind",
+   "name": "Google DeepMind",
+   "group": "labs",
+   "affiliation": "Google",
+   "why": "Owner follow (2026-11-22). Official Google DeepMind lab account. Recent posts roll out Gemini 4 Neon (AA Intelligence Index 61 at xhigh thinking) and show Neon building a live Mont Blanc ski simulator in Antigravity.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-22",
+   "evidence": [
+    "https://x.com/GoogleDeepMind/status/2123167884411077030",
+    "https://x.com/GoogleDeepMind/status/2123167889976905966",
+    "https://x.com/GoogleDeepMind/status/2123826572385833119"
+   ],
+   "last_qualifying_post": "2026-11-20",
+   "retired_reason": null,
+   "x_user_id": "4783690002",
+   "on_list": true,
+   "source": "owner_follow",
+   "owner_requested": true
+  },
+  {
+   "handle": "@cursor_ai",
+   "name": "Cursor",
+   "group": "devtools",
+   "affiliation": "Cursor",
+   "why": "Owner follow (2026-11-22). Official Cursor account. Recent posts add Gemini 4 Neon at 63.7% on CursorBench 4.1 (up from 57.3% for Hydrogen) with prices, plus Hydrogen, Team Projects, and the Agent SDK.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-22",
+   "evidence": [
+    "https://x.com/cursor_ai/status/2123198346802450926",
+    "https://x.com/cursor_ai/status/2120944639633211619"
+   ],
+   "last_qualifying_post": "2026-11-18",
+   "retired_reason": null,
+   "x_user_id": "1695890961094909952",
+   "on_list": true,
+   "source": "owner_follow",
+   "owner_requested": true
+  },
+  {
+   "handle": "@TeslaSI",
+   "name": "Tesla Super Intelligence",
+   "group": "labs",
+   "affiliation": "Tesla",
+   "why": "Owner follow (2026-11-22). Official Tesla Super Intelligence account. FSD v15 release notes cover an upgraded vision encoder shared with Robotaxi and Optimus, plus Reality View, a real-time generative driving visualization.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-22",
+   "evidence": [
+    "https://x.com/TeslaSI/status/2124229673056113100",
+    "https://x.com/TeslaSI/status/2124229676055040007"
+   ],
+   "last_qualifying_post": "2026-11-21",
+   "retired_reason": null,
+   "x_user_id": "1659653864138612761",
+   "on_list": true,
+   "source": "owner_follow",
+   "owner_requested": true
+  },
+  {
+   "handle": "@SpaceXSI",
+   "name": "SpaceX Super Intelligence",
+   "group": "labs",
+   "affiliation": "SpaceX Super Intelligence",
+   "why": "Owner follow (2026-11-22). Official SpaceX Super Intelligence lab account. Introduced Grok Bot 1.0, with shareable, more collaborative bots.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-22",
+   "evidence": [
+    "https://x.com/SpaceXSI/status/2120584928983441826"
+   ],
+   "last_qualifying_post": "2026-11-11",
+   "retired_reason": null,
+   "x_user_id": "1661523610111193088",
+   "on_list": true,
+   "source": "owner_follow",
+   "owner_requested": true
+  },
+  {
+   "handle": "@PyTorch",
+   "name": "PyTorch",
+   "group": "opensource",
+   "affiliation": "PyTorch Foundation",
+   "why": "Owner follow (2026-11-22). Official PyTorch account. Recent technical posts include ExecuTorch WebGPU, which runs PyTorch models on the GPU in the browser, and post-training Meta's Muse Spark Open MoE with NVIDIA NeMo AutoModel.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-22",
+   "evidence": [
+    "https://x.com/PyTorch/status/2120286712970854790",
+    "https://x.com/PyTorch/status/2122776754171375730"
+   ],
+   "last_qualifying_post": "2026-11-17",
+   "retired_reason": null,
+   "x_user_id": "776585502606721024",
+   "on_list": true,
+   "source": "owner_follow",
+   "owner_requested": true
+  },
+  {
+   "handle": "@ModelScope2022",
+   "name": "ModelScope",
+   "group": "opensource",
+   "affiliation": "ModelScope",
+   "why": "Owner follow (2026-11-22). Official ModelScope account for open-weight releases. Recent drops include Tencent Hy4 (770B backbone, 49B active, 1M context) and CCORE-Web-Coder-4B, an Apache-2.0 4B local web-generation model.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-22",
+   "evidence": [
+    "https://x.com/ModelScope2022/status/2123622652896260296",
+    "https://x.com/ModelScope2022/status/2123990190939308374"
+   ],
+   "last_qualifying_post": "2026-11-21",
+   "retired_reason": null,
+   "x_user_id": "1784494412913049600",
+   "on_list": true,
+   "source": "owner_follow",
+   "owner_requested": true
+  },
+  {
+   "handle": "@omarchy",
+   "name": "Omarchy",
+   "group": "builders",
+   "affiliation": "37signals",
+   "why": "Owner follow (2026-11-22). Official Omarchy account (agentic Linux by DHH). Recent posts cover Apple Silicon kernel work validated in their Mac Lab, and Flowtunes, a local-AI music feature using ACE-Step 1.5 Turbo.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-22",
+   "evidence": [
+    "https://x.com/omarchy/status/2123873118477496329",
+    "https://x.com/omarchy/status/2123857861851898283"
+   ],
+   "last_qualifying_post": "2026-11-20",
+   "retired_reason": null,
+   "x_user_id": "2108454467309883392",
+   "on_list": true,
+   "source": "owner_follow",
+   "owner_requested": true
+  },
+  {
+   "handle": "@Alibaba_Qwen",
+   "name": "Qwen",
+   "group": "labs",
+   "affiliation": "Alibaba",
+   "why": "Owner follow (2026-11-22). Official Qwen lab account for open foundation models. Recent posts announce Qwen4-Max availability and note significant improvements on coding and finance tasks (ValsAI).",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-22",
+   "evidence": [
+    "https://x.com/Alibaba_Qwen/status/2122175103115075709",
+    "https://x.com/Alibaba_Qwen/status/2122248112479907848"
+   ],
+   "last_qualifying_post": "2026-11-16",
+   "retired_reason": null,
+   "x_user_id": "1753339277386342400",
+   "on_list": true,
+   "source": "owner_follow",
+   "owner_requested": true
+  },
+  {
+   "handle": "@ssi",
+   "name": "SSI Inc.",
+   "group": "labs",
+   "affiliation": "SSI",
+   "why": "Owner follow (2026-11-22). Official Safe Superintelligence lab account. Low volume; last post announced a long-term NVIDIA partnership to 10x compute in 12 months. Added as an owner pick so it is not auto-retired for silence.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-22",
+   "evidence": [
+    "https://x.com/ssi/status/2081732119194394763"
+   ],
+   "last_qualifying_post": "2026-07-27",
+   "retired_reason": null,
+   "x_user_id": "1802854238370050050",
+   "on_list": true,
+   "source": "owner_follow",
+   "owner_requested": true
+  },
+  {
+   "handle": "@architectlabs",
+   "name": "Architect Labs",
+   "group": "labs",
+   "affiliation": "Architect Labs",
+   "why": "Owner follow (2026-11-22). Official Architect Labs account. Introduced Frostbite, an interaction-net CPU whose ISA and architecture were co-designed by their agents, with held-out workload evaluations and a path to GDS.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-22",
+   "evidence": [
+    "https://x.com/architectlabs/status/2123187520276152487",
+    "https://x.com/architectlabs/status/2123188226596999439"
+   ],
+   "last_qualifying_post": "2026-11-18",
+   "retired_reason": null,
+   "x_user_id": "1954060095111016449",
+   "on_list": true,
+   "source": "owner_follow",
+   "owner_requested": true
+  },
+  {
+   "handle": "@DeepSeekHarness",
+   "name": "DeepSeek Harness",
+   "group": "devtools",
+   "affiliation": "DeepSeek",
+   "why": "Owner follow (2026-11-22). Official DeepSeek Harness account. Version 0.2.1 is tuned for DeepSeek-V4.1-Flash-1017, and Creator Mode lets users turn ideas into plugins.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-22",
+   "evidence": [
+    "https://x.com/DeepSeekHarness/status/2111376365497077958",
+    "https://x.com/DeepSeekHarness/status/2117256196227019194"
+   ],
+   "last_qualifying_post": "2026-11-03",
+   "retired_reason": null,
+   "x_user_id": "2067518374469640193",
+   "on_list": true,
+   "source": "owner_follow",
+   "owner_requested": true
+  },
+  {
+   "handle": "@bot",
+   "name": "Grok Bot",
+   "group": "devtools",
+   "affiliation": "SpaceX Super Intelligence",
+   "why": "Owner follow (2026-11-22). Official Grok Bot product account. Recent posts ship QuickBooks invoicing, meeting join, and trip booking, plus a writeup of Shared Bots used on their accounting team.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-22",
+   "evidence": [
+    "https://x.com/bot/status/2123840024747946383",
+    "https://x.com/bot/status/2121320089920430181"
+   ],
+   "last_qualifying_post": "2026-11-20",
+   "retired_reason": null,
+   "x_user_id": "2085838061347217408",
+   "on_list": true,
+   "source": "owner_follow",
+   "owner_requested": true
+  },
+  {
+   "handle": "@soumithchintala",
+   "name": "Soumith Chintala",
+   "group": "labs",
+   "affiliation": "Thinking Machines",
+   "why": "Owner follow (2026-11-22). Thinking Machines staff, PyTorch cofounder. First-hand on a 27B looping MoE mini model (3B active, fits in 32GB, evals roughly matching Qwen 3.8 27B) and an NVFP4 training writeup.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-22",
+   "evidence": [
+    "https://x.com/soumithchintala/status/2123878334895436115",
+    "https://x.com/soumithchintala/status/2121361306087252093"
+   ],
+   "last_qualifying_post": "2026-11-20",
+   "retired_reason": null,
+   "x_user_id": "70831441",
+   "on_list": true,
+   "source": "owner_follow",
+   "owner_requested": true
+  },
+  {
+   "handle": "@adcock_brett",
+   "name": "Brett Adcock",
+   "group": "labs",
+   "affiliation": "Hark",
+   "why": "Owner follow (2026-11-22). Founder of Figure and Hark. Recent posts launch Handoff², a frontier-level computer-use model for browser work, and bring Hark to iOS, Android, macOS, and iMessage.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-22",
+   "evidence": [
+    "https://x.com/adcock_brett/status/2123807345545502980",
+    "https://x.com/adcock_brett/status/2123156302134411406"
+   ],
+   "last_qualifying_post": "2026-11-20",
+   "retired_reason": null,
+   "x_user_id": "3222018178",
+   "on_list": true,
+   "source": "owner_follow",
+   "owner_requested": true
   }
  ],
  "source_leads": [
@@ -2695,8 +3054,8 @@
   "name": "Magpie roster",
   "owner": "@CameronSutcliff",
   "private": true,
-  "member_count": 107,
+  "member_count": 125,
   "scope": "every trial and active account in this file; curated config accounts are not members yet",
-  "updated_at": "2026-11-13T06:36:00Z"
+  "updated_at": "2026-11-22T07:32:00Z"
  }
 }
