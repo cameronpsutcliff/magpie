@@ -1,0 +1,145 @@
+{
+ "ran_at": "2026-11-22T23:27:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-22T19:17:00Z",
+ "queries": 5,
+ "calls": 9,
+ "items": [
+  {
+   "title": "Inkling-2-Mini hits 10.04x on KernelBench-Mega on one RTX PRO 6000 via a persistent Triton megakernel",
+   "url": "https://x.com/elliotarledge/status/2124568616964333644",
+   "handle": "@elliotarledge",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A local run of Inkling-2-Mini wrote a 1,119-line single-launch Triton megakernel for a hybrid KDA/MLA/MoE model and scored 10.04x on KernelBench-Mega, ahead of the other models listed on the same GPU. The post lists the 2.9-hour trace and the speedup steps; no repo is linked.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Inkling",
+   "posted_at": "2026-11-22T18:20:05Z",
+   "metrics": {
+    "likes": 233,
+    "reposts": 17,
+    "quotes": 5,
+    "replies": 19,
+    "views": 17898
+   },
+   "confirmed_by": [
+    "@victormustar",
+    "@soumithchintala"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single-author run with no linked trace or code; replies not read.",
+    "source": null
+   }
+  },
+  {
+   "title": "TensorFold 1.3.4: Qwen3.8-27B decode up to 42.2% faster on an Intel Arc Pro B70 after a 121k-token prompt",
+   "url": "https://x.com/ashxhart/status/2124609773765112271",
+   "handle": "@ashxhart",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "TensorFold 1.3.4 reports plain decode on Qwen3.8-27B up to 42.2% faster on an Intel Arc Pro B70 after a 121,022-token prompt, with the same output tokens. The release also makes model pulls work through proxies and resume stalled downloads.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/ashhart/TensorFold/releases"
+   ],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-22T21:03:00Z",
+   "metrics": {
+    "likes": 76,
+    "reposts": 5,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Google gemini-api-cli open-sourced: a CLI plus skill that gives agents Gemini video analysis, OCR and media generation",
+   "url": "https://x.com/LyalinDotCom/status/2124593932038254981",
+   "handle": "@LyalinDotCom",
+   "group": "devtools",
+   "origin": "saved",
+   "summary": "A Google developer points to the open-source gemini-api-cli, which with an API key and an installed skill lets coding agents call Gemini for video analysis, OCR and TTS, music, video and image generation.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/google-gemini/gemini-api-cli"
+   ],
+   "vendor": "Google",
+   "posted_at": "2026-11-22T20:00:41Z",
+   "metrics": {
+    "likes": 637,
+    "reposts": 22,
+    "quotes": 5,
+    "replies": 30,
+    "views": 34631
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Colab CLI lets agents spend Gemini Ultra plan Colab credits on GPUs without notebooks",
+   "url": "https://x.com/aaronmring/status/2124198800034345262",
+   "handle": "@aaronmring",
+   "group": "applied",
+   "origin": "saved",
+   "summary": "A user reports the Colab CLI lets an agent run jobs on H100 or RTX 6000 Pro hours drawn from the Gemini Ultra plan's monthly Colab credits, Modal-style and with no notebook. The credit and GPU-hour figures are the poster's own and nothing official is linked.",
+   "kind": "tool",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Google",
+   "posted_at": "2026-11-21T17:50:34Z",
+   "metrics": {
+    "likes": 2949,
+    "reposts": 83,
+    "quotes": 27,
+    "replies": 94,
+    "views": 184377
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Credit and GPU-hour numbers come from the poster with no primary link.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/GreenCodeCodes/status/2124559016676192342",
+   "reason": "Tutorial series on training a small LLM from scratch, no new capability."
+  },
+  {
+   "url": "https://x.com/SaadhJawwadh/status/2124447613172982216",
+   "reason": "Third-party feature summary with no primary source or link, hype wording."
+  }
+ ],
+ "saved_in": 4,
+ "saved_kept": 2,
+ "list_posts_read": 96,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
