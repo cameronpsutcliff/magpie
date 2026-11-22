@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-22",
+  "posting_enabled": false,
+  "note": "Drafts only. Never posted.",
+  "drafts": [
+    {
+      "text": "Hao AI Lab's FastRUA cuts a robot-use agent from 11.1 to 3.4 minutes on a cup task. Merging tool-call round trips and moving the arm while the model plans keeps the robot moving 84% of the time, up from 24%. Code and write-up are out.",
+      "evidence": [
+        "https://x.com/haoailab/status/2123593596918235515",
+        "https://github.com/fast-rua/making-rua-fast"
+      ],
+      "why": "Measured agent latency fix for real robots with code published."
+    },
+    {
+      "text": "Two DGX Sparks on one cable show each port as two network devices, and using only one gets about 112 of 200 Gb/s. Naming both in NCCL_IB_HCA speeds prompt processing 26 to 28% with generation unchanged. The fix is in TensorFold's docs.",
+      "evidence": [
+        "https://x.com/plotarmordev/status/2123683261289296125",
+        "https://github.com/ashhart/TensorFold/pull/2969"
+      ],
+      "why": "A one-line config change with a measured speedup that owners of this hardware can apply today."
+    },
+    {
+      "text": "ORA v0.1 from Hao AI Lab adds cuRobo motion planning and a code mode where models write their own tools. Collision-stopped moves on RoboDojo fall from 14.1% to 7.0%. A dataset of 3K+ episodes from 7 models is released.",
+      "evidence": [
+        "https://x.com/haoailab/status/2123214025580536251",
+        "https://github.com/fast-rua/ORA",
+        "https://huggingface.co/datasets/FastRUA/ora-traces"
+      ],
+      "why": "Open harness and traces for robot agents with before and after numbers."
+    }
+  ]
+}

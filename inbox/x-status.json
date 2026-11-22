@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-11-22T03:17:00Z",
- "job": "sweep",
+ "updated_at": "2026-11-22T10:28:59Z",
+ "job": "roster",
  "prompt": "v6.1",
- "calls_used_today": 4,
+ "calls_used_today": 5,
  "notes_via_api": false,
  "last_sweep": {
   "ran_at": "2026-11-22T03:17:00Z",
@@ -20,8 +20,8 @@
  },
  "roster": {
   "curated": 223,
-  "trial": 73,
-  "active": 52,
+  "trial": 70,
+  "active": 56,
   "retired": 7
  },
  "follows_this_week": 0,
@@ -53,7 +53,8 @@
   "Sweep 2026-11-21T11:21:00Z: list page reached 2026-11-20T21:34Z, well before since, so every list member was covered. Bookmarks: 25 newest all already in the archive (saved_in 0). calls_used_today is a single counter but calls_day is a UTC date that rolled at 18:00 CT; X showed 969 of 1000 left, so about 31 shared calls used so far today. InferenceBench leaderboard renders by script, so ranks cannot be read with curl.",
   "Sweep 15:28Z (Nov 21, run from the box, pull-based): labs and devtools OR searches returned 0 posts for 11:21Z-15:25Z; builders hit the 25 cap and needed 1 extra page. calls_used_today is 12 added to the earlier 30 (X showed 959 of 1000 shared left afterward). Bookmarks: 25 newest all already in archive, saved_in 0. Follows skipped, no browser. OpenRouter/MiniMax provider-snooping claim logged as security_na (OpenRouter not in stack.json); owner may want it added if fleet uses OpenRouter.",
   "Sweep 2026-11-21T23:26Z (run from the box): list page reached 12:42Z, so all list members covered; no fallback searches. 2 new saves, both rejected. Follows skipped, no browser. Saves lacked author handles from get_users_bookmarks, so 1 get_posts_by_ids call hydrated them. X showed 954 of 1000 shared left.",
-  "Sweep 2026-11-22T03:17Z (run from the box): list page reached 15:07Z so all members covered; no fallback searches. Bookmarks: 25 newest all already in archive (saved_in 0). No deep reads (budget fine, nothing met the bar beyond Scarlet, skipped). Follows skipped, no browser. calls_used_today reset for UTC day 2026-11-22."
+  "Sweep 2026-11-22T03:17Z (run from the box): list page reached 15:07Z so all members covered; no fallback searches. Bookmarks: 25 newest all already in archive (saved_in 0). No deep reads (budget fine, nothing met the bar beyond Scarlet, skipped). Follows skipped, no browser. calls_used_today reset for UTC day 2026-11-22.",
+  "Roster review 2026-11-22 (Sunday): added @OrcaRouter (2 kept saves, Oct 31 and Nov 19; passed AI/dev screen, but heavy product marketing, owner may prefer avoid) as owner_saves trial and to the List (1 X read). Promoted @vanstriendaniel, @arcprize, @theworldlabs and @NielsRogge to active (14 days, 2+ sweep items). Updated last_qualifying_post for 38 accounts from sweep files. No retirements; @JensenHuang (owner_requested) still has no qualifying post since 2026-09-03, flagged only. @bcherny, @_catwu, @trq212 trials have no recorded qualifying post and no sweep items since added 2026-10-24 (reach 45 days 2026-12-08). @danikkk_wqs and @RoundtableSpace still excluded. Pruned sweep files older than 14 days. Wrote 3 Sunday drafts."
  ],
  "errors": [],
  "follows_today": 0,
@@ -71,7 +72,7 @@
   "owner": "@CameronSutcliff",
   "owner_id": "1521986356721123328",
   "private": true,
-  "member_count": 125,
+  "member_count": 126,
   "members": "every trial/active entry in inbox/x-roster.json (x_user_id, on_list)",
   "created_at": "2026-10-24T04:35:00Z",
   "updated_at": "2026-11-22T07:32:00Z"
