@@ -1,0 +1,330 @@
+{
+ "ran_at": "2026-11-23T15:35:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-23T11:20:00Z",
+ "queries": 7,
+ "calls": 9,
+ "items": [
+  {
+   "title": "Aleph Alpha releases Kolibri 1.1 weights under Apache 2.0, seven weeks after Kolibri 1",
+   "url": "https://x.com/Aleph__Alpha/status/2124882073320071362",
+   "handle": "@Aleph__Alpha",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Aleph Alpha shipped a second iteration of its Kolibri model with open weights under Apache 2.0, which can be downloaded from Hugging Face. The post claims better quality, speed and efficiency; no numbers in the post itself.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/Aleph-Alpha/Kolibri-1.1",
+    "https://aleph-alpha.com/en/blog/kolibri-1-1/"
+   ],
+   "vendor": "Aleph Alpha",
+   "posted_at": "2026-11-23T15:05:39Z",
+   "metrics": {
+    "likes": 78,
+    "reposts": 32,
+    "quotes": 16,
+    "replies": 6,
+    "views": 1658
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "OpenCode 2.4.0 adds an automation tool that agents can use to schedule runs or react to MCP events",
+   "url": "https://x.com/opencode/status/2124886266835505473",
+   "handle": "@opencode",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "OpenCode's new release lets the agent create automations that run on a schedule or on MCP events and trigger prompts, shell commands or a code-mode script with access to its MCP tools.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "OpenCode",
+   "posted_at": "2026-11-23T15:22:19Z",
+   "metrics": {
+    "likes": 182,
+    "reposts": 9,
+    "quotes": 4,
+    "replies": 10,
+    "views": 4271
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Xing4.1-Preview: 285B MoE (17B active) for agentic coding with native 1M context, on ModelScope",
+   "url": "https://x.com/ModelScope2022/status/2124850649997148387",
+   "handle": "@ModelScope2022",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A preview of a 285B-parameter mixture-of-experts model that activates 17B per token and supports a 1M-token window, aimed at agentic coding; the post cites Terminal-Bench results and links the ModelScope collection.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://www.modelscope.ai/collections/XingChen-AGI/Xing41-Preview"
+   ],
+   "vendor": "XingChen-AGI",
+   "posted_at": "2026-11-23T13:00:47Z",
+   "metrics": {
+    "likes": 11,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 888
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Omarchy adds a Local Models panel that warns whether a local model fits in RAM before it starts",
+   "url": "https://x.com/OmarchyUpdates/status/2124880770187804725",
+   "handle": "@OmarchyUpdates",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "The Linux distro's new panel estimates memory use for local AI models (the post cites about 100 GiB for one model at its full 256K context) before launch, so a user does not start a model that will not fit. PRs are linked.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Omarchy",
+   "posted_at": "2026-11-23T15:00:28Z",
+   "metrics": {
+    "likes": 16,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 2,
+    "views": 320
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "TensorFold fork adds NVFP4 mode: MiniMax H3-Image warm render drops from 13.2s to 10.7s on a DGX Spark",
+   "url": "https://x.com/plotarmordev/status/2124837982599590197",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "On a DGX Spark an NVFP4 option in a TensorFold fork cuts a warm image generation from 13.2s to 10.7s with the same prompt and seed, at the cost of flatter colors, so it ships as an opt-in.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "plotarmordev (fork of TensorFold)",
+   "posted_at": "2026-11-23T12:10:27Z",
+   "metrics": {
+    "likes": 18,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 3,
+    "views": 1006
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "TensorFold fork --far-pool option: 4096x4096 MiniMax H3-Image goes from 55s to 49s on an M5 Ultra Mac Studio",
+   "url": "https://x.com/plotarmordev/status/2124850455952154687",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A new opt-in flag in a TensorFold fork speeds a 4096x4096 image render on an M5 Ultra Mac Studio from 55s to 49s with, as far as the author can tell, the same output.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "plotarmordev (fork of TensorFold)",
+   "posted_at": "2026-11-23T13:00:01Z",
+   "metrics": {
+    "likes": 3,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 388
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "VS Code adds experimental app-window screenshot capture with crop and markup as Copilot chat context",
+   "url": "https://x.com/code/status/2124879182685491271",
+   "handle": "@code",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Experimental setting lets a user capture a browser or app window, crop and annotate it, and attach it to a Copilot chat so the agent sees exactly what to change.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "VS Code",
+   "posted_at": "2026-11-23T14:54:10Z",
+   "metrics": {
+    "likes": 30,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 5,
+    "views": 4049
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "olmOCR-bench looks saturated: top score moved from 87.6 to 87.8 in seven months while ParseBench rose from 74.3 to 79.0",
+   "url": "https://x.com/vanstriendaniel/status/2124839699873448099",
+   "handle": "@vanstriendaniel",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A Hugging Face leaderboard view of ten models since April shows almost no headroom left on the olmOCR OCR benchmark, while ParseBench still discriminates; useful for choosing which document-parsing eval to trust.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/spaces/davanstrien/benchmark-race?benchmark=olmOcr"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-23T12:17:16Z",
+   "metrics": {
+    "likes": 12,
+    "reposts": 3,
+    "quotes": 1,
+    "replies": 3,
+    "views": 1123
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Apple's FastFrames video models: VAE decoding and KV-cache updates were over half of autoregressive video diffusion latency",
+   "url": "https://x.com/RisingSayak/status/2124880346097582201",
+   "handle": "@RisingSayak",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A summary of Apple's FastFrames work (Wan 2.1 fine-tunes at 1.3B and 14B) reporting that the unglamorous VAE decode and KV-cache steps, not the denoiser, dominated end-to-end latency.",
+   "kind": "paper",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Apple (via @RisingSayak)",
+   "posted_at": "2026-11-23T14:58:47Z",
+   "metrics": {
+    "likes": 5,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 345
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "OpenBMB LexReward: rubric reward models for legal answers on style, element and chain, 81.75% pairwise accuracy for LexRM-Style",
+   "url": "https://x.com/OpenBMB/status/2124858037290836109",
+   "handle": "@OpenBMB",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "A rubric-based reward modeling approach for legal reasoning that scores style, element coverage and reasoning chain; the post reports 81.75% pairwise selection accuracy for the style model.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "OpenBMB",
+   "posted_at": "2026-11-23T13:30:08Z",
+   "metrics": {
+    "likes": 15,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 1,
+    "views": 702
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "MemTrace memory observability integrated into EverOS, a local-first memory runtime for agents",
+   "url": "https://x.com/zxlzr/status/2124858949069672924",
+   "handle": "@zxlzr",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "MemTrace, an observability layer for agent memory, is now integrated into EverOS, which provides a local-first memory runtime for AI agents.",
+   "kind": "tool",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "EverOS / MemTrace",
+   "posted_at": "2026-11-23T13:33:46Z",
+   "metrics": {
+    "likes": 7,
+    "reposts": 1,
+    "quotes": 3,
+    "replies": 1,
+    "views": 1086
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 90,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
