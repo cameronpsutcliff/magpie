@@ -1,0 +1,332 @@
+{
+ "ran_at": "2026-11-23T11:20:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-23T03:20:00Z",
+ "queries": 8,
+ "calls": 10,
+ "items": [
+  {
+   "title": "GLM-5.4 launches in Z.ai Coding Plan: first Loop Transformer from Zhipu, with vision and 1M context",
+   "url": "https://x.com/Zai_org/status/2124811995912286352",
+   "handle": "@Zai_org",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Z.ai released GLM-5.4, which loops existing GLM-5 layers for deeper reasoning and adds vision for coding, video, 3D shaders and CAD tasks. It is available through the Coding Plan and API now; weights are not out yet and Zhipu's Chinese notice reportedly gives the architecture detail (looped transformer, about 700B parameters, technical report later).",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://z.ai"
+   ],
+   "vendor": "Z.ai (Zhipu)",
+   "posted_at": "2026-11-23T10:27:11Z",
+   "metrics": {
+    "likes": 1475,
+    "reposts": 166,
+    "quotes": 108,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@aitrackerbot",
+    "@scaling01",
+    "@plotarmordev",
+    "@MatthewBerman",
+    "@CommandCodeAI",
+    "@askalphaxiv"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Open weights and technical report not published yet; one replier reports it looping in thought and burning tokens with no output.",
+    "source": "https://x.com/jollyroger1480/status/2124824875734806884"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Mostly excitement and requests for open weights, one replier reports it death-looping in thought and burning tokens, another welcomes loop transformers after Inkling 2 Mini.",
+    "tried": true,
+    "replies_read": 8
+   }
+  },
+  {
+   "title": "inclusionAI releases LingSante-3.1 medical models under MIT: 560B-A25B flash, 124B-A5.5B air-VL and a 16.7M signal encoder",
+   "url": "https://x.com/ModelScope2022/status/2124705563082682437",
+   "handle": "@ModelScope2022",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Ant Group's inclusionAI posted open medical models: a 560B MoE with 1M context in FP8 and MXFP4, a multimodal 124B MoE for imaging and medical GUI workflows, and a small physiological-signal encoder. The lab's own evaluation claims it beats frontier closed models on HealthBench Professional; one builder is already running it on four DGX Sparks.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://modelscope.ai/collections/inclusionAI/LingSante-31"
+   ],
+   "vendor": "inclusionAI (Ant Group)",
+   "posted_at": "2026-11-23T03:24:00Z",
+   "metrics": {
+    "likes": 43,
+    "reposts": 5,
+    "quotes": 0,
+    "replies": 3,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@NielsRogge",
+    "@sudoingX",
+    "@TheInclusionAI"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Benchmark comparisons are the team's own evaluation.",
+    "source": null
+   }
+  },
+  {
+   "title": "MemTensor and NVIDIA release MemT-1.0 memory-native models, 36B to 554B total (59B active for Pro)",
+   "url": "https://x.com/ModelScope2022/status/2124805221918310521",
+   "handle": "@ModelScope2022",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "MemT models keep a persistent memory state across interactions through local and trainable hyper memory instead of re-sending history. Nano, Flash and Pro checkpoints are on ModelScope under Apache-2.0, MIT and OpenMDW-1.1; the post reports a 53.08 average across 11 memory benchmarks among parametric-memory methods.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://modelscope.ai/collections/MemTensor/MemT-10"
+   ],
+   "vendor": "MemTensor / NVIDIA",
+   "posted_at": "2026-11-23T10:00:03Z",
+   "metrics": {
+    "likes": 17,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "SOTA claim is limited to evaluated parametric-memory methods and is self-reported.",
+    "source": null
+   }
+  },
+  {
+   "title": "WeChat Vision releases WePocketModel 1.0: 2B and 4B Apache-2.0 model that generates, embeds and picks options, with GGUF builds",
+   "url": "https://x.com/ModelScope2022/status/2124750633500578274",
+   "handle": "@ModelScope2022",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "One compact vision-language backbone covers image description, retrieval embeddings and candidate selection, so on-device apps need one model instead of three. The 4B leads the paper's reported comparisons across 76 benchmarks; GGUF versions are available for local use.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://modelscope.ai/collections/WeChat-Vision/WePocketModel"
+   ],
+   "vendor": "WeChat Vision (Tencent)",
+   "posted_at": "2026-11-23T06:23:00Z",
+   "metrics": {
+    "likes": 10,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 1,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Benchmark leadership is from the authors' own paper.",
+    "source": null
+   }
+  },
+  {
+   "title": "vLLM: KV cache offloading to NVMe matched DRAM within 1% on Kimi-K3 with 16 AMD MI355X GPUs",
+   "url": "https://x.com/vllm_project/status/2124783254683132414",
+   "handle": "@vllm_project",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "vLLM skipped the DRAM tier for KV cache offloading on AMD: a 1.8 TB NVMe pool matched 1.8 TB of DRAM within 1%, and at 70 sessions 4.6 TB of NVMe delivered 5.1x the throughput of 1 TB of DRAM. Tested with SemiAnalysis AgentX traces over 48, 70 and 96 sessions; a blog post gives the setup.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/vllm_project/status/2124783794112938241"
+   ],
+   "vendor": "vLLM",
+   "posted_at": "2026-11-23T08:32:00Z",
+   "metrics": {
+    "likes": 101,
+    "reposts": 8,
+    "quotes": 3,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Hugging Face kernels v0.19.0 makes Metal kernels a first-class citizen alongside CUDA and ROCm",
+   "url": "https://x.com/ariG23498/status/2124802533562675281",
+   "handle": "@ariG23498",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "The Hugging Face kernels library now treats Metal kernels as a first-class target, so Apple-silicon kernel authors can publish and load them the same way as CUDA and ROCm ones.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/huggingface/kernels/releases/tag/v0.19.0"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-23T09:49:00Z",
+   "metrics": {
+    "likes": 32,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "SenseTime publishes sensenova-roborsi-27b: vision-language model that asks a VLA policy for motion or writes gripper-pose code",
+   "url": "https://x.com/aitrackerbot/status/2124753311295262841",
+   "handle": "@aitrackerbot",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "SenseTime's 27B robot-manipulation vision-language model weights are public on Hugging Face. It either requests motion from a vision-language-action policy or writes code for gripper poses. A 9B DFlash2 speculative-decoding draft for SenseNova-Loop was published the same hour.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "SenseTime",
+   "posted_at": "2026-11-23T06:34:00Z",
+   "metrics": {
+    "likes": 17,
+    "reposts": 0,
+    "quotes": 1,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Aggregator post with the Hugging Face link shortened; no benchmarks given.",
+    "source": null
+   }
+  },
+  {
+   "title": "AlphaAnything extends pretrained RGB image generators to RGBA, with paper and model",
+   "url": "https://x.com/_akhaliq/status/2124797213272690972",
+   "handle": "@_akhaliq",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A paper and released model show how to adapt existing RGB generators to produce transparent (RGBA) output without training from scratch.",
+   "kind": "paper",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "research",
+   "posted_at": "2026-11-23T09:28:00Z",
+   "metrics": {
+    "likes": 53,
+    "reposts": 5,
+    "quotes": 3,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Short post; links not opened and no numbers seen.",
+    "source": null
+   }
+  },
+  {
+   "title": "TheGrill: open-source tool that tests whether a change made an LLM server faster or slower",
+   "url": "https://x.com/plotarmordev/status/2124806412408598962",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "The author's open-source benchmarking tool works with any OpenAI-compatible server on Linux or Mac, aimed at flag-tuning claims such as one tweak out of 199 vLLM and SGLang changes that held for about 2%.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/plotarmordev/thegrill"
+   ],
+   "vendor": "plotarmordev",
+   "posted_at": "2026-11-23T10:05:00Z",
+   "metrics": {
+    "likes": 2,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 3,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Early, small account; no results shown.",
+    "source": null
+   }
+  },
+  {
+   "title": "TensorFold runs DeepSeek V4.1 Flash on one 512GB M5 Ultra: prefill 1300 to 3400 tok/s, decode 56 to 80 tok/s",
+   "url": "https://x.com/plotarmordev/status/2124797855546343568",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Reported throughput for DeepSeek's own quant of V4.1 Flash on a single 512 GB M5 Ultra Mac using the TensorFold engine; the original numbers come from the TensorFold author's post.",
+   "kind": "tool",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/ashxhart/status/2124130433717719043"
+   ],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-23T09:31:00Z",
+   "metrics": {
+    "likes": 12,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@ashxhart"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Numbers without method or repo in the post.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "saved_in": 0,
+ "saved_kept": 0,
+ "list_posts_read": 92,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}

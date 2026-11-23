@@ -1,21 +1,21 @@
 {
- "updated_at": "2026-11-23T10:40:00Z",
- "job": "roster",
+ "updated_at": "2026-11-23T11:21:00Z",
+ "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 5,
+ "calls_used_today": 10,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-23T03:20:00Z",
-  "items": 5,
-  "queries": 3,
-  "deep_reads": 0,
+  "ran_at": "2026-11-23T11:20:00Z",
+  "items": 10,
+  "queries": 8,
+  "deep_reads": 1,
   "rechecks": 0,
   "flagged": 0,
-  "saved_in": 2,
-  "saved_kept": 1,
+  "saved_in": 0,
+  "saved_kept": 0,
   "videos": 0,
   "security_forwarded": 0,
-  "list_posts_read": 94,
+  "list_posts_read": 92,
   "list_pages": 1
  },
  "roster": {
@@ -58,7 +58,8 @@
   "Sweep 2026-11-22T11:27Z (run from the box): list page reached 18:49Z Nov 21 so all members covered; no fallback searches. 3 new saves (1 kept, 2 rejected). Follows skipped, no browser. Horizon watch Dessa: 1 read, nothing. X showed 969 of 1000 shared left.",
   "Sweep 15:24Z: run from the box with MCP X tools; no TS cells or Skill tool available, so the skill files were not loaded and the prompt was followed directly. Bookmark seen_ids.json holds only 2 ids, so new saves were found by diffing against sweep files and the jsonl archive.",
   "Sweep 19:17Z (Nov 22, run from the box): list page reached 01:59Z so all members covered; no fallback searches. Bookmarks: 25 newest all in archive (saved_in 0). No Skill tool, so skills read from sand-data files. MAGPIE_GITHUB_TOKEN unset: committed locally, not pushed. Follows skipped, no browser. Horizon watch skipped this sweep (0 reads).",
-  "Roster review 2026-11-23: no new owner_saves authors (@danikkk_wqs still fails screen, @RoundtableSpace on avoid). No promotions: no trial aged 14+ days has 2 posts in the retained 14 days of sweep files. @exolabs (1 original capability post in 30 days) not added yet. @JensenHuang (owner_requested) has no qualifying post since 2026-09-03, flagged only. 2 X reads used (1 search, 1 list add)."
+  "Roster review 2026-11-23: no new owner_saves authors (@danikkk_wqs still fails screen, @RoundtableSpace on avoid). No promotions: no trial aged 14+ days has 2 posts in the retained 14 days of sweep files. @exolabs (1 original capability post in 30 days) not added yet. @JensenHuang (owner_requested) has no qualifying post since 2026-09-03, flagged only. 2 X reads used (1 search, 1 list add).",
+  "Sweep 11:20Z Nov 23: no user-X search tool; search_posts_all (x namespace) used. It caps at 25 per call and returns sparse pages with next_token, so four batched curated queries returned only 4/10/25/18 posts; only the busiest was paged. Bookmarks (25 newest) all already in the archive. Follows skipped, no browser."
  ],
  "errors": [],
  "follows_today": 0,
