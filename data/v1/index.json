@@ -2,6 +2,86 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-11-23",
+   "headline": "Non-penetrating World Models, ffmpeg-skill, cmHC: Balancing Stream Mixing in Hyper-Connections via Geometric Contraction, and more",
+   "events": 176,
+   "sources": 545,
+   "enriched": false,
+   "top": [
+    {
+     "id": "3d4a6d687ca7",
+     "title": "Non-penetrating World Models",
+     "impact": 5,
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-23-3d4a6d687ca7"
+    },
+    {
+     "id": "fcc74671eed1",
+     "title": "kajisho5/ffmpeg-skill",
+     "impact": 5,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-23-fcc74671eed1"
+    },
+    {
+     "id": "86d7ff3289d6",
+     "title": "cmHC: Balancing Stream Mixing in Hyper-Connections via Geometric Contraction",
+     "impact": 4,
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-23-86d7ff3289d6"
+    },
+    {
+     "id": "4302db6cb9e8",
+     "title": "elementalsouls/Claude-BugHunter",
+     "impact": 5,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-23-4302db6cb9e8"
+    },
+    {
+     "id": "6e62c7dad254",
+     "title": "alibaba/open-code-review",
+     "impact": 5,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-23-6e62c7dad254"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Research",
+    "Anthropic",
+    "Qwen",
+    "TensorFold",
+    "Google"
+   ],
+   "topics": {
+    "models": 60,
+    "coding": 56,
+    "multimodal": 51,
+    "agents": 49,
+    "local": 24,
+    "infra": 23,
+    "evals": 22,
+    "mcp": 12,
+    "research": 11,
+    "memory": 10,
+    "security": 8,
+    "robotics": 2,
+    "reverse": 1
+   },
+   "kinds": {
+    "paper": 40,
+    "repo": 36,
+    "model": 30,
+    "social": 20,
+    "space": 20,
+    "community": 14,
+    "changelog": 7,
+    "blog": 7,
+    "news": 1,
+    "newsletter": 1
+   },
+   "threats": []
+  },
+  {
    "date": "2026-11-22",
    "headline": "Open few-step video, fit Inkling in 5.4 GB, port hot code, and more",
    "events": 245,
@@ -5037,5 +5117,5 @@
    }
   }
  ],
- "latest": "2026-11-22"
+ "latest": "2026-11-23"
 }
