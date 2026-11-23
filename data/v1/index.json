@@ -3,79 +3,80 @@
  "days": [
   {
    "date": "2026-11-23",
-   "headline": "Non-penetrating World Models, ffmpeg-skill, cmHC: Balancing Stream Mixing in Hyper-Connections via Geometric Contraction, and more",
-   "events": 176,
-   "sources": 545,
-   "enriched": false,
+   "headline": "Robots write gripper code, GLM-5.4 leads open coding, llama.cpp fork speeds up, and more",
+   "events": 227,
+   "sources": 576,
+   "enriched": true,
    "top": [
     {
-     "id": "3d4a6d687ca7",
-     "title": "Non-penetrating World Models",
-     "impact": 5,
-     "vendor": "Research",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-23-3d4a6d687ca7"
-    },
-    {
      "id": "fcc74671eed1",
-     "title": "kajisho5/ffmpeg-skill",
-     "impact": 5,
+     "title": "FFmpeg skill for coding agents keeps climbing GitHub",
+     "impact": 4,
      "vendor": "Open source",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-23-fcc74671eed1"
     },
     {
-     "id": "86d7ff3289d6",
-     "title": "cmHC: Balancing Stream Mixing in Hyper-Connections via Geometric Contraction",
-     "impact": 4,
-     "vendor": "Research",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-23-86d7ff3289d6"
-    },
-    {
-     "id": "4302db6cb9e8",
-     "title": "elementalsouls/Claude-BugHunter",
-     "impact": 5,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-23-4302db6cb9e8"
-    },
-    {
      "id": "6e62c7dad254",
-     "title": "alibaba/open-code-review",
-     "impact": 5,
-     "vendor": "Open source",
+     "title": "Alibaba open-code-review adds 3,700 stars this week",
+     "impact": 4,
+     "vendor": "Alibaba",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-23-6e62c7dad254"
+    },
+    {
+     "id": "3d4a6d687ca7",
+     "title": "Benchmark and fix for object penetration in world models",
+     "impact": 3,
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-23-3d4a6d687ca7"
+    },
+    {
+     "id": "3cd4e48abda1",
+     "title": "T3 Code agent controller passes 73,000 stars",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-23-3cd4e48abda1"
+    },
+    {
+     "id": "18b5c14b7e76",
+     "title": "Clover: 35B mixture-of-experts diffusion language model",
+     "impact": 3,
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-23-18b5c14b7e76"
     }
    ],
    "vendors": [
     "Open source",
     "Research",
     "Anthropic",
+    "Google",
     "Qwen",
-    "TensorFold",
-    "Google"
+    "Hugging Face"
    ],
    "topics": {
-    "models": 60,
-    "coding": 56,
+    "models": 69,
+    "coding": 59,
+    "agents": 51,
     "multimodal": 51,
-    "agents": 49,
-    "local": 24,
-    "infra": 23,
-    "evals": 22,
+    "local": 30,
+    "infra": 30,
+    "evals": 26,
+    "research": 18,
     "mcp": 12,
-    "research": 11,
-    "memory": 10,
-    "security": 8,
-    "robotics": 2,
-    "reverse": 1
+    "security": 9,
+    "memory": 9,
+    "robotics": 4,
+    "reverse": 3
    },
    "kinds": {
+    "video": 41,
     "paper": 40,
-    "repo": 36,
+    "repo": 35,
     "model": 30,
-    "social": 20,
+    "social": 30,
     "space": 20,
-    "community": 14,
+    "community": 13,
+    "blog": 9,
     "changelog": 7,
-    "blog": 7,
     "news": 1,
     "newsletter": 1
    },
