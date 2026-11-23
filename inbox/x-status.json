@@ -1,21 +1,21 @@
 {
- "updated_at": "2026-11-22T23:27:00Z",
+ "updated_at": "2026-11-23T03:20:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 39,
+ "calls_used_today": 3,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-22T23:27:00Z",
-  "items": 4,
-  "queries": 5,
+  "ran_at": "2026-11-23T03:20:00Z",
+  "items": 5,
+  "queries": 3,
   "deep_reads": 0,
   "rechecks": 0,
   "flagged": 0,
-  "saved_in": 4,
-  "saved_kept": 2,
+  "saved_in": 2,
+  "saved_kept": 1,
   "videos": 0,
   "security_forwarded": 0,
-  "list_posts_read": 96,
+  "list_posts_read": 94,
   "list_pages": 1
  },
  "roster": {
@@ -81,7 +81,7 @@
   "updated_at": "2026-11-22T07:32:00Z"
  },
  "horizon_triggered": [],
- "calls_day": "2026-11-22",
+ "calls_day": "2026-11-23",
  "roster_review_calls": 0,
  "follows_note": "2026-11-20 11:20Z sweep: no browser available, follows skipped (follow_mode browser).",
  "roster_review": {
@@ -95,6 +95,6 @@
   "flagged": [],
   "sunday_drafts": false
  },
- "follows_skipped": "Sweep 15:24Z: follows skipped, no browser in this run.",
+ "follows_skipped": "Sweep 03:20Z: follows skipped, no browser in this run.",
  "calls_note": "calls_used_today is the Magpie share counted by this lane for UTC day 2026-11-21; X reported 956 of 1000 shared reads left at 19:19Z."
 }

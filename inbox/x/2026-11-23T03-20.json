@@ -1,0 +1,172 @@
+{
+ "ran_at": "2026-11-23T03:20:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-22T23:27:00Z",
+ "queries": 3,
+ "calls": 3,
+ "items": [
+  {
+   "title": "Basalt engine on one DGX Spark: over 2x vLLM single-stream on Qwen3.8-Flash-Next, slower at 4 concurrent",
+   "url": "https://x.com/wei_wang/status/2124672786878673341",
+   "handle": "@wei_wang",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A community Basalt engine runs Qwen3.8-Flash-Next with all 24,576 experts resident on one DGX Spark. End-to-end single-stream throughput is more than twice vLLM, while vLLM is over 1.5x faster at four concurrent streams; method (temperature 0, 256 output tokens, two runs each, engines alternated) is stated.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/dingzhao100/basalt-arm-sm121-dgxspark",
+    "https://forums.developer.nvidia.com/t/first-successful-basalt-qwen3-8-flash-next-moe-run-on-dgx-spark-24-576-experts-fully-resident-plus-a-linux-uma-memory-fix/389794"
+   ],
+   "vendor": "Basalt (community)",
+   "posted_at": "2026-11-23T01:14:01Z",
+   "metrics": {
+    "likes": 4,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 3,
+    "views": 297
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Third-party summary of another author's forum post; numbers not independently reproduced, replies not read.",
+    "source": null
+   }
+  },
+  {
+   "title": "Beam 1.0 (501B MoE) fits a 128 GB DGX Spark at 99.9 GB via vector quantization, 25.23 tok/s decode",
+   "url": "https://x.com/wei_wang/status/2124655926632120755",
+   "handle": "@wei_wang",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A VQ GGUF of the 501B-parameter Beam 1.0 shrinks 1.0 TB of BF16 weights to 99.9 GB, with expert weights stored at about 1.5 to 1.625 bits each via codebook lookup in the ds4-dfm-rs engine. It reports 25.23 tok/s decode on one 128 GB Spark.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/Baekpica/Beam-1.0-501B-A23B-VQ-GGUF",
+    "https://github.com/Baekpica/ds4-dfm-rs"
+   ],
+   "vendor": "Baekpica (community)",
+   "posted_at": "2026-11-23T00:07:01Z",
+   "metrics": {
+    "likes": 11,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 6,
+    "views": 580
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Quality loss from the quantization is not shown in the post; replies not read.",
+    "source": null
+   }
+  },
+  {
+   "title": "aci-cpp (llama.cpp fork) beats llama.cpp v1.0.0 on 8 of 10 Qwen3.8-27B workloads, up to 28%",
+   "url": "https://x.com/actualinc/status/2124662121304617094",
+   "handle": "@actualinc",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "The Actual team benchmarks its llama.cpp fork against v1.0.0 on Qwen3.8-27B across Macs, DGX Spark and RTX cards: ahead on 8 of 10 workloads by up to 28%, with faster multi-token-prediction drafting and 250K-context decode on an M3 Ultra (12.6 tok/s, 46% faster than its prior build). A full write-up lists conditions per chart.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://actual.inc/blog/in-search-of-perfection"
+   ],
+   "vendor": "Actual",
+   "posted_at": "2026-11-23T00:31:38Z",
+   "metrics": {
+    "likes": 45,
+    "reposts": 15,
+    "quotes": 3,
+    "replies": 7,
+    "views": 4520
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Vendor-run benchmark of its own fork; not independently reproduced.",
+    "source": null
+   }
+  },
+  {
+   "title": "Strata 0.2.20 adds full support for Unsloth quants of Inkling 2 Mini and faster small-GPU performance",
+   "url": "https://x.com/coldniko/status/2124646708185334088",
+   "handle": "@coldniko",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Strata 0.2.20 fixes bugs and improves speed on smaller GPUs and older devices, and now supports all Unsloth quantizations of Inkling 2 Mini.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/Niko1221/Strata/releases/tag/v0.2.20"
+   ],
+   "vendor": "Strata",
+   "posted_at": "2026-11-22T23:30:23Z",
+   "metrics": {
+    "likes": 397,
+    "reposts": 50,
+    "quotes": 14,
+    "replies": 35,
+    "views": 19243
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Walkthrough: pointing an agent at T3 Code over one MCP link so it routes all coding to a single coding model",
+   "url": "https://x.com/0xCodez/status/2124607614529175879",
+   "handle": "@0xCodez",
+   "group": "devtools",
+   "origin": "saved",
+   "summary": "A how-to thread for orchestrating a fleet of machines from one agent while T3 Code handles the coding, using a single MCP link and one routing rule. Setup description only; no repo or measured result.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "T3 Code",
+   "posted_at": "2026-11-22T20:55:03Z",
+   "metrics": {
+    "likes": 319,
+    "reposts": 15,
+    "quotes": 3,
+    "replies": 15,
+    "views": 27572
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Third-party setup description with no link to docs or result; claim only.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/auroter/status/2124573913036587119",
+   "reason": "Vague tok/s reaction quoting an already-reported Strata release; no new capability."
+  }
+ ],
+ "saved_in": 2,
+ "saved_kept": 1,
+ "list_posts_read": 94,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": []
+}
