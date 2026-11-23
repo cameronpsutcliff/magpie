@@ -1,22 +1,23 @@
 {
- "updated_at": "2026-11-23T19:30:00Z",
+ "updated_at": "2026-11-23T23:40:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 28,
+ "calls_used_today": 48,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-23T19:26:00Z",
-  "items": 11,
-  "queries": 9,
-  "deep_reads": 4,
+  "ran_at": "2026-11-23T23:22:00Z",
+  "items": 22,
+  "queries": 11,
+  "deep_reads": 6,
   "rechecks": 0,
-  "flagged": 0,
+  "flagged": 10,
   "saved_in": 0,
   "saved_kept": 0,
   "videos": 0,
-  "security_forwarded": 3,
-  "list_posts_read": 98,
-  "list_pages": 1
+  "security_forwarded": 1,
+  "list_posts_read": 97,
+  "list_pages": 1,
+  "bus_posts": 1
  },
  "roster": {
   "curated": 223,
@@ -61,7 +62,8 @@
   "Roster review 2026-11-23: no new owner_saves authors (@danikkk_wqs still fails screen, @RoundtableSpace on avoid). No promotions: no trial aged 14+ days has 2 posts in the retained 14 days of sweep files. @exolabs (1 original capability post in 30 days) not added yet. @JensenHuang (owner_requested) has no qualifying post since 2026-09-03, flagged only. 2 X reads used (1 search, 1 list add).",
   "Sweep 11:20Z Nov 23: no user-X search tool; search_posts_all (x namespace) used. It caps at 25 per call and returns sparse pages with next_token, so four batched curated queries returned only 4/10/25/18 posts; only the busiest was paged. Bookmarks (25 newest) all already in the archive. Follows skipped, no browser.",
   "Sweep 15:35Z (Nov 23): list timeline reached since (oldest post 04:35Z, so every list member was covered). Curated labs OR query returned 0 posts since 11:20Z; other five group queries (about 35 handles each, max_results capped at 25 per call) returned posts; Jensen Huang reinstatement as NVIDIA CEO dominated roster chatter (not kept, business). Bookmarks: no new saves. Follows skipped: no browser in this run.",
-  "Sweep 19:26Z: search_posts_all conversation_id replies return newest replies, not top replies, so deep reads of very popular posts only see recent low-engagement replies. Prior sweep files wrote security_forwarded as a count; this one uses the list form from the prompt. Post data for t.co links at the end of posts resolved only to photo/video URLs, so several kept items have no primary link."
+  "Sweep 19:26Z: search_posts_all conversation_id replies return newest replies, not top replies, so deep reads of very popular posts only see recent low-engagement replies. Prior sweep files wrote security_forwarded as a count; this one uses the list form from the prompt. Post data for t.co links at the end of posts resolved only to photo/video URLs, so several kept items have no primary link.",
+  "Security routing: owner's 2026-11-23 rule sends verified stack-touching security items straight to the Mini event bus (lane personal), not Bouncer; the prompt's Fleet stack section still says forward to Bouncer. Suggest updating that section. This sweep logs the bus post under security_forwarded[].bus_post."
  ],
  "errors": [],
  "follows_today": 0,
@@ -99,6 +101,6 @@
   "flagged": [],
   "sunday_drafts": false
  },
- "follows_skipped": "Sweep 19:26Z: follows skipped, executor has no browser.",
- "calls_note": "calls_used_today is the Magpie share counted by this lane for UTC day 2026-11-21; X reported 956 of 1000 shared reads left at 19:19Z."
+ "follows_skipped": "Sweep 23:22Z: follows skipped, executor has no browser.",
+ "calls_note": "calls_used_today is the Magpie share counted by this lane for UTC day 2026-11-23; X reported 944 of 1000 shared reads left at ~23:26Z."
 }

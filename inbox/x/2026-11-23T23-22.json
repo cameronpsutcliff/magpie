@@ -1,0 +1,765 @@
+{
+ "ran_at": "2026-11-23T23:22:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-23T19:26:00Z",
+ "queries": 11,
+ "calls": 20,
+ "items": [
+  {
+   "title": "Anthropic launches Claude Ship beta: Code Review, PR Steward and policy-based Claude Approvals for GitHub PRs",
+   "url": "https://x.com/ClaudeDevs/status/2124959436640858475",
+   "handle": "@ClaudeDevs",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Team and Enterprise GitHub repos can now have Claude review PRs, fix failing checks and conflicts (PR Steward), and approve changes a repo policy file allows (Claude Approvals). Developers can also run /ship from Claude Code to push, open, review and shepherd a PR.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://claude.com/resources/articles/introducing-claude-ship",
+    "https://code.claude.com/docs/en/approvals",
+    "https://claude.com/product/claude-ship"
+   ],
+   "vendor": "Anthropic",
+   "posted_at": "2026-11-23T20:13:00Z",
+   "metrics": {
+    "likes": 12607,
+    "reposts": 596,
+    "quotes": 387,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [
+    "@bcherny",
+    "@addyosmani",
+    "@lydiahallie"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Anthropic's own docs note that Claude's approving review can satisfy a GitHub one-approval rule, so with auto-merge a PR can merge with no human review; repliers flag who audits the approver.",
+    "source": "https://code.claude.com/docs/en/approvals"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Mostly enthusiastic about faster review and repo-versioned approval policies; skeptics ask what is new over existing Claude Code review, whether it needs extra usage credits, and warn about auto-approval risk.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "OpenAI and Cisco open-source Shirudo, an eBPF runtime where agents write signed temporary shields for running Linux systems",
+   "url": "https://x.com/OpenAI/status/2124980590717911527",
+   "handle": "@OpenAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Shirudo lets operators (and agents such as Codex) build signed eBPF or Java micropatches that block a vulnerable code path on a running Linux host without a restart, with TPM-backed attestation. OpenAI reports a Codex-written shield blocked a Java4Shell exploit on live Elasticsearch in a controlled test. Pre-release; production needs Shirudo kernel patches and TPM 2.0. BSD-2-Clause.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/shirudo-dev/shirudo",
+    "https://openai.com/index/introducing-shirudo",
+    "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/cisco-and-openai-launch-shirudo-a-new-project-to-safeguard-agentic-ai.html",
+    "https://isovalent.com/blog/post/cisco-openai-shirudo"
+   ],
+   "vendor": "OpenAI and Cisco",
+   "posted_at": "2026-11-23T21:37:00Z",
+   "metrics": {
+    "likes": 6012,
+    "reposts": null,
+    "quotes": 269,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [
+    "@gdb"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers ask how agent-written rules are scoped, expired and rolled back, and how to prove a shield will not drop legitimate traffic; the only result so far is a vendor-run controlled test.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Security practitioners welcome the patch-gap framing and eBPF approach; the main questions are review gates before load, rollback and blast radius.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Claude merges connectors and skills into plugins, with a directory of 10,000+ plugins on Free, Pro, Max and Ultra",
+   "url": "https://x.com/claudeai/status/2124970294523945328",
+   "handle": "@claudeai",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Claude now packages tool connectors and skills together as plugins, installable from a directory of more than 10,000, on consumer plans now and Team and Enterprise later. A plugin can give Claude both access to an app and the workflow for using it.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://claude.ai/plugins"
+   ],
+   "vendor": "Anthropic",
+   "posted_at": "2026-11-23T20:56:00Z",
+   "metrics": {
+    "likes": 4068,
+    "reposts": null,
+    "quotes": 91,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers raise supply-chain risk of installing many third-party plugins and note that removing a plugin does not disconnect its connector; one asks whether plugins pin connector versions.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Users like one entry point for connectors and skills; a few ask whether this is new and raise plugin vetting and version pinning.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Claude Code desktop redesigns its side panel so Files, Changes and Terminal open as tabs beside the session (Mac first)",
+   "url": "https://x.com/ClaudeDevs/status/2124978802006851961",
+   "handle": "@ClaudeDevs",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "In Claude Code on desktop, tools now open as movable tabs next to the agent session and can pop out into their own windows. Rolling out on Mac, with Windows and Linux to follow.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Anthropic",
+   "posted_at": "2026-11-23T21:30:00Z",
+   "metrics": {
+    "likes": 2672,
+    "reposts": null,
+    "quotes": 44,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [
+    "@theo"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Users like seeing diffs and terminal beside the chat; requests for WSL and Linux, and one report that a popped-out terminal loses its session.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Antigravity resets Gemini quotas, opens Hydrogen to all users, adds Carbon for paid Pro and folds the separate Argon bucket into the general one",
+   "url": "https://x.com/_mohansolo/status/2124960419429458207",
+   "handle": "@_mohansolo",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Google reset Antigravity usage for everyone while upgrading models across tiers: Hydrogen is now available to all users, paid Pro users get Carbon, and Argon capacity moves into the general Gemini bucket so it can be spent on Argon, Carbon or Neon.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Google",
+   "posted_at": "2026-11-23T20:16:00Z",
+   "metrics": {
+    "likes": 10531,
+    "reposts": 593,
+    "quotes": 495,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [
+    "@PatrickToulme",
+    "@thecsguy"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Overwhelmingly happy replies; some ask for advance notice before resets, and one says Argon is shown as going away on 11-30.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Antigravity adds checklists that show progress on long-running agent tasks",
+   "url": "https://x.com/_mohansolo/status/2125002306584506750",
+   "handle": "@_mohansolo",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Antigravity now shows a checklist for long-running tasks so users can see what the agent has done and what is left without opening side chats.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Google",
+   "posted_at": "2026-11-23T23:03:00Z",
+   "metrics": {
+    "likes": 494,
+    "reposts": 9,
+    "quotes": 5,
+    "replies": 71,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Anthropic says an internal Claude model found a proof that VP is not equal to VNP, with a 70-page paper and a Lean formalization",
+   "url": "https://x.com/askalphaxiv/status/2124995113395060999",
+   "handle": "@askalphaxiv",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Anthropic posted a paper and Lean proof, credited to Claude, claiming Valiant's algebraic analogue of P vs NP (a superpolynomial lower bound for the permanent) over every field. The Lean proof reportedly passes automated checks; it does not settle P vs NP itself.",
+   "kind": "paper",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/anthropics/formal-math/blob/main/vp-vnp/paper.pdf",
+    "https://github.com/anthropics/formal-math"
+   ],
+   "vendor": "Anthropic",
+   "posted_at": "2026-11-23T22:34:00Z",
+   "metrics": {
+    "likes": 175,
+    "reposts": null,
+    "quotes": 11,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [
+    "@xingyudang"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No independent human review of the proof yet; coverage is mostly excitement and restatement.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Widespread astonishment and reposting; careful posts stress it is a formalized claim awaiting expert verification.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "megakernel-zoo runs Inkling-2-Mini at 123 to 194 tokens/s on an M5 Max MacBook Pro, 1.6 to 1.7x the fastest Mac engine tested",
+   "url": "https://x.com/xingyudang/status/2124996440753623281",
+   "handle": "@xingyudang",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "The agent-built megakernel engine now serves Thinking Machines' 26B MoE Inkling-2-Mini on Apple silicon with exact speculative decoding via the model's own MTP head, reported 1.6 to 1.7x faster than the best Mac engine the author found.",
+   "kind": "repo",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/dangxingyu/megakernel-zoo",
+    "https://dangxingyu.github.io/megakernel/"
+   ],
+   "vendor": "megakernel-zoo (Xingyu Dang)",
+   "posted_at": "2026-11-23T22:40:00Z",
+   "metrics": {
+    "likes": 11,
+    "reposts": 0,
+    "quotes": 1,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Humanity Last System: a benchmark for agents that build specialized serving engines, with an agent-built engine beating vLLM in 12 hours",
+   "url": "https://x.com/i/status/2124939718362341696",
+   "handle": "@xingyudang",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A new benchmark tests whether agents can write hyperspecialized inference engines for text, agentic and multimodal workloads; the authors say an agent built one from scratch in 12 hours that beat vLLM.",
+   "kind": "eval",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Humanity Last System authors",
+   "posted_at": "2026-11-23T18:54:00Z",
+   "metrics": {
+    "likes": 59,
+    "reposts": 13,
+    "quotes": null,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [
+    "@xingyudang"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No paper or repo link was visible in the post; result is self-reported.",
+    "source": null
+   }
+  },
+  {
+   "title": "LlamaIndex releases OCRia-nano-1, an 8.1M-parameter open-weight OCR and layout model at 426 ms per page on one CPU core",
+   "url": "https://x.com/llama_index/status/2124952874316632394",
+   "handle": "@llama_index",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "The smallest OCRia model reads text, rebuilds tables and recovers page layout entirely on CPU; LlamaIndex reports 426 ms per page on a single core and 27.8 pages per second with more cores. ONNX weights on Hugging Face.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/llamaindex/OCRia-nano-1"
+   ],
+   "vendor": "LlamaIndex",
+   "posted_at": "2026-11-23T19:46:00Z",
+   "metrics": {
+    "likes": 28,
+    "reposts": null,
+    "quotes": 2,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Cerebras reports up to 5x throughput at the same power by pairing GPUs and WSEs in disaggregated inference",
+   "url": "https://x.com/cerebras/status/2124958021952413949",
+   "handle": "@cerebras",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Cerebras says it combined GPUs and its wafer-scale engines in a production heterogeneous disaggregated inference setup, seeing up to 5x throughput within the same power footprint while keeping its inference speed.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Cerebras",
+   "posted_at": "2026-11-23T20:07:00Z",
+   "metrics": {
+    "likes": 180,
+    "reposts": null,
+    "quotes": 10,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Vendor production numbers with no method or workload details in the post.",
+    "source": null
+   }
+  },
+  {
+   "title": "Browserbase adds Large and XL browser sizes for heavy agent sessions, citing up to 2x speedups",
+   "url": "https://x.com/browserbase/status/2124963830585516233",
+   "handle": "@browserbase",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Browser agents running multi-tab workflows or heavy web apps can now request larger cloud browsers with more compute; Browserbase reports up to 2x faster for some tasks.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Browserbase",
+   "posted_at": "2026-11-23T20:30:00Z",
+   "metrics": {
+    "likes": 28,
+    "reposts": null,
+    "quotes": 1,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Simon Willison releases datasette-charts 0.1a0, a plugin that picks visualizations for any table automatically",
+   "url": "https://x.com/simonw/status/2125007029442114041",
+   "handle": "@simonw",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A new Datasette plugin, built with Fable 5.2's help, tries to choose credible charts automatically for whatever data is loaded.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://simonwillison.net/2026/Nov/23/datasette-charts/"
+   ],
+   "vendor": "Datasette",
+   "posted_at": "2026-11-23T23:22:00Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 569
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Hyper3D Low Poly on fal turns text, images or high-poly meshes into low-poly 3D assets with baked textures",
+   "url": "https://x.com/fal/status/2124994211971756465",
+   "handle": "@fal",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "fal now hosts Hyper3D Low Poly, which generates low-poly models from prompts or reference images and retopologizes high-poly meshes into triangle or quad low-poly assets for LOD workflows.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Hyper3D on fal",
+   "posted_at": "2026-11-23T22:31:00Z",
+   "metrics": {
+    "likes": 35,
+    "reposts": 3,
+    "quotes": 2,
+    "replies": 3,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Replit publishes research on scaling laws for agent swarms",
+   "url": "https://x.com/amasad/status/2124969305674748175",
+   "handle": "@amasad",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Replit reports that adding more agents can give large gains, but more compute does not reliably help, and how agents organize themselves matters.",
+   "kind": "paper",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Replit",
+   "posted_at": "2026-11-23T20:52:00Z",
+   "metrics": {
+    "likes": 171,
+    "reposts": null,
+    "quotes": 1,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Wharton report finds AI shopping agents' preferences flip with site order, prior chat or a changed headline",
+   "url": "https://x.com/emollick/status/2124970360445796544",
+   "handle": "@emollick",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A Wharton Generative AI Labs technical report on agentic shopping finds agent recommendations are fragile: reordering sites, chatting first or editing a headline changes what the agent suggests.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://gail.wharton.upenn.edu/research-and-insights/technical-report-agentic-shopping/"
+   ],
+   "vendor": "Wharton Generative AI Labs",
+   "posted_at": "2026-11-23T20:56:00Z",
+   "metrics": {
+    "likes": 89,
+    "reposts": null,
+    "quotes": 1,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Inkling 2 Mini enters the Agent Arena Index at #18 among open models and #3 among US open-weight models",
+   "url": "https://x.com/arena/status/2124981167279546382",
+   "handle": "@arena",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Arena's agent leaderboard places Thinking Machines' 26.4B Inkling 2 Mini at 996 points versus 1117 for the 594B Inkling 2 Small.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Arena",
+   "posted_at": "2026-11-23T21:39:00Z",
+   "metrics": {
+    "likes": 79,
+    "reposts": null,
+    "quotes": 2,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Nace AI's Drex Max tops AIMultiple's System One Index of 77 decision models, completing 43 of 50 browser-agent tasks",
+   "url": "https://x.com/NaceAI/status/2124957120840015898",
+   "handle": "@NaceAI",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "On AIMultiple's index, Drex Max scored 62.6 versus 60.3 and 58.6 for the next two, and finished 43 of 50 browser-agent tasks, matching Gemini 3.8 Flash in under half the time at about 1/20 the cost per task (vendor summary of a third-party index).",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Nace AI",
+   "posted_at": "2026-11-23T20:03:00Z",
+   "metrics": {
+    "likes": 18,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Numbers come from the vendor's summary of the index.",
+    "source": null
+   }
+  },
+  {
+   "title": "Next Omarchy update lets Intel Arc (xe) GPUs use about 3/4 of system RAM, 46.7 of 64 GB, so 38 GB local models fit",
+   "url": "https://x.com/OmarchyUpdates/status/2124956215646318637",
+   "handle": "@OmarchyUpdates",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "On an XPS 14 with Arc B390, the GPU memory cap rises from 31 GiB to 46.7 GiB, enough to load a 38 GiB model such as MiniMax H3 locally.",
+   "kind": "feature",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Omarchy",
+   "posted_at": "2026-11-23T20:00:00Z",
+   "metrics": {
+    "likes": 21,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "GPT-6.2 Sol rolls out in ChatGPT's Chat tab, tuned for everyday conversation, detailed instructions and web lookups",
+   "url": "https://x.com/i/status/2124942186425069836",
+   "handle": "@thsottiaux",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "OpenAI is rolling a version of GPT-6.2 Sol into the ChatGPT Chat tab, aimed at complex everyday requests, finer photo details and finding information online; Codex lead Tibo says users should notice a significant quality jump.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "OpenAI",
+   "posted_at": "2026-11-23T19:04:00Z",
+   "metrics": {
+    "likes": 5200,
+    "reposts": 347,
+    "quotes": null,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [
+    "@thsottiaux"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Copilot Fusion appears at #1 on Terminal Bench 4.1 by a wide margin over Opus 5.5",
+   "url": "https://x.com/maksym_andr/status/2124943654624395771",
+   "handle": "@maksym_andr",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A previously unknown agent, Copilot Fusion, now leads the Terminal Bench 4.1 leaderboard; no details on what it is yet.",
+   "kind": "eval",
+   "evidence": "claim",
+   "links": [
+    "https://www.tbench.ai/"
+   ],
+   "vendor": "unknown",
+   "posted_at": "2026-11-23T19:10:00Z",
+   "metrics": {
+    "likes": 14,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No information on the system behind the entry.",
+    "source": null
+   }
+  },
+  {
+   "title": "LiteLLM Lens, its open-source tracing product, joins Inference Stack with zero-setup traces and cost tracking",
+   "url": "https://x.com/mokhalil01/status/2124983534817575179",
+   "handle": "@mokhalil01",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Teams running the LiteLLM gateway can collect traces and track spend through the open-source Lens tracer without extra setup.",
+   "kind": "tool",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "LiteLLM",
+   "posted_at": "2026-11-23T21:48:00Z",
+   "metrics": {
+    "likes": 15,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 97,
+ "list_pages": 1,
+ "security_forwarded": [
+  {
+   "url": "https://x.com/theautomate_io/status/2124984468322545721",
+   "matched": "always_forward: supply chain (PyPI) and agent tooling; Python/PyPI on fleet",
+   "note": "VERIFIED (GHSA-764m-3ppc-5m73, OSV MAL-2026-20101, Wiz, StepSecurity): Microsoft agent-framework 1.26.1 and 1.26.2 on PyPI were credential stealers via .pth startup hooks (Nov 17, quarantined). 1.26.0 clean. No IOC files on box or Mini. Posted to Mini event bus (lane personal) per current routing instead of Bouncer.",
+   "bus_post": {
+    "title": "Check fleet Python envs for malicious agent-framework 1.26.1/1.26.2 (PyPI credential stealer)",
+    "ok": true,
+    "ts": "2026-11-23 17:32:35 CT"
+   }
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/rfeio/status/2124965277981143200",
+   "reason": "Verified via Hackread/Cato (Nov 23): malicious Google Ads push fake Codex, Claude Code and Homebrew installers (ClickFix, AMOS-like) to Macs. Awareness only; fleet installs from official channels; not posted."
+  },
+  {
+   "url": "https://x.com/saeidzeb/status/2124968350522679365",
+   "reason": "Verified (GitHub changelog 2026-11-02): pull_request_target blocked by default in public repos from Dec 2, 2026. magpie has no pull_request_target workflows; only matters for public repos that use it. Recorded, not posted."
+  },
+  {
+   "url": "https://x.com/vlad_bivouac/status/2124983921997742131",
+   "reason": "Unverified: claim that pnpm audit could drop advisories, fixed in pnpm 12.22.0/11.28.13. No primary source checked; pnpm not in stack.json."
+  },
+  {
+   "url": "https://x.com/TheLabLedger/status/2124978129727091164",
+   "reason": "LiteLLM CVE-2026-40217 KEV already forwarded in the 19:26Z sweep."
+  },
+  {
+   "url": "https://x.com/sgegaed/status/2124954933367550423",
+   "reason": "mcp-server-kubernetes argument-injection CVE (<4.2.0); no Kubernetes MCP server in stack.json."
+  },
+  {
+   "url": "https://x.com/VibeIncidents/status/2125001693787988057",
+   "reason": "jupyter-mcp-server <=1.0.2 DNS rebinding (CVE-2026-77359); not in stack.json."
+  },
+  {
+   "url": "https://x.com/infrastack_ai/status/2124967070169456658",
+   "reason": "ungit 1.5.30 command injection; ungit not in stack.json."
+  },
+  {
+   "url": "https://x.com/infrastack_ai/status/2125001913003614240",
+   "reason": "Daily count of 70 malicious npm/PyPI typosquat packages; no named package in the fleet."
+  }
+ ],
+ "horizon_checks": [
+  {
+   "entry": "block-dessa",
+   "reads": 1,
+   "result": "no results since 19:26Z"
+  }
+ ],
+ "notes": [
+  "Owner saves: no new bookmarks in /workspace/x-ai-bookmarks since last sweep (new_candidates.json empty at 15:31 CT sync).",
+  "Follows skipped: executor has no browser.",
+  "Skipped as out of scope: Jensen Huang return coverage (business), Ladybird browser alpha (general tech), Zed GPUI repo split (non-AI), Kiro credits and OpenWorks (promotion), Replit acquiring Resonate (business), Olala mini on iPhone (already covered Nov 19/20)."
+ ]
+}
