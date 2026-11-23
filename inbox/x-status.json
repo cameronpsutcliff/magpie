@@ -20,7 +20,7 @@
  },
  "roster": {
   "curated": 223,
-  "trial": 78,
+  "trial": 88,
   "active": 56,
   "retired": 7
  },
@@ -79,10 +79,10 @@
   "owner": "@CameronSutcliff",
   "owner_id": "1521986356721123328",
   "private": true,
-  "member_count": 134,
+  "member_count": 144,
   "members": "every trial/active entry in inbox/x-roster.json (x_user_id, on_list)",
   "created_at": "2026-10-24T04:35:00Z",
-  "updated_at": "2026-11-23T19:52:00Z"
+  "updated_at": "2026-11-23T19:57:00Z"
  },
  "horizon_triggered": [],
  "calls_day": "2026-11-23",

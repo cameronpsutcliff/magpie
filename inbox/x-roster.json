@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-23T19:52:00Z",
+ "updated_at": "2026-11-23T19:57:00Z",
  "accounts": [
   {
    "handle": "@thsottiaux",
@@ -2703,6 +2703,205 @@
    "on_list": true,
    "source": "owner_follow",
    "owner_requested": true
+  },
+  {
+   "handle": "@vllm_project",
+   "name": "vLLM",
+   "group": "devtools",
+   "affiliation": "vLLM",
+   "why": "Owner-requested watch (2026-11-23). Official vLLM inference-server account. Recent posts give measurements: NVMe KV-cache offload matched a 1.8 TB DRAM pool within 1%, plus day-0 serving for Thinking Machines' Inkling model.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-23",
+   "evidence": [
+    "https://x.com/vllm_project/status/2124783794112938241",
+    "https://x.com/vllm_project/status/2123872608848687262"
+   ],
+   "last_qualifying_post": "2026-11-23",
+   "retired_reason": null,
+   "x_user_id": "1774187564276289536",
+   "on_list": true,
+   "source": "owner_requested",
+   "owner_requested": true
+  },
+  {
+   "handle": "@sgl_project",
+   "name": "SGLang",
+   "group": "devtools",
+   "affiliation": "LMSYS",
+   "why": "Owner-requested watch (2026-11-23). Official SGLang account. Recent posts include day-0 support for Ling-3.2-air (124B MoE, 5.5B active, 1M context) and Inkling 2 Mini recipes across NVIDIA, AMD, and TPU hardware.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-23",
+   "evidence": [
+    "https://x.com/sgl_project/status/2124896179913924876",
+    "https://x.com/sgl_project/status/2123874852117594408"
+   ],
+   "last_qualifying_post": "2026-11-23",
+   "retired_reason": null,
+   "x_user_id": "1923440305703092226",
+   "on_list": true,
+   "source": "owner_requested",
+   "owner_requested": true
+  },
+  {
+   "handle": "@ggerganov",
+   "name": "Georgi Gerganov",
+   "group": "opensource",
+   "affiliation": "llama.cpp",
+   "why": "Owner-requested watch (2026-11-23). Creator of llama.cpp and ggml. Shipped llama.cpp and ggml v1.0.0 on 2026-11-13, the first major release.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-23",
+   "evidence": [
+    "https://x.com/ggerganov/status/2121246103312212124",
+    "https://x.com/ggerganov/status/2121247058451411047"
+   ],
+   "last_qualifying_post": "2026-11-13",
+   "retired_reason": null,
+   "x_user_id": "3300401027",
+   "on_list": true,
+   "source": "owner_requested",
+   "owner_requested": true
+  },
+  {
+   "handle": "@ollama",
+   "name": "ollama",
+   "group": "opensource",
+   "affiliation": "Ollama",
+   "why": "Owner-requested watch (2026-11-23). Official Ollama account for local and cloud open-model serving. Recent drops include Tencent Hy4 (770B, 49B active, vision and computer use) and Inkling 2 Mini for 32 GB Macs.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-23",
+   "evidence": [
+    "https://x.com/ollama/status/2124669766723920377",
+    "https://x.com/ollama/status/2123889582303281557"
+   ],
+   "last_qualifying_post": "2026-11-23",
+   "retired_reason": null,
+   "x_user_id": "1688410127378829312",
+   "on_list": true,
+   "source": "owner_requested",
+   "owner_requested": true
+  },
+  {
+   "handle": "@LiteLLM",
+   "name": "LiteLLM",
+   "group": "devtools",
+   "affiliation": "LiteLLM",
+   "why": "Owner-requested watch (2026-11-23). Official LiteLLM gateway for models, MCPs, and agents. This week's changelog includes more of the hot path in Rust and Lens CLI for comparing models and harnesses from the terminal.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-23",
+   "evidence": [
+    "https://x.com/LiteLLM/status/2124627330467606917",
+    "https://x.com/LiteLLM/status/2124627332409475543"
+   ],
+   "last_qualifying_post": "2026-11-22",
+   "retired_reason": null,
+   "x_user_id": "1607849281280671744",
+   "on_list": true,
+   "source": "owner_requested",
+   "owner_requested": true
+  },
+  {
+   "handle": "@OpenRouter",
+   "name": "OpenRouter",
+   "group": "devtools",
+   "affiliation": "OpenRouter",
+   "why": "Owner-requested watch (2026-11-23). Official OpenRouter model-router account. Recent posts report Google models passing 50% of user spend last week and describe off-boarding three inference providers after a data-handling review.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-23",
+   "evidence": [
+    "https://x.com/OpenRouter/status/2124925631012209137",
+    "https://x.com/OpenRouter/status/2124315081899200715"
+   ],
+   "last_qualifying_post": "2026-11-23",
+   "retired_reason": null,
+   "x_user_id": "1681349314797240320",
+   "on_list": true,
+   "source": "owner_requested",
+   "owner_requested": true
+  },
+  {
+   "handle": "@lmsysorg",
+   "name": "LMSYS Org",
+   "group": "research",
+   "affiliation": "LMSYS",
+   "why": "Owner-requested watch (2026-11-23). Official LMSYS account (SGLang, Vicuna, Chatbot Arena). Recent technical posts cover bit-exact on-policy RL with SGLang and Miles, DeepSeek-V4.1-Flash serving on H20-3e, and Humming low-bit MoE kernels.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-23",
+   "evidence": [
+    "https://x.com/lmsysorg/status/2124926906109935925",
+    "https://x.com/lmsysorg/status/2123199188414664812"
+   ],
+   "last_qualifying_post": "2026-11-23",
+   "retired_reason": null,
+   "x_user_id": "1822588444046249984",
+   "on_list": true,
+   "source": "owner_requested",
+   "owner_requested": true
+  },
+  {
+   "handle": "@koraykv",
+   "name": "koray kavukcuoglu",
+   "group": "labs",
+   "affiliation": "Google DeepMind",
+   "why": "Owner-requested watch (2026-11-23). SVP at Google DeepMind and Google's Chief AI Architect. Recent first-hand posts launch Gemini 4 Neon, Hydrogen, and Carbon, including availability in AI Studio, Antigravity, and the Gemini app.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-23",
+   "evidence": [
+    "https://x.com/koraykv/status/2123167638050541626",
+    "https://x.com/koraykv/status/2120941627229536511"
+   ],
+   "last_qualifying_post": "2026-11-18",
+   "retired_reason": null,
+   "x_user_id": "915239533",
+   "on_list": true,
+   "source": "owner_requested",
+   "owner_requested": true
+  },
+  {
+   "handle": "@GoogleLabs",
+   "name": "Google Labs",
+   "group": "labs",
+   "affiliation": "Google",
+   "why": "Owner-requested watch (2026-11-23). Official Google Labs account for AI tools and experiments. Recent posts put Genie 4 into Project Genie and introduced Stitch Loop and Tabletop.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-23",
+   "evidence": [
+    "https://x.com/GoogleLabs/status/2123118145552749015",
+    "https://x.com/GoogleLabs/status/2123102389775573314"
+   ],
+   "last_qualifying_post": "2026-11-18",
+   "retired_reason": null,
+   "x_user_id": "163975783",
+   "on_list": true,
+   "source": "owner_requested",
+   "owner_requested": true
+  },
+  {
+   "handle": "@FeinbergVlad",
+   "name": "Vlad Feinberg",
+   "group": "labs",
+   "affiliation": "Google DeepMind",
+   "why": "Owner-requested watch (2026-11-23). Gemini pretraining lead at Google DeepMind. A 2026-11-23 post credits the Neon and Hydrogen pretraining leads on his team after Patrick Toulme pointed people to the group.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-23",
+   "evidence": [
+    "https://x.com/FeinbergVlad/status/2124942270806007878"
+   ],
+   "last_qualifying_post": "2026-11-23",
+   "retired_reason": null,
+   "x_user_id": "1035960203659726848",
+   "on_list": true,
+   "source": "owner_requested",
+   "owner_requested": true
   }
  ],
  "source_leads": [
@@ -3231,8 +3430,8 @@
   "name": "Magpie roster",
   "owner": "@CameronSutcliff",
   "private": true,
-  "member_count": 134,
+  "member_count": 144,
   "scope": "every trial and active account in this file; curated config accounts are not members yet",
-  "updated_at": "2026-11-23T19:52:00Z"
+  "updated_at": "2026-11-23T19:57:00Z"
  }
 }
