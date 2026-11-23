@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-22T10:28:59Z",
+ "updated_at": "2026-11-23T10:40:00Z",
  "accounts": [
   {
    "handle": "@thsottiaux",
@@ -2544,6 +2544,25 @@
    "retired_reason": null,
    "source": "owner_saves",
    "x_user_id": "2049258250923810816",
+   "on_list": true
+  },
+  {
+   "handle": "@RisingSayak",
+   "name": "Sayak Paul",
+   "group": "opensource",
+   "affiliation": "Hugging Face (Diffusers)",
+   "why": "Diffusers maintainer; first-hand on diffusion training and inference examples (e.g. LoRA fine-tuning of RFD4-Proteina with Diffusers) and Modular Diffusers.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-23",
+   "evidence": [
+    "https://x.com/RisingSayak/status/2123796018563272956",
+    "https://x.com/RisingSayak/status/2122702406710706605"
+   ],
+   "last_qualifying_post": "2026-11-20",
+   "retired_reason": null,
+   "source": "roster_review",
+   "x_user_id": "593407733",
    "on_list": true
   }
  ],
