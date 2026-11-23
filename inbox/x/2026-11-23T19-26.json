@@ -1,0 +1,391 @@
+{
+ "ran_at": "2026-11-23T19:26:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-23T15:35:00Z",
+ "queries": 9,
+ "calls": 9,
+ "items": [
+  {
+   "title": "Gemini API accepts PDFs, Office files, audio and video and returns only the requested pages, cells, segments or layers",
+   "url": "https://x.com/OfficialLoganK/status/2124938672399384681",
+   "handle": "@OfficialLoganK",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Google's Gemini API now lets developers pass documents, spreadsheets, slides, audio and video and ask for just the pages, spreadsheet cells, media segments or layers they need, so the model reads less input.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Google",
+   "posted_at": "2026-11-23T18:50:33Z",
+   "metrics": {
+    "likes": 598,
+    "reposts": 24,
+    "quotes": 11,
+    "replies": 72,
+    "views": 21424
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers welcomed selecting only certain spreadsheet cells; others asked for the same in Antigravity and for larger file limits. No one reported results yet.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Google open-sources gBench, a benchmarking framework for Gemma and other open models with 86 evaluation suites",
+   "url": "https://x.com/googlegemma/status/2124935724999073902",
+   "handle": "@googlegemma",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "gBench runs chat-template checks, agentic benchmarks and smoke-test tiers against any OpenAI-compatible endpoint. The post says it ships with 86 evaluation suites.",
+   "kind": "repo",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Google",
+   "posted_at": "2026-11-23T18:38:50Z",
+   "metrics": {
+    "likes": 267,
+    "reposts": 14,
+    "quotes": 7,
+    "replies": 20,
+    "views": 7995
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The post text shows no repo link in the data returned; repo not opened.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers said it will make evals easier; one asked about testing small models against their own tool definitions and a Gemma staff member answered. Many asked about Gemma 5.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "DeepMind reports Gemini 4 agent teams built quantum circuits that cut future simulation costs by up to 10x",
+   "url": "https://x.com/GoogleDeepMind/status/2124911073266413634",
+   "handle": "@GoogleDeepMind",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Teams of Gemini 4 agents searched for new quantum circuits for fusion, chemistry and drug-discovery simulation, with a claimed cost reduction of up to 10x on early hardware. Repliers cite circuits checked in Lean and fewer logical qubits; the post itself gives no paper link in the returned data.",
+   "kind": "paper",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Google DeepMind",
+   "posted_at": "2026-11-23T17:00:53Z",
+   "metrics": {
+    "likes": 2148,
+    "reposts": 226,
+    "quotes": 87,
+    "replies": 153,
+    "views": 97021
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Specific figures (10.9x, 5,650 to 4,338 logical qubits, Lean checks) come from repliers, not a source I opened; no paper link in the post data.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Mostly praise; two repliers highlighted the Lean verification and the qubit reduction, one noted past 'up to' speedups shrinking on real traffic.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Antigravity Orchestrator lets you pick the pair of models and effort levels to use",
+   "url": "https://x.com/_mohansolo/status/2124917777630961911",
+   "handle": "@_mohansolo",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Antigravity now has an explicit setting for which two models and effort levels the Orchestrator uses, for example Neon High with Hydrogen High. The author says more ships later today.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Google (Antigravity)",
+   "posted_at": "2026-11-23T17:27:31Z",
+   "metrics": {
+    "likes": 2738,
+    "reposts": 102,
+    "quotes": 58,
+    "replies": 327,
+    "views": 73901
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Users liked the pairing control; most replies ask for quota resets. A few say they use the Neon and Hydrogen pair.",
+    "tried": true,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "TorchNeuron: open source native PyTorch backend for AWS Trainium",
+   "url": "https://x.com/PyTorch/status/2124936039747739794",
+   "handle": "@PyTorch",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A PyTorch Conference talk by Amazon describes TorchNeuron, an open source PyTorch backend that gives a native PyTorch experience on Trainium without rewriting the stack.",
+   "kind": "repo",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Amazon / PyTorch",
+   "posted_at": "2026-11-23T18:40:05Z",
+   "metrics": {
+    "likes": 4,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 1,
+    "views": 1359
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Conference clip; no repo link seen.",
+    "source": null
+   }
+  },
+  {
+   "title": "TensorFold 1.3.4: GLM prompts 15% faster at 2K on two DGX Sparks with TF_GLM_PAIR_EXPERTS=1",
+   "url": "https://x.com/plotarmordev/status/2124932492499050960",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A user of the TensorFold inference runtime reports the 1.3.4 release makes GLM prompt processing 15% faster at 2K context on a pair of Sparks when an expert-pairing environment flag is set.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/ashxhart/status/2124609773765112271"
+   ],
+   "vendor": "TensorFold (@ashxhart)",
+   "posted_at": "2026-11-23T18:26:00Z",
+   "metrics": {
+    "likes": 10,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 459
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single-user number on one setup.",
+    "source": null
+   }
+  },
+  {
+   "title": "Nace AI releases Drex for Extraction, a model that returns the location of every answer in a document",
+   "url": "https://x.com/NaceAI/status/2124926513489580270",
+   "handle": "@NaceAI",
+   "group": "applied",
+   "origin": "discovery",
+   "summary": "Drex returns text spans or page coordinates with each extracted answer so results can be checked. The company reports 84.1 on ExtractBench and an 81.5 average over six public text datasets.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Nace AI",
+   "posted_at": "2026-11-23T18:02:14Z",
+   "metrics": {
+    "likes": 40,
+    "reposts": 5,
+    "quotes": 2,
+    "replies": 6,
+    "views": 2862
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Vendor-reported scores; the try link is a console sign-in page, not opened.",
+    "source": null
+   }
+  },
+  {
+   "title": "Hume AI releases a speech dataset aimed at ASR errors on rare names, emails and codes",
+   "url": "https://x.com/hume_ai/status/2124921562549911774",
+   "handle": "@hume_ai",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Hume AI published a dataset meant to improve speech recognition on names, emails and codes that models rarely heard in training.",
+   "kind": "dataset",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Hume AI",
+   "posted_at": "2026-11-23T17:42:34Z",
+   "metrics": {
+    "likes": 7,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 1,
+    "views": 455
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No dataset link or size in the returned post data.",
+    "source": null
+   }
+  },
+  {
+   "title": "ThreeJS-3D-Scenes-v2: 3,445 rendered Three.js scenes with prompts, reasoning traces and HTML/JS targets, MIT license",
+   "url": "https://x.com/ModelScope2022/status/2124911555632353569",
+   "handle": "@ModelScope2022",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A ModelScope dataset that frames 3D scene generation as trainable creative coding, covering 50 domains, with full HTML and JavaScript targets.",
+   "kind": "dataset",
+   "evidence": "artifact",
+   "links": [
+    "https://modelscope.ai/datasets/ccore/ThreeJS-3D-Scenes-v2"
+   ],
+   "vendor": "CCORE / ModelScope",
+   "posted_at": "2026-11-23T17:02:48Z",
+   "metrics": {
+    "likes": 5,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 753
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Voice Arena adds new TTS languages; ElevenLabs Eleven v4 ranks first in Tamil (1115) and Telugu (1090)",
+   "url": "https://x.com/voicearena_ai/status/2124903300357116161",
+   "handle": "@voicearena_ai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Voice Arena extended its blind head-to-head TTS leaderboard to several new languages, with Eleven v4 topping two of them.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Voice Arena / ElevenLabs",
+   "posted_at": "2026-11-23T16:30:00Z",
+   "metrics": {
+    "likes": 67,
+    "reposts": 62,
+    "quotes": 0,
+    "replies": 2,
+    "views": 24134
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Epoch AI publishes 4 more benchmark reviews: 1 Verified, 3 Flawed, 4 without enough information",
+   "url": "https://x.com/EpochAIResearch/status/2124945252725510614",
+   "handle": "@EpochAIResearch",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Epoch's rubric-based reviews rate external AI benchmarks; the latest batch marks Vending-Bench 2 as Flawed for simulation issues and reward-hacking exposure.",
+   "kind": "eval",
+   "evidence": "artifact",
+   "links": [
+    "https://epoch.ai/data/benchmark-reviews-documentation/included-benchmarks",
+    "https://epoch.ai/data/benchmark-reviews-documentation/methodology"
+   ],
+   "vendor": "Epoch AI",
+   "posted_at": "2026-11-23T19:16:42Z",
+   "metrics": {
+    "likes": 36,
+    "reposts": 7,
+    "quotes": 2,
+    "replies": 4,
+    "views": 1408
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 98,
+ "list_pages": 1,
+ "security_forwarded": [
+  {
+   "url": "https://x.com/zoomeyebot/status/2124937341802586396",
+   "matched": "LiteLLM (stack.json)",
+   "note": "CVE-2026-40217 LiteLLM custom-code guardrail sandbox escape, fixed in 1.83.11. New since the Nov 6 lead: CISA KEV added it 2026-11-18 with due date 2026-12-02 (checked against CISA's KEV JSON). Also https://x.com/StepPhase/status/2124900783720182190. Nov 6 note: GHSA-wxxx-gvqv-xp7p, block POST /guardrails/test_custom_code. Spark and Mini LiteLLM versions unverified in stack.json."
+  },
+  {
+   "url": "https://x.com/itsMikeKipruto/status/2124932481954861232",
+   "matched": "Node.js / npm (stack.json)",
+   "note": "Unverified: binary-parser npm CVE-2026-134814 (CVSS 9.2), parser options injected into generated JavaScript, fixed in 2.3.1. OSV only lists an older binary-parser issue (CVE-2026-1245), so the new ID is not confirmed. Not installed on the box. Low priority, check only if a project uses binary-parser."
+  },
+  {
+   "url": "https://x.com/wei_wang/status/2124898037629596037",
+   "matched": "Spark (stack.json machines: Ubuntu with nvidia kernel)",
+   "note": "Stability report, not a vulnerability: forum post says an ASUS GX10 crashed 6 times in 5 days after the DGX OS 7.2.3 to 7.6.0 OTA (Nov 10; kernel 7.0.0-1025, driver 580.178.04). Check Spark OS version before updating."
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/atlintell_labs/status/2124909870227013706",
+   "reason": "Dragos canary-prompt study of AI API providers; same topic as the Nov 20 observation already filed. Fleet does not use resellers per stack.json."
+  },
+  {
+   "url": "https://x.com/botnewsnetwork/status/2124934175426035997",
+   "reason": "OX Security report on agent and MCP supply chain risk in aggregate; no specific component or package named."
+  },
+  {
+   "url": "https://x.com/Myhomesolution_/status/2124896877736870379",
+   "reason": "Together AI leak disclosed Nov 21; Together is not in the fleet stack."
+  },
+  {
+   "url": "https://x.com/HugoValters/status/2124919406551798061",
+   "reason": "Low-severity Linux kernel CVEs (ftrace sample, sfq overflow, drm/xe) from an auto-posting CVE feed; not applicable to the fleet's configs or severity."
+  },
+  {
+   "url": "https://x.com/davidd_ai/status/2124933283788308657",
+   "reason": "Claude-BugHunter is a security-testing skill pack trending on GitHub, not a vulnerability."
+  }
+ ]
+}
