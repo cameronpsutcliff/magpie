@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-23T10:40:00Z",
+ "updated_at": "2026-11-23T19:52:00Z",
  "accounts": [
   {
    "handle": "@thsottiaux",
@@ -2564,6 +2564,145 @@
    "source": "roster_review",
    "x_user_id": "593407733",
    "on_list": true
+  },
+  {
+   "handle": "@PatrickToulme",
+   "name": "Patrick C Toulme",
+   "group": "labs",
+   "affiliation": "Google DeepMind",
+   "why": "Owner follow (2026-11-23). Works on Gemini, RSI, and TPUs at Google DeepMind (previously Meta MTIA and AWS Trainium). Recent posts confirm T3 Code should use Antigravity for Gemini Neon and share a practical latency-hillclimb prompt with tracked metrics.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-23",
+   "evidence": [
+    "https://x.com/PatrickToulme/status/2124681579125702798",
+    "https://x.com/PatrickToulme/status/2124562528738988251"
+   ],
+   "last_qualifying_post": "2026-11-23",
+   "retired_reason": null,
+   "x_user_id": "2004705309139374080",
+   "on_list": true,
+   "source": "owner_follow",
+   "owner_requested": true
+  },
+  {
+   "handle": "@vedantmisra",
+   "name": "Vedant Misra",
+   "group": "labs",
+   "affiliation": "Google DeepMind",
+   "why": "Owner follow (2026-11-23). ASI at Google DeepMind, previously reasoning and algorithms lead at OpenAI. Recent posts flag Gemini 5 and a Lean-verified number-theory result delivered as a tarball.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-23",
+   "evidence": [
+    "https://x.com/vedantmisra/status/2124306817371316358",
+    "https://x.com/vedantmisra/status/2123816354172240120"
+   ],
+   "last_qualifying_post": "2026-11-22",
+   "retired_reason": null,
+   "x_user_id": "76551002",
+   "on_list": true,
+   "source": "owner_follow",
+   "owner_requested": true
+  },
+  {
+   "handle": "@theo",
+   "name": "Theo - t3.gg",
+   "group": "devtools",
+   "affiliation": "T3",
+   "why": "Owner follow (2026-11-23). Creator of T3 Code and T3 Chat. Recent posts cover T3 Code's Antigravity bindings and a nightly build for Gemini Neon. The feed is personality-heavy, so filter engagement and drama in sweeps.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-23",
+   "evidence": [
+    "https://x.com/theo/status/2124824959835082951"
+   ],
+   "last_qualifying_post": "2026-11-23",
+   "retired_reason": null,
+   "x_user_id": "786375418685165568",
+   "on_list": true,
+   "source": "owner_follow",
+   "owner_requested": true
+  },
+  {
+   "handle": "@GoogleAIStudio",
+   "name": "Google AI Studio",
+   "group": "labs",
+   "affiliation": "Google",
+   "why": "Owner follow (2026-11-23). Official Google AI Studio account (already followed; missed in the prior 200-follow window). Recent posts ship Genie 4 in the Gemini API and AI Studio, introduce Gemini 4 Neon with pricing, and add self-hosted sandboxes for Managed Agents.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-23",
+   "evidence": [
+    "https://x.com/GoogleAIStudio/status/2123479057996116143",
+    "https://x.com/GoogleAIStudio/status/2123168408678359294"
+   ],
+   "last_qualifying_post": "2026-11-20",
+   "retired_reason": null,
+   "x_user_id": "1742923424056713217",
+   "on_list": true,
+   "source": "owner_follow",
+   "owner_requested": true
+  },
+  {
+   "handle": "@demishassabis",
+   "name": "Demis Hassabis",
+   "group": "labs",
+   "affiliation": "Google DeepMind",
+   "why": "Owner follow (2026-11-23). Co-founder and chair of Google DeepMind, already followed but not on the inbox roster. Recent first-hand posts launch Gemini 4 Neon and Genie 4, plus an Isomorphic Labs collaboration with Merck on a cancer drug.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-23",
+   "evidence": [
+    "https://x.com/demishassabis/status/2123168218743554465",
+    "https://x.com/demishassabis/status/2123130606162985350"
+   ],
+   "last_qualifying_post": "2026-11-20",
+   "retired_reason": null,
+   "x_user_id": "1482581556",
+   "on_list": true,
+   "source": "owner_follow",
+   "owner_requested": true
+  },
+  {
+   "handle": "@karpathy",
+   "name": "Andrej Karpathy",
+   "group": "builders",
+   "affiliation": "independent",
+   "why": "Owner follow (2026-11-23). Already followed; first-hand builder posts with measurements. Recent weekend hacks include HackerTube (43M HN comments filtered to 6,454 videos) and TristanTube (47K videos plus a TV mode).",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-23",
+   "evidence": [
+    "https://x.com/karpathy/status/2116957135661945283",
+    "https://x.com/karpathy/status/2119114537442189652"
+   ],
+   "last_qualifying_post": "2026-11-07",
+   "retired_reason": null,
+   "x_user_id": "33836629",
+   "on_list": true,
+   "source": "owner_follow",
+   "owner_requested": true
+  },
+  {
+   "handle": "@simonw",
+   "name": "Simon Willison",
+   "group": "devtools",
+   "affiliation": "independent",
+   "why": "Owner follow (2026-11-23). Already followed; first-hand model tests with measurements. Recent posts compare Gemini 4 Carbon, Neon, and Hydrogen across reasoning levels, including Hydrogen high vs xhigh cost and token counts.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-23",
+   "evidence": [
+    "https://x.com/simonw/status/2124223349769609407",
+    "https://x.com/simonw/status/2124217876777464269"
+   ],
+   "last_qualifying_post": "2026-11-21",
+   "retired_reason": null,
+   "x_user_id": "12497",
+   "on_list": true,
+   "source": "owner_follow",
+   "owner_requested": true
   }
  ],
  "source_leads": [
@@ -3092,8 +3231,8 @@
   "name": "Magpie roster",
   "owner": "@CameronSutcliff",
   "private": true,
-  "member_count": 125,
+  "member_count": 134,
   "scope": "every trial and active account in this file; curated config accounts are not members yet",
-  "updated_at": "2026-11-22T07:32:00Z"
+  "updated_at": "2026-11-23T19:52:00Z"
  }
 }
