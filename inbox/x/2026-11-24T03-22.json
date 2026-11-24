@@ -1,0 +1,784 @@
+{
+ "ran_at": "2026-11-24T03:22:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-23T23:22:00Z",
+ "queries": 20,
+ "calls": 23,
+ "items": [
+  {
+   "title": "inclusionAI releases Ling-3.2-air, a 124B-total, 5.5B-active open-weight multimodal MoE under MIT",
+   "url": "https://x.com/AntLingAGI/status/2124891223597240338",
+   "handle": "@AntLingAGI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Ant Group's Ling team released open weights for Ling-3.2-air, a native multimodal MoE that activates 5.5B of 124B parameters per token, aimed at workflow automation and document reasoning; they report AutomationBench-AA rising from 15.7% to 61%. vLLM shipped day-0 support and community NVFP4 and GGUF quants are already on Hugging Face.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/inclusionAI/Ling-3.2-air"
+   ],
+   "vendor": "inclusionAI (Ant Group)",
+   "posted_at": "2026-11-23T15:42:00Z",
+   "metrics": {
+    "likes": 745,
+    "reposts": 104,
+    "quotes": 65,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [
+    "@TheInclusionAI",
+    "@vllm_project"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "A replier asks for the eval code and sampled traces before trusting the AutomationBench jump, since prompt format and tool-call parsing can swing scores.",
+    "source": "https://x.com/UtkarshDeoli/status/2125017208824996134"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Most replies praise the small active count as runnable on one decent GPU; one notes a 4-bit NVFP4 build exists (vLLM compressed-tensors); one is skeptical of the benchmark jump; license confirmed as MIT on the model card.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "vLLM v0.34 turns on extensible KV cache by default, sizing the cache automatically with GPU virtual memory",
+   "url": "https://x.com/vllm_project/status/2125041827107741733",
+   "handle": "@vllm_project",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "vLLM v0.34 now sizes its KV cache automatically using GPU virtual memory, so operators no longer hand-tune gpu-memory-utilization style settings to fit the cache; Red Hat AI published a short walkthrough.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/vllm-project/vllm/releases"
+   ],
+   "vendor": "vLLM",
+   "posted_at": "2026-11-24T01:40:00Z",
+   "metrics": {
+    "likes": 32,
+    "reposts": 2,
+    "quotes": 1,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Splash local inference engine runs Inkling 2 Mini at 200+ tok/s on an M5 Max with an open DFlash 2 drafter",
+   "url": "https://x.com/inco_ai/status/2125066128968007863",
+   "handle": "@inco_ai",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Inco's Splash, an Apache-2.0 inference engine for Apple silicon, now ships a DFlash 2 speculative drafter trained for Thinking Machines' Inkling 2 Mini; they report 200+ tok/s on an M5 Max, 1.7x the next engine on an M5 Pro, and heavy prompt-cache reuse in agent sessions. Needs M3 or newer with 36 GB and macOS 26.4+; installs via Homebrew.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/incoai/splash",
+    "https://huggingface.co/incoai/Inkling-2-Mini-DFlash2"
+   ],
+   "vendor": "Inco",
+   "posted_at": "2026-11-24T03:17:00Z",
+   "metrics": {
+    "likes": 21,
+    "reposts": 3,
+    "quotes": 1,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Antigravity adds live progress checklists that show each step of an agent run",
+   "url": "https://x.com/antigravity/status/2125032843550028030",
+   "handle": "@antigravity",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Google Antigravity now shows a real-time checklist of what the agent is doing during a run, with an expandable step breakdown for checking its work.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Google",
+   "posted_at": "2026-11-24T01:04:00Z",
+   "metrics": {
+    "likes": 1943,
+    "reposts": 96,
+    "quotes": 32,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Users like seeing mid-run state (one says it exposed an unexpected 40 GB model download); requests include a CLI version, a mobile app, non-interrupting steering messages, and fixes for token use and subagent context loss.",
+    "tried": true,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "GPT-6.2 Astra driving Codex scores 97% on RoboDojo-RC Tier 1 across 120 real robot trials; Robocurve retires the benchmark",
+   "url": "https://x.com/robocurve/status/2125028977194786857",
+   "handle": "@robocurve",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Robocurve ran coding-agent harnesses as robot controllers: GPT-6.2 Astra through Codex scored 97% on 120 real-world trials, versus 66% for the same model through their Inspect Robots harness, and was the only system to cap a pen reliably. Dedicated robot models remain about 4x faster and 63x cheaper per trial. All 360 runs, with transcripts and videos for Codex, Claude Code and Antigravity, are public.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://robocurve.org/blog/codex-vs-inspect-robots/",
+    "https://robocurve.org/all-runs/?leaderboard=coding-agents"
+   ],
+   "vendor": "Robocurve",
+   "posted_at": "2026-11-24T00:49:00Z",
+   "metrics": {
+    "likes": 243,
+    "reposts": 20,
+    "quotes": 10,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [
+    "@gdb"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers note the 95% interval on 116/120 is roughly 92 to 99% and question retiring the benchmark after one system's result; the harness alone moved the score from 66% to 97%.",
+    "source": "https://x.com/orex_haarness/status/2125050206979027421"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Mostly impressed by a general model beating robot-specific models; specific questions about confidence intervals, remaining failure modes, and whether coding harnesses will replace Inspect Robots going forward.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Microsoft AI details Rocket, its in-house RL framework for weeks-long agentic post-training of MAI Base 2",
+   "url": "https://x.com/MicrosoftAI/status/2124922556922691892",
+   "handle": "@MicrosoftAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Microsoft AI published engineering details on Rocket, the RL system post-training its 3T-parameter MAI Base 2 without third-party distillation: handling stale agentic rollouts under GRPO, sampler and learner numerical consistency at low precision, and fault tolerance across thousands of GPUs. SGLang says a customized SGLang engine generates the rollouts.",
+   "kind": "technique",
+   "evidence": "claim",
+   "links": [
+    "https://microsoft.ai/news/rl-infrastructure-at-microsoft-ai/"
+   ],
+   "vendor": "Microsoft AI",
+   "posted_at": "2026-11-23T17:46:00Z",
+   "metrics": {
+    "likes": 1034,
+    "reposts": 125,
+    "quotes": 25,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [
+    "@sgl_project",
+    "@satyanadella"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "HubEgo-100K Release #2: 20,000+ more hours of egocentric skilled-work video from 20K contributors, CC BY 4.0",
+   "url": "https://x.com/hublabs/status/2125016996383502691",
+   "handle": "@hublabs",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Hub Labs added over 20,000 hours of first-person video of skilled tasks, recorded by more than 20,000 paid contributors in 28,000+ environments, to its HubEgo-100K robotics training dataset on Hugging Face under CC BY 4.0.",
+   "kind": "dataset",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/datasets/HubLabs/HubEgo-100K"
+   ],
+   "vendor": "Hub Labs",
+   "posted_at": "2026-11-24T00:01:00Z",
+   "metrics": {
+    "likes": 425,
+    "reposts": 282,
+    "quotes": 27,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [
+    "@lhoestq"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Replies are almost entirely contributors describing earnings and what they would ask robots to do, apparently answering a prompt in the thread; no technical feedback on data quality.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Browser Use runs 7 browser harnesses on Scale's agentenv: Browser Use 78.0, Playwright MCP 71.7, Stagehand 62.0",
+   "url": "https://x.com/browser_use/status/2125057327678247290",
+   "handle": "@browser_use",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Browser Use compared seven browser-agent harnesses on 200 web tasks in Scale AI's agentenv with the same model and judge, reporting score and cost per task, and added its long-horizon tasks to agentenv so others can run them.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Browser Use",
+   "posted_at": "2026-11-24T02:42:00Z",
+   "metrics": {
+    "likes": 23,
+    "reposts": 2,
+    "quotes": 2,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Vendor-run comparison in which the vendor's own harness wins.",
+    "source": null
+   }
+  },
+  {
+   "title": "OpenCode Go offers stealth model HungerG free this week: 1M context, multimodal, no training on data",
+   "url": "https://x.com/opencode/status/2125062647846694979",
+   "handle": "@opencode",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "OpenCode made an unnamed stealth model, HungerG, free to OpenCode Go subscribers for a week, with 1M context, image and video input and zero data retention.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "OpenCode",
+   "posted_at": "2026-11-24T03:03:00Z",
+   "metrics": {
+    "likes": 375,
+    "reposts": 16,
+    "quotes": 8,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [
+    "@aitrackerbot"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The model's maker is undisclosed; token-probe claims tying it to StepFun's Step-5 line are unconfirmed.",
+    "source": "https://x.com/aitrackerbot/status/2125053324705591315"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Interest in a free 1M-context model with no training on data; many guess the lab (GLM, StepFun); some expect a price after the free week.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "SenseTime publishes SenseNova-U1.6-8B-MoT weights and LoRAs under Apache 2.0",
+   "url": "https://x.com/aitrackerbot/status/2125044440993570921",
+   "handle": "@aitrackerbot",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "SenseTime's SenseNova-U1.6-8B-MoT, with native and LoRA variants and a community GGUF, is now downloadable on Hugging Face under Apache 2.0.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/sensenova/SenseNova-U1.6-8B-MoT-LoRAs",
+    "https://huggingface.co/sensenova/SenseNova-U1.6-8B-MoT"
+   ],
+   "vendor": "SenseTime",
+   "posted_at": "2026-11-24T01:50:00Z",
+   "metrics": {
+    "likes": 7,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Paper compiles exact arithmetic circuits into a pretrained LLM's weights with zero gradient steps",
+   "url": "https://x.com/askalphaxiv/status/2125042215781110146",
+   "handle": "@askalphaxiv",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "\"A CPU Inside an LLM\" reports writing exact calculator circuits directly into pretrained weights, so the model does precise arithmetic without fine-tuning or tool calls.",
+   "kind": "paper",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "unknown (paper)",
+   "posted_at": "2026-11-24T01:42:00Z",
+   "metrics": {
+    "likes": 98,
+    "reposts": 13,
+    "quotes": 2,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No paper link resolved from the post; arXiv title search found nothing yet.",
+    "source": null
+   }
+  },
+  {
+   "title": "Model Carving: learnable gates prune unneeded attention and MLP sublayers during training",
+   "url": "https://x.com/dair_ai/status/2125027375553605836",
+   "handle": "@dair_ai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Harvard and NYU researchers put a learnable scalar gate on every sublayer; training closes unneeded gates and those sublayers are removed, which they report beats equal-compute baselines.",
+   "kind": "paper",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Harvard / NYU",
+   "posted_at": "2026-11-24T00:43:00Z",
+   "metrics": {
+    "likes": 26,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No paper link resolved from the post.",
+    "source": null
+   }
+  },
+  {
+   "title": "Besimple fine-tunes Nemotron 3.5 Transcribe to 0.87% medical-term error on MedDictate for about $500",
+   "url": "https://x.com/baseten/status/2125028331821404646",
+   "handle": "@baseten",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Using Baseten Training, Besimple post-trained NVIDIA's Nemotron 3.5 Transcribe for medical dictation and reports a 0.87% medical term error rate, lower than every proprietary ASR model Baseten benchmarked, on about $500 of compute.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://www.baseten.co/blog/post-train-your-own-medical-asr-model-to-outperform-the-frontier/"
+   ],
+   "vendor": "Baseten / Besimple",
+   "posted_at": "2026-11-24T00:46:00Z",
+   "metrics": {
+    "likes": 40,
+    "reposts": 14,
+    "quotes": 14,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "DeepSeek V4.1 Flash 1017 available for serverless post-training on Baseten Loops",
+   "url": "https://x.com/baseten/status/2125051975066923075",
+   "handle": "@baseten",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Baseten's Loops SDK can now RL or fine-tune DeepSeek V4.1 Flash 1017 on your data and reward functions, then deploy the checkpoint straight to inference.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Baseten",
+   "posted_at": "2026-11-24T02:20:00Z",
+   "metrics": {
+    "likes": 9,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "inference-optimisation-skill: agent playbook that hill-climbs local LLM serving speed, with up to 4.9x reported gains",
+   "url": "https://x.com/0xSero/status/2124815228709859375",
+   "handle": "@0xSero",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "An MIT-licensed agent skill that has Claude Code run controlled speed experiments on local hardware (compute theoretical ceilings, change one parameter at a time, bracket each run with controls, log results). The author reports Qwen3.8-27B on an Arc Pro B70 rising from 25 tok/s in llama.cpp to 91 tok/s with vLLM and custom kernels.",
+   "kind": "repo",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/sybil-solutions/inference-optimisation-skill"
+   ],
+   "vendor": "Sybil Solutions",
+   "posted_at": "2026-11-23T10:40:00Z",
+   "metrics": {
+    "likes": 343,
+    "reposts": 13,
+    "quotes": 6,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [
+    "@wei_wang"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Speedups are the author's own measurements on the author's hardware.",
+    "source": null
+   }
+  },
+  {
+   "title": "Four DGX Sparks serve DeepSeek-V4.1-Flash-1017 NVFP4 to 5 concurrent users at 17 to 26 tok/s each (GuideLLM)",
+   "url": "https://x.com/wei_wang/status/2125065880698495103",
+   "handle": "@wei_wang",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A GuideLLM benchmark on the NVIDIA forum runs full NVFP4 DeepSeek-V4.1-Flash on four DGX Sparks (512 GB over 200G RoCE, vLLM TP=4, 5-token speculative drafts): 37.5 to 51.8 tok/s single-user and 85 to 112 tok/s aggregate for 5 users, with a 21.4 s P95 time to first token at 16K input.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://forums.developer.nvidia.com/t/deepseek-v4-1-flash-1017-nvfp4-on-4x-dgx-spark-guidellm-benchmark-6-scenarios-1-and-5-concurrent-users/389876"
+   ],
+   "vendor": "community (NVIDIA forum)",
+   "posted_at": "2026-11-24T03:16:00Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The forum summary's 85 to 112 tok/s per-stream figure is actually aggregate across 5 users; per-user speed is 17 to 26 tok/s.",
+    "source": "https://x.com/wei_wang/status/2125065880698495103"
+   }
+  },
+  {
+   "title": "M5 Ultra Mac Studio beats two DGX Sparks on GLM-5.3-Flash prefill and 1 to 4 stream decode",
+   "url": "https://x.com/wei_wang/status/2125047759900225928",
+   "handle": "@wei_wang",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Ciru's published benchmark puts a 512 GB M5 Ultra (Ciru RCS engine, MTP) ahead of two DGX Sparks (TensorFold, EXL3 4-bit, DFlash2) on GLM-5.3-Flash: 2,993 vs 1,801 tok/s prefill at 32K and 74.1 vs 47.8 tok/s single-stream decode.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://llm.ciru.ai/research/glm-5-3-flash-sparkdash/"
+   ],
+   "vendor": "Ciru",
+   "posted_at": "2026-11-24T02:04:00Z",
+   "metrics": {
+    "likes": 2,
+    "reposts": 0,
+    "quotes": 1,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Different engines and quantizations on each side, so it compares stacks rather than hardware alone.",
+    "source": null
+   }
+  },
+  {
+   "title": "TensorFold on an M5 Ultra now beats oMLX by up to 1.45x on 128K prompts after a week of updates",
+   "url": "https://x.com/krunkosaurus/status/2124464288165470381",
+   "handle": "@krunkosaurus",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A rerun on the same Mac Studio M5 Ultra shows TensorFold 1.3.3 plus unmerged PRs going from losing to oMLX on long multi-user prompts to up to 1.45x faster, and matching four DGX Sparks with two users on prose.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/i/article/2124330272124805120"
+   ],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-22T11:25:00Z",
+   "metrics": {
+    "likes": 46,
+    "reposts": 2,
+    "quotes": 5,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [
+    "@plotarmordev"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Result relies on PRs that are not merged yet.",
+    "source": null
+   }
+  },
+  {
+   "title": "omarchy-mlx adds a torch.compile mlx_vulkan backend: stock Hugging Face PyTorch on an Apple GPU under Linux",
+   "url": "https://x.com/JoshuaSWarren/status/2125026169275703375",
+   "handle": "@JoshuaSWarren",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "omarchy-mlx can now run unmodified Hugging Face PyTorch on Apple GPUs in Omarchy Linux via torch.compile(backend=\"mlx_vulkan\"), with Qwen3-0.6B at 24 tok/s on an M1 MacBook Pro (6 to 8x CPU PyTorch) and 35 tok/s on an RTX 5060 Ti eGPU. Inference only for now; merged to main.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "omarchy-mlx",
+   "posted_at": "2026-11-24T00:38:00Z",
+   "metrics": {
+    "likes": 28,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Recraft V4.1 Flash V2 and Vectorize Pro go live on fal",
+   "url": "https://x.com/fal/status/2125009867324715057",
+   "handle": "@fal",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "fal now serves Recraft V4.1 Flash V2 for cleaner text in generated images and Vectorize Pro for converting raster images to clean SVG.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://fal.ai/models/recraft/v4.1/flash/v2/text-to-image",
+    "https://fal.ai/models/recraft/vectorize/pro"
+   ],
+   "vendor": "Recraft / fal",
+   "posted_at": "2026-11-23T23:33:00Z",
+   "metrics": {
+    "likes": 53,
+    "reposts": 4,
+    "quotes": 1,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Hugging Face extension for DuckDB v2.0.1 released",
+   "url": "https://x.com/lhoestq/status/2125020416779448730",
+   "handle": "@lhoestq",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A new release of the DuckDB extension for querying Hugging Face datasets directly from DuckDB.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/lhoestq/duckdb-hf-extension"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-24T00:15:00Z",
+   "metrics": {
+    "likes": 5,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "BIS adds 7 Malaysia, Singapore and Thailand firms, including Megaspeed entities, to the Entity List over AI-chip diversion",
+   "url": "https://x.com/thetickerati/status/2125066393670328775",
+   "handle": "@thetickerati",
+   "group": "applied",
+   "origin": "discovery",
+   "summary": "A BIS final rule adds seven entities (MSFusion, PT Megaspeed International, Speedmatrix, Apex Enterprise Solutions, Megaspeed International Pte, Swiftdata, Megaspeed Thailand) to the Entity List for risk of diverting advanced computing commodities, requiring a license for all items subject to the EAR with a presumption of denial.",
+   "kind": "constraint",
+   "evidence": "artifact",
+   "links": [
+    "https://public-inspection.federalregister.gov/2026-23999.pdf",
+    "https://www.federalregister.gov/public-inspection/2026-23999/additions-to-the-entity-list"
+   ],
+   "vendor": "US BIS",
+   "posted_at": "2026-11-24T03:18:00Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "jurisdiction": "US",
+   "issuer": "Bureau of Industry and Security",
+   "status": "in_force"
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 97,
+ "list_pages": 1,
+ "security_forwarded": [
+  {
+   "url": "https://x.com/cvedotnow/status/2125067482184528293",
+   "matched": "macOS on Mini, Air and Pro",
+   "note": "VERIFIED (NVD CVE-2026-114021, Apple support 149521/149522/149523): malicious NFS server can corrupt kernel memory; CVSS 9.8; fixed in macOS 27.2 (released Oct 26), 26.7.2, 15.8.2. Mini reported on 27.2; Air/Pro unverified. Posted to Mini event bus (lane personal) per current routing.",
+   "bus_post": {
+    "title": "Confirm every Mac is on macOS 27.2+ (CVE-2026-114021 NFS kernel memory corruption, CVSS 9.8)",
+    "ok": true,
+    "ts": "2026-11-23 21:29:21 CT"
+   }
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/OpenAI/status/2125007927098699827",
+   "reason": "Talk promoting OpenAI's Nov 4 'A thousand fewer paths to root' research (948 Linux LPE exploits, fixes going upstream). No new advisory or fixed versions; Spark kernel updates are already an open item. Not posted; Magpie covered the research Nov 5."
+  },
+  {
+   "url": "https://x.com/HugoValters/status/2125063858385809909",
+   "reason": "Vendor guide for a CVE gate in GitHub Actions; promotion, not a vulnerability."
+  }
+ ],
+ "bus_posts": [
+  {
+   "title": "Confirm every Mac is on macOS 27.2+ (CVE-2026-114021 NFS kernel memory corruption, CVSS 9.8)",
+   "ok": true,
+   "ts": "2026-11-23 21:29:21 CT"
+  }
+ ],
+ "horizon_checks": [
+  {
+   "entry": "block-dessa",
+   "reads": 1,
+   "result": "no results since 23:22Z"
+  }
+ ],
+ "deep_reads": 6,
+ "rechecks": 8,
+ "videos": [],
+ "follow_candidates": [
+  {
+   "handle": "@robocurve",
+   "why": "active roster, first-hand robotics eval lab, qualifying posts Nov 20 and Nov 24"
+  },
+  {
+   "handle": "@JoshuaSWarren",
+   "why": "active roster, first-hand builder of omarchy-mlx, qualifying posts Nov 20 and Nov 24"
+  },
+  {
+   "handle": "@plotarmordev",
+   "why": "active roster, first-hand TensorFold builder, frequent measured posts"
+  }
+ ],
+ "follows": "skipped: executor has no browser (follow_mode browser); candidates listed above, not followed",
+ "gh_testing_candidates": [
+  {
+   "url": "https://github.com/sybil-solutions/inference-optimisation-skill",
+   "why": "MIT but unverified owner (org created repo Nov 16); agent skill that runs local serving experiments, relevant to Spark and Mini inference"
+  },
+  {
+   "url": "https://github.com/incoai/splash",
+   "why": "Apache-2.0 (not MIT), small org; Apple-silicon inference engine with DFlash 2 drafter, meets Mini's M-series 36 GB requirement"
+  }
+ ],
+ "notes": [
+  "Owner saves: none new; /workspace/x-ai-bookmarks new_candidates.json empty at 19:27 CT sync and bookmarks_ai.jsonl unchanged since Nov 22.",
+  "List timeline reached since in one page (97 posts, oldest 23:22Z), so all list members are covered. All 6 curated OR searches were paged once; second pages were empty.",
+  "Rechecks (8, one batched lookup): GLM-5.4 11.1K likes, gBench 1.5K, DeepMind quantum circuits 3.7K, Claude Ship 17.4K, Shirudo 11.2K, Claude plugins 5.7K, VP vs VNP proof 1.6K, Copilot Fusion 15. No new notes visible (notes_via_api false); doubt levels unchanged.",
+  "Videos: none analyzed. OpenAI GPT-6 Cyber talk (12 min) is a recap of covered research; no video analysis tool in this run.",
+  "Skipped: Gemini 4 Neon Workspace rollout (incremental), GLM-5.4 analyses (covered Nov 23), datasette-charts (covered last sweep), Antigravity orchestrator pairing (covered 19:26Z), LingSante-Pulse weights (Magpie Nov 20), Sakana Applied Research Lab (org news), OpenWorks (promotion), Jensen Huang/NVIDIA coverage (business), DeepSeek discount (pricing), teortaxesTex political posts, Ling Sante on one Spark (hype formatting, no artifact)."
+ ]
+}
