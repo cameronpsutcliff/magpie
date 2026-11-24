@@ -1,0 +1,747 @@
+{
+ "ran_at": "2026-11-24T19:26:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-24T15:24:00Z",
+ "queries": 9,
+ "calls": 13,
+ "items": [
+  {
+   "title": "Claude opens Skills over MCP in public beta and makes MCP Tasks and Elicitation generally available",
+   "url": "https://x.com/ClaudeDevs/status/2125289794871963935",
+   "handle": "@ClaudeDevs",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "MCP servers can now ship their own skills alongside their tools, loaded only when needed, so Claude and Claude Code know how to use a server on connect. Tasks lets a server run long background jobs while Claude keeps working, and Elicitation lets a server pause for user sign-off; File Uploads is next.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://claude.com/resources/articles/skills-over-mcp-tasks-and-more",
+    "https://github.com/modelcontextprotocol/modelcontextprotocol/issues/2640",
+    "https://py.sdk.modelcontextprotocol.io/api/mcp/server/skills/"
+   ],
+   "vendor": "Anthropic",
+   "posted_at": "2026-11-24T18:05:47Z",
+   "metrics": {
+    "likes": 3891,
+    "reposts": 201,
+    "quotes": 127,
+    "replies": 117,
+    "views": 233136
+   },
+   "confirmed_by": [
+    "@bcherny"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "A builder points out that skills shipped inside a server update with it, so the server owner can change the playbook Claude follows without the user ever seeing a diff.",
+    "source": "https://x.com/ClaudeDevs/status/2125289794871963935"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Mostly enthusiastic restatements and builders saying their agents needed this; the one substantive concern was silent server-side skill changes steering the model.",
+    "tried": false,
+    "replies_read": 12
+   }
+  },
+  {
+   "title": "LlamaIndex open-sources OCRia-1, a 4B VLM for document OCR",
+   "url": "https://x.com/jerryjliu0/status/2125266115874144473",
+   "handle": "@jerryjliu0",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "LlamaIndex released open weights for OCRia-1, a 4B vision-language model for document OCR it places on the accuracy-cost Pareto curve among 4B models, a day after the 8.1M-parameter OCRia-nano-1. Community GGUF conversions appeared within hours, so it can already run in local runtimes.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/llamaindex/OCRia-1",
+    "https://huggingface.co/prithivMLmods/OCRia-1-GGUF"
+   ],
+   "vendor": "LlamaIndex",
+   "posted_at": "2026-11-24T16:31:42Z",
+   "metrics": {
+    "likes": 415,
+    "reposts": 63,
+    "quotes": 11,
+    "replies": 45,
+    "views": 20170
+   },
+   "confirmed_by": [
+    "@huggingface"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "none",
+    "summary": "No replies surfaced in the conversation search window beyond the announcement itself.",
+    "tried": false,
+    "replies_read": 0
+   }
+  },
+  {
+   "title": "Cognition releases SWE-2.1, an RL-trained coding model on Kimi K3, with Lightning and Cyber variants",
+   "url": "https://x.com/cognition/status/2125305349414523061",
+   "handle": "@cognition",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "SWE-2.1 is trained with pure reinforcement learning on Kimi K3 and reportedly rises from 24.1% to 41.3% on FrontierCode 2.0 and from 24.2% to 50.0% on Terminal-Bench 4.1 versus SWE-2; a Lightning variant runs about 10x faster on Cerebras. It is free on Devin paid plans for two weeks.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [
+    "https://cognition.com/blog/swe-2-1"
+   ],
+   "vendor": "Cognition",
+   "posted_at": "2026-11-24T19:07:36Z",
+   "metrics": {
+    "likes": 246,
+    "reposts": 27,
+    "quotes": 32,
+    "replies": 34,
+    "views": 6544
+   },
+   "confirmed_by": [
+    "@aitrackerbot"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Benchmarks are vendor-reported; repliers want to see whether they hold in practice after SWE-2 underwhelmed relative to its numbers.",
+    "source": "https://x.com/cognition/status/2125305349414523061"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Early replies were curious (why Kimi rather than Qwen or DeepSeek) and cautiously positive, with one skeptic asking whether the benchmark gains reflect real use.",
+    "tried": false,
+    "replies_read": 6
+   }
+  },
+  {
+   "title": "ARC Prize verifies Gemini 4 Neon at 93.8% on ARC-AGI-2 for $0.32 a task; PostTrainBench ranks it #8",
+   "url": "https://x.com/arcprize/status/2125262076306137507",
+   "handle": "@arcprize",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "ARC Prize's verified run puts Gemini 4 Neon at 93.8% on ARC-AGI-2 ($0.32 per task) and 98.5% on ARC-AGI-1 ($0.17), tied for fifth with Fable 5.2. Separately, PostTrainBench added Neon at #8, level with Gemini 4 Carbon.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://arcprize.org/leaderboard",
+    "https://posttrainbench.com/"
+   ],
+   "vendor": "ARC Prize Foundation",
+   "posted_at": "2026-11-24T16:15:39Z",
+   "metrics": {
+    "likes": 343,
+    "reposts": 8,
+    "quotes": 6,
+    "replies": 12,
+    "views": 14840
+   },
+   "confirmed_by": [
+    "@hrdkbhatnagar",
+    "@maksym_andr"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "none",
+    "summary": "No replies surfaced in the conversation search window.",
+    "tried": false,
+    "replies_read": 0
+   }
+  },
+  {
+   "title": "OpenAI: two amateur astronomers used Codex and GPT-6.2 Astra to find candidate exoplanet signals in public telescope data",
+   "url": "https://x.com/OpenAI/status/2125305606685053416",
+   "handle": "@OpenAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "OpenAI describes two hobbyists who independently searched public survey data with Codex and Astra and flagged signals that could indicate planets. The finds are candidates, not confirmed planets.",
+   "kind": "demo",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "OpenAI",
+   "posted_at": "2026-11-24T19:08:37Z",
+   "metrics": {
+    "likes": 762,
+    "reposts": 61,
+    "quotes": 40,
+    "replies": 78,
+    "views": 73979
+   },
+   "confirmed_by": [
+    "@gdb"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "A reply notes one search flagged 200+ signals including about 10 already-confirmed Kepler planets, and confirmation of new ones could take months or years.",
+    "source": "https://x.com/OpenAI/status/2125305606685053416"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Some enthusiasm about citizen science with AI over public data, some hostility toward OpenAI, and one specific caution that the signals are unconfirmed candidates.",
+    "tried": false,
+    "replies_read": 4
+   }
+  },
+  {
+   "title": "Datalab ships Indra OCR 1.2: 1M-parameter recognizer on CPU, 50 ms a page on 32 cores, 78.9 on OmniParseBench",
+   "url": "https://x.com/VikParuchuri/status/2125297129468096925",
+   "handle": "@VikParuchuri",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Indra OCR 1.2 runs on CPU with a 1M-parameter main recognizer, about 7x faster than Tesseract, and Datalab reports it beats DeepSeek-OCR-2 on its benchmark, with LaTeX math, better tables and word boxes.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/datalab-to/indra-ocr"
+   ],
+   "vendor": "Datalab",
+   "posted_at": "2026-11-24T18:34:56Z",
+   "metrics": {
+    "likes": 34,
+    "reposts": 6,
+    "quotes": 0,
+    "replies": 2,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@datalabto"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Comparison is on the vendor's own benchmark.",
+    "source": null
+   }
+  },
+  {
+   "title": "Baseten and Harvey post-train four US open-weight models on legal agent tasks; Muse Spark Open hits 30.3% all-pass",
+   "url": "https://x.com/amiruci/status/2125267897606099436",
+   "handle": "@amiruci",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Post-training Meta, NVIDIA, Reflection and Thinking Machines open-weight models on long-horizon legal work lifted all four above 20% all-pass on Harvey's Legal Agent Benchmark, and post-trained Muse Spark Open reached 30.3%, above every closed model they evaluated.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/baseten/status/2125264430904820154"
+   ],
+   "vendor": "Baseten / Harvey",
+   "posted_at": "2026-11-24T16:38:47Z",
+   "metrics": {
+    "likes": 81,
+    "reposts": 12,
+    "quotes": 2,
+    "replies": 3,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@baseten",
+    "@ClementDelangue",
+    "@reflection_ai"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Benchmark and evaluation are run by the partners themselves.",
+    "source": null
+   }
+  },
+  {
+   "title": "Arena launches a 3D leaderboard in Code Arena; Claude Fable 5.2 leads at 1933",
+   "url": "https://x.com/arena/status/2125290119271772222",
+   "handle": "@arena",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Code Arena now ranks models on generating 3D scenes by head-to-head votes; first scores put Claude Fable 5.2 (1933) and Opus 5.5 (1915) ahead of GPT-6.2 Sol (1869).",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://x.com/arena/status/2125288739886821624"
+   ],
+   "vendor": "LMArena",
+   "posted_at": "2026-11-24T18:07:05Z",
+   "metrics": {
+    "likes": 157,
+    "reposts": 11,
+    "quotes": 8,
+    "replies": 36,
+    "views": 10781
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Google Workspace MCP servers and gwscli go GA with a free one-click personal mode",
+   "url": "https://x.com/_philschmid/status/2125296446459056156",
+   "handle": "@_philschmid",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Eight official MCP servers (Gmail, Drive, Docs, Sheets, Slides, Calendar, Chat, Tasks) plus the gwscli tool are generally available without an Enterprise plan or billing card, with 5,000 requests a day per product free and built-in human approval for sends.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Google",
+   "posted_at": "2026-11-24T18:32:13Z",
+   "metrics": {
+    "likes": 117,
+    "reposts": 7,
+    "quotes": 3,
+    "replies": 10,
+    "views": 4526
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "ByteDance Seed TTS 3.0 available on fal: 100+ languages with pace, pitch and volume control",
+   "url": "https://x.com/fal/status/2125294102300307663",
+   "handle": "@fal",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "ByteDance's Seed TTS 3.0 can now be called through fal's API, generating speech in over 100 languages and variants with selectable voices and prosody controls.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "ByteDance Seed",
+   "posted_at": "2026-11-24T18:22:54Z",
+   "metrics": {
+    "likes": 23,
+    "reposts": 0,
+    "quotes": 1,
+    "replies": 3,
+    "views": 2168
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "TRL's async RL trainer is now stable, overlapping generation and learning to cut GPU idle time",
+   "url": "https://x.com/SergioPaniego/status/2125250085835460791",
+   "handle": "@SergioPaniego",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Hugging Face TRL's asynchronous RL trainer generates and trains at the same time instead of alternating, and the team reports large wall-clock savings for the same number of steps on 16 GPUs.",
+   "kind": "feature",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/huggingface/trl"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-24T15:28:00Z",
+   "metrics": {
+    "likes": 23,
+    "reposts": 6,
+    "quotes": 0,
+    "replies": 6,
+    "views": 970
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Hugging Face curates about 2,000 validated RL environments to train Qwen3.8-27B on agentic coding and knowledge work",
+   "url": "https://x.com/ben_burtenshaw/status/2125250590209122775",
+   "handle": "@ben_burtenshaw",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "The team retrieved, cleaned and validated roughly 2k environments spanning coding, banking, law, consulting and business apps for RL post-training, and describes what made environments useful.",
+   "kind": "dataset",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-24T15:30:00Z",
+   "metrics": {
+    "likes": 103,
+    "reposts": 11,
+    "quotes": 2,
+    "replies": 13,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@SergioPaniego"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No dataset link or numbers in the post itself.",
+    "source": null
+   }
+  },
+  {
+   "title": "Hermes Agent v0.23.4 moves old dashboard and serve backends onto the new unified gateway in one command",
+   "url": "https://x.com/witcheer/status/2125259648685027530",
+   "handle": "@witcheer",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "The release migrates existing hermes dashboard or hermes serve setups to the unified gateway on the same address and port, enabling the new web app ahead of a mobile app. Google DeepMind's Neon and Hydrogen models are also now in Nous Portal for use under Hermes Agent.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Nous Research",
+   "posted_at": "2026-11-24T16:06:00Z",
+   "metrics": {
+    "likes": 208,
+    "reposts": 16,
+    "quotes": 1,
+    "replies": 13,
+    "views": 13406
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "NVIDIA publishes a validated VeRL + vLLM container on NGC for RL training",
+   "url": "https://x.com/vllm_project/status/2125290626170417165",
+   "handle": "@vllm_project",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A prebuilt NGC image bundles VeRL and vLLM with tested dependencies so RL experiments start without environment setup.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://catalog.ngc.nvidia.com/orgs/nvidia/-/containers/verl-vllm/-"
+   ],
+   "vendor": "NVIDIA / vLLM",
+   "posted_at": "2026-11-24T18:09:05Z",
+   "metrics": {
+    "likes": 13,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 1286
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Exa search API adds live structured flight data for agents",
+   "url": "https://x.com/ExaAILabs/status/2125280837923172750",
+   "handle": "@ExaAILabs",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Agents using Exa can now query 37M+ flights a year across 4,200 airports with live gate, delay and cancellation data.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Exa",
+   "posted_at": "2026-11-24T17:30:12Z",
+   "metrics": {
+    "likes": 266,
+    "reposts": 21,
+    "quotes": 8,
+    "replies": 10,
+    "views": 9799
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "NVIDIA tutorial trains an obstacle-avoidance controller for the Microduck robot in Isaac Lab and Newton",
+   "url": "https://x.com/NVIDIARobotics/status/2125269759948358023",
+   "handle": "@NVIDIARobotics",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "The walkthrough trains a navigation policy in simulation on top of a fixed walking policy, then tests it on the small physical robot.",
+   "kind": "demo",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-11-24T16:46:11Z",
+   "metrics": {
+    "likes": 156,
+    "reposts": 14,
+    "quotes": 5,
+    "replies": 13,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@huggingface"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "WorldLatent: a unified 4D latent space for world perception and generation",
+   "url": "https://x.com/_akhaliq/status/2125295056211103898",
+   "handle": "@_akhaliq",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A paper proposing one 4D latent representation shared by world perception and generation models.",
+   "kind": "paper",
+   "evidence": "claim",
+   "links": [
+    "https://huggingface.co/papers/2611.31209"
+   ],
+   "vendor": "WorldLatent authors",
+   "posted_at": "2026-11-24T18:26:42Z",
+   "metrics": {
+    "likes": 52,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 3,
+    "views": 4012
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Paper link only; no code or numbers in the post.",
+    "source": null
+   }
+  },
+  {
+   "title": "Dynamic-allocation quantization of DeepSeek V4.1 Flash 1017 reports 37 to 49% lower KL than ExLlamaV3",
+   "url": "https://x.com/casper_hansen_/status/2125289355501580785",
+   "handle": "@casper_hansen_",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "An automatic quantization algorithm with dynamic weight allocation beats EXL3 on its own KL benchmark for DeepSeek V4.1 Flash 1017, without hand tuning.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "casper_hansen_",
+   "posted_at": "2026-11-24T18:04:02Z",
+   "metrics": {
+    "likes": 7,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 2,
+    "views": 591
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Early result, no release link yet.",
+    "source": null
+   }
+  },
+  {
+   "title": "TokenSpeed reports a new throughput-interactivity frontier for Kimi K3.1 Pro on eight AMD MI355X GPUs",
+   "url": "https://x.com/lightseekorg/status/2125296416218099721",
+   "handle": "@lightseekorg",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Running the full SemiAnalysis AgentX trace, TokenSpeed claims the leading measured curve from latency-first to throughput-first serving on MI355X.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "LightSeek",
+   "posted_at": "2026-11-24T18:32:06Z",
+   "metrics": {
+    "likes": 4,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 0,
+    "views": 223
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Self-reported state of the art.",
+    "source": null
+   }
+  },
+  {
+   "title": "SAGE-EXL3 recipe runs Inkling 2 Mini on a DGX Spark at 108.8 tok/s in about 27 GB",
+   "url": "https://x.com/ViC305/status/2125282526885478640",
+   "handle": "@ViC305",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A community EXL3 quantization recipe reports 108.8 tokens/s on one DGX Spark with 98.33% top-1 agreement to the full model and 26 to 27 GB peak memory.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "community",
+   "posted_at": "2026-11-24T17:36:54Z",
+   "metrics": {
+    "likes": 31,
+    "reposts": 5,
+    "quotes": 0,
+    "replies": 6,
+    "views": 1125
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single-author benchmark; recipe link not opened.",
+    "source": null
+   }
+  },
+  {
+   "title": "OpenAI begins rolling out a combined Chat and Work experience to a small group of ChatGPT Pro users",
+   "url": "https://x.com/thsottiaux/status/2125284868414394550",
+   "handle": "@thsottiaux",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "OpenAI is testing a merged chat and agentic work interface with some Pro users before a broader rollout.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "OpenAI",
+   "posted_at": "2026-11-24T17:46:13Z",
+   "metrics": {
+    "likes": 3186,
+    "reposts": 97,
+    "quotes": 143,
+    "replies": 1278,
+    "views": 232504
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Limited rollout, no docs or details on what changes.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/tomgreenwald/status/2124890020263727264",
+   "reason": "Pre-release teaser (ships 'tomorrow'); no artifact in the post. Watch for the release post."
+  },
+  {
+   "url": "https://x.com/0xSero/status/2125183185399251071",
+   "reason": "inference-optimisation-skill repo already delivered in the 2026-11-24T03-22 sweep."
+  },
+  {
+   "url": "https://x.com/realchendahuang/status/2125153472450527440",
+   "reason": "T3 Code telemetry allegation, not a capability; verified against the T3 Code repo and sent to the Mini bus as a security task."
+  }
+ ],
+ "list_posts_read": 187,
+ "list_pages": 2,
+ "security_forwarded": [],
+ "bus_posts": [
+  {
+   "title": "Turn off T3 Code telemetry on the Mini (analytics hashes Codex and Claude account IDs)",
+   "ok": true,
+   "ts": "2026-11-24 13:30:43 CT",
+   "kind": "task",
+   "primary": "https://github.com/pingdotgg/t3code/pull/42299"
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/infrastack_ai/status/2125307046275031477",
+   "reason": "@apexfdn/copilot-mcp is confirmed malicious (MAL-2026-20505 / GHSA-8q2p-w9w5-552h, npm already replaced it with a security stub), but it is not in the Mini's npm cache or global modules and not in stack.json."
+  },
+  {
+   "url": "https://x.com/w0rmsign/status/2125297212452491476",
+   "reason": "Malicious npm packages ugent_uws, getsolara, rolimons-api (MAL-2026-20430..20432): unrelated to anything we run."
+  },
+  {
+   "url": "https://x.com/VibeIncidents/status/2125303685190418491",
+   "reason": "CVE-2026-125771 is in a WordPress MCP plugin; we run no WordPress."
+  },
+  {
+   "url": "https://x.com/ThreatAft/status/2125262666012966987",
+   "reason": "Kerberos Agent hardcoded JWT (CVE-2026-135208): IoT camera software not in the fleet."
+  },
+  {
+   "url": "https://x.com/HugoValters/status/2125250591475511348",
+   "reason": "Linux kernel CVE-2026-90082/90059/90060 are medium severity and hardware or VM specific (MSI-X on large vCPU VMs, stmmac, ALSA); not high signal for our hosts."
+  },
+  {
+   "url": "https://x.com/adarshsolanki/status/2125298837342331115",
+   "reason": "Claim about an offensive model's exploit count; not a vulnerability to patch."
+  }
+ ],
+ "horizon_checks": [
+  {
+   "entry": "block-dessa",
+   "reads": 1,
+   "result": "no results since 15:22Z"
+  }
+ ],
+ "deep_reads": 5,
+ "rechecks": 8,
+ "videos": [],
+ "follow_candidates": [],
+ "follows": "skipped: executor has no browser (follow_mode browser); the 3 candidates recommended at 15:24Z (@ashxhart, @NielsRogge, @OpenBMB) still use today's daily limit of 3, so no new candidates were added.",
+ "gh_testing_candidates": [],
+ "notes": [
+  "List timeline took two pages (187 posts); page 2 reached since (oldest 04:11Z), so every list member is covered. Four curated OR searches (about 1,000 characters each) plus one extra page for the research/builders batch, whose second page ended at 15:27Z, three minutes after since.",
+  "Owner saves: the AI sync added 4 kept and 4 discarded saves at 09:32 CT after the last sweep; 1 kept save (tensorfish) was already an item, the other 3 were rejected as listed. The 4 discarded ones were sorted Politics/Memes/Other by the sync and are not reviewed here.",
+  "Rechecks (8, one batched lookup): tensorfish 3.3K likes, philschmid frontend skill 2.0K, emollick 326, GoogleDeepMind Easy Read 373, ashxhart TF-Rewind 87, adithya_s_k 168, dair_ai 85, victormustar 190. No notes returned (notes_via_api false); doubt levels unchanged.",
+  "Deep reads used one batched conversation search covering 5 threads; only 25 replies came back across them, so replies_read is low.",
+  "T3 Code is installed on the Mac mini (T3 Code (Beta).app 0.1.11 and ~/.local/bin/t3 v0.1.11) but is not in stack.json. Its maintainers' open PR #42299 confirms analytics reads ~/.codex/auth.json and ~/.claude.json and sends unsalted hashes of the account IDs. Posted to the Mini bus as a task: 'Turn off T3 Code telemetry on the Mini (analytics hashes Codex and Claude account IDs)'.",
+  "Videos: none analyzed; there is no video-analysis hand-off available to this executor.",
+  "Discovery: one url:huggingface.co/github.com search returned mostly low-engagement self-promotion; nothing kept from it. One security search."
+ ]
+}
