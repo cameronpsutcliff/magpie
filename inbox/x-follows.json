@@ -169,6 +169,36 @@
     "https://x.com/PyTorch/status/2112967243956945293",
     "https://x.com/PyTorch/status/2112997399081676921"
    ]
+  },
+  {
+   "handle": "@ashxhart",
+   "date": "2026-11-24",
+   "by": "magpie-scout",
+   "status": "recommended",
+   "why": "Active roster, first-hand TensorFold/TF-Rewind builder with measured posts; not followed this run (no browser).",
+   "evidence": [
+    "https://x.com/ashxhart/status/2125231311128297587"
+   ]
+  },
+  {
+   "handle": "@NielsRogge",
+   "date": "2026-11-24",
+   "by": "magpie-scout",
+   "status": "recommended",
+   "why": "Active roster, first-hand Hugging Face builder shipping tools; not followed this run (no browser).",
+   "evidence": [
+    "https://x.com/NielsRogge/status/2125215715955298786"
+   ]
+  },
+  {
+   "handle": "@OpenBMB",
+   "date": "2026-11-24",
+   "by": "magpie-scout",
+   "status": "recommended",
+   "why": "Active roster, official MiniCPM project account; not followed this run (no browser).",
+   "evidence": [
+    "https://x.com/OpenBMB/status/2125220440318890238"
+   ]
   }
  ]
 }

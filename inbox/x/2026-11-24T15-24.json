@@ -1,0 +1,636 @@
+{
+ "ran_at": "2026-11-24T15:24:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-24T11:29:00Z",
+ "queries": 14,
+ "calls": 17,
+ "items": [
+  {
+   "title": "Unsloth adds Inkling 2 Mini fine-tuning: 1.8 to 3.1x faster with 50% less VRAM, local training on 22 GB",
+   "url": "https://x.com/UnslothAI/status/2125243469094605071",
+   "handle": "@UnslothAI",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Unsloth now fine-tunes Thinking Machines' Inkling 2 Mini with free Colab and Kaggle notebooks, and local training fits in about 22 GB of VRAM. Kernel work includes FlexAttention for sliding-window and sink attention and recomputing residuals for the looped layers.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://unsloth.ai/docs/models/inkling-2-mini/fine-tuning",
+    "https://github.com/unslothai/unsloth"
+   ],
+   "vendor": "Unsloth",
+   "posted_at": "2026-11-24T15:01:42Z",
+   "metrics": {
+    "likes": 180,
+    "reposts": 17,
+    "quotes": 2,
+    "replies": 6
+   },
+   "confirmed_by": [
+    "@danielhanchen"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "TF-Rewind: exact checkpoint-free state rewind for Gated DeltaNet hybrid models, 3.95 ms vs 792.9 ms on Qwen3.8-27B",
+   "url": "https://x.com/ashxhart/status/2125231311128297587",
+   "handle": "@ashxhart",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "An MIT-licensed method and code that lets hybrid linear-attention models (Qwen3.5/3.8, Mamba-2, RWKV-7 style recurrences) roll back their recurrent state by any number of tokens without stored checkpoints, which matters for agents that retry tool calls or branch. The author reports exact continuation parity on Qwen3.8-27B and ships a PyTorch reference script that runs on any CPU or CUDA GPU.",
+   "kind": "technique",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/ashhart/tf-rewind"
+   ],
+   "vendor": "TensorFold Research",
+   "posted_at": "2026-11-24T14:13:24Z",
+   "metrics": {
+    "likes": 39,
+    "reposts": 5,
+    "quotes": 1,
+    "replies": 9,
+    "views": 2020
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "All numbers are the author's own; the repo is hours old with no outside reproduction yet.",
+    "source": null
+   }
+  },
+  {
+   "title": "Gemini 4 Neon, pointed at an inference-optimization skill, produced squid5090: a Zig + CUDA engine for Inkling 2 Mini at 370 to 440 tok/s on one RTX 5090",
+   "url": "https://x.com/tensorfish/status/2124975715141689818",
+   "handle": "@tensorfish",
+   "group": "builders",
+   "origin": "discovery",
+   "summary": "A builder left Gemini 4 Neon running with 0xSero's open inference-optimisation skill on an RTX 5090 and got back a zero-dependency Zig and sm_120a CUDA engine serving Inkling 2 Mini at a reported 4x llama.cpp, with 1M context in 22.7 GB. The engine is public on GitHub with an OpenAI-compatible server.",
+   "kind": "demo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/tensorfish/squid5090",
+    "https://huggingface.co/thinkingmachines/Inkling-2-Mini"
+   ],
+   "vendor": "tensorfish (community)",
+   "posted_at": "2026-11-23T21:17:45Z",
+   "metrics": {
+    "likes": 2913,
+    "reposts": 131,
+    "quotes": 27,
+    "replies": 72,
+    "views": 157693
+   },
+   "confirmed_by": [
+    "@thecsguy"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "A replier notes the 1M-in-22.7 GB figure mostly reflects Inkling 2 Mini's sliding-window design, not the engine; throughput is self-reported; repo has no license.",
+    "source": "https://x.com/m7jazin/status/2125233023214047370"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Mostly amazement plus how-to questions; one reply explains the memory figure comes from the model's sliding-window layers, another disputes that the skill deserves credit.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "RL on a 2B model with a 280-line open harness lifts held-out math-proof score from 0.22 to 0.41 without SFT",
+   "url": "https://x.com/adithya_s_k/status/2125238461498270053",
+   "handle": "@adithya_s_k",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "A small model was trained with AsyncGRPO in TRL inside a short custom harness built on Harbor and OpenEnv, entirely on Hugging Face infrastructure, nearly doubling its proof score on held-out problems. The author says the environment, harness, model and evals are all open source.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Hugging Face (community)",
+   "posted_at": "2026-11-24T14:41:48Z",
+   "metrics": {
+    "likes": 45,
+    "reposts": 4,
+    "quotes": 1,
+    "replies": 4,
+    "views": 1577
+   },
+   "confirmed_by": [
+    "@ClementDelangue"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No repo or model link in the post itself.",
+    "source": null
+   }
+  },
+  {
+   "title": "Qwen3.8-27B-think-pi-adapted: RL inside the Pi harness keeps scores but cuts output tokens about 38%",
+   "url": "https://x.com/yb2698/status/2125241088445423636",
+   "handle": "@yb2698",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "An Apache-2.0 adapter of Qwen3.8-27B trained with reinforcement learning, thinking on, inside the Pi coding harness. On solved SWE-Bench and Terminal-Bench 2.1 tasks it averages 10.8k output tokens versus 17.5k for the base model at similar scores, so local agent runs finish cheaper and faster.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/harness-hub/Qwen3.8-27B-think-pi-adapted"
+   ],
+   "vendor": "harness-hub",
+   "posted_at": "2026-11-24T14:52:15Z",
+   "metrics": {
+    "likes": 20,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 4,
+    "views": 535
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Google's experimental frontend skill for Gemini 4 Neon targets clean, non-generic landing pages",
+   "url": "https://x.com/_philschmid/status/2125206633722601572",
+   "handle": "@_philschmid",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A Gemini 4 Neon skill encodes layout, type and color rules plus an explicit anti-slop list (no pill badges, no nested cards, no beige or purple) and uses Nano Banana for custom visuals, aimed at landing pages and long-form web essays.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Google",
+   "posted_at": "2026-11-24T12:35:20Z",
+   "metrics": {
+    "likes": 1295,
+    "reposts": 44,
+    "quotes": 17,
+    "replies": 79,
+    "views": 65534
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No link to the skill in the post; a replier says it overlaps heavily with Stitch's existing taste-design skill, and the author says dashboards are not yet well handled.",
+    "source": "https://x.com/hello_bohdan/status/2125248017620172961"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers praise the negative rule list as the useful part; one says it overlaps with an existing Stitch skill; the skill's author says it suits landing pages more than dense dashboards.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "MIT CSAIL paper: a recursive harness that manages context in code lets RL-trained models generalize to tasks 2 to 64x longer",
+   "url": "https://x.com/dair_ai/status/2125230967833190632",
+   "handle": "@dair_ai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "The paper argues harnesses matter: an RLM-style harness splits a task so each model call sees a familiar input, and models trained only on short tasks under RL handled tasks 2 to 64 times longer and transferred across domains with shared structure.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "MIT CSAIL",
+   "posted_at": "2026-11-24T14:12:02Z",
+   "metrics": {
+    "likes": 39,
+    "reposts": 3,
+    "quotes": 1,
+    "replies": 13,
+    "views": 3160
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Secondhand summary; the post links no paper.",
+    "source": null
+   }
+  },
+  {
+   "title": "BAAI's Embodied SafeWorld stress-tests seven robot and world models on consequence-level physical hazards",
+   "url": "https://x.com/BAAIBeijing/status/2125229172339752973",
+   "handle": "@BAAIBeijing",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "A benchmark project that scores embodied models on what their actions cause (for example placing a box by a running heater), not just motion success, run across GPT-6 Astra, Gemini 4 Argon, Claude Opus 5.5, GR00T N1.7, pi0.5, Wan 3.0 and Cosmos3-Nano. A whitepaper and scenario explorer are online.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://safeai-lab-x.github.io/embodied-safeworld"
+   ],
+   "vendor": "BAAI",
+   "posted_at": "2026-11-24T14:04:54Z",
+   "metrics": {
+    "likes": 2,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 1,
+    "views": 170
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Code is marked coming soon on the project page.",
+    "source": null
+   }
+  },
+  {
+   "title": "Historian reports GPT-6.2 Astra identified the author of an anonymous 1808 sketchbook at Yale",
+   "url": "https://x.com/emollick/status/2125245031842042301",
+   "handle": "@emollick",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Mark Humphries describes GPT-6.2 Astra researching an open archival question end to end, forming hypotheses and naming an obscure French aristocrat as the sketchbook's author, a sign these models can do original humanities research, not only math.",
+   "kind": "demo",
+   "evidence": "claim",
+   "links": [
+    "https://generativehistory.substack.com/p/gpt-62-astra-solves-a-historical"
+   ],
+   "vendor": "OpenAI",
+   "posted_at": "2026-11-24T15:07:55Z",
+   "metrics": {
+    "likes": 44,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 18,
+    "views": 3929
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single case reported by the user himself; no independent check of the attribution yet.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Few substantive replies so far; repliers find the humanities use case notable, nobody reports reproducing it.",
+    "tried": false,
+    "replies_read": 2
+   }
+  },
+  {
+   "title": "Llama app on Mac can now run several local models at once",
+   "url": "https://x.com/erusev/status/2125238804042883582",
+   "handle": "@erusev",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "The Llama desktop app can keep multiple models loaded and running at the same time; the demo shows a support inbox built from three local models on one Mac.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Llama app",
+   "posted_at": "2026-11-24T14:43:10Z",
+   "metrics": {
+    "likes": 12,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 4,
+    "views": 708
+   },
+   "confirmed_by": [
+    "@ggerganov"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Closing Guard: local MiniCPM-V 4.7 1B and MiniCPM-OCR agent turns shop closing checks into a verifiable record",
+   "url": "https://x.com/OpenBMB/status/2125220440318890238",
+   "handle": "@OpenBMB",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "A community app where staff photograph equipment with an Android phone and a local computer checks valve, panel and door states and reads the gas meter with MiniCPM models, asking for a retake when unsure and keeping a hash-chained evidence log.",
+   "kind": "demo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/HankGuo/closing-guard",
+    "https://huggingface.co/openbmb/MiniCPM-V-4.7-1B",
+    "https://huggingface.co/openbmb/MiniCPM-OCR-1.0"
+   ],
+   "vendor": "OpenBMB community",
+   "posted_at": "2026-11-24T13:30:12Z",
+   "metrics": {
+    "likes": 15,
+    "reposts": 2,
+    "quotes": 1,
+    "replies": 1
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "VS Code plugin pushes Copilot agent traces to a Hugging Face dataset for fine-tuning",
+   "url": "https://x.com/NielsRogge/status/2125215715955298786",
+   "handle": "@NielsRogge",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "An Apache-2.0 VS Code extension exports your coding-agent traces to the Hugging Face Hub so they can be used to fine-tune open models such as Qwen 3.8 or Inkling 2 Small; an example trace dataset is public.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/NielsRogge/copilot-traces-hf",
+    "https://huggingface.co/datasets/nielsr/copilot-traces"
+   ],
+   "vendor": "Niels Rogge (Hugging Face)",
+   "posted_at": "2026-11-24T13:11:25Z",
+   "metrics": {
+    "likes": 36,
+    "reposts": 4,
+    "quotes": 2,
+    "replies": 19
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Inkling 2 Mini evaluation results posted on Hugging Face: 79.2% SWE-bench Verified, 48.2% DeepSWE",
+   "url": "https://x.com/victormustar/status/2125230011414143460",
+   "handle": "@victormustar",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Evaluation results for Thinking Machines' open Inkling 2 Mini now appear on its model page, placing it first under 32B on DeepSWE and first under 128B on SWE-bench Verified, and second under 32B on Terminal-Bench 2.1.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/thinkingmachines/Inkling-2-Mini"
+   ],
+   "vendor": "Thinking Machines",
+   "posted_at": "2026-11-24T14:08:14Z",
+   "metrics": {
+    "likes": 78,
+    "reposts": 8,
+    "quotes": 2,
+    "replies": 13
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Scores are as published on the model page, not independently rerun.",
+    "source": null
+   }
+  },
+  {
+   "title": "Kolibri 1.1 now ships in Hugging Face Transformers",
+   "url": "https://x.com/Aleph__Alpha/status/2125242801638294013",
+   "handle": "@Aleph__Alpha",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Aleph Alpha's Apache-2.0 Kolibri 1.1 has a reference implementation in Transformers, so it loads with standard tooling; vLLM is recommended for fast serving.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/docs/transformers/main/en/model_doc/kolibri1_1",
+    "https://huggingface.co/Aleph-Alpha/Kolibri-1.1"
+   ],
+   "vendor": "Aleph Alpha",
+   "posted_at": "2026-11-24T14:59:03Z",
+   "metrics": {
+    "likes": 19,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Stanford study: most of 50 widely cited LLM findings no longer held, or weakened, within 15 months",
+   "url": "https://x.com/james_y_zou/status/2124936874192245206",
+   "handle": "@james_y_zou",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Researchers re-tested 50 well-known published claims about LLMs across 20 models and found most had faded or reversed within about 15 months, a caution for anyone relying on older papers about model limits.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://zou-group.github.io/llm-claims-shelf-life/"
+   ],
+   "vendor": "Stanford (Zou group)",
+   "posted_at": "2026-11-23T18:43:24Z",
+   "metrics": {
+    "likes": 279,
+    "reposts": 36,
+    "quotes": 4,
+    "replies": 8,
+    "views": 26797
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Light, approving replies; one asks how it squares with hallucination benchmarks; nobody disputes the method.",
+    "tried": false,
+    "replies_read": 9
+   }
+  },
+  {
+   "title": "Google DeepMind and Mencap build Easy Read Co-Creator, turning dense documents into accessible text and images with expert review",
+   "url": "https://x.com/GoogleDeepMind/status/2125201709852934598",
+   "handle": "@GoogleDeepMind",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "A Gemini-based tool, co-designed with people with learning disabilities, converts health, finance and everyday documents into Easy Read format in minutes instead of weeks, with human experts reviewing each version.",
+   "kind": "tool",
+   "evidence": "claim",
+   "links": [
+    "https://www.mencap.org.uk/what-we-do/accessibility/google-deepmind-easy-read-co-creator-tool"
+   ],
+   "vendor": "Google DeepMind",
+   "posted_at": "2026-11-24T12:15:46Z",
+   "metrics": {
+    "likes": 316,
+    "reposts": 23,
+    "quotes": 24,
+    "replies": 105,
+    "views": 34134
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No public access or measured quality numbers; the speedup is the vendor's claim.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers welcome the use case and stress that keeping human reviewers in the loop is the important part; no one reports using it.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Gemini API adds server-side file slicing: request only the pages, cells, layers or clip ranges you need",
+   "url": "https://x.com/GoogleAIStudio/status/2124928707529674979",
+   "handle": "@GoogleAIStudio",
+   "group": "labs",
+   "origin": "saved",
+   "summary": "Gemini 4 models can now take PDFs, Office, OpenDocument, audio and video files once via the Files API and load only selected pages, sheet ranges, time segments and content layers at a chosen resolution, billing tokens only for what is inspected. Agents can choose the slice inside a function response, which removes local LibreOffice or ffmpeg steps from harnesses.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://x.com/i/article/2124919844235513856"
+   ],
+   "vendor": "Google",
+   "posted_at": "2026-11-23T18:10:57Z",
+   "metrics": {
+    "likes": 1036,
+    "reposts": 72,
+    "quotes": 19,
+    "replies": 30,
+    "views": 76188
+   },
+   "confirmed_by": [
+    "@OfficialLoganK"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Developers call it an unglamorous feature with real cost savings, especially page ranges for long PDFs; no criticism.",
+    "tried": false,
+    "replies_read": 20
+   }
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/0xCodez/status/2124880498220491122",
+   "reason": "Aggregator recap of Theo's T3 Code workshop with playbook bait; features (remote connect, sub-agents) already reported; no new artifact or result."
+  }
+ ],
+ "list_posts_read": 91,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://x.com/realchendahuang/status/2125160473176023486",
+   "reason": "T3 Code privacy/telemetry allegations (fake conversation delete, issue #17845; command-line args in diagnostics telemetry, PR #41889): T3 Code is not in stack.json and not verified against a primary source this run; no bus post."
+  },
+  {
+   "url": "https://x.com/trending_repos/status/2125199813264241080",
+   "reason": "Claude-BugHunter is an offensive red-team skill bundle, not a vulnerability; nothing to patch."
+  }
+ ],
+ "bus_posts": [],
+ "horizon_checks": [
+  {
+   "entry": "block-dessa",
+   "reads": 1,
+   "result": "no results since 11:28Z"
+  }
+ ],
+ "deep_reads": 6,
+ "rechecks": 8,
+ "videos": [],
+ "follow_candidates": [
+  {
+   "handle": "@ashxhart",
+   "why": "active roster, first-hand TensorFold/TF-Rewind builder, 15 sweep items in 30 days, no doubt 2+",
+   "status": "pending, not executed (no browser)"
+  },
+  {
+   "handle": "@NielsRogge",
+   "why": "active roster, first-hand Hugging Face builder, 6 sweep items in 30 days, no doubt 2+",
+   "status": "pending, not executed (no browser)"
+  },
+  {
+   "handle": "@OpenBMB",
+   "why": "active roster, official MiniCPM project account, 4 sweep items in 30 days, no doubt 2+",
+   "status": "pending, not executed (no browser)"
+  }
+ ],
+ "follows": "skipped: executor has no browser (follow_mode browser); candidates recorded as recommended in inbox/x-follows.json, not followed",
+ "gh_testing_candidates": [
+  {
+   "url": "https://github.com/ashhart/tf-rewind",
+   "why": "MIT but individual owner, repo created today; exact state rewind for hybrid models, relevant to Mini/Spark local inference"
+  },
+  {
+   "url": "https://github.com/tensorfish/squid5090",
+   "why": "individual owner, no license; Zig+CUDA Inkling 2 Mini engine, 2.9K-like post"
+  },
+  {
+   "url": "https://github.com/elementalsouls/Claude-BugHunter",
+   "why": "MIT but individual owner; Claude Code red-team skill bundle trending (20.9K stars), touches Claude Code"
+  },
+  {
+   "url": "https://github.com/NielsRogge/copilot-traces-hf",
+   "why": "Apache-2.0, individual owner; VS Code extension exporting agent traces"
+  },
+  {
+   "url": "https://github.com/HankGuo/closing-guard",
+   "why": "Apache-2.0, individual owner; local MiniCPM agent app"
+  }
+ ],
+ "notes": [
+  "List timeline reached since in one page (91 posts, oldest 03:29Z), so all list members are covered. Six curated OR searches each fit in one page.",
+  "Owner saves: 2 added to the archive at 07:27 CT (GoogleAIStudio file slicing, 0xCodez T3 Code workshop); 1 kept, 1 rejected.",
+  "Rechecks (8, one batched lookup): ERNIE 5.5 Flash 489 likes, Hy-MT3 769, CPU-ARC rebuild 10, Shirudo 18.7K, Claude Ship 23.6K, Claude plugins 8.4K, Valiant proof 2.6K, 4x DGX Spark DeepSeek 19. No notes visible (notes_via_api false); doubt levels unchanged.",
+  "Videos: none analyzed. Only the rejected 0xCodez save had a clip over 60 s (45 min) and no video-analysis hand-off is available to this executor.",
+  "Discovery: one search with min_likes returned only low-engagement noise (operator appears ignored); tensorfish and adithya_s_k came from roster quotes/reposts instead. Second discovery search skipped."
+ ]
+}
