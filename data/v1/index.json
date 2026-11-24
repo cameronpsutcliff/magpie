@@ -3,80 +3,81 @@
  "days": [
   {
    "date": "2026-11-24",
-   "headline": "Let the Fixer Decide: Training a Code Localizer from the Fixer's Likelihood, Ling-3.2-air, Embo-Harness: Towards Understanding Frontier-Model-as-Policy Harness, and more",
-   "events": 337,
-   "sources": 552,
-   "enriched": false,
+   "headline": "Run Ling-3.2-air, OCR on one CPU core, drive robots with Codex, and more",
+   "events": 420,
+   "sources": 583,
+   "enriched": true,
    "top": [
     {
-     "id": "71ba207cc24a",
-     "title": "Let the Fixer Decide: Training a Code Localizer from the Fixer's Likelihood",
-     "impact": 5,
-     "vendor": "Research",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-24-71ba207cc24a"
-    },
-    {
      "id": "2330e99fc5e8",
-     "title": "inclusionAI/Ling-3.2-air",
-     "impact": 4,
-     "vendor": "Open source",
+     "title": "Ling-3.2-air: open 124B multimodal MoE, 5.5B active",
+     "impact": 5,
+     "vendor": "inclusionAI (Ant Group)",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-24-2330e99fc5e8"
     },
     {
-     "id": "076a0353af33",
-     "title": "Embo-Harness: Towards Understanding Frontier-Model-as-Policy Harness",
+     "id": "4c5b0fc07ccf",
+     "title": "OCRia-nano-1: 8.1M-parameter OCR on one CPU core",
      "impact": 4,
+     "vendor": "LlamaIndex",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-24-4c5b0fc07ccf"
+    },
+    {
+     "id": "f2ff2322772b",
+     "title": "Claude credited with Lean-checked VP not equal VNP proof",
+     "impact": 4,
+     "vendor": "Anthropic",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-24-f2ff2322772b"
+    },
+    {
+     "id": "076a0353af33",
+     "title": "Embo-Harness studies frontier models as robot policies",
+     "impact": 3,
      "vendor": "Research",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-24-076a0353af33"
     },
     {
      "id": "ab321d2755cb",
-     "title": "yetone/magpie",
-     "impact": 4,
+     "title": "Menu bar switcher for coding agent model backends",
+     "impact": 3,
      "vendor": "Open source",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-24-ab321d2755cb"
-    },
-    {
-     "id": "4c5b0fc07ccf",
-     "title": "llamaindex/OCRia-nano-1",
-     "impact": 4,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-24-4c5b0fc07ccf"
     }
    ],
    "vendors": [
     "Open source",
     "Research",
+    "NVIDIA",
     "Anthropic",
     "Google",
-    "OpenAI",
-    "Hugging Face"
+    "OpenAI"
    ],
    "topics": {
-    "models": 129,
-    "agents": 118,
-    "coding": 88,
-    "multimodal": 72,
-    "infra": 57,
+    "models": 131,
+    "agents": 126,
+    "coding": 89,
+    "multimodal": 73,
+    "infra": 60,
     "evals": 39,
-    "local": 32,
-    "research": 29,
-    "memory": 28,
-    "mcp": 25,
-    "robotics": 20,
+    "local": 35,
+    "research": 32,
+    "memory": 27,
+    "mcp": 23,
+    "robotics": 21,
     "reverse": 19,
-    "security": 12
+    "security": 16
    },
    "kinds": {
+    "video": 86,
     "social": 71,
-    "newsletter": 54,
+    "newsletter": 53,
     "paper": 40,
     "repo": 39,
     "blog": 38,
     "model": 30,
     "changelog": 23,
     "space": 20,
-    "community": 15,
+    "community": 13,
     "news": 7
    },
    "constraints": [],
