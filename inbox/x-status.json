@@ -1,23 +1,23 @@
 {
- "updated_at": "2026-11-24T10:35:00Z",
- "job": "roster",
+ "updated_at": "2026-11-24T11:31:00Z",
+ "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 23,
+ "calls_used_today": 38,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-24T03:22:00Z",
-  "items": 22,
-  "queries": 20,
-  "deep_reads": 6,
+  "ran_at": "2026-11-24T11:29:00Z",
+  "items": 7,
+  "queries": 12,
+  "deep_reads": 2,
   "rechecks": 8,
-  "flagged": 10,
-  "saved_in": 0,
-  "saved_kept": 0,
+  "flagged": 4,
+  "saved_in": 3,
+  "saved_kept": 1,
   "videos": 0,
-  "security_forwarded": 1,
-  "list_posts_read": 97,
+  "security_forwarded": 0,
+  "list_posts_read": 88,
   "list_pages": 1,
-  "bus_posts": 1
+  "bus_posts": 0
  },
  "roster": {
   "curated": 223,
@@ -65,7 +65,8 @@
   "Sweep 19:26Z: search_posts_all conversation_id replies return newest replies, not top replies, so deep reads of very popular posts only see recent low-engagement replies. Prior sweep files wrote security_forwarded as a count; this one uses the list form from the prompt. Post data for t.co links at the end of posts resolved only to photo/video URLs, so several kept items have no primary link.",
   "Security routing: owner's 2026-11-23 rule sends verified stack-touching security items straight to the Mini event bus (lane personal), not Bouncer; the prompt's Fleet stack section still says forward to Bouncer. Suggest updating that section. This sweep logs the bus post under security_forwarded[].bus_post.",
   "Sweep 03:22Z (Nov 24): search_posts_all appears to ignore min_likes in queries (discovery returned 0-like posts), so discovery is noisy. Fleet stack section still says forward to Bouncer while the owner's 2026-11-23 rule routes verified items to the Mini bus; this sweep logs the bus post under security_forwarded[].bus_post and bus_posts. Follow candidates are listed in the sweep file because follows were skipped.",
-  "Roster review 2026-11-24: 0 X reads. Owner saves: @danikkk_wqs, @mirku21, @RoundtableSpace, @OrcaRouter have 2 saves each; none newly eligible (excluded/retired/already trial). Promoted ['@mitchellh']; refreshed last_qualifying_post for 36 accounts; no retirements; pruned 4 sweep files before 2026-11-10. Tuesday, no drafts. Owner may add @danikkk_wqs and @OrcaRouter to avoid."
+  "Roster review 2026-11-24: 0 X reads. Owner saves: @danikkk_wqs, @mirku21, @RoundtableSpace, @OrcaRouter have 2 saves each; none newly eligible (excluded/retired/already trial). Promoted ['@mitchellh']; refreshed last_qualifying_post for 36 accounts; no retirements; pruned 4 sweep files before 2026-11-10. Tuesday, no drafts. Owner may add @danikkk_wqs and @OrcaRouter to avoid.",
+  "Sweep 11:29Z: list timeline covered since in one page (88 posts). Owner saves read from /workspace/x-ai-bookmarks; found one save (atomic_chat_hq, captured Nov 22) that no sweep had reported, because earlier sweeps checked only new_candidates.json. Suggest the sweep always diff bookmarks_ai.jsonl ids against recent sweep files. Security leads seen (LiteLLM KEV, agent-framework PyPI) were already on the Mini bus; no new posts."
  ],
  "errors": [],
  "follows_today": 0,
@@ -103,6 +104,6 @@
   "flagged": [],
   "sunday_drafts": false
  },
- "follows_skipped": "Sweep 03:22Z: follows skipped, executor has no browser; 3 candidates listed in the sweep file.",
- "calls_note": "calls_used_today is the Magpie share counted by this lane for UTC day 2026-11-24; X reported 984 of 1000 shared reads left at ~03:28Z."
+ "follows_skipped": "Sweep 11:29Z: follows skipped, executor has no browser; 3 candidates listed in the sweep file.",
+ "calls_note": "calls_used_today is the Magpie share counted by this lane for UTC day 2026-11-24; X reported 964 of 1000 shared reads left at ~11:28Z."
 }

@@ -1,0 +1,343 @@
+{
+ "ran_at": "2026-11-24T11:29:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-24T03:22:00Z",
+ "queries": 12,
+ "calls": 15,
+ "items": [
+  {
+   "title": "Baidu releases ERNIE 5.5 Flash Preview open weights under Apache 2.0: 280B-total, 14B-active MoE with 1M context",
+   "url": "https://x.com/Baidu_ERNIE/status/2125072735336546546",
+   "handle": "@Baidu_ERNIE",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Baidu published weights for the first post-trained checkpoint of ERNIE 5.5 Flash, a 280B MoE that activates 14B per token, with a 1M-token context, FP8 weights with FP4 experts, and a built-in DSpark draft head for speculative decoding. It targets coding, agent and knowledge work and is still mid post-training. vLLM (via a plugin) and SGLang had day-0 serving; SGLang reports single-request decode raised from 102 to 1,074 tok/s on 4 Blackwell GPUs.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/baidu/ERNIE-5.5-Flash-Preview",
+    "https://ernie.baidu.com/release/ernie-5-5-flash-preview/",
+    "https://www.lmsys.org/blog/2026-11-23-ernie55-flash-low-latency",
+    "https://docs.sglang.io/cookbook/autoregressive/Baidu/ERNIE-5.5-Flash",
+    "https://openrouter.ai/baidu/ernie-5.5-flash-preview:free"
+   ],
+   "vendor": "Baidu",
+   "posted_at": "2026-11-24T03:43:16Z",
+   "metrics": {
+    "likes": 408,
+    "reposts": 60,
+    "quotes": 30,
+    "replies": 35,
+    "views": null
+   },
+   "confirmed_by": [
+    "@vllm_project",
+    "@sgl_project",
+    "@ModelScope2022"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Baidu itself calls it an intermediate post-training checkpoint; one replier notes it is text-only with no image input. Benchmarks so far are Baidu's own.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Mostly short congratulations and excitement about open weights and 1M context; one asks for image input, a few compare its size to DeepSeek; no hands-on results yet.",
+    "tried": false,
+    "replies_read": 12
+   }
+  },
+  {
+   "title": "Tencent open-sources Hy-MT3 translation models (1.8B, 7B, 30B-A3B) covering 102 languages",
+   "url": "https://x.com/TencentHunyuan/status/2125170622049485093",
+   "handle": "@TencentHunyuan",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Tencent released the third generation of its Hy translation family under Apache 2.0, in 1.8B, 7B and 30B-A3B MoE sizes with FP8 and GGUF builds, expanding from 38 to 102 languages. Tencent reports 43% fewer mistranslations and 74% fewer omissions than Hy-MT2 on real-world data, and the 30B-A3B tops its non-thinking comparison; it also released the TransRubric evaluation and a paper.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/tencent/Hy-MT3-30B-A3B",
+    "https://huggingface.co/tencent/Hy-MT3-7B",
+    "https://huggingface.co/tencent/Hy-MT3-1.8B",
+    "https://huggingface.co/papers/2611.27673",
+    "https://modelscope.ai/collections/Tencent-Hunyuan/Hy-MT3"
+   ],
+   "vendor": "Tencent Hunyuan",
+   "posted_at": "2026-11-24T10:12:14Z",
+   "metrics": {
+    "likes": 310,
+    "reposts": 33,
+    "quotes": 9,
+    "replies": 11,
+    "views": null
+   },
+   "confirmed_by": [
+    "@ModelScope2022"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "A replier asks why TranslateGemma-27B is missing from the comparison and whether direct non-English pairs were tested; results are Tencent's own.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Replies welcome the jump to 102 languages and game localization; questions about OpenRouter availability and missing baselines; nobody reports trying it yet.",
+    "tried": false,
+    "replies_read": 14
+   }
+  },
+  {
+   "title": "Strata v0.2.21 makes Inkling 2 Mini up to 3x faster on long prompts across NVIDIA, AMD, Apple and DGX Spark",
+   "url": "https://x.com/uctive/status/2125181271936524665",
+   "handle": "@uctive",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "The open-source Strata local inference app shipped 0.2.21: on an RTX 4090 Inkling 2 Mini decodes at 92 tok/s after a 32K prompt (was 29), an RTX 3060 Ti 8 GB goes from 11 to 43 tok/s, prompt reading on M5 Max is 62% faster and DGX Spark gains 12 to 58%. Agent sessions now reuse their prompt cache on every backend, and the DSpark drafter works with Unsloth GGUFs.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/Niko1221/Strata/releases",
+    "https://github.com/Niko1221/Strata",
+    "https://huggingface.co/strata-engine/Inkling-2-Mini-Strata"
+   ],
+   "vendor": "Strata (Niko1221)",
+   "posted_at": "2026-11-24T10:54:33Z",
+   "metrics": {
+    "likes": 13,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 4,
+    "views": null
+   },
+   "confirmed_by": [
+    "@coldniko"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "TensorFold fork drafts all streams' next tokens in one shared pass, lifting Inkling 2 Mini from 284 to 372 tok/s at 16 streams on a Mac Studio",
+   "url": "https://x.com/plotarmordev/status/2125165692605677702",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A builder's fork of the TensorFold Apple-silicon engine batches speculative drafting across 16 concurrent streams, raising total throughput about 31% while each stream's output matches running it alone token for token.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "plotarmordev (TensorFold fork)",
+   "posted_at": "2026-11-24T09:52:39Z",
+   "metrics": {
+    "likes": 11,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 4,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Independent rebuild of NVIDIA's CPU-ARC cached-reasoning replay on one RTX 5090 finds it does not hold, failing most on familiar-looking questions",
+   "url": "https://x.com/witcheer/status/2125167793834516914",
+   "handle": "@witcheer",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A builder reimplemented the CPU-ARC idea, where a CPU replays a large model's cached reasoning instead of running the model, and reports the cache trails the 27B model on new maths questions and breaks worst on questions that resemble cached ones. A useful negative replication for anyone planning cache-based CPU offload.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "witcheer",
+   "posted_at": "2026-11-24T10:01:00Z",
+   "metrics": {
+    "likes": 7,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 4,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single-person replication on one GPU; method details are in the post and video only, no code linked.",
+    "source": null
+   }
+  },
+  {
+   "title": "Community tiny-voca TTS ports (4.5M to 27M params) reach #1 for Hindi and Arabic on the Hugging Face Open TTS Leaderboard",
+   "url": "https://x.com/EricBezzam/status/2125149984827818383",
+   "handle": "@EricBezzam",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Community fine-tunes of the tiny-voca text-to-speech models now rank first for Hindi and Arabic and top four in Turkish, Greek, French and Russian on Hugging Face's open TTS leaderboard, showing tiny on-device TTS can compete across languages.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/spaces/hf-audio/open_tts_leaderboard"
+   ],
+   "vendor": "Hugging Face community (tiny-voca)",
+   "posted_at": "2026-11-24T08:50:14Z",
+   "metrics": {
+    "likes": 36,
+    "reposts": 6,
+    "quotes": 2,
+    "replies": 6,
+    "views": null
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "OpenAI and Cisco open-source Shirudo, an eBPF runtime where agents write signed temporary shields for running Linux systems",
+   "url": "https://x.com/OpenAI/status/2124980590717911527",
+   "handle": "@OpenAI",
+   "group": "labs",
+   "origin": "saved",
+   "summary": "Shirudo lets operators (and agents such as Codex) build signed eBPF or Java micropatches that block a vulnerable code path on a running Linux host without a restart, with TPM-backed attestation. OpenAI reports a Codex-written shield blocked a Java4Shell exploit on live Elasticsearch in a controlled test. Pre-release; production needs Shirudo kernel patches and TPM 2.0. BSD-2-Clause.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/shirudo-dev/shirudo",
+    "https://openai.com/index/introducing-shirudo",
+    "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/cisco-and-openai-launch-shirudo-a-new-project-to-safeguard-agentic-ai.html",
+    "https://isovalent.com/blog/post/cisco-openai-shirudo"
+   ],
+   "vendor": "OpenAI and Cisco",
+   "posted_at": "2026-11-23T21:37:00Z",
+   "metrics": {
+    "likes": 17294,
+    "reposts": 2142,
+    "quotes": 894,
+    "replies": 648,
+    "views": 1927048
+   },
+   "confirmed_by": [
+    "@gdb"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers ask how agent-written rules are scoped, expired and rolled back, and how to prove a shield will not drop legitimate traffic; the only result so far is a vendor-run controlled test.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Security practitioners welcome the patch-gap framing and eBPF approach; the main questions are review gates before load, rollback and blast radius.",
+    "tried": false,
+    "replies_read": 25
+   }
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/theo/status/2124974048728019201",
+   "reason": "Opinion quote of the Ladybird browser alpha; not an AI capability and no first-hand result."
+  },
+  {
+   "url": "https://x.com/atomic_chat_hq/status/2124147181418602912",
+   "reason": "Uncensored (refusal-removed) Inkling 2 Mini quant pack promoted by a chat-app vendor; refusal and MMLU numbers are its own test only. Saved Nov 22, not reported before."
+  }
+ ],
+ "list_posts_read": 88,
+ "list_pages": 1,
+ "security_forwarded": [],
+ "security_na": [
+  {
+   "url": "https://x.com/socstorm/status/2125152190876795250",
+   "reason": "LiteLLM CVE-2026-40217 CISA KEV: already on the Mini bus Nov 23 13:28 and 13:29 CT (patch/verify tasks); no new facts."
+  },
+  {
+   "url": "https://x.com/Grouve/status/2125138639562645871",
+   "reason": "Microsoft agent-framework 1.26.1/1.26.2 PyPI stealer (GHSA-764m-3ppc-5m73): already posted to the bus in the 23:22Z sweep."
+  },
+  {
+   "url": "https://x.com/amitspofficial/status/2125124174591008914",
+   "reason": "Cursor marketplace backdoored Anthropic.claude-code 2.1.312/2.1.313 is the Oct 29 incident (Cursor notice Oct 29, update Nov 13); nothing new in this post."
+  },
+  {
+   "url": "https://x.com/FineShotAI/status/2125106066933608885",
+   "reason": "binary-parser npm CVE-2026-134814 (fixed 2.3.1): exploitable only when an attacker supplies parser definitions; no fleet use known."
+  },
+  {
+   "url": "https://x.com/UpwindMDR/status/2125098905423520098",
+   "reason": "Mongoose GHSA-xfcm-rmv3-crmq projection bypass: no Mongoose app in stack.json."
+  },
+  {
+   "url": "https://x.com/superdoccimo/status/2125132860655124516",
+   "reason": "astro-airflow-mcp 0.5.0 to 0.9.1 code execution: fleet does not run Airflow or this MCP."
+  },
+  {
+   "url": "https://x.com/superdoccimo/status/2125100907755184261",
+   "reason": "Dokploy CVE-2026-72884 incomplete fix: fleet does not run Dokploy."
+  },
+  {
+   "url": "https://x.com/_pksharma/status/2125153253482479930",
+   "reason": "CISA KEV adds N-able MailAssure and MONAI Label: neither runs on the fleet."
+  }
+ ],
+ "bus_posts": [],
+ "horizon_checks": [
+  {
+   "entry": "block-dessa",
+   "reads": 1,
+   "result": "no results since 03:22Z"
+  }
+ ],
+ "deep_reads": 2,
+ "rechecks": 8,
+ "videos": [],
+ "follow_candidates": [
+  {
+   "handle": "@plotarmordev",
+   "why": "active roster, first-hand TensorFold builder, measured posts Nov 22 to Nov 24"
+  },
+  {
+   "handle": "@robocurve",
+   "why": "active roster, first-hand robotics eval lab, qualifying posts Nov 20 and Nov 24"
+  },
+  {
+   "handle": "@JoshuaSWarren",
+   "why": "active roster, first-hand builder of omarchy-mlx, qualifying posts Nov 20 and Nov 24"
+  }
+ ],
+ "follows": "skipped: executor has no browser (follow_mode browser); candidates listed above, not followed",
+ "gh_testing_candidates": [
+  {
+   "url": "https://github.com/Niko1221/Strata",
+   "why": "MIT but individual owner (not a verified org); local inference app with DSpark drafter and DGX Spark/M-series gains in v0.2.21, relevant to Spark and Mini"
+  }
+ ],
+ "notes": [
+  "List timeline reached since in one page (88 posts, oldest 01:06Z), so all list members are covered. Six curated OR searches each fit in one page.",
+  "Owner saves: 2 added to the archive at 21:35 CT Nov 23 (Shirudo, theo Ladybird) plus one earlier unreported save (atomic_chat_hq, captured Nov 22). Shirudo kept (re-emitted with fresh metrics; prior deep read carried over).",
+  "Rechecks (8, one batched lookup): Ling-3.2-air 806 likes, Antigravity checklists 4.1K, robocurve 480, HubEgo 569 likes with 822 replies (reply-heavy, possible engagement bait; not re-read), OpenCode HungerG 2.5K, arithmetic circuits 242, Model Carving 40, inference-optimisation-skill 398. No notes visible (notes_via_api false); doubt levels unchanged.",
+  "Videos: none analyzed. witcheer's 62 s CPU-ARC clip was not deep-read; no video analysis tool in this run.",
+  "Skipped: SenseNova-U1.6 (covered last sweep), Gemini API file slicing (already in Magpie), HF trusted publishers (changelog dated Jun 8), NVIDIA SkillSpector (repo since March, already in Magpie), sudoingX FP8 LingSante conversion and MooncastOnline numbers (truncated, low detail), gdb GPT-6.2 Astra quote (no primary link), ERNIE/Hy-MT3 aggregator reposts, theo T3 Code fork dispute and teortaxesTex/levelsio commentary (opinion), CoreWeave webinar and SemiAnalysis hiring (business)."
+ ]
+}
