@@ -1,23 +1,23 @@
 {
-  "updated_at": "2026-11-24T19:34:00Z",
+  "updated_at": "2026-11-24T23:30:00Z",
   "job": "sweep",
   "prompt": "v6.1",
-  "calls_used_today": 68,
+  "calls_used_today": 88,
   "notes_via_api": false,
   "last_sweep": {
-    "ran_at": "2026-11-24T19:26:00Z",
-    "items": 21,
-    "queries": 9,
-    "deep_reads": 5,
+    "ran_at": "2026-11-24T23:16:00Z",
+    "items": 15,
+    "queries": 8,
+    "deep_reads": 9,
     "rechecks": 8,
-    "flagged": 11,
-    "saved_in": 4,
+    "flagged": 7,
+    "saved_in": 1,
     "saved_kept": 0,
     "videos": 0,
-    "security_forwarded": 0,
-    "list_posts_read": 187,
+    "security_forwarded": 2,
+    "list_posts_read": 193,
     "list_pages": 2,
-    "bus_posts": 1
+    "bus_posts": 2
   },
   "roster": {
     "curated": 223,
@@ -68,7 +68,8 @@
     "Roster review 2026-11-24: 0 X reads. Owner saves: @danikkk_wqs, @mirku21, @RoundtableSpace, @OrcaRouter have 2 saves each; none newly eligible (excluded/retired/already trial). Promoted ['@mitchellh']; refreshed last_qualifying_post for 36 accounts; no retirements; pruned 4 sweep files before 2026-11-10. Tuesday, no drafts. Owner may add @danikkk_wqs and @OrcaRouter to avoid.",
     "Sweep 11:29Z: list timeline covered since in one page (88 posts). Owner saves read from /workspace/x-ai-bookmarks; found one save (atomic_chat_hq, captured Nov 22) that no sweep had reported, because earlier sweeps checked only new_candidates.json. Suggest the sweep always diff bookmarks_ai.jsonl ids against recent sweep files. Security leads seen (LiteLLM KEV, agent-framework PyPI) were already on the Mini bus; no new posts.",
     "Sweep 15:24Z: min_likes in search_posts_all discovery queries appears to be ignored (returned 0-like posts), so discovery by engagement does not work as written; roster quotes/reposts were a better discovery source. The always_forward rule (agent tooling to Bouncer) conflicts with the current owner routing (verified stack-touching items to the Mini bus only, nothing to Bouncer); T3 Code telemetry allegations were logged as security_na since T3 Code is not in stack.json. Follows still skipped (no browser); candidates now also written to x-follows.json as recommended per the prompt.",
-    "Sweep 19:26Z: T3 Code is installed on the Mac mini (app and CLI v0.1.11) but is missing from inbox/stack.json, so stack matching marked earlier T3 Code leads N/A. Suggest the owner add it (match terms: t3 code, t3code, pingdotgg). Also, the search tool caps at 25 results per call even with max_results 100, and returns next_token even on short pages."
+    "Sweep 19:26Z: T3 Code is installed on the Mac mini (app and CLI v0.1.11) but is missing from inbox/stack.json, so stack matching marked earlier T3 Code leads N/A. Suggest the owner add it (match terms: t3 code, t3code, pingdotgg). Also, the search tool caps at 25 results per call even with max_results 100, and returns next_token even on short pages.",
+    "Sweep 23:16Z: security routing follows the 2026-11-23 owner layout (verified stack-touching leads go to the Mini event bus, not Bouncer), so 'security_forwarded' now lists bus-posted leads; the prompt's Fleet stack section still says forward to Bouncer and could be updated to match. Search results from search_posts_all omit entities on many posts, so a batched get_posts_by_ids lookup was used for links and metrics (1 call for 30 posts, which also served the 8 rechecks)."
   ],
   "errors": [],
   "follows_today": 3,
@@ -106,6 +107,6 @@
     "flagged": [],
     "sunday_drafts": false
   },
-  "follows_skipped": "2026-11-24T19:34Z: 3 recommended candidates (@ashxhart, @NielsRogge, @OpenBMB) followed as @sutcliffcc via box browser; daily limit 3 reached.",
-  "calls_note": "calls_used_today is the Magpie share counted by this lane for UTC day 2026-11-24; X reported 942 of 1000 shared reads left at ~19:28Z."
+  "follows_skipped": "2026-11-24T23:16Z sweep: no follows (no browser in this run, and the daily limit of 3 was already used at 19:34Z); weekly remaining 12.",
+  "calls_note": "calls_used_today is the Magpie share counted by this lane for UTC day 2026-11-24 (68 before the 23:16Z sweep + 20). X reported 921 of 1000 shared reads left at ~23:22Z."
 }
