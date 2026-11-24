@@ -2,6 +2,87 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-11-24",
+   "headline": "Let the Fixer Decide: Training a Code Localizer from the Fixer's Likelihood, Ling-3.2-air, Embo-Harness: Towards Understanding Frontier-Model-as-Policy Harness, and more",
+   "events": 337,
+   "sources": 552,
+   "enriched": false,
+   "top": [
+    {
+     "id": "71ba207cc24a",
+     "title": "Let the Fixer Decide: Training a Code Localizer from the Fixer's Likelihood",
+     "impact": 5,
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-24-71ba207cc24a"
+    },
+    {
+     "id": "2330e99fc5e8",
+     "title": "inclusionAI/Ling-3.2-air",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-24-2330e99fc5e8"
+    },
+    {
+     "id": "076a0353af33",
+     "title": "Embo-Harness: Towards Understanding Frontier-Model-as-Policy Harness",
+     "impact": 4,
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-24-076a0353af33"
+    },
+    {
+     "id": "ab321d2755cb",
+     "title": "yetone/magpie",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-24-ab321d2755cb"
+    },
+    {
+     "id": "4c5b0fc07ccf",
+     "title": "llamaindex/OCRia-nano-1",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-24-4c5b0fc07ccf"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Research",
+    "Anthropic",
+    "Google",
+    "OpenAI",
+    "Hugging Face"
+   ],
+   "topics": {
+    "models": 129,
+    "agents": 118,
+    "coding": 88,
+    "multimodal": 72,
+    "infra": 57,
+    "evals": 39,
+    "local": 32,
+    "research": 29,
+    "memory": 28,
+    "mcp": 25,
+    "robotics": 20,
+    "reverse": 19,
+    "security": 12
+   },
+   "kinds": {
+    "social": 71,
+    "newsletter": 54,
+    "paper": 40,
+    "repo": 39,
+    "blog": 38,
+    "model": 30,
+    "changelog": 23,
+    "space": 20,
+    "community": 15,
+    "news": 7
+   },
+   "constraints": [],
+   "threats": []
+  },
+  {
    "date": "2026-11-23",
    "headline": "Robots write gripper code, GLM-5.4 leads open coding, llama.cpp fork speeds up, and more",
    "events": 227,
@@ -5118,5 +5199,5 @@
    }
   }
  ],
- "latest": "2026-11-23"
+ "latest": "2026-11-24"
 }
