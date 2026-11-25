@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  pull_request:
+    paths-ignore:
+      - "data/**"
+      - "state/**"
+      - "inbox/**"
+  push:
+    branches: [main]
+    paths-ignore:
+      - "data/**"
+      - "state/**"
+      - "inbox/**"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: magpie-ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  checks:
+    name: Tests, lint, and config hygiene
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e . pytest ruff
+      - name: Lint with ruff
+        run: ruff check magpie tests
+      - name: Run pytest
+        run: pytest -q
+      - name: Validate JSON configs and house style
+        run: |
+          python3 - <<'PY'
+          import json, pathlib, re
+          for cfg in sorted(pathlib.Path("config").glob("*.json")):
+              json.loads(cfg.read_text(encoding="utf-8"))
+          bad = []
+          inv = re.compile("[\u200b\u00ad\u2060\ufeff\u180e\u202d\u202e\U000e0000-\U000e007f]")
+          for root in ("magpie", "config"):
+              for p in pathlib.Path(root).rglob("*"):
+                  if p.is_file() and p.suffix in (".py", ".json", ".md", ".yml", ".yaml"):
+                      txt = p.read_text(encoding="utf-8")
+                      if "\u2014" in txt:
+                          bad.append((str(p), "em_dash"))
+                      if inv.search(txt[1:] if txt.startswith("\ufeff") else txt):
+                          bad.append((str(p), "invisible_mark"))
+          assert not bad, f"House style failures: {bad}"
+          print("Config JSON and house style: OK")
+          PY
