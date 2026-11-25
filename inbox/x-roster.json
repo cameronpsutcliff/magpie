@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-25T10:35:00Z",
+ "updated_at": "2026-11-25T18:42:00Z",
  "accounts": [
   {
    "handle": "@thsottiaux",
@@ -2902,6 +2902,23 @@
    "on_list": true,
    "source": "owner_requested",
    "owner_requested": true
+  },
+  {
+   "handle": "@poteto",
+   "name": "lauren",
+   "group": "devtools",
+   "affiliation": "SpaceX Super Intelligence",
+   "why": "Owner-requested watch (2026-11-25). Cameron asked to include her content. Grok Bot engineer at SpaceX Super Intelligence.",
+   "signal_to_noise": 3,
+   "status": "active",
+   "added_on": "2026-11-25",
+   "evidence": [],
+   "last_qualifying_post": null,
+   "retired_reason": null,
+   "owner_requested": true,
+   "x_user_id": "2832427459",
+   "on_list": true,
+   "note": "Cameron requested her directly on 2026-11-25; added as active, trial vetting skipped."
   }
  ],
  "source_leads": [
@@ -3430,8 +3447,8 @@
   "name": "Magpie roster",
   "owner": "@CameronSutcliff",
   "private": true,
-  "member_count": 144,
+  "member_count": 145,
   "scope": "every trial and active account in this file; curated config accounts are not members yet",
-  "updated_at": "2026-11-23T19:57:00Z"
+  "updated_at": "2026-11-25T18:42:00Z"
  }
 }
