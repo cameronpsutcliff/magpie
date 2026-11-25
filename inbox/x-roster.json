@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-24T10:35:00Z",
+ "updated_at": "2026-11-25T10:35:00Z",
  "accounts": [
   {
    "handle": "@thsottiaux",
@@ -14,7 +14,7 @@
     "https://x.com/thsottiaux/status/2111990254408434095",
     "https://x.com/thsottiaux/status/2111244596131111253"
    ],
-   "last_qualifying_post": "2026-11-23",
+   "last_qualifying_post": "2026-11-24",
    "retired_reason": null,
    "x_user_id": "1953337039510003712",
    "on_list": true,
@@ -33,7 +33,7 @@
     "https://x.com/OpenBMB/status/2109694573408866351",
     "https://x.com/OpenBMB/status/2110364065822646570"
    ],
-   "last_qualifying_post": "2026-11-23",
+   "last_qualifying_post": "2026-11-24",
    "retired_reason": null,
    "x_user_id": "1496119294844825600",
    "on_list": true,
@@ -71,7 +71,7 @@
     "https://x.com/fal/status/2112251022047412492",
     "https://x.com/fal/status/2110795863861674073"
    ],
-   "last_qualifying_post": "2026-11-23",
+   "last_qualifying_post": "2026-11-24",
    "retired_reason": null,
    "x_user_id": "39622874",
    "on_list": true,
@@ -90,7 +90,7 @@
     "https://x.com/ExaAILabs/status/2112218730952601719",
     "https://x.com/ExaAILabs/status/2108245582745850303"
    ],
-   "last_qualifying_post": "2026-11-18",
+   "last_qualifying_post": "2026-11-24",
    "retired_reason": null,
    "x_user_id": "1423733191005724672",
    "on_list": true,
@@ -166,7 +166,7 @@
     "https://x.com/PrismML/status/2110823964650164348",
     "https://x.com/PrismML/status/2102859262062145966"
    ],
-   "last_qualifying_post": "2026-10-15",
+   "last_qualifying_post": "2026-11-24",
    "retired_reason": null,
    "x_user_id": "1905730305136455680",
    "on_list": true
@@ -184,7 +184,7 @@
     "https://x.com/Aleph__Alpha/status/2110008600936800588",
     "https://x.com/Aleph__Alpha/status/2112547676868817027"
    ],
-   "last_qualifying_post": "2026-11-23",
+   "last_qualifying_post": "2026-11-24",
    "retired_reason": null,
    "x_user_id": "1073704329528438785",
    "on_list": true,
@@ -215,13 +215,13 @@
    "affiliation": "Actual",
    "why": "Ships open tooling with measurements (toks tokenizer, e engine).",
    "signal_to_noise": 4,
-   "status": "trial",
+   "status": "active",
    "added_on": "2026-10-20",
    "evidence": [
     "https://x.com/actualinc/status/2107573418434629849",
     "https://x.com/actualinc/status/2110759623435117020"
    ],
-   "last_qualifying_post": "2026-11-23",
+   "last_qualifying_post": "2026-11-24",
    "retired_reason": null,
    "x_user_id": "1432925558304919552",
    "on_list": true
@@ -986,7 +986,7 @@
     "https://x.com/JoshuaSWarren/status/2113767671615602763",
     "https://x.com/JoshuaSWarren/status/2113619227278037430"
    ],
-   "last_qualifying_post": "2026-11-24",
+   "last_qualifying_post": "2026-11-25",
    "retired_reason": null,
    "x_user_id": "293383320",
    "on_list": true,
@@ -1047,7 +1047,7 @@
     "https://x.com/ViC305/status/2113761570304188533",
     "https://x.com/ViC305/status/2111523015234384166"
    ],
-   "last_qualifying_post": "2026-11-19",
+   "last_qualifying_post": "2026-11-24",
    "retired_reason": null,
    "x_user_id": "45953078",
    "on_list": true
@@ -1086,7 +1086,7 @@
     "https://x.com/plotarmordev/status/2114874525435507169",
     "https://x.com/plotarmordev/status/2114644076029227206"
    ],
-   "last_qualifying_post": "2026-11-23",
+   "last_qualifying_post": "2026-11-24",
    "retired_reason": null,
    "x_user_id": "1513438573747486721",
    "on_list": true
@@ -1238,7 +1238,7 @@
     "https://x.com/victormustar/status/2115531118292131887",
     "https://x.com/victormustar/status/2114432158647685127"
    ],
-   "last_qualifying_post": "2026-11-18",
+   "last_qualifying_post": "2026-11-24",
    "retired_reason": null,
    "x_user_id": "784830007",
    "on_list": true,
@@ -1498,7 +1498,7 @@
     "https://x.com/EricBezzam/status/2116230930885120117",
     "https://x.com/EricBezzam/status/2113571314149568964"
    ],
-   "last_qualifying_post": "2026-11-18",
+   "last_qualifying_post": "2026-11-24",
    "retired_reason": null,
    "source": "roster_review",
    "x_user_id": "1016643081179934721",
@@ -1533,14 +1533,14 @@
    "affiliation": "METR (nonprofit)",
    "why": "First-hand AI R&D acceleration and catastrophic-risk evaluations; Nov 5 public review of Anthropic automated R&D claims with measurements and methodology.",
    "signal_to_noise": 4,
-   "status": "trial",
+   "status": "active",
    "added_on": "2026-11-06",
    "evidence": [
     "https://x.com/METR_Evals/status/2118417781825904708",
     "https://x.com/METR_Evals/status/2118417774045475323",
     "https://x.com/METR_Evals/status/2118417772774580623"
    ],
-   "last_qualifying_post": "2026-11-20",
+   "last_qualifying_post": "2026-11-24",
    "retired_reason": null,
    "x_user_id": "1706770561903497216",
    "on_list": true
@@ -1578,7 +1578,7 @@
     "https://x.com/ashxhart/status/2118488485963485662",
     "https://x.com/ashxhart/status/2118328617784459483"
    ],
-   "last_qualifying_post": "2026-11-22",
+   "last_qualifying_post": "2026-11-25",
    "retired_reason": null,
    "x_user_id": "2841951623",
    "on_list": true
@@ -1656,7 +1656,7 @@
     "https://x.com/james_y_zou/status/2110428682439598486",
     "https://x.com/james_y_zou/status/2117310373661700604"
    ],
-   "last_qualifying_post": "2026-11-06",
+   "last_qualifying_post": "2026-11-23",
    "retired_reason": null,
    "x_user_id": "762359343656361984",
    "on_list": true
@@ -1747,7 +1747,7 @@
     "https://x.com/arcprize/status/2117360588959461708",
     "https://x.com/arcprize/status/2115512736809468084"
    ],
-   "last_qualifying_post": "2026-11-20",
+   "last_qualifying_post": "2026-11-24",
    "x_user_id": "1773935160192647168",
    "signal_to_noise": 4,
    "status": "active",
@@ -1804,7 +1804,7 @@
     "https://x.com/NielsRogge/status/2117998047372202401",
     "https://x.com/NielsRogge/status/2116908700132671583"
    ],
-   "last_qualifying_post": "2026-11-21",
+   "last_qualifying_post": "2026-11-24",
    "x_user_id": "133818617",
    "signal_to_noise": 3,
    "status": "active",
@@ -1855,7 +1855,7 @@
    "affiliation": "Pruna AI",
    "why": "First-hand open-source model optimization and image/video generation releases with weights, human-rating numbers and library releases (P-H3-Image, P-Video-2-Pro-Replace, Pruna v0.3.5).",
    "signal_to_noise": 3,
-   "status": "trial",
+   "status": "active",
    "added_on": "2026-11-11",
    "evidence": [
     "https://x.com/PrunaAI/status/2117663564487926043",
@@ -1976,7 +1976,7 @@
     "https://x.com/thinkymachines/status/2120982625582195011",
     "https://x.com/thinkymachines/status/2118489527362912566"
    ],
-   "last_qualifying_post": "2026-11-21",
+   "last_qualifying_post": "2026-11-25",
    "retired_reason": null,
    "owner_requested": false,
    "x_user_id": "1891523745929732096",
@@ -2110,7 +2110,7 @@
     "https://x.com/SergioPaniego/status/2120177440282788028",
     "https://x.com/SergioPaniego/status/2121270590304813225"
    ],
-   "last_qualifying_post": "2026-11-22",
+   "last_qualifying_post": "2026-11-24",
    "retired_reason": null,
    "x_user_id": "330572456",
    "on_list": true
@@ -2181,7 +2181,7 @@
     "https://x.com/antigravity/status/2124201177344582136",
     "https://x.com/antigravity/status/2123921833883840650"
    ],
-   "last_qualifying_post": "2026-11-24",
+   "last_qualifying_post": "2026-11-25",
    "retired_reason": null,
    "x_user_id": "1965856473084473347",
    "on_list": true,
@@ -2201,7 +2201,7 @@
     "https://x.com/_mohansolo/status/2124286882188284171",
     "https://x.com/_mohansolo/status/2124070033534161407"
    ],
-   "last_qualifying_post": "2026-11-23",
+   "last_qualifying_post": "2026-11-24",
    "retired_reason": null,
    "x_user_id": "1086145626633494528",
    "on_list": true,
@@ -2262,7 +2262,7 @@
     "https://x.com/GoogleDeepMind/status/2123167889976905966",
     "https://x.com/GoogleDeepMind/status/2123826572385833119"
    ],
-   "last_qualifying_post": "2026-11-23",
+   "last_qualifying_post": "2026-11-24",
    "retired_reason": null,
    "x_user_id": "4783690002",
    "on_list": true,
@@ -2341,7 +2341,7 @@
     "https://x.com/PyTorch/status/2120286712970854790",
     "https://x.com/PyTorch/status/2122776754171375730"
    ],
-   "last_qualifying_post": "2026-11-23",
+   "last_qualifying_post": "2026-11-24",
    "retired_reason": null,
    "x_user_id": "776585502606721024",
    "on_list": true,
@@ -2637,7 +2637,7 @@
     "https://x.com/GoogleAIStudio/status/2123479057996116143",
     "https://x.com/GoogleAIStudio/status/2123168408678359294"
    ],
-   "last_qualifying_post": "2026-11-20",
+   "last_qualifying_post": "2026-11-23",
    "retired_reason": null,
    "x_user_id": "1742923424056713217",
    "on_list": true,
@@ -2717,7 +2717,7 @@
     "https://x.com/vllm_project/status/2124783794112938241",
     "https://x.com/vllm_project/status/2123872608848687262"
    ],
-   "last_qualifying_post": "2026-11-24",
+   "last_qualifying_post": "2026-11-25",
    "retired_reason": null,
    "x_user_id": "1774187564276289536",
    "on_list": true,
@@ -2797,7 +2797,7 @@
     "https://x.com/LiteLLM/status/2124627330467606917",
     "https://x.com/LiteLLM/status/2124627332409475543"
    ],
-   "last_qualifying_post": "2026-11-22",
+   "last_qualifying_post": "2026-11-25",
    "retired_reason": null,
    "x_user_id": "1607849281280671744",
    "on_list": true,

@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-25T03:40:00Z",
-  "job": "sweep",
+  "updated_at": "2026-11-25T10:35:00Z",
+  "job": "roster_review",
   "prompt": "v6.1",
   "calls_used_today": 20,
   "notes_via_api": false,
@@ -21,8 +21,8 @@
   },
   "roster": {
     "curated": 223,
-    "trial": 87,
-    "active": 57,
+    "trial": 84,
+    "active": 60,
     "retired": 7
   },
   "follows_this_week": 3,
@@ -75,10 +75,10 @@
   "errors": [],
   "follows_today": 3,
   "last_roster_review": {
-    "date": "2026-11-19",
+    "date": "2026-11-25",
     "reads": 0,
     "added": 0,
-    "promoted": 0,
+    "promoted": 3,
     "retired": 0
   },
   "x_list": {
@@ -98,15 +98,18 @@
   "roster_review_calls": 0,
   "follows_note": "2026-11-20 11:20Z sweep: no browser available, follows skipped (follow_mode browser).",
   "roster_review": {
-    "ran_at": "2026-11-20T10:40:00Z",
-    "reads_used": 3,
+    "ran_at": "2026-11-25T10:35:00Z",
+    "reads_used": 0,
     "added": 0,
     "promoted": [
-      "@ashxhart"
+      "@actualinc",
+      "@METR_Evals",
+      "@PrunaAI"
     ],
     "retired": [],
     "flagged": [],
-    "sunday_drafts": false
+    "sunday_drafts": false,
+    "notes": "Run from the box. Skill tool unavailable; skill files read from disk. Owner saves (30d): 2+ kept saves only for @danikkk_wqs and @0xCodez (aggregator/hype-style posts, not first-hand builders); not added, no screen reads spent. Others with 2+ already on roster, curated or avoid. No doubt flags level 2+. Not Sunday: no drafts. Pruned 5 sweep files from 2026-11-10 (older than 14 days)."
   },
   "follows_skipped": "2026-11-25T03:31Z sweep: no follows (no browser in this run; daily limit of 3 already used 2026-11-24 CT). Candidates reported to parent: @JoshuaSWarren, @xingyudang. Weekly remaining 12.",
   "calls_note": "calls_used_today is the Magpie share counted by this lane for UTC day 2026-11-25 (20 in the 03:31Z sweep). X reported 994 of 1000 shared reads left at ~03:28Z; its daily window resets at 2026-11-26T00:00Z."
