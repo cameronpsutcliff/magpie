@@ -1066,6 +1066,166 @@
    "vendor": "qwen",
    "product": "qwen",
    "window_hours": 96
+  },
+  {
+   "id": "aws-bedrock-notes",
+   "name": "AWS Bedrock release notes",
+   "kind": "changelog",
+   "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-ug.rss",
+   "trust": 0.85,
+   "vendor": "AWS",
+   "product": "Amazon Bedrock",
+   "window_hours": 336
+  },
+  {
+   "id": "anthropic-sdk-python",
+   "name": "Anthropic Python SDK releases",
+   "kind": "changelog",
+   "url": "https://github.com/anthropics/anthropic-sdk-python/releases.atom",
+   "trust": 0.8,
+   "vendor": "Anthropic",
+   "product": "Anthropic Python SDK",
+   "window_hours": 336
+  },
+  {
+   "id": "anthropic-sdk-typescript",
+   "name": "Anthropic TypeScript SDK releases",
+   "kind": "changelog",
+   "url": "https://github.com/anthropics/anthropic-sdk-typescript/releases.atom",
+   "trust": 0.8,
+   "vendor": "Anthropic",
+   "product": "Anthropic TypeScript SDK",
+   "window_hours": 336
+  },
+  {
+   "id": "openai-node-sdk",
+   "name": "OpenAI Node SDK releases",
+   "kind": "changelog",
+   "url": "https://github.com/openai/openai-node/releases.atom",
+   "trust": 0.75,
+   "vendor": "OpenAI",
+   "product": "OpenAI Node SDK",
+   "window_hours": 336
+  },
+  {
+   "id": "google-genai-js-sdk",
+   "name": "Google Gen AI JS SDK releases",
+   "kind": "changelog",
+   "url": "https://github.com/googleapis/js-genai/releases.atom",
+   "trust": 0.75,
+   "vendor": "Google",
+   "product": "Google Gen AI JS SDK",
+   "window_hours": 336
+  },
+  {
+   "id": "azure-updates-rss",
+   "name": "Microsoft Azure updates",
+   "kind": "changelog",
+   "url": "https://www.microsoft.com/releasecommunications/api/v2/azure/rss",
+   "trust": 0.75,
+   "vendor": "Microsoft",
+   "product": "Azure AI and OpenAI",
+   "window_hours": 336
+  },
+  {
+   "id": "deepseek-v3-releases",
+   "name": "DeepSeek-V3 releases",
+   "kind": "changelog",
+   "url": "https://github.com/deepseek-ai/DeepSeek-V3/releases.atom",
+   "trust": 0.85,
+   "vendor": "DeepSeek",
+   "product": "DeepSeek-V3",
+   "window_hours": 336
+  },
+  {
+   "id": "deepseek-r1-releases",
+   "name": "DeepSeek-R1 releases",
+   "kind": "changelog",
+   "url": "https://github.com/deepseek-ai/DeepSeek-R1/releases.atom",
+   "trust": 0.85,
+   "vendor": "DeepSeek",
+   "product": "DeepSeek-R1",
+   "window_hours": 336
+  },
+  {
+   "id": "zai-glm-5-releases",
+   "name": "Zhipu GLM-5 releases",
+   "kind": "changelog",
+   "url": "https://github.com/zai-org/GLM-5/releases.atom",
+   "trust": 0.85,
+   "vendor": "Zhipu",
+   "product": "GLM-5",
+   "window_hours": 336
+  },
+  {
+   "id": "zai-glm-45-releases",
+   "name": "Zhipu GLM-4.5 releases",
+   "kind": "changelog",
+   "url": "https://github.com/zai-org/GLM-4.5/releases.atom",
+   "trust": 0.8,
+   "vendor": "Zhipu",
+   "product": "GLM-4.5",
+   "window_hours": 336
+  },
+  {
+   "id": "zhipuai-sdk-python",
+   "name": "ZhipuAI Python SDK releases",
+   "kind": "changelog",
+   "url": "https://github.com/zhipuai/zhipuai-sdk-python-v4/releases.atom",
+   "trust": 0.8,
+   "vendor": "Zhipu",
+   "product": "ZhipuAI Python SDK",
+   "window_hours": 336
+  },
+  {
+   "id": "qwen3-releases",
+   "name": "Qwen3 releases",
+   "kind": "changelog",
+   "url": "https://github.com/QwenLM/Qwen3/releases.atom",
+   "trust": 0.85,
+   "vendor": "Qwen",
+   "product": "Qwen3",
+   "window_hours": 336
+  },
+  {
+   "id": "qwen-code-releases",
+   "name": "Qwen Code CLI releases",
+   "kind": "changelog",
+   "url": "https://github.com/QwenLM/qwen-code/releases.atom",
+   "trust": 0.8,
+   "vendor": "Qwen",
+   "product": "Qwen Code",
+   "window_hours": 336
+  },
+  {
+   "id": "moonshot-kimi-cli",
+   "name": "Moonshot Kimi CLI releases",
+   "kind": "changelog",
+   "url": "https://github.com/MoonshotAI/kimi-cli/releases.atom",
+   "trust": 0.8,
+   "vendor": "Moonshot",
+   "product": "Kimi CLI",
+   "window_hours": 336
+  },
+  {
+   "id": "minimax-mcp-releases",
+   "name": "MiniMax MCP releases",
+   "kind": "changelog",
+   "url": "https://github.com/MiniMax-AI/MiniMax-MCP/releases.atom",
+   "trust": 0.75,
+   "vendor": "MiniMax",
+   "product": "MiniMax MCP",
+   "window_hours": 336
+  },
+  {
+   "id": "mistral-client-py",
+   "name": "Mistral Python SDK releases",
+   "kind": "changelog",
+   "url": "https://github.com/mistralai/client-python/releases.atom",
+   "trust": 0.75,
+   "vendor": "Mistral",
+   "product": "Mistral Python SDK",
+   "window_hours": 336
   }
  ],
  "apis": [
@@ -1599,6 +1759,46 @@
      "url": "https://latent.space/p/ainews-riemann-hypothesis-proved-twice-independently/"
     }
    ]
+  },
+  {
+   "org": "zai-org",
+   "why": "Added 2026-11-24: Open-weight GLM releases and tooling (Zhipu / GLM-4.5 / GLM-5 / GLM-5.3).",
+   "origin": "operator",
+   "since": "2026-11-24",
+   "discovered_as": "github:zai-org",
+   "evidence": []
+  },
+  {
+   "org": "QwenLM",
+   "why": "Added 2026-11-24: Open-weight Qwen model releases and Qwen Code CLI.",
+   "origin": "operator",
+   "since": "2026-11-24",
+   "discovered_as": "github:qwenlm",
+   "evidence": []
+  },
+  {
+   "org": "MoonshotAI",
+   "why": "Added 2026-11-24: Open-weight Kimi model releases and Kimi CLI.",
+   "origin": "operator",
+   "since": "2026-11-24",
+   "discovered_as": "github:moonshotai",
+   "evidence": []
+  },
+  {
+   "org": "MiniMax-AI",
+   "why": "Added 2026-11-24: Open-weight MiniMax model and MCP releases.",
+   "origin": "operator",
+   "since": "2026-11-24",
+   "discovered_as": "github:minimax-ai",
+   "evidence": []
+  },
+  {
+   "org": "mistralai",
+   "why": "Added 2026-11-24: Open-weight Mistral model releases and official SDKs.",
+   "origin": "operator",
+   "since": "2026-11-24",
+   "discovered_as": "github:mistralai",
+   "evidence": []
   }
  ],
  "policy_feeds": [
