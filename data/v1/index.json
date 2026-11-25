@@ -2,6 +2,87 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-11-25",
+   "headline": "Ternary-Bonsai-2.5-27B-GGUF, Rewirable Circuits in Transformers with Loom Attention, dsh-our-free-model, and more",
+   "events": 390,
+   "sources": 568,
+   "enriched": false,
+   "top": [
+    {
+     "id": "cb27b265b765",
+     "title": "prism-ml/Ternary-Bonsai-2.5-27B-GGUF",
+     "impact": 5,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-25-cb27b265b765"
+    },
+    {
+     "id": "8d57762db734",
+     "title": "Rewirable Circuits in Transformers with Loom Attention",
+     "impact": 5,
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-25-8d57762db734"
+    },
+    {
+     "id": "acd236001d84",
+     "title": "Ebony-Vinyl/dsh-our-free-model",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-25-acd236001d84"
+    },
+    {
+     "id": "e50556ef1e99",
+     "title": "thinkingmachines/Inkling-2-Mini",
+     "impact": 5,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-25-e50556ef1e99"
+    },
+    {
+     "id": "f4eb70b14d6a",
+     "title": "Lazy Agents Answer Against Their Own Beliefs: Reinforcement Learning with Verifiable Beliefs Teaches Them to Act on What They Believe",
+     "impact": 4,
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-25-f4eb70b14d6a"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Research",
+    "Anthropic",
+    "OpenAI",
+    "Microsoft",
+    "Google"
+   ],
+   "topics": {
+    "models": 161,
+    "agents": 132,
+    "coding": 116,
+    "multimodal": 80,
+    "infra": 63,
+    "evals": 51,
+    "mcp": 45,
+    "local": 42,
+    "memory": 39,
+    "research": 36,
+    "reverse": 26,
+    "security": 16,
+    "robotics": 9
+   },
+   "kinds": {
+    "social": 74,
+    "newsletter": 57,
+    "changelog": 56,
+    "repo": 45,
+    "paper": 40,
+    "blog": 35,
+    "model": 30,
+    "community": 25,
+    "space": 20,
+    "news": 8
+   },
+   "constraints": [],
+   "threats": []
+  },
+  {
    "date": "2026-11-24",
    "headline": "Run Ling-3.2-air, OCR on one CPU core, drive robots with Codex, and more",
    "events": 420,
@@ -5200,5 +5281,5 @@
    }
   }
  ],
- "latest": "2026-11-24"
+ "latest": "2026-11-25"
 }

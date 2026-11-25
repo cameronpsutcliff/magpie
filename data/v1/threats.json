@@ -1,6 +1,6 @@
 {
  "schema": "magpie.threats/1",
- "updated": "2026-11-24",
+ "updated": "2026-11-25",
  "threats": [
   {
    "id": "thr-2026-11-19-mcp-python-sdk-oauth-client-sends-credentials",
