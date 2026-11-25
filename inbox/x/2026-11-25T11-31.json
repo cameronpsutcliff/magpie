@@ -1,0 +1,554 @@
+{
+ "ran_at": "2026-11-25T11:31:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-25T03:31:00Z",
+ "queries": 11,
+ "calls": 20,
+ "items": [
+  {
+   "title": "Tencent Hy4 Flash runs locally from official AngelSlim quants: about 50 tok/s on a 128 GB M5 Max",
+   "url": "https://x.com/TencentHunyuan/status/2125510109417857368",
+   "handle": "@TencentHunyuan",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Tencent's AngelSlim team published GGUF and Spark 4-bit builds of Hy4 Flash with llama.cpp and Strata recipes, reporting up to 50 tok/s decode on a 128 GB M5 Max, 39 on a DGX Spark and 58 on a 24 GB 4090D. Owners of large-memory Macs and Sparks can now run the full model at home.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/AngelSlim/Hy4-flash-GGUF",
+    "https://github.com/ggml-org/llama.cpp/pull/32517",
+    "https://github.com/tencent/AngelSlim"
+   ],
+   "vendor": "Tencent Hunyuan",
+   "posted_at": "2026-11-25T08:41:00Z",
+   "metrics": {
+    "likes": 307,
+    "reposts": 29,
+    "quotes": 13,
+    "replies": 27,
+    "views": 23079
+   },
+   "confirmed_by": [
+    "@coldniko"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "llama.cpp support still needs the unmerged PR #32517 and the smallest GGUF is 125.73 GiB; one Spark user reports a malformed think-close tag that breaks tool-call parsing.",
+    "source": "https://x.com/apocalypseRSA/status/2125534098315952280"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers welcomed local Hy4 Flash, two report daily use and Mac M5 Max speeds above 50 tok/s; others note 'up to' figures, the open llama.cpp PR and a think-tag bug.",
+    "tried": true,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "TensorFold 1.3.5: 3,855 tok/s prefill and 154.5 tok/s decode for Qwen3.8 Flash Next TFQ3 on an M5 Ultra",
+   "url": "https://x.com/ashxhart/status/2125514839430676754",
+   "handle": "@ashxhart",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "TensorFold 1.3.5 runs TFQ3 natively on Metal for Qwen3.8 Flash Next and GLM-5.3-Flash, brings Inkling 2 Mini to Metal and CUDA with about 16x faster single-stream decode on M5 Ultra, and adds CUDA speech in and out. A 15.4 GB TFQ3 build of Qwen3.8 27B was also posted.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/ashhart/TensorFold",
+    "https://github.com/ashhart/TensorFold/blob/HEAD/CHANGELOG.md",
+    "https://huggingface.co/TensorFold/Qwen3.8-27B-TFQ3",
+    "https://tensorfold.dev"
+   ],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-25T09:00:00Z",
+   "metrics": {
+    "likes": 63,
+    "reposts": 4,
+    "quotes": 4,
+    "replies": 10,
+    "views": 2590
+   },
+   "confirmed_by": [
+    "@plotarmordev"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Speed figures are the maintainer's own; no independent run yet.",
+    "source": null
+   }
+  },
+  {
+   "title": "TRL async GRPO packs shared prompts as a tree: about 3x faster steps and 26x less trainer compute on an agentic run",
+   "url": "https://x.com/SergioPaniego/status/2125545041120936328",
+   "handle": "@SergioPaniego",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "TRL's async GRPO trainer now sends tokens shared across a group's answers or an agent's turns through the model once, which the post reports as about 3x faster steps, memory cut from 35 to 13.5 GiB on Qwen3-1.7B, and the same reward with 26x less trainer compute on an agentic RL run.",
+   "kind": "feature",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/docs/trl/async_grpo_trainer#tree-packing"
+   ],
+   "vendor": "Hugging Face TRL",
+   "posted_at": "2026-11-25T11:00:00Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 109
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Hugging Face launches Nightwatch, an agent that watches an org's Hub activity and alerts on suspicious token use",
+   "url": "https://x.com/Thom_Wolf/status/2125530620948336798",
+   "handle": "@Thom_Wolf",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Nightwatch is a paid Enterprise add-on that scans Hub activity logs in real time (token use, private repo creation, visibility changes, logins from new places), investigates, and posts a narrative alert to Slack or an incident system. Built after the July 2026 agent-driven intrusion on Hugging Face.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/docs/hub/en/enterprise-nightwatch",
+    "https://huggingface.co/blog/security-incident-july-2026"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-25T10:02:00Z",
+   "metrics": {
+    "likes": 104,
+    "reposts": 14,
+    "quotes": 6,
+    "replies": 25,
+    "views": 7609
+   },
+   "confirmed_by": [
+    "@jeffboudier"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No false-alarm rates, no detail on whether it revokes tokens on its own, and the zero-day it says it caught is unnamed.",
+    "source": "https://x.com/djcodess/status/2125536566689018002"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Repliers like the idea but ask about false positives, what permissions the watcher holds, and whether it acts on its own; some note it is Enterprise-only.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "ShellBench: best agents pass 62.5% of 100 everyday personal-assistant tasks across 12 models and 5 harnesses",
+   "url": "https://x.com/openclaw/status/2125326970976366734",
+   "handle": "@openclaw",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "The OpenClaw Foundation's ShellBench grades 12 models in 5 harnesses on 100 real-world tasks (receipts, travel, long email threads) over 53,100 runs; the top score is 62.5%, only 48.8% pass all three attempts, and open-source harnesses kept up. Kaggle reproduced it with a live leaderboard.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://openclaw.ai/blog/shellbench"
+   ],
+   "vendor": "OpenClaw Foundation",
+   "posted_at": "2026-11-24T20:33:00Z",
+   "metrics": {
+    "likes": 410,
+    "reposts": 34,
+    "quotes": 30,
+    "replies": 60,
+    "views": 107301
+   },
+   "confirmed_by": [
+    "@omarsar0",
+    "@kaggle"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers ask for a human baseline and note 9.9% of fully correct runs still failed a safety check.",
+    "source": "https://x.com/pandaxia0613/status/2125520553167782189"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers welcome a realistic agent benchmark, stress the low pass rate and safety failures, and ask for human baselines and more models; one reports a similar silent-failure rate in a daily agent job.",
+    "tried": true,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Eugene Yan audits 12 public AI evals: graders that fail correct work, misconfigured harnesses, unrealistic specs",
+   "url": "https://x.com/eugeneyan/status/2125418696248095188",
+   "handle": "@eugeneyan",
+   "group": "research",
+   "origin": "discovery",
+   "summary": "A breakdown of how 12 popular benchmarks are built and where they break, including graders that reject correct answers and harnesses that reward format over substance, with suggestions for what to measure instead. Useful for anyone picking models from leaderboards.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://eugeneyan.com/writing/public-evals"
+   ],
+   "vendor": "Eugene Yan",
+   "posted_at": "2026-11-25T02:38:00Z",
+   "metrics": {
+    "likes": 227,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@HamelHusain"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers agree broken graders make small leaderboard gaps noise and share their own practice of hand-reading failures and building evals from production rejections.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "NVIDIA releases open weights for Nemotron-Labs-Image-30B-A3B, a 3B-active autoregressive image generator",
+   "url": "https://x.com/_akhaliq/status/2125499465587208669",
+   "handle": "@_akhaliq",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Part of NVIDIA's Nemotron-Labs-VisualCreation (Pixel as Code) work, the 30B-total, 3B-active MoE image model ships with a 642M visual tokenizer that encodes 7x and decodes 11x faster than Emu3.5 IBQ; the paper reports the full system near GPT Image 2 on most benchmarks. The agent harness is not released yet.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/nvidia/Nemotron-Labs-Image-30B-A3B",
+    "https://arxiv.org/abs/2611.31358",
+    "https://huggingface.co/papers/2611.31358"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-11-25T07:58:00Z",
+   "metrics": {
+    "likes": 45,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@aitrackerbot"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Headline benchmark numbers are for the full framework, whose harness is not yet released; a hands-on test found it missed a named person.",
+    "source": "https://x.com/aitrackerbot/status/2125451358908113069"
+   }
+  },
+  {
+   "title": "Recursive Collective Intelligence: identical LLM agents self-organize and improve across generations without labels",
+   "url": "https://x.com/yining_hong/status/2125449953791414293",
+   "handle": "@yining_hong",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "The paper sets compute-matched tests for when a group of agents beats its members, finds that forwarding distributed facts beats pass@n by about 30 points while debate does not, and shows groups that learn from their own verified interactions improving over 4 to 6 generations on PlanBench, HiddenBench and Hanabi. Code and a playground are open.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2611.32606",
+    "https://github.com/lixuan27/RCI-official",
+    "https://lixuan27.github.io/RCI/"
+   ],
+   "vendor": "RCI authors",
+   "posted_at": "2026-11-25T04:42:00Z",
+   "metrics": {
+    "likes": 140,
+    "reposts": 23,
+    "quotes": 9,
+    "replies": 21,
+    "views": 8337
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Feedback Shortcut restores speculative decoding for latent-feedback transformers: 2.4 to 2.8x faster",
+   "url": "https://x.com/askalphaxiv/status/2125471796547743945",
+   "handle": "@askalphaxiv",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Latent-feedback transformers break normal speculative decoding; this method predicts the missing hidden states so several tokens can be verified at once, reporting 2.4 to 2.8x faster decoding on 135M and 780M models with near-identical quality for about 2% extra training compute.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://www.alphaxiv.org/abs/2611.feedback-shortcut-speculative-decoding"
+   ],
+   "vendor": "paper authors",
+   "posted_at": "2026-11-25T06:09:00Z",
+   "metrics": {
+    "likes": 100,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Results only at 135M and 780M scale.",
+    "source": null
+   }
+  },
+  {
+   "title": "CodecOPSD drops 66% of condition tokens in all-in-one video generation with no clear quality loss",
+   "url": "https://x.com/_akhaliq/status/2125450969085546500",
+   "handle": "@_akhaliq",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "On-policy codec distillation prunes redundant condition tokens across 16 condition modalities for video generation, cutting 66% of them on average; a demo Space is up.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/papers/2611.31184",
+    "https://huggingface.co/spaces/HikariDawn/CodecOPSD-H3-Ref2VA"
+   ],
+   "vendor": "paper authors",
+   "posted_at": "2026-11-25T04:46:00Z",
+   "metrics": {
+    "likes": 77,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Telos Lab introduces Telos-Live-1, a full-duplex omni-modal model that talks while it uses tools",
+   "url": "https://x.com/Telos_lab/status/2125292671032013294",
+   "handle": "@Telos_lab",
+   "group": "labs",
+   "origin": "discovery",
+   "summary": "Telos-Live-1 sees, hears and speaks at the same time and keeps talking while it searches, calls tools or operates a computer; the tech blog compares it with gpt-live-1 on full-duplex benchmarks. No weights or public API were stated.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [
+    "https://teloslab.com/research/introducing-telos-live-1"
+   ],
+   "vendor": "Telos Lab",
+   "posted_at": "2026-11-24T18:17:00Z",
+   "metrics": {
+    "likes": 131,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@sudoingX"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Benchmarks are self-reported in the lab's blog; no weights or open access stated.",
+    "source": null
+   }
+  },
+  {
+   "title": "Japan weather dataset: 150 years of observations from about 1,700 stations as daily-updated Parquet for agents",
+   "url": "https://x.com/hotchpotch/status/2125499455478939881",
+   "handle": "@hotchpotch",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A daily-updated Hugging Face dataset packages Japan's station weather records (up to 150 years, about 1,700 sites) as Parquet with DuckDB access, so an agent given one URL and a question can run the analysis.",
+   "kind": "dataset",
+   "evidence": "artifact",
+   "links": [
+    "https://hotchpotch.github.io/japan-weather-dataset/"
+   ],
+   "vendor": "hotchpotch",
+   "posted_at": "2026-11-25T07:58:00Z",
+   "metrics": {
+    "likes": 65,
+    "reposts": 12,
+    "quotes": 0,
+    "replies": 0,
+    "views": 2971
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Artificial Analysis: Octen Search answers in about 0.17s and scores 82 on its Search Index, top on BrowseComp subset",
+   "url": "https://x.com/ArtificialAnlys/status/2125439213944664531",
+   "handle": "@ArtificialAnlys",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "In the Stirrup agent harness over 1,700 search tasks, Octen's fast mode was the quickest of 25 search APIs at about 0.17s per search, third on the Search Index at 82, highest on a 200-question BrowseComp subset at 92%, at about $0.018 per task.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://artificialanalysis.ai"
+   ],
+   "vendor": "Artificial Analysis",
+   "posted_at": "2026-11-25T03:59:00Z",
+   "metrics": {
+    "likes": 109,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "LiteLLM proxy to redact credential-named fields in relayed provider errors",
+   "url": "https://x.com/LiteLLM/status/2125444178268344519",
+   "handle": "@LiteLLM",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "A LiteLLM change masks provider error fields such as subscription_key, connectionString and accountKey before they are relayed to callers, adding to existing PII guardrails and log redaction.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/BerriAI/litellm/pull/54302"
+   ],
+   "vendor": "LiteLLM",
+   "posted_at": "2026-11-25T04:19:00Z",
+   "metrics": {
+    "likes": 16,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 1065
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The PR was still open when checked, though the post says new today.",
+    "source": null
+   }
+  },
+  {
+   "title": "LingSante 3.1 Air VL quant fits 124B in 74 GB and reads three years of synthetic bloodwork on one DGX Spark at 48 tok/s",
+   "url": "https://x.com/ViC305/status/2125470908576116986",
+   "handle": "@ViC305",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A 5.12-bit-per-weight EXL3 quant of the 124B LingSante 3.1 Air VL keeps 94.89% top-1 agreement with the full model and, on a planted synthetic patient, read 87 of 87 lab values from report images and flagged multi-year trends.",
+   "kind": "demo",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/vcruz305/LingSante-3.1-Air-VL-REXL3-SAGE-5.12bpw"
+   ],
+   "vendor": "vcruz305",
+   "posted_at": "2026-11-25T06:05:00Z",
+   "metrics": {
+    "likes": 20,
+    "reposts": 0,
+    "quotes": 1,
+    "replies": 3,
+    "views": 726
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single synthetic case built by the author.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "list_posts_read": 94,
+ "list_pages": 1,
+ "security_forwarded": [
+  {
+   "url": "https://osv.dev/vulnerability/MAL-2026-20330",
+   "matched": "Hermes agent and Node/npm in stack.json (supply chain); posted to the Mini bus, not to Bouncer",
+   "note": "VERIFIED: OSV MAL-2026-20330 / GHSA-6crj-9fxx-v653 and SafeDep writeup; lead from https://x.com/Sujeet/status/2125545438707352039"
+  }
+ ],
+ "bus_posted": [
+  {
+   "title": "Check fleet for malicious npm @leadstack/crm-connect (Hermes Agent backdoor)",
+   "kind": "cve",
+   "lane": "personal",
+   "result": "ok (2026-11-25 05:30:02 CT, immediate runner triggered)"
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/plyra/status/2125541455162745140",
+   "reason": "CVE-2026-136441 Bytebase DBHub MCP auth bypass (verified ZDI-26-1067); DBHub is not in stack.json."
+  },
+  {
+   "url": "https://github.com/BerriAI/litellm/pull/54302",
+   "reason": "LiteLLM hardening PR (credential-named provider error fields); no advisory or CVE, PR says no real provider returns these fields."
+  },
+  {
+   "url": "https://x.com/Thom_Wolf/status/2125530620948336798",
+   "reason": "Nightwatch post mentions a zero-day attempt on an unnamed third-party library; nothing to match or verify."
+  },
+  {
+   "url": "https://x.com/HugoValters/status/2125457955084468427",
+   "reason": "Linux kernel dm-integrity CVE-2026-90052 from a CVE aggregator; local path, not verified high-signal for the fleet."
+  },
+  {
+   "url": "https://x.com/Sujeet/status/2125545345426112568",
+   "reason": "Microsoft agent-framework PyPI compromise (Nov 17) already handled in earlier sweeps."
+  }
+ ],
+ "rechecks": 8,
+ "deep_reads": 5,
+ "videos": 0,
+ "saved_in": 0
+}
