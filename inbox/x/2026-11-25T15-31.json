@@ -1,0 +1,701 @@
+{
+ "ran_at": "2026-11-25T15:31:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-25T11:31:00Z",
+ "queries": 13,
+ "calls": 17,
+ "items": [
+  {
+   "title": "Google Research posts six Cogentic papers written by a Gemini 4 agent, including an unconditional L[1/3] factoring proof",
+   "url": "https://x.com/dummerspast39/status/2125547001433526759",
+   "handle": "@dummerspast39",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Google Research added six math papers to its public google-research repo that it says the Cogentic multi-agent proof harness on Gemini 4 produced from a single prompt, covering factoring, discrete logs, Nash equilibria, log-rank and graph reconstruction. The Lean 4 formalizations are promised but not yet public and nothing is peer reviewed.",
+   "kind": "paper",
+   "evidence": "claim",
+   "links": [
+    "https://github.com/google-research/google-research/tree/master/cogentic_research_papers",
+    "https://github.com/google-research/google-research/tree/master/cogentic_research_papers/integer_factorization",
+    "https://sites.google.com/view/cogentic"
+   ],
+   "vendor": "Google Research / Google DeepMind",
+   "posted_at": "2026-11-25T11:07:50Z",
+   "metrics": {
+    "likes": 758,
+    "reposts": 115,
+    "quotes": 32,
+    "replies": 35,
+    "views": 63154
+   },
+   "confirmed_by": [
+    "@teortaxesTex"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Lean proofs are not released and no outside review yet; the proven constant (105) is far above the number field sieve's ~1.9, so there is no practical crypto impact.",
+    "source": "https://x.com/MontoAI/status/2125606016721330424"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Repliers and quoters are impressed but want the Lean files before calling it a breakthrough, and several note it does not weaken RSA or ECC; one quoter questions a lab publicly targeting factoring.",
+    "tried": false,
+    "replies_read": 39
+   }
+  },
+  {
+   "title": "MiniT2I text-to-image runs in the browser on WebGPU: MIT-licensed, int8, 313 MB, about 0.5 s per image",
+   "url": "https://x.com/calebfahlgren/status/2125322772515631279",
+   "handle": "@calebfahlgren",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "An int8 WebGPU build of the compact MiniT2I model (originally 603M params from MIT and Kaiming He, compacted to 315M) generates images locally in the browser in about half a second, with a Hugging Face Space to try it.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/cfahlgren1/MiniT2I-B-16-MF-compact-webgpu-int8",
+    "https://huggingface.co/spaces/cfahlgren1/imagine"
+   ],
+   "vendor": "MiniT2I (MIT); WebGPU port by Caleb Fahlgren",
+   "posted_at": "2026-11-24T20:16:50Z",
+   "metrics": {
+    "likes": 330,
+    "reposts": 38,
+    "quotes": 3,
+    "replies": 13,
+    "views": 11631
+   },
+   "confirmed_by": [
+    "@victormustar"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "People who tried it call it tiny and very fast with early Stable Diffusion quality; one user hit a WebGPU start failure only after the full 313 MB download.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Transformers PR adds a last_loop KV cache mode for Inkling 2 that halves cache memory with identical output tokens",
+   "url": "https://x.com/art_zucker/status/2125159289480421549",
+   "handle": "@art_zucker",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A Hugging Face transformers pull request adds a dory-style last_loop cache mode for the looped Inkling 2 models, which keeps only the final loop's KV cache and cuts the cache footprint by about 50% while producing the same tokens.",
+   "kind": "technique",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/huggingface/transformers/pull/51161"
+   ],
+   "vendor": "Hugging Face transformers",
+   "posted_at": "2026-11-24T09:27:12Z",
+   "metrics": {
+    "likes": 219,
+    "reposts": 10,
+    "quotes": 0,
+    "replies": 8,
+    "views": 14040
+   },
+   "confirmed_by": [
+    "@huggingface"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "TensorFold TFQ3 quantization gets a native CUDA runtime PR with 3, 4 and 5-bit kernels and drafters",
+   "url": "https://x.com/ashxhart/status/2125563903450955898",
+   "handle": "@ashxhart",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A TensorFold pull request brings its open TFQ quantization format to NVIDIA GPUs with native 3/4/5-bit kernels plus speculative drafters for Qwen3.8-27B, GLM-5.3-Flash and Flash Next, so TFQ3 models are no longer Metal-only.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/ashhart/TensorFold/pull/4986"
+   ],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-25T12:15:00Z",
+   "metrics": {
+    "likes": 23,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 7,
+    "views": 2045
+   },
+   "confirmed_by": [
+    "@wei_wang"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "PR is open, not merged, and no CUDA speed numbers in the post.",
+    "source": null
+   }
+  },
+  {
+   "title": "ishiki-asr-1.0 merges seven speech models into one 13B checkpoint and becomes the top open model on the Open ASR Leaderboard",
+   "url": "https://x.com/EricBezzam/status/2125555333133222350",
+   "handle": "@EricBezzam",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Ishiki Labs packed Qwen3-ASR, Cohere Transcribe, Whisper, Parakeet, Granite Speech and others into a single 13B checkpoint with a learned gate; it ranks first among open models (third overall) on the Hugging Face Open ASR Leaderboard and held up on the leaderboard team's private sets.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/ishiki-labs/ishiki-asr-1.0",
+    "https://huggingface.co/spaces/hf-audio/open_asr_leaderboard"
+   ],
+   "vendor": "Ishiki Labs",
+   "posted_at": "2026-11-25T11:40:56Z",
+   "metrics": {
+    "likes": 19,
+    "reposts": 1,
+    "quotes": 2,
+    "replies": 1,
+    "views": 1210
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Reproducible tiny-voca TTS training recipe on Hugging Face Jobs: one GPU, about 5.5 hours, 1.26% WER",
+   "url": "https://x.com/vanstriendaniel/status/2125587307545899064",
+   "handle": "@vanstriendaniel",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A tested recipe re-runs the tiny-voca README end to end on Hugging Face Jobs (data prep, alignment, training, eval, ONNX export) on one GPU in about 5.5 hours, matching the release with 1.26% vs 1.36% test WER, and ships an AGENTS.md so a coding agent can run it.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/n4ze3m/tiny-voca"
+   ],
+   "vendor": "Hugging Face (recipe); tiny-voca by n4ze3m",
+   "posted_at": "2026-11-25T13:48:00Z",
+   "metrics": {
+    "likes": 21,
+    "reposts": 4,
+    "quotes": 1,
+    "replies": 8,
+    "views": 2425
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "DiffSynth-Studio adds multi-GPU sequence-parallel inference with EntroPack KV-cache compression",
+   "url": "https://x.com/ModelScope2022/status/2125575663717327313",
+   "handle": "@ModelScope2022",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "ModelScope's DiffSynth-Studio can now split generation across several GPUs for most supported models and combine it with weight quantization and EntroPack INT8 KV-cache compression; on MiniMax-H3 5-second 720p video it reports 2.329 s per denoising step on 8 A100s.",
+   "kind": "feature",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/modelscope/DiffSynth-Studio"
+   ],
+   "vendor": "ModelScope",
+   "posted_at": "2026-11-25T13:01:44Z",
+   "metrics": {
+    "likes": 6,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 2,
+    "views": 816
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "EVIL benchmark: 269 court-case scenarios show most frontier models fall below 75% safety on illicit-intent requests",
+   "url": "https://x.com/OpenBMB/status/2125575267217531181",
+   "handle": "@OpenBMB",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "OpenBMB's EVIL benchmark, published in Nature Communications, builds 269 illicit scenarios times 50 intents from real Chinese and US court cases and tests 10 frontier models; most score under 75% safety and GPT-4o stays under 60% in both legal contexts.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "OpenBMB",
+   "posted_at": "2026-11-25T13:00:09Z",
+   "metrics": {
+    "likes": 13,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 1,
+    "views": 728
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Sage-Interaction: a 9B open-weight full-duplex omni model that talks while delegating agent tasks in the background",
+   "url": "https://x.com/ModelScope2022/status/2125561403952316699",
+   "handle": "@ModelScope2022",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Shanghai AI Lab's Sage-Interaction, built on MiniCPM-o 4.5, combines full-duplex voice interaction with background task delegation; it reports 80.73 on FD-Bench v1.5 and 1.29 s turn-taking latency, with weights on ModelScope and Hugging Face.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/internlm/Sage-Interaction",
+    "https://modelscope.ai/models/Shanghai_AI_Laboratory/Sage-Interaction"
+   ],
+   "vendor": "Shanghai AI Laboratory",
+   "posted_at": "2026-11-25T12:05:04Z",
+   "metrics": {
+    "likes": 12,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 0,
+    "views": 1227
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "PCIe Relaxed Ordering silently corrupted 63 of 400k GPU transfers on 4x RTX PRO 6000; hyperflare-inference merges a fix",
+   "url": "https://x.com/plotarmordev/status/2125578247618564494",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "On a 4x RTX PRO 6000 box, PCIe Relaxed Ordering let CUDA report copies complete before the last bytes reached host RAM, corrupting 63 of 400,000 transfers with no CUDA error; the hyperflare-inference engine merged a fix for multi-GPU local serving.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "hyperflare-inference",
+   "posted_at": "2026-11-25T13:12:00Z",
+   "metrics": {
+    "likes": 9,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 961
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single-rig report; no repo link in the post.",
+    "source": null
+   }
+  },
+  {
+   "title": "NVIDIA TimeTravelContainer live-forks a running container so agents can branch stateful tool sessions",
+   "url": "https://x.com/omarsar0/status/2125599144102531334",
+   "handle": "@omarsar0",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "NVIDIA's rootless TimeTravelContainer, built on gVisor, forks a running container's processes, memory, filesystem and network with copy-on-write on Linux, macOS and WSL2; on agentic EDA flows it reports 84.1x faster cloning, 31 to 72% less memory and 1.7 to 9.4x end-to-end speedups.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://arxiv.org/abs/2611.32255",
+    "https://github.com/NVlabs/TimeTravelContainer"
+   ],
+   "vendor": "NVIDIA Research",
+   "posted_at": "2026-11-25T14:35:02Z",
+   "metrics": {
+    "likes": 23,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 14,
+    "views": 2393
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Delegent: Claude Code harness hands legwork to a local small model and cuts frontier cost 59 to 67% with no task loss",
+   "url": "https://x.com/dair_ai/status/2125596877966213596",
+   "handle": "@dair_ai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A University of Waterloo harness keeps the frontier model in charge in unmodified Claude Code but routes subagent coding and search subtasks to a local SLM via a relay; with a 27B FP8 SLM it cuts frontier cost 67% on long-horizon coding and 59% on agentic search, and a 2B laptop model still saves 66% on coding.",
+   "kind": "paper",
+   "evidence": "artifact",
+   "links": [
+    "https://arxiv.org/abs/2611.33098",
+    "https://github.com/castorini/delegent"
+   ],
+   "vendor": "University of Waterloo (castorini)",
+   "posted_at": "2026-11-25T14:26:02Z",
+   "metrics": {
+    "likes": 20,
+    "reposts": 3,
+    "quotes": 1,
+    "replies": 5,
+    "views": 2077
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Hugging Face trains harness adapters live in the open for Inkling-2-Mini and Qwen3.8-Flash-Next, with checkpoints and GGUFs public",
+   "url": "https://x.com/yb2698/status/2125568461581750447",
+   "handle": "@yb2698",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A fully open training run for harness adapters (Inkling-2-Mini on Pi, Hermes and DeepSeek-Harness; Qwen3.8-Flash-Next on Pi) publishes weights, data, experiments, decisions and intermediate GGUF checkpoints as it goes, with a live dashboard.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://harness-hub-community-adapters.hf.space/"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-25T12:33:07Z",
+   "metrics": {
+    "likes": 115,
+    "reposts": 39,
+    "quotes": 28,
+    "replies": 24,
+    "views": 10646
+   },
+   "confirmed_by": [
+    "@ben_burtenshaw",
+    "@vanstriendaniel",
+    "@DirhousssiAmine"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Ant Group introduces LingSante-Live, a real-time multimodal architecture for ongoing health guidance",
+   "url": "https://x.com/AntLingAGI/status/2125597171454300581",
+   "handle": "@AntLingAGI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "LingSante-Live splits a fast foreground responder from a slower background reasoner so perception and guidance follow a user's activity in real time; the thread shows the architecture, four demos and an evaluation.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Ant Group (Ling)",
+   "posted_at": "2026-11-25T14:27:12Z",
+   "metrics": {
+    "likes": 48,
+    "reposts": 3,
+    "quotes": 3,
+    "replies": 3,
+    "views": 1784
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No weights, paper or API link in the post; demos and self-reported evaluation only.",
+    "source": null
+   }
+  },
+  {
+   "title": "Google DevRel: rules and guardrails written for older models slow Gemini 4 Neon down; five changes that helped",
+   "url": "https://x.com/_philschmid/status/2125579472594223340",
+   "handle": "@_philschmid",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "After weeks of evals with Gemini 4 Neon, Google's Philipp Schmid removed or rewrote older-model guardrails, skills and rules that the stronger model over-follows, in an X article with five concrete changes for agent prompt files.",
+   "kind": "technique",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/i/article/2125577971788386305"
+   ],
+   "vendor": "Google",
+   "posted_at": "2026-11-25T13:16:52Z",
+   "metrics": {
+    "likes": 605,
+    "reposts": 32,
+    "quotes": 11,
+    "replies": 83,
+    "views": 38429
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No eval numbers in the post itself; repliers ask how safety and approval cases were checked after removing rules.",
+    "source": "https://x.com/milhouscc/status/2125611076272504901"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers report the same effect after trimming rules files, with a few suggesting safety rules move into hooks rather than being deleted and asking how regressions were checked.",
+    "tried": true,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Tripo H3.5 Preview: image-to-3D model aimed at print-ready and game-ready assets",
+   "url": "https://x.com/tripoai/status/2125605442772517083",
+   "handle": "@tripoai",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Tripo AI released a preview of its H3.5 3D generation model, claiming closer fidelity to reference images and cleaner geometry for 3D printing and game asset pipelines.",
+   "kind": "model",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Tripo AI",
+   "posted_at": "2026-11-25T15:00:04Z",
+   "metrics": {
+    "likes": 24,
+    "reposts": 5,
+    "quotes": 3,
+    "replies": 4,
+    "views": 817
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Vendor claims and a sizzle clip; no benchmark or open access details.",
+    "source": null
+   }
+  },
+  {
+   "title": "Overnight autoresearch test: Gemini 4 Neon reaches 80% of Claude Fable 5.2's result at half the cost",
+   "url": "https://x.com/harris_p10/status/2125597344091504699",
+   "handle": "@harris_p10",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Given Karpathy's autoresearch GPT-training setup, H100s and a night without humans, Gemini 4 Neon reached about 80% of Fable 5.2's improvement while costing about half as much.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "independent",
+   "posted_at": "2026-11-25T14:27:53Z",
+   "metrics": {
+    "likes": 22,
+    "reposts": 3,
+    "quotes": 3,
+    "replies": 7,
+    "views": 1777
+   },
+   "confirmed_by": [
+    "@PatrickToulme"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single run by one tester, no repo or logs linked.",
+    "source": null
+   }
+  },
+  {
+   "title": "Living Brain memory system finds Lean lemmas that close 15 conjectures in a 17-million-line library",
+   "url": "https://x.com/livingbrain/status/2125588604173041821",
+   "handle": "@livingbrain",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Living Brain says its memory system, loaded with a 17M-line Lean library, retrieved the lemmas that, together with its OpenHuman agent, settled 15 conjectures; the product is live.",
+   "kind": "tool",
+   "evidence": "claim",
+   "links": [
+    "https://livingbrain.com/"
+   ],
+   "vendor": "Living Brain",
+   "posted_at": "2026-11-25T13:53:09Z",
+   "metrics": {
+    "likes": 13,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 1,
+    "views": 447
+   },
+   "confirmed_by": [
+    "@omarsar0"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No list of the conjectures, proofs or Lean files linked; product announcement only.",
+    "source": null
+   },
+   "reception": {
+    "sentiment": "none",
+    "summary": "Only one short reply; no one reports trying it.",
+    "tried": false,
+    "replies_read": 1
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "saved_in": 0,
+ "saved_note": "No new owner saves: /workspace/x-ai-bookmarks archive unchanged since the 03:28Z capture (latest raw 07:33 CT page all in seen_ids); Twitter Profile not called.",
+ "list_posts_read": 98,
+ "list_pages": 1,
+ "list_covered_since": true,
+ "deep_reads": 4,
+ "rechecks": 8,
+ "videos": 0,
+ "recheck_notes": [
+  {
+   "url": "https://x.com/PrismML/status/2125310762390552588",
+   "note": "Likes 1738 to 3285. New caveat from @plotarmordev (https://x.com/plotarmordev/status/2125601400172445881): the 5.93 GB file only runs on PrismML's llama.cpp fork; stock llama.cpp needs the 7.6 GB Q2_0 and build b11556+, older builds load it but output garbage. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/METR_Evals/status/2125372372039741753",
+   "note": "Likes 990 to 1767. Specific pushback from roster account @scaling01 (https://x.com/scaling01/status/2125561262108987696) calling the presentation misleading against OpenAI's own footnotes on compute vs perplexity; suggest doubt 2."
+  },
+  {
+   "url": "https://x.com/SebastienBubeck/status/2125402576145572334",
+   "note": "Likes 961 to 3740; no Community Note visible via API (notes not returned). Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/thinkymachines/status/2125399183683465370",
+   "note": "Likes 215 to 463; no new pushback seen. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/SakanaAILabs/status/2125387934203560416",
+   "note": "Likes 500 to 923; no new pushback seen. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/antigravity/status/2125378937156944146",
+   "note": "Likes 975 to 2030; no new pushback seen. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/AnthropicAI/status/2125341904644763678",
+   "note": "Likes 1375 to 2461, 494 replies; no new pushback read this run. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/OpenAI/status/2125334383490105601",
+   "note": "Likes 3679 to 9765; no new pushback read this run. Doubt stays 1."
+  }
+ ],
+ "security_forwarded": [],
+ "bus_posted": [],
+ "security_na": [
+  {
+   "url": "https://x.com/vulnipulse/status/2125611215640764742",
+   "reason": "Docker Engine CVE-2026-135124 (verified NVD + GHSA-vfmq-r373-x89f): docker cp race leaves a read-only bind mount writable during copy, CVSS 4.1 medium, needs a malicious container and a docker cp into it, not exploited; fixed in 29.10.1. Matches Docker in stack.json but not high-signal, so not bus-posted; patch on normal update."
+  },
+  {
+   "url": "https://x.com/MikeChecksAI/status/2125603532858446267",
+   "reason": "LiteLLM CVE-2026-47101/47102 (NVD, May 2026, fixed 1.83.14/1.83.10) and CVE-2026-40217 KEV (added 2026-11-18, due 2026-12-02) already handled in earlier sweeps; nothing new."
+  },
+  {
+   "url": "https://x.com/GreenoraLabs/status/2125555969656606737",
+   "reason": "Same LiteLLM CVE-2026-40217 KEV item already forwarded 2026-11-23."
+  },
+  {
+   "url": "https://x.com/SiuHarry202601/status/2125605439714766873",
+   "reason": "OSV MAL-2026-20295 verified: @guicai777/mcp-doctor npm drops a hidden Windows payload. Obscure package not in stack.json and no sign the fleet uses it; not bus-posted."
+  },
+  {
+   "url": "https://x.com/w0rmsign/status/2125603001104756741",
+   "reason": "Malicious npm ts-input-utils and onlinegdb (OSV MAL-2026-20548/20549); not in stack.json, no fleet use known."
+  },
+  {
+   "url": "https://x.com/changeswatch/status/2125564471972098415",
+   "reason": "Malicious @wppconnect/server 2.10.82 (WhatsApp library); not in the fleet stack."
+  },
+  {
+   "url": "https://x.com/HugoValters/status/2125558115177242699",
+   "reason": "vm2 sandbox escape CVE-2026-93606 from a CVE aggregator; vm2 not in stack.json."
+  },
+  {
+   "url": "https://x.com/attackshieldhq/status/2125561323316469936",
+   "reason": "binary-parser npm CVE-2026-134814 already logged 2026-11-23."
+  },
+  {
+   "url": "https://x.com/dailycve/status/2125582975102263605",
+   "reason": "IBM ContextForge MCP Gateway CVE-2026-53709; not run on the fleet."
+  },
+  {
+   "url": "https://x.com/VibeIncidents/status/2125605675795648914",
+   "reason": "k8s-mcp-server CVE-2026-130007 missing auth; not run on the fleet."
+  }
+ ],
+ "repos_for_gh_testing": [
+  {
+   "url": "https://github.com/NVlabs/TimeTravelContainer",
+   "why": "Rootless live-forking container sandbox for agents (Linux, macOS, WSL2); possible base for branching agent sessions. License not checked here."
+  },
+  {
+   "url": "https://github.com/castorini/delegent",
+   "why": "Claude Code relay that offloads subagent work to a local SLM (67% frontier cost cut on coding); fits Spark/DGX local models. License not checked here."
+  },
+  {
+   "url": "https://github.com/ashhart/TensorFold/pull/4986",
+   "why": "TFQ3 CUDA runtime PR (open, unmerged) for TensorFold, relevant to the Spark; individual-owned repo."
+  }
+ ],
+ "skipped": "RoboColosseum Gemini 4 Hydrogen onboarding (claim), LeRobot Slush startup roundup (roundup), CommandCode MOAT token reseller (business/promo), Databricks AI Index (business), whitecircle post-training competition (event), Claude-BugHunter (already covered Nov 23/24), Bonsai 2.5 and Strata Inkling quants (covered), Gemini MCP skills GA (covered), levelsio spam blocklist (not a capability), Llama Cookbook decision models (minor how-to), Omarchy app and PR from @jankeesvw (not AI capability), opinion and policy reposts.",
+ "follows": {
+  "made": [],
+  "pending": [],
+  "note": "No follows: daily limit already used (3 of 3 followed 2026-11-25: @coldniko, @JoshuaSWarren, @xingyudang); weekly 6 of 15 used. No browser in this run."
+ },
+ "horizon_checks": [
+  {
+   "entry": "block-dessa",
+   "reads": 1,
+   "result": "0 posts since 11:28Z; no trigger."
+  }
+ ]
+}

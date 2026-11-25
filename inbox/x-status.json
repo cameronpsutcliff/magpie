@@ -1,23 +1,23 @@
 {
-  "updated_at": "2026-11-25T11:33:00Z",
+  "updated_at": "2026-11-25T15:33:00Z",
   "job": "sweep",
   "prompt": "v6.1",
-  "calls_used_today": 40,
+  "calls_used_today": 57,
   "notes_via_api": false,
   "last_sweep": {
-    "ran_at": "2026-11-25T11:31:00Z",
-    "items": 15,
-    "queries": 11,
-    "deep_reads": 5,
+    "ran_at": "2026-11-25T15:31:00Z",
+    "items": 18,
+    "queries": 13,
+    "deep_reads": 4,
     "rechecks": 8,
-    "flagged": 11,
+    "flagged": 8,
     "saved_in": 0,
     "saved_kept": 0,
     "videos": 0,
-    "security_forwarded": 1,
-    "list_posts_read": 94,
+    "security_forwarded": 0,
+    "list_posts_read": 98,
     "list_pages": 1,
-    "bus_posts": 1
+    "bus_posts": 0
   },
   "roster": {
     "curated": 223,
@@ -25,7 +25,7 @@
     "active": 60,
     "retired": 7
   },
-  "follows_this_week": 3,
+  "follows_this_week": 6,
   "unfollow_suggestions": [],
   "prompt_feedback": [
     "Sweep 02:57Z: calls_used_today counted for UTC day 2026-11-12 (5 so far; X shows 997 of 1000 left shared). No new saves in the 20 newest bookmarks (all in the archive). Follows skipped, no browser.",
@@ -71,11 +71,10 @@
     "Sweep 19:26Z: T3 Code is installed on the Mac mini (app and CLI v0.1.11) but is missing from inbox/stack.json, so stack matching marked earlier T3 Code leads N/A. Suggest the owner add it (match terms: t3 code, t3code, pingdotgg). Also, the search tool caps at 25 results per call even with max_results 100, and returns next_token even on short pages.",
     "Sweep 23:16Z: security routing follows the 2026-11-23 owner layout (verified stack-touching leads go to the Mini event bus, not Bouncer), so 'security_forwarded' now lists bus-posted leads; the prompt's Fleet stack section still says forward to Bouncer and could be updated to match. Search results from search_posts_all omit entities on many posts, so a batched get_posts_by_ids lookup was used for links and metrics (1 call for 30 posts, which also served the 8 rechecks).",
     "Sweep 03:31Z (Nov 25): get_users_bookmarks surfaced 3 saves newer than the 19:30 CT archive sync; this run writes only under inbox/, so they are recorded in the sweep file but not appended to /workspace/x-ai-bookmarks (the sync routine should pick them up). search_posts_all caps max_results at 25, so OR searches for busy groups need a second page; budget for 5 to 6 search calls per sweep rather than 4.",
-    "Sweep 11:31Z (Nov 25): owner saves read from /workspace/x-ai-bookmarks only (archive unchanged since 03:28Z, the overnight sync gap), so saved_in is 0. search_posts_all rejects until_id together with start_time; use pagination_token for the second page. Per owner layout, the @leadstack/crm-connect Hermes backdoor was posted to the Mini bus, not Bouncer; the prompt's Fleet stack section still says Bouncer."
+    "Sweep 11:31Z (Nov 25): owner saves read from /workspace/x-ai-bookmarks only (archive unchanged since 03:28Z, the overnight sync gap), so saved_in is 0. search_posts_all rejects until_id together with start_time; use pagination_token for the second page. Per owner layout, the @leadstack/crm-connect Hermes backdoor was posted to the Mini bus, not Bouncer; the prompt's Fleet stack section still says Bouncer.",
+    "Sweep 15:31Z (Nov 25): x get_posts_by_ids did not return note_post (long-post full text) even when requested, so long posts are truncated; t.co links were resolved with plain HEAD requests instead. The min_faves operator in search_posts_all appeared to be ignored (discovery results had 0 likes), so discovery queries need relevancy sort plus manual filtering. Follow week counting: follows_this_week was 3 in the status file but x-follows.json shows 6 followed on Nov 24 and 25; set to 6 (Mon-Sun week); the prompt could define the week explicitly. No Community Notes via API, and no browser to check them."
   ],
-  "errors": [
-    "11:31Z sweep: one search_posts_all call rejected (400) for combining until_id with start_time; retried with pagination_token."
-  ],
+  "errors": [],
   "follows_today": 3,
   "last_roster_review": {
     "date": "2026-11-25",
@@ -114,6 +113,6 @@
     "sunday_drafts": false,
     "notes": "Run from the box. Skill tool unavailable; skill files read from disk. Owner saves (30d): 2+ kept saves only for @danikkk_wqs and @0xCodez (aggregator/hype-style posts, not first-hand builders); not added, no screen reads spent. Others with 2+ already on roster, curated or avoid. No doubt flags level 2+. Not Sunday: no drafts. Pruned 5 sweep files from 2026-11-10 (older than 14 days)."
   },
-  "follows_skipped": "2026-11-25T11:31Z sweep: no follows (no browser in this run, follow_mode browser). Recommended in x-follows.json: @coldniko, @JoshuaSWarren, @xingyudang (3 of today's 3; weekly remaining 12).",
-  "calls_note": "calls_used_today is the Magpie share counted by this lane for UTC day 2026-11-25 (20 in the 03:31Z sweep, 20 in the 11:31Z sweep). X reported 971 of 1000 shared reads left at ~11:27Z; its daily window resets at 2026-11-26T00:00Z."
+  "follows_skipped": "2026-11-25T15:31Z sweep: no follows; daily limit 3 of 3 already used (followed via browser earlier today), weekly 6 of 15. No browser in this run.",
+  "calls_note": "calls_used_today is the Magpie share counted by this lane for UTC day 2026-11-25 (20 at 03:31Z, 20 at 11:31Z, 17 at 15:31Z). X reported 957 of 1000 shared reads left at ~15:26Z; resets 2026-11-26T00:00Z."
 }
