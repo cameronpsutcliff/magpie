@@ -3,80 +3,81 @@
  "days": [
   {
    "date": "2026-11-25",
-   "headline": "Ternary-Bonsai-2.5-27B-GGUF, Rewirable Circuits in Transformers with Loom Attention, dsh-our-free-model, and more",
-   "events": 390,
-   "sources": 568,
-   "enriched": false,
+   "headline": "Run a 27B coder in 5.9 GB, prove 9/4, slice Gemini files, and more",
+   "events": 478,
+   "sources": 599,
+   "enriched": true,
    "top": [
     {
      "id": "cb27b265b765",
-     "title": "prism-ml/Ternary-Bonsai-2.5-27B-GGUF",
+     "title": "Ternary Bonsai 2.5 27B fits in 5.9 GB",
      "impact": 5,
-     "vendor": "Open source",
+     "vendor": "PrismML",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-25-cb27b265b765"
     },
     {
-     "id": "8d57762db734",
-     "title": "Rewirable Circuits in Transformers with Loom Attention",
-     "impact": 5,
-     "vendor": "Research",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-25-8d57762db734"
-    },
-    {
-     "id": "acd236001d84",
-     "title": "Ebony-Vinyl/dsh-our-free-model",
+     "id": "aa82b875221d",
+     "title": "GPT-6 models design proteins that bind in lab tests",
      "impact": 4,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-25-acd236001d84"
+     "vendor": "OpenAI",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-25-aa82b875221d"
     },
     {
-     "id": "e50556ef1e99",
-     "title": "thinkingmachines/Inkling-2-Mini",
-     "impact": 5,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-25-e50556ef1e99"
-    },
-    {
-     "id": "f4eb70b14d6a",
-     "title": "Lazy Agents Answer Against Their Own Beliefs: Reinforcement Learning with Verifiable Beliefs Teaches Them to Act on What They Believe",
+     "id": "cc528cadb49a",
+     "title": "Baidu opens ERNIE 5.5 Flash Preview under Apache 2.0",
      "impact": 4,
+     "vendor": "Baidu",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-25-cc528cadb49a"
+    },
+    {
+     "id": "fe343f0c8e92",
+     "title": "NightWatch keeps computer-use agents watching the screen",
+     "impact": 3,
      "vendor": "Research",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-25-f4eb70b14d6a"
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-25-fe343f0c8e92"
+    },
+    {
+     "id": "02d839d894dc",
+     "title": "OpenAI model claims matrix multiplication exponent is exactly 9/4",
+     "impact": 4,
+     "vendor": "OpenAI",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-25-02d839d894dc"
     }
    ],
    "vendors": [
     "Open source",
     "Research",
+    "NVIDIA",
     "Anthropic",
     "OpenAI",
-    "Microsoft",
-    "Google"
+    "Microsoft"
    ],
    "topics": {
-    "models": 161,
-    "agents": 132,
-    "coding": 116,
-    "multimodal": 80,
-    "infra": 63,
+    "models": 157,
+    "agents": 137,
+    "coding": 118,
+    "multimodal": 82,
+    "infra": 62,
     "evals": 51,
-    "mcp": 45,
-    "local": 42,
-    "memory": 39,
-    "research": 36,
-    "reverse": 26,
-    "security": 16,
-    "robotics": 9
+    "local": 44,
+    "mcp": 43,
+    "research": 39,
+    "memory": 38,
+    "reverse": 25,
+    "security": 19,
+    "robotics": 11
    },
    "kinds": {
+    "video": 90,
     "social": 74,
-    "newsletter": 57,
-    "changelog": 56,
+    "newsletter": 59,
+    "changelog": 55,
     "repo": 45,
     "paper": 40,
-    "blog": 35,
+    "blog": 34,
     "model": 30,
-    "community": 25,
-    "space": 20,
+    "community": 24,
+    "space": 19,
     "news": 8
    },
    "constraints": [],
