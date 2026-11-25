@@ -2006,6 +2006,33 @@
    "why": "NVIDIA's AI account, not Jensen. This week is GTC Berlin plus a note on RTX PRO 6000 performance.",
    "signal_to_noise": 3,
    "last_post": "2026-10-20"
+  },
+  {
+   "handle": "@poteto",
+   "name": "Lauren Tan",
+   "group": "devtools",
+   "affiliation": "SpaceXSI / Grok Bot, ex-Cursor",
+   "why": "Principal engineer behind pstack, noodle, brainmaxxing, and formal/runtime agent verification patterns.",
+   "signal_to_noise": 5,
+   "last_post": "2026-11-11"
+  },
+  {
+   "handle": "@Lethain",
+   "name": "Will Larson",
+   "group": "builders",
+   "affiliation": "Imprint",
+   "why": "CTO sharing concrete engineering metrics, cloud agent harnesses, and verification workflows for 100+ PRs/week.",
+   "signal_to_noise": 4,
+   "last_post": "2026-11-22"
+  },
+  {
+   "handle": "@AntithesisHQ",
+   "name": "Antithesis",
+   "group": "devtools",
+   "affiliation": "Antithesis",
+   "why": "Ships Bombadil property-based browser/terminal fuzzer, deterministic simulation testing, and coding-agent plugins.",
+   "signal_to_noise": 4,
+   "last_post": "2026-11-24"
   }
  ],
  "avoid": [

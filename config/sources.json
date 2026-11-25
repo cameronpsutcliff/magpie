@@ -1226,6 +1226,47 @@
    "vendor": "Mistral",
    "product": "Mistral Python SDK",
    "window_hours": 336
+  },
+  {
+   "id": "will-larson",
+   "name": "Will Larson (Irrational Exuberance)",
+   "kind": "blog",
+   "url": "https://lethain.com/feeds.xml",
+   "trust": 0.8,
+   "vendor": null,
+   "product": null,
+   "window_hours": 168,
+   "ai_only": true
+  },
+  {
+   "id": "antithesis-blog",
+   "name": "Antithesis engineering blog",
+   "kind": "blog",
+   "url": "https://antithesis.com/blog/rss.xml",
+   "trust": 0.75,
+   "vendor": "Antithesis",
+   "product": null,
+   "window_hours": 168
+  },
+  {
+   "id": "bombadil-releases",
+   "name": "Antithesis Bombadil releases",
+   "kind": "changelog",
+   "url": "https://github.com/antithesishq/bombadil/releases.atom",
+   "trust": 0.75,
+   "vendor": "Antithesis",
+   "product": "Bombadil",
+   "window_hours": 336
+  },
+  {
+   "id": "noodle-releases",
+   "name": "Poteto Noodle releases",
+   "kind": "changelog",
+   "url": "https://github.com/poteto/noodle/releases.atom",
+   "trust": 0.75,
+   "vendor": null,
+   "product": "Noodle",
+   "window_hours": 336
   }
  ],
  "apis": [
@@ -1798,6 +1839,30 @@
    "origin": "operator",
    "since": "2026-11-24",
    "discovered_as": "github:mistralai",
+   "evidence": []
+  },
+  {
+   "org": "poteto",
+   "why": "Added 2026-11-25: Agent orchestration (noodle), persistent memory (brainmaxxing), and verification skills by Lauren Tan.",
+   "origin": "operator",
+   "since": "2026-11-25",
+   "discovered_as": "github:poteto",
+   "evidence": []
+  },
+  {
+   "org": "antithesishq",
+   "why": "Added 2026-11-25: Bombadil property-based UI/terminal fuzzer and deterministic simulation testing tools.",
+   "origin": "operator",
+   "since": "2026-11-25",
+   "discovered_as": "github:antithesishq",
+   "evidence": []
+  },
+  {
+   "org": "xai-org",
+   "why": "Added 2026-11-25: Public SpaceXSI / xAI repos including grok-build, SDKs, and plugin marketplace.",
+   "origin": "operator",
+   "since": "2026-11-25",
+   "discovered_as": "github:xai-org",
    "evidence": []
   }
  ],
