@@ -1,0 +1,653 @@
+{
+  "ran_at": "2026-11-25T03:31:00Z",
+  "bot": "magpie-scout",
+  "prompt": "v6.1",
+  "since": "2026-11-24T23:16:00Z",
+  "queries": 7,
+  "calls": 20,
+  "items": [
+    {
+      "title": "OpenAI model proves the matrix multiplication exponent is exactly 9/4",
+      "url": "https://x.com/SebastienBubeck/status/2125402576145572334",
+      "handle": "@SebastienBubeck",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "After an October upper bound of 9/4, an OpenAI model has now produced a matching lower bound, so the exponent for multiplying n x n matrices is claimed to be exactly 2.25; the author notes it also implies linear programs solvable in n^(9/4) time. A milestone for AI-assisted mathematics, with a public preprint to check.",
+      "kind": "paper",
+      "evidence": "measured",
+      "links": [
+        "https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/paper.pdf"
+      ],
+      "vendor": "OpenAI",
+      "posted_at": "2026-11-25T01:33:56Z",
+      "metrics": {
+        "likes": 961,
+        "reposts": 81,
+        "quotes": 23,
+        "replies": 34,
+        "views": 63602
+      },
+      "confirmed_by": [
+        "@gdb",
+        "@xingyudang",
+        "@wen_kaiyue",
+        "@askalphaxiv"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Self-reported preprint not yet independently refereed; a replier asks whether the lower bound covers all algorithms or only a restricted model, and others note the algorithm only wins on impractically large matrices.",
+        "source": "https://x.com/SebastienBubeck/status/2125402576145572334"
+      },
+      "reception": {
+        "sentiment": "positive",
+        "summary": "Mostly astonishment and congratulations; questions about the scope of the lower bound and practical relevance, no reports of independent checking yet.",
+        "tried": false,
+        "replies_read": 25
+      }
+    },
+    {
+      "title": "OpenAI publishes pretraining loss for every frontier model since GPT-3.5; METR finds a ~7x faster fall since early 2026",
+      "url": "https://x.com/METR_Evals/status/2125372372039741753",
+      "handle": "@METR_Evals",
+      "group": "evals",
+      "origin": "sweep",
+      "summary": "OpenAI released base-model log-perplexity for 13 models on a fixed held-out set drawn from its own codebase, and METR's analysis shows loss falling about 7 times faster since early 2026 than in 2022 to 2025. Forecasters get a rare public series of underlying model quality, though METR notes benchmark scores do not show a comparable jump.",
+      "kind": "eval",
+      "evidence": "measured",
+      "links": [
+        "https://metr.org/blog/2026-11-24-interpreting-a-recent-acceleration-in-pretraining-loss/"
+      ],
+      "vendor": "OpenAI / METR",
+      "posted_at": "2026-11-24T23:33:55Z",
+      "metrics": {
+        "likes": 990,
+        "reposts": 90,
+        "quotes": 29,
+        "replies": 49,
+        "views": 75740
+      },
+      "confirmed_by": [
+        "@eliebakouch"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Repliers note the 7x depends on OpenAI's own data mix and held-out set, and that the 2023 to 2025 plateau may reflect failed runs, making the linear baseline misleading.",
+        "source": "https://x.com/METR_Evals/status/2125372372039741753"
+      },
+      "reception": {
+        "sentiment": "mixed",
+        "summary": "Praise for the transparency plus calls for Anthropic and Google to publish theirs; skeptics question comparability of the loss series and the baseline fit.",
+        "tried": false,
+        "replies_read": 25
+      }
+    },
+    {
+      "title": "Pre-training index v0 compares perplexity of 27 open models on ~260 recent curated sources",
+      "url": "https://x.com/eliebakouch/status/2125403710931005852",
+      "handle": "@eliebakouch",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "Responding to OpenAI's loss disclosure, a public index scores 27 open base and post-trained models on about 260 curated code, math, science, systems and essay sources plus an uncheatable eval built from recent documents to limit memorization. Gives open-model users a first apples-to-apples pretraining quality comparison.",
+      "kind": "eval",
+      "evidence": "measured",
+      "links": [
+        "https://eliebak.com/pretraining-index"
+      ],
+      "vendor": "Elie Bakouch",
+      "posted_at": "2026-11-25T01:38:27Z",
+      "metrics": {
+        "likes": 92,
+        "reposts": 21,
+        "quotes": 2,
+        "replies": 23,
+        "views": 5416
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Sakana releases Namazu Small, a 30B model that beats Nemotron 3 Super 120B on a 25-benchmark average",
+      "url": "https://x.com/SakanaAILabs/status/2125387934203560416",
+      "handle": "@SakanaAILabs",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "Sakana continued pretraining and post-trained NVIDIA's Nemotron 3 Nano base into a 30B-A3B model that outscores the roughly 4x larger Nemotron 3 Super across 25 benchmarks, with strong long-document reading and web research (BrowseComp, FRAMES). On-premises availability details come in early December; no weights announced.",
+      "kind": "model",
+      "evidence": "measured",
+      "links": [
+        "https://sakana.ai/namazu-small/"
+      ],
+      "vendor": "Sakana AI",
+      "posted_at": "2026-11-25T00:35:45Z",
+      "metrics": {
+        "likes": 500,
+        "reposts": 102,
+        "quotes": 30,
+        "replies": 14,
+        "views": 35770
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "No weights or API yet; repliers ask for the benchmark tasks and inference settings to reproduce the 120B comparison.",
+        "source": "https://x.com/SakanaAILabs/status/2125387934203560416"
+      },
+      "reception": {
+        "sentiment": "positive",
+        "summary": "Interest in a small long-context model for on-prem use; questions about weights availability and reproducibility of the comparison.",
+        "tried": false,
+        "replies_read": 13
+      }
+    },
+    {
+      "title": "Antigravity's Modern Web Guidance skill adds declarative WebMCP tools to existing HTML forms",
+      "url": "https://x.com/antigravity/status/2125378937156944146",
+      "handle": "@antigravity",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "A new Antigravity skill annotates existing HTML forms with declarative WebMCP tools, giving AI agents structured access to a site without a frontend rewrite while humans see the same page. Web developers can make apps agent-ready incrementally.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [],
+      "vendor": "Google",
+      "posted_at": "2026-11-25T00:00:00Z",
+      "metrics": {
+        "likes": 975,
+        "reposts": 59,
+        "quotes": 20,
+        "replies": 65,
+        "views": 43826
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Demo shows a simple form; repliers ask how server-side validation errors and partial failures get back to the agent without duplicate submissions.",
+        "source": "https://x.com/antigravity/status/2125378937156944146"
+      },
+      "reception": {
+        "sentiment": "mixed",
+        "summary": "Builders like reusing forms as the agent API but want to see auth-gated, multi-step and failure cases.",
+        "tried": false,
+        "replies_read": 25
+      }
+    },
+    {
+      "title": "Tinker makes Inkling 2 Mini free to fine-tune and sample",
+      "url": "https://x.com/tinkerapi/status/2125381230388715931",
+      "handle": "@tinkerapi",
+      "group": "infra",
+      "origin": "sweep",
+      "summary": "Any Tinker user with a positive balance can now train LoRAs on and sample from Inkling 2 Mini for free under rate limits, using a dedicated free model id. Lowers the cost of trying model customization to near zero for small teams.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://thinkingmachines.ai/tinker/pricing/"
+      ],
+      "vendor": "Thinking Machines",
+      "posted_at": "2026-11-25T00:09:23Z",
+      "metrics": {
+        "likes": 408,
+        "reposts": 35,
+        "quotes": 10,
+        "replies": 0,
+        "views": 0
+      },
+      "confirmed_by": [
+        "@soumithchintala"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      },
+      "reception": {
+        "sentiment": "positive",
+        "summary": "Enthusiasm; questions about rate limits, data terms for the free tier, and whether trained LoRAs can be downloaded (a staff reply says yes).",
+        "tried": false,
+        "replies_read": 16
+      }
+    },
+    {
+      "title": "Mantic fine-tunes Inkling 2 Small on Tinker into a forecasting agent at frontier accuracy for 7% of the cost",
+      "url": "https://x.com/thinkymachines/status/2125399183683465370",
+      "handle": "@thinkymachines",
+      "group": "labs",
+      "origin": "sweep",
+      "summary": "Mantic used custom data and RL for agentic tool use to train a small model that matches frontier LLM forecasting accuracy at about 7% of the cost, written up by Thinking Machines. Shows a narrow fine-tune replacing a frontier model for a high-volume task.",
+      "kind": "technique",
+      "evidence": "measured",
+      "links": [
+        "https://thinkingmachines.ai/news/training-a-scalable-forecasting-agent/"
+      ],
+      "vendor": "Mantic / Thinking Machines",
+      "posted_at": "2026-11-25T01:20:28Z",
+      "metrics": {
+        "likes": 215,
+        "reposts": 17,
+        "quotes": 6,
+        "replies": 18,
+        "views": 15454
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "A replier warns synthetic questions written from the news that resolves them can leak answers and asks for a no-research baseline.",
+        "source": "https://x.com/thinkymachines/status/2125399183683465370"
+      },
+      "reception": {
+        "sentiment": "positive",
+        "summary": "Interest in the cost result; methodological questions about the eval set and answer leakage.",
+        "tried": false,
+        "replies_read": 19
+      }
+    },
+    {
+      "title": "vLLM-GR: generative recommendation inference with on-device beam search and shared KV cache",
+      "url": "https://x.com/vllm_project/status/2125409455278059747",
+      "handle": "@vllm_project",
+      "group": "infra",
+      "origin": "sweep",
+      "summary": "vLLM adds a beam-session engine for generative recommendation models with accelerator-side beam search, catalog constraints and shared prompt KV, on NVIDIA GPUs and Huawei Ascend NPUs. The team reports the lowest P99 latency among tested backends at wide beams (H20 batch 8: 369.4 ms vs 1,280.1 ms for SGLang).",
+      "kind": "repo",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/vllm-project/vllm-gr",
+        "https://vllm.ai/blog/2026-11-24-vllm-gr-announcement"
+      ],
+      "vendor": "vLLM",
+      "posted_at": "2026-11-25T02:01:16Z",
+      "metrics": {
+        "likes": 45,
+        "reposts": 6,
+        "quotes": 2,
+        "replies": 5,
+        "views": 2446
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "TensorFold's TFQ quantizer goes open source, with Qwen3.8 Flash Next TFQ3 weights",
+      "url": "https://x.com/ashxhart/status/2125389504966258962",
+      "handle": "@ashxhart",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "The TFQ quantization format is now public, and a Qwen3.8 Flash Next TFQ3 checkpoint (78.99 GiB, 58.2% smaller than 8-bit) is on Hugging Face; the author reports perplexity 5.996 vs 6.007 for 8-bit and 9.8% lower than MLX 4-bit. Local users of large MoE models can try it directly.",
+      "kind": "repo",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/ashhart/TFQ",
+        "https://huggingface.co/TensorFold/Qwen3.8-Flash-Next-TFQ3",
+        "https://github.com/ashhart/tensorFold/pull/4964"
+      ],
+      "vendor": "TensorFold",
+      "posted_at": "2026-11-25T00:42:00Z",
+      "metrics": {
+        "likes": 38,
+        "reposts": 2,
+        "quotes": 1,
+        "replies": 5,
+        "views": 1574
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Perplexity numbers are author-reported; the TFQ repo was created today and declares no recognized license.",
+        "source": "https://github.com/ashhart/TFQ"
+      }
+    },
+    {
+      "title": "Both Neural Engines on the M6 Mac mini run under Linux in omarchy-ane",
+      "url": "https://x.com/JoshuaSWarren/status/2125391251859992892",
+      "handle": "@JoshuaSWarren",
+      "group": "builders",
+      "origin": "sweep",
+      "summary": "An open DRM accelerator driver and userspace library now drive both Apple Neural Engines on an M6 Mac mini under Linux, running three programs interleaved per engine with bit-identical results across engines. Opens the ANE to on-device inference work outside macOS.",
+      "kind": "repo",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/joshuaswarren/omarchy-ane"
+      ],
+      "vendor": "omarchy-ane",
+      "posted_at": "2026-11-25T00:48:56Z",
+      "metrics": {
+        "likes": 68,
+        "reposts": 6,
+        "quotes": 2,
+        "replies": 10,
+        "views": 1854
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "Rapid-MLX 1.1.2 runs Ternary Bonsai 2.5 27B on Apple Silicon in about 10 GB of RAM",
+      "url": "https://x.com/rapidmlx/status/2125415040014745617",
+      "handle": "@rapidmlx",
+      "group": "local",
+      "origin": "sweep",
+      "summary": "Rapid-MLX added support for PrismML's ternary 27B model: 8.9 GB packed, loads in 10 s and peaks at 12.6 GB RAM on an M4 Pro, with tool calling, vision and thinking toggle verified, and it prints connect commands for Codex or OpenCode. Mac users get a capable local coding model in a small footprint.",
+      "kind": "tool",
+      "evidence": "measured",
+      "links": [],
+      "vendor": "Rapid-MLX",
+      "posted_at": "2026-11-25T02:23:28Z",
+      "metrics": {
+        "likes": 8,
+        "reposts": 0,
+        "quotes": 0,
+        "replies": 1,
+        "views": 415
+      },
+      "confirmed_by": [
+        "@PrismML"
+      ],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "tinygrad adds slopkernels: model-generated fast AMD LLM kernels",
+      "url": "https://x.com/__tinygrad__/status/2125406553906065584",
+      "handle": "@__tinygrad__",
+      "group": "local",
+      "origin": "sweep",
+      "summary": "A new directory in the tinygrad repo holds AMD LLM kernels generated in Python that emit tinygrad UIR, with Gemini Neon iterating on them. A public test of whether model-written kernels can match hand-tuned ones.",
+      "kind": "repo",
+      "evidence": "artifact",
+      "links": [
+        "https://github.com/tinygrad/tinygrad"
+      ],
+      "vendor": "tiny corp",
+      "posted_at": "2026-11-25T01:49:45Z",
+      "metrics": {
+        "likes": 123,
+        "reposts": 2,
+        "quotes": 0,
+        "replies": 13,
+        "views": 4926
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "No performance numbers given yet.",
+        "source": null
+      }
+    },
+    {
+      "title": "Gemini API function calling now returns native document, audio and video results",
+      "url": "https://x.com/_philschmid/status/2124929125974450503",
+      "handle": "@_philschmid",
+      "group": "labs",
+      "origin": "saved",
+      "summary": "Tools and subagents can now hand Gemini 4 Neon raw video, audio and document chunks as function results instead of text summaries. Enables agents that review UI bug recordings, clip podcasts or edit video without a lossy transcription step.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://aistudio.google.com/docs/function-calling?e=0#multimodal",
+        "https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/"
+      ],
+      "vendor": "Google",
+      "posted_at": "2026-11-23T18:12:37Z",
+      "metrics": {
+        "likes": 2312,
+        "reposts": 140,
+        "quotes": 43,
+        "replies": 129,
+        "views": 118186
+      },
+      "confirmed_by": [],
+      "deep_read": true,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      },
+      "reception": {
+        "sentiment": "positive",
+        "summary": "Builders welcome dropping transcripts for UI-bug replay and media agents; one asks about context cost when every tool call returns video.",
+        "tried": true,
+        "replies_read": 25
+      }
+    },
+    {
+      "title": "Antigravity v2.35.0 rolls out with more reliable compaction for long threads",
+      "url": "https://x.com/RohanPhadte/status/2125324194586190055",
+      "handle": "@RohanPhadte",
+      "group": "devtools",
+      "origin": "saved",
+      "summary": "An Antigravity engineer's thread walks through the v2.35.0 release, the same build behind the quota and approval gains reported earlier; repliers credit compaction for keeping long-running threads usable. Antigravity users get longer sessions with fewer manual resets.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [],
+      "vendor": "Google",
+      "posted_at": "2026-11-24T20:22:29Z",
+      "metrics": {
+        "likes": 2874,
+        "reposts": 75,
+        "quotes": 20,
+        "replies": 173,
+        "views": 230247
+      },
+      "confirmed_by": [
+        "@_mohansolo"
+      ],
+      "deep_read": true,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Repliers report lingering SSH sessions that never exit, cache bugs and account access problems.",
+        "source": "https://x.com/RohanPhadte/status/2125324194586190055"
+      },
+      "reception": {
+        "sentiment": "mixed",
+        "summary": "Some users say compaction now just works; others list SSH, caching, UI-customization and access complaints.",
+        "tried": true,
+        "replies_read": 25
+      }
+    },
+    {
+      "title": "NVIDIA NeMo Switchyard router ships in LiteLLM to route coding-agent calls by difficulty",
+      "url": "https://x.com/LiteLLM/status/2125391269694501214",
+      "handle": "@LiteLLM",
+      "group": "infra",
+      "origin": "sweep",
+      "summary": "LiteLLM now includes NVIDIA's Switchyard auto-router, which sends simple coding-agent tasks to a cheap fast model and escalates complex ones to a frontier model, for Claude Code, Codex or custom harnesses. Teams can cut agent spend without changing tools.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://docs.litellm.ai/blog/switchyard-tool-aware-routing"
+      ],
+      "vendor": "LiteLLM / NVIDIA",
+      "posted_at": "2026-11-25T00:49:01Z",
+      "metrics": {
+        "likes": 9,
+        "reposts": 2,
+        "quotes": 2,
+        "replies": 7,
+        "views": 607
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "No routing quality or savings numbers in the post.",
+        "source": null
+      }
+    },
+    {
+      "title": "Browser Use syncs logins, sessions and settings across all concurrent browsers in real time",
+      "url": "https://x.com/browser_use/status/2125430040091668580",
+      "handle": "@browser_use",
+      "group": "devtools",
+      "origin": "sweep",
+      "summary": "Browser Use profiles now sync live, so every agent browser shares one login, cart, session and settings, with no code change. Fleets of 1 to 100 agent browsers behave like one browser with many tabs.",
+      "kind": "feature",
+      "evidence": "artifact",
+      "links": [
+        "https://browser-use.com/"
+      ],
+      "vendor": "Browser Use",
+      "posted_at": "2026-11-25T03:23:04Z",
+      "metrics": {
+        "likes": 4,
+        "reposts": 2,
+        "quotes": 0,
+        "replies": 0,
+        "views": 269
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    },
+    {
+      "title": "ComputeWise benchmark: unaided research agents spend only 52% of GPU time on useful work",
+      "url": "https://x.com/dair_ai/status/2125393287314104619",
+      "handle": "@dair_ai",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "Salesforce AI Research and Datadog built a simulated-GPU benchmark that replays recorded training runs; agents wasted 22% of GPU time on unneeded runs and left 26% idle, and only an evidence-first harness reduced the waste. Useful for anyone letting agents run experiments on GPUs.",
+      "kind": "paper",
+      "evidence": "measured",
+      "links": [],
+      "vendor": "Salesforce AI Research / Datadog",
+      "posted_at": "2026-11-25T00:57:02Z",
+      "metrics": {
+        "likes": 24,
+        "reposts": 2,
+        "quotes": 0,
+        "replies": 4,
+        "views": 2375
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Aggregator post with no paper link to check.",
+        "source": null
+      }
+    },
+    {
+      "title": "MLEvolver harness hits 72.7% medal rate on MLE-Bench Lite with context folding",
+      "url": "https://x.com/omarsar0/status/2125391524712309135",
+      "handle": "@omarsar0",
+      "group": "research",
+      "origin": "sweep",
+      "summary": "HKUST and NVIDIA compared memory mechanisms for autoresearch agents; condensing each attempt into a short digest beat rolling summaries in all six settings, and the harness reached 72.7% on MLE-Bench Lite and 94% on KernelBench Level 3 at the same budget as AIDE and OpenEvolve.",
+      "kind": "paper",
+      "evidence": "measured",
+      "links": [],
+      "vendor": "HKUST / NVIDIA",
+      "posted_at": "2026-11-25T00:50:02Z",
+      "metrics": {
+        "likes": 28,
+        "reposts": 5,
+        "quotes": 0,
+        "replies": 15,
+        "views": 3354
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 1,
+        "community_note": null,
+        "pushback": "Aggregator post with no paper link to check.",
+        "source": null
+      }
+    },
+    {
+      "title": "Mistral Large 4 ranks sixth on Vals CyberOffense multi-stage attack eval",
+      "url": "https://x.com/ValsAI/status/2125398605607686401",
+      "handle": "@ValsAI",
+      "group": "evals",
+      "origin": "sweep",
+      "summary": "Vals scored Mistral Large 4 at 37.0% on CyberOffense, its eval of multi-stage attacks across simulated networks, placing it sixth. Adds an independent offensive-capability data point for an open-weight-adjacent frontier model.",
+      "kind": "eval",
+      "evidence": "measured",
+      "links": [],
+      "vendor": "Vals AI",
+      "posted_at": "2026-11-25T01:18:10Z",
+      "metrics": {
+        "likes": 15,
+        "reposts": 0,
+        "quotes": 0,
+        "replies": 3,
+        "views": 1247
+      },
+      "confirmed_by": [],
+      "deep_read": false,
+      "doubt": {
+        "level": 0,
+        "community_note": null,
+        "pushback": null,
+        "source": null
+      }
+    }
+  ],
+  "saved_rejected": [],
+  "list_posts_read": 98,
+  "list_pages": 1,
+  "security_forwarded": [],
+  "security_na": [
+    {
+      "url": "https://x.com/wei_wang/status/2125428264965419243",
+      "reason": "T3 Code default telemetry hashing Codex/Claude account IDs: already verified and posted to the Mini bus in the 19:26Z and 23:16Z sweeps; no new fix or exposure."
+    },
+    {
+      "url": "https://x.com/theo/status/2125422662277337478",
+      "reason": "Unverified allegation that Grok Build uploads whole repos; no advisory or primary source, and Grok Build is not in stack.json."
+    },
+    {
+      "url": "https://x.com/plotarmordev/status/2125413366105780547",
+      "reason": "Single user's Anthropic account ban while traveling; account policy, not a vulnerability."
+    }
+  ],
+  "bus_posts": [],
+  "notes": "Saves: 3 new bookmarks found via get_users_bookmarks (not yet in the archive; newest archive sync 19:30 CT had none new); the two _philschmid posts are merged into one item, the RohanPhadte thread is kept as a second item. Videos: none analyzed (no download/analysis path in this run; Antigravity WebMCP clip is 62 s, others under 60 s). Horizon: block-dessa query returned 0 posts. Rechecks: 8 prior items (Bonsai 2.5, OpenAI protein preprint, Siren, MCP Apps, Antigravity release, TFQ3, Arena, SWE-2.1) re-read in one batched lookup; metrics up, no new doubt signals. Fallback search for the research/evals group left a 23:16 to 23:38Z gap unpaged (remaining page was opinion posts). Skipped: Gemini 4 Hydrogen globe demo (showcase), Simon Willison essay (opinion), OpenCode Kimi promo and own-GPU claim (business), NVIDIA Dory 1.5 vLLM PR (leak, not release), Hy4 API on a reseller, Replit Muse local fork (third-party claim), PyTorch Day China and Ollama/Fly hackathon (events). Calls: 1 list page, 6 roster OR searches (4 groups plus 2 second pages), 1 bookmarks, 1 horizon, 1 batched lookup of candidates, 8 deep-read reply searches, 1 batched recheck = 20. Discovery searches (step 4) skipped this run to save budget; the matrix-exponent original was found through roster quotes."
+}
