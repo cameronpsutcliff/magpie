@@ -1,23 +1,23 @@
 {
-  "updated_at": "2026-11-25T19:27:00Z",
+  "updated_at": "2026-11-25T23:30:00Z",
   "job": "sweep",
   "prompt": "v6.1",
-  "calls_used_today": 72,
+  "calls_used_today": 93,
   "notes_via_api": false,
   "last_sweep": {
-    "ran_at": "2026-11-25T19:16:00Z",
-    "items": 24,
-    "queries": 12,
-    "deep_reads": 3,
+    "ran_at": "2026-11-25T23:17:00Z",
+    "items": 20,
+    "queries": 11,
+    "deep_reads": 7,
     "rechecks": 8,
-    "flagged": 15,
-    "saved_in": 0,
-    "saved_kept": 0,
+    "flagged": 9,
+    "saved_in": 5,
+    "saved_kept": 2,
     "videos": 0,
-    "security_forwarded": 1,
-    "list_posts_read": 187,
+    "security_forwarded": 0,
+    "list_posts_read": 180,
     "list_pages": 2,
-    "bus_posts": 1
+    "bus_posts": 0
   },
   "roster": {
     "curated": 223,
@@ -73,7 +73,8 @@
     "Sweep 03:31Z (Nov 25): get_users_bookmarks surfaced 3 saves newer than the 19:30 CT archive sync; this run writes only under inbox/, so they are recorded in the sweep file but not appended to /workspace/x-ai-bookmarks (the sync routine should pick them up). search_posts_all caps max_results at 25, so OR searches for busy groups need a second page; budget for 5 to 6 search calls per sweep rather than 4.",
     "Sweep 11:31Z (Nov 25): owner saves read from /workspace/x-ai-bookmarks only (archive unchanged since 03:28Z, the overnight sync gap), so saved_in is 0. search_posts_all rejects until_id together with start_time; use pagination_token for the second page. Per owner layout, the @leadstack/crm-connect Hermes backdoor was posted to the Mini bus, not Bouncer; the prompt's Fleet stack section still says Bouncer.",
     "Sweep 15:31Z (Nov 25): x get_posts_by_ids did not return note_post (long-post full text) even when requested, so long posts are truncated; t.co links were resolved with plain HEAD requests instead. The min_faves operator in search_posts_all appeared to be ignored (discovery results had 0 likes), so discovery queries need relevancy sort plus manual filtering. Follow week counting: follows_this_week was 3 in the status file but x-follows.json shows 6 followed on Nov 24 and 25; set to 6 (Mon-Sun week); the prompt could define the week explicitly. No Community Notes via API, and no browser to check them.",
-    "Sweep 19:16Z: search operator min_likes: had no effect in search_posts_all (zero-like posts returned), so the release discovery query mostly surfaced self-promo repos; a roster-quoted discovery approach would be cheaper. Real-time security alerts now go to the Mini bus per the owner's 2026-11-23 rule, which conflicts with the prompt's 'Forward to Bouncer' section; the prompt may need updating."
+    "Sweep 19:16Z: search operator min_likes: had no effect in search_posts_all (zero-like posts returned), so the release discovery query mostly surfaced self-promo repos; a roster-quoted discovery approach would be cheaper. Real-time security alerts now go to the Mini bus per the owner's 2026-11-23 rule, which conflicts with the prompt's 'Forward to Bouncer' section; the prompt may need updating.",
+    "Sweep 23:17Z: get_users_bookmarks again surfaced 3 saves the 2-hour archive sync had not captured; the sweep cannot append to /workspace/x-ai-bookmarks (inbox-only writes), so the sync routine must pick them up. Video analysis has no available hand-off path in unattended runs, so qualifying clips are skipped."
   ],
   "errors": [],
   "follows_today": 3,
@@ -114,6 +115,6 @@
     "sunday_drafts": false,
     "notes": "Run from the box. Skill tool unavailable; skill files read from disk. Owner saves (30d): 2+ kept saves only for @danikkk_wqs and @0xCodez (aggregator/hype-style posts, not first-hand builders); not added, no screen reads spent. Others with 2+ already on roster, curated or avoid. No doubt flags level 2+. Not Sunday: no drafts. Pruned 5 sweep files from 2026-11-10 (older than 14 days)."
   },
-  "follows_skipped": "2026-11-25T19:16Z sweep: no follows; daily limit 3 of 3 already used, weekly 6 of 15. No browser in this run.",
-  "calls_note": "calls_used_today is the Magpie share counted by this lane for UTC day 2026-11-25 (20 at 03:31Z, 20 at 11:31Z, 17 at 15:31Z, 15 at 19:16Z). X reported 937 of 1000 shared reads left at ~19:22Z; resets 2026-11-26T00:00Z."
+  "follows_skipped": "2026-11-25T23:17Z sweep: no follows; daily limit 3 of 3 already used, weekly 6 of 15.",
+  "calls_note": "calls_used_today is the Magpie share counted by this lane for UTC day 2026-11-25 (20 at 03:31Z, 20 at 11:31Z, 17 at 15:31Z, 15 at 19:16Z, 21 at 23:17Z). X reported 925 of 1000 shared reads left at about 23:21Z; resets 2026-11-26T00:00Z."
 }

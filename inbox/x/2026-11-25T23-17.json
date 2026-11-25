@@ -1,0 +1,802 @@
+{
+ "ran_at": "2026-11-25T23:17:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-25T19:16:00Z",
+ "queries": 11,
+ "calls": 21,
+ "items": [
+  {
+   "title": "Hazy Research's Plato's Key: one closed-form rotation lets independently trained LLMs read each other's representations",
+   "url": "https://x.com/viviencheng__/status/2125631050319831474",
+   "handle": "@viviencheng__",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Stanford's Hazy Research shows that a single learned rotation, with no gradient training of either model, maps the hidden states of one independently trained LLM into another so each can use the other's representations. It gives interpretability and model-merging researchers a cheap way to compare and transfer what different models know.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://hazyresearch.stanford.edu/blog/2026-11-25-platos-key"
+   ],
+   "vendor": "Hazy Research (Stanford)",
+   "posted_at": "2026-11-25T16:41:49Z",
+   "metrics": {
+    "likes": 2532,
+    "reposts": 292,
+    "quotes": 72,
+    "replies": 88,
+    "views": 118495
+   },
+   "confirmed_by": [
+    "@MichaelThiessen"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers ask whether the alignment is just model stitching renamed and whether shared pretraining data, not convergence, explains the fit; no ablation reply yet.",
+    "source": "https://x.com/viviencheng__/status/2125631050319831474"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Mostly enthusiasm; a few researchers call it close to prior model-stitching work and one lists held-out-relation ablations needed to rule out shared-pretraining artifacts.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Weight-space micromachines: Claude Code writes small exact modules into a frozen LLM's weights and lifts Qwen3-0.6B benchmarks",
+   "url": "https://x.com/DimitrisPapail/status/2125617058331160951",
+   "handle": "@DimitrisPapail",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Dimitris Papailiopoulos had Claude Code compile calculators, rule checkers, mistake detectors and a small vision module directly into weights that stay off until needed. On Qwen3-0.6B, 14 implants take IFEval from 58% to 72% and RL with implants reaches 80% on GSM8K versus 68% for plain RL; code is MIT on GitHub.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://papail.io/papers/wsm/",
+    "https://github.com/anadim/weight-space-micromachines"
+   ],
+   "vendor": "Dimitris Papailiopoulos",
+   "posted_at": "2026-11-25T15:46:13Z",
+   "metrics": {
+    "likes": 437,
+    "reposts": 63,
+    "quotes": 23,
+    "replies": 51,
+    "views": 35335
+   },
+   "confirmed_by": [
+    "@rikiyatakehi"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers warn the keep-it-if-the-score-rises loop can overfit the eval without a held-out suite, and that dormant implants are also a backdoor recipe normal evals would miss.",
+    "source": "https://x.com/DimitrisPapail/status/2125617058331160951"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Researchers are intrigued and one group posts a follow-up; specific concerns are eval overfitting from the discovery loop and backdoor risk from implants that are bit-for-bit invisible until they fire.",
+    "tried": true,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "opencode open-sources psychoscript, the pausable JavaScript runtime behind its codemode",
+   "url": "https://x.com/opencode/status/2125702030832349374",
+   "handle": "@opencode",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "opencode extracted the runtime that powers codemode into psychoscript, an MIT package that runs confined JavaScript calling schema-described tools and can pause and resume mid-execution without WASM. Agent builders get a way to run model-written scripts that wait on tools or humans; a Rust port for native apps is in progress.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/anomalyco/psychoscript",
+    "https://psychoscript.com"
+   ],
+   "vendor": "opencode (Anomaly)",
+   "posted_at": "2026-11-25T21:23:52Z",
+   "metrics": {
+    "likes": 836,
+    "reposts": 52,
+    "quotes": 23,
+    "replies": 57,
+    "views": 50697
+   },
+   "confirmed_by": [
+    "@thdxr",
+    "@jlongster"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Replies praise pause and resume as the key feature and the site design; one asks how captured secrets are handled on resume. Nobody reports using it yet.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Rex adds program resume through server restarts with a new open terminal protocol, OSC 7577",
+   "url": "https://x.com/mitchellh/status/2125713695233970521",
+   "handle": "@mitchellh",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Mitchell Hashimoto published OSC 7577, a terminal escape sequence that lets a program tell the terminal how to relaunch it, and shipped it in Rex and herdr so sessions such as Claude Code chats come back after a terminal server restart. Coding-agent CLIs can opt in with a few lines; an opencode feature request already exists.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://www.superlogical.com/rex/docs/build/program-resume",
+    "https://github.com/anomalyco/opencode/issues/66462"
+   ],
+   "vendor": "Superlogical (Rex)",
+   "posted_at": "2026-11-25T22:10:13Z",
+   "metrics": {
+    "likes": 998,
+    "reposts": 50,
+    "quotes": 26,
+    "replies": 86,
+    "views": 26395
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Developers welcome resume as a portable in-band protocol; questions are whether a resumed agent knows a long command died mid-run and what non-supporting terminals do with the sequence. Rex itself is still invite-only.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Artificial Analysis launches a FrontierPhysics leaderboard: Claude Fable 5.2 leads at 32% on 54 research tasks",
+   "url": "https://x.com/ArtificialAnlys/status/2125691597602058284",
+   "handle": "@ArtificialAnlys",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Artificial Analysis now runs 54 of BenchFlow's 56 physicist-written FrontierPhysics research tasks, scored on both numeric checks and manuscript review. Fable 5.2 leads at 32%, six points ahead of GPT-6.2 Astra, and Gemini 4 Neon passes the most numeric checks but fails review about half the time.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://artificialanalysis.ai/evaluations/frontierphysics"
+   ],
+   "vendor": "Artificial Analysis / BenchFlow",
+   "posted_at": "2026-11-25T20:42:24Z",
+   "metrics": {
+    "likes": 322,
+    "reposts": 16,
+    "quotes": 8,
+    "replies": 42,
+    "views": 26615
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers value a hard, unsaturated benchmark and single out the gap between numeric pass rate and review pass rate; one asks for per-task results.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "AA-Robotics-Sim v0.1: frontier LLMs in coding harnesses drive a simulated Unitree G1 humanoid; GPT-6.2 Astra leads with 71",
+   "url": "https://x.com/ArtificialAnlys/status/2125683694103064979",
+   "handle": "@ArtificialAnlys",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Artificial Analysis gives models a simulated 29-joint G1 across ten household and industrial tasks, five practice episodes to write notes and code, then ten unseen scenes. Every model handles navigation, but grasping is weak: five dishes reached the rack in 90 episodes and no laundry made it into the machine.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://artificialanalysis.ai/articles/aa-robotics-sim"
+   ],
+   "vendor": "Artificial Analysis",
+   "posted_at": "2026-11-25T20:11:00Z",
+   "metrics": {
+    "likes": 187,
+    "reposts": 10,
+    "quotes": 11,
+    "replies": 31,
+    "views": 13352
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Microsoft releases Aion 1.0 Instruct, a 2.3B model trained from scratch, under MIT on Hugging Face",
+   "url": "https://x.com/MohsenFyz/status/2125654809802104901",
+   "handle": "@MohsenFyz",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Aion 1.0 Instruct is a 2.3B-parameter small language model built from scratch and published with MIT-licensed weights, a size that runs on laptops and edge devices.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/microsoft/Aion-1.0-Instruct-2.3B"
+   ],
+   "vendor": "Microsoft",
+   "posted_at": "2026-11-25T18:16:14Z",
+   "metrics": {
+    "likes": 190,
+    "reposts": 5,
+    "quotes": 3,
+    "replies": 12,
+    "views": 11197
+   },
+   "confirmed_by": [
+    "@victormustar"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "TracePress: open-source tool for querying gigabytes of agent traces, with a Harbor eval integration",
+   "url": "https://x.com/NoahZiems/status/2125681517099618614",
+   "handle": "@NoahZiems",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "TracePress lets eval builders run bulk analysis over agent traces too long to read one by one, installable as a skill, and Harbor now pairs it with its eval framework.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/Ziems/tracepress",
+    "https://noahziems.com/trace-science"
+   ],
+   "vendor": "Noah Ziems",
+   "posted_at": "2026-11-25T20:02:21Z",
+   "metrics": {
+    "likes": 149,
+    "reposts": 25,
+    "quotes": 8,
+    "replies": 17,
+    "views": 7944
+   },
+   "confirmed_by": [
+    "@harborframework"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "FastKandinsky 6.0 Pro: NVFP4 QAD version generates 5 s of video with audio in about 1 minute on one RTX 5090",
+   "url": "https://x.com/haoailab/status/2125679076514128052",
+   "handle": "@haoailab",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Hao AI Lab's FastVideo and the Kandinsky team quantized and distilled Kandinsky 6.0 Pro video plus audio so a 5-second clip takes about one minute instead of 31 on a single RTX 5090, about 30 times faster.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/hao-ai-lab/FastVideo"
+   ],
+   "vendor": "Hao AI Lab / Kandinsky Lab",
+   "posted_at": "2026-11-25T19:52:39Z",
+   "metrics": {
+    "likes": 30,
+    "reposts": 10,
+    "quotes": 3,
+    "replies": 1,
+    "views": 1674
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Speedup is the team's own number; no independent run seen yet.",
+    "source": null
+   }
+  },
+  {
+   "title": "T3 Code 0.1.12 lets one project and one agent turn span several repos",
+   "url": "https://x.com/jullerino/status/2125495369291477159",
+   "handle": "@jullerino",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "T3 Code projects can now cover a folder of repos, a .code-workspace file or submodules, with one worktree branching all of them so a single agent turn can change every repo.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/pingdotgg/t3code/releases"
+   ],
+   "vendor": "T3 Code",
+   "posted_at": "2026-11-25T07:42:40Z",
+   "metrics": {
+    "likes": 2517,
+    "reposts": 60,
+    "quotes": 25,
+    "replies": 131,
+    "views": 106966
+   },
+   "confirmed_by": [
+    "@theo"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Audit of 25 open-source AI coding GUIs and harnesses: only 1 cleanly honors DO_NOT_TRACK",
+   "url": "https://x.com/ZryMiller/status/2125497546772812061",
+   "handle": "@ZryMiller",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A developer read the source of 25 open-source coding GUIs and agent harnesses for telemetry and rated their privacy hygiene, finding only one fully honors DO_NOT_TRACK and several keep tracking after opt-out. Useful for anyone choosing a harness for sensitive code.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "independent",
+   "posted_at": "2026-11-25T07:51:19Z",
+   "metrics": {
+    "likes": 1029,
+    "reposts": 126,
+    "quotes": 51,
+    "replies": 134,
+    "views": 167142
+   },
+   "confirmed_by": [
+    "@theo"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The author read source only, not network traffic, and accepted corrections from maintainers in replies; one replier notes it grades hygiene, not severity.",
+    "source": "https://x.com/ZryMiller/status/2125497546772812061"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Maintainers of several harnesses replied with corrections or context, the author conceded points he could not see in source, and others pitched their own zero-telemetry tools.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Gemini Live Guided Vision reaches iOS: point the camera and get real-time on-screen guidance",
+   "url": "https://x.com/GeminiApp/status/2125685936344236471",
+   "handle": "@GeminiApp",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Guided Vision, built with blind and low-vision users, gives conversational real-time visual assistance with on-screen cues and is now available in Gemini Live on iOS as well as Android.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://x.com/GeminiApp/status/2107546530987286542"
+   ],
+   "vendor": "Google",
+   "posted_at": "2026-11-25T20:19:55Z",
+   "metrics": {
+    "likes": 419,
+    "reposts": 38,
+    "quotes": 18,
+    "replies": 44,
+    "views": 44420
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Midjourney ships Niji V8 with consistent characters, precision prompting and a dedicated editing model",
+   "url": "https://x.com/midjourney/status/2125328040624521639",
+   "handle": "@midjourney",
+   "group": "applied",
+   "origin": "saved",
+   "summary": "Niji V8, Midjourney's anime model, adds character consistency across images, more literal prompt following and a separate editing model, aimed at creators who need the same character across scenes.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://updates.midjourney.com/niji-v8/"
+   ],
+   "vendor": "Midjourney",
+   "posted_at": "2026-11-24T20:37:46Z",
+   "metrics": {
+    "likes": 4403,
+    "reposts": 347,
+    "quotes": 230,
+    "replies": 182,
+    "views": 812745
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Some users say prompt adherence and hands are still rough and there is no measured consistency benchmark.",
+    "source": "https://x.com/midjourney/status/2125328040624521639"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Anime creators welcome character consistency; a minority complain about prompt adherence, hands and training-data transparency. No one posts a systematic test.",
+    "tried": true,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Google DevRel: rules and guardrails written for older models slow Gemini 4 Neon down; five changes that helped",
+   "url": "https://x.com/_philschmid/status/2125579472594223340",
+   "handle": "@_philschmid",
+   "group": "opensource",
+   "origin": "saved",
+   "summary": "Philipp Schmid lists five prompt, skill and rule changes he made after weeks of evals with Gemini 4 Neon, arguing that scaffolding built for older models now hurts. Same post delivered in the 15:31Z sweep; listed here because the owner saved it.",
+   "kind": "technique",
+   "evidence": "claim",
+   "links": [
+    "https://x.com/i/article/2125577971788386305"
+   ],
+   "vendor": "Google",
+   "posted_at": "2026-11-25T13:16:52Z",
+   "metrics": {
+    "likes": 1269,
+    "reposts": 69,
+    "quotes": 28,
+    "replies": 130,
+    "views": 94423
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Advice from the vendor's own DevRel without published eval numbers.",
+    "source": null
+   }
+  },
+  {
+   "title": "Dictation Bench week 3: Function Voice 1 takes #1 with 82.7% of drafts sendable with zero edits",
+   "url": "https://x.com/voicearena_ai/status/2125701752523788699",
+   "handle": "@voicearena_ai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Voice Arena's weekly dictation benchmark adds five apps; the new leader Function Voice 1 produced drafts that needed no edits 82.7% of the time across 19 apps tested.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Voice Arena",
+   "posted_at": "2026-11-25T21:22:46Z",
+   "metrics": {
+    "likes": 34,
+    "reposts": 25,
+    "quotes": 1,
+    "replies": 2,
+    "views": 12165
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Rapidata robot-manipulation video benchmark: fal's post-trained MiniMax H3 Max ranks #1 of 23 video models",
+   "url": "https://x.com/RapidataAI/status/2125658002388566215",
+   "handle": "@RapidataAI",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Rapidata scored 23 video models on 126 DreamGen-style robot manipulation tasks with 1.44M blind votes on task completion and physical plausibility, a proxy for how useful each is for generating robot training data; fal's version of MiniMax H3 Max came first.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Rapidata",
+   "posted_at": "2026-11-25T18:28:55Z",
+   "metrics": {
+    "likes": 10,
+    "reposts": 2,
+    "quotes": 2,
+    "replies": 1,
+    "views": 737
+   },
+   "confirmed_by": [
+    "@fal"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Human-preference votes, not robot training outcomes; the winner's host promotes the result.",
+    "source": null
+   }
+  },
+  {
+   "title": "Hugging Face datasets now render 3D Gaussian splats: upload .ply files and get a 3D gallery",
+   "url": "https://x.com/calebfahlgren/status/2125695169231987152",
+   "handle": "@calebfahlgren",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Hugging Face dataset pages now show uploaded Gaussian-splat .ply files as an interactive 3D gallery, demonstrated with 360 Met Museum open-access objects converted to splats.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/datasets/cfahlgren1/met-splats-ply"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-25T20:56:36Z",
+   "metrics": {
+    "likes": 18,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 3,
+    "views": 1253
+   },
+   "confirmed_by": [
+    "@victormustar"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Whole-trajectory perplexity ranks agents backwards on Terminal-Bench 2.1; perplexity on 0.3% of selected tokens tracks ability",
+   "url": "https://x.com/wenhaocha1/status/2125721109303533973",
+   "handle": "@wenhaocha1",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A blog post finds that perplexity over full agent trajectories anti-correlates with Terminal-Bench 2.1 rank, but computing it on a small, cleverly chosen slice of tokens recovers the ordering, a cheap proxy eval for agentic ability.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://wenhaochai.com/blogs/agentic-ppl.html",
+    "https://arxiv.org/abs/2410.23771"
+   ],
+   "vendor": "Wenhao Chai",
+   "posted_at": "2026-11-25T22:40:00Z",
+   "metrics": {
+    "likes": 50,
+    "reposts": null,
+    "quotes": null,
+    "replies": null,
+    "views": null
+   },
+   "confirmed_by": [
+    "@eliebakouch"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Open models rederive some of 11 open-math results first found with frontier models, verified on Baseten Sandboxes",
+   "url": "https://x.com/oneill_c/status/2125728486711271687",
+   "handle": "@oneill_c",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Charles O'Neill reports 11 results on open math problems derived with frontier models, then reproduced some with DeepSeek and Kimi; Baseten says 2,900 machine-hours of verification ran in 19 hours on its sandboxes.",
+   "kind": "other",
+   "evidence": "measured",
+   "links": [
+    "https://charlesponeill.com/maths-releases/"
+   ],
+   "vendor": "independent / Baseten",
+   "posted_at": "2026-11-25T23:09:00Z",
+   "metrics": {
+    "likes": 18,
+    "reposts": 4,
+    "quotes": 1,
+    "replies": 1,
+    "views": 766
+   },
+   "confirmed_by": [
+    "@baseten"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Self-reported results; no independent review of the proofs yet.",
+    "source": null
+   }
+  },
+  {
+   "title": "TokenSpeed reaches 645 output tokens/s per user for Muse Spark Open on eight AMD MI355X GPUs",
+   "url": "https://x.com/lightseekorg/status/2125722833489948883",
+   "handle": "@lightseekorg",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "On SemiAnalysis's AgentX benchmark, the TokenSpeed inference engine hit 645 output tokens per second per user for Muse Spark Open on eight Instinct MI355X GPUs, which it calls the highest measured interactivity for that model.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "LightSeek (TokenSpeed)",
+   "posted_at": "2026-11-25T22:46:32Z",
+   "metrics": {
+    "likes": 4,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 137
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Vendor's own benchmark claim.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/Iancu_ai/status/2125598514638201237",
+   "reason": "AI art sample reply (Niji V8 plus MAGI-2 output), no new capability beyond Niji V8, which is kept separately."
+  },
+  {
+   "url": "https://x.com/threejs/status/2125421481517871529",
+   "reason": "Three.js creative web demo video, not AI."
+  },
+  {
+   "url": "https://x.com/threejs/status/2125624713875726423",
+   "reason": "Three.js creative web demo (Penna), not AI."
+  }
+ ],
+ "saved_in": 5,
+ "saved_note": "Owner saves since 19:16Z: 2 from the AI bookmark sync archive (15:28 CT capture, both Three.js, rejected) plus 3 found with one get_users_bookmarks call that the archive has not captured yet (Niji V8 and Philipp Schmid kept, Iancu_ai rejected). This run writes only under inbox/, so they were not appended to /workspace/x-ai-bookmarks. No verdict note sent to any agent.",
+ "list_posts_read": 180,
+ "list_pages": 2,
+ "list_covered_since": true,
+ "deep_reads": 7,
+ "rechecks": 8,
+ "videos": 0,
+ "video_note": "Rex (141 s) and Niji V8 (103 s) clips qualified by length, but no video analysis path was available in this unattended run; none analyzed.",
+ "recheck_notes": [
+  {
+   "url": "https://x.com/AnthropicAI/status/2125627317263466739",
+   "note": "Likes 4624 to 7613, replies 310 to 425; no new pushback read. Doubt stays 0."
+  },
+  {
+   "url": "https://x.com/_mohansolo/status/2125641696377712968",
+   "note": "Likes 5435 to 9034, quotes 107 to 159; no new specific pushback read. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/SemiAnalysis_/status/2125658708357128703",
+   "note": "Likes 367 to 995, quotes 14 to 36; no new pushback read. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/sama/status/2125638790593274259",
+   "note": "Likes 4479 to 6386, replies 511 to 708; still a limited test. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/quantbagel/status/2125650766438523377",
+   "note": "Likes 1278 to 1620, replies 99 to 173; no new pushback read. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/lvwerra/status/2125612908499349833",
+   "note": "Likes 409 to 698; no new pushback read. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/RampLabs/status/2125625946229064118",
+   "note": "Likes 172 to 242; no new pushback read. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/adithya_s_k/status/2125609209723318482",
+   "note": "Likes 113 to 131, flat; doubt stays 1."
+  }
+ ],
+ "security_forwarded": [],
+ "bus_posts": [],
+ "security_na": [
+  {
+   "url": "https://x.com/_josehelps/status/2125725720223842620",
+   "reason": "Verified (mate.security Nov 5, Hackread Nov 23): Google Ads push fake Claude Code install pages whose Copy button swaps in an AMOS stealer command. Same campaign logged N/A on 2026-11-23; awareness only, fleet installs from official channels; not posted."
+  },
+  {
+   "url": "https://x.com/PatchOnChain/status/2125697466519658882",
+   "reason": "T3 Code reading Codex/Claude auth files for telemetry hashes; already posted to the bus as tasks on 2026-11-24 (disable telemetry, update build). Not reposted."
+  },
+  {
+   "url": "https://x.com/1Password/status/2125642686443258030",
+   "reason": "1Password backend incident (no vault contents or keys exposed per vendor); 1Password is not in stack.json and no fleet credential is implicated."
+  },
+  {
+   "url": "https://x.com/vlad_bivouac/status/2125708699112984833",
+   "reason": "simple-git CVE-2026-134815 (--exec via listRemote/raw, fixed 4.1.0): npm library not listed in stack.json, exploitable only with untrusted input to those calls; not verified against advisory, low signal."
+  },
+  {
+   "url": "https://x.com/infrastack_ai/status/2125726538041799055",
+   "reason": "Malicious PyPI/npm packages (mcp-sysinfo-tools, mcp-env-report, mcp-runtime-report, brightlineelectr*): obscure packages with no sign of use in the fleet."
+  },
+  {
+   "url": "https://x.com/certlockerio/status/2125675601964986603",
+   "reason": "GitLab self-managed EE MCP OAuth CVE-2026-135221: fleet does not run self-managed GitLab."
+  },
+  {
+   "url": "https://x.com/VibeIncidents/status/2125726469829845342",
+   "reason": "@connorbritain/mssql-mcp-core SQL injection (<=0.5.0, fixed 0.6.0): MSSQL MCP server not in the fleet."
+  },
+  {
+   "url": "https://x.com/ndayland/status/2125726575866053116",
+   "reason": "Sim (simstudioai) workflow MCP authorization CVE-2026-135162: not run in the fleet."
+  },
+  {
+   "url": "https://x.com/ndayland/status/2125725972339331505",
+   "reason": "astro-airflow-mcp search-path CVE-2026-133632: Airflow MCP not in the fleet."
+  },
+  {
+   "url": "https://x.com/guterz/status/2125679131832603122",
+   "reason": "AWS ECS MCP Server redaction bypass CVE-2026-135614 (fixed 0.1.36): fleet does not run the ECS MCP server."
+  }
+ ],
+ "repos_for_gh_testing": [
+  {
+   "url": "https://github.com/anadim/weight-space-micromachines",
+   "why": "Code for weight-space implants (kept item); MIT but individual owner, so not bus-eligible."
+  },
+  {
+   "url": "https://github.com/Ziems/tracepress",
+   "why": "Trace-analysis tool installed as an agent skill (npx skills add); Apache-2.0, individual owner."
+  },
+  {
+   "url": "https://github.com/hexolight/depbouncer",
+   "why": "Hook that gates npm/PyPI/NuGet installs by Claude Code, Codex, Cursor and Antigravity; created today, 0 stars, license NOASSERTION despite MIT claim."
+  }
+ ],
+ "skipped": "Grok Bot holiday promo, T3 Code telemetry drama threads, Thariq move to OpenAI (hiring), Copilot Fusion discount, GPUI repo (not AI), Hy4 Flash on Fireworks and OCRia-nano tech report (covered earlier), Gemini API CLI PSA (covered Nov 22), LingSante-Live (covered 15:31Z), Gemini Neon arcade demo and Antigravity swarm demos (promo), Sundar One More Pie game, Inkling 2 Mini local partner thanks, Humanist AI Code of Conduct and Dario thread (commentary), CodeRabbit Nemotron routing (old quote), Agent Arena Pareto note, pre-training index visualization, AI Engineer Code Summit talks (YouTube), Omarchy update (not AI), events and holiday posts; both discovery searches were mostly self-promo repos and spam replies.",
+ "follows": {
+  "made": [],
+  "pending": [],
+  "note": "No follows: daily limit already used (3 of 3 on 2026-11-25: @coldniko, @JoshuaSWarren, @xingyudang). No recommendations added."
+ },
+ "horizon_checks": [
+  {
+   "entry": "block-dessa",
+   "reads": 1,
+   "result": "0 posts since 19:16Z; no trigger."
+  }
+ ],
+ "errors": [],
+ "notes": "List paging reached since on page 2 (oldest 16:09Z). get_posts_by_ids again omitted note_post, so long-post links were found by web search. Fallback search for applied group returned 22 posts with a next_token (oldest 19:20Z); the 4 minutes to 19:16Z were not paged."
+}
