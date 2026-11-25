@@ -7,6 +7,8 @@ set -uo pipefail
 cd "$(dirname "$0")/.."
 # Machine-specific settings (for example MAGPIE_YT_HOME) live in an untracked file.
 [ -f .env.local ] && set -a && . ./.env.local && set +a
+export MAGPIE_LANES="${MAGPIE_LANES:-agy,claude,codex}"
+export MAGPIE_AGY_MODEL="${MAGPIE_AGY_MODEL:-gemini-4-neon-high}"
 export PATH="/opt/homebrew/bin:/usr/local/bin:$HOME/.local/bin:/usr/bin:/bin"
 # Pick the GitHub account per call; never switch the machine's active login.
 export GH_ACCOUNT="${MAGPIE_GH_ACCOUNT:-cameronpsutcliff}"

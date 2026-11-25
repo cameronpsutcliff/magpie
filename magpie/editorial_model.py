@@ -68,7 +68,81 @@ def _run_codex(prompt: str, timeout: int) -> str:
         return out.read_text()
 
 
-LANES = {"claude": _run_claude, "codex": _run_codex}
+def _parse_agy_stream_json(raw: str) -> str:
+    for line in raw.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            evt = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        if isinstance(evt, dict) and evt.get("event") == "result":
+            res = evt.get("result") or {}
+            if res.get("status") not in (None, "SUCCESS"):
+                raise RuntimeError(f"agy stream status {res.get('status')}")
+            return str(res.get("response", ""))
+    raise RuntimeError("agy stream missing result event")
+
+
+def _run_agy(prompt: str, timeout: int) -> str:
+    exe = shutil.which("agy") or str(Path.home() / ".local" / "bin" / "agy")
+    if not Path(exe).exists():
+        raise FileNotFoundError("agy")
+    model = os.environ.get("MAGPIE_AGY_MODEL", "gemini-4-neon-high").strip() or "gemini-4-neon-high"
+    effort = os.environ.get("MAGPIE_AGY_EFFORT", "").strip()
+    use_stdin = len(prompt.encode("utf-8")) > 100_000 or prompt.startswith("-")
+    with tempfile.TemporaryDirectory() as tmp:
+        if use_stdin:
+            argv = [
+                exe,
+                "--disable-slash-commands",
+                "--input-format",
+                "stream-json",
+                "--output-format",
+                "stream-json",
+                "--model",
+                model,
+                "--print-timeout",
+                f"{timeout}s",
+            ]
+            if effort:
+                argv.extend(["--effort", effort])
+            argv.append("-p=")
+            payload = json.dumps({"event": "user", "message": {"content": prompt}}) + "\n"
+            r = subprocess.run(argv, input=payload, cwd=tmp, capture_output=True, text=True, timeout=timeout)
+            if r.returncode != 0:
+                raise RuntimeError(f"agy rc {r.returncode}")
+            return _parse_agy_stream_json(r.stdout)
+
+        argv = [
+            exe,
+            "--disable-slash-commands",
+            "--output-format",
+            "json",
+            "--model",
+            model,
+            "--print-timeout",
+            f"{timeout}s",
+        ]
+        if effort:
+            argv.extend(["--effort", effort])
+        argv.append(f"-p={prompt}")
+        r = subprocess.run(argv, cwd=tmp, capture_output=True, text=True, timeout=timeout)
+    if r.returncode != 0:
+        raise RuntimeError(f"agy rc {r.returncode}")
+    try:
+        envelope = json.loads(r.stdout)
+        if isinstance(envelope, dict) and "response" in envelope:
+            if envelope.get("status") not in (None, "SUCCESS"):
+                raise RuntimeError(f"agy status {envelope.get('status')}")
+            return str(envelope["response"])
+    except json.JSONDecodeError:
+        pass
+    return r.stdout
+
+
+LANES = {"claude": _run_claude, "codex": _run_codex, "agy": _run_agy}
 
 
 def legacy_error(lane: str, ex: Exception, raw: str) -> str:

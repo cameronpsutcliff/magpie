@@ -1,3 +1,4 @@
+import json
 import subprocess
 from unittest.mock import Mock
 
@@ -109,3 +110,59 @@ def test_followups_uses_requested_order_and_requires_complete_rewrite(lanes, cap
     second.assert_called_once()
     first.assert_called_once_with(second.call_args.args[0], 42)
     assert capsys.readouterr().err == ""
+
+
+def test_run_agy_defaults_to_neon_high_with_slash_commands_disabled(monkeypatch, tmp_path):
+    fake_agy = tmp_path / "agy"
+    fake_agy.write_text("#!/bin/sh\nexit 0\n")
+    fake_agy.chmod(0o755)
+    monkeypatch.setenv("PATH", str(tmp_path))
+    monkeypatch.delenv("MAGPIE_AGY_MODEL", raising=False)
+    monkeypatch.delenv("MAGPIE_AGY_EFFORT", raising=False)
+
+    seen = {}
+
+    def fake_run(argv, **kwargs):
+        seen["argv"] = argv
+        seen["kwargs"] = kwargs
+        return subprocess.CompletedProcess(argv, 0, '{"status":"SUCCESS","response":"{\\"ready\\":true}"}', "")
+
+    monkeypatch.setattr(model.subprocess, "run", fake_run)
+    out = model._run_agy("classify this", 90)
+    assert out == '{"ready":true}'
+    assert "--disable-slash-commands" in seen["argv"]
+    assert seen["argv"][seen["argv"].index("--model") + 1] == "gemini-4-neon-high"
+    assert "-p=classify this" in seen["argv"]
+
+
+def test_run_agy_routes_dash_prompt_over_stream_json_and_falls_back(monkeypatch, tmp_path):
+    fake_agy = tmp_path / "agy"
+    fake_agy.write_text("#!/bin/sh\nexit 0\n")
+    fake_agy.chmod(0o755)
+    monkeypatch.setenv("PATH", str(tmp_path))
+    monkeypatch.setenv("MAGPIE_AGY_MODEL", "gemini-4-hydrogen-high")
+
+    seen = {}
+
+    def fake_run(argv, **kwargs):
+        seen["argv"] = argv
+        seen["input"] = kwargs.get("input")
+        return subprocess.CompletedProcess(
+            argv, 0,
+            '{"event":"result","result":{"status":"SUCCESS","response":"{\\"ready\\":true}"}}\n',
+            "",
+        )
+
+    monkeypatch.setattr(model.subprocess, "run", fake_run)
+    out = model._run_agy("---\nleading dash prompt", 60)
+    assert out == '{"ready":true}'
+    assert seen["argv"][-1] == "-p="
+    assert json.loads(seen["input"]) == {"event": "user", "message": {"content": "---\nleading dash prompt"}}
+
+    monkeypatch.setenv("PATH", str(tmp_path / "empty"))
+    monkeypatch.setattr(model.Path, "home", lambda: tmp_path / "nohome")
+    fallback = Mock(return_value='{"ready": true}')
+    monkeypatch.setattr(model, "LANES", {"agy": model._run_agy, "claude": fallback})
+    outcome = model.request_json("prompt", model.Policy(30, ("agy", "claude")), lambda data: data["ready"])
+    assert outcome == model.Outcome({"ready": True}, "claude", ["agy: unavailable"])
+    fallback.assert_called_once_with("prompt", 30)
