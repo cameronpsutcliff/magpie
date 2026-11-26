@@ -1,0 +1,558 @@
+{
+ "ran_at": "2026-11-26T03:22:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-25T23:17:00Z",
+ "queries": 13,
+ "calls": 16,
+ "items": [
+  {
+   "title": "Asm-built bare-metal OS boots Qwen3-0.6B in 24 KB and beats llama.cpp CPU decode by 31 to 54 percent",
+   "url": "https://x.com/superalesha/status/2125682626056839259",
+   "handle": "@superalesha",
+   "group": "builders",
+   "origin": "saved",
+   "summary": "A from-scratch x86-64 assembly Multiboot kernel maps Q8_0 Qwen3-0.6B weights from RAM and serves multi-turn chat with no Linux or libc; on one EPYC 7642 the author reports 23.7 to 134.9 tok/s versus 16.6 to 103.0 for llama.cpp, with bit-exact greedy output against PyTorch. MIT source and an ISO builder are public.",
+   "kind": "repo",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/alesha-pro/llm.asm",
+    "https://github.com/alesha-pro/llm.asm/tree/main/02-baremetal-os"
+   ],
+   "vendor": "Alexey Fateev (llm.asm)",
+   "posted_at": "2026-11-25T20:06:45Z",
+   "metrics": {
+    "likes": 6083,
+    "reposts": 655,
+    "quotes": 199,
+    "replies": 358,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single-author benchmark on one CPU, not yet reproduced; one reply argues a trimmed Linux kernel would get most of the gain.",
+    "source": "https://x.com/lanyuezhai/status/2125788989596872705"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Mostly amazement and requests for a plain explanation; a few note it could run on clusters or a Raspberry Pi, nobody posted their own numbers yet.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Karpathy has Claude Opus 5.5 build a Civilization-style US map from 31 public data sources in one 7-hour run",
+   "url": "https://x.com/karpathy/status/2125779541952246039",
+   "handle": "@karpathy",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Using the Claude Code desktop app with Opus 5.5, one long agent session pulled and reconciled Census, BEA, BLS, NOAA, USGS and other datasets onto a 25 km hex grid and shipped a deployed, browsable game-style map with 19 lenses and county explorer, about 45K lines of code. Shows long-horizon data engineering by a coding agent with a public result and source.",
+   "kind": "demo",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Anthropic (Claude Code, Opus 5.5)",
+   "posted_at": "2026-11-26T02:31:52Z",
+   "metrics": {
+    "likes": 3038,
+    "reposts": 251,
+    "quotes": 90,
+    "replies": 283,
+    "views": 130843
+   },
+   "confirmed_by": [
+    "@thecsguy"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Replies praise the data reconciliation work and ask how sources that disagree were handled and how drift was avoided over 7 hours; several joke about usage quotas; one notes the source is an MIT zip.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "OpenCode adds a video generation tool for providers with video models, Grok Imagine and Gemini Omni in Console",
+   "url": "https://x.com/opencode/status/2125737965871681587",
+   "handle": "@opencode",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "The open-source coding agent can now call video models as a tool when a connected provider offers them, so an agent session can produce clips such as launch videos alongside code; OpenCode Console users get Grok Imagine and Gemini Omni.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "OpenCode (SST)",
+   "posted_at": "2026-11-25T23:46:40Z",
+   "metrics": {
+    "likes": 704,
+    "reposts": 28,
+    "quotes": 20,
+    "replies": 54,
+    "views": 42226
+   },
+   "confirmed_by": [
+    "@thdxr"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Mostly enthusiasm; the substantive questions are whether the agent can review its own clip and re-prompt, pricing, and quality or length limits.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "SemiAnalysis GDPx leaderboard: GPT-6.2 Astra leads at 19.3 percent, Claude Fable 5.2 16.4, Gemini 4 Neon 6th at 10.1",
+   "url": "https://x.com/SemiAnalysis_/status/2125743598587003170",
+   "handle": "@SemiAnalysis_",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "SemiAnalysis published GDPx results on economically valuable task suites: Astra tops the overall score while Fable 5.2 leads the software engineering slice (24.4 vs 13.3), and Sol lands near Opus 5.5 at a fraction of the per-task cost.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "SemiAnalysis",
+   "posted_at": "2026-11-26T00:09:02Z",
+   "metrics": {
+    "likes": 458,
+    "reposts": 43,
+    "quotes": 22,
+    "replies": 67,
+    "views": 48462
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers say Neon's low coding score may reflect the Antigravity harness rather than the model, and that a 2.9-point lead needs run-to-run variance; SemiAnalysis says it runs the harnesses itself.",
+    "source": "https://x.com/neonxhigh/status/2125787928219853248"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Interest in a non-coding economic benchmark, skepticism about harness effects and missing variance, and debate over Neon placing 6th.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Six Easy Tasks: real-world robot benchmark where frontier coding agents score 0 of 72 trials and teleoperators 100 percent",
+   "url": "https://x.com/robocurve/status/2125754721847988381",
+   "handle": "@robocurve",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Robocurve's SET asks GPT-6.2 Astra (Codex) and Claude Fable 5.2 (Claude Code) to drive real robot arms through six household manipulations such as capping a bottle or unlocking a padlock; both failed every trial while human teleoperators on the same arms finished all six.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://robocurve.org/blog/six-easy-tasks/"
+   ],
+   "vendor": "Robocurve",
+   "posted_at": "2026-11-26T00:53:14Z",
+   "metrics": {
+    "likes": 120,
+    "reposts": 11,
+    "quotes": 4,
+    "replies": 16,
+    "views": 8268
+   },
+   "confirmed_by": [
+    "@robocurve"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Sand AI's MAGI-2 (480B, 28B active) debuts #1 on Artificial Analysis image-to-video at 0.08 dollars per second",
+   "url": "https://x.com/ArtificialAnlys/status/2125759745655210113",
+   "handle": "@ArtificialAnlys",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Artificial Analysis ranks MAGI-2 statistically tied for first in image-to-video and 7th in text-to-video; it generates up to 30 s of 1080p audio-video with up to 20 reference items, about 7x cheaper than Seedance 2.5. Proprietary API now, with open-source releases stated as intended.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Sand AI",
+   "posted_at": "2026-11-26T01:13:12Z",
+   "metrics": {
+    "likes": 119,
+    "reposts": 8,
+    "quotes": 15,
+    "replies": 23,
+    "views": 13534
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Ollama v0.40.18 runs Inkling 2 Mini on Windows and Linux and adds custom Mac kernels",
+   "url": "https://x.com/ollama/status/2125780317747466548",
+   "handle": "@ollama",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Thinking Machines' 26B (5.4B active) open model now runs locally through Ollama on Windows and Linux with 32 GB of memory or VRAM, with faster Mac performance from custom kernels; Fireworks also began hosting Inkling 2 Small and Mini.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://ollama.com/library/inkling-2-mini",
+    "https://ollama.com/download/"
+   ],
+   "vendor": "Ollama",
+   "posted_at": "2026-11-26T02:34:57Z",
+   "metrics": {
+    "likes": 101,
+    "reposts": 9,
+    "quotes": 2,
+    "replies": 8,
+    "views": 6308
+   },
+   "confirmed_by": [
+    "@FireworksAI_HQ"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Hermes Agent adds hermes fallback: in-place provider and model failover mid-session",
+   "url": "https://x.com/witcheer/status/2125772024819986615",
+   "handle": "@witcheer",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A configurable backup chain swaps a running Hermes Agent session to the next provider and model on rate limits, 5xx errors, auth failures or dropped connections, across CLI, messaging gateways, desktop and cron jobs; a check command validates each backup and its credentials.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Nous Research (Hermes Agent)",
+   "posted_at": "2026-11-26T02:02:00Z",
+   "metrics": {
+    "likes": 16,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 3,
+    "views": 802
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "You.com, NVIDIA and CoreWeave post-train Nemotron 3.5 Lightning for web research: BrowseComp 37.0 to 45.5 percent",
+   "url": "https://x.com/CoreWeave/status/2125741358044344552",
+   "handle": "@CoreWeave",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Three weeks of SFT and RL rollouts with You.com Search lifted the small Nemotron model's BrowseComp accuracy by about 8.5 points while cutting tool calls per task by 30 percent.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "You.com, NVIDIA, CoreWeave",
+   "posted_at": "2026-11-26T00:00:08Z",
+   "metrics": {
+    "likes": 21,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 2,
+    "views": 1835
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Partner-reported result with no linked write-up in the post.",
+    "source": null
+   }
+  },
+  {
+   "title": "NeoWorld-10K v0.1: 1,324 articulated, simulation-checked 3D household assets under CC BY 4.0",
+   "url": "https://x.com/ModelScope2022/status/2125783835820298461",
+   "handle": "@ModelScope2022",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A dataset of editable objects with part structure, joints, axes, limits and kinematic trees, shipped as GLB, USDZ, URDF and Blender sources, for articulated-object reconstruction and embodied AI simulation.",
+   "kind": "dataset",
+   "evidence": "artifact",
+   "links": [
+    "https://modelscope.ai/datasets/Doxi-AI/NeoWorld-10K"
+   ],
+   "vendor": "Doxi AI",
+   "posted_at": "2026-11-26T02:48:56Z",
+   "metrics": {
+    "likes": 4,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 343
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Wide-verify patch speeds NVFP4-KV Qwen3.8 Flash-Next decode 31 to 50 percent at 6 to 16 streams on one RTX PRO 6000",
+   "url": "https://x.com/wei_wang/status/2125743093458600208",
+   "handle": "@wei_wang",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Extending SGLang fast paths from 16 to 64 rows stops speculative-decoding verification from falling onto slow kernels past four concurrent streams; per-step time drops from 25.2 to 18.4 ms at 5 streams and 46.6 to 32.9 ms at 16, with code and full data published.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/Lesilva/qwen38-flashnext-nvfp4-kv",
+    "https://github.com/Lesilva/qwen38-flashnext-nvfp4-kv/blob/main/docs/results.md"
+   ],
+   "vendor": "Lesilva (community patch)",
+   "posted_at": "2026-11-26T00:07:02Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 157
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Nace AI ships Drex Max v1.2, one multimodal checkpoint for general and financial decisions at 0.04 dollars per 1M tokens",
+   "url": "https://x.com/NaceAI/status/2125770218215731315",
+   "handle": "@NaceAI",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "Drex Max and Drex for Finance merge into one model returning probabilities for every option in a single pass; Nace reports 79.0 percent on OSWorld-Verified and 97.1 on BFCL, available through its API.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Nace AI",
+   "posted_at": "2026-11-26T01:54:49Z",
+   "metrics": {
+    "likes": 37,
+    "reposts": 5,
+    "quotes": 4,
+    "replies": 8,
+    "views": 2825
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Vendor-reported benchmark wins with no independent run linked.",
+    "source": null
+   }
+  },
+  {
+   "title": "InclusionAI LingSante MedGuard: medical risk guardrail models, 27B reaches F1 87.4 across 11 detection tasks",
+   "url": "https://x.com/TheInclusionAI/status/2125779628115780011",
+   "handle": "@TheInclusionAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "A guardrail model family aimed at subtle clinical errors (wrong lab rows, misapplied guidelines, confident false conclusions); the 4B variant scores 82.3 F1 on the lab's MedGuardBench, above a 397B general base model.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "InclusionAI (Ant Group)",
+   "posted_at": "2026-11-26T02:32:13Z",
+   "metrics": {
+    "likes": 6,
+    "reposts": 2,
+    "quotes": 1,
+    "replies": 1,
+    "views": 277
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Scored on the lab's own benchmark; no weights link in the post.",
+    "source": null
+   }
+  },
+  {
+   "title": "Google requires AI agents to reach Gmail, Drive and Calendar through Workspace MCP or the Workspace CLI from Feb 1 2027",
+   "url": "https://workspaceupdates.googleblog.com/2026/11/mcp-servers-cli-standardized-usage-tiers-now-available.html",
+   "handle": "@udnagdeote",
+   "group": "applied",
+   "origin": "discovery",
+   "summary": "Google's new Workspace AI Tools Addendum says tools driven by an AI agent or model must use Google-hosted MCP servers instead of calling Workspace REST APIs; from Feb 1 2027 agents on REST are capped at Standard Tier quotas, and Scaled Tier billing starts Apr 1 2027.",
+   "kind": "constraint",
+   "evidence": "artifact",
+   "links": [
+    "https://workspaceupdates.googleblog.com/2026/11/mcp-servers-cli-standardized-usage-tiers-now-available.html",
+    "https://workspace.google.com/terms/ai-tools/",
+    "https://developers.google.com/workspace/guides/quota-usage-tiers",
+    "https://x.com/udnagdeote/status/2125780502657286454"
+   ],
+   "vendor": "Google",
+   "posted_at": "2026-11-26T02:35:00Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "jurisdiction": "Google (Workspace API terms)",
+   "issuer": "Google",
+   "status": "final"
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/tazmannner/status/2125573892974760313",
+   "reason": "AI anime compositing showcase with no new capability."
+  },
+  {
+   "url": "https://x.com/DavidOndrej1/status/2125713650224689178",
+   "reason": "Quote post reaction ('we are in the singularity') with no content."
+  }
+ ],
+ "saved_in": 4,
+ "saved_note": "Owner saves since 23:17Z from the AI bookmark sync archive (01:29Z capture): 2 superalesha posts (thread and repo reply, merged into one kept item) plus 2 the sync discarded (rejected). Midjourney Niji V8 and Philipp Schmid were already vetted last sweep. No get_users_bookmarks call this run. No verdict note sent to any agent.",
+ "list_posts_read": 92,
+ "list_pages": 1,
+ "list_covered_since": true,
+ "deep_reads": 4,
+ "rechecks": 8,
+ "videos": 0,
+ "video_note": "No video analysis path in this unattended run; superalesha and karpathy clips not analyzed.",
+ "recheck_notes": [
+  {
+   "url": "https://x.com/viviencheng__/status/2125631050319831474",
+   "note": "Likes 3384, replies 103, quotes 102; no new pushback read. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/DimitrisPapail/status/2125617058331160951",
+   "note": "Likes 501, replies 53; no new pushback read. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/haoailab/status/2125679076514128052",
+   "note": "Likes 38, flat; doubt stays 1."
+  },
+  {
+   "url": "https://x.com/ZryMiller/status/2125497546772812061",
+   "note": "Likes 1131, replies 145; no new pushback read. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/midjourney/status/2125328040624521639",
+   "note": "Likes 4491, quotes 236; no new pushback read. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/_philschmid/status/2125579472594223340",
+   "note": "Likes 1487, replies 135; no new pushback read. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/RapidataAI/status/2125658002388566215",
+   "note": "Likes 16, flat; doubt stays 1."
+  },
+  {
+   "url": "https://x.com/oneill_c/status/2125728486711271687",
+   "note": "Likes 102, replies 4; doubt stays 1."
+  }
+ ],
+ "security_forwarded": [],
+ "bus_posts": [
+  {
+   "title": "Move fleet agents off direct Gmail/Drive/Calendar REST calls to Workspace MCP or gws CLI before Feb 1 2027",
+   "kind": "task",
+   "ok": true,
+   "posted_at": "2026-11-26T03:23:05Z"
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/TheGlobalTech0/status/2125737355197685820",
+   "reason": "Rehash of the Oct 29 Cursor marketplace trojanized Anthropic.claude-code 2.1.312/2.1.313 incident (Cursor notice Oct 29, update Nov 13); already logged N/A on 2026-11-24, nothing new."
+  },
+  {
+   "url": "https://x.com/infrastack_ai/status/2125776736952754232",
+   "reason": "markdownify-mcp SSRF bypass below 1.2.0: this MCP server is not in stack.json or known fleet use."
+  },
+  {
+   "url": "https://x.com/infrastack_ai/status/2125740238354166265",
+   "reason": "psqlODBC SQL injection fix 18.00.0007: fleet does not use psqlODBC."
+  },
+  {
+   "url": "https://x.com/madiajijah11/status/2125752628059762840",
+   "reason": "Databricks statistics on malicious npm packages in 2026: research summary, no specific package or version to act on."
+  },
+  {
+   "url": "https://x.com/thsottiaux/status/2125784147889393806",
+   "reason": "Codex/ChatGPT plan usage correction (GPT-6.2 Astra limits reached 40 percent faster, Sol 25 percent): quota change, not a security issue or functional break; FYI only."
+  }
+ ],
+ "repos_for_gh_testing": [
+  {
+   "url": "https://github.com/alesha-pro/llm.asm",
+   "why": "Owner save; bare-metal asm OS running Qwen3-0.6B with claimed 31-54 percent CPU speedup over llama.cpp. MIT but individual owner, created 2026-11-25."
+  },
+  {
+   "url": "https://github.com/Lesilva/qwen38-flashnext-nvfp4-kv",
+   "why": "NVFP4 KV and wide-verify SGLang patch with measured decode speedups; Apache-2.0, individual owner."
+  }
+ ],
+ "skipped": "Codex usage-limit correction (pricing), Theo/T3 Code telemetry drama and reposts, Grok Bot Black Friday promo, Demis Hassabis quote, Pirate Face torrent roundup, TensorFold TFQ3 CUDA GB10 numbers and vLLM side-channel repost (covered 15:31Z and 19:16Z), TokenSpeed Kimi K3.1 (covered), aitrackerbot seaglass-alpha (model reference only), Spark x Astron quiz demo (promo), Sakana Schmidhuber interview (YouTube), GitHub Copilot Day and NeurIPS party (events), PhalaNetwork uncensored LoRA, AppSci-Bench (0 engagement, no roster pickup), ERNIE 5.5 Flash Preview (covered Nov 24), Omarchy gaming manual (not AI), commentary posts.",
+ "follows": {
+  "made": [],
+  "pending": [],
+  "note": "No follows and no candidates: daily limit 3 of 3 already used on 2026-11-25 (Central); no browser."
+ },
+ "horizon_checks": 1,
+ "errors": 0,
+ "notes": "List page 1 (92 posts) reached back to 21:26Z, so since was covered. Fallback OR searches for 195 curated non-list accounts in 6 queries (opensource returned none). get_posts_by_ids now returns note_tweet full text. conversation_id searches with sort relevancy returned newest replies first."
+}
