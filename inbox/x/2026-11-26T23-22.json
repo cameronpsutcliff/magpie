@@ -1,0 +1,400 @@
+{
+ "ran_at": "2026-11-26T23:22:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-26T19:23:00Z",
+ "queries": 13,
+ "calls": 15,
+ "items": [
+  {
+   "title": "T3 Code Mobile 2.4 opens a remote dev server's localhost on the phone over a built-in tunnel, plus mobile issue trackers and reply citations",
+   "url": "https://x.com/jullerino/status/2126008211417510213",
+   "handle": "@jullerino",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "The T3 Code mobile app can now render a coding agent's localhost preview natively on iOS or Android by tunnelling loopback traffic through the host environment, so you can check an agent's UI change from the phone without ngrok. It also adds issue trackers on mobile and highlight-to-comment citations on agent replies.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/pingdotgg/t3code/blob/main/docs/user/remote-access.md",
+    "https://github.com/pingdotgg/t3code/pull/38045",
+    "https://github.com/pingdotgg/t3code/pull/39415"
+   ],
+   "vendor": "T3 (Ping Labs)",
+   "posted_at": "2026-11-26T17:40:00Z",
+   "metrics": {
+    "likes": 1129,
+    "reposts": 30,
+    "quotes": 13,
+    "replies": 91,
+    "views": 41944
+   },
+   "confirmed_by": [
+    "@theo",
+    "@thecsguy"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Users single out in-app localhost previews and citations as long-awaited; a few note they were stuck on an old TestFlight build and ask about iPad support and draft sync.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "MacRemote 1.0: open-source Mac app that shares chosen local CLIs and MCP servers with any cloud agent over a permissioned tunnel",
+   "url": "https://x.com/viticci/status/2125994816945246298",
+   "handle": "@viticci",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Federico Viticci released MacRemote, a native macOS MCP host that exposes only the CLI tools and existing MCP servers you pick (it can import Claude Code, Codex and Cursor configs) to ChatGPT, Claude and other agents through a Cloudflare tunnel, with per-app approval, per-tool grants, ask-first for mutating tools and no shell access. Requires macOS 26.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/viticci/MacRemote",
+    "https://www.macstories.net/stories/macremote-connect-any-agent-to-your-macs-tools-now-free-and-open-source/"
+   ],
+   "vendor": "MacStories (Federico Viticci)",
+   "posted_at": "2026-11-26T16:47:00Z",
+   "metrics": {
+    "likes": 374,
+    "reposts": 25,
+    "quotes": 10,
+    "replies": 61,
+    "views": 25272
+   },
+   "confirmed_by": [
+    "@trycua"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers ask whether revoking access mid-run cancels a running task and warn that exposing local tools to agents widens prompt-injection risk; GitHub reports the license as unasserted although the README says MIT.",
+    "source": "https://x.com/illulachy_/status/2125994816945246298"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Most replies praise the per-tool permission model; open questions on revoke-during-run behaviour, tailnet binding instead of a public tunnel, and how it compares with SSH.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Hands-on test of 16 agent browser and computer-use tools on one Apple Silicon Mac: cua-driver plus Ardia or OpenCode Browse win on speed, RAM and tokens",
+   "url": "https://x.com/mvanhorn/status/2125974014032323047",
+   "handle": "@mvanhorn",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Matt Van Horn timed 16 browser and Mac computer-use tools on the same five targets; cua-driver drove native apps in the background at about 27 MB RAM, and OpenCode Browse produced page snapshots 53x smaller than Stagehand while avoiding Chrome's remote-debugging prompts. Useful for anyone picking a browser layer for local coding agents.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://www.techtwitter.com/articles/i-tested-16-agent-browser-and-computer-use-tools-here-is-what-i-switched-to-2125973765104566675",
+    "https://github.com/trycua/cua"
+   ],
+   "vendor": "Independent (Matt Van Horn)",
+   "posted_at": "2026-11-26T15:24:00Z",
+   "metrics": {
+    "likes": 351,
+    "reposts": 23,
+    "quotes": 8,
+    "replies": 66,
+    "views": 26529
+   },
+   "confirmed_by": [
+    "@theo"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single-machine, author-run timings; a replier asks how the prompt-injection fences were actually scored, and another notes Chrome's own DevTools for agents covers much of this.",
+    "source": "https://x.com/shu8ham_/status/2125974014032323047"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Mostly thanks and switch intentions; requests for a multi-agent concurrent run and for TinyFish and other tools in a second round.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "OpenAI GPT-Live-1.1 debuts at #1 on Voice Arena's Jarvis Bench for naturalness, task effectiveness and 100% task success",
+   "url": "https://x.com/voicearena_ai/status/2126042778497069233",
+   "handle": "@voicearena_ai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "On live human-rated calls (2,442 votes), OpenAI's full-duplex GPT-Live-1.1 leads Jarvis Bench at 999 naturalness Elo and 1025 task-effectiveness Elo, and completes 100% of tasks when delegating to GPT 6.2 Sol Medium, ahead of Gemini 3.8 Live Extended Thinking at 98%. The model is in the API as gpt-live-1.1 at $0.05 per active minute.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://voicearena.com/jarvis-bench",
+    "https://developers.openai.com/api/docs/models/gpt-live-1.1"
+   ],
+   "vendor": "Voice Arena / OpenAI",
+   "posted_at": "2026-11-26T19:57:00Z",
+   "metrics": {
+    "likes": 88,
+    "reposts": 56,
+    "quotes": 24,
+    "replies": 6,
+    "views": 78877
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Few replies; they focus on the 100% task success and ask about delegation latency and whether the Sol Medium backend is configurable.",
+    "tried": false,
+    "replies_read": 5
+   }
+  },
+  {
+   "title": "TensorFold 1.3.6 serves TFQ3 natively on CUDA: Qwen3.8-27B on a GB10 (DGX Spark) goes from 15.1 to 56.6 tok/s with speculative drafting",
+   "url": "https://x.com/ashxhart/status/2126056575710188011",
+   "handle": "@ashxhart",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "TensorFold's 3, 4 and 5-bit TFQ3 quantized checkpoints now run on NVIDIA GPUs, with a linux-aarch64 build verified on GB10; with DFlash2 and DSpine drafters, Qwen3.8-27B decode rose 3.75x with bit-identical output in the author's coding test, and full GLM-5.3 runs on CUDA with MTP.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/ashhart/TensorFold/releases/tag/v1.3.6",
+    "https://github.com/ashhart/TensorFold/pull/4986"
+   ],
+   "vendor": "TensorFold (Ash Hart)",
+   "posted_at": "2026-11-26T20:52:00Z",
+   "metrics": {
+    "likes": 88,
+    "reposts": 11,
+    "quotes": 3,
+    "replies": 16,
+    "views": 3519
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Speedups are the author's own single-task benchmark; no independent reproduction yet.",
+    "source": null
+   }
+  },
+  {
+   "title": "Cortheon v2: execution-verified parallel consensus runtime lifts frozen local models up to +30 points on AIME 2025",
+   "url": "https://x.com/ashxhart/status/2126076517356609642",
+   "handle": "@ashxhart",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Cortheon wraps a local model served by Ollama, llama.cpp, vLLM, LM Studio or TensorFold with parallel generated Python, SymPy and Z3 checkers and consensus voting, with no weight changes; the author reports 3-bit GLM-5.3-Flash going from 50% to 80% on AIME 2025 and wins on all 8 benchmark runs across three model families, with per-problem logs in the repo.",
+   "kind": "repo",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/ashhart/Cortheon"
+   ],
+   "vendor": "Cortheon (Ash Hart)",
+   "posted_at": "2026-11-26T22:11:00Z",
+   "metrics": {
+    "likes": 90,
+    "reposts": 8,
+    "quotes": 1,
+    "replies": 25,
+    "views": 2329
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Self-reported; AIME 2025 has 30 problems so 50 to 80 percent is 9 more answers, and gains come with many more inference calls per problem.",
+    "source": null
+   }
+  },
+  {
+   "title": "TontaubeV1.1 Flash: open Apache-2.0 TTS on Qwen3-0.6B that streams in real time on CPU in the browser via WebAssembly",
+   "url": "https://x.com/fritzcremer/status/2126056155122131435",
+   "handle": "@fritzcremer",
+   "group": "opensource",
+   "origin": "discovery",
+   "summary": "A small English text-to-speech model built on Qwen3-0.6B, with weights on Hugging Face, code on GitHub and a browser demo that runs on the CPU through WebAssembly, so speech synthesis needs no GPU or server.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/TontaubeAI/TontaubeV1.1-Flash",
+    "https://github.com/craitech/tontaube",
+    "https://huggingface.co/spaces/TontaubeAI/TontaubeV1.1-Flash"
+   ],
+   "vendor": "Tontaube (craitech)",
+   "posted_at": "2026-11-26T20:51:00Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 6
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No quality or latency numbers; very new and barely noticed (0 likes, 2 HF likes).",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "saved_in": 0,
+ "saved_kept": 0,
+ "saved_note": "No new owner saves since the 19:23Z sweep: /workspace/x-ai-bookmarks/bookmarks_ai.jsonl last changed 13:29Z (131 lines, already vetted) and new_candidates.json from the 21:28Z sync is empty. No get_users_bookmarks call this run.",
+ "list_posts_read": 98,
+ "list_pages": 1,
+ "list_covered_since": true,
+ "deep_reads": 4,
+ "rechecks": 8,
+ "videos": 0,
+ "video_note": "No kept or deep-read clip over 60 s: T3 Code Mobile clip 45.5 s, Voice Arena clip 10.9 s, Tontaube clip 31 s.",
+ "recheck_notes": [
+  {
+   "url": "https://x.com/opencode/status/2125737965871681587",
+   "note": "Likes 2166 (from 704), replies 102. Doubt stays 0."
+  },
+  {
+   "url": "https://x.com/SemiAnalysis_/status/2125743598587003170",
+   "note": "Likes 991 (from 458), quotes 70. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/Alibaba_Qwen/status/2125798914490249411",
+   "note": "Likes 1145 (from 800). Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/SakanaAILabs/status/2125824400935317763",
+   "note": "Likes 156 (from 108). Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/askalphaxiv/status/2125847647072518581",
+   "note": "Likes 248 (from 129). Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/NaceAI/status/2125770218215731315",
+   "note": "Likes 190 (from 37). Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/PrunaAI/status/2125998082110140537",
+   "note": "Likes 112 (from 70). Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/bfl_ai/status/2126025443157664229",
+   "note": "Likes 69 (from 26). Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/METR_Evals/status/2125372372039741753",
+   "note": "Outside the 24 h re-check window but surfaced free via the list: METR's Beth Barnes said she is not sure the post and thread meet METR's standard for research communication and that it is less robust to over-interpretation than intended (https://x.com/BethMayBarnes/status/2126047518572310984, 174 likes). Credible pushback from the publisher itself: treat this item as doubt 2 if Magpie still carries it."
+  }
+ ],
+ "security_forwarded": [
+  {
+   "url": "https://www.zerodayinitiative.com/advisories/ZDI-26-1031/",
+   "matched": "stack.json LiteLLM (Spark, Mini); seen via https://x.com/severitydaily/status/2126047416428220457"
+  },
+  {
+   "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-126139",
+   "matched": "stack.json Docker plus always_forward agent tooling/containers; seen via https://x.com/vulnipulse/status/2126057657119473843"
+  }
+ ],
+ "bus_posts": [],
+ "bus_pending": [
+  {
+   "title": "Check LiteLLM installs are 1.104.0+ with LITELLM_ENABLE_MCP_STDIO unset (ZDI-26-1031)",
+   "kind": "cve",
+   "file": "/workspace/security/bus-pending/20261126-1728-litellm-mcp-stdio-zdi-26-1031.json",
+   "url": "https://www.zerodayinitiative.com/advisories/ZDI-26-1031/"
+  },
+  {
+   "title": "Check fleet for Docker Sandboxes below 0.54.0 (CVE-2026-126139 mount replay)",
+   "kind": "cve",
+   "file": "/workspace/security/bus-pending/20261126-1728-docker-sandboxes-cve-2026-126139.json",
+   "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-126139"
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/BlueVigilint/status/2126054455703376010",
+   "reason": "markdownify-mcp CVE-2026-137308 SSRF (fixed 1.2.0): already logged N/A at 03:22Z and 11:28Z; not in fleet use."
+  },
+  {
+   "url": "https://x.com/infrastack_ai/status/2126088998259146774",
+   "reason": "Daily roundup of 28 malicious npm/PyPI packages (animation-timeline-composer, httpnex, nxxpi-session and others): no names match fleet tooling and no advisory per package checked; no action beyond normal lockfile hygiene."
+  },
+  {
+   "url": "https://x.com/cveverdict/status/2126038585958900093",
+   "reason": "Budibase CVE-2026-137499 account takeover: Budibase not run on the fleet."
+  },
+  {
+   "url": "https://x.com/HugoValters/status/2126078544401055946",
+   "reason": "hickory-resolver CVE-2026-93657 DNSSEC bypass: Rust DNS library not in stack.json."
+  },
+  {
+   "url": "https://x.com/HugoValters/status/2126054888534650963",
+   "reason": "MidnightBSD mport CVE-2026-54583: OS not used."
+  },
+  {
+   "url": "https://x.com/almokhtar_al/status/2126067137512956271",
+   "reason": "Unnamed VS Code extension command execution awaiting CVE: no product named, nothing to verify."
+  }
+ ],
+ "repos_for_gh_testing": [
+  {
+   "url": "https://github.com/viticci/MacRemote",
+   "why": "Kept item; exposes local CLIs and MCP servers to cloud agents, relevant to the Mini. Individual owner, GitHub license NOASSERTION (README says MIT). Not queued."
+  },
+  {
+   "url": "https://github.com/ashhart/Cortheon",
+   "why": "Kept item; local-model consensus runtime with an Ollama/llama.cpp/vLLM proxy and slash-command installer for Claude Code, Cursor and Codex. Individual owner, MIT, 25 stars. Not queued."
+  },
+  {
+   "url": "https://github.com/ashhart/TensorFold",
+   "why": "Kept item; GB10/DGX Spark CUDA runtime for TFQ3 checkpoints. Individual owner, Apache-2.0 (not MIT). Not queued."
+  },
+  {
+   "url": "https://github.com/craitech/tontaube",
+   "why": "Kept discovery item; browser CPU TTS. Small org (24 stars), Apache-2.0 (not MIT). Not queued."
+  }
+ ],
+ "follows": {
+  "made": [],
+  "recommended": [],
+  "candidates": [
+   {
+    "handle": "@vanstriendaniel",
+    "why": "Active opensource roster account (Hugging Face), several kept items this month, no doubt 2+."
+   },
+   {
+    "handle": "@linoy_tsaban",
+    "why": "Active opensource roster account, first-hand Hugging Face diffusion and on-device image work, no doubt 2+."
+   },
+   {
+    "handle": "@voicearena_ai",
+    "why": "Active research roster account publishing method-backed voice model leaderboards (human-rated live calls)."
+   }
+  ],
+  "note": "No browser, so no follows. Central-day allowance already covered by the three recommendations logged at 15:26Z; candidates listed only, not written to x-follows.json."
+ },
+ "horizon_checks": 1,
+ "skipped": "LiteLLM Rust gateway adds drop_params and timeouts on /v1/messages (minor); SemiAnalysis Trainium3 2.28x perf per dollar (repeat of 2026-11-25 item); Rex App Store client (needs Rex Server, teaser); Microduck mass production (shipping news, covered Nov 24); Anthropic Messages API Rust migration (covered Nov 25); looped-transformers explainer blog (explainer, Mixture-of-Loops covered); Ming-Image-0.2-Design on one DGX Spark (covered 15:26Z); Omarchy rollcall and Omarchy on iPad (not AI); Radius gateway update (no release); eliebakouch AI-text removal from pre-training index (no link in post); Antigravity removes GPT-OSS-120b on Nov 30 (already announced on its models page, opinion post); Earendil, opencode and teortaxesTex commentary; AI Engineer talk clips; Thanksgiving posts. Discovery query 1 was mostly non-AI open source self-promotion.",
+ "errors": [],
+ "notes": "List page 1 (98 posts) reached back to 14:14Z, so since 19:23Z was covered (29 posts in window). Fallback OR searches for 195 curated non-list accounts in 6 group queries (31 results; labs and opensource returned 0 on Thanksgiving evening). 2 discovery queries (releases with HF/GitHub/arXiv links; security on stack terms). Horizon: 1 X read (Dessa query, 0 results) plus block.xyz/dessa page (still waitlist; Download buttons are sample clips), no trigger. 1 batched get_posts_by_ids for 8 re-checks plus metrics of kept items. 4 deep reads (reply searches). Primary links checked via GitHub API, Hugging Face API, NVD, ZDI and web search (no X reads). Bus offline: verified security items written to /workspace/security/bus-pending, not posted."
+}

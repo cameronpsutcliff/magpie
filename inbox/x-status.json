@@ -1,23 +1,24 @@
 {
-  "updated_at": "2026-11-26T19:25:00Z",
+  "updated_at": "2026-11-26T23:32:00Z",
   "job": "sweep",
   "prompt": "v6.1",
-  "calls_used_today": 62,
+  "calls_used_today": 77,
   "notes_via_api": false,
   "last_sweep": {
-    "ran_at": "2026-11-26T19:23:00Z",
-    "items": 8,
-    "queries": 9,
-    "deep_reads": 2,
+    "ran_at": "2026-11-26T23:22:00Z",
+    "items": 7,
+    "queries": 13,
+    "deep_reads": 4,
     "rechecks": 8,
     "flagged": 5,
     "saved_in": 0,
     "saved_kept": 0,
     "videos": 0,
-    "security_forwarded": 0,
-    "list_posts_read": 96,
+    "security_forwarded": 2,
+    "list_posts_read": 98,
     "list_pages": 1,
-    "bus_posts": 2
+    "bus_posts": 0,
+    "bus_pending": 2
   },
   "roster": {
     "curated": 223,
@@ -78,7 +79,8 @@
     "Sweep 03:22Z (Nov 26): get_posts_by_ids returned note_tweet full text again this run (contrary to the 15:31Z note). search_posts_all conversation_id queries with sort_order relevancy came back newest-first, so 'top replies' are really latest replies. Real-time alerts went to the Mini bus per the 2026-11-23 owner layout (Workspace MCP requirement task); the prompt's Fleet stack section still says forward to Bouncer. calls_used_today reset for UTC day 2026-11-26 while follow limits stay on the Central day; the prompt could state which day each counter uses.",
     "Sweep 11:28Z: @teortaxesTex (curated builders) returned 19 of 25 builders-query results, almost all political or commentary quote posts, forcing extra windowed reads for the rest of the group; owner may want to review his signal_to_noise. No new saves (archive unchanged since 01:29Z). Video analysis unavailable in this run. Security lead GTIG Claude Code .claude/settings.json hooks handed to parent as a bus task (not POSTed by this lane).",
     "Sweep 15:26Z: block.xyz/dessa links an X handle @RagavanThurair for the Dessa lead; the horizon entry's handle_notes say his handle is unknown. Owner may add it to checks.handles. Also, the prompt still routes security leads to Bouncer via security_forwarded while the current owner instruction routes verified stack items to the Mini bus via bus-pending JSON; this sweep had none of either.",
-    "Sweep 19:23Z: the x connector reported 942 of 1000 shared reads left for the UTC day after this sweep's first calls, consistent with calls_used_today. Two verified supply-chain items (tzero-mcp malicious npm MCP server, PolinRider repo loader) went to the Mini bus per the 2026-11-23 owner layout; the prompt's Fleet stack section still says forward to Bouncer via security_forwarded. Obsidian's official agent connectors are skills packages; the owner's vault and Hermes setup may want to adopt them (a capability item, not a security lead)."
+    "Sweep 19:23Z: the x connector reported 942 of 1000 shared reads left for the UTC day after this sweep's first calls, consistent with calls_used_today. Two verified supply-chain items (tzero-mcp malicious npm MCP server, PolinRider repo loader) went to the Mini bus per the 2026-11-23 owner layout; the prompt's Fleet stack section still says forward to Bouncer via security_forwarded. Obsidian's official agent connectors are skills packages; the owner's vault and Hermes setup may want to adopt them (a capability item, not a security lead).",
+    "Sweep 23:22Z: the Mini bus is offline, so two verified items (LiteLLM ZDI-26-1031 MCP stdio command execution, Docker Sandboxes CVE-2026-126139) were written to /workspace/security/bus-pending for the parent to post; the prompt has no bus-pending path, only security_forwarded. stack.json does not say whether Docker Sandboxes (the agent sandbox plugin) is installed anywhere; worth a verified fact. write_to_file results from the X connector truncate the middle of large list pages; the full text file must be read to parse them."
   ],
   "errors": [],
   "follows_today": 3,
@@ -120,5 +122,5 @@
     "notes": "Run from the box. Skill tool unavailable; skill files read from disk. Owner saves (30d): 2+ kept saves only for @danikkk_wqs and @0xCodez (aggregator/hype-style posts, not first-hand builders); not added, no screen reads spent. Others with 2+ already on roster, curated or avoid. No doubt flags level 2+. Not Sunday: no drafts. Pruned 5 sweep files from 2026-11-10 (older than 14 days)."
   },
   "follows_skipped": "2026-11-26T15:26Z sweep: no browser, so no follows; recommended @TencentHunyuan, @AntLingAGI, @Aleph__Alpha in inbox/x-follows.json (daily limit 0 of 3 used today Central, weekly 6 of 15).",
-  "calls_note": "calls_used_today is the Magpie share counted by this lane for UTC day 2026-11-26 (47 at 15:26Z: 34 before plus 13 this sweep). X reported 957 of 1000 shared reads left at about 15:23Z; resets 2026-11-27T00:00Z."
+  "calls_note": "calls_used_today is the Magpie share counted by this lane for UTC day 2026-11-26 (77 at 23:22Z: 62 before plus 15 this sweep). X reported 929 of 1000 shared reads left at about 23:27Z; resets 2026-11-27T00:00Z."
 }
