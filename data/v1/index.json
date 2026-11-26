@@ -3,79 +3,80 @@
  "days": [
   {
    "date": "2026-11-26",
-   "headline": "3] factoring proof, Mixture-of-Loops Transformer, Nemotron-Labs-Image-30B-A3B, and more",
-   "events": 353,
-   "sources": 575,
-   "enriched": false,
+   "headline": "Running native NVFP4 locally, evaluating agent APIs, training live harness adapters, and more",
+   "events": 437,
+   "sources": 606,
+   "enriched": true,
    "top": [
     {
-     "id": "e93ee6ceceba",
-     "title": "Google Research posts six Cogentic papers written by a Gemini 4 agent, including an unconditional L[1/3] factoring proof",
-     "impact": 5,
-     "vendor": "Google Research / Google DeepMind",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-26-e93ee6ceceba"
-    },
-    {
-     "id": "fa05c89de4d5",
-     "title": "Mixture-of-Loops Transformer",
-     "impact": 5,
-     "vendor": "Research",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-26-fa05c89de4d5"
-    },
-    {
      "id": "2d9c5f5d440f",
-     "title": "nvidia/Nemotron-Labs-Image-30B-A3B",
+     "title": "NVIDIA releases open weights for Nemotron-Labs-Image-30B-A3B",
      "impact": 4,
      "vendor": "NVIDIA",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-26-2d9c5f5d440f"
     },
     {
+     "id": "56bdd5b3103d",
+     "title": "llama.cpp adds NVFP4 support across Apple Silicon and GPUs",
+     "impact": 5,
+     "vendor": "llama.cpp",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-26-56bdd5b3103d"
+    },
+    {
      "id": "f0387f1179d7",
-     "title": "alesha-pro/llm.asm",
-     "impact": 4,
+     "title": "llm.asm runs Qwen3-0.6B on bare metal in assembly",
+     "impact": 3,
      "vendor": "Open source",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-26-f0387f1179d7"
     },
     {
-     "id": "f454167ae3a3",
-     "title": "google-labs-code/stitch-skills",
-     "impact": 5,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-26-f454167ae3a3"
+     "id": "3cd4e48abda1",
+     "title": "T3 Code 0.1.12 spans multiple repos per agent turn",
+     "impact": 4,
+     "vendor": "T3 Code",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-26-3cd4e48abda1"
+    },
+    {
+     "id": "b333cc0fb65d",
+     "title": "Real2SimLab unifies real-to-simulation transfer evaluation for coding agents",
+     "impact": 3,
+     "vendor": "Real2SimLab",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-26-b333cc0fb65d"
     }
    ],
    "vendors": [
     "Open source",
     "Research",
     "Anthropic",
+    "NVIDIA",
     "OpenAI",
-    "Google",
-    "Hugging Face"
+    "Google"
    ],
    "topics": {
-    "agents": 130,
-    "models": 129,
-    "coding": 107,
-    "multimodal": 89,
-    "infra": 67,
-    "evals": 48,
-    "memory": 36,
-    "research": 36,
-    "mcp": 36,
-    "local": 34,
+    "agents": 146,
+    "models": 142,
+    "coding": 121,
+    "multimodal": 98,
+    "infra": 71,
+    "evals": 49,
+    "local": 41,
+    "research": 40,
+    "mcp": 37,
+    "memory": 37,
     "security": 17,
-    "reverse": 14,
-    "robotics": 12
+    "robotics": 14,
+    "reverse": 13
    },
    "kinds": {
-    "social": 80,
-    "newsletter": 51,
+    "social": 89,
+    "video": 75,
+    "newsletter": 54,
     "repo": 42,
     "paper": 40,
-    "changelog": 37,
+    "changelog": 35,
     "model": 30,
-    "community": 27,
     "blog": 26,
+    "community": 26,
     "space": 20
    },
    "constraints": [],
