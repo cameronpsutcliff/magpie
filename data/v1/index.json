@@ -2,6 +2,86 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-11-26",
+   "headline": "3] factoring proof, Mixture-of-Loops Transformer, Nemotron-Labs-Image-30B-A3B, and more",
+   "events": 353,
+   "sources": 575,
+   "enriched": false,
+   "top": [
+    {
+     "id": "e93ee6ceceba",
+     "title": "Google Research posts six Cogentic papers written by a Gemini 4 agent, including an unconditional L[1/3] factoring proof",
+     "impact": 5,
+     "vendor": "Google Research / Google DeepMind",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-26-e93ee6ceceba"
+    },
+    {
+     "id": "fa05c89de4d5",
+     "title": "Mixture-of-Loops Transformer",
+     "impact": 5,
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-26-fa05c89de4d5"
+    },
+    {
+     "id": "2d9c5f5d440f",
+     "title": "nvidia/Nemotron-Labs-Image-30B-A3B",
+     "impact": 4,
+     "vendor": "NVIDIA",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-26-2d9c5f5d440f"
+    },
+    {
+     "id": "f0387f1179d7",
+     "title": "alesha-pro/llm.asm",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-26-f0387f1179d7"
+    },
+    {
+     "id": "f454167ae3a3",
+     "title": "google-labs-code/stitch-skills",
+     "impact": 5,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-26-f454167ae3a3"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Research",
+    "Anthropic",
+    "OpenAI",
+    "Google",
+    "Hugging Face"
+   ],
+   "topics": {
+    "agents": 130,
+    "models": 129,
+    "coding": 107,
+    "multimodal": 89,
+    "infra": 67,
+    "evals": 48,
+    "memory": 36,
+    "research": 36,
+    "mcp": 36,
+    "local": 34,
+    "security": 17,
+    "reverse": 14,
+    "robotics": 12
+   },
+   "kinds": {
+    "social": 80,
+    "newsletter": 51,
+    "repo": 42,
+    "paper": 40,
+    "changelog": 37,
+    "model": 30,
+    "community": 27,
+    "blog": 26,
+    "space": 20
+   },
+   "constraints": [],
+   "threats": []
+  },
+  {
    "date": "2026-11-25",
    "headline": "Run a 27B coder in 5.9 GB, prove 9/4, slice Gemini files, and more",
    "events": 478,
@@ -5282,5 +5362,5 @@
    }
   }
  ],
- "latest": "2026-11-25"
+ "latest": "2026-11-26"
 }
