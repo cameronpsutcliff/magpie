@@ -1,0 +1,372 @@
+{
+ "ran_at": "2026-11-26T19:23:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-26T15:26:00Z",
+ "queries": 9,
+ "calls": 15,
+ "items": [
+  {
+   "title": "Obsidian ships official agent connectors: skills that let Hermes, Claude, ChatGPT and others read and write a local vault",
+   "url": "https://x.com/obsdmd/status/2125700941156651151",
+   "handle": "@obsdmd",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Obsidian now publishes official skill packages (Obsidian Flavored Markdown, Bases, JSON Canvas, the Obsidian CLI, Headless Sync and Publish) so any agent can use a vault as a shared, user-owned knowledge base. Nous added it to the Hermes Agent plugin marketplace as a verified, instructions-only package, so Hermes users can point their agent at their notes today.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://hermes-agent.nousresearch.com/marketplace/obsidian",
+    "https://x.com/NousResearch/status/2125989568721637578"
+   ],
+   "vendor": "Obsidian; Nous Research (Hermes Agent)",
+   "posted_at": "2026-11-25T21:19:00Z",
+   "metrics": {
+    "likes": 16386,
+    "reposts": 1369,
+    "quotes": 550,
+    "replies": 432,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@NousResearch",
+    "@Teknium",
+    "@witcheer"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers point out the 'connector' is a set of skills, not an MCP server, needs the desktop app running or Headless Sync, and that agents could already work on an Obsidian folder.",
+    "source": "https://x.com/FengshaoL/status/2126017844337123645"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Mostly enthusiastic about user-owned shared context across agents; skeptics say it repackages what a local folder plus skills already did, and one user benchmarking it says CLI lookups and edits cost more at equal or slower speed.",
+    "tried": true,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Hugging Face trains a four-agent swarm on one shared Qwen3-0.6B policy: team success 6.6% to 82.3% with 37% fewer tokens",
+   "url": "https://x.com/ben_burtenshaw/status/2125975365420191816",
+   "handle": "@ben_burtenshaw",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Part 1 of a Hugging Face series reproduces the s3 information-sharing task with TRL async GRPO: four agents with private inputs learn to message each other under a token-penalized team reward. The post gives the training loop, reward and a roughly $20 to $50 reproduction path, so builders can test whether multi-agent setups actually cooperate rather than just spend more compute.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/blog/training-swarms"
+   ],
+   "vendor": "Hugging Face",
+   "posted_at": "2026-11-26T15:30:00Z",
+   "metrics": {
+    "likes": 176,
+    "reposts": 24,
+    "quotes": 1,
+    "replies": 19,
+    "views": 10629
+   },
+   "confirmed_by": [
+    "@DirhousssiAmine"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "JetBrains releases Mellum2.1 Instruct, a 12B-A2.5B open coding model for sub-agents and tool loops, with an MTP head",
+   "url": "https://x.com/jetbrains/status/2125884781929886178",
+   "handle": "@jetbrains",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Mellum2.1 Instruct is the non-reasoning sibling of Mellum2.1 Thinking (same MoE architecture and RL post-training), uses about half the tokens of Thinking on agentic coding tasks, and ships with a multi-token-prediction head for up to 1.8x faster generation. GGUF builds run through llama.cpp; one roster builder reports 25 to 30 tokens/s on an M3 Pro laptop.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/JetBrains/Mellum2.1-12B-A2.5B-Instruct",
+    "https://huggingface.co/JetBrains/Mellum2.1-12B-A2.5B-Instruct-GGUF",
+    "https://blog.jetbrains.com/ai/2026/11/mellum2-1-instruct-is-out-bringing-faster-answers-for-coding-agents/"
+   ],
+   "vendor": "JetBrains",
+   "posted_at": "2026-11-26T09:30:00Z",
+   "metrics": {
+    "likes": 63,
+    "reposts": 7,
+    "quotes": 4,
+    "replies": 6,
+    "views": 0
+   },
+   "confirmed_by": [
+    "@mervenoyann"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Texas A&M measures GPU memory traffic over NVLink C2C on DGX Spark (GB10) with CUPTI L2 counters, within 0.005%",
+   "url": "https://x.com/wei_wang/status/2125985283833278513",
+   "handle": "@wei_wang",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "On GB10 every GPU L2 miss crosses NVLink C2C to CPU-attached LPDDR5X, yet DCGM, NVML, nvidia-smi and the Linux C2C PMU expose no byte counts. The paper samples five L2 sector counters every 10 ms via CUPTI from a non-attached process and matches known copy sizes within 0.005% on DGX Spark, with an MIT-licensed tool, giving Spark owners real memory-bandwidth telemetry for inference tuning.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2611.29915",
+    "https://github.com/deepakpanigrahy03/pravaha-mem"
+   ],
+   "vendor": "Texas A&M University",
+   "posted_at": "2026-11-26T16:09:00Z",
+   "metrics": {
+    "likes": 7,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 7,
+    "views": 696
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Pruna launches P-Video-2-Pro-Lipsync on MiniMax H3: re-sync a talking video to new audio at $0.025 per second",
+   "url": "https://x.com/PrunaAI/status/2125998082110140537",
+   "handle": "@PrunaAI",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "An API model that takes an existing talking video plus new audio and re-renders only the mouth, keeping shot, framing and identity, for dubbing and line fixes. Partners list clips up to 60 s at 1080p, about 14 s to process a 5 s clip and 10 tested languages; it is live on Pruna, Runware and each::labs on day one.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Pruna AI",
+   "posted_at": "2026-11-26T17:00:00Z",
+   "metrics": {
+    "likes": 70,
+    "reposts": 9,
+    "quotes": 7,
+    "replies": 3,
+    "views": 2668
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Vendor and reseller posts only; no independent quality comparison yet.",
+    "source": null
+   }
+  },
+  {
+   "title": "Retro Diffusion's RD Flow 64, a 271M-parameter pixel-art text-to-image model, now runs in real time in the browser on WebGPU",
+   "url": "https://x.com/linoy_tsaban/status/2125976499354538250",
+   "handle": "@linoy_tsaban",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "RD Flow 64 is a small flow-matching model that draws 64x64 pixel-art sprites and game assets, about 74x smaller than Qwen Image 2.1. An ONNX port and static WebGPU Space make it run locally in a browser tab with no server GPU.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/Retro-Diffusion/rd-flow-64",
+    "https://huggingface.co/linoyts/RD-Flow-64-ONNX",
+    "https://huggingface.co/spaces/linoyts/RD-Flow-64-WebGPU"
+   ],
+   "vendor": "Retro Diffusion; Hugging Face",
+   "posted_at": "2026-11-26T15:34:00Z",
+   "metrics": {
+    "likes": 6,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 448
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "FLUX 3 Action ranks first among VLA and world-action models on Poke & Wiggle's physical Reality Check robot benchmark",
+   "url": "https://x.com/bfl_ai/status/2126025443157664229",
+   "handle": "@bfl_ai",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Poke & Wiggle built an open benchmark that runs robot policies on its own physical stations, and Black Forest Labs reports FLUX 3 Action is the top VLA/WAM there, with every clip under the model's control. This is a second third-party robotics result for the model after RoboColosseum.",
+   "kind": "eval",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Black Forest Labs; Poke & Wiggle",
+   "posted_at": "2026-11-26T18:48:00Z",
+   "metrics": {
+    "likes": 26,
+    "reposts": 7,
+    "quotes": 2,
+    "replies": 5,
+    "views": 1319
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Vendor-reported rank; leaderboard link not given in the post.",
+    "source": null
+   }
+  },
+  {
+   "title": "PyTorch Lightning can checkpoint straight to Hugging Face Storage Buckets and resume from them",
+   "url": "https://x.com/vanstriendaniel/status/2125986915505562070",
+   "handle": "@vanstriendaniel",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Pointing Lightning's ModelCheckpoint at an hf://buckets/ path writes checkpoints to a Hugging Face Storage Bucket and resumes training from it, removing the separate upload step for long or preemptible training jobs.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Lightning AI; Hugging Face",
+   "posted_at": "2026-11-26T16:15:00Z",
+   "metrics": {
+    "likes": 2,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 2,
+    "views": 473
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No docs or release link in the post.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "saved_in": 0,
+ "saved_kept": 0,
+ "saved_note": "No new owner saves since the 15:26Z sweep: AI bookmark sync runs at 15:30Z and 17:34Z found nothing new (archive last changed 13:29Z, already vetted). No get_users_bookmarks call this run. No verdict note sent to any agent.",
+ "list_posts_read": 96,
+ "list_pages": 1,
+ "list_covered_since": true,
+ "deep_reads": 2,
+ "rechecks": 8,
+ "videos": 0,
+ "video_note": "No deep-read or saved item carried a clip over 60 s (Obsidian post is an image). The 78 s nano-swarm clip was not deep-read; video hand-off is unavailable in unattended runs.",
+ "recheck_notes": [
+  {
+   "url": "https://x.com/superalesha/status/2125682626056839259",
+   "note": "Likes 11743, replies 612. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/midjourney/status/2125328040624521639",
+   "note": "Likes 4601. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/karpathy/status/2125779541952246039",
+   "note": "Likes 20561, replies 1145. Doubt stays 0."
+  },
+  {
+   "url": "https://x.com/viviencheng__/status/2125631050319831474",
+   "note": "Likes 5424. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/_philschmid/status/2125579472594223340",
+   "note": "Likes 1782. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/ZryMiller/status/2125497546772812061",
+   "note": "Likes 1347. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/AntLingAGI/status/2125916926048358827",
+   "note": "Likes 630 (from 490), quotes 85. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/TencentHunyuan/status/2125928146113585468",
+   "note": "Likes 618 (from 427). Doubt stays 1."
+  }
+ ],
+ "security_forwarded": [],
+ "bus_posts": [
+  {
+   "title": "Check fleet for malicious npm tzero-mcp 12.3.0 (MCP server)",
+   "kind": "cve",
+   "url": "https://github.com/advisories/GHSA-pm3r-rxg9-cj5j",
+   "seen_via": "https://x.com/infrastack_ai/status/2126015171172917544",
+   "posted_at": "2026-11-26T19:22:22Z"
+  },
+  {
+   "title": "Scan local repos for PolinRider loader (forged commits, conftest.py, VS Code folderOpen)",
+   "kind": "cve",
+   "url": "https://safedep.io/blog/polinrider-python-loader-ethereum-calldata.md",
+   "seen_via": "https://x.com/DFIR_Radar/status/2125999265621369296",
+   "posted_at": "2026-11-26T19:22:32Z"
+  }
+ ],
+ "bus_pending": [],
+ "security_na": [
+  {
+   "url": "https://x.com/KaitanSecurity/status/2126005612223844407",
+   "reason": "vLLM CVE-2026-137476 (GHSA-mwgq-9582-w2vf, NVD): unauthenticated oversized 400-error responses in the OpenAI-compatible server, 0.3.0 to before 0.30.0, fixed 0.30.0; CVSS low/medium DoS, 'exploit in the wild' not in any primary source; vLLM is not in stack.json. Upgrade at next vLLM bump, not bus-worthy."
+  },
+  {
+   "url": "https://x.com/ParameterWatch/status/2125999927662948523",
+   "reason": "pulp_python SSRF CVE-2026-126984: Pulp is not run on the fleet."
+  },
+  {
+   "url": "https://x.com/botnewsnetwork/status/2126021835410337956",
+   "reason": "Mittwald hosting MCP-server breach follow-up: vendor-specific hosting platform, not used."
+  },
+  {
+   "url": "https://x.com/botnewsnetwork/status/2126022156714983661",
+   "reason": "Microsoft agent-framework PyPI 1.26.1/1.26.2 compromised release: already logged in earlier sweeps (Nov 23 to 25); no new advisory."
+  },
+  {
+   "url": "https://x.com/Faseel_infosec/status/2126005804113314153",
+   "reason": "Four AI-coding-named malicious npm packages (ali-ai-coding-trace, toga-ai): no advisory link checked this run and no stack match; left unforwarded."
+  },
+  {
+   "url": "https://x.com/comsecteam/status/2125988729928229368",
+   "reason": "Recap of earlier Fireworks AI incidents; no new primary report."
+  }
+ ],
+ "repos_for_gh_testing": [
+  {
+   "url": "https://github.com/deepakpanigrahy03/pravaha-mem",
+   "why": "Tool from the kept GB10 C2C memory-traffic paper; useful for DGX Spark telemetry. MIT but individual owner, 0 stars, created 2026-11-17. Not queued."
+  },
+  {
+   "url": "https://github.com/invergent-ai/surogate",
+   "why": "Surogate v1.5.16 Spark-X2.5 LoRA recipe seen via @SparkLLM; org owner, Apache-2.0 (not MIT). Not kept, not queued."
+  }
+ ],
+ "follows": {
+  "made": [],
+  "recommended": [],
+  "note": "No browser, so no follows. Central-day follow allowance already covered by the three recommendations logged at 15:26Z (@TencentHunyuan, @AntLingAGI, @Aleph__Alpha, still pending); week 6 of 15. Next in line if the owner wants more: @vanstriendaniel and @linoy_tsaban (active, opensource, 4 and 3+ kept items, no doubt 2+)."
+ },
+ "horizon_checks": 1,
+ "skipped": "Hy4 flash 10T tokens/day on OpenCode and Black Friday contest (usage/promo); Antigravity community showcase and Gemini 4 Neon oven planner (demos, model covered); Antigravity quota reset; TRL async RL examples (trainer covered Nov 24); RetroEnv chemistry RL repost (covered Nov 25); FisherR1/P-Bench NeurIPS oral repost (covered Nov 25); robocurve SET benchmark reposts (covered 03:22Z); OCRia-nano-1 praise (covered); speculative encoding (Ramp Labs, covered); llama.cpp v1.1.0 (already in today's edition from GitHub); TensorFold GLM 5.3 on 4x Mac Studio 70 tps and EXLR8 TFQ codebook (TensorFold covered repeatedly, no new artifact); Zig+CUDA Inkling engine by Gemini Neon (partly promo for a company, no code); Surogate Spark-X2.5 LoRA recipe (minor docs); Tinker free Inkling 2 Mini training (pricing promo); OpenRouter Jevons paradox data (market analysis); meshy-7.5 (aggregator, no link); GLM 5.5/Kimi K4 delay rumor; Ratchet teaser (coming soon); Sakana Agentic Scientist talk (YouTube recap); Sentence Transformers award; Thanksgiving posts; teortaxesTex commentary. Discovery results were low-signal self-promotion; Sberbank open model and Tencent OmniEVIE-4B surfaced only via small accounts and were not verified this run.",
+ "errors": 0,
+ "notes": "List page 1 (96 posts) reached back to 12:01Z, so since was covered (about 60 posts in window). Fallback OR searches for 195 curated non-list accounts in 6 group queries (44 results, quiet Thanksgiving). 2 discovery queries (releases with links; security on stack terms). Horizon: 1 X read (Dessa query, 0 results) plus block.xyz/dessa page (still waitlist and safety-researcher early access), no trigger. Primary links from HF/GitHub/arXiv APIs and web search (no X reads)."
+}
