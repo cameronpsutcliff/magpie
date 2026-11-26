@@ -227,6 +227,32 @@
       "status": "followed",
       "why": "Active roster account with 4 kept first-hand capability items in 30 days and no doubt flag of 2+. Followed in browser as @sutcliffcc at ~5:45 AM CT.",
       "evidence": []
+    },
+    {
+      "handle": "@NVIDIAAI",
+      "date": "2026-11-26",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Active roster account; official NVIDIA AI account with 9 kept first-hand release items in the kept sweep files and no doubt flag of 2+. No browser in the 11:28Z sweep, so recommended for a browser follow as @sutcliffcc.",
+      "evidence": []
+    },
+    {
+      "handle": "@haoailab",
+      "date": "2026-11-26",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Active roster account; UCSD Hao AI Lab, first-hand research and inference-system releases, 8 kept items, no doubt flag of 2+. No browser in the 11:28Z sweep, so recommended for a browser follow as @sutcliffcc.",
+      "evidence": [
+        "https://x.com/haoailab/status/2125679076514128052"
+      ]
+    },
+    {
+      "handle": "@skalskip92",
+      "date": "2026-11-26",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Active roster account; first-hand computer-vision builder (Roboflow), 7 kept items, no doubt flag of 2+. No browser in the 11:28Z sweep, so recommended for a browser follow as @sutcliffcc.",
+      "evidence": []
     }
   ]
 }

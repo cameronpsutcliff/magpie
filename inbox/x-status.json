@@ -1,21 +1,21 @@
 {
-  "updated_at": "2026-11-26T03:26:00Z",
+  "updated_at": "2026-11-26T11:31:00Z",
   "job": "sweep",
   "prompt": "v6.1",
-  "calls_used_today": 16,
+  "calls_used_today": 34,
   "notes_via_api": false,
   "last_sweep": {
-    "ran_at": "2026-11-26T03:22:00Z",
-    "items": 14,
-    "queries": 13,
-    "deep_reads": 4,
+    "ran_at": "2026-11-26T11:28:00Z",
+    "items": 10,
+    "queries": 11,
+    "deep_reads": 3,
     "rechecks": 8,
-    "flagged": 7,
-    "saved_in": 4,
-    "saved_kept": 1,
+    "flagged": 6,
+    "saved_in": 0,
+    "saved_kept": 0,
     "videos": 0,
-    "security_forwarded": 0,
-    "list_posts_read": 92,
+    "security_forwarded": 1,
+    "list_posts_read": 95,
     "list_pages": 1,
     "bus_posts": 1
   },
@@ -75,9 +75,12 @@
     "Sweep 15:31Z (Nov 25): x get_posts_by_ids did not return note_post (long-post full text) even when requested, so long posts are truncated; t.co links were resolved with plain HEAD requests instead. The min_faves operator in search_posts_all appeared to be ignored (discovery results had 0 likes), so discovery queries need relevancy sort plus manual filtering. Follow week counting: follows_this_week was 3 in the status file but x-follows.json shows 6 followed on Nov 24 and 25; set to 6 (Mon-Sun week); the prompt could define the week explicitly. No Community Notes via API, and no browser to check them.",
     "Sweep 19:16Z: search operator min_likes: had no effect in search_posts_all (zero-like posts returned), so the release discovery query mostly surfaced self-promo repos; a roster-quoted discovery approach would be cheaper. Real-time security alerts now go to the Mini bus per the owner's 2026-11-23 rule, which conflicts with the prompt's 'Forward to Bouncer' section; the prompt may need updating.",
     "Sweep 23:17Z: get_users_bookmarks again surfaced 3 saves the 2-hour archive sync had not captured; the sweep cannot append to /workspace/x-ai-bookmarks (inbox-only writes), so the sync routine must pick them up. Video analysis has no available hand-off path in unattended runs, so qualifying clips are skipped.",
-    "Sweep 03:22Z (Nov 26): get_posts_by_ids returned note_tweet full text again this run (contrary to the 15:31Z note). search_posts_all conversation_id queries with sort_order relevancy came back newest-first, so 'top replies' are really latest replies. Real-time alerts went to the Mini bus per the 2026-11-23 owner layout (Workspace MCP requirement task); the prompt's Fleet stack section still says forward to Bouncer. calls_used_today reset for UTC day 2026-11-26 while follow limits stay on the Central day; the prompt could state which day each counter uses."
+    "Sweep 03:22Z (Nov 26): get_posts_by_ids returned note_tweet full text again this run (contrary to the 15:31Z note). search_posts_all conversation_id queries with sort_order relevancy came back newest-first, so 'top replies' are really latest replies. Real-time alerts went to the Mini bus per the 2026-11-23 owner layout (Workspace MCP requirement task); the prompt's Fleet stack section still says forward to Bouncer. calls_used_today reset for UTC day 2026-11-26 while follow limits stay on the Central day; the prompt could state which day each counter uses.",
+    "Sweep 11:28Z: @teortaxesTex (curated builders) returned 19 of 25 builders-query results, almost all political or commentary quote posts, forcing extra windowed reads for the rest of the group; owner may want to review his signal_to_noise. No new saves (archive unchanged since 01:29Z). Video analysis unavailable in this run. Security lead GTIG Claude Code .claude/settings.json hooks handed to parent as a bus task (not POSTed by this lane)."
   ],
-  "errors": [],
+  "errors": [
+    "11:28Z sweep: one builders search rejected (400) for combining until_id with start_time; retried with end_time. min_likes operator did not filter search results."
+  ],
   "follows_today": 3,
   "last_roster_review": {
     "date": "2026-11-25",
@@ -116,6 +119,6 @@
     "sunday_drafts": false,
     "notes": "Run from the box. Skill tool unavailable; skill files read from disk. Owner saves (30d): 2+ kept saves only for @danikkk_wqs and @0xCodez (aggregator/hype-style posts, not first-hand builders); not added, no screen reads spent. Others with 2+ already on roster, curated or avoid. No doubt flags level 2+. Not Sunday: no drafts. Pruned 5 sweep files from 2026-11-10 (older than 14 days)."
   },
-  "follows_skipped": "2026-11-26T03:22Z sweep: no follows or candidates; daily limit 3 of 3 used on 2026-11-25 Central, weekly 6 of 15; no browser.",
-  "calls_note": "calls_used_today is the Magpie share counted by this lane for UTC day 2026-11-26 (16 at 03:22Z). X reported 984 of 1000 shared reads left at about 03:20Z; resets 2026-11-27T00:00Z."
+  "follows_skipped": "2026-11-26T11:28Z sweep: no browser, so no follows; recommended @NVIDIAAI, @haoailab, @skalskip92 in inbox/x-follows.json (daily limit 0 of 3 used today Central, weekly 6 of 15).",
+  "calls_note": "calls_used_today is the Magpie share counted by this lane for UTC day 2026-11-26 (34 at 11:28Z: 16 before plus 18 this sweep). X reported 966 of 1000 shared reads left at about 11:27Z; resets 2026-11-27T00:00Z."
 }

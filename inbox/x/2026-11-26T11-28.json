@@ -1,0 +1,438 @@
+{
+ "ran_at": "2026-11-26T11:28:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-26T03:22:00Z",
+ "queries": 11,
+ "calls": 18,
+ "items": [
+  {
+   "title": "Qwen-Audio-3.1 ASR, TTS and Realtime APIs widen to 59, 65 and 53 languages with Chinese dialect support",
+   "url": "https://x.com/Alibaba_Qwen/status/2125798914490249411",
+   "handle": "@Alibaba_Qwen",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Alibaba's hosted Qwen-Audio-3.1 speech endpoints now cover 59 languages plus 8 Chinese dialects for recognition, 65 languages plus 6 dialects for synthesis, and 53 plus 6 for realtime voice, selectable by language hint in the API. Useful for voice agents that must handle dialect speech; no new weights or accuracy tables came with it.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://docs.qwencloud.com/developer-guides/speech/voice-list/qwen-audio-tts"
+   ],
+   "vendor": "Alibaba Qwen",
+   "posted_at": "2026-11-26T03:48:51Z",
+   "metrics": {
+    "likes": 800,
+    "reposts": 83,
+    "quotes": 52,
+    "replies": 112,
+    "views": 77470
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Hosted-only update with no benchmark tables, and the published dialect count dropped from 16 at the September launch to 8 without explanation; repliers asked for weights and Hugging Face links.",
+    "source": "https://www.orcarouter.ai/blog/qwen-audio-3-1-multilingual-dialect-upgrade"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Repliers welcomed dialect coverage but many asked where the weights or Hugging Face links are and whether it ships in the same checkpoints; no one reported test results.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "ABot-World 0.5 Iris: open 5B causal world model turns one image into a real-time, keyboard-controllable video world",
+   "url": "https://x.com/ModelScope2022/status/2125907860533989784",
+   "handle": "@ModelScope2022",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "AMAP CV Lab released a 5B Apache-2.0 world model that animates a still image into an interactive video scene you can steer while it runs; its causal-chain training raised the reported physical-consistency score from 32.43 to 68.07 when scaled to 1.2M examples.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://modelscope.ai/models/amap_cvlab/ABot-World-0-5-5B-Iris"
+   ],
+   "vendor": "AMAP CV Lab (Alibaba)",
+   "posted_at": "2026-11-26T11:01:46Z",
+   "metrics": {
+    "likes": 8,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 429
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "SenseNova-RoboRSI-27B: open robot VLM that calls a VLA policy, reviews trajectories or writes code, 34.7 on RoboDojo",
+   "url": "https://x.com/ModelScope2022/status/2125832273618481290",
+   "handle": "@ModelScope2022",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "SenseNova released an Apache-2.0 27B vision-language model for robots that can request a motion from a VLA policy, inspect the camera result and correct its next move, or write code as policy. It averages 34.7 on RoboDojo under the same harness where its preview scored 10.0.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [
+    "https://modelscope.ai/models/SenseNova/SenseNova-RoboRSI-27B"
+   ],
+   "vendor": "SenseNova (SenseTime)",
+   "posted_at": "2026-11-26T06:01:24Z",
+   "metrics": {
+    "likes": 3,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 892
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Datasette Charts adds chart annotations, and Datasette Agent can annotate charts itself",
+   "url": "https://x.com/simonw/status/2125816311284674905",
+   "handle": "@simonw",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Simon Willison's datasette-charts plugin now supports custom lines, shaded areas and labels on charts, and the Datasette Agent can add those annotations for you; a new gallery site shows every chart type.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://simonwillison.net/2026/Nov/25/datasette-charts/",
+    "https://charts.datasette.io/gallery/"
+   ],
+   "vendor": "Datasette",
+   "posted_at": "2026-11-26T04:57:00Z",
+   "metrics": {
+    "likes": 8,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 7,
+    "views": 0
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "agent-root: a small script that makes a coding agent state why it needs root before Omarchy's sudo prompt",
+   "url": "https://x.com/jankeesvw/status/2125886351950364784",
+   "handle": "@jankeesvw",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Omarchy now shows which agent is asking for root; agent-root adds a bash helper plus agent instructions so the agent also says why, before you type your password.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/jankeesvw/agent-root"
+   ],
+   "vendor": "Jankees van Woezik",
+   "posted_at": "2026-11-26T09:36:18Z",
+   "metrics": {
+    "likes": 21,
+    "reposts": 0,
+    "quotes": 1,
+    "replies": 3,
+    "views": 629
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Sakana Marlin research agent adds Twilight 2.0 and Midnight 2.0 modes and a rebuilt slide-deck harness",
+   "url": "https://x.com/SakanaAILabs/status/2125824400935317763",
+   "handle": "@SakanaAILabs",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Sakana's strategy research agent gains a faster multi-angle mode and a broadest-search mode, keeps the old mode as Sunlight, and now builds PowerPoint decks with a dedicated agent that renders and checks its own slides.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://sakana.ai/marlin-update-2/",
+    "https://sakana.ai/marlin/"
+   ],
+   "vendor": "Sakana AI",
+   "posted_at": "2026-11-26T05:30:07Z",
+   "metrics": {
+    "likes": 108,
+    "reposts": 34,
+    "quotes": 9,
+    "replies": 9,
+    "views": 11997
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Paid product; no public benchmark for the new modes beyond sample reports.",
+    "source": null
+   }
+  },
+  {
+   "title": "LocalAI adds Strata as a backend for running large MoE models on ordinary hardware",
+   "url": "https://x.com/LocalAI_API/status/2125870404455546903",
+   "handle": "@LocalAI_API",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "LocalAI can now run coldniko's Strata engine next to its own backends, so its agents and multi-machine setup can use Strata's offloading for big mixture-of-experts models.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "LocalAI",
+   "posted_at": "2026-11-26T08:32:55Z",
+   "metrics": {
+    "likes": 8,
+    "reposts": 2,
+    "quotes": 1,
+    "replies": 2,
+    "views": 615
+   },
+   "confirmed_by": [
+    "@coldniko"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Announcement post with no link or numbers.",
+    "source": null
+   }
+  },
+  {
+   "title": "Paper: high-fidelity image matting with pixel-space diffusion transformers",
+   "url": "https://x.com/_akhaliq/status/2125858027287036149",
+   "handle": "@_akhaliq",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A new paper applies pixel-space diffusion transformers to image matting, producing fine alpha mattes such as hair edges directly in pixel space.",
+   "kind": "paper",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/papers/2611.34929"
+   ],
+   "vendor": "paper authors",
+   "posted_at": "2026-11-26T07:43:44Z",
+   "metrics": {
+    "likes": 119,
+    "reposts": 12,
+    "quotes": 0,
+    "replies": 6,
+    "views": 9289
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Attention Latent Feedback: lets each transformer layer read deeper representations from the previous token",
+   "url": "https://x.com/askalphaxiv/status/2125847647072518581",
+   "handle": "@askalphaxiv",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A paper proposes ALF, which feeds deeper-layer representations of the previous token back to earlier layers, arguing standard transformers waste that computed information.",
+   "kind": "paper",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "paper authors",
+   "posted_at": "2026-11-26T07:02:30Z",
+   "metrics": {
+    "likes": 129,
+    "reposts": 17,
+    "quotes": 2,
+    "replies": 11,
+    "views": 4519
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Summary post with no paper link or numbers in the text.",
+    "source": null
+   }
+  },
+  {
+   "title": "Lean-style verification finds an unaddressed mistake in the Attention Is All You Need paper",
+   "url": "https://x.com/abidlabs/status/2125711334184718706",
+   "handle": "@abidlabs",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Abubakar Abid's team used Lean-style formal checking on the original transformer paper and reports an error that the authors never corrected, showing formal verification applied to ML papers.",
+   "kind": "technique",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Hugging Face / Gradio team",
+   "posted_at": "2026-11-25T22:00:50Z",
+   "metrics": {
+    "likes": 140,
+    "reposts": 15,
+    "quotes": 1,
+    "replies": 3,
+    "views": 12716
+   },
+   "confirmed_by": [
+    "@Gradio"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Thread and video only; no write-up link in the post.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "saved_in": 0,
+ "saved_note": "No new owner saves since 03:22Z: AI bookmark sync archive unchanged since its 01:29Z capture (126 lines), and the 05:33Z sync found no new candidates. No get_users_bookmarks call this run. No verdict note sent to any agent.",
+ "list_posts_read": 95,
+ "list_pages": 1,
+ "list_covered_since": true,
+ "deep_reads": 3,
+ "rechecks": 8,
+ "videos": 0,
+ "video_note": "No video analysis path in this run (no watchVideo handoff available); ABot-World 0.5 Iris (153 s) clip not analyzed.",
+ "deep_read_notes": [
+  {
+   "url": "https://x.com/shneural/status/2125658847323017291",
+   "note": "Viral 'Opus Next' fake launch video (5.4K likes, quoted by @simonw). Replies dispute whether it is an unreleased model at all; unverifiable model identity, so dropped."
+  },
+  {
+   "url": "https://x.com/SemiAnalysis_/status/2125867835050111357",
+   "note": "InferenceX/AgentX now lists Trainium and TPU at 1.2x to 2.5x perf per dollar. Recap of the Trainium3 preview (kept in the 2026-11-25 19:16Z sweep) and the Nov 5 TPUv7 results; replies hostile with no method critique beyond modeled TCO pricing. Not re-kept."
+  }
+ ],
+ "recheck_notes": [
+  {
+   "url": "https://x.com/superalesha/status/2125682626056839259",
+   "note": "Likes 9783, reposts 1063, replies 527; still MIT individual repo pending GH Testing. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/karpathy/status/2125779541952246039",
+   "note": "Likes 14220, replies 817; live site karpathy.ai/usaciv. Doubt stays 0."
+  },
+  {
+   "url": "https://x.com/opencode/status/2125737965871681587",
+   "note": "Likes 1584; doubt stays 0."
+  },
+  {
+   "url": "https://x.com/SemiAnalysis_/status/2125743598587003170",
+   "note": "Likes 792, replies 100; doubt stays 1."
+  },
+  {
+   "url": "https://x.com/CoreWeave/status/2125741358044344552",
+   "note": "Likes 32, flat; doubt stays 1."
+  },
+  {
+   "url": "https://x.com/NaceAI/status/2125770218215731315",
+   "note": "Likes 107, replies 13; doubt stays 1."
+  },
+  {
+   "url": "https://x.com/TheInclusionAI/status/2125779628115780011",
+   "note": "Likes 32, flat; doubt stays 1."
+  },
+  {
+   "url": "https://x.com/viviencheng__/status/2125631050319831474",
+   "note": "Likes 4487, reposts 541; no new pushback read. Doubt stays 1."
+  }
+ ],
+ "security_forwarded": [
+  {
+   "url": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold",
+   "matched": "Claude Code (stack.json: mini, air, spark); agent tooling. Seen via https://x.com/pritesh_ghodge/status/2125801773050831306"
+  }
+ ],
+ "bus_posts": [
+  {
+   "title": "Disable repo hooks when running Claude Code headless in cloned or untrusted repos",
+   "kind": "task",
+   "status": "posted-to-bus",
+   "posted_by": "parent (grokbot) on handoff",
+   "note": "JSON body handed to parent; this sweep did not POST."
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/Npj8448/status/2125816542923571205",
+   "reason": "Recap: LiteLLM CVE-2026-40217 KEV (added 2026-11-18, due 2026-12-02, fixed 1.83.10/1.83.11) already handled in earlier sweeps; vLLM and Trivy mentions are older items with no new advisory; vLLM and Trivy not in stack.json."
+  },
+  {
+   "url": "https://x.com/atikbytes/status/2125807510670237733",
+   "reason": "AutoGPT Platform default JWT secret (fixed 0.8.0) and Electerm MCP DNS-rebinding: neither is in stack.json or known fleet use."
+  },
+  {
+   "url": "https://x.com/CVEnew/status/2125834691521417294",
+   "reason": "markdownify-mcp CVE-2026-137308 SSRF below 1.2.0: already logged N/A at 03:22Z; not in fleet use."
+  },
+  {
+   "url": "https://x.com/kyo_rush/status/2125870032794096104",
+   "reason": "ruflo MCP bridge unauthenticated RCE (CVE-2026-59726, fixed 3.16.3): already logged N/A on 2026-11-24; not in stack.json."
+  },
+  {
+   "url": "https://x.com/plotarmordev/status/2125878140228845866",
+   "reason": "1Password employee GitHub compromise leaking names, emails and recovery-link tokens: already logged N/A on 2026-11-25; 1Password not in stack.json. Phishing risk only."
+  },
+  {
+   "url": "https://x.com/BlueVigilint/status/2125880812658700784",
+   "reason": "Orca write-up of a root-run Node.js app container escape with no CVE: generic hardening, no component or version to act on."
+  },
+  {
+   "url": "https://x.com/getpharon/status/2125856435938492697",
+   "reason": "Drupal core CVE-2026-136716: fleet does not run Drupal."
+  },
+  {
+   "url": "https://x.com/henormulla1/status/2125836117740228999",
+   "reason": "Unsourced claim of a backdoored AI hacking tool image on Docker Hub; no image name or advisory."
+  }
+ ],
+ "repos_for_gh_testing": [
+  {
+   "url": "https://github.com/jankeesvw/agent-root",
+   "why": "Kept item: Omarchy helper that makes coding agents explain sudo requests (Cameron runs Omarchy on csdesktop). MIT but individual owner, created 2026-10-17, 9 stars."
+  }
+ ],
+ "follows": {
+  "made": [],
+  "recommended": [
+   "@NVIDIAAI",
+   "@haoailab",
+   "@skalskip92"
+  ],
+  "note": "No browser in this run, so no follows. Recommended three active roster accounts with 7 to 9 kept items and no doubt flag of 2+; daily limit resets today (Central), week 6 of 15."
+ },
+ "skipped": "Antigravity Thanksgiving quota reset and Codex banked reset (usage, not capability); Hy4 Flash on Fireworks and OpenCode 10T tokens (covered); gdb Private Inference (covered Nov 25); TokenSpeed Muse Spark Open MI355X (covered); vLLM Trainium3 thanks (covered); Nemotron-Labs-Image-30B-A3B (covered Nov 25); Ternary Bonsai 2.5 and Magnitude (covered); PARDIG space (covered Nov 13); Semantic Router Labs (org news); Omarchy install speed and Taildrop (not AI); METR nanoGPT speedrun chart, emollick, levelsio, teortaxesTex and tinygrad posts (commentary); witcheer neuron-patch rerun and sudoingX LingSante Spark run (low signal, no result in text); discovery repos from non-roster accounts with no roster pickup (n8n Nod, Olano, Openbar, SuperHub and others); listicles.",
+ "horizon_checks": 1,
+ "errors": 0,
+ "notes": "List page 1 (95 posts) reached back to 03:22Z, so since was covered. Fallback OR searches for 195 curated non-list accounts in 6 group queries; builders hit the 25-result cap twice and needed 2 extra windowed reads (one rejected for mixing until_id with start_time). teortaxesTex filled 19 of 25 builders results with commentary. 2 discovery queries (releases with links; security). min_likes in search did not filter."
+}
