@@ -253,6 +253,36 @@
       "status": "recommended",
       "why": "Active roster account; first-hand computer-vision builder (Roboflow), 7 kept items, no doubt flag of 2+. No browser in the 11:28Z sweep, so recommended for a browser follow as @sutcliffcc.",
       "evidence": []
+    },
+    {
+      "handle": "@TencentHunyuan",
+      "date": "2026-11-26",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Curated lab account (signal 5); first-hand Hy4 and DFly2 releases with weights, code and reports, 5 kept items, no doubt flag of 2+. No browser in the 15:26Z sweep, so recommended for a browser follow as @sutcliffcc.",
+      "evidence": [
+        "https://x.com/TencentHunyuan/status/2125928146113585468"
+      ]
+    },
+    {
+      "handle": "@AntLingAGI",
+      "date": "2026-11-26",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Curated lab account (Ant Group Ling/Ming); first-hand open-weight releases, 3 kept items, no doubt flag of 2+. No browser in the 15:26Z sweep, so recommended for a browser follow as @sutcliffcc.",
+      "evidence": [
+        "https://x.com/AntLingAGI/status/2125916926048358827"
+      ]
+    },
+    {
+      "handle": "@Aleph__Alpha",
+      "date": "2026-11-26",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Active roster account; first-hand Kolibri open-weight releases and technical write-ups, 3 kept items, no doubt flag of 2+. No browser in the 15:26Z sweep, so recommended for a browser follow as @sutcliffcc.",
+      "evidence": [
+        "https://x.com/Aleph__Alpha/status/2125967904092938704"
+      ]
     }
   ]
 }

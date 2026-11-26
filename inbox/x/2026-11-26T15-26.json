@@ -1,0 +1,404 @@
+{
+ "ran_at": "2026-11-26T15:26:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-26T11:28:00Z",
+ "queries": 11,
+ "calls": 13,
+ "items": [
+  {
+   "title": "Tencent open-sources DFly2, the speculative-decoding drafter that reuses the target's sparse KV cache, with drafters for Hy4 flash, DeepSeek-V4.1-Flash and GLM-5.3-Flash",
+   "url": "https://x.com/TencentHunyuan/status/2125928146113585468",
+   "handle": "@TencentHunyuan",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "DFly2 drafts from the target model's own sparse-attention KV cache and top-k picks, so it keeps no cache of its own and its cost stays flat as context grows. Weights, training code (AngelSpec) and a technical report are out; the paper reports 10 to 31.5 percent more accepted tokens than DFlash and DSpark on long-context and agentic work and 62 to 81 percent more throughput serving DS-V4.1-Flash at 64K.",
+   "kind": "technique",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/Tencent/AngelSpec",
+    "https://arxiv.org/abs/2611.34776",
+    "https://huggingface.co/AngelSlim/Hy4-flash-DFly2-B6",
+    "https://huggingface.co/AngelSlim/DS-V4.1-Flash-DFly2-B6",
+    "https://huggingface.co/AngelSlim/GLM-5.3-Flash-DFly2-B6",
+    "https://huggingface.co/tencent/Hy4-flash"
+   ],
+   "vendor": "Tencent Hunyuan",
+   "posted_at": "2026-11-26T12:22:00Z",
+   "metrics": {
+    "likes": 427,
+    "reposts": 48,
+    "quotes": 22,
+    "replies": 25,
+    "views": 13814
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "4.2x is a peak decode figure; a replier reading the model card reports end-to-end averages of 2.12x (long) and 1.67x (agentic) on Hy4 flash, and vLLM support for the new MoE drafters is still in progress.",
+    "source": "https://x.com/ShenfuX/status/2125935506815172615"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers praise sharing the target KV cache as the real contribution and ask about acceptance at higher temperature, batch size and whether vLLM or SGLang will merge it; one notes drafters must be retrained when target weights change.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Ant Ling open-sources Ming-Image-0.2-Design, now the top open-weight model on Artificial Analysis text-to-image (1,095 Elo)",
+   "url": "https://x.com/AntLingAGI/status/2125916926048358827",
+   "handle": "@AntLingAGI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "MIT-licensed design-focused text-to-image model (6B DiT plus an MoE language encoder) for UI drafts, posters, e-commerce and text-heavy layouts at 2K. The Layer model that splits an image into editable transparent sublayers is promised for next week and is not out yet.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/inclusionAI/Ming-Image-0.2-Design",
+    "https://github.com/inclusionAI/Ming-Image"
+   ],
+   "vendor": "Ant Group (inclusionAI)",
+   "posted_at": "2026-11-26T11:37:00Z",
+   "metrics": {
+    "likes": 490,
+    "reposts": 72,
+    "quotes": 65,
+    "replies": 42,
+    "views": 27537
+   },
+   "confirmed_by": [
+    "@TheInclusionAI"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The 6B figure is only the DiT: repliers note the full release is about 24.9B parameters (52.9 GB repo) and the README validates one 80 GiB GPU in BF16, so it is not a consumer-GPU model yet.",
+    "source": "https://x.com/ShenfuX/status/2125942665145634925"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Mostly congratulations and interest in the upcoming Layer model; practical notes on VRAM and a broken sdpa attention path, and one reply calling the outputs worse than Krea 2.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "oMLX 0.8.4 doubles Inkling 2 Mini decode at 128K on Apple silicon and adds LoopCD decoding",
+   "url": "https://x.com/jundotkim/status/2125956304976114170",
+   "handle": "@jundotkim",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "The Mac LLM server's new fused Metal kernels lift Inkling 2 Mini prefill 51 to 124 percent and decode up to 2x at 128K on an M5 Ultra, and Lightning MTP now works with concurrent requests (2.6x total speed for two). DeepSeek V4.1 also decodes faster with several requests at once.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/jundot/omlx/releases/tag/v0.8.4"
+   ],
+   "vendor": "oMLX",
+   "posted_at": "2026-11-26T14:14:00Z",
+   "metrics": {
+    "likes": 67,
+    "reposts": 2,
+    "quotes": 1,
+    "replies": 14,
+    "views": 2124
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Black Forest Labs' FLUX 3 Action world action model tops RoboColosseum's Franka DROID open track against VLAs and LLM agents",
+   "url": "https://x.com/RoboColosseum/status/2125938007178203488",
+   "handle": "@RoboColosseum",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "In blind on-the-spot prompts on a real Franka arm, the open-weight 7B FLUX 3 Action DROID model won 50 of 55 decided comparisons against five VLAs (pi0.5, GR00T N1.7, MolmoAct2, G0.5, LingBot-VLA v2) over 75 comparisons; every run and evaluator note is public.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://robocolosseum.ai/evals",
+    "https://huggingface.co/black-forest-labs/flux-3-action-droid",
+    "https://bfl.ai/models/flux-3-action"
+   ],
+   "vendor": "Black Forest Labs / RoboColosseum",
+   "posted_at": "2026-11-26T13:01:00Z",
+   "metrics": {
+    "likes": 31,
+    "reposts": 5,
+    "quotes": 4,
+    "replies": 3,
+    "views": 1617
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Could not confirm the #1 rank on the JS-only leaderboard page; a search index snapshot of the leaderboard listed it third on the Franka open track (1,821 DCR over 91 comparisons).",
+    "source": "https://robocolosseum.ai/leaderboard"
+   }
+  },
+  {
+   "title": "Aleph Alpha details YASA sparse attention behind Kolibri 1.1: up to 14x decode throughput per GPU at 1M context",
+   "url": "https://x.com/Aleph__Alpha/status/2125967904092938704",
+   "handle": "@Aleph__Alpha",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Technical write-up of Yet Another Sparse Attention, which replaced Kolibri 1's dense attention in the Apache-2.0 Kolibri 1.1 open weights, with throughput, quality and training details; the small base-model quality hit is said to be recovered after post-training.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://aleph-alpha.com/en/blog/sparse-attention-in-kolibri-1-1/",
+    "https://huggingface.co/Aleph-Alpha/Kolibri-1.1"
+   ],
+   "vendor": "Aleph Alpha",
+   "posted_at": "2026-11-26T15:00:00Z",
+   "metrics": {
+    "likes": 25,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 2,
+    "views": 651
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Microsoft measures coding-agent over-editing on 7,660 Copilot CLI trajectories: about 11% of agent code units are unneeded",
+   "url": "https://x.com/dair_ai/status/2125964299227242769",
+   "handle": "@dair_ai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Delta Residue Attribution replays each trajectory and reverts every patch unit to test whether it was needed. Across 18 models, agents' code is on average at least as necessary as developers'; extra lines are mostly added tests and docs on SWE-bench Verified, and test-based pruning removes most unneeded code while 89% of pruned patches still resolve.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2611.34875"
+   ],
+   "vendor": "Microsoft",
+   "posted_at": "2026-11-26T14:46:00Z",
+   "metrics": {
+    "likes": 18,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 12,
+    "views": 1798
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "NVIDIA lets agents manage their own context in its NOOA harness: GPT 6.1 nearly triples its score at a 32K budget",
+   "url": "https://x.com/omarsar0/status/2125961781743075565",
+   "handle": "@omarsar0",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Models get a context API to collapse history into summaries and fetch archived events by tag. On OfficeQA Pro v2 and MLE-bench Lite from 8K to 512K budgets, models that use it well score higher with fewer tokens, and reusing the KV cache of the unchanged suffix after an edit cuts prefill compute by up to 15% with no accuracy change.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2611.34147",
+    "https://nvidia-nemo.github.io/Applied-Research/dev-notes/posts/2026-11-23-model-driven-context-management/"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-11-26T14:36:00Z",
+   "metrics": {
+    "likes": 29,
+    "reposts": 5,
+    "quotes": 2,
+    "replies": 19,
+    "views": 2828
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "ByteDance Seed's Mixture-of-Loops Transformer passes KV memory between loops for 1.7x token efficiency at 700M",
+   "url": "https://x.com/scaling01/status/2125967067241173402",
+   "handle": "@scaling01",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "MoLT reuses attention keys and values across loops so a looped transformer can decode in a single traversal. In 400B-token pretraining it beats OLMo3 at 700M, 1.5B and a 3B MoE, and a continued-pretraining adaptation of Qwen3.5-0.8B lowers loss on all 11 domains; code is public.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2611.34923",
+    "https://github.com/hustvl/MoLT"
+   ],
+   "vendor": "ByteDance Seed / HUST",
+   "posted_at": "2026-11-26T14:57:00Z",
+   "metrics": {
+    "likes": 30,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 5,
+    "views": 1652
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The 1.7x is token efficiency in training tokens, not a compute-matched cost saving; results are at small scale (up to 3B MoE).",
+    "source": "https://www.tokenpost.kr/news/ai/444904"
+   }
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/Alibaba_Qwen/status/2125798914490249411",
+   "reason": "Duplicate: same post already delivered as a kept item in the 11:28Z sweep."
+  },
+  {
+   "url": "https://x.com/PrismML/status/2125310762390552588",
+   "reason": "Duplicate: Ternary Bonsai 2.5 27B already covered in earlier sweeps."
+  },
+  {
+   "url": "https://x.com/treg_ai/status/2125546075855741424",
+   "reason": "Paid people-search API selling phone numbers and personal emails; product promotion with no capability evidence; repo pending GH Testing."
+  },
+  {
+   "url": "https://x.com/treg_ai/status/2125546078049366511",
+   "reason": "Repo link for the same people-search API (superdesigndev/treg, license NOASSERTION); not a capability on its own."
+  },
+  {
+   "url": "https://x.com/erintwalsh_/status/2125635589282087208",
+   "reason": "Tutorial series (Built with Antigravity, 3D browser world); shows an existing tool, no new capability."
+  },
+  {
+   "url": "https://x.com/elonmusk/status/2125797463047258119",
+   "reason": "Not AI: SpaceX shares post (sync discarded)."
+  },
+  {
+   "url": "https://x.com/GrokUniversity/status/2125631486904934733",
+   "reason": "Consumer education product, no developer capability (sync discarded)."
+  },
+  {
+   "url": "https://x.com/Domingortiz/status/2125714600394109412",
+   "reason": "Spanish reaction to a video, no AI capability (sync discarded)."
+  },
+  {
+   "url": "https://x.com/ItsmeAjayKV/status/2125802239319220699",
+   "reason": "Commentary duplicate of the Qwen-Audio-3.1 post (sync discarded)."
+  },
+  {
+   "url": "https://x.com/ChibiReviews/status/2125601745250275775",
+   "reason": "AI video meme, no capability shown (sync discarded)."
+  }
+ ],
+ "saved_in": 10,
+ "saved_kept": 0,
+ "saved_note": "10 saves since 11:28Z from the AI bookmark sync (13:29Z capture): 5 the sync kept, 5 it discarded. None kept for Magpie: 2 duplicates of items already delivered, 3 failed vetting. No get_users_bookmarks call this run. No verdict note sent to any agent.",
+ "list_posts_read": 92,
+ "list_pages": 1,
+ "list_covered_since": true,
+ "deep_reads": 2,
+ "rechecks": 8,
+ "videos": 0,
+ "video_note": "No kept deep-read or saved item had a clip over 60 s (DFly2 and Ming posts are images; RoboColosseum clip is 24.5 s).",
+ "recheck_notes": [
+  {
+   "url": "https://x.com/sama/status/2125638790593274259",
+   "note": "Likes 9193 (from 4479), replies 1039; no new pushback read. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/_mohansolo/status/2125641696377712968",
+   "note": "Likes 13485, replies 1006. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/quantbagel/status/2125650766438523377",
+   "note": "Likes 3234, reposts 556. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/DimitrisPapail/status/2125617058331160951",
+   "note": "Likes 669 (from 437). Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/SemiAnalysis_/status/2125658708357128703",
+   "note": "Likes 1729, replies 89. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/lvwerra/status/2125612908499349833",
+   "note": "Likes 1234. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/Alibaba_Qwen/status/2125798914490249411",
+   "note": "Likes 949, replies 124. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/askalphaxiv/status/2125847647072518581",
+   "note": "Likes 179, replies 13. Doubt stays 1."
+  }
+ ],
+ "security_forwarded": [],
+ "bus_pending": [],
+ "security_na": [
+  {
+   "url": "https://x.com/endurasecurity/status/2125938195653095778",
+   "reason": "Docker CVE-2026-135124 (docker cp read-only bind mount race, CVSS 4.1, fixed 29.10.1): already logged at 2026-11-25 15:31Z as not high-signal; no new advisory."
+  },
+  {
+   "url": "https://x.com/OmGupta520/status/2125968968896950699",
+   "reason": "Recap of the Google threat-intel report on backdoored agent config in repos: already forwarded and bus-posted (repo hooks task) in the 11:28Z sweep."
+  },
+  {
+   "url": "https://x.com/SKYSQUAWK/status/2125919392160534625",
+   "reason": "Reported NVIDIA pause of AI server shipments to Singapore, Malaysia, Thailand and Indonesia under new US export licensing: press reports (FT via Reuters) only, no official document seen, so neither a security lead nor a constraint item yet."
+  }
+ ],
+ "repos_for_gh_testing": [
+  {
+   "url": "https://github.com/superdesigndev/treg",
+   "why": "Owner save (Treg People API). Org owner unverified, license NOASSERTION, people-search data use. Not queued."
+  },
+  {
+   "url": "https://github.com/elementalsouls/Claude-BugHunter",
+   "why": "Trending Claude Code security-research skill bundle (85 skills, about 24k stars) seen via @trending_repos; MIT but individual owner, offensive-security content. Not kept, not queued."
+  },
+  {
+   "url": "https://github.com/hustvl/MoLT",
+   "why": "Code link for the kept MoLT paper item; academic org, no license file. Listed as a research link only, not queued."
+  }
+ ],
+ "follows": {
+  "made": [],
+  "recommended": [
+   "@TencentHunyuan",
+   "@AntLingAGI",
+   "@Aleph__Alpha"
+  ],
+  "note": "No browser in this run, so no follows. Recommended three sweep-roster accounts (two curated labs, one active) with 3+ kept first-hand items and no doubt flag of 2+; Central day 0 of 3 used, week 6 of 15."
+ },
+ "skipped": "Mistral Large 4 visual-grounding demo (model covered Nov 17 and Nov 25, no numbers); HF Kernel Hub recap (linked blogs already covered); DiffSynth KV compression, Cogentic papers, Sage-Interaction, TensorFold and Anthropic Rust migration write-up (covered earlier); multimodalart 'soon to be open' video model (not released); Hy4 flash free on OpenCode (usage); Rapid-MLX in Docker docs (minor docs listing); Hermes Agent iOS beta expansion (waitlist); MiniMax-H3-Image training on ModelScope (platform availability); OpenBMB MiniCPM reposts (older third-party posts); vanstriendaniel asm-llm-os on HF Jobs (derivative of the superalesha item); Gradio x Modal NeurIPS repro hackathon (event); Turkey-2-Mini joke fine-tune; levelsio, teortaxesTex, swyx, rasbt and Thom_Wolf posts (commentary or non-AI); discovery results were low-signal self-promotion and sponsorship posts.",
+ "horizon_checks": 1,
+ "errors": 0,
+ "notes": "List page 1 (92 posts) reached back to 03:17Z, so since was covered with 45 posts in window. Fallback OR searches for 195 curated non-list accounts in 6 group queries (34 results total, quiet Thanksgiving morning). 2 discovery queries (releases with links; security on stack terms), relevancy-sorted, mostly noise. Primary links for posts whose t.co links were media-only came from web search and HF/GitHub APIs (no X reads). Last-sweep Qwen-Audio item was also saved by the owner."
+}
