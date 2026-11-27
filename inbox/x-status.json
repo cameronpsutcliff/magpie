@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-11-27T03:30:00Z",
- "job": "sweep",
+ "updated_at": "2026-11-27T10:41:00Z",
+ "job": "roster_review",
  "prompt": "v6.1",
  "calls_used_today": 14,
  "notes_via_api": false,
@@ -22,8 +22,8 @@
  },
  "roster": {
   "curated": 223,
-  "trial": 84,
-  "active": 60,
+  "trial": 81,
+  "active": 66,
   "retired": 7
  },
  "follows_this_week": 6,
@@ -82,7 +82,8 @@
   "Sweep 19:23Z: the x connector reported 942 of 1000 shared reads left for the UTC day after this sweep's first calls, consistent with calls_used_today. Two verified supply-chain items (tzero-mcp malicious npm MCP server, PolinRider repo loader) went to the Mini bus per the 2026-11-23 owner layout; the prompt's Fleet stack section still says forward to Bouncer via security_forwarded. Obsidian's official agent connectors are skills packages; the owner's vault and Hermes setup may want to adopt them (a capability item, not a security lead).",
   "Sweep 23:22Z: the Mini bus is offline, so two verified items (LiteLLM ZDI-26-1031 MCP stdio command execution, Docker Sandboxes CVE-2026-126139) were written to /workspace/security/bus-pending for the parent to post; the prompt has no bus-pending path, only security_forwarded. stack.json does not say whether Docker Sandboxes (the agent sandbox plugin) is installed anywhere; worth a verified fact. write_to_file results from the X connector truncate the middle of large list pages; the full text file must be read to parse them.",
   "2026-11-27T03:21Z: Videos section asks to download X clips for analysis, but the box's auto-review blocked a yt-dlp download of a public X video under the 'no YouTube/LinkedIn' rule; either allow X clip downloads explicitly or drop the video step.",
-  "2026-11-27T03:21Z: Fleet stack section routes security leads to Bouncer via security_forwarded, while the current owner layout sends verified stack-touching items straight to the Mini event bus; consider updating the prompt to match. Also stack.json lacks the Spark's NVIDIA driver version (needed to judge the 615.71.09 weight-load stall)."
+  "2026-11-27T03:21Z: Fleet stack section routes security leads to Bouncer via security_forwarded, while the current owner layout sends verified stack-touching items straight to the Mini event bus; consider updating the prompt to match. Also stack.json lacks the Spark's NVIDIA driver version (needed to judge the 615.71.09 weight-load stall).",
+  "Roster review 2026-11-27 (9 reads: 1 users lookup, 4 posts reads; 71 of 80 unused): added @MiaAI_lab and @superalesha as owner_saves trials (both on list). @superalesha mixes capability work with all-caps AI export-control commentary; flagged, re-screen next review. Failed owner_saves screen, not added, owner may add to avoid: @0xCodez (course and engagement-bait promo, get-rich claims) and @treg_ai (product promotion, own quote-posts of customers). @_philschmid already curated; @RoundtableSpace on avoid; @OrcaRouter and @GoogleAIStudio already trial. Promoted to active: @jankeesvw, @thepirateface, @OmarchyUpdates, @thinkymachines, @lhoestq (14+ days, 2+ sweep items). No retirements (earliest trial is 38 days old). Auto-review blocked one add_lists_member until approved; retried once with approval. No other candidates searched this run."
  ],
  "errors": [],
  "follows_today": 3,
@@ -100,7 +101,7 @@
   "owner": "@CameronSutcliff",
   "owner_id": "1521986356721123328",
   "private": true,
-  "member_count": 144,
+  "member_count": 147,
   "members": "every trial/active entry in inbox/x-roster.json (x_user_id, on_list)",
   "created_at": "2026-10-24T04:35:00Z",
   "updated_at": "2026-11-23T19:57:00Z"

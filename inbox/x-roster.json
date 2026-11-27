@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-25T18:42:00Z",
+ "updated_at": "2026-11-27T10:40:00Z",
  "accounts": [
   {
    "handle": "@thsottiaux",
@@ -870,12 +870,13 @@
    ],
    "last_qualifying_post": "2026-11-05",
    "signal_to_noise": 3,
-   "status": "trial",
+   "status": "active",
    "added_on": "2026-10-24",
    "retired_reason": null,
    "source": "owner_saves",
    "x_user_id": "11835032",
-   "on_list": true
+   "on_list": true,
+   "promoted_on": "2026-11-27"
   },
   {
    "handle": "@yufan_zhuang",
@@ -1874,7 +1875,7 @@
    "affiliation": "Pirate Face",
    "why": "Owner-requested watch (2026-11-13). Official Pirate Face account (@thepirateface, pirateface.co): torrent index and CLI that keep open-weight models available peer-to-peer. Daily magnet lists and first-hand seeder counts (30,000 seeders on 2026-11-12).",
    "signal_to_noise": 3,
-   "status": "trial",
+   "status": "active",
    "added_on": "2026-11-13",
    "evidence": [
     "https://x.com/thepirateface/status/2121046373269450884",
@@ -1884,7 +1885,8 @@
    "retired_reason": null,
    "owner_requested": true,
    "x_user_id": "882578436849418240",
-   "on_list": true
+   "on_list": true,
+   "promoted_on": "2026-11-27"
   },
   {
    "handle": "@JensenHuang",
@@ -1913,7 +1915,7 @@
    "affiliation": "independent (Omarchy community)",
    "why": "Owner-requested watch (2026-11-13). Community-run Omarchy release and fix account (not affiliated with Omarchy). Owner saved the 2026-11-12 post on Omarchy 4.6 letting a laptop borrow a home desktop's local model over the tailnet, with no cloud or API bill.",
    "signal_to_noise": 3,
-   "status": "trial",
+   "status": "active",
    "added_on": "2026-11-13",
    "evidence": [
     "https://x.com/OmarchyUpdates/status/2120969956364026157"
@@ -1922,7 +1924,8 @@
    "retired_reason": null,
    "owner_requested": true,
    "x_user_id": "2090578233263853568",
-   "on_list": true
+   "on_list": true,
+   "promoted_on": "2026-11-27"
   },
   {
    "handle": "@ClementDelangue",
@@ -1970,7 +1973,7 @@
    "affiliation": "Thinking Machines Lab",
    "why": "NVIDIA-backed open lab. On 2026-11-12 released Inkling 2 Small weights on Hugging Face under Apache 2.0 (after introducing the model on 2026-11-05, with a thanks to @NVIDIAAI). Also curated in config; added here so it is a List member.",
    "signal_to_noise": 4,
-   "status": "trial",
+   "status": "active",
    "added_on": "2026-11-13",
    "evidence": [
     "https://x.com/thinkymachines/status/2120982625582195011",
@@ -1980,7 +1983,8 @@
    "retired_reason": null,
    "owner_requested": false,
    "x_user_id": "1891523745929732096",
-   "on_list": true
+   "on_list": true,
+   "promoted_on": "2026-11-27"
   },
   {
    "handle": "@DrJimFan",
@@ -2008,7 +2012,7 @@
    "affiliation": "Hugging Face",
    "why": "First-hand on Hugging Face datasets and hub plumbing: hf:// DuckDB 2.0 extension, hf_dataset(), Parquet edit storage savings of 99.7%.",
    "signal_to_noise": 4,
-   "status": "trial",
+   "status": "active",
    "added_on": "2026-11-13",
    "evidence": [
     "https://x.com/lhoestq/status/2117260945558745584",
@@ -2017,7 +2021,8 @@
    "last_qualifying_post": "2026-11-24",
    "retired_reason": null,
    "x_user_id": "1846655912",
-   "on_list": true
+   "on_list": true,
+   "promoted_on": "2026-11-27"
   },
   {
    "handle": "@can1357",
@@ -2919,6 +2924,46 @@
    "x_user_id": "2832427459",
    "on_list": true,
    "note": "Cameron requested her directly on 2026-11-25; added as active, trial vetting skipped."
+  },
+  {
+   "handle": "@MiaAI_lab",
+   "name": "Mia",
+   "group": "builders",
+   "affiliation": null,
+   "why": "First-hand local-inference builder: publishes measured decode/prefill tok/s recipes for frontier open models on DGX Spark and RTX PRO 6000.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-27",
+   "evidence": [
+    "https://x.com/MiaAI_lab/status/2119489287117000924",
+    "https://x.com/MiaAI_lab/status/2126041024288190845",
+    "https://x.com/MiaAI_lab/status/2126259007698440271"
+   ],
+   "last_qualifying_post": "2026-11-27",
+   "retired_reason": null,
+   "source": "owner_saves",
+   "x_user_id": "1550009227493752834",
+   "on_list": true
+  },
+  {
+   "handle": "@superalesha",
+   "name": "Alexey Fateev",
+   "group": "builders",
+   "affiliation": null,
+   "why": "First-hand local-inference builder: quantizes and ports open models on 3090 rigs with repos and tok/s numbers, and hand-wrote LLM engines in raw machine code. Some posts are AI-export-control commentary in all-caps tone; watch for drift.",
+   "signal_to_noise": 3,
+   "status": "trial",
+   "added_on": "2026-11-27",
+   "evidence": [
+    "https://x.com/superalesha/status/2125682626056839259",
+    "https://x.com/superalesha/status/2125682663700738065",
+    "https://x.com/superalesha/status/2126041962272690479"
+   ],
+   "last_qualifying_post": "2026-11-27",
+   "retired_reason": null,
+   "source": "owner_saves",
+   "x_user_id": "2010272031603068928",
+   "on_list": true
   }
  ],
  "source_leads": [
@@ -3447,8 +3492,8 @@
   "name": "Magpie roster",
   "owner": "@CameronSutcliff",
   "private": true,
-  "member_count": 145,
+  "member_count": 147,
   "scope": "every trial and active account in this file; curated config accounts are not members yet",
-  "updated_at": "2026-11-25T18:42:00Z"
+  "updated_at": "2026-11-27T10:40:00Z"
  }
 }
