@@ -3,80 +3,81 @@
  "days": [
   {
    "date": "2026-11-27",
-   "headline": "ProxyGenBench: Benchmarking Proxy-Guided Video Generation, What a Forecasting Leaderboard Can Establish: Resolution Reporting for Zero-Shot Time-Series Models, t3code, and more",
-   "events": 262,
-   "sources": 577,
-   "enriched": false,
+   "headline": "Completing live voice calls, speeding 1M-context decoding, shrinking 26B local MoEs, and more",
+   "events": 318,
+   "sources": 608,
+   "enriched": true,
    "top": [
     {
-     "id": "5a95bfb7d25d",
-     "title": "ProxyGenBench: Benchmarking Proxy-Guided Video Generation",
+     "id": "ad68ffbab617",
+     "title": "Aleph Alpha Kolibri 1.1 brings YASA 1M-context sparse attention",
      "impact": 4,
-     "vendor": "Research",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-27-5a95bfb7d25d"
+     "vendor": "Aleph Alpha",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-27-ad68ffbab617"
+    },
+    {
+     "id": "c03bb3fcfd6d",
+     "title": "OpenAI GPT-Live-1.1 tops Jarvis Bench at $0.05 per minute",
+     "impact": 5,
+     "vendor": "OpenAI",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-27-c03bb3fcfd6d"
     },
     {
      "id": "24c1b0a9ee1f",
-     "title": "What a Forecasting Leaderboard Can Establish: Resolution Reporting for Zero-Shot Time-Series Models",
-     "impact": 4,
+     "title": "Vernier measures resolution limits on forecasting leaderboards",
+     "impact": 3,
      "vendor": "Research",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-27-24c1b0a9ee1f"
     },
     {
      "id": "3cd4e48abda1",
-     "title": "pingdotgg/t3code",
-     "impact": 5,
-     "vendor": "Open source",
+     "title": "T3 Code Mobile 2.4 adds remote localhost tunneling",
+     "impact": 3,
+     "vendor": "T3 (Ping Labs)",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-27-3cd4e48abda1"
     },
     {
-     "id": "ad68ffbab617",
-     "title": "Aleph-Alpha/Kolibri-1.1",
-     "impact": 4,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-27-ad68ffbab617"
-    },
-    {
-     "id": "4302db6cb9e8",
-     "title": "elementalsouls/Claude-BugHunter",
-     "impact": 5,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-27-4302db6cb9e8"
+     "id": "f992e7398cc8",
+     "title": "OS-Omni benchmarks long-horizon computer-use agents across six platforms",
+     "impact": 3,
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-27-f992e7398cc8"
     }
    ],
    "vendors": [
     "Open source",
     "Research",
-    "OpenAI",
-    "Hugging Face",
     "Anthropic",
-    "Google"
+    "OpenAI",
+    "Google",
+    "NVIDIA"
    ],
    "topics": {
-    "models": 93,
-    "agents": 88,
-    "coding": 79,
-    "multimodal": 67,
-    "infra": 39,
-    "evals": 32,
+    "models": 101,
+    "agents": 94,
+    "coding": 88,
+    "multimodal": 72,
+    "infra": 44,
+    "local": 35,
+    "evals": 34,
     "research": 32,
-    "local": 31,
-    "mcp": 28,
     "memory": 25,
-    "security": 11,
+    "mcp": 24,
+    "security": 12,
     "robotics": 7,
-    "reverse": 6
+    "reverse": 5
    },
    "kinds": {
-    "repo": 44,
+    "video": 53,
+    "social": 49,
+    "repo": 43,
     "paper": 40,
-    "social": 40,
-    "newsletter": 34,
-    "model": 30,
-    "changelog": 22,
+    "newsletter": 35,
+    "model": 29,
+    "changelog": 21,
     "space": 20,
-    "community": 18,
-    "blog": 14
+    "community": 16,
+    "blog": 12
    },
    "constraints": [],
    "threats": []
