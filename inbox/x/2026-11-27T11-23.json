@@ -1,0 +1,454 @@
+{
+ "ran_at": "2026-11-27T11:23:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-27T03:21:00Z",
+ "queries": 10,
+ "calls": 12,
+ "items": [
+  {
+   "title": "IST DASLab publishes GSQ-RCO GGUFs of Inkling 2 Mini: the 26B looped MoE in about 10.5 GB at 3.5 bits per weight, retaining 99% of base scores",
+   "url": "https://x.com/mhelcig/status/2126048821583188286",
+   "handle": "@mhelcig",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Non-uniform GGUF quants of Thinking Machines' Inkling 2 Mini at 2.75 to 3.5 bits per weight, with per-tensor precision picked by a gradient-based search, so the 26B looped MoE fits a 12 GB GPU in llama.cpp. The card reports AIME25, GPQA-Diamond and LiveCodeBench v6 against the base model.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/ISTA-DASLab/Inkling-2-Mini-GSQ-RCO-GGUF",
+    "https://arxiv.org/abs/2604.18556",
+    "https://arxiv.org/abs/2605.00649",
+    "https://github.com/IST-DASLab/GSQ",
+    "https://github.com/IST-DASLab/RCO"
+   ],
+   "vendor": "IST Austria DASLab",
+   "posted_at": "2026-11-26T20:21:53Z",
+   "metrics": {
+    "likes": 1014,
+    "reposts": 86,
+    "quotes": 20,
+    "replies": 60,
+    "views": 55830
+   },
+   "confirmed_by": [
+    "@coldniko"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers note the 12 GB figure leaves little room for KV cache, ask which evals and context length back the 99% claim, and one cites unsourced talk that GSQ-RCO quants weaken long agent tasks.",
+    "source": "https://x.com/mhelcig/status/2126048821583188286"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Mostly enthusiasm about a 26B model on consumer GPUs, with questions on KV-cache headroom, Windows support and benchmark choice; one replier reports the earlier Qwen3.8 GSQ-RCO build worked well.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "MiaAI Lab updates its TensorFold recipes for Inkling 2 Mini: DGX Spark decode up 21 to 35%, RTX 5090 and PRO 6000 up 43 to 66%",
+   "url": "https://x.com/MiaAI_lab/status/2126259007698440271",
+   "handle": "@MiaAI_lab",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "New versions of MiaAI Lab's open run recipes raise single-stream Inkling 2 Mini decode on one DGX Spark from 48 to 64 tok/s and prefill from about 3.5k to 4.3k tok/s; the RTX 5090 and RTX PRO 6000 recipes reach 230 tok/s single stream and 679 tok/s at 8 streams. Directly useful for serving Inkling 2 Mini on a Spark.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/MiaAI-Lab/Inkling-2-Mini-DGX-Spark-TensorFold",
+    "https://github.com/MiaAI-Lab/Inkling-2-Mini-RTX-5090-TensorFold"
+   ],
+   "vendor": "MiaAI Lab (TensorFold)",
+   "posted_at": "2026-11-27T10:17:06Z",
+   "metrics": {
+    "likes": 98,
+    "reposts": 3,
+    "quotes": 2,
+    "replies": 7,
+    "views": 3970
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Throughput numbers are self-reported by the recipe author, with no independent rerun yet.",
+    "source": null
+   }
+  },
+  {
+   "title": "Side-by-side on one RTX 5090: Inkling 2 Mini codes at 318.7 tok/s on Basalt, 205.1 on TensorFold and 111.1 on llama.cpp",
+   "url": "https://x.com/niklaslenz_ai/status/2126065962013110490",
+   "handle": "@niklaslenz_ai",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A builder ran three local engines on the same card and prompts: Basalt was fastest, TensorFold scored slightly higher on IFEval with similar overall quality, and llama.cpp could not hold 128K context with drafting on. A practical guide to picking a local engine for this model.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Basalt, TensorFold, llama.cpp",
+   "posted_at": "2026-11-26T21:30:00Z",
+   "metrics": {
+    "likes": 16,
+    "reposts": 1,
+    "quotes": 3,
+    "replies": 3,
+    "views": 1860
+   },
+   "confirmed_by": [
+    "@plotarmordev"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single-machine run with no published harness; predates the latest TensorFold recipe update.",
+    "source": null
+   }
+  },
+  {
+   "title": "Omarchy 4.6 RC names the coding agent behind a root password prompt",
+   "url": "https://x.com/OmarchyUpdates/status/2126268214556643839",
+   "handle": "@OmarchyUpdates",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "When an agent runs a pkexec command, the Omarchy polkit dialog now says which of 14 known agents (Claude, Codex, Antigravity, Cursor, OpenCode, Hermes and others) is asking, shows its icon and any reason it gave. It is a hint, not proof, since any program can claim a name; it ships in the 4.6.0 release candidate.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/omacom/omarchy/pull/20103"
+   ],
+   "vendor": "Omarchy",
+   "posted_at": "2026-11-27T10:53:41Z",
+   "metrics": {
+    "likes": 13,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 3,
+    "views": 221
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Sber releases GigaAM-v4 (238M) and GigaAM-Multilingual-v2 (776M) open ASR models under MIT",
+   "url": "https://x.com/aitrackerbot/status/2126228109972156712",
+   "handle": "@aitrackerbot",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Two small speech recognition models are on Hugging Face under MIT; Sber reports the 238M GigaAM-v4 beating Whisper large-v3 on the public Open ASR English subset and leading on Russian sets. A community MLX port for Apple silicon already exists.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/ai-sage/GigaAM-v4",
+    "https://huggingface.co/ai-sage/GigaAM-Multilingual-v2"
+   ],
+   "vendor": "Sber (ai-sage)",
+   "posted_at": "2026-11-27T08:14:19Z",
+   "metrics": {
+    "likes": 23,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 2,
+    "views": 1142
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "WER comparisons are vendor-reported on the model card.",
+    "source": null
+   }
+  },
+  {
+   "title": "Tencent ships GGUF builds of Hy-MT3-30B-A3B, its 102-language translation MoE, for llama.cpp",
+   "url": "https://x.com/TencentHunyuan/status/2126261924803535020",
+   "handle": "@TencentHunyuan",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Official GGUF quantizations (down to IQ2) let the 3B-active translation model run locally in llama.cpp, so private on-device translation across 102 languages is now a download away.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/tencent/Hy-MT3-30B-A3B-GGUF"
+   ],
+   "vendor": "Tencent Hunyuan",
+   "posted_at": "2026-11-27T10:28:41Z",
+   "metrics": {
+    "likes": 176,
+    "reposts": 17,
+    "quotes": 5,
+    "replies": 18,
+    "views": 5495
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Diffbot's 3-bit EXL3 pack runs DeepSeek V4.1 Flash at full 1M context on two RTX PRO 6000s with vLLM",
+   "url": "https://x.com/plotarmordev/status/2126224515537531252",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A 3 bpw EXL3 quant plus an optional CPU runtime keeps some routed experts in pinned host RAM so the full 1M context fits two 96 GB cards, with up to 289 tok/s reported on agentic coding.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/diffbot/DeepSeek-V4.1-Flash-EXL3-3bpw-2x-RTX-PRO-6000"
+   ],
+   "vendor": "Diffbot",
+   "posted_at": "2026-11-27T08:00:02Z",
+   "metrics": {
+    "likes": 12,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 5,
+    "views": 1043
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Needs about 280 GB of free system RAM; speed figures are from the pack's own benchmarks.",
+    "source": null
+   }
+  },
+  {
+   "title": "Robbyant releases LingBot-Map 2.0 inference code and streaming base weights for frame-by-frame 3D reconstruction",
+   "url": "https://x.com/ModelScope2022/status/2126198367084761422",
+   "handle": "@ModelScope2022",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A causal streaming model predicts camera pose, intrinsics, depth and confidence as RGB frames arrive, runnable from a CLI or embedded per frame in an app. Code and weights are CC BY-NC 4.0, so noncommercial only.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/robbyant/lingbot-map-v2-base-streaming",
+    "https://modelscope.ai/models/Robbyant/lingbot-map-v2"
+   ],
+   "vendor": "Robbyant (Ant Group)",
+   "posted_at": "2026-11-27T06:16:08Z",
+   "metrics": {
+    "likes": 22,
+    "reposts": 8,
+    "quotes": 6,
+    "replies": 10,
+    "views": 1486
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "DeepSeek ships DeepEP V2.6 and DeepEP-Ascend V1.1, plus fused Ascend kernels in FlashMLA",
+   "url": "https://x.com/teortaxesTex/status/2126209404601319535",
+   "handle": "@teortaxesTex",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "DeepEP V2.6 adds buffer resizing, FP32 combine output and redundant-expert mapping; DeepEP-Ascend V1.1 drops the HCCL runtime dependency and adds cluster-scale training pieces; FlashMLA gains fused kernels and head128 support for Huawei Ascend. Open MoE serving and training code now targets Ascend 950 as well as NVIDIA SM100.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/deepseek-ai/DeepEP",
+    "https://github.com/deepseek-ai/DeepEP-Ascend",
+    "https://github.com/deepseek-ai/FlashMLA"
+   ],
+   "vendor": "DeepSeek",
+   "posted_at": "2026-11-27T06:59:59Z",
+   "metrics": {
+    "likes": 103,
+    "reposts": 4,
+    "quotes": 1,
+    "replies": 7,
+    "views": 5280
+   },
+   "confirmed_by": [
+    "@bebuu_ai",
+    "@superalesha"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Ling 3.2 Air official FP8 (124B, 5.5B active) runs across two DGX Sparks with vLLM TP=2 at 47 tok/s single stream",
+   "url": "https://x.com/sudoingX/status/2126157347173339218",
+   "handle": "@sudoingX",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A builder split the 129 GB FP8 checkpoint over two linked Sparks with tensor parallelism and measured 47.11 tok/s with thinking on, after vLLM rejected the first two launch attempts. A data point for anyone sizing a two-Spark setup.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "inclusionAI (Ling), vLLM",
+   "posted_at": "2026-11-27T03:33:08Z",
+   "metrics": {
+    "likes": 4,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 5,
+    "views": 1560
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "One run, one stream, launch flags not published in the post.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [
+  {
+   "url": "https://x.com/jaww1999/status/2125987792564134173",
+   "reason": "Reply pointing at OpenCode Browse, which launched in October (v0.1.5 on Nov 17) and already appears in the Nov 26 hands-on browser-tools item; nothing new."
+  },
+  {
+   "url": "https://x.com/Telos_lab/status/2125292671032013294",
+   "reason": "Telos-Live-1 launch already delivered in the 2026-11-25T11:31Z sweep; still no weights or public API."
+  },
+  {
+   "url": "https://x.com/MiaAI_lab/status/2126041024288190845",
+   "reason": "Commentary repeating the Telos-Live-1 launch; duplicate of an item already delivered."
+  }
+ ],
+ "saved_in": 3,
+ "saved_kept": 0,
+ "saved_note": "3 new owner saves from the AI bookmark sync (05:34Z capture, archive now 134 lines) vetted here; none kept (1 not new, 2 duplicates of a delivered item). No get_users_bookmarks call this run. No verdict note sent to any agent.",
+ "list_posts_read": 93,
+ "list_pages": 1,
+ "list_covered_since": true,
+ "deep_reads": 1,
+ "rechecks": 8,
+ "videos": 0,
+ "video_note": "No qualifying clip: the only deep-read item has no video; LingBot-Map (248 s) was not deep-read or saved; the Telos save clip is 40 s and already covered.",
+ "recheck_notes": [
+  {
+   "url": "https://x.com/omarchy/status/2126119015877607928",
+   "note": "Likes 848 (from 411), replies 49. Doubt stays 0."
+  },
+  {
+   "url": "https://x.com/kitlangton/status/2126102192264523896",
+   "note": "Likes 1241 (from 598), replies 59. Doubt stays 0."
+  },
+  {
+   "url": "https://x.com/wei_wang/status/2126153040008823062",
+   "note": "Likes 4 (from 1), replies 3. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/ashxhart/status/2126105426945089800",
+   "note": "Likes 117 (from 73), replies 7. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/ajaytoronto1/status/2126137882843000969",
+   "note": "Likes 0 (from 0), replies 0. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/__tinygrad__/status/2126140202557346044",
+   "note": "Likes 903 (from 194), replies 62. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/browser_use/status/2126111222680740045",
+   "note": "Likes 49 (from 32), replies 10. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/obsdmd/status/2125700941156651151",
+   "note": "Likes 18462 (from 16386), replies 505. Doubt stays 1."
+  }
+ ],
+ "security_forwarded": [
+  {
+   "url": "https://github.com/pingdotgg/t3code/pull/43026",
+   "matched": "Antigravity (agy) in stack.json plus agent tooling (T3 Code on the Mini); tool break posted to the Mini event bus instead of Bouncer"
+  }
+ ],
+ "bus_posts": [
+  {
+   "title": "Update T3 Code on the Mini to v0.1.13+ and keep Antigravity off proxies, shared logins and unattended runs",
+   "kind": "task",
+   "lane": "personal",
+   "url": "https://github.com/pingdotgg/t3code/pull/43026",
+   "seen_via": "https://x.com/realchendahuang/status/2126228292231659944",
+   "posted_at": "2026-11-27T11:23:22Z",
+   "result": "ok"
+  }
+ ],
+ "bus_pending": [],
+ "security_na": [
+  {
+   "url": "https://x.com/DFIR_Radar/status/2126255851006767202",
+   "reason": "SOCRadar BabidiGhost: an attacker drove a jailbroken Hermes Agent against exposed Metabase instances; no Hermes vulnerability and no Metabase on the fleet."
+  },
+  {
+   "url": "https://x.com/ProgrammerDude/status/2126269384653996139",
+   "reason": "aws configure agent-toolkit adds an unpinned uvx mcp-proxy-for-aws to Claude MCP config: design criticism, no advisory, AWS MCP not run on the fleet."
+  },
+  {
+   "url": "https://x.com/AIInspoWorld/status/2126162590933926201",
+   "reason": "Microsoft agent-framework PyPI stealer (GHSA-764m-3ppc-5m73): already posted to the bus 2026-11-23."
+  },
+  {
+   "url": "https://x.com/aitrackerbot/status/2126253114923577418",
+   "reason": "Unreleased model name leaked in a closed SGLang PR: rumor, not a security issue for the fleet."
+  }
+ ],
+ "repos_for_gh_testing": [
+  {
+   "url": "https://github.com/MiaAI-Lab/Inkling-2-Mini-DGX-Spark-TensorFold",
+   "why": "Kept item; updated Inkling 2 Mini serving recipe for one DGX Spark (+21 to 35% decode). Individual owner, Apache-2.0, 58 stars. Not queued."
+  },
+  {
+   "url": "https://github.com/IST-DASLab/GSQ",
+   "why": "Kept item; method code behind the GSQ-RCO GGUFs (12 GB GPU Inkling 2 Mini). Academic lab org; license not checked. Not queued."
+  }
+ ],
+ "follows": {
+  "made": [],
+  "recommended": [
+   "@OmarchyUpdates",
+   "@kitlangton"
+  ],
+  "candidates": [
+   {
+    "handle": "@OmarchyUpdates",
+    "why": "Active roster account, 13 sweep items in 14 days, first-hand Omarchy release notes incl. agent-facing features, no doubt 2+."
+   },
+   {
+    "handle": "@kitlangton",
+    "why": "Curated builders account, Hex maintainer with repeated capability releases, no doubt 2+."
+   }
+  ],
+  "note": "No browser, so no follows; written as recommended in inbox/x-follows.json (Central day Nov 27: 0 of 3 follows used; weekly 6 of 15)."
+ },
+ "horizon_checks": 1,
+ "skipped": "Kimi free research API credits (program); Omarchy plugin contest votes and themes (not AI); RealAstropulse 'Claude sabotages ML research' repost and KBlueleaf reply (anecdote and pushback, no artifact); Gemini Neon praise from teortaxesTex, thecsguy, vanstriendaniel (commentary, model covered); superalesha DeepSeek billing-receipt thread (product UI plus corporate news) and Anthropic-politicians post (political commentary, not kept); onloglogn LoopCD in oMLX (covered by oMLX 0.8.4 item); Hermes Agent in VR (personal demo); Rex App Store listing (covered Rex items); SemiAnalysis Rubin vs GB300 TCO chart (vendor economics); sudoingX uncensored 24 GB tier list (listicle); LiteLLM and NousResearch thanks posts; discovery results were low-signal self-promotion.",
+ "errors": [],
+ "notes": "List page 1 (93 posts) reached back to 2026-11-26T20:52Z, so since 03:21Z was covered (53 posts in window). Fallback OR searches for the 195 curated non-list accounts in 6 group queries. 2 discovery queries (releases with HF/GitHub/arXiv links; security on stack terms). Horizon: 1 X read (Dessa query since Nov 20: one market recap of the October demo), block.xyz/dessa still waitlist plus demo clips, no trigger. 1 batched get_posts_by_ids for 8 re-checks plus originals and save metrics. 1 deep read (GSQ-RCO replies). Primary links checked via GitHub API, Hugging Face API, opencode.ai and the Google AI developer forum (no X reads). Community Notes: none returned. One verified tool break (T3 Code Antigravity internal-API quota reads, fixed in v0.1.13) posted to the Mini event bus, lane personal. The bus route for that event lists antigravity as a fallback provider, worth noting for the unattended-run rule."
+}

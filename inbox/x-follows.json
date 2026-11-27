@@ -283,6 +283,26 @@
       "evidence": [
         "https://x.com/Aleph__Alpha/status/2125967904092938704"
       ]
+    },
+    {
+      "handle": "@OmarchyUpdates",
+      "date": "2026-11-27",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Active roster account with 13 sweep items in 14 days, first-hand Omarchy release notes including agent-facing features, no doubt flag of 2 or more. Browser unavailable, so recommended.",
+      "evidence": [
+        "https://x.com/OmarchyUpdates/status/2126268214556643839"
+      ]
+    },
+    {
+      "handle": "@kitlangton",
+      "date": "2026-11-27",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Curated builders account, first-hand Hex maintainer with repeated capability releases, no doubt flag of 2 or more. Browser unavailable, so recommended.",
+      "evidence": [
+        "https://x.com/kitlangton/status/2126102192264523896"
+      ]
     }
   ]
 }
