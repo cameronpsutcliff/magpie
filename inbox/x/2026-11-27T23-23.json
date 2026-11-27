@@ -1,0 +1,371 @@
+{
+ "ran_at": "2026-11-27T23:23:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-27T19:24:00Z",
+ "queries": 9,
+ "calls": 14,
+ "items": [
+  {
+   "title": "Bare-metal 74 KB hypervisor puts a 2B LLM in Ring -1 to catch Linux kernel panics and live-patch guest RAM",
+   "url": "https://x.com/superalesha/status/2126420450737610808",
+   "handle": "@superalesha",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Part 4 of the llm.asm project runs a MiniCPM5-2B engine in a tiny Type-1 hypervisor below Linux; when the guest hits a fatal Ring 0 fault the model inspects the faulting bytes and chooses to patch, pass the fault to Linux, or halt, so the demo kernel keeps running without a reboot. Source, GRPO training and eval scripts are MIT.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/alesha-pro/llm.asm/tree/main/04-ring1-kernel-surgeon"
+   ],
+   "vendor": "llm.asm (Alesha)",
+   "posted_at": "2026-11-27T20:58:00Z",
+   "metrics": {
+    "likes": 717,
+    "reposts": 52,
+    "quotes": 25,
+    "replies": 61,
+    "views": 19201
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Several repliers argue that patching over a panic can hide corruption or an intrusion and that halting is safer; the author replies the model can choose PASS_TO_LINUX or HALT_FOR_DUMP and the eval showed zero dangerous patches, but it is one author's test on injected faults.",
+    "source": "https://x.com/superalesha/status/2126420450737610808"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Mostly amazement; the substantive replies question whether surviving a kernel fault is desirable versus failing safe, and the author explains the patch, pass and halt choices.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "OpenCode Rune early dev build: native Rust desktop app with no Electron",
+   "url": "https://x.com/opencode/status/2126433856370638952",
+   "handle": "@opencode",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "OpenCode opened an early build of Rune, its next desktop client for the OpenCode coding agent, built on its own native app framework instead of Electron, with embeddable session crates. MIT licensed.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/anomalyco/opencode-rune"
+   ],
+   "vendor": "OpenCode (Anomaly)",
+   "posted_at": "2026-11-27T21:51:00Z",
+   "metrics": {
+    "likes": 973,
+    "reposts": 58,
+    "quotes": 8,
+    "replies": 40,
+    "views": 32370
+   },
+   "confirmed_by": [
+    "@kitlangton"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Early testers note Chromium still downloads the first time the built-in browser is used, one Fedora user saw only 10 to 20 percent lower resource use, and one profiler says it still trails native SwiftUI apps.",
+    "source": "https://x.com/opencode/status/2126433856370638952"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Users welcome dropping Electron because agent sessions already strain RAM; a few who tried it report modest gains and missing polish such as Ctrl+Enter to send.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "SGLang Omni turns speech into a tool call, cutting first audio from 1,826 to 567 ms",
+   "url": "https://x.com/sgl_project/status/2126436771735257094",
+   "handle": "@sgl_project",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "In SGLang Omni the LLM decides what to say aloud through a TTS tool call while the server decides when speech stops and tells the model how much the user actually heard, enabling full-duplex barge-in and speaking before the thought is finished; first-audio latency fell about 3x averaged over three models.",
+   "kind": "feature",
+   "evidence": "measured",
+   "links": [
+    "https://www.sglang.io/blog/tts-as-a-tool",
+    "https://www.youtube.com/watch?v=BAXd3yOU7Ag"
+   ],
+   "vendor": "SGLang",
+   "posted_at": "2026-11-27T22:03:00Z",
+   "metrics": {
+    "likes": 11,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 4,
+    "views": 629
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Cohere Labs releases CulturalRiddles, locally written riddles from 62 countries as a cultural-understanding benchmark",
+   "url": "https://x.com/cohere/status/2126436812507722132",
+   "handle": "@cohere",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "A new open benchmark of original, culturally grounded riddles written by locals across 62 countries, with a paper and interactive results, for testing whether models understand local culture rather than just reasoning puzzles.",
+   "kind": "eval",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/datasets/CohereLabsCommunity/CulturalRiddles",
+    "https://arxiv.org/abs/2610.29968"
+   ],
+   "vendor": "Cohere Labs",
+   "posted_at": "2026-11-27T22:03:00Z",
+   "metrics": {
+    "likes": 40,
+    "reposts": 2,
+    "quotes": 2,
+    "replies": 3,
+    "views": 1689
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Inkling-2-Mini reaches 264.5 tok/s single-user and 950 tok/s at 8 users on one RTX PRO 6000 with DFlash2 drafts in vLLM",
+   "url": "https://x.com/NielsRogge/status/2126407410973642911",
+   "handle": "@NielsRogge",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Using Inco AI's DFlash2 block-diffusion draft model for lossless speculative decoding in vLLM, Inkling-2-Mini serving on a single RTX PRO 6000 rose 39 percent single-user and 33 percent at 8 concurrent users over the previous record; the setup was tuned with Gemini 4 Neon.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/incoai/Inkling-2-Mini-DFlash2"
+   ],
+   "vendor": "Inco AI / vLLM",
+   "posted_at": "2026-11-27T20:06:00Z",
+   "metrics": {
+    "likes": 40,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 9,
+    "views": 2089
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "TensorFold 1.3.7 speeds Inkling 2 Mini prefill 23 percent on M5 Ultra and adds DFlash2 drafting on Metal",
+   "url": "https://x.com/ashxhart/status/2126450557053276626",
+   "handle": "@ashxhart",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "The local inference runtime's new release fills 2K and 8K prompts 23 percent faster and decodes 3 to 6 percent faster on M5 Ultra with identical output tokens, fixes model loading on macOS 27.0, adds DFlash2 drafting on Metal and multi-stream drafting on CUDA, and serves Kolibri 1.1 on CUDA. A community repo packages Inkling 2 Mini on one RTX 5090 with 256k context.",
+   "kind": "tool",
+   "evidence": "measured",
+   "links": [
+    "http://TensorFold.dev",
+    "https://github.com/MiaAI-Lab/Inkling-2-Mini-RTX-5090-TensorFold"
+   ],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-27T22:58:00Z",
+   "metrics": {
+    "likes": 26,
+    "reposts": 4,
+    "quotes": 1,
+    "replies": 4,
+    "views": 994
+   },
+   "confirmed_by": [
+    "@MiaAI_lab"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Anpaure Pretrain Index estimates bits per byte for closed frontier models from API outputs",
+   "url": "https://x.com/anpaure/status/2126423367683363071",
+   "handle": "@anpaure",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A method to rank pretraining quality of closed models: the model must pick the real continuation of held-out text over a decoy written by a small open model, and that choice rate is calibrated against true perplexity on open models to estimate log-perplexity for API-only models.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "Anpaure (independent)",
+   "posted_at": "2026-11-27T21:10:00Z",
+   "metrics": {
+    "likes": 541,
+    "reposts": 37,
+    "quotes": 10,
+    "replies": 39,
+    "views": 25052
+   },
+   "confirmed_by": [
+    "@eliebakouch"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers ask for error bars by holding out open-weight models whose bits per byte can be computed directly, question extrapolating from one vendor's curve, and note tokenizer and instruct-model decoy choices may bias the ranking.",
+    "source": "https://x.com/anpaure/status/2126423367683363071"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Researchers praise the idea and note it ranks known same-base pairs together; the critical replies are about validation and extrapolation rather than the core trick.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Max Woolf: Opus 5.5 and Fable 5.2 pushed his Rust libraries close to hardware limits",
+   "url": "https://x.com/minimaxir/status/2126411443516101100",
+   "handle": "@minimaxir",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A long first-hand write-up of using agentic coding models, with checks against regressions and cheating, to further optimize already-fast Rust crates, with benchmark comparisons against existing libraries such as umap-learn.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://minimaxir.com/2026/11/opus-fable/"
+   ],
+   "vendor": "Max Woolf",
+   "posted_at": "2026-11-27T20:22:00Z",
+   "metrics": {
+    "likes": 3,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 2,
+    "views": 339
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "saved_in": 0,
+ "saved_kept": 0,
+ "saved_note": "No new owner saves since the 19:24Z sweep: the AI bookmark sync archive is unchanged at 134 lines (last capture 05:34Z, already vetted) and new_candidates.json is []. No get_users_bookmarks call this run. No verdict note sent to any agent.",
+ "list_posts_read": 95,
+ "list_pages": 1,
+ "list_covered_since": true,
+ "deep_reads": 3,
+ "rechecks": 5,
+ "videos": 0,
+ "video_note": "No qualifying clip: the deep-read Ring -1 demo is 46 s, Cohere's clip 47 s and SemiAnalysis's 28 s, all under 60 s; Anpaure and OpenCode posts have no video.",
+ "recheck_notes": "Re-checked 5 items from the 19:24Z sweep with doubt 1 or a deep read (Liquid d1.3-ultra, Antigravity PR pills, training-free looped transformer, Physical Intelligence Index, omarchy-mlx) in the same get_posts_by_ids call; metrics updated, no Community Notes returned, no new pushback, doubt levels unchanged.",
+ "security_forwarded": [
+  {
+   "url": "https://docs.litellm.ai/blog/trail-of-bits-patch-the-planet",
+   "matched": "stack.json LiteLLM (Spark, Mini). Verified on the vendor blog: Patch the Planet fix wave over 3 to 4 weeks, embargoed severe fixes only for LTS v1.108.x and latest stable. Posted to the Mini event bus as a task, not to Bouncer.",
+   "seen_via": "https://x.com/trailofbits/status/2126286058610360340"
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/MiningRabid/status/2126397151001628817",
+   "reason": "LiteLLM CVE-2026-40217 (CISA KEV 2026-11-18, fixed 1.83.10) already handled on Nov 23 and Nov 26; not re-posted."
+  },
+  {
+   "url": "https://x.com/DailyDarkWeb/status/2126420652404191464",
+   "reason": "LiteLLM 'supply chain data' sale is the old March 2026 TeamPCP archive already logged at 15:30Z; no new compromise."
+  },
+  {
+   "url": "https://www.cve.org/CVERecord?id=CVE-2026-138027",
+   "reason": "Bagel (bagel-mcp) DuckDB and rsync injection (CVE-2026-138027, -138028, fixed 2.5.5); bagel-mcp is not in stack.json or known fleet MCP configs."
+  },
+  {
+   "url": "https://www.cve.org/CVERecord?id=CVE-2026-138026",
+   "reason": "Crypto APIs MCP packages; not used on the fleet."
+  },
+  {
+   "url": "https://x.com/tau_home/status/2126420584737521730",
+   "reason": "IBM ContextForge MCP gateway auth bypass CVE-2026-110279 (1.0.0 to 1.1.0); ContextForge is not run on the fleet."
+  },
+  {
+   "url": "https://x.com/MalwareBibleJP/status/2126399418832437671",
+   "reason": "nektos act 0.2.92 to 0.2.94 untrusted-repo config bypass; act is not a known fleet tool (secondary source only)."
+  },
+  {
+   "url": "https://x.com/infrastack_ai/status/2126416925253374448",
+   "reason": "Malicious PyPI qwentts-gradio 0.3.0 and a daily list of 50 npm/PyPI packages; none are known fleet dependencies (secondary source)."
+  },
+  {
+   "url": "https://x.com/intigriti/status/2126423322233602207",
+   "reason": "Newsletter recap mentions backdooring Codex via a GitHub Actions pipeline; no primary advisory in the window, so unverified and not posted."
+  },
+  {
+   "url": "https://x.com/endurasecurity/status/2126445605203464301",
+   "reason": "SAP build automation paused after reported token theft; SAP is not in the stack."
+  }
+ ],
+ "bus_posts": [
+  {
+   "title": "Move LiteLLM installs to the v1.108.x LTS line before the Trail of Bits fix wave",
+   "kind": "task",
+   "lane": "personal",
+   "url": "https://docs.litellm.ai/blog/trail-of-bits-patch-the-planet",
+   "seen_via": "https://x.com/trailofbits/status/2126286058610360340",
+   "posted_at": "2026-11-27T23:22:45Z",
+   "result": "ok"
+  }
+ ],
+ "bus_pending": 0,
+ "repos_for_gh_testing": [
+  {
+   "url": "https://github.com/alesha-pro/llm.asm",
+   "why": "Kept item (Ring -1 hypervisor with a 2B LLM). MIT but an individual owner and bare-metal code, so untrusted for any bus install."
+  },
+  {
+   "url": "https://github.com/MiaAI-Lab/Inkling-2-Mini-RTX-5090-TensorFold",
+   "why": "Cited in the TensorFold item; Apache-2.0, not MIT, individual-owned deploy recipe."
+  }
+ ],
+ "follows": {
+  "made": [],
+  "recommended": [
+   "@opencode"
+  ],
+  "candidates": [
+   {
+    "handle": "@opencode",
+    "why": "Curated (signal_to_noise 5), first-hand project account, Rune early build today, no doubt flag of 2 or more. No browser, so recommended only."
+   }
+  ],
+  "note": "@superalesha and @MiaAI_lab are trial accounts, not yet eligible. Earlier recommendations @vanstriendaniel, @_philschmid and @RoboColosseum still stand."
+ },
+ "horizon_checks": 1,
+ "errors": 0,
+ "skipped": "OfficialLoganK instinct family onboarding (anecdote); NousResearch and witcheer Nous Portal Black Friday promo, CommandCode GLM discounts, SemiAnalysis supply shop (marketing); SemiAnalysis InferenceX TPU and Trainium perf per dollar (Trainium3 and InferenceX results already delivered; post links only a video); Box Context Retrieval and Astropods demo (coming feature, partner demo); aiDotEngineer talk clips (talks already public); jerryjliu0 OCRia-nano-1 (already delivered); eliebakouch quote folded into Anpaure item; casper_hansen Opus audit and Opus stagnation (opinion); omarsar0 book and Neon editor posts (recommendation, no artifact); kitlangton effect.institute open-sourced (education, not AI capability); MatthewBerman Folio Gemini support (minor integration); OpenRouter MCP deslop tip (Neon already delivered); omarchy Plugin Contest results and repo star board (community); rohanpaul Stanford agent-team paper via repost (no paper link in post); arena illustration retrospective; discovery release search was mostly non-AI apps and self-promotion; Inkling uncensored finetune (no source).",
+ "notes": "List: 1 page (95 posts) reaching 17:01Z, so since 19:24Z was covered. Fallback OR searches for curated non-list accounts in 6 group queries (35 posts). 2 discovery queries (releases with HF/GitHub/arXiv links; security on stack terms). Horizon: 1 X read (Dessa query since 19:24Z: 0 results), no trigger. 1 get_posts_by_ids call for full text, media and 5 re-checks. 3 deep reads (Ring -1 hypervisor, OpenCode Rune, Anpaure Pretrain Index). Primary links checked via GitHub API, Hugging Face API, sglang.io, docs.litellm.ai, CISA KEV and NVD (no X reads). Community Notes: none returned. One verified LiteLLM security task posted to the Mini event bus, lane personal."
+}
