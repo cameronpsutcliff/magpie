@@ -1,0 +1,469 @@
+{
+ "ran_at": "2026-11-27T19:24:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-27T15:30:00Z",
+ "queries": 9,
+ "calls": 15,
+ "items": [
+  {
+   "title": "Liquid AI releases d1.3-ultra decision model, tied for first on the Artificial Analysis Decision Index",
+   "url": "https://x.com/liquidai/status/2126374995399975380",
+   "handle": "@liquidai",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Liquid's d1.3-ultra update adds ranking and top-k selection, number and date extraction, and audio span extraction, and is trained to treat planted instructions in inputs as data. Artificial Analysis independently scores it 76 on its Decision Index v2.1, tied with Bison 31B at about 60% lower cost per million tasks.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [
+    "https://console.liquid.ai"
+   ],
+   "vendor": "Liquid AI",
+   "posted_at": "2026-11-27T17:57:59Z",
+   "metrics": {
+    "likes": 397,
+    "reposts": 33,
+    "quotes": 13,
+    "replies": 47,
+    "views": 371514
+   },
+   "confirmed_by": [
+    "@ArtificialAnlys"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Replies are mostly short, generic praise about audio span extraction; one user could not find it in the Liquid Console and asked whether it is US-only, another asked for OpenRouter.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Google Antigravity release cuts Auto-mode approvals another 15% and adds native GitHub PR pills",
+   "url": "https://x.com/antigravity/status/2126360403022069908",
+   "handle": "@antigravity",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "The day-after-Thanksgiving Antigravity release trims unnecessary approvals in Auto mode by a further 15% and adds native GitHub integration: paste a PR link into chat to reference it inline, hover for status, branches and comments, and see all linked PRs in the Overview menu.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [],
+   "vendor": "Google",
+   "posted_at": "2026-11-27T17:00:00Z",
+   "metrics": {
+    "likes": 891,
+    "reposts": 43,
+    "quotes": 11,
+    "replies": 68,
+    "views": 61468
+   },
+   "confirmed_by": [
+    "@_mohansolo"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Few replies discuss the feature; most ask about weekly usage limits running out, bans for using other harnesses, proxy settings, and Auto mode missing on Windows 10.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Strata 0.2.23 adds GSQ-RCO IQ3_S and four other Inkling 2 Mini builds plus up to 64 parallel requests",
+   "url": "https://x.com/coldniko/status/2126392295528284588",
+   "handle": "@coldniko",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "The MIT-licensed Strata local engine now ships five Inkling 2 Mini builds from 10.5 to 19.4 GB, including the GSQ-RCO IQ3_S quant, fixes long-context regressions and serves up to 64 parallel requests, so the 26B looped MoE runs faster on consumer GPUs.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/Niko1221/Strata/releases/tag/v0.2.23"
+   ],
+   "vendor": "Strata (Niko Veit)",
+   "posted_at": "2026-11-27T19:06:44Z",
+   "metrics": {
+    "likes": 31,
+    "reposts": 6,
+    "quotes": 1,
+    "replies": 7,
+    "views": 978
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "NVIDIA Research Test-time Baking keeps novel-view rendering fast as more photos are added",
+   "url": "https://x.com/NVIDIAAI/status/2126390108555489431",
+   "handle": "@NVIDIAAI",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "Test-time Baking trains a compact network to imitate how a multi-view model combines information across input photos, so rendering new viewpoints stays fast while quality stays close to the original model as photo count grows. Paper, code, weights and a demo are out for the NeurIPS 2026 spotlight.",
+   "kind": "paper",
+   "evidence": "artifact",
+   "links": [
+    "http://nvda.ws/4B3rzNX"
+   ],
+   "vendor": "NVIDIA Research",
+   "posted_at": "2026-11-27T18:58:02Z",
+   "metrics": {
+    "likes": 36,
+    "reposts": 2,
+    "quotes": 1,
+    "replies": 4,
+    "views": 2500
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Training-free looped transformer: rerunning 3 layers of frozen Qwen3-0.6B raises ARC-Easy accuracy",
+   "url": "https://x.com/ben_burtenshaw/status/2126337755378581803",
+   "handle": "@ben_burtenshaw",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A Hugging Face engineer reproduces the Training-Free Looped Transformers paper by running three layers of a frozen Qwen3-0.6B twice at half a step per pass, raising ARC-Easy accuracy with no weight changes; code and eval results are in a Hugging Face bucket.",
+   "kind": "technique",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/buckets/burtenshaw/qwen-arc-loop/tree/eval"
+   ],
+   "vendor": "Hugging Face (Ben Burtenshaw)",
+   "posted_at": "2026-11-27T15:30:00Z",
+   "metrics": {
+    "likes": 272,
+    "reposts": 22,
+    "quotes": 5,
+    "replies": 25,
+    "views": 13286
+   },
+   "confirmed_by": [
+    "@huggingface"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "A replier notes the paper's best 0.6B method (heavy-ball) gains only 0.13 points on ARC-Easy in the posted results.json, and others ask for the baseline and the extra compute and KV-cache cost.",
+    "source": "https://x.com/dr_hb_ai/status/2126373118042312940"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Mostly interested builders planning to try it; specific questions about KV cache handling in decoding, compute overhead, the small heavy-ball gain, and whether longer CoT does the same.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "SGLang makes Intel Xeon CPUs and Intel GPUs first-class serving platforms",
+   "url": "https://x.com/lmsysorg/status/2126365316833755432",
+   "handle": "@lmsysorg",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "SGLang now serves on Intel Xeon with AMX compute, W8A8 INT8 and NUMA-aware threads, and on Intel GPUs with native XPU attention and grouped MoE kernels, speculative decoding and graph capture; MXFP4 MoE on Xe2 keeps expert weights packed in device memory.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://lmsys.org/blog/2026-11-27-sglang-intel/"
+   ],
+   "vendor": "SGLang (LMSYS, RadixArk, Intel)",
+   "posted_at": "2026-11-27T17:19:32Z",
+   "metrics": {
+    "likes": 6,
+    "reposts": 0,
+    "quotes": 1,
+    "replies": 2,
+    "views": 848
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Physical Intelligence Index ranks robot models by blind head-to-head Elo on real robots",
+   "url": "https://x.com/RoboColosseum/status/2126360711228280968",
+   "handle": "@RoboColosseum",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "RoboColosseum's new weekly index ranks robot policies, world action models and LLM agents by Elo from 27,688 blind head-to-head trials on real robots; Dream-1, GPT-6.2 Astra and Fable 5.2 lead, with MolmoAct2 the best VLA at eighth.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "RoboColosseum",
+   "posted_at": "2026-11-27T17:01:14Z",
+   "metrics": {
+    "likes": 17,
+    "reposts": 3,
+    "quotes": 1,
+    "replies": 3,
+    "views": 999
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The post itself notes the leaders are thinly tested at about 400 to 600 comparisons each, against about 4,000 for VLAs, so top ranks may move.",
+    "source": "https://x.com/RoboColosseum/status/2126360723899244668"
+   }
+  },
+  {
+   "title": "omarchy-mlx brings Linux MLX inference on Apple Silicon to parity with macOS",
+   "url": "https://x.com/JoshuaSWarren/status/2126341900403663032",
+   "handle": "@JoshuaSWarren",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "On Linux on Apple Silicon, omarchy-mlx now runs Qwen3.8-2B at 215 tok/s on an M2 Max (213 on macOS) and Qwen3-4B at 105 tok/s on an M1 Max (104 on macOS); a fix for slow M5 Max runs is up for testing. MIT repo.",
+   "kind": "repo",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/joshuaswarren/omarchy-mlx"
+   ],
+   "vendor": "omarchy-mlx (Joshua Warren)",
+   "posted_at": "2026-11-27T15:46:29Z",
+   "metrics": {
+    "likes": 88,
+    "reposts": 7,
+    "quotes": 1,
+    "replies": 19,
+    "views": 3740
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The margins are about 1%, within run-to-run noise, so this is parity rather than a clear win; the post also promotes a hardware wishlist.",
+    "source": null
+   }
+  },
+  {
+   "title": "10 MB page-script classifiers route scanned PDFs to the right OCR pipeline at 1,773 pages/s",
+   "url": "https://x.com/vanstriendaniel/status/2126337319032516859",
+   "handle": "@vanstriendaniel",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Two tiny image classifiers trained for $25.50 on Hugging Face Jobs predict which of 21 writing scripts a page uses, at 11 ms on CPU or 1,773 pages/s on an A10G, so web-scale PDF crawls can be pre-sorted before paying for OCR; a run over 21,490 Common Crawl pages cost 18 cents.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/collections/davanstrien/page-script-id-6b0994a41888240e8b30aa97"
+   ],
+   "vendor": "Hugging Face (Daniel van Strien)",
+   "posted_at": "2026-11-27T15:28:16Z",
+   "metrics": {
+    "likes": 38,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 4,
+    "views": 4982
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "TRL async GRPO now powers RL for genomic models, a 2B olympiad prover and multi-harness coding agents",
+   "url": "https://x.com/SergioPaniego/status/2126337500755206351",
+   "handle": "@SergioPaniego",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Hugging Face TRL's asynchronous RL trainer is the base for the RL stage of the Carbon-X genomic model, a 2B proof-writing model in FineEnvs, coding agents from 1.7B to 27B trained inside pi, OpenCode and Hermes, and the async RL in Unsloth, Axolotl and Snowflake Arctic Platform.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/spaces/trl-lib/async-grpo-stable",
+    "https://github.com/huggingface/carbon",
+    "https://huggingface.co/blog/FineEnvs/fineproofenvs-rl-2b-prover",
+    "https://huggingface.co/spaces/FineEnvs/multi-harness-rl",
+    "https://huggingface.co/blog/harness-adapters-at-scale"
+   ],
+   "vendor": "Hugging Face TRL",
+   "posted_at": "2026-11-27T15:29:00Z",
+   "metrics": {
+    "likes": 12,
+    "reposts": 3,
+    "quotes": 0,
+    "replies": 3,
+    "views": 617
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "HyperHarness trains one generator that writes a personalized agent harness from each user's history",
+   "url": "https://x.com/dair_ai/status/2126339269442818297",
+   "handle": "@dair_ai",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A Microsoft-led paper trains a single generator that, given a user's history, has an LLM write that user's retrieval and answer-guidance functions, refined by task scores across training users, so personalized assistants adapt per user without per-user search or updating the answering model.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2611.29062"
+   ],
+   "vendor": "Microsoft Research and collaborators",
+   "posted_at": "2026-11-27T15:36:01Z",
+   "metrics": {
+    "likes": 83,
+    "reposts": 14,
+    "quotes": 1,
+    "replies": 19,
+    "views": 6188
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "saved_in": 0,
+ "saved_kept": 0,
+ "saved_note": "No new owner saves since the 15:30Z sweep: the AI bookmark sync archive is unchanged at 134 lines (last capture 05:34Z, already vetted), the 11:30 CT sync raw file has 20 posts all already in the archive or discarded, and new_candidates.json is []. No get_users_bookmarks call this run. No verdict note sent to any agent.",
+ "list_posts_read": 105,
+ "list_pages": 2,
+ "list_covered_since": true,
+ "deep_reads": 3,
+ "rechecks": 7,
+ "videos": 0,
+ "video_note": "No qualifying clip: the deep-read items' clips are 23 s (Antigravity) and 51 s (looped transformer), and Liquid's post has only an image; the 123 s OpenAIDevs merch-store demo was not a kept or deep-read item.",
+ "recheck_notes": "Re-checked 7 items from the 15:30Z sweep with doubt 1 or a deep read (GigaChat 3.5 Omni, Unsloth MCP engines, Gemini deep-research skill, AMD HF kernels, OpenBMB receipt agent, SnowPR, witcheer short-answer pushback). Metrics updated in the read; no Community Notes returned and no new pushback found, so doubt levels unchanged.",
+ "security_forwarded": [
+  {
+   "url": "https://github.com/modelcontextprotocol/servers/releases/tag/v2.6.0",
+   "matched": "always_forward: agent tooling (MCP reference servers mcp-server-git, server-memory, mcp-server-fetch, server-filesystem). Verified on the release page; posted to the Mini event bus as a cve, not to Bouncer.",
+   "seen_via": "https://x.com/botnewsnetwork/status/2126383218551320818"
+  },
+  {
+   "url": "https://apiiro.com/blog/malicious-mcp-servers-miou",
+   "matched": "always_forward: agent tooling (malicious MCP servers on GitHub run code when an agent launches them, before any tool call). Research, no specific package in our stack; not posted to the bus.",
+   "seen_via": "https://x.com/SAINwatch/status/2126377521113452554"
+  },
+  {
+   "url": "https://vibeincidents.com/incidents/axon-mcp-cve-2026-76818/",
+   "matched": "always_forward: agent tooling (axon-mcp <= 0.1.0 runs a downloaded binary without an integrity check, CVE-2026-76818). Not known in our stack; not posted to the bus.",
+   "seen_via": "https://x.com/VibeIncidents/status/2126390868806676825"
+  },
+  {
+   "url": "https://x.com/infrastack_ai/status/2126348854513860925",
+   "matched": "always_forward: supply chain (malicious code in every published version of npm react-schedule-it). Not known in our stack; no primary advisory link; not posted to the bus.",
+   "seen_via": "https://x.com/infrastack_ai/status/2126348854513860925"
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://cve.now/CVE-2026-137964",
+   "reason": "ToolJet GitHub Actions release-workflow command injection; ToolJet is not run on the fleet."
+  },
+  {
+   "url": "https://www.thehackerwire.com/vulnerability/CVE-2026-76807/",
+   "reason": "Todoist MCP DNS rebinding (fixed 10.3.3); Todoist MCP is not in stack.json or known fleet MCP configs."
+  },
+  {
+   "url": "https://www.valtersit.com/cve/CVE-2026-93605/",
+   "reason": "vm2 NodeVM sandbox escape; vm2 is not a known fleet dependency (secondary source only)."
+  },
+  {
+   "url": "https://github.com/advisories/GHSA-5j23-2pf6-3cg8",
+   "reason": "WordPress 'Secure MCP Server' plugin privilege escalation (CVE-2026-131688); no WordPress or PHP on the fleet (PHP checked not present)."
+  },
+  {
+   "url": "https://x.com/BenjiM8164/status/2126383202088464585",
+   "reason": "Commentary on OX Security's Nov 23 MCP prompt-injection survey; no new package or fix."
+  },
+  {
+   "url": "https://x.com/wfouaaad/status/2126351061019759093",
+   "reason": "Research that search APIs sometimes return typosquatted packages to coding-agent queries; no specific component to patch."
+  }
+ ],
+ "bus_posts": [
+  {
+   "title": "Upgrade MCP reference servers (git, memory, fetch, filesystem) to the v2.6.0 fixes",
+   "kind": "cve",
+   "lane": "personal",
+   "url": "https://github.com/modelcontextprotocol/servers/releases/tag/v2.6.0",
+   "seen_via": "https://x.com/botnewsnetwork/status/2126383218551320818",
+   "posted_at": "2026-11-27T19:23:32Z",
+   "result": "ok"
+  }
+ ],
+ "bus_pending": 0,
+ "repos_for_gh_testing": [
+  {
+   "url": "https://github.com/joshuaswarren/omarchy-mlx",
+   "why": "Kept item: Linux MLX inference on Apple Silicon at macOS parity. MIT but individual owner, so not trusted for bus install; worth testing only if Omarchy runs on a Mac."
+  }
+ ],
+ "follows": {
+  "made": [],
+  "recommended": [
+   "@vanstriendaniel",
+   "@_philschmid",
+   "@RoboColosseum"
+  ],
+  "candidates": [
+   {
+    "handle": "@vanstriendaniel",
+    "why": "Active roster account, first-hand Hugging Face researcher, 5 kept sweep items in 14 days (page-script classifiers today), no doubt flag of 2 or more."
+   },
+   {
+    "handle": "@_philschmid",
+    "why": "Curated (signal_to_noise 4), first-hand Google DeepMind builder, 6 kept sweep items in 14 days (deep-research skill today), no doubt flag of 2 or more."
+   },
+   {
+    "handle": "@RoboColosseum",
+    "why": "Active roster account, first-hand eval project (Physical Intelligence Index today), 3 kept sweep items in 14 days, no doubt flag of 2 or more."
+   }
+  ],
+  "note": "No browser, so no follows; written as recommended in inbox/x-follows.json. Limits: Central day Nov 27 0 of 3 follows used, week 6 of 15."
+ },
+ "horizon_checks": 1,
+ "skipped": "Antigravity weekly-limit and harness-ban complaints (replies, not capability); trq212 RPG-stat-sheet model scoring (opinion); Gemini 4 Neon praise and the Neon 'Claude sabotage' audit repost (anecdote, Neon already delivered); philschmid Neon code-to-poster skill images (no link); OpenAIDevs talk-to-a-merch-store demo (showcase video of existing APIs, no repo); Modular MAX LLM book revamp (docs); SemiAnalysis Trainium3 deep dive (paywalled analysis, Trainium3 already delivered); NielsRogge Inkling-2-Mini vs GLM-5.3 on HF CLI (single anecdote); ViC305 Ling Sante quant on one DGX Spark 81 vs 76 on 100 questions (single anecdote, similar skipped earlier); wei_wang PRO 6000 vs two Sparks cost thread and Nvidia SEA shipment halt (commentary; FT report already skipped); jerryjliu0 OCRia-1 ICYMI (already delivered); trending_repos Claude-BugHunter (already delivered and listed for GH Testing Nov 26); Gradio NeurIPS reproduction hackathon and White Circle competition (events); Llama_app multi-model (original before window); witcheer Hermes cost tips and Obsidian setup (how-to, no measured result); thdxr OpenCode App Store dispute (not capability); PatrickToulme AI-adoption essay, levie, emollick, HamelHusain (opinion); ElevenLabs Black Friday map, Snowflake Gartner, Databricks Genie CEO, llama_index booth, PyTorch cert discount (marketing); discovery release search was low-signal self-promotion and listicles.",
+ "errors": 0,
+ "notes": "List: 2 compact pages (50 + 55 posts) reaching 14:00Z, so since 15:30Z was covered. Fallback OR searches for the 195 curated non-list accounts in 6 group queries (38 posts). 2 discovery queries (releases with HF/GitHub/arXiv links; security on stack terms). Horizon: 1 X read (Dessa queries since 15:30Z: 0 results), no trigger. 1 get_posts_by_ids call for full text, links, media and 7 re-checks. 3 deep reads (Antigravity release, Liquid d1.3-ultra, looped transformer replies). Primary links checked via GitHub API (Strata release, omarchy-mlx, MCP servers v2.6.0), arXiv, lmsys.org and Hugging Face (no X reads). Community Notes: none returned. One verified MCP reference-server security release posted to the Mini event bus, lane personal."
+}

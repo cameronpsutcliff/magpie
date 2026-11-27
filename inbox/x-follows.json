@@ -324,6 +324,37 @@
         "https://x.com/lhoestq/status/2126297205128511913",
         "https://x.com/lhoestq/status/2126322891662799052"
       ]
+    },
+    {
+      "handle": "@vanstriendaniel",
+      "date": "2026-11-27",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Active roster account, first-hand Hugging Face researcher, 5 kept sweep items in 14 days (page-script classifiers today), no doubt flag of 2 or more. No browser this sweep, so recommended instead of followed.",
+      "evidence": [
+        "https://x.com/vanstriendaniel/status/2126337319032516859"
+      ]
+    },
+    {
+      "handle": "@_philschmid",
+      "date": "2026-11-27",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Curated (signal_to_noise 4), first-hand Google DeepMind builder, 6 kept sweep items in 14 days (deep-research skill today), no doubt flag of 2 or more. No browser this sweep, so recommended instead of followed.",
+      "evidence": [
+        "https://x.com/_philschmid/status/2126312943520243885",
+        "https://x.com/_philschmid/status/2126383425858789528"
+      ]
+    },
+    {
+      "handle": "@RoboColosseum",
+      "date": "2026-11-27",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Active roster account, first-hand eval project (Physical Intelligence Index today), 3 kept sweep items in 14 days, no doubt flag of 2 or more. No browser this sweep, so recommended instead of followed.",
+      "evidence": [
+        "https://x.com/RoboColosseum/status/2126360711228280968"
+      ]
     }
   ]
 }
