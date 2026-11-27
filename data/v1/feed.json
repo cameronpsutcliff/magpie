@@ -13,6 +13,33 @@
  ],
  "items": [
   {
+   "id": "2026-11-27",
+   "url": "https://www.cameronsutcliff.com/magpie/2026-11-27",
+   "title": "ProxyGenBench: Benchmarking Proxy-Guided Video Generation, What a Forecasting Leaderboard Can Establish: Resolution Reporting for Zero-Shot Time-Series Models, t3code, and more",
+   "summary": "262 capability events from 141 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words.",
+   "content_html": "<p>262 capability events from 141 sources. Ranked by code; the editor did not run this edition, so copy is the sources&#x27; own words.</p><ol><li><a href=\"https://huggingface.co/papers/2611.34457\">ProxyGenBench: Benchmarking Proxy-Guided Video Generation</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-27-5a95bfb7d25d\">on Magpie</a>)</li><li><a href=\"https://huggingface.co/papers/2611.31619\">What a Forecasting Leaderboard Can Establish: Resolution Reporting for Zero-Shot Time-Series Models</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-27-24c1b0a9ee1f\">on Magpie</a>)</li><li><a href=\"https://github.com/pingdotgg/t3code\">pingdotgg/t3code</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-27-3cd4e48abda1\">on Magpie</a>)</li><li><a href=\"https://huggingface.co/Aleph-Alpha/Kolibri-1.1\">Aleph-Alpha/Kolibri-1.1</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-27-ad68ffbab617\">on Magpie</a>)</li><li><a href=\"https://github.com/elementalsouls/Claude-BugHunter\">elementalsouls/Claude-BugHunter</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-11-27-4302db6cb9e8\">on Magpie</a>)</li></ol><p><strong>Possibilities:</strong> No new possibility today. Latest: One approval can cover a coordinated frontend and backend change routed through T3 Code (2026-11-26)</p><p><strong>Worth watching:</strong> No new video pick today. Latest: 1,000 Claude Agents Formalized Fermat&#x27;s Last Theorem, Lance Martin, Anthropic (2026-11-26)</p><p><strong>Still open:</strong> <a href=\"https://www.federalregister.gov/documents/2026/11/19/2026-23529/addressing-remote-access-to-advanced-semiconductors\">Commerce rule restricts chip exports to data centers serving D:5 firms</a> (2026-11-19)</p><p><strong>Threats still open:</strong> <a href=\"https://osv.dev/vulnerability/GHSA-qx49-fqc8-xw99\">MCP Python SDK OAuth client leaks credentials to servers</a> (high, patched)</p>",
+   "content_text": "262 capability events from 141 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words. ProxyGenBench: Benchmarking Proxy-Guided Video Generation What a Forecasting Leaderboard Can Establish: Resolution Reporting for Zero-Shot Time-Series Models pingdotgg/t3code Aleph-Alpha/Kolibri-1.1 elementalsouls/Claude-BugHunter",
+   "date_published": "2026-11-27T11:15:16Z",
+   "tags": [
+    "agents",
+    "coding",
+    "evals",
+    "infra",
+    "local",
+    "mcp",
+    "models",
+    "multimodal",
+    "research",
+    "reverse",
+    "security"
+   ],
+   "_magpie": {
+    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-11-27.json",
+    "backfilled": false,
+    "capabilities": 262
+   }
+  },
+  {
    "id": "2026-11-26",
    "url": "https://www.cameronsutcliff.com/magpie/2026-11-26",
    "title": "Running native NVFP4 locally, evaluating agent APIs, training live harness adapters, and more",
@@ -679,30 +706,6 @@
     "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-29.json",
     "backfilled": false,
     "capabilities": 425
-   }
-  },
-  {
-   "id": "2026-10-28",
-   "url": "https://www.cameronsutcliff.com/magpie/2026-10-28",
-   "title": "LFM3-1.7B, graphify, ECC, and more",
-   "summary": "306 capability events from 127 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words.",
-   "content_html": "<p>306 capability events from 127 sources. Ranked by code; the editor did not run this edition, so copy is the sources&#x27; own words.</p><ol><li><a href=\"https://huggingface.co/LiquidAI/LFM3-1.7B\">LiquidAI/LFM3-1.7B</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-28-04012c1787eb\">on Magpie</a>)</li><li><a href=\"https://github.com/Graphify-Labs/graphify\">Graphify-Labs/graphify</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-28-40993ef93264\">on Magpie</a>)</li><li><a href=\"https://github.com/affaan-m/ECC\">affaan-m/ECC</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-28-ab5596443556\">on Magpie</a>)</li><li><a href=\"https://github.com/obra/superpowers\">obra/superpowers</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-28-1ec0b1042f97\">on Magpie</a>)</li><li><a href=\"https://github.com/anomalyco/opencode\">anomalyco/opencode</a> (<a href=\"https://www.cameronsutcliff.com/magpie/c/2026-10-28-6813b8a55e39\">on Magpie</a>)</li></ol><p><strong>Possibilities:</strong> No new possibility today. Latest: IT teams must audit local agent tool calls now that installs take one click (2026-10-27)</p><p><strong>Worth watching:</strong> No new video pick today. Latest: Hugging Face Journal Club: Score Centering Stabilizes Off-policy Reinforcement Learning (2026-10-27)</p><p><strong>Constraints:</strong> No new constraint today. Latest: DHS order bars DeepSeek products from federal civilian agencies (2026-10-20)</p><p><strong>Threats still open:</strong> <a href=\"https://osv.dev/vulnerability/GHSA-hq85-5cpj-mr62\">uv bundled CA store trusts compromised emSign root</a> (critical, patched); <a href=\"https://osv.dev/vulnerability/RUSTSEC-2026-0382\">rustls-webpki may accept compromised emSign intermediates</a> (high (editor&#x27;s estimate), patched); <a href=\"https://osv.dev/vulnerability/GHSA-46jr-4wx8-v453\">MCP TypeScript SDK server memory exhaustion</a> (high, patched)</p>",
-   "content_text": "306 capability events from 127 sources. Ranked by code; the editor did not run this edition, so copy is the sources' own words. LiquidAI/LFM3-1.7B Graphify-Labs/graphify affaan-m/ECC obra/superpowers anomalyco/opencode",
-   "date_published": "2026-10-28T13:19:01Z",
-   "tags": [
-    "agents",
-    "coding",
-    "local",
-    "mcp",
-    "memory",
-    "models",
-    "multimodal",
-    "research"
-   ],
-   "_magpie": {
-    "day": "https://www.cameronsutcliff.com/magpie-data/days/2026-10-28.json",
-    "backfilled": false,
-    "capabilities": 306
    }
   }
  ]

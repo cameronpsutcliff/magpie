@@ -2,6 +2,86 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-11-27",
+   "headline": "ProxyGenBench: Benchmarking Proxy-Guided Video Generation, What a Forecasting Leaderboard Can Establish: Resolution Reporting for Zero-Shot Time-Series Models, t3code, and more",
+   "events": 262,
+   "sources": 577,
+   "enriched": false,
+   "top": [
+    {
+     "id": "5a95bfb7d25d",
+     "title": "ProxyGenBench: Benchmarking Proxy-Guided Video Generation",
+     "impact": 4,
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-27-5a95bfb7d25d"
+    },
+    {
+     "id": "24c1b0a9ee1f",
+     "title": "What a Forecasting Leaderboard Can Establish: Resolution Reporting for Zero-Shot Time-Series Models",
+     "impact": 4,
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-27-24c1b0a9ee1f"
+    },
+    {
+     "id": "3cd4e48abda1",
+     "title": "pingdotgg/t3code",
+     "impact": 5,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-27-3cd4e48abda1"
+    },
+    {
+     "id": "ad68ffbab617",
+     "title": "Aleph-Alpha/Kolibri-1.1",
+     "impact": 4,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-27-ad68ffbab617"
+    },
+    {
+     "id": "4302db6cb9e8",
+     "title": "elementalsouls/Claude-BugHunter",
+     "impact": 5,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-27-4302db6cb9e8"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Research",
+    "OpenAI",
+    "Hugging Face",
+    "Anthropic",
+    "Google"
+   ],
+   "topics": {
+    "models": 93,
+    "agents": 88,
+    "coding": 79,
+    "multimodal": 67,
+    "infra": 39,
+    "evals": 32,
+    "research": 32,
+    "local": 31,
+    "mcp": 28,
+    "memory": 25,
+    "security": 11,
+    "robotics": 7,
+    "reverse": 6
+   },
+   "kinds": {
+    "repo": 44,
+    "paper": 40,
+    "social": 40,
+    "newsletter": 34,
+    "model": 30,
+    "changelog": 22,
+    "space": 20,
+    "community": 18,
+    "blog": 14
+   },
+   "constraints": [],
+   "threats": []
+  },
+  {
    "date": "2026-11-26",
    "headline": "Running native NVFP4 locally, evaluating agent APIs, training live harness adapters, and more",
    "events": 437,
@@ -5363,5 +5443,5 @@
    }
   }
  ],
- "latest": "2026-11-26"
+ "latest": "2026-11-27"
 }
