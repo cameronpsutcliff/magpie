@@ -1,0 +1,479 @@
+{
+ "ran_at": "2026-11-27T03:21:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-26T23:22:00Z",
+ "queries": 12,
+ "calls": 14,
+ "items": [
+  {
+   "title": "Omarchy 4.6.0 RC1 lets coding agents run on local models on the machine or across a tailnet, from one agents panel",
+   "url": "https://x.com/omarchy/status/2126119015877607928",
+   "handle": "@omarchy",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Omarchy's release candidate adds an agents panel that installs a catalog model sized to the machine in a network-less container, opens it in the bundled Pi agent, shares it over Tailscale, and can split one model across two cabled DGX Sparks. Linux users get local-model coding agents set up from the desktop instead of by hand.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/omacom/omarchy/releases/tag/v4.6.0-rc1"
+   ],
+   "vendor": "Omacom (Omarchy)",
+   "posted_at": "2026-11-27T01:00:26Z",
+   "metrics": {
+    "likes": 411,
+    "reposts": 34,
+    "quotes": 5,
+    "replies": 33,
+    "views": 10043
+   },
+   "confirmed_by": [
+    "@OmarchyUpdates"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": "Release candidate: the release notes themselves warn of bugs and advise a test machine or backup.",
+    "source": "https://github.com/omacom/omarchy/releases/tag/v4.6.0-rc1"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers welcomed local agents and the no-network container, asked whether local models hold up on long agent loops and modest hardware, and how RC and stable channels switch; no one reported results yet.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Hex 3.5 adds free, local meeting recording with transcripts agents can search via `hex meetings search`",
+   "url": "https://x.com/kitlangton/status/2126102192264523896",
+   "handle": "@kitlangton",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "The Rust rewrite of the Hex dictation app now records calls locally, offers a copy-agent-prompt action and a CLI that scopes transcript search to one meeting, and `hex transcribe` handles audio and video files without the app open. A local alternative to cloud meeting bots for people who want agents to read their calls.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/anomalyco/hex/releases/tag/v3.5.1",
+    "https://github.com/anomalyco/hex/releases/tag/v3.5.0",
+    "https://github.com/anomalyco/hex"
+   ],
+   "vendor": "Anomaly (Hex)",
+   "posted_at": "2026-11-26T23:53:58Z",
+   "metrics": {
+    "likes": 598,
+    "reposts": 21,
+    "quotes": 7,
+    "replies": 34,
+    "views": 25603
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers liked that audio stays local and compared it with Wispr Flow and Granola; one user said they are switching from Wispr Flow and asked for a better cleanup model, and the author pointed to the Rewrite with OpenCode mode.",
+    "tried": true,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "DGX Spark on driver 615.71.09: weight loading stalls at ~22 MB/s; setting NVreg_CoherentGPUMemoryMode=numa restores 50 s loads",
+   "url": "https://x.com/wei_wang/status/2126153040008823062",
+   "handle": "@wei_wang",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "Two DGX Spark owners on the NVIDIA forum traced multi-minute to never-finishing vLLM and SGLang startups after the 615 driver update to the default CDMM coherent-memory mode; switching the nvidia module to NUMA mode loaded 21.9 GB in 50 s and cut a 123.6 GiB model's startup from over 48 min to about 6 min. Useful for anyone serving large checkpoints on a Spark.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [
+    "https://forums.developer.nvidia.com/t/dgx-spark-gb10-cdmm-driver-mode-stalls-weight-loading-at-22-mb-s-nvreg-coherentgpumemorymode-numa-fixes-it/389131",
+    "https://github.com/NVIDIA/open-gpu-kernel-modules"
+   ],
+   "vendor": "NVIDIA (DGX Spark)",
+   "posted_at": "2026-11-27T03:16:01Z",
+   "metrics": {
+    "likes": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 2,
+    "views": 28
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "User-found workaround: NVIDIA has not said whether NUMA mode is supported on GB10, multi-day stability is untested, and one forum reply argues the mode makes little difference on Spark.",
+    "source": "https://forums.developer.nvidia.com/t/dgx-spark-gb10-cdmm-driver-mode-stalls-weight-loading-at-22-mb-s-nvreg-coherentgpumemorymode-numa-fixes-it/389131"
+   }
+  },
+  {
+   "title": "Measured: halving DGX Spark links from 200G to 100G leaves tensor-parallel decode unchanged and delays long-prompt first token 12.6-22.5%",
+   "url": "https://x.com/wei_wang/status/2126134922750365722",
+   "handle": "@wei_wang",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A white paper tested GLM-5.3 at TP=8 on eight Sparks (100G emulated) and GLM-5.3-Flash at TP=4 on a real 4x100G breakout, finding decode speed flat and first-token delay of about 0.11 s per 1,000 prompt tokens, with a formula to estimate the cost from the model config. Builders sizing Spark clusters can buy cheaper switches with known tradeoffs.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://whitepapers.openzeka.com/papers/dgx-spark-link-speed-tensor-parallel/",
+    "https://forums.developer.nvidia.com/t/100g-vs-200g-per-dgx-spark-for-tensor-parallel-inference-theory-estimate-emulation-and-real-100g-results/390309"
+   ],
+   "vendor": "OpenZeka",
+   "posted_at": "2026-11-27T02:04:00Z",
+   "metrics": {
+    "likes": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 2,
+    "views": 308
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "MLX-Serve v26.11.4 serves Thinking Machines' Inkling 2 Mini on M1-M6 Macs with draft-tree speculative decoding, 10-13% faster decode",
+   "url": "https://x.com/ddalcu/status/2126119551980949820",
+   "handle": "@ddalcu",
+   "group": "opensource",
+   "origin": "discovery",
+   "summary": "The Apple Silicon server now runs Inkling 2 Mini from its released checkpoint with image input and batched drafting, speeds DeepSeek-V4.1 decode about 11% on M5, extends Thunderbolt tensor parallel past two Macs, and resumes long sliding-window sessions without re-reading context (Gemma 4 26B at 80K: 20 s to 2 s first token).",
+   "kind": "repo",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/ddalcu/mlx-serve/releases/tag/v26.11.4",
+    "https://huggingface.co/thinkingmachines/Inkling-2-Mini"
+   ],
+   "vendor": "mlx-serve",
+   "posted_at": "2026-11-27T01:02:00Z",
+   "metrics": {
+    "likes": 68,
+    "reposts": 4,
+    "quotes": 2,
+    "replies": 11,
+    "views": 3095
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "TensorFold publishes an Inkling 2 Mini TFQ3 checkpoint, 15.6 GiB versus 18.8 GiB source",
+   "url": "https://x.com/ashxhart/status/2126105426945089800",
+   "handle": "@ashxhart",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A TFQ3-quantized preview of Thinking Machines' Inkling 2 Mini for TensorFold builds with TFQ3 support, Apache-2.0. Format checks pass; quality and generation benchmarks are not out yet.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/TensorFold/Inkling-2-Mini-TFQ3",
+    "https://github.com/ashhart/TensorFold"
+   ],
+   "vendor": "TensorFold",
+   "posted_at": "2026-11-27T00:06:00Z",
+   "metrics": {
+    "likes": 73,
+    "reposts": 6,
+    "quotes": 1,
+    "replies": 7,
+    "views": 3985
+   },
+   "confirmed_by": [
+    "@wei_wang"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Model card says end-to-end generation and quality benchmarks are pending.",
+    "source": "https://huggingface.co/TensorFold/Inkling-2-Mini-TFQ3"
+   }
+  },
+  {
+   "title": "Sber's GigaChat 4: 708B-total, 41B-active hybrid MoE with 1M context, open weights under MIT on Hugging Face",
+   "url": "https://x.com/ajaytoronto1/status/2126137882843000969",
+   "handle": "@ajaytoronto1",
+   "group": "labs",
+   "origin": "discovery",
+   "summary": "GigaChat 4 combines MoE with DeepSeek Sparse Attention and Gated DeltaNet, offers instant and reasoning modes in one checkpoint, ships FP8, BF16, GGUF, base and intermediate checkpoints, and supports MTP or DFlash2 speculative decoding.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/ai-sage/GigaChat4-708B-A41B",
+    "https://huggingface.co/ai-sage/GigaChat4-708B-A41B-GGUF",
+    "https://huggingface.co/ai-sage/GigaChat4-708B-A41B-base"
+   ],
+   "vendor": "Sber (ai-sage)",
+   "posted_at": "2026-11-27T02:15:00Z",
+   "metrics": {
+    "likes": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 13
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Seen only via a small aggregator; the 80.89% SWE-bench Verified figure in the post was not found on the model card, and the repo dates from Nov 20.",
+    "source": "https://huggingface.co/ai-sage/GigaChat4-708B-A41B"
+   }
+  },
+  {
+   "title": "Verifiable On-Policy Distillation weights teacher guidance by verified outcomes, +1.7 to +2.4 points on eight math benchmarks",
+   "url": "https://x.com/askalphaxiv/status/2126149012806132182",
+   "handle": "@askalphaxiv",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "VOPD uses verified answers to scale how strongly a student follows its teacher during on-policy distillation, turning sparse rewards into dense signal; average accuracy rises from 64.71% to 66.38% on Qwen3-4B and 50.88% to 53.32% distilling into 1.7B.",
+   "kind": "paper",
+   "evidence": "measured",
+   "links": [
+    "https://arxiv.org/abs/2611.30325",
+    "https://www.alphaxiv.org/abs/2611.30325"
+   ],
+   "vendor": "VOPD authors",
+   "posted_at": "2026-11-27T03:00:00Z",
+   "metrics": {
+    "likes": 21,
+    "reposts": 1,
+    "quotes": 1,
+    "replies": 0,
+    "views": 1097
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "tinygrad opens a free test inference service for Qwen 3.8 Flash and GLM 5.3 Flash at 262k context on tinybox reds",
+   "url": "https://x.com/__tinygrad__/status/2126140202557346044",
+   "handle": "@__tinygrad__",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "tinygrad is serving two open models from its own AMD-based tinybox reds with GitHub signup and five concurrent connections, as a public test of its inference stack.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "tiny corp",
+   "posted_at": "2026-11-27T02:25:00Z",
+   "metrics": {
+    "likes": 194,
+    "reposts": 3,
+    "quotes": 2,
+    "replies": 21,
+    "views": 6969
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No endpoint or numbers in the post; tinygrad says it logs traffic to fix bugs and offered to drop Qwen if Alibaba objects after a licensing question.",
+    "source": "https://x.com/__tinygrad__/status/2126152188842131466"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Repliers were keen to try it but asked about throughput, time to first token at 262k, the endpoint, privacy (tinygrad confirmed logging) and whether serving Qwen 3.8 Flash is licensed.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Hermes Agent adds `hermes pause` to hold scheduled jobs and new turns until `hermes resume`",
+   "url": "https://x.com/witcheer/status/2126137180619719146",
+   "handle": "@witcheer",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "The pause command stops cron jobs and new turns from starting while letting running work finish, catches up due work on resume, and can show a reason to anyone messaging the agent meanwhile.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/NousResearch/hermes-agent"
+   ],
+   "vendor": "Nous Research",
+   "posted_at": "2026-11-27T02:13:00Z",
+   "metrics": {
+    "likes": 17,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 876
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Browser Use cloud VMs now scale memory from 2.5 GB to 6 GB per heavy page at the same price",
+   "url": "https://x.com/browser_use/status/2126111222680740045",
+   "handle": "@browser_use",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Browser Use says its Firecracker-based browser VMs grow memory on demand so heavy sites no longer crash agent browsing sessions.",
+   "kind": "feature",
+   "evidence": "claim",
+   "links": [],
+   "vendor": "Browser Use",
+   "posted_at": "2026-11-27T00:29:00Z",
+   "metrics": {
+    "likes": 32,
+    "reposts": 1,
+    "quotes": 2,
+    "replies": 8,
+    "views": 3033
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "No docs, changelog or measurements linked.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "saved_in": 0,
+ "saved_kept": 0,
+ "saved_note": "No new owner saves since the 23:22Z sweep: /workspace/x-ai-bookmarks/bookmarks_ai.jsonl unchanged since 13:29Z (131 lines, already vetted) and new_candidates.json from the latest sync is empty. No bookmarks API call this run (AI bookmark sync owns capture).",
+ "list_posts_read": 98,
+ "list_pages": 1,
+ "list_covered_since": true,
+ "deep_reads": 3,
+ "rechecks": 8,
+ "videos": 0,
+ "video_note": "Hex clip (95.7 s, deep-read) qualified, but the download was blocked by the box's auto-review, so no video record. Other clips were under 60 s or not kept.",
+ "recheck_notes": [
+  {
+   "url": "https://x.com/ashxhart/status/2126076517356609642",
+   "note": "Likes 314 (from 90), replies 67. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/ashxhart/status/2126056575710188011",
+   "note": "Likes 109 (from 88). Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/fritzcremer/status/2126056155122131435",
+   "note": "No engagement. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/voicearena_ai/status/2126042778497069233",
+   "note": "Likes 101 (from 88), quotes 31. Doubt stays 0."
+  },
+  {
+   "url": "https://x.com/jullerino/status/2126008211417510213",
+   "note": "Likes 1337 (from 1129). Doubt stays 0."
+  },
+  {
+   "url": "https://x.com/viticci/status/2125994816945246298",
+   "note": "Likes 465 (from 374). Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/mvanhorn/status/2125974014032323047",
+   "note": "Likes 470 (from 351). Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/TencentHunyuan/status/2125928146113585468",
+   "note": "Likes 799 (from 427), quotes 53. Doubt stays 1."
+  }
+ ],
+ "security_forwarded": [
+  {
+   "url": "https://forums.developer.nvidia.com/t/dgx-spark-gb10-cdmm-driver-mode-stalls-weight-loading-at-22-mb-s-nvreg-coherentgpumemorymode-numa-fixes-it/389131",
+   "matched": "stack.json Linux kernel (match term nvidia driver, Spark); tool break, posted to the Mini event bus instead of Bouncer"
+  }
+ ],
+ "bus_posts": [
+  {
+   "title": "Check Spark NVIDIA driver 615.71.09 for model-load stalls (CoherentGPUMemoryMode)",
+   "kind": "task",
+   "lane": "personal",
+   "posted_at": "2026-11-27T03:27:43Z",
+   "result": "ok"
+  }
+ ],
+ "bus_pending": [],
+ "security_na": [
+  {
+   "url": "https://x.com/santhosh_patell/status/2126142483520471216",
+   "reason": "Fake MCP packages on PyPI/npm (mcp-runtime-report, mcp-env-report, mcp-sysinfo-tools, create-ai-agent-setup): already logged N/A at 2026-11-25T23:17Z; obscure names, no fleet use."
+  },
+  {
+   "url": "https://x.com/fernandogomes/status/2126108577693626630",
+   "reason": "AWS ECS MCP Server CVE-2026-135614: already logged N/A; ECS MCP server not run on the fleet."
+  },
+  {
+   "url": "https://x.com/MalwareBibleJP/status/2126108751128379869",
+   "reason": "Bytebase DBHub MCP auth bypass zero-day (ZDI): already logged N/A 2026-11-25; DBHub not used."
+  },
+  {
+   "url": "https://x.com/multilayer/status/2126124584479162398",
+   "reason": "GitLab 19.6.2/19.5.9/19.4.11 security release: no self-hosted GitLab on the fleet."
+  },
+  {
+   "url": "https://x.com/SiuHarry202601/status/2126111259854795009",
+   "reason": "markdownify-mcp CVE-2026-137308: repeat, already N/A."
+  }
+ ],
+ "repos_for_gh_testing": [
+  {
+   "url": "https://github.com/anomalyco/hex",
+   "why": "Kept item; local meeting transcripts searchable by agents (relevant to Mini/Air). Org owner, MIT, 8.8k stars; org trust not verified. Not queued."
+  },
+  {
+   "url": "https://github.com/ddalcu/mlx-serve",
+   "why": "Kept discovery item; Apple Silicon model server with Inkling 2 Mini and multi-Mac tensor parallel. Individual owner, license NOASSERTION. Not queued."
+  }
+ ],
+ "follows": {
+  "made": [],
+  "recommended": [],
+  "candidates": [
+   {
+    "handle": "@kitlangton",
+    "why": "Curated builders account, first-hand maintainer of Hex with repeated capability releases, no doubt 2+."
+   },
+   {
+    "handle": "@__tinygrad__",
+    "why": "Curated opensource account, first-hand inference stack and hardware work; watch the doubt 1 on the free service first."
+   }
+  ],
+  "note": "No follows performed (orchestrator rule); Central-day allowance for Nov 26 already used by the 15:26Z recommendations. Candidates listed only, not written to x-follows.json."
+ },
+ "horizon_checks": 1,
+ "skipped": "Ming-Image-0.2-Design ModelScope repost and openreponotes recap (covered 15:26Z); SenseNova-RoboRSI-27B (covered Nov 26); Kimi free research API credits (program, business); Gradio x Mirendil Lor NeurIPS repro hackathon credits (event); thecsguy GB10 Black Friday price and Grok Bot usage post (pricing, promo); Omarchy shortcut PR and OmarchyUpdates replies (minor, covered by the RC item); Treeward eBPF micro-patching control plane (not AI); WhatsApp agent SDK, Goshikq, xtoolio, 50-repos listicle (self-promotion or listicles); reach_vb Astra game demo (no new capability); claimed Nvidia halt of server shipments to Southeast Asia (no official document, not a constraint item); CommandCodeAI discounts; emollick, swyx, teortaxesTex, addyosmani, _mohansolo, zachlloydtweets, MichaelThiessen commentary; Thanksgiving posts.",
+ "errors": [],
+ "notes": "List page 1 (98 posts) reached back to 17:00Z, so since 23:22Z was covered (36 posts in window). Fallback OR searches for the 195 curated non-list accounts in 6 group queries (24 results, quiet Thanksgiving night). 2 discovery queries (releases with HF/GitHub/arXiv links; security on stack terms). Horizon: 1 X read (Ragavan Thurairatnam query, 0 results), no trigger. 1 batched get_posts_by_ids for 8 re-checks plus kept-item metrics. 3 deep reads (reply searches). Primary links checked via GitHub API, Hugging Face API, arXiv and the NVIDIA forum JSON (no X reads). Community Notes: none returned by the API. One verified tool break (Spark driver 615 weight-load stall) posted to the Mini event bus, lane personal."
+}
