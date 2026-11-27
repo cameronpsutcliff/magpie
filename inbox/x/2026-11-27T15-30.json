@@ -1,0 +1,582 @@
+{
+ "ran_at": "2026-11-27T15:30:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-27T11:23:00Z",
+ "queries": 11,
+ "calls": 17,
+ "items": [
+  {
+   "title": "Sber releases GigaChat 3.5 Omni (432B MoE, 28B active) as MIT open weights on Hugging Face",
+   "url": "https://x.com/aitrackerbot/status/2126280064832545056",
+   "handle": "@aitrackerbot",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "Sber made its omni-modal GigaChat 3.5 model public: one checkpoint takes text, images, audio and video with sound (up to 512 frames, 131K context), shipped as FP8 weights with SGLang support. Builders with multi-GPU servers get an open any-to-text model to self-host.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/ai-sage/GigaChat3.5-Omni-432B-A28B"
+   ],
+   "vendor": "Sber (ai-sage)",
+   "posted_at": "2026-11-27T11:40:46Z",
+   "metrics": {
+    "likes": 19,
+    "reposts": 2,
+    "quotes": 0,
+    "replies": 3,
+    "views": 1181
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Benchmark wins over Qwen3-Omni-30B and MiMo-V2.6-Pro come from the vendor model card and an aggregator post, not an independent run.",
+    "source": "https://huggingface.co/ai-sage/GigaChat3.5-Omni-432B-A28B"
+   }
+  },
+  {
+   "title": "Unsloth guide wires local GGUF models to Unreal Engine, Unity and Blender over MCP",
+   "url": "https://x.com/UnslothAI/status/2126322382239649959",
+   "handle": "@UnslothAI",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Unsloth published an MCP engines guide showing an Inkling 2 Mini GGUF running locally and building assets in Unreal Engine, Unity and Blender without a human in the loop. It extends Unsloth's earlier computer-use beta to Unity and to a newer local model.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://unsloth.ai/docs/basics/mcp/mcp-engines",
+    "https://github.com/unslothai/unsloth"
+   ],
+   "vendor": "Unsloth",
+   "posted_at": "2026-11-27T14:28:55Z",
+   "metrics": {
+    "likes": 522,
+    "reposts": 48,
+    "quotes": 14,
+    "replies": 42,
+    "views": 15024
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "A replier asked whether this is just MCP wiring to existing engine servers with no new tech; others asked how it recovers from broken tool calls.",
+    "source": "https://x.com/tfolkman/status/2126331175736361434"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Mostly enthusiasm about local models driving creative tools, with practical questions on undo, error recovery and whether the model checks rendered output; one reply notes it is MCP plumbing rather than new tech.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Google publishes a 16-line deep-research skill that turns coding agents into researchers",
+   "url": "https://x.com/_philschmid/status/2126312943520243885",
+   "handle": "@_philschmid",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Google's demolab repo adds a deep-research skill for coding agents (installable with npx skills add): scoped angles, capped parallel subagents, primary filings and PDFs only, and a short cited report. Google says it was preferred over no skill in more than 90% of hundreds of blind evals.",
+   "kind": "technique",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/google-gemini/demolab"
+   ],
+   "vendor": "Google",
+   "posted_at": "2026-11-27T13:51:25Z",
+   "metrics": {
+    "likes": 640,
+    "reposts": 32,
+    "quotes": 15,
+    "replies": 75,
+    "views": 22817
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The 90% preference figure is Google's own blind eval with no published set; repliers asked how it handles conflicting primary sources.",
+    "source": "https://x.com/AINative_Agency/status/2126334099707310246"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers liked the primary-sources-only rule and the step caps, and asked how it resolves disagreeing sources and stops subagents converging; no one reported results from running it yet.",
+    "tried": false,
+    "replies_read": 20
+   }
+  },
+  {
+   "title": "Hugging Face releases an RL-trained Pi harness adapter for Inkling 2 Mini that cuts output tokens about 40%",
+   "url": "https://x.com/yb2698/status/2126323962774945958",
+   "handle": "@yb2698",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A preview adapter for Thinking Machines' Inkling 2 Mini, trained with TRL's AsyncGRPOTrainer, tunes the model for the Pi coding harness. In low reasoning mode it matches base-model accuracy with about 40% fewer output tokens per solved task.",
+   "kind": "model",
+   "evidence": "measured",
+   "links": [
+    "https://huggingface.co/harness-hub/Inkling-2-Mini-pi-adapted-preview",
+    "https://harness-hub-community-adapters.hf.space/"
+   ],
+   "vendor": "Hugging Face (harness-hub)",
+   "posted_at": "2026-11-27T14:35:12Z",
+   "metrics": {
+    "likes": 22,
+    "reposts": 8,
+    "quotes": 0,
+    "replies": 7,
+    "views": 3261
+   },
+   "confirmed_by": [
+    "@huggingface"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Agent Client Protocol v2 enters preview with subagent tracking and turn-safe command stops",
+   "url": "https://x.com/zeddotdev/status/2126335304193970203",
+   "handle": "@zeddotdev",
+   "group": "devtools",
+   "origin": "sweep",
+   "summary": "Zed and JetBrains put ACP v2 into preview: editors can follow subagent activity, stop background commands without cancelling the turn, and retry prompts without duplicates. Any ACP client or agent can adopt it now.",
+   "kind": "feature",
+   "evidence": "artifact",
+   "links": [
+    "https://agentclientprotocol.com/announcements/acp-v2-preview"
+   ],
+   "vendor": "Zed / JetBrains",
+   "posted_at": "2026-11-27T15:20:16Z",
+   "metrics": {
+    "likes": 15,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 2,
+    "views": 696
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "AMD ships two more prebuilt GPU kernels through the Hugging Face kernels hub",
+   "url": "https://x.com/julien_c/status/2126301892955308187",
+   "handle": "@julien_c",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "AMD publishes ROCm kernels as loadable packages on the Hugging Face Hub, so models can pull an optimized kernel at runtime instead of compiling it. Two new kernels landed today.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/amd"
+   ],
+   "vendor": "AMD / Hugging Face",
+   "posted_at": "2026-11-27T13:07:30Z",
+   "metrics": {
+    "likes": 125,
+    "reposts": 15,
+    "quotes": 0,
+    "replies": 12,
+    "views": 7537
+   },
+   "confirmed_by": [
+    "@huggingface"
+   ],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Kandinsky ImageSR 2.0 open weights upscale images 2x or 4x without a prompt",
+   "url": "https://x.com/ModelScope2022/status/2126278993515282862",
+   "handle": "@ModelScope2022",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "Kandinsky Lab released ImageSR 2.0, a prompt-free 2x/4x super-resolution model with a tiled Diffusers pipeline tested to 8192x8192 output. Transformer weights and code are MIT.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://modelscope.ai/models/kandinskylab/Kandinsky-ImageSR-2.0"
+   ],
+   "vendor": "Kandinsky Lab",
+   "posted_at": "2026-11-27T11:36:31Z",
+   "metrics": {
+    "likes": 38,
+    "reposts": 4,
+    "quotes": 0,
+    "replies": 1,
+    "views": 1678
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "DiffSynth-Studio releases Qwen-Image-2.1-SR super-resolution with denoising, detail control and RGBA",
+   "url": "https://x.com/ModelScope2022/status/2126300013773160465",
+   "handle": "@ModelScope2022",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "A super-resolution model built on Qwen-Image-2.1 that removes input noise, exposes a detail-intensity knob, renders Chinese and English text cleanly and keeps transparent backgrounds.",
+   "kind": "model",
+   "evidence": "artifact",
+   "links": [
+    "https://modelscope.ai/models/DiffSynth-Studio/Qwen-Image-2.1-SR"
+   ],
+   "vendor": "DiffSynth-Studio (ModelScope)",
+   "posted_at": "2026-11-27T13:00:02Z",
+   "metrics": {
+    "likes": 7,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 672
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "GigaSpeech 3 brings 39k hours of Arabic dialect speech to Hugging Face",
+   "url": "https://x.com/lhoestq/status/2126297205128511913",
+   "handle": "@lhoestq",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "SJTU X-Lance and SeasaltAI published GigaSpeech 3, a 39,000-hour speech corpus covering five Arabic dialects in webdataset format that loads or streams in one line of Python.",
+   "kind": "dataset",
+   "evidence": "artifact",
+   "links": [
+    "https://huggingface.co/datasets/speechcolab/gigaspeech3"
+   ],
+   "vendor": "SpeechColab (SJTU X-Lance, SeasaltAI)",
+   "posted_at": "2026-11-27T12:48:53Z",
+   "metrics": {
+    "likes": 16,
+    "reposts": 5,
+    "quotes": 0,
+    "replies": 0,
+    "views": 926
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "CCORE Web Designs dataset pairs 3,500 design briefs with full React HTML pages",
+   "url": "https://x.com/ModelScope2022/status/2126330215513124937",
+   "handle": "@ModelScope2022",
+   "group": "opensource",
+   "origin": "sweep",
+   "summary": "The training set behind CCORE Web Coder 4B is public: 3,500 English design briefs with complete React-built pages across 40 subject areas and 29 layout families, useful for training small web-UI coders.",
+   "kind": "dataset",
+   "evidence": "artifact",
+   "links": [
+    "https://modelscope.ai/datasets/ccore/CCORE-Web-Designs"
+   ],
+   "vendor": "CCORE",
+   "posted_at": "2026-11-27T15:00:03Z",
+   "metrics": {
+    "likes": 2,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 0,
+    "views": 304
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "nano-xet lets you test Hugging Face Xet chunk deduplication on your own data",
+   "url": "https://x.com/lhoestq/status/2126322891662799052",
+   "handle": "@lhoestq",
+   "group": "research",
+   "origin": "sweep",
+   "summary": "A small, readable Python reimplementation of Xet content-defined chunking and dedupe, so teams can measure how much their own datasets would shrink on Xet storage before migrating.",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/lhoestq/nano-xet"
+   ],
+   "vendor": "Quentin Lhoest (Hugging Face)",
+   "posted_at": "2026-11-27T14:30:57Z",
+   "metrics": {
+    "likes": 3,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 0,
+    "views": 189
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 0,
+    "community_note": null,
+    "pushback": null,
+    "source": null
+   }
+  },
+  {
+   "title": "Local receipt agent checks its own OCR with three MiniCPM models on one RTX 3060",
+   "url": "https://x.com/OpenBMB/status/2126304982093947118",
+   "handle": "@OpenBMB",
+   "group": "labs",
+   "origin": "sweep",
+   "summary": "A community build pairs MiniCPM-V 4.7, MiniCPM-OCR 1.0 and the MiniCPM-OCR Jev scorer so a bookkeeping agent re-reads low-confidence receipt fields and flags uncertain ones; on degraded CORD-v2 receipts all 60 auto-accepted totals were correct, in 10.2 GB of VRAM.",
+   "kind": "demo",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/OpenBMB/MiniCPM-OCR",
+    "https://huggingface.co/openbmb/MiniCPM-OCR-Jev",
+    "https://huggingface.co/openbmb/MiniCPM-V-4.7-35B-A3B"
+   ],
+   "vendor": "OpenBMB community",
+   "posted_at": "2026-11-27T13:19:47Z",
+   "metrics": {
+    "likes": 20,
+    "reposts": 3,
+    "quotes": 1,
+    "replies": 0,
+    "views": 1078
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single developer test on 60 receipts; the builder's own repo was not linked in the post.",
+    "source": null
+   }
+  },
+  {
+   "title": "Snowflake builds SnowPR, a coding-agent benchmark from 65 merged internal PRs graded by hidden tests",
+   "url": "https://x.com/Snowflake/status/2126330307322257643",
+   "handle": "@Snowflake",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "SnowPR gives agents pre-change code and a task description, then grades their patches with hidden tests in Snowflake's Bazel builds, as a template for repo-specific agent evals.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://www.snowflake.com/en/blog/engineering/Benchmarking-coding-agents/"
+   ],
+   "vendor": "Snowflake",
+   "posted_at": "2026-11-27T15:00:25Z",
+   "metrics": {
+    "likes": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 362
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Internal benchmark; the task set is not public.",
+    "source": null
+   }
+  },
+  {
+   "title": "Asking for two-sentence answers made Qwen3-4B drop correct answers under pushback 37% of the time vs 8%",
+   "url": "https://x.com/witcheer/status/2126317116563636422",
+   "handle": "@witcheer",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A local re-run of a recent sycophancy paper on Qwen3-4B (MMLU, RTX 5090) found that a short-answer system prompt raised caving to 'are you sure?' from 8.2% to 37.3%; adding 'keep it if confident' cut that to 23.3%. Worth testing in any short-answer system prompt.",
+   "kind": "technique",
+   "evidence": "measured",
+   "links": [],
+   "vendor": "independent (witcheer)",
+   "posted_at": "2026-11-27T14:08:00Z",
+   "metrics": {
+    "likes": 26,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 4,
+    "views": 1253
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "One 4B model on one benchmark, run by one person; the author says to check your own model.",
+    "source": null
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "saved_in": 0,
+ "saved_kept": 0,
+ "saved_note": "No new owner saves since the 11:23Z sweep: the AI bookmark sync archive is unchanged at 134 lines (last capture 05:34Z, already vetted) and the 13:32Z sync wrote new_candidates.json = []. No get_users_bookmarks call this run. No verdict note sent to any agent.",
+ "list_posts_read": 83,
+ "list_pages": 3,
+ "list_covered_since": true,
+ "deep_reads": 2,
+ "rechecks": 8,
+ "videos": 0,
+ "video_note": "No qualifying clip: the deep-read Unsloth (15 s) and Google deep-research (18 s) videos and the other kept-item clips are all under 60 s.",
+ "recheck_notes": [
+  {
+   "url": "https://x.com/mhelcig/status/2126048821583188286",
+   "note": "Likes 1129 (from 1014), replies 65. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/MiaAI_lab/status/2126259007698440271",
+   "note": "Likes 265 (from 98), replies 22. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/niklaslenz_ai/status/2126065962013110490",
+   "note": "Likes 19 (from 16), replies 4. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/aitrackerbot/status/2126228109972156712",
+   "note": "Likes 45 (from 23), replies 2. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/plotarmordev/status/2126224515537531252",
+   "note": "Likes 24 (from 12), replies 7. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/sudoingX/status/2126157347173339218",
+   "note": "Likes 5 (from 4), replies 5. Doubt stays 1."
+  },
+  {
+   "url": "https://x.com/jullerino/status/2126008211417510213",
+   "note": "Likes 1631 (from 1337), replies 113. Doubt stays 0."
+  },
+  {
+   "url": "https://x.com/viticci/status/2125994816945246298",
+   "note": "Likes 564 (from 465), replies 71. Doubt stays 1."
+  }
+ ],
+ "security_forwarded": [
+  {
+   "url": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold",
+   "matched": "Claude Code in stack.json plus agent tooling; repo .claude/settings.json hooks run in headless -p sessions without a trust prompt (Anthropic docs). Posted to the Mini event bus as a task instead of Bouncer.",
+   "seen_via": "https://x.com/stas_sorokin_/status/2126327156582007164"
+  }
+ ],
+ "bus_posts": [
+  {
+   "title": "Run Claude Code on untrusted repos with --setting-sources user so repo hooks cannot fire",
+   "kind": "task",
+   "lane": "personal",
+   "url": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold",
+   "seen_via": "https://x.com/stas_sorokin_/status/2126327156582007164",
+   "posted_at": "2026-11-27T15:29:56Z",
+   "result": "ok"
+  }
+ ],
+ "bus_pending": [],
+ "security_na": [
+  {
+   "url": "https://x.com/VECERTRadar/status/2126312617664811483",
+   "reason": "Zexxy dark-forum sale of 'LiteLLM supply chain data' (153 GB, 433,909 files) matches the March 2026 TeamPCP litellm 1.82.7/1.82.8 exfil archive already analyzed by Hudson Rock and GitGuardian (Nov 4); resale of old loot, no new LiteLLM compromise, LiteLLM already tracked in stack.json."
+  },
+  {
+   "url": "https://x.com/VibeIncidents/status/2126330471370113182",
+   "reason": "StacklokLabs sqlite-mcp CVE-2026-130008 (fixed 0.1.2): sqlite-mcp is not run on the fleet."
+  },
+  {
+   "url": "https://x.com/w0rmsign/status/2126333159469977643",
+   "reason": "Two malicious npm packages (@evial/init-helper-djkwt, @evial/runtime-observer-qarges, MAL-2026-20666/20667): typosquat-style packages not used by the fleet."
+  },
+  {
+   "url": "https://x.com/bigrkg/status/2126300015564116077",
+   "reason": "Bytebase DBHub CVE-2026-136441 already logged in the 2026-11-25 and 2026-11-27 03:21Z sweeps; nothing new."
+  },
+  {
+   "url": "https://x.com/codesprint_/status/2126324273765548442",
+   "reason": "Ruflo CVE-2026-59726 already logged 2026-11-24 and 2026-11-26; nothing new."
+  },
+  {
+   "url": "https://x.com/jenistranger/status/2126330209448436114",
+   "reason": "Mittwald MCP SSH-key RCE postmortem already logged 2026-11-26; Mittwald MCP not on the fleet."
+  },
+  {
+   "url": "https://x.com/dpuiger/status/2126315700092281162",
+   "reason": "Ray 2.60.1 bumps brotli for KEV CVE-2026-111497: brotli already at 1.2.1 on Mini/Air per stack.json; Ray not run on the fleet."
+  },
+  {
+   "url": "https://x.com/andersonbcdefg/status/2126333185201991922",
+   "reason": "Opinion that the Antigravity CLI installs via curl | bash; no advisory or compromise."
+  },
+  {
+   "url": "https://x.com/superdoccimo/status/2126326670999142675",
+   "reason": "NVIDIA AIStore critical CVE: AIStore not run on the fleet."
+  }
+ ],
+ "repos_for_gh_testing": [
+  {
+   "url": "https://github.com/lhoestq/nano-xet",
+   "why": "Kept item (Xet dedupe test tool). Individual owner, Apache-2.0, 1 star. Not queued."
+  },
+  {
+   "url": "https://github.com/google-gemini/demolab",
+   "why": "Kept item (deep-research skill installed via npx skills add). Verified Google org but Apache-2.0, not MIT, and the install path runs a third-party installer. Not queued."
+  }
+ ],
+ "follows": {
+  "made": [],
+  "recommended": [
+   "@UnslothAI",
+   "@lhoestq"
+  ],
+  "candidates": [
+   {
+    "handle": "@UnslothAI",
+    "why": "Curated opensource account, first-hand Unsloth releases with repeated capability posts (computer use, MCP engines), no doubt flag of 2 or more."
+   },
+   {
+    "handle": "@lhoestq",
+    "why": "Active roster account (promoted 2026-11-27), first-hand Hugging Face datasets and tooling (GigaSpeech 3, nano-xet today), no doubt flag of 2 or more."
+   }
+  ],
+  "note": "No browser, so no follows; written as recommended in inbox/x-follows.json (Central day Nov 27: 0 of 3 follows used; weekly 6 of 15)."
+ },
+ "horizon_checks": 1,
+ "skipped": "Omarchy 4.6 RC1 local-model-for-agents post (delivered 03:21Z); Pruna lipsync benchmark (launch delivered Nov 26); Tencent DFly2 via mervenoyann quote (delivered Nov 26); omarsar0 recursive collective intelligence paper (delivered Nov 25); Nvidia halting server shipments to Singapore, Malaysia, Thailand and Indonesia (FT report, not a company notice; the underlying Commerce remote-access IFR 2026-23529 is already in Magpie); wei_wang GB10 cudaMalloc memory not charged to process or cgroup, freezing DGX Spark under overcommit (NVIDIA forum user reports, no vendor statement; useful Spark ops note); MiaAI GLM 5.3 Flash teaser and open-weights opinion; Clement Delangue distillation and post-training posts plus White Circle competition (opinion and event); superalesha B300 lease and 4x3090 rig threads (news commentary, support pitch); OpenBMB Sage-Interaction quote (no primary link); can1357 refactor bench (early, no artifact); plotarmordev Rust GPU scheduler (not released); NielsRogge Pi code-mode try-out; Mistral Voxtral AA ranking (marketing); sudoingX uncensored picks (listicle) and LingSante lab-report test (anecdote); akshay_pachaar Anthropic recap; aiDotEngineer talk (video link); discovery release search was low-signal self-promotion.",
+ "errors": [],
+ "notes": "List pages: 1 oversized call (100 posts with entities, output too large to use, counted), then 2 compact pages of 40 and 43 posts reaching 08:33Z, so since 11:23Z was covered (about 60 posts in window). Fallback OR searches for the 195 curated non-list accounts in 6 group queries (28 posts). 2 discovery queries (releases with HF/GitHub/arXiv links; security on stack terms). Horizon: 1 X read (Dessa queries since 11:23Z: 0 results), no trigger. 3 get_posts_by_ids calls for full text, links, 8 re-checks and media. 2 deep reads (Unsloth, Google deep-research skill replies). Primary links checked via Hugging Face API, GitHub API, agentclientprotocol.com, Anthropic Claude Code docs and the GTIG blog (no X reads). Community Notes: none returned. One verified security task (Claude Code project hooks run in headless -p sessions in untrusted repos; GTIG MIDNIGHT NEPTUNE case) posted to the Mini event bus, lane personal."
+}

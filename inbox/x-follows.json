@@ -303,6 +303,27 @@
       "evidence": [
         "https://x.com/kitlangton/status/2126102192264523896"
       ]
+    },
+    {
+      "handle": "@UnslothAI",
+      "date": "2026-11-27",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Curated opensource account, first-hand Unsloth releases with repeated capability posts (computer use beta, MCP engines guide), no doubt flag of 2 or more. Browser unavailable, so recommended.",
+      "evidence": [
+        "https://x.com/UnslothAI/status/2126322382239649959"
+      ]
+    },
+    {
+      "handle": "@lhoestq",
+      "date": "2026-11-27",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Active roster account, first-hand Hugging Face datasets and tooling (GigaSpeech 3, nano-xet), no doubt flag of 2 or more. Browser unavailable, so recommended.",
+      "evidence": [
+        "https://x.com/lhoestq/status/2126297205128511913",
+        "https://x.com/lhoestq/status/2126322891662799052"
+      ]
     }
   ]
 }

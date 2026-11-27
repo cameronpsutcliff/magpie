@@ -1,22 +1,22 @@
 {
- "updated_at": "2026-11-27T11:26:00Z",
+ "updated_at": "2026-11-27T15:33:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 35,
+ "calls_used_today": 52,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-27T11:23:00Z",
-  "items": 10,
-  "queries": 10,
-  "deep_reads": 1,
+  "ran_at": "2026-11-27T15:30:00Z",
+  "items": 14,
+  "queries": 11,
+  "deep_reads": 2,
   "rechecks": 8,
-  "flagged": 6,
-  "saved_in": 3,
+  "flagged": 8,
+  "saved_in": 0,
   "saved_kept": 0,
   "videos": 0,
   "security_forwarded": 1,
-  "list_posts_read": 93,
-  "list_pages": 1,
+  "list_posts_read": 83,
+  "list_pages": 3,
   "bus_posts": 1,
   "bus_pending": 0
  },
@@ -84,7 +84,8 @@
   "2026-11-27T03:21Z: Videos section asks to download X clips for analysis, but the box's auto-review blocked a yt-dlp download of a public X video under the 'no YouTube/LinkedIn' rule; either allow X clip downloads explicitly or drop the video step.",
   "2026-11-27T03:21Z: Fleet stack section routes security leads to Bouncer via security_forwarded, while the current owner layout sends verified stack-touching items straight to the Mini event bus; consider updating the prompt to match. Also stack.json lacks the Spark's NVIDIA driver version (needed to judge the 615.71.09 weight-load stall).",
   "Roster review 2026-11-27 (9 reads: 1 users lookup, 4 posts reads; 71 of 80 unused): added @MiaAI_lab and @superalesha as owner_saves trials (both on list). @superalesha mixes capability work with all-caps AI export-control commentary; flagged, re-screen next review. Failed owner_saves screen, not added, owner may add to avoid: @0xCodez (course and engagement-bait promo, get-rich claims) and @treg_ai (product promotion, own quote-posts of customers). @_philschmid already curated; @RoundtableSpace on avoid; @OrcaRouter and @GoogleAIStudio already trial. Promoted to active: @jankeesvw, @thepirateface, @OmarchyUpdates, @thinkymachines, @lhoestq (14+ days, 2+ sweep items). No retirements (earliest trial is 38 days old). Auto-review blocked one add_lists_member until approved; retried once with approval. No other candidates searched this run.",
-  "2026-11-27T11:23Z sweep: the 10:41Z roster review reported 9 X reads but left calls_used_today at 14; this sweep counted them (35 total). Suggest the roster job always add its reads to calls_used_today. @superalesha (owner_saves trial) posted a profane, partisan-toned thread on Anthropic-funded politicians and Jensen Huang today; add to the next roster re-screen. The Mini bus routed today's task event with antigravity as a fallback provider; if fleet jobs run unattended on a personal Antigravity plan, Google's stated rules (no unattended third-party harness runs, no proxies, no account rotation) may apply."
+  "2026-11-27T11:23Z sweep: the 10:41Z roster review reported 9 X reads but left calls_used_today at 14; this sweep counted them (35 total). Suggest the roster job always add its reads to calls_used_today. @superalesha (owner_saves trial) posted a profane, partisan-toned thread on Anthropic-funded politicians and Jensen Huang today; add to the next roster re-screen. The Mini bus routed today's task event with antigravity as a fallback provider; if fleet jobs run unattended on a personal Antigravity plan, Google's stated rules (no unattended third-party harness runs, no proxies, no account rotation) may apply.",
+  "2026-11-27T15:30Z sweep: get_lists_posts with max_results 100 plus entities returns a result too large to use in one tool response; requesting only created_at, public_metrics and author_id at 40 to 45 per page works, then get_posts_by_ids with note_post for the shortlisted posts. Suggest the prompt recommend that pattern. Also: the GTIG MIDNIGHT NEPTUNE case (Nov 16) shows repo .claude/settings.json hooks run under claude -p without a trust prompt; consider adding 'agent project config files (.claude/settings.json, .mcp.json, skills) in untrusted repos' to stack.json always_forward. wei_wang surfaced NVIDIA forum reports that GB10 cudaMalloc memory is not charged to the process or cgroup, so a DGX Spark can freeze under overcommit and docker --memory does not contain it; worth a Spark ops note (engine budgets like --gpu-memory-utilization), not a bus item without a vendor statement."
  ],
  "errors": [],
  "follows_today": 3,
@@ -125,6 +126,6 @@
   "sunday_drafts": false,
   "notes": "Run from the box. Skill tool unavailable; skill files read from disk. Owner saves (30d): 2+ kept saves only for @danikkk_wqs and @0xCodez (aggregator/hype-style posts, not first-hand builders); not added, no screen reads spent. Others with 2+ already on roster, curated or avoid. No doubt flags level 2+. Not Sunday: no drafts. Pruned 5 sweep files from 2026-11-10 (older than 14 days)."
  },
- "follows_skipped": "2026-11-27T11:23Z sweep: no browser, so no follows; recommended @OmarchyUpdates and @kitlangton in inbox/x-follows.json (Central day Nov 27: 0 of 3 follows used; weekly 6 of 15).",
- "calls_note": "calls_used_today is the Magpie share for UTC day 2026-11-27: 14 at the 03:21Z sweep, plus 9 by the 10:41Z roster review (its note reports 9 reads but it left the counter at 14), plus 12 this sweep = 35 of 450."
+ "follows_skipped": "2026-11-27T15:30Z sweep: no browser, so no follows; recommended @UnslothAI and @lhoestq in inbox/x-follows.json (Central day Nov 27: 0 of 3 follows used; weekly 6 of 15).",
+ "calls_note": "calls_used_today is the Magpie share for UTC day 2026-11-27: 35 through the 11:23Z sweep plus 17 this sweep = 52 of 450 (X reports 958 of 1000 shared left)."
 }
