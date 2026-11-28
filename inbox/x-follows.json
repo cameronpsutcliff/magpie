@@ -1,380 +1,416 @@
 {
- "follows": [
-  {
-   "handle": "@arena",
-   "date": "2026-10-20",
-   "by": "magpie-scout",
-   "status": "followed",
-   "why": "Curated eval platform (Arena.ai) with 3 qualifying capability posts in today's sweeps and no doubt flags; Twitter Profile confirmed it cannot check or act, and the browser showed @sutcliffcc was not yet following.",
-   "evidence": [
-    "https://x.com/arena/status/2112578867521319377",
-    "https://x.com/arena/status/2112600237491810662",
-    "https://x.com/arena/status/2112639437482176693"
-   ]
-  },
-  {
-   "handle": "@OpenAI",
-   "date": "2026-10-21",
-   "by": "magpie-scout",
-   "status": "followed",
-   "why": "Curated first-hand lab account with 3 qualifying capability posts in recent sweep files and no doubt flag above level 1; the browser showed @sutcliffcc was not yet following.",
-   "evidence": [
-    "https://x.com/OpenAI/status/2112310345863930168",
-    "https://x.com/OpenAI/status/2112907856018309586",
-    "https://x.com/OpenAI/status/2112899854569762936"
-   ]
-  },
-  {
-   "handle": "@ArtificialAnlys",
-   "date": "2026-10-21",
-   "by": "magpie-scout",
-   "status": "followed",
-   "why": "Curated first-hand eval lab (signal_to_noise 5) with 4 qualifying capability posts in recent sweep files and no doubt flag above level 1; the browser showed @sutcliffcc was not yet following.",
-   "evidence": [
-    "https://x.com/ArtificialAnlys/status/2112318755321868493",
-    "https://x.com/ArtificialAnlys/status/2112961069526249973",
-    "https://x.com/ArtificialAnlys/status/2112960933177770071",
-    "https://x.com/ArtificialAnlys/status/2112935427422527584"
-   ]
-  },
-  {
-   "handle": "@witcheer",
-   "date": "2026-10-21",
-   "by": "magpie-scout",
-   "status": "followed",
-   "why": "Curated first-hand local-model tester (signal_to_noise 4) with 3 qualifying capability posts in recent sweep files and no doubt flag above level 1; the browser showed @sutcliffcc was not yet following.",
-   "evidence": [
-    "https://x.com/witcheer/status/2112830183820685787",
-    "https://x.com/witcheer/status/2112793011864121658",
-    "https://x.com/witcheer/status/2112936955168141754"
-   ]
-  },
-  {
-   "handle": "@vllm_project",
-   "date": "2026-10-22",
-   "by": "magpie-scout",
-   "status": "followed",
-   "why": "Curated first-hand open-source inference project with 3 qualifying capability posts in recent sweep files and no doubt flag above level 1; the browser showed @sutcliffcc was not yet following.",
-   "evidence": [
-    "https://x.com/vllm_project/status/2112703311933747347",
-    "https://x.com/vllm_project/status/2112760256120197333",
-    "https://x.com/vllm_project/status/2112979682421596162"
-   ]
-  },
-  {
-   "handle": "@sgl_project",
-   "date": "2026-10-22",
-   "by": "magpie-scout",
-   "status": "followed",
-   "why": "Curated first-hand open-source inference project (SGLang) with 3 qualifying capability posts in recent sweep files and no doubt flags; the browser showed @sutcliffcc was not yet following.",
-   "evidence": [
-    "https://x.com/sgl_project/status/2112692463513288843",
-    "https://x.com/sgl_project/status/2112948714453262363",
-    "https://x.com/sgl_project/status/2113060793994686852"
-   ]
-  },
-  {
-   "handle": "@rapidmlx",
-   "date": "2026-10-22",
-   "by": "magpie-scout",
-   "status": "followed",
-   "why": "Curated first-hand Rapid-MLX project account with 3 qualifying capability posts in recent sweep files and no doubt flags; the browser showed @sutcliffcc was not yet following.",
-   "evidence": [
-    "https://x.com/rapidmlx/status/2112334158693552232",
-    "https://x.com/rapidmlx/status/2113026522890273123",
-    "https://x.com/rapidmlx/status/2113095409623245208"
-   ]
-  },
-  {
-   "handle": "@fal",
-   "date": "2026-10-23",
-   "by": "magpie-scout",
-   "status": "recommended",
-   "why": "Curated first-hand inference platform account with 7 qualifying capability posts in recent sweep files and no doubt flag of level 2 or higher. Recommended, not followed: no browser this run; follow state of @sutcliffcc not checked.",
-   "evidence": [
-    "https://x.com/fal/status/2112562029336608819",
-    "https://x.com/fal/status/2113301781681754474",
-    "https://x.com/fal/status/2113646807997620396"
-   ]
-  },
-  {
-   "handle": "@modal",
-   "date": "2026-10-23",
-   "by": "magpie-scout",
-   "status": "recommended",
-   "why": "Curated first-hand infrastructure account with 4 qualifying capability posts in recent sweep files and no doubt flags. Recommended, not followed: no browser this run; follow state of @sutcliffcc not checked.",
-   "evidence": [
-    "https://x.com/modal/status/2113019312474878265",
-    "https://x.com/modal/status/2113383878215827664",
-    "https://x.com/modal/status/2113720618072076514"
-   ]
-  },
-  {
-   "handle": "@claudeai",
-   "date": "2026-10-23",
-   "by": "magpie-scout",
-   "status": "recommended",
-   "why": "Curated first-hand Anthropic product account with 4 qualifying capability posts in recent sweep files and no doubt flag of level 2 or higher. Recommended, not followed: no browser this run; follow state of @sutcliffcc not checked.",
-   "evidence": [
-    "https://x.com/claudeai/status/2112984664256241837",
-    "https://x.com/claudeai/status/2113360845409583307",
-    "https://x.com/claudeai/status/2113380122468454765"
-   ]
-  },
-  {
-   "handle": "@fal",
-   "date": "2026-10-23",
-   "by": "magpie-scout",
-   "status": "followed",
-   "why": "Curated first-hand inference platform account with 7 qualifying capability posts in recent sweep files and no doubt flag of level 2 or higher. Followed as @sutcliffcc via box browser at 2026-10-23T22:14Z; no warnings or prompts seen.",
-   "evidence": [
-    "https://x.com/fal/status/2112562029336608819",
-    "https://x.com/fal/status/2113301781681754474",
-    "https://x.com/fal/status/2113646807997620396"
-   ]
-  },
-  {
-   "handle": "@modal",
-   "date": "2026-10-23",
-   "by": "magpie-scout",
-   "status": "followed",
-   "why": "Curated first-hand infrastructure account with 4 qualifying capability posts in recent sweep files and no doubt flags. Followed as @sutcliffcc via box browser at 2026-10-23T22:14Z; no warnings or prompts seen.",
-   "evidence": [
-    "https://x.com/modal/status/2113019312474878265",
-    "https://x.com/modal/status/2113383878215827664",
-    "https://x.com/modal/status/2113720618072076514"
-   ]
-  },
-  {
-   "handle": "@claudeai",
-   "date": "2026-10-23",
-   "by": "magpie-scout",
-   "status": "followed",
-   "why": "Curated first-hand Anthropic product account with 4 qualifying capability posts in recent sweep files and no doubt flag of level 2 or higher. Followed as @sutcliffcc via box browser at 2026-10-23T22:14Z; no warnings or prompts seen.",
-   "evidence": [
-    "https://x.com/claudeai/status/2112984664256241837",
-    "https://x.com/claudeai/status/2113360845409583307",
-    "https://x.com/claudeai/status/2113380122468454765"
-   ]
-  },
-  {
-   "handle": "@PyTorch",
-   "date": "2026-10-24",
-   "by": "magpie-scout",
-   "status": "recommended",
-   "why": "Curated first-hand open-source project account with 4 qualifying capability posts in recent sweep files and no doubt flags. Recommended, not followed: no browser this sweep.",
-   "evidence": [
-    "https://x.com/PyTorch/status/2112601000670322787",
-    "https://x.com/PyTorch/status/2112619930755465245",
-    "https://x.com/PyTorch/status/2112967243956945293",
-    "https://x.com/PyTorch/status/2112997399081676921"
-   ]
-  },
-  {
-   "handle": "@ashxhart",
-   "date": "2026-11-24",
-   "by": "magpie-scout",
-   "status": "followed",
-   "why": "Active roster, first-hand TensorFold/TF-Rewind builder with measured posts; not followed this run (no browser). Followed as @sutcliffcc via box browser at 2026-11-24T19:34Z; no warnings or prompts seen.",
-   "evidence": [
-    "https://x.com/ashxhart/status/2125231311128297587"
-   ]
-  },
-  {
-   "handle": "@NielsRogge",
-   "date": "2026-11-24",
-   "by": "magpie-scout",
-   "status": "followed",
-   "why": "Active roster, first-hand Hugging Face builder shipping tools; not followed this run (no browser). Followed as @sutcliffcc via box browser at 2026-11-24T19:34Z; no warnings or prompts seen.",
-   "evidence": [
-    "https://x.com/NielsRogge/status/2125215715955298786"
-   ]
-  },
-  {
-   "handle": "@OpenBMB",
-   "date": "2026-11-24",
-   "by": "magpie-scout",
-   "status": "followed",
-   "why": "Active roster, official MiniCPM project account; not followed this run (no browser). Followed as @sutcliffcc via box browser at 2026-11-24T19:34Z; no warnings or prompts seen.",
-   "evidence": [
-    "https://x.com/OpenBMB/status/2125220440318890238"
-   ]
-  },
-  {
-   "handle": "@coldniko",
-   "date": "2026-11-25",
-   "by": "magpie-scout",
-   "status": "followed",
-   "why": "Active roster account; Strata maintainer with 7 kept first-hand local-inference releases and no doubt flag of 2+. Followed in browser as @sutcliffcc at ~5:45 AM CT.",
-   "evidence": [
-    "https://x.com/coldniko/status/2125527849775886400"
-   ]
-  },
-  {
-   "handle": "@JoshuaSWarren",
-   "date": "2026-11-25",
-   "by": "magpie-scout",
-   "status": "followed",
-   "why": "Active roster account; first-hand builder (omarchy-ane, Neural Engine on Linux) with 4 kept items and no doubt flag of 2+. Followed in browser as @sutcliffcc at ~5:45 AM CT.",
-   "evidence": [
-    "https://x.com/JoshuaSWarren/status/2125391251859992892"
-   ]
-  },
-  {
-   "handle": "@xingyudang",
-   "date": "2026-11-25",
-   "by": "magpie-scout",
-   "status": "followed",
-   "why": "Active roster account with 4 kept first-hand capability items in 30 days and no doubt flag of 2+. Followed in browser as @sutcliffcc at ~5:45 AM CT.",
-   "evidence": []
-  },
-  {
-   "handle": "@NVIDIAAI",
-   "date": "2026-11-26",
-   "by": "magpie-scout",
-   "status": "recommended",
-   "why": "Active roster account; official NVIDIA AI account with 9 kept first-hand release items in the kept sweep files and no doubt flag of 2+. No browser in the 11:28Z sweep, so recommended for a browser follow as @sutcliffcc.",
-   "evidence": []
-  },
-  {
-   "handle": "@haoailab",
-   "date": "2026-11-26",
-   "by": "magpie-scout",
-   "status": "recommended",
-   "why": "Active roster account; UCSD Hao AI Lab, first-hand research and inference-system releases, 8 kept items, no doubt flag of 2+. No browser in the 11:28Z sweep, so recommended for a browser follow as @sutcliffcc.",
-   "evidence": [
-    "https://x.com/haoailab/status/2125679076514128052"
-   ]
-  },
-  {
-   "handle": "@skalskip92",
-   "date": "2026-11-26",
-   "by": "magpie-scout",
-   "status": "recommended",
-   "why": "Active roster account; first-hand computer-vision builder (Roboflow), 7 kept items, no doubt flag of 2+. No browser in the 11:28Z sweep, so recommended for a browser follow as @sutcliffcc.",
-   "evidence": []
-  },
-  {
-   "handle": "@TencentHunyuan",
-   "date": "2026-11-26",
-   "by": "magpie-scout",
-   "status": "recommended",
-   "why": "Curated lab account (signal 5); first-hand Hy4 and DFly2 releases with weights, code and reports, 5 kept items, no doubt flag of 2+. No browser in the 15:26Z sweep, so recommended for a browser follow as @sutcliffcc.",
-   "evidence": [
-    "https://x.com/TencentHunyuan/status/2125928146113585468"
-   ]
-  },
-  {
-   "handle": "@AntLingAGI",
-   "date": "2026-11-26",
-   "by": "magpie-scout",
-   "status": "recommended",
-   "why": "Curated lab account (Ant Group Ling/Ming); first-hand open-weight releases, 3 kept items, no doubt flag of 2+. No browser in the 15:26Z sweep, so recommended for a browser follow as @sutcliffcc.",
-   "evidence": [
-    "https://x.com/AntLingAGI/status/2125916926048358827"
-   ]
-  },
-  {
-   "handle": "@Aleph__Alpha",
-   "date": "2026-11-26",
-   "by": "magpie-scout",
-   "status": "recommended",
-   "why": "Active roster account; first-hand Kolibri open-weight releases and technical write-ups, 3 kept items, no doubt flag of 2+. No browser in the 15:26Z sweep, so recommended for a browser follow as @sutcliffcc.",
-   "evidence": [
-    "https://x.com/Aleph__Alpha/status/2125967904092938704"
-   ]
-  },
-  {
-   "handle": "@OmarchyUpdates",
-   "date": "2026-11-27",
-   "by": "magpie-scout",
-   "status": "recommended",
-   "why": "Active roster account with 13 sweep items in 14 days, first-hand Omarchy release notes including agent-facing features, no doubt flag of 2 or more. Browser unavailable, so recommended.",
-   "evidence": [
-    "https://x.com/OmarchyUpdates/status/2126268214556643839"
-   ]
-  },
-  {
-   "handle": "@kitlangton",
-   "date": "2026-11-27",
-   "by": "magpie-scout",
-   "status": "recommended",
-   "why": "Curated builders account, first-hand Hex maintainer with repeated capability releases, no doubt flag of 2 or more. Browser unavailable, so recommended.",
-   "evidence": [
-    "https://x.com/kitlangton/status/2126102192264523896"
-   ]
-  },
-  {
-   "handle": "@UnslothAI",
-   "date": "2026-11-27",
-   "by": "magpie-scout",
-   "status": "recommended",
-   "why": "Curated opensource account, first-hand Unsloth releases with repeated capability posts (computer use beta, MCP engines guide), no doubt flag of 2 or more. Browser unavailable, so recommended.",
-   "evidence": [
-    "https://x.com/UnslothAI/status/2126322382239649959"
-   ]
-  },
-  {
-   "handle": "@lhoestq",
-   "date": "2026-11-27",
-   "by": "magpie-scout",
-   "status": "recommended",
-   "why": "Active roster account, first-hand Hugging Face datasets and tooling (GigaSpeech 3, nano-xet), no doubt flag of 2 or more. Browser unavailable, so recommended.",
-   "evidence": [
-    "https://x.com/lhoestq/status/2126297205128511913",
-    "https://x.com/lhoestq/status/2126322891662799052"
-   ]
-  },
-  {
-   "handle": "@vanstriendaniel",
-   "date": "2026-11-27",
-   "by": "magpie-scout",
-   "status": "recommended",
-   "why": "Active roster account, first-hand Hugging Face researcher, 5 kept sweep items in 14 days (page-script classifiers today), no doubt flag of 2 or more. No browser this sweep, so recommended instead of followed.",
-   "evidence": [
-    "https://x.com/vanstriendaniel/status/2126337319032516859"
-   ]
-  },
-  {
-   "handle": "@_philschmid",
-   "date": "2026-11-27",
-   "by": "magpie-scout",
-   "status": "recommended",
-   "why": "Curated (signal_to_noise 4), first-hand Google DeepMind builder, 6 kept sweep items in 14 days (deep-research skill today), no doubt flag of 2 or more. No browser this sweep, so recommended instead of followed.",
-   "evidence": [
-    "https://x.com/_philschmid/status/2126312943520243885",
-    "https://x.com/_philschmid/status/2126383425858789528"
-   ]
-  },
-  {
-   "handle": "@RoboColosseum",
-   "date": "2026-11-27",
-   "by": "magpie-scout",
-   "status": "recommended",
-   "why": "Active roster account, first-hand eval project (Physical Intelligence Index today), 3 kept sweep items in 14 days, no doubt flag of 2 or more. No browser this sweep, so recommended instead of followed.",
-   "evidence": [
-    "https://x.com/RoboColosseum/status/2126360711228280968"
-   ]
-  },
-  {
-   "handle": "@opencode",
-   "date": "2026-11-27",
-   "by": "magpie-scout",
-   "status": "recommended",
-   "why": "Curated first-hand project account (signal_to_noise 5) shipping the Rune native desktop client today, no doubt flag of 2 or more. No browser this sweep, so recommended instead of followed.",
-   "evidence": [
-    "https://x.com/opencode/status/2126433856370638952"
-   ]
-  },
-  {
-   "handle": "@ViC305",
-   "date": "2026-11-27",
-   "by": "magpie-scout",
-   "status": "recommended",
-   "why": "Active roster builder doing first-hand DGX Spark quantization and local medical-model apps, 3+ qualifying posts in 30 days, no doubt flag of 2 or more. No browser this sweep, so recommended instead of followed.",
-   "evidence": [
-    "https://x.com/ViC305/status/2126514413360533650"
-   ]
-  }
- ]
+  "follows": [
+    {
+      "handle": "@arena",
+      "date": "2026-10-20",
+      "by": "magpie-scout",
+      "status": "followed",
+      "why": "Curated eval platform (Arena.ai) with 3 qualifying capability posts in today's sweeps and no doubt flags; Twitter Profile confirmed it cannot check or act, and the browser showed @sutcliffcc was not yet following.",
+      "evidence": [
+        "https://x.com/arena/status/2112578867521319377",
+        "https://x.com/arena/status/2112600237491810662",
+        "https://x.com/arena/status/2112639437482176693"
+      ]
+    },
+    {
+      "handle": "@OpenAI",
+      "date": "2026-10-21",
+      "by": "magpie-scout",
+      "status": "followed",
+      "why": "Curated first-hand lab account with 3 qualifying capability posts in recent sweep files and no doubt flag above level 1; the browser showed @sutcliffcc was not yet following.",
+      "evidence": [
+        "https://x.com/OpenAI/status/2112310345863930168",
+        "https://x.com/OpenAI/status/2112907856018309586",
+        "https://x.com/OpenAI/status/2112899854569762936"
+      ]
+    },
+    {
+      "handle": "@ArtificialAnlys",
+      "date": "2026-10-21",
+      "by": "magpie-scout",
+      "status": "followed",
+      "why": "Curated first-hand eval lab (signal_to_noise 5) with 4 qualifying capability posts in recent sweep files and no doubt flag above level 1; the browser showed @sutcliffcc was not yet following.",
+      "evidence": [
+        "https://x.com/ArtificialAnlys/status/2112318755321868493",
+        "https://x.com/ArtificialAnlys/status/2112961069526249973",
+        "https://x.com/ArtificialAnlys/status/2112960933177770071",
+        "https://x.com/ArtificialAnlys/status/2112935427422527584"
+      ]
+    },
+    {
+      "handle": "@witcheer",
+      "date": "2026-10-21",
+      "by": "magpie-scout",
+      "status": "followed",
+      "why": "Curated first-hand local-model tester (signal_to_noise 4) with 3 qualifying capability posts in recent sweep files and no doubt flag above level 1; the browser showed @sutcliffcc was not yet following.",
+      "evidence": [
+        "https://x.com/witcheer/status/2112830183820685787",
+        "https://x.com/witcheer/status/2112793011864121658",
+        "https://x.com/witcheer/status/2112936955168141754"
+      ]
+    },
+    {
+      "handle": "@vllm_project",
+      "date": "2026-10-22",
+      "by": "magpie-scout",
+      "status": "followed",
+      "why": "Curated first-hand open-source inference project with 3 qualifying capability posts in recent sweep files and no doubt flag above level 1; the browser showed @sutcliffcc was not yet following.",
+      "evidence": [
+        "https://x.com/vllm_project/status/2112703311933747347",
+        "https://x.com/vllm_project/status/2112760256120197333",
+        "https://x.com/vllm_project/status/2112979682421596162"
+      ]
+    },
+    {
+      "handle": "@sgl_project",
+      "date": "2026-10-22",
+      "by": "magpie-scout",
+      "status": "followed",
+      "why": "Curated first-hand open-source inference project (SGLang) with 3 qualifying capability posts in recent sweep files and no doubt flags; the browser showed @sutcliffcc was not yet following.",
+      "evidence": [
+        "https://x.com/sgl_project/status/2112692463513288843",
+        "https://x.com/sgl_project/status/2112948714453262363",
+        "https://x.com/sgl_project/status/2113060793994686852"
+      ]
+    },
+    {
+      "handle": "@rapidmlx",
+      "date": "2026-10-22",
+      "by": "magpie-scout",
+      "status": "followed",
+      "why": "Curated first-hand Rapid-MLX project account with 3 qualifying capability posts in recent sweep files and no doubt flags; the browser showed @sutcliffcc was not yet following.",
+      "evidence": [
+        "https://x.com/rapidmlx/status/2112334158693552232",
+        "https://x.com/rapidmlx/status/2113026522890273123",
+        "https://x.com/rapidmlx/status/2113095409623245208"
+      ]
+    },
+    {
+      "handle": "@fal",
+      "date": "2026-10-23",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Curated first-hand inference platform account with 7 qualifying capability posts in recent sweep files and no doubt flag of level 2 or higher. Recommended, not followed: no browser this run; follow state of @sutcliffcc not checked.",
+      "evidence": [
+        "https://x.com/fal/status/2112562029336608819",
+        "https://x.com/fal/status/2113301781681754474",
+        "https://x.com/fal/status/2113646807997620396"
+      ]
+    },
+    {
+      "handle": "@modal",
+      "date": "2026-10-23",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Curated first-hand infrastructure account with 4 qualifying capability posts in recent sweep files and no doubt flags. Recommended, not followed: no browser this run; follow state of @sutcliffcc not checked.",
+      "evidence": [
+        "https://x.com/modal/status/2113019312474878265",
+        "https://x.com/modal/status/2113383878215827664",
+        "https://x.com/modal/status/2113720618072076514"
+      ]
+    },
+    {
+      "handle": "@claudeai",
+      "date": "2026-10-23",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Curated first-hand Anthropic product account with 4 qualifying capability posts in recent sweep files and no doubt flag of level 2 or higher. Recommended, not followed: no browser this run; follow state of @sutcliffcc not checked.",
+      "evidence": [
+        "https://x.com/claudeai/status/2112984664256241837",
+        "https://x.com/claudeai/status/2113360845409583307",
+        "https://x.com/claudeai/status/2113380122468454765"
+      ]
+    },
+    {
+      "handle": "@fal",
+      "date": "2026-10-23",
+      "by": "magpie-scout",
+      "status": "followed",
+      "why": "Curated first-hand inference platform account with 7 qualifying capability posts in recent sweep files and no doubt flag of level 2 or higher. Followed as @sutcliffcc via box browser at 2026-10-23T22:14Z; no warnings or prompts seen.",
+      "evidence": [
+        "https://x.com/fal/status/2112562029336608819",
+        "https://x.com/fal/status/2113301781681754474",
+        "https://x.com/fal/status/2113646807997620396"
+      ]
+    },
+    {
+      "handle": "@modal",
+      "date": "2026-10-23",
+      "by": "magpie-scout",
+      "status": "followed",
+      "why": "Curated first-hand infrastructure account with 4 qualifying capability posts in recent sweep files and no doubt flags. Followed as @sutcliffcc via box browser at 2026-10-23T22:14Z; no warnings or prompts seen.",
+      "evidence": [
+        "https://x.com/modal/status/2113019312474878265",
+        "https://x.com/modal/status/2113383878215827664",
+        "https://x.com/modal/status/2113720618072076514"
+      ]
+    },
+    {
+      "handle": "@claudeai",
+      "date": "2026-10-23",
+      "by": "magpie-scout",
+      "status": "followed",
+      "why": "Curated first-hand Anthropic product account with 4 qualifying capability posts in recent sweep files and no doubt flag of level 2 or higher. Followed as @sutcliffcc via box browser at 2026-10-23T22:14Z; no warnings or prompts seen.",
+      "evidence": [
+        "https://x.com/claudeai/status/2112984664256241837",
+        "https://x.com/claudeai/status/2113360845409583307",
+        "https://x.com/claudeai/status/2113380122468454765"
+      ]
+    },
+    {
+      "handle": "@PyTorch",
+      "date": "2026-10-24",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Curated first-hand open-source project account with 4 qualifying capability posts in recent sweep files and no doubt flags. Recommended, not followed: no browser this sweep.",
+      "evidence": [
+        "https://x.com/PyTorch/status/2112601000670322787",
+        "https://x.com/PyTorch/status/2112619930755465245",
+        "https://x.com/PyTorch/status/2112967243956945293",
+        "https://x.com/PyTorch/status/2112997399081676921"
+      ]
+    },
+    {
+      "handle": "@ashxhart",
+      "date": "2026-11-24",
+      "by": "magpie-scout",
+      "status": "followed",
+      "why": "Active roster, first-hand TensorFold/TF-Rewind builder with measured posts; not followed this run (no browser). Followed as @sutcliffcc via box browser at 2026-11-24T19:34Z; no warnings or prompts seen.",
+      "evidence": [
+        "https://x.com/ashxhart/status/2125231311128297587"
+      ]
+    },
+    {
+      "handle": "@NielsRogge",
+      "date": "2026-11-24",
+      "by": "magpie-scout",
+      "status": "followed",
+      "why": "Active roster, first-hand Hugging Face builder shipping tools; not followed this run (no browser). Followed as @sutcliffcc via box browser at 2026-11-24T19:34Z; no warnings or prompts seen.",
+      "evidence": [
+        "https://x.com/NielsRogge/status/2125215715955298786"
+      ]
+    },
+    {
+      "handle": "@OpenBMB",
+      "date": "2026-11-24",
+      "by": "magpie-scout",
+      "status": "followed",
+      "why": "Active roster, official MiniCPM project account; not followed this run (no browser). Followed as @sutcliffcc via box browser at 2026-11-24T19:34Z; no warnings or prompts seen.",
+      "evidence": [
+        "https://x.com/OpenBMB/status/2125220440318890238"
+      ]
+    },
+    {
+      "handle": "@coldniko",
+      "date": "2026-11-25",
+      "by": "magpie-scout",
+      "status": "followed",
+      "why": "Active roster account; Strata maintainer with 7 kept first-hand local-inference releases and no doubt flag of 2+. Followed in browser as @sutcliffcc at ~5:45 AM CT.",
+      "evidence": [
+        "https://x.com/coldniko/status/2125527849775886400"
+      ]
+    },
+    {
+      "handle": "@JoshuaSWarren",
+      "date": "2026-11-25",
+      "by": "magpie-scout",
+      "status": "followed",
+      "why": "Active roster account; first-hand builder (omarchy-ane, Neural Engine on Linux) with 4 kept items and no doubt flag of 2+. Followed in browser as @sutcliffcc at ~5:45 AM CT.",
+      "evidence": [
+        "https://x.com/JoshuaSWarren/status/2125391251859992892"
+      ]
+    },
+    {
+      "handle": "@xingyudang",
+      "date": "2026-11-25",
+      "by": "magpie-scout",
+      "status": "followed",
+      "why": "Active roster account with 4 kept first-hand capability items in 30 days and no doubt flag of 2+. Followed in browser as @sutcliffcc at ~5:45 AM CT.",
+      "evidence": []
+    },
+    {
+      "handle": "@NVIDIAAI",
+      "date": "2026-11-26",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Active roster account; official NVIDIA AI account with 9 kept first-hand release items in the kept sweep files and no doubt flag of 2+. No browser in the 11:28Z sweep, so recommended for a browser follow as @sutcliffcc.",
+      "evidence": []
+    },
+    {
+      "handle": "@haoailab",
+      "date": "2026-11-26",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Active roster account; UCSD Hao AI Lab, first-hand research and inference-system releases, 8 kept items, no doubt flag of 2+. No browser in the 11:28Z sweep, so recommended for a browser follow as @sutcliffcc.",
+      "evidence": [
+        "https://x.com/haoailab/status/2125679076514128052"
+      ]
+    },
+    {
+      "handle": "@skalskip92",
+      "date": "2026-11-26",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Active roster account; first-hand computer-vision builder (Roboflow), 7 kept items, no doubt flag of 2+. No browser in the 11:28Z sweep, so recommended for a browser follow as @sutcliffcc.",
+      "evidence": []
+    },
+    {
+      "handle": "@TencentHunyuan",
+      "date": "2026-11-26",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Curated lab account (signal 5); first-hand Hy4 and DFly2 releases with weights, code and reports, 5 kept items, no doubt flag of 2+. No browser in the 15:26Z sweep, so recommended for a browser follow as @sutcliffcc.",
+      "evidence": [
+        "https://x.com/TencentHunyuan/status/2125928146113585468"
+      ]
+    },
+    {
+      "handle": "@AntLingAGI",
+      "date": "2026-11-26",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Curated lab account (Ant Group Ling/Ming); first-hand open-weight releases, 3 kept items, no doubt flag of 2+. No browser in the 15:26Z sweep, so recommended for a browser follow as @sutcliffcc.",
+      "evidence": [
+        "https://x.com/AntLingAGI/status/2125916926048358827"
+      ]
+    },
+    {
+      "handle": "@Aleph__Alpha",
+      "date": "2026-11-26",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Active roster account; first-hand Kolibri open-weight releases and technical write-ups, 3 kept items, no doubt flag of 2+. No browser in the 15:26Z sweep, so recommended for a browser follow as @sutcliffcc.",
+      "evidence": [
+        "https://x.com/Aleph__Alpha/status/2125967904092938704"
+      ]
+    },
+    {
+      "handle": "@OmarchyUpdates",
+      "date": "2026-11-27",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Active roster account with 13 sweep items in 14 days, first-hand Omarchy release notes including agent-facing features, no doubt flag of 2 or more. Browser unavailable, so recommended.",
+      "evidence": [
+        "https://x.com/OmarchyUpdates/status/2126268214556643839"
+      ]
+    },
+    {
+      "handle": "@kitlangton",
+      "date": "2026-11-27",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Curated builders account, first-hand Hex maintainer with repeated capability releases, no doubt flag of 2 or more. Browser unavailable, so recommended.",
+      "evidence": [
+        "https://x.com/kitlangton/status/2126102192264523896"
+      ]
+    },
+    {
+      "handle": "@UnslothAI",
+      "date": "2026-11-27",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Curated opensource account, first-hand Unsloth releases with repeated capability posts (computer use beta, MCP engines guide), no doubt flag of 2 or more. Browser unavailable, so recommended.",
+      "evidence": [
+        "https://x.com/UnslothAI/status/2126322382239649959"
+      ]
+    },
+    {
+      "handle": "@lhoestq",
+      "date": "2026-11-27",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Active roster account, first-hand Hugging Face datasets and tooling (GigaSpeech 3, nano-xet), no doubt flag of 2 or more. Browser unavailable, so recommended.",
+      "evidence": [
+        "https://x.com/lhoestq/status/2126297205128511913",
+        "https://x.com/lhoestq/status/2126322891662799052"
+      ]
+    },
+    {
+      "handle": "@vanstriendaniel",
+      "date": "2026-11-27",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Active roster account, first-hand Hugging Face researcher, 5 kept sweep items in 14 days (page-script classifiers today), no doubt flag of 2 or more. No browser this sweep, so recommended instead of followed.",
+      "evidence": [
+        "https://x.com/vanstriendaniel/status/2126337319032516859"
+      ]
+    },
+    {
+      "handle": "@_philschmid",
+      "date": "2026-11-27",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Curated (signal_to_noise 4), first-hand Google DeepMind builder, 6 kept sweep items in 14 days (deep-research skill today), no doubt flag of 2 or more. No browser this sweep, so recommended instead of followed.",
+      "evidence": [
+        "https://x.com/_philschmid/status/2126312943520243885",
+        "https://x.com/_philschmid/status/2126383425858789528"
+      ]
+    },
+    {
+      "handle": "@RoboColosseum",
+      "date": "2026-11-27",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Active roster account, first-hand eval project (Physical Intelligence Index today), 3 kept sweep items in 14 days, no doubt flag of 2 or more. No browser this sweep, so recommended instead of followed.",
+      "evidence": [
+        "https://x.com/RoboColosseum/status/2126360711228280968"
+      ]
+    },
+    {
+      "handle": "@opencode",
+      "date": "2026-11-27",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Curated first-hand project account (signal_to_noise 5) shipping the Rune native desktop client today, no doubt flag of 2 or more. No browser this sweep, so recommended instead of followed.",
+      "evidence": [
+        "https://x.com/opencode/status/2126433856370638952"
+      ]
+    },
+    {
+      "handle": "@ViC305",
+      "date": "2026-11-27",
+      "by": "magpie-scout",
+      "status": "recommended",
+      "why": "Active roster builder doing first-hand DGX Spark quantization and local medical-model apps, 3+ qualifying posts in 30 days, no doubt flag of 2 or more. No browser this sweep, so recommended instead of followed.",
+      "evidence": [
+        "https://x.com/ViC305/status/2126514413360533650"
+      ]
+    },
+    {
+      "handle": "@EpochAIResearch",
+      "date": "2026-11-28",
+      "by": "magpie-scout",
+      "status": "followed",
+      "why": "Active research org, 4 kept sweep items in 30 days, no doubt flags (followed in browser as @sutcliffcc)",
+      "evidence": [
+        "https://x.com/EpochAIResearch/status/2122762380463735010",
+        "https://x.com/EpochAIResearch/status/2123114112054112529",
+        "https://x.com/EpochAIResearch/status/2124945252725510614"
+      ]
+    },
+    {
+      "handle": "@linoy_tsaban",
+      "date": "2026-11-28",
+      "by": "magpie-scout",
+      "status": "followed",
+      "why": "Active Hugging Face builder, 4 kept sweep items, no doubt flags (followed in browser as @sutcliffcc)",
+      "evidence": [
+        "https://x.com/linoy_tsaban/status/2122334438826893476",
+        "https://x.com/linoy_tsaban/status/2123814286602666263",
+        "https://x.com/linoy_tsaban/status/2125976499354538250"
+      ]
+    },
+    {
+      "handle": "@maksym_andr",
+      "date": "2026-11-28",
+      "by": "magpie-scout",
+      "status": "followed",
+      "why": "Runs PostTrainBench and InferenceBench, 5 kept sweep items, doubt <=1 (followed in browser as @sutcliffcc)",
+      "evidence": [
+        "https://x.com/maksym_andr/status/2123487393663914175",
+        "https://x.com/maksym_andr/status/2123851338941685977",
+        "https://x.com/maksym_andr/status/2124100080152035403"
+      ]
+    }
+  ]
 }
