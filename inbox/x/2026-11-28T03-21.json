@@ -1,0 +1,215 @@
+{
+ "ran_at": "2026-11-28T03:21:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-27T23:23:00Z",
+ "queries": 9,
+ "calls": 13,
+ "items": [
+  {
+   "title": "Same RL sampling code on a DGX Spark and a rented H100 PCIe: H100 only 1.0x to 4.1x faster, not the 7.3x bandwidth ratio",
+   "url": "https://x.com/wei_wang/status/2126515428763558199",
+   "handle": "@wei_wang",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A team doing RL sampling on ByteDance's looped Ouro-1.4B timed one Python generation loop in the same NVIDIA container on a DGX Spark and an H100 PCIe: 4.1x with the stock cache code at batch 32, parity with their faster loop at 32, and 1.6x at batch 96, because a single host Python thread on the rented box kept the H100 34 to 50 percent busy. At batch 96 they estimate about $0.25 per thousand answers rented versus $0.04 to $0.12 on an owned Spark.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://forums.developer.nvidia.com/t/same-rl-sampling-code-on-a-dgx-spark-and-a-rented-h100-pcie-measured-1x-to-4x-not-the-7x-bandwidth-ratio-and-the-cost-per-answer/390374"
+   ],
+   "vendor": "NVIDIA Developer Forums (mark.hutto)",
+   "posted_at": "2026-11-28T03:16:01Z",
+   "metrics": {
+    "likes": 2,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 2,
+    "views": 46
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "A forum reply notes the run used no CUDA Graphs or torch.compile, so the H100 was host-bound; the author agrees and plans to re-time with graphs, which would move the cost comparison toward renting.",
+    "source": "https://forums.developer.nvidia.com/t/same-rl-sampling-code-on-a-dgx-spark-and-a-rented-h100-pcie-measured-1x-to-4x-not-the-7x-bandwidth-ratio-and-the-cost-per-answer/390374"
+   }
+  },
+  {
+   "title": "SemiAnalysis: Kimi K3.1 Pro is first of 169 on Terminal-Bench 4.1 at 68.2% but 16th of 26 on private GDPx at 6.3%",
+   "url": "https://x.com/SemiAnalysis_/status/2126488849090060483",
+   "handle": "@SemiAnalysis_",
+   "group": "applied",
+   "origin": "sweep",
+   "summary": "SemiAnalysis contrasts Kimi K3.1 Pro's top public Terminal-Bench 4.1 score with its rank on GDPx, its 206-task private agentic benchmark across 11 expert domains, where it trails Qwen 4 Max; its write-up calls K3.1 benchmaxxed on Terminal-Bench. Useful for anyone choosing an open model for agentic coding off public leaderboards.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://gdpx.semianalysis.com/",
+    "https://gdpx.semianalysis.com/changelog",
+    "https://newsletter.semianalysis.com/p/evaluating-recent-model-releases"
+   ],
+   "vendor": "SemiAnalysis",
+   "posted_at": "2026-11-28T01:30:00Z",
+   "metrics": {
+    "likes": 209,
+    "reposts": 16,
+    "quotes": 7,
+    "replies": 33,
+    "views": 23860
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers ask whether both scores used the same harness and host (GDPx ran Kimi in Kimi Code via Fireworks; the official Terminal-Bench board with Claude Code puts K3.1 at 59.7%), and ask SemiAnalysis to publish GDPx task mix and contamination controls.",
+    "source": "https://x.com/clhdev/status/2126505894842384538"
+   },
+   "reception": {
+    "sentiment": "mixed",
+    "summary": "Most repliers read the gap as public-benchmark contamination and praise held-out evals; the specific critiques are harness and precision mismatch and a private benchmark nobody can audit. One reply points to a separate audit where K3.1 recalled hidden grading rules.",
+    "tried": false,
+    "replies_read": 25
+   }
+  },
+  {
+   "title": "Open-source caregiver medication board runs LingSante 3.1 Flash at 1.51 bits per weight on one DGX Spark",
+   "url": "https://x.com/ViC305/status/2126514413360533650",
+   "handle": "@ViC305",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "A builder released an MIT web app where a caregiver types a change in plain English and a local medical model rebuilds the pill schedule, flags drug interactions and lists questions for a pharmacist; it runs on a single DGX Spark with inclusionAI's LingSante 3.1 Flash quantized to 1.51 bpw at 28 to 30 tok/s. The only test shown is one synthetic patient with three planted interactions.",
+   "kind": "demo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/vcruz305/caregiver-ai-dashboard",
+    "https://huggingface.co/vcruz305/LingSante-3.1-Flash-REXL3-SAGE-1.51bpw"
+   ],
+   "vendor": "vcruz305",
+   "posted_at": "2026-11-28T03:11:00Z",
+   "metrics": {
+    "likes": 6,
+    "reposts": 0,
+    "quotes": 0,
+    "replies": 1,
+    "views": 123
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Single synthetic demo session (3 of 3 planted interactions flagged); no clinical evaluation, and the repo was created today.",
+    "source": null
+   }
+  },
+  {
+   "title": "Bare-metal 74 KB hypervisor puts a 2B LLM in Ring -1 to catch Linux kernel panics and live-patch guest RAM",
+   "url": "https://x.com/superalesha/status/2126420450737610808",
+   "handle": "@superalesha",
+   "group": "builders",
+   "origin": "saved",
+   "summary": "A Type-1 AMD SVM hypervisor written in NASM and libc-free C freezes Linux at a fatal Ring 0 fault, runs a GRPO-tuned MiniCPM5-2B on CPU to choose a patch, NOPs the faulting bytes through nested page tables and resumes the guest; the author reports 97.54% pass@1 on 122 unseen fault cases with no dangerous patches. Source is MIT on GitHub.",
+   "kind": "repo",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/alesha-pro/llm.asm"
+   ],
+   "vendor": "Alexey Fateev",
+   "posted_at": "2026-11-27T20:58:37Z",
+   "metrics": {
+    "likes": 1741,
+    "reposts": 152,
+    "quotes": 62,
+    "replies": 127,
+    "views": 64262
+   },
+   "confirmed_by": [],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Repliers at the 23:23Z deep read questioned whether NOP-ing faulting bytes is a real fix and noted the test faults come from a purpose-built crash module; no new pushback on re-check.",
+    "source": "https://x.com/superalesha/status/2126420450737610808"
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "saved_in": 1,
+ "saved_kept": 1,
+ "saved_note": "One new owner save since the 23:23Z sweep, captured by the AI bookmark sync at 01:28Z (archive now 135 lines): @superalesha's Ring -1 hypervisor post, kept (it was already delivered at 23:23Z from the list; re-listed here with origin saved and fresh metrics). No get_users_bookmarks call this run. No verdict note sent to any agent.",
+ "list_posts_read": 90,
+ "list_pages": 1,
+ "list_covered_since": true,
+ "deep_reads": 2,
+ "rechecks": 6,
+ "videos": 0,
+ "video_note": "No clip analyzed: the deep-read SemiAnalysis clip is 13 s and the saved Ring -1 clip is 46 s, both under 60 s. The caregiver dashboard video (103 s) was neither deep-read nor saved.",
+ "recheck_notes": "Re-checked 6 items in the same get_posts_by_ids call: Ring -1 hypervisor, OpenCode Rune, Anpaure Pretrain Index (23:23Z) and training-free looped transformer, Physical Intelligence Index, omarchy-mlx (19:24Z). Metrics only; no Community Notes returned, no new pushback, doubt levels unchanged.",
+ "security_forwarded": [
+  {
+   "url": "https://github.com/opencontainers/runc/releases/tag/v1.6.0",
+   "matched": "stack.json Docker (match term runc; Docker Engine on Spark 29.6.2 and cspie 29.9.1). Verified on the runc release notes and GHSA-ffh6-8jcg-cjmw: CVE-2026-135844 medium DoS, fixed in moby/sys/user v0.5.1 / runc 1.6.0; runc 1.3.z now unsupported. Posted to the Mini event bus, not to Bouncer.",
+   "seen_via": "https://x.com/pepetheshneine/status/2126513904293441615"
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/mergenewsapp/status/2126489535512994124",
+   "reason": "Docker Sandboxes below 0.54.0 (CVE-2026-126139) already handled in the 2026-11-26 23:22Z sweep; not re-posted."
+  },
+  {
+   "url": "https://x.com/igor_os777/status/2126468426252026139",
+   "reason": "PolinRider GitHub repo loader (The Hacker News recap of Apiiro and SafeDep) already posted to the bus in the 2026-11-26 19:23Z sweep; nothing new."
+  },
+  {
+   "url": "https://github.com/gaul/s3proxy/releases/tag/s3proxy-4.3.0",
+   "reason": "S3Proxy 4.3.0 security fixes; S3Proxy is not in stack.json."
+  },
+  {
+   "url": "https://x.com/soflysojoe/status/2126473699737891181",
+   "reason": "PS5 firmware jailbreak; not fleet software."
+  }
+ ],
+ "bus_posts": [
+  {
+   "title": "Plan runc 1.6.0 on Docker hosts (CVE-2026-135844; runc 1.3.z now unsupported)",
+   "kind": "cve",
+   "lane": "personal",
+   "url": "https://github.com/opencontainers/runc/releases/tag/v1.6.0",
+   "seen_via": "https://x.com/pepetheshneine/status/2126513904293441615",
+   "posted_at": "2026-11-28T03:28:07Z",
+   "result": "ok"
+  }
+ ],
+ "bus_pending": [],
+ "repos_for_gh_testing": [
+  {
+   "url": "https://github.com/vcruz305/caregiver-ai-dashboard",
+   "why": "Kept item (caregiver medication board on DGX Spark). MIT, but an individual owner and the repo was created today with 0 stars."
+  },
+  {
+   "url": "https://github.com/Caistro-Labs/poros",
+   "why": "Discovery search: streaming LoRA fine-tuning that pages 4-bit weights from a USB4 SSD (72B LoRA on a 16 GB Mac claimed). Apache-2.0, not MIT; small new org (6 stars); not kept, surfaced by a 0-like post."
+  }
+ ],
+ "follows": {
+  "made": [],
+  "recommended": [
+   "@ViC305"
+  ],
+  "candidates": [
+   {
+    "handle": "@ViC305",
+    "why": "Active roster builder, first-hand DGX Spark quantization and local-model work with 3+ qualifying posts in 30 days (Nov 19, 24, 25 items and today's MIT app), no doubt flag of 2 or more. No browser, so recommended only."
+   }
+  ],
+  "note": "Earlier recommendations @opencode, @vanstriendaniel, @_philschmid and @RoboColosseum still stand. @wei_wang and @superalesha are trial accounts, not yet eligible."
+ },
+ "horizon_checks": 1,
+ "errors": 0,
+ "skipped": "wei_wang AngelSpec DFly2 drafter (delivered 2026-11-26); ashxhart Cortheon v2.3.1 point release (Cortheon v2 delivered 2026-11-26); witcheer Hermes sessions export --redact tip (feature shipped by Nov 14, not new); Hermes Agent v0.23.5 roll-up patch (no curated notes, no security fix listed); erintwalsh_ Antigravity CLI v1.5.13 to 1.5.18 article repost (release window covered by the 19:24Z Antigravity item; article body not readable); _mohansolo AGY harness quota repost (Nov 25, older); thecsguy Noon prototype (no artifact); superalesha GLM-5.4 in Droid shader demo (one-off showcase); thepirateface model torrents (index, no capability); teortaxesTex quote posts and commentary on Claude sabotage, Gemini 4 Neon ECI and 5M context (opinion); emollick RPG and cloud-GPU posts (anecdote); aitrackerbot weekly recap; wen_kaiyue and dbreunig reposts (commentary); badlogicgames posts (non-capability); SemiAnalysis-adjacent quote posts (recap); jerryjliu0 'Gemini (!)' (no content); discovery release search was mostly non-AI apps and listicles (ccbar, agent-chat-room, cc-board minor tools).",
+ "notes": "List: 1 page (90 posts) reaching 18:53Z, so since 23:23Z was covered. Fallback OR searches for curated non-list accounts in 6 group queries (22 posts; labs and opensource returned none, Thanksgiving night). 2 discovery queries (releases with HF/GitHub/arXiv links; security on stack terms). Horizon: 1 X read (Dessa query since 23:23Z: 0 results), no trigger. 1 get_posts_by_ids call for full text, media and 6 re-checks. 2 deep-read calls on the SemiAnalysis post (25 replies, 6 quote posts). Primary links checked via GitHub API, Hugging Face API, NVIDIA forum JSON, gdpx.semianalysis.com and Hermes docs (no X reads). Community Notes: none returned. One verified runc CVE posted to the Mini event bus, lane personal."
+}

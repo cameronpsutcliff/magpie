@@ -1,21 +1,21 @@
 {
- "updated_at": "2026-11-27T23:23:00Z",
+ "updated_at": "2026-11-28T03:30:00Z",
  "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 81,
+ "calls_used_today": 13,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-27T23:23:00Z",
-  "items": 8,
+  "ran_at": "2026-11-28T03:21:00Z",
+  "items": 4,
   "queries": 9,
-  "deep_reads": 3,
-  "rechecks": 5,
-  "flagged": 3,
-  "saved_in": 0,
-  "saved_kept": 0,
+  "deep_reads": 2,
+  "rechecks": 6,
+  "flagged": 4,
+  "saved_in": 1,
+  "saved_kept": 1,
   "videos": 0,
   "security_forwarded": 1,
-  "list_posts_read": 95,
+  "list_posts_read": 90,
   "list_pages": 1,
   "bus_posts": 1,
   "bus_pending": 0
@@ -86,7 +86,8 @@
   "Roster review 2026-11-27 (9 reads: 1 users lookup, 4 posts reads; 71 of 80 unused): added @MiaAI_lab and @superalesha as owner_saves trials (both on list). @superalesha mixes capability work with all-caps AI export-control commentary; flagged, re-screen next review. Failed owner_saves screen, not added, owner may add to avoid: @0xCodez (course and engagement-bait promo, get-rich claims) and @treg_ai (product promotion, own quote-posts of customers). @_philschmid already curated; @RoundtableSpace on avoid; @OrcaRouter and @GoogleAIStudio already trial. Promoted to active: @jankeesvw, @thepirateface, @OmarchyUpdates, @thinkymachines, @lhoestq (14+ days, 2+ sweep items). No retirements (earliest trial is 38 days old). Auto-review blocked one add_lists_member until approved; retried once with approval. No other candidates searched this run.",
   "2026-11-27T11:23Z sweep: the 10:41Z roster review reported 9 X reads but left calls_used_today at 14; this sweep counted them (35 total). Suggest the roster job always add its reads to calls_used_today. @superalesha (owner_saves trial) posted a profane, partisan-toned thread on Anthropic-funded politicians and Jensen Huang today; add to the next roster re-screen. The Mini bus routed today's task event with antigravity as a fallback provider; if fleet jobs run unattended on a personal Antigravity plan, Google's stated rules (no unattended third-party harness runs, no proxies, no account rotation) may apply.",
   "2026-11-27T15:30Z sweep: get_lists_posts with max_results 100 plus entities returns a result too large to use in one tool response; requesting only created_at, public_metrics and author_id at 40 to 45 per page works, then get_posts_by_ids with note_post for the shortlisted posts. Suggest the prompt recommend that pattern. Also: the GTIG MIDNIGHT NEPTUNE case (Nov 16) shows repo .claude/settings.json hooks run under claude -p without a trust prompt; consider adding 'agent project config files (.claude/settings.json, .mcp.json, skills) in untrusted repos' to stack.json always_forward. wei_wang surfaced NVIDIA forum reports that GB10 cudaMalloc memory is not charged to the process or cgroup, so a DGX Spark can freeze under overcommit and docker --memory does not contain it; worth a Spark ops note (engine budgets like --gpu-memory-utilization), not a bus item without a vendor statement.",
-  "Sweep 23:23Z: no new saves (archive unchanged at 134 lines); bookmarks read from the archive, not get_users_bookmarks. Follows skipped, no browser; @opencode recommended. Security leads went to the Mini event bus per the owner's X Recon layout rather than Bouncer; security_forwarded records what matched. calls_used_today counts UTC day 2026-11-27 (X reported 935 of 1000 shared reads left before the id lookup and deep reads)."
+  "Sweep 23:23Z: no new saves (archive unchanged at 134 lines); bookmarks read from the archive, not get_users_bookmarks. Follows skipped, no browser; @opencode recommended. Security leads went to the Mini event bus per the owner's X Recon layout rather than Bouncer; security_forwarded records what matched. calls_used_today counts UTC day 2026-11-27 (X reported 935 of 1000 shared reads left before the id lookup and deep reads).",
+  "Sweep 03:21Z (Nov 28): first sweep of UTC day 2026-11-28, so calls_used_today restarted at 13. The owner's new save (Ring -1 hypervisor) had already been delivered from the list at 23:23Z; it is re-listed with origin saved, and the prompt could say whether a save of an already delivered post should be repeated in items or only noted. Fleet stack section still says forward to Bouncer; real-time alerts went to the Mini bus per the 2026-11-23 owner layout."
  ],
  "errors": [],
  "follows_today": 3,
@@ -110,7 +111,7 @@
   "updated_at": "2026-11-23T19:57:00Z"
  },
  "horizon_triggered": [],
- "calls_day": "2026-11-27",
+ "calls_day": "2026-11-28",
  "roster_review_calls": 0,
  "follows_note": "2026-11-20 11:20Z sweep: no browser available, follows skipped (follow_mode browser).",
  "roster_review": {
@@ -127,6 +128,6 @@
   "sunday_drafts": false,
   "notes": "Run from the box. Skill tool unavailable; skill files read from disk. Owner saves (30d): 2+ kept saves only for @danikkk_wqs and @0xCodez (aggregator/hype-style posts, not first-hand builders); not added, no screen reads spent. Others with 2+ already on roster, curated or avoid. No doubt flags level 2+. Not Sunday: no drafts. Pruned 5 sweep files from 2026-11-10 (older than 14 days)."
  },
- "follows_skipped": "2026-11-27T19:24Z sweep: no browser, so no follows; recommended @vanstriendaniel, @_philschmid and @RoboColosseum in inbox/x-follows.json (Central day Nov 27: 0 of 3 follows used; weekly 6 of 15).",
- "calls_note": "calls_used_today is the Magpie share for UTC day 2026-11-27: 52 through the 15:30Z sweep plus 15 this sweep = 67 of 450 (X reported 946 of 1000 shared left mid-sweep)."
+ "follows_skipped": "2026-11-28T03:21Z sweep: no browser, so no follows; recommended @ViC305 in inbox/x-follows.json (Central day Nov 27: 0 of 3 follows used; weekly 6 of 15).",
+ "calls_note": "calls_used_today is the Magpie share for UTC day 2026-11-28: 13 this sweep (first of the UTC day) = 13 of 450 (X reported 991 of 1000 shared left after the 10th call)."
 }
