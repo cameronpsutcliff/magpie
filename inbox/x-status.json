@@ -1,21 +1,21 @@
 {
- "updated_at": "2026-11-28T10:40:00Z",
- "job": "roster",
+ "updated_at": "2026-11-28T11:30:00Z",
+ "job": "sweep",
  "prompt": "v6.1",
- "calls_used_today": 14,
+ "calls_used_today": 28,
  "notes_via_api": false,
  "last_sweep": {
-  "ran_at": "2026-11-28T03:21:00Z",
-  "items": 4,
-  "queries": 9,
-  "deep_reads": 2,
-  "rechecks": 6,
-  "flagged": 4,
-  "saved_in": 1,
-  "saved_kept": 1,
+  "ran_at": "2026-11-28T11:20:00Z",
+  "items": 2,
+  "queries": 10,
+  "deep_reads": 1,
+  "rechecks": 8,
+  "flagged": 2,
+  "saved_in": 0,
+  "saved_kept": 0,
   "videos": 0,
   "security_forwarded": 1,
-  "list_posts_read": 90,
+  "list_posts_read": 86,
   "list_pages": 1,
   "bus_posts": 1,
   "bus_pending": 0
@@ -88,7 +88,8 @@
   "2026-11-27T15:30Z sweep: get_lists_posts with max_results 100 plus entities returns a result too large to use in one tool response; requesting only created_at, public_metrics and author_id at 40 to 45 per page works, then get_posts_by_ids with note_post for the shortlisted posts. Suggest the prompt recommend that pattern. Also: the GTIG MIDNIGHT NEPTUNE case (Nov 16) shows repo .claude/settings.json hooks run under claude -p without a trust prompt; consider adding 'agent project config files (.claude/settings.json, .mcp.json, skills) in untrusted repos' to stack.json always_forward. wei_wang surfaced NVIDIA forum reports that GB10 cudaMalloc memory is not charged to the process or cgroup, so a DGX Spark can freeze under overcommit and docker --memory does not contain it; worth a Spark ops note (engine budgets like --gpu-memory-utilization), not a bus item without a vendor statement.",
   "Sweep 23:23Z: no new saves (archive unchanged at 134 lines); bookmarks read from the archive, not get_users_bookmarks. Follows skipped, no browser; @opencode recommended. Security leads went to the Mini event bus per the owner's X Recon layout rather than Bouncer; security_forwarded records what matched. calls_used_today counts UTC day 2026-11-27 (X reported 935 of 1000 shared reads left before the id lookup and deep reads).",
   "Sweep 03:21Z (Nov 28): first sweep of UTC day 2026-11-28, so calls_used_today restarted at 13. The owner's new save (Ring -1 hypervisor) had already been delivered from the list at 23:23Z; it is re-listed with origin saved, and the prompt could say whether a save of an already delivered post should be repeated in items or only noted. Fleet stack section still says forward to Bouncer; real-time alerts went to the Mini bus per the 2026-11-23 owner layout.",
-  "Roster review 2026-11-28 (Saturday, no Sunday drafts): 1 X read (batched from:ElorianAI OR from:StefanoErmon). Owner_saves step: no new authors with 2+ kept saves (@0xCodez and @treg_ai still fail the screen, @RoundtableSpace on avoid, rest already on roster). No additions, promotions or retirements. Updated last_qualifying_post for 46 accounts from the sweep files. @ElorianAI (last qualifying 2026-10-16; only an event promo since) and @StefanoErmon (last 2026-10-19; only congrats replies since) have no qualifying post and reach the 45-day retire line on 2026-11-30 and 2026-12-03; retire next review unless a new post qualifies. @JensenHuang and @ssi (owner_requested) have no recent qualifying posts; status unchanged, flagged. Deleted 2 sweep files older than 14 days."
+  "Roster review 2026-11-28 (Saturday, no Sunday drafts): 1 X read (batched from:ElorianAI OR from:StefanoErmon). Owner_saves step: no new authors with 2+ kept saves (@0xCodez and @treg_ai still fail the screen, @RoundtableSpace on avoid, rest already on roster). No additions, promotions or retirements. Updated last_qualifying_post for 46 accounts from the sweep files. @ElorianAI (last qualifying 2026-10-16; only an event promo since) and @StefanoErmon (last 2026-10-19; only congrats replies since) have no qualifying post and reach the 45-day retire line on 2026-11-30 and 2026-12-03; retire next review unless a new post qualifies. @JensenHuang and @ssi (owner_requested) have no recent qualifying posts; status unchanged, flagged. Deleted 2 sweep files older than 14 days.",
+  "Sweep 11:20Z (Nov 28): no new saves (archive unchanged at 135 lines, bookmark sync idle overnight). Follow candidates returned to the parent instead of written to x-follows.json, per the parent's no-browser rule. Fleet stack section still says forward to Bouncer; the verified VS Code CVE went to the Mini bus per the 2026-11-23 owner layout. stack.json does not list VS Code; if any machine runs it (or Cursor's VS Code base), it could be added."
  ],
  "errors": [],
  "follows_today": 3,
@@ -129,6 +130,6 @@
   "sunday_drafts": false,
   "notes": "Run from the box. Skill tool unavailable; skill files read from disk. Owner saves (30d): 2+ kept saves only for @danikkk_wqs and @0xCodez (aggregator/hype-style posts, not first-hand builders); not added, no screen reads spent. Others with 2+ already on roster, curated or avoid. No doubt flags level 2+. Not Sunday: no drafts. Pruned 5 sweep files from 2026-11-10 (older than 14 days)."
  },
- "follows_skipped": "2026-11-28T03:21Z sweep: no browser, so no follows; recommended @ViC305 in inbox/x-follows.json (Central day Nov 27: 0 of 3 follows used; weekly 6 of 15).",
- "calls_note": "calls_used_today is the Magpie share for UTC day 2026-11-28: 13 this sweep (first of the UTC day) = 13 of 450 (X reported 991 of 1000 shared left after the 10th call)."
+ "follows_skipped": "2026-11-28T11:20Z sweep: no browser, so no follows and nothing written to inbox/x-follows.json; 3 candidates (@EpochAIResearch, @linoy_tsaban, @maksym_andr) handed to the parent for the browser follow.",
+ "calls_note": "calls_used_today is the Magpie share for UTC day 2026-11-28: 13 (03:21Z sweep) + 1 (roster review) + 14 this sweep = 28 of 450."
 }

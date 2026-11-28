@@ -1,0 +1,180 @@
+{
+ "ran_at": "2026-11-28T11:20:00Z",
+ "bot": "magpie-scout",
+ "prompt": "v6.1",
+ "since": "2026-11-28T03:21:00Z",
+ "queries": 10,
+ "calls": 14,
+ "items": [
+  {
+   "title": "NVIDIA Flare v0.4.0 adds pure-CUDA lossless KV-cache compression and parallel Engram gathers",
+   "url": "https://x.com/plotarmordev/status/2126624645118136659",
+   "handle": "@plotarmordev",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "NVIDIA's hyperflare-inference (Flare) v0.4.0 compresses prefix-cache checkpoints losslessly on the GPU at the VRAM to DRAM boundary, with a matching Rust CPU decoder, so revisited long sessions restore instead of recomputing. A tester on two DGX Sparks reports a Qwen 3.8 Flash Next continuation wait falling from 229.8 s to 170.6 s, and the release also parallelizes Engram table gathers (128K DeepSeek V4.1 Flash GPU wait 3,769 ms to 21.3 ms in their notes).",
+   "kind": "tool",
+   "evidence": "artifact",
+   "links": [
+    "https://github.com/NVIDIA/hyperflare-inference/releases/tag/v0.4.0",
+    "https://github.com/NVIDIA/hyperflare-inference/pull/504",
+    "https://github.com/NVIDIA/hyperflare-inference/pull/470"
+   ],
+   "vendor": "NVIDIA",
+   "posted_at": "2026-11-28T10:30:00Z",
+   "metrics": {
+    "likes": 3,
+    "reposts": 1,
+    "quotes": 0,
+    "replies": 2,
+    "views": 335
+   },
+   "confirmed_by": [],
+   "deep_read": false,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "The 3.9x revisit figure is the PR's own run and the DGX Spark timing is one tester's single workload; no independent repro yet.",
+    "source": null
+   }
+  },
+  {
+   "title": "DHH's blind overnight Omarchy eval: Inkling 2 Mini scores 8.50 vs Qwen3.8 27B 8.00 on a 48-64 GB RTX Spark",
+   "url": "https://x.com/dhh/status/2125845831051858053",
+   "handle": "@dhh",
+   "group": "builders",
+   "origin": "sweep",
+   "summary": "DHH gave three local models the same Omarchy jobs overnight (a theme, a plugin, an app and a game), judged blind out of 10: Inkling 2 Mini scored 8.50 and finished all 8 runs in 142 minutes, Qwen3.8 27B 8.00 with 7 of 8 in 240 minutes, Nemotron 3.5 Bolt 4.38. Omarchy has added Inkling 2 Mini to its local model catalog and published a reproducible measurement: 32.7 GB loaded and about 78 to 92 tok/s decode on a 64 GB NVIDIA N1X laptop via TensorFold.",
+   "kind": "eval",
+   "evidence": "measured",
+   "links": [
+    "https://github.com/omacom/omarchy-local-ai/blob/master/measurements/inkling-2-mini-tensorfold-n1x.toml",
+    "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+    "https://x.com/OmarchyUpdates/status/2126566787986882793"
+   ],
+   "vendor": "Omarchy (DHH) / Thinking Machines",
+   "posted_at": "2026-11-26T06:55:17Z",
+   "metrics": {
+    "likes": 3286,
+    "reposts": 188,
+    "quotes": 67,
+    "replies": 167,
+    "views": 160532
+   },
+   "confirmed_by": [
+    "@OmarchyUpdates",
+    "@MiaAI_lab"
+   ],
+   "deep_read": true,
+   "doubt": {
+    "level": 1,
+    "community_note": null,
+    "pushback": "Eval prompts and judge rubric are not published; one quoter notes judge calibration across 8 runs could move averages by more than half a point.",
+    "source": "https://x.com/coffeeaiguy"
+   },
+   "reception": {
+    "sentiment": "positive",
+    "summary": "Repliers and quoters mostly agree Inkling 2 Mini is best in class for the 48-64 GB tier; AkitaOnRails ran his own small benchmark and found it level with or slightly ahead of Qwen 3.8 27B, others report using it as a daily local agent; asks for published prompts, power and tok/s numbers, and long tool-loop tests.",
+    "tried": true,
+    "replies_read": 25
+   }
+  }
+ ],
+ "saved_rejected": [],
+ "saved_in": 0,
+ "saved_kept": 0,
+ "saved_note": "No new owner saves since the 03:21Z sweep: the archive's newest capture is 01:28Z (135 lines) and the AI bookmark sync is idle overnight (next run 7:41 AM CT). No get_users_bookmarks call this run. No verdict note sent to any agent.",
+ "list_posts_read": 86,
+ "list_pages": 1,
+ "list_covered_since": true,
+ "deep_reads": 1,
+ "rechecks": 8,
+ "videos": 0,
+ "video_note": "No clip analyzed: the deep-read DHH post is a photo; the Omarchy quote clip is 20 s.",
+ "recheck_notes": "Re-checked 8 items in the same get_posts_by_ids call: SemiAnalysis Kimi K3.1 (553 likes), Ring -1 hypervisor (4,053), OpenCode Rune (3,260), Anpaure Pretrain Index (1,465), Liquid d1.3-ultra (1,524), Antigravity PR pills (1,552), training-free looped transformer (872), IST DASLab GSQ-RCO (1,375). Metrics only; no Community Notes returned, no new pushback, doubt levels unchanged.",
+ "security_forwarded": [
+  {
+   "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-120779",
+   "matched": "always_forward agent tooling (MCP client in VS Code; Cursor IDE is a VS Code fork, stack.json Cursor match term 'cursor ide'). Verified on MSRC and NVD: VS Code RCE, CVSS 9.6, fixed in 1.145.3. Posted to the Mini event bus, not to Bouncer.",
+   "seen_via": "https://x.com/SiuHarry202601/status/2126633002713440356"
+  }
+ ],
+ "security_na": [
+  {
+   "url": "https://x.com/suroorwijdan/status/2126577544992587982",
+   "reason": "Convex plugin in the official Claude Code marketplace: verified in get-convex/convex-backend-skill that the quickstart skill POSTs the app idea to basic-anteater-667.convex.site/generate and runs fetched bootstrap scripts, and hooks send PostHog telemetry by default (opt-out CONVEX_PLUGIN_TELEMETRY=0). Disclosed behavior, not a CVE, and the Convex plugin is not in stack.json; not posted."
+  },
+  {
+   "url": "https://x.com/likasanma/status/2126546383771467828",
+   "reason": "Amazon ECS MCP Server CVE-2026-135614 (secrets in troubleshooting output); the AWS ECS MCP server is not in stack.json."
+  },
+  {
+   "url": "https://x.com/CVEnew/status/2126558915357811176",
+   "reason": "bigcommerce-api-mcp CVE-2026-138034; not fleet software."
+  },
+  {
+   "url": "https://x.com/OfficialAbijita/status/2126594055345734077",
+   "reason": "ToolJet release-workflow CVE-2026-137964; ToolJet is not in stack.json."
+  },
+  {
+   "url": "https://x.com/likasanma/status/2126518197746651350",
+   "reason": "Pydantic PlaywrightBrowser egress-policy gaps; Pydantic AI browser tooling is not in stack.json."
+  }
+ ],
+ "bus_posts": [
+  {
+   "title": "Update VS Code to 1.145.3+ for MCP elicitation RCE (CVE-2026-120779)",
+   "kind": "cve",
+   "lane": "personal",
+   "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-120779",
+   "seen_via": "https://x.com/SiuHarry202601/status/2126633002713440356",
+   "posted_at": "2026-11-28T11:27:15Z",
+   "result": "ok (HTTP 201)"
+  }
+ ],
+ "bus_pending": [],
+ "repos_for_gh_testing": [
+  {
+   "url": "https://github.com/NVIDIA/hyperflare-inference",
+   "why": "Kept item (Flare v0.4.0 lossless KV compression, tested on two DGX Sparks). Verified NVIDIA org but Apache-2.0, not MIT, so not sent to the bus."
+  }
+ ],
+ "follows": {
+  "made": [],
+  "recommended": [],
+  "candidates": [
+   {
+    "handle": "@EpochAIResearch",
+    "why": "Active roster research org, 4 kept capability items in 30 days (Capabilities Index, Automation Reports, inference capacity, benchmark reviews), all doubt 0.",
+    "evidence": [
+     "https://x.com/EpochAIResearch/status/2122762380463735010",
+     "https://x.com/EpochAIResearch/status/2123114112054112529",
+     "https://x.com/EpochAIResearch/status/2124945252725510614"
+    ]
+   },
+   {
+    "handle": "@linoy_tsaban",
+    "why": "Active roster first-hand Hugging Face builder, 4 kept items in 30 days (Open Vision Banana recipe, RMBG 3.0 weights, WebGPU image generation, RD Flow 64 in browser), all doubt 0.",
+    "evidence": [
+     "https://x.com/linoy_tsaban/status/2122334438826893476",
+     "https://x.com/linoy_tsaban/status/2123814286602666263",
+     "https://x.com/linoy_tsaban/status/2125976499354538250"
+    ]
+   },
+   {
+    "handle": "@maksym_andr",
+    "why": "Active roster researcher behind PostTrainBench and InferenceBench, 5 kept eval items in 30 days, no doubt flag above 1.",
+    "evidence": [
+     "https://x.com/maksym_andr/status/2123487393663914175",
+     "https://x.com/maksym_andr/status/2123851338941685977",
+     "https://x.com/maksym_andr/status/2124100080152035403"
+    ]
+   }
+  ],
+  "note": "No browser this run, so candidates are handed to the parent for the browser follow and logging; none are in inbox/x-follows.json. @plotarmordev skipped (level 2 doubt on 2026-11-14); trial accounts not eligible."
+ },
+ "horizon_checks": 1,
+ "errors": 0,
+ "skipped": "Loom attention (arXiv 2611.30634, via @paperswithcodee repost) and Sleep in-context adaptation (arXiv 2611.32802, @askalphaxiv) already in Magpie editions Nov 25 and 26; ByteDance Mixture-of-Loops (covered Nov 26); Google DeepCrossAttention residual blog via @badlogicgames (already in today's edition); Scarlet AI video editor (covered Nov 16 to 22); GigaChat 4 708B (covered Nov 27); ISTA-DASLab Inkling 2 Mini GGUF and TensorFold 1.3.7 reposts (covered Nov 27); ashxhart GLM-5.3 FP8 at about 60 tok/s on four M3 Ultra (unreleased work in progress, screenshot only); BUTA_no_rakuen Strata Inkling prefill numbers (repost, incremental); sudoingX Inkling vs Qwen 3090 thread (teaser, results in thread not read) and LingSante pill-label test (anecdote); tinygrad VIZ=2 with Neon (claim); MiaAI Inkling 2 Small Spark recipe (in the works); Omarchy OOM notification PR (not AI); Taigi TTS on Hugging Face (0 downloads, individual); Anthropic Fable 5.2 sabotage statement and replies, teortaxesTex and scaling01 commentary, sudoingX market posts, levelsio, emollick and swyx posts (opinion or non-capability); Hark agentic payments (business claim); Pirate Face ecosystem page (index, no capability); export-control licence mention (Commerce remote-access rule already in today's edition).",
+ "notes": "List: 1 page (86 posts) reaching 2026-11-27T21:48Z, so since 03:21Z was covered. Fallback OR searches for curated non-list accounts in 6 group queries (labs returned none, Saturday morning); builders filled a page, so one more builders query without teortaxesTex covered 03:21Z to 05:27Z. 2 discovery queries (releases with HF/GitHub/arXiv links; security on stack terms). Horizon: 1 X read (Dessa query since 03:21Z: 0 results), no trigger. 1 get_posts_by_ids call for full text, media and 8 re-checks. 2 deep-read calls on the DHH post (25 replies, 24 quote posts). Primary links checked via GitHub API, arXiv API, Hugging Face API, MSRC and NVD APIs and raw GitHub (no X reads). Community Notes: none returned. One verified VS Code CVE posted to the Mini event bus, lane personal."
+}
