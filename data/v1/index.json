@@ -3,80 +3,81 @@
  "days": [
   {
    "date": "2026-11-28",
-   "headline": "Revisiting LLMs as Context Engineers, Claude-BugHunter, ffmpeg-skill, and more",
-   "events": 250,
-   "sources": 577,
-   "enriched": false,
+   "headline": "Hosting GigaChat 3.5 Omni, speeding Inkling, previewing GPT 6 Luna, and more",
+   "events": 304,
+   "sources": 608,
+   "enriched": true,
    "top": [
     {
-     "id": "be3aa08a4cae",
-     "title": "Revisiting LLMs as Context Engineers",
+     "id": "764e1ed14511",
+     "title": "Sber releases GigaChat 3.5 Omni MIT open weights",
+     "impact": 5,
+     "vendor": "Sber",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-28-764e1ed14511"
+    },
+    {
+     "id": "f454167ae3a3",
+     "title": "Google Stitch agent skills keep trending on GitHub",
      "impact": 4,
-     "vendor": "Research",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-28-be3aa08a4cae"
+     "vendor": "Google",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-28-f454167ae3a3"
+    },
+    {
+     "id": "f42b84d9a069",
+     "title": "GPT 6 Luna Preview rolls out to Kiro Enterprise",
+     "impact": 4,
+     "vendor": "AWS",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-28-f42b84d9a069"
     },
     {
      "id": "4302db6cb9e8",
-     "title": "elementalsouls/Claude-BugHunter",
-     "impact": 5,
+     "title": "Claude-BugHunter skill bundle keeps climbing GitHub trending",
+     "impact": 3,
      "vendor": "Open source",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-28-4302db6cb9e8"
     },
     {
      "id": "fcc74671eed1",
-     "title": "kajisho5/ffmpeg-skill",
-     "impact": 5,
+     "title": "ffmpeg-skill local video MCP server keeps trending",
+     "impact": 3,
      "vendor": "Open source",
      "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-28-fcc74671eed1"
-    },
-    {
-     "id": "f454167ae3a3",
-     "title": "google-labs-code/stitch-skills",
-     "impact": 5,
-     "vendor": "Open source",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-28-f454167ae3a3"
-    },
-    {
-     "id": "d53a59c9e558",
-     "title": "StateWeaver: Multi-Agent Coordination of Story-State Transitions for Long-Horizon Video Generation",
-     "impact": 4,
-     "vendor": "Research",
-     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-28-d53a59c9e558"
     }
    ],
    "vendors": [
     "Open source",
     "Research",
-    "Google",
     "NVIDIA",
+    "Google",
     "Anthropic",
-    "OpenAI"
+    "Hugging Face"
    ],
    "topics": {
-    "models": 90,
-    "agents": 80,
-    "coding": 75,
-    "multimodal": 65,
-    "infra": 40,
-    "local": 31,
+    "models": 97,
+    "agents": 85,
+    "coding": 78,
+    "multimodal": 67,
+    "infra": 46,
+    "local": 33,
+    "research": 29,
     "memory": 27,
-    "research": 26,
-    "evals": 26,
-    "mcp": 23,
-    "security": 10,
-    "robotics": 7,
-    "reverse": 7
+    "evals": 27,
+    "mcp": 21,
+    "security": 11,
+    "reverse": 9,
+    "robotics": 7
    },
    "kinds": {
-    "social": 44,
-    "newsletter": 41,
-    "paper": 40,
+    "video": 54,
+    "social": 46,
+    "newsletter": 42,
     "repo": 40,
+    "paper": 40,
     "model": 30,
     "space": 20,
-    "community": 16,
+    "community": 14,
     "changelog": 12,
-    "blog": 7
+    "blog": 6
    },
    "constraints": []
   },
