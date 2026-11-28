@@ -2,6 +2,85 @@
  "schema": "magpie.index/1",
  "days": [
   {
+   "date": "2026-11-28",
+   "headline": "Revisiting LLMs as Context Engineers, Claude-BugHunter, ffmpeg-skill, and more",
+   "events": 250,
+   "sources": 577,
+   "enriched": false,
+   "top": [
+    {
+     "id": "be3aa08a4cae",
+     "title": "Revisiting LLMs as Context Engineers",
+     "impact": 4,
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-28-be3aa08a4cae"
+    },
+    {
+     "id": "4302db6cb9e8",
+     "title": "elementalsouls/Claude-BugHunter",
+     "impact": 5,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-28-4302db6cb9e8"
+    },
+    {
+     "id": "fcc74671eed1",
+     "title": "kajisho5/ffmpeg-skill",
+     "impact": 5,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-28-fcc74671eed1"
+    },
+    {
+     "id": "f454167ae3a3",
+     "title": "google-labs-code/stitch-skills",
+     "impact": 5,
+     "vendor": "Open source",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-28-f454167ae3a3"
+    },
+    {
+     "id": "d53a59c9e558",
+     "title": "StateWeaver: Multi-Agent Coordination of Story-State Transitions for Long-Horizon Video Generation",
+     "impact": 4,
+     "vendor": "Research",
+     "page_url": "https://www.cameronsutcliff.com/magpie/c/2026-11-28-d53a59c9e558"
+    }
+   ],
+   "vendors": [
+    "Open source",
+    "Research",
+    "Google",
+    "NVIDIA",
+    "Anthropic",
+    "OpenAI"
+   ],
+   "topics": {
+    "models": 90,
+    "agents": 80,
+    "coding": 75,
+    "multimodal": 65,
+    "infra": 40,
+    "local": 31,
+    "memory": 27,
+    "research": 26,
+    "evals": 26,
+    "mcp": 23,
+    "security": 10,
+    "robotics": 7,
+    "reverse": 7
+   },
+   "kinds": {
+    "social": 44,
+    "newsletter": 41,
+    "paper": 40,
+    "repo": 40,
+    "model": 30,
+    "space": 20,
+    "community": 16,
+    "changelog": 12,
+    "blog": 7
+   },
+   "constraints": []
+  },
+  {
    "date": "2026-11-27",
    "headline": "Completing live voice calls, speeding 1M-context decoding, shrinking 26B local MoEs, and more",
    "events": 318,
@@ -5444,5 +5523,5 @@
    }
   }
  ],
- "latest": "2026-11-27"
+ "latest": "2026-11-28"
 }
